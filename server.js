@@ -63,9 +63,9 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // 路由：GET /add.html - 添加页面
+  // 路由：GET /add.html - 添加页面（使用V2版本）
   if (req.method === 'GET' && pathname === '/add.html') {
-    const filePath = path.join(__dirname, 'add.html');
+    const filePath = path.join(__dirname, 'add-v2.html');
     const content = fs.readFileSync(filePath, 'utf-8');
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(content);
@@ -109,6 +109,25 @@ function generateMarkdown(data) {
 
   if (data.content) {
     md += `### 完整内容\n${data.content}\n\n`;
+  }
+
+  // 处理图片
+  if (data.images && Array.isArray(data.images) && data.images.length > 0) {
+    md += `### 相关图片\n`;
+    if (data.downloadedImages && data.downloadedImages.length > 0) {
+      // 如果有下载的图片，使用本地路径
+      data.downloadedImages.forEach((filename, index) => {
+        md += `![图片 ${index + 1}](../images/${filename})\n`;
+      });
+    } else {
+      // 否则保存图片URL（外链）
+      md += `<!-- 图片URL（请手动下载并保存到images目录）:\n`;
+      data.images.forEach((url, index) => {
+        md += `${index + 1}. ${url}\n`;
+      });
+      md += `-->\n`;
+    }
+    md += `\n`;
   }
 
   md += `---\n\n`;
