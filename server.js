@@ -11,17 +11,36 @@ const fs = require('fs');
 const path = require('path');
 const url = require('url');
 const crypto = require('crypto');
+const { HttpsProxyAgent } = require('https-proxy-agent');
 
 const PORT = 3000;
 const COLLECTION_FILE = path.join(__dirname, 'content/collection.md');
 const IMAGES_DIR = path.join(__dirname, 'images');
 
-// 确保images目录存在
+// 代理配置（可选）
+const PROXY_URL =
+  process.env.HTTPS_PROXY ||
+  process.env.https_proxy ||
+  process.env.HTTP_PROXY ||
+  process.env.http_proxy ||
+  null;
+
+let HTTPS_AGENT = null;
+if (PROXY_URL) {
+  try {
+    HTTPS_AGENT = new HttpsProxyAgent(PROXY_URL);
+    console.log('Proxy enabled for image download: ' + PROXY_URL);
+  } catch (error) {
+    HTTPS_AGENT = null;
+    console.warn('⚠️ 代理配置无效:', error.message);
+  }
+}
+
+// 确保 images 目录存在
 if (!fs.existsSync(IMAGES_DIR)) {
   fs.mkdirSync(IMAGES_DIR, { recursive: true });
 }
 
-// 创建HTTP服务器
 const server = http.createServer((req, res) => {
   // 设置CORS头，允许跨域
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -144,27 +163,78 @@ function generateUniqueId() {
 /**
  * 下载单张图片
  */
-function downloadImage(imageUrl, savePath) {
+function downloadImage(imageUrl, savePath, redirectCount = 0) {
   return new Promise((resolve, reject) => {
-    const protocol = imageUrl.startsWith('https') ? https : http;
+    if (redirectCount > 5) {
+      return reject(new Error('下载失败: 重定向次数过多'));
+    }
 
-    protocol.get(imageUrl, (response) => {
-      if (response.statusCode === 200) {
-        const fileStream = fs.createWriteStream(savePath);
-        response.pipe(fileStream);
+    let urlObj;
+    try {
+      urlObj = new URL(imageUrl);
+    } catch (err) {
+      return reject(new Error(`下载失败: 无效的图片地址 - ${imageUrl}`));
+    }
 
-        fileStream.on('finish', () => {
-          fileStream.close();
-          resolve(savePath);
-        });
-
-        fileStream.on('error', (err) => {
-          fs.unlink(savePath, () => {}); // 删除不完整的文件
-          reject(err);
-        });
-      } else {
-        reject(new Error(`下载失败: HTTP ${response.statusCode}`));
+    const protocol = urlObj.protocol === 'https:' ? https : http;
+    const requestOptions = {
+      hostname: urlObj.hostname,
+      path: urlObj.pathname + urlObj.search,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        'Accept': 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Referer': `${urlObj.protocol}//${urlObj.hostname}/`
       }
+    };
+
+    if (urlObj.port) {
+      requestOptions.port = urlObj.port;
+    }
+
+    if (HTTPS_AGENT && urlObj.protocol === 'https:') {
+      requestOptions.agent = HTTPS_AGENT;
+    }
+
+    protocol.get(requestOptions, (response) => {
+      if ([301, 302, 303, 307, 308].includes(response.statusCode)) {
+        const location = response.headers.location;
+        if (!location) {
+          response.resume();
+          return reject(new Error('下载失败: 重定向未提供目标地址'));
+        }
+
+        const nextUrl = new URL(location, imageUrl).toString();
+        response.destroy();
+        return downloadImage(nextUrl, savePath, redirectCount + 1)
+          .then(resolve)
+          .catch(reject);
+      }
+
+      if (response.statusCode !== 200) {
+        response.resume();
+        return reject(new Error(`下载失败: HTTP ${response.statusCode}`));
+      }
+
+      const fileStream = fs.createWriteStream(savePath);
+      response.pipe(fileStream);
+
+      fileStream.on('finish', () => {
+        fileStream.close();
+        resolve(savePath);
+      });
+
+      fileStream.on('error', (err) => {
+        fileStream.close();
+        fs.unlink(savePath, () => {});
+        reject(err);
+      });
+
+      response.on('error', (err) => {
+        fileStream.close();
+        fs.unlink(savePath, () => {});
+        reject(err);
+      });
     }).on('error', (err) => {
       reject(err);
     });
@@ -179,7 +249,13 @@ async function downloadAllImages(imageUrls, tweetId) {
 
   for (let i = 0; i < imageUrls.length; i++) {
     const imageUrl = imageUrls[i];
-    const ext = '.jpg'; // X的图片通常是jpg
+    let urlObj;
+    try {
+      urlObj = new URL(imageUrl);
+    } catch (_) {
+      urlObj = null;
+    }
+    const ext = urlObj ? (path.extname(urlObj.pathname) || '.jpg') : '.jpg';
     const filename = `tweet-${tweetId}-${i + 1}${ext}`;
     const savePath = path.join(IMAGES_DIR, filename);
 
@@ -196,6 +272,7 @@ async function downloadAllImages(imageUrls, tweetId) {
 
   return downloadedFiles;
 }
+
 
 /**
  * 生成Markdown格式内容
