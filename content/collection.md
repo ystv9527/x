@@ -519,3 +519,103 @@ Nano banana on @GeminiApp 纳米香蕉在 @GeminiApp 上"A highly detailed, prof
 
 ---
 
+
+## Title: Nano banana on @GeminiApp 纳米香蕉在 @GeminiApp 上"A highly detailed, professional three-quarter body stud...
+- **Source**: X / Iqra Saifi
+- **Link**: https://x.com/IqraSaifiii/status/1983659753801965580
+- **Date**: 2025-11-04
+- **Tags**: X, Twitter
+
+### Content
+A highly detailed, professional three-quarter body studio portrait of an attractive young woman with long, voluminous, dark wavy hair. She is captured in a dynamic, high-fashion pose, with her body slightly angled to the viewer's right, and her left arm raised to gently run her fingers through her hair. Her gaze is direct and confident. She is wearing a captivating, layered fashion ensemble: a cream-white cropped cardigan with long, ribbed sleeves and a deep V-neckline trimmed in maroon ruffles, tied together with delicate maroon ribbons. She pairs this with a layered mini-skirt featuring a white, lace-accented overlay and a deep maroon, ruffled underlayer. A small, fluffy brown pom-pom charm is attached to the skirt. Studio environment, soft, bright lighting, high fashion photography.",
+"subject_details": {
+"ethnicity": "East Asian",
+"hair": "Long, thick, dark, wavy, and voluminous",
+"makeup": "Bold red lips, smokey eye makeup, perfectly sculpted eyebrows",
+"expression": "Sultry and confident"
+},
+"pose_details": {
+"camera_view": "Three-quarter body shot (cropping just above the knee)",
+"body_stance": "Standing, subtle S-curve posture, with hips slightly angled away from the camera.",
+"arm_action": "Left arm raised with fingers delicately touching and pulling strands of hair; right arm relaxed and slightly bent at the side.",
+"gaze": "Direct eye contact with the camera, head slightly tilted."
+},
+"camera_details": {
+"camera_angle": "Slightly high angle, looking subtly down on the subject.",
+"focal_length": "85mm or 105mm (medium telephoto portrait lens for flattering compression)",
+"aperture_value": "f/2.0 or f/2.8 (shallow depth of field to isolate subject)",
+"lighting_setup": "Single large softbox key light from the front-left, clean neutral gray background, fill light on the right."
+},
+"outfit_description": {
+"top": "Cropped, cream-white knitted cardigan, maroon ruffled trim on collar, long ribbed sleeves, ribbon closure.",
+"bottom": "Layered mini-skirt, contrasting cream-white lace fabric layer over a deep maroon ruffled layer.",
+"accessories": "Small, fluffy brown pom-pom/bear tail attached to the skirt."
+},
+"style_and_aesthetics": [
+"High fashion photography",
+"Professional studio lighting",
+"Hyper-detailed",
+"Ultra-realistic",
+"8k",
+"Cinematic lighting",
+"Vogue editorial"
+],
+"negative_prompt_suggestions": [
+"blurry",
+"out of focus",
+"low resolution",
+"poor quality",
+"deformed hands",
+"artifacts",
+"tiling",
+"multiple bodies"
+]
+}
+}“这是一幅高度详细、专业的四分之三身体工作室肖像，描绘了一位迷人的年轻女子，有着长而蓬松的深色波浪形头发。她以一个充满活力的高级时尚姿势被捕捉到，她的身体稍微向观众的右侧倾斜，她的左臂举起，用手指轻轻地抚摸她的头发。她的目光直视而自信。她穿着迷人的层次感时尚套装：乳白色短款开衫，长罗纹袖子和深 V 领饰有栗色荷叶边，用精致的栗色丝带系在一起。她将它与一条分层迷你裙搭配，该半身裙采用白色蕾丝覆盖层和深栗色荷叶边内衣。裙子上附有一个小而蓬松的棕色绒球吊饰。工作室环境，柔和、明亮的灯光，高级时装摄影。
+“subject_details”： {
+“ethnicity”： “东亚”，
+“hair”： “长、浓、黑、波浪状、体积大”，
+“makeup”：“大胆的红唇，烟熏眼妆，完美雕刻的眉毛”，
+“expression”： “撩人自信”
+},
+“pose_details”： {
+“camera_view”： “四分之三的身体镜头（膝盖上方裁剪）”，
+“body_stance”： “站立，微妙的 S 形曲线姿势，臀部略微远离镜头。”
+“arm_action”：“左臂举起，手指轻轻地抚摸和拉扯发丝;右臂放松，侧面微微弯曲。
+“gaze”： “与相机直接眼神交流，头部微微倾斜。
+},
+“camera_details”： {
+“camera_angle”： “略高角度，微妙地俯视拍摄对象。”
+“focal_length”： “85mm 或 105mm（用于讨人喜欢压缩的中长焦人像镜头）”，
+“aperture_value”： “f/2.0 或 f/2.8（浅景深以隔离被摄体）”，
+“lighting_setup”： “左前方的单个大柔光箱键光，干净的中性灰色背景，右侧的补光。
+},
+“outfit_description”： {
+“top”： “短款，乳白色针织开衫，衣领栗色荷叶边饰边，罗纹长袖，丝带开合。
+“bottom”： “分层迷你裙，对比鲜明的乳白色蕾丝面料层叠叠在深栗色荷叶边层上。”
+“accessories”： “裙子上附着小而蓬松的棕色绒球/熊尾巴。”
+},
+“style_and_aesthetics”： [
+“高级时装摄影”，
+“专业演播室照明”，
+“超细致”，
+“超现实”，
+“8k”，
+“电影照明”，
+《Vogue》社论
+],
+“negative_prompt_suggestions”： [
+“模糊”，
+“失焦”，
+“低分辨率”，
+“质量差”，
+“畸形的手”，
+“工件”，
+“平铺”，
+“多体”
+]
+}
+}
+
+---
+

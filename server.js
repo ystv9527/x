@@ -1,53 +1,28 @@
 #!/usr/bin/env node
 
 /**
- * 简易API服务器 V2 - 支持自动下载图片
- * 运行方法: npm run server
+ * Content Collector Server - Support for Form Upload
  */
 
 const http = require('http');
-const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
-const crypto = require('crypto');
-const { HttpsProxyAgent } = require('https-proxy-agent');
 
 const PORT = 3000;
 const COLLECTION_FILE = path.join(__dirname, 'content/collection.md');
 const IMAGES_DIR = path.join(__dirname, 'images');
 
-// 代理配置（可选）
-const PROXY_URL =
-  process.env.HTTPS_PROXY ||
-  process.env.https_proxy ||
-  process.env.HTTP_PROXY ||
-  process.env.http_proxy ||
-  null;
-
-let HTTPS_AGENT = null;
-if (PROXY_URL) {
-  try {
-    HTTPS_AGENT = new HttpsProxyAgent(PROXY_URL);
-    console.log('Proxy enabled for image download: ' + PROXY_URL);
-  } catch (error) {
-    HTTPS_AGENT = null;
-    console.warn('⚠️ 代理配置无效:', error.message);
-  }
-}
-
-// 确保 images 目录存在
+// Ensure images directory exists
 if (!fs.existsSync(IMAGES_DIR)) {
   fs.mkdirSync(IMAGES_DIR, { recursive: true });
 }
 
 const server = http.createServer((req, res) => {
-  // 设置CORS头，允许跨域
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Content-Length');
 
-  // 处理OPTIONS预检请求
   if (req.method === 'OPTIONS') {
     res.writeHead(200);
     res.end();
@@ -57,54 +32,84 @@ const server = http.createServer((req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
 
-  // 路由：POST /api/add-content - 添加内容
+  // API: Add content with form data (file upload)
   if (req.method === 'POST' && pathname === '/api/add-content') {
-    let body = '';
+    let body = Buffer.alloc(0);
 
     req.on('data', chunk => {
-      body += chunk.toString();
+      body = Buffer.concat([body, chunk]);
     });
 
     req.on('end', async () => {
       try {
-        const data = JSON.parse(body);
+        const contentType = req.headers['content-type'] || '';
 
-        console.log('📝 收到内容:', data.title);
-
-        // 如果有图片，自动下载
+        let data = {};
         let downloadedImages = [];
-        if (data.images && Array.isArray(data.images) && data.images.length > 0) {
-          console.log(`🖼️  发现 ${data.images.length} 张图片，开始自动下载...`);
 
-          // 生成唯一的推文ID（从URL提取或生成）
-          const tweetId = extractTweetId(data.url) || generateUniqueId();
+        if (contentType.includes('application/json')) {
+          // JSON format (old method)
+          data = JSON.parse(body.toString());
+        } else if (contentType.includes('multipart/form-data')) {
+          // Form data with file upload
+          const boundary = contentType.split('boundary=')[1];
+          const parts = body.toString('binary').split('--' + boundary);
 
-          // 下载所有图片
-          downloadedImages = await downloadAllImages(data.images, tweetId);
+          for (let part of parts) {
+            if (part.includes('Content-Disposition')) {
+              const nameMatch = part.match(/name="([^"]+)"/);
+              const filenameMatch = part.match(/filename="([^"]+)"/);
 
-          console.log(`✅ 成功下载 ${downloadedImages.length} 张图片`);
+              if (filenameMatch) {
+                // File upload
+                const fieldName = nameMatch[1];
+                const filename = filenameMatch[1];
+                const fileStart = part.indexOf('\r\n\r\n') + 4;
+                const fileEnd = part.lastIndexOf('\r\n');
+                const fileBuffer = Buffer.from(part.substring(fileStart, fileEnd), 'binary');
+
+                const tweetId = data.url ? extractTweetId(data.url) : generateUniqueId();
+                const index = downloadedImages.length + 1;
+                const newFilename = `tweet-${tweetId}-${index}.jpg`;
+                const savePath = path.join(IMAGES_DIR, newFilename);
+
+                fs.writeFileSync(savePath, fileBuffer);
+                downloadedImages.push(newFilename);
+
+                console.log(`   ✅ Saved: ${newFilename}`);
+              } else {
+                // Form field
+                const fieldName = nameMatch[1];
+                const fieldStart = part.indexOf('\r\n\r\n') + 4;
+                const fieldEnd = part.lastIndexOf('\r\n');
+                const fieldValue = part.substring(fieldStart, fieldEnd);
+
+                data[fieldName] = fieldValue;
+              }
+            }
+          }
         }
 
-        // 将下载的图片文件名添加到数据中
+        console.log('📝 Content received:', data.title);
+        console.log(`🖼️ Images saved: ${downloadedImages.length}`);
+
         data.downloadedImages = downloadedImages;
 
-        // 生成Markdown格式内容
+        // Generate Markdown
         const markdown = generateMarkdown(data);
-
-        // 追加到collection.md文件
         fs.appendFileSync(COLLECTION_FILE, markdown, 'utf-8');
 
-        console.log('✅ 内容已保存:', data.title);
+        console.log('✅ Content saved:', data.title);
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({
           success: true,
-          message: '内容已保存',
+          message: 'Content saved',
           downloadedImages: downloadedImages.length
         }));
 
       } catch (error) {
-        console.error('❌ 保存失败:', error);
+        console.error('❌ Save failed:', error);
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ success: false, error: error.message }));
       }
@@ -113,172 +118,55 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // 路由：GET /add.html - 添加页面（使用V2版本）
+  // GET /add.html - Use V3 with file upload
   if (req.method === 'GET' && pathname === '/add.html') {
-    const filePath = path.join(__dirname, 'add-v2.html');
+    const filePath = path.join(__dirname, 'add-v3.html');
     const content = fs.readFileSync(filePath, 'utf-8');
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     res.end(content);
     return;
   }
 
-  // 路由：GET / - 主页重定向
+  // GET / - Main page
   if (req.method === 'GET' && pathname === '/') {
     const indexPath = path.join(__dirname, 'index.html');
     const content = fs.readFileSync(indexPath, 'utf-8');
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     res.end(content);
     return;
   }
 
-  // 静态文件服务
+  // Static files
   if (req.method === 'GET') {
     serveStaticFile(pathname, res);
     return;
   }
 
-  // 404
   res.writeHead(404, { 'Content-Type': 'text/plain' });
   res.end('404 Not Found');
 });
 
 /**
- * 从推文URL提取ID
+ * Extract tweet ID from URL
  */
 function extractTweetId(tweetUrl) {
   if (!tweetUrl) return null;
-
-  // 匹配 https://x.com/username/status/1234567890
   const match = tweetUrl.match(/status\/(\d+)/);
   return match ? match[1] : null;
 }
 
 /**
- * 生成唯一ID
+ * Generate unique ID
  */
 function generateUniqueId() {
   return Date.now().toString();
 }
 
 /**
- * 下载单张图片
- */
-function downloadImage(imageUrl, savePath, redirectCount = 0) {
-  return new Promise((resolve, reject) => {
-    if (redirectCount > 5) {
-      return reject(new Error('下载失败: 重定向次数过多'));
-    }
-
-    let urlObj;
-    try {
-      urlObj = new URL(imageUrl);
-    } catch (err) {
-      return reject(new Error(`下载失败: 无效的图片地址 - ${imageUrl}`));
-    }
-
-    const protocol = urlObj.protocol === 'https:' ? https : http;
-    const requestOptions = {
-      hostname: urlObj.hostname,
-      path: urlObj.pathname + urlObj.search,
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-        'Accept': 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8',
-        'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
-        'Referer': `${urlObj.protocol}//${urlObj.hostname}/`
-      }
-    };
-
-    if (urlObj.port) {
-      requestOptions.port = urlObj.port;
-    }
-
-    if (HTTPS_AGENT && urlObj.protocol === 'https:') {
-      requestOptions.agent = HTTPS_AGENT;
-    }
-
-    protocol.get(requestOptions, (response) => {
-      if ([301, 302, 303, 307, 308].includes(response.statusCode)) {
-        const location = response.headers.location;
-        if (!location) {
-          response.resume();
-          return reject(new Error('下载失败: 重定向未提供目标地址'));
-        }
-
-        const nextUrl = new URL(location, imageUrl).toString();
-        response.destroy();
-        return downloadImage(nextUrl, savePath, redirectCount + 1)
-          .then(resolve)
-          .catch(reject);
-      }
-
-      if (response.statusCode !== 200) {
-        response.resume();
-        return reject(new Error(`下载失败: HTTP ${response.statusCode}`));
-      }
-
-      const fileStream = fs.createWriteStream(savePath);
-      response.pipe(fileStream);
-
-      fileStream.on('finish', () => {
-        fileStream.close();
-        resolve(savePath);
-      });
-
-      fileStream.on('error', (err) => {
-        fileStream.close();
-        fs.unlink(savePath, () => {});
-        reject(err);
-      });
-
-      response.on('error', (err) => {
-        fileStream.close();
-        fs.unlink(savePath, () => {});
-        reject(err);
-      });
-    }).on('error', (err) => {
-      reject(err);
-    });
-  });
-}
-
-/**
- * 下载所有图片
- */
-async function downloadAllImages(imageUrls, tweetId) {
-  const downloadedFiles = [];
-
-  for (let i = 0; i < imageUrls.length; i++) {
-    const imageUrl = imageUrls[i];
-    let urlObj;
-    try {
-      urlObj = new URL(imageUrl);
-    } catch (_) {
-      urlObj = null;
-    }
-    const ext = urlObj ? (path.extname(urlObj.pathname) || '.jpg') : '.jpg';
-    const filename = `tweet-${tweetId}-${i + 1}${ext}`;
-    const savePath = path.join(IMAGES_DIR, filename);
-
-    try {
-      console.log(`  ⬇️  下载图片 ${i + 1}/${imageUrls.length}: ${filename}`);
-      await downloadImage(imageUrl, savePath);
-      downloadedFiles.push(filename);
-      console.log(`  ✅ 完成: ${filename}`);
-    } catch (error) {
-      console.error(`  ❌ 下载失败 ${filename}:`, error.message);
-      // 继续下载其他图片
-    }
-  }
-
-  return downloadedFiles;
-}
-
-
-/**
- * 生成Markdown格式内容
+ * Generate Markdown
  */
 function generateMarkdown(data) {
-  let md = `\n## 标题：${data.title}\n`;
+  let md = `\n## ${data.title}\n`;
   if (data.source) md += `- **来源**: ${data.source}\n`;
   if (data.url) md += `- **链接**: ${data.url}\n`;
   if (data.date) md += `- **日期**: ${data.date}\n`;
@@ -295,7 +183,6 @@ function generateMarkdown(data) {
     md += `### 完整内容\n${data.content}\n\n`;
   }
 
-  // 处理图片
   if (data.downloadedImages && data.downloadedImages.length > 0) {
     md += `### 相关图片\n`;
     data.downloadedImages.forEach((filename, index) => {
@@ -310,29 +197,26 @@ function generateMarkdown(data) {
 }
 
 /**
- * 静态文件服务
+ * Serve static file
  */
 function serveStaticFile(pathname, res) {
   const filePath = path.join(__dirname, pathname);
 
-  // 安全检查
   if (!filePath.startsWith(__dirname)) {
     res.writeHead(403, { 'Content-Type': 'text/plain' });
     res.end('403 Forbidden');
     return;
   }
 
-  // 检查文件是否存在
   if (!fs.existsSync(filePath)) {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
     res.end('404 Not Found');
     return;
   }
 
-  // 获取文件扩展名
   const ext = path.extname(filePath).toLowerCase();
   const contentTypes = {
-    '.html': 'text/html',
+    '.html': 'text/html; charset=utf-8',
     '.css': 'text/css',
     '.js': 'application/javascript',
     '.json': 'application/json',
@@ -345,7 +229,6 @@ function serveStaticFile(pathname, res) {
 
   const contentType = contentTypes[ext] || 'application/octet-stream';
 
-  // 读取并返回文件
   try {
     const content = fs.readFileSync(filePath);
     res.writeHead(200, { 'Content-Type': contentType });
@@ -356,20 +239,16 @@ function serveStaticFile(pathname, res) {
   }
 }
 
-// 启动服务器
+// Start server
 server.listen(PORT, () => {
-  console.log('\n🚀 书签采集服务器已启动（V2 - 支持自动下载图片）！\n');
-  console.log(`   访问地址: http://localhost:${PORT}`);
-  console.log(`   API地址: http://localhost:${PORT}/api/add-content`);
-  console.log(`   添加页面: http://localhost:${PORT}/add.html`);
-  console.log(`   图片目录: ${IMAGES_DIR}`);
-  console.log('\n✨ 新功能: 自动下载推文图片到本地！');
-  console.log('💡 每个推文的图片会自动命名为: tweet-推文ID-序号.jpg');
-  console.log('   按 Ctrl+C 停止服务器\n');
+  console.log('\n🚀 Content Collector Server Started!\n');
+  console.log(`   Server: http://localhost:${PORT}`);
+  console.log(`   Images: ${IMAGES_DIR}`);
+  console.log('\n💡 Upload images directly from browser - No VPN proxy needed!\n');
+  console.log('   Press Ctrl+C to stop\n');
 });
 
-// 优雅退出
 process.on('SIGINT', () => {
-  console.log('\n\n👋 服务器已关闭');
+  console.log('\n\n👋 Server stopped\n');
   process.exit(0);
 });
