@@ -1,25 +1,17 @@
 #!/usr/bin/env node
 
 /**
- * 简易API服务器 V2 - 支持自动下载图片
+ * 简易API服务器 - 接收书签工具采集的内容
  * 运行方法: npm run server
  */
 
 const http = require('http');
-const https = require('https');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
-const crypto = require('crypto');
 
 const PORT = 3000;
 const COLLECTION_FILE = path.join(__dirname, 'content/collection.md');
-const IMAGES_DIR = path.join(__dirname, 'images');
-
-// 确保images目录存在
-if (!fs.existsSync(IMAGES_DIR)) {
-  fs.mkdirSync(IMAGES_DIR, { recursive: true });
-}
 
 // 创建HTTP服务器
 const server = http.createServer((req, res) => {
@@ -46,28 +38,9 @@ const server = http.createServer((req, res) => {
       body += chunk.toString();
     });
 
-    req.on('end', async () => {
+    req.on('end', () => {
       try {
         const data = JSON.parse(body);
-
-        console.log('📝 收到内容:', data.title);
-
-        // 如果有图片，自动下载
-        let downloadedImages = [];
-        if (data.images && Array.isArray(data.images) && data.images.length > 0) {
-          console.log(`🖼️  发现 ${data.images.length} 张图片，开始自动下载...`);
-
-          // 生成唯一的推文ID（从URL提取或生成）
-          const tweetId = extractTweetId(data.url) || generateUniqueId();
-
-          // 下载所有图片
-          downloadedImages = await downloadAllImages(data.images, tweetId);
-
-          console.log(`✅ 成功下载 ${downloadedImages.length} 张图片`);
-        }
-
-        // 将下载的图片文件名添加到数据中
-        data.downloadedImages = downloadedImages;
 
         // 生成Markdown格式内容
         const markdown = generateMarkdown(data);
@@ -75,14 +48,10 @@ const server = http.createServer((req, res) => {
         // 追加到collection.md文件
         fs.appendFileSync(COLLECTION_FILE, markdown, 'utf-8');
 
-        console.log('✅ 内容已保存:', data.title);
+        console.log('✅ 内容已添加:', data.title);
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({
-          success: true,
-          message: '内容已保存',
-          downloadedImages: downloadedImages.length
-        }));
+        res.end(JSON.stringify({ success: true, message: '内容已保存' }));
 
       } catch (error) {
         console.error('❌ 保存失败:', error);
@@ -123,83 +92,7 @@ const server = http.createServer((req, res) => {
   res.end('404 Not Found');
 });
 
-/**
- * 从推文URL提取ID
- */
-function extractTweetId(tweetUrl) {
-  if (!tweetUrl) return null;
-
-  // 匹配 https://x.com/username/status/1234567890
-  const match = tweetUrl.match(/status\/(\d+)/);
-  return match ? match[1] : null;
-}
-
-/**
- * 生成唯一ID
- */
-function generateUniqueId() {
-  return Date.now().toString();
-}
-
-/**
- * 下载单张图片
- */
-function downloadImage(imageUrl, savePath) {
-  return new Promise((resolve, reject) => {
-    const protocol = imageUrl.startsWith('https') ? https : http;
-
-    protocol.get(imageUrl, (response) => {
-      if (response.statusCode === 200) {
-        const fileStream = fs.createWriteStream(savePath);
-        response.pipe(fileStream);
-
-        fileStream.on('finish', () => {
-          fileStream.close();
-          resolve(savePath);
-        });
-
-        fileStream.on('error', (err) => {
-          fs.unlink(savePath, () => {}); // 删除不完整的文件
-          reject(err);
-        });
-      } else {
-        reject(new Error(`下载失败: HTTP ${response.statusCode}`));
-      }
-    }).on('error', (err) => {
-      reject(err);
-    });
-  });
-}
-
-/**
- * 下载所有图片
- */
-async function downloadAllImages(imageUrls, tweetId) {
-  const downloadedFiles = [];
-
-  for (let i = 0; i < imageUrls.length; i++) {
-    const imageUrl = imageUrls[i];
-    const ext = '.jpg'; // X的图片通常是jpg
-    const filename = `tweet-${tweetId}-${i + 1}${ext}`;
-    const savePath = path.join(IMAGES_DIR, filename);
-
-    try {
-      console.log(`  ⬇️  下载图片 ${i + 1}/${imageUrls.length}: ${filename}`);
-      await downloadImage(imageUrl, savePath);
-      downloadedFiles.push(filename);
-      console.log(`  ✅ 完成: ${filename}`);
-    } catch (error) {
-      console.error(`  ❌ 下载失败 ${filename}:`, error.message);
-      // 继续下载其他图片
-    }
-  }
-
-  return downloadedFiles;
-}
-
-/**
- * 生成Markdown格式内容
- */
+// 生成Markdown格式内容
 function generateMarkdown(data) {
   let md = `\n## 标题：${data.title}\n`;
   if (data.source) md += `- **来源**: ${data.source}\n`;
@@ -219,11 +112,21 @@ function generateMarkdown(data) {
   }
 
   // 处理图片
-  if (data.downloadedImages && data.downloadedImages.length > 0) {
+  if (data.images && Array.isArray(data.images) && data.images.length > 0) {
     md += `### 相关图片\n`;
-    data.downloadedImages.forEach((filename, index) => {
-      md += `![图片 ${index + 1}](../images/${filename})\n`;
-    });
+    if (data.downloadedImages && data.downloadedImages.length > 0) {
+      // 如果有下载的图片，使用本地路径
+      data.downloadedImages.forEach((filename, index) => {
+        md += `![图片 ${index + 1}](../images/${filename})\n`;
+      });
+    } else {
+      // 否则保存图片URL（外链）
+      md += `<!-- 图片URL（请手动下载并保存到images目录）:\n`;
+      data.images.forEach((url, index) => {
+        md += `${index + 1}. ${url}\n`;
+      });
+      md += `-->\n`;
+    }
     md += `\n`;
   }
 
@@ -232,9 +135,7 @@ function generateMarkdown(data) {
   return md;
 }
 
-/**
- * 静态文件服务
- */
+// 静态文件服务
 function serveStaticFile(pathname, res) {
   const filePath = path.join(__dirname, pathname);
 
@@ -281,13 +182,11 @@ function serveStaticFile(pathname, res) {
 
 // 启动服务器
 server.listen(PORT, () => {
-  console.log('\n🚀 书签采集服务器已启动（V2 - 支持自动下载图片）！\n');
+  console.log('\n🚀 书签采集服务器已启动！\n');
   console.log(`   访问地址: http://localhost:${PORT}`);
   console.log(`   API地址: http://localhost:${PORT}/api/add-content`);
   console.log(`   添加页面: http://localhost:${PORT}/add.html`);
-  console.log(`   图片目录: ${IMAGES_DIR}`);
-  console.log('\n✨ 新功能: 自动下载推文图片到本地！');
-  console.log('💡 每个推文的图片会自动命名为: tweet-推文ID-序号.jpg');
+  console.log('\n💡 现在可以使用书签工具采集X内容了！');
   console.log('   按 Ctrl+C 停止服务器\n');
 });
 
