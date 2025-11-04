@@ -102,3 +102,139 @@ Sora作为最先进的AI视频生成模型，能够创造令人惊叹的视频�
 
 ---
 
+
+## 标题：Nano Banana in @GeminiApp 纳米香蕉在 @GeminiApp "A striking, high-fashion studio portrait featuring a sub...
+- **来源**: X / Iqra Saifi
+- **链接**: https://x.com/IqraSaifiii/status/1984145782459769093
+- **日期**: 2025-11-04
+- **分类**: X,   Twitter
+
+### 完整内容
+Nano Banana in @GeminiApp 纳米香蕉在 @GeminiApp "A striking, high-fashion studio portrait featuring a subject in a futuristic metallic outfit, emphasizing a cool-toned and edgy aesthetic.",
+  "subject": {
+    "gender": "female",
+    "appearance": "Youthful, East Asian. **Hairstyle is an intentionally messy, voluminous, and chic updo/bun, featuring multiple twisted strands pinned loosely at the crown/back of the head. Crucially, several long, wispy, curled strands frame the face and neck, giving it a soft, editorial look.** Sharp, dark winged eyeliner, subtle eyeshadow, and natural-toned lips with a glossy finish. Prominent ear cuff or dangling earring, and a delicate bracelet.",
+    "attire": "Shiny silver metallic halter-neck corset top with textured details, likely pleats or ridges, and a central zipper or lacing detail. The halter strap is made of chains, which also drape down the front. Black mini-skirt. Multiple chain belts, one with a prominent silver buckle, another with a leopard print detail, and long decorative chains dangling around the waist."
+  },
+  "pose": {
+    "stance": "Relaxed yet stylish seated pose, leaning slightly back and to the right, with one leg extended and the other bent or tucked.",
+    "upper_body": "Torso is angled towards the camera, showcasing the outfit. Head is turned slightly to the left, with eyes looking off-camera to the left, creating a contemplative or distant gaze.",
+    "arms_and_hands": "Left arm is bent, with the hand resting on the floor or surface beside the body, providing support. Right arm is relaxed, with the hand resting on the thigh or leg."
+  },
+  "camera": {
+    "shot_type": "Medium shot (framing from just above the head to mid-thigh/knee).",
+    "angle": "Slightly high angle, looking down on the subject, which emphasizes the relaxed seated pose and the outfit details.",
+    "lens_and_depth": "Portrait lens (e.g., 85mm or 100mm) with a moderate depth of field (f/2.8-f/4) to keep the subject sharp while gently blurring the background.",
+    "film_stock": "Digital capture, high resolution, with a slightly cool color temperature."
+  },
+  "lighting": {
+    "type": "Soft Studio Lighting with a cool tone.",
+    "main_light_source": "Large, soft light source (softbox or octabox) positioned to the left and slightly in front of the subject, creating gentle highlights on the metallic top and soft shadows.",
+    "fill_light": "Subtle fill light from the right to balance shadows and maintain detail in the darker areas of the skirt and chains.",
+    "background_light": "Even lighting on the background to create a smooth, gradient effect, likely from a separate light source or ambient studio light."
+  },
+  "background_and_setting": {
+    "environment": "Seamless studio backdrop and floor.",
+    "color": "Solid, gradient light blue to a slightly deeper blue-grey, suggesting a cool, airy, or icy atmosphere. The floor is the same color, creating a continuous, ethereal space.",
+    "mood_keywords": "Edgy, Futuristic, Glamorous, Metallic, Chic, Cool-toned, Fashion Editorial, K-Pop."
+  }
+}“一幅引人注目的高级时装工作室肖像，主角身着未来主义金属服装，强调冷色调和前卫的美学。”
+“主题”： {
+“gender”： “女性”，
+“appearance”： “年轻，东亚人。**发型是故意凌乱、蓬松、别致的高髻/发髻，在头顶/后脑勺松散地固定着多股扭曲的发髻。至关重要的是，几根细长的、纤细的卷曲的股线勾勒出面部和颈部的轮廓，赋予其柔和的编辑外观。锐利的深色翼状眼线笔、微妙的眼影和自然色调的双唇，具有光泽。突出的耳夹或悬垂的耳环，以及精致的手镯。
+“attire”： “闪亮的银色金属挂脖紧身胸衣上衣，带有纹理细节，可能是褶皱或脊线，以及中央拉链或系带细节。挂脖带由链条制成，链条也垂在前面。黑色迷你裙。多条链带，一条带有突出的银色搭扣，另一条带有豹纹细节，腰间悬挂着长长的装饰链。
+  },
+“姿势”： {
+“stance”： “轻松而时尚的坐姿，稍微向后和向右倾斜，一条腿伸展，另一条腿弯曲或收起。
+“upper_body”： “躯干朝向镜头，展示了服装。头部略微向左转，眼睛看向镜头外的左侧，营造出一种沉思或远方的凝视。
+“arms_and_hands”：“左臂弯曲，手放在身体旁边的地板或表面上，提供支撑。右臂放松，手放在大腿或腿上。
+  },
+“相机”： {
+“shot_type”： “中镜头（从头顶到大腿中部/膝盖的取景）”，
+“angle”： “略高角度，俯视主体，强调放松的坐姿和着装细节。”
+“lens_and_depth”： “人像镜头（例如 85mm 或 100mm）具有适度的景深 （f/2.8-f/4），可保持拍摄对象清晰，同时轻轻模糊背景。”
+“film_stock”： “数字拍摄，分辨率高，色温略冷。
+  },
+“照明”： {
+“type”： “柔和的演播室灯光，色调冷。”
+“main_light_source”： “大而柔和的光源（柔光箱或八角盒）位于拍摄对象的左侧和略前方，在金属顶部产生柔和的高光和柔和的阴影。
+“fill_light”： “从右侧进行微妙的补光，以平衡阴影并保持裙子和链条较暗区域的细节。
+“background_light”： “在背景上均匀照明以创建平滑的渐变效果，可能来自单独的光源或环境工作室灯光。”
+  },
+“background_and_setting”： {
+“environment”： “无缝的演播室背景和地板。”
+“color”： “纯色、渐变的浅蓝色到稍深的蓝灰色，暗示凉爽、通风或冰冷的气氛。地板是相同的颜色，营造出一个连续的、空灵的空间。
+“mood_keywords”： “前卫、未来主义、迷人、金属、别致、冷色调、时尚社论、韩国流行音乐。”
+  }
+}
+
+---
+
+
+## 标题：Nano Banana in @GeminiApp 纳米香蕉在 @GeminiApp "A striking, high-fashion studio portrait featuring a sub...
+- **来源**: X / Iqra Saifi
+- **链接**: https://x.com/IqraSaifiii/status/1984145782459769093
+- **日期**: 2025-11-04
+- **分类**: X,   Twitter
+
+### 完整内容
+Nano Banana in @GeminiApp 纳米香蕉在 @GeminiApp "A striking, high-fashion studio portrait featuring a subject in a futuristic metallic outfit, emphasizing a cool-toned and edgy aesthetic.",
+  "subject": {
+    "gender": "female",
+    "appearance": "Youthful, East Asian. **Hairstyle is an intentionally messy, voluminous, and chic updo/bun, featuring multiple twisted strands pinned loosely at the crown/back of the head. Crucially, several long, wispy, curled strands frame the face and neck, giving it a soft, editorial look.** Sharp, dark winged eyeliner, subtle eyeshadow, and natural-toned lips with a glossy finish. Prominent ear cuff or dangling earring, and a delicate bracelet.",
+    "attire": "Shiny silver metallic halter-neck corset top with textured details, likely pleats or ridges, and a central zipper or lacing detail. The halter strap is made of chains, which also drape down the front. Black mini-skirt. Multiple chain belts, one with a prominent silver buckle, another with a leopard print detail, and long decorative chains dangling around the waist."
+  },
+  "pose": {
+    "stance": "Relaxed yet stylish seated pose, leaning slightly back and to the right, with one leg extended and the other bent or tucked.",
+    "upper_body": "Torso is angled towards the camera, showcasing the outfit. Head is turned slightly to the left, with eyes looking off-camera to the left, creating a contemplative or distant gaze.",
+    "arms_and_hands": "Left arm is bent, with the hand resting on the floor or surface beside the body, providing support. Right arm is relaxed, with the hand resting on the thigh or leg."
+  },
+  "camera": {
+    "shot_type": "Medium shot (framing from just above the head to mid-thigh/knee).",
+    "angle": "Slightly high angle, looking down on the subject, which emphasizes the relaxed seated pose and the outfit details.",
+    "lens_and_depth": "Portrait lens (e.g., 85mm or 100mm) with a moderate depth of field (f/2.8-f/4) to keep the subject sharp while gently blurring the background.",
+    "film_stock": "Digital capture, high resolution, with a slightly cool color temperature."
+  },
+  "lighting": {
+    "type": "Soft Studio Lighting with a cool tone.",
+    "main_light_source": "Large, soft light source (softbox or octabox) positioned to the left and slightly in front of the subject, creating gentle highlights on the metallic top and soft shadows.",
+    "fill_light": "Subtle fill light from the right to balance shadows and maintain detail in the darker areas of the skirt and chains.",
+    "background_light": "Even lighting on the background to create a smooth, gradient effect, likely from a separate light source or ambient studio light."
+  },
+  "background_and_setting": {
+    "environment": "Seamless studio backdrop and floor.",
+    "color": "Solid, gradient light blue to a slightly deeper blue-grey, suggesting a cool, airy, or icy atmosphere. The floor is the same color, creating a continuous, ethereal space.",
+    "mood_keywords": "Edgy, Futuristic, Glamorous, Metallic, Chic, Cool-toned, Fashion Editorial, K-Pop."
+  }
+}“一幅引人注目的高级时装工作室肖像，主角身着未来主义金属服装，强调冷色调和前卫的美学。”
+“主题”： {
+“gender”： “女性”，
+“appearance”： “年轻，东亚人。**发型是故意凌乱、蓬松、别致的高髻/发髻，在头顶/后脑勺松散地固定着多股扭曲的发髻。至关重要的是，几根细长的、纤细的卷曲的股线勾勒出面部和颈部的轮廓，赋予其柔和的编辑外观。锐利的深色翼状眼线笔、微妙的眼影和自然色调的双唇，具有光泽。突出的耳夹或悬垂的耳环，以及精致的手镯。
+“attire”： “闪亮的银色金属挂脖紧身胸衣上衣，带有纹理细节，可能是褶皱或脊线，以及中央拉链或系带细节。挂脖带由链条制成，链条也垂在前面。黑色迷你裙。多条链带，一条带有突出的银色搭扣，另一条带有豹纹细节，腰间悬挂着长长的装饰链。
+  },
+“姿势”： {
+“stance”： “轻松而时尚的坐姿，稍微向后和向右倾斜，一条腿伸展，另一条腿弯曲或收起。
+“upper_body”： “躯干朝向镜头，展示了服装。头部略微向左转，眼睛看向镜头外的左侧，营造出一种沉思或远方的凝视。
+“arms_and_hands”：“左臂弯曲，手放在身体旁边的地板或表面上，提供支撑。右臂放松，手放在大腿或腿上。
+  },
+“相机”： {
+“shot_type”： “中镜头（从头顶到大腿中部/膝盖的取景）”，
+“angle”： “略高角度，俯视主体，强调放松的坐姿和着装细节。”
+“lens_and_depth”： “人像镜头（例如 85mm 或 100mm）具有适度的景深 （f/2.8-f/4），可保持拍摄对象清晰，同时轻轻模糊背景。”
+“film_stock”： “数字拍摄，分辨率高，色温略冷。
+  },
+“照明”： {
+“type”： “柔和的演播室灯光，色调冷。”
+“main_light_source”： “大而柔和的光源（柔光箱或八角盒）位于拍摄对象的左侧和略前方，在金属顶部产生柔和的高光和柔和的阴影。
+“fill_light”： “从右侧进行微妙的补光，以平衡阴影并保持裙子和链条较暗区域的细节。
+“background_light”： “在背景上均匀照明以创建平滑的渐变效果，可能来自单独的光源或环境工作室灯光。”
+  },
+“background_and_setting”： {
+“environment”： “无缝的演播室背景和地板。”
+“color”： “纯色、渐变的浅蓝色到稍深的蓝灰色，暗示凉爽、通风或冰冷的气氛。地板是相同的颜色，营造出一个连续的、空灵的空间。
+“mood_keywords”： “前卫、未来主义、迷人、金属、别致、冷色调、时尚社论、韩国流行音乐。”
+  }
+}
+
+---
+

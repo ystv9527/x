@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>书签工具测试页面</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .step {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        .step h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .code-box {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            word-wrap: break-word;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .btn-secondary {
+            background: #4CAF50;
+        }
+        .btn-test {
+            background: #FF9800;
+        }
+        .alert {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .bookmarklet-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            margin: 20px 0;
+            cursor: move;
+        }
+        .drag-instruction {
+            background: #fff3cd;
+            border: 2px dashed #ffc107;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 书签工具创建指南</h1>
+
+        <div class="alert">
+            <strong>✅ 服务器状态：</strong>正在运行 (http://localhost:3000)<br>
+            <strong>📍 当前页面：</strong>书签创建测试页面
+        </div>
+
+        <div class="step">
+            <h3>🎯 方法一：拖拽创建（最简单）</h3>
+            <p>将下面的红色按钮<strong>拖到浏览器的书签栏</strong>（就像拖文件一样）</p>
+            <div class="drag-instruction">
+                <p style="font-size:16px; margin-bottom:15px;">👇 按住鼠标拖动下面的按钮到书签栏 👆</p>
+                <a href="javascript:(function(){if(!window.location.hostname.includes('twitter.com')&&!window.location.hostname.includes('x.com')){alert('⚠️ 请在X(Twitter)推文页面使用此书签！');return;}try{let tweetText='';let author='';let url=window.location.href;const textSelectors=['[data-testid=&quot;tweetText&quot;]','article [lang]','[role=&quot;article&quot;] [lang]'];for(let selector of textSelectors){const element=document.querySelector(selector);if(element&&element.textContent){tweetText=element.textContent.trim();break;}}const authorElement=document.querySelector('[data-testid=&quot;User-Name&quot;] span')||document.querySelector('article a[role=&quot;link&quot;] span');if(authorElement){author=authorElement.textContent.trim();}if(!tweetText){tweetText=document.title;}const data={title:tweetText.substring(0,100)+(tweetText.length>100?'...':''),source:'X / '+(author||'@unknown'),url:url,content:tweetText,tags:'X, Twitter',date:new Date().toISOString().split('T')[0]};const params=new URLSearchParams(data);const addUrl='http://localhost:3000/add.html?'+params.toString();window.open(addUrl,'_blank','width=800,height=900');}catch(error){alert('❌ 提取失败：'+error.message+'\n\n请确保：\n1. 在推文详情页使用\n2. 页面已完全加载\n3. 本地服务器正在运行');console.error('Bookmarklet error:',error);}})();" class="bookmarklet-link">📚 收藏到库</a>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>🎯 方法二：手动创建</h3>
+            <ol>
+                <li>按 <code>Ctrl + Shift + O</code> 打开书签管理器</li>
+                <li>右键点击"书签栏" → 选择"添加新书签"</li>
+                <li>名称填写：<code>📚 收藏到库</code></li>
+                <li>网址复制下面的代码：</li>
+            </ol>
+            <div class="code-box" id="bookmarkletCode">javascript:(function(){if(!window.location.hostname.includes('twitter.com')&&!window.location.hostname.includes('x.com')){alert('⚠️ 请在X(Twitter)推文页面使用此书签！');return;}try{let tweetText='';let author='';let url=window.location.href;const textSelectors=['[data-testid="tweetText"]','article [lang]','[role="article"] [lang]'];for(let selector of textSelectors){const element=document.querySelector(selector);if(element&&element.textContent){tweetText=element.textContent.trim();break;}}const authorElement=document.querySelector('[data-testid="User-Name"] span')||document.querySelector('article a[role="link"] span');if(authorElement){author=authorElement.textContent.trim();}if(!tweetText){tweetText=document.title;}const data={title:tweetText.substring(0,100)+(tweetText.length>100?'...':''),source:'X / '+(author||'@unknown'),url:url,content:tweetText,tags:'X, Twitter',date:new Date().toISOString().split('T')[0]};const params=new URLSearchParams(data);const addUrl='http://localhost:3000/add.html?'+params.toString();window.open(addUrl,'_blank','width=800,height=900');}catch(error){alert('❌ 提取失败：'+error.message+'\n\n请确保：\n1. 在推文详情页使用\n2. 页面已完全加载\n3. 本地服务器正在运行');console.error('Bookmarklet error:',error);}})();</div>
+            <button onclick="copyCode()" class="btn">📋 复制代码</button>
+        </div>
+
+        <div class="step">
+            <h3>🧪 测试功能</h3>
+            <p>不用书签也可以测试功能：</p>
+            <a href="http://localhost:3000/add.html" target="_blank" class="btn btn-secondary">
+                ✏️ 打开添加页面（手动填写）
+            </a>
+            <a href="http://localhost:3000" target="_blank" class="btn">
+                📚 查看收藏库
+            </a>
+        </div>
+
+        <div class="step">
+            <h3>📖 使用说明</h3>
+            <ol>
+                <li>创建好书签后，在书签栏会看到「📚 收藏到库」</li>
+                <li>打开X(Twitter)，找到一条推文</li>
+                <li>点击书签栏的「📚 收藏到库」</li>
+                <li>会弹出表单，内容已自动提取</li>
+                <li>确认后点击保存</li>
+                <li>运行 <code>npm run generate</code></li>
+                <li>刷新收藏库页面查看</li>
+            </ol>
+        </div>
+
+        <div class="alert">
+            <strong>💡 提示：</strong>
+            <ul style="margin: 10px 0;">
+                <li>书签栏通常在浏览器地址栏下方</li>
+                <li>如果没有显示，按 <code>Ctrl + Shift + B</code> 显示</li>
+                <li>书签就像快捷方式，点一下就能运行</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function copyCode() {
+            const code = document.getElementById('bookmarkletCode').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('✅ 代码已复制到剪贴板！\n\n现在去书签管理器粘贴即可。');
+            }).catch(err => {
+                alert('复制失败，请手动选择文本复制');
+            });
+        }
+    </script>
+</body>
+</html>
