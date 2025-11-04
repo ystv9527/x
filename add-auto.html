@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加内容到收藏库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-save {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-save:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-cancel {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .btn-cancel:hover {
+            background: #d0d0d0;
+        }
+
+        .status-message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .status-message.show {
+            display: block;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .images-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #1976d2;
+        }
+
+        .images-info strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #667eea;
+            width: 0%;
+            transition: width 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 添加内容到收藏库</h1>
+        <p class="subtitle">自动采集和上传图片</p>
+
+        <div class="status-message" id="statusMessage"></div>
+
+        <div class="loading" id="loadingSection">
+            <div class="spinner"></div>
+            <div id="loadingText">正在下载和上传图片...</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div id="formSection">
+            <div class="images-info" id="imagesInfo" style="display:none;"></div>
+
+            <form id="contentForm">
+                <div class="form-group">
+                    <label for="title">📝 标题 *</label>
+                    <input type="text" id="title" name="title" required placeholder="标题">
+                </div>
+
+                <div class="form-group">
+                    <label for="source">🔗 来源</label>
+                    <input type="text" id="source" name="source" placeholder="例如：X / @username">
+                </div>
+
+                <div class="form-group">
+                    <label for="url">🌐 链接</label>
+                    <input type="url" id="url" name="url" placeholder="https://x.com/...">
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">🏷️ 标签（用逗号分隔）</label>
+                    <input type="text" id="tags" name="tags" placeholder="AI, 教程, 技巧">
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">⭐ 收藏理由</label>
+                    <input type="text" id="reason" name="reason" placeholder="为什么收藏">
+                </div>
+
+                <div class="form-group">
+                    <label for="summary">📋 内容摘要</label>
+                    <textarea id="summary" name="summary" placeholder="简短总结"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="content">📖 完整内容</label>
+                    <textarea id="content" name="content" rows="10" placeholder="完整内容"></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn-save" id="saveBtn">💾 保存到收藏库</button>
+                    <button type="button" class="btn-cancel" onclick="window.close()">❌ 取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let downloadedImages = [];
+
+        // 从localStorage加载数据
+        const tweetData = JSON.parse(localStorage.getItem('tweet_data') || '{}');
+        localStorage.removeItem('tweet_data');
+
+        // 填充表单
+        document.getElementById('title').value = tweetData.title || '';
+        document.getElementById('source').value = tweetData.source || '';
+        document.getElementById('url').value = tweetData.url || '';
+        document.getElementById('tags').value = tweetData.tags || '';
+        document.getElementById('content').value = tweetData.content || '';
+
+        // 自动下载图片
+        async function autoDownloadImages() {
+            if (!tweetData.images || tweetData.images.length === 0) {
+                document.getElementById('formSection').style.display = 'block';
+                document.getElementById('loadingSection').style.display = 'none';
+                return;
+            }
+
+            const imageCount = tweetData.images.length;
+            document.getElementById('loadingText').textContent = `正在下载 ${imageCount} 张图片...`;
+
+            for (let i = 0; i < tweetData.images.length; i++) {
+                const img = tweetData.images[i];
+                const progress = Math.round(((i + 1) / imageCount) * 100);
+                document.getElementById('progressFill').style.width = progress + '%';
+                document.getElementById('loadingText').textContent =
+                    `正在下载图片 ${i + 1}/${imageCount}...`;
+
+                try {
+                    // 使用fetch下载图片
+                    const response = await fetch(img.src);
+                    if (response.ok) {
+                        const blob = await response.blob();
+                        const reader = new FileReader();
+
+                        reader.onload = () => {
+                            downloadedImages.push({
+                                data: reader.result,
+                                index: i + 1
+                            });
+                        };
+
+                        reader.readAsArrayBuffer(blob);
+
+                        // 等待读取完成
+                        await new Promise(resolve => {
+                            const checkInterval = setInterval(() => {
+                                if (downloadedImages.length > i) {
+                                    clearInterval(checkInterval);
+                                    resolve();
+                                }
+                            }, 100);
+                        });
+                    }
+                } catch (error) {
+                    console.error(`Failed to download image ${i + 1}:`, error);
+                }
+            }
+
+            // 显示图片信息
+            const imagesInfo = document.getElementById('imagesInfo');
+            imagesInfo.innerHTML = `<strong>✅ 已下载 ${downloadedImages.length} 张图片</strong>
+将在保存时自动上传到服务器`;
+            imagesInfo.style.display = 'block';
+
+            // 显示表单
+            document.getElementById('loadingSection').style.display = 'none';
+            document.getElementById('formSection').style.display = 'block';
+        }
+
+        // 表单提交
+        document.getElementById('contentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            document.getElementById('saveBtn').disabled = true;
+            showStatus('⏳ 正在保存...', 'info');
+
+            const formData = new FormData();
+            formData.append('title', document.getElementById('title').value);
+            formData.append('source', document.getElementById('source').value);
+            formData.append('url', document.getElementById('url').value);
+            formData.append('tags', document.getElementById('tags').value);
+            formData.append('reason', document.getElementById('reason').value);
+            formData.append('summary', document.getElementById('summary').value);
+            formData.append('content', document.getElementById('content').value);
+            formData.append('date', new Date().toISOString().split('T')[0]);
+
+            // 添加下载的图片
+            downloadedImages.forEach((img, index) => {
+                const blob = new Blob([new Uint8Array(img.data)], { type: 'image/jpeg' });
+                formData.append('images', blob, `image-${index + 1}.jpg`);
+            });
+
+            try {
+                const response = await fetch('http://localhost:3000/api/add-content', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    showStatus(`✅ 内容已保存！已上传 ${result.downloadedImages} 张图片`, 'success');
+
+                    setTimeout(() => {
+                        window.close();
+                    }, 2000);
+                } else {
+                    showStatus('❌ 保存失败', 'error');
+                }
+            } catch (error) {
+                showStatus('❌ 错误: ' + error.message, 'error');
+            } finally {
+                document.getElementById('saveBtn').disabled = false;
+            }
+        });
+
+        function showStatus(message, type) {
+            const el = document.getElementById('statusMessage');
+            el.textContent = message;
+            el.className = 'status-message show ' + type;
+        }
+
+        // 启动图片下载
+        autoDownloadImages();
+    </script>
+</body>
+</html>

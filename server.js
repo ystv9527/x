@@ -118,12 +118,17 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // GET /add.html - Use V3 with file upload
-  if (req.method === 'GET' && pathname === '/add.html') {
-    const filePath = path.join(__dirname, 'add-v3.html');
-    const content = fs.readFileSync(filePath, 'utf-8');
-    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.end(content);
+  // GET /add.html - Auto download and upload
+  if (req.method === 'GET' && pathname === '/add.html' || pathname === '/add-auto.html') {
+    const filePath = path.join(__dirname, pathname === '/add.html' ? 'add-v3.html' : 'add-auto.html');
+    if (fs.existsSync(filePath)) {
+      const content = fs.readFileSync(filePath, 'utf-8');
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(content);
+    } else {
+      res.writeHead(404);
+      res.end('Not Found');
+    }
     return;
   }
 
