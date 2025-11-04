@@ -464,3 +464,58 @@ Nano banana on 纳米香蕉在@GeminiApp@GeminiApp "A highly detailed, professio
 
 ---
 
+
+## 标题：Nano banana on @GeminiApp 纳米香蕉在 @GeminiApp 上"A highly detailed, professional three-quarter body stud...
+- **来源**: X / Iqra Saifi
+- **链接**: https://x.com/IqraSaifiii/status/1983659753801965580
+- **日期**: 2025-11-04
+- **分类**: X, Twitter
+
+### 完整内容
+Nano banana on @GeminiApp 纳米香蕉在 @GeminiApp 上"A highly detailed, professional three-quarter body studio portrait of an attractive young woman with long, voluminous, dark wavy hair. She is captured in a dynamic, high-fashion pose, with her body slightly angled to the viewer's right, and her left arm raised to gently run her fingers through her hair. Her gaze is direct and confident. She is wearing a captivating, layered fashion ensemble: a cream-white cropped cardigan with long, ribbed sleeves and a deep V-neckline trimmed in maroon ruffles, tied together with delicate maroon ribbons. She pairs this with a layered mini-skirt featuring a white, lace-accented overlay and a deep maroon, ruffled underlayer. A small, fluffy brown pom-pom charm is attached to the skirt. Studio environment, soft, bright lighting, high fashion photography.",
+"subject_details": {
+"ethnicity": "East Asian",
+"hair": "Long, thick, dark, wavy, and voluminous",
+"makeup": "Bold red lips, smokey eye makeup, perfectly sculpted eyebrows",
+"expression": "Sultry and confident"
+},
+"pose_details": {
+"camera_view": "Three-quarter body shot (cropping just above the knee)",
+"body_stance": "Standing, subtle S-curve posture, with hips slightly angled away from the camera.",
+"arm_action": "Left arm raised with fingers delicately touching and pulling strands of hair; right arm relaxed and slightly bent at the side.",
+"gaze": "Direct eye contact with the camera, head slightly tilted."
+},
+"camera_details": {
+"camera_angle": "Slightly high angle, looking subtly down on the subject.",
+"focal_length": "85mm or 105mm (medium telephoto portrait lens for flattering compression)",
+"aperture_value": "f/2.0 or f/2.8 (shallow depth of field to isolate subject)",
+"lighting_setup": "Single large softbox key light from the front-left, clean neutral gray background, fill light on the right."
+},
+"outfit_description": {
+"top": "Cropped, cream-white knitted cardigan, maroon ruffled trim on collar, long ribbed sleeves, ribbon closure.",
+"bottom": "Layered mini-skirt, contrasting cream-white lace fabric layer over a deep maroon ruffled layer.",
+"accessories": "Small, fluffy brown pom-pom/bear tail attached to the skirt."
+},
+"style_and_aesthetics": [
+"High fashion photography",
+"Professional studio lighting",
+"Hyper-detailed",
+"Ultra-realistic",
+"8k",
+"Cinematic lighting",
+"Vogue editorial"
+],
+"negative_prompt_suggestions": [
+"blurry",
+"out of focus",
+"low resolution",
+"poor quality",
+"deformed hands",
+"artifacts",
+"tiling",
+"multiple bodies"
+]
+
+
+---
+

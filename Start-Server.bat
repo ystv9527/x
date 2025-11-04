@@ -5,7 +5,7 @@ setlocal enabledelayedexpansion
 cls
 echo.
 echo ========================================
-echo   Content Collector - Start Server
+echo   Content Collector - Start Server V3
 echo ========================================
 echo.
 
@@ -21,6 +21,9 @@ timeout /t 2 /nobreak >nul
 echo.
 echo Starting server on http://localhost:3000
 echo.
+echo If image download fails, configure VPN/proxy in .env file
+echo See VPN-PROXY-CONFIG.md for details
+echo.
 cd /d %~dp0
-npm run server
+node server-v3.js
 pause
