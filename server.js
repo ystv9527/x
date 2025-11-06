@@ -398,6 +398,14 @@ ${TAG_WHITELIST.join(', ')}
         const data = JSON.parse(body);
         console.log('📝 Content received:', data.title);
 
+        // 标签去重
+        if (data.tags) {
+          const tags = data.tags.split(',').map(t => t.trim()).filter(t => t);
+          const uniqueTags = [...new Set(tags)]; // 去重
+          data.tags = uniqueTags.join(',');
+          console.log(`🏷️ 标签去重后: ${data.tags}`);
+        }
+
         // Generate Markdown
         const markdown = generateMarkdown(data);
         fs.appendFileSync(COLLECTION_FILE, markdown, 'utf-8');
@@ -570,6 +578,14 @@ ${TAG_WHITELIST.join(', ')}
 
         // 自动生成编号
         data.caseNumber = getNextCaseNumber();
+
+        // 标签去重
+        if (data.tags) {
+          const tags = data.tags.split(',').map(t => t.trim()).filter(t => t);
+          const uniqueTags = [...new Set(tags)]; // 去重
+          data.tags = uniqueTags.join(',');
+          console.log(`🏷️ 标签去重后: ${data.tags}`);
+        }
 
         // 自动分离中英文内容
         if (data.content && !data.contentChinese && !data.contentEnglish) {
