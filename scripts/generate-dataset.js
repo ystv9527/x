@@ -7,6 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const readline = require('readline');
 
 // 路径配置
 const CONTENT_FILE = path.join(__dirname, '../content/collection.md');
@@ -138,11 +139,25 @@ function parseMarkdown(markdown) {
   return items;
 }
 
+/**
+ * 询问用户确认
+ */
+function askQuestion(query) {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  return new Promise(resolve => rl.question(query, ans => {
+    rl.close();
+    resolve(ans);
+  }));
+}
 
 /**
  * 主函数（追加+分批模式）
  */
-function main() {
+async function main() {
   console.log('🚀 开始生成JSON数据集（追加+分批模式）...\n');
 
   try {
@@ -175,6 +190,27 @@ function main() {
     // 解析新内容
     const newItems = parseMarkdown(markdown);
     console.log(`✨ 解析完成，共找到 ${newItems.length} 个新条目`);
+
+    // 🛡️ 安全检查：防止意外覆盖大量数据
+    if (existingItems.length > 0 && newItems.length > 0 && newItems.length < existingItems.length * 0.5) {
+      console.log('\n⚠️  警告：检测到异常情况！');
+      console.log(`   - collection.md 只有 ${newItems.length} 条新内容`);
+      console.log(`   - 现有数据库有 ${existingItems.length} 条内容`);
+      console.log(`   - 如果继续，会将 ${newItems.length} 条新内容追加到现有 ${existingItems.length} 条数据中`);
+      console.log('\n💡 可能的情况：');
+      console.log('   1. 你删除了本地数据但没有上传 Git，然后采集了少量新内容');
+      console.log('   2. collection.md 文件被意外修改或清空了部分内容');
+      console.log('   3. 这是正常的少量采集（如果是这样，可以继续）\n');
+
+      const answer = await askQuestion('❓ 是否继续生成数据集？(y/n): ');
+
+      if (answer.toLowerCase() !== 'y' && answer.toLowerCase() !== 'yes') {
+        console.log('❌ 已取消操作，数据未被修改');
+        process.exit(0);
+      }
+
+      console.log('✅ 继续处理...\n');
+    }
 
     // 合并数据（即使没有新内容，也要重新生成以同步路径修复等变更）
     const allItems = newItems.length > 0 ? [...existingItems, ...newItems] : existingItems;
@@ -264,4 +300,7 @@ function main() {
 }
 
 // 运行
-main();
+main().catch(error => {
+  console.error('❌ 致命错误:', error);
+  process.exit(1);
+});
