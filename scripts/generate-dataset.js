@@ -176,14 +176,14 @@ function main() {
     const newItems = parseMarkdown(markdown);
     console.log(`✨ 解析完成，共找到 ${newItems.length} 个新条目`);
 
-    if (newItems.length === 0) {
-      console.log('⚠️ 没有新内容需要添加');
-      return;
-    }
+    // 合并数据（即使没有新内容，也要重新生成以同步路径修复等变更）
+    const allItems = newItems.length > 0 ? [...existingItems, ...newItems] : existingItems;
 
-    // 合并数据
-    const allItems = [...existingItems, ...newItems];
+    if (newItems.length === 0) {
+      console.log('⚠️ 没有新内容，但仍然重新生成数据集以同步变更');
+    } else {
     console.log(`🔗 合并数据: ${existingItems.length} (现有) + ${newItems.length} (新增) = ${allItems.length} (总计)`);
+    }
 
     // 重新编号
     allItems.forEach((item, index) => {
