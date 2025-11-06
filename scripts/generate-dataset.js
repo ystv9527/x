@@ -3,11 +3,15 @@
 /**
  * 生成JSON数据集 - 将Markdown内容转换为JSON
  * 使用方法: npm run generate
+ * 自动模式: node scripts/generate-dataset.js --auto
  */
 
 const fs = require('fs');
 const path = require('path');
 const readline = require('readline');
+
+// 检查是否为自动模式（跳过安全检查确认）
+const isAutoMode = process.argv.includes('--auto');
 
 // 路径配置
 const CONTENT_FILE = path.join(__dirname, '../content/collection.md');
@@ -192,7 +196,7 @@ async function main() {
     console.log(`✨ 解析完成，共找到 ${newItems.length} 个新条目`);
 
     // 🛡️ 安全检查：防止意外覆盖大量数据
-    if (existingItems.length > 0 && newItems.length > 0 && newItems.length < existingItems.length * 0.5) {
+    if (!isAutoMode && existingItems.length > 0 && newItems.length > 0 && newItems.length < existingItems.length * 0.5) {
       console.log('\n⚠️  警告：检测到异常情况！');
       console.log(`   - collection.md 只有 ${newItems.length} 条新内容`);
       console.log(`   - 现有数据库有 ${existingItems.length} 条内容`);
@@ -210,6 +214,9 @@ async function main() {
       }
 
       console.log('✅ 继续处理...\n');
+    } else if (isAutoMode && existingItems.length > 0 && newItems.length > 0 && newItems.length < existingItems.length * 0.5) {
+      // 自动模式：记录警告但继续执行
+      console.log('⚠️  [自动模式] 检测到少量新内容，自动继续处理...');
     }
 
     // 合并数据（即使没有新内容，也要重新生成以同步路径修复等变更）
