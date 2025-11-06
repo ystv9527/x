@@ -44,7 +44,7 @@ if %errorlevel% equ 0 (
 
 echo [6/6] 提交更改...
 set /p commit_msg="请输入提交说明（直接回车使用默认）: "
-if "%commit_msg%"=="" set commit_msg=更新内容 %date% %time%
+if "%commit_msg%"=="" set "commit_msg=更新内容"
 
 git commit -m "%commit_msg%"
 echo.
