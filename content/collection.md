@@ -268,3 +268,88 @@ Model: https://huggingface.co/ByteDance/BindWeave…BindWeave：
 
 ---
 
+
+## Veo 3.1与Veo 3对比：未来派摩托车组装动画初体验
+- **编号**: 案例011
+- **来源**: X / Amira Zairi
+- **链接**: https://x.com/azed_ai/status/1986071279317999882
+- **日期**: 2025-11-06
+- **分类**: 视频,动画,特效,3D,数字艺术,创意
+
+### 内容摘要
+本文分享使用Veo 3.1 Fast在LeonardoAi平台制作的高质量工业动画，通过详细的场景、特效和配乐，展示未来派摩托车从零件飞入到组装完成的过程，旨在比较两个版本的表现差异。
+
+### 完整内容
+Trying this old Prompt with Veo 3.1 to compare with Veo 3. Let me know what you think!尝试使用 Veo 3.1 进行此旧提示，以与 Veo 3 进行比较。让我知道你的想法！I used Veo 3.1 Fast on @LeonardoAi  / 1080p
+JSON prompt:我在 @LeonardoAi / 1080p  上使用了 Veo 3.1 Fast
+JSON 提示：{
+  "shot": {
+    "composition": "wide shot centered at eye level, capturing the full view of the factory floor and the assembling motorbike",
+    "lens": "35mm",
+    "frame_rate": "24fps",
+    "camera_movement": "static"
+  },{
+“射击”： {
+“composition”：“以视线水平为中心的广角镜头，捕捉工厂车间和组装摩托车的全貌”，
+“lens”： “35mm”，
+“frame_rate”： “24fps”，
+“camera_movement”： “静态”
+  },  "subject": {
+    "description": "a futuristic, strong motorbike assembling itself from scattered parts",
+    "wardrobe": "",
+    "props": "mechanical parts, gears, wires, pistons, body panels, wheels"
+  },“主题”： {
+“description”： “一辆未来派、坚固的摩托车，由分散的零件组装而成”，
+“衣柜”： “”，
+“props”： “机械零件、齿轮、电线、活塞、车身面板、车轮”
+  },  "scene": {
+    "location": "large, clear industrial factory floor",
+    "time_of_day": "midday",
+    "environment": "shiny, clean surfaces with strong light and dramatic shadows; the atmosphere is warm and filled with subtle ambient haze"
+  },“场景”： {
+“location”： “大而清晰的工业厂房”，
+“time_of_day”： “中午”，
+“环境”：“闪亮、干净的表面，具有强烈的光线和戏剧性的阴影;气氛温暖，充满了微妙的环境阴霾”
+  },  "visual_details": {
+    "action": "motorbike parts fly in from all directions, clicking and locking into place to form a complete, sleek vehicle",
+    "special_effects": "electric zaps, soft glows, heat distortion waves rising from the exhaust",
+    "hair_clothing_motion": ""
+  },“visual_details”： {
+“action”： “摩托车零件从四面八方飞来，咔哒一声并锁定到位，形成一辆完整、时尚的车辆”，
+“special_effects”：“电击声，柔和的光芒，从排气中升起的热扭曲波”，
+“hair_clothing_motion”： “”
+  },  "cinematography": {
+    "lighting": "bright overhead industrial lighting with sharp contrast, emphasizing form and texture",
+    "color_palette": "warm tones with metallic highlights and soft amber reflections",
+    "tone": "epic and intense, emphasizing mechanical precision and power"
+  },“电影摄影”： {
+“lighting”：“明亮的头顶工业照明，对比鲜明，强调形式和纹理”，
+“color_palette”：“带有金属亮点和柔和琥珀色反射的暖色调”，
+“tone”：“史诗般而激烈，强调机械精度和力量”
+  },  "audio": {
+    "music": "minimalist, deep synthetic pulses that build with the assembly",
+    "ambient": "deep factory hum, subtle air movements",
+    "sound_effects": "clicks, whirs, zaps, shinks, thuds, whooshes, crackles, hiss, rumble",
+    "mix_level": "cinematic mix with prioritized effects and balanced music bed"
+  },“音频”： {
+“music”： “极简主义、深沉的合成脉冲，与组装一起构建”，
+“ambient”：“深沉的工厂嗡嗡声，微妙的空气运动”，
+“sound_effects”： “咔哒声、呼呼声、电击声、咔哒声、砰砰声、嗖嗖声、噼啪声、嘶嘶声、隆隆声”，
+“mix_level”： “具有优先效果和平衡音乐床的电影混音”
+  },  "dialogue": {
+    "character": "",
+    "line": "",
+    "subtitles": false
+  }
+}“对话”： {
+“字符”： “”，
+“行”： “”，
+“字幕”：false
+  }
+}
+
+### 相关视频
+<video width="100%" controls><source src="../videos/tweet-1986071279317999882-1.mp4" type="video/mp4"></video>
+
+---
+
