@@ -4,6 +4,7 @@ let filteredItems = [];
 let selectedTags = new Set();
 let archiveLoaded = false;  // 是否已加载历史数据
 let isLoadingArchive = false;  // 是否正在加载历史数据
+let globalStats = null;  // 全局统计信息（总数407）
 
 // DOM元素
 const searchInput = document.getElementById('searchInput');
@@ -35,6 +36,7 @@ async function loadData() {
     const data = await response.json();
     allItems = (data.items || []).reverse();  // 按案例号倒序（大号在前）
     filteredItems = [...allItems];
+    globalStats = data.globalStats || null;  // 读取全局统计
     console.log('✅ 加载最新数据:', allItems.length, '条');
     
     // 检查是否有更多数据
@@ -94,14 +96,17 @@ async function loadArchive() {
 
 // 渲染标签筛选器
 function renderTagFilters() {
-    const tagCount = {};
-
-    // 统计所有标签
-    allItems.forEach(item => {
-        item.tags.forEach(tag => {
-            tagCount[tag] = (tagCount[tag] || 0) + 1;
+    // 使用全局统计（如果有）或本地统计
+    const tagCount = globalStats?.tagCount || {};
+    
+    // 如果没有全局统计，计算本地统计
+    if (!globalStats) {
+        allItems.forEach(item => {
+            item.tags.forEach(tag => {
+                tagCount[tag] = (tagCount[tag] || 0) + 1;
+            });
         });
-    });
+    }
 
     // 按数量排序
     const sortedTags = Object.entries(tagCount)
@@ -271,7 +276,7 @@ function filterContent() {
 
 // 更新统计信息
 function updateStats() {
-    const total = allItems.length;
+    const total = globalStats?.totalCount || allItems.length;  // 使用全局总数
     const shown = filteredItems.length;
     const filtered = selectedTags.size > 0 || searchInput.value.trim();
 
