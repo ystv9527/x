@@ -2,6 +2,8 @@
 let allItems = [];
 let filteredItems = [];
 let selectedTags = new Set();
+let archiveLoaded = false;  // 是否已加载历史数据
+let isLoadingArchive = false;  // 是否正在加载历史数据
 
 // DOM元素
 const searchInput = document.getElementById('searchInput');
@@ -27,12 +29,67 @@ async function init() {
     }
 }
 
-// 加载数据
+// 加载数据（先加载最新100条）
 async function loadData() {
-    const response = await fetch('data/contents.json');
+    const response = await fetch('data/latest.json');
     const data = await response.json();
     allItems = (data.items || []).reverse();  // 按案例号倒序（大号在前）
     filteredItems = [...allItems];
+    console.log('✅ 加载最新数据:', allItems.length, '条');
+    
+    // 检查是否有更多数据
+    if (data.hasMore) {
+        console.log('💡 还有历史数据，滚动到底部可加载更多');
+    }
+}
+
+
+
+// 加载历史数据（滚动到底部时调用）
+async function loadArchive() {
+    if (archiveLoaded || isLoadingArchive) {
+        return;  // 已加载或正在加载，跳过
+    }
+    
+    isLoadingArchive = true;
+    console.log('📦 开始加载历史数据...');
+    
+    // 显示加载提示
+    const loadingDiv = document.createElement('div');
+    loadingDiv.className = 'loading-more';
+    loadingDiv.textContent = '加载中...';
+    loadingDiv.style.textAlign = 'center';
+    loadingDiv.style.padding = '20px';
+    contentList.appendChild(loadingDiv);
+    
+    try {
+        const response = await fetch('data/archive.json');
+        const data = await response.json();
+        const archiveItems = (data.items || []).reverse();  // 倒序
+        
+        // 合并到 allItems
+        allItems = [...allItems, ...archiveItems];
+        filteredItems = [...allItems];
+        
+        console.log('✅ 历史数据加载完成:', archiveItems.length, '条');
+        console.log('📊 总数据:', allItems.length, '条');
+        
+        archiveLoaded = true;
+        
+        // 移除加载提示
+        loadingDiv.remove();
+        
+        // 重新渲染（追加新内容）
+        renderTagFilters();
+        filterContent();
+        
+    } catch (error) {
+        console.error('❌ 加载历史数据失败:', error);
+        loadingDiv.textContent = '加载失败';
+        setTimeout(() => loadingDiv.remove(), 2000);
+    } finally {
+        isLoadingArchive = false;
+    }
 }
 
 // 渲染标签筛选器
@@ -268,6 +325,24 @@ function setupEventListeners() {
     });
 
     // ESC键关闭模态框
+    
+    // 滚动监听：到底部时加载历史数据
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // 距离底部还有200px时开始加载
+            if (scrollTop + windowHeight >= documentHeight - 200) {
+                if (!archiveLoaded && !isLoadingArchive) {
+                    loadArchive();
+                }
+            }
+        }, 100);  // 防抖100ms
+    });
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.style.display === 'block') {
             modal.style.display = 'none';
