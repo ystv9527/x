@@ -196,27 +196,42 @@ async function main() {
     console.log(`✨ 解析完成，共找到 ${newItems.length} 个新条目`);
 
     // 🛡️ 安全检查：防止意外覆盖大量数据
-    if (!isAutoMode && existingItems.length > 0 && newItems.length > 0 && newItems.length < existingItems.length * 0.5) {
-      console.log('\n⚠️  警告：检测到异常情况！');
-      console.log(`   - collection.md 只有 ${newItems.length} 条新内容`);
-      console.log(`   - 现有数据库有 ${existingItems.length} 条内容`);
-      console.log(`   - 如果继续，会将 ${newItems.length} 条新内容追加到现有 ${existingItems.length} 条数据中`);
-      console.log('\n💡 可能的情况：');
-      console.log('   1. 你删除了本地数据但没有上传 Git，然后采集了少量新内容');
-      console.log('   2. collection.md 文件被意外修改或清空了部分内容');
-      console.log('   3. 这是正常的少量采集（如果是这样，可以继续）\n');
+    const hasDataAnomaly = existingItems.length > 0 && newItems.length > 0 && newItems.length < existingItems.length * 0.5;
 
-      const answer = await askQuestion('❓ 是否继续生成数据集？(y/n): ');
+    if (hasDataAnomaly) {
+      if (isAutoMode) {
+        // 自动模式：检测到异常时拒绝执行，防止数据丢失
+        console.error('\n❌ [自动模式] 检测到数据异常，拒绝自动生成！');
+        console.error(`   - collection.md 只有 ${newItems.length} 条新内容`);
+        console.error(`   - 现有数据库有 ${existingItems.length} 条内容`);
+        console.error(`   - 数据量差异过大，可能存在风险`);
+        console.error('\n⚠️  可能的原因：');
+        console.error('   1. 你删除了本地数据但没有上传 Git，然后采集了新内容');
+        console.error('   2. collection.md 文件被意外修改');
+        console.error('\n💡 解决方案：');
+        console.error('   1. 先运行一键上传，将删除操作同步到 Git');
+        console.error('   2. 或者手动运行 "npm run generate" 并确认\n');
+        process.exit(1);
+      } else {
+        // 手动模式：询问用户确认
+        console.log('\n⚠️  警告：检测到异常情况！');
+        console.log(`   - collection.md 只有 ${newItems.length} 条新内容`);
+        console.log(`   - 现有数据库有 ${existingItems.length} 条内容`);
+        console.log(`   - 如果继续，会将 ${newItems.length} 条新内容追加到现有 ${existingItems.length} 条数据中`);
+        console.log('\n💡 可能的情况：');
+        console.log('   1. 你删除了本地数据但没有上传 Git，然后采集了少量新内容');
+        console.log('   2. collection.md 文件被意外修改或清空了部分内容');
+        console.log('   3. 这是正常的少量采集（如果是这样，可以继续）\n');
 
-      if (answer.toLowerCase() !== 'y' && answer.toLowerCase() !== 'yes') {
-        console.log('❌ 已取消操作，数据未被修改');
-        process.exit(0);
+        const answer = await askQuestion('❓ 是否继续生成数据集？(y/n): ');
+
+        if (answer.toLowerCase() !== 'y' && answer.toLowerCase() !== 'yes') {
+          console.log('❌ 已取消操作，数据未被修改');
+          process.exit(0);
+        }
+
+        console.log('✅ 继续处理...\n');
       }
-
-      console.log('✅ 继续处理...\n');
-    } else if (isAutoMode && existingItems.length > 0 && newItems.length > 0 && newItems.length < existingItems.length * 0.5) {
-      // 自动模式：记录警告但继续执行
-      console.log('⚠️  [自动模式] 检测到少量新内容，自动继续处理...');
     }
 
     // 合并数据（即使没有新内容，也要重新生成以同步路径修复等变更）
