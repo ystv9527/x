@@ -46,24 +46,32 @@ if errorlevel 1 (
 echo.
 
 echo [4/4] 推送到GitHub...
+echo 💡 提示：如遇到网络问题，将自动重试 5 次
+echo.
+
 set retry=0
 :push_retry
 git push
 if errorlevel 1 (
     set /a retry+=1
-    if %retry% lss 3 (
-        echo ⚠️ 推送失败，3秒后重试（%retry%/3）...
-        timeout /t 3 /nobreak >nul
+    if %retry% lss 5 (
+        echo ⚠️ 推送失败，10秒后重试（%retry%/5）...
+        echo    如果持续失败，可能需要配置代理或使用 SSH
+        timeout /t 10 /nobreak >nul
         goto push_retry
     ) else (
         echo.
-        echo ❌ 推送失败3次，可能原因：
-        echo    - 网络问题
-        echo    - 文件过大（视频超过50MB）
+        echo ❌ 推送失败 5 次，可能原因：
+        echo    1. 网络连接不稳定（GitHub 在国内访问较慢）
+        echo    2. 需要配置 Git 代理
+        echo    3. 文件过大（视频超过 50MB）
         echo.
         echo 💡 解决方案：
-        echo    1. 检查网络连接
-        echo    2. 稍后手动运行 git push
+        echo    方案1：稍后手动运行 'git push'
+        echo    方案2：配置代理 'git config --global http.proxy http://127.0.0.1:端口'
+        echo    方案3：使用 SSH 而不是 HTTPS
+        echo.
+        echo 📝 当前代码已提交到本地，等网络恢复后可直接运行 'git push'
         echo.
         pause
         exit /b 1
