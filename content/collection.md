@@ -353,3 +353,35 @@ JSON 提示：{
 
 ---
 
+
+## 未来水下城市幻想场景，虚拟视觉特效精彩呈现
+- **编号**: 案例012
+- **来源**: X / LudovicCreator
+- **链接**: https://x.com/LudovicCreator/status/1986180509429309585
+- **日期**: 2025-11-06
+- **分类**: 视频,创意,数字艺术,特效,3D,动画
+
+### 内容摘要
+这段描述展现了一座被淹没的未来城市，通过虚拟特效模拟水下光线、气泡和环境氛围，展现了丰富的视觉创意，适合数字艺术和动画爱好者欣赏。
+
+### 🇨🇳 中文内容
+提示：
+
+一座淹没在水下的广阔城市。摩天大楼像珊瑚塔一样拔地而起。镜头穿过破碎的窗户和漂浮的汽车，阳光透过上方的表面。成群的鱼在空荡荡的办公大厅里游来游去。一阵气泡的低语经过一个发光的标志，该标志仍然在水下隐约闪烁。视觉特效：水下光焦散、体积雾、气泡轨迹、柔和折射效果。
+
+@Kling_ai 制造
+
+### 🇺🇸 英文内容
+KLING 2.5  
+
+Prompt :
+
+A vast city submerged underwater. Skyscrapers rise like coral towers. The camera drifts through broken windows and floating cars, sunlight filtering through the surface above. Schools of fish swim through empty office halls. A whisper of bubbles trails past a glowing sign that still flickers faintly underwater. VFX: underwater light caustics, volumetric fog, bubble trails, soft refraction FX.
+
+Made in   KLING 2.5
+
+### 相关视频
+<video width="100%" controls><source src="../videos/tweet-1986180509429309585-1.mp4" type="video/mp4"></video>
+
+---
+
