@@ -1,6 +1,6 @@
 /**
- * X Content Collector - Final Version
- * 自动下载图片并上传到服务器
+ * X Content Collector - Final Version with Video Support
+ * 自动下载图片和视频并上传到服务器
  */
 
 javascript:(function() {
@@ -14,6 +14,7 @@ javascript:(function() {
     let author = '';
     let url = window.location.href;
     let images = [];
+    let videos = [];
 
     // 提取文字内容
     const textSelectors = [
@@ -37,7 +38,7 @@ javascript:(function() {
       author = authorElement.textContent.trim();
     }
 
-    // 提取图片 - 重要：获取本地图片而不是URL
+    // 提取图片
     const imageSelectors = [
       'article img[src*="media"]',
       '[data-testid="tweetPhoto"] img',
@@ -58,6 +59,32 @@ javascript:(function() {
       }
     }
 
+    // 提取视频
+    const videoElements = document.querySelectorAll('article video, div[data-testid="videoPlayer"] video');
+    if (videoElements.length > 0) {
+      videoElements.forEach(video => {
+        // 尝试获取video的source标签
+        const sources = video.querySelectorAll('source');
+        if (sources.length > 0) {
+          sources.forEach(source => {
+            if (source.src && source.src.includes('video.twimg.com')) {
+              videos.push({
+                src: source.src,
+                type: source.type || 'video/mp4'
+              });
+            }
+          });
+        }
+        // 如果没有source标签，尝试直接获取video的src
+        if (videos.length === 0 && video.src && !video.src.startsWith('blob:')) {
+          videos.push({
+            src: video.src,
+            type: 'video/mp4'
+          });
+        }
+      });
+    }
+
     if (!tweetText) {
       tweetText = document.title;
     }
@@ -70,7 +97,8 @@ javascript:(function() {
       content: tweetText,
       tags: 'X, Twitter',
       date: new Date().toISOString().split('T')[0],
-      images: images
+      images: images,
+      videos: videos
     };
 
     // 通过localStorage传递数据
@@ -78,6 +106,11 @@ javascript:(function() {
 
     // 打开添加窗口
     window.open('http://localhost:3000/add-auto.html', '_blank', 'width=900,height=1000');
+
+    // 提示用户采集结果
+    console.log('📦 采集到的数据:', data);
+    console.log('🖼️ 图片数量:', images.length);
+    console.log('🎬 视频数量:', videos.length);
 
   } catch (error) {
     alert('❌ 提取失败：' + error.message);

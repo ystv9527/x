@@ -22,10 +22,13 @@ function parseMarkdown(markdown) {
   const sections = markdown.split(/\n## /).filter(s => s.trim());
 
   sections.forEach((section, index) => {
-    if (!section.trim() || section.startsWith('#')) return;
+    if (!section.trim() || section.startsWith('#')) {
+      return;
+    }
 
     const item = {
       id: index + 1,
+      caseNumber: '',
       title: '',
       source: '',
       url: '',
@@ -35,11 +38,14 @@ function parseMarkdown(markdown) {
       summary: '',
       keyPoints: [],
       content: '',
-      images: []
+      contentChinese: '',
+      contentEnglish: '',
+      images: [],
+      videos: []
     };
 
-    // 提取标题（第一行）
-    const lines = section.split('\n');
+    // 提取标题（第一行）- 处理Windows换行符
+    const lines = section.split(/\r?\n/);
     const titleMatch = lines[0].match(/^标题：(.+)$/) || lines[0].match(/^(.+)$/);
     if (titleMatch) {
       item.title = titleMatch[1].trim();
@@ -53,7 +59,9 @@ function parseMarkdown(markdown) {
         const key = match[1].toLowerCase();
         const value = match[2].trim();
 
-        if (key === '来源' || key === 'source') {
+        if (key === '编号' || key === 'casenumber') {
+          item.caseNumber = value;
+        } else if (key === '来源' || key === 'source') {
           item.source = value;
         } else if (key === '链接' || key === 'url' || key === 'link') {
           item.url = value;
@@ -82,10 +90,24 @@ function parseMarkdown(markdown) {
       }
     }
 
-    // 提取完整内容
-    const contentMatch = section.match(/###\s*完整内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
-    if (contentMatch) {
-      item.content = contentMatch[1].trim();
+    // 提取中文内容
+    const chineseMatch = section.match(/###\s*🇨🇳\s*中文内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    if (chineseMatch) {
+      item.contentChinese = chineseMatch[1].trim();
+    }
+
+    // 提取英文内容
+    const englishMatch = section.match(/###\s*🇺🇸\s*英文内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    if (englishMatch) {
+      item.contentEnglish = englishMatch[1].trim();
+    }
+
+    // 兼容旧版本：提取完整内容（如果没有分离的中英文内容）
+    if (!item.contentChinese && !item.contentEnglish) {
+      const contentMatch = section.match(/###\s*完整内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+      if (contentMatch) {
+        item.content = contentMatch[1].trim();
+      }
     }
 
     // 提取图片
@@ -95,6 +117,16 @@ function parseMarkdown(markdown) {
         const match = img.match(/!\[.*?\]\((.*?)\)/);
         return match ? match[1] : '';
       }).filter(img => img);
+    }
+
+    
+    // 提取视频
+    const videoMatches = section.match(/<video[^>]*>.*?<source src="(.*?)".*?<\/video>/g);
+    if (videoMatches) {
+      item.videos = videoMatches.map(video => {
+        const match = video.match(/<source src="(.*?)"/);
+        return match ? match[1] : '';
+      }).filter(video => video);
     }
 
     // 只添加有标题的条目
@@ -127,11 +159,11 @@ function main() {
     const items = parseMarkdown(markdown);
     console.log(`✨ 解析完成，共找到 ${items.length} 个条目`);
 
-    // 生成数据集
+    // 生成数据集（倒序排列，让最新的文章在最前面）
     const dataset = {
       generatedAt: new Date().toISOString(),
       totalCount: items.length,
-      items: items
+      items: items.reverse()
     };
 
     // 确保输出目录存在

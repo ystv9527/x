@@ -68,6 +68,22 @@ function renderContent(items) {
 
     contentList.innerHTML = items.map(item => `
         <div class="content-card" data-id="${item.id}">
+            ${item.videos && item.videos.length > 0 && (!item.images || item.images.length === 0) ? `
+                <div class="content-image">
+                    <video style="width:100%; max-height:200px; object-fit:cover;" muted>
+                        <source src="${item.videos[0]}" type="video/mp4">
+                    </video>
+                    ${item.videos.length > 1 ? `<span class="image-count">+${item.videos.length - 1}🎬</span>` : ''}
+                </div>
+            ` : ''}
+            ${item.images && item.images.length > 0 ? `
+                <div class="content-image">
+                    <img src="${item.images[0]}" alt="${escapeHtml(item.title)}" loading="lazy">
+                    ${item.images.length > 1 ? `<span class="image-count">+${item.images.length - 1}</span>` : ''}
+                    ${item.caseNumber ? `<span class="case-number">${escapeHtml(item.caseNumber)}</span>` : ''}
+                </div>
+            ` : ''}
+            ${!item.images || item.images.length === 0 && item.caseNumber ? `<div class="case-number-top">${escapeHtml(item.caseNumber)}</div>` : ''}
             <h3>${escapeHtml(item.title)}</h3>
             <div class="content-meta">
                 ${item.source ? `<div class="content-meta-item">📌 ${escapeHtml(item.source)}</div>` : ''}
@@ -117,16 +133,44 @@ function showModal(id) {
                 </ul>
             </div>
         ` : ''}
-        ${item.content ? `
+        ${item.contentChinese || item.contentEnglish ? `
+            ${item.contentChinese ? `
+                <div class="modal-section">
+                    <div class="content-header">
+                        <h4>🇨🇳 中文内容</h4>
+                        <button class="copy-btn" onclick="copyContent('chinese-${item.id}', event)">📋 复制</button>
+                    </div>
+                    <div class="modal-content-text" id="chinese-${item.id}">${escapeHtml(item.contentChinese)}</div>
+                </div>
+            ` : ''}
+            ${item.contentEnglish ? `
+                <div class="modal-section">
+                    <div class="content-header">
+                        <h4>🇺🇸 英文内容</h4>
+                        <button class="copy-btn" onclick="copyContent('english-${item.id}', event)">📋 复制</button>
+                    </div>
+                    <div class="modal-content-text" id="english-${item.id}">${escapeHtml(item.contentEnglish)}</div>
+                </div>
+            ` : ''}
+        ` : item.content ? `
             <div class="modal-section">
-                <h4>📖 完整内容</h4>
-                <div class="modal-content-text">${escapeHtml(item.content)}</div>
+                <div class="content-header">
+                    <h4>📖 完整内容</h4>
+                    <button class="copy-btn" onclick="copyContent('content-${item.id}', event)">📋 复制</button>
+                </div>
+                <div class="modal-content-text" id="content-${item.id}">${escapeHtml(item.content)}</div>
             </div>
         ` : ''}
         ${item.images.length > 0 ? `
             <div class="modal-section">
                 <h4>🖼️ 相关图片</h4>
                 ${item.images.map(img => `<img src="${img}" alt="图片" style="max-width: 100%; border-radius: 8px; margin-top: 10px;">`).join('')}
+            </div>
+        ` : ''}
+        ${item.videos && item.videos.length > 0 ? `
+            <div class="modal-section">
+                <h4>🎬 相关视频</h4>
+                ${item.videos.map(video => `<video width="100%" controls style="margin-top: 10px; border-radius: 8px;"><source src="${video}" type="video/mp4"></video>`).join('')}
             </div>
         ` : ''}
     `;
@@ -236,6 +280,59 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+// 复制内容到剪贴板
+function copyContent(elementId, event) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+
+    const text = element.textContent;
+    const button = event ? event.target : null;
+
+    // 使用现代 Clipboard API
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+            if (button) showCopyFeedback(button);
+        }).catch(err => {
+            console.error('复制失败:', err);
+            if (button) {
+                button.textContent = '❌ 复制失败';
+                setTimeout(() => {
+                    button.textContent = '📋 复制';
+                }, 2000);
+            }
+        });
+    } else {
+        // 兼容旧浏览器
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand('copy');
+            if (button) showCopyFeedback(button);
+        } catch (err) {
+            console.error('复制失败:', err);
+        }
+        document.body.removeChild(textarea);
+    }
+}
+
+// 显示复制成功反馈
+function showCopyFeedback(button) {
+    const originalText = button.textContent;
+    button.textContent = '✅ 已复制';
+    button.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+    button.style.transform = 'scale(1.05)';
+
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.style.background = '';
+        button.style.transform = '';
+    }, 2000);
 }
 
 // 页面加载完成后初始化
