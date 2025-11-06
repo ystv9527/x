@@ -405,6 +405,16 @@ ${TAG_WHITELIST.join(', ')}
         console.log('✅ Content saved:', data.title);
         console.log('📊 统计: 图片', downloadedImages.length, '个, 视频', downloadedVideos.length, '个');
 
+        // 自动生成 JSON 数据
+        console.log('🔄 自动生成 JSON 数据...');
+        const { execSync } = require('child_process');
+        try {
+          execSync('node scripts/generate-dataset.js', { cwd: __dirname });
+          console.log('✅ JSON 数据已自动更新');
+        } catch (err) {
+          console.error('⚠️ JSON 生成失败:', err.message);
+        }
+
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({
           success: true,
@@ -592,6 +602,16 @@ ${TAG_WHITELIST.join(', ')}
 
         console.log('✅ Content saved:', data.title);
         console.log('📊 统计: 图片', downloadedImages.length, '个, 视频', downloadedVideos.length, '个');
+
+        // 自动生成 JSON 数据
+        console.log('🔄 自动生成 JSON 数据...');
+        const { execSync } = require('child_process');
+        try {
+          execSync('node scripts/generate-dataset.js', { cwd: __dirname });
+          console.log('✅ JSON 数据已自动更新');
+        } catch (err) {
+          console.error('⚠️ JSON 生成失败:', err.message);
+        }
 
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({
