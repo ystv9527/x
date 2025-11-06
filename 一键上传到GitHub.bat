@@ -8,6 +8,12 @@ echo.
 
 cd /d "%~dp0"
 
+REM 设置代理（解决 cmd 环境下 GitHub 连接问题）
+set HTTP_PROXY=http://127.0.0.1:7897
+set HTTPS_PROXY=http://127.0.0.1:7897
+echo 💡 已配置代理: %HTTP_PROXY%
+echo.
+
 echo [1/4] 修复GitHub Pages路径...
 node fix-paths-for-github.js
 if errorlevel 1 (
