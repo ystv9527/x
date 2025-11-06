@@ -240,3 +240,31 @@ Used a Midjourney image and animated without prompt
 
 ---
 
+
+## 字节跳动开源AI视频模型BindWeave 实现多角色主题一致
+- **编号**: 案例010
+- **来源**: X / Gorden Sun
+- **链接**: https://x.com/Gorden_Sun/status/1986024143771545921
+- **日期**: 2025-11-06
+- **分类**: 视频,AI,视频,工具,资源,数字艺术
+
+### 内容摘要
+ByteDance推出的开源AI视频模型BindWeave，支持多角色同时作为参考，确保视频中的主体保持一致，提升视频生成的连贯性与质量。项目地址已开放。
+
+### 🇨🇳 中文内容
+保持主题一致性的开源视频模型
+字节跳动的开源 AI 视频模型，保持主题一致性，支持同时使用多个角色作为参考。
+项目地址：https:// lzy-dot.github.io/BindWeave/
+型号：https:// huggingface.co/ByteDance/Bind 编织 ...
+
+### 🇺🇸 英文内容
+BindWeave: Open-Source Video Model That Maintains Subject Consistency
+ByteDance's open-source AI video model that maintains subject consistency, supporting the use of multiple characters as references simultaneously.
+Project Address: https://lzy-dot.github.io/BindWeave/
+Model: https://huggingface.co/ByteDance/BindWeave…BindWeave：
+
+### 相关视频
+<video width="100%" controls><source src="../videos/tweet-1986024143771545921-1.mp4" type="video/mp4"></video>
+
+---
+
