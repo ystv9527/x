@@ -31,7 +31,7 @@ async function init() {
 async function loadData() {
     const response = await fetch('data/contents.json');
     const data = await response.json();
-    allItems = (data.items || []).reverse();  // 倒序显示（最新在前）
+    allItems = data.items || [];
     filteredItems = [...allItems];
 }
 
