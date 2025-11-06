@@ -46,11 +46,28 @@ if errorlevel 1 (
 echo.
 
 echo [4/4] 推送到GitHub...
+set retry=0
+:push_retry
 git push
 if errorlevel 1 (
-    echo ❌ 推送失败
-    pause
-    exit /b 1
+    set /a retry+=1
+    if %retry% lss 3 (
+        echo ⚠️ 推送失败，3秒后重试（%retry%/3）...
+        timeout /t 3 /nobreak >nul
+        goto push_retry
+    ) else (
+        echo.
+        echo ❌ 推送失败3次，可能原因：
+        echo    - 网络问题
+        echo    - 文件过大（视频超过50MB）
+        echo.
+        echo 💡 解决方案：
+        echo    1. 检查网络连接
+        echo    2. 稍后手动运行 git push
+        echo.
+        pause
+        exit /b 1
+    )
 )
 
 echo.
