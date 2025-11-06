@@ -5,6 +5,19 @@ let selectedTags = new Set();
 let archiveLoaded = false;  // 是否已加载历史数据
 let isLoadingArchive = false;  // 是否正在加载历史数据
 let globalStats = null;  // 全局统计信息（总数407）
+let isLocalAccess = false;  // 是否为本地访问
+
+// 检查是否为本地访问
+function checkLocalAccess() {
+    const hostname = window.location.hostname;
+    isLocalAccess = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '';
+    if (isLocalAccess) {
+        console.log('✅ 本地访问模式：删除功能已启用');
+    }
+}
+
+// 页面加载时检查
+checkLocalAccess();
 
 // DOM元素
 const searchInput = document.getElementById('searchInput');
@@ -130,6 +143,7 @@ function renderContent(items) {
 
     contentList.innerHTML = items.map(item => `
         <div class="content-card" data-id="${item.id}">
+            ${isLocalAccess ? `<button class="delete-btn" data-id="${item.id}" title="删除这条内容">🗑️</button>` : ''}
             ${item.videos && item.videos.length > 0 && (!item.images || item.images.length === 0) ? `
                 <div class="content-image">
                     <video style="width:100%; max-height:200px; object-fit:cover;" muted>
@@ -165,6 +179,17 @@ function renderContent(items) {
             showModal(id);
         });
     });
+
+    // 添加删除按钮事件（仅本地访问时）
+    if (isLocalAccess) {
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation(); // 阻止事件冒泡，避免触发卡片点击
+                const id = parseInt(btn.dataset.id);
+                deleteContent(id);
+            });
+        });
+    }
 }
 
 // 显示详情模态框
@@ -413,6 +438,39 @@ function showCopyFeedback(button) {
         button.style.background = '';
         button.style.transform = '';
     }, 2000);
+}
+
+// 删除内容
+async function deleteContent(id) {
+    const item = allItems.find(i => i.id === id);
+    if (!item) {
+        alert('未找到该内容');
+        return;
+    }
+
+    // 二次确认
+    if (!confirm(`确定要删除这条内容吗？\n\n标题：${item.title}\n\n删除后无法恢复！`)) {
+        return;
+    }
+
+    try {
+        const response = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            alert('✅ 删除成功！页面即将刷新');
+            location.reload();
+        } else {
+            alert('❌ 删除失败：' + result.error);
+        }
+    } catch (error) {
+        alert('❌ 删除失败：' + error.message);
+    }
 }
 
 // 页面加载完成后初始化
