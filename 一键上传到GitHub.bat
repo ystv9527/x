@@ -33,14 +33,23 @@ echo [4/6] 添加所有更改...
 git add .
 echo.
 
-echo [5/6] 提交更改...
+echo [5/6] 检查是否有变更...
+git diff --cached --quiet
+if %errorlevel% equ 0 (
+    echo ⚠️ 没有新内容需要提交
+    echo.
+    pause
+    exit /b 0
+)
+
+echo [6/6] 提交更改...
 set /p commit_msg="请输入提交说明（直接回车使用默认）: "
 if "%commit_msg%"=="" set commit_msg=更新内容 %date% %time%
 
 git commit -m "%commit_msg%"
 echo.
 
-echo [6/6] 推送到GitHub...
+echo [7/7] 推送到GitHub...
 git push
 echo.
 
