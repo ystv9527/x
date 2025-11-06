@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 chcp 65001 >nul
 echo ========================================
 echo    一键上传新内容到GitHub
@@ -54,8 +55,8 @@ set retry=0
 git push
 if errorlevel 1 (
     set /a retry+=1
-    if %retry% lss 5 (
-        echo ⚠️ 推送失败，10秒后重试（%retry%/5）...
+    if !retry! lss 5 (
+        echo ⚠️ 推送失败，10秒后重试（!retry!/5）...
         echo    如果持续失败，可能需要配置代理或使用 SSH
         timeout /t 10 /nobreak >nul
         goto push_retry
