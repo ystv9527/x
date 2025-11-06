@@ -1,0 +1,267 @@
+#!/usr/bin/env node
+
+/**
+ * 生成JSON数据集 - 将Markdown内容转换为JSON
+ * 使用方法: npm run generate
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+// 路径配置
+const CONTENT_FILE = path.join(__dirname, '../content/collection.md');
+const OUTPUT_FILE = path.join(__dirname, '../data/contents.json');
+
+/**
+ * 解析Markdown文件
+ */
+function parseMarkdown(markdown) {
+  const items = [];
+
+  // 按 "## " 分割各个条目（忽略第一个标题）
+  const sections = markdown.split(/\n## /).filter(s => s.trim());
+
+  sections.forEach((section, index) => {
+    if (!section.trim() || section.startsWith('#')) {
+      return;
+    }
+
+    const item = {
+      id: index + 1,
+      caseNumber: '',
+      title: '',
+      source: '',
+      url: '',
+      date: '',
+      tags: [],
+      reason: '',
+      summary: '',
+      keyPoints: [],
+      content: '',
+      contentChinese: '',
+      contentEnglish: '',
+      images: [],
+      videos: []
+    };
+
+    // 提取标题（第一行）- 处理Windows换行符
+    const lines = section.split(/\r?\n/);
+    const titleMatch = lines[0].match(/^标题：(.+)$/) || lines[0].match(/^(.+)$/);
+    if (titleMatch) {
+      item.title = titleMatch[1].trim();
+    }
+
+    // 提取元数据
+    const metaRegex = /^- \*\*(.+?)\*\*:\s*(.+)$/;
+    lines.forEach(line => {
+      const match = line.match(metaRegex);
+      if (match) {
+        const key = match[1].toLowerCase();
+        const value = match[2].trim();
+
+        if (key === '编号' || key === 'casenumber') {
+          item.caseNumber = value;
+        } else if (key === '来源' || key === 'source') {
+          item.source = value;
+        } else if (key === '链接' || key === 'url' || key === 'link') {
+          item.url = value;
+        } else if (key === '日期' || key === 'date') {
+          item.date = value;
+        } else if (key === '分类' || key === 'tags' || key === '标签') {
+          item.tags = value.split(/[,，]/).map(t => t.trim()).filter(t => t);
+        } else if (key === '收藏理由' || key === 'reason') {
+          item.reason = value;
+        }
+      }
+    });
+
+    // 提取摘要
+    const summaryMatch = section.match(/###\s*内容摘要\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    if (summaryMatch) {
+      item.summary = summaryMatch[1].trim();
+    }
+
+    // 提取关键要点
+    const keyPointsMatch = section.match(/###\s*关键要点\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    if (keyPointsMatch) {
+      const points = keyPointsMatch[1].match(/^[-*]\s+(.+)$/gm);
+      if (points) {
+        item.keyPoints = points.map(p => p.replace(/^[-*]\s+/, '').trim());
+      }
+    }
+
+    // 提取中文内容
+    const chineseMatch = section.match(/###\s*🇨🇳\s*中文内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    if (chineseMatch) {
+      item.contentChinese = chineseMatch[1].trim();
+    }
+
+    // 提取英文内容
+    const englishMatch = section.match(/###\s*🇺🇸\s*英文内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    if (englishMatch) {
+      item.contentEnglish = englishMatch[1].trim();
+    }
+
+    // 兼容旧版本：提取完整内容（如果没有分离的中英文内容）
+    if (!item.contentChinese && !item.contentEnglish) {
+      const contentMatch = section.match(/###\s*完整内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+      if (contentMatch) {
+        item.content = contentMatch[1].trim();
+      }
+    }
+
+    // 提取图片
+    const imageMatches = section.match(/!\[.*?\]\((.*?)\)/g);
+    if (imageMatches) {
+      item.images = imageMatches.map(img => {
+        const match = img.match(/!\[.*?\]\((.*?)\)/);
+        return match ? match[1] : '';
+      }).filter(img => img);
+    }
+
+    
+    // 提取视频
+    const videoMatches = section.match(/<video[^>]*>.*?<source src="(.*?)".*?<\/video>/g);
+    if (videoMatches) {
+      item.videos = videoMatches.map(video => {
+        const match = video.match(/<source src="(.*?)"/);
+        return match ? match[1] : '';
+      }).filter(video => video);
+    }
+
+    // 只添加有标题的条目
+    if (item.title) {
+      items.push(item);
+    }
+  });
+
+  return items;
+}
+
+
+/**
+ * 主函数（追加+分批模式）
+ */
+function main() {
+  console.log('🚀 开始生成JSON数据集（追加+分批模式）...\n');
+
+  try {
+    const LATEST_FILE = path.join(__dirname, '../data/latest.json');
+    const ARCHIVE_FILE = path.join(__dirname, '../data/archive.json');
+    const LATEST_COUNT = 100;
+
+    // 检查输入文件
+    if (!fs.existsSync(CONTENT_FILE)) {
+      console.error('❌ 错误: 找不到 content/collection.md 文件');
+      process.exit(1);
+    }
+
+    // 读取现有数据
+    let existingItems = [];
+    if (fs.existsSync(OUTPUT_FILE)) {
+      try {
+        const fullData = JSON.parse(fs.readFileSync(OUTPUT_FILE, 'utf-8'));
+        existingItems = fullData.items || [];
+        console.log(`📂 读取现有数据: ${existingItems.length} 条`);
+      } catch (error) {
+        console.warn('⚠️ 无法读取现有数据');
+      }
+    }
+
+    // 读取Markdown文件
+    const markdown = fs.readFileSync(CONTENT_FILE, 'utf-8');
+    console.log('📖 读取 Markdown 文件...');
+
+    // 解析新内容
+    const newItems = parseMarkdown(markdown);
+    console.log(`✨ 解析完成，共找到 ${newItems.length} 个新条目`);
+
+    if (newItems.length === 0) {
+      console.log('⚠️ 没有新内容需要添加');
+      return;
+    }
+
+    // 合并数据
+    const allItems = [...existingItems, ...newItems];
+    console.log(`🔗 合并数据: ${existingItems.length} (现有) + ${newItems.length} (新增) = ${allItems.length} (总计)`);
+
+    // 重新编号
+    allItems.forEach((item, index) => {
+      item.id = index + 1;
+      item.caseNumber = '案例' + String(index + 1).padStart(3, '0');
+    });
+
+    // 拆分：最后100条（最新） + 前面的（历史）
+    const latestItems = allItems.slice(-LATEST_COUNT);
+    const archiveItems = allItems.slice(0, -LATEST_COUNT);
+
+    console.log(`\n📦 数据拆分:`);
+    console.log(`   - latest.json: ${latestItems.length} 条`);
+    console.log(`   - archive.json: ${archiveItems.length} 条`);
+
+    // 确保输出目录存在
+    const outputDir = path.dirname(OUTPUT_FILE);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+
+    // 计算全局标签统计
+    const globalTagCount = {};
+    allItems.forEach(item => {
+      item.tags.forEach(tag => {
+        globalTagCount[tag] = (globalTagCount[tag] || 0) + 1;
+      });
+    });
+
+    // 保存 latest.json（包含全局统计）
+    const latestDataset = {
+      generatedAt: new Date().toISOString(),
+      totalCount: latestItems.length,
+      hasMore: archiveItems.length > 0,
+      globalStats: {
+        totalCount: allItems.length,
+        tagCount: globalTagCount
+      },
+      items: latestItems
+    };
+    fs.writeFileSync(LATEST_FILE, JSON.stringify(latestDataset, null, 2), 'utf-8');
+    console.log(`💾 latest.json 已保存`);
+
+    // 保存 archive.json
+    if (archiveItems.length > 0) {
+      const archiveDataset = {
+        generatedAt: new Date().toISOString(),
+        totalCount: archiveItems.length,
+        items: archiveItems
+      };
+      fs.writeFileSync(ARCHIVE_FILE, JSON.stringify(archiveDataset, null, 2), 'utf-8');
+      console.log(`💾 archive.json 已保存`);
+    }
+
+    // 保存完整的 contents.json
+    const fullDataset = {
+      generatedAt: new Date().toISOString(),
+      totalCount: allItems.length,
+      items: allItems
+    };
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(fullDataset, null, 2), 'utf-8');
+    console.log(`💾 contents.json 已保存`);
+
+    console.log('\n✅ 数据集生成完成！');
+    console.log(`💡 案例${allItems.length}（最新）将显示在最前\n`);
+
+    // 清空 collection.md，避免下次重复添加
+    if (newItems.length > 0) {
+      fs.writeFileSync(CONTENT_FILE, '# 收藏内容\n', 'utf-8');
+      console.log('🧹 已清空 collection.md，准备下次采集\n');
+    }
+
+  } catch (error) {
+    console.error('❌ 错误:', error.message);
+    console.error(error.stack);
+    process.exit(1);
+  }
+}
+
+// 运行
+main();
