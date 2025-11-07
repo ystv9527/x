@@ -134,6 +134,40 @@ function renderTagFilters() {
     `).join('');
 }
 
+// 渲染精选推荐
+function renderFeaturedItems() {
+    const featuredList = document.getElementById('featuredList');
+    if (!featuredList) return;
+
+    // 选择5个精彩的Nano Banana案例（有图片的）
+    const nanoItems = allItems.filter(item =>
+        item.tags.includes('Nano Banana') &&
+        item.images &&
+        item.images.length > 0
+    );
+
+    // 选择前5个
+    const featured = nanoItems.slice(0, 5);
+
+    featuredList.innerHTML = featured.map(item => {
+        const firstImage = item.images[0];
+        const summaryPreview = item.summary ? item.summary.split('\n')[0] : '';
+
+        return `
+            <div class="featured-card" data-id="${item.id}" onclick="showDetail(${item.id})">
+                ${firstImage ? `<img src="${firstImage}" alt="${escapeHtml(item.title)}" class="featured-image" onerror="this.style.display='none'">` : ''}
+                <div class="featured-content">
+                    <h3 class="featured-title">${escapeHtml(item.title)}</h3>
+                    <p class="featured-summary">${escapeHtml(summaryPreview)}</p>
+                    <div class="featured-tags">
+                        ${item.tags.slice(0, 3).map(tag => `<span class="featured-tag">${escapeHtml(tag)}</span>`).join('')}
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
 // 渲染内容列表
 function renderContent(items) {
     if (items.length === 0) {
@@ -305,11 +339,69 @@ function updateStats() {
     const shown = filteredItems.length;
     const filtered = selectedTags.size > 0 || searchInput.value.trim();
 
+    // 更新底部状态栏
     if (filtered) {
         statsText.textContent = `显示 ${shown} / ${total} 条内容`;
     } else {
         statsText.textContent = `共 ${total} 条内容`;
     }
+
+    // 更新Hero统计数字
+    updateHeroStats(total);
+}
+
+// 更新Hero区域的统计数字
+function updateHeroStats(totalCases) {
+    // 总案例数
+    const totalCasesEl = document.getElementById('totalCases');
+    if (totalCasesEl) {
+        animateNumber(totalCasesEl, totalCases);
+    }
+
+    // 计算总标签数（去重）
+    const allTags = new Set();
+    allItems.forEach(item => {
+        item.tags.forEach(tag => allTags.add(tag));
+    });
+    const totalTagsEl = document.getElementById('totalTags');
+    if (totalTagsEl) {
+        animateNumber(totalTagsEl, allTags.size);
+    }
+
+    // 计算Nano Banana案例数
+    const nanoCount = allItems.filter(item =>
+        item.tags.includes('Nano Banana')
+    ).length;
+    const nanoCountEl = document.getElementById('nanoCount');
+    if (nanoCountEl) {
+        animateNumber(nanoCountEl, nanoCount);
+    }
+}
+
+// 数字动画效果
+function animateNumber(element, targetNumber) {
+    const duration = 1000; // 1秒
+    const startNumber = parseInt(element.textContent) || 0;
+    const startTime = Date.now();
+
+    function update() {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // 使用缓动函数
+        const easeOutQuad = progress * (2 - progress);
+        const current = Math.floor(startNumber + (targetNumber - startNumber) * easeOutQuad);
+
+        element.textContent = current;
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            element.textContent = targetNumber;
+        }
+    }
+
+    update();
 }
 
 // 设置事件监听器
