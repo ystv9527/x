@@ -463,7 +463,7 @@ async function deleteContent(id) {
         const result = await response.json();
 
         if (result.success) {
-            alert('✅ 删除成功！页面即将刷新');
+            // 删除成功，直接刷新页面
             location.reload();
         } else {
             alert('❌ 删除失败：' + result.error);
