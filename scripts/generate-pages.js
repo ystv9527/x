@@ -562,6 +562,88 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
 }
 
 /**
+ * 生成结构化数据（JSON-LD）
+ */
+function generateSchema(options) {
+    const {
+        pageType = 'WebPage',
+        title,
+        description,
+        url,
+        breadcrumbs = [],
+        itemCount = 0
+    } = options;
+
+    let schemas = [];
+
+    // 首页：WebSite + ItemList
+    if (pageType === 'home') {
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Gem Nana AI 提示词库",
+            "url": SITE_URL + "/",
+            "description": "精选 AI 提示词收藏库，包含图片生成、视频生成和文字提示词等优质案例",
+            "inLanguage": "zh-CN",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": SITE_URL + "/?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+            }
+        });
+
+        schemas.push({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "AI 提示词案例精选",
+            "description": description,
+            "numberOfItems": itemCount,
+            "itemListElement": []
+        });
+    }
+    // 分类页或标签页：CollectionPage + BreadcrumbList
+    else if (pageType === 'collection') {
+        const schema = {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": title + " | Gem Nana AI 提示词库",
+            "description": description,
+            "url": url,
+            "inLanguage": "zh-CN",
+            "isPartOf": {
+                "@type": "WebSite",
+                "name": "Gem Nana AI 提示词库",
+                "url": SITE_URL + "/"
+            }
+        };
+
+        // 添加面包屑导航
+        if (breadcrumbs.length > 0) {
+            schema.breadcrumb = {
+                "@type": "BreadcrumbList",
+                "itemListElement": breadcrumbs.map((crumb, index) => ({
+                    "@type": "ListItem",
+                    "position": index + 1,
+                    "name": crumb.name,
+                    "item": crumb.url
+                }))
+            };
+        }
+
+        schemas.push(schema);
+    }
+
+    // 生成 JSON-LD 脚本标签
+    return schemas.map(schema => `
+    <script type="application/ld+json">
+    ${JSON.stringify(schema, null, 2)}
+    </script>`).join('');
+}
+
+/**
  * 生成页面模板
  */
 function generatePageTemplate(options) {
@@ -574,8 +656,21 @@ function generatePageTemplate(options) {
         stylePath = 'assets/style.css',
         scriptPath = null,
         items = [],
-        dataPath = ''
+        dataPath = '',
+        pageType = 'WebPage',
+        pageUrl = '',
+        breadcrumbs = []
     } = options;
+
+    // 生成结构化数据
+    const schemaMarkup = generateSchema({
+        pageType,
+        title,
+        description,
+        url: pageUrl,
+        breadcrumbs,
+        itemCount: items.length
+    });
 
     return `<!DOCTYPE html>
 <html lang="zh-CN">
@@ -585,6 +680,7 @@ function generatePageTemplate(options) {
     <title>${title} | Gem Nana AI 提示词库</title>
     <meta name="description" content="${description}">
     <link rel="stylesheet" href="${stylePath}">
+${schemaMarkup}
 </head>
 <body class="layout-sidebar">
     ${generateSidebar(currentPage, stats)}
@@ -667,6 +763,8 @@ function generateHomePage(allItems, stats) {
         stylePath: 'assets/style.css',
         items: displayItems,
         dataPath: '',
+        pageType: 'home',
+        pageUrl: SITE_URL + '/',
         enableSearch: true  // 启用搜索功能
     });
 
@@ -704,7 +802,13 @@ function generateImagePage(imageItems, stats) {
         content,
         stylePath: '../assets/style.css',
         items: displayItems,
-        dataPath: '../'
+        dataPath: '../',
+        pageType: 'collection',
+        pageUrl: SITE_URL + '/image/',
+        breadcrumbs: [
+            { name: '首页', url: SITE_URL + '/' },
+            { name: '图片生成', url: SITE_URL + '/image/' }
+        ]
     });
 
     fs.writeFileSync(path.join(ROOT_DIR, 'image', 'index.html'), html, 'utf8');
@@ -743,7 +847,13 @@ function generateVideoPage(videoItems, stats) {
         content,
         stylePath: '../assets/style.css',
         items: sortedItems,
-        dataPath: '../'
+        dataPath: '../',
+        pageType: 'collection',
+        pageUrl: SITE_URL + '/video/',
+        breadcrumbs: [
+            { name: '首页', url: SITE_URL + '/' },
+            { name: '视频生成', url: SITE_URL + '/video/' }
+        ]
     });
 
     fs.writeFileSync(path.join(ROOT_DIR, 'video', 'index.html'), html, 'utf8');
@@ -778,7 +888,13 @@ function generateTextPage(textItems, stats) {
         content,
         stylePath: '../assets/style.css',
         items: [],
-        dataPath: '../'
+        dataPath: '../',
+        pageType: 'collection',
+        pageUrl: SITE_URL + '/text/',
+        breadcrumbs: [
+            { name: '首页', url: SITE_URL + '/' },
+            { name: '文字提示词', url: SITE_URL + '/text/' }
+        ]
     });
 
     fs.writeFileSync(path.join(ROOT_DIR, 'text', 'index.html'), html, 'utf8');
@@ -824,6 +940,7 @@ function generateImageTagPages(imageItems, stats) {
             </div>
         `;
 
+        const filename = tag.replace(/\s+/g, '-').toLowerCase() + '.html';
         const html = generatePageTemplate({
             title: `${tag} - 图片生成`,
             description: `${count} 个 ${tag} 相关的图片生成提示词案例`,
@@ -832,10 +949,16 @@ function generateImageTagPages(imageItems, stats) {
             content,
             stylePath: '../assets/style.css',
             items: tagItems,
-            dataPath: '../'
+            dataPath: '../',
+            pageType: 'collection',
+            pageUrl: SITE_URL + '/image/' + filename,
+            breadcrumbs: [
+                { name: '首页', url: SITE_URL + '/' },
+                { name: '图片生成', url: SITE_URL + '/image/' },
+                { name: tag, url: SITE_URL + '/image/' + filename }
+            ]
         });
 
-        const filename = tag.replace(/\s+/g, '-').toLowerCase() + '.html';
         fs.writeFileSync(path.join(ROOT_DIR, 'image', filename), html, 'utf8');
         console.log(`  ✓ ${tag} (${count})`);
     });
