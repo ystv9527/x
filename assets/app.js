@@ -180,7 +180,12 @@ function renderContent(items) {
             ${isLocalAccess ? `<button class="delete-btn" data-id="${item.id}" title="删除这条内容">🗑️</button>` : ''}
             ${item.videos && item.videos.length > 0 && (!item.images || item.images.length === 0) ? `
                 <div class="content-image">
-                    <video style="width:100%; max-height:200px; object-fit:cover;" muted>
+                    <video 
+                        style="width:100%; max-height:200px; object-fit:cover;" 
+                        muted 
+                        playsinline 
+                        webkit-playsinline 
+                        preload="metadata">
                         <source src="${item.videos[0]}" type="video/mp4">
                     </video>
                     ${item.videos.length > 1 ? `<span class="image-count">+${item.videos.length - 1}🎬</span>` : ''}
