@@ -23,10 +23,10 @@ if errorlevel 1 (
 )
 echo.
 
-echo [2/4] 重新生成数据集...
-call npm run generate
+echo [2/4] 重新生成数据集和sitemap...
+call npm run build
 if errorlevel 1 (
-    echo ❌ 数据集生成失败
+    echo ❌ 构建失败
     pause
     exit /b 1
 )
