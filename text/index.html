@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="文字提示词即将上线">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="layout-sidebar">
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1 class="logo">📚 Gem Nana</h1>
+            <p class="tagline">AI 提示词收藏库</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-item ">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-text">首页</span>
+                <span class="nav-count">525</span>
+            </a>
+            <a href="../image/index.html" class="nav-item ">
+                <span class="nav-icon">📸</span>
+                <span class="nav-text">图片生成</span>
+                <span class="nav-count">523</span>
+            </a>
+            <a href="../video/index.html" class="nav-item ">
+                <span class="nav-icon">🎬</span>
+                <span class="nav-text">视频生成</span>
+                <span class="nav-count">2</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <span class="nav-icon">💬</span>
+                <span class="nav-text">文字提示词</span>
+                <span class="nav-count">0</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>© 2025 Gem Nana</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <div class="page-header">
+            <h1>💬 文字提示词</h1>
+            <p>即将上线，敬请期待</p>
+        </div>
+
+        <div class="coming-soon">
+            <div class="coming-soon-icon">🚧</div>
+            <h2>内容筹备中</h2>
+            <p>我们正在收集和整理优质的 AI 对话提示词</p>
+            <p>包括 ChatGPT、Claude、Gemini 等工具的高级用法</p>
+        </div>
+    
+    </main>
+
+    
+    <!-- 详情模态框 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script>
+    // 页面数据
+    const pageItems = [];
+
+    // DOM元素
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modalBody');
+    const modalClose = document.querySelector('.modal-close');
+
+    // HTML转义
+    function escapeHtml(text) {
+        if (!text) return '';
+        const map = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#039;'
+        };
+        return text.toString().replace(/[&<>"']/g, m => map[m]);
+    }
+
+    // 显示详情弹窗
+    function showModal(id) {
+        const item = pageItems.find(i => i.id === id);
+        if (!item) return;
+
+        let html = `
+            <h2 class="modal-title">${escapeHtml(item.title)}</h2>
+            <div class="modal-meta">
+                <span>📅 ${item.date || ''}</span>
+                ${item.url ? `<a href="${item.url}" target="_blank" class="modal-source-link">🔗 ${item.source || '查看原文'}</a>` : `<span>🔗 ${item.source || ''}</span>`}
+            </div>
+        `;
+
+        // 标签（移到摘要上面）
+        if (item.tags && item.tags.length > 0) {
+            html += '<div class="modal-section"><h3>🏷️ 标签</h3><div class="modal-tags">';
+            item.tags.forEach(tag => {
+                html += `<span class="tag">${tag}</span>`;
+            });
+            html += '</div></div>';
+        }
+
+        // 摘要
+        if (item.summary) {
+            html += `
+                <div class="modal-section">
+                    <h3>📝 内容摘要</h3>
+                    <p class="modal-summary">${escapeHtml(item.summary)}</p>
+                </div>
+            `;
+        }
+
+        // 图片
+        if (item.images && item.images.length > 0) {
+            html += '<div class="modal-section"><h3>📸 图片</h3><div class="modal-images">';
+            item.images.forEach(img => {
+                const imgPath = '../' + img;
+                html += `<img src="${imgPath}" alt="${escapeHtml(item.title)}" loading="lazy">`;
+            });
+            html += '</div></div>';
+        }
+
+        // 视频
+        if (item.videos && item.videos.length > 0) {
+            html += '<div class="modal-section"><h3>🎬 视频</h3><div class="modal-videos">';
+            item.videos.forEach(video => {
+                const videoPath = '../' + video;
+                html += `<video controls><source src="${videoPath}" type="video/mp4"></video>`;
+            });
+            html += '</div></div>';
+        }
+
+        // 中文提示词
+        if (item.contentChinese) {
+            html += `
+                <div class="modal-section">
+                    <h3>🇨🇳 中文提示词
+                        <button class="copy-btn" onclick="copyText('chinese')">📋 复制</button>
+                    </h3>
+                    <div class="modal-content-text" id="text-chinese">${escapeHtml(item.contentChinese)}</div>
+                </div>
+            `;
+        }
+
+        // 英文提示词
+        if (item.contentEnglish) {
+            html += `
+                <div class="modal-section">
+                    <h3>🇬🇧 英文提示词
+                        <button class="copy-btn" onclick="copyText('english')">📋 复制</button>
+                    </h3>
+                    <div class="modal-content-text" id="text-english">${escapeHtml(item.contentEnglish)}</div>
+                </div>
+            `;
+        }
+
+        // 通用内容
+        if (item.content) {
+            html += `
+                <div class="modal-section">
+                    <h3>📝 内容
+                        <button class="copy-btn" onclick="copyText('content')">📋 复制</button>
+                    </h3>
+                    <div class="modal-content-text" id="text-content">${escapeHtml(item.content)}</div>
+                </div>
+            `;
+        }
+
+        modalBody.innerHTML = html;
+        modal.style.display = 'block';
+    }
+
+    // 复制文本
+    function copyText(type) {
+        const element = document.getElementById('text-' + type);
+        if (!element) return;
+
+        const text = element.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+            alert('✅ 已复制到剪贴板');
+        }).catch(err => {
+            console.error('复制失败:', err);
+        });
+    }
+
+    // 关闭模态框
+    modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // 检查是否为本地访问
+    function checkLocalAccess() {
+        const hostname = window.location.hostname;
+        return hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '';
+    }
+
+    // 删除内容
+    async function deleteContent(id) {
+        const item = pageItems.find(i => i.id === id);
+        if (!item) {
+            alert('未找到该内容');
+            return;
+        }
+
+        // 二次确认
+        if (!confirm(`确定要删除这条内容吗？\n\n标题：${item.title}\n\n删除后无法恢复！`)) {
+            return;
+        }
+
+        try {
+            const response = await fetch('/api/delete-content', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                // 删除成功，直接刷新页面
+                location.reload();
+            } else {
+                alert('❌ 删除失败：' + result.error);
+            }
+        } catch (error) {
+            alert('❌ 删除失败：' + error.message);
+        }
+    }
+
+    // 搜索和筛选功能
+    let selectedTags = new Set();
+
+    function filterContent() {
+        const searchInput = document.getElementById('searchInput');
+        const statsText = document.getElementById('statsText');
+        const caseGrid = document.getElementById('caseGrid');
+
+        if (!searchInput || !caseGrid) return; // 如果没有搜索框，直接返回
+
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        let filteredItems = pageItems;
+
+        // 标签筛选
+        if (selectedTags.size > 0) {
+            filteredItems = filteredItems.filter(item => {
+                return item.tags && item.tags.some(tag => selectedTags.has(tag));
+            });
+        }
+
+        // 搜索筛选
+        if (searchTerm) {
+            filteredItems = filteredItems.filter(item => {
+                const searchableText = [
+                    item.title || '',
+                    item.summary || '',
+                    item.content || '',
+                    item.source || '',
+                    ...(item.tags || [])
+                ].join(' ').toLowerCase();
+                return searchableText.includes(searchTerm);
+            });
+        }
+
+        // 重新渲染卡片
+        renderCards(filteredItems);
+
+        // 更新统计
+        if (statsText) {
+            if (selectedTags.size > 0 || searchTerm) {
+                statsText.textContent = `显示 ${filteredItems.length} / ${pageItems.length} 条内容`;
+            } else {
+                statsText.textContent = `共 ${pageItems.length} 条内容`;
+            }
+        }
+    }
+
+    function renderCards(items) {
+        const caseGrid = document.getElementById('caseGrid');
+        if (!caseGrid) return;
+
+        if (items.length === 0) {
+            caseGrid.innerHTML = '<div class="no-results">😕 没有找到匹配的内容</div>';
+            return;
+        }
+
+        caseGrid.innerHTML = items.map(item => {
+            const tags = item.tags ? item.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
+
+            // 缩略图：优先显示图片，其次显示视频，最后显示默认图标
+            let thumbnail;
+            if (item.images && item.images[0]) {
+                thumbnail = `<img src="${item.images[0]}" alt="${escapeHtml(item.title)}" loading="lazy">`;
+            } else if (item.videos && item.videos[0]) {
+                thumbnail = `<video style="width:100%; height:100%; object-fit:cover;" muted loop>
+                    <source src="${item.videos[0]}" type="video/mp4">
+                </video>`;
+            } else {
+                thumbnail = `<div class="no-image">📸</div>`;
+            }
+
+            const summary = item.summary ? escapeHtml(item.summary) : '';
+
+            return `
+                <div class="case-card" data-id="${item.id}">
+                    <button class="delete-btn" data-id="${item.id}" title="删除这条内容" style="display:none;">🗑️</button>
+                    <div class="case-thumbnail">${thumbnail}</div>
+                    <div class="case-info">
+                        <h3 class="case-title">${item.caseNumber}: ${escapeHtml(item.title)}</h3>
+                        ${summary ? `<p class="case-summary">${summary}</p>` : ''}
+                        <div class="case-meta">
+                            <span class="case-date">${item.date || ''}</span>
+                            <span class="case-source">${item.source || ''}</span>
+                        </div>
+                        <div class="case-tags">${tags}</div>
+                    </div>
+                </div>`;
+        }).join('');
+
+        // 重新绑定事件
+        bindCardEvents();
+    }
+
+    function bindCardEvents() {
+        const isLocalAccess = checkLocalAccess();
+
+        // 如果是本地访问，显示删除按钮
+        if (isLocalAccess) {
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.style.display = 'block';
+            });
+        }
+
+        // 绑定卡片点击事件
+        document.querySelectorAll('.case-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (e.target.classList.contains('delete-btn') || e.target.closest('.delete-btn')) {
+                    return;
+                }
+                const id = parseInt(card.getAttribute('data-id'));
+                showModal(id);
+            });
+        });
+
+        // 绑定删除按钮事件
+        if (isLocalAccess) {
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const id = parseInt(btn.getAttribute('data-id'));
+                    deleteContent(id);
+                });
+            });
+        }
+    }
+
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+        bindCardEvents();
+
+        // 搜索功能
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', filterContent);
+        }
+
+        // 标签筛选
+        const tagFilters = document.getElementById('tagFilters');
+        if (tagFilters) {
+            tagFilters.addEventListener('click', (e) => {
+                if (e.target.classList.contains('tag-filter')) {
+                    const tag = e.target.dataset.tag;
+                    e.target.classList.toggle('active');
+
+                    if (selectedTags.has(tag)) {
+                        selectedTags.delete(tag);
+                    } else {
+                        selectedTags.add(tag);
+                    }
+
+                    filterContent();
+                }
+            });
+        }
+
+        // 清除筛选
+        const clearFilters = document.getElementById('clearFilters');
+        if (clearFilters) {
+            clearFilters.addEventListener('click', () => {
+                selectedTags.clear();
+                if (searchInput) searchInput.value = '';
+                document.querySelectorAll('.tag-filter.active').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                filterContent();
+            });
+        }
+    });
+    </script>
+    
+</body>
+</html>

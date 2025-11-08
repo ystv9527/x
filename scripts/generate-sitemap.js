@@ -49,6 +49,29 @@ function loadJsonData(filePath) {
 }
 
 /**
+ * 扫描目录下的 HTML 文件
+ */
+function scanHtmlFiles(dir, baseUrl = '') {
+    const urls = [];
+    const fullPath = path.join(__dirname, '..', dir);
+
+    if (!fs.existsSync(fullPath)) {
+        return urls;
+    }
+
+    const files = fs.readdirSync(fullPath);
+
+    files.forEach(file => {
+        if (file.endsWith('.html') && file !== 'index-old.html') {
+            const url = baseUrl + '/' + file;
+            urls.push(url);
+        }
+    });
+
+    return urls;
+}
+
+/**
  * 生成 sitemap.xml
  */
 function generateSitemap() {
@@ -65,50 +88,44 @@ function generateSitemap() {
         '1.0'
     ));
 
-    // 2. 读取最新数据
-    const latestPath = path.join(__dirname, '..', 'data', 'latest.json');
-    const latestData = loadJsonData(latestPath);
+    // 2. 添加图片主页
+    urls.push(generateUrlEntry(
+        SITE_URL + '/image/',
+        now,
+        'daily',
+        '0.9'
+    ));
 
-    // 3. 读取历史数据
-    const archivePath = path.join(__dirname, '..', 'data', 'archive.json');
-    const archiveData = loadJsonData(archivePath);
+    // 3. 添加视频主页
+    urls.push(generateUrlEntry(
+        SITE_URL + '/video/',
+        now,
+        'weekly',
+        '0.9'
+    ));
 
-    // 收集所有案例
-    const allItems = [];
+    // 4. 添加文字主页
+    urls.push(generateUrlEntry(
+        SITE_URL + '/text/',
+        now,
+        'weekly',
+        '0.8'
+    ));
 
-    if (latestData && latestData.items) {
-        allItems.push(...latestData.items);
-    }
-
-    if (archiveData && archiveData.items) {
-        allItems.push(...archiveData.items);
-    }
-
-    console.log(`📊 找到 ${allItems.length} 个案例`);
-
-    // 4. 为每个案例添加 URL（如果有详情页的话）
-    // 目前是 SPA，所以先只添加主页
-    // 如果未来每个案例有独立页面，可以这样添加：
-    /*
-    allItems.forEach(item => {
-        if (item.id) {
+    // 5. 扫描图片分类页
+    const imagePages = scanHtmlFiles('image', '/image');
+    imagePages.forEach(url => {
+        if (!url.endsWith('/index.html')) {
             urls.push(generateUrlEntry(
-                `${SITE_URL}/prompt/${item.id}`,
-                item.updatedAt || now,
+                SITE_URL + url,
+                now,
                 'weekly',
                 '0.8'
             ));
         }
     });
-    */
 
-    // 5. 添加静态页面（如果有的话）
-    // urls.push(generateUrlEntry(
-    //     SITE_URL + '/about',
-    //     now,
-    //     'monthly',
-    //     '0.5'
-    // ));
+    console.log(`📊 找到 ${imagePages.length} 个图片分类页`);
 
     // 6. 生成完整的 XML
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
