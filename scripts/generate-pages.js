@@ -124,7 +124,7 @@ function generateCaseCard(item, basePath = '.') {
     if (item.images && item.images[0]) {
         thumbnail = `<img src="${basePath}/${item.images[0]}" alt="${item.title}" loading="lazy">`;
     } else if (item.videos && item.videos[0]) {
-        thumbnail = `<video style="width:100%; height:100%; object-fit:cover;" muted loop playsinline controls>
+        thumbnail = `<video style="width:100%; height:100%; object-fit: cover;" muted playsinline controls preload="metadata">
             <source src="${basePath}/${item.videos[0]}" type="video/mp4">
             您的浏览器不支持视频播放
         </video>`;
@@ -454,7 +454,7 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
             if (item.images && item.images[0]) {
                 thumbnail = \`<img src="\${item.images[0]}" alt="\${escapeHtml(item.title)}" loading="lazy">\`;
             } else if (item.videos && item.videos[0]) {
-                thumbnail = \`<video style="width:100%; height:100%; object-fit:cover;" muted loop playsinline controls>
+                thumbnail = \`<video style="width:100%; height:100%; object-fit: cover;" muted playsinline controls preload="metadata">
                     <source src="\${item.videos[0]}" type="video/mp4">
                     您的浏览器不支持视频播放
                 </video>\`;
