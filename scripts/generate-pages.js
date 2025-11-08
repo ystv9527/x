@@ -679,7 +679,7 @@ function generatePageTemplate(options) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} | Gem Nana AI 提示词库</title>
     <meta name="description" content="${description}">
-    <link rel="stylesheet" href="${stylePath}">
+    <link rel="stylesheet" href="${stylePath}?v=${Date.now()}">
 ${schemaMarkup}
 </head>
 <body class="layout-sidebar">
