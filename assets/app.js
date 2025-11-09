@@ -185,6 +185,8 @@ function renderContent(items) {
                         muted 
                         playsinline 
                         webkit-playsinline 
+                        autoplay 
+                        loop 
                         preload="metadata">
                         <source src="${item.videos[0]}" type="video/mp4">
                     </video>
