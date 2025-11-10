@@ -132,8 +132,44 @@ function generateCaseCard(item, basePath = '.') {
         thumbnail = `<div class="no-image">📸</div>`;
     }
 
-    // HTML转义摘要
-    const summary = item.summary ? item.summary.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
+    // HTML转义函数
+    const escapeHtml = (text) => text ? text.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
+    const summary = escapeHtml(item.summary);
+
+    // 生成提示词预览（截取前200字符，SEO友好）
+    let promptPreview = '';
+    if (item.contentChinese || item.contentEnglish) {
+        let chinesePreview = '';
+        let englishPreview = '';
+
+        if (item.contentChinese) {
+            const text = item.contentChinese.substring(0, 200);
+            const truncated = item.contentChinese.length > 200 ? '...' : '';
+            chinesePreview = `<div class="prompt-section">
+                <h4>🇨🇳 中文提示词</h4>
+                <p>${escapeHtml(text)}${truncated}</p>
+            </div>`;
+        }
+
+        if (item.contentEnglish) {
+            const text = item.contentEnglish.substring(0, 200);
+            const truncated = item.contentEnglish.length > 200 ? '...' : '';
+            englishPreview = `<div class="prompt-section">
+                <h4>🇬🇧 English Prompt</h4>
+                <p>${escapeHtml(text)}${truncated}</p>
+            </div>`;
+        }
+
+        promptPreview = `
+            <details class="prompt-preview">
+                <summary>🎨 查看AI提示词</summary>
+                <div class="prompt-content">
+                    ${chinesePreview}
+                    ${englishPreview}
+                    <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\\"${item.id}\\"]').click();">查看完整内容</button>
+                </div>
+            </details>`;
+    }
 
     return `
         <div class="case-card" data-id="${item.id}">
@@ -147,6 +183,7 @@ function generateCaseCard(item, basePath = '.') {
                     <span class="case-source">${item.source || ''}</span>
                 </div>
                 <div class="case-tags">${tags}</div>
+                ${promptPreview}
             </div>
         </div>`;
 }
@@ -652,6 +689,7 @@ function generatePageTemplate(options) {
     const {
         title,
         description,
+        keywords = 'AI提示词,Prompt,Midjourney,Stable Diffusion,DALL-E,图片生成,AI绘画,提示词库',
         currentPage,
         stats,
         content,
@@ -681,6 +719,7 @@ function generatePageTemplate(options) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} | Gem Nana AI 提示词库</title>
     <meta name="description" content="${description}">
+    <meta name="keywords" content="${keywords}">
     <link rel="stylesheet" href="${stylePath}?v=${Date.now()}">
 ${schemaMarkup}
 </head>
@@ -757,8 +796,9 @@ function generateHomePage(allItems, stats) {
     `;
 
     const html = generatePageTemplate({
-        title: '首页',
-        description: `精选 AI 提示词收藏库，包含 ${stats.total} 个优质案例`,
+        title: 'AI提示词库 - ' + stats.total + '个Midjourney/Stable Diffusion/ChatGPT提示词案例',
+        description: `免费AI图片生成提示词库，收录${stats.total}个精选Prompt案例，支持Midjourney、DALL-E、Stable Diffusion、Gemini等工具。包含中英文提示词、图像编辑、人像生成、创意设计等分类，助力AI绘画创作。`,
+        keywords: 'AI提示词,Prompt,Midjourney提示词,Stable Diffusion,DALL-E,ChatGPT,Gemini,图片生成,AI绘画,提示词库,人像生成,创意设计,3D转换,图像编辑',
         currentPage: 'home',
         stats,
         content,
@@ -797,8 +837,8 @@ function generateImagePage(imageItems, stats) {
     `;
 
     const html = generatePageTemplate({
-        title: '图片生成',
-        description: `${imageItems.length} 个精选图片生成提示词案例`,
+        title: 'AI图片生成提示词 - ' + imageItems.length + '个Midjourney/Stable Diffusion Prompt案例',
+        description: `${imageItems.length}个精选AI图片生成提示词，涵盖Midjourney、Stable Diffusion、DALL-E等主流工具，包含人像摄影、创意设计、3D转换、图像编辑等多种风格，提供中英双语Prompt参考。`,
         currentPage: 'image',
         stats,
         content,
@@ -842,8 +882,8 @@ function generateVideoPage(videoItems, stats) {
     `;
 
     const html = generatePageTemplate({
-        title: '视频生成',
-        description: `${sortedItems.length} 个精选视频生成提示词案例`,
+        title: 'AI视频生成提示词 - ' + sortedItems.length + '个Sora/Runway/Pika Prompt案例',
+        description: `${sortedItems.length}个精选AI视频生成提示词，支持Sora、Runway、Pika、Veo等主流视频生成工具，涵盖电影级场景、动画特效、创意视频等类型，提供中英双语Prompt参考。`,
         currentPage: 'video',
         stats,
         content,
@@ -883,8 +923,8 @@ function generateTextPage(textItems, stats) {
     `;
 
     const html = generatePageTemplate({
-        title: '文字提示词',
-        description: '文字提示词即将上线',
+        title: 'AI文字提示词库 - ChatGPT/Claude/Gemini Prompt大全',
+        description: 'AI文字提示词库即将上线，将收录ChatGPT、Claude、Gemini等主流AI对话工具的高级Prompt，涵盖写作、编程、分析、创意等多种场景，助力提升AI对话效率。',
         currentPage: 'text',
         stats,
         content,
