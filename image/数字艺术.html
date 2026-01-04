@@ -6,7 +6,7 @@
     <title>数字艺术 - 图片生成 | Gem Nana AI 提示词库</title>
     <meta name="description" content="22 个 数字艺术 相关的图片生成提示词案例">
     <meta name="keywords" content="AI提示词,Prompt,Midjourney,Stable Diffusion,DALL-E,图片生成,AI绘画,提示词库">
-    <link rel="stylesheet" href="../assets/style.css?v=1767505315935">
+    <link rel="stylesheet" href="../assets/style.css?v=1767506154536">
 
     <script type="application/ld+json">
     {
@@ -983,12 +983,14 @@ Generate a hyper-realistic landscape image o...</p>
             `;
         }
 
-        html += `
-            <div class="modal-section">
-                <h3>📣 发布到公众号</h3>
-                <button class="view-full-btn" onclick="publishToWechat(${item.id}, this)">发布到草稿箱</button>
-            </div>
-        `;
+        if (checkLocalAccess()) {
+            html += `
+                <div class="modal-section">
+                    <h3>📣 发布到公众号</h3>
+                    <button class="view-full-btn" onclick="publishToWechat(${item.id}, this)">发布到草稿箱</button>
+                </div>
+            `;
+        }
 
         // 图片
         if (item.images && item.images.length > 0) {

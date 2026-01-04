@@ -319,12 +319,14 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
             \`;
         }
 
-        html += \`
-            <div class="modal-section">
-                <h3>📣 发布到公众号</h3>
-                <button class="view-full-btn" onclick="publishToWechat(\${item.id}, this)">发布到草稿箱</button>
-            </div>
-        \`;
+        if (checkLocalAccess()) {
+            html += \`
+                <div class="modal-section">
+                    <h3>📣 发布到公众号</h3>
+                    <button class="view-full-btn" onclick="publishToWechat(\${item.id}, this)">发布到草稿箱</button>
+                </div>
+            \`;
+        }
 
         // 图片
         if (item.images && item.images.length > 0) {

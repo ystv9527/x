@@ -6,7 +6,7 @@
     <title>AI图片生成提示词 - 558个Midjourney/Stable Diffusion Prompt案例 | Gem Nana AI 提示词库</title>
     <meta name="description" content="558个精选AI图片生成提示词，涵盖Midjourney、Stable Diffusion、DALL-E等主流工具，包含人像摄影、创意设计、3D转换、图像编辑等多种风格，提供中英双语Prompt参考。">
     <meta name="keywords" content="AI提示词,Prompt,Midjourney,Stable Diffusion,DALL-E,图片生成,AI绘画,提示词库">
-    <link rel="stylesheet" href="../assets/style.css?v=1767505315909">
+    <link rel="stylesheet" href="../assets/style.css?v=1767506154485">
 
     <script type="application/ld+json">
     {
@@ -3753,12 +3753,14 @@ Subject: Virtual holographic character [CHARACTER], floating above a modern desk
             `;
         }
 
-        html += `
-            <div class="modal-section">
-                <h3>📣 发布到公众号</h3>
-                <button class="view-full-btn" onclick="publishToWechat(${item.id}, this)">发布到草稿箱</button>
-            </div>
-        `;
+        if (checkLocalAccess()) {
+            html += `
+                <div class="modal-section">
+                    <h3>📣 发布到公众号</h3>
+                    <button class="view-full-btn" onclick="publishToWechat(${item.id}, this)">发布到草稿箱</button>
+                </div>
+            `;
+        }
 
         // 图片
         if (item.images && item.images.length > 0) {
