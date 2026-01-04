@@ -6,7 +6,7 @@
     <title>AI视频生成提示词 - 6个Sora/Runway/Pika Prompt案例 | Gem Nana AI 提示词库</title>
     <meta name="description" content="6个精选AI视频生成提示词，支持Sora、Runway、Pika、Veo等主流视频生成工具，涵盖电影级场景、动画特效、创意视频等类型，提供中英双语Prompt参考。">
     <meta name="keywords" content="AI提示词,Prompt,Midjourney,Stable Diffusion,DALL-E,图片生成,AI绘画,提示词库">
-    <link rel="stylesheet" href="../assets/style.css?v=1767406874161">
+    <link rel="stylesheet" href="../assets/style.css?v=1767505315914">
 
     <script type="application/ld+json">
     {
@@ -53,12 +53,12 @@
             <a href="../index.html" class="nav-item ">
                 <span class="nav-icon">🏠</span>
                 <span class="nav-text">首页</span>
-                <span class="nav-count">561</span>
+                <span class="nav-count">564</span>
             </a>
             <a href="../image/index.html" class="nav-item ">
                 <span class="nav-icon">📸</span>
                 <span class="nav-text">图片生成</span>
-                <span class="nav-count">555</span>
+                <span class="nav-count">558</span>
             </a>
             <a href="#" class="nav-item active">
                 <span class="nav-icon">🎬</span>
@@ -124,6 +124,7 @@
     "frame_rate": "60fps",
     "camera_movem...</p>
             </div>
+                    
                     <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\"555\"]').click();">查看完整内容</button>
                 </div>
             </details>
@@ -156,6 +157,7 @@
                 <h4>🇬🇧 English Prompt</h4>
                 <p>Crane-to-ground transition, large shipyard at dawn as cranes move containers in sync, camera descends revealing workers in orange suits, sound of engines, seagulls, and steel tension cables, pale gold...</p>
             </div>
+                    
                     <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\"539\"]').click();">查看完整内容</button>
                 </div>
             </details>
@@ -196,6 +198,7 @@
     "scene": {
       "setting": "A 90s living room with ...</p>
             </div>
+                    
                     <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\"534\"]').click();">查看完整内容</button>
                 </div>
             </details>
@@ -240,6 +243,7 @@
     "composition": "dynamic tracking shot from behind the lead helicopter, sweeping through tight canyon turns",
     "lens": "telephoto lens with shallow dept...</p>
             </div>
+                    
                     <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\"530\"]').click();">查看完整内容</button>
                 </div>
             </details>
@@ -275,6 +279,7 @@
                 <h4>🇬🇧 English Prompt</h4>
                 <p>Veo-3.1 Fast in A dynamic, high-speed chase featuring two modern, black European sports coupes (like a BMW M4 or similar), racing down a scenic, winding mountain highway. The clip focuses on the momen...</p>
             </div>
+                    
                     <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\"525\"]').click();">查看完整内容</button>
                 </div>
             </details>
@@ -317,6 +322,7 @@ Made with Veo 3.1 on @BasedLabsAI
 {
   "prompt": "A night-time dashcam video on a rural road. The car headlights reveal two d...</p>
             </div>
+                    
                     <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\"407\"]').click();">查看完整内容</button>
                 </div>
             </details>
@@ -389,6 +395,13 @@ Made with Veo 3.1 on @BasedLabsAI
             `;
         }
 
+        html += `
+            <div class="modal-section">
+                <h3>📣 发布到公众号</h3>
+                <button class="view-full-btn" onclick="publishToWechat(${item.id}, this)">发布到草稿箱</button>
+            </div>
+        `;
+
         // 图片
         if (item.images && item.images.length > 0) {
             html += '<div class="modal-section"><h3>📸 图片</h3><div class="modal-images">';
@@ -460,6 +473,38 @@ Made with Veo 3.1 on @BasedLabsAI
         }).catch(err => {
             console.error('复制失败:', err);
         });
+    }
+
+    async function publishToWechat(id, button) {
+        if (!id) return;
+        const originalText = button ? button.textContent : '';
+        if (button) {
+            button.disabled = true;
+            button.textContent = '发布中...';
+        }
+
+        try {
+            const response = await fetch('/api/wechat-publish', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id })
+            });
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                alert('✅ 已发布到公众号草稿箱');
+            } else {
+                const message = result.error || result.message || ('HTTP ' + response.status);
+                alert('❌ 发布失败：' + message);
+            }
+        } catch (error) {
+            alert('❌ 发布失败：' + error.message);
+        } finally {
+            if (button) {
+                button.disabled = false;
+                button.textContent = originalText || '发布到草稿箱';
+            }
+        }
     }
 
     // 关闭模态框
@@ -585,6 +630,54 @@ Made with Veo 3.1 on @BasedLabsAI
             }
 
             const summary = item.summary ? escapeHtml(item.summary) : '';
+            const hasChinese = item.contentChinese && item.contentChinese.trim();
+            const hasEnglish = item.contentEnglish && item.contentEnglish.trim();
+            const hasContent = item.content && item.content.trim();
+            let promptPreview = '';
+
+            if (hasChinese || hasEnglish || hasContent) {
+                let chinesePreview = '';
+                let englishPreview = '';
+                let contentPreview = '';
+
+                if (hasChinese) {
+                    const text = item.contentChinese.substring(0, 200);
+                    const truncated = item.contentChinese.length > 200 ? '...' : '';
+                    chinesePreview = `<div class="prompt-section">
+                        <h4>🇨🇳 中文提示词</h4>
+                        <p>${escapeHtml(text)}${truncated}</p>
+                    </div>`;
+                }
+
+                if (hasEnglish) {
+                    const text = item.contentEnglish.substring(0, 200);
+                    const truncated = item.contentEnglish.length > 200 ? '...' : '';
+                    englishPreview = `<div class="prompt-section">
+                        <h4>🇬🇧 English Prompt</h4>
+                        <p>${escapeHtml(text)}${truncated}</p>
+                    </div>`;
+                }
+
+                if (!hasChinese && !hasEnglish && hasContent) {
+                    const text = item.content.substring(0, 200);
+                    const truncated = item.content.length > 200 ? '...' : '';
+                    contentPreview = `<div class="prompt-section">
+                        <h4>📝 提示词</h4>
+                        <p>${escapeHtml(text)}${truncated}</p>
+                    </div>`;
+                }
+
+                promptPreview = `
+                    <details class="prompt-preview">
+                        <summary>🎨 查看AI提示词</summary>
+                        <div class="prompt-content">
+                            ${chinesePreview}
+                            ${englishPreview}
+                            ${contentPreview}
+                            <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\"${item.id}\"]').click();">查看完整内容</button>
+                        </div>
+                    </details>`;
+            }
 
             return `
                 <div class="case-card" data-id="${item.id}">
@@ -598,6 +691,7 @@ Made with Veo 3.1 on @BasedLabsAI
                             <span class="case-source">${item.source || ''}</span>
                         </div>
                         <div class="case-tags">${tags}</div>
+                        ${promptPreview}
                     </div>
                 </div>`;
         }).join('');

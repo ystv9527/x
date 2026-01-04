@@ -138,11 +138,16 @@ function generateCaseCard(item, basePath = '.') {
 
     // 生成提示词预览（截取前200字符，SEO友好）
     let promptPreview = '';
-    if (item.contentChinese || item.contentEnglish) {
+    const hasChinese = item.contentChinese && item.contentChinese.trim();
+    const hasEnglish = item.contentEnglish && item.contentEnglish.trim();
+    const hasContent = item.content && item.content.trim();
+
+    if (hasChinese || hasEnglish || hasContent) {
         let chinesePreview = '';
         let englishPreview = '';
+        let contentPreview = '';
 
-        if (item.contentChinese) {
+        if (hasChinese) {
             const text = item.contentChinese.substring(0, 200);
             const truncated = item.contentChinese.length > 200 ? '...' : '';
             chinesePreview = `<div class="prompt-section">
@@ -151,11 +156,20 @@ function generateCaseCard(item, basePath = '.') {
             </div>`;
         }
 
-        if (item.contentEnglish) {
+        if (hasEnglish) {
             const text = item.contentEnglish.substring(0, 200);
             const truncated = item.contentEnglish.length > 200 ? '...' : '';
             englishPreview = `<div class="prompt-section">
                 <h4>🇬🇧 English Prompt</h4>
+                <p>${escapeHtml(text)}${truncated}</p>
+            </div>`;
+        }
+
+        if (!hasChinese && !hasEnglish && hasContent) {
+            const text = item.content.substring(0, 200);
+            const truncated = item.content.length > 200 ? '...' : '';
+            contentPreview = `<div class="prompt-section">
+                <h4>📝 提示词</h4>
                 <p>${escapeHtml(text)}${truncated}</p>
             </div>`;
         }
@@ -166,6 +180,7 @@ function generateCaseCard(item, basePath = '.') {
                 <div class="prompt-content">
                     ${chinesePreview}
                     ${englishPreview}
+                    ${contentPreview}
                     <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\\"${item.id}\\"]').click();">查看完整内容</button>
                 </div>
             </details>`;
@@ -304,6 +319,13 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
             \`;
         }
 
+        html += \`
+            <div class="modal-section">
+                <h3>📣 发布到公众号</h3>
+                <button class="view-full-btn" onclick="publishToWechat(\${item.id}, this)">发布到草稿箱</button>
+            </div>
+        \`;
+
         // 图片
         if (item.images && item.images.length > 0) {
             html += '<div class="modal-section"><h3>📸 图片</h3><div class="modal-images">';
@@ -375,6 +397,38 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
         }).catch(err => {
             console.error('复制失败:', err);
         });
+    }
+
+    async function publishToWechat(id, button) {
+        if (!id) return;
+        const originalText = button ? button.textContent : '';
+        if (button) {
+            button.disabled = true;
+            button.textContent = '发布中...';
+        }
+
+        try {
+            const response = await fetch('/api/wechat-publish', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id })
+            });
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                alert('✅ 已发布到公众号草稿箱');
+            } else {
+                const message = result.error || result.message || ('HTTP ' + response.status);
+                alert('❌ 发布失败：' + message);
+            }
+        } catch (error) {
+            alert('❌ 发布失败：' + error.message);
+        } finally {
+            if (button) {
+                button.disabled = false;
+                button.textContent = originalText || '发布到草稿箱';
+            }
+        }
     }
 
     // 关闭模态框
@@ -500,6 +554,54 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
             }
 
             const summary = item.summary ? escapeHtml(item.summary) : '';
+            const hasChinese = item.contentChinese && item.contentChinese.trim();
+            const hasEnglish = item.contentEnglish && item.contentEnglish.trim();
+            const hasContent = item.content && item.content.trim();
+            let promptPreview = '';
+
+            if (hasChinese || hasEnglish || hasContent) {
+                let chinesePreview = '';
+                let englishPreview = '';
+                let contentPreview = '';
+
+                if (hasChinese) {
+                    const text = item.contentChinese.substring(0, 200);
+                    const truncated = item.contentChinese.length > 200 ? '...' : '';
+                    chinesePreview = \`<div class="prompt-section">
+                        <h4>🇨🇳 中文提示词</h4>
+                        <p>\${escapeHtml(text)}\${truncated}</p>
+                    </div>\`;
+                }
+
+                if (hasEnglish) {
+                    const text = item.contentEnglish.substring(0, 200);
+                    const truncated = item.contentEnglish.length > 200 ? '...' : '';
+                    englishPreview = \`<div class="prompt-section">
+                        <h4>🇬🇧 English Prompt</h4>
+                        <p>\${escapeHtml(text)}\${truncated}</p>
+                    </div>\`;
+                }
+
+                if (!hasChinese && !hasEnglish && hasContent) {
+                    const text = item.content.substring(0, 200);
+                    const truncated = item.content.length > 200 ? '...' : '';
+                    contentPreview = \`<div class="prompt-section">
+                        <h4>📝 提示词</h4>
+                        <p>\${escapeHtml(text)}\${truncated}</p>
+                    </div>\`;
+                }
+
+                promptPreview = \`
+                    <details class="prompt-preview">
+                        <summary>🎨 查看AI提示词</summary>
+                        <div class="prompt-content">
+                            \${chinesePreview}
+                            \${englishPreview}
+                            \${contentPreview}
+                            <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\\\"${'${item.id}'}\\\"]').click();">查看完整内容</button>
+                        </div>
+                    </details>\`;
+            }
 
             return \`
                 <div class="case-card" data-id="\${item.id}">
@@ -513,6 +615,7 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
                             <span class="case-source">\${item.source || ''}</span>
                         </div>
                         <div class="case-tags">\${tags}</div>
+                        \${promptPreview}
                     </div>
                 </div>\`;
         }).join('');
