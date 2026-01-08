@@ -238,6 +238,7 @@ function generateSidebar(currentPage = 'home', stats = {}) {
         </nav>
 
         <div class="sidebar-footer">
+            <a href=\"${currentPage === 'home' ? 'settings.html' : '../settings.html'}\" class=\"local-settings-link\">??</a>
             <p>© 2025 Gem Nana</p>
         </div>
     </aside>`;
@@ -662,6 +663,11 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
     // 初始化
     document.addEventListener('DOMContentLoaded', () => {
         bindCardEvents();
+
+        const settingsLink = document.querySelector('.local-settings-link');
+        if (settingsLink && checkLocalAccess()) {
+            settingsLink.style.display = 'inline-block';
+        }
 
         // 搜索功能
         const searchInput = document.getElementById('searchInput');
