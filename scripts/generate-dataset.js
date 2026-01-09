@@ -22,12 +22,15 @@ const OUTPUT_FILE = path.join(__dirname, '../data/contents.json');
  */
 function parseMarkdown(markdown) {
   const items = [];
+  const entryMarker = '<!-- ENTRY -->';
 
-  // 按 "## " 分割各个条目（忽略第一个标题）
-  const sections = markdown.split(/\n## /).filter(s => s.trim());
+  // 优先按 ENTRY 标记分割，避免内容内出现 "## " 造成误拆分
+  const sections = markdown.includes(entryMarker)
+    ? markdown.split(entryMarker).map(s => s.trim()).filter(s => s)
+    : markdown.split(/\n## /).map(s => s.trim()).filter(s => s);
 
   sections.forEach((section, index) => {
-    if (!section.trim() || section.startsWith('#')) {
+    if (!section.trim()) {
       return;
     }
 
@@ -51,7 +54,13 @@ function parseMarkdown(markdown) {
 
     // 提取标题（第一行）- 处理Windows换行符
     const lines = section.split(/\r?\n/);
-    const titleMatch = lines[0].match(/^标题：(.+)$/) || lines[0].match(/^(.+)$/);
+    const firstLine = lines[0].trim().startsWith('## ') ? lines[0].trim().slice(3) : lines[0].trim();
+
+    if (!firstLine || firstLine.startsWith('#')) {
+      return;
+    }
+
+    const titleMatch = firstLine.match(/^标题：(.+)$/) || firstLine.match(/^(.+)$/);
     if (titleMatch) {
       item.title = titleMatch[1].trim();
     }

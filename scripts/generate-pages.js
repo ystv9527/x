@@ -50,7 +50,17 @@ function groupByMediaType(items) {
         text: []
     };
 
+    
     items.forEach(item => {
+        const tags = Array.isArray(item.tags)
+            ? item.tags
+            : (typeof item.tags === 'string' ? item.tags.split(',').map(t => t.trim()).filter(t => t) : []);
+
+        if (tags.includes('\u7cfb\u7edf\u63d0\u793a\u8bcd')) {
+            groups.text.push(item);
+            return;
+        }
+
         // 优先根据实际内容判断媒体类型
         if (item.videos && item.videos.length > 0) {
             // 有视频内容 → 视频分类
@@ -232,7 +242,7 @@ function generateSidebar(currentPage = 'home', stats = {}) {
             </a>
             <a href="${currentPage.startsWith('text') ? '#' : (currentPage === 'home' ? 'text/index.html' : '../text/index.html')}" class="nav-item ${currentPage.startsWith('text') ? 'active' : ''}">
                 <span class="nav-icon">💬</span>
-                <span class="nav-text">文字提示词</span>
+                <span class="nav-text">系统提示词</span>
                 <span class="nav-count">${stats.text || 0}</span>
             </a>
         </nav>
@@ -733,7 +743,7 @@ function generateSchema(options) {
             "@type": "WebSite",
             "name": "Gem Nana AI 提示词库",
             "url": SITE_URL + "/",
-            "description": "精选 AI 提示词收藏库，包含图片生成、视频生成和文字提示词等优质案例",
+            "description": "精选 AI 提示词收藏库，包含图片生成、视频生成和系统提示词等优质案例",
             "inLanguage": "zh-CN",
             "potentialAction": {
                 "@type": "SearchAction",
@@ -1017,46 +1027,59 @@ function generateVideoPage(videoItems, stats) {
  * 生成文字主页
  */
 function generateTextPage(textItems, stats) {
-    console.log('📄 生成文字主页...');
+    console.log('Generating text page...');
+
+    const sortedItems = textItems.sort((a, b) => (b.id || 0) - (a.id || 0));
+    const titleText = '\u7cfb\u7edf\u63d0\u793a\u8bcd';
+    const comingSoonText = '\u5373\u5c06\u4e0a\u7ebf\uff0c\u656c\u8bf7\u671f\u5f85';
+    const comingSoonHeadline = '\u5185\u5bb9\u7b79\u5907\u4e2d';
+    const comingSoonLine1 = '\u6211\u4eec\u6b63\u5728\u6536\u96c6\u548c\u6574\u7406\u4f18\u8d28\u7684 AI \u5bf9\u8bdd\u63d0\u793a\u8bcd';
+    const comingSoonLine2 = '\u5305\u62ec ChatGPT\u3001Claude\u3001Gemini \u7b49\u5de5\u5177\u7684\u9ad8\u7ea7\u7528\u6cd5';
+    const headerCountText = sortedItems.length > 0
+        ? `\u7cbe\u9009 ${sortedItems.length} \u4e2a${titleText}\u6848\u4f8b`
+        : comingSoonText;
+    const noResultsText = '\u6682\u65e0' + titleText + '\u6848\u4f8b\uff0c\u656c\u8bf7\u671f\u5f85...';
+
+    const casesHtml = sortedItems.length > 0
+        ? sortedItems.map(item => generateCaseCard(item, '..')).join('\n')
+        : `<div class="no-results">${noResultsText}</div>`;
 
     const content = `
         <div class="page-header">
-            <h1>💬 文字提示词</h1>
-            <p>即将上线，敬请期待</p>
+            <h1>\u{1F4AC} ${titleText}</h1>
+            <p>${headerCountText}</p>
         </div>
 
-        <div class="coming-soon">
-            <div class="coming-soon-icon">🚧</div>
-            <h2>内容筹备中</h2>
-            <p>我们正在收集和整理优质的 AI 对话提示词</p>
-            <p>包括 ChatGPT、Claude、Gemini 等工具的高级用法</p>
+        <div class="${sortedItems.length > 0 ? 'case-grid' : 'coming-soon'}">
+            ${sortedItems.length > 0 ? casesHtml : `
+            <div class="coming-soon-icon">\u{1F6A7}</div>
+            <h2>${comingSoonHeadline}</h2>
+            <p>${comingSoonLine1}</p>
+            <p>${comingSoonLine2}</p>`}
         </div>
     `;
 
     const html = generatePageTemplate({
-        title: 'AI文字提示词库 - ChatGPT/Claude/Gemini Prompt大全',
-        description: 'AI文字提示词库即将上线，将收录ChatGPT、Claude、Gemini等主流AI对话工具的高级Prompt，涵盖写作、编程、分析、创意等多种场景，助力提升AI对话效率。',
+        title: 'AI' + titleText + '\u5e93 - ChatGPT/Claude/Gemini Prompt\u5927\u5168',
+        description: 'AI' + titleText + '\u5e93\u5373\u5c06\u4e0a\u7ebf\uff0c\u5c06\u6536\u5f55ChatGPT\u3001Claude\u3001Gemini\u7b49\u4e3b\u6d41AI\u5bf9\u8bdd\u5de5\u5177\u7684\u9ad8\u7ea7Prompt\uff0c\u6db5\u76d6\u5199\u4f5c\u3001\u7f16\u7a0b\u3001\u5206\u6790\u3001\u521b\u610f\u7b49\u591a\u79cd\u573a\u666f\uff0c\u52a9\u529b\u63d0\u5347AI\u5bf9\u8bdd\u6548\u7387\u3002',
         currentPage: 'text',
         stats,
         content,
         stylePath: '../assets/style.css',
-        items: [],
+        items: sortedItems,
         dataPath: '../',
         pageType: 'collection',
         pageUrl: SITE_URL + '/text/',
         breadcrumbs: [
-            { name: '首页', url: SITE_URL + '/' },
-            { name: '文字提示词', url: SITE_URL + '/text/' }
+            { name: '\u9996\u9875', url: SITE_URL + '/' },
+            { name: titleText, url: SITE_URL + '/text/' }
         ]
     });
 
     fs.writeFileSync(path.join(ROOT_DIR, 'text', 'index.html'), html, 'utf8');
-    console.log('✅ 文字主页生成完成\n');
+    console.log('Text page generated.\n');
 }
 
-/**
- * 生成标签分类页（图片）
- */
 function generateImageTagPages(imageItems, stats) {
     console.log('📄 生成图片标签分类页...');
 
