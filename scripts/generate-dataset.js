@@ -23,6 +23,21 @@ const OUTPUT_FILE = path.join(__dirname, '../data/contents.json');
 function parseMarkdown(markdown) {
   const items = [];
   const entryMarker = '<!-- ENTRY -->';
+  const markerContentStart = '<!-- CONTENT_START -->';
+  const markerContentEnd = '<!-- CONTENT_END -->';
+  const markerContentZhStart = '<!-- CONTENT_ZH_START -->';
+  const markerContentZhEnd = '<!-- CONTENT_ZH_END -->';
+  const markerContentEnStart = '<!-- CONTENT_EN_START -->';
+  const markerContentEnEnd = '<!-- CONTENT_EN_END -->';
+
+  function extractBetween(source, startMarker, endMarker) {
+    const startIndex = source.indexOf(startMarker);
+    if (startIndex === -1) return null;
+    const endIndex = source.indexOf(endMarker, startIndex + startMarker.length);
+    if (endIndex === -1) return null;
+    return source.slice(startIndex + startMarker.length, endIndex);
+  }
+
 
   // 优先按 ENTRY 标记分割，避免内容内出现 "## " 造成误拆分
   const sections = markdown.includes(entryMarker)
@@ -104,21 +119,36 @@ function parseMarkdown(markdown) {
       }
     }
 
-    // 提取中文内容
-    const chineseMatch = section.match(/###\s*🇨🇳\s*中文内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
-    if (chineseMatch) {
-      item.contentChinese = chineseMatch[1].trim();
+    // Extract Chinese content
+    const chineseFromMarker = extractBetween(section, markerContentZhStart, markerContentZhEnd);
+    if (chineseFromMarker !== null) {
+      item.contentChinese = chineseFromMarker.trim();
+    } else {
+      const chineseMatch = section.match(/###\s*(?:\u4e2d\u6587\u5185\u5bb9|Chinese Content)\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+      if (chineseMatch) {
+        item.contentChinese = chineseMatch[1].trim();
+      }
     }
 
-    // 提取英文内容
-    const englishMatch = section.match(/###\s*🇺🇸\s*英文内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
-    if (englishMatch) {
-      item.contentEnglish = englishMatch[1].trim();
+    // Extract English content
+    const englishFromMarker = extractBetween(section, markerContentEnStart, markerContentEnEnd);
+    if (englishFromMarker !== null) {
+      item.contentEnglish = englishFromMarker.trim();
+    } else {
+      const englishMatch = section.match(/###\s*(?:\u82f1\u6587\u5185\u5bb9|English Content)\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+      if (englishMatch) {
+        item.contentEnglish = englishMatch[1].trim();
+      }
     }
 
-    // 兼容旧版本：提取完整内容（如果没有分离的中英文内容）
-    if (!item.contentChinese && !item.contentEnglish) {
-      const contentMatch = section.match(/###\s*完整内容\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    // Extract full content (fallback only when no split content is present)
+    const contentFromMarker = extractBetween(section, markerContentStart, markerContentEnd);
+    if (contentFromMarker !== null) {
+      item.content = contentFromMarker.trim();
+    }
+
+    if (!item.contentChinese && !item.contentEnglish && !item.content) {
+      const contentMatch = section.match(/###\s*\u5b8c\u6574\u5185\u5bb9\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
       if (contentMatch) {
         item.content = contentMatch[1].trim();
       }
