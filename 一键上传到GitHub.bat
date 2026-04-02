@@ -1,94 +1,152 @@
 @echo off
-setlocal enabledelayedexpansion
+setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
-echo ========================================
-echo    一键上传新内容到GitHub
-echo ========================================
-echo.
 
 cd /d "%~dp0"
 
-REM 设置代理（解决 cmd 环境下 GitHub 连接问题）
-set HTTP_PROXY=http://127.0.0.1:7897
-set HTTPS_PROXY=http://127.0.0.1:7897
-echo 💡 已配置代理: %HTTP_PROXY%
+echo ========================================
+echo    Upload new content to GitHub
+echo ========================================
 echo.
 
-echo [1/4] 修复GitHub Pages路径...
-node fix-paths-for-github.js
-if errorlevel 1 (
-    echo ❌ 路径修复失败
-    pause
-    exit /b 1
+if defined GIT_PROXY (
+    set "HTTP_PROXY=%GIT_PROXY%"
+    set "HTTPS_PROXY=%GIT_PROXY%"
+    echo [info] Proxy enabled via GIT_PROXY=%GIT_PROXY%
+) else (
+    echo [info] Proxy not overridden. Using current network settings.
 )
 echo.
 
-echo [2/4] 重新生成数据集和sitemap...
-call npm run build
-if errorlevel 1 (
-    echo ❌ 构建失败
-    pause
-    exit /b 1
+for /f "usebackq delims=" %%i in (`git remote get-url origin 2^>nul`) do set "ORIGIN_URL=%%i"
+if defined ORIGIN_URL (
+    echo [info] origin: !ORIGIN_URL!
+    echo.
 )
-echo.
 
-echo [3/4] 添加并提交更改...
-git add .
-
-REM 检查是否有变更
-git diff-index --quiet --cached HEAD
-if errorlevel 1 (
-    REM 有变更，执行提交
-    git commit -m "更新内容"
+if /i "%SKIP_BUILD%"=="1" (
+    echo [1/4] Skipping build because SKIP_BUILD=1
+) else (
+    echo [1/4] Fix GitHub Pages paths...
+    node fix-paths-for-github.js
     if errorlevel 1 (
-        echo ❌ 提交失败
+        echo [error] Failed to fix GitHub Pages paths.
+        pause
+        exit /b 1
+    )
+
+    echo.
+    echo [2/4] Rebuild data and sitemap...
+    call npm run build
+    if errorlevel 1 (
+        echo [error] Build failed.
+        pause
+        exit /b 1
+    )
+)
+echo.
+
+echo [3/4] Stage and commit changes...
+git add .
+git diff --cached --quiet
+if errorlevel 1 (
+    git commit -m "Update content"
+    if errorlevel 1 (
+        echo [error] Commit failed.
         pause
         exit /b 1
     )
 ) else (
-    echo ⚠️ 没有新内容需要提交
+    echo [info] No staged changes to commit.
+)
+echo.
+
+if /i "%SKIP_PUSH%"=="1" (
+    echo [4/4] Skipping push because SKIP_PUSH=1
+    echo.
     pause
     exit /b 0
 )
+
+echo [4/4] Push to GitHub...
+echo [info] If push fails, the script will retry up to 5 times.
 echo.
 
-echo [4/4] 推送到GitHub...
-echo 💡 提示：如遇到网络问题，将自动重试 5 次
-echo.
+set "RETRY=0"
+set "LAST_PUSH_LOG=%TEMP%\gitpromts-last-push.log"
 
-set retry=0
 :push_retry
-git push
-if errorlevel 1 (
-    set /a retry+=1
-    if !retry! lss 5 (
-        echo ⚠️ 推送失败，10秒后重试（!retry!/5）...
-        echo    如果持续失败，可能需要配置代理或使用 SSH
-        timeout /t 10 /nobreak >nul
-        goto push_retry
-    ) else (
-        echo.
-        echo ❌ 推送失败 5 次，可能原因：
-        echo    1. 网络连接不稳定（GitHub 在国内访问较慢）
-        echo    2. 需要配置 Git 代理
-        echo    3. 文件过大（视频超过 50MB）
-        echo.
-        echo 💡 解决方案：
-        echo    方案1：稍后手动运行 'git push'
-        echo    方案2：配置代理 'git config --global http.proxy http://127.0.0.1:端口'
-        echo    方案3：使用 SSH 而不是 HTTPS
-        echo.
-        echo 📝 当前代码已提交到本地，等网络恢复后可直接运行 'git push'
-        echo.
-        pause
-        exit /b 1
-    )
+git push >"%LAST_PUSH_LOG%" 2>&1
+set "PUSH_EXIT=!errorlevel!"
+type "%LAST_PUSH_LOG%"
+if !PUSH_EXIT! equ 0 goto push_done
+
+set /a RETRY+=1
+if !RETRY! lss 5 (
+    echo.
+    echo [warn] Push failed. Retry !RETRY!/5 in 10 seconds...
+    timeout /t 10 /nobreak >nul
+    goto push_retry
 )
 
+call :print_push_guidance "%LAST_PUSH_LOG%"
+pause
+exit /b 1
+
+:push_done
 echo.
 echo ========================================
-echo    ✅ 上传成功！
-echo    等待1-2分钟后访问GitHub Pages查看
+echo    Upload succeeded
+echo    Wait 1-2 minutes, then check GitHub Pages
 echo ========================================
 echo.
 pause
+exit /b 0
+
+:print_push_guidance
+set "LOG_FILE=%~1"
+echo.
+echo [error] Push failed 5 times.
+echo.
+
+findstr /C:"Permission to " "%LOG_FILE%" >nul
+if not errorlevel 1 (
+    echo Cause: the current GitHub account does not have write access to this repo.
+    echo.
+    echo Fix:
+    echo 1. Remove the cached github.com credential from Windows Credential Manager.
+    echo 2. Run git push again and sign in with an account that can write to the repo.
+    echo 3. Or switch origin to SSH:
+    echo    git remote set-url origin git@github.com:ystv9527/x.git
+    echo.
+    echo Repo: ystv9527/x
+    goto :eof
+)
+
+findstr /C:"GH001" /C:"Large files detected" /C:"exceeds GitHub's file size limit" "%LOG_FILE%" >nul
+if not errorlevel 1 (
+    echo Cause: one or more tracked files are too large for GitHub.
+    echo.
+    echo Fix:
+    echo 1. Remove the large file from the commit, or use Git LFS.
+    echo 2. Push again after rewriting the commit if needed.
+    goto :eof
+)
+
+findstr /C:"Failed to connect" /C:"Could not resolve host" /C:"Connection timed out" /C:"schannel" /C:"SSL" "%LOG_FILE%" >nul
+if not errorlevel 1 (
+    echo Cause: network, proxy, or TLS connection problem.
+    echo.
+    echo Fix:
+    echo 1. Check whether your proxy is available.
+    echo 2. If you need one, run this script with:
+    echo    set GIT_PROXY=http://127.0.0.1:7897
+    echo 3. Or switch origin to SSH.
+    goto :eof
+)
+
+echo Cause: see the git error shown above.
+echo.
+echo Retry manually with:
+echo    git push
+goto :eof
