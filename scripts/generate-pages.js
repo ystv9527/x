@@ -384,7 +384,7 @@ function generateInlineScript(items, dataPath = '', currentPage = 'home') {
         }
 
         // 通用内容
-        if (item.content) {
+        if (item.content && !item.contentChinese && !item.contentEnglish) {
             html += \`
                 <div class="modal-section">
                     <h3>📝 内容
