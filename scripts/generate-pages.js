@@ -1,1184 +1,833 @@
 #!/usr/bin/env node
 /**
- * 生成所有静态页面
- * 包括：首页、分类主页、标签页
+ * Generate bilingual static pages:
+ * - /zh/* and /en/*
+ * - per-case detail pages: /{lang}/case/{id}.html
+ * - root / index redirect by browser language
  */
 
 const fs = require('fs');
 const path = require('path');
 
-// 配置
 const SITE_URL = 'https://gemnana.com';
 const ROOT_DIR = path.join(__dirname, '..');
 const DATA_DIR = path.join(ROOT_DIR, 'data');
-const ASSETS_PATH = 'assets';
+const CONTENTS_FILE = path.join(DATA_DIR, 'contents.json');
+const LATEST_FILE = path.join(DATA_DIR, 'latest.json');
+const ARCHIVE_FILE = path.join(DATA_DIR, 'archive.json');
 
-console.log('🚀 开始生成静态页面...\n');
+const LANGS = {
+  zh: {
+    htmlLang: 'zh-CN',
+    titleSuffix: 'Gem Nana AI 提示词库',
+    siteName: 'Gem Nana',
+    tagline: 'AI 提示词收藏库',
+    nav: { home: '首页', image: '图片生成', video: '视频生成', text: '文字提示词' },
+    switchLabel: 'English',
+    latestTitle: '最新案例',
+    latestDesc: (n) => `精选 ${n} 个 AI 提示词案例`,
+    imageTitle: '图片生成提示词',
+    imageDesc: (n) => `精选 ${n} 个图片案例`,
+    videoTitle: '视频生成提示词',
+    videoDesc: (n) => `精选 ${n} 个视频案例`,
+    textTitle: '文字提示词',
+    textDesc: (n) => `精选 ${n} 个文字案例`,
+    detailsCta: '查看详情页',
+    previewTitle: '查看提示词',
+    searchPlaceholder: '🔍 搜索标题、摘要、标签…',
+    filterTitle: '🏷️ 标签筛选',
+    clearFilter: '清除筛选',
+    countText: '共 {count} 条内容',
+    noResults: '😕 没有找到匹配内容',
+    promptHeading: '提示词',
+    fallbackMark: '（当前为英文原文）',
+    promptCnHeading: '中文提示词',
+    promptEnHeading: '英文提示词',
+    promptCnFallback: '（中文缺失，回退英文）',
+    promptEnFallback: '（英文缺失，回退中文）',
+    summaryHeading: '内容摘要',
+    sourceHeading: '来源链接',
+    imagesHeading: '图片',
+    videosHeading: '视频',
+    backToList: '← 返回列表',
+    detailNoPrompt: '该案例暂无可展示的提示词内容。',
+    localPublish: '发布到公众号草稿箱',
+    localDelete: '删除该案例',
+    publishLoading: '发布中...',
+    deleteConfirm: '确认删除该案例？此操作不可恢复。',
+    deleteSuccess: '删除成功',
+    settingsLabel: '⚙️ 设置'
+  },
+  en: {
+    htmlLang: 'en',
+    titleSuffix: 'Gem Nana AI Prompt Library',
+    siteName: 'Gem Nana',
+    tagline: 'AI Prompt Collection',
+    nav: { home: 'Home', image: 'Image', video: 'Video', text: 'Text' },
+    switchLabel: '中文',
+    latestTitle: 'Latest Cases',
+    latestDesc: (n) => `${n} curated AI prompt cases`,
+    imageTitle: 'Image Prompt Cases',
+    imageDesc: (n) => `${n} curated image cases`,
+    videoTitle: 'Video Prompt Cases',
+    videoDesc: (n) => `${n} curated video cases`,
+    textTitle: 'Text Prompt Cases',
+    textDesc: (n) => `${n} curated text cases`,
+    detailsCta: 'Open detail page',
+    previewTitle: 'View Prompt',
+    searchPlaceholder: '🔍 Search title, summary, tags…',
+    filterTitle: '🏷️ Tag Filters',
+    clearFilter: 'Clear Filters',
+    countText: '{count} items',
+    noResults: '😕 No matched content',
+    promptHeading: 'Prompt',
+    fallbackMark: '(Showing Chinese original)',
+    promptCnHeading: 'Chinese Prompt',
+    promptEnHeading: 'English Prompt',
+    promptCnFallback: '(Chinese missing, fallback from English)',
+    promptEnFallback: '(English missing, fallback from Chinese)',
+    summaryHeading: 'Summary',
+    sourceHeading: 'Source URL',
+    imagesHeading: 'Images',
+    videosHeading: 'Videos',
+    backToList: '← Back to list',
+    detailNoPrompt: 'No prompt content is available for this case.',
+    localPublish: 'Publish to WeChat Draft',
+    localDelete: 'Delete this case',
+    publishLoading: 'Publishing...',
+    deleteConfirm: 'Delete this case? This action cannot be undone.',
+    deleteSuccess: 'Deleted successfully',
+    settingsLabel: '⚙️ Settings'
+  }
+};
 
-/**
- * 读取所有数据
- */
-function loadAllData() {
-    const latestPath = path.join(DATA_DIR, 'latest.json');
-    const archivePath = path.join(DATA_DIR, 'archive.json');
-
-    let allItems = [];
-
-    // 读取最新数据
-    if (fs.existsSync(latestPath)) {
-        const latest = JSON.parse(fs.readFileSync(latestPath, 'utf8'));
-        allItems.push(...(latest.items || []));
-    }
-
-    // 读取历史数据
-    if (fs.existsSync(archivePath)) {
-        const archive = JSON.parse(fs.readFileSync(archivePath, 'utf8'));
-        allItems.push(...(archive.items || []));
-    }
-
-    console.log(`📊 加载数据：共 ${allItems.length} 个案例`);
-    return allItems;
+function ensureDir(dirPath) {
+  if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
 }
 
-/**
- * 按媒体类型分组
- */
+function writeFile(filePath, content) {
+  ensureDir(path.dirname(filePath));
+  fs.writeFileSync(filePath, content, 'utf8');
+}
+
+function cleanText(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function normalizeTags(tags) {
+  if (Array.isArray(tags)) return tags.map((t) => String(t).trim()).filter(Boolean);
+  if (typeof tags === 'string') return tags.split(',').map((t) => t.trim()).filter(Boolean);
+  return [];
+}
+
+function escapeHtml(value) {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function escapeAttr(value) {
+  return escapeHtml(value).replace(/\n/g, ' ');
+}
+
+function formatMultilineText(text) {
+  const normalized = cleanText(text);
+  if (!normalized) return '';
+  const blocks = normalized.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean);
+  if (blocks.length === 0) return '';
+  return blocks
+    .map((p) => `<p>${escapeHtml(p).replace(/\n/g, '<br>')}</p>`)
+    .join('');
+}
+
+function loadItems() {
+  if (fs.existsSync(CONTENTS_FILE)) {
+    const data = JSON.parse(fs.readFileSync(CONTENTS_FILE, 'utf8'));
+    if (Array.isArray(data.items)) return data.items;
+  }
+
+  const all = [];
+  if (fs.existsSync(LATEST_FILE)) {
+    const latest = JSON.parse(fs.readFileSync(LATEST_FILE, 'utf8'));
+    all.push(...(latest.items || []));
+  }
+  if (fs.existsSync(ARCHIVE_FILE)) {
+    const archive = JSON.parse(fs.readFileSync(ARCHIVE_FILE, 'utf8'));
+    all.push(...(archive.items || []));
+  }
+  return all;
+}
+
+function sortByIdDesc(items) {
+  return [...items].sort((a, b) => (Number(b.id) || 0) - (Number(a.id) || 0));
+}
+
 function groupByMediaType(items) {
-    const groups = {
-        image: [],
-        video: [],
-        text: []
-    };
+  const groups = { image: [], video: [], text: [] };
 
-    
-    items.forEach(item => {
-        const tags = Array.isArray(item.tags)
-            ? item.tags
-            : (typeof item.tags === 'string' ? item.tags.split(',').map(t => t.trim()).filter(t => t) : []);
+  for (const item of items) {
+    const tags = normalizeTags(item.tags);
+    const hasVideo = Array.isArray(item.videos) && item.videos.length > 0;
+    const hasImage = Array.isArray(item.images) && item.images.length > 0;
+    const isText = tags.includes('系统提示词');
 
-        if (tags.includes('\u7cfb\u7edf\u63d0\u793a\u8bcd')) {
-            groups.text.push(item);
-            return;
-        }
+    if (isText) groups.text.push(item);
+    else if (hasVideo) groups.video.push(item);
+    else if (hasImage) groups.image.push(item);
+    else groups.text.push(item);
+  }
 
-        // 优先根据实际内容判断媒体类型
-        if (item.videos && item.videos.length > 0) {
-            // 有视频内容 → 视频分类
-            groups.video.push(item);
-        } else if (item.images && item.images.length > 0) {
-            // 有图片内容 → 图片分类
-            groups.image.push(item);
-        } else {
-            // 纯文本内容 → 文字分类
-            groups.text.push(item);
-        }
-    });
-
-    console.log(`📸 图片案例：${groups.image.length} 个`);
-    console.log(`🎬 视频案例：${groups.video.length} 个`);
-    console.log(`💬 文字案例：${groups.text.length} 个\n`);
-
-    return groups;
+  return groups;
 }
 
-/**
- * 统计标签
- */
 function getTagStats(items) {
-    const tagCount = {};
-    items.forEach(item => {
-        if (item.tags) {
-            item.tags.forEach(tag => {
-                tagCount[tag] = (tagCount[tag] || 0) + 1;
-            });
-        }
-    });
-    return tagCount;
+  const stats = {};
+  for (const item of items) {
+    for (const tag of normalizeTags(item.tags)) {
+      stats[tag] = (stats[tag] || 0) + 1;
+    }
+  }
+  return stats;
 }
 
-/**
- * 标签名转文件名
- */
 function tagToFilename(tag) {
-    return tag.replace(/\s+/g, '-').toLowerCase() + '.html';
+  return `${String(tag).replace(/\s+/g, '-').toLowerCase()}.html`;
 }
 
-/**
- * 生成标签HTML（可点击或不可点击）
- * @param {string} tag - 标签名
- * @param {string} basePath - 基础路径（如 '.' 或 '..'）
- * @param {object} tagStats - 标签统计（用于判断是否有标签页）
- * @param {string} mediaType - 媒体类型（'image', 'video', 'text'）
- */
-function generateTagHtml(tag, basePath = '.', tagStats = {}, mediaType = 'image') {
-    // 只有图片类型且案例数 >= 10 的标签才有专属页面
-    const hasPage = mediaType === 'image' && tagStats[tag] >= 10;
+function getPromptByLang(item, lang) {
+  const zh = cleanText(item.contentChinese);
+  const en = cleanText(item.contentEnglish);
+  const full = cleanText(item.content);
 
-    if (hasPage) {
-        const filename = tagToFilename(tag);
-        const href = `${basePath}/image/${filename}`;
-        return `<a href="${href}" class="tag">${tag}</a>`;
-    } else {
-        return `<span class="tag">${tag}</span>`;
-    }
+  if (lang === 'zh') {
+    if (zh) return { text: zh, isFallback: false };
+    if (en) return { text: en, isFallback: true };
+    if (full) return { text: full, isFallback: true };
+    return { text: '', isFallback: false };
+  }
+
+  if (en) return { text: en, isFallback: false };
+  if (zh) return { text: zh, isFallback: true };
+  if (full) return { text: full, isFallback: true };
+  return { text: '', isFallback: false };
 }
 
-/**
- * 生成案例卡片 HTML
- */
-function generateCaseCard(item, basePath = '.') {
-    const tags = item.tags ? item.tags.map(t => `<span class="tag">${t}</span>`).join('') : '';
-
-    // 缩略图：优先显示图片，其次显示视频，最后显示默认图标
-    let thumbnail;
-    if (item.images && item.images[0]) {
-        thumbnail = `<img src="${basePath}/${item.images[0]}" alt="${item.title}" loading="lazy">`;
-    } else if (item.videos && item.videos[0]) {
-        thumbnail = `<video style="width:100%; height:100%; object-fit: cover;" muted playsinline webkit-playsinline autoplay loop preload="metadata">
-            <source src="${basePath}/${item.videos[0]}" type="video/mp4">
-            您的浏览器不支持视频播放
-        </video>`;
-    } else {
-        thumbnail = `<div class="no-image">📸</div>`;
-    }
-
-    // HTML转义函数
-    const escapeHtml = (text) => text ? text.replace(/</g, '&lt;').replace(/>/g, '&gt;') : '';
-    const summary = escapeHtml(item.summary);
-
-    // 生成提示词预览（截取前200字符，SEO友好）
-    let promptPreview = '';
-    const hasChinese = item.contentChinese && item.contentChinese.trim();
-    const hasEnglish = item.contentEnglish && item.contentEnglish.trim();
-    const hasContent = item.content && item.content.trim();
-
-    if (hasChinese || hasEnglish || hasContent) {
-        let chinesePreview = '';
-        let englishPreview = '';
-        let contentPreview = '';
-
-        if (hasChinese) {
-            const text = item.contentChinese.substring(0, 200);
-            const truncated = item.contentChinese.length > 200 ? '...' : '';
-            chinesePreview = `<div class="prompt-section">
-                <h4>🇨🇳 中文提示词</h4>
-                <p>${escapeHtml(text)}${truncated}</p>
-            </div>`;
-        }
-
-        if (hasEnglish) {
-            const text = item.contentEnglish.substring(0, 200);
-            const truncated = item.contentEnglish.length > 200 ? '...' : '';
-            englishPreview = `<div class="prompt-section">
-                <h4>🇬🇧 English Prompt</h4>
-                <p>${escapeHtml(text)}${truncated}</p>
-            </div>`;
-        }
-
-        if (!hasChinese && !hasEnglish && hasContent) {
-            const text = item.content.substring(0, 200);
-            const truncated = item.content.length > 200 ? '...' : '';
-            contentPreview = `<div class="prompt-section">
-                <h4>📝 提示词</h4>
-                <p>${escapeHtml(text)}${truncated}</p>
-            </div>`;
-        }
-
-        promptPreview = `
-            <details class="prompt-preview">
-                <summary>🎨 查看AI提示词</summary>
-                <div class="prompt-content">
-                    ${chinesePreview}
-                    ${englishPreview}
-                    ${contentPreview}
-                    <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\\"${item.id}\\"]').click();">查看完整内容</button>
-                </div>
-            </details>`;
-    }
-
-    return `
-        <div class="case-card" data-id="${item.id}">
-            <button class="delete-btn" data-id="${item.id}" title="删除这条内容" style="display:none;">🗑️</button>
-            <div class="case-thumbnail">${thumbnail}</div>
-            <div class="case-info">
-                <h3 class="case-title">${item.caseNumber}: ${item.title}</h3>
-                ${summary ? `<p class="case-summary">${summary}</p>` : ''}
-                <div class="case-meta">
-                    <span class="case-date">${item.date || ''}</span>
-                    <span class="case-source">${item.source || ''}</span>
-                </div>
-                <div class="case-tags">${tags}</div>
-                ${promptPreview}
-            </div>
-        </div>`;
+function getDetailPath(item) {
+  return `/case/${Number(item.id)}.html`;
 }
 
-/**
- * 生成侧边栏HTML
- */
-function generateSidebar(currentPage = 'home', stats = {}) {
-    return `
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h1 class="logo">📚 Gem Nana</h1>
-            <p class="tagline">AI 提示词收藏库</p>
+function toLangHref(lang, canonicalPath) {
+  if (canonicalPath === '/') return `/${lang}/index.html`;
+  if (canonicalPath.endsWith('/')) return `/${lang}${canonicalPath}index.html`;
+  return `/${lang}${canonicalPath}`;
+}
+
+function getAbsoluteAssetPath(assetPath) {
+  const clean = String(assetPath || '').replace(/^\/+/, '');
+  return `/${clean}`;
+}
+
+function buildSearchText(item, lang) {
+  const prompt = getPromptByLang(item, lang).text.slice(0, 300);
+  const tags = normalizeTags(item.tags).join(' ');
+  const base = [
+    item.caseNumber || '',
+    item.title || '',
+    item.summary || '',
+    item.source || '',
+    item.url || '',
+    tags,
+    prompt
+  ].join(' ');
+  return base.replace(/\s+/g, ' ').trim().toLowerCase();
+}
+
+function renderCaseCard(item, lang) {
+  const t = LANGS[lang];
+  const detailPath = `/${lang}${getDetailPath(item)}`;
+  const tags = normalizeTags(item.tags);
+  const prompt = getPromptByLang(item, lang);
+  const promptPreviewText = prompt.text ? `${prompt.text.slice(0, 200)}${prompt.text.length > 200 ? '...' : ''}` : '';
+  const fallbackBadge = prompt.isFallback ? ` <span class="fallback-badge">${t.fallbackMark}</span>` : '';
+
+  let thumbnail = '<div class="no-image">📷</div>';
+  if (Array.isArray(item.images) && item.images[0]) {
+    thumbnail = `<img src="${getAbsoluteAssetPath(item.images[0])}" alt="${escapeAttr(item.title || '')}" loading="lazy">`;
+  } else if (Array.isArray(item.videos) && item.videos[0]) {
+    thumbnail = `<video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="${getAbsoluteAssetPath(item.videos[0])}" type="video/mp4"></video>`;
+  }
+
+  const tagsHtml = tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('');
+  const summary = cleanText(item.summary);
+
+  let promptHtml = '';
+  if (promptPreviewText) {
+    promptHtml = `
+      <details class="prompt-preview">
+        <summary>🎨 ${t.previewTitle}</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>${t.promptHeading}${fallbackBadge}</h4>
+            <p>${escapeHtml(promptPreviewText)}</p>
+          </div>
+          <a class="view-full-btn" href="${detailPath}">${t.detailsCta}</a>
         </div>
-
-        <nav class="sidebar-nav">
-            <a href="${currentPage === 'home' ? '#' : '../index.html'}" class="nav-item ${currentPage === 'home' ? 'active' : ''}">
-                <span class="nav-icon">🏠</span>
-                <span class="nav-text">首页</span>
-                <span class="nav-count">${stats.total || 0}</span>
-            </a>
-            <a href="${currentPage.startsWith('image') ? '#' : (currentPage === 'home' ? 'image/index.html' : '../image/index.html')}" class="nav-item ${currentPage.startsWith('image') ? 'active' : ''}">
-                <span class="nav-icon">📸</span>
-                <span class="nav-text">图片生成</span>
-                <span class="nav-count">${stats.image || 0}</span>
-            </a>
-            <a href="${currentPage.startsWith('video') ? '#' : (currentPage === 'home' ? 'video/index.html' : '../video/index.html')}" class="nav-item ${currentPage.startsWith('video') ? 'active' : ''}">
-                <span class="nav-icon">🎬</span>
-                <span class="nav-text">视频生成</span>
-                <span class="nav-count">${stats.video || 0}</span>
-            </a>
-            <a href="${currentPage.startsWith('text') ? '#' : (currentPage === 'home' ? 'text/index.html' : '../text/index.html')}" class="nav-item ${currentPage.startsWith('text') ? 'active' : ''}">
-                <span class="nav-icon">💬</span>
-                <span class="nav-text">系统提示词</span>
-                <span class="nav-count">${stats.text || 0}</span>
-            </a>
-        </nav>
-
-        <div class="sidebar-footer">
-            <a href=\"${currentPage === 'home' ? 'settings.html' : '../settings.html'}\" class=\"local-settings-link\">??</a>
-            <p>© 2025 Gem Nana</p>
-        </div>
-    </aside>`;
-}
-
-/**
- * 生成模态框HTML
- */
-function generateModal() {
-    return `
-    <!-- 详情模态框 -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <div id="modalBody"></div>
-        </div>
-    </div>`;
-}
-
-/**
- * 生成页面内嵌脚本
- */
-function generateInlineScript(items, dataPath = '', currentPage = 'home') {
-    // 转义JSON数据
-    const jsonData = JSON.stringify(items).replace(/</g, '\\u003c');
-
-    return `
-    <script>
-    // 页面数据
-    const pageItems = ${jsonData};
-
-    // DOM元素
-    const modal = document.getElementById('modal');
-    const modalBody = document.getElementById('modalBody');
-    const modalClose = document.querySelector('.modal-close');
-
-    // HTML转义
-    function escapeHtml(text) {
-        if (!text) return '';
-        const map = {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#039;'
-        };
-        return text.toString().replace(/[&<>"']/g, m => map[m]);
-    }
-
-    // 显示详情弹窗
-    function showModal(id) {
-        const item = pageItems.find(i => i.id === id);
-        if (!item) return;
-
-        let html = \`
-            <h2 class="modal-title">\${escapeHtml(item.title)}</h2>
-            <div class="modal-meta">
-                <span>📅 \${item.date || ''}</span>
-                \${item.url ? \`<a href="\${item.url}" target="_blank" class="modal-source-link">🔗 \${item.source || '查看原文'}</a>\` : \`<span>🔗 \${item.source || ''}</span>\`}
-            </div>
-        \`;
-
-        // 标签（移到摘要上面）
-        if (item.tags && item.tags.length > 0) {
-            html += '<div class="modal-section"><h3>🏷️ 标签</h3><div class="modal-tags">';
-            item.tags.forEach(tag => {
-                html += \`<span class="tag">\${tag}</span>\`;
-            });
-            html += '</div></div>';
-        }
-
-        // 摘要
-        if (item.summary) {
-            html += \`
-                <div class="modal-section">
-                    <h3>📝 内容摘要</h3>
-                    <p class="modal-summary">\${escapeHtml(item.summary)}</p>
-                </div>
-            \`;
-        }
-
-        if (checkLocalAccess()) {
-            html += \`
-                <div class="modal-section">
-                    <h3>📣 发布到公众号</h3>
-                    <button class="view-full-btn" onclick="publishToWechat(\${item.id}, this)">发布到草稿箱</button>
-                </div>
-            \`;
-        }
-
-        // 图片
-        if (item.images && item.images.length > 0) {
-            html += '<div class="modal-section"><h3>📸 图片</h3><div class="modal-images">';
-            item.images.forEach(img => {
-                const imgPath = '${dataPath}' + img;
-                html += \`<img src="\${imgPath}" alt="\${escapeHtml(item.title)}" loading="lazy">\`;
-            });
-            html += '</div></div>';
-        }
-
-        // 视频
-        if (item.videos && item.videos.length > 0) {
-            html += '<div class="modal-section"><h3>🎬 视频</h3><div class="modal-videos">';
-            item.videos.forEach(video => {
-                const videoPath = '${dataPath}' + video;
-                html += \`<video controls><source src="\${videoPath}" type="video/mp4"></video>\`;
-            });
-            html += '</div></div>';
-        }
-
-        // 中文提示词
-        if (item.contentChinese) {
-            html += \`
-                <div class="modal-section">
-                    <h3>🇨🇳 中文提示词
-                        <button class="copy-btn" onclick="copyText('chinese')">📋 复制</button>
-                    </h3>
-                    <div class="modal-content-text" id="text-chinese">\${escapeHtml(item.contentChinese)}</div>
-                </div>
-            \`;
-        }
-
-        // 英文提示词
-        if (item.contentEnglish) {
-            html += \`
-                <div class="modal-section">
-                    <h3>🇬🇧 英文提示词
-                        <button class="copy-btn" onclick="copyText('english')">📋 复制</button>
-                    </h3>
-                    <div class="modal-content-text" id="text-english">\${escapeHtml(item.contentEnglish)}</div>
-                </div>
-            \`;
-        }
-
-        // 通用内容
-        if (item.content && !item.contentChinese && !item.contentEnglish) {
-            html += \`
-                <div class="modal-section">
-                    <h3>📝 内容
-                        <button class="copy-btn" onclick="copyText('content')">📋 复制</button>
-                    </h3>
-                    <div class="modal-content-text" id="text-content">\${escapeHtml(item.content)}</div>
-                </div>
-            \`;
-        }
-
-        modalBody.innerHTML = html;
-        modal.style.display = 'block';
-    }
-
-    // 复制文本
-    function copyText(type) {
-        const element = document.getElementById('text-' + type);
-        if (!element) return;
-
-        const text = element.textContent;
-        navigator.clipboard.writeText(text).then(() => {
-            alert('✅ 已复制到剪贴板');
-        }).catch(err => {
-            console.error('复制失败:', err);
-        });
-    }
-
-    async function publishToWechat(id, button) {
-        if (!id) return;
-        const originalText = button ? button.textContent : '';
-        if (button) {
-            button.disabled = true;
-            button.textContent = '发布中...';
-        }
-
-        try {
-            const response = await fetch('/api/wechat-publish', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id })
-            });
-            const result = await response.json();
-
-            if (response.ok && result.success) {
-                alert('✅ 已发布到公众号草稿箱');
-            } else {
-                const message = result.error || result.message || ('HTTP ' + response.status);
-                alert('❌ 发布失败：' + message);
-            }
-        } catch (error) {
-            alert('❌ 发布失败：' + error.message);
-        } finally {
-            if (button) {
-                button.disabled = false;
-                button.textContent = originalText || '发布到草稿箱';
-            }
-        }
-    }
-
-    // 关闭模态框
-    modalClose.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.style.display = 'none';
-        }
-    });
-
-    // 检查是否为本地访问
-    function checkLocalAccess() {
-        const hostname = window.location.hostname;
-        return hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '';
-    }
-
-    // 删除内容
-    async function deleteContent(id) {
-        const item = pageItems.find(i => i.id === id);
-        if (!item) {
-            alert('未找到该内容');
-            return;
-        }
-
-        // 二次确认
-        if (!confirm(\`确定要删除这条内容吗？\\n\\n标题：\${item.title}\\n\\n删除后无法恢复！\`)) {
-            return;
-        }
-
-        try {
-            const response = await fetch('/api/delete-content', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id })
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                // 删除成功，直接刷新页面
-                location.reload();
-            } else {
-                alert('❌ 删除失败：' + result.error);
-            }
-        } catch (error) {
-            alert('❌ 删除失败：' + error.message);
-        }
-    }
-
-    // 搜索和筛选功能
-    let selectedTags = new Set();
-
-    function filterContent() {
-        const searchInput = document.getElementById('searchInput');
-        const statsText = document.getElementById('statsText');
-        const caseGrid = document.getElementById('caseGrid');
-
-        if (!searchInput || !caseGrid) return; // 如果没有搜索框，直接返回
-
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        let filteredItems = pageItems;
-
-        // 标签筛选
-        if (selectedTags.size > 0) {
-            filteredItems = filteredItems.filter(item => {
-                return item.tags && item.tags.some(tag => selectedTags.has(tag));
-            });
-        }
-
-        // 搜索筛选
-        if (searchTerm) {
-            filteredItems = filteredItems.filter(item => {
-                const searchableText = [
-                    item.title || '',
-                    item.summary || '',
-                    item.content || '',
-                    item.source || '',
-                    ...(item.tags || [])
-                ].join(' ').toLowerCase();
-                return searchableText.includes(searchTerm);
-            });
-        }
-
-        // 重新渲染卡片
-        renderCards(filteredItems);
-
-        // 更新统计
-        if (statsText) {
-            if (selectedTags.size > 0 || searchTerm) {
-                statsText.textContent = \`显示 \${filteredItems.length} / \${pageItems.length} 条内容\`;
-            } else {
-                statsText.textContent = \`共 \${pageItems.length} 条内容\`;
-            }
-        }
-    }
-
-    function renderCards(items) {
-        const caseGrid = document.getElementById('caseGrid');
-        if (!caseGrid) return;
-
-        if (items.length === 0) {
-            caseGrid.innerHTML = '<div class="no-results">😕 没有找到匹配的内容</div>';
-            return;
-        }
-
-        caseGrid.innerHTML = items.map(item => {
-            const tags = item.tags ? item.tags.map(t => \`<span class="tag">\${t}</span>\`).join('') : '';
-
-            // 缩略图：优先显示图片，其次显示视频，最后显示默认图标
-            let thumbnail;
-            if (item.images && item.images[0]) {
-                thumbnail = \`<img src="\${item.images[0]}" alt="\${escapeHtml(item.title)}" loading="lazy">\`;
-            } else if (item.videos && item.videos[0]) {
-                thumbnail = \`<video style="width:100%; height:100%; object-fit: cover;" muted playsinline webkit-playsinline autoplay loop preload="metadata">
-                    <source src="\${item.videos[0]}" type="video/mp4">
-                    您的浏览器不支持视频播放
-                </video>\`;
-            } else {
-                thumbnail = \`<div class="no-image">📸</div>\`;
-            }
-
-            const summary = item.summary ? escapeHtml(item.summary) : '';
-            const hasChinese = item.contentChinese && item.contentChinese.trim();
-            const hasEnglish = item.contentEnglish && item.contentEnglish.trim();
-            const hasContent = item.content && item.content.trim();
-            let promptPreview = '';
-
-            if (hasChinese || hasEnglish || hasContent) {
-                let chinesePreview = '';
-                let englishPreview = '';
-                let contentPreview = '';
-
-                if (hasChinese) {
-                    const text = item.contentChinese.substring(0, 200);
-                    const truncated = item.contentChinese.length > 200 ? '...' : '';
-                    chinesePreview = \`<div class="prompt-section">
-                        <h4>🇨🇳 中文提示词</h4>
-                        <p>\${escapeHtml(text)}\${truncated}</p>
-                    </div>\`;
-                }
-
-                if (hasEnglish) {
-                    const text = item.contentEnglish.substring(0, 200);
-                    const truncated = item.contentEnglish.length > 200 ? '...' : '';
-                    englishPreview = \`<div class="prompt-section">
-                        <h4>🇬🇧 English Prompt</h4>
-                        <p>\${escapeHtml(text)}\${truncated}</p>
-                    </div>\`;
-                }
-
-                if (!hasChinese && !hasEnglish && hasContent) {
-                    const text = item.content.substring(0, 200);
-                    const truncated = item.content.length > 200 ? '...' : '';
-                    contentPreview = \`<div class="prompt-section">
-                        <h4>📝 提示词</h4>
-                        <p>\${escapeHtml(text)}\${truncated}</p>
-                    </div>\`;
-                }
-
-                promptPreview = \`
-                    <details class="prompt-preview">
-                        <summary>🎨 查看AI提示词</summary>
-                        <div class="prompt-content">
-                            \${chinesePreview}
-                            \${englishPreview}
-                            \${contentPreview}
-                            <button class="view-full-btn" onclick="event.stopPropagation(); document.querySelector('.case-card[data-id=\\\"${'${item.id}'}\\\"]').click();">查看完整内容</button>
-                        </div>
-                    </details>\`;
-            }
-
-            return \`
-                <div class="case-card" data-id="\${item.id}">
-                    <button class="delete-btn" data-id="\${item.id}" title="删除这条内容" style="display:none;">🗑️</button>
-                    <div class="case-thumbnail">\${thumbnail}</div>
-                    <div class="case-info">
-                        <h3 class="case-title">\${item.caseNumber}: \${escapeHtml(item.title)}</h3>
-                        \${summary ? \`<p class="case-summary">\${summary}</p>\` : ''}
-                        <div class="case-meta">
-                            <span class="case-date">\${item.date || ''}</span>
-                            <span class="case-source">\${item.source || ''}</span>
-                        </div>
-                        <div class="case-tags">\${tags}</div>
-                        \${promptPreview}
-                    </div>
-                </div>\`;
-        }).join('');
-
-        // 重新绑定事件
-        bindCardEvents();
-    }
-
-    function bindCardEvents() {
-        const isLocalAccess = checkLocalAccess();
-
-        // 如果是本地访问，显示删除按钮
-        if (isLocalAccess) {
-            document.querySelectorAll('.delete-btn').forEach(btn => {
-                btn.style.display = 'block';
-            });
-        }
-
-        // 绑定卡片点击事件
-        document.querySelectorAll('.case-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                if (e.target.classList.contains('delete-btn') || e.target.closest('.delete-btn')) {
-                    return;
-                }
-                const id = parseInt(card.getAttribute('data-id'));
-                showModal(id);
-            });
-        });
-
-        // 绑定删除按钮事件
-        if (isLocalAccess) {
-            document.querySelectorAll('.delete-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const id = parseInt(btn.getAttribute('data-id'));
-                    deleteContent(id);
-                });
-            });
-        }
-    }
-
-    // 初始化
-    document.addEventListener('DOMContentLoaded', () => {
-        bindCardEvents();
-
-        const settingsLink = document.querySelector('.local-settings-link');
-        if (settingsLink && checkLocalAccess()) {
-            settingsLink.style.display = 'inline-block';
-        }
-
-        // 搜索功能
-        const searchInput = document.getElementById('searchInput');
-        if (searchInput) {
-            searchInput.addEventListener('input', filterContent);
-        }
-
-        // 标签筛选
-        const tagFilters = document.getElementById('tagFilters');
-        if (tagFilters) {
-            tagFilters.addEventListener('click', (e) => {
-                if (e.target.classList.contains('tag-filter')) {
-                    const tag = e.target.dataset.tag;
-                    e.target.classList.toggle('active');
-
-                    if (selectedTags.has(tag)) {
-                        selectedTags.delete(tag);
-                    } else {
-                        selectedTags.add(tag);
-                    }
-
-                    filterContent();
-                }
-            });
-        }
-
-        // 清除筛选
-        const clearFilters = document.getElementById('clearFilters');
-        if (clearFilters) {
-            clearFilters.addEventListener('click', () => {
-                selectedTags.clear();
-                if (searchInput) searchInput.value = '';
-                document.querySelectorAll('.tag-filter.active').forEach(btn => {
-                    btn.classList.remove('active');
-                });
-                filterContent();
-            });
-        }
-    });
-    </script>
+      </details>
     `;
+  }
+
+  return `
+    <article class="case-card" data-id="${Number(item.id)}" data-search="${escapeAttr(buildSearchText(item, lang))}" data-tags="${escapeAttr(tags.join('|'))}">
+      <a class="case-card-link" href="${detailPath}">
+        <div class="case-thumbnail">${thumbnail}</div>
+        <div class="case-info">
+          <h3 class="case-title">${escapeHtml(item.caseNumber || '')}: ${escapeHtml(item.title || '')}</h3>
+          ${summary ? `<p class="case-summary">${escapeHtml(summary)}</p>` : ''}
+          <div class="case-meta">
+            <span class="case-date">${escapeHtml(item.date || '')}</span>
+            <span class="case-source">${escapeHtml(item.source || '')}</span>
+          </div>
+          <div class="case-tags">${tagsHtml}</div>
+          ${promptHtml}
+        </div>
+      </a>
+    </article>
+  `;
 }
 
-/**
- * 生成结构化数据（JSON-LD）
- */
-function generateSchema(options) {
-    const {
-        pageType = 'WebPage',
-        title,
-        description,
-        url,
-        breadcrumbs = [],
-        itemCount = 0
-    } = options;
+function renderSidebar(lang, currentNav, stats, currentPath) {
+  const t = LANGS[lang];
+  const otherLang = lang === 'zh' ? 'en' : 'zh';
+  const switchHref = toLangHref(otherLang, currentPath);
 
-    let schemas = [];
+  return `
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 ${t.siteName}</h1>
+        <p class="tagline">${t.tagline}</p>
+      </div>
 
-    // 首页：WebSite + ItemList
-    if (pageType === 'home') {
-        schemas.push({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Gem Nana AI 提示词库",
-            "url": SITE_URL + "/",
-            "description": "精选 AI 提示词收藏库，包含图片生成、视频生成和系统提示词等优质案例",
-            "inLanguage": "zh-CN",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": SITE_URL + "/?q={search_term_string}"
-                },
-                "query-input": "required name=search_term_string"
-            }
-        });
+      <nav class="sidebar-nav">
+        <a href="${toLangHref(lang, '/')}" class="nav-item ${currentNav === 'home' ? 'active' : ''}">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">${t.nav.home}</span>
+          <span class="nav-count">${stats.total}</span>
+        </a>
+        <a href="${toLangHref(lang, '/image/')}" class="nav-item ${currentNav === 'image' ? 'active' : ''}">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">${t.nav.image}</span>
+          <span class="nav-count">${stats.image}</span>
+        </a>
+        <a href="${toLangHref(lang, '/video/')}" class="nav-item ${currentNav === 'video' ? 'active' : ''}">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">${t.nav.video}</span>
+          <span class="nav-count">${stats.video}</span>
+        </a>
+        <a href="${toLangHref(lang, '/text/')}" class="nav-item ${currentNav === 'text' ? 'active' : ''}">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">${t.nav.text}</span>
+          <span class="nav-count">${stats.text}</span>
+        </a>
+      </nav>
 
-        schemas.push({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "AI 提示词案例精选",
-            "description": description,
-            "numberOfItems": itemCount,
-            "itemListElement": []
-        });
-    }
-    // 分类页或标签页：CollectionPage + BreadcrumbList
-    else if (pageType === 'collection') {
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": title + " | Gem Nana AI 提示词库",
-            "description": description,
-            "url": url,
-            "inLanguage": "zh-CN",
-            "isPartOf": {
-                "@type": "WebSite",
-                "name": "Gem Nana AI 提示词库",
-                "url": SITE_URL + "/"
-            }
-        };
+      <div class="sidebar-footer">
+        <a href="${switchHref}" class="lang-switch-link">${t.switchLabel}</a>
+        <a href="/settings.html" class="local-settings-link">${t.settingsLabel}</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  `;
+}
 
-        // 添加面包屑导航
-        if (breadcrumbs.length > 0) {
-            schema.breadcrumb = {
-                "@type": "BreadcrumbList",
-                "itemListElement": breadcrumbs.map((crumb, index) => ({
-                    "@type": "ListItem",
-                    "position": index + 1,
-                    "name": crumb.name,
-                    "item": crumb.url
-                }))
-            };
+function renderBaseScripts() {
+  return `
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+      })();
+    </script>
+  `;
+}
+
+function renderFilterScript(lang) {
+  const t = LANGS[lang];
+  const textConfig = JSON.stringify({ countText: t.countText, noResults: t.noResults });
+  return `
+    <script>
+      (function () {
+        const config = ${textConfig};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const cards = Array.from(document.querySelectorAll('.case-card'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        if (!cards.length) return;
+
+        let activeTag = '';
+
+        function applyFilters() {
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
         }
 
-        schemas.push(schema);
-    }
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
 
-    // 生成 JSON-LD 脚本标签
-    return schemas.map(schema => `
-    <script type="application/ld+json">
-    ${JSON.stringify(schema, null, 2)}
-    </script>`).join('');
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        applyFilters();
+      })();
+    </script>
+  `;
 }
 
-/**
- * 生成页面模板
- */
-function generatePageTemplate(options) {
-    const {
-        title,
-        description,
-        keywords = 'AI提示词,Prompt,Midjourney,Stable Diffusion,DALL-E,图片生成,AI绘画,提示词库',
-        currentPage,
-        stats,
-        content,
-        stylePath = 'assets/style.css',
-        scriptPath = null,
-        items = [],
-        dataPath = '',
-        pageType = 'WebPage',
-        pageUrl = '',
-        breadcrumbs = []
-    } = options;
+function renderHead({ lang, title, description, canonicalPath }) {
+  const t = LANGS[lang];
+  const canonical = `${SITE_URL}/${lang}${canonicalPath}`;
+  const zhAlt = `${SITE_URL}/zh${canonicalPath}`;
+  const enAlt = `${SITE_URL}/en${canonicalPath}`;
 
-    // 生成结构化数据
-    const schemaMarkup = generateSchema({
-        pageType,
-        title,
-        description,
-        url: pageUrl,
-        breadcrumbs,
-        itemCount: items.length
-    });
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    inLanguage: t.htmlLang,
+    name: title,
+    description,
+    url: canonical,
+    isPartOf: { '@type': 'WebSite', name: t.siteName, url: SITE_URL }
+  };
 
-    return `<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
+  return `
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${title} | Gem Nana AI 提示词库</title>
-    <meta name="description" content="${description}">
-    <meta name="keywords" content="${keywords}">
-    <link rel="stylesheet" href="${stylePath}?v=${Date.now()}">
-${schemaMarkup}
+    <title>${escapeHtml(title)} | ${escapeHtml(t.titleSuffix)}</title>
+    <meta name="description" content="${escapeAttr(description)}">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <link rel="canonical" href="${canonical}">
+    <link rel="alternate" hreflang="zh-CN" href="${zhAlt}">
+    <link rel="alternate" hreflang="en" href="${enAlt}">
+    <link rel="alternate" hreflang="x-default" href="${SITE_URL}/">
+    <link rel="stylesheet" href="/assets/style.css?v=${Date.now()}">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+    </style>
+    <script type="application/ld+json">${JSON.stringify(schema)}</script>
+  `;
+}
+
+function renderPageTemplate({ lang, title, description, canonicalPath, currentNav, stats, content, withFilterScript = false }) {
+  return `<!DOCTYPE html>
+<html lang="${LANGS[lang].htmlLang}">
+<head>
+${renderHead({ lang, title, description, canonicalPath })}
 </head>
 <body class="layout-sidebar">
-    ${generateSidebar(currentPage, stats)}
-
-    <main class="main-content">
-        ${content}
-    </main>
-
-    ${generateModal()}
-    ${generateInlineScript(items, dataPath, currentPage)}
+${renderSidebar(lang, currentNav, stats, canonicalPath)}
+<main class="main-content">
+${content}
+</main>
+${renderBaseScripts()}
+${withFilterScript ? renderFilterScript(lang) : ''}
 </body>
 </html>`;
 }
 
-/**
- * 生成首页（内容流）
- */
-function generateHomePage(allItems, stats) {
-    console.log('📄 生成首页...');
+function renderControls(lang, items) {
+  const t = LANGS[lang];
+  const tagStats = getTagStats(items);
+  const tags = Object.entries(tagStats)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 30);
 
-    // 按时间倒序
-    const sortedItems = allItems.sort((a, b) => {
-        return (b.id || 0) - (a.id || 0);
-    });
+  const tagsHtml = tags
+    .map(([tag, count]) => `<button type="button" class="tag-filter" data-tag="${escapeAttr(tag)}">${escapeHtml(tag)} (${count})</button>`)
+    .join('');
 
-    // 统计所有标签
-    const tagStats = getTagStats(sortedItems);
-    const topTags = Object.entries(tagStats)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 20) // 显示前20个热门标签
-        .map(([tag, count]) => `<button class="tag-filter" data-tag="${tag}">${tag} (${count})</button>`)
-        .join('');
-
-    const displayItems = sortedItems;
-    const casesHtml = displayItems.map(item => generateCaseCard(item, '.')).join('\n');
-
-    const content = `
-        <div class="page-header">
-            <h1>最新案例</h1>
-            <p>精选 ${stats.total} 个 AI 提示词案例</p>
+  return `
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="${escapeAttr(t.searchPlaceholder)}">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>${t.filterTitle}</span>
+          <button id="clearFilters" class="btn-clear" type="button">${t.clearFilter}</button>
         </div>
-
-        <!-- 搜索和筛选区 -->
-        <div class="controls">
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="🔍 搜索标题、内容、标签..."
-                    class="search-input"
-                />
-            </div>
-
-            <div class="filter-section">
-                <div class="filter-header">
-                    <span>🏷️ 标签筛选:</span>
-                    <button id="clearFilters" class="btn-clear">清除筛选</button>
-                </div>
-                <div id="tagFilters" class="tag-filters">
-                    ${topTags}
-                </div>
-            </div>
-
-            <div class="stats">
-                <span id="statsText">共 ${stats.total} 条内容</span>
-            </div>
-        </div>
-
-        <div class="case-grid" id="caseGrid">
-            ${casesHtml}
-        </div>
-    `;
-
-    const html = generatePageTemplate({
-        title: 'AI提示词库 - ' + stats.total + '个Midjourney/Stable Diffusion/ChatGPT提示词案例',
-        description: `免费AI图片生成提示词库，收录${stats.total}个精选Prompt案例，支持Midjourney、DALL-E、Stable Diffusion、Gemini等工具。包含中英文提示词、图像编辑、人像生成、创意设计等分类，助力AI绘画创作。`,
-        keywords: 'AI提示词,Prompt,Midjourney提示词,Stable Diffusion,DALL-E,ChatGPT,Gemini,图片生成,AI绘画,提示词库,人像生成,创意设计,3D转换,图像编辑',
-        currentPage: 'home',
-        stats,
-        content,
-        stylePath: 'assets/style.css',
-        items: displayItems,
-        dataPath: '',
-        pageType: 'home',
-        pageUrl: SITE_URL + '/',
-        enableSearch: true  // 启用搜索功能
-    });
-
-    fs.writeFileSync(path.join(ROOT_DIR, 'index.html'), html, 'utf8');
-    console.log('✅ 首页生成完成\n');
+        <div id="tagFilters" class="tag-filters">${tagsHtml}</div>
+      </div>
+      <div class="stats"><span id="statsText">${t.countText.replace('{count}', String(items.length))}</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">${t.noResults}</div>
+  `;
 }
 
-/**
- * 生成图片主页
- */
-function generateImagePage(imageItems, stats) {
-    console.log('📄 生成图片主页...');
-
-    // 按ID倒序排列
-    const sortedItems = imageItems.sort((a, b) => (b.id || 0) - (a.id || 0));
-    const displayItems = sortedItems.slice(0, 100);
-    const casesHtml = displayItems.map(item => generateCaseCard(item, '..')).join('\n');
-
-    const content = `
-        <div class="page-header">
-            <h1>📸 图片生成提示词</h1>
-            <p>精选 ${imageItems.length} 个图片生成案例</p>
-        </div>
-
-        <div class="case-grid">
-            ${casesHtml}
-        </div>
-    `;
-
-    const html = generatePageTemplate({
-        title: 'AI图片生成提示词 - ' + imageItems.length + '个Midjourney/Stable Diffusion Prompt案例',
-        description: `${imageItems.length}个精选AI图片生成提示词，涵盖Midjourney、Stable Diffusion、DALL-E等主流工具，包含人像摄影、创意设计、3D转换、图像编辑等多种风格，提供中英双语Prompt参考。`,
-        currentPage: 'image',
-        stats,
-        content,
-        stylePath: '../assets/style.css',
-        items: displayItems,
-        dataPath: '../',
-        pageType: 'collection',
-        pageUrl: SITE_URL + '/image/',
-        breadcrumbs: [
-            { name: '首页', url: SITE_URL + '/' },
-            { name: '图片生成', url: SITE_URL + '/image/' }
-        ]
-    });
-
-    fs.writeFileSync(path.join(ROOT_DIR, 'image', 'index.html'), html, 'utf8');
-    console.log('✅ 图片主页生成完成\n');
+function renderListPage({ lang, canonicalPath, currentNav, title, subtitle, description, items, stats }) {
+  const cardsHtml = items.map((item) => renderCaseCard(item, lang)).join('\n');
+  const content = `
+    <div class="page-header">
+      <h1>${escapeHtml(title)}</h1>
+      <p>${escapeHtml(subtitle)}</p>
+    </div>
+    ${renderControls(lang, items)}
+    <div class="case-grid">${cardsHtml}</div>
+  `;
+  return renderPageTemplate({
+    lang,
+    title,
+    description,
+    canonicalPath,
+    currentNav,
+    stats,
+    content,
+    withFilterScript: true
+  });
 }
 
-/**
- * 生成视频主页
- */
-function generateVideoPage(videoItems, stats) {
-    console.log('📄 生成视频主页...');
+function renderDetailPage({ lang, item, stats }) {
+  const t = LANGS[lang];
+  const zhRaw = cleanText(item.contentChinese);
+  const enRaw = cleanText(item.contentEnglish);
+  const fullRaw = cleanText(item.content);
+  const zhPrompt = zhRaw || enRaw || fullRaw;
+  const enPrompt = enRaw || zhRaw || fullRaw;
+  const zhFallback = !zhRaw && !!zhPrompt;
+  const enFallback = !enRaw && !!enPrompt;
+  const summary = cleanText(item.summary);
+  const detailPath = getDetailPath(item);
+  const navKey = currentNavByItem(item);
 
-    // 按ID倒序排列
-    const sortedItems = videoItems.sort((a, b) => (b.id || 0) - (a.id || 0));
+  const images = Array.isArray(item.images) ? item.images : [];
+  const videos = Array.isArray(item.videos) ? item.videos : [];
 
-    const casesHtml = sortedItems.length > 0 ?
-        sortedItems.map(item => generateCaseCard(item, '..')).join('\n') :
-        '<div class="no-results">暂无视频案例，敬请期待...</div>';
+  const imagesHtml = images.length
+    ? `<div class="detail-block"><h3>📷 ${t.imagesHeading}</h3><div class="detail-media-grid">${images.map((img) => `<img src="${getAbsoluteAssetPath(img)}" alt="${escapeAttr(item.title || '')}" loading="lazy">`).join('')}</div></div>`
+    : '';
+  const videosHtml = videos.length
+    ? `<div class="detail-block"><h3>🎬 ${t.videosHeading}</h3><div class="detail-media-grid">${videos.map((video) => `<video controls><source src="${getAbsoluteAssetPath(video)}" type="video/mp4"></video>`).join('')}</div></div>`
+    : '';
+  const sourceHtml = cleanText(item.url)
+    ? `<div class="detail-block"><h3>🔗 ${t.sourceHeading}</h3><a class="source-link" href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.url)}</a></div>`
+    : '';
 
-    const content = `
-        <div class="page-header">
-            <h1>🎬 视频生成提示词</h1>
-            <p>${videoItems.length > 0 ? `精选 ${videoItems.length} 个视频生成案例` : '即将上线'}</p>
-        </div>
+  const content = `
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="${toLangHref(lang, '/')}">${LANGS[lang].nav.home}</a><span>›</span>
+        <a href="${toLangHref(lang, `/${navKey}/`)}">${LANGS[lang].nav[navKey]}</a><span>›</span>
+        <span>${escapeHtml(item.caseNumber || '')}</span>
+      </nav>
+      <h1>${escapeHtml(item.caseNumber || '')}: ${escapeHtml(item.title || '')}</h1>
+      <p>${escapeHtml(item.date || '')}　${escapeHtml(item.source || '')}</p>
+      <p><a class="source-link" href="${toLangHref(lang, `/${navKey}/`)}">${t.backToList}</a></p>
+    </div>
 
-        <div class="case-grid">
-            ${casesHtml}
-        </div>
-    `;
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">${t.localPublish}</button>
+        <button class="view-full-btn" onclick="deleteCurrentCase()">${t.localDelete}</button>
+      </div>
 
-    const html = generatePageTemplate({
-        title: 'AI视频生成提示词 - ' + sortedItems.length + '个Sora/Runway/Pika Prompt案例',
-        description: `${sortedItems.length}个精选AI视频生成提示词，支持Sora、Runway、Pika、Veo等主流视频生成工具，涵盖电影级场景、动画特效、创意视频等类型，提供中英双语Prompt参考。`,
-        currentPage: 'video',
-        stats,
-        content,
-        stylePath: '../assets/style.css',
-        items: sortedItems,
-        dataPath: '../',
-        pageType: 'collection',
-        pageUrl: SITE_URL + '/video/',
-        breadcrumbs: [
-            { name: '首页', url: SITE_URL + '/' },
-            { name: '视频生成', url: SITE_URL + '/video/' }
-        ]
-    });
+      ${summary ? `<div class="detail-block"><h3>📝 ${t.summaryHeading}</h3><p>${escapeHtml(summary)}</p></div>` : ''}
+      <div class="detail-block">
+        <h3>🎨 ${t.promptCnHeading}${zhFallback ? ` <span class="fallback-badge">${t.promptCnFallback}</span>` : ''}</h3>
+        ${zhPrompt ? formatMultilineText(zhPrompt) : `<p>${escapeHtml(t.detailNoPrompt)}</p>`}
+      </div>
+      <div class="detail-block">
+        <h3>🎨 ${t.promptEnHeading}${enFallback ? ` <span class="fallback-badge">${t.promptEnFallback}</span>` : ''}</h3>
+        ${enPrompt ? formatMultilineText(enPrompt) : `<p>${escapeHtml(t.detailNoPrompt)}</p>`}
+      </div>
+      ${imagesHtml}
+      ${videosHtml}
+      ${sourceHtml}
+    </div>
 
-    fs.writeFileSync(path.join(ROOT_DIR, 'video', 'index.html'), html, 'utf8');
-    console.log('✅ 视频主页生成完成\n');
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = ${JSON.stringify(t.localPublish === 'Publish to WeChat Draft' ? t.publishLoading : t.publishLoading)};
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: ${Number(item.id)} })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm(${JSON.stringify(t.deleteConfirm)})) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: ${Number(item.id)} })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert(${JSON.stringify(t.deleteSuccess)});
+          window.location.href = ${JSON.stringify(toLangHref(lang, `/${navKey}/`))};
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  `;
+
+  return renderPageTemplate({
+    lang,
+    title: `${item.caseNumber || ''}: ${item.title || ''}`,
+    description: summary || cleanText(item.title) || 'AI prompt case',
+    canonicalPath: detailPath,
+    currentNav: currentNavByItem(item),
+    stats,
+    content
+  });
 }
 
-/**
- * 生成文字主页
- */
-function generateTextPage(textItems, stats) {
-    console.log('Generating text page...');
-
-    const sortedItems = textItems.sort((a, b) => (b.id || 0) - (a.id || 0));
-    const titleText = '\u7cfb\u7edf\u63d0\u793a\u8bcd';
-    const comingSoonText = '\u5373\u5c06\u4e0a\u7ebf\uff0c\u656c\u8bf7\u671f\u5f85';
-    const comingSoonHeadline = '\u5185\u5bb9\u7b79\u5907\u4e2d';
-    const comingSoonLine1 = '\u6211\u4eec\u6b63\u5728\u6536\u96c6\u548c\u6574\u7406\u4f18\u8d28\u7684 AI \u5bf9\u8bdd\u63d0\u793a\u8bcd';
-    const comingSoonLine2 = '\u5305\u62ec ChatGPT\u3001Claude\u3001Gemini \u7b49\u5de5\u5177\u7684\u9ad8\u7ea7\u7528\u6cd5';
-    const headerCountText = sortedItems.length > 0
-        ? `\u7cbe\u9009 ${sortedItems.length} \u4e2a${titleText}\u6848\u4f8b`
-        : comingSoonText;
-    const noResultsText = '\u6682\u65e0' + titleText + '\u6848\u4f8b\uff0c\u656c\u8bf7\u671f\u5f85...';
-
-    const casesHtml = sortedItems.length > 0
-        ? sortedItems.map(item => generateCaseCard(item, '..')).join('\n')
-        : `<div class="no-results">${noResultsText}</div>`;
-
-    const content = `
-        <div class="page-header">
-            <h1>\u{1F4AC} ${titleText}</h1>
-            <p>${headerCountText}</p>
-        </div>
-
-        <div class="${sortedItems.length > 0 ? 'case-grid' : 'coming-soon'}">
-            ${sortedItems.length > 0 ? casesHtml : `
-            <div class="coming-soon-icon">\u{1F6A7}</div>
-            <h2>${comingSoonHeadline}</h2>
-            <p>${comingSoonLine1}</p>
-            <p>${comingSoonLine2}</p>`}
-        </div>
-    `;
-
-    const html = generatePageTemplate({
-        title: 'AI' + titleText + '\u5e93 - ChatGPT/Claude/Gemini Prompt\u5927\u5168',
-        description: 'AI' + titleText + '\u5e93\u5373\u5c06\u4e0a\u7ebf\uff0c\u5c06\u6536\u5f55ChatGPT\u3001Claude\u3001Gemini\u7b49\u4e3b\u6d41AI\u5bf9\u8bdd\u5de5\u5177\u7684\u9ad8\u7ea7Prompt\uff0c\u6db5\u76d6\u5199\u4f5c\u3001\u7f16\u7a0b\u3001\u5206\u6790\u3001\u521b\u610f\u7b49\u591a\u79cd\u573a\u666f\uff0c\u52a9\u529b\u63d0\u5347AI\u5bf9\u8bdd\u6548\u7387\u3002',
-        currentPage: 'text',
-        stats,
-        content,
-        stylePath: '../assets/style.css',
-        items: sortedItems,
-        dataPath: '../',
-        pageType: 'collection',
-        pageUrl: SITE_URL + '/text/',
-        breadcrumbs: [
-            { name: '\u9996\u9875', url: SITE_URL + '/' },
-            { name: titleText, url: SITE_URL + '/text/' }
-        ]
-    });
-
-    fs.writeFileSync(path.join(ROOT_DIR, 'text', 'index.html'), html, 'utf8');
-    console.log('Text page generated.\n');
+function currentNavByItem(item) {
+  const tags = normalizeTags(item.tags);
+  if (tags.includes('系统提示词')) return 'text';
+  if (Array.isArray(item.videos) && item.videos.length > 0) return 'video';
+  return 'image';
 }
 
-function generateImageTagPages(imageItems, stats) {
-    console.log('📄 生成图片标签分类页...');
-
-    const tagStats = getTagStats(imageItems);
-
-    // 只生成案例数 >= 10 的标签页
-    const majorTags = Object.entries(tagStats)
-        .filter(([tag, count]) => count >= 10)
-        .sort((a, b) => b[1] - a[1]);
-
-    majorTags.forEach(([tag, count]) => {
-        // 筛选该标签的案例并按ID倒序排列
-        const tagItems = imageItems
-            .filter(item => item.tags && item.tags.includes(tag))
-            .sort((a, b) => (b.id || 0) - (a.id || 0));
-
-        const casesHtml = tagItems.map(item => generateCaseCard(item, '..')).join('\n');
-
-        const content = `
-            <div class="page-header">
-                <nav class="breadcrumb">
-                    <a href="../index.html">🏠 首页</a>
-                    <span>›</span>
-                    <a href="index.html">📸 图片生成</a>
-                    <span>›</span>
-                    <span>${tag}</span>
-                </nav>
-                <h1>${tag}</h1>
-                <p>精选 ${count} 个相关案例</p>
-            </div>
-
-            <div class="case-grid">
-                ${casesHtml}
-            </div>
-        `;
-
-        const filename = tag.replace(/\s+/g, '-').toLowerCase() + '.html';
-        const html = generatePageTemplate({
-            title: `${tag} - 图片生成`,
-            description: `${count} 个 ${tag} 相关的图片生成提示词案例`,
-            currentPage: 'image',
-            stats,
-            content,
-            stylePath: '../assets/style.css',
-            items: tagItems,
-            dataPath: '../',
-            pageType: 'collection',
-            pageUrl: SITE_URL + '/image/' + filename,
-            breadcrumbs: [
-                { name: '首页', url: SITE_URL + '/' },
-                { name: '图片生成', url: SITE_URL + '/image/' },
-                { name: tag, url: SITE_URL + '/image/' + filename }
-            ]
-        });
-
-        fs.writeFileSync(path.join(ROOT_DIR, 'image', filename), html, 'utf8');
-        console.log(`  ✓ ${tag} (${count})`);
-    });
-
-    console.log(`✅ 生成了 ${majorTags.length} 个标签页\n`);
+function renderRootRedirectPage() {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gem Nana</title>
+  <meta name="description" content="Gem Nana AI Prompt Library">
+  <script>
+    (function () {
+      try {
+        const prefers = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+        const lang = prefers.includes('zh') ? 'zh' : 'en';
+        const target = '/' + lang + '/index.html' + window.location.search + window.location.hash;
+        window.location.replace(target);
+      } catch (e) {
+        window.location.replace('/zh/index.html');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting… If not redirected, open <a href="/zh/index.html">中文</a> / <a href="/en/index.html">English</a>.</p>
+</body>
+</html>`;
 }
 
-/**
- * 主函数
- */
+function generateLanguagePages(lang, items, groups, stats) {
+  const t = LANGS[lang];
+  const langRoot = path.join(ROOT_DIR, lang);
+  ensureDir(langRoot);
+
+  const sortedAll = sortByIdDesc(items);
+  const sortedImage = sortByIdDesc(groups.image);
+  const sortedVideo = sortByIdDesc(groups.video);
+  const sortedText = sortByIdDesc(groups.text);
+
+  // Home
+  writeFile(
+    path.join(langRoot, 'index.html'),
+    renderListPage({
+      lang,
+      canonicalPath: '/',
+      currentNav: 'home',
+      title: t.latestTitle,
+      subtitle: t.latestDesc(stats.total),
+      description: t.latestDesc(stats.total),
+      items: sortedAll,
+      stats
+    })
+  );
+
+  // Image
+  writeFile(
+    path.join(langRoot, 'image', 'index.html'),
+    renderListPage({
+      lang,
+      canonicalPath: '/image/',
+      currentNav: 'image',
+      title: t.imageTitle,
+      subtitle: t.imageDesc(sortedImage.length),
+      description: t.imageDesc(sortedImage.length),
+      items: sortedImage,
+      stats
+    })
+  );
+
+  // Video
+  writeFile(
+    path.join(langRoot, 'video', 'index.html'),
+    renderListPage({
+      lang,
+      canonicalPath: '/video/',
+      currentNav: 'video',
+      title: t.videoTitle,
+      subtitle: t.videoDesc(sortedVideo.length),
+      description: t.videoDesc(sortedVideo.length),
+      items: sortedVideo,
+      stats
+    })
+  );
+
+  // Text
+  writeFile(
+    path.join(langRoot, 'text', 'index.html'),
+    renderListPage({
+      lang,
+      canonicalPath: '/text/',
+      currentNav: 'text',
+      title: t.textTitle,
+      subtitle: t.textDesc(sortedText.length),
+      description: t.textDesc(sortedText.length),
+      items: sortedText,
+      stats
+    })
+  );
+
+  // Image tag pages (>= 10)
+  const tagStats = getTagStats(sortedImage);
+  const tagPairs = Object.entries(tagStats).filter(([, count]) => count >= 10).sort((a, b) => b[1] - a[1]);
+  for (const [tag, count] of tagPairs) {
+    const filename = tagToFilename(tag);
+    const tagItems = sortedImage.filter((item) => normalizeTags(item.tags).includes(tag));
+    const pageTitle = `${tag} · ${t.imageTitle}`;
+    const pageDesc = `${count} ${lang === 'zh' ? '条' : ''} ${tag} ${lang === 'zh' ? '相关案例' : 'related cases'}`;
+
+    writeFile(
+      path.join(langRoot, 'image', filename),
+      renderListPage({
+        lang,
+        canonicalPath: `/image/${filename}`,
+        currentNav: 'image',
+        title: pageTitle,
+        subtitle: pageDesc,
+        description: pageDesc,
+        items: tagItems,
+        stats
+      })
+    );
+  }
+
+  // Detail pages
+  for (const item of sortedAll) {
+    writeFile(
+      path.join(langRoot, 'case', `${Number(item.id)}.html`),
+      renderDetailPage({ lang, item, stats })
+    );
+  }
+
+  console.log(`✅ ${lang.toUpperCase()} generated: home/image/video/text + ${tagPairs.length} tag pages + ${sortedAll.length} details`);
+}
+
 function main() {
-    try {
-        // 加载数据
-        const allItems = loadAllData();
+  console.log('🚀 Start generating bilingual static pages...\n');
 
-        // 按媒体类型分组
-        const groups = groupByMediaType(allItems);
+  const items = loadItems();
+  const groups = groupByMediaType(items);
+  const stats = {
+    total: items.length,
+    image: groups.image.length,
+    video: groups.video.length,
+    text: groups.text.length
+  };
 
-        // 统计数据
-        const stats = {
-            total: allItems.length,
-            image: groups.image.length,
-            video: groups.video.length,
-            text: groups.text.length
-        };
+  console.log(`📊 Items: ${stats.total} (image=${stats.image}, video=${stats.video}, text=${stats.text})`);
 
-        // 生成各页面
-        generateHomePage(allItems, stats);
-        generateImagePage(groups.image, stats);
-        generateVideoPage(groups.video, stats);
-        generateTextPage(groups.text, stats);
-        generateImageTagPages(groups.image, stats);
+  // Root redirect page
+  writeFile(path.join(ROOT_DIR, 'index.html'), renderRootRedirectPage());
 
-        console.log('🎉 所有页面生成完成！');
-        console.log(`📊 总计: ${stats.total} 个案例`);
-        console.log(`   - 图片: ${stats.image} 个`);
-        console.log(`   - 视频: ${stats.video} 个`);
-        console.log(`   - 文字: ${stats.text} 个`);
+  // Bilingual pages
+  generateLanguagePages('zh', items, groups, stats);
+  generateLanguagePages('en', items, groups, stats);
 
-    } catch (error) {
-        console.error('❌ 生成失败:', error);
-        process.exit(1);
-    }
+  console.log('\n🎉 Bilingual pages generated successfully.');
 }
 
-// 执行
 main();

@@ -1,33 +1,30 @@
 #!/usr/bin/env node
 /**
- * 生成 sitemap.xml
- * 用于 SEO 优化，帮助搜索引擎索引网站内容
+ * Generate bilingual sitemap.xml:
+ * - /
+ * - /zh/*, /en/*
+ * - /{lang}/case/{id}.html
  */
 
 const fs = require('fs');
 const path = require('path');
 
 const SITE_URL = 'https://gemnana.com';
-const OUTPUT_FILE = path.join(__dirname, '..', 'sitemap.xml');
+const ROOT_DIR = path.join(__dirname, '..');
+const OUTPUT_FILE = path.join(ROOT_DIR, 'sitemap.xml');
+const CONTENTS_FILE = path.join(ROOT_DIR, 'data', 'contents.json');
 
-/**
- * 转义 XML 特殊字符
- */
 function escapeXml(str) {
-    if (!str) return '';
-    return str.toString()
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&apos;');
+  return String(str || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }
 
-/**
- * 生成 URL 条目
- */
-function generateUrlEntry(loc, lastmod, changefreq, priority) {
-    return `  <url>
+function urlEntry(loc, lastmod, changefreq, priority) {
+  return `  <url>
     <loc>${escapeXml(loc)}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
@@ -35,126 +32,79 @@ function generateUrlEntry(loc, lastmod, changefreq, priority) {
   </url>`;
 }
 
-/**
- * 读取 JSON 数据
- */
-function loadJsonData(filePath) {
-    try {
-        const data = fs.readFileSync(filePath, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.warn(`⚠️  无法读取 ${filePath}:`, error.message);
-        return null;
-    }
+function scanHtmlFiles(dirPath, baseUrlPrefix) {
+  const out = [];
+  if (!fs.existsSync(dirPath)) return out;
+
+  const files = fs.readdirSync(dirPath);
+  for (const file of files) {
+    if (!file.endsWith('.html')) continue;
+    if (file === 'index-old.html') continue;
+    if (file === 'index.html') continue;
+    out.push(`${baseUrlPrefix}/${file}`);
+  }
+  return out;
 }
 
-/**
- * 扫描目录下的 HTML 文件
- */
-function scanHtmlFiles(dir, baseUrl = '') {
-    const urls = [];
-    const fullPath = path.join(__dirname, '..', dir);
-
-    if (!fs.existsSync(fullPath)) {
-        return urls;
-    }
-
-    const files = fs.readdirSync(fullPath);
-
-    files.forEach(file => {
-        if (file.endsWith('.html') && file !== 'index-old.html') {
-            const url = baseUrl + '/' + file;
-            urls.push(url);
-        }
-    });
-
-    return urls;
+function loadCaseIds() {
+  if (!fs.existsSync(CONTENTS_FILE)) return [];
+  try {
+    const data = JSON.parse(fs.readFileSync(CONTENTS_FILE, 'utf8'));
+    const items = Array.isArray(data.items) ? data.items : [];
+    return items.map((it) => Number(it.id)).filter((id) => Number.isFinite(id));
+  } catch {
+    return [];
+  }
 }
 
-/**
- * 生成 sitemap.xml
- */
 function generateSitemap() {
-    console.log('🗺️  开始生成 sitemap.xml...');
+  const today = new Date().toISOString().split('T')[0];
+  const entries = [];
 
-    const urls = [];
-    const now = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+  // Root language router
+  entries.push(urlEntry(`${SITE_URL}/`, today, 'daily', '1.0'));
 
-    // 1. 添加主页
-    urls.push(generateUrlEntry(
-        SITE_URL + '/',
-        now,
-        'daily',
-        '1.0'
-    ));
+  const langs = ['zh', 'en'];
+  const caseIds = loadCaseIds();
 
-    // 2. 添加图片主页
-    urls.push(generateUrlEntry(
-        SITE_URL + '/image/',
-        now,
-        'daily',
-        '0.9'
-    ));
+  for (const lang of langs) {
+    entries.push(urlEntry(`${SITE_URL}/${lang}/`, today, 'daily', '0.95'));
+    entries.push(urlEntry(`${SITE_URL}/${lang}/image/`, today, 'daily', '0.9'));
+    entries.push(urlEntry(`${SITE_URL}/${lang}/video/`, today, 'weekly', '0.85'));
+    entries.push(urlEntry(`${SITE_URL}/${lang}/text/`, today, 'weekly', '0.85'));
 
-    // 3. 添加视频主页
-    urls.push(generateUrlEntry(
-        SITE_URL + '/video/',
-        now,
-        'weekly',
-        '0.9'
-    ));
+    // Tag pages under /{lang}/image/*.html
+    const tagPages = scanHtmlFiles(path.join(ROOT_DIR, lang, 'image'), `/${lang}/image`);
+    for (const tagUrl of tagPages) {
+      entries.push(urlEntry(`${SITE_URL}${tagUrl}`, today, 'weekly', '0.8'));
+    }
 
-    // 4. 添加文字主页
-    urls.push(generateUrlEntry(
-        SITE_URL + '/text/',
-        now,
-        'weekly',
-        '0.8'
-    ));
+    // Detail pages
+    for (const id of caseIds) {
+      entries.push(urlEntry(`${SITE_URL}/${lang}/case/${id}.html`, today, 'weekly', '0.75'));
+    }
 
-    // 5. 扫描图片分类页
-    const imagePages = scanHtmlFiles('image', '/image');
-    imagePages.forEach(url => {
-        if (!url.endsWith('/index.html')) {
-            urls.push(generateUrlEntry(
-                SITE_URL + url,
-                now,
-                'weekly',
-                '0.8'
-            ));
-        }
-    });
+    console.log(`📄 ${lang.toUpperCase()} tag pages: ${tagPages.length}, details: ${caseIds.length}`);
+  }
 
-    console.log(`📊 找到 ${imagePages.length} 个图片分类页`);
-
-    // 6. 生成完整的 XML
-    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-${urls.join('\n')}
+${entries.join('\n')}
 </urlset>`;
 
-    // 7. 写入文件
-    fs.writeFileSync(OUTPUT_FILE, xml, 'utf8');
+  fs.writeFileSync(OUTPUT_FILE, xml, 'utf8');
 
-    console.log(`✅ sitemap.xml 已生成: ${OUTPUT_FILE}`);
-    console.log(`📍 包含 ${urls.length} 个 URL`);
-    console.log(`🌐 网站地址: ${SITE_URL}`);
-    console.log(`📅 生成时间: ${now}`);
-    console.log('');
-    console.log('📝 提示：');
-    console.log('   1. 将 sitemap.xml 部署到网站根目录');
-    console.log('   2. 访问 https://search.google.com/search-console');
-    console.log('   3. 提交 sitemap: https://gemnana.com/sitemap.xml');
-    console.log('   4. 等待 Google 索引你的网站');
+  console.log('✅ sitemap.xml generated:', OUTPUT_FILE);
+  console.log(`📍 URL count: ${entries.length}`);
 }
 
-// 执行生成
 try {
-    generateSitemap();
+  generateSitemap();
 } catch (error) {
-    console.error('❌ 生成失败:', error);
-    process.exit(1);
+  console.error('❌ Failed to generate sitemap:', error.message || error);
+  process.exit(1);
 }
+

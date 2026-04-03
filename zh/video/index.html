@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="精选 8 个视频案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <link rel="canonical" href="https://gemnana.com/zh/video/">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/video/">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/video/">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1775192545686">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"视频生成提示词","description":"精选 8 个视频案例","url":"https://gemnana.com/zh/video/","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2753</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item ">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2742</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item active">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">8</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/video/index.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>视频生成提示词</h1>
+      <p>精选 8 个视频案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="视频">视频 (8)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (4)</button><button type="button" class="tag-filter" data-tag="设计">设计 (4)</button><button type="button" class="tag-filter" data-tag="图片">图片 (2)</button><button type="button" class="tag-filter" data-tag="创意">创意 (2)</button><button type="button" class="tag-filter" data-tag="Gemini">Gemini (2)</button><button type="button" class="tag-filter" data-tag="AI">AI (2)</button><button type="button" class="tag-filter" data-tag="特效">特效 (2)</button><button type="button" class="tag-filter" data-tag="Kling">Kling (1)</button><button type="button" class="tag-filter" data-tag="Veo-3.1">Veo-3.1 (1)</button><button type="button" class="tag-filter" data-tag="资源">资源 (1)</button><button type="button" class="tag-filter" data-tag="工业">工业 (1)</button><button type="button" class="tag-filter" data-tag="Veo">Veo (1)</button><button type="button" class="tag-filter" data-tag="动画">动画 (1)</button><button type="button" class="tag-filter" data-tag="工具">工具 (1)</button><button type="button" class="tag-filter" data-tag="Grok">Grok (1)</button><button type="button" class="tag-filter" data-tag="电影">电影 (1)</button><button type="button" class="tag-filter" data-tag="Unreal Engine">Unreal Engine (1)</button><button type="button" class="tag-filter" data-tag="3D">3D (1)</button><button type="button" class="tag-filter" data-tag="效果">效果 (1)</button><button type="button" class="tag-filter" data-tag="动物">动物 (1)</button><button type="button" class="tag-filter" data-tag="Veo 3.1">Veo 3.1 (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 8 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div class="case-grid">
+    <article class="case-card" data-id="571" data-search="案例571 拟人橙色虎斑猫厨师在火焰中炫技炒虾仁炒饭 高度真实的特写镜头，拟人橙色虎斑猫厨师在火焰中翻炒虾仁炒饭，背景的副厨显得沮丧而震撼，画面呈现专业厨房的亮灯与不锈钢环境。 x / iqra saifi https://x.com/iqrasaifiii/status/2011180741955371195 视频 摄影 设计 图片 创意 一个高度逼真、特写、电影感的镜头，展示一只拟人化的橙色虎斑猫，身穿一尘不染的白色厨师帽和围裙，在专业的燃气灶上，激烈而凶猛地炒着虾仁炒饭。 这只猫后腿站立，手持一个大型金属锅铲和刮刀，动作充满强烈、专注的狂怒。燃气灶的火焰环绕着炒锅，蒸汽戏剧性地升腾。 背景中，略微模糊，可以看到一位穿着黑色制服的沮丧的副厨师长，双手高举，做出烦躁和沮丧的姿势，直视着那只猫。厨房一尘不染，是全不锈钢的。 镜头：中景，动态角度，明亮的商业厨房灯光。" data-tags="视频|摄影|设计|图片|创意">
+      <a class="case-card-link" href="/zh/case/571.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-2011180741955371195-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title">案例571: 拟人橙色虎斑猫厨师在火焰中炫技炒虾仁炒饭</h3>
+          <p class="case-summary">高度真实的特写镜头，拟人橙色虎斑猫厨师在火焰中翻炒虾仁炒饭，背景的副厨显得沮丧而震撼，画面呈现专业厨房的亮灯与不锈钢环境。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-14</span>
+            <span class="case-source">X / Iqra Saifi</span>
+          </div>
+          <div class="case-tags"><span class="tag">视频</span><span class="tag">摄影</span><span class="tag">设计</span><span class="tag">图片</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一个高度逼真、特写、电影感的镜头，展示一只拟人化的橙色虎斑猫，身穿一尘不染的白色厨师帽和围裙，在专业的燃气灶上，激烈而凶猛地炒着虾仁炒饭。
+
+这只猫后腿站立，手持一个大型金属锅铲和刮刀，动作充满强烈、专注的狂怒。燃气灶的火焰环绕着炒锅，蒸汽戏剧性地升腾。
+
+背景中，略微模糊，可以看到一位穿着黑色制服的沮丧的副厨师长，双手高举，做出烦躁和沮丧的姿势，直视着那只猫。厨房一尘不染，是全不锈钢的。...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/571.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="556" data-search="案例556 kling ai 与 gemini nano banana pro：汉堡信息图 展示汉堡在缓慢旋转中层层分离的精确运动提示，配以两张高质感视觉作品：一张专业产品照，一张超真实的爆炸式信息图，均以纯白背景呈现。 x / zara https://x.com/zarairahh/status/2008910386008125614 图片 视频 kling gemini 摄影 设计 动作提示：汉堡开始缓慢、平稳地旋转，其各层逐一分离开来，保持完美的对齐、间距和比例。每个配料以精确、受控的运动飘散开来。运动干净利落，流畅自然，没有额外的效果或干扰。 图片 1 :- 一张高质量的、专业的产品照片，展示一个酥脆的香辣汉堡，配有金黄酥脆的炸鸡排、新鲜的生菜和柔软的芝麻面包。汉堡看起来多汁且堆叠整齐，可见纹理和酥脆感。极简风格，在纯色纯白的背景下拍摄，带有柔和的自然阴影。8k 分辨率，清晰对焦，简洁现代的审美。 图 2 :- 创建一个超逼真的爆炸式垂直信息图表组合，展示一个美食汉堡。顶部是一个柔软光泽的芝麻面包冠，可见芝麻籽和轻盈的纹理。下方是自然漂浮的新鲜脆生菜叶，接" data-tags="图片|视频|Kling|Gemini|摄影|设计">
+      <a class="case-card-link" href="/zh/case/556.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2008910386008125614-1.jpg" alt="Kling AI 与 Gemini Nano Banana Pro：汉堡信息图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title">案例556: Kling AI 与 Gemini Nano Banana Pro：汉堡信息图</h3>
+          <p class="case-summary">展示汉堡在缓慢旋转中层层分离的精确运动提示，配以两张高质感视觉作品：一张专业产品照，一张超真实的爆炸式信息图，均以纯白背景呈现。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-08</span>
+            <span class="case-source">X / Zara</span>
+          </div>
+          <div class="case-tags"><span class="tag">图片</span><span class="tag">视频</span><span class="tag">Kling</span><span class="tag">Gemini</span><span class="tag">摄影</span><span class="tag">设计</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>动作提示：汉堡开始缓慢、平稳地旋转，其各层逐一分离开来，保持完美的对齐、间距和比例。每个配料以精确、受控的运动飘散开来。运动干净利落，流畅自然，没有额外的效果或干扰。
+
+图片 1 :- 一张高质量的、专业的产品照片，展示一个酥脆的香辣汉堡，配有金黄酥脆的炸鸡排、新鲜的生菜和柔软的芝麻面包。汉堡看起来多汁且堆叠整齐，可见纹理和酥脆感。极简风格，在纯色纯白的背景下拍摄，带有柔和的自然阴影。8K 分...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/556.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="532" data-search="案例532 用krea_ai打造震撼的veo3汽车组装动画 json提示详解 本文分享由krea_ai制作的veo3汽车组装动画的详细json提示，涵盖场景、动作、特效和摄影细节，展现动态、爆发力十足的视觉效果，适合影视特效和创意设计爱好者参考。 x / pierrick chevallier | ia https://x.com/charaspowerai/status/1994461325787799785 视频 ai 设计 特效 { &quot;shot&quot;: { “构图”：“英雄般的广角镜头，画面中央是空旷的沥青路面，福特野马从无到有地出现”， “镜头”: “24mm 变形镜头” &quot;frame_rate&quot;: &quot;60fps&quot;, &quot;camera_movement&quot;: &quot;快速旋转圆圈，在主要组装时刻猛烈推进，快速摇摄过渡&quot; }, “主题”： { “描述”：“福特野马车一点一点地成型——底盘、发动机、车架、面板、车轮、车灯——所有部件都在半空中组装。” “衣柜”： ””， “道具”：“漂浮的钢板、镀铬零件、发动机缸体部件、旋转的螺栓、发光的蓝色组装能量” }, “场景”： { “地点”：“尘土飞扬、阳光直射的工" data-tags="视频|AI|设计|特效">
+      <a class="case-card-link" href="/zh/case/532.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1994461325787799785-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title">案例532: 用Krea_ai打造震撼的Veo3汽车组装动画 JSON提示详解</h3>
+          <p class="case-summary">本文分享由Krea_ai制作的Veo3汽车组装动画的详细JSON提示，涵盖场景、动作、特效和摄影细节，展现动态、爆发力十足的视觉效果，适合影视特效和创意设计爱好者参考。</p>
+          <div class="case-meta">
+            <span class="case-date">2025-11-29</span>
+            <span class="case-source">X / Pierrick Chevallier | IA</span>
+          </div>
+          <div class="case-tags"><span class="tag">视频</span><span class="tag">AI</span><span class="tag">设计</span><span class="tag">特效</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+&quot;shot&quot;: {
+“构图”：“英雄般的广角镜头，画面中央是空旷的沥青路面，福特野马从无到有地出现”，
+“镜头”: “24mm 变形镜头”
+&quot;frame_rate&quot;: &quot;60fps&quot;,
+&quot;camera_movement&quot;: &quot;快速旋转圆圈，在主要组装时刻猛烈推进，快速摇摄过渡&quot;
+},
+“主题”： {
+“描述”：“福特野马车一点一点地成型——底盘、发动机、车架、面板、车轮、车灯—...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/532.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="516" data-search="案例516 黎明时分大型造船厂的工业场景震撼呈现 描绘黎明时分大规模造船厂中起重机同步移动集装箱的壮观场景，镜头逐渐揭示工人、引擎声和海鸥声，展现史诗级工业电影风格的逼真画面。 x / ludoviccreator https://x.com/ludoviccreator/status/1988717217219801306 视频 veo-3.1 摄影 资源 工业 起重机到地面的过渡，黎明时分的大型造船厂，起重机同步移动集装箱，摄像机下降揭示穿着橙色制服的工人，引擎声、海鸥声和钢索的紧张声，淡金色光照，史诗工业电影现实主义风格。" data-tags="视频|Veo-3.1|摄影|资源|工业">
+      <a class="case-card-link" href="/zh/case/516.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1988717217219801306-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title">案例516: 黎明时分大型造船厂的工业场景震撼呈现</h3>
+          <p class="case-summary">描绘黎明时分大规模造船厂中起重机同步移动集装箱的壮观场景，镜头逐渐揭示工人、引擎声和海鸥声，展现史诗级工业电影风格的逼真画面。</p>
+          <div class="case-meta">
+            <span class="case-date">2025-11-13</span>
+            <span class="case-source">X / LudovicCreator</span>
+          </div>
+          <div class="case-tags"><span class="tag">视频</span><span class="tag">Veo-3.1</span><span class="tag">摄影</span><span class="tag">资源</span><span class="tag">工业</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>起重机到地面的过渡，黎明时分的大型造船厂，起重机同步移动集装箱，摄像机下降揭示穿着橙色制服的工人，引擎声、海鸥声和钢索的紧张声，淡金色光照，史诗工业电影现实主义风格。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/516.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="511" data-search="案例511 怀旧90年代客厅复刻：8秒重现《鸭 hunt》游戏场景 这段8秒的视频还原了90年代客厅的经典场景，展示了《鸭 hunt》游戏的怀旧氛围，包括复古crt电视、nes主机、怀旧道具和经典像素画面，唤起童年记忆。 x / mr das https://x.com/mrdasonx/status/1987793088883105852 视频 veo 动画 设计 工具 { &quot;prompt&quot;: { &quot;description&quot;: &quot;创建一个 8 秒的视频，捕捉一个怀旧的 90 年代客厅设置，用于玩 duck hunt 视频游戏。&quot; &quot;场景&quot;: { &quot;场景设定&quot;: &quot;一个 90 年代客厅，摆放着木质支架上的复古 crt 电视，显示着 duck hunt 的起始画面，画面中有像素化的鸭子和草地。&quot;, &quot;游戏机&quot;: &quot;任天堂娱乐系统（nes），灰色，连接到电视，控制器放在毛茸茸的地毯上。&quot;, &quot;角色&quot;: &quot;一个穿着 90 年代风格服装的男孩（宽松牛仔裤，荧光衬衫），盘腿坐在地上，手持 nes zapper 光枪，瞄准电视。&quot; &quot;props&quot;:" data-tags="视频|Veo|动画|设计|工具">
+      <a class="case-card-link" href="/zh/case/511.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1987793088883105852-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title">案例511: 怀旧90年代客厅复刻：8秒重现《鸭 Hunt》游戏场景</h3>
+          <p class="case-summary">这段8秒的视频还原了90年代客厅的经典场景，展示了《鸭 Hunt》游戏的怀旧氛围，包括复古CRT电视、NES主机、怀旧道具和经典像素画面，唤起童年记忆。</p>
+          <div class="case-meta">
+            <span class="case-date">2025-11-10</span>
+            <span class="case-source">X / Mr Das</span>
+          </div>
+          <div class="case-tags"><span class="tag">视频</span><span class="tag">Veo</span><span class="tag">动画</span><span class="tag">设计</span><span class="tag">工具</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+  &quot;prompt&quot;: {
+    &quot;description&quot;: &quot;创建一个 8 秒的视频，捕捉一个怀旧的 90 年代客厅设置，用于玩 Duck Hunt 视频游戏。&quot;
+&quot;场景&quot;: {
+&quot;场景设定&quot;: &quot;一个 90 年代客厅，摆放着木质支架上的复古 CRT 电视，显示着 Duck Hunt 的起始画面，画面中有像素化的鸭子和草地。&quot;,
+&quot;游戏机&quot;: &quot;任天堂娱乐系统（NES），灰色，...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/511.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="507" data-search="案例507 电影级直升机激烈追逐场景全景解析 本文详细描述了一场在峡谷中进行的高速直升机追逐的场景，从动态摄像、视觉特效到音效布局，展现了紧张刺激的战争氛围，视觉与听觉效果高度结合。 x / amira zairi https://x.com/azed_ai/status/1987550568626393584 视频 grok ai 摄影 特效 电影 { &quot;shot&quot;: { &quot;构图&quot;: &quot;从领航直升机后方进行动态跟踪拍摄，扫过狭窄的峡谷转弯处&quot;, &quot;镜头&quot;: &quot;长焦镜头，景深浅&quot;, &quot;帧率&quot;: &quot;24fps&quot;, &quot;摄像机运动&quot;: &quot;快速空中摇摄，伴随突然的平移和倾斜以跟随追逐&quot; }, &quot;subject&quot;: { &quot;description&quot;: &quot;两架军用攻击直升机正在峡谷中进行高速追逐&quot;, &quot;wardrobe&quot;: &quot;n/a&quot;, &quot;props&quot;: &quot;旋转的炮塔枪，导弹舱，闪烁的驾驶舱灯光&quot; }, &quot;scene&quot;: { &quot;location&quot;: &quot;崎岖的沙漠峡谷，有高耸的红色岩壁&quot;" data-tags="视频|Grok|AI|摄影|特效|电影">
+      <a class="case-card-link" href="/zh/case/507.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1987550568626393584-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title">案例507: 电影级直升机激烈追逐场景全景解析</h3>
+          <p class="case-summary">本文详细描述了一场在峡谷中进行的高速直升机追逐的场景，从动态摄像、视觉特效到音效布局，展现了紧张刺激的战争氛围，视觉与听觉效果高度结合。</p>
+          <div class="case-meta">
+            <span class="case-date">2025-11-10</span>
+            <span class="case-source">X / Amira Zairi</span>
+          </div>
+          <div class="case-tags"><span class="tag">视频</span><span class="tag">Grok</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">特效</span><span class="tag">电影</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+  &quot;shot&quot;: {
+&quot;构图&quot;: &quot;从领航直升机后方进行动态跟踪拍摄，扫过狭窄的峡谷转弯处&quot;,
+&quot;镜头&quot;: &quot;长焦镜头，景深浅&quot;,
+&quot;帧率&quot;: &quot;24fps&quot;,
+&quot;摄像机运动&quot;: &quot;快速空中摇摄，伴随突然的平移和倾斜以跟随追逐&quot;
+  },
+&quot;subject&quot;: {
+    &quot;description&quot;: &quot;两架军用攻击直升机正在峡谷中进行高速追逐&quot;,
+    &quot;wardrob...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/507.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="502" data-search="案例502 电影级极速追逐：黑色欧洲跑车在山间公路激烈超车 一段炫酷的高速追逐视频，展现两辆现代欧洲跑车在风景优美的山路上激烈超车，配合专业的摄像和极致的视觉效果，营造出速度与激情的极致体验。 x / iqra saifi https://x.com/iqrasaifiii/status/1986691307147043154 视频 unreal engine gemini 3d 效果 一场充满活力的高速追逐，两辆现代黑色欧洲运动轿跑车（如宝马 m4 或类似车型）在风景秀丽、蜿蜒的山区公路上驰骋。该剪辑聚焦于后车积极超越前车的那一刻。动作应该让人感觉快速、有力和令人振奋。 相机移动（关键）： * 开始（0-2 秒）：从紧紧抓住尾随汽车（图像中最靠近摄像头的那个）的后保险杠和发光的 led 尾灯的低角度、激进的跟踪镜头开始。以强烈的运动模糊显示下面冲刺的道路。 * 中序（2-6 秒）：摄像机执行平滑、快速的电影拉出和向左弧形平移，跟随尾随的汽车向前冲入相邻车道超车。并排简要捕捉两辆车，强调背景树木和道路纹理上的运动模糊。 * 结束（6-8 秒）：相机稳定并锁定在新领头车" data-tags="视频|Unreal Engine|Gemini|3D|效果">
+      <a class="case-card-link" href="/zh/case/502.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1986691307147043154-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title">案例502: 电影级极速追逐：黑色欧洲跑车在山间公路激烈超车</h3>
+          <p class="case-summary">一段炫酷的高速追逐视频，展现两辆现代欧洲跑车在风景优美的山路上激烈超车，配合专业的摄像和极致的视觉效果，营造出速度与激情的极致体验。</p>
+          <div class="case-meta">
+            <span class="case-date">2025-11-08</span>
+            <span class="case-source">X / Iqra Saifi</span>
+          </div>
+          <div class="case-tags"><span class="tag">视频</span><span class="tag">Unreal Engine</span><span class="tag">Gemini</span><span class="tag">3D</span><span class="tag">效果</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一场充满活力的高速追逐，两辆现代黑色欧洲运动轿跑车（如宝马 M4 或类似车型）在风景秀丽、蜿蜒的山区公路上驰骋。该剪辑聚焦于后车积极超越前车的那一刻。动作应该让人感觉快速、有力和令人振奋。
+相机移动（关键）：
+* 开始（0-2 秒）：从紧紧抓住尾随汽车（图像中最靠近摄像头的那个）的后保险杠和发光的 LED 尾灯的低角度、激进的跟踪镜头开始。以强烈的运动模糊显示下面冲刺的道路。
+* 中序（2-...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/502.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="403" data-search="案例403 鹿竟在夜晚舞出tiktok挑战，萌态十足 一段夜间行车记录仪捕捉到两只鹿在乡村道路上表演搞笑舞蹈，宛如提前开启了tiktok挑战，引发网友热议。视频展现了动物的趣味互动与自然之美，结合逼真的夜景和幽默氛围。 x / mr das https://x.com/mrdasonx/status/1986342181058293761 视频 创意 动物 veo 3.1 我发誓这些鹿在我们看到它 之前就开始了 tiktok 挑战 在 @basedlabsai 上使用 veo 3.1 制造 { “prompt”： “乡村道路上的夜间行车记录仪视频。汽车前灯显示两只鹿面对面地站在路中间。突然，一只鹿开始跳起有趣的舞蹈，在路上有节奏地跺脚。另一只鹿看起来很惊讶，然后加入了夸张的头部动作。几秒钟后，两只鹿都僵住了，盯着镜头，仿佛被抓住了。视频应持续 8 秒，捕捉完整的舞蹈序列。视频中不应出现字幕。 “长度”：8， “style”：“逼真的森林之夜行车记录仪镜头，俏皮幽默”， “camera”： “固定行车记录仪视图，大灯照亮鹿和道路”， “" data-tags="视频|创意|动物|Veo 3.1">
+      <a class="case-card-link" href="/zh/case/403.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1986342181058293761-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title">案例403: 鹿竟在夜晚舞出TikTok挑战，萌态十足</h3>
+          <p class="case-summary">一段夜间行车记录仪捕捉到两只鹿在乡村道路上表演搞笑舞蹈，宛如提前开启了TikTok挑战，引发网友热议。视频展现了动物的趣味互动与自然之美，结合逼真的夜景和幽默氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2025-11-07</span>
+            <span class="case-source">X / Mr Das</span>
+          </div>
+          <div class="case-tags"><span class="tag">视频</span><span class="tag">创意</span><span class="tag">动物</span><span class="tag">Veo 3.1</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>我发誓这些鹿在我们看到它    之前就开始了 TikTok 挑战
+
+在 @BasedLabsAI 上使用 Veo 3.1 制造
+
+{
+“prompt”： “乡村道路上的夜间行车记录仪视频。汽车前灯显示两只鹿面对面地站在路中间。突然，一只鹿开始跳起有趣的舞蹈，在路上有节奏地跺脚。另一只鹿看起来很惊讶，然后加入了夸张的头部动作。几秒钟后，两只鹿都僵住了，盯着镜头，仿佛被抓住了。视频应持续 8...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/403.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const cards = Array.from(document.querySelectorAll('.case-card'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        if (!cards.length) return;
+
+        let activeTag = '';
+
+        function applyFilters() {
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>
