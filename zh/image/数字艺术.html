@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/数字艺术.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/数字艺术.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1775192545843">
+    <link rel="stylesheet" href="/assets/style.css?v=1775261002560">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -25,6 +25,31 @@
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -34,6 +59,19 @@
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
@@ -52,12 +90,12 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2753</span>
+          <span class="nav-count">2754</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2742</span>
+          <span class="nav-count">2743</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
@@ -105,11 +143,11 @@
       <a class="case-card-link" href="/zh/case/574.html">
         <div class="case-thumbnail"><img src="/images/tweet-2012533640769814534-1.jpg" alt="长曝光街头人像：静默女子与姜猫在黄昏广场的对比" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例574: 长曝光街头人像：静默女子与姜猫在黄昏广场的对比</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#574</span></span><span class="case-title-text">长曝光街头人像：静默女子与姜猫在黄昏广场的对比</span></h3>
           <p class="case-summary">在黄昏的都市广场，年轻女子与姜猫静默并列，运用长曝光和背景模糊形成对比，呈现安静而深情的情绪。画面强调织物质感、暖色点缀与极致分辨率的艺术效果。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-18</span>
-            <span class="case-source">X / Taaruk</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2012533640769814534">X / Taaruk</span>
           </div>
           <div class="case-tags"><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">工具</span><span class="tag">数字艺术</span></div>
           
@@ -141,11 +179,11 @@
       <a class="case-card-link" href="/zh/case/565.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009271652690034820-1.jpg" alt="超写实火水元素平衡电影肖像生成指南與要点" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例565: 超写实火水元素平衡电影肖像生成指南與要点</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#565</span></span><span class="case-title-text">超写实火水元素平衡电影肖像生成指南與要点</span></h3>
           <p class="case-summary">描述一个面向镜头、左为火、右为水的对称超写实肖像，强调暖橙与冷蓝的强烈对比，以及电影级灯光、质感与超细纹理。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-09</span>
-            <span class="case-source">X / Taaruk</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2009271652690034820">X / Taaruk</span>
           </div>
           <div class="case-tags"><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">数字艺术</span><span class="tag">创意</span><span class="tag">技巧</span></div>
           
@@ -180,11 +218,11 @@
       <a class="case-card-link" href="/zh/case/555.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009157587024138319-1.jpg" alt="Ultra-Realistic NYC Floating Island" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例555: Ultra-Realistic NYC Floating Island</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#555</span></span><span class="case-title-text">Ultra-Realistic NYC Floating Island</span></h3>
           <p class="case-summary">Ultra-high-detail poster of a floating NYC island among clouds, with cinematic lighting.</p>
           <div class="case-meta">
             <span class="case-date">2026-01-08</span>
-            <span class="case-source">X / Milo</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Milo_Bahi_02/status/2009157587024138319">X / Milo</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">3D</span><span class="tag">数字艺术</span><span class="tag">设计</span></div>
           
@@ -209,11 +247,11 @@
       <a class="case-card-link" href="/zh/case/552.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007371413628272679-1.jpg" alt="竖版中式复古教育信息图海报设计：一键封装开箱即用" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例552: 竖版中式复古教育信息图海报设计：一键封装开箱即用</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#552</span></span><span class="case-title-text">竖版中式复古教育信息图海报设计：一键封装开箱即用</span></h3>
           <p class="case-summary">该推文描述一张竖版、传统中国复古风格的教育信息图海报的设计规范，包含核心主题、经典语录、核心观点六项内容、关系图谱、时间线与人物卡等模块，强调统一字体、留白比例、高分辨率输出与竖横双向适配，适合大幅面展示与展览使用。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Berryxia.AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/berryxia/status/2007371413628272679">X / Berryxia.AI</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">设计</span><span class="tag">数字艺术</span><span class="tag">教程</span><span class="tag">工具</span><span class="tag">Shortcuts</span></div>
           
@@ -245,11 +283,11 @@
       <a class="case-card-link" href="/zh/case/550.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007667561396109358-1.jpg" alt="8K镜像自拍：K-Pop偶像风格的高饱和活力后台场景" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例550: 8K镜像自拍：K-Pop偶像风格的高饱和活力后台场景</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#550</span></span><span class="case-title-text">8K镜像自拍：K-Pop偶像风格的高饱和活力后台场景</span></h3>
           <p class="case-summary">提供一份8K镜像自拍的生成提示，塑造韩国风格K-Pop偶像在后台更衣室的高饱和造型。通过柔和高调灯光、环灯光效与动态构图，突出面部与服装细节及俏皮眼神。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / BubbleBrain</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2007667561396109358">X / BubbleBrain</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">数字艺术</span><span class="tag">灵感</span></div>
           
@@ -282,11 +320,11 @@
       <a class="case-card-link" href="/zh/case/547.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007266399497138682-1.jpg" alt="极致冰镇可乐液体飞溅定格：高端商业摄影级水花瞬间" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例547: 极致冰镇可乐液体飞溅定格：高端商业摄影级水花瞬间</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#547</span></span><span class="case-title-text">极致冰镇可乐液体飞溅定格：高端商业摄影级水花瞬间</span></h3>
           <p class="case-summary">本推文描绘一只成人手握透明玻璃杯，冰镇可乐在高速拍摄下瞬间爆裂飞溅，强调真实水花、湿润质感和强烈对比，打造高端商业广告风格的强劲可乐视觉。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / underwood</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/underwoodxie96/status/2007266399497138682">X / underwood</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">数字艺术</span><span class="tag">广告</span></div>
           
@@ -325,11 +363,11 @@
       <a class="case-card-link" href="/zh/case/543.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007483709084315766-1.jpg" alt="边走边聊享受周末，探索AI与3D数字艺术的魅力" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例543: 边走边聊享受周末，探索AI与3D数字艺术的魅力</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#543</span></span><span class="case-title-text">边走边聊享受周末，探索AI与3D数字艺术的魅力</span></h3>
           <p class="case-summary">推文分享了边走边听声音的放松方式，并展示了两款梦幻般的3D数字角色，结合AI渲染技术，呈现出细腻高清的动画风格，激发创意灵感。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Aijaz</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2007483709084315766">X / Aijaz</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">GPT</span><span class="tag">AI</span><span class="tag">3D</span><span class="tag">数字艺术</span></div>
           
@@ -353,11 +391,11 @@
       <a class="case-card-link" href="/zh/case/542.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007444051537342855-1.jpg" alt="高品质3D动画幻灯片与肖像创作展示" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例542: 高品质3D动画幻灯片与肖像创作展示</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#542</span></span><span class="case-title-text">高品质3D动画幻灯片与肖像创作展示</span></h3>
           <p class="case-summary">本推文介绍了由Google Gemini Nano Banana AI生成的高分辨率3D动画幻灯片与肖像，包括细腻的角色细节、光影效果和丰富的纹理，展现了先进的数字艺术与动画技术应用。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Aijaz</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2007444051537342855">X / Aijaz</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">3D</span><span class="tag">动画</span><span class="tag">数字艺术</span></div>
           
@@ -383,11 +421,11 @@
       <a class="case-card-link" href="/zh/case/540.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007417297103921324-1.jpg" alt="复古技术插图：谷歌 Gemini Nano Banana pro 3.0 工具展示" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例540: 复古技术插图：谷歌 Gemini Nano Banana pro 3.0 工具展示</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#540</span></span><span class="case-title-text">复古技术插图：谷歌 Gemini Nano Banana pro 3.0 工具展示</span></h3>
           <p class="case-summary">本图为谷歌 Gemini Nano Banana pro 3.0 的复古技术插图，描绘一只戴手套的手握黄铜绘图圆规和老式钢笔，背景为房屋建筑蓝图及机械元素，展现传统制图与现代技术的结合。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Sharon Riley</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Just_sharon7/status/2007417297103921324">X / Sharon Riley</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">设计</span><span class="tag">创意</span><span class="tag">数字艺术</span></div>
           
@@ -416,11 +454,11 @@
       <a class="case-card-link" href="/zh/case/539.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007492122933628997-1.jpg" alt="Nano Banana Pro在Gemini应用中的精彩呈现" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例539: Nano Banana Pro在Gemini应用中的精彩呈现</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#539</span></span><span class="case-title-text">Nano Banana Pro在Gemini应用中的精彩呈现</span></h3>
           <p class="case-summary">推文介绍了在Gemini应用中使用Nano Banana Pro创建的肖像作品，描绘了一位年轻东亚女性侧身回眸，展现细腻的视觉效果和创意设计。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Oogie</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2007492122933628997">X / Oogie</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">设计</span><span class="tag">Nano Banana Pro</span></div>
           
@@ -447,11 +485,11 @@
       <a class="case-card-link" href="/zh/case/537.html">
         <div class="case-thumbnail"><img src="/images/tweet-1999883513676403032-1.jpg" alt="极端视角下的可爱动物碗内摄影艺术" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例537: 极端视角下的可爱动物碗内摄影艺术</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#537</span></span><span class="case-title-text">极端视角下的可爱动物碗内摄影艺术</span></h3>
           <p class="case-summary">这是一张采用极端内视角拍摄的广告照片，镜头置于深碗底部，广角镜头捕捉到一只可爱动物探入碗中，鼻子特写且透视夸张，眼神灵动，画面明亮清晰，展现出极致的萌态与欢乐氛围。</p>
           <div class="case-meta">
             <span class="case-date">2025-12-14</span>
-            <span class="case-source">X / Alexandra Aisling</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AllaAisling/status/1999883513676403032">X / Alexandra Aisling</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">数字艺术</span><span class="tag">广告</span></div>
           
@@ -475,11 +513,11 @@
       <a class="case-card-link" href="/zh/case/536.html">
         <div class="case-thumbnail"><img src="/images/tweet-1999464392258191511-1.jpg" alt="龙的解剖结构爆炸图：奇幻写实与达芬奇风格融合" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例536: 龙的解剖结构爆炸图：奇幻写实与达芬奇风格融合</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#536</span></span><span class="case-title-text">龙的解剖结构爆炸图：奇幻写实与达芬奇风格融合</span></h3>
           <p class="case-summary">这幅高分辨率龙的解剖爆炸图细致展示了翅膀、鳞片、喷火腺和骨骼等部位，采用金属光泽鳞片与晶莹骨骼，背景为古羊皮纸配烟雾与火炬光影，辅以优雅注释，灵感源自达芬奇草图，结合现代数字艺术技术创作。</p>
           <div class="case-meta">
             <span class="case-date">2025-12-14</span>
-            <span class="case-source">X / LudovicCreator</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/LudovicCreator/status/1999464392258191511">X / LudovicCreator</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">数字艺术</span><span class="tag">设计</span><span class="tag">创意</span><span class="tag">NANOBANANA PRO</span></div>
           
@@ -503,11 +541,11 @@
       <a class="case-card-link" href="/zh/case/535.html">
         <div class="case-thumbnail"><img src="/images/tweet-2000027682533421139-1.jpg" alt="用Gemini Nano Banana Pro打造极致写实圣诞女郎造型" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例535: 用Gemini Nano Banana Pro打造极致写实圣诞女郎造型</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#535</span></span><span class="case-title-text">用Gemini Nano Banana Pro打造极致写实圣诞女郎造型</span></h3>
           <p class="case-summary">本次作品利用Gemini Nano Banana Pro工具，生成一位穿着圣诞老人主题服装的女性形象，细节极为写实，呈现温暖梦幻的节日氛围。整体风格融合专业影棚摄影质感与柔和电影灯光，打造出浓郁且富有诱惑力的圣诞节视觉效果。</p>
           <div class="case-meta">
             <span class="case-date">2025-12-14</span>
-            <span class="case-source">X / Shreya Yadav</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ShreyaYadav___/status/2000027682533421139">X / Shreya Yadav</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">数字艺术</span><span class="tag">设计</span><span class="tag">摄影</span><span class="tag">创意</span></div>
           
@@ -538,11 +576,11 @@
       <a class="case-card-link" href="/zh/case/534.html">
         <div class="case-thumbnail"><img src="/images/tweet-1991917912349909243-1.jpg" alt="Nano banana Pro助力打造复古颓废风高角度艺术写真" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例534: Nano banana Pro助力打造复古颓废风高角度艺术写真</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#534</span></span><span class="case-title-text">Nano banana Pro助力打造复古颓废风高角度艺术写真</span></h3>
           <p class="case-summary">使用Nano banana Pro成功生成一幅高角度鸟瞰视角的东亚女偶像形象，展现其倒挂姿势和丰富纹身细节。画面采用90年代复古棕褐色调，背景为凌乱的黄色衣橱，传递疲惫而浪漫的颓废摇滚美学。</p>
           <div class="case-meta">
             <span class="case-date">2025-12-14</span>
-            <span class="case-source">X / Emily</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/IamEmily2050/status/1991917912349909243">X / Emily</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">数字艺术</span><span class="tag">设计</span><span class="tag">创意</span><span class="tag">Nano banana Pro</span></div>
           
@@ -569,11 +607,11 @@
       <a class="case-card-link" href="/zh/case/533.html">
         <div class="case-thumbnail"><img src="/images/tweet-1995052291981005278-1.jpg" alt="一脸六情：AI绘制六态女性拼贴艺术作品欣赏" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例533: 一脸六情：AI绘制六态女性拼贴艺术作品欣赏</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#533</span></span><span class="case-title-text">一脸六情：AI绘制六态女性拼贴艺术作品欣赏</span></h3>
           <p class="case-summary">这篇推文介绍了使用Google Gemini ai Nano Banana 3 Pro工具，创作出一幅六格拼贴的3D漫画风格女性肖像，展现六种不同情绪，包括快乐、惊讶、严肃、可爱、俏皮和自信，融合高端数字艺术与丰富色彩。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-30</span>
-            <span class="case-source">X / Shreya Yadav</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ShreyaYadav___/status/1995052291981005278">X / Shreya Yadav</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">3D</span><span class="tag">工具</span></div>
           
@@ -607,11 +645,11 @@
       <a class="case-card-link" href="/zh/case/531.html">
         <div class="case-thumbnail"><img src="/images/tweet-1994624635300974734-1.jpg" alt="黑板粉笔画艺术：展现《海贼王》波雅·汉库克的细腻再现" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例531: 黑板粉笔画艺术：展现《海贼王》波雅·汉库克的细腻再现</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#531</span></span><span class="case-title-text">黑板粉笔画艺术：展现《海贼王》波雅·汉库克的细腻再现</span></h3>
           <p class="case-summary">这篇推文详细描述了在日本学校教室中，用粉笔绘制的《海贼王》角色波雅·汉库克的写实黑板画，捕捉了作品的纹理细节与环境氛围，展现了粉笔艺术的瞬间美感。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-29</span>
-            <span class="case-source">X / Emily</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/IamEmily2050/status/1994624635300974734">X / Emily</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">工具</span></div>
           
@@ -641,11 +679,11 @@
       <a class="case-card-link" href="/zh/case/529.html">
         <div class="case-thumbnail"><img src="/images/tweet-1993754650336428422-1.jpg" alt="创意手绘竖版日历插图设计指南与元素解析" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例529: 创意手绘竖版日历插图设计指南与元素解析</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#529</span></span><span class="case-title-text">创意手绘竖版日历插图设计指南与元素解析</span></h3>
           <p class="case-summary">本文详解一款清新明亮的手绘风格竖版日历插图设计，包括人物角色、季节元素、节日特色及本地化细节的创作要求，适合设计师参考。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-28</span>
-            <span class="case-source">X / 宝玉</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/dotey/status/1993754650336428422">X / 宝玉</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">nana banana pro Prompt</span><span class="tag">设计</span><span class="tag">数字艺术</span><span class="tag">工具</span></div>
           
@@ -669,11 +707,11 @@
       <a class="case-card-link" href="/zh/case/528.html">
         <div class="case-thumbnail"><img src="/images/tweet-1992366309288595681-1.jpg" alt="古今融合：唐代贵妇与现代吹风机的幽默画作" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例528: 古今融合：唐代贵妇与现代吹风机的幽默画作</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#528</span></span><span class="case-title-text">古今融合：唐代贵妇与现代吹风机的幽默画作</span></h3>
           <p class="case-summary">这幅工笔风格的中国传统水墨彩画融合古典与现代元素，描绘唐代贵妇使用现代吹风机，身边黄人仆从各司其职，展现幽默的时代错置和创意融合。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-24</span>
-            <span class="case-source">X / 宝玉</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/dotey/status/1992366309288595681">X / 宝玉</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">nano banana pro</span><span class="tag">创意</span><span class="tag">数字艺术</span><span class="tag">工具</span></div>
           
@@ -700,11 +738,11 @@
       <a class="case-card-link" href="/zh/case/527.html">
         <div class="case-thumbnail"><img src="/images/tweet-1991958132419919975-1.jpg" alt="Nano Banana Pro创作“萝莲 Maiden”壁画，细节逼真如梦似幻" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例527: Nano Banana Pro创作“萝莲 Maiden”壁画，细节逼真如梦似幻</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#527</span></span><span class="case-title-text">Nano Banana Pro创作“萝莲 Maiden”壁画，细节逼真如梦似幻</span></h3>
           <p class="case-summary">这幅由Nano Banana Pro创作的“萝莲 Maiden”壁画融合中式韵味和细腻的摄影质感，展现一位面容娇美的洋娃娃般女子，背景繁花似锦，场景如梦似幻，彰显其高超的数字艺术技巧。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-22</span>
-            <span class="case-source">X / 宝玉</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/dotey/status/1991958132419919975">X / 宝玉</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">数字艺术</span><span class="tag">摄影</span><span class="tag">创意</span></div>
           
@@ -732,11 +770,11 @@
       <a class="case-card-link" href="/zh/case/526.html">
         <div class="case-thumbnail"><img src="/images/tweet-1990536869218546082-1.jpg" alt="与狗狗一起在悬崖边飞无人机的奇妙体验" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例526: 与狗狗一起在悬崖边飞无人机的奇妙体验</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#526</span></span><span class="case-title-text">与狗狗一起在悬崖边飞无人机的奇妙体验</span></h3>
           <p class="case-summary">想象一下，你和你的狗狗在悬崖边操控无人机，享受壮丽的自然风光。通过Gemini应用程序，你可以生成一幅超逼真的无人机航拍图像，捕捉这一刻的美好。只需简单几步，便可创建属于你自己的精致风景画面！</p>
           <div class="case-meta">
             <span class="case-date">2025-11-21</span>
-            <span class="case-source">X / Nano Banana Labs</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/NanoBanana_labs/status/1990536869218546082">X / Nano Banana Labs</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">数字艺术</span></div>
           
@@ -760,11 +798,11 @@
       <a class="case-card-link" href="/zh/case/522.html">
         <div class="case-thumbnail"><img src="/images/tweet-1991531687147360728-1.jpg" alt="纳米香蕉效果震撼！探索AI创意新边界" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例522: 纳米香蕉效果震撼！探索AI创意新边界</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#522</span></span><span class="case-title-text">纳米香蕉效果震撼！探索AI创意新边界</span></h3>
           <p class="case-summary">这篇推文介绍了纳米香蕉的惊人表现，结合ALT提示展现了AI在数字艺术和创意领域的强大潜力。让人期待未来更多创新应用。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-21</span>
-            <span class="case-source">X / Sebastien Jefferies</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/SebJefferies/status/1991531687147360728">X / Sebastien Jefferies</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Midjourney</span><span class="tag">AI</span><span class="tag">创意</span><span class="tag">数字艺术</span><span class="tag">ALT</span></div>
           
@@ -796,11 +834,11 @@
       <a class="case-card-link" href="/zh/case/515.html">
         <div class="case-thumbnail"><img src="/images/tweet-1988547753270550992-1.jpg" alt="使用 Gemini Nano Banana 创作个性自画像的创新体验" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例515: 使用 Gemini Nano Banana 创作个性自画像的创新体验</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#515</span></span><span class="case-title-text">使用 Gemini Nano Banana 创作个性自画像的创新体验</span></h3>
           <p class="case-summary">这篇推文介绍了如何利用 Gemini Nano Banana 工具，为自己创作独特的自画像。通过提示引导，激发创意，实现数字艺术的个性表达，适合艺术爱好者和创意设计师尝试。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-13</span>
-            <span class="case-source">X / Zara</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZaraIrahh/status/1988547753270550992">X / Zara</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">数字艺术</span><span class="tag">创意</span><span class="tag">Gemini Nano Banana</span></div>
           
@@ -824,11 +862,11 @@
       <a class="case-card-link" href="/zh/case/512.html">
         <div class="case-thumbnail"><img src="/images/tweet-1987873107156078650-1.jpg" alt="雨夜中的超写实蜘蛛侠与女性亲密瞬间" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例512: 雨夜中的超写实蜘蛛侠与女性亲密瞬间</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#512</span></span><span class="case-title-text">雨夜中的超写实蜘蛛侠与女性亲密瞬间</span></h3>
           <p class="case-summary">这组超写实风格的图像展现了在雨夜城市中，蜘蛛侠倒挂与一位湿润的女性亲密互动的场景，细节丰富，光影戏剧化，呈现出极致的摄影质感。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-10</span>
-            <span class="case-source">X / Melisa♡</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xmliisu/status/1987873107156078650">X / Melisa♡</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Midjourney</span><span class="tag">摄影</span><span class="tag">数字艺术</span><span class="tag">AI</span></div>
           
@@ -865,11 +903,11 @@
       <a class="case-card-link" href="/zh/case/509.html">
         <div class="case-thumbnail"><img src="/images/tweet-1987867842952224973-1.jpg" alt="双重曝光艺术：现代人与自然的对比之美" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例509: 双重曝光艺术：现代人与自然的对比之美</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#509</span></span><span class="case-title-text">双重曝光艺术：现代人与自然的对比之美</span></h3>
           <p class="case-summary">这幅由Grok Imagine创作的双重曝光艺术将艺伎轮廓与城市与自然景观融合，展现现代人类在城市与自然之间的双重存在，充满视觉冲击与哲理思考。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-10</span>
-            <span class="case-source">X / LudovicCreator</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/LudovicCreator/status/1987867842952224973">X / LudovicCreator</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Grok</span><span class="tag">AI</span><span class="tag">设计</span><span class="tag">数字艺术</span><span class="tag">创意</span></div>
           
@@ -893,11 +931,11 @@
       <a class="case-card-link" href="/zh/case/508.html">
         <div class="case-thumbnail"><img src="/images/tweet-1987778015917645963-1.jpg" alt="超现实越南女性白莲肖像，静谧优雅的艺术表达" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例508: 超现实越南女性白莲肖像，静谧优雅的艺术表达</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#508</span></span><span class="case-title-text">超现实越南女性白莲肖像，静谧优雅的艺术表达</span></h3>
           <p class="case-summary">这是一幅8K超真实肖像，描绘一位身穿传统丝绸服饰的越南年轻女性，手持白莲花，神态宁静梦幻。背景采用渐变橄榄绿，细节精致，表现出极高的艺术品质。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-10</span>
-            <span class="case-source">X / Shreya Yadav</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ShreyaYadav___/status/1987778015917645963">X / Shreya Yadav</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Midjourney</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">数字艺术</span></div>
           
@@ -921,11 +959,11 @@
       <a class="case-card-link" href="/zh/case/506.html">
         <div class="case-thumbnail"><img src="/images/tweet-1987493848294232422-1.jpg" alt="超逼真风格女性骑马肖像：白色礼服与风车夕阳场景" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例506: 超逼真风格女性骑马肖像：白色礼服与风车夕阳场景</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#506</span></span><span class="case-title-text">超逼真风格女性骑马肖像：白色礼服与风车夕阳场景</span></h3>
           <p class="case-summary">这是一幅以超逼真风格呈现的女性骑马肖像，背景设于日落时分的传统风车旁，融合戏剧性光影与高动态范围，展现庄严而永恒的氛围，采用索尼a7RV与85mm镜头精心捕捉细节。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-09</span>
-            <span class="case-source">X / Shreya Yadav</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ShreyaYadav___/status/1987493848294232422">X / Shreya Yadav</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Grok</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">数字艺术</span><span class="tag">资源</span></div>
           
@@ -958,11 +996,11 @@
       <a class="case-card-link" href="/zh/case/504.html">
         <div class="case-thumbnail"><img src="/images/tweet-1986865467953455399-1.jpg" alt="未来已来：高逼真金属机器人与人类的新纪元" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例504: 未来已来：高逼真金属机器人与人类的新纪元</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#504</span></span><span class="case-title-text">未来已来：高逼真金属机器人与人类的新纪元</span></h3>
           <p class="case-summary">这篇推文展现了未来科技场景：超写实机器人与人类互动的视觉创作，强调工具seedream 4.0或Gemini nanobanana在数字艺术中的应用，预示智能与工业风的融合。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-08</span>
-            <span class="case-source">X / Saman | AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Samann_ai/status/1986865467953455399">X / Saman | AI</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">设计</span><span class="tag">seedream 4.0</span></div>
           
@@ -986,11 +1024,11 @@
       <a class="case-card-link" href="/zh/case/503.html">
         <div class="case-thumbnail"><img src="/images/tweet-1986833636193189893-1.jpg" alt="利用Gemini nano banana实现逼真场景合成与音乐叠加教程" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例503: 利用Gemini nano banana实现逼真场景合成与音乐叠加教程</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#503</span></span><span class="case-title-text">利用Gemini nano banana实现逼真场景合成与音乐叠加教程</span></h3>
           <p class="case-summary">本文详细介绍如何通过Gemini nano banana工具，将人物参考图置入崭新悲伤公交背景，并叠加玻璃晶态音乐播放器UI，实现逼真场景合成与情感渲染，适合数字艺术创作者参考学习。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-08</span>
-            <span class="case-source">X / Melis</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/miilesus/status/1986833636193189893">X / Melis</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">nano banana</span><span class="tag">场景合成</span></div>
           
@@ -1026,11 +1064,11 @@
       <a class="case-card-link" href="/zh/case/501.html">
         <div class="case-thumbnail"><img src="/images/tweet-1986747235862790574-1.jpg" alt="极光雪景下的忧郁少女三联画：超写实数字艺术呈现" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例501: 极光雪景下的忧郁少女三联画：超写实数字艺术呈现</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#501</span></span><span class="case-title-text">极光雪景下的忧郁少女三联画：超写实数字艺术呈现</span></h3>
           <p class="case-summary">这是一幅4K超写实数字三联画，表现孤独少女在雪原中的静谧与忧郁，通过细腻的光影和极光背景展现深邃情感，强调面部保持高度一致的视觉效果。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-08</span>
-            <span class="case-source">X / Yaseen Khan Gul</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/YaseenK7212/status/1986747235862790574">X / Yaseen Khan Gul</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">数字艺术</span><span class="tag">摄影</span><span class="tag">灵感</span></div>
           
@@ -1055,11 +1093,11 @@
       <a class="case-card-link" href="/zh/case/500.html">
         <div class="case-thumbnail"><img src="/images/tweet-1986832793343504654-1.jpg" alt="Meta AI打造超现实人像创意，展现自信优雅新风尚" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例500: Meta AI打造超现实人像创意，展现自信优雅新风尚</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#500</span></span><span class="case-title-text">Meta AI打造超现实人像创意，展现自信优雅新风尚</span></h3>
           <p class="case-summary">这组由Meta AI生成的超现实风格人像，展现了一位自信、优雅的年轻女子，细腻的灯光和极简背景突显其魅力，融合了高端时尚与艺术创意。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-08</span>
-            <span class="case-source">X / Melisa♡</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xmliisu/status/1986832793343504654">X / Melisa♡</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Midjourney</span><span class="tag">AI</span><span class="tag">设计</span><span class="tag">数字艺术</span></div>
           
@@ -1100,6 +1138,16 @@
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   

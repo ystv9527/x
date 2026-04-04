@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/app.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/app.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1775192545836">
+    <link rel="stylesheet" href="/assets/style.css?v=1775261002552">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -25,6 +25,31 @@
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -34,6 +59,19 @@
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
@@ -52,12 +90,12 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2753</span>
+          <span class="nav-count">2754</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2742</span>
+          <span class="nav-count">2743</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
@@ -105,11 +143,11 @@
       <a class="case-card-link" href="/zh/case/1262.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011506876928966716-1.jpg" alt="A hyper realistic 3D photo concept showing a hand holding a s..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1262: A hyper realistic 3D photo concept showing a hand holding a s...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1262</span></span><span class="case-title-text">A hyper realistic 3D photo concept showing a hand holding a s...</span></h3>
           <p class="case-summary">A hyper realistic 3D photo concept showing a hand holding a square polaroid photo labeled “[ELEMENT]”. Inside the pho...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / TechieSA</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TechieBySA/status/2011506876928966716">X / TechieSA</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -133,11 +171,11 @@
       <a class="case-card-link" href="/zh/case/1250.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011445852267860013-1.jpg" alt="Happy Dragon Day! 🐉🎉" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1250: Happy Dragon Day! 🐉🎉</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1250</span></span><span class="case-title-text">Happy Dragon Day! 🐉🎉</span></h3>
           <p class="case-summary">Happy Dragon Day! 🐉🎉 Midjourney on @Somake ai https://t.co/vTQcrfaE03</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Stoneflower013</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/stoneflowe41058/status/2011445852267860013">X / Stoneflower013</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">App</span></div>
           
@@ -163,11 +201,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1237.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011435742375948739-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1237: &quot;meta&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1237</span></span><span class="case-title-text">&quot;meta&quot;: {</span></h3>
           <p class="case-summary">{ &quot;meta&quot;: { &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;quality&quot;: &quot;photorealistic, raw, unedited smartphone photograph&quot;, &quot;resolution&quot;: &quot;...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Passion</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Passionai0/status/2011435742375948739">X / Passion</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -199,11 +237,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1234.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011425018438115821-1.jpg" alt="&quot;project meta&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1234: &quot;project meta&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1234</span></span><span class="case-title-text">&quot;project meta&quot;: {</span></h3>
           <p class="case-summary">{ &quot;project meta&quot;: { &quot;title&quot;: &quot;Monochromatic Orange High Fashion Editorial&quot;, &quot;style&quot;: &quot;Ultra photorealistic, 8K, luxur...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / cinema 🎥</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/FilmHub00/status/2011425018438115821">X / cinema 🎥</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -237,11 +275,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1230.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011420500774314231-1.jpg" alt="&quot;scene type&quot;: &quot;Indoor lifestyle portrait&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1230: &quot;scene type&quot;: &quot;Indoor lifestyle portrait&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1230</span></span><span class="case-title-text">&quot;scene type&quot;: &quot;Indoor lifestyle portrait&quot;,</span></h3>
           <p class="case-summary">{ &quot;scene type&quot;: &quot;Indoor lifestyle portrait&quot;, &quot;environment&quot;: { &quot;location&quot;: &quot;Sunlit bedroom filled with soft natural da...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / sadiaamir</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/sadiaamir000786/status/2011420500774314231">X / sadiaamir</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -273,11 +311,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1225.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011398486152061051-1.jpg" alt="A hyper realistic, ultra detailed 8K cinematic photograph cap..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1225: A hyper realistic, ultra detailed 8K cinematic photograph cap...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1225</span></span><span class="case-title-text">A hyper realistic, ultra detailed 8K cinematic photograph cap...</span></h3>
           <p class="case-summary">A hyper realistic, ultra detailed 8K cinematic photograph captured with a 35mm lens, medium wide shot, set inside a r...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Duet | AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Sheldon056/status/2011398486152061051">X / Duet | AI</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -308,11 +346,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1224.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011395626504966335-1.jpg" alt="&quot;Objective&quot;: &quot;Create a breathtaking cinematic winter portrait..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1224: &quot;Objective&quot;: &quot;Create a breathtaking cinematic winter portrait...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1224</span></span><span class="case-title-text">&quot;Objective&quot;: &quot;Create a breathtaking cinematic winter portrait...</span></h3>
           <p class="case-summary">{ &quot;Objective&quot;: &quot;Create a breathtaking cinematic winter portrait depicting a deep, primal bond between a woman and a w...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Taaruk</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2011395626504966335">X / Taaruk</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span><span class="tag">Girl</span></div>
           
@@ -345,11 +383,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1222.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011393430442717194-1.jpg" alt="&quot;title&quot;: &quot;LA Rooftop Poolside Selfie&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1222: &quot;title&quot;: &quot;LA Rooftop Poolside Selfie&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1222</span></span><span class="case-title-text">&quot;title&quot;: &quot;LA Rooftop Poolside Selfie&quot;,</span></h3>
           <p class="case-summary">{ &quot;title&quot;: &quot;LA Rooftop Poolside Selfie&quot;, &quot;style attributes&quot;: [ &quot;Ultra realistic cinematic lifestyle photography&quot;, &quot;8K...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Melisa♡</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xmliisu/status/2011393430442717194">X / Melisa♡</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -384,11 +422,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1218.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011389738591338958-1.jpg" alt="8K Ultra Realistic Promotional" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1218: 8K Ultra Realistic Promotional</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1218</span></span><span class="case-title-text">8K Ultra Realistic Promotional</span></h3>
           <p class="case-summary">8K Ultra Realistic Promotional Design a hyper realistic close up image of a folded sheet of aged paper. Within the pa...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Milo</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Milo_Bahi_02/status/2011389738591338958">X / Milo</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -416,11 +454,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1214.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011385771530592547-1.jpg" alt="Ultra realistic luxury perfume product shot (9: 16, 4K). A cl..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1214: Ultra realistic luxury perfume product shot (9: 16, 4K). A cl...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1214</span></span><span class="case-title-text">Ultra realistic luxury perfume product shot (9: 16, 4K). A cl...</span></h3>
           <p class="case-summary">Ultra realistic luxury perfume product shot (9: 16, 4K). A clear rectangular glass perfume bottle with warm amber liq...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Oogie</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2011385771530592547">X / Oogie</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Product</span><span class="tag">App</span></div>
           
@@ -444,11 +482,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1211.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011379631740633191-1.jpg" alt="Use the same face from the reference image without changing f..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1211: Use the same face from the reference image without changing f...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1211</span></span><span class="case-title-text">Use the same face from the reference image without changing f...</span></h3>
           <p class="case-summary">Use the same face from the reference image without changing facial features { &quot;image description&quot;: &quot;A high angle, low...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / The Newz 2.0</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TheNewz_816/status/2011379631740633191">X / The Newz 2.0</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -480,11 +518,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1208.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011378277001363610-1.jpg" alt="Young beautiful woman with long wavy hair, elegant sleeveless..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1208: Young beautiful woman with long wavy hair, elegant sleeveless...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1208</span></span><span class="case-title-text">Young beautiful woman with long wavy hair, elegant sleeveless...</span></h3>
           <p class="case-summary">Young beautiful woman with long wavy hair, elegant sleeveless polka dot midi dress black and white pattern, sitting t...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Abhishek Singh</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/2abhisheknaks/status/2011378277001363610">X / Abhishek Singh</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -510,11 +548,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1207.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011374713780457546-1.jpg" alt="&quot;content goal&quot;: &quot;viral food visual with extreme craving appeal&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1207: &quot;content goal&quot;: &quot;viral food visual with extreme craving appeal&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1207</span></span><span class="case-title-text">&quot;content goal&quot;: &quot;viral food visual with extreme craving appeal&quot;,</span></h3>
           <p class="case-summary">{ &quot;content goal&quot;: &quot;viral food visual with extreme craving appeal&quot;, &quot;image type&quot;: &quot;ultra photorealistic food action ph...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Cuties</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/cuties7377/status/2011374713780457546">X / Cuties</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -547,11 +585,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1204.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011355651382104115-1.jpg" alt="ultra realistic studio portrait" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1204: ultra realistic studio portrait</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1204</span></span><span class="case-title-text">ultra realistic studio portrait</span></h3>
           <p class="case-summary">ultra realistic studio portrait Create an ultra realistic, high end professional studio portrait of one adult subject...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / simeon-sanai</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Naiknelofar788/status/2011355651382104115">X / simeon-sanai</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -586,11 +624,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1198.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011320913908941188-1.jpg" alt="A minimalist studio photograph fashion ad. At the top center,..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1198: A minimalist studio photograph fashion ad. At the top center,...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1198</span></span><span class="case-title-text">A minimalist studio photograph fashion ad. At the top center,...</span></h3>
           <p class="case-summary">A minimalist studio photograph fashion ad. At the top center, the bold sans serif text &quot;[TEXT]&quot; is positioned above t...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Heisenberg</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/rovvmut_/status/2011320913908941188">X / Heisenberg</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -614,11 +652,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1197.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011319851089051967-1.jpg" alt="&quot;prompt type&quot;: &quot;photorealistic image generation&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1197: &quot;prompt type&quot;: &quot;photorealistic image generation&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1197</span></span><span class="case-title-text">&quot;prompt type&quot;: &quot;photorealistic image generation&quot;,</span></h3>
           <p class="case-summary">{ &quot;prompt type&quot;: &quot;photorealistic image generation&quot;, &quot;subject&quot;: { &quot;gender&quot;: &quot;female&quot;, &quot;age&quot;: 18, &quot;ethnicity appearance...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / sammy</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/sumiturkude007/status/2011319851089051967">X / sammy</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -650,11 +688,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1196.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011307364671262927-1.jpg" alt="&quot;image properties&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1196: &quot;image properties&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1196</span></span><span class="case-title-text">&quot;image properties&quot;: {</span></h3>
           <p class="case-summary">{ &quot;image properties&quot;: { &quot;width&quot;: 504, &quot;height&quot;: 1002, &quot;orientation&quot;: &quot;vertical&quot;, &quot;aspect ratio&quot;: &quot;1:2&quot; }, &quot;subject&quot;:...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Ankit Mishra</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AnkitMi16412441/status/2011307364671262927">X / Ankit Mishra</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -687,11 +725,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1195.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011306880740835746-1.jpg" alt="A high fashion editorial portrait of a woman reclining elegan..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1195: A high fashion editorial portrait of a woman reclining elegan...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1195</span></span><span class="case-title-text">A high fashion editorial portrait of a woman reclining elegan...</span></h3>
           <p class="case-summary">A high fashion editorial portrait of a woman reclining elegantly on floating white stone stairs inside a minimalist s...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Smiling Khan</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AIwithkhan/status/2011306880740835746">X / Smiling Khan</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -715,11 +753,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1193.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011300896186253645-1.jpg" alt="Macro food photography of a crispy martabak telur tearing ope..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1193: Macro food photography of a crispy martabak telur tearing ope...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1193</span></span><span class="case-title-text">Macro food photography of a crispy martabak telur tearing ope...</span></h3>
           <p class="case-summary">Macro food photography of a crispy martabak telur tearing open mid air, thin golden wrapper shattering with a crack,...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / The Newz 2.0</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TheNewz_816/status/2011300896186253645">X / The Newz 2.0</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -743,11 +781,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1192.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011292261246718268-1.jpg" alt="Create an image using the exact same face as the reference im..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1192: Create an image using the exact same face as the reference im...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1192</span></span><span class="case-title-text">Create an image using the exact same face as the reference im...</span></h3>
           <p class="case-summary">Create an image using the exact same face as the reference image (100% identical, no facial changes at all). A close...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Zara</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZaraIrahh/status/2011292261246718268">X / Zara</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -777,11 +815,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1187.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011273105541644683-1.jpg" alt="Hyper realistic low angle closeup front shot of a young man u..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1187: Hyper realistic low angle closeup front shot of a young man u...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1187</span></span><span class="case-title-text">Hyper realistic low angle closeup front shot of a young man u...</span></h3>
           <p class="case-summary">Hyper realistic low angle closeup front shot of a young man use image uploaded leaning against a Land Rover Defender...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Harboriis</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/harboriis/status/2011273105541644683">X / Harboriis</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -808,11 +846,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1185.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011264845187072356-1.jpg" alt="&quot;image description&quot;: &quot;A high quality, cinematic portrait of a..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1185: &quot;image description&quot;: &quot;A high quality, cinematic portrait of a...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1185</span></span><span class="case-title-text">&quot;image description&quot;: &quot;A high quality, cinematic portrait of a...</span></h3>
           <p class="case-summary">{ &quot;image description&quot;: &quot;A high quality, cinematic portrait of a beautiful young woman with long blonde hair, styled i...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / The Newz 2.0</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TheNewz_816/status/2011264845187072356">X / The Newz 2.0</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -837,11 +875,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1183.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011261271946187209-1.jpg" alt="&quot;model&quot;: &quot;Nano Banana / Gemini style&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1183: &quot;model&quot;: &quot;Nano Banana / Gemini style&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1183</span></span><span class="case-title-text">&quot;model&quot;: &quot;Nano Banana / Gemini style&quot;,</span></h3>
           <p class="case-summary">{ &quot;model&quot;: &quot;Nano Banana / Gemini style&quot;, &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;render mode&quot;: &quot;raw&quot;, &quot;series&quot;: [ { &quot;index&quot;: &quot;1/5&quot;, &quot;...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Sharon Riley</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Just_sharon7/status/2011261271946187209">X / Sharon Riley</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -872,11 +910,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1179.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011248143925723306-1.jpg" alt="Use the uploaded image as a reference for the character. Crea..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1179: Use the uploaded image as a reference for the character. Crea...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1179</span></span><span class="case-title-text">Use the uploaded image as a reference for the character. Crea...</span></h3>
           <p class="case-summary">Use the uploaded image as a reference for the character. Create a sweet, cute, youthful looking girl with a relaxed,...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Zara</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZaraIrahh/status/2011248143925723306">X / Zara</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -902,11 +940,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1172.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011177721754443954-1.jpg" alt="&quot;subject details&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1172: &quot;subject details&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1172</span></span><span class="case-title-text">&quot;subject details&quot;: {</span></h3>
           <p class="case-summary">{ &quot;subject details&quot;: { &quot;demographics&quot;: &quot;Female motorcyclist.&quot;, &quot;hair&quot;: &quot;Dark hair styled in a single braid visible ha...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Iqra Saifi</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/IqraSaifiii/status/2011177721754443954">X / Iqra Saifi</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span><span class="tag">Girl</span></div>
           
@@ -936,11 +974,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1167.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011148742913900843-1.jpg" alt="Before and after upper body portrait photo of Sydney Sweeney,..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1167: Before and after upper body portrait photo of Sydney Sweeney,...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1167</span></span><span class="case-title-text">Before and after upper body portrait photo of Sydney Sweeney,...</span></h3>
           <p class="case-summary">Before and after upper body portrait photo of Sydney Sweeney, smiling in both images, split vertically down the cente...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Keskin</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/craftian_keskin/status/2011148742913900843">X / Keskin</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -969,11 +1007,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1162.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011120431877800041-1.jpg" alt="Three useful words in Nano Banana Pro:" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1162: Three useful words in Nano Banana Pro:</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1162</span></span><span class="case-title-text">Three useful words in Nano Banana Pro:</span></h3>
           <p class="case-summary">Three useful words in Nano Banana Pro: “MATCH THE LIGHTING” I have been using this constantly since it launched. If I...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Henry Daubrez 🌸💀</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/henrydaubrez/status/2011120431877800041">X / Henry Daubrez 🌸💀</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">App</span></div>
           
@@ -1005,11 +1043,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1160.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011117557391225023-1.jpg" alt="&quot;scene description&quot;: &quot;Three young women lying down on a textu..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1160: &quot;scene description&quot;: &quot;Three young women lying down on a textu...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1160</span></span><span class="case-title-text">&quot;scene description&quot;: &quot;Three young women lying down on a textu...</span></h3>
           <p class="case-summary">{ &quot;scene description&quot;: &quot;Three young women lying down on a textured surface. The bodies are intertwined in a triangula...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Iqra Saifi</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/IqraSaifiii/status/2011117557391225023">X / Iqra Saifi</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1039,11 +1077,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1158.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011114481015795906-1.jpg" alt="Sometimes I want to stay alone away from the Chaos of City life" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1158: Sometimes I want to stay alone away from the Chaos of City life</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1158</span></span><span class="case-title-text">Sometimes I want to stay alone away from the Chaos of City life</span></h3>
           <p class="case-summary">Sometimes I want to stay alone away from the Chaos of City life The Realism by gemini nano banana Prompt 👇 Wide shot...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Vera Collins</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/PiyariArisha/status/2011114481015795906">X / Vera Collins</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -1074,11 +1112,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1154.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011108316882014431-1.jpg" alt="A vibrant, high end advertising visual of a [PRODUCT NAME] ca..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1154: A vibrant, high end advertising visual of a [PRODUCT NAME] ca...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1154</span></span><span class="case-title-text">A vibrant, high end advertising visual of a [PRODUCT NAME] ca...</span></h3>
           <p class="case-summary">A vibrant, high end advertising visual of a [PRODUCT NAME] can/bottle floating dynamically in the center. The backgro...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Mo</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Kerroudjm/status/2011108316882014431">X / Mo</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Product</span><span class="tag">App</span></div>
           
@@ -1102,11 +1140,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1153.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011107848068194432-1.jpg" alt="&quot;reference usage&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1153: &quot;reference usage&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1153</span></span><span class="case-title-text">&quot;reference usage&quot;: {</span></h3>
           <p class="case-summary">{ &quot;reference usage&quot;: { &quot;use reference for&quot;: [ &quot;pose&quot;, &quot;framing&quot;, &quot;camera angle&quot;, &quot;lighting style&quot;, &quot;background style&quot;...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Johnn</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/john_my07/status/2011107848068194432">X / Johnn</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span></div>
           
@@ -1148,11 +1186,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1151.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011107213457477786-1.jpg" alt="Close up portrait of a young man Noor with long messy, volumi..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1151: Close up portrait of a young man Noor with long messy, volumi...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1151</span></span><span class="case-title-text">Close up portrait of a young man Noor with long messy, volumi...</span></h3>
           <p class="case-summary">Close up portrait of a young man Noor with long messy, voluminous dark hair, holding a fluffy white Persian cat in fr...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Zar⭕on</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Xaroonx/status/2011107213457477786">X / Zar⭕on</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">App</span></div>
           
@@ -1176,11 +1214,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1150.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011106561838723266-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1150: &quot;subject&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1150</span></span><span class="case-title-text">&quot;subject&quot;: {</span></h3>
           <p class="case-summary">{ &quot;subject&quot;: { &quot;type&quot;: &quot;Woman&quot;, &quot;age&quot;: &quot;Young adult&quot;, &quot;appearance&quot;: { &quot;hair&quot;: { &quot;color&quot;: &quot;Dark brown&quot;, &quot;style&quot;: &quot;Medi...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Sudee🥀</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/NameIsSudee/status/2011106561838723266">X / Sudee🥀</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span><span class="tag">Girl</span></div>
           
@@ -1215,11 +1253,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1149.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011103869909287335-1.jpg" alt="Wide shot, subject acts as an anchor against a raging wind. S..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1149: Wide shot, subject acts as an anchor against a raging wind. S...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1149</span></span><span class="case-title-text">Wide shot, subject acts as an anchor against a raging wind. S...</span></h3>
           <p class="case-summary">Wide shot, subject acts as an anchor against a raging wind. Standing on a jagged black rock coastline, waves crashing...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Abhi</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Abhiew_/status/2011103869909287335">X / Abhi</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -1244,11 +1282,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1143.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011085218778861844-1.jpg" alt="&quot;prompt configuration&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1143: &quot;prompt configuration&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1143</span></span><span class="case-title-text">&quot;prompt configuration&quot;: {</span></h3>
           <p class="case-summary">{ &quot;prompt configuration&quot;: { &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;quality settings&quot;: { &quot;resolution&quot;: &quot;4k&quot;, &quot;definition&quot;: &quot;Ultra HD...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Iris</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xIrissy/status/2011085218778861844">X / Iris</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1280,11 +1318,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1142.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011084512617246917-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1142: &quot;subject&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1142</span></span><span class="case-title-text">&quot;subject&quot;: {</span></h3>
           <p class="case-summary">{ &quot;subject&quot;: { &quot;type&quot;: &quot;Woman&quot;, &quot;age&quot;: &quot;Young adult&quot;, &quot;appearance&quot;: { &quot;hair&quot;: { &quot;color&quot;: &quot;Dark brown&quot;, &quot;style&quot;: &quot;Medi...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Melisa♡</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xmliisu/status/2011084512617246917">X / Melisa♡</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span><span class="tag">Girl</span></div>
           
@@ -1320,11 +1358,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1139.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011080155612209311-1.jpg" alt="&quot;Objective&quot;: &quot;Create a cinematic fine art portrait with gothi..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1139: &quot;Objective&quot;: &quot;Create a cinematic fine art portrait with gothi...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1139</span></span><span class="case-title-text">&quot;Objective&quot;: &quot;Create a cinematic fine art portrait with gothi...</span></h3>
           <p class="case-summary">{ &quot;Objective&quot;: &quot;Create a cinematic fine art portrait with gothic elegance and high fashion editorial refinement&quot;, &quot;Pe...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Taaruk</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2011080155612209311">X / Taaruk</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1357,11 +1395,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1138.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011079834508935406-1.jpg" alt="a beautiful woman with dark hair, wearing a short skirt and a..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1138: a beautiful woman with dark hair, wearing a short skirt and a...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1138</span></span><span class="case-title-text">a beautiful woman with dark hair, wearing a short skirt and a...</span></h3>
           <p class="case-summary">a beautiful woman with dark hair, wearing a short skirt and an open back top, smiling and holding an umbrella in the...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / MapleShaw</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/msjiaozhu/status/2011079834508935406">X / MapleShaw</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1385,11 +1423,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1135.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011077396263317952-1.jpg" alt="&quot;generation request&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1135: &quot;generation request&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1135</span></span><span class="case-title-text">&quot;generation request&quot;: {</span></h3>
           <p class="case-summary">{ &quot;generation request&quot;: { &quot;meta data&quot;: { &quot;tool&quot;: &quot;NanoBanana Pro&quot;, &quot;task type&quot;: &quot;photoreal candid street romance&quot;, &quot;v...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Özge Döner</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/astronomerozge1/status/2011077396263317952">X / Özge Döner</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span></div>
           
@@ -1420,11 +1458,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1133.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011074680808227128-1.jpg" alt="Create an image of my face exactly as in the attached file, 1..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1133: Create an image of my face exactly as in the attached file, 1...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1133</span></span><span class="case-title-text">Create an image of my face exactly as in the attached file, 1...</span></h3>
           <p class="case-summary">Create an image of my face exactly as in the attached file, 100% without any changes. A high resolution 8k image self...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Zara</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZaraIrahh/status/2011074680808227128">X / Zara</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1450,11 +1488,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1132.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011074239994933506-1.jpg" alt="&quot;prompt details&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1132: &quot;prompt details&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1132</span></span><span class="case-title-text">&quot;prompt details&quot;: {</span></h3>
           <p class="case-summary">{ &quot;prompt details&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;elegant young woman descending a grand staircase&quot;, &quot;appearance&quot;: &quot;...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / TJ</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TAB_TAB_HH/status/2011074239994933506">X / TJ</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1486,11 +1524,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1131.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011072669941448785-1.jpg" alt="High contrast black and white photo taken with a 1990s dispos..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1131: High contrast black and white photo taken with a 1990s dispos...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1131</span></span><span class="case-title-text">High contrast black and white photo taken with a 1990s dispos...</span></h3>
           <p class="case-summary">High contrast black and white photo taken with a 1990s disposable camera at a dark house party. A handsome young man...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Harboriis</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/harboriis/status/2011072669941448785">X / Harboriis</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -1514,11 +1552,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1130.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011072648303018074-1.jpg" alt="&quot;description&quot;: &quot;A colossal woman standing in a city street, a..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1130: &quot;description&quot;: &quot;A colossal woman standing in a city street, a...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1130</span></span><span class="case-title-text">&quot;description&quot;: &quot;A colossal woman standing in a city street, a...</span></h3>
           <p class="case-summary">{ &quot;description&quot;: &quot;A colossal woman standing in a city street, appearing to be &#39;under construction&#39; with scaffolding s...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Iqra Saifi</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/IqraSaifiii/status/2011072648303018074">X / Iqra Saifi</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -1548,11 +1586,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1123.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011050049258865019-1.jpg" alt="a window looking out an airplane and you can see a 4k image o..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1123: a window looking out an airplane and you can see a 4k image o...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1123</span></span><span class="case-title-text">a window looking out an airplane and you can see a 4k image o...</span></h3>
           <p class="case-summary">a window looking out an airplane and you can see a 4k image of a futuistic, very modern house on top of a mountain wi...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / 𝐌</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Strength04_X/status/2011050049258865019">X / 𝐌</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -1576,11 +1614,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1117.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011044123818549711-1.jpg" alt="&quot;production manifest&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1117: &quot;production manifest&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1117</span></span><span class="case-title-text">&quot;production manifest&quot;: {</span></h3>
           <p class="case-summary">{ &quot;production manifest&quot;: { &quot;metadata&quot;: { &quot;series id&quot;: &quot;CIN FOOD 2025&quot;, &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;resolution target&quot;: &quot;...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / The Newz 2.0</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TheNewz_816/status/2011044123818549711">X / The Newz 2.0</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -1615,11 +1653,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1116.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011041247142822373-1.jpg" alt="A full length portrait of a woman with a biker chic style, si..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1116: A full length portrait of a woman with a biker chic style, si...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1116</span></span><span class="case-title-text">A full length portrait of a woman with a biker chic style, si...</span></h3>
           <p class="case-summary">A full length portrait of a woman with a biker chic style, sitting sideways on a customized motorcycle on an urban st...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Cherry 2.O</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/hey_m_cherry/status/2011041247142822373">X / Cherry 2.O</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1643,11 +1681,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1114.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011038232213962944-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1114: &quot;meta&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1114</span></span><span class="case-title-text">&quot;meta&quot;: {</span></h3>
           <p class="case-summary">{ &quot;meta&quot;: { &quot;image quality&quot;: &quot;High&quot;, &quot;image type&quot;: &quot;Photo Set&quot;, &quot;aspect ratio&quot;: &quot;4:5&quot;, &quot;frame count&quot;: 4 }, &quot;global co...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / yusra.</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/chatgptpaglu/status/2011038232213962944">X / yusra.</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1682,11 +1720,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1111.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011034968127057975-1.jpg" alt="&quot;file metadata&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1111: &quot;file metadata&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1111</span></span><span class="case-title-text">&quot;file metadata&quot;: {</span></h3>
           <p class="case-summary">{ &quot;file metadata&quot;: { &quot;filename&quot;: &quot;sydney sweeney ae campaign collage.jpg&quot;, &quot;category&quot;: &quot;High End Fashion Photography&quot;...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Bahar azam</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BaharAzamm561/status/2011034968127057975">X / Bahar azam</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1719,11 +1757,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1108.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011028969332805684-1.jpg" alt="Create a hyper realistic mirror selfie of me (use my face fro..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1108: Create a hyper realistic mirror selfie of me (use my face fro...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1108</span></span><span class="case-title-text">Create a hyper realistic mirror selfie of me (use my face fro...</span></h3>
           <p class="case-summary">Create a hyper realistic mirror selfie of me (use my face from the uploaded selfie) wearing the same black Ferrari ra...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Harboriis</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/harboriis/status/2011028969332805684">X / Harboriis</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -1751,11 +1789,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1105.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011026753205256288-1.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial iden..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1105: &quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial iden...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1105</span></span><span class="case-title-text">&quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial iden...</span></h3>
           <p class="case-summary">{ &quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial identity reference. Preserve the same woman exactly — no c...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Aarvi sharma</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/me_Aarvi/status/2011026753205256288">X / Aarvi sharma</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1780,11 +1818,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1104.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011018911006052407-1.jpg" alt="Generate a photorealistic medium full body shot of a young wo..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1104: Generate a photorealistic medium full body shot of a young wo...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1104</span></span><span class="case-title-text">Generate a photorealistic medium full body shot of a young wo...</span></h3>
           <p class="case-summary">Generate a photorealistic medium full body shot of a young woman sitting on the armrest of a pink velvet armchair in...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Adam也叫吉米</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Adam38363368936/status/2011018911006052407">X / Adam也叫吉米</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -1808,11 +1846,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1102.html">
         <div class="case-thumbnail"><img src="/images/tweet-2011006506863640931-1.jpg" alt="Purple Faux Leather School Look with Digital Polka Dots, 2026" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1102: Purple Faux Leather School Look with Digital Polka Dots, 2026</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1102</span></span><span class="case-title-text">Purple Faux Leather School Look with Digital Polka Dots, 2026</span></h3>
           <p class="case-summary">Ayle Purple Faux Leather School Look with Digital Polka Dots, 2026 Midjourney prompt on digital canvas X &quot;The boredom...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / AYLE</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/shadowsouli/status/2011006506863640931">X / AYLE</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">App</span></div>
           
@@ -1844,11 +1882,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1096.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010872045433995679-1.jpg" alt="Niji journey/Midjourney https://t.co/auxj7GqKph" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1096: Niji journey/Midjourney https://t.co/auxj7GqKph</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1096</span></span><span class="case-title-text">Niji journey/Midjourney https://t.co/auxj7GqKph</span></h3>
           <p class="case-summary">Niji journey/Midjourney https://t.co/auxj7GqKph</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Iris</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Iris_of_AI/status/2010872045433995679">X / Iris</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">App</span></div>
           
@@ -1872,11 +1910,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1086.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010788877934469176-1.jpg" alt="A poetic ink and paint style with misty peaks, soft skies, an..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1086: A poetic ink and paint style with misty peaks, soft skies, an...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1086</span></span><span class="case-title-text">A poetic ink and paint style with misty peaks, soft skies, an...</span></h3>
           <p class="case-summary">A poetic ink and paint style with misty peaks, soft skies, and quiet scale shifts that move from nature to city witho...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-12</span>
-            <span class="case-source">X / Tischeins</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/tisch_eins/status/2010788877934469176">X / Tischeins</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">App</span></div>
           
@@ -1904,11 +1942,11 @@ Midjourney 在 @Somake_ai 上 https://t.co/vTQcrfaE03</p>
       <a class="case-card-link" href="/zh/case/1041.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010548697881612371-1.jpg" alt="A Quiet Moment Behind the Counter" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1041: A Quiet Moment Behind the Counter</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1041</span></span><span class="case-title-text">A Quiet Moment Behind the Counter</span></h3>
           <p class="case-summary">静かな店番 A Quiet Moment Behind the Counter Midjourney https://t.co/zOk6sBZsqd</p>
           <div class="case-meta">
             <span class="case-date">2026-01-12</span>
-            <span class="case-source">X / もしもし@Aiart</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/moshimoshi_ai/status/2010548697881612371">X / もしもし@Aiart</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">App</span></div>
           
@@ -1934,11 +1972,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/1036.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010492916397908450-1.jpg" alt="She opens her eyes and sees products orbiting her like memori..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1036: She opens her eyes and sees products orbiting her like memori...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1036</span></span><span class="case-title-text">She opens her eyes and sees products orbiting her like memori...</span></h3>
           <p class="case-summary">She opens her eyes and sees products orbiting her like memories that never decomposed. The algorithm calls it &quot;person...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-11</span>
-            <span class="case-source">X / ibexdream</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ibexdream/status/2010492916397908450">X / ibexdream</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">Product</span><span class="tag">App</span></div>
           
@@ -1969,11 +2007,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/1020.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010373557650653320-1.jpg" alt="＜Break/ 休憩＞" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1020: ＜Break/ 休憩＞</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1020</span></span><span class="case-title-text">＜Break/ 休憩＞</span></h3>
           <p class="case-summary">＜Break/ 休憩＞ ... In the summer, a cool place is a great place to relax! Was there anywhere you could slack off? I gues...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-11</span>
-            <span class="case-source">X / iX｜AIART/AIMOVIE【2nd】</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iX00AI2/status/2010373557650653320">X / iX｜AIART/AIMOVIE【2nd】</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -2004,11 +2042,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/1009.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010335891982532777-1.jpg" alt="Double exposure portraits with glowing cityscapes, warm light..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1009: Double exposure portraits with glowing cityscapes, warm light...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1009</span></span><span class="case-title-text">Double exposure portraits with glowing cityscapes, warm light...</span></h3>
           <p class="case-summary">Double exposure portraits with glowing cityscapes, warm light leaks, and a quiet cinematic mood with this SREF. 💫 sr...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-11</span>
-            <span class="case-source">X / Tischeins</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/tisch_eins/status/2010335891982532777">X / Tischeins</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -2036,11 +2074,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/1007.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010320834632749530-1.jpg" alt="This woman is quietly thinking whether or not Midjourney V8 w..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例1007: This woman is quietly thinking whether or not Midjourney V8 w...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#1007</span></span><span class="case-title-text">This woman is quietly thinking whether or not Midjourney V8 w...</span></h3>
           <p class="case-summary">This woman is quietly thinking whether or not Midjourney V8 will finally fix feet and hands like everyone else have.....</p>
           <div class="case-meta">
             <span class="case-date">2026-01-11</span>
-            <span class="case-source">X / Michael Rabone</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/michaelrabone/status/2010320834632749530">X / Michael Rabone</span>
           </div>
           <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -2067,11 +2105,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/953.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009947657905811727-1.jpg" alt="&quot;global settings&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例953: &quot;global settings&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#953</span></span><span class="case-title-text">&quot;global settings&quot;: {</span></h3>
           <p class="case-summary">{ &quot;global settings&quot;: { &quot;resolution&quot;: &quot;8K UHD&quot;, &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;image type&quot;: &quot;AI edited hyper realistic commer...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-10</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2009947657905811727">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Product</span><span class="tag">App</span></div>
           
@@ -2103,11 +2141,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/948.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009937038670540843-1.jpg" alt="&quot;Macro food photography of a crispy martabak telur tearing op..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例948: &quot;Macro food photography of a crispy martabak telur tearing op...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#948</span></span><span class="case-title-text">&quot;Macro food photography of a crispy martabak telur tearing op...</span></h3>
           <p class="case-summary">&quot;Macro food photography of a crispy martabak telur tearing open mid air, thin golden wrapper shattering with a crack,...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-10</span>
-            <span class="case-source">X / Sharon Riley</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Just_sharon7/status/2009937038670540843">X / Sharon Riley</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -2131,11 +2169,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/938.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009878072565346585-1.jpg" alt="A photorealistic image, split down the middle. On the left si..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例938: A photorealistic image, split down the middle. On the left si...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#938</span></span><span class="case-title-text">A photorealistic image, split down the middle. On the left si...</span></h3>
           <p class="case-summary">A photorealistic image, split down the middle. On the left side, a small, detailed bone that touches the center divid...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-10</span>
-            <span class="case-source">X / Umesh</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/umesh_ai/status/2009878072565346585">X / Umesh</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -2159,11 +2197,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/903.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009624649894945022-1.jpg" alt="Create a high quality 3D metallic typography composition of t..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例903: Create a high quality 3D metallic typography composition of t...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#903</span></span><span class="case-title-text">Create a high quality 3D metallic typography composition of t...</span></h3>
           <p class="case-summary">Create a high quality 3D metallic typography composition of the title [MOVIE / SERIES NAME], set against a dark, text...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-09</span>
-            <span class="case-source">X / Aleena Amir</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/aleenaamiir/status/2009624649894945022">X / Aleena Amir</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">3D</span><span class="tag">App</span></div>
           
@@ -2191,11 +2229,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/896.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009591285406208118-1.jpg" alt="&quot;project&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例896: &quot;project&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#896</span></span><span class="case-title-text">&quot;project&quot;: {</span></h3>
           <p class="case-summary">{ &quot;project&quot;: { &quot;title&quot;: &quot;Hyper Visual Fried Chicken Action Series&quot;, &quot;output quality&quot;: &quot;8K Ultra HD&quot;, &quot;aspect ratio&quot;:...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-09</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2009591285406208118">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -2230,11 +2268,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/879.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009446363331973461-1.jpg" alt="&quot;global settings&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例879: &quot;global settings&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#879</span></span><span class="case-title-text">&quot;global settings&quot;: {</span></h3>
           <p class="case-summary">{ &quot;global settings&quot;: { &quot;resolution&quot;: &quot;8K UHD&quot;, &quot;quality&quot;: &quot;ultra high&quot;, &quot;render style&quot;: &quot;AI edited hyper realistic fo...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-09</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2009446363331973461">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -2269,11 +2307,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/866.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009310549994283496-1.jpg" alt="ChatGPT Image 1.5 × Google Veo 3.1" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例866: ChatGPT Image 1.5 × Google Veo 3.1</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#866</span></span><span class="case-title-text">ChatGPT Image 1.5 × Google Veo 3.1</span></h3>
           <p class="case-summary">ChatGPT Image 1.5 × Google Veo 3.1 → Nano Banana Pro / GPT Image 1.5 → Copy &amp; Paste the Prompt → View Results Below ⤵...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-08</span>
-            <span class="case-source">X / LOKII</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TheLOKII_/status/2009310549994283496">X / LOKII</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">Product</span><span class="tag">App</span></div>
           
@@ -2305,11 +2343,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/862.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009284710862643206-1.jpg" alt="A marque historian&#39;s documentation board for [VEHICLE] — [MOD..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例862: A marque historian&#39;s documentation board for [VEHICLE] — [MOD...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#862</span></span><span class="case-title-text">A marque historian&#39;s documentation board for [VEHICLE] — [MOD...</span></h3>
           <p class="case-summary">A marque historian&#39;s documentation board for [VEHICLE] — [MODEL / VARIANT / YEAR]. Left section: factory documentatio...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-08</span>
-            <span class="case-source">X / Alexandra Aisling</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AllaAisling/status/2009284710862643206">X / Alexandra Aisling</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -2339,11 +2377,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/832.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009157208240755151-1.jpg" alt="&quot;resolution&quot;: &quot;8K UHD&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例832: &quot;resolution&quot;: &quot;8K UHD&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#832</span></span><span class="case-title-text">&quot;resolution&quot;: &quot;8K UHD&quot;,</span></h3>
           <p class="case-summary">{ &quot;resolution&quot;: &quot;8K UHD&quot;, &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;image style&quot;: &quot;hyper realistic commercial food photography&quot;, &quot;globa...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-08</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2009157208240755151">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -2374,11 +2412,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/828.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009117120987320527-1.jpg" alt="Create a hyperrealistic, surreal spherical panorama of [CITY..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例828: Create a hyperrealistic, surreal spherical panorama of [CITY...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#828</span></span><span class="case-title-text">Create a hyperrealistic, surreal spherical panorama of [CITY...</span></h3>
           <p class="case-summary">Create a hyperrealistic, surreal spherical panorama of [CITY NAME], with its most iconic landmarks and architecture s...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-08</span>
-            <span class="case-source">X / Aleena Amir</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/aleenaamiir/status/2009117120987320527">X / Aleena Amir</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">3D</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -2407,11 +2445,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/796.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008843805487686111-1.jpg" alt="(Paris, PC) Anchor: [Location] :: [Material Concept]::4" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例796: (Paris, PC) Anchor: [Location] :: [Material Concept]::4</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#796</span></span><span class="case-title-text">(Paris, PC) Anchor: [Location] :: [Material Concept]::4</span></h3>
           <p class="case-summary">(Paris, PC) Anchor: [Location] :: [Material Concept]::4 Morphology: Miniature architectural cityscape of [Location],...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-07</span>
-            <span class="case-source">X / Gadgetify</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Gdgtify/status/2008843805487686111">X / Gadgetify</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -2437,11 +2475,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/786.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008794302630309945-1.jpg" alt="&quot;prompt details&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例786: &quot;prompt details&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#786</span></span><span class="case-title-text">&quot;prompt details&quot;: {</span></h3>
           <p class="case-summary">{ &quot;prompt details&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;Handsome male trekker, dark wavy hair (no cap), full beard, rugged...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-07</span>
-            <span class="case-source">X / 𝐌</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Strength04_X/status/2008794302630309945">X / 𝐌</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -2472,11 +2510,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/772.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008745209547669542-1.jpg" alt="&quot;Objective&quot;: &quot;Create a realistic candid street photograph wit..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例772: &quot;Objective&quot;: &quot;Create a realistic candid street photograph wit...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#772</span></span><span class="case-title-text">&quot;Objective&quot;: &quot;Create a realistic candid street photograph wit...</span></h3>
           <p class="case-summary">{ &quot;Objective&quot;: &quot;Create a realistic candid street photograph with cinematic documentary realism&quot;, &quot;PersonaDetails&quot;: {...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-07</span>
-            <span class="case-source">X / Taaruk</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2008745209547669542">X / Taaruk</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -2509,11 +2547,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/741.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008524388862460300-1.jpg" alt="&quot;image type&quot;: &quot;studio fashion photography&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例741: &quot;image type&quot;: &quot;studio fashion photography&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#741</span></span><span class="case-title-text">&quot;image type&quot;: &quot;studio fashion photography&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;studio fashion photography&quot;, &quot;resolution target&quot;: &quot;8K&quot;, &quot;aspect ratio&quot;: &quot;portrait&quot;, &quot;subject&quot;: { &quot;en...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-06</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2008524388862460300">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">App</span><span class="tag">JSON</span></div>
           
@@ -2548,11 +2586,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/730.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008484790287430022-1.jpg" alt="&quot;image generation&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例730: &quot;image generation&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#730</span></span><span class="case-title-text">&quot;image generation&quot;: {</span></h3>
           <p class="case-summary">{ &quot;image generation&quot;: { &quot;face&quot;: { &quot;preserve original&quot;: true, &quot;reference match&quot;: true, &quot;description&quot;: &quot;Maintain the sa...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-06</span>
-            <span class="case-source">X / Harboriis</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/harboriis/status/2008484790287430022">X / Harboriis</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span><span class="tag">Photograph</span></div>
           
@@ -2584,11 +2622,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/723.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008455129624965416-1.jpg" alt="&quot;image type&quot;: &quot;Hyper realistic cinematic food photography&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例723: &quot;image type&quot;: &quot;Hyper realistic cinematic food photography&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#723</span></span><span class="case-title-text">&quot;image type&quot;: &quot;Hyper realistic cinematic food photography&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;Hyper realistic cinematic food photography&quot;, &quot;resolution&quot;: &quot;8K&quot;, &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;camera&quot;: {...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-06</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2008455129624965416">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -2623,11 +2661,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/722.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008453808968659330-1.jpg" alt="&quot;Objective&quot;: &quot;Create a joyful, cinematic fantasy photograph s..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例722: &quot;Objective&quot;: &quot;Create a joyful, cinematic fantasy photograph s...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#722</span></span><span class="case-title-text">&quot;Objective&quot;: &quot;Create a joyful, cinematic fantasy photograph s...</span></h3>
           <p class="case-summary">{ &quot;Objective&quot;: &quot;Create a joyful, cinematic fantasy photograph set in a magical fairytale theme park&quot; &quot;Type&quot;: &quot;Young w...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-06</span>
-            <span class="case-source">X / Taaruk</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2008453808968659330">X / Taaruk</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -2660,11 +2698,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/688.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008197435622133842-1.jpg" alt="&quot;style&quot;: &quot;monochrome studio portrait&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例688: &quot;style&quot;: &quot;monochrome studio portrait&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#688</span></span><span class="case-title-text">&quot;style&quot;: &quot;monochrome studio portrait&quot;,</span></h3>
           <p class="case-summary">{ &quot;style&quot;: &quot;monochrome studio portrait&quot;, &quot;subject&quot;: { &quot;identity&quot;: &quot;same man as reference&quot;, &quot;expression&quot;: &quot;calm, confi...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-05</span>
-            <span class="case-source">X / Johnn</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/john_my07/status/2008197435622133842">X / Johnn</span>
           </div>
           <div class="case-tags"><span class="tag">Nano Banana</span><span class="tag">JSON</span><span class="tag">App</span></div>
           
@@ -2701,11 +2739,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/678.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008133265492988148-1.jpg" alt="&quot;image type&quot;: &quot;photographic portrait&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例678: &quot;image type&quot;: &quot;photographic portrait&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#678</span></span><span class="case-title-text">&quot;image type&quot;: &quot;photographic portrait&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;photographic portrait&quot;, &quot;composition&quot;: { &quot;framing&quot;: &quot;tight close up portrait&quot;, &quot;crop&quot;: &quot;top of head...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-05</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2008133265492988148">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -2737,11 +2775,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/667.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007811680882110495-1.jpg" alt="&quot;image type&quot;: &quot;photographic portrait&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例667: &quot;image type&quot;: &quot;photographic portrait&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#667</span></span><span class="case-title-text">&quot;image type&quot;: &quot;photographic portrait&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;photographic portrait&quot;, &quot;resolution target&quot;: &quot;8K&quot;, &quot;subject&quot;: { &quot;count&quot;: 1, &quot;gender presentation&quot;: &quot;...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2007811680882110495">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -2773,11 +2811,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/660.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007711515458318421-1.jpg" alt="Create a hyper realistic, stylish vertical poster featuring a..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例660: Create a hyper realistic, stylish vertical poster featuring a...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#660</span></span><span class="case-title-text">Create a hyper realistic, stylish vertical poster featuring a...</span></h3>
           <p class="case-summary">Create a hyper realistic, stylish vertical poster featuring a smartphone lying on a table, transformed into a hockey...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / 𝐌</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Strength04_X/status/2007711515458318421">X / 𝐌</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -2801,11 +2839,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/657.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007635164718084527-1.jpg" alt="&quot;prompt name&quot;: &quot;Lays Spanish Tomato Tango Explosion&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例657: &quot;prompt name&quot;: &quot;Lays Spanish Tomato Tango Explosion&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#657</span></span><span class="case-title-text">&quot;prompt name&quot;: &quot;Lays Spanish Tomato Tango Explosion&quot;,</span></h3>
           <p class="case-summary">{ &quot;prompt name&quot;: &quot;Lays Spanish Tomato Tango Explosion&quot;, &quot;description&quot;: &quot;Ultra realistic commercial food photography s...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2007635164718084527">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -2831,11 +2869,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/649.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007400716667965782-1.jpg" alt="Ultra realistic 8K high fashion editorial photograph of a you..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例649: Ultra realistic 8K high fashion editorial photograph of a you...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#649</span></span><span class="case-title-text">Ultra realistic 8K high fashion editorial photograph of a you...</span></h3>
           <p class="case-summary">Ultra realistic 8K high fashion editorial photograph of a young woman with fair skin and long wavy chestnut brown hai...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-03</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2007400716667965782">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -2865,11 +2903,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/648.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007269989359948066-1.jpg" alt="Epic 8K cinematic fantasy food scene: a colossal crispy fried..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例648: Epic 8K cinematic fantasy food scene: a colossal crispy fried...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#648</span></span><span class="case-title-text">Epic 8K cinematic fantasy food scene: a colossal crispy fried...</span></h3>
           <p class="case-summary">Epic 8K cinematic fantasy food scene: a colossal crispy fried chicken leg rising like a legendary artifact through a...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-03</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2007269989359948066">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">Food</span><span class="tag">App</span></div>
           
@@ -2893,11 +2931,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/643.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007082189742379459-1.jpg" alt="Create a highly detailed isometric 3D rendering of [LANDMARK]..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例643: Create a highly detailed isometric 3D rendering of [LANDMARK]...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#643</span></span><span class="case-title-text">Create a highly detailed isometric 3D rendering of [LANDMARK]...</span></h3>
           <p class="case-summary">Create a highly detailed isometric 3D rendering of [LANDMARK] in architectural visualization style. The building is s...</p>
           <div class="case-meta">
             <span class="case-date">2026-01-02</span>
-            <span class="case-source">X / TechieSA</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TechieBySA/status/2007082189742379459">X / TechieSA</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">3D</span><span class="tag">App</span></div>
           
@@ -2921,11 +2959,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/630.html">
         <div class="case-thumbnail"><img src="/images/tweet-2005541752187273292-1.jpg" alt="A stylish man wearing a tan suit and sunglasses is featured i..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例630: A stylish man wearing a tan suit and sunglasses is featured i...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#630</span></span><span class="case-title-text">A stylish man wearing a tan suit and sunglasses is featured i...</span></h3>
           <p class="case-summary">A stylish man wearing a tan suit and sunglasses is featured in a creative split image, framed by two ornate gold fram...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-29</span>
-            <span class="case-source">X / Zar⭕on</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Xaroonx/status/2005541752187273292">X / Zar⭕on</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">App</span><span class="tag">Photograph</span></div>
           
@@ -2949,11 +2987,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/628.html">
         <div class="case-thumbnail"><img src="/images/tweet-2005459268720550271-1.jpg" alt="&quot;task&quot;: &quot;image analysis to generation prompt&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例628: &quot;task&quot;: &quot;image analysis to generation prompt&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#628</span></span><span class="case-title-text">&quot;task&quot;: &quot;image analysis to generation prompt&quot;,</span></h3>
           <p class="case-summary">{ &quot;task&quot;: &quot;image analysis to generation prompt&quot;, &quot;resolution&quot;: &quot;8K UHD&quot;, &quot;orientation&quot;: &quot;vertical portrait&quot;, &quot;image t...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-29</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2005459268720550271">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -2985,11 +3023,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/623.html">
         <div class="case-thumbnail"><img src="/images/tweet-2004950904152506497-1.jpg" alt="A charcuterie style board presents JAPAN as an edible sculptu..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例623: A charcuterie style board presents JAPAN as an edible sculptu...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#623</span></span><span class="case-title-text">A charcuterie style board presents JAPAN as an edible sculptu...</span></h3>
           <p class="case-summary">A charcuterie style board presents JAPAN as an edible sculpture: • Letters carved from compact sushi rice blocks wrap...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-27</span>
-            <span class="case-source">X / Gadgetify</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Gdgtify/status/2004950904152506497">X / Gadgetify</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -3020,11 +3058,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/622.html">
         <div class="case-thumbnail"><img src="/images/tweet-2004935778183590081-1.jpg" alt="&quot;id&quot;: &quot;pineapple beach v2&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例622: &quot;id&quot;: &quot;pineapple beach v2&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#622</span></span><span class="case-title-text">&quot;id&quot;: &quot;pineapple beach v2&quot;,</span></h3>
           <p class="case-summary">[ { &quot;id&quot;: &quot;pineapple beach v2&quot;, &quot;type&quot;: &quot;photorealistic advertising shot&quot;, &quot;subject&quot;: { &quot;item&quot;: &quot;pineapple juice bott...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-27</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2004935778183590081">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">App</span><span class="tag">Food</span></div>
           
@@ -3058,11 +3096,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/621.html">
         <div class="case-thumbnail"><img src="/images/tweet-2004854685438804012-1.jpg" alt="&quot;type&quot;: &quot;image generation prompt&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例621: &quot;type&quot;: &quot;image generation prompt&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#621</span></span><span class="case-title-text">&quot;type&quot;: &quot;image generation prompt&quot;,</span></h3>
           <p class="case-summary">{ &quot;type&quot;: &quot;image generation prompt&quot;, &quot;style&quot;: &quot;ultra wide angle, aerial portrait, contemporary studio photography&quot;, &quot;...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-27</span>
-            <span class="case-source">X / 𝗦𝗮𝗻𝗶𝗮</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/saniaspeaks_/status/2004854685438804012">X / 𝗦𝗮𝗻𝗶𝗮</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -3093,11 +3131,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/617.html">
         <div class="case-thumbnail"><img src="/images/tweet-2004219626897465419-1.jpg" alt="A luxury [BRAND] brand advertisement featuring three stylish..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例617: A luxury [BRAND] brand advertisement featuring three stylish...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#617</span></span><span class="case-title-text">A luxury [BRAND] brand advertisement featuring three stylish...</span></h3>
           <p class="case-summary">A luxury [BRAND] brand advertisement featuring three stylish [ATHLETES / MODELS / PEOPLE] arranged in a single horizo...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-25</span>
-            <span class="case-source">X / ΛRMIN | AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Arminn_Ai/status/2004219626897465419">X / ΛRMIN | AI</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">App</span><span class="tag">Photograph</span></div>
           
@@ -3124,11 +3162,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/616.html">
         <div class="case-thumbnail"><img src="/images/tweet-2004110494282785053-1.jpg" alt="&quot;image type&quot;: &quot;Photorealistic portrait&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例616: &quot;image type&quot;: &quot;Photorealistic portrait&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#616</span></span><span class="case-title-text">&quot;image type&quot;: &quot;Photorealistic portrait&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;Photorealistic portrait&quot;, &quot;resolution&quot;: &quot;8K UHD&quot;, &quot;aspect ratio&quot;: &quot;Vertical&quot;, &quot;camera&quot;: { &quot;framing&quot;:...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-25</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2004110494282785053">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -3161,11 +3199,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/614.html">
         <div class="case-thumbnail"><img src="/images/tweet-2004018464936370316-1.jpg" alt="&quot;image type&quot;: &quot;AI enhanced photographic portrait&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例614: &quot;image type&quot;: &quot;AI enhanced photographic portrait&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#614</span></span><span class="case-title-text">&quot;image type&quot;: &quot;AI enhanced photographic portrait&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;AI enhanced photographic portrait&quot;, &quot;resolution target&quot;: &quot;8K Ultra HD&quot;, &quot;aspect ratio&quot;: &quot;vertical (p...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-25</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2004018464936370316">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -3196,11 +3234,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/613.html">
         <div class="case-thumbnail"><img src="/images/tweet-2003860469132718409-1.jpg" alt="Do this for Pineapple Pizza: &lt;instruction" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例613: Do this for Pineapple Pizza: &lt;instruction</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#613</span></span><span class="case-title-text">Do this for Pineapple Pizza: &lt;instruction</span></h3>
           <p class="case-summary">Do this for Pineapple Pizza: &lt;instruction Input A: user uploads an image or shares name of dish Logic Identify the hi...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-24</span>
-            <span class="case-source">X / Gadgetify</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Gdgtify/status/2003860469132718409">X / Gadgetify</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">3D</span><span class="tag">App</span><span class="tag">Food</span></div>
           
@@ -3232,11 +3270,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/612.html">
         <div class="case-thumbnail"><img src="/images/tweet-2003815849380262231-1.jpg" alt="&quot;image type&quot;: &quot;fashion portrait photography&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例612: &quot;image type&quot;: &quot;fashion portrait photography&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#612</span></span><span class="case-title-text">&quot;image type&quot;: &quot;fashion portrait photography&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;fashion portrait photography&quot;, &quot;resolution target&quot;: &quot;8K Ultra HD&quot;, &quot;aspect ratio&quot;: &quot;vertical (approx...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-24</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2003815849380262231">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -3268,11 +3306,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/608.html">
         <div class="case-thumbnail"><img src="/images/tweet-2003650158064730620-1.jpg" alt="&quot;image type&quot;: &quot;studio fashion portrait photography&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例608: &quot;image type&quot;: &quot;studio fashion portrait photography&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#608</span></span><span class="case-title-text">&quot;image type&quot;: &quot;studio fashion portrait photography&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;studio fashion portrait photography&quot;, &quot;resolution target&quot;: &quot;8K ultra high definition&quot;, &quot;aspect ratio...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-24</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2003650158064730620">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -3296,11 +3334,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/606.html">
         <div class="case-thumbnail"><img src="/images/tweet-2003418636795674903-1.jpg" alt="&quot;canvas&quot;: {" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例606: &quot;canvas&quot;: {</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#606</span></span><span class="case-title-text">&quot;canvas&quot;: {</span></h3>
           <p class="case-summary">{ &quot;canvas&quot;: { &quot;width&quot;: 1200, &quot;height&quot;: 1200 }, &quot;subject&quot;: { &quot;gender&quot;: &quot;female&quot;, &quot;age range&quot;: &quot;early to mid 20s&quot;, &quot;eth...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-23</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2003418636795674903">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -3333,11 +3371,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/605.html">
         <div class="case-thumbnail"><img src="/images/tweet-2003286722139029590-1.jpg" alt="Scene: type: &quot;battle scene&quot; camera angle: &quot;dramatic dutch ang..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例605: Scene: type: &quot;battle scene&quot; camera angle: &quot;dramatic dutch ang...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#605</span></span><span class="case-title-text">Scene: type: &quot;battle scene&quot; camera angle: &quot;dramatic dutch ang...</span></h3>
           <p class="case-summary">Scene: type: &quot;battle scene&quot; camera angle: &quot;dramatic dutch angle, tilted composition&quot; lens: type: &quot;super wide angle le...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-23</span>
-            <span class="case-source">X / Studio Veco|日本一ダサい画像を生成する人</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/studio_veco/status/2003286722139029590">X / Studio Veco|日本一ダサい画像を生成する人</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">Girl</span><span class="tag">App</span></div>
           
@@ -3361,11 +3399,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/598.html">
         <div class="case-thumbnail"><img src="/images/tweet-2002804332853653965-1.jpg" alt="GPT Image 1.5 on Higgsfield keeps multi shot scenes consisten..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例598: GPT Image 1.5 on Higgsfield keeps multi shot scenes consisten...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#598</span></span><span class="case-title-text">GPT Image 1.5 on Higgsfield keeps multi shot scenes consisten...</span></h3>
           <p class="case-summary">GPT Image 1.5 on Higgsfield keeps multi shot scenes consistent, turning simple moments into clean, well structured vi...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-21</span>
-            <span class="case-source">X / Smiling Khan</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AIwithkhan/status/2002804332853653965">X / Smiling Khan</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">Girl</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -3393,11 +3431,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/597.html">
         <div class="case-thumbnail"><img src="/images/tweet-2002763964476965234-1.jpg" alt="&quot;image type&quot;: &quot;studio portrait&quot;," loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例597: &quot;image type&quot;: &quot;studio portrait&quot;,</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#597</span></span><span class="case-title-text">&quot;image type&quot;: &quot;studio portrait&quot;,</span></h3>
           <p class="case-summary">{ &quot;image type&quot;: &quot;studio portrait&quot;, &quot;composition&quot;: { &quot;framing&quot;: &quot;tight head and shoulders close up&quot;, &quot;camera angle&quot;: &quot;...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-21</span>
-            <span class="case-source">X / Duet | AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Sheldon056/status/2002763964476965234">X / Duet | AI</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -3429,11 +3467,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/596.html">
         <div class="case-thumbnail"><img src="/images/tweet-2002751900337275167-1.jpg" alt="&quot;prompt&quot;: &quot;Create a hyper realistic, ultra detailed cinematic..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例596: &quot;prompt&quot;: &quot;Create a hyper realistic, ultra detailed cinematic...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#596</span></span><span class="case-title-text">&quot;prompt&quot;: &quot;Create a hyper realistic, ultra detailed cinematic...</span></h3>
           <p class="case-summary">{ &quot;prompt&quot;: &quot;Create a hyper realistic, ultra detailed cinematic photo featuring a MINIATURE version of the person fro...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-21</span>
-            <span class="case-source">X / Saman | AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Samann_ai/status/2002751900337275167">X / Saman | AI</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -3458,11 +3496,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/592.html">
         <div class="case-thumbnail"><img src="/images/tweet-2002399592906993959-1.jpg" alt="Surreal diorama emerging from an open vintage book of &quot;Brave..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例592: Surreal diorama emerging from an open vintage book of &quot;Brave...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#592</span></span><span class="case-title-text">Surreal diorama emerging from an open vintage book of &quot;Brave...</span></h3>
           <p class="case-summary">Surreal diorama emerging from an open vintage book of &quot;Brave New World&quot; by Aldous Huxley: the pages form a futuristic...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-20</span>
-            <span class="case-source">X / Gadgetify</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Gdgtify/status/2002399592906993959">X / Gadgetify</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">App</span><span class="tag">3D</span></div>
           
@@ -3486,11 +3524,11 @@ Midjourney https://t.co/zOk6sBZsqd</p>
       <a class="case-card-link" href="/zh/case/591.html">
         <div class="case-thumbnail"><img src="/images/tweet-2002292454729605505-1.jpg" alt="higgsfield https://t.co/JoqYJ1mqeI GPTImage 1.5" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例591: higgsfield https://t.co/JoqYJ1mqeI GPTImage 1.5</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#591</span></span><span class="case-title-text">higgsfield https://t.co/JoqYJ1mqeI GPTImage 1.5</span></h3>
           <p class="case-summary">higgsfield https://t.co/JoqYJ1mqeI GPTImage 1.5 GPT Image 1.5 just launched on Higgsfield — OpenAI’s structured, reas...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-20</span>
-            <span class="case-source">X / a&#39;wang@thinking</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/awanchuang/status/2002292454729605505">X / a&#39;wang@thinking</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">App</span></div>
           
@@ -3516,11 +3554,11 @@ GPT Image 1.5 刚在 Higgsfield 上发布——OpenAI 的结构化、面向推�
       <a class="case-card-link" href="/zh/case/587.html">
         <div class="case-thumbnail"><img src="/images/tweet-2001975468577403099-1.jpg" alt="A 3x3 grid storyboard contact sheet comprised of nine candid,..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例587: A 3x3 grid storyboard contact sheet comprised of nine candid,...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#587</span></span><span class="case-title-text">A 3x3 grid storyboard contact sheet comprised of nine candid,...</span></h3>
           <p class="case-summary">A 3x3 grid storyboard contact sheet comprised of nine candid, cinematic movie stills showing a continuous sequence of...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-19</span>
-            <span class="case-source">X / Oogie</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2001975468577403099">X / Oogie</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -3544,11 +3582,11 @@ GPT Image 1.5 刚在 Higgsfield 上发布——OpenAI 的结构化、面向推�
       <a class="case-card-link" href="/zh/case/584.html">
         <div class="case-thumbnail"><img src="/images/tweet-2001888275724984383-1.jpg" alt="&quot;render goal&quot;: &quot;Create a hyper realistic, cinematic portrait..." loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例584: &quot;render goal&quot;: &quot;Create a hyper realistic, cinematic portrait...</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#584</span></span><span class="case-title-text">&quot;render goal&quot;: &quot;Create a hyper realistic, cinematic portrait...</span></h3>
           <p class="case-summary">{ &quot;render goal&quot;: &quot;Create a hyper realistic, cinematic portrait with a rugged outdoor adventure aesthetic&quot;, &quot;subject&quot;:...</p>
           <div class="case-meta">
             <span class="case-date">2025-12-19</span>
-            <span class="case-source">X / Johnn</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/john_my07/status/2001888275724984383">X / Johnn</span>
           </div>
           <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">JSON</span><span class="tag">Photograph</span><span class="tag">App</span></div>
           
@@ -3581,6 +3619,16 @@ GPT Image 1.5 刚在 Higgsfield 上发布——OpenAI 的结构化、面向推�
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   

@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/text/">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/text/">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1775192546548">
+    <link rel="stylesheet" href="/assets/style.css?v=1775261003355">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -25,6 +25,31 @@
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -34,6 +59,19 @@
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
@@ -52,12 +90,12 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2753</span>
+          <span class="nav-count">2754</span>
         </a>
         <a href="/en/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2742</span>
+          <span class="nav-count">2743</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
@@ -94,24 +132,24 @@
           <span>🏷️ Tag Filters</span>
           <button id="clearFilters" class="btn-clear" type="button">Clear Filters</button>
         </div>
-        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="系统提示词">系统提示词 (3)</button><button type="button" class="tag-filter" data-tag="设计">设计 (2)</button><button type="button" class="tag-filter" data-tag="教程">教程 (2)</button><button type="button" class="tag-filter" data-tag="资源">资源 (2)</button><button type="button" class="tag-filter" data-tag="图片">图片 (2)</button><button type="button" class="tag-filter" data-tag="技巧">技巧 (1)</button><button type="button" class="tag-filter" data-tag="AI">AI (1)</button></div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="系统提示词">System Prompt (3)</button><button type="button" class="tag-filter" data-tag="设计">Design (2)</button><button type="button" class="tag-filter" data-tag="教程">Tutorials (2)</button><button type="button" class="tag-filter" data-tag="资源">Resources (2)</button><button type="button" class="tag-filter" data-tag="图片">Image (2)</button><button type="button" class="tag-filter" data-tag="技巧">Tips (1)</button><button type="button" class="tag-filter" data-tag="AI">AI (1)</button></div>
       </div>
       <div class="stats"><span id="statsText">3 items</span></div>
     </div>
     <div id="noResults" class="no-results" style="display:none;">😕 No matched content</div>
   
     <div class="case-grid">
-    <article class="case-card" data-id="568" data-search="案例568 将复杂内容拆解成卡通信息图系列的实战模板 将输入内容拆解为1-10张竖版信息图，覆盖封面、内容与结尾三大阶段，强调手绘字体、卡通风格与柔和配色。逐张输出独立生成提示，便于实现高效落地。 x / 宝玉 https://x.com/dotey/status/2010497574872940552 系统提示词 设计 技巧 教程 资源 图片 # role definition you are a professional xiaohongshu visual content planner, skilled at breaking down complex content into eye-catching cartoon-style series infographics. # task please analyze the following input and decompose it into 1-10 xiaohongshu-style infographics in a series, and output indep" data-tags="系统提示词|设计|技巧|教程|资源|图片">
+    <article class="case-card" data-id="568" data-search="案例568 practical templates for turning complex content into a series of cartoon infographics. break the input content into 1–10 vertical infographic slides, covering three stages: cover, content, and conclusion. emphasize hand-drawn typography, a cartoon style, and a soft color palette. provide separate generation prompts for each slide to facilitate efficient implementation. x / 宝玉 https://x.com/dotey/status/2010497574872940552 系统提示词 设计 技巧 教程 资源 图片 # role definition you are a professional xiaohongshu visual content planner, skilled at breaking down complex content into eye-catching cartoon-style series infographics. # task please analyze the following input and decompose it into 1-10 xiaohongshu-style infographics in a series, and output indep" data-tags="系统提示词|设计|技巧|教程|资源|图片">
       <a class="case-card-link" href="/en/case/568.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010497574872940552-1.jpg" alt="将复杂内容拆解成卡通信息图系列的实战模板" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例568: 将复杂内容拆解成卡通信息图系列的实战模板</h3>
-          <p class="case-summary">将输入内容拆解为1-10张竖版信息图，覆盖封面、内容与结尾三大阶段，强调手绘字体、卡通风格与柔和配色。逐张输出独立生成提示，便于实现高效落地。</p>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#568</span></span><span class="case-title-text">Practical templates for turning complex content into a series of cartoon infographics.</span></h3>
+          <p class="case-summary">Break the input content into 1–10 vertical infographic slides, covering three stages: cover, content, and conclusion. Emphasize hand-drawn typography, a cartoon style, and a soft color palette. Provide separate generation prompts for each slide to facilitate efficient implementation.</p>
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / 宝玉</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/dotey/status/2010497574872940552">X / 宝玉</span>
           </div>
-          <div class="case-tags"><span class="tag">系统提示词</span><span class="tag">设计</span><span class="tag">技巧</span><span class="tag">教程</span><span class="tag">资源</span><span class="tag">图片</span></div>
+          <div class="case-tags"><span class="tag">System Prompt</span><span class="tag">Design</span><span class="tag">Tips</span><span class="tag">Tutorials</span><span class="tag">Resources</span><span class="tag">Image</span></div>
           
       <details class="prompt-preview">
         <summary>🎨 View Prompt</summary>
@@ -132,17 +170,17 @@ Please analyze the fol...</p>
     </article>
   
 
-    <article class="case-card" data-id="567" data-search="案例567 大闹天宫gemini版 x / keng哥 https://x.com/langzihan/status/2010750292212773350 图片 系统提示词 # role you are an expert ai art director and master storyboard artist. your goal is to conduct a deep narrative analysis of a [scenario] and generate a **series of 9 distinct image prompts**. # objective create a complete visual novel adaptation of the [scenario] consisting of **9 separate imag" data-tags="图片|系统提示词">
+    <article class="case-card" data-id="567" data-search="案例567 havoc in heaven – gemini edition x / keng哥 https://x.com/langzihan/status/2010750292212773350 图片 系统提示词 # role you are an expert ai art director and master storyboard artist. your goal is to conduct a deep narrative analysis of a [scenario] and generate a **series of 9 distinct image prompts**. # objective create a complete visual novel adaptation of the [scenario] consisting of **9 separate imag" data-tags="图片|系统提示词">
       <a class="case-card-link" href="/en/case/567.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010750292212773350-1.jpg" alt="大闹天宫gemini版" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例567: 大闹天宫gemini版</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#567</span></span><span class="case-title-text">Havoc in Heaven – Gemini Edition</span></h3>
           
           <div class="case-meta">
             <span class="case-date">2026-01-13</span>
-            <span class="case-source">X / Keng哥</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/langzihan/status/2010750292212773350">X / Keng哥</span>
           </div>
-          <div class="case-tags"><span class="tag">图片</span><span class="tag">系统提示词</span></div>
+          <div class="case-tags"><span class="tag">Image</span><span class="tag">System Prompt</span></div>
           
       <details class="prompt-preview">
         <summary>🎨 View Prompt</summary>
@@ -163,17 +201,17 @@ You are an expert AI Art Director and Master Storyboard Artist. Your goal is to 
     </article>
   
 
-    <article class="case-card" data-id="564" data-search="案例564 面向儿童的知识认知卡片提示词全集及应用完整版 这篇分享提供一套面向儿童的知识认知卡片提示词，可扩展为字母、数字、颜色、形状等维度，适合打卡使用，并已打包好供直接使用。 x / berryxia.ai https://x.com/berryxia/status/2008425387999801451 系统提示词 ai 设计 教程 资源 🎨 &quot;daily character learning for kids&quot; simplified version v7.0 (removed technical parameters) create a modern apple design-inspired &quot;daily character learning for kids&quot; calendar page for {month} month {day} day, {year}. ultra-minimalist, clean, playful, and child-friendly layout in 4k quality. **to" data-tags="系统提示词|AI|设计|教程|资源">
+    <article class="case-card" data-id="564" data-search="案例564 complete collection of prompts for children&#39;s knowledge and cognitive flashcards, and the full application version. this post offers a set of knowledge and cognitive card prompts for children, extendable to dimensions such as letters, numbers, colors, shapes, etc., suitable for daily check-ins, and packaged for immediate use. x / berryxia.ai https://x.com/berryxia/status/2008425387999801451 系统提示词 ai 设计 教程 资源 🎨 &quot;daily character learning for kids&quot; simplified version v7.0 (removed technical parameters) create a modern apple design-inspired &quot;daily character learning for kids&quot; calendar page for {month} month {day} day, {year}. ultra-minimalist, clean, playful, and child-friendly layout in 4k quality. **to" data-tags="系统提示词|AI|设计|教程|资源">
       <a class="case-card-link" href="/en/case/564.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008425387999801451-1.jpg" alt="面向儿童的知识认知卡片提示词全集及应用完整版" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例564: 面向儿童的知识认知卡片提示词全集及应用完整版</h3>
-          <p class="case-summary">这篇分享提供一套面向儿童的知识认知卡片提示词，可扩展为字母、数字、颜色、形状等维度，适合打卡使用，并已打包好供直接使用。</p>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#564</span></span><span class="case-title-text">Complete collection of prompts for children&#39;s knowledge and cognitive flashcards, and the full application version.</span></h3>
+          <p class="case-summary">This post offers a set of knowledge and cognitive card prompts for children, extendable to dimensions such as letters, numbers, colors, shapes, etc., suitable for daily check-ins, and packaged for immediate use.</p>
           <div class="case-meta">
             <span class="case-date">2026-01-09</span>
-            <span class="case-source">X / Berryxia.AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/berryxia/status/2008425387999801451">X / Berryxia.AI</span>
           </div>
-          <div class="case-tags"><span class="tag">系统提示词</span><span class="tag">AI</span><span class="tag">设计</span><span class="tag">教程</span><span class="tag">资源</span></div>
+          <div class="case-tags"><span class="tag">System Prompt</span><span class="tag">AI</span><span class="tag">Design</span><span class="tag">Tutorials</span><span class="tag">Resources</span></div>
           
       <details class="prompt-preview">
         <summary>🎨 View Prompt</summary>
@@ -201,6 +239,16 @@ Create a modern Apple Design-inspired &quot;Daily Character Learning for Kids&qu
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   

@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/图像编辑.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/图像编辑.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1775192545847">
+    <link rel="stylesheet" href="/assets/style.css?v=1775261002565">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -25,6 +25,31 @@
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -34,6 +59,19 @@
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
@@ -52,12 +90,12 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2753</span>
+          <span class="nav-count">2754</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2742</span>
+          <span class="nav-count">2743</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
@@ -105,13 +143,13 @@
       <a class="case-card-link" href="/zh/case/487.html">
         <div class="case-thumbnail"><img src="/images/nano-case100-input.jpg" alt="将参考图像变为透明物体" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例487: 将参考图像变为透明物体</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#487</span></span><span class="case-title-text">将参考图像变为透明物体</span></h3>
           <p class="case-summary">将参考图像变为透明物体 - Nano Banana AI图片生成案例
 
 📥 输入：需上传一张参考图像</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@icreatelife</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/icreatelife/status/1967759082544332817">@icreatelife</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -135,11 +173,11 @@
       <a class="case-card-link" href="/zh/case/476.html">
         <div class="case-thumbnail"><img src="/images/nano-case87-output.png" alt="黑白进化图" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例476: 黑白进化图</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#476</span></span><span class="case-title-text">黑白进化图</span></h3>
           <p class="case-summary">黑白进化图 - Nano Banana AI图片生成案例</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@ZHO_ZHO_ZHO</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZHO_ZHO_ZHO/status/1965816445008548213">@ZHO_ZHO_ZHO</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -163,11 +201,11 @@
       <a class="case-card-link" href="/zh/case/467.html">
         <div class="case-thumbnail"><img src="/images/nano-case66-case.jpg" alt="分割对照样式照片" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例467: 分割对照样式照片</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#467</span></span><span class="case-title-text">分割对照样式照片</span></h3>
           <p class="case-summary">分割对照样式照片 - Nano Banana AI图片生成案例</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@fofrAI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/fofrAI/status/1964818395381248397">@fofrAI</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -191,13 +229,13 @@
       <a class="case-card-link" href="/zh/case/462.html">
         <div class="case-thumbnail"><img src="/images/nano-case60-case.jpg" alt="材质球赋予材质" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例462: 材质球赋予材质</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#462</span></span><span class="case-title-text">材质球赋予材质</span></h3>
           <p class="case-summary">材质球赋予材质 - Nano Banana AI图片生成案例
 
 📥 输入：需上传一张参考图像和一张材质球图像</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@ZHO_ZHO_ZHO</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZHO_ZHO_ZHO/status/1964995347505352794">@ZHO_ZHO_ZHO</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -221,11 +259,11 @@
       <a class="case-card-link" href="/zh/case/455.html">
         <div class="case-thumbnail"><img src="/images/nano-case53-output.jpg" alt="精致可爱的产品照片" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例455: 精致可爱的产品照片</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#455</span></span><span class="case-title-text">精致可爱的产品照片</span></h3>
           <p class="case-summary">精致可爱的产品照片 - Nano Banana AI图片生成案例</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@azed_ai</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/azed_ai/status/1962878353784066342">@azed_ai</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -251,13 +289,13 @@
       <a class="case-card-link" href="/zh/case/451.html">
         <div class="case-thumbnail"><img src="/images/nano-case49-input.jpg" alt="提取信息并放置透明图层" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例451: 提取信息并放置透明图层</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#451</span></span><span class="case-title-text">提取信息并放置透明图层</span></h3>
           <p class="case-summary">提取信息并放置透明图层 - Nano Banana AI图片生成案例
 
 📥 输入：需上传一张参考图像</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@nglprz</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/nglprz/status/1961494974555394068">@nglprz</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -283,13 +321,13 @@
       <a class="case-card-link" href="/zh/case/450.html">
         <div class="case-thumbnail"><img src="/images/nano-case48-output.jpg" alt="食物卡路里标注" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例450: 食物卡路里标注</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#450</span></span><span class="case-title-text">食物卡路里标注</span></h3>
           <p class="case-summary">食物卡路里标注 - Nano Banana AI图片生成案例
 
 📥 输入：需上传一张食物参考图像</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@icreatelife</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/icreatelife/status/1963646757222715516">@icreatelife</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -313,13 +351,13 @@
       <a class="case-card-link" href="/zh/case/446.html">
         <div class="case-thumbnail"><img src="/images/nano-case44-case.jpg" alt="光影控制" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例446: 光影控制</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#446</span></span><span class="case-title-text">光影控制</span></h3>
           <p class="case-summary">光影控制 - Nano Banana AI图片生成案例
 
 📥 输入：需上传一张参考图像和一张光影参考图片</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@ZHO_ZHO_ZHO</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZHO_ZHO_ZHO/status/1961779457372602725">@ZHO_ZHO_ZHO</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -343,13 +381,13 @@
       <a class="case-card-link" href="/zh/case/444.html">
         <div class="case-thumbnail"><img src="/images/nano-case42-case.jpg" alt="叠加滤镜/材质" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例444: 叠加滤镜/材质</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#444</span></span><span class="case-title-text">叠加滤镜/材质</span></h3>
           <p class="case-summary">叠加滤镜/材质 - Nano Banana AI图片生成案例
 
 📥 输入：需上传一张参考图像和一张滤镜/材质参考图片</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@ZHO_ZHO_ZHO</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZHO_ZHO_ZHO/status/1962520937011855793">@ZHO_ZHO_ZHO</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -375,13 +413,13 @@
       <a class="case-card-link" href="/zh/case/431.html">
         <div class="case-thumbnail"><img src="/images/nano-case29-input.jpg" alt="红笔批注" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例431: 红笔批注</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#431</span></span><span class="case-title-text">红笔批注</span></h3>
           <p class="case-summary">红笔批注 - Nano Banana AI图片生成案例
 
 📥 输入：需上传参考图像</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@AiMachete</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AiMachete/status/1962356993550643355">@AiMachete</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -405,13 +443,13 @@
       <a class="case-card-link" href="/zh/case/429.html">
         <div class="case-thumbnail"><img src="/images/nano-case27-input.jpg" alt="为图像添加���印" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例429: 为图像添加���印</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#429</span></span><span class="case-title-text">为图像添加���印</span></h3>
           <p class="case-summary">为图像添加���印 - Nano Banana AI图片生成案例
 
 📥 输入：需上传参考图像</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@AiMachete</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AiMachete/status/1963038793705128219">@AiMachete</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -435,13 +473,13 @@
       <a class="case-card-link" href="/zh/case/428.html">
         <div class="case-thumbnail"><img src="/images/nano-case26-input.jpg" alt="线稿图生成图像" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例428: 线稿图生成图像</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#428</span></span><span class="case-title-text">线稿图生成图像</span></h3>
           <p class="case-summary">线稿图生成图像 - Nano Banana AI图片生成案例
 
 📥 输入：需上传线稿图和参考图像</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@ZHO_ZHO_ZHO</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZHO_ZHO_ZHO/status/1961024423596872184">@ZHO_ZHO_ZHO</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -465,11 +503,11 @@
       <a class="case-card-link" href="/zh/case/419.html">
         <div class="case-thumbnail"><img src="/images/nano-case16-output.jpg" alt="模型标注讲解图" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例419: 模型标注讲解图</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#419</span></span><span class="case-title-text">模型标注讲解图</span></h3>
           <p class="case-summary">模型标注讲解图 - Nano Banana AI图片生成案例</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@berryxia_ai</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/berryxia_ai/status/1960708465586004305">@berryxia_ai</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -495,13 +533,13 @@
       <a class="case-card-link" href="/zh/case/416.html">
         <div class="case-thumbnail"><img src="/images/nano-case13-input.jpg" alt="色卡线稿上色" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例416: 色卡线稿上色</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#416</span></span><span class="case-title-text">色卡线稿上色</span></h3>
           <p class="case-summary">色卡线稿上色 - Nano Banana AI图片生成案例
 
 📥 输入：需上传一张线稿图和一张色卡图</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@ZHO_ZHO_ZHO</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZHO_ZHO_ZHO/status/1960652077891510752">@ZHO_ZHO_ZHO</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -525,13 +563,13 @@
       <a class="case-card-link" href="/zh/case/410.html">
         <div class="case-thumbnail"><img src="/images/nano-case7-input.jpg" alt="自动修图" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例410: 自动修图</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#410</span></span><span class="case-title-text">自动修图</span></h3>
           <p class="case-summary">自动修图 - Nano Banana AI图片生成案例
 
 📥 输入：需上传一张需要进行修正的图像</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">@op7418</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/op7418/status/1960528616573558864">@op7418</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Nano Banana</span><span class="tag">图像编辑</span></div>
           
@@ -559,6 +597,16 @@
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   

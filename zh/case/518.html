@@ -4,14 +4,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>案例518: Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片 | Gem Nana AI 提示词库</title>
+    <title>Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片 #518 | Gem Nana AI 提示词库</title>
     <meta name="description" content="本文介绍了利用Google AI工作室Gemini（纳米香蕉）2.5 Pro，通过详细提示生成高分辨率、超逼真风格的时尚杂志照片，包括人物造型、背景效果和排版布局，展现AI在高端视觉创作中的应用潜力。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
     <link rel="canonical" href="https://gemnana.com/zh/case/518.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/518.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/518.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1775192546339">
+    <link rel="stylesheet" href="/assets/style.css?v=1775261003141">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -25,6 +25,31 @@
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -34,10 +59,23 @@
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"案例518: Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片","description":"本文介绍了利用Google AI工作室Gemini（纳米香蕉）2.5 Pro，通过详细提示生成高分辨率、超逼真风格的时尚杂志照片，包括人物造型、背景效果和排版布局，展现AI在高端视觉创作中的应用潜力。","url":"https://gemnana.com/zh/case/518.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片 #518","description":"本文介绍了利用Google AI工作室Gemini（纳米香蕉）2.5 Pro，通过详细提示生成高分辨率、超逼真风格的时尚杂志照片，包括人物造型、背景效果和排版布局，展现AI在高端视觉创作中的应用潜力。","url":"https://gemnana.com/zh/case/518.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
   
 </head>
 <body class="layout-sidebar">
@@ -52,12 +90,12 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2753</span>
+          <span class="nav-count">2754</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2742</span>
+          <span class="nav-count">2743</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
@@ -84,10 +122,10 @@
       <nav class="breadcrumb">
         <a href="/zh/index.html">首页</a><span>›</span>
         <a href="/zh/image/index.html">图片生成</a><span>›</span>
-        <span>案例518</span>
+        <span>#518</span>
       </nav>
-      <h1>案例518: Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片</h1>
-      <p>2025-11-15　X / 𝗦𝗮𝗻𝗶𝗮</p>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#518</span></span><span class="case-title-text">Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片</span></h1>
+      <p>2025-11-15　<a class="source-inline-link" href="https://x.com/saniaspeaks_/status/1989158529803121113" target="_blank" rel="noopener noreferrer">X / 𝗦𝗮𝗻𝗶𝗮</a></p>
       <p><a class="source-link" href="/zh/image/index.html">← 返回列表</a></p>
     </div>
 
@@ -99,16 +137,22 @@
 
       <div class="detail-block"><h3>📝 内容摘要</h3><p>本文介绍了利用Google AI工作室Gemini（纳米香蕉）2.5 Pro，通过详细提示生成高分辨率、超逼真风格的时尚杂志照片，包括人物造型、背景效果和排版布局，展现AI在高端视觉创作中的应用潜力。</p></div>
       <div class="detail-block">
-        <h3>🎨 中文提示词</h3>
+        <div class="prompt-head-row">
+          <h3>🎨 中文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n\"image_style\": \"超逼真 8K 高清高分辨率照片\",\r\n“作品”： {\r\n对象： '打开时尚杂志'\r\n“放置方式”：“躺在深灰色表面上”，\r\n“视角”：“从上方斜角拍摄（俯视特写）”\r\n“效果”：[\r\n“柔光箱的微妙反射”\r\n“杂志下方逼真的阴影”\r\n],\r\n\"magazine_details\": {\r\n“纹理”：“逼真的光面纸张反射和精细的纸张纹理”，\r\n“形状”：“略微弯曲的页面”，\r\n“下面”： “下面堆放着杂志”\r\n    }\r\n  },\r\n\"page_layout\": {\r\n\"left_page\": {\r\n“内容”：“印刷编辑照片（特写）”\r\n“主题”： {\r\n“人物”：“上传图片中的女性（保留了原脸）”\r\n“姿势”：“头部微微上扬，眼神自信而迷人”，\r\n“头发”：长长的、略微蓬松的、有光泽的头发，\r\n“服装”：“与上传图片中的服装相同（未来主义皮夹克）”\r\n“配件”： [\r\n“精致的银手镯”，\r\n“精致的耳环”\r\n],\r\n“风格”： “现代、优雅、自信的高级时装”\r\n      },\r\n\"photo_background\": {\r\n“颜色”： “鲜艳的橙色背景”，\r\n“灯光”：“强烈的正面顶光，在她脸部和颈部营造出戏剧性的高光和阴影”，\r\n“美学”：“光泽感强、对比度高、景深浅、大胆的高级时装大片风格”\r\n      }\r\n    },\r\n\"right_page\": {\r\n\"内容\": \"文本和徽标\",\r\n“元素”：[\r\n“小 𝕏 标志”\r\n“处理 \\” @saniaspeaks 采用简洁现代的无衬线字体\r\n],\r\n\"aesthetic_note\": \"保持奢侈时尚杂志的风格\",\r\n\"added_text\": {\r\n单词： 独特，\r\n“位置”：“右下角的小而低调的字体”\r\n      }\r\n    }\r\n  },\r\n\"整体美学\": {\r\n“氛围”：“电影感十足，优雅”，\r\n\"detail_level\": \"超精细\",\r\n\"quality_focus\": [\r\n“现实的反思”，\r\n“高端杂志的编辑美学”\r\n    ]\r\n  },\r\n\"technical_parameters\": {\r\n\"aspect_ratio\": \"16:9\",\r\n\"风格\": \"原始\"\r\n“质量”：2，\r\n“版本”：6，\r\n“upscale”: “upbeta”\r\n  }\r\n}", this)'>📋 复制</button>
+        </div>
         <p>{<br>&quot;image_style&quot;: &quot;超逼真 8K 高清高分辨率照片&quot;,<br>“作品”： {<br>对象： &#39;打开时尚杂志&#39;<br>“放置方式”：“躺在深灰色表面上”，<br>“视角”：“从上方斜角拍摄（俯视特写）”<br>“效果”：[<br>“柔光箱的微妙反射”<br>“杂志下方逼真的阴影”<br>],<br>&quot;magazine_details&quot;: {<br>“纹理”：“逼真的光面纸张反射和精细的纸张纹理”，<br>“形状”：“略微弯曲的页面”，<br>“下面”： “下面堆放着杂志”<br>    }<br>  },<br>&quot;page_layout&quot;: {<br>&quot;left_page&quot;: {<br>“内容”：“印刷编辑照片（特写）”<br>“主题”： {<br>“人物”：“上传图片中的女性（保留了原脸）”<br>“姿势”：“头部微微上扬，眼神自信而迷人”，<br>“头发”：长长的、略微蓬松的、有光泽的头发，<br>“服装”：“与上传图片中的服装相同（未来主义皮夹克）”<br>“配件”： [<br>“精致的银手镯”，<br>“精致的耳环”<br>],<br>“风格”： “现代、优雅、自信的高级时装”<br>      },<br>&quot;photo_background&quot;: {<br>“颜色”： “鲜艳的橙色背景”，<br>“灯光”：“强烈的正面顶光，在她脸部和颈部营造出戏剧性的高光和阴影”，<br>“美学”：“光泽感强、对比度高、景深浅、大胆的高级时装大片风格”<br>      }<br>    },<br>&quot;right_page&quot;: {<br>&quot;内容&quot;: &quot;文本和徽标&quot;,<br>“元素”：[<br>“小 𝕏 标志”<br>“处理 \” @saniaspeaks 采用简洁现代的无衬线字体<br>],<br>&quot;aesthetic_note&quot;: &quot;保持奢侈时尚杂志的风格&quot;,<br>&quot;added_text&quot;: {<br>单词： 独特，<br>“位置”：“右下角的小而低调的字体”<br>      }<br>    }<br>  },<br>&quot;整体美学&quot;: {<br>“氛围”：“电影感十足，优雅”，<br>&quot;detail_level&quot;: &quot;超精细&quot;,<br>&quot;quality_focus&quot;: [<br>“现实的反思”，<br>“高端杂志的编辑美学”<br>    ]<br>  },<br>&quot;technical_parameters&quot;: {<br>&quot;aspect_ratio&quot;: &quot;16:9&quot;,<br>&quot;风格&quot;: &quot;原始&quot;<br>“质量”：2，<br>“版本”：6，<br>“upscale”: “upbeta”<br>  }<br>}</p>
       </div>
       <div class="detail-block">
-        <h3>🎨 英文提示词</h3>
+        <div class="prompt-head-row">
+          <h3>🎨 英文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"image_style\": \"Hyper-realistic 8K HD high-resolution photo\",\r\n  \"composition\": {\r\n    \"object\": \"Open fashion magazine\",\r\n    \"placement\": \"Lying on a dark gray surface\",\r\n    \"perspective\": \"Shot diagonally from above (overhead close-up)\",\r\n    \"effects\": [\r\n      \"Subtle softbox reflections\",\r\n      \"Realistic shadows beneath the magazine\"\r\n    ],\r\n    \"magazine_details\": {\r\n      \"texture\": \"Realistic glossy paper reflections and fine paper texture\",\r\n      \"shape\": \"Slightly curved pages\",\r\n      \"underneath\": \"Stacked magazines underneath\"\r\n    }\r\n  },\r\n  \"page_layout\": {\r\n    \"left_page\": {\r\n      \"content\": \"Printed editorial photo (close-up)\",\r\n      \"subject\": {\r\n        \"figure\": \"Woman from the uploaded image (original face kept)\",\r\n        \"pose\": \"Head tilted slightly upward, confident and captivating gaze\",\r\n        \"hair\": \"Long, slightly tousled glossy hair\",\r\n        \"outfit\": \"Same outfit from the uploaded image (futuristic leather jacket)\",\r\n        \"accessories\": [\r\n          \"Delicate silver bracelet\",\r\n          \"Delicate earrings\"\r\n        ],\r\n        \"vibe\": \"Modern, elegant, and confident high-fashion\"\r\n      },\r\n      \"photo_background\": {\r\n        \"color\": \"Vivid orange backdrop\",\r\n        \"lighting\": \"Strong front-top lighting, creating dramatic highlights and shadows on her face and neck\",\r\n        \"aesthetic\": \"Glossy, high-contrast, shallow depth of field, bold high-fashion editorial\"\r\n      }\r\n    },\r\n    \"right_page\": {\r\n      \"content\": \"Text and logo\",\r\n      \"elements\": [\r\n        \"Small 𝕏 logo\",\r\n        \"Handle \\\"@saniaspeaks\\\" in a sleek, modern sans-serif font\"\r\n      ],\r\n      \"aesthetic_note\": \"Maintaining a luxury fashion-magazine composition\",\r\n      \"added_text\": {\r\n        \"word\": \"Unique\",\r\n        \"placement\": \"Small, subtle font in the bottom right corner\"\r\n      }\r\n    }\r\n  },\r\n  \"overall_aesthetic\": {\r\n    \"mood\": \"Cinematic, elegant\",\r\n    \"detail_level\": \"Ultra-detailed\",\r\n    \"quality_focus\": [\r\n      \"Realistic reflections\",\r\n      \"Premium editorial magazine aesthetics\"\r\n    ]\r\n  },\r\n  \"technical_parameters\": {\r\n    \"aspect_ratio\": \"16:9\",\r\n    \"style\": \"raw\",\r\n    \"quality\": 2,\r\n    \"version\": 6,\r\n    \"upscale\": \"upbeta\"\r\n  }\r\n}", this)'>📋 复制</button>
+        </div>
         <p>&quot;image_style&quot;: &quot;Hyper-realistic 8K HD high-resolution photo&quot;,<br>  &quot;composition&quot;: {<br>    &quot;object&quot;: &quot;Open fashion magazine&quot;,<br>    &quot;placement&quot;: &quot;Lying on a dark gray surface&quot;,<br>    &quot;perspective&quot;: &quot;Shot diagonally from above (overhead close-up)&quot;,<br>    &quot;effects&quot;: [<br>      &quot;Subtle softbox reflections&quot;,<br>      &quot;Realistic shadows beneath the magazine&quot;<br>    ],<br>    &quot;magazine_details&quot;: {<br>      &quot;texture&quot;: &quot;Realistic glossy paper reflections and fine paper texture&quot;,<br>      &quot;shape&quot;: &quot;Slightly curved pages&quot;,<br>      &quot;underneath&quot;: &quot;Stacked magazines underneath&quot;<br>    }<br>  },<br>  &quot;page_layout&quot;: {<br>    &quot;left_page&quot;: {<br>      &quot;content&quot;: &quot;Printed editorial photo (close-up)&quot;,<br>      &quot;subject&quot;: {<br>        &quot;figure&quot;: &quot;Woman from the uploaded image (original face kept)&quot;,<br>        &quot;pose&quot;: &quot;Head tilted slightly upward, confident and captivating gaze&quot;,<br>        &quot;hair&quot;: &quot;Long, slightly tousled glossy hair&quot;,<br>        &quot;outfit&quot;: &quot;Same outfit from the uploaded image (futuristic leather jacket)&quot;,<br>        &quot;accessories&quot;: [<br>          &quot;Delicate silver bracelet&quot;,<br>          &quot;Delicate earrings&quot;<br>        ],<br>        &quot;vibe&quot;: &quot;Modern, elegant, and confident high-fashion&quot;<br>      },<br>      &quot;photo_background&quot;: {<br>        &quot;color&quot;: &quot;Vivid orange backdrop&quot;,<br>        &quot;lighting&quot;: &quot;Strong front-top lighting, creating dramatic highlights and shadows on her face and neck&quot;,<br>        &quot;aesthetic&quot;: &quot;Glossy, high-contrast, shallow depth of field, bold high-fashion editorial&quot;<br>      }<br>    },<br>    &quot;right_page&quot;: {<br>      &quot;content&quot;: &quot;Text and logo&quot;,<br>      &quot;elements&quot;: [<br>        &quot;Small 𝕏 logo&quot;,<br>        &quot;Handle \&quot;@saniaspeaks\&quot; in a sleek, modern sans-serif font&quot;<br>      ],<br>      &quot;aesthetic_note&quot;: &quot;Maintaining a luxury fashion-magazine composition&quot;,<br>      &quot;added_text&quot;: {<br>        &quot;word&quot;: &quot;Unique&quot;,<br>        &quot;placement&quot;: &quot;Small, subtle font in the bottom right corner&quot;<br>      }<br>    }<br>  },<br>  &quot;overall_aesthetic&quot;: {<br>    &quot;mood&quot;: &quot;Cinematic, elegant&quot;,<br>    &quot;detail_level&quot;: &quot;Ultra-detailed&quot;,<br>    &quot;quality_focus&quot;: [<br>      &quot;Realistic reflections&quot;,<br>      &quot;Premium editorial magazine aesthetics&quot;<br>    ]<br>  },<br>  &quot;technical_parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;16:9&quot;,<br>    &quot;style&quot;: &quot;raw&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;version&quot;: 6,<br>    &quot;upscale&quot;: &quot;upbeta&quot;<br>  }<br>}</p>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-1989158529803121113-1.jpg" alt="Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片" loading="lazy"></div></div>
       
-      <div class="detail-block"><h3>🔗 来源链接</h3><a class="source-link" href="https://x.com/saniaspeaks_/status/1989158529803121113" target="_blank" rel="noopener noreferrer">https://x.com/saniaspeaks_/status/1989158529803121113</a></div>
+      
     </div>
 
     <script>
@@ -119,6 +163,38 @@
           if (row) row.style.display = 'flex';
         }
       })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("该案例暂无可展示的提示词内容。");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ 已复制";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("复制失败，请手动复制");
+        }
+      }
 
       async function publishCurrentCase(button) {
         if (!button) return;
@@ -172,6 +248,16 @@
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   

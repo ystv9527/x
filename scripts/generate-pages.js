@@ -8,6 +8,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const http = require('http');
+const https = require('https');
 
 const SITE_URL = 'https://gemnana.com';
 const ROOT_DIR = path.join(__dirname, '..');
@@ -15,6 +17,10 @@ const DATA_DIR = path.join(ROOT_DIR, 'data');
 const CONTENTS_FILE = path.join(DATA_DIR, 'contents.json');
 const LATEST_FILE = path.join(DATA_DIR, 'latest.json');
 const ARCHIVE_FILE = path.join(DATA_DIR, 'archive.json');
+const CONFIG_FILE = path.join(ROOT_DIR, 'config.json');
+const EN_TRANSLATION_CACHE_FILE = path.join(DATA_DIR, 'en-title-summary-cache.json');
+const EN_TRANSLATE_RECENT_LIMIT = 80;
+const EN_TRANSLATE_MAX_NEW_PER_RUN = 20;
 
 const LANGS = {
   zh: {
@@ -56,7 +62,10 @@ const LANGS = {
     publishLoading: '发布中...',
     deleteConfirm: '确认删除该案例？此操作不可恢复。',
     deleteSuccess: '删除成功',
-    settingsLabel: '⚙️ 设置'
+    settingsLabel: '⚙️ 设置',
+    copyLabel: '📋 复制',
+    copiedLabel: '✅ 已复制',
+    copyFailed: '复制失败，请手动复制'
   },
   en: {
     htmlLang: 'en',
@@ -97,7 +106,10 @@ const LANGS = {
     publishLoading: 'Publishing...',
     deleteConfirm: 'Delete this case? This action cannot be undone.',
     deleteSuccess: 'Deleted successfully',
-    settingsLabel: '⚙️ Settings'
+    settingsLabel: '⚙️ Settings',
+    copyLabel: '📋 Copy',
+    copiedLabel: '✅ Copied',
+    copyFailed: 'Copy failed. Please copy manually.'
   }
 };
 
@@ -118,6 +130,92 @@ function normalizeTags(tags) {
   if (Array.isArray(tags)) return tags.map((t) => String(t).trim()).filter(Boolean);
   if (typeof tags === 'string') return tags.split(',').map((t) => t.trim()).filter(Boolean);
   return [];
+}
+
+const EN_TAG_LABELS = Object.freeze({
+  '图片': 'Image',
+  '摄影': 'Photography',
+  '创意': 'Creative',
+  '创意设计': 'Creative Design',
+  '设计': 'Design',
+  '数字艺术': 'Digital Art',
+  '工具': 'Tools',
+  '图像编辑': 'Image Editing',
+  '人像编辑': 'Portrait Editing',
+  '3D转换': '3D Conversion',
+  '灵感': 'Inspiration',
+  '视频': 'Video',
+  '资源': 'Resources',
+  '时尚': 'Fashion',
+  '技巧': 'Tips',
+  '图像转换': 'Image Transformation',
+  '风格转换': 'Style Transfer',
+  '漫画': 'Comics',
+  '图像合成': 'Image Compositing',
+  '动画': 'Animation',
+  '社交媒体': 'Social Media',
+  '广告': 'Advertising',
+  '教程': 'Tutorials',
+  '后期': 'Post-processing',
+  '系统提示词': 'System Prompt',
+  '图像修复': 'Image Restoration',
+  '特效': 'VFX',
+  '动物': 'Animals',
+  '作品修复': 'Work Restoration',
+  '证件照': 'ID Photo',
+  '效果': 'Effects',
+  '场景合成': 'Scene Compositing',
+  '艺术': 'Art',
+  '电影': 'Film',
+  '自然': 'Nature',
+  '剧烈光线': 'Harsh Lighting',
+  '工业': 'Industrial',
+  '提示': 'Prompt',
+  '教学': 'Education',
+  '科普': 'Popular Science',
+  '胶片风格': 'Film Look',
+  '营销': 'Marketing',
+  '产品设计': 'Product Design',
+  '旅行': 'Travel',
+  '案例': 'Case Study',
+  '产品摄影': 'Product Photography',
+  '海报设计': 'Poster Design',
+  '生活': 'Lifestyle',
+  '写实': 'Realistic'
+});
+
+function toDisplayTag(tag, lang) {
+  const text = cleanText(tag);
+  if (!text) return '';
+  if (lang !== 'en') return text;
+  if (!/[\u3400-\u9FFF]/.test(text)) return text;
+  return EN_TAG_LABELS[text] || text;
+}
+
+function getCaseIdText(item) {
+  const fromCaseNumber = cleanText(item.caseNumber).match(/\d+/);
+  if (fromCaseNumber && fromCaseNumber[0]) return String(Number(fromCaseNumber[0]));
+  const id = Number(item.id);
+  return Number.isFinite(id) && id > 0 ? String(id) : '';
+}
+
+function getCaseTitle(item, lang = 'zh') {
+  if (lang === 'en') {
+    return cleanText(item.titleEnglish) || cleanText(item.title) || cleanText(item.caseNumber);
+  }
+  return cleanText(item.titleChinese) || cleanText(item.title) || cleanText(item.caseNumber);
+}
+
+function getCaseSummary(item, lang = 'zh') {
+  if (lang === 'en') {
+    return cleanText(item.summaryEnglish) || cleanText(item.summary);
+  }
+  return cleanText(item.summaryChinese) || cleanText(item.summary);
+}
+
+function renderCaseIdPill(item) {
+  const caseId = getCaseIdText(item) || '?';
+  return `<span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#${escapeHtml(caseId)}</span></span>`;
 }
 
 function escapeHtml(value) {
@@ -159,6 +257,236 @@ function loadItems() {
     all.push(...(archive.items || []));
   }
   return all;
+}
+
+function hasCjkText(value) {
+  return /[\u3400-\u9FFF]/.test(cleanText(value));
+}
+
+function loadEnTranslationCache() {
+  try {
+    if (!fs.existsSync(EN_TRANSLATION_CACHE_FILE)) {
+      return { title: {}, summary: {} };
+    }
+    const raw = JSON.parse(fs.readFileSync(EN_TRANSLATION_CACHE_FILE, 'utf8'));
+    return {
+      title: raw && typeof raw.title === 'object' ? raw.title : {},
+      summary: raw && typeof raw.summary === 'object' ? raw.summary : {}
+    };
+  } catch (error) {
+    return { title: {}, summary: {} };
+  }
+}
+
+function saveEnTranslationCache(cache) {
+  try {
+    ensureDir(path.dirname(EN_TRANSLATION_CACHE_FILE));
+    fs.writeFileSync(EN_TRANSLATION_CACHE_FILE, JSON.stringify(cache, null, 2), 'utf8');
+  } catch (error) {
+    console.warn('⚠️ Failed to save translation cache:', error.message);
+  }
+}
+
+function loadAiTranslateConfig() {
+  try {
+    if (!fs.existsSync(CONFIG_FILE)) return null;
+    const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
+    const ai = config && config.ai ? config.ai : null;
+    if (!ai || !ai.apiUrl || !ai.apiKey || !ai.model) return null;
+    return {
+      apiUrl: String(ai.apiUrl).replace(/\/+$/, ''),
+      apiKey: String(ai.apiKey),
+      model: String(ai.model),
+      maxTokens: Math.max(200, Math.min(1200, Number(ai.maxTokens) || 800))
+    };
+  } catch (error) {
+    return null;
+  }
+}
+
+function extractAiText(payload) {
+  if (!payload || typeof payload !== 'object') return '';
+  const direct = payload?.choices?.[0]?.message?.content;
+  if (typeof direct === 'string') return direct.trim();
+  if (Array.isArray(direct)) {
+    return direct
+      .map((part) => {
+        if (!part) return '';
+        if (typeof part === 'string') return part;
+        if (typeof part.text === 'string') return part.text;
+        return '';
+      })
+      .join('')
+      .trim();
+  }
+  return '';
+}
+
+async function translateToEnglish(text) {
+  const input = cleanText(text);
+  if (!input) return '';
+
+  const ai = loadAiTranslateConfig();
+  if (ai) {
+    const payload = JSON.stringify({
+      model: ai.model,
+      messages: [
+        {
+          role: 'system',
+          content: 'Translate the user text into natural English. Keep meaning accurate. Output translated text only.'
+        },
+        {
+          role: 'user',
+          content: input
+        }
+      ],
+      reasoning_effort: 'low',
+      temperature: 0.1,
+      max_tokens: ai.maxTokens
+    });
+
+    const aiResult = await new Promise((resolve) => {
+      const apiUrl = new URL(`${ai.apiUrl}/chat/completions`);
+      const client = apiUrl.protocol === 'http:' ? http : https;
+      const req = client.request({
+        protocol: apiUrl.protocol,
+        hostname: apiUrl.hostname,
+        port: apiUrl.port || (apiUrl.protocol === 'https:' ? 443 : 80),
+        path: `${apiUrl.pathname}${apiUrl.search}`,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${ai.apiKey}`,
+          'Content-Length': Buffer.byteLength(payload)
+        }
+      }, (res) => {
+        let body = '';
+        res.setEncoding('utf8');
+        res.on('data', (chunk) => { body += chunk; });
+        res.on('end', () => {
+          if (res.statusCode < 200 || res.statusCode >= 300) {
+            resolve('');
+            return;
+          }
+          try {
+            const parsed = JSON.parse(body);
+            resolve(extractAiText(parsed));
+          } catch (error) {
+            resolve('');
+          }
+        });
+      });
+
+      req.setTimeout(12000, () => {
+        req.destroy();
+        resolve('');
+      });
+      req.on('error', () => resolve(''));
+      req.write(payload);
+      req.end();
+    });
+
+    if (aiResult) return aiResult;
+  }
+
+  const endpoint = new URL('https://translate.googleapis.com/translate_a/single');
+  endpoint.searchParams.set('client', 'gtx');
+  endpoint.searchParams.set('sl', 'auto');
+  endpoint.searchParams.set('tl', 'en');
+  endpoint.searchParams.set('dt', 't');
+  endpoint.searchParams.set('q', input);
+
+  return new Promise((resolve) => {
+    const req = https.get(endpoint.toString(), {
+      headers: { 'User-Agent': 'Mozilla/5.0' }
+    }, (res) => {
+      if (res.statusCode !== 200) {
+        res.resume();
+        resolve('');
+        return;
+      }
+
+      let body = '';
+      res.setEncoding('utf8');
+      res.on('data', (chunk) => {
+        body += chunk;
+      });
+      res.on('end', () => {
+        try {
+          const data = JSON.parse(body);
+          if (!Array.isArray(data) || !Array.isArray(data[0])) {
+            resolve('');
+            return;
+          }
+          const translated = data[0]
+            .map((seg) => (Array.isArray(seg) ? String(seg[0] || '') : ''))
+            .join('')
+            .trim();
+          resolve(translated);
+        } catch (error) {
+          resolve('');
+        }
+      });
+    });
+
+    req.setTimeout(8000, () => {
+      req.destroy();
+      resolve('');
+    });
+    req.on('error', () => resolve(''));
+  });
+}
+
+async function enrichEnglishTitleSummary(items) {
+  const cache = loadEnTranslationCache();
+  const recentItems = sortByIdDesc(items).slice(0, EN_TRANSLATE_RECENT_LIMIT);
+  let newTranslations = 0;
+  let cacheDirty = false;
+
+  for (const item of recentItems) {
+    if (newTranslations >= EN_TRANSLATE_MAX_NEW_PER_RUN) break;
+
+    const title = cleanText(item.title);
+    if (!cleanText(item.titleEnglish) && hasCjkText(title)) {
+      const cached = cleanText(cache.title[title]);
+      if (cached) {
+        item.titleEnglish = cached;
+      } else {
+        const translated = await translateToEnglish(title);
+        if (translated) {
+          item.titleEnglish = translated;
+          cache.title[title] = translated;
+          cacheDirty = true;
+          newTranslations += 1;
+        }
+      }
+    }
+
+    if (newTranslations >= EN_TRANSLATE_MAX_NEW_PER_RUN) break;
+
+    const summary = cleanText(item.summary);
+    if (!cleanText(item.summaryEnglish) && hasCjkText(summary)) {
+      const cached = cleanText(cache.summary[summary]);
+      if (cached) {
+        item.summaryEnglish = cached;
+      } else {
+        const translated = await translateToEnglish(summary);
+        if (translated) {
+          item.summaryEnglish = translated;
+          cache.summary[summary] = translated;
+          cacheDirty = true;
+          newTranslations += 1;
+        }
+      }
+    }
+  }
+
+  if (cacheDirty) {
+    saveEnTranslationCache(cache);
+  }
+  if (newTranslations > 0) {
+    console.log(`🌐 EN auto-translation added: ${newTranslations}`);
+  }
 }
 
 function sortByIdDesc(items) {
@@ -233,10 +561,12 @@ function getAbsoluteAssetPath(assetPath) {
 function buildSearchText(item, lang) {
   const prompt = getPromptByLang(item, lang).text.slice(0, 300);
   const tags = normalizeTags(item.tags).join(' ');
+  const displayTitle = getCaseTitle(item, lang);
+  const displaySummary = getCaseSummary(item, lang);
   const base = [
     item.caseNumber || '',
-    item.title || '',
-    item.summary || '',
+    displayTitle || item.title || '',
+    displaySummary || item.summary || '',
     item.source || '',
     item.url || '',
     tags,
@@ -260,8 +590,13 @@ function renderCaseCard(item, lang) {
     thumbnail = `<video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="${getAbsoluteAssetPath(item.videos[0])}" type="video/mp4"></video>`;
   }
 
-  const tagsHtml = tags.map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`).join('');
-  const summary = cleanText(item.summary);
+  const tagsHtml = tags.map((tag) => `<span class="tag">${escapeHtml(toDisplayTag(tag, lang))}</span>`).join('');
+  const summary = getCaseSummary(item, lang);
+  const caseTitle = getCaseTitle(item, lang);
+  const sourceText = cleanText(item.source);
+  const sourceMetaHtml = cleanText(item.url)
+    ? `<span class="case-source source-inline-link clickable-source" data-url="${escapeAttr(item.url)}">${escapeHtml(sourceText || item.url)}</span>`
+    : `<span class="case-source">${escapeHtml(sourceText)}</span>`;
 
   let promptHtml = '';
   if (promptPreviewText) {
@@ -284,11 +619,11 @@ function renderCaseCard(item, lang) {
       <a class="case-card-link" href="${detailPath}">
         <div class="case-thumbnail">${thumbnail}</div>
         <div class="case-info">
-          <h3 class="case-title">${escapeHtml(item.caseNumber || '')}: ${escapeHtml(item.title || '')}</h3>
+          <h3 class="case-title">${renderCaseIdPill(item)}${caseTitle ? `<span class="case-title-text">${escapeHtml(caseTitle)}</span>` : ''}</h3>
           ${summary ? `<p class="case-summary">${escapeHtml(summary)}</p>` : ''}
           <div class="case-meta">
             <span class="case-date">${escapeHtml(item.date || '')}</span>
-            <span class="case-source">${escapeHtml(item.source || '')}</span>
+            ${sourceMetaHtml}
           </div>
           <div class="case-tags">${tagsHtml}</div>
           ${promptHtml}
@@ -350,6 +685,16 @@ function renderBaseScripts() {
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   `;
@@ -460,6 +805,31 @@ function renderHead({ lang, title, description, canonicalPath }) {
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -469,6 +839,19 @@ function renderHead({ lang, title, description, canonicalPath }) {
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
@@ -501,7 +884,7 @@ function renderControls(lang, items) {
     .slice(0, 30);
 
   const tagsHtml = tags
-    .map(([tag, count]) => `<button type="button" class="tag-filter" data-tag="${escapeAttr(tag)}">${escapeHtml(tag)} (${count})</button>`)
+    .map(([tag, count]) => `<button type="button" class="tag-filter" data-tag="${escapeAttr(tag)}">${escapeHtml(toDisplayTag(tag, lang))} (${count})</button>`)
     .join('');
 
   return `
@@ -553,9 +936,11 @@ function renderDetailPage({ lang, item, stats }) {
   const enPrompt = enRaw || zhRaw || fullRaw;
   const zhFallback = !zhRaw && !!zhPrompt;
   const enFallback = !enRaw && !!enPrompt;
-  const summary = cleanText(item.summary);
+  const summary = getCaseSummary(item, lang);
   const detailPath = getDetailPath(item);
   const navKey = currentNavByItem(item);
+  const caseTitle = getCaseTitle(item, lang);
+  const caseId = getCaseIdText(item) || String(Number(item.id) || '');
 
   const images = Array.isArray(item.images) ? item.images : [];
   const videos = Array.isArray(item.videos) ? item.videos : [];
@@ -566,19 +951,21 @@ function renderDetailPage({ lang, item, stats }) {
   const videosHtml = videos.length
     ? `<div class="detail-block"><h3>🎬 ${t.videosHeading}</h3><div class="detail-media-grid">${videos.map((video) => `<video controls><source src="${getAbsoluteAssetPath(video)}" type="video/mp4"></video>`).join('')}</div></div>`
     : '';
-  const sourceHtml = cleanText(item.url)
-    ? `<div class="detail-block"><h3>🔗 ${t.sourceHeading}</h3><a class="source-link" href="${escapeAttr(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.url)}</a></div>`
-    : '';
+  const sourceUrl = cleanText(item.url);
+  const sourceHtml = '';
+  const headerSourceHtml = sourceUrl
+    ? `<a class="source-inline-link" href="${escapeAttr(sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.source || sourceUrl)}</a>`
+    : escapeHtml(item.source || '');
 
   const content = `
     <div class="page-header detail-body">
       <nav class="breadcrumb">
         <a href="${toLangHref(lang, '/')}">${LANGS[lang].nav.home}</a><span>›</span>
         <a href="${toLangHref(lang, `/${navKey}/`)}">${LANGS[lang].nav[navKey]}</a><span>›</span>
-        <span>${escapeHtml(item.caseNumber || '')}</span>
+        <span>#${escapeHtml(caseId)}</span>
       </nav>
-      <h1>${escapeHtml(item.caseNumber || '')}: ${escapeHtml(item.title || '')}</h1>
-      <p>${escapeHtml(item.date || '')}　${escapeHtml(item.source || '')}</p>
+      <h1 class="detail-title">${renderCaseIdPill(item)}${caseTitle ? `<span class="case-title-text">${escapeHtml(caseTitle)}</span>` : ''}</h1>
+      <p>${escapeHtml(item.date || '')}　${headerSourceHtml}</p>
       <p><a class="source-link" href="${toLangHref(lang, `/${navKey}/`)}">${t.backToList}</a></p>
     </div>
 
@@ -590,11 +977,17 @@ function renderDetailPage({ lang, item, stats }) {
 
       ${summary ? `<div class="detail-block"><h3>📝 ${t.summaryHeading}</h3><p>${escapeHtml(summary)}</p></div>` : ''}
       <div class="detail-block">
-        <h3>🎨 ${t.promptCnHeading}${zhFallback ? ` <span class="fallback-badge">${t.promptCnFallback}</span>` : ''}</h3>
+        <div class="prompt-head-row">
+          <h3>🎨 ${t.promptCnHeading}${zhFallback ? ` <span class="fallback-badge">${t.promptCnFallback}</span>` : ''}</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText(${JSON.stringify(zhPrompt)}, this)'>${t.copyLabel}</button>
+        </div>
         ${zhPrompt ? formatMultilineText(zhPrompt) : `<p>${escapeHtml(t.detailNoPrompt)}</p>`}
       </div>
       <div class="detail-block">
-        <h3>🎨 ${t.promptEnHeading}${enFallback ? ` <span class="fallback-badge">${t.promptEnFallback}</span>` : ''}</h3>
+        <div class="prompt-head-row">
+          <h3>🎨 ${t.promptEnHeading}${enFallback ? ` <span class="fallback-badge">${t.promptEnFallback}</span>` : ''}</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText(${JSON.stringify(enPrompt)}, this)'>${t.copyLabel}</button>
+        </div>
         ${enPrompt ? formatMultilineText(enPrompt) : `<p>${escapeHtml(t.detailNoPrompt)}</p>`}
       </div>
       ${imagesHtml}
@@ -610,6 +1003,38 @@ function renderDetailPage({ lang, item, stats }) {
           if (row) row.style.display = 'flex';
         }
       })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert(${JSON.stringify(t.detailNoPrompt)});
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = ${JSON.stringify(t.copiedLabel)};
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert(${JSON.stringify(t.copyFailed)});
+        }
+      }
 
       async function publishCurrentCase(button) {
         if (!button) return;
@@ -658,7 +1083,7 @@ function renderDetailPage({ lang, item, stats }) {
 
   return renderPageTemplate({
     lang,
-    title: `${item.caseNumber || ''}: ${item.title || ''}`,
+    title: `${caseTitle || 'Case'} #${caseId}`,
     description: summary || cleanText(item.title) || 'AI prompt case',
     canonicalPath: detailPath,
     currentNav: currentNavByItem(item),
@@ -777,8 +1202,9 @@ function generateLanguagePages(lang, items, groups, stats) {
   for (const [tag, count] of tagPairs) {
     const filename = tagToFilename(tag);
     const tagItems = sortedImage.filter((item) => normalizeTags(item.tags).includes(tag));
-    const pageTitle = `${tag} · ${t.imageTitle}`;
-    const pageDesc = `${count} ${lang === 'zh' ? '条' : ''} ${tag} ${lang === 'zh' ? '相关案例' : 'related cases'}`;
+    const displayTag = toDisplayTag(tag, lang);
+    const pageTitle = `${displayTag} · ${t.imageTitle}`;
+    const pageDesc = `${count} ${lang === 'zh' ? '条' : ''} ${displayTag} ${lang === 'zh' ? '相关案例' : 'related cases'}`;
 
     writeFile(
       path.join(langRoot, 'image', filename),
@@ -806,10 +1232,11 @@ function generateLanguagePages(lang, items, groups, stats) {
   console.log(`✅ ${lang.toUpperCase()} generated: home/image/video/text + ${tagPairs.length} tag pages + ${sortedAll.length} details`);
 }
 
-function main() {
+async function main() {
   console.log('🚀 Start generating bilingual static pages...\n');
 
   const items = loadItems();
+  await enrichEnglishTitleSummary(items);
   const groups = groupByMediaType(items);
   const stats = {
     total: items.length,
@@ -830,4 +1257,7 @@ function main() {
   console.log('\n🎉 Bilingual pages generated successfully.');
 }
 
-main();
+main().catch((error) => {
+  console.error('❌ Page generation failed:', error.message || error);
+  process.exit(1);
+});

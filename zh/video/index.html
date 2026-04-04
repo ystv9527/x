@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/video/">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/video/">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1775192545686">
+    <link rel="stylesheet" href="/assets/style.css?v=1775261002427">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -25,6 +25,31 @@
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -34,6 +59,19 @@
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
@@ -52,12 +90,12 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2753</span>
+          <span class="nav-count">2754</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2742</span>
+          <span class="nav-count">2743</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item active">
           <span class="nav-icon">🎬</span>
@@ -105,11 +143,11 @@
       <a class="case-card-link" href="/zh/case/571.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-2011180741955371195-1.mp4" type="video/mp4"></video></div>
         <div class="case-info">
-          <h3 class="case-title">案例571: 拟人橙色虎斑猫厨师在火焰中炫技炒虾仁炒饭</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#571</span></span><span class="case-title-text">拟人橙色虎斑猫厨师在火焰中炫技炒虾仁炒饭</span></h3>
           <p class="case-summary">高度真实的特写镜头，拟人橙色虎斑猫厨师在火焰中翻炒虾仁炒饭，背景的副厨显得沮丧而震撼，画面呈现专业厨房的亮灯与不锈钢环境。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-14</span>
-            <span class="case-source">X / Iqra Saifi</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/IqraSaifiii/status/2011180741955371195">X / Iqra Saifi</span>
           </div>
           <div class="case-tags"><span class="tag">视频</span><span class="tag">摄影</span><span class="tag">设计</span><span class="tag">图片</span><span class="tag">创意</span></div>
           
@@ -137,11 +175,11 @@
       <a class="case-card-link" href="/zh/case/556.html">
         <div class="case-thumbnail"><img src="/images/tweet-2008910386008125614-1.jpg" alt="Kling AI 与 Gemini Nano Banana Pro：汉堡信息图" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例556: Kling AI 与 Gemini Nano Banana Pro：汉堡信息图</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#556</span></span><span class="case-title-text">Kling AI 与 Gemini Nano Banana Pro：汉堡信息图</span></h3>
           <p class="case-summary">展示汉堡在缓慢旋转中层层分离的精确运动提示，配以两张高质感视觉作品：一张专业产品照，一张超真实的爆炸式信息图，均以纯白背景呈现。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-08</span>
-            <span class="case-source">X / Zara</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ZaraIrahh/status/2008910386008125614">X / Zara</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">视频</span><span class="tag">Kling</span><span class="tag">Gemini</span><span class="tag">摄影</span><span class="tag">设计</span></div>
           
@@ -167,11 +205,11 @@
       <a class="case-card-link" href="/zh/case/532.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1994461325787799785-1.mp4" type="video/mp4"></video></div>
         <div class="case-info">
-          <h3 class="case-title">案例532: 用Krea_ai打造震撼的Veo3汽车组装动画 JSON提示详解</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#532</span></span><span class="case-title-text">用Krea_ai打造震撼的Veo3汽车组装动画 JSON提示详解</span></h3>
           <p class="case-summary">本文分享由Krea_ai制作的Veo3汽车组装动画的详细JSON提示，涵盖场景、动作、特效和摄影细节，展现动态、爆发力十足的视觉效果，适合影视特效和创意设计爱好者参考。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-29</span>
-            <span class="case-source">X / Pierrick Chevallier | IA</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/CharaspowerAI/status/1994461325787799785">X / Pierrick Chevallier | IA</span>
           </div>
           <div class="case-tags"><span class="tag">视频</span><span class="tag">AI</span><span class="tag">设计</span><span class="tag">特效</span></div>
           
@@ -203,11 +241,11 @@
       <a class="case-card-link" href="/zh/case/516.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1988717217219801306-1.mp4" type="video/mp4"></video></div>
         <div class="case-info">
-          <h3 class="case-title">案例516: 黎明时分大型造船厂的工业场景震撼呈现</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#516</span></span><span class="case-title-text">黎明时分大型造船厂的工业场景震撼呈现</span></h3>
           <p class="case-summary">描绘黎明时分大规模造船厂中起重机同步移动集装箱的壮观场景，镜头逐渐揭示工人、引擎声和海鸥声，展现史诗级工业电影风格的逼真画面。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-13</span>
-            <span class="case-source">X / LudovicCreator</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/LudovicCreator/status/1988717217219801306">X / LudovicCreator</span>
           </div>
           <div class="case-tags"><span class="tag">视频</span><span class="tag">Veo-3.1</span><span class="tag">摄影</span><span class="tag">资源</span><span class="tag">工业</span></div>
           
@@ -231,11 +269,11 @@
       <a class="case-card-link" href="/zh/case/511.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1987793088883105852-1.mp4" type="video/mp4"></video></div>
         <div class="case-info">
-          <h3 class="case-title">案例511: 怀旧90年代客厅复刻：8秒重现《鸭 Hunt》游戏场景</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#511</span></span><span class="case-title-text">怀旧90年代客厅复刻：8秒重现《鸭 Hunt》游戏场景</span></h3>
           <p class="case-summary">这段8秒的视频还原了90年代客厅的经典场景，展示了《鸭 Hunt》游戏的怀旧氛围，包括复古CRT电视、NES主机、怀旧道具和经典像素画面，唤起童年记忆。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-10</span>
-            <span class="case-source">X / Mr Das</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrDasOnX/status/1987793088883105852">X / Mr Das</span>
           </div>
           <div class="case-tags"><span class="tag">视频</span><span class="tag">Veo</span><span class="tag">动画</span><span class="tag">设计</span><span class="tag">工具</span></div>
           
@@ -264,11 +302,11 @@
       <a class="case-card-link" href="/zh/case/507.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1987550568626393584-1.mp4" type="video/mp4"></video></div>
         <div class="case-info">
-          <h3 class="case-title">案例507: 电影级直升机激烈追逐场景全景解析</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#507</span></span><span class="case-title-text">电影级直升机激烈追逐场景全景解析</span></h3>
           <p class="case-summary">本文详细描述了一场在峡谷中进行的高速直升机追逐的场景，从动态摄像、视觉特效到音效布局，展现了紧张刺激的战争氛围，视觉与听觉效果高度结合。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-10</span>
-            <span class="case-source">X / Amira Zairi</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/azed_ai/status/1987550568626393584">X / Amira Zairi</span>
           </div>
           <div class="case-tags"><span class="tag">视频</span><span class="tag">Grok</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">特效</span><span class="tag">电影</span></div>
           
@@ -301,11 +339,11 @@
       <a class="case-card-link" href="/zh/case/502.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1986691307147043154-1.mp4" type="video/mp4"></video></div>
         <div class="case-info">
-          <h3 class="case-title">案例502: 电影级极速追逐：黑色欧洲跑车在山间公路激烈超车</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#502</span></span><span class="case-title-text">电影级极速追逐：黑色欧洲跑车在山间公路激烈超车</span></h3>
           <p class="case-summary">一段炫酷的高速追逐视频，展现两辆现代欧洲跑车在风景优美的山路上激烈超车，配合专业的摄像和极致的视觉效果，营造出速度与激情的极致体验。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-08</span>
-            <span class="case-source">X / Iqra Saifi</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/IqraSaifiii/status/1986691307147043154">X / Iqra Saifi</span>
           </div>
           <div class="case-tags"><span class="tag">视频</span><span class="tag">Unreal Engine</span><span class="tag">Gemini</span><span class="tag">3D</span><span class="tag">效果</span></div>
           
@@ -332,11 +370,11 @@
       <a class="case-card-link" href="/zh/case/403.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/videos/tweet-1986342181058293761-1.mp4" type="video/mp4"></video></div>
         <div class="case-info">
-          <h3 class="case-title">案例403: 鹿竟在夜晚舞出TikTok挑战，萌态十足</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#403</span></span><span class="case-title-text">鹿竟在夜晚舞出TikTok挑战，萌态十足</span></h3>
           <p class="case-summary">一段夜间行车记录仪捕捉到两只鹿在乡村道路上表演搞笑舞蹈，宛如提前开启了TikTok挑战，引发网友热议。视频展现了动物的趣味互动与自然之美，结合逼真的夜景和幽默氛围。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">X / Mr Das</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrDasOnX/status/1986342181058293761">X / Mr Das</span>
           </div>
           <div class="case-tags"><span class="tag">视频</span><span class="tag">创意</span><span class="tag">动物</span><span class="tag">Veo 3.1</span></div>
           
@@ -369,6 +407,16 @@
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   

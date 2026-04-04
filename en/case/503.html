@@ -4,14 +4,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>案例503: 利用Gemini nano banana实现逼真场景合成与音乐叠加教程 | Gem Nana AI Prompt Library</title>
-    <meta name="description" content="本文详细介绍如何通过Gemini nano banana工具，将人物参考图置入崭新悲伤公交背景，并叠加玻璃晶态音乐播放器UI，实现逼真场景合成与情感渲染，适合数字艺术创作者参考学习。">
+    <title>Tutorial on using Gemini Nano Banana to achieve realistic scene compositing and music overlay. #503 | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="This article provides a detailed guide on using the Gemini nano banana tool to insert a reference image of a person into a fresh, melancholic bus background, and to overlay a glassy, crystalline music-player UI, achieving realistic scene composition and emotional rendering. It is suitable for digital artists to study and learn from.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
     <link rel="canonical" href="https://gemnana.com/en/case/503.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/503.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/503.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1775192547211">
+    <link rel="stylesheet" href="/assets/style.css?v=1775261004075">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -25,6 +25,31 @@
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -34,10 +59,23 @@
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"案例503: 利用Gemini nano banana实现逼真场景合成与音乐叠加教程","description":"本文详细介绍如何通过Gemini nano banana工具，将人物参考图置入崭新悲伤公交背景，并叠加玻璃晶态音乐播放器UI，实现逼真场景合成与情感渲染，适合数字艺术创作者参考学习。","url":"https://gemnana.com/en/case/503.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"Tutorial on using Gemini Nano Banana to achieve realistic scene compositing and music overlay. #503","description":"This article provides a detailed guide on using the Gemini nano banana tool to insert a reference image of a person into a fresh, melancholic bus background, and to overlay a glassy, crystalline music-player UI, achieving realistic scene composition and emotional rendering. It is suitable for digital artists to study and learn from.","url":"https://gemnana.com/en/case/503.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
   
 </head>
 <body class="layout-sidebar">
@@ -52,12 +90,12 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2753</span>
+          <span class="nav-count">2754</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2742</span>
+          <span class="nav-count">2743</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
@@ -84,10 +122,10 @@
       <nav class="breadcrumb">
         <a href="/en/index.html">Home</a><span>›</span>
         <a href="/en/image/index.html">Image</a><span>›</span>
-        <span>案例503</span>
+        <span>#503</span>
       </nav>
-      <h1>案例503: 利用Gemini nano banana实现逼真场景合成与音乐叠加教程</h1>
-      <p>2025-11-08　X / Melis</p>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#503</span></span><span class="case-title-text">Tutorial on using Gemini Nano Banana to achieve realistic scene compositing and music overlay.</span></h1>
+      <p>2025-11-08　<a class="source-inline-link" href="https://x.com/miilesus/status/1986833636193189893" target="_blank" rel="noopener noreferrer">X / Melis</a></p>
       <p><a class="source-link" href="/en/image/index.html">← Back to list</a></p>
     </div>
 
@@ -97,18 +135,24 @@
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
-      <div class="detail-block"><h3>📝 Summary</h3><p>本文详细介绍如何通过Gemini nano banana工具，将人物参考图置入崭新悲伤公交背景，并叠加玻璃晶态音乐播放器UI，实现逼真场景合成与情感渲染，适合数字艺术创作者参考学习。</p></div>
+      <div class="detail-block"><h3>📝 Summary</h3><p>This article provides a detailed guide on using the Gemini nano banana tool to insert a reference image of a person into a fresh, melancholic bus background, and to overlay a glassy, crystalline music-player UI, achieving realistic scene composition and emotional rendering. It is suitable for digital artists to study and learn from.</p></div>
       <div class="detail-block">
-        <h3>🎨 Chinese Prompt</h3>
+        <div class="prompt-head-row">
+          <h3>🎨 Chinese Prompt</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n“promptDetails”： {\r\n“description”： “通过将主题（基于参考照片）放入新的大气背景，然后叠加音乐 UI 来*创建新场景*的提示。”\r\n“styleTags”： [\r\n“美学编辑”，\r\n“电影”，\r\n“场景合成”，\r\n“玻璃晶态”\r\n        ]\r\n    },\r\n“主题引用”： {\r\n“source”： “[上传的图片]”，\r\n“description”： “仅使用此图像作为拍摄对象面部、头发和外观的参考。*不要*使用其原始背景。\r\n    },\r\n“场景”： {\r\n“背景”： {\r\n“setting”：“公交车上的窗户是悲伤的，烦恼的，是悲伤的”，\r\n“details”： “这是主题必须被放置在的*新*环境中，完全取代了原始背景。”\r\n        },\r\n“主题”： {\r\n“description”： “外貌由'[上传图片]'定义的年轻人。”\r\n“pose”： “他的头轻轻地靠在公交车窗上”，\r\n“focus”： “主体清晰对焦，完全融入新背景。”\r\n        }\r\n    },\r\n“overlayObject”： {\r\n“type”： “浮动玻璃变形音乐播放器 UI”，\r\n“relationshipToEnvironment”： “UI 与公交车窗玻璃**完全齐平并物理连接**到同一平面上，**不浮动**，不是屏幕空间。\r\n“transform”： “UI 与窗口表面匹配的 *完全相同的旋转和透视*。如果窗口倾斜，则 UI 倾斜的方式与正确的透视相同。\r\n“surfaceInteraction”： “通过玻璃进行微妙、逼真的反射和轻微折射，极薄的玻璃成型面板集成到窗户表面中。\r\n“组件”： {\r\n“songTitle”： “失事”，\r\n“artistName”： “想象龙”，\r\n“position”： “安装在框架左中区域的公交车窗玻璃上（不浮动）。”\r\n        }\r\n    },\r\n“技术风格”： {\r\n“aspectRatio”： “1：1”，\r\n“photographyStyle”： “电影般的人像，逼真的合成”，\r\n“相机”： {\r\n“shotType”： “中镜头或中特写”，\r\n“angle”： “视线水平”，\r\n“depthOfField”： “浅，模糊新背景（散景）。”\r\n        },\r\n“照明”： {\r\n“type”： “柔和、环境、喜怒无常”，\r\n“description”： “拍摄对象上的照明*必须匹配*新背景设置的照明（例如，透过公交车窗的雨光、柔和的阴影渐变）。”\r\n        },\r\n“颜色”： {\r\n“palette”： “柔和的电影级调色。”\r\n        }\r\n    },\r\n“音频设备”： {\r\n“type”： “微妙的入耳式无线耳塞”，\r\n“fit”：“自然地坐在双耳中，具有正确逼真的皮肤接触”，\r\n“color”： “哑光黑色或深中性色调”，\r\n“consistencyNote”： “没有电缆，没有笨重的游戏耳机”\r\n    },\r\n“moodReinforcement”： “耳塞暗示悲伤的音乐'Wrecked - Imagine Dragons'是受试者正在听的。\r\n}", this)'>📋 Copy</button>
+        </div>
         <p>{<br>“promptDetails”： {<br>“description”： “通过将主题（基于参考照片）放入新的大气背景，然后叠加音乐 UI 来*创建新场景*的提示。”<br>“styleTags”： [<br>“美学编辑”，<br>“电影”，<br>“场景合成”，<br>“玻璃晶态”<br>        ]<br>    },<br>“主题引用”： {<br>“source”： “[上传的图片]”，<br>“description”： “仅使用此图像作为拍摄对象面部、头发和外观的参考。*不要*使用其原始背景。<br>    },<br>“场景”： {<br>“背景”： {<br>“setting”：“公交车上的窗户是悲伤的，烦恼的，是悲伤的”，<br>“details”： “这是主题必须被放置在的*新*环境中，完全取代了原始背景。”<br>        },<br>“主题”： {<br>“description”： “外貌由&#39;[上传图片]&#39;定义的年轻人。”<br>“pose”： “他的头轻轻地靠在公交车窗上”，<br>“focus”： “主体清晰对焦，完全融入新背景。”<br>        }<br>    },<br>“overlayObject”： {<br>“type”： “浮动玻璃变形音乐播放器 UI”，<br>“relationshipToEnvironment”： “UI 与公交车窗玻璃**完全齐平并物理连接**到同一平面上，**不浮动**，不是屏幕空间。<br>“transform”： “UI 与窗口表面匹配的 *完全相同的旋转和透视*。如果窗口倾斜，则 UI 倾斜的方式与正确的透视相同。<br>“surfaceInteraction”： “通过玻璃进行微妙、逼真的反射和轻微折射，极薄的玻璃成型面板集成到窗户表面中。<br>“组件”： {<br>“songTitle”： “失事”，<br>“artistName”： “想象龙”，<br>“position”： “安装在框架左中区域的公交车窗玻璃上（不浮动）。”<br>        }<br>    },<br>“技术风格”： {<br>“aspectRatio”： “1：1”，<br>“photographyStyle”： “电影般的人像，逼真的合成”，<br>“相机”： {<br>“shotType”： “中镜头或中特写”，<br>“angle”： “视线水平”，<br>“depthOfField”： “浅，模糊新背景（散景）。”<br>        },<br>“照明”： {<br>“type”： “柔和、环境、喜怒无常”，<br>“description”： “拍摄对象上的照明*必须匹配*新背景设置的照明（例如，透过公交车窗的雨光、柔和的阴影渐变）。”<br>        },<br>“颜色”： {<br>“palette”： “柔和的电影级调色。”<br>        }<br>    },<br>“音频设备”： {<br>“type”： “微妙的入耳式无线耳塞”，<br>“fit”：“自然地坐在双耳中，具有正确逼真的皮肤接触”，<br>“color”： “哑光黑色或深中性色调”，<br>“consistencyNote”： “没有电缆，没有笨重的游戏耳机”<br>    },<br>“moodReinforcement”： “耳塞暗示悲伤的音乐&#39;Wrecked - Imagine Dragons&#39;是受试者正在听的。<br>}</p>
       </div>
       <div class="detail-block">
-        <h3>🎨 English Prompt</h3>
+        <div class="prompt-head-row">
+          <h3>🎨 English Prompt</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n    \"promptDetails\": {\r\n        \"description\": \"A prompt to *create a new scene* by placing a subject (based on a reference photo) into a new atmospheric background, then overlaying a music UI.\",\r\n        \"styleTags\": [\r\n            \"Aesthetic Edit\",\r\n            \"Cinematic\",\r\n            \"Scene Compositing\",\r\n            \"Glassmorphism\"\r\n        ]\r\n    },\r\n    \"subjectReference\": {\r\n        \"source\": \"[UPLOADED IMAGE]\",\r\n        \"description\": \"Use this image *only* as a reference for the subject's face, hair, and appearance. Do *not* use its original background.\"\r\n    },\r\n    \"scene\": {\r\n        \"background\": {\r\n            \"setting\": \"the window on the bus is sad, troubled, sorrowful\",\r\n            \"details\": \"This is the *new* environment the subject must be placed into, completely replacing the original background.\"\r\n        },\r\n        \"subject\": {\r\n            \"description\": \"The young man whose appearance is defined by the `[UPLOADED IMAGE]`.\",\r\n            \"pose\": \"his head resting gently against the bus window\",\r\n            \"focus\": \"Subject is in sharp focus, fully integrated into the new background.\"\r\n        }\r\n    },\r\n    \"overlayObject\": {\r\n        \"type\": \"Floating Glassmorphism Music Player UI\",\r\n        \"relationshipToEnvironment\": \"the UI is **perfectly flush and physically attached** to the same plane as the bus window glass, **not floating**, not screen-space.\",\r\n        \"transform\": \"the UI matches the *exact same rotation and perspective* as the window surface. If the window tilts, the UI tilts identically with correct foreshortening.\",\r\n        \"surfaceInteraction\": \"subtle, realistic reflection and slight refraction through glass, extremely thin glassmorphism panel integrated *into* the window surface.\",\r\n        \"components\": {\r\n            \"songTitle\": \"Wrecked\",\r\n            \"artistName\": \"Imagine Dragons\",\r\n            \"position\": \"mounted on the bus window glass at the middle-left region of the frame (not floating).\"\r\n        }\r\n    },\r\n    \"technicalStyle\": {\r\n        \"aspectRatio\": \"1:1\",\r\n        \"photographyStyle\": \"Cinematic Portrait, Realistic Compositing\",\r\n        \"camera\": {\r\n            \"shotType\": \"Medium Shot or Medium Close-Up\",\r\n            \"angle\": \"Eye-level\",\r\n            \"depthOfField\": \"Shallow, to blur the new background (bokeh).\"\r\n        },\r\n        \"lighting\": {\r\n            \"type\": \"Soft, Ambient, Moody\",\r\n            \"description\": \"Lighting on the subject *must match* the lighting of the new background setting (e.g., rainy light through bus window, soft shadow gradients).\"\r\n        },\r\n        \"color\": {\r\n            \"palette\": \"Muted, cinematic color grading.\"\r\n        }\r\n    },\r\n    \"audioDevice\": {\r\n        \"type\": \"subtle in-ear wireless earbuds\",\r\n        \"fit\": \"naturally seated in both ears with correct realistic skin contact\",\r\n        \"color\": \"matte black or dark neutral tone\",\r\n        \"consistencyNote\": \"no cable, no bulky gaming headset\"\r\n    },\r\n    \"moodReinforcement\": \"earbuds imply the sad music 'Wrecked - Imagine Dragons' is what the subject is listening to.\"\r\n}", this)'>📋 Copy</button>
+        </div>
         <p>{<br>    &quot;promptDetails&quot;: {<br>        &quot;description&quot;: &quot;A prompt to *create a new scene* by placing a subject (based on a reference photo) into a new atmospheric background, then overlaying a music UI.&quot;,<br>        &quot;styleTags&quot;: [<br>            &quot;Aesthetic Edit&quot;,<br>            &quot;Cinematic&quot;,<br>            &quot;Scene Compositing&quot;,<br>            &quot;Glassmorphism&quot;<br>        ]<br>    },<br>    &quot;subjectReference&quot;: {<br>        &quot;source&quot;: &quot;[UPLOADED IMAGE]&quot;,<br>        &quot;description&quot;: &quot;Use this image *only* as a reference for the subject&#39;s face, hair, and appearance. Do *not* use its original background.&quot;<br>    },<br>    &quot;scene&quot;: {<br>        &quot;background&quot;: {<br>            &quot;setting&quot;: &quot;the window on the bus is sad, troubled, sorrowful&quot;,<br>            &quot;details&quot;: &quot;This is the *new* environment the subject must be placed into, completely replacing the original background.&quot;<br>        },<br>        &quot;subject&quot;: {<br>            &quot;description&quot;: &quot;The young man whose appearance is defined by the `[UPLOADED IMAGE]`.&quot;,<br>            &quot;pose&quot;: &quot;his head resting gently against the bus window&quot;,<br>            &quot;focus&quot;: &quot;Subject is in sharp focus, fully integrated into the new background.&quot;<br>        }<br>    },<br>    &quot;overlayObject&quot;: {<br>        &quot;type&quot;: &quot;Floating Glassmorphism Music Player UI&quot;,<br>        &quot;relationshipToEnvironment&quot;: &quot;the UI is **perfectly flush and physically attached** to the same plane as the bus window glass, **not floating**, not screen-space.&quot;,<br>        &quot;transform&quot;: &quot;the UI matches the *exact same rotation and perspective* as the window surface. If the window tilts, the UI tilts identically with correct foreshortening.&quot;,<br>        &quot;surfaceInteraction&quot;: &quot;subtle, realistic reflection and slight refraction through glass, extremely thin glassmorphism panel integrated *into* the window surface.&quot;,<br>        &quot;components&quot;: {<br>            &quot;songTitle&quot;: &quot;Wrecked&quot;,<br>            &quot;artistName&quot;: &quot;Imagine Dragons&quot;,<br>            &quot;position&quot;: &quot;mounted on the bus window glass at the middle-left region of the frame (not floating).&quot;<br>        }<br>    },<br>    &quot;technicalStyle&quot;: {<br>        &quot;aspectRatio&quot;: &quot;1:1&quot;,<br>        &quot;photographyStyle&quot;: &quot;Cinematic Portrait, Realistic Compositing&quot;,<br>        &quot;camera&quot;: {<br>            &quot;shotType&quot;: &quot;Medium Shot or Medium Close-Up&quot;,<br>            &quot;angle&quot;: &quot;Eye-level&quot;,<br>            &quot;depthOfField&quot;: &quot;Shallow, to blur the new background (bokeh).&quot;<br>        },<br>        &quot;lighting&quot;: {<br>            &quot;type&quot;: &quot;Soft, Ambient, Moody&quot;,<br>            &quot;description&quot;: &quot;Lighting on the subject *must match* the lighting of the new background setting (e.g., rainy light through bus window, soft shadow gradients).&quot;<br>        },<br>        &quot;color&quot;: {<br>            &quot;palette&quot;: &quot;Muted, cinematic color grading.&quot;<br>        }<br>    },<br>    &quot;audioDevice&quot;: {<br>        &quot;type&quot;: &quot;subtle in-ear wireless earbuds&quot;,<br>        &quot;fit&quot;: &quot;naturally seated in both ears with correct realistic skin contact&quot;,<br>        &quot;color&quot;: &quot;matte black or dark neutral tone&quot;,<br>        &quot;consistencyNote&quot;: &quot;no cable, no bulky gaming headset&quot;<br>    },<br>    &quot;moodReinforcement&quot;: &quot;earbuds imply the sad music &#39;Wrecked - Imagine Dragons&#39; is what the subject is listening to.&quot;<br>}</p>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-1986833636193189893-1.jpg" alt="利用Gemini nano banana实现逼真场景合成与音乐叠加教程" loading="lazy"><img src="/images/tweet-1986833636193189893-2.jpg" alt="利用Gemini nano banana实现逼真场景合成与音乐叠加教程" loading="lazy"><img src="/images/tweet-1986833636193189893-3.jpg" alt="利用Gemini nano banana实现逼真场景合成与音乐叠加教程" loading="lazy"></div></div>
       
-      <div class="detail-block"><h3>🔗 Source URL</h3><a class="source-link" href="https://x.com/miilesus/status/1986833636193189893" target="_blank" rel="noopener noreferrer">https://x.com/miilesus/status/1986833636193189893</a></div>
+      
     </div>
 
     <script>
@@ -119,6 +163,38 @@
           if (row) row.style.display = 'flex';
         }
       })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("No prompt content is available for this case.");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ Copied";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("Copy failed. Please copy manually.");
+        }
+      }
 
       async function publishCurrentCase(button) {
         if (!button) return;
@@ -172,6 +248,16 @@
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   

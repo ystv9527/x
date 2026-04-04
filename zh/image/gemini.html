@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/gemini.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/gemini.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1775192545845">
+    <link rel="stylesheet" href="/assets/style.css?v=1775261002563">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -25,6 +25,31 @@
       }
       .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
       .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
       .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
       .detail-body { max-width: 980px; }
       .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
@@ -34,6 +59,19 @@
       .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
       .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
       .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
     </style>
@@ -52,12 +90,12 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2753</span>
+          <span class="nav-count">2754</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2742</span>
+          <span class="nav-count">2743</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
@@ -105,11 +143,11 @@
       <a class="case-card-link" href="/zh/case/575.html">
         <div class="case-thumbnail"><img src="/images/tweet-2012721935193686197-1.jpg" alt="粉彩风3D等距办公场景：悬浮元素设计与光影" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例575: 粉彩风3D等距办公场景：悬浮元素设计与光影</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#575</span></span><span class="case-title-text">粉彩风3D等距办公场景：悬浮元素设计与光影</span></h3>
           <p class="case-summary">以粉彩色3D等距视角呈现，桌面笔记本悬浮、植物漂浮、书架脱离墙体。光影柔和，营造宁静未来感的插画风格场景。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-18</span>
-            <span class="case-source">X / Sharon Riley</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Just_sharon7/status/2012721935193686197">X / Sharon Riley</span>
           </div>
           <div class="case-tags"><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">3D</span><span class="tag">设计</span><span class="tag">图片</span></div>
           
@@ -133,11 +171,11 @@
       <a class="case-card-link" href="/zh/case/562.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009296521637085542-1.jpg" alt="冬日乡村肖像：披肩雪花少女的凝视与温柔静默光影" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例562: 冬日乡村肖像：披肩雪花少女的凝视与温柔静默光影</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#562</span></span><span class="case-title-text">冬日乡村肖像：披肩雪花少女的凝视与温柔静默光影</span></h3>
           <p class="case-summary">冬日乡村静谧场景中，年轻女性回眸凝视，披肩雪花点缀，呈现自然质感与温暖对比。画面采用柔和漫射光与浅景深，呈现电影质感。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-09</span>
-            <span class="case-source">X / Oogie</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2009296521637085542">X / Oogie</span>
           </div>
           <div class="case-tags"><span class="tag">Gemini</span><span class="tag">摄影</span><span class="tag">设计</span><span class="tag">创意</span><span class="tag">工具</span></div>
           
@@ -171,11 +209,11 @@
       <a class="case-card-link" href="/zh/case/559.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009269788602978736-1.jpg" alt="将原始照片转换为四种戏剧化高对比风格的图像" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例559: 将原始照片转换为四种戏剧化高对比风格的图像</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#559</span></span><span class="case-title-text">将原始照片转换为四种戏剧化高对比风格的图像</span></h3>
           <p class="case-summary">将原始照片转化为四种戏剧化风格，采用极端广角与动态角度，呈现电影级灯光、高清对比与细腻纹理的超真实画面。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-09</span>
-            <span class="case-source">X / ANKIT PATEL  | AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Ankit_patel211/status/2009269788602978736">X / ANKIT PATEL  | AI</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">后期</span><span class="tag">工具</span></div>
           
@@ -201,11 +239,11 @@
       <a class="case-card-link" href="/zh/case/558.html">
         <div class="case-thumbnail"><img src="/images/tweet-2009219470686830694-1.jpg" alt="城市监控画面中的名人肖像识别标记与放大焦点效果" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例558: 城市监控画面中的名人肖像识别标记与放大焦点效果</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#558</span></span><span class="case-title-text">城市监控画面中的名人肖像识别标记与放大焦点效果</span></h3>
           <p class="case-summary">以城市监控为背景的名人肖像生成提示，含AI人脸识别标记、放大焦点和低饱和冷色风格，呈现多位明星在繁忙街头的动态场景。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-09</span>
-            <span class="case-source">X / ShaHid WaNii</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2009219470686830694">X / ShaHid WaNii</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">设计</span><span class="tag">工具</span></div>
           
@@ -241,11 +279,11 @@
       <a class="case-card-link" href="/zh/case/551.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007732049839300912-1.jpg" alt="寂静中的紫光瞬间：电影感优雅与身份锁定的四格拼贴" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例551: 寂静中的紫光瞬间：电影感优雅与身份锁定的四格拼贴</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#551</span></span><span class="case-title-text">寂静中的紫光瞬间：电影感优雅与身份锁定的四格拼贴</span></h3>
           <p class="case-summary">以寂静中的紫光照脸为起点，探讨优雅是否自足表达，并提供2×2网格超逼真拼贴的详细生成指令，强调身份锁定与统一造型带来的电影感视觉。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Mira</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xmiiru_/status/2007732049839300912">X / Mira</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">创意</span></div>
           
@@ -270,11 +308,11 @@
       <a class="case-card-link" href="/zh/case/542.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007444051537342855-1.jpg" alt="高品质3D动画幻灯片与肖像创作展示" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例542: 高品质3D动画幻灯片与肖像创作展示</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#542</span></span><span class="case-title-text">高品质3D动画幻灯片与肖像创作展示</span></h3>
           <p class="case-summary">本推文介绍了由Google Gemini Nano Banana AI生成的高分辨率3D动画幻灯片与肖像，包括细腻的角色细节、光影效果和丰富的纹理，展现了先进的数字艺术与动画技术应用。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Aijaz</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2007444051537342855">X / Aijaz</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">3D</span><span class="tag">动画</span><span class="tag">数字艺术</span></div>
           
@@ -300,11 +338,11 @@
       <a class="case-card-link" href="/zh/case/540.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007417297103921324-1.jpg" alt="复古技术插图：谷歌 Gemini Nano Banana pro 3.0 工具展示" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例540: 复古技术插图：谷歌 Gemini Nano Banana pro 3.0 工具展示</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#540</span></span><span class="case-title-text">复古技术插图：谷歌 Gemini Nano Banana pro 3.0 工具展示</span></h3>
           <p class="case-summary">本图为谷歌 Gemini Nano Banana pro 3.0 的复古技术插图，描绘一只戴手套的手握黄铜绘图圆规和老式钢笔，背景为房屋建筑蓝图及机械元素，展现传统制图与现代技术的结合。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Sharon Riley</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Just_sharon7/status/2007417297103921324">X / Sharon Riley</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">设计</span><span class="tag">创意</span><span class="tag">数字艺术</span></div>
           
@@ -333,11 +371,11 @@
       <a class="case-card-link" href="/zh/case/539.html">
         <div class="case-thumbnail"><img src="/images/tweet-2007492122933628997-1.jpg" alt="Nano Banana Pro在Gemini应用中的精彩呈现" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例539: Nano Banana Pro在Gemini应用中的精彩呈现</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#539</span></span><span class="case-title-text">Nano Banana Pro在Gemini应用中的精彩呈现</span></h3>
           <p class="case-summary">推文介绍了在Gemini应用中使用Nano Banana Pro创建的肖像作品，描绘了一位年轻东亚女性侧身回眸，展现细腻的视觉效果和创意设计。</p>
           <div class="case-meta">
             <span class="case-date">2026-01-04</span>
-            <span class="case-source">X / Oogie</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2007492122933628997">X / Oogie</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">设计</span><span class="tag">Nano Banana Pro</span></div>
           
@@ -364,11 +402,11 @@
       <a class="case-card-link" href="/zh/case/535.html">
         <div class="case-thumbnail"><img src="/images/tweet-2000027682533421139-1.jpg" alt="用Gemini Nano Banana Pro打造极致写实圣诞女郎造型" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例535: 用Gemini Nano Banana Pro打造极致写实圣诞女郎造型</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#535</span></span><span class="case-title-text">用Gemini Nano Banana Pro打造极致写实圣诞女郎造型</span></h3>
           <p class="case-summary">本次作品利用Gemini Nano Banana Pro工具，生成一位穿着圣诞老人主题服装的女性形象，细节极为写实，呈现温暖梦幻的节日氛围。整体风格融合专业影棚摄影质感与柔和电影灯光，打造出浓郁且富有诱惑力的圣诞节视觉效果。</p>
           <div class="case-meta">
             <span class="case-date">2025-12-14</span>
-            <span class="case-source">X / Shreya Yadav</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ShreyaYadav___/status/2000027682533421139">X / Shreya Yadav</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">数字艺术</span><span class="tag">设计</span><span class="tag">摄影</span><span class="tag">创意</span></div>
           
@@ -399,11 +437,11 @@
       <a class="case-card-link" href="/zh/case/533.html">
         <div class="case-thumbnail"><img src="/images/tweet-1995052291981005278-1.jpg" alt="一脸六情：AI绘制六态女性拼贴艺术作品欣赏" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例533: 一脸六情：AI绘制六态女性拼贴艺术作品欣赏</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#533</span></span><span class="case-title-text">一脸六情：AI绘制六态女性拼贴艺术作品欣赏</span></h3>
           <p class="case-summary">这篇推文介绍了使用Google Gemini ai Nano Banana 3 Pro工具，创作出一幅六格拼贴的3D漫画风格女性肖像，展现六种不同情绪，包括快乐、惊讶、严肃、可爱、俏皮和自信，融合高端数字艺术与丰富色彩。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-30</span>
-            <span class="case-source">X / Shreya Yadav</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ShreyaYadav___/status/1995052291981005278">X / Shreya Yadav</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">3D</span><span class="tag">工具</span></div>
           
@@ -437,11 +475,11 @@
       <a class="case-card-link" href="/zh/case/531.html">
         <div class="case-thumbnail"><img src="/images/tweet-1994624635300974734-1.jpg" alt="黑板粉笔画艺术：展现《海贼王》波雅·汉库克的细腻再现" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例531: 黑板粉笔画艺术：展现《海贼王》波雅·汉库克的细腻再现</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#531</span></span><span class="case-title-text">黑板粉笔画艺术：展现《海贼王》波雅·汉库克的细腻再现</span></h3>
           <p class="case-summary">这篇推文详细描述了在日本学校教室中，用粉笔绘制的《海贼王》角色波雅·汉库克的写实黑板画，捕捉了作品的纹理细节与环境氛围，展现了粉笔艺术的瞬间美感。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-29</span>
-            <span class="case-source">X / Emily</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/IamEmily2050/status/1994624635300974734">X / Emily</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">工具</span></div>
           
@@ -471,11 +509,11 @@
       <a class="case-card-link" href="/zh/case/526.html">
         <div class="case-thumbnail"><img src="/images/tweet-1990536869218546082-1.jpg" alt="与狗狗一起在悬崖边飞无人机的奇妙体验" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例526: 与狗狗一起在悬崖边飞无人机的奇妙体验</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#526</span></span><span class="case-title-text">与狗狗一起在悬崖边飞无人机的奇妙体验</span></h3>
           <p class="case-summary">想象一下，你和你的狗狗在悬崖边操控无人机，享受壮丽的自然风光。通过Gemini应用程序，你可以生成一幅超逼真的无人机航拍图像，捕捉这一刻的美好。只需简单几步，便可创建属于你自己的精致风景画面！</p>
           <div class="case-meta">
             <span class="case-date">2025-11-21</span>
-            <span class="case-source">X / Nano Banana Labs</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/NanoBanana_labs/status/1990536869218546082">X / Nano Banana Labs</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">数字艺术</span></div>
           
@@ -499,11 +537,11 @@
       <a class="case-card-link" href="/zh/case/524.html">
         <div class="case-thumbnail"><img src="/images/tweet-1991846934844174440-1.jpg" alt="一键生成街头潮流大片：AI助你打造酷炫自拍照" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例524: 一键生成街头潮流大片：AI助你打造酷炫自拍照</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#524</span></span><span class="case-title-text">一键生成街头潮流大片：AI助你打造酷炫自拍照</span></h3>
           <p class="case-summary">通过简单自拍，使用Gemini和Nano Banana Pro工具，即可创造逼真的街头风格大片，包括调皮猫咪和时尚男士，展现个性潮流态度。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-21</span>
-            <span class="case-source">X / Nano Banana Labs</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/NanoBanana_labs/status/1991846934844174440">X / Nano Banana Labs</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">工具</span><span class="tag">Nano Banana Pro</span></div>
           
@@ -527,11 +565,11 @@
       <a class="case-card-link" href="/zh/case/518.html">
         <div class="case-thumbnail"><img src="/images/tweet-1989158529803121113-1.jpg" alt="Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例518: Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#518</span></span><span class="case-title-text">Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片</span></h3>
           <p class="case-summary">本文介绍了利用Google AI工作室Gemini（纳米香蕉）2.5 Pro，通过详细提示生成高分辨率、超逼真风格的时尚杂志照片，包括人物造型、背景效果和排版布局，展现AI在高端视觉创作中的应用潜力。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-15</span>
-            <span class="case-source">X / 𝗦𝗮𝗻𝗶𝗮</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/saniaspeaks_/status/1989158529803121113">X / 𝗦𝗮𝗻𝗶𝗮</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">设计</span><span class="tag">摄影</span></div>
           
@@ -567,11 +605,11 @@
       <a class="case-card-link" href="/zh/case/517.html">
         <div class="case-thumbnail"><img src="/images/tweet-1988840767994126797-1.jpg" alt="AI生成超写实野生动物探险照片，打造你的专属野生旅程" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例517: AI生成超写实野生动物探险照片，打造你的专属野生旅程</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#517</span></span><span class="case-title-text">AI生成超写实野生动物探险照片，打造你的专属野生旅程</span></h3>
           <p class="case-summary">这篇推文介绍如何使用Gemini应用，通过上传个人照片并应用AI提示，生成逼真的野生动物摄影场景，结合名人元素，打造个性化的野生探险体验。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-13</span>
-            <span class="case-source">X / Nano Banana Labs</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/NanoBanana_labs/status/1988840767994126797">X / Nano Banana Labs</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">提示</span></div>
           
@@ -595,11 +633,11 @@
       <a class="case-card-link" href="/zh/case/514.html">
         <div class="case-thumbnail"><img src="/images/tweet-1988471870505766913-1.jpg" alt="使用GPTAI打造个性化2025生日主题3D插图" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例514: 使用GPTAI打造个性化2025生日主题3D插图</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#514</span></span><span class="case-title-text">使用GPTAI打造个性化2025生日主题3D插图</span></h3>
           <p class="case-summary">这篇推文展示了利用ChatGPT和Gemini AI创作的生日祝福特别图片，包括3D皮克斯风格日历、生日数字和可爱的小人物形象，彰显创意与技术结合的魅力。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-13</span>
-            <span class="case-source">X / Shreya Yadav</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ShreyaYadav___/status/1988471870505766913">X / Shreya Yadav</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">ChatGPT</span><span class="tag">3D</span><span class="tag">创意</span><span class="tag">工具</span></div>
           
@@ -623,11 +661,11 @@
       <a class="case-card-link" href="/zh/case/505.html">
         <div class="case-thumbnail"><img src="/images/tweet-1987442804994293778-1.jpg" alt="复古电影风格黑色长裙少女艺术照" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例505: 复古电影风格黑色长裙少女艺术照</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#505</span></span><span class="case-title-text">复古电影风格黑色长裙少女艺术照</span></h3>
           <p class="case-summary">一幅充满复古颗粒感的明亮图像，女孩身穿Pinterest风格的黑色长款乔其纱连衣裙，长发飘逸，花朵点缀，营造神秘浪漫的艺术氛围，犹如好莱坞电影场景。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-09</span>
-            <span class="case-source">X / مانو بلی</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/rowanali09/status/1987442804994293778">X / مانو بلی</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">摄影</span><span class="tag">设计</span><span class="tag">艺术</span></div>
           
@@ -651,11 +689,11 @@
       <a class="case-card-link" href="/zh/case/504.html">
         <div class="case-thumbnail"><img src="/images/tweet-1986865467953455399-1.jpg" alt="未来已来：高逼真金属机器人与人类的新纪元" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例504: 未来已来：高逼真金属机器人与人类的新纪元</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#504</span></span><span class="case-title-text">未来已来：高逼真金属机器人与人类的新纪元</span></h3>
           <p class="case-summary">这篇推文展现了未来科技场景：超写实机器人与人类互动的视觉创作，强调工具seedream 4.0或Gemini nanobanana在数字艺术中的应用，预示智能与工业风的融合。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-08</span>
-            <span class="case-source">X / Saman | AI</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Samann_ai/status/1986865467953455399">X / Saman | AI</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">设计</span><span class="tag">seedream 4.0</span></div>
           
@@ -679,11 +717,11 @@
       <a class="case-card-link" href="/zh/case/503.html">
         <div class="case-thumbnail"><img src="/images/tweet-1986833636193189893-1.jpg" alt="利用Gemini nano banana实现逼真场景合成与音乐叠加教程" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例503: 利用Gemini nano banana实现逼真场景合成与音乐叠加教程</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#503</span></span><span class="case-title-text">利用Gemini nano banana实现逼真场景合成与音乐叠加教程</span></h3>
           <p class="case-summary">本文详细介绍如何通过Gemini nano banana工具，将人物参考图置入崭新悲伤公交背景，并叠加玻璃晶态音乐播放器UI，实现逼真场景合成与情感渲染，适合数字艺术创作者参考学习。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-08</span>
-            <span class="case-source">X / Melis</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/miilesus/status/1986833636193189893">X / Melis</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">nano banana</span><span class="tag">场景合成</span></div>
           
@@ -719,11 +757,11 @@
       <a class="case-card-link" href="/zh/case/499.html">
         <div class="case-thumbnail"><img src="/images/tweet-1986304257134584009-1.jpg" alt="利用Gemini AI制作高逼真护照照片，轻松定制个人官方证件照" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例499: 利用Gemini AI制作高逼真护照照片，轻松定制个人官方证件照</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#499</span></span><span class="case-title-text">利用Gemini AI制作高逼真护照照片，轻松定制个人官方证件照</span></h3>
           <p class="case-summary">本文介绍如何通过Gemini AI生成超逼真的护照尺寸照片，确保面部高度相似、专业风格，适用于身份证或护照，操作简便效果自然。首先要上传一张你的照片。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">X / Shreya Yadav</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ShreyaYadav___/status/1986304257134584009">X / Shreya Yadav</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">工具</span><span class="tag">证件照</span></div>
           
@@ -747,11 +785,11 @@
       <a class="case-card-link" href="/zh/case/497.html">
         <div class="case-thumbnail"><img src="/images/tweet-1971499622926618846-1.jpg" alt="专业旧照片修复：用Google Gemini AI让照片焕发新生" loading="lazy"></div>
         <div class="case-info">
-          <h3 class="case-title">案例497: 专业旧照片修复：用Google Gemini AI让照片焕发新生</h3>
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#497</span></span><span class="case-title-text">专业旧照片修复：用Google Gemini AI让照片焕发新生</span></h3>
           <p class="case-summary">这是一项基于Google Gemini AI的专业照片修复服务，能够将老照片编辑成1080x1920像素，赋予现代美感，增强色彩和真实感。非免费AI滤镜，需私信咨询套餐详情。</p>
           <div class="case-meta">
             <span class="case-date">2025-11-07</span>
-            <span class="case-source">X / Marry Evan</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/marryevan999/status/1971499622926618846">X / Marry Evan</span>
           </div>
           <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">作品修复</span></div>
           
@@ -784,6 +822,16 @@
         if (isLocal) {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
+
+        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
+          el.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            const rawUrl = (el.getAttribute('data-url') || '').trim();
+            if (!rawUrl) return;
+            window.open(rawUrl, '_blank', 'noopener,noreferrer');
+          });
+        });
       })();
     </script>
   
