@@ -1,16 +1,38 @@
-# Gem Nana 提示词收藏库 - robots.txt
-# 更新时间: 2025-11-08
+# Gem Nana robots.txt
+# Updated: 2026-04-04
+#
+# Note:
+# If Cloudflare "Managed robots.txt" is enabled, dashboard settings can
+# override this file in production.
 
 User-agent: *
 Allow: /
-
-# 禁止抓取管理和工具页面
 Disallow: /add-auto.html
 Disallow: /settings.html
-
-# 禁止抓取后台脚本和数据目录
 Disallow: /scripts/
 Disallow: /node_modules/
 
-# 站点地图
+# Explicitly allow major AI retrieval crawlers.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Cloudflare content signals (machine-readable policy).
+# search=yes      -> allow search indexing and snippets
+# ai-input=yes    -> allow retrieval for AI answers
+# ai-train=no     -> disallow model training
+User-agent: *
+Content-Signal: search=yes,ai-input=yes,ai-train=no
+
 Sitemap: https://gemnana.com/sitemap.xml
