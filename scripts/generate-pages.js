@@ -21,6 +21,7 @@ const CONFIG_FILE = path.join(ROOT_DIR, 'config.json');
 const EN_TRANSLATION_CACHE_FILE = path.join(DATA_DIR, 'en-title-summary-cache.json');
 const EN_TRANSLATE_RECENT_LIMIT = 80;
 const EN_TRANSLATE_MAX_NEW_PER_RUN = 20;
+const PAGE_SIZE = Number(process.env.PAGE_SIZE || 120);
 
 const LANGS = {
   zh: {
@@ -65,7 +66,11 @@ const LANGS = {
     settingsLabel: '⚙️ 设置',
     copyLabel: '📋 复制',
     copiedLabel: '✅ 已复制',
-    copyFailed: '复制失败，请手动复制'
+    copyFailed: '复制失败，请手动复制',
+    prevPage: '上一页',
+    nextPage: '下一页',
+    loadMore: '加载更多',
+    loadingMore: '加载中...'
   },
   en: {
     htmlLang: 'en',
@@ -109,7 +114,11 @@ const LANGS = {
     settingsLabel: '⚙️ Settings',
     copyLabel: '📋 Copy',
     copiedLabel: '✅ Copied',
-    copyFailed: 'Copy failed. Please copy manually.'
+    copyFailed: 'Copy failed. Please copy manually.',
+    prevPage: 'Previous',
+    nextPage: 'Next',
+    loadMore: 'Load more',
+    loadingMore: 'Loading...'
   }
 };
 
@@ -525,6 +534,10 @@ function tagToFilename(tag) {
   return `${String(tag).replace(/\s+/g, '-').toLowerCase()}.html`;
 }
 
+function listKeyFromTagFilename(filename) {
+  return `tag-${String(filename || '').toLowerCase().replace(/[^a-z0-9_-]+/g, '-')}`;
+}
+
 function getPromptByLang(item, lang) {
   const zh = cleanText(item.contentChinese);
   const en = cleanText(item.contentEnglish);
@@ -551,6 +564,58 @@ function toLangHref(lang, canonicalPath) {
   if (canonicalPath === '/') return `/${lang}/index.html`;
   if (canonicalPath.endsWith('/')) return `/${lang}${canonicalPath}index.html`;
   return `/${lang}${canonicalPath}`;
+}
+
+function paginateItems(items, pageSize = PAGE_SIZE) {
+  const size = Math.max(1, Number(pageSize) || PAGE_SIZE);
+  const total = Array.isArray(items) ? items.length : 0;
+  if (total === 0) return [[]];
+  const pages = [];
+  for (let i = 0; i < total; i += size) {
+    pages.push(items.slice(i, i + size));
+  }
+  return pages;
+}
+
+function getPagedCanonicalPath(baseCanonicalPath, pageNo) {
+  const raw = String(baseCanonicalPath || '');
+  const trimmed = raw.replace(/^\/+|\/+$/g, '');
+  const isFilePath = /\.html$/i.test(trimmed);
+  if (isFilePath) {
+    const parts = trimmed.split('/').filter(Boolean);
+    const filename = parts.pop() || '';
+    const dirPrefix = parts.length ? `/${parts.join('/')}` : '';
+    if (pageNo <= 1) return `${dirPrefix}/${filename}`;
+    return `${dirPrefix}/page/${pageNo}/${filename}`;
+  }
+
+  const base = raw === '/' ? '/' : `/${trimmed}/`;
+  if (pageNo <= 1) return base;
+  if (base === '/') return `/page/${pageNo}/`;
+  return `${base}page/${pageNo}/`;
+}
+
+function getPageOutputPath(langRoot, baseCanonicalPath, pageNo) {
+  const raw = String(baseCanonicalPath || '');
+  const trimmed = raw.replace(/^\/+|\/+$/g, '');
+  const isFilePath = /\.html$/i.test(trimmed);
+  if (isFilePath) {
+    const parts = trimmed.split('/').filter(Boolean);
+    const filename = parts.pop() || '';
+    if (pageNo <= 1) {
+      return path.join(langRoot, ...parts, filename);
+    }
+    return path.join(langRoot, ...parts, 'page', String(pageNo), filename);
+  }
+
+  const canonical = getPagedCanonicalPath(baseCanonicalPath, pageNo);
+  if (canonical === '/') return path.join(langRoot, 'index.html');
+  const parts = canonical.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+  return path.join(langRoot, ...parts, 'index.html');
+}
+
+function getChunkBaseUrl(lang, listKey) {
+  return `/${lang}/chunks/${encodeURIComponent(listKey)}`;
 }
 
 function getAbsoluteAssetPath(assetPath) {
@@ -686,38 +751,59 @@ function renderBaseScripts() {
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
 
-        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
-          el.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const rawUrl = (el.getAttribute('data-url') || '').trim();
-            if (!rawUrl) return;
-            window.open(rawUrl, '_blank', 'noopener,noreferrer');
-          });
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
         });
       })();
     </script>
   `;
 }
 
-function renderFilterScript(lang) {
+function renderFilterScript(lang, options = {}) {
   const t = LANGS[lang];
-  const textConfig = JSON.stringify({ countText: t.countText, noResults: t.noResults });
+  const textConfig = JSON.stringify({
+    countText: t.countText,
+    noResults: t.noResults,
+    loadMore: t.loadMore,
+    loadingMore: t.loadingMore
+  });
+  const optionsConfig = JSON.stringify({
+    enableLoadMore: !!options.enableLoadMore,
+    chunkBaseUrl: options.chunkBaseUrl || ''
+  });
   return `
     <script>
       (function () {
         const config = ${textConfig};
+        const options = ${optionsConfig};
         const searchInput = document.getElementById('searchInput');
         const clearBtn = document.getElementById('clearFilters');
         const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
-        const cards = Array.from(document.querySelectorAll('.case-card'));
         const statsText = document.getElementById('statsText');
         const noResults = document.getElementById('noResults');
-        if (!cards.length) return;
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
 
         let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
 
         function applyFilters() {
+          const cards = getCards();
           const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
           let visibleCount = 0;
 
@@ -733,6 +819,44 @@ function renderFilterScript(lang) {
 
           if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
           if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
         }
 
         function setActiveTag(tag) {
@@ -759,6 +883,11 @@ function renderFilterScript(lang) {
           });
         });
 
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
         applyFilters();
       })();
     </script>
@@ -854,12 +983,83 @@ function renderHead({ lang, title, description, canonicalPath }) {
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
     </style>
     <script type="application/ld+json">${JSON.stringify(schema)}</script>
   `;
 }
 
-function renderPageTemplate({ lang, title, description, canonicalPath, currentNav, stats, content, withFilterScript = false }) {
+function renderPageTemplate({
+  lang,
+  title,
+  description,
+  canonicalPath,
+  currentNav,
+  stats,
+  content,
+  withFilterScript = false,
+  filterScriptOptions = {}
+}) {
   return `<!DOCTYPE html>
 <html lang="${LANGS[lang].htmlLang}">
 <head>
@@ -871,14 +1071,17 @@ ${renderSidebar(lang, currentNav, stats, canonicalPath)}
 ${content}
 </main>
 ${renderBaseScripts()}
-${withFilterScript ? renderFilterScript(lang) : ''}
+${withFilterScript ? renderFilterScript(lang, filterScriptOptions) : ''}
 </body>
 </html>`;
 }
 
-function renderControls(lang, items) {
+function renderControls(lang, items, options = {}) {
   const t = LANGS[lang];
-  const tagStats = getTagStats(items);
+  const filterItems = Array.isArray(options.filterItems) && options.filterItems.length ? options.filterItems : items;
+  const initialCount = Number(options.initialCount);
+  const countValue = Number.isFinite(initialCount) ? initialCount : items.length;
+  const tagStats = getTagStats(filterItems);
   const tags = Object.entries(tagStats)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 30);
@@ -899,21 +1102,88 @@ function renderControls(lang, items) {
         </div>
         <div id="tagFilters" class="tag-filters">${tagsHtml}</div>
       </div>
-      <div class="stats"><span id="statsText">${t.countText.replace('{count}', String(items.length))}</span></div>
+      <div class="stats"><span id="statsText">${t.countText.replace('{count}', String(countValue))}</span></div>
     </div>
     <div id="noResults" class="no-results" style="display:none;">${t.noResults}</div>
   `;
 }
 
-function renderListPage({ lang, canonicalPath, currentNav, title, subtitle, description, items, stats }) {
+function renderPagination(lang, baseCanonicalPath, currentPage, totalPages) {
+  if (!Number.isFinite(totalPages) || totalPages <= 1) return '';
+  const t = LANGS[lang];
+  const pages = [];
+  const push = (n) => { if (!pages.includes(n) && n >= 1 && n <= totalPages) pages.push(n); };
+  push(1);
+  push(totalPages);
+  for (let n = currentPage - 2; n <= currentPage + 2; n += 1) push(n);
+  pages.sort((a, b) => a - b);
+
+  const pageLinks = [];
+  let prev = 0;
+  for (const pageNo of pages) {
+    if (prev && pageNo - prev > 1) {
+      pageLinks.push('<span class="pagination-ellipsis">...</span>');
+    }
+    const href = toLangHref(lang, getPagedCanonicalPath(baseCanonicalPath, pageNo));
+    if (pageNo === currentPage) {
+      pageLinks.push(`<span class="pagination-link active">${pageNo}</span>`);
+    } else {
+      pageLinks.push(`<a class="pagination-link" href="${href}">${pageNo}</a>`);
+    }
+    prev = pageNo;
+  }
+
+  const prevLink = currentPage > 1
+    ? `<a class="pagination-link" href="${toLangHref(lang, getPagedCanonicalPath(baseCanonicalPath, currentPage - 1))}">${t.prevPage}</a>`
+    : '';
+  const nextLink = currentPage < totalPages
+    ? `<a class="pagination-link" href="${toLangHref(lang, getPagedCanonicalPath(baseCanonicalPath, currentPage + 1))}">${t.nextPage}</a>`
+    : '';
+
+  return `<nav class="pagination">${prevLink}${pageLinks.join('')}${nextLink}</nav>`;
+}
+
+function renderListPage({
+  lang,
+  canonicalPath,
+  currentNav,
+  title,
+  subtitle,
+  description,
+  items,
+  stats,
+  allItemsForFilters = [],
+  currentPage = 1,
+  totalPages = 1,
+  chunkBaseUrl = '',
+  enableLoadMore = false
+}) {
+  const t = LANGS[lang];
   const cardsHtml = items.map((item) => renderCaseCard(item, lang)).join('\n');
+  const paginationHtml = renderPagination(lang, canonicalPath, currentPage, totalPages);
+  const hasMore = enableLoadMore && currentPage < totalPages;
+  const loadMoreHtml = enableLoadMore
+    ? `
+    <div id="loadMoreWrap" class="load-more-wrap" style="${hasMore ? '' : 'display:none;'}">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="${currentPage}"
+        data-total-pages="${totalPages}"
+      >${t.loadMore}</button>
+    </div>
+  `
+    : '';
   const content = `
     <div class="page-header">
       <h1>${escapeHtml(title)}</h1>
       <p>${escapeHtml(subtitle)}</p>
     </div>
-    ${renderControls(lang, items)}
-    <div class="case-grid">${cardsHtml}</div>
+    ${renderControls(lang, items, { filterItems: allItemsForFilters, initialCount: items.length })}
+    <div id="caseGrid" class="case-grid">${cardsHtml}</div>
+    ${loadMoreHtml}
+    ${paginationHtml}
   `;
   return renderPageTemplate({
     lang,
@@ -923,7 +1193,11 @@ function renderListPage({ lang, canonicalPath, currentNav, title, subtitle, desc
     currentNav,
     stats,
     content,
-    withFilterScript: true
+    withFilterScript: true,
+    filterScriptOptions: {
+      enableLoadMore,
+      chunkBaseUrl
+    }
   });
 }
 
@@ -1126,6 +1400,67 @@ function renderRootRedirectPage() {
 </html>`;
 }
 
+function writePaginatedListPages({
+  lang,
+  langRoot,
+  baseCanonicalPath,
+  currentNav,
+  title,
+  subtitle,
+  description,
+  allItems,
+  stats,
+  listKey,
+  enableLoadMore = true
+}) {
+  const pages = paginateItems(allItems);
+  const totalPages = pages.length;
+  const chunkBaseUrl = getChunkBaseUrl(lang, listKey);
+  const chunkDir = path.join(langRoot, 'chunks', listKey);
+  ensureDir(chunkDir);
+
+  for (let idx = 0; idx < pages.length; idx += 1) {
+    const pageNo = idx + 1;
+    const pageItems = pages[idx];
+    if (pageNo > 1) {
+      writeFile(
+        path.join(chunkDir, `${pageNo}.html`),
+        pageItems.map((item) => renderCaseCard(item, lang)).join('\n')
+      );
+    }
+
+    const canonicalPath = getPagedCanonicalPath(baseCanonicalPath, pageNo);
+    const pageOutputPath = getPageOutputPath(langRoot, baseCanonicalPath, pageNo);
+    const pageTitle = pageNo > 1
+      ? `${title} - ${lang === 'zh' ? `第${pageNo}页` : `Page ${pageNo}`}`
+      : title;
+    const pageDescription = pageNo > 1
+      ? `${description} (${lang === 'zh' ? `第${pageNo}页` : `Page ${pageNo}`})`
+      : description;
+
+    writeFile(
+      pageOutputPath,
+      renderListPage({
+        lang,
+        canonicalPath,
+        currentNav,
+        title: pageTitle,
+        subtitle,
+        description: pageDescription,
+        items: pageItems,
+        stats,
+        allItemsForFilters: allItems,
+        currentPage: pageNo,
+        totalPages,
+        chunkBaseUrl,
+        enableLoadMore
+      })
+    );
+  }
+
+  return totalPages;
+}
+
 function generateLanguagePages(lang, items, groups, stats) {
   const t = LANGS[lang];
   const langRoot = path.join(ROOT_DIR, lang);
@@ -1137,68 +1472,65 @@ function generateLanguagePages(lang, items, groups, stats) {
   const sortedText = sortByIdDesc(groups.text);
 
   // Home
-  writeFile(
-    path.join(langRoot, 'index.html'),
-    renderListPage({
-      lang,
-      canonicalPath: '/',
-      currentNav: 'home',
-      title: t.latestTitle,
-      subtitle: t.latestDesc(stats.total),
-      description: t.latestDesc(stats.total),
-      items: sortedAll,
-      stats
-    })
-  );
+  const homePages = writePaginatedListPages({
+    lang,
+    langRoot,
+    baseCanonicalPath: '/',
+    currentNav: 'home',
+    title: t.latestTitle,
+    subtitle: t.latestDesc(stats.total),
+    description: t.latestDesc(stats.total),
+    allItems: sortedAll,
+    stats,
+    listKey: 'home'
+  });
 
   // Image
-  writeFile(
-    path.join(langRoot, 'image', 'index.html'),
-    renderListPage({
-      lang,
-      canonicalPath: '/image/',
-      currentNav: 'image',
-      title: t.imageTitle,
-      subtitle: t.imageDesc(sortedImage.length),
-      description: t.imageDesc(sortedImage.length),
-      items: sortedImage,
-      stats
-    })
-  );
+  const imagePages = writePaginatedListPages({
+    lang,
+    langRoot,
+    baseCanonicalPath: '/image/',
+    currentNav: 'image',
+    title: t.imageTitle,
+    subtitle: t.imageDesc(sortedImage.length),
+    description: t.imageDesc(sortedImage.length),
+    allItems: sortedImage,
+    stats,
+    listKey: 'image'
+  });
 
   // Video
-  writeFile(
-    path.join(langRoot, 'video', 'index.html'),
-    renderListPage({
-      lang,
-      canonicalPath: '/video/',
-      currentNav: 'video',
-      title: t.videoTitle,
-      subtitle: t.videoDesc(sortedVideo.length),
-      description: t.videoDesc(sortedVideo.length),
-      items: sortedVideo,
-      stats
-    })
-  );
+  const videoPages = writePaginatedListPages({
+    lang,
+    langRoot,
+    baseCanonicalPath: '/video/',
+    currentNav: 'video',
+    title: t.videoTitle,
+    subtitle: t.videoDesc(sortedVideo.length),
+    description: t.videoDesc(sortedVideo.length),
+    allItems: sortedVideo,
+    stats,
+    listKey: 'video'
+  });
 
   // Text
-  writeFile(
-    path.join(langRoot, 'text', 'index.html'),
-    renderListPage({
-      lang,
-      canonicalPath: '/text/',
-      currentNav: 'text',
-      title: t.textTitle,
-      subtitle: t.textDesc(sortedText.length),
-      description: t.textDesc(sortedText.length),
-      items: sortedText,
-      stats
-    })
-  );
+  const textPages = writePaginatedListPages({
+    lang,
+    langRoot,
+    baseCanonicalPath: '/text/',
+    currentNav: 'text',
+    title: t.textTitle,
+    subtitle: t.textDesc(sortedText.length),
+    description: t.textDesc(sortedText.length),
+    allItems: sortedText,
+    stats,
+    listKey: 'text'
+  });
 
   // Image tag pages (>= 10)
   const tagStats = getTagStats(sortedImage);
   const tagPairs = Object.entries(tagStats).filter(([, count]) => count >= 10).sort((a, b) => b[1] - a[1]);
+  let tagPageCount = 0;
   for (const [tag, count] of tagPairs) {
     const filename = tagToFilename(tag);
     const tagItems = sortedImage.filter((item) => normalizeTags(item.tags).includes(tag));
@@ -1206,19 +1538,19 @@ function generateLanguagePages(lang, items, groups, stats) {
     const pageTitle = `${displayTag} · ${t.imageTitle}`;
     const pageDesc = `${count} ${lang === 'zh' ? '条' : ''} ${displayTag} ${lang === 'zh' ? '相关案例' : 'related cases'}`;
 
-    writeFile(
-      path.join(langRoot, 'image', filename),
-      renderListPage({
-        lang,
-        canonicalPath: `/image/${filename}`,
-        currentNav: 'image',
-        title: pageTitle,
-        subtitle: pageDesc,
-        description: pageDesc,
-        items: tagItems,
-        stats
-      })
-    );
+    const listKey = listKeyFromTagFilename(filename);
+    tagPageCount += writePaginatedListPages({
+      lang,
+      langRoot,
+      baseCanonicalPath: `/image/${filename}`,
+      currentNav: 'image',
+      title: pageTitle,
+      subtitle: pageDesc,
+      description: pageDesc,
+      allItems: tagItems,
+      stats,
+      listKey
+    });
   }
 
   // Detail pages
@@ -1229,7 +1561,7 @@ function generateLanguagePages(lang, items, groups, stats) {
     );
   }
 
-  console.log(`✅ ${lang.toUpperCase()} generated: home/image/video/text + ${tagPairs.length} tag pages + ${sortedAll.length} details`);
+  console.log(`✅ ${lang.toUpperCase()} generated: home(${homePages})/image(${imagePages})/video(${videoPages})/text(${textPages}) + ${tagPairs.length} tag groups (${tagPageCount} pages) + ${sortedAll.length} details`);
 }
 
 async function main() {

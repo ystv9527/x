@@ -46,6 +46,56 @@ function scanHtmlFiles(dirPath, baseUrlPrefix) {
   return out;
 }
 
+function scanPaginatedIndexes(dirPath, baseUrlPrefix) {
+  const out = [];
+  const pageDir = path.join(dirPath, 'page');
+  if (!fs.existsSync(pageDir)) return out;
+
+  const entries = fs.readdirSync(pageDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const indexPath = path.join(pageDir, entry.name, 'index.html');
+    if (!fs.existsSync(indexPath)) continue;
+    out.push(`${baseUrlPrefix}/page/${entry.name}/`);
+  }
+
+  return out.sort((a, b) => {
+    const ai = Number((a.match(/\/page\/(\d+)\//) || [])[1] || 0);
+    const bi = Number((b.match(/\/page\/(\d+)\//) || [])[1] || 0);
+    return ai - bi;
+  });
+}
+
+function scanTagPaginatedIndexes(imageDirPath, baseUrlPrefix) {
+  const out = [];
+  if (!fs.existsSync(imageDirPath)) return out;
+
+  const pageRoot = path.join(imageDirPath, 'page');
+  if (!fs.existsSync(pageRoot)) return out;
+
+  const pageEntries = fs.readdirSync(pageRoot, { withFileTypes: true });
+  for (const pageEntry of pageEntries) {
+    if (!pageEntry.isDirectory()) continue;
+    const pageNo = pageEntry.name;
+    const pageDir = path.join(pageRoot, pageNo);
+    const files = fs.readdirSync(pageDir, { withFileTypes: true });
+    for (const file of files) {
+      if (!file.isFile()) continue;
+      if (!file.name.endsWith('.html')) continue;
+      out.push(`${baseUrlPrefix}/page/${pageNo}/${file.name}`);
+    }
+  }
+
+  return out.sort((a, b) => {
+    const ap = a.match(/\/page\/(\d+)\//);
+    const bp = b.match(/\/page\/(\d+)\//);
+    const ai = Number(ap ? ap[1] : 0);
+    const bi = Number(bp ? bp[1] : 0);
+    if (ai !== bi) return ai - bi;
+    return a.localeCompare(b);
+  });
+}
+
 function loadCaseIds() {
   if (!fs.existsSync(CONTENTS_FILE)) return [];
   try {
@@ -73,6 +123,16 @@ function generateSitemap() {
     entries.push(urlEntry(`${SITE_URL}/${lang}/video/`, today, 'weekly', '0.85'));
     entries.push(urlEntry(`${SITE_URL}/${lang}/text/`, today, 'weekly', '0.85'));
 
+    const pagedHome = scanPaginatedIndexes(path.join(ROOT_DIR, lang), `/${lang}`);
+    const pagedImage = scanPaginatedIndexes(path.join(ROOT_DIR, lang, 'image'), `/${lang}/image`);
+    const pagedImageTag = scanTagPaginatedIndexes(path.join(ROOT_DIR, lang, 'image'), `/${lang}/image`);
+    const pagedVideo = scanPaginatedIndexes(path.join(ROOT_DIR, lang, 'video'), `/${lang}/video`);
+    const pagedText = scanPaginatedIndexes(path.join(ROOT_DIR, lang, 'text'), `/${lang}/text`);
+    const pagedUrls = Array.from(new Set([...pagedHome, ...pagedImage, ...pagedImageTag, ...pagedVideo, ...pagedText]));
+    for (const pageUrl of pagedUrls) {
+      entries.push(urlEntry(`${SITE_URL}${pageUrl}`, today, 'weekly', '0.72'));
+    }
+
     // Tag pages under /{lang}/image/*.html
     const tagPages = scanHtmlFiles(path.join(ROOT_DIR, lang, 'image'), `/${lang}/image`);
     for (const tagUrl of tagPages) {
@@ -84,7 +144,7 @@ function generateSitemap() {
       entries.push(urlEntry(`${SITE_URL}/${lang}/case/${id}.html`, today, 'weekly', '0.75'));
     }
 
-    console.log(`📄 ${lang.toUpperCase()} tag pages: ${tagPages.length}, details: ${caseIds.length}`);
+    console.log(`📄 ${lang.toUpperCase()} paged: ${pagedUrls.length}, tag pages: ${tagPages.length}, details: ${caseIds.length}`);
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -107,4 +167,3 @@ try {
   console.error('❌ Failed to generate sitemap:', error.message || error);
   process.exit(1);
 }
-

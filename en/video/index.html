@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Prompt Cases | Gem Nana AI Prompt Library</title>
-    <meta name="description" content="15 curated video cases">
+    <meta name="description" content="16 curated video cases">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
     <link rel="canonical" href="https://gemnana.com/en/video/">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/video/">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/video/">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1767868636427">
+    <link rel="stylesheet" href="/assets/style.css?v=1775547209104">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -74,8 +74,69 @@
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"Video Prompt Cases","description":"15 curated video cases","url":"https://gemnana.com/en/video/","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"Video Prompt Cases","description":"16 curated video cases","url":"https://gemnana.com/en/video/","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
   
 </head>
 <body class="layout-sidebar">
@@ -90,7 +151,7 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2763</span>
+          <span class="nav-count">2764</span>
         </a>
         <a href="/en/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
@@ -100,7 +161,7 @@
         <a href="/en/video/index.html" class="nav-item active">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">15</span>
+          <span class="nav-count">16</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -120,7 +181,7 @@
 
     <div class="page-header">
       <h1>Video Prompt Cases</h1>
-      <p>15 curated video cases</p>
+      <p>16 curated video cases</p>
     </div>
     
     <div class="controls">
@@ -132,13 +193,42 @@
           <span>🏷️ Tag Filters</span>
           <button id="clearFilters" class="btn-clear" type="button">Clear Filters</button>
         </div>
-        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="视频">Video (15)</button><button type="button" class="tag-filter" data-tag="摄影">Photography (7)</button><button type="button" class="tag-filter" data-tag="创意">Creative (6)</button><button type="button" class="tag-filter" data-tag="设计">Design (6)</button><button type="button" class="tag-filter" data-tag="AI">AI (4)</button><button type="button" class="tag-filter" data-tag="动画">Animation (3)</button><button type="button" class="tag-filter" data-tag="特效">VFX (3)</button><button type="button" class="tag-filter" data-tag="灵感">Inspiration (2)</button><button type="button" class="tag-filter" data-tag="Kling">Kling (2)</button><button type="button" class="tag-filter" data-tag="工具">Tools (2)</button><button type="button" class="tag-filter" data-tag="图片">Image (2)</button><button type="button" class="tag-filter" data-tag="Gemini">Gemini (2)</button><button type="button" class="tag-filter" data-tag="数字艺术">Digital Art (1)</button><button type="button" class="tag-filter" data-tag="Seedance 2.0">Seedance 2.0 (1)</button><button type="button" class="tag-filter" data-tag="后期">Post-processing (1)</button><button type="button" class="tag-filter" data-tag="时尚">Fashion (1)</button><button type="button" class="tag-filter" data-tag="案例">Case Study (1)</button><button type="button" class="tag-filter" data-tag="技巧">Tips (1)</button><button type="button" class="tag-filter" data-tag="Veo-3.1">Veo-3.1 (1)</button><button type="button" class="tag-filter" data-tag="资源">Resources (1)</button><button type="button" class="tag-filter" data-tag="工业">Industrial (1)</button><button type="button" class="tag-filter" data-tag="Veo">Veo (1)</button><button type="button" class="tag-filter" data-tag="Grok">Grok (1)</button><button type="button" class="tag-filter" data-tag="电影">Film (1)</button><button type="button" class="tag-filter" data-tag="Unreal Engine">Unreal Engine (1)</button><button type="button" class="tag-filter" data-tag="3D">3D (1)</button><button type="button" class="tag-filter" data-tag="效果">Effects (1)</button><button type="button" class="tag-filter" data-tag="动物">Animals (1)</button><button type="button" class="tag-filter" data-tag="Veo 3.1">Veo 3.1 (1)</button></div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="视频">Video (16)</button><button type="button" class="tag-filter" data-tag="摄影">Photography (8)</button><button type="button" class="tag-filter" data-tag="创意">Creative (6)</button><button type="button" class="tag-filter" data-tag="设计">Design (6)</button><button type="button" class="tag-filter" data-tag="特效">VFX (4)</button><button type="button" class="tag-filter" data-tag="动画">Animation (4)</button><button type="button" class="tag-filter" data-tag="AI">AI (4)</button><button type="button" class="tag-filter" data-tag="Seedance 2.0">Seedance 2.0 (2)</button><button type="button" class="tag-filter" data-tag="灵感">Inspiration (2)</button><button type="button" class="tag-filter" data-tag="Kling">Kling (2)</button><button type="button" class="tag-filter" data-tag="工具">Tools (2)</button><button type="button" class="tag-filter" data-tag="图片">Image (2)</button><button type="button" class="tag-filter" data-tag="Gemini">Gemini (2)</button><button type="button" class="tag-filter" data-tag="数字艺术">Digital Art (1)</button><button type="button" class="tag-filter" data-tag="后期">Post-processing (1)</button><button type="button" class="tag-filter" data-tag="时尚">Fashion (1)</button><button type="button" class="tag-filter" data-tag="案例">Case Study (1)</button><button type="button" class="tag-filter" data-tag="技巧">Tips (1)</button><button type="button" class="tag-filter" data-tag="Veo-3.1">Veo-3.1 (1)</button><button type="button" class="tag-filter" data-tag="资源">Resources (1)</button><button type="button" class="tag-filter" data-tag="工业">Industrial (1)</button><button type="button" class="tag-filter" data-tag="Veo">Veo (1)</button><button type="button" class="tag-filter" data-tag="Grok">Grok (1)</button><button type="button" class="tag-filter" data-tag="电影">Film (1)</button><button type="button" class="tag-filter" data-tag="Unreal Engine">Unreal Engine (1)</button><button type="button" class="tag-filter" data-tag="3D">3D (1)</button><button type="button" class="tag-filter" data-tag="效果">Effects (1)</button><button type="button" class="tag-filter" data-tag="动物">Animals (1)</button><button type="button" class="tag-filter" data-tag="Veo 3.1">Veo 3.1 (1)</button></div>
       </div>
-      <div class="stats"><span id="statsText">15 items</span></div>
+      <div class="stats"><span id="statsText">16 items</span></div>
     </div>
     <div id="noResults" class="no-results" style="display:none;">😕 No matched content</div>
   
-    <div class="case-grid">
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2764" data-search="案例2764 the complete workflow for creating a bullet-time effect with seedance 2.0 an example prompt using seedance 2.0 to create a bullet time effect in a wall street scene, with a low-angle 360-degree surrounding shot, freezing the splashing coffee and ice cubes, emphasizing a cinematic feel and overcast, dramatic lighting. x / oogie https://x.com/oggii_0/status/2040302447382728784 视频 特效 摄影 动画 seedance 2.0 bullet time effect using seedance 2.0 prompt: bullet time effect. a businessman in white shirt and black tie slipping and falling backwards on icy wet street in wall street, new york. coffee cup standing on ground, liquid exploding outward frozen in mid-air. ice chunks, water droplets, and coffee s" data-tags="视频|特效|摄影|动画|Seedance 2.0">
+      <a class="case-card-link" href="/en/case/2764.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/../videos/tweet-2040302447382728784-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2764</span></span><span class="case-title-text">The complete workflow for creating a bullet-time effect with Seedance 2.0</span></h3>
+          <p class="case-summary">An example prompt using Seedance 2.0 to create a Bullet Time effect in a Wall Street scene, with a low-angle 360-degree surrounding shot, freezing the splashing coffee and ice cubes, emphasizing a cinematic feel and overcast, dramatic lighting.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-07</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2040302447382728784">X / Oogie</span>
+          </div>
+          <div class="case-tags"><span class="tag">Video</span><span class="tag">VFX</span><span class="tag">Photography</span><span class="tag">Animation</span><span class="tag">Seedance 2.0</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Bullet time effect using Seedance 2.0
+Prompt: Bullet time effect. A businessman in white shirt and black tie slipping and falling backwards on icy wet street in Wall Street, New York. Coffee cup stan...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2764.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
     <article class="case-card" data-id="2762" data-search="案例2762 one continuous shot: an 8k visual storytelling prompt guide to the eastern city of gods and buddhas a one-shot 8k scene prompt depicting an eastern fantasy floating city on the water, with an epic buddha statue and an array of samurai, guiding continuous camera movement and visual composition, lighting, and detailed storyboard references. x / john https://x.com/john87445528/status/2041000256930763046 视频 创意 动画 灵感 数字艺术 seedance 2.0 prompt:one-take shot prompt: city of gods and buddhas · grandmaster takes the stage】 the shot unfolds in a single continuous take, soaring, rolling, spinning, and racing through a colossal eastern fantasy divine capital. 【opening frame - scene 1】: the camera dives from the sky, skimmi" data-tags="视频|创意|动画|灵感|数字艺术">
       <a class="case-card-link" href="/en/case/2762.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/../videos/tweet-2041000256930763046-1.mp4" type="video/mp4"></video></div>
@@ -584,6 +674,18 @@ Made with Veo 3.1 on @BasedLabsAI
       </a>
     </article>
   </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >Load more</button>
+    </div>
+  
+    
   
 </main>
 
@@ -594,14 +696,14 @@ Made with Veo 3.1 on @BasedLabsAI
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
 
-        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
-          el.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const rawUrl = (el.getAttribute('data-url') || '').trim();
-            if (!rawUrl) return;
-            window.open(rawUrl, '_blank', 'noopener,noreferrer');
-          });
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
         });
       })();
     </script>
@@ -609,18 +711,30 @@ Made with Veo 3.1 on @BasedLabsAI
 
     <script>
       (function () {
-        const config = {"countText":"{count} items","noResults":"😕 No matched content"};
+        const config = {"countText":"{count} items","noResults":"😕 No matched content","loadMore":"Load more","loadingMore":"Loading..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/en/chunks/video"};
         const searchInput = document.getElementById('searchInput');
         const clearBtn = document.getElementById('clearFilters');
         const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
-        const cards = Array.from(document.querySelectorAll('.case-card'));
         const statsText = document.getElementById('statsText');
         const noResults = document.getElementById('noResults');
-        if (!cards.length) return;
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
 
         let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
 
         function applyFilters() {
+          const cards = getCards();
           const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
           let visibleCount = 0;
 
@@ -636,6 +750,44 @@ Made with Veo 3.1 on @BasedLabsAI
 
           if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
           if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
         }
 
         function setActiveTag(tag) {
@@ -662,6 +814,11 @@ Made with Veo 3.1 on @BasedLabsAI
           });
         });
 
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
         applyFilters();
       })();
     </script>

@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/人像编辑.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/人像编辑.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1767868636427">
+    <link rel="stylesheet" href="/assets/style.css?v=1775547206390">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -74,6 +74,67 @@
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"人像编辑 · 图片生成提示词","description":"13 条 人像编辑 相关案例","url":"https://gemnana.com/zh/image/人像编辑.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
   
@@ -90,7 +151,7 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2763</span>
+          <span class="nav-count">2764</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
@@ -100,7 +161,7 @@
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">15</span>
+          <span class="nav-count">16</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -138,7 +199,7 @@
     </div>
     <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
   
-    <div class="case-grid">
+    <div id="caseGrid" class="case-grid">
     <article class="case-card" data-id="495" data-search="案例495 对童年的自己治疗 对童年的自己治疗 - nano banana ai图片生成案例 📥 输入：需上传一张人物参考图像 @samann_ai https://x.com/samann_ai/status/1969743981157265867 图片 nano banana 人像编辑 超逼真极简主义治疗室场景： 墙面浅色，灰色沙发，木质咖啡桌，上面放置纸巾盒、笔记本和一杯水；简约的装饰画和落地灯。 柔和自然光照射室内。 同一人以两种年龄状态并排而坐：左侧为成年人，双手打开交谈；右侧为儿童，微微低头倾听。 两人穿相同 [服装]（颜色与款式一致）。 风格干净，具有工作室氛围，构图居中，浅景深，50mm 镜头效果。 分辨率 4k，纵向 3:4。 场景中无其他人物，无文字，无水印。 &gt; [!note] &gt; **将 [方括号] 中的文字改为您需要的服装**" data-tags="图片|Nano Banana|人像编辑">
       <a class="case-card-link" href="/zh/case/495.html">
         <div class="case-thumbnail"><img src="/images/nano-case109-output.jpg" alt="对童年的自己治疗" loading="lazy"></div>
@@ -548,6 +609,18 @@ Analyze this image. Use red pen to denote where you can improve</p>
       </a>
     </article>
   </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
   
 </main>
 
@@ -558,14 +631,14 @@ Analyze this image. Use red pen to denote where you can improve</p>
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
 
-        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
-          el.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const rawUrl = (el.getAttribute('data-url') || '').trim();
-            if (!rawUrl) return;
-            window.open(rawUrl, '_blank', 'noopener,noreferrer');
-          });
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
         });
       })();
     </script>
@@ -573,18 +646,30 @@ Analyze this image. Use red pen to denote where you can improve</p>
 
     <script>
       (function () {
-        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容"};
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
         const searchInput = document.getElementById('searchInput');
         const clearBtn = document.getElementById('clearFilters');
         const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
-        const cards = Array.from(document.querySelectorAll('.case-card'));
         const statsText = document.getElementById('statsText');
         const noResults = document.getElementById('noResults');
-        if (!cards.length) return;
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
 
         let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
 
         function applyFilters() {
+          const cards = getCards();
           const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
           let visibleCount = 0;
 
@@ -600,6 +685,44 @@ Analyze this image. Use red pen to denote where you can improve</p>
 
           if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
           if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
         }
 
         function setActiveTag(tag) {
@@ -626,6 +749,11 @@ Analyze this image. Use red pen to denote where you can improve</p>
           });
         });
 
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
         applyFilters();
       })();
     </script>

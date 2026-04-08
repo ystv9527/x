@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>视频生成提示词 | Gem Nana AI 提示词库</title>
-    <meta name="description" content="精选 15 个视频案例">
+    <meta name="description" content="精选 16 个视频案例">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
     <link rel="canonical" href="https://gemnana.com/zh/video/">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/video/">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/video/">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1767868636427">
+    <link rel="stylesheet" href="/assets/style.css?v=1775547205636">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -74,8 +74,69 @@
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"视频生成提示词","description":"精选 15 个视频案例","url":"https://gemnana.com/zh/video/","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"视频生成提示词","description":"精选 16 个视频案例","url":"https://gemnana.com/zh/video/","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
   
 </head>
 <body class="layout-sidebar">
@@ -90,7 +151,7 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2763</span>
+          <span class="nav-count">2764</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
@@ -100,7 +161,7 @@
         <a href="/zh/video/index.html" class="nav-item active">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">15</span>
+          <span class="nav-count">16</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -120,7 +181,7 @@
 
     <div class="page-header">
       <h1>视频生成提示词</h1>
-      <p>精选 15 个视频案例</p>
+      <p>精选 16 个视频案例</p>
     </div>
     
     <div class="controls">
@@ -132,13 +193,42 @@
           <span>🏷️ 标签筛选</span>
           <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
         </div>
-        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="视频">视频 (15)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (7)</button><button type="button" class="tag-filter" data-tag="创意">创意 (6)</button><button type="button" class="tag-filter" data-tag="设计">设计 (6)</button><button type="button" class="tag-filter" data-tag="AI">AI (4)</button><button type="button" class="tag-filter" data-tag="动画">动画 (3)</button><button type="button" class="tag-filter" data-tag="特效">特效 (3)</button><button type="button" class="tag-filter" data-tag="灵感">灵感 (2)</button><button type="button" class="tag-filter" data-tag="Kling">Kling (2)</button><button type="button" class="tag-filter" data-tag="工具">工具 (2)</button><button type="button" class="tag-filter" data-tag="图片">图片 (2)</button><button type="button" class="tag-filter" data-tag="Gemini">Gemini (2)</button><button type="button" class="tag-filter" data-tag="数字艺术">数字艺术 (1)</button><button type="button" class="tag-filter" data-tag="Seedance 2.0">Seedance 2.0 (1)</button><button type="button" class="tag-filter" data-tag="后期">后期 (1)</button><button type="button" class="tag-filter" data-tag="时尚">时尚 (1)</button><button type="button" class="tag-filter" data-tag="案例">案例 (1)</button><button type="button" class="tag-filter" data-tag="技巧">技巧 (1)</button><button type="button" class="tag-filter" data-tag="Veo-3.1">Veo-3.1 (1)</button><button type="button" class="tag-filter" data-tag="资源">资源 (1)</button><button type="button" class="tag-filter" data-tag="工业">工业 (1)</button><button type="button" class="tag-filter" data-tag="Veo">Veo (1)</button><button type="button" class="tag-filter" data-tag="Grok">Grok (1)</button><button type="button" class="tag-filter" data-tag="电影">电影 (1)</button><button type="button" class="tag-filter" data-tag="Unreal Engine">Unreal Engine (1)</button><button type="button" class="tag-filter" data-tag="3D">3D (1)</button><button type="button" class="tag-filter" data-tag="效果">效果 (1)</button><button type="button" class="tag-filter" data-tag="动物">动物 (1)</button><button type="button" class="tag-filter" data-tag="Veo 3.1">Veo 3.1 (1)</button></div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="视频">视频 (16)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (8)</button><button type="button" class="tag-filter" data-tag="创意">创意 (6)</button><button type="button" class="tag-filter" data-tag="设计">设计 (6)</button><button type="button" class="tag-filter" data-tag="特效">特效 (4)</button><button type="button" class="tag-filter" data-tag="动画">动画 (4)</button><button type="button" class="tag-filter" data-tag="AI">AI (4)</button><button type="button" class="tag-filter" data-tag="Seedance 2.0">Seedance 2.0 (2)</button><button type="button" class="tag-filter" data-tag="灵感">灵感 (2)</button><button type="button" class="tag-filter" data-tag="Kling">Kling (2)</button><button type="button" class="tag-filter" data-tag="工具">工具 (2)</button><button type="button" class="tag-filter" data-tag="图片">图片 (2)</button><button type="button" class="tag-filter" data-tag="Gemini">Gemini (2)</button><button type="button" class="tag-filter" data-tag="数字艺术">数字艺术 (1)</button><button type="button" class="tag-filter" data-tag="后期">后期 (1)</button><button type="button" class="tag-filter" data-tag="时尚">时尚 (1)</button><button type="button" class="tag-filter" data-tag="案例">案例 (1)</button><button type="button" class="tag-filter" data-tag="技巧">技巧 (1)</button><button type="button" class="tag-filter" data-tag="Veo-3.1">Veo-3.1 (1)</button><button type="button" class="tag-filter" data-tag="资源">资源 (1)</button><button type="button" class="tag-filter" data-tag="工业">工业 (1)</button><button type="button" class="tag-filter" data-tag="Veo">Veo (1)</button><button type="button" class="tag-filter" data-tag="Grok">Grok (1)</button><button type="button" class="tag-filter" data-tag="电影">电影 (1)</button><button type="button" class="tag-filter" data-tag="Unreal Engine">Unreal Engine (1)</button><button type="button" class="tag-filter" data-tag="3D">3D (1)</button><button type="button" class="tag-filter" data-tag="效果">效果 (1)</button><button type="button" class="tag-filter" data-tag="动物">动物 (1)</button><button type="button" class="tag-filter" data-tag="Veo 3.1">Veo 3.1 (1)</button></div>
       </div>
-      <div class="stats"><span id="statsText">共 15 条内容</span></div>
+      <div class="stats"><span id="statsText">共 16 条内容</span></div>
     </div>
     <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
   
-    <div class="case-grid">
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2764" data-search="案例2764 使用seedance 2.0制作子弹时间特效全流程 示例提示用seedance 2.0创建华尔街场景的子弹时间效果，低角度360度环绕摄影、冻结溅起的咖啡水花与冰块，强调电影感与阴天戏剧光效。 x / oogie https://x.com/oggii_0/status/2040302447382728784 视频 特效 摄影 动画 seedance 2.0 使用seedance 2.0的子弹时间效果 提示：子弹时间效果。一名穿白衬衫和黑领带的商人在纽约华尔街冰冷湿滑的街道上滑倒摔倒。咖啡杯倒在地上，液体在半空中爆裂，凝结在半空中。冰块、水珠和咖啡溅起的水花都完全停滞——时间仿佛凝固了。两侧高楼形成峡谷效果。摄像机以低地面角度平滑地绕着坠落的人体360度旋转，只有摄像机移动，其他部分保持完全静止。电影感十足，阴天的戏剧性灯光，广角镜头失真。" data-tags="视频|特效|摄影|动画|Seedance 2.0">
+      <a class="case-card-link" href="/zh/case/2764.html">
+        <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/../videos/tweet-2040302447382728784-1.mp4" type="video/mp4"></video></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2764</span></span><span class="case-title-text">使用Seedance 2.0制作子弹时间特效全流程</span></h3>
+          <p class="case-summary">示例提示用Seedance 2.0创建华尔街场景的子弹时间效果，低角度360度环绕摄影、冻结溅起的咖啡水花与冰块，强调电影感与阴天戏剧光效。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-07</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2040302447382728784">X / Oogie</span>
+          </div>
+          <div class="case-tags"><span class="tag">视频</span><span class="tag">特效</span><span class="tag">摄影</span><span class="tag">动画</span><span class="tag">Seedance 2.0</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>使用Seedance 2.0的子弹时间效果
+提示：子弹时间效果。一名穿白衬衫和黑领带的商人在纽约华尔街冰冷湿滑的街道上滑倒摔倒。咖啡杯倒在地上，液体在半空中爆裂，凝结在半空中。冰块、水珠和咖啡溅起的水花都完全停滞——时间仿佛凝固了。两侧高楼形成峡谷效果。摄像机以低地面角度平滑地绕着坠落的人体360度旋转，只有摄像机移动，其他部分保持完全静止。电影感十足，阴天的戏剧性灯光，广角镜头失真。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2764.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
     <article class="case-card" data-id="2762" data-search="案例2762 一镜到底：东方神佛之城8k视觉叙事提示指南 一镜到底的8k场景提示，描绘东方奇幻水上都城与史诗级佛像、武士阵列，指导连续摄像机运动与视觉构图、灯光与细节分镜参考。 x / john https://x.com/john87445528/status/2041000256930763046 视频 创意 动画 灵感 数字艺术 提示：一镜到底：神佛之城·大师登台】 镜头以一镜到底展开，飞翔、滚动、旋转，穿越一座巨大的东方奇幻神都。 【开场画面 - 场景1】：镜头从天空俯冲，掠过一轮巨大的苍白月亮，迅速接近两尊高耸云端、掌心高举如雕塑般的巨大佛像（高达百米），穿梭在薄雾和红色灯笼串间旋转。镜头急剧下降，俯瞰东方奇幻水上大都市，下面被翠绿的运河交错交错，浓密的木质古老建筑、高脚屋、石桥和明亮的码头在雾中时隐时现。 镜头穿透佛像手掌上精美的雕刻，沿着盘绕佛像基座的螺旋木板路向下飞驰，躲避悬挂的红灯笼、飘扬的祈福旗、鞠躬的僧侣和袅袅的香烟。摄像机掠过运河表面，溅起水花，穿过一艘挂着红灯的黑色遮阳船的船顶，滑行在水下。水" data-tags="视频|创意|动画|灵感|数字艺术">
       <a class="case-card-link" href="/zh/case/2762.html">
         <div class="case-thumbnail"><video muted playsinline webkit-playsinline autoplay loop preload="metadata"><source src="/../videos/tweet-2041000256930763046-1.mp4" type="video/mp4"></video></div>
@@ -613,6 +703,18 @@
       </a>
     </article>
   </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
   
 </main>
 
@@ -623,14 +725,14 @@
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
 
-        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
-          el.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const rawUrl = (el.getAttribute('data-url') || '').trim();
-            if (!rawUrl) return;
-            window.open(rawUrl, '_blank', 'noopener,noreferrer');
-          });
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
         });
       })();
     </script>
@@ -638,18 +740,30 @@
 
     <script>
       (function () {
-        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容"};
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/video"};
         const searchInput = document.getElementById('searchInput');
         const clearBtn = document.getElementById('clearFilters');
         const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
-        const cards = Array.from(document.querySelectorAll('.case-card'));
         const statsText = document.getElementById('statsText');
         const noResults = document.getElementById('noResults');
-        if (!cards.length) return;
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
 
         let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
 
         function applyFilters() {
+          const cards = getCards();
           const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
           let visibleCount = 0;
 
@@ -665,6 +779,44 @@
 
           if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
           if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
         }
 
         function setActiveTag(tag) {
@@ -691,6 +843,11 @@
           });
         });
 
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
         applyFilters();
       })();
     </script>

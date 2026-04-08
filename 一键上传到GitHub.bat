@@ -9,6 +9,9 @@ echo    Upload new content to GitHub
 echo ========================================
 echo.
 
+if not defined SKIP_BUILD set "SKIP_BUILD=1"
+if /i "%FORCE_BUILD%"=="1" set "SKIP_BUILD=0"
+
 if defined GIT_PROXY (
     set "HTTP_PROXY=%GIT_PROXY%"
     set "HTTPS_PROXY=%GIT_PROXY%"
@@ -25,9 +28,9 @@ if defined ORIGIN_URL (
 )
 
 if /i "%SKIP_BUILD%"=="1" (
-    echo [1/4] Skipping build because SKIP_BUILD=1
+    echo [1/5] Skipping build because SKIP_BUILD=1
 ) else (
-    echo [1/4] Fix GitHub Pages paths...
+    echo [1/5] Fix GitHub Pages paths...
     node fix-paths-for-github.js
     if errorlevel 1 (
         echo [error] Failed to fix GitHub Pages paths.
@@ -36,7 +39,7 @@ if /i "%SKIP_BUILD%"=="1" (
     )
 
     echo.
-    echo [2/4] Rebuild data and sitemap...
+    echo [2/5] Rebuild data and sitemap...
     call npm run build
     if errorlevel 1 (
         echo [error] Build failed.
@@ -46,8 +49,33 @@ if /i "%SKIP_BUILD%"=="1" (
 )
 echo.
 
-echo [3/4] Stage and commit changes...
-git add .
+echo [3/5] Generate llms metadata files...
+call npm run generate:llms
+if errorlevel 1 (
+    echo [error] llms metadata generation failed.
+    pause
+    exit /b 1
+)
+echo.
+
+echo [4/5] Stage and commit changes...
+if /i "%FULL_STAGE%"=="1" (
+    echo [info] FULL_STAGE=1, staging all files.
+    git add -A .
+) else (
+    echo [info] Incremental staging (data/ zh/ en/ images/ videos/ sitemap.xml index.html robots.txt llms.txt llms-full.txt)
+    set "STAGED_ANY=0"
+    for %%p in (data zh en images videos sitemap.xml index.html robots.txt llms.txt llms-full.txt) do (
+        if exist "%%p" (
+            git add -A "%%p"
+            if not errorlevel 1 set "STAGED_ANY=1"
+        )
+    )
+    if "!STAGED_ANY!"=="0" (
+        echo [warn] No incremental paths found. Falling back to full staging.
+        git add -A .
+    )
+)
 git diff --cached --quiet
 if errorlevel 1 (
     git commit -m "Update content"
@@ -62,13 +90,13 @@ if errorlevel 1 (
 echo.
 
 if /i "%SKIP_PUSH%"=="1" (
-    echo [4/4] Skipping push because SKIP_PUSH=1
+    echo [5/5] Skipping push because SKIP_PUSH=1
     echo.
     pause
     exit /b 0
 )
 
-echo [4/4] Push to GitHub...
+echo [5/5] Push to GitHub...
 echo [info] If push fails, the script will retry up to 5 times.
 echo.
 

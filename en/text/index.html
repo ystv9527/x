@@ -11,7 +11,7 @@
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/text/">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/text/">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1767868636427">
+    <link rel="stylesheet" href="/assets/style.css?v=1775547209105">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -74,6 +74,67 @@
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
       .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"Text Prompt Cases","description":"3 curated text cases","url":"https://gemnana.com/en/text/","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
   
@@ -90,7 +151,7 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2763</span>
+          <span class="nav-count">2764</span>
         </a>
         <a href="/en/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
@@ -100,7 +161,7 @@
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">15</span>
+          <span class="nav-count">16</span>
         </a>
         <a href="/en/text/index.html" class="nav-item active">
           <span class="nav-icon">💬</span>
@@ -138,7 +199,7 @@
     </div>
     <div id="noResults" class="no-results" style="display:none;">😕 No matched content</div>
   
-    <div class="case-grid">
+    <div id="caseGrid" class="case-grid">
     <article class="case-card" data-id="568" data-search="案例568 practical templates for turning complex content into a series of cartoon infographics. break the input content into 1–10 vertical infographic slides, covering three stages: cover, content, and conclusion. emphasize hand-drawn typography, a cartoon style, and a soft color palette. provide separate generation prompts for each slide to facilitate efficient implementation. x / 宝玉 https://x.com/dotey/status/2010497574872940552 系统提示词 设计 技巧 教程 资源 图片 # role definition you are a professional xiaohongshu visual content planner, skilled at breaking down complex content into eye-catching cartoon-style series infographics. # task please analyze the following input and decompose it into 1-10 xiaohongshu-style infographics in a series, and output indep" data-tags="系统提示词|设计|技巧|教程|资源|图片">
       <a class="case-card-link" href="/en/case/568.html">
         <div class="case-thumbnail"><img src="/images/tweet-2010497574872940552-1.jpg" alt="将复杂内容拆解成卡通信息图系列的实战模板" loading="lazy"></div>
@@ -230,6 +291,18 @@ Create a modern Apple Design-inspired &quot;Daily Character Learning for Kids&qu
       </a>
     </article>
   </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >Load more</button>
+    </div>
+  
+    
   
 </main>
 
@@ -240,14 +313,14 @@ Create a modern Apple Design-inspired &quot;Daily Character Learning for Kids&qu
           document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
         }
 
-        document.querySelectorAll('.clickable-source[data-url]').forEach((el) => {
-          el.addEventListener('click', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const rawUrl = (el.getAttribute('data-url') || '').trim();
-            if (!rawUrl) return;
-            window.open(rawUrl, '_blank', 'noopener,noreferrer');
-          });
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
         });
       })();
     </script>
@@ -255,18 +328,30 @@ Create a modern Apple Design-inspired &quot;Daily Character Learning for Kids&qu
 
     <script>
       (function () {
-        const config = {"countText":"{count} items","noResults":"😕 No matched content"};
+        const config = {"countText":"{count} items","noResults":"😕 No matched content","loadMore":"Load more","loadingMore":"Loading..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/en/chunks/text"};
         const searchInput = document.getElementById('searchInput');
         const clearBtn = document.getElementById('clearFilters');
         const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
-        const cards = Array.from(document.querySelectorAll('.case-card'));
         const statsText = document.getElementById('statsText');
         const noResults = document.getElementById('noResults');
-        if (!cards.length) return;
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
 
         let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
 
         function applyFilters() {
+          const cards = getCards();
           const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
           let visibleCount = 0;
 
@@ -282,6 +367,44 @@ Create a modern Apple Design-inspired &quot;Daily Character Learning for Kids&qu
 
           if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
           if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
         }
 
         function setActiveTag(tag) {
@@ -308,6 +431,11 @@ Create a modern Apple Design-inspired &quot;Daily Character Learning for Kids&qu
           });
         });
 
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
         applyFilters();
       })();
     </script>
