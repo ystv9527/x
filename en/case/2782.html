@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate a realistic + anime-style couple selfie outfit look. #2782 | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="Use Gemini to upload a selfie and a skirt outfit reference, then generate a 9:16 realistic female image + a 2D anime style comparison image.">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <link rel="canonical" href="https://gemnana.com/en/case/2782.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2782.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2782.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1776245843742">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"Generate a realistic + anime-style couple selfie outfit look. #2782","description":"Use Gemini to upload a selfie and a skirt outfit reference, then generate a 9:16 realistic female image + a 2D anime style comparison image.","url":"https://gemnana.com/en/case/2782.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI Prompt Collection</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/en/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+          <span class="nav-count">2788</span>
+        </a>
+        <a href="/en/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">Image</span>
+          <span class="nav-count">2762</span>
+        </a>
+        <a href="/en/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">Video</span>
+          <span class="nav-count">23</span>
+        </a>
+        <a href="/en/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Text</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/zh/case/2782.html" class="lang-switch-link">中文</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ Settings</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="/en/index.html">Home</a><span>›</span>
+        <a href="/en/image/index.html">Image</a><span>›</span>
+        <span>#2782</span>
+      </nav>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2782</span></span><span class="case-title-text">Generate a realistic + anime-style couple selfie outfit look.</span></h1>
+      <p>2026-04-15　<a class="source-inline-link" href="https://x.com/gemini_prompts/status/2043548876867801111" target="_blank" rel="noopener noreferrer">X / gemini prompts</a></p>
+      <p><a class="source-link" href="/en/image/index.html">← Back to list</a></p>
+    </div>
+
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
+      </div>
+
+      <div class="detail-block"><h3>📝 Summary</h3><p>Use Gemini to upload a selfie and a skirt outfit reference, then generate a 9:16 realistic female image + a 2D anime style comparison image.</p></div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 Chinese Prompt</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("与你的 #anime 版本合照 打开双子座\r\n 上传你的清晰自拍\r\n 上传你想穿的裙子 粘\r\n贴下面的提示\r\n词 提示：“创作一个高质量的全身9：16竖直构图，两个人物站在极简的深黑色纹理墙上，配以柔和均匀的摄影棚灯光，保持场景干净、现代且无干扰，使焦点始终聚焦在主体上;严格使用提供的面部参考图片作为女性面部的唯一来源，第二张图片严格作为服装（裙装/服装）的唯一来源;右侧那位写实的女性必须拥有百分之百相同的面部匹配，绝不能有任何修改，完全保留参考中的每个面部细节，包括骨骼结构、眼形和颜色、鼻子、嘴唇、眉毛、下颌线、皮肤质地、自然光泽和表情，同时使用相同的妆容、光影细节和柔和自信的微笑;她穿着第二张参考图中完全相同的服装，完全准确地还原了面料和质地、色彩搭配和色调、图案、印花、刺绣或装饰、服装结构和合身度、褶皱、垂褶、层叠以及所有配饰，服装会自然适应她的身体和姿势，且不改变任何设计元素;定位现实的WOM画面右侧，轻轻靠着墙，一侧肩膀轻触墙壁，头发保持与面部参考图中完全一致，蓬松、略带光泽，带有红棕色调和自然飘逸的发丝;左侧放置同一名女性的年轻动画形象，约为身高的60%至70%，以塑造可爱年轻的比例，采用高质量的2D动漫风格，线条流畅，阴影柔和，细节表现丰富，同时保持与原始面容（包括眼睛、鼻子、嘴唇）的完美相似。 眉毛、比例和基础表情转化为风格化的造型，头发颜色和发型相匹配，但稍微柔和、弹性且更具风格化;给动画版穿上第二张参考图中完全相同的服装，颜色、图案、纹理、结构、轮廓和配饰完全一致，稍微风格化以匹配动漫渲染，但设计明显相同;保持两个人物之间的清晰视觉分隔，同时保持构图和谐，保持它们之间微妙的负空间以强调现实与动画之间的对比，并确保两位人物的光影保持柔和平衡，阴影和深度一致，同时增强皮肤和服装的质感和细节。”", this)'>📋 Copy</button>
+        </div>
+        <p>与你的 #anime 版本合照 打开双子座<br> 上传你的清晰自拍<br> 上传你想穿的裙子 粘<br>贴下面的提示<br>词 提示：“创作一个高质量的全身9：16竖直构图，两个人物站在极简的深黑色纹理墙上，配以柔和均匀的摄影棚灯光，保持场景干净、现代且无干扰，使焦点始终聚焦在主体上;严格使用提供的面部参考图片作为女性面部的唯一来源，第二张图片严格作为服装（裙装/服装）的唯一来源;右侧那位写实的女性必须拥有百分之百相同的面部匹配，绝不能有任何修改，完全保留参考中的每个面部细节，包括骨骼结构、眼形和颜色、鼻子、嘴唇、眉毛、下颌线、皮肤质地、自然光泽和表情，同时使用相同的妆容、光影细节和柔和自信的微笑;她穿着第二张参考图中完全相同的服装，完全准确地还原了面料和质地、色彩搭配和色调、图案、印花、刺绣或装饰、服装结构和合身度、褶皱、垂褶、层叠以及所有配饰，服装会自然适应她的身体和姿势，且不改变任何设计元素;定位现实的WOM画面右侧，轻轻靠着墙，一侧肩膀轻触墙壁，头发保持与面部参考图中完全一致，蓬松、略带光泽，带有红棕色调和自然飘逸的发丝;左侧放置同一名女性的年轻动画形象，约为身高的60%至70%，以塑造可爱年轻的比例，采用高质量的2D动漫风格，线条流畅，阴影柔和，细节表现丰富，同时保持与原始面容（包括眼睛、鼻子、嘴唇）的完美相似。 眉毛、比例和基础表情转化为风格化的造型，头发颜色和发型相匹配，但稍微柔和、弹性且更具风格化;给动画版穿上第二张参考图中完全相同的服装，颜色、图案、纹理、结构、轮廓和配饰完全一致，稍微风格化以匹配动漫渲染，但设计明显相同;保持两个人物之间的清晰视觉分隔，同时保持构图和谐，保持它们之间微妙的负空间以强调现实与动画之间的对比，并确保两位人物的光影保持柔和平衡，阴影和深度一致，同时增强皮肤和服装的质感和细节。”</p>
+      </div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 English Prompt</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Prompt:\r\n\"Create a high-quality, full-body 9:16 vertical composition featuring two figures against a minimalist, dark black textured wall with soft, even studio lighting, keeping the scene clean, modern, and distraction-free so full focus remains on the subjects; use the provided face reference image strictly as the only source for the woman's face and the second provided image strictly as the only source for the outfit (dress/clothing); the realistic woman on the right must have a 100% identical facial match with absolutely no alterations, preserving every facial detail exactly as in the reference including bone structure, eye shape and color, nose, lips, eyebrows, jawline, skin texture, natural glow, and expression, along with the same makeup, lighting nuances, and soft confident smile; she is wearing the exact outfit from the second reference image, replicated with complete accuracy including fabric type and texture, color palette and tones, patterns, prints, embroidery or embellishments, garment structure and fit, folds, draping, layering, and any accessories present, with the outfit adapting naturally to her body and pose without altering any design elements; position the realistic woman on the right side of the frame leaning gently against the wall with one shoulder lightly touching it, and keep her hair exactly as in the face reference image, voluminous, slightly glossy, with reddish-brown tones and naturally flowing strands framing her face; on the left side place a stylized animated younger version of the same woman at approximately 60–70% of her height to create a cute and youthful proportion, rendered in a high-quality 2D anime-inspired style with smooth linework, soft shading, and expressive detailing while maintaining a perfect likeness to the original face including eyes, nose, lips, eyebrows, proportions, and base expression translated into stylized form, with hair matching the same style and color but slightly softer, bouncier, and more stylized; dress the animated version in the exact same outfit from the second reference image with full consistency in colors, patterns, textures, structure, silhouette, and accessories, slightly stylized to match the anime rendering but clearly identical in design; maintain clear visual separation between the two figures while preserving compositional harmony, leave subtle negative space between them to emphasize the contrast between realism and animation, and ensure lighting remains soft and balanced across both figures with consistent shadows and depth while enhancing textures and details of both skin and clothing.\"", this)'>📋 Copy</button>
+        </div>
+        <p>Prompt:<br>&quot;Create a high-quality, full-body 9:16 vertical composition featuring two figures against a minimalist, dark black textured wall with soft, even studio lighting, keeping the scene clean, modern, and distraction-free so full focus remains on the subjects; use the provided face reference image strictly as the only source for the woman&#39;s face and the second provided image strictly as the only source for the outfit (dress/clothing); the realistic woman on the right must have a 100% identical facial match with absolutely no alterations, preserving every facial detail exactly as in the reference including bone structure, eye shape and color, nose, lips, eyebrows, jawline, skin texture, natural glow, and expression, along with the same makeup, lighting nuances, and soft confident smile; she is wearing the exact outfit from the second reference image, replicated with complete accuracy including fabric type and texture, color palette and tones, patterns, prints, embroidery or embellishments, garment structure and fit, folds, draping, layering, and any accessories present, with the outfit adapting naturally to her body and pose without altering any design elements; position the realistic woman on the right side of the frame leaning gently against the wall with one shoulder lightly touching it, and keep her hair exactly as in the face reference image, voluminous, slightly glossy, with reddish-brown tones and naturally flowing strands framing her face; on the left side place a stylized animated younger version of the same woman at approximately 60–70% of her height to create a cute and youthful proportion, rendered in a high-quality 2D anime-inspired style with smooth linework, soft shading, and expressive detailing while maintaining a perfect likeness to the original face including eyes, nose, lips, eyebrows, proportions, and base expression translated into stylized form, with hair matching the same style and color but slightly softer, bouncier, and more stylized; dress the animated version in the exact same outfit from the second reference image with full consistency in colors, patterns, textures, structure, silhouette, and accessories, slightly stylized to match the anime rendering but clearly identical in design; maintain clear visual separation between the two figures while preserving compositional harmony, leave subtle negative space between them to emphasize the contrast between realism and animation, and ensure lighting remains soft and balanced across both figures with consistent shadows and depth while enhancing textures and details of both skin and clothing.&quot;</p>
+      </div>
+      <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/../images/tweet-2043548876867801111-1.jpg" alt="双人写实+动漫自拍穿搭生成" loading="lazy"><img src="/../images/tweet-2043548876867801111-2.jpg" alt="双人写实+动漫自拍穿搭生成" loading="lazy"></div></div>
+      
+      
+    </div>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("No prompt content is available for this case.");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ Copied";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("Copy failed. Please copy manually.");
+        }
+      }
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing...";
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: 2782 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm("Delete this case? This action cannot be undone.")) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: 2782 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert("Deleted successfully");
+          window.location.href = "/en/image/index.html";
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+</body>
+</html>
