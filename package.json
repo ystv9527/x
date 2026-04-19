@@ -1,0 +1,42 @@
+﻿{
+  "name": "content-collector",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "Semi-automated content collection and curation tool.",
+  "main": "index.js",
+  "scripts": {
+    "add": "node scripts/add-content.js",
+    "generate": "node scripts/generate-dataset.js",
+    "generate:pages": "node scripts/generate-pages.js",
+    "generate:llms": "node scripts/generate-llms-files.js",
+    "sitemap": "node scripts/generate-sitemap.js",
+    "build": "npm run generate && npm run generate:pages && npm run generate:llms && npm run sitemap",
+    "server": "node server.js",
+    "minify:css": "cleancss -o assets/style.min.css assets/style.css",
+    "minify:js": "terser assets/app.js -o assets/app.min.js -c -m",
+    "minify": "npm run minify:css && npm run minify:js",
+    "build:prod": "npm run build && npm run minify",
+    "test:perf": "echo 'Please visit https://pagespeed.web.dev/ to test performance'"
+  },
+  "keywords": [
+    "content",
+    "collector",
+    "twitter",
+    "article",
+    "curation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "^3.5.4",
+    "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.6",
+    "js-yaml": "^4.1.0",
+    "marked": "^11.1.1",
+    "socks-proxy-agent": "^8.0.5"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "terser": "^5.31.0"
+  }
+}

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置 - AI 配置</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .settings-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .settings-header {
+            margin-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 20px;
+        }
+
+        .settings-header h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .settings-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 5px;
+            color: #888;
+            font-size: 12px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 30px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #4caf50;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(30px);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-test {
+            background: #4caf50;
+            color: white;
+        }
+
+        .btn-test:hover {
+            background: #45a049;
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .btn-fetch {
+            padding: 8px 16px;
+            font-size: 13px;
+        }
+
+        .wechat-account-list {
+            margin-top: 10px;
+        }
+
+        .inline-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .status-message {
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .status-message.show {
+            display: block;
+        }
+
+        .status-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .info-box h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #1976d2;
+        }
+
+        .info-box ul {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .info-box li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <div class="settings-header">
+            <h1>⚙️ AI 功能设置</h1>
+            <p>配置 AI API 以启用自动优化标题、生成摘要等功能</p>
+        </div>
+
+        <div class="info-box">
+            <h3>💡 使用说明</h3>
+            <ul>
+                <li>支持所有兼容 OpenAI 格式的 API（中转API、DeepSeek、Kimi等）</li>
+                <li>配置后可在采集页面使用"AI优化"按钮自动生成标题和摘要</li>
+                <li>API 密钥保存在本地，不会上传到任何服务器</li>
+            </ul>
+        </div>
+
+        <form id="settingsForm">
+            <div class="form-section">
+                <h2>🔌 API 配置</h2>
+
+                <div class="form-group">
+                    <label>
+                        启用 AI 功能
+                    </label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="aiEnabled">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="apiUrl">API 地址 *</label>
+                    <input
+                        type="text"
+                        id="apiUrl"
+                        placeholder="https://api.openai.com/v1"
+                        required
+                    >
+                    <small>OpenAI兼容的API基础地址（结尾不要加斜杠）</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="apiKey">API 密钥 *</label>
+                    <input
+                        type="password"
+                        id="apiKey"
+                        placeholder="sk-xxxxxxxxxxxxxxxx"
+                        required
+                    >
+                    <small>你的 API 密钥，安全保存在本地</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="model">模型名称</label>
+                    <input
+                        type="text"
+                        id="model"
+                        placeholder="gpt-3.5-turbo"
+                        value="gpt-3.5-turbo"
+                    >
+                    <small>例如：gpt-3.5-turbo, gpt-4, deepseek-chat, moonshot-v1-8k</small>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>📣 公众号 API 配置</h2>
+
+                <div class="form-group">
+                    <label for="wechatApiBaseUrl">API 地址 *</label>
+                    <input
+                        type="text"
+                        id="wechatApiBaseUrl"
+                        placeholder="https://wx.limyai.com"
+                    >
+                    <small>公众号 API 基础地址，默认 https://wx.limyai.com</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="wechatApiKey">API 密钥 *</label>
+                    <input
+                        type="password"
+                        id="wechatApiKey"
+                        placeholder="your-api-key"
+                    >
+                    <small>后台请求公众号 API 的密钥</small>
+                    <div class="wechat-account-list">
+                        <button type="button" class="btn btn-test btn-fetch" onclick="fetchWechatAccounts()">获取公众号列表</button>
+                        <select id="wechatAccountList" style="display: none; margin-top: 10px;">
+                            <option value="">请选择公众号</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="wechatDefaultAppid">默认 AppID *</label>
+                    <input
+                        type="text"
+                        id="wechatDefaultAppid"
+                        placeholder="wx1234567890"
+                    >
+                    <small>在“获取公众号列表”接口获取</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="wechatPublicBaseUrl">公网域名</label>
+                    <input
+                        type="text"
+                        id="wechatPublicBaseUrl"
+                        placeholder="https://your-domain.com"
+                    >
+                    <small>用于将本地图片路径转换成公网可访问地址</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="wechatAuthor">作者</label>
+                    <input
+                        type="text"
+                        id="wechatAuthor"
+                        placeholder="作者名称"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="wechatContentFormat">内容格式</label>
+                    <select id="wechatContentFormat">
+                        <option value="markdown">markdown</option>
+                        <option value="html">html</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="wechatArticleType">文章类型</label>
+                    <select id="wechatArticleType">
+                        <option value="news">news（普通）</option>
+                        <option value="newspic">newspic（图文）</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="wechatAutoOptimize">
+                        发布到公众号前自动AI优化标题/摘要
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>📕 小红书发布配置</h2>
+
+                <div class="form-group">
+                    <label style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="xhsEnabled">
+                        启用小红书发布
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="xhsPythonCmd">Python 命令</label>
+                    <input
+                        type="text"
+                        id="xhsPythonCmd"
+                        placeholder="python"
+                    >
+                    <small>用于执行 xhs-auto-suite 的 Python 命令</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="xhsSkillRoot">Skill 路径</label>
+                    <input
+                        type="text"
+                        id="xhsSkillRoot"
+                        placeholder="C:\\Users\\xxx\\.skills-manager\\skills\\xhs-auto-suite"
+                    >
+                    <small>xhs-auto-suite 的根目录</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="xhsAccount">账号名</label>
+                    <input
+                        type="text"
+                        id="xhsAccount"
+                        placeholder="default"
+                    >
+                    <small>对应浏览器 profile 名称，默认 default</small>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="xhsHeadless">
+                        使用无头模式（建议关闭用于首登扫码）
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="xhsPublicBaseUrl">小红书公网域名（可选）</label>
+                    <input
+                        type="text"
+                        id="xhsPublicBaseUrl"
+                        placeholder="https://your-domain.com"
+                    >
+                    <small>本地媒体路径会按该域名重写为公网地址</small>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="xhsAutoPublish">
+                        保存采集内容时默认勾选“同时发布到小红书”
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="xhsAutoOptimizeTitle">
+                        发布前自动优化小红书标题
+                    </label>
+                    <small>发布时调用本地小红书爆款标题 skill，仅改发布标题，不改收藏库原文</small>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="xhsForcePromptTag">
+                        正文强制附加 #prompt 标签
+                    </label>
+                    <small>用于统一小红书搜索标签</small>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: inline-flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" id="xhsScheduleEnabled">
+                        启用小红书平台原生定时发布
+                    </label>
+                    <small>开启后不会立即发布，系统会自动计算发布时间并提交到小红书平台；提交成功后即使你关机也会按平台时间发布</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="xhsScheduleMinHours">连续帖子最小间隔（小时）</label>
+                    <input
+                        type="number"
+                        id="xhsScheduleMinHours"
+                        min="0.5"
+                        max="24"
+                        step="0.5"
+                        value="2"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="xhsScheduleMaxHours">连续帖子最大间隔（小时）</label>
+                    <input
+                        type="number"
+                        id="xhsScheduleMaxHours"
+                        min="0.5"
+                        max="24"
+                        step="0.5"
+                        value="3"
+                    >
+                    <small>每条之间会在最小值和最大值之间随机取一个时间间隔，并自动填到小红书平台定时发布</small>
+                </div>
+
+                <div class="form-group">
+                    <label>登录检查</label>
+                    <div class="inline-actions">
+                        <button type="button" class="btn btn-test btn-fetch" onclick="testXhsLogin()">检查小红书登录状态</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>🎛️ 高级选项</h2>
+
+                <div class="form-group">
+                    <label for="temperature">创造性 (Temperature)</label>
+                    <input
+                        type="number"
+                        id="temperature"
+                        min="0"
+                        max="1"
+                        step="0.1"
+                        value="0.7"
+                    >
+                    <small>0-1之间，数值越高越有创造性，建议0.7</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="maxTokens">最大Token数</label>
+                    <input
+                        type="number"
+                        id="maxTokens"
+                        min="100"
+                        max="20000"
+                        step="50"
+                        value="500"
+                    >
+                    <small>生成内容的最大长度，500足够生成标题和摘要</small>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-test" onclick="testAPI()">🧪 测试连接</button>
+                <button type="submit" class="btn btn-primary">💾 保存设置</button>
+                <button type="button" class="btn btn-secondary" onclick="window.location.href='/'">返回主页</button>
+            </div>
+        </form>
+
+        <div class="status-message" id="statusMessage"></div>
+    </div>
+
+    <script>
+        // 加载配置
+        async function loadConfig() {
+            try {
+                const response = await fetch('/api/config');
+                const config = await response.json();
+
+                if (config.ai) {
+                    document.getElementById('aiEnabled').checked = config.ai.enabled || false;
+                    document.getElementById('apiUrl').value = config.ai.apiUrl || '';
+                    document.getElementById('apiKey').value = config.ai.apiKey || '';
+                    document.getElementById('model').value = config.ai.model || 'gpt-3.5-turbo';
+                    document.getElementById('temperature').value = config.ai.temperature || 0.7;
+                    document.getElementById('maxTokens').value = config.ai.maxTokens || 500;
+                }
+
+                if (config.wechat) {
+                    document.getElementById('wechatApiBaseUrl').value = config.wechat.apiBaseUrl || 'https://wx.limyai.com';
+                    document.getElementById('wechatApiKey').value = config.wechat.apiKey || '';
+                    document.getElementById('wechatDefaultAppid').value = config.wechat.defaultAppid || '';
+                    document.getElementById('wechatPublicBaseUrl').value = config.wechat.publicBaseUrl || '';
+                    document.getElementById('wechatAuthor').value = config.wechat.author || '';
+                    document.getElementById('wechatContentFormat').value = config.wechat.contentFormat || 'markdown';
+                    document.getElementById('wechatArticleType').value = config.wechat.articleType || 'news';
+                    document.getElementById('wechatAutoOptimize').checked = config.wechat.autoOptimize !== false;
+                }
+
+                if (config.xhs) {
+                    document.getElementById('xhsEnabled').checked = !!config.xhs.enabled;
+                    document.getElementById('xhsPythonCmd').value = config.xhs.pythonCmd || 'python';
+                    document.getElementById('xhsSkillRoot').value = config.xhs.skillRoot || '';
+                    document.getElementById('xhsAccount').value = config.xhs.account || 'default';
+                    document.getElementById('xhsHeadless').checked = !!config.xhs.headless;
+                    document.getElementById('xhsPublicBaseUrl').value = config.xhs.publicBaseUrl || '';
+                    document.getElementById('xhsAutoPublish').checked = !!config.xhs.autoPublish;
+                    document.getElementById('xhsAutoOptimizeTitle').checked = config.xhs.autoOptimizeTitle !== false;
+                    document.getElementById('xhsForcePromptTag').checked = config.xhs.forcePromptTag !== false;
+                    document.getElementById('xhsScheduleEnabled').checked = !!config.xhs.scheduleEnabled;
+                    document.getElementById('xhsScheduleMinHours').value = config.xhs.scheduleMinHours || 2;
+                    document.getElementById('xhsScheduleMaxHours').value = config.xhs.scheduleMaxHours || 3;
+                }
+            } catch (error) {
+                console.error('加载配置失败:', error);
+            }
+        }
+
+        // 保存配置
+        document.getElementById('settingsForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const config = {
+                ai: {
+                    enabled: document.getElementById('aiEnabled').checked,
+                    provider: 'openai-compatible',
+                    apiUrl: document.getElementById('apiUrl').value.trim(),
+                    apiKey: document.getElementById('apiKey').value.trim(),
+                    model: document.getElementById('model').value.trim(),
+                    temperature: parseFloat(document.getElementById('temperature').value),
+                    maxTokens: parseInt(document.getElementById('maxTokens').value)
+                },
+                wechat: {
+                    apiBaseUrl: document.getElementById('wechatApiBaseUrl').value.trim(),
+                    apiKey: document.getElementById('wechatApiKey').value.trim(),
+                    defaultAppid: document.getElementById('wechatDefaultAppid').value.trim(),
+                    publicBaseUrl: document.getElementById('wechatPublicBaseUrl').value.trim(),
+                    author: document.getElementById('wechatAuthor').value.trim(),
+                    contentFormat: document.getElementById('wechatContentFormat').value,
+                    articleType: document.getElementById('wechatArticleType').value,
+                    autoOptimize: document.getElementById('wechatAutoOptimize').checked
+                },
+                xhs: {
+                    enabled: document.getElementById('xhsEnabled').checked,
+                    pythonCmd: document.getElementById('xhsPythonCmd').value.trim() || 'python',
+                    skillRoot: document.getElementById('xhsSkillRoot').value.trim(),
+                    account: document.getElementById('xhsAccount').value.trim() || 'default',
+                    headless: document.getElementById('xhsHeadless').checked,
+                    publicBaseUrl: document.getElementById('xhsPublicBaseUrl').value.trim(),
+                    autoPublish: document.getElementById('xhsAutoPublish').checked,
+                    autoOptimizeTitle: document.getElementById('xhsAutoOptimizeTitle').checked,
+                    forcePromptTag: document.getElementById('xhsForcePromptTag').checked,
+                    scheduleEnabled: document.getElementById('xhsScheduleEnabled').checked,
+                    scheduleMinHours: parseFloat(document.getElementById('xhsScheduleMinHours').value) || 2,
+                    scheduleMaxHours: parseFloat(document.getElementById('xhsScheduleMaxHours').value) || 3
+                }
+            };
+
+            try {
+                const response = await fetch('/api/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(config)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showStatus('✅ 设置保存成功！', 'success');
+                } else {
+                    showStatus('❌ 保存失败：' + result.message, 'error');
+                }
+            } catch (error) {
+                showStatus('❌ 保存失败：' + error.message, 'error');
+            }
+        });
+
+        // 测试API连接
+        async function testAPI() {
+            const btn = event.target;
+            btn.disabled = true;
+            btn.textContent = '🔄 测试中...';
+
+            const config = {
+                apiUrl: document.getElementById('apiUrl').value.trim(),
+                apiKey: document.getElementById('apiKey').value.trim(),
+                model: document.getElementById('model').value.trim()
+            };
+
+            try {
+                const response = await fetch('/api/test-ai', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(config)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    showStatus('✅ API 连接成功！模型响应正常', 'success');
+                } else {
+                    showStatus('❌ API 测试失败：' + result.error, 'error');
+                }
+            } catch (error) {
+                showStatus('❌ API 测试失败：' + error.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🧪 测试连接';
+            }
+        }
+
+        async function fetchWechatAccounts() {
+            const apiKey = document.getElementById('wechatApiKey').value.trim();
+            const apiBaseUrl = document.getElementById('wechatApiBaseUrl').value.trim() || 'https://wx.limyai.com';
+            const select = document.getElementById('wechatAccountList');
+
+            if (!apiKey) {
+                showStatus('❌ 请先填写公众号 API 密钥', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/wechat-accounts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ apiKey, apiBaseUrl })
+                });
+
+                const result = await response.json();
+                if (!response.ok || !result.success) {
+                    showStatus('❌ 获取公众号列表失败：' + (result.error || '请求失败'), 'error');
+                    return;
+                }
+
+                const accounts = (result.data && result.data.accounts) ? result.data.accounts : [];
+                if (accounts.length === 0) {
+                    showStatus('⚠️ 未找到已授权公众号', 'error');
+                    return;
+                }
+
+                const currentAppid = document.getElementById('wechatDefaultAppid').value.trim();
+                select.innerHTML = accounts.map(account => {
+                    const name = account.name || account.username || '未命名公众号';
+                    const typeLabel = account.type === 'service' ? '服务号' : '订阅号';
+                    const label = `${name} (${typeLabel})`;
+                    const selected = account.wechatAppid === currentAppid ? 'selected' : '';
+                    return `<option value="${account.wechatAppid}" ${selected}>${label}</option>`;
+                }).join('');
+
+                select.style.display = 'block';
+
+                if (!currentAppid && accounts[0] && accounts[0].wechatAppid) {
+                    document.getElementById('wechatDefaultAppid').value = accounts[0].wechatAppid;
+                }
+
+                select.onchange = () => {
+                    document.getElementById('wechatDefaultAppid').value = select.value;
+                };
+
+                showStatus('✅ 已获取公众号列表，请选择默认账号', 'success');
+            } catch (error) {
+                showStatus('❌ 获取公众号列表失败：' + error.message, 'error');
+            }
+        }
+
+        async function testXhsLogin() {
+            const payload = {
+                pythonCmd: document.getElementById('xhsPythonCmd').value.trim() || 'python',
+                skillRoot: document.getElementById('xhsSkillRoot').value.trim()
+            };
+
+            try {
+                const response = await fetch('/api/xhs-check-login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                if (result.success) {
+                    showStatus('✅ 小红书已登录，可直接发布', 'success');
+                    return;
+                }
+                const detail = result?.data?.log ? `；${result.data.log}` : '';
+                showStatus('❌ 小红书未登录或检查失败' + detail, 'error');
+            } catch (error) {
+                showStatus('❌ 小红书登录检查失败：' + error.message, 'error');
+            }
+        }
+
+        function showStatus(message, type) {
+            const el = document.getElementById('statusMessage');
+            el.textContent = message;
+            el.className = 'status-message show ' + type;
+
+            setTimeout(() => {
+                el.classList.remove('show');
+            }, 5000);
+        }
+
+        // 页面加载时加载配置
+        loadConfig();
+    </script>
+</body>
+</html>

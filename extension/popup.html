@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X 推文收藏助手</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 320px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4caf50;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .status.offline .status-indicator {
+            background: #f44336;
+        }
+
+        .info-section {
+            margin-bottom: 15px;
+        }
+
+        .info-section h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .info-section ul {
+            list-style: none;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .info-section li::before {
+            content: "✓ ";
+            margin-right: 5px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .footer {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📚 X 推文收藏助手</h1>
+        <p>一键采集推文到本地</p>
+    </div>
+
+    <div class="content">
+        <div class="status" id="serverStatus">
+            <span>服务器状态</span>
+            <div>
+                <span id="statusText">检查中...</span>
+                <div class="status-indicator"></div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>📌 使用方法</h3>
+            <ul>
+                <li>浏览X/Twitter推文</li>
+                <li>点击推文下方"📚 采集"按钮</li>
+                <li>编辑内容并保存</li>
+                <li>在本地查看收藏库</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3>✨ 功能特性</h3>
+            <ul>
+                <li>自动下载图片</li>
+                <li>中英文自动分离</li>
+                <li>本地安全存储</li>
+            </ul>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-primary" id="openLibrary">打开收藏库</button>
+            <button class="btn btn-secondary" id="openSettings">设置</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        v1.0.0 | Made with ❤️
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

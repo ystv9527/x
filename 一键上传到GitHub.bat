@@ -9,7 +9,7 @@ echo    Upload new content to GitHub
 echo ========================================
 echo.
 
-if not defined SKIP_BUILD set "SKIP_BUILD=1"
+if not defined SKIP_BUILD set "SKIP_BUILD=0"
 if /i "%FORCE_BUILD%"=="1" set "SKIP_BUILD=0"
 
 if defined GIT_PROXY (
@@ -59,13 +59,22 @@ if errorlevel 1 (
 echo.
 
 echo [4/5] Stage and commit changes...
+if exist ".git\index.lock" (
+    echo [warn] Detected .git\index.lock. Trying to remove stale lock...
+    del /f /q ".git\index.lock" >nul 2>&1
+    if exist ".git\index.lock" (
+        echo [error] .git\index.lock still exists. Close other Git processes and retry.
+        pause
+        exit /b 1
+    )
+)
 if /i "%FULL_STAGE%"=="1" (
     echo [info] FULL_STAGE=1, staging all files.
     git add -A .
 ) else (
-    echo [info] Incremental staging (data/ zh/ en/ images/ videos/ sitemap.xml index.html robots.txt llms.txt llms-full.txt)
+    echo [info] Incremental staging (data/ zh/ en/ images/ videos/ scripts/ package.json sitemap.xml index.html robots.txt llms.txt llms-full.txt)
     set "STAGED_ANY=0"
-    for %%p in (data zh en images videos sitemap.xml index.html robots.txt llms.txt llms-full.txt) do (
+    for %%p in (data zh en images videos scripts package.json sitemap.xml index.html robots.txt llms.txt llms-full.txt) do (
         if exist "%%p" (
             git add -A "%%p"
             if not errorlevel 1 set "STAGED_ANY=1"

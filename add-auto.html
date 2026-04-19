@@ -1,0 +1,1474 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加内容到收藏库</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        button {
+            flex: 1;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-save {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-save:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-save:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-cancel {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .btn-cancel:hover {
+            background: #d0d0d0;
+        }
+
+        .status-message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .status-message.show {
+            display: block;
+        }
+
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .images-info {
+            background: #e3f2fd;
+            padding: 12px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .media-selection {
+            margin-top: 0;
+            border: 0;
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            display: none;
+        }
+
+        .media-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            color: #1976d2;
+            font-size: 13px;
+        }
+
+        .btn-small {
+            padding: 4px 10px;
+            border: 1px solid #90caf9;
+            background: #e3f2fd;
+            color: #1565c0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .btn-small:hover {
+            background: #d7ebfb;
+        }
+
+        .selected-count {
+            margin-left: auto;
+            color: #0d47a1;
+            font-weight: 600;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 10px;
+        }
+
+        .media-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fafafa;
+            cursor: pointer;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .media-item:hover {
+            border-color: #90caf9;
+            transform: translateY(-1px);
+        }
+
+        .media-item input[type="checkbox"] {
+            margin: 6px;
+        }
+
+        .media-item img {
+            display: block;
+            width: 100%;
+            height: 90px;
+            object-fit: cover;
+        }
+
+        .media-caption {
+            padding: 6px 8px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #667eea;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .textarea-with-copy {
+            position: relative;
+        }
+
+        .copy-btn-small {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+
+        .copy-btn-small:hover {
+            background: #45a049;
+            transform: scale(1.05);
+        }
+
+        .copy-btn-small:active {
+            transform: scale(0.95);
+        }
+
+        .copy-success {
+            background: #2196f3 !important;
+        }
+
+        .content-editor {
+            position: relative;
+        }
+
+        .content-editor textarea {
+            width: 100%;
+            padding-right: 100px; /* 缁欐寜閽暀绌洪棿 */
+        }
+
+        .btn-split {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            background: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .btn-split:hover {
+            background: #f57c00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .btn-split:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hint-text {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .tag-selector {
+            margin-top: 10px;
+        }
+
+        .tag-quick {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        .tag-toggle {
+            flex: 0 0 auto;
+            padding: 4px 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background: white;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tag-buttons {
+            display: none;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .tag-buttons.is-open {
+            display: flex;
+        }
+
+        .tag-button {
+            flex: 0 0 auto;
+            padding: 4px 10px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.2s;
+        }
+
+        .tag-button:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .btn-ai-optimize {
+            padding: 6px 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-ai-optimize:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-ai-optimize:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 添加内容到收藏库</h1>
+        <p class="subtitle">自动采集并上传图片/视频</p>
+
+        <div class="status-message" id="statusMessage"></div>
+
+        <div class="loading" id="loadingSection">
+            <div class="spinner"></div>
+            <div id="loadingText">正在下载并上传媒体文件...</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div id="formSection">
+            <div class="images-info" id="imagesInfo" style="display:none;">
+                <div class="media-selection" id="imageSelection">
+                    <div class="media-actions">
+                        <strong>&#36873;&#25321;&#35201;&#20445;&#23384;&#30340;&#22270;&#29255;</strong>
+                        <button type="button" class="btn-small" id="selectAllImages">&#20840;&#36873;</button>
+                        <button type="button" class="btn-small" id="selectNoneImages">&#20840;&#19981;&#36873;</button>
+                        <span class="selected-count" id="selectedImageCount"></span>
+                    </div>
+                    <div class="media-grid" id="imageGrid"></div>
+                </div>
+            </div>
+            <div class="images-info" id="videosInfo" style="display:none; margin-top: 10px;"></div>
+
+
+            <form id="contentForm">
+                <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <label for="title" style="margin: 0;">📝 标题 *</label>
+                        <button type="button" class="btn-ai-optimize" onclick="aiOptimize()" title="使用 AI 优化标题、摘要和标签">
+                            🤖 AI优化
+                        </button>
+                    </div>
+                    <input type="text" id="title" name="title" required placeholder="请输入标题">
+                </div>
+
+                <div class="form-group">
+                    <label for="source">🔗 来源</label>
+                    <input type="text" id="source" name="source" placeholder="例如：X / @username">
+                </div>
+
+                <div class="form-group">
+                    <label for="url">🌐 链接</label>
+                    <input type="url" id="url" name="url" placeholder="https://x.com/...">
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">🏷️ 标签（用逗号分隔）</label>
+                    <input type="text" id="tags" name="tags" placeholder="AI, 教程, 技巧">
+                    <div id="tagSelector" class="tag-selector" style="display: none;">
+                        <div class="tag-quick">
+                            <span class="tag-label">💡 快速选择</span>
+                            <button type="button" class="tag-toggle" id="tagToggle">展开</button>
+                        </div>
+                        <div id="tagButtons" class="tag-buttons"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="systemPromptToggle">
+                        作为系统提示词
+                    </label>
+                    <div class="hint-text">勾选后无论是否有图片/视频，都会归类到“系统提示词”标签</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">⭐ 收藏理由</label>
+                    <input type="text" id="reason" name="reason" placeholder="为什么收藏">
+                </div>
+
+                <div class="form-group">
+                    <label for="summary">📝 内容摘要</label>
+                    <textarea id="summary" name="summary" placeholder="简短总结"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <label for="content" style="margin: 0;">📄 完整内容</label>
+                        <button type="button" class="btn-ai-optimize" onclick="translateContentBilingual(event)" title="将单语正文自动补成中英双语">
+                            🌐 翻译补全
+                        </button>
+                    </div>
+                    <div class="content-editor">
+                        <textarea id="content" name="content" rows="15" placeholder="推文内容...&#10;&#10;💡 提示：把光标放在中英文分界处，点击右侧按钮插入分隔符"></textarea>
+                        <button type="button" class="btn-split" onclick="insertSeparator(event)" title="在光标位置插入分隔符">
+                            ✂️ 在此处分割
+                        </button>
+                    </div>
+                    <div class="hint-text">💡 点击“在此处分割”按钮会在光标位置插入分隔符，用于分离中英文内容</div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="publishWechat">
+                        保存到收藏库后同时发布到公众号
+                    </label>
+                    <div class="hint-text">勾选后会先保存，再将图片上传到临时图床并发布到公众号草稿箱</div>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="publishXhs">
+                        保存到收藏库后同时发布到小红书
+                    </label>
+                    <div class="hint-text">勾选后会在保存成功后自动发布为图文或视频（按采集内容自动判断）</div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn-save" id="saveBtn">💾 保存到收藏库</button>
+                    <button type="button" class="btn-cancel" onclick="window.close()">❌ 取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let downloadedImages = [];
+        let downloadedVideos = [];
+
+        // 从多个来源加载数据
+        let tweetData = {};
+
+        // 方式1：localStorage（本地存储）
+        const localData = localStorage.getItem('tweet_data');
+        if (localData) {
+            console.log('从 localStorage 读取数据');
+            tweetData = JSON.parse(localData);
+            localStorage.removeItem('tweet_data');
+        }
+
+        // 方式2：URL 参数（Base64 编码）
+        const params = new URLSearchParams(window.location.search);
+        const urlData = params.get('data');
+        if (urlData && !tweetData.title) {
+            try {
+                console.log('从 URL 参数读取 Base64 数据');
+                tweetData = JSON.parse(atob(urlData));
+            } catch(e) {
+                console.warn('URL 参数解析失败:', e);
+            }
+        }
+
+        // 方式3：直接读取 URL 普通参数
+        if (!tweetData.title) {
+            console.log('从 URL 普通参数读取数据');
+            tweetData = {
+                title: params.get('title') || '',
+                source: params.get('source') || '',
+                url: params.get('url') || '',
+                content: params.get('content') || '',
+                summary: params.get('summary') || '',
+                tags: params.get('tags') || '',
+                date: params.get('date') || new Date().toISOString().split('T')[0],
+                images: params.get('images') ? params.get('images').split('|') : [],
+                videos: params.get('videos') ? params.get('videos').split('|') : []
+            };
+        }
+
+        console.log('解析后的数据:', tweetData);
+
+        // Fallback: derive source from URL if collector did not provide it.
+        if ((!tweetData.source || !String(tweetData.source).trim()) && tweetData.url) {
+            const m = String(tweetData.url).match(/x\.com\/([^\/?#]+)\/status\/\d+/i);
+            if (m && m[1]) {
+                tweetData.source = 'X / @' + m[1];
+            }
+        }
+
+        // 检查是否有数据
+        if (!tweetData.title && !tweetData.content) {
+            console.warn('没有找到任何可用数据');
+        }
+
+        // 填充表单
+        document.getElementById('title').value = tweetData.title || '';
+        document.getElementById('source').value = tweetData.source || '';
+        document.getElementById('url').value = tweetData.url || '';
+        document.getElementById('summary').value = tweetData.summary || '';
+        document.getElementById('content').value = tweetData.content || '';
+
+        // 自动附加媒体标签
+        let autoTags = [];
+        const imageUrls = processImageUrls();
+        const videoUrls = processVideoUrls();
+        const imagesInfo = document.getElementById('imagesInfo');
+        const videosInfo = document.getElementById('videosInfo');
+        if (imageUrls.length > 0) {
+            imagesInfo.style.display = 'block';
+        } else {
+            imagesInfo.style.display = 'none';
+        }
+        if (videosInfo) {
+            if (videoUrls.length > 0) {
+                videosInfo.style.display = 'block';
+                videosInfo.innerHTML = `<strong>检测到视频：</strong>${videoUrls.length} 个（保存时会一并处理）`;
+            } else {
+                videosInfo.style.display = 'none';
+                videosInfo.innerHTML = '';
+            }
+        }
+
+        if (videoUrls.length > 0) {
+            autoTags.push('视频');
+            console.log('检测到视频，自动添加标签：视频');
+        }
+
+        // 合并原有标签和自动标签
+        let existingTags = (tweetData.tags || '').split(',').map(t => t.trim()).filter(t => t);
+        // 移除 X 和 Twitter 标签
+        existingTags = existingTags.filter(tag => tag !== 'X' && tag !== 'Twitter');
+
+        const allTags = [...new Set([...autoTags, ...existingTags])]; // 去重
+        document.getElementById('tags').value = allTags.join(',');
+
+        console.log('表单已填充，图片数:', imageUrls.length, '视频数:', videoUrls.length, '标签:', allTags.join(','));
+
+        const systemPromptTag = '系统提示词';
+        const systemPromptToggle = document.getElementById('systemPromptToggle');
+        if (systemPromptToggle) {
+            const tagsInput = document.getElementById('tags');
+            const initialTags = tagsInput.value.split(',').map(t => t.trim()).filter(t => t);
+            if (initialTags.includes(systemPromptTag)) {
+                systemPromptToggle.checked = true;
+            }
+
+            systemPromptToggle.addEventListener('change', () => {
+                let tags = tagsInput.value.split(',').map(t => t.trim()).filter(t => t);
+                if (systemPromptToggle.checked) {
+                    if (!tags.includes(systemPromptTag)) {
+                        tags.push(systemPromptTag);
+                    }
+                } else {
+                    tags = tags.filter(tag => tag !== systemPromptTag);
+                }
+                tagsInput.value = tags.join(',');
+            });
+        }
+
+        // 提取推文 ID
+        function extractTweetId(url) {
+            if (!url) return Date.now().toString();
+            const match = url.match(/status\/(\d+)/);
+            return match ? match[1] : Date.now().toString();
+        }
+
+        // 处理图片 URLs
+        function processImageUrls() {
+            // 处理 images，可能是字符串或数组
+            let imageUrls = [];
+            if (typeof tweetData.images === 'string') {
+                if (tweetData.images) {
+                    imageUrls = tweetData.images.split('|').filter(url => url && url.trim() && url.includes('http'));
+                }
+            } else if (Array.isArray(tweetData.images)) {
+                imageUrls = tweetData.images.filter(url => url && url.includes('http'));
+            }
+
+            console.log('处理后的图片 URLs:', imageUrls);
+            return imageUrls;
+        }
+
+        function processVideoUrls() {
+            // 处理 videos，可能是字符串或数组
+            let videoUrls = [];
+            const isValidVideoRef = (value) => {
+                if (!value) return false;
+                const v = String(value).trim();
+                if (!v) return false;
+                if (/^https?:\/\//i.test(v)) return true;
+                if (/^\/?videos\/[^?#]+\.(mp4|mov|webm)(\?.*)?$/i.test(v)) return true;
+                if (/^[^\/?#]+\.(mp4|mov|webm)(\?.*)?$/i.test(v)) return true;
+                return false;
+            };
+
+            if (typeof tweetData.videos === 'string') {
+                if (tweetData.videos) {
+                    videoUrls = tweetData.videos
+                        .split('|')
+                        .map(url => String(url || '').trim())
+                        .filter(url => isValidVideoRef(url));
+                }
+            } else if (Array.isArray(tweetData.videos)) {
+                videoUrls = tweetData.videos
+                    .map(v => {
+                        if (!v) return '';
+                        if (typeof v === 'string') return v;
+                        return v.src || v.url || '';
+                    })
+                    .map(v => String(v || '').trim())
+                    .filter(v => isValidVideoRef(v));
+            }
+            console.log('处理后的视频 URLs:', videoUrls);
+            return videoUrls;
+        }
+
+        function getImageSelectionCheckboxes() {
+            return Array.from(document.querySelectorAll('#imageGrid input[type="checkbox"]'));
+        }
+
+        function getSelectedImageUrls() {
+            const boxes = getImageSelectionCheckboxes();
+            return boxes
+                .filter(box => box.checked)
+                .map(box => box.dataset.url)
+                .filter(url => url);
+        }
+
+        function updateSelectedCount() {
+            const countEl = document.getElementById('selectedImageCount');
+            const boxes = getImageSelectionCheckboxes();
+            if (!countEl) return;
+            if (boxes.length === 0) {
+                countEl.textContent = '';
+                return;
+            }
+            const selected = boxes.filter(box => box.checked).length;
+            countEl.textContent = '已选 ' + selected + '/' + boxes.length;
+        }
+
+        function setAllImageSelection(checked) {
+            const boxes = getImageSelectionCheckboxes();
+            boxes.forEach(box => {
+                box.checked = checked;
+            });
+            updateSelectedCount();
+        }
+
+        function renderImageSelection(imageUrls) {
+            const selectionEl = document.getElementById('imageSelection');
+            const gridEl = document.getElementById('imageGrid');
+
+            if (!selectionEl || !gridEl) return;
+
+            gridEl.innerHTML = '';
+
+            if (!imageUrls || imageUrls.length === 0) {
+                selectionEl.style.display = 'none';
+                updateSelectedCount();
+                return;
+            }
+
+            imageUrls.forEach((url, index) => {
+                const item = document.createElement('label');
+                item.className = 'media-item';
+
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.checked = true;
+                checkbox.dataset.url = url;
+                checkbox.addEventListener('change', updateSelectedCount);
+
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = 'Image ' + (index + 1);
+                img.loading = 'lazy';
+
+                const caption = document.createElement('div');
+                caption.className = 'media-caption';
+                caption.textContent = '图片 ' + (index + 1);
+
+                item.appendChild(checkbox);
+                item.appendChild(img);
+                item.appendChild(caption);
+                gridEl.appendChild(item);
+            });
+
+            selectionEl.style.display = 'block';
+            updateSelectedCount();
+        }
+
+        function getSelectedImageUrlsOrAll(imageUrls) {
+            const boxes = getImageSelectionCheckboxes();
+            if (boxes.length === 0) {
+                return imageUrls;
+            }
+            return getSelectedImageUrls();
+        }
+
+        const selectAllBtn = document.getElementById('selectAllImages');
+        if (selectAllBtn) {
+            selectAllBtn.addEventListener('click', () => setAllImageSelection(true));
+        }
+
+        const selectNoneBtn = document.getElementById('selectNoneImages');
+        if (selectNoneBtn) {
+            selectNoneBtn.addEventListener('click', () => setAllImageSelection(false));
+        }
+
+
+
+        // 显示媒体预览
+        function showMediaPreview() {
+            let imageUrls = processImageUrls();
+            let videoUrls = processVideoUrls();
+
+            document.getElementById('formSection').style.display = 'block';
+            document.getElementById('loadingSection').style.display = 'none';
+            const imagesInfo = document.getElementById('imagesInfo');
+            const videosInfo = document.getElementById('videosInfo');
+            if (imageUrls.length > 0) {
+                imagesInfo.style.display = 'block';
+            } else {
+                imagesInfo.style.display = 'none';
+            }
+            if (videosInfo) {
+                if (videoUrls.length > 0) {
+                    videosInfo.style.display = 'block';
+                    videosInfo.innerHTML = `<strong>检测到视频：</strong>${videoUrls.length} 个（保存时会一并处理）`;
+                } else {
+                    videosInfo.style.display = 'none';
+                    videosInfo.innerHTML = '';
+                }
+            }
+
+            renderImageSelection(imageUrls);
+        }
+
+        async function loadPublishDefaults() {
+            try {
+                const response = await fetch('/api/config');
+                if (!response.ok) return;
+                const config = await response.json();
+                const publishWechat = document.getElementById('publishWechat');
+                const publishXhs = document.getElementById('publishXhs');
+                if (publishWechat) {
+                    publishWechat.checked = false;
+                }
+                if (publishXhs) {
+                    publishXhs.checked = !!(config && config.xhs && config.xhs.autoPublish);
+                }
+            } catch (error) {
+                console.warn('Load publish defaults failed:', error.message);
+            }
+        }
+
+        async function downloadMediaFiles() {
+            let imageUrls = processImageUrls();
+            let videoUrls = processVideoUrls();
+            imageUrls = getSelectedImageUrlsOrAll(imageUrls);
+
+            if ((!imageUrls || imageUrls.length === 0) && (!videoUrls || videoUrls.length === 0)) {
+                return { images: [], videos: [] };
+            }
+
+            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('loadingSection').style.display = 'block';
+
+            const imageCount = imageUrls.length;
+            const videoCount = videoUrls.length;
+            const tempDownloadedImages = [];
+            const tempFailedImageUrls = [];
+            const tempDownloadedVideos = [];
+
+            if (imageCount > 0 && videoCount > 0) {
+                document.getElementById('loadingText').textContent = `正在下载 ${imageCount} 张图片和 ${videoCount} 个视频...`;
+            } else if (imageCount > 0) {
+                document.getElementById('loadingText').textContent = `正在下载 ${imageCount} 张图片...`;
+            } else {
+                document.getElementById('loadingText').textContent = `正在下载 ${videoCount} 个视频...`;
+            }
+
+            if (imageCount > 0) {
+                for (let i = 0; i < imageUrls.length; i++) {
+                    const imgUrl = imageUrls[i];
+
+                    const progress = Math.round(((i + 1) / imageCount) * 100);
+                    document.getElementById('progressFill').style.width = progress + '%';
+                    document.getElementById('loadingText').textContent =
+                        `正在下载图片 ${i + 1}/${imageCount}...`;
+
+                    console.log('Downloading image ' + (i + 1) + ':', imgUrl);
+
+                    try {
+                        const tweetId = extractTweetId(tweetData.url);
+                        const response = await fetch('http://localhost:3000/api/download-image', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                imageUrl: imgUrl,
+                                tweetId: tweetId,
+                                index: i + 1
+                            })
+                        });
+
+                        if (response.ok) {
+                            const result = await response.json();
+                            if (result.success) {
+                                tempDownloadedImages.push({
+                                    filename: result.filename,
+                                    index: i + 1
+                                });
+                                console.log('Image downloaded:', result.filename);
+                            } else {
+                                tempFailedImageUrls.push(imgUrl);
+                                console.error('Image download failed:', result.error || result);
+                            }
+                        } else {
+                            tempFailedImageUrls.push(imgUrl);
+                            const errorText = await response.text();
+                            console.error('Image download failed:', response.status, errorText);
+                        }
+                    } catch (error) {
+                        tempFailedImageUrls.push(imgUrl);
+                        console.error('Image download failed:', error);
+                    }
+                }
+            }
+
+            if (videoUrls && videoUrls.length > 0) {
+                document.getElementById('loadingText').textContent = `正在下载 ${videoCount} 个视频...`;
+
+                for (let i = 0; i < videoUrls.length; i++) {
+                    const videoUrl = videoUrls[i];
+                    const isRemoteVideo = /^https?:\/\//i.test(videoUrl);
+
+                    const progress = Math.round(((i + 1) / videoCount) * 100);
+                    document.getElementById('progressFill').style.width = progress + '%';
+                    document.getElementById('loadingText').textContent =
+                        `正在下载视频 ${i + 1}/${videoCount}...`;
+
+                    console.log('Downloading video ' + (i + 1) + ':', videoUrl);
+
+                    try {
+                        if (!isRemoteVideo) {
+                            const normalized = String(videoUrl).split('/').pop().split('?')[0];
+                            if (normalized) {
+                                tempDownloadedVideos.push({
+                                    filename: normalized,
+                                    index: i + 1
+                                });
+                                console.log('Video already local, skip download:', normalized);
+                            }
+                            continue;
+                        }
+
+                        const tweetId = extractTweetId(tweetData.url);
+                        console.log(`Video ${i + 1} tweetId: ${tweetId}, URL: ${videoUrl.substring(0, 80)}...`);
+
+                        const response = await fetch('http://localhost:3000/api/download-video', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                videoUrl: videoUrl,
+                                tweetId: tweetId,
+                                index: i + 1
+                            })
+                        });
+
+                        console.log(`Video ${i + 1} response ${response.status} ${response.statusText}`);
+
+                        if (response.ok) {
+                            const responseText = await response.text();
+                            console.log(`Video ${i + 1} response body:`, responseText);
+
+                            const result = JSON.parse(responseText);
+
+                            if (result.success) {
+                                tempDownloadedVideos.push({
+                                    filename: result.filename,
+                                    index: i + 1
+                                });
+                                console.log('Video downloaded:', result.filename);
+                            } else {
+                                console.error(`Video ${i + 1} failed`, result.error);
+                            }
+                        } else {
+                            const errorText = await response.text();
+                            console.error(`Video ${i + 1} HTTP error ${response.status}:`, errorText);
+                        }
+                    } catch (error) {
+                        console.error('Video download failed:', error);
+                    }
+                }
+            }
+
+            console.log('Media downloads completed');
+            console.log(`Downloaded images: ${tempDownloadedImages.length}, videos: ${tempDownloadedVideos.length}`);
+
+            return {
+                images: tempDownloadedImages,
+                failedImageUrls: tempFailedImageUrls,
+                videos: tempDownloadedVideos
+            };
+        }
+
+
+        // 琛ㄥ崟鎻愪氦
+        document.getElementById('contentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            
+            document.getElementById('saveBtn').disabled = true;
+            const systemPromptToggle = document.getElementById('systemPromptToggle');
+            if (systemPromptToggle) {
+                const tagsInput = document.getElementById('tags');
+                let tags = tagsInput.value.split(',').map(t => t.trim()).filter(t => t);
+                const systemPromptTag = '系统提示词';
+                if (systemPromptToggle.checked) {
+                    if (!tags.includes(systemPromptTag)) {
+                        tags.push(systemPromptTag);
+                    }
+                } else {
+                    tags = tags.filter(tag => tag !== systemPromptTag);
+                }
+                tagsInput.value = tags.join(',');
+            }
+            const urlValue = document.getElementById('url').value.trim();
+            const sourceValue = document.getElementById('source').value.trim();
+            const previewImageUrls = getSelectedImageUrlsOrAll(processImageUrls());
+            const previewVideoUrls = processVideoUrls();
+            const likelyBrokenCapture =
+                !urlValue &&
+                !sourceValue &&
+                previewImageUrls.length === 0 &&
+                previewVideoUrls.length === 0;
+
+            if (likelyBrokenCapture) {
+                const warningText = '⚠️ 当前内容没有来源链接、来源账号、图片或视频，可能是采集失败。';
+                showStatus(warningText, 'error');
+                const shouldContinue = confirm(`${warningText}\n\n是否仍然继续保存？`);
+                if (!shouldContinue) {
+                    document.getElementById('saveBtn').disabled = false;
+                    return;
+                }
+            }
+
+            const contentValue = document.getElementById('content').value.trim();
+            if (!contentValue) {
+                const warningText = '⚠️ 当前提示词正文为空，保存后详情页会显示“暂无可展示内容”。';
+                showStatus(warningText, 'error');
+                const shouldContinue = confirm(`${warningText}\n\n建议先回到 X 页面重试采集。\n\n是否仍然继续保存？`);
+                if (!shouldContinue) {
+                    document.getElementById('saveBtn').disabled = false;
+                    return;
+                }
+            }
+
+            if (urlValue) {
+                showStatus('🔍 正在检查 URL 是否重复...', 'info');
+                try {
+                    const checkResponse = await fetch('http://localhost:3000/data/contents.json');
+                    if (checkResponse.ok) {
+                        const contentsData = await checkResponse.json();
+                        const existingUrls = contentsData.items.map(item => item.url).filter(url => url);
+
+                        if (existingUrls.includes(urlValue)) {
+                            showStatus('❌ 该内容已存在，此 URL 已被采集过。', 'error');
+                            document.getElementById('saveBtn').disabled = false;
+                            return;
+                        }
+                    }
+                } catch (error) {
+                    console.warn('URL 去重检查失败，继续执行:', error.message);
+                }
+            }
+            showStatus('⏳ 正在下载媒体文件...', 'info');
+            setLoadingPhase('正在下载媒体文件...', 0);
+
+            const { images: downloadedImages, failedImageUrls = [], videos: downloadedVideos } = await downloadMediaFiles();
+
+            showStatus('⏳ 正在保存...', 'info');
+            setLoadingPhase('正在保存内容...', 100);
+
+            const formData = new FormData();
+
+            formData.append('title', document.getElementById('title').value);
+            formData.append('source', document.getElementById('source').value);
+            formData.append('url', document.getElementById('url').value);
+            formData.append('tags', document.getElementById('tags').value);
+            formData.append('reason', document.getElementById('reason').value);
+            formData.append('summary', document.getElementById('summary').value);
+            formData.append('content', document.getElementById('content').value);
+            formData.append('date', new Date().toISOString().split('T')[0]);
+
+            // 娣诲姞宸蹭笅杞界殑鍥剧墖鏂囦欢鍚?
+            if (downloadedImages.length > 0) {
+                const filenames = downloadedImages.map(img => img.filename).join(',');
+                formData.append('downloadedImageFiles', filenames);
+            }
+            if (failedImageUrls.length > 0) {
+                formData.append('imageUrls', failedImageUrls.join('|'));
+                console.warn(`图片下载失败 ${failedImageUrls.length} 张，已写入远程 URL 兜底`);
+            }
+
+            // 娣诲姞宸蹭笅杞界殑瑙嗛鏂囦欢鍚?
+            console.log('馃搵 妫€鏌ヨ棰戞暟缁?- 闀垮害:', downloadedVideos.length);
+            console.log('馃搵 downloadedVideos 鍐呭:', downloadedVideos);
+
+            if (downloadedVideos.length > 0) {
+                const videoFilenames = downloadedVideos.map(v => v.filename).join(',');
+                formData.append('downloadedVideos', videoFilenames);
+                console.log('馃摛 鎻愪氦瑙嗛鏂囦欢鍚?', videoFilenames);
+            } else {
+                console.warn('鈿狅笍 璀﹀憡: downloadedVideos 鏁扮粍涓虹┖锛佷笉浼氭坊鍔犺棰戝埌 markdown');
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/api/add-content', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    const publishWechatToggle = document.getElementById('publishWechat');
+                    const publishXhsToggle = document.getElementById('publishXhs');
+                    const shouldPublishWechat = publishWechatToggle ? publishWechatToggle.checked : false;
+                    const shouldPublishXhs = publishXhsToggle ? publishXhsToggle.checked : false;
+
+                    const fallbackText = failedImageUrls.length > 0 ? `，${failedImageUrls.length} 张使用远程URL兜底` : '';
+                    showStatus(`✅ 内容已保存！已上传 ${result.downloadedImages} 张图片${fallbackText}`, 'success');
+
+                    if (!shouldPublishWechat && !shouldPublishXhs) {
+                        setTimeout(() => {
+                            window.close();
+                        }, 2000);
+                        return;
+                    }
+
+                    if (!result.contentId) {
+                        showStatus('⚠️ 内容已保存，但未获取到内容ID，无法自动发布', 'error');
+                        return;
+                    }
+
+                    const contentUrl = document.getElementById('url')?.value || '';
+                    const publishErrors = [];
+                    const publishSuccess = [];
+
+                    if (shouldPublishWechat) {
+                        showStatus('⏳ 正在发布到公众号...', 'info');
+                        setLoadingPhase('正在发布到公众号...', 100);
+                        try {
+                            const publishResponse = await fetch('/api/wechat-publish', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    id: result.contentId,
+                                    url: contentUrl.trim(),
+                                    useTempStorage: true
+                                })
+                            });
+                            const publishResult = await publishResponse.json();
+
+                            if (publishResponse.ok && publishResult.success) {
+                                publishSuccess.push('公众号');
+                            } else {
+                                const message = publishResult.error || publishResult.message || `HTTP ${publishResponse.status}`;
+                                publishErrors.push(`公众号失败：${message}`);
+                            }
+                        } catch (error) {
+                            publishErrors.push(`公众号失败：${error.message}`);
+                        }
+                    }
+
+                    if (shouldPublishXhs) {
+                        showStatus('⏳ 正在发布到小红书...', 'info');
+                        setLoadingPhase('正在提交小红书平台定时发布...', 100);
+                        try {
+                            const preferredMedia = downloadedVideos.length > 0 ? 'video' : 'image';
+                            const xhsResponse = await fetch('/api/xhs-publish', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    id: result.contentId,
+                                    url: contentUrl.trim(),
+                                    preferredMedia
+                                })
+                            });
+                            const xhsResult = await xhsResponse.json();
+
+                            if (xhsResponse.ok && xhsResult.success) {
+                                if (xhsResult.data && xhsResult.data.status === 'scheduled' && xhsResult.data.scheduledAt) {
+                                    const scheduledLabel = new Date(xhsResult.data.scheduledAt).toLocaleString('zh-CN');
+                                    publishSuccess.push(`小红书（定时发布：${scheduledLabel}）`);
+                                } else {
+                                    publishSuccess.push('小红书');
+                                }
+                            } else {
+                                const message = xhsResult.error || xhsResult.message || `HTTP ${xhsResponse.status}`;
+                                publishErrors.push(`小红书失败：${message}`);
+                            }
+                        } catch (error) {
+                            publishErrors.push(`小红书失败：${error.message}`);
+                        }
+                    }
+
+                    if (publishErrors.length > 0) {
+                        showStatus(`⚠️ 内容已保存。成功：${publishSuccess.join('、') || '无'}；${publishErrors.join('；')}`, 'error');
+                    } else {
+                        showStatus(`✅ 内容已保存并发布到：${publishSuccess.join('、')}`, 'success');
+                        setTimeout(() => {
+                            window.close();
+                        }, 2000);
+                    }
+                } else {
+                    showStatus('❌ 保存失败', 'error');
+                }
+            } catch (error) {
+                showStatus('❌ 错误：' + error.message, 'error');
+            } finally {
+                document.getElementById('saveBtn').disabled = false;
+            }
+        });
+
+        function showStatus(message, type) {
+            const el = document.getElementById('statusMessage');
+            el.textContent = message;
+            el.className = 'status-message show ' + type;
+        }
+
+        function setLoadingPhase(text, progressPercent = null) {
+            const loadingText = document.getElementById('loadingText');
+            const progressFill = document.getElementById('progressFill');
+            if (loadingText) {
+                loadingText.textContent = text;
+            }
+            if (progressFill && progressPercent !== null && Number.isFinite(progressPercent)) {
+                progressFill.style.width = Math.max(0, Math.min(100, progressPercent)) + '%';
+            }
+        }
+
+        // 在光标位置插入分隔符
+        function insertSeparator(evt) {
+            const textarea = document.getElementById('content');
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = textarea.value;
+
+            // 在光标位置插入分隔符
+            const separator = '\n------\n';
+            const newText = text.substring(0, start) + separator + text.substring(end);
+
+            textarea.value = newText;
+
+            // 将光标移动到分隔符之后
+            const newCursorPos = start + separator.length;
+            textarea.setSelectionRange(newCursorPos, newCursorPos);
+            textarea.focus();
+
+            // 按钮反馈
+            const btn = evt && evt.target ? evt.target : null;
+            if (btn) {
+                const originalText = btn.textContent;
+                btn.textContent = '✅ 已插入';
+                btn.style.background = '#4caf50';
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                }, 1500);
+            }
+        }
+
+        async function translateContentBilingual(evt) {
+            const btn = evt && evt.target ? evt.target : null;
+            const textarea = document.getElementById('content');
+            const content = textarea.value.trim();
+
+            if (!content || content.length < 10) {
+                alert('❌ 请先填写正文，至少 10 个字符后才能翻译补全');
+                return;
+            }
+
+            if (btn) {
+                btn.disabled = true;
+                btn.dataset.originalText = btn.textContent;
+                btn.textContent = '🌐 翻译中...';
+            }
+
+            try {
+                const response = await fetch('/api/translate-bilingual', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ content })
+                });
+
+                const result = await response.json();
+                if (!result.success || !result.data) {
+                    throw new Error(result.error || '翻译补全失败');
+                }
+
+                if (result.data.mergedContent) {
+                    textarea.value = result.data.mergedContent;
+                }
+
+                if (btn) {
+                    btn.textContent = '✅ 已补全';
+                    btn.style.background = '#4caf50';
+                }
+                showStatus('✅ 正文已补成中英双语，并自动插入分隔符', 'success');
+            } catch (error) {
+                alert('❌ 翻译补全失败：' + error.message);
+            } finally {
+                if (btn) {
+                    const originalText = btn.dataset.originalText || '🌐 翻译补全';
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 1500);
+                }
+            }
+        }
+
+        // AI 优化功能
+        async function aiOptimize() {
+            const btn = event.target;
+            const content = document.getElementById('content').value;
+
+            if (!content || content.trim().length < 10) {
+                alert('❌ 请先填写内容，至少 10 个字符后才能进行 AI 优化');
+                return;
+            }
+
+            // 按钮状态
+            btn.disabled = true;
+            const originalText = btn.textContent;
+            btn.textContent = '🤖 AI思考中...';
+
+            try {
+                const response = await fetch('/api/ai-optimize', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ content })
+                });
+
+                const result = await response.json();
+
+                if (result.success && result.data) {
+                    // 填充优化后的内容
+                    if (result.data.title) {
+                        document.getElementById('title').value = result.data.title;
+                    }
+                    if (result.data.summary) {
+                        document.getElementById('summary').value = result.data.summary;
+                    }
+                    if (result.data.tags) {
+                        // 限制标签数量最多 5 个
+                        let newTagsArray = result.data.tags.split(',').map(t => t.trim()).filter(t => t);
+                        if (newTagsArray.length > 5) {
+                            console.log(`AI 返回了 ${newTagsArray.length} 个标签，已自动限制为前 5 个`);
+                            newTagsArray = newTagsArray.slice(0, 5);
+                        }
+
+                        // 合并现有标签
+                        const existingTags = document.getElementById('tags').value;
+                        const newTags = newTagsArray.join(',');
+                        if (existingTags) {
+                            document.getElementById('tags').value = existingTags + ',' + newTags;
+                        } else {
+                            document.getElementById('tags').value = newTags;
+                        }
+                    }
+
+                    // 成功反馈
+                    btn.textContent = '✅ 优化完成';
+                    btn.style.background = '#4caf50';
+
+                    setTimeout(() => {
+                        btn.textContent = originalText;
+                        btn.style.background = '';
+                        btn.disabled = false;
+                    }, 2000);
+
+                    showStatus('✅ AI 优化成功，已自动填充标题、摘要和标签', 'success');
+                } else {
+                    throw new Error(result.error || 'AI 优化失败');
+                }
+            } catch (error) {
+                btn.textContent = originalText;
+                btn.disabled = false;
+
+                let errorMsg = error.message;
+                if (errorMsg.includes('未启用')) {
+                    errorMsg += '\n\n点击“确定”跳转到设置页面配置 AI 功能';
+                    if (confirm(errorMsg)) {
+                        window.open('/settings.html', '_blank');
+                    }
+                } else {
+                    alert('❌ AI 优化失败：' + errorMsg);
+                }
+            }
+        }
+
+        // 加载标签按钮
+        async function loadTagButtons() {
+            try {
+                const response = await fetch('http://localhost:3000/api/tags');
+                if (response.ok) {
+                    const result = await response.json();
+                    const tagButtons = document.getElementById('tagButtons');
+                    const tagSelector = document.getElementById('tagSelector');
+                    const tagToggle = document.getElementById('tagToggle');
+
+                    result.tags.forEach(tag => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.textContent = tag;
+                        btn.className = 'tag-button';
+
+                        btn.onclick = function() {
+                            const tagsInput = document.getElementById('tags');
+                            const currentTags = tagsInput.value.split(',').map(t => t.trim()).filter(t => t);
+
+                            if (!currentTags.includes(tag)) {
+                                currentTags.push(tag);
+                                tagsInput.value = currentTags.join(',');
+                                console.log('已添加标签:', tag);
+                            } else {
+                                console.log('标签已存在:', tag);
+                            }
+                        };
+
+                        tagButtons.appendChild(btn);
+                    });
+
+                    if (tagButtons) {
+                        tagButtons.classList.remove('is-open');
+                    }
+
+                    if (tagToggle) {
+                        tagToggle.textContent = '展开';
+                        tagToggle.onclick = () => {
+                            const isOpen = tagButtons.classList.toggle('is-open');
+                            tagToggle.textContent = isOpen ? '收起' : '展开';
+                        };
+                    }
+
+                    tagSelector.style.display = 'block';
+                }
+            } catch (error) {
+                console.error('加载标签失败:', error);
+            }
+        }
+
+        // 启动
+        loadTagButtons();
+        showMediaPreview();
+        loadPublishDefaults();
+    </script>
+</body>
+</html>
+
