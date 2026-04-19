@@ -7,11 +7,13 @@
     <title>Gorillaz-style illustration of street kids. #258 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Gorillaz-style street-kid illustration — prompts for AI image generation.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/258.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/258.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/258.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846314">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023900">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("将这张图片重新设计成粗粝的街头顽童（Gorillaz）风格插画，采用粗重的黑色轮廓线、锐利的棱角、扁平化的富有表现力的光线、风格化的高对比度阴影、粗糙破旧的表面纹理；色彩搭配柔和暗淡：褪色的蓝绿色、橄榄绿、锈红色、芥末黄、土褐色；营造出原始粗粝的都市氛围，融合漫画的扁平化与绘画的颗粒感，带有褪色渐变效果的手绘质感，呈现出漫画小说的美学风格，整体基调叛逆、生动且时尚暗黑，充满个性。", this)'>📋 Copy</button>
         </div>
-        <p>将这张图片重新设计成粗粝的街头顽童（Gorillaz）风格插画，采用粗重的黑色轮廓线、锐利的棱角、扁平化的富有表现力的光线、风格化的高对比度阴影、粗糙破旧的表面纹理；色彩搭配柔和暗淡：褪色的蓝绿色、橄榄绿、锈红色、芥末黄、土褐色；营造出原始粗粝的都市氛围，融合漫画的扁平化与绘画的颗粒感，带有褪色渐变效果的手绘质感，呈现出漫画小说的美学风格，整体基调叛逆、生动且时尚暗黑，充满个性。</p>
+        <div data-nosnippet><p>将这张图片重新设计成粗粝的街头顽童（Gorillaz）风格插画，采用粗重的黑色轮廓线、锐利的棱角、扁平化的富有表现力的光线、风格化的高对比度阴影、粗糙破旧的表面纹理；色彩搭配柔和暗淡：褪色的蓝绿色、橄榄绿、锈红色、芥末黄、土褐色；营造出原始粗粝的都市氛围，融合漫画的扁平化与绘画的颗粒感，带有褪色渐变效果的手绘质感，呈现出漫画小说的美学风格，整体基调叛逆、生动且时尚暗黑，充满个性。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Restyle this image into a gritty Gorillaz-style illustration, bold thick black outlines, sharp angular edges, flat expressive lighting, stylized high-contrast shadows, dirty distressed surface textures, muted color palette: washed-out teals, olive greens, rusty reds, mustard yellows, dusty browns, raw grungy urban atmosphere, comic book flatness mixed with painterly grit, hand-drawn finish with faded gradients, graphic novel aesthetic\nwith a rebellious, animated tone, dark stylish tone, full of attitude.", this)'>📋 Copy</button>
         </div>
-        <p>Restyle this image into a gritty Gorillaz-style illustration, bold thick black outlines, sharp angular edges, flat expressive lighting, stylized high-contrast shadows, dirty distressed surface textures, muted color palette: washed-out teals, olive greens, rusty reds, mustard yellows, dusty browns, raw grungy urban atmosphere, comic book flatness mixed with painterly grit, hand-drawn finish with faded gradients, graphic novel aesthetic<br>with a rebellious, animated tone, dark stylish tone, full of attitude.</p>
+        <div data-nosnippet><p>Restyle this image into a gritty Gorillaz-style illustration, bold thick black outlines, sharp angular edges, flat expressive lighting, stylized high-contrast shadows, dirty distressed surface textures, muted color palette: washed-out teals, olive greens, rusty reds, mustard yellows, dusty browns, raw grungy urban atmosphere, comic book flatness mixed with painterly grit, hand-drawn finish with faded gradients, graphic novel aesthetic<br>with a rebellious, animated tone, dark stylish tone, full of attitude.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/262.png" alt="街头顽童（Gorillaz）风格插画" loading="lazy"><img src="/images/262-2.jpeg" alt="街头顽童（Gorillaz）风格插画" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 258,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

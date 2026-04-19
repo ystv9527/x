@@ -7,11 +7,13 @@
     <title>&quot;style&quot;: &quot;monochrome studio portrait&quot;, #688 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;style&quot;: &quot;monochrome studio portrait&quot;, &quot;subject&quot;: { &quot;identity&quot;: &quot;same man as reference&quot;, &quot;expression&quot;: &quot;calm, confi...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/688.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/688.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/688.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845881">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023817">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"风格\": \"单色工作室肖像\",\n  \"主题\": {\n    \"身份\": \"与参考图像中的同一人\",\n    \"表情\": \"冷静、自信\",\n    \"镜头类型\": \"紧凑中景\"\n  },\n  \"灯光\": {\n    \"布光\": \"极简\",\n    \"衰减\": \"柔和\",\n    \"氛围\": \"聚焦于主体\",\n    \"说明\": \"深邃的阴影和微妙的渐变塑造脸部\"\n  },\n  \"穿搭\": {\n    \"类型\": \"休闲时尚\",\n    \"示例\": [\"简约T恤\", \"浅纹理卫衣\"],\n    \"兼容性\": \"设计成在黑白效果中也能好看\"\n  },\n  \"背景\": {\n    \"风格\": \"干净\",\n    \"干扰\": \"无干扰\",\n    \"基调\": \"中性\"\n  },\n  \"渲染\": {\n    \"调色板\": \"高对比黑白\",\n    \"细节\": \"清晰\",\n    \"色调\": \"平滑\",\n    \"深度\": \"微妙的电影感深度\"\n  },\n  \"整体氛围\": \"平衡、冷静、自信\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;风格&quot;: &quot;单色工作室肖像&quot;,<br>  &quot;主题&quot;: {<br>    &quot;身份&quot;: &quot;与参考图像中的同一人&quot;,<br>    &quot;表情&quot;: &quot;冷静、自信&quot;,<br>    &quot;镜头类型&quot;: &quot;紧凑中景&quot;<br>  },<br>  &quot;灯光&quot;: {<br>    &quot;布光&quot;: &quot;极简&quot;,<br>    &quot;衰减&quot;: &quot;柔和&quot;,<br>    &quot;氛围&quot;: &quot;聚焦于主体&quot;,<br>    &quot;说明&quot;: &quot;深邃的阴影和微妙的渐变塑造脸部&quot;<br>  },<br>  &quot;穿搭&quot;: {<br>    &quot;类型&quot;: &quot;休闲时尚&quot;,<br>    &quot;示例&quot;: [&quot;简约T恤&quot;, &quot;浅纹理卫衣&quot;],<br>    &quot;兼容性&quot;: &quot;设计成在黑白效果中也能好看&quot;<br>  },<br>  &quot;背景&quot;: {<br>    &quot;风格&quot;: &quot;干净&quot;,<br>    &quot;干扰&quot;: &quot;无干扰&quot;,<br>    &quot;基调&quot;: &quot;中性&quot;<br>  },<br>  &quot;渲染&quot;: {<br>    &quot;调色板&quot;: &quot;高对比黑白&quot;,<br>    &quot;细节&quot;: &quot;清晰&quot;,<br>    &quot;色调&quot;: &quot;平滑&quot;,<br>    &quot;深度&quot;: &quot;微妙的电影感深度&quot;<br>  },<br>  &quot;整体氛围&quot;: &quot;平衡、冷静、自信&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;风格&quot;: &quot;单色工作室肖像&quot;,<br>  &quot;主题&quot;: {<br>    &quot;身份&quot;: &quot;与参考图像中的同一人&quot;,<br>    &quot;表情&quot;: &quot;冷静、自信&quot;,<br>    &quot;镜头类型&quot;: &quot;紧凑中景&quot;<br>  },<br>  &quot;灯光&quot;: {<br>    &quot;布光&quot;: &quot;极简&quot;,<br>    &quot;衰减&quot;: &quot;柔和&quot;,<br>    &quot;氛围&quot;: &quot;聚焦于主体&quot;,<br>    &quot;说明&quot;: &quot;深邃的阴影和微妙的渐变塑造脸部&quot;<br>  },<br>  &quot;穿搭&quot;: {<br>    &quot;类型&quot;: &quot;休闲时尚&quot;,<br>    &quot;示例&quot;: [&quot;简约T恤&quot;, &quot;浅纹理卫衣&quot;],<br>    &quot;兼容性&quot;: &quot;设计成在黑白效果中也能好看&quot;<br>  },<br>  &quot;背景&quot;: {<br>    &quot;风格&quot;: &quot;干净&quot;,<br>    &quot;干扰&quot;: &quot;无干扰&quot;,<br>    &quot;基调&quot;: &quot;中性&quot;<br>  },<br>  &quot;渲染&quot;: {<br>    &quot;调色板&quot;: &quot;高对比黑白&quot;,<br>    &quot;细节&quot;: &quot;清晰&quot;,<br>    &quot;色调&quot;: &quot;平滑&quot;,<br>    &quot;深度&quot;: &quot;微妙的电影感深度&quot;<br>  },<br>  &quot;整体氛围&quot;: &quot;平衡、冷静、自信&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"style\": \"monochrome studio portrait\",\n  \"subject\": {\n    \"identity\": \"same man as reference\",\n    \"expression\": \"calm, confident\",\n    \"shot_type\": \"tight-medium\"\n  },\n  \"lighting\": {\n    \"setup\": \"minimal\",\n    \"falloff\": \"soft\",\n    \"mood\": \"focused on subject\",\n    \"notes\": \"deep shadows and subtle gradients shape the face\"\n  },\n  \"wardrobe\": {\n    \"type\": \"casual stylish\",\n    \"examples\": [\"simple tee\", \"light-textured sweatshirt\"],\n    \"compatibility\": \"designed to look good in black and white\"\n  },\n  \"background\": {\n    \"style\": \"clean\",\n    \"distractions\": \"none\",\n    \"tone\": \"neutral\"\n  },\n  \"render\": {\n    \"palette\": \"high-contrast black and white\",\n    \"detail\": \"crisp\",\n    \"tone\": \"smooth\",\n    \"depth\": \"subtle cinematic depth\"\n  },\n  \"overall_vibe\": \"balanced, calm, confident\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;style&quot;: &quot;monochrome studio portrait&quot;,<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;same man as reference&quot;,<br>    &quot;expression&quot;: &quot;calm, confident&quot;,<br>    &quot;shot_type&quot;: &quot;tight-medium&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;setup&quot;: &quot;minimal&quot;,<br>    &quot;falloff&quot;: &quot;soft&quot;,<br>    &quot;mood&quot;: &quot;focused on subject&quot;,<br>    &quot;notes&quot;: &quot;deep shadows and subtle gradients shape the face&quot;<br>  },<br>  &quot;wardrobe&quot;: {<br>    &quot;type&quot;: &quot;casual stylish&quot;,<br>    &quot;examples&quot;: [&quot;simple tee&quot;, &quot;light-textured sweatshirt&quot;],<br>    &quot;compatibility&quot;: &quot;designed to look good in black and white&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;style&quot;: &quot;clean&quot;,<br>    &quot;distractions&quot;: &quot;none&quot;,<br>    &quot;tone&quot;: &quot;neutral&quot;<br>  },<br>  &quot;render&quot;: {<br>    &quot;palette&quot;: &quot;high-contrast black and white&quot;,<br>    &quot;detail&quot;: &quot;crisp&quot;,<br>    &quot;tone&quot;: &quot;smooth&quot;,<br>    &quot;depth&quot;: &quot;subtle cinematic depth&quot;<br>  },<br>  &quot;overall_vibe&quot;: &quot;balanced, calm, confident&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;style&quot;: &quot;monochrome studio portrait&quot;,<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;same man as reference&quot;,<br>    &quot;expression&quot;: &quot;calm, confident&quot;,<br>    &quot;shot_type&quot;: &quot;tight-medium&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;setup&quot;: &quot;minimal&quot;,<br>    &quot;falloff&quot;: &quot;soft&quot;,<br>    &quot;mood&quot;: &quot;focused on subject&quot;,<br>    &quot;notes&quot;: &quot;deep shadows and subtle gradients shape the face&quot;<br>  },<br>  &quot;wardrobe&quot;: {<br>    &quot;type&quot;: &quot;casual stylish&quot;,<br>    &quot;examples&quot;: [&quot;simple tee&quot;, &quot;light-textured sweatshirt&quot;],<br>    &quot;compatibility&quot;: &quot;designed to look good in black and white&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;style&quot;: &quot;clean&quot;,<br>    &quot;distractions&quot;: &quot;none&quot;,<br>    &quot;tone&quot;: &quot;neutral&quot;<br>  },<br>  &quot;render&quot;: {<br>    &quot;palette&quot;: &quot;high-contrast black and white&quot;,<br>    &quot;detail&quot;: &quot;crisp&quot;,<br>    &quot;tone&quot;: &quot;smooth&quot;,<br>    &quot;depth&quot;: &quot;subtle cinematic depth&quot;<br>  },<br>  &quot;overall_vibe&quot;: &quot;balanced, calm, confident&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2008197435622133842-1.jpg" alt="&quot;style&quot;: &quot;monochrome studio portrait&quot;," loading="lazy"><img src="/images/tweet-2008197435622133842-2.jpg" alt="&quot;style&quot;: &quot;monochrome studio portrait&quot;," loading="lazy"><img src="/images/tweet-2008197435622133842-3.jpg" alt="&quot;style&quot;: &quot;monochrome studio portrait&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 688,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

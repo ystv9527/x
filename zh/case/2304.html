@@ -7,11 +7,13 @@
     <title>Un storyboard limpio en cuadrícula 3×3 con nueve paneles igua... #2304 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Un storyboard limpio en cuadrícula 3×3 con nueve paneles iguales en proporción [ratio], dentro de un formato total 4:...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2304.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2304.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2304.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840050">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022258">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一个干净的3×3网格分镜，包含九个相同的面板，比例为 [ratio]，整体画幅为 4:5。\n\n使用参考图像作为产品基础。在九个面板中严格保持完全相同的产品、包装设计、品牌识别、材质、颜色、比例和总体识别。每一帧中的产品必须清晰可辨。标签、标志和比例必须完全一致。\n\n此分镜为用于品牌作品集的高级 mockup 演示。重点在于形态、构图、材质感和视觉节奏，而非写实性或生活方式叙事。最终效果应感到经过策划、具有编辑感并以设计为导向。\n\n画面 1：\n产品的正面英雄镜头，置于干净的影棚环境。背景中性，构图均衡，产品呈现沉稳自信。\n\n画面 2：\n中部的特写，焦点位于产品中段。突出表面纹理、材质和印刷细节。\n\n画面 3：\n参考产品置于与品牌和产品类别自然契合的场景中。影棚场景以产品的设计元素和颜色为灵感。\n\n画面 4：\n产品在中性影棚背景下被展示为使用或交互状态。手部和交互元素最小且低调，保持与包装风格一致。\n\n画面 5：\n等距构图，展示多个产品按精确几何顺序从上方等距角度排列。所有产品以相同的等距角度放置，间距均匀，干净、结构化且具有图形感。\n\n画面 6：\n产品轻微悬浮，倾斜于与参考图像色板相匹配的中性背景上。漂浮位置具有刻意性并在空间中显得自然。\n\n画面 7：\n超近特写，聚焦标签、边缘、纹理或材料行为的特定细节。\n\n画面 8：\n产品置于意想不到但美学上强烈的环境中，风格大胆、具有编辑感且视觉冲击力强。场景虽出人意料但高度风格化，基于影棚并以设计为导向。构图强烈，提升品牌形象。\n\n画面 9：\n宽景构图，展示产品在精致设计布景中的使用情境。道具干净，造型受控，并与系列其余画面保持一致。\n\n相机与风格：\n超高品质影棚影像，具有真实相机质感。每帧采用不同角度和取景。控制景深、精准照明、真实材质与反光。照明逻辑、色板、氛围与视觉语言在九个面板中保持一致，作为一个连贯的系列。\n\n输出：\n一个干净的 3×3 网格，无边框、无文字、无说明文字/标题、无水印。", this)'>📋 复制</button>
         </div>
-        <p>一个干净的3×3网格分镜，包含九个相同的面板，比例为 [ratio]，整体画幅为 4:5。</p><p>使用参考图像作为产品基础。在九个面板中严格保持完全相同的产品、包装设计、品牌识别、材质、颜色、比例和总体识别。每一帧中的产品必须清晰可辨。标签、标志和比例必须完全一致。</p><p>此分镜为用于品牌作品集的高级 mockup 演示。重点在于形态、构图、材质感和视觉节奏，而非写实性或生活方式叙事。最终效果应感到经过策划、具有编辑感并以设计为导向。</p><p>画面 1：<br>产品的正面英雄镜头，置于干净的影棚环境。背景中性，构图均衡，产品呈现沉稳自信。</p><p>画面 2：<br>中部的特写，焦点位于产品中段。突出表面纹理、材质和印刷细节。</p><p>画面 3：<br>参考产品置于与品牌和产品类别自然契合的场景中。影棚场景以产品的设计元素和颜色为灵感。</p><p>画面 4：<br>产品在中性影棚背景下被展示为使用或交互状态。手部和交互元素最小且低调，保持与包装风格一致。</p><p>画面 5：<br>等距构图，展示多个产品按精确几何顺序从上方等距角度排列。所有产品以相同的等距角度放置，间距均匀，干净、结构化且具有图形感。</p><p>画面 6：<br>产品轻微悬浮，倾斜于与参考图像色板相匹配的中性背景上。漂浮位置具有刻意性并在空间中显得自然。</p><p>画面 7：<br>超近特写，聚焦标签、边缘、纹理或材料行为的特定细节。</p><p>画面 8：<br>产品置于意想不到但美学上强烈的环境中，风格大胆、具有编辑感且视觉冲击力强。场景虽出人意料但高度风格化，基于影棚并以设计为导向。构图强烈，提升品牌形象。</p><p>画面 9：<br>宽景构图，展示产品在精致设计布景中的使用情境。道具干净，造型受控，并与系列其余画面保持一致。</p><p>相机与风格：<br>超高品质影棚影像，具有真实相机质感。每帧采用不同角度和取景。控制景深、精准照明、真实材质与反光。照明逻辑、色板、氛围与视觉语言在九个面板中保持一致，作为一个连贯的系列。</p><p>输出：<br>一个干净的 3×3 网格，无边框、无文字、无说明文字/标题、无水印。</p>
+        <div data-nosnippet><p>一个干净的3×3网格分镜，包含九个相同的面板，比例为 [ratio]，整体画幅为 4:5。</p><p>使用参考图像作为产品基础。在九个面板中严格保持完全相同的产品、包装设计、品牌识别、材质、颜色、比例和总体识别。每一帧中的产品必须清晰可辨。标签、标志和比例必须完全一致。</p><p>此分镜为用于品牌作品集的高级 mockup 演示。重点在于形态、构图、材质感和视觉节奏，而非写实性或生活方式叙事。最终效果应感到经过策划、具有编辑感并以设计为导向。</p><p>画面 1：<br>产品的正面英雄镜头，置于干净的影棚环境。背景中性，构图均衡，产品呈现沉稳自信。</p><p>画面 2：<br>中部的特写，焦点位于产品中段。突出表面纹理、材质和印刷细节。</p><p>画面 3：<br>参考产品置于与品牌和产品类别自然契合的场景中。影棚场景以产品的设计元素和颜色为灵感。</p><p>画面 4：<br>产品在中性影棚背景下被展示为使用或交互状态。手部和交互元素最小且低调，保持与包装风格一致。</p><p>画面 5：<br>等距构图，展示多个产品按精确几何顺序从上方等距角度排列。所有产品以相同的等距角度放置，间距均匀，干净、结构化且具有图形感。</p><p>画面 6：<br>产品轻微悬浮，倾斜于与参考图像色板相匹配的中性背景上。漂浮位置具有刻意性并在空间中显得自然。</p><p>画面 7：<br>超近特写，聚焦标签、边缘、纹理或材料行为的特定细节。</p><p>画面 8：<br>产品置于意想不到但美学上强烈的环境中，风格大胆、具有编辑感且视觉冲击力强。场景虽出人意料但高度风格化，基于影棚并以设计为导向。构图强烈，提升品牌形象。</p><p>画面 9：<br>宽景构图，展示产品在精致设计布景中的使用情境。道具干净，造型受控，并与系列其余画面保持一致。</p><p>相机与风格：<br>超高品质影棚影像，具有真实相机质感。每帧采用不同角度和取景。控制景深、精准照明、真实材质与反光。照明逻辑、色板、氛围与视觉语言在九个面板中保持一致，作为一个连贯的系列。</p><p>输出：<br>一个干净的 3×3 网格，无边框、无文字、无说明文字/标题、无水印。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Un storyboard limpio en cuadrícula 3×3 con nueve paneles iguales en proporción [ratio], dentro de un formato total 4:5.\n\nUsa la imagen de referencia como base del producto. Mantén exactamente el mismo producto, diseño del packaging, branding, materiales, colores, proporciones e identidad general en los nueve paneles, tal como en la referencia. El producto debe ser claramente reconocible en cada frame. La etiqueta, el logo y las proporciones deben permanecer exactamente iguales.\n\nEste storyboard es una presentación mockup de alto nivel para un portfolio de branding. El enfoque está en la forma, la composición, la materialidad y el ritmo visual, más que en el realismo o una narrativa lifestyle. El resultado debe sentirse curado, editorial y orientado al diseño.\n\nFRAME 1:\nPlano frontal hero del producto en un entorno de estudio limpio. Fondo neutro, composición equilibrada, presentación calmada y segura del producto.\n\nFRAME 2:\nPrimer plano con el enfoque centrado en la parte media del producto. Se destacan la textura de la superficie, los materiales y los detalles de impresión.\n\nFRAME 3:\nEl producto de referencia colocado en un entorno que encaja naturalmente con la marca y la categoría del producto. Escenario de estudio inspirado en los elementos de diseño y colores del producto.\n\nFRAME 4:\nProducto mostrado en uso o en interacción sobre un fondo de estudio neutro. Las manos y los elementos de interacción son mínimos y discretos, manteniendo el estilo del packaging.\n\nFRAME 5:\nComposición isométrica que muestra varios productos organizados en un orden geométrico preciso desde un ángulo isométrico superior. Todos los productos están colocados con el mismo ángulo isométrico, espaciados de forma uniforme, limpios, estructurados y gráficos.\n\nFRAME 6:\nProducto levitando ligeramente, inclinado sobre un fondo neutro que coincida con la paleta de colores de la imagen de referencia. La posición flotante es intencional y natural en el espacio.\n\nFRAME 7:\nPrimerísimo primer plano centrado en un detalle específico de la etiqueta, el borde, la textura o el comportamiento del material.\n\nFRAME 8:\nEl producto en un entorno inesperado pero estéticamente potente, con un enfoque audaz, editorial y visualmente impactante. Escenario inesperado pero altamente estilizado, basado en estudio y dirigido por diseño. Composición fuerte que eleva la marca.\n\nFRAME 9:\nComposición amplia que muestra el producto en uso dentro de un setup de diseño refinado. Props limpios, estilismo controlado y coherente con el resto de la serie.\n\nCÁMARA Y ESTILO:\nImágenes de estudio de ultra alta calidad con apariencia de cámara real. Diferentes ángulos y encuadres en cada frame. Profundidad de campo controlada, iluminación precisa, materiales y reflejos realistas. La lógica de iluminación, la paleta de colores, el mood y el lenguaje visual deben mantenerse consistentes en los nueve paneles como una sola serie cohesionada.\n\nOUTPUT:\nUna cuadrícula limpia 3×3 sin bordes, sin texto, sin captions y sin marcas de agua.", this)'>📋 复制</button>
         </div>
-        <p>Un storyboard limpio en cuadrícula 3×3 con nueve paneles iguales en proporción [ratio], dentro de un formato total 4:5.</p><p>Usa la imagen de referencia como base del producto. Mantén exactamente el mismo producto, diseño del packaging, branding, materiales, colores, proporciones e identidad general en los nueve paneles, tal como en la referencia. El producto debe ser claramente reconocible en cada frame. La etiqueta, el logo y las proporciones deben permanecer exactamente iguales.</p><p>Este storyboard es una presentación mockup de alto nivel para un portfolio de branding. El enfoque está en la forma, la composición, la materialidad y el ritmo visual, más que en el realismo o una narrativa lifestyle. El resultado debe sentirse curado, editorial y orientado al diseño.</p><p>FRAME 1:<br>Plano frontal hero del producto en un entorno de estudio limpio. Fondo neutro, composición equilibrada, presentación calmada y segura del producto.</p><p>FRAME 2:<br>Primer plano con el enfoque centrado en la parte media del producto. Se destacan la textura de la superficie, los materiales y los detalles de impresión.</p><p>FRAME 3:<br>El producto de referencia colocado en un entorno que encaja naturalmente con la marca y la categoría del producto. Escenario de estudio inspirado en los elementos de diseño y colores del producto.</p><p>FRAME 4:<br>Producto mostrado en uso o en interacción sobre un fondo de estudio neutro. Las manos y los elementos de interacción son mínimos y discretos, manteniendo el estilo del packaging.</p><p>FRAME 5:<br>Composición isométrica que muestra varios productos organizados en un orden geométrico preciso desde un ángulo isométrico superior. Todos los productos están colocados con el mismo ángulo isométrico, espaciados de forma uniforme, limpios, estructurados y gráficos.</p><p>FRAME 6:<br>Producto levitando ligeramente, inclinado sobre un fondo neutro que coincida con la paleta de colores de la imagen de referencia. La posición flotante es intencional y natural en el espacio.</p><p>FRAME 7:<br>Primerísimo primer plano centrado en un detalle específico de la etiqueta, el borde, la textura o el comportamiento del material.</p><p>FRAME 8:<br>El producto en un entorno inesperado pero estéticamente potente, con un enfoque audaz, editorial y visualmente impactante. Escenario inesperado pero altamente estilizado, basado en estudio y dirigido por diseño. Composición fuerte que eleva la marca.</p><p>FRAME 9:<br>Composición amplia que muestra el producto en uso dentro de un setup de diseño refinado. Props limpios, estilismo controlado y coherente con el resto de la serie.</p><p>CÁMARA Y ESTILO:<br>Imágenes de estudio de ultra alta calidad con apariencia de cámara real. Diferentes ángulos y encuadres en cada frame. Profundidad de campo controlada, iluminación precisa, materiales y reflejos realistas. La lógica de iluminación, la paleta de colores, el mood y el lenguaje visual deben mantenerse consistentes en los nueve paneles como una sola serie cohesionada.</p><p>OUTPUT:<br>Una cuadrícula limpia 3×3 sin bordes, sin texto, sin captions y sin marcas de agua.</p>
+        <div data-nosnippet><p>Un storyboard limpio en cuadrícula 3×3 con nueve paneles iguales en proporción [ratio], dentro de un formato total 4:5.</p><p>Usa la imagen de referencia como base del producto. Mantén exactamente el mismo producto, diseño del packaging, branding, materiales, colores, proporciones e identidad general en los nueve paneles, tal como en la referencia. El producto debe ser claramente reconocible en cada frame. La etiqueta, el logo y las proporciones deben permanecer exactamente iguales.</p><p>Este storyboard es una presentación mockup de alto nivel para un portfolio de branding. El enfoque está en la forma, la composición, la materialidad y el ritmo visual, más que en el realismo o una narrativa lifestyle. El resultado debe sentirse curado, editorial y orientado al diseño.</p><p>FRAME 1:<br>Plano frontal hero del producto en un entorno de estudio limpio. Fondo neutro, composición equilibrada, presentación calmada y segura del producto.</p><p>FRAME 2:<br>Primer plano con el enfoque centrado en la parte media del producto. Se destacan la textura de la superficie, los materiales y los detalles de impresión.</p><p>FRAME 3:<br>El producto de referencia colocado en un entorno que encaja naturalmente con la marca y la categoría del producto. Escenario de estudio inspirado en los elementos de diseño y colores del producto.</p><p>FRAME 4:<br>Producto mostrado en uso o en interacción sobre un fondo de estudio neutro. Las manos y los elementos de interacción son mínimos y discretos, manteniendo el estilo del packaging.</p><p>FRAME 5:<br>Composición isométrica que muestra varios productos organizados en un orden geométrico preciso desde un ángulo isométrico superior. Todos los productos están colocados con el mismo ángulo isométrico, espaciados de forma uniforme, limpios, estructurados y gráficos.</p><p>FRAME 6:<br>Producto levitando ligeramente, inclinado sobre un fondo neutro que coincida con la paleta de colores de la imagen de referencia. La posición flotante es intencional y natural en el espacio.</p><p>FRAME 7:<br>Primerísimo primer plano centrado en un detalle específico de la etiqueta, el borde, la textura o el comportamiento del material.</p><p>FRAME 8:<br>El producto en un entorno inesperado pero estéticamente potente, con un enfoque audaz, editorial y visualmente impactante. Escenario inesperado pero altamente estilizado, basado en estudio y dirigido por diseño. Composición fuerte que eleva la marca.</p><p>FRAME 9:<br>Composición amplia que muestra el producto en uso dentro de un setup de diseño refinado. Props limpios, estilismo controlado y coherente con el resto de la serie.</p><p>CÁMARA Y ESTILO:<br>Imágenes de estudio de ultra alta calidad con apariencia de cámara real. Diferentes ángulos y encuadres en cada frame. Profundidad de campo controlada, iluminación precisa, materiales y reflejos realistas. La lógica de iluminación, la paleta de colores, el mood y el lenguaje visual deben mantenerse consistentes en los nueve paneles como una sola serie cohesionada.</p><p>OUTPUT:<br>Una cuadrícula limpia 3×3 sin bordes, sin texto, sin captions y sin marcas de agua.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2027526257018024246-1.jpg" alt="Un storyboard limpio en cuadrícula 3×3 con nueve paneles igua..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2304,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

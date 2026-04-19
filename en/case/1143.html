@@ -7,11 +7,13 @@
     <title>&quot;prompt configuration&quot;: { #1143 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt configuration&quot;: { &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;quality settings&quot;: { &quot;resolution&quot;: &quot;4k&quot;, &quot;definition&quot;: &quot;Ultra HD...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1143.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1143.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1143.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845430">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023717">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_configuration\": {\n    \"aspect_ratio\": \"9:16\",\n    \"quality_settings\": {\n      \"resolution\": \"4k\",\n      \"definition\": \"Ultra HD\",\n      \"style\": \"照片写实\",\n      \"lighting\": \"自然日光，柔和阴影\",\n      \"camera_focus\": \"主题清晰对焦，浅景深\"\n    }\n  },\n  \"subject\": {\n    \"description\": \"年轻女子，站在户外\",\n    \"appearance\": {\n      \"hair\": \"及肩波浪状的赤褐色/棕色头发，半扎发，上方有两个小马尾/小发髻\",\n      \"skin\": \"浅肤色，自然妆容\",\n      \"expression\": \"平静、中性表情，直视镜头\",\n      \"pose\": \"自然站立，一臂放松，一手靠近裙子\"\n    }\n  },\n  \"attire\": {\n    \"top\": \"红色露肩短款上衣，带蓬松短袖和心形领口\",\n    \"bottom\": \"蓝色牛仔风多层荷叶边长裙\",\n    \"accessories\": [\n      \"大号米色手工编织（macramé/钩针）托特包，搭在右肩上\",\n      \"大号花卉垂坠耳环\",\n      \"精致银项链\",\n      \"左手腕戴金链手链\"\n    ]\n  },\n  \"environment\": {\n    \"setting\": \"热带都市街景\",\n    \"background_elements\": [\n      \"白色建筑立面，带黑色护栏的窗户\",\n      \"大型热带棕榈叶和绿色植被\",\n      \"标有 'NO PARKING' / 'NO ESTACIONAR' 并带有 'San Juan' 标识的路牌\"\n    ],\n    \"props\": [\n      \"停在路边的深绿色复古丰田轿车\",\n      \"一只虎斑猫坐在车尾箱上\"\n    ]\n  },\n  \"technical_modifiers\": [\n    \"4k\",\n    \"8k\",\n    \"HDR\",\n    \"高度细致\",\n    \"电影感摄影\",\n    \"色彩鲜艳\",\n    \"生活方式肖像\",\n    \"杰作\"\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_configuration&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality_settings&quot;: {<br>      &quot;resolution&quot;: &quot;4k&quot;,<br>      &quot;definition&quot;: &quot;Ultra HD&quot;,<br>      &quot;style&quot;: &quot;照片写实&quot;,<br>      &quot;lighting&quot;: &quot;自然日光，柔和阴影&quot;,<br>      &quot;camera_focus&quot;: &quot;主题清晰对焦，浅景深&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;年轻女子，站在户外&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;及肩波浪状的赤褐色/棕色头发，半扎发，上方有两个小马尾/小发髻&quot;,<br>      &quot;skin&quot;: &quot;浅肤色，自然妆容&quot;,<br>      &quot;expression&quot;: &quot;平静、中性表情，直视镜头&quot;,<br>      &quot;pose&quot;: &quot;自然站立，一臂放松，一手靠近裙子&quot;<br>    }<br>  },<br>  &quot;attire&quot;: {<br>    &quot;top&quot;: &quot;红色露肩短款上衣，带蓬松短袖和心形领口&quot;,<br>    &quot;bottom&quot;: &quot;蓝色牛仔风多层荷叶边长裙&quot;,<br>    &quot;accessories&quot;: [<br>      &quot;大号米色手工编织（macramé/钩针）托特包，搭在右肩上&quot;,<br>      &quot;大号花卉垂坠耳环&quot;,<br>      &quot;精致银项链&quot;,<br>      &quot;左手腕戴金链手链&quot;<br>    ]<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;热带都市街景&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;白色建筑立面，带黑色护栏的窗户&quot;,<br>      &quot;大型热带棕榈叶和绿色植被&quot;,<br>      &quot;标有 &#39;NO PARKING&#39; / &#39;NO ESTACIONAR&#39; 并带有 &#39;San Juan&#39; 标识的路牌&quot;<br>    ],<br>    &quot;props&quot;: [<br>      &quot;停在路边的深绿色复古丰田轿车&quot;,<br>      &quot;一只虎斑猫坐在车尾箱上&quot;<br>    ]<br>  },<br>  &quot;technical_modifiers&quot;: [<br>    &quot;4k&quot;,<br>    &quot;8k&quot;,<br>    &quot;HDR&quot;,<br>    &quot;高度细致&quot;,<br>    &quot;电影感摄影&quot;,<br>    &quot;色彩鲜艳&quot;,<br>    &quot;生活方式肖像&quot;,<br>    &quot;杰作&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_configuration&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality_settings&quot;: {<br>      &quot;resolution&quot;: &quot;4k&quot;,<br>      &quot;definition&quot;: &quot;Ultra HD&quot;,<br>      &quot;style&quot;: &quot;照片写实&quot;,<br>      &quot;lighting&quot;: &quot;自然日光，柔和阴影&quot;,<br>      &quot;camera_focus&quot;: &quot;主题清晰对焦，浅景深&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;年轻女子，站在户外&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;及肩波浪状的赤褐色/棕色头发，半扎发，上方有两个小马尾/小发髻&quot;,<br>      &quot;skin&quot;: &quot;浅肤色，自然妆容&quot;,<br>      &quot;expression&quot;: &quot;平静、中性表情，直视镜头&quot;,<br>      &quot;pose&quot;: &quot;自然站立，一臂放松，一手靠近裙子&quot;<br>    }<br>  },<br>  &quot;attire&quot;: {<br>    &quot;top&quot;: &quot;红色露肩短款上衣，带蓬松短袖和心形领口&quot;,<br>    &quot;bottom&quot;: &quot;蓝色牛仔风多层荷叶边长裙&quot;,<br>    &quot;accessories&quot;: [<br>      &quot;大号米色手工编织（macramé/钩针）托特包，搭在右肩上&quot;,<br>      &quot;大号花卉垂坠耳环&quot;,<br>      &quot;精致银项链&quot;,<br>      &quot;左手腕戴金链手链&quot;<br>    ]<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;热带都市街景&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;白色建筑立面，带黑色护栏的窗户&quot;,<br>      &quot;大型热带棕榈叶和绿色植被&quot;,<br>      &quot;标有 &#39;NO PARKING&#39; / &#39;NO ESTACIONAR&#39; 并带有 &#39;San Juan&#39; 标识的路牌&quot;<br>    ],<br>    &quot;props&quot;: [<br>      &quot;停在路边的深绿色复古丰田轿车&quot;,<br>      &quot;一只虎斑猫坐在车尾箱上&quot;<br>    ]<br>  },<br>  &quot;technical_modifiers&quot;: [<br>    &quot;4k&quot;,<br>    &quot;8k&quot;,<br>    &quot;HDR&quot;,<br>    &quot;高度细致&quot;,<br>    &quot;电影感摄影&quot;,<br>    &quot;色彩鲜艳&quot;,<br>    &quot;生活方式肖像&quot;,<br>    &quot;杰作&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_configuration\": {\n    \"aspect_ratio\": \"9:16\",\n    \"quality_settings\": {\n      \"resolution\": \"4k\",\n      \"definition\": \"Ultra HD\",\n      \"style\": \"Photorealistic\",\n      \"lighting\": \"Natural daylight, soft shadows\",\n      \"camera_focus\": \"Sharp focus on subject, shallow depth of field\"\n    }\n  },\n  \"subject\": {\n    \"description\": \"Young Woman  standing outdoors\",\n    \"appearance\": {\n      \"hair\": \"Shoulder-length wavy auburn/brown hair, styled in a half-up look with two small pigtails/buns on top\",\n      \"skin\": \"Light skin tone, natural makeup\",\n      \"expression\": \"Calm, neutral expression, direct eye contact\",\n      \"pose\": \"Standing comfortably, one arm relaxed, one hand near skirt\"\n    }\n  },\n  \"attire\": {\n    \"top\": \"Red off-the-shoulder crop top with puffy short sleeves and sweetheart neckline\",\n    \"bottom\": \"Blue denim-like tiered maxi skirt with ruffles\",\n    \"accessories\": [\n      \"Large beige macramé/crochet tote bag on right shoulder\",\n      \"Large floral dangle earrings\",\n      \"Delicate silver necklace\",\n      \"Gold chain bracelet on left wrist\"\n    ]\n  },\n  \"environment\": {\n    \"setting\": \"Urban tropical street scene\",\n    \"background_elements\": [\n      \"White building facade with black barred windows\",\n      \"Large tropical palm fronds and green foliage\",\n      \"Street sign reading 'NO PARKING' / 'NO ESTACIONAR' with 'San Juan' logo\"\n    ],\n    \"props\": [\n      \"Dark green vintage Toyota sedan parked on the side\",\n      \"Tabby cat sitting on the trunk of the car\"\n    ]\n  },\n  \"technical_modifiers\": [\n    \"4k\",\n    \"8k\",\n    \"HDR\",\n    \"highly detailed\",\n    \"cinematic photography\",\n    \"vibrant colors\",\n    \"lifestyle portrait\",\n    \"masterpiece\"\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_configuration&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality_settings&quot;: {<br>      &quot;resolution&quot;: &quot;4k&quot;,<br>      &quot;definition&quot;: &quot;Ultra HD&quot;,<br>      &quot;style&quot;: &quot;Photorealistic&quot;,<br>      &quot;lighting&quot;: &quot;Natural daylight, soft shadows&quot;,<br>      &quot;camera_focus&quot;: &quot;Sharp focus on subject, shallow depth of field&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;Young Woman  standing outdoors&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;Shoulder-length wavy auburn/brown hair, styled in a half-up look with two small pigtails/buns on top&quot;,<br>      &quot;skin&quot;: &quot;Light skin tone, natural makeup&quot;,<br>      &quot;expression&quot;: &quot;Calm, neutral expression, direct eye contact&quot;,<br>      &quot;pose&quot;: &quot;Standing comfortably, one arm relaxed, one hand near skirt&quot;<br>    }<br>  },<br>  &quot;attire&quot;: {<br>    &quot;top&quot;: &quot;Red off-the-shoulder crop top with puffy short sleeves and sweetheart neckline&quot;,<br>    &quot;bottom&quot;: &quot;Blue denim-like tiered maxi skirt with ruffles&quot;,<br>    &quot;accessories&quot;: [<br>      &quot;Large beige macramé/crochet tote bag on right shoulder&quot;,<br>      &quot;Large floral dangle earrings&quot;,<br>      &quot;Delicate silver necklace&quot;,<br>      &quot;Gold chain bracelet on left wrist&quot;<br>    ]<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;Urban tropical street scene&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;White building facade with black barred windows&quot;,<br>      &quot;Large tropical palm fronds and green foliage&quot;,<br>      &quot;Street sign reading &#39;NO PARKING&#39; / &#39;NO ESTACIONAR&#39; with &#39;San Juan&#39; logo&quot;<br>    ],<br>    &quot;props&quot;: [<br>      &quot;Dark green vintage Toyota sedan parked on the side&quot;,<br>      &quot;Tabby cat sitting on the trunk of the car&quot;<br>    ]<br>  },<br>  &quot;technical_modifiers&quot;: [<br>    &quot;4k&quot;,<br>    &quot;8k&quot;,<br>    &quot;HDR&quot;,<br>    &quot;highly detailed&quot;,<br>    &quot;cinematic photography&quot;,<br>    &quot;vibrant colors&quot;,<br>    &quot;lifestyle portrait&quot;,<br>    &quot;masterpiece&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_configuration&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality_settings&quot;: {<br>      &quot;resolution&quot;: &quot;4k&quot;,<br>      &quot;definition&quot;: &quot;Ultra HD&quot;,<br>      &quot;style&quot;: &quot;Photorealistic&quot;,<br>      &quot;lighting&quot;: &quot;Natural daylight, soft shadows&quot;,<br>      &quot;camera_focus&quot;: &quot;Sharp focus on subject, shallow depth of field&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;Young Woman  standing outdoors&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;Shoulder-length wavy auburn/brown hair, styled in a half-up look with two small pigtails/buns on top&quot;,<br>      &quot;skin&quot;: &quot;Light skin tone, natural makeup&quot;,<br>      &quot;expression&quot;: &quot;Calm, neutral expression, direct eye contact&quot;,<br>      &quot;pose&quot;: &quot;Standing comfortably, one arm relaxed, one hand near skirt&quot;<br>    }<br>  },<br>  &quot;attire&quot;: {<br>    &quot;top&quot;: &quot;Red off-the-shoulder crop top with puffy short sleeves and sweetheart neckline&quot;,<br>    &quot;bottom&quot;: &quot;Blue denim-like tiered maxi skirt with ruffles&quot;,<br>    &quot;accessories&quot;: [<br>      &quot;Large beige macramé/crochet tote bag on right shoulder&quot;,<br>      &quot;Large floral dangle earrings&quot;,<br>      &quot;Delicate silver necklace&quot;,<br>      &quot;Gold chain bracelet on left wrist&quot;<br>    ]<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;Urban tropical street scene&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;White building facade with black barred windows&quot;,<br>      &quot;Large tropical palm fronds and green foliage&quot;,<br>      &quot;Street sign reading &#39;NO PARKING&#39; / &#39;NO ESTACIONAR&#39; with &#39;San Juan&#39; logo&quot;<br>    ],<br>    &quot;props&quot;: [<br>      &quot;Dark green vintage Toyota sedan parked on the side&quot;,<br>      &quot;Tabby cat sitting on the trunk of the car&quot;<br>    ]<br>  },<br>  &quot;technical_modifiers&quot;: [<br>    &quot;4k&quot;,<br>    &quot;8k&quot;,<br>    &quot;HDR&quot;,<br>    &quot;highly detailed&quot;,<br>    &quot;cinematic photography&quot;,<br>    &quot;vibrant colors&quot;,<br>    &quot;lifestyle portrait&quot;,<br>    &quot;masterpiece&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011085218778861844-1.jpg" alt="&quot;prompt configuration&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1143,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

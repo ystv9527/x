@@ -7,11 +7,13 @@
     <title>Create a clean, minimalist fashion infographic from an upload... #1858 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create a clean, minimalist fashion infographic from an uploaded reference photo of a person. Extract the outfit worn...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1858.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1858.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1858.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840517">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022360">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("根据上传的人物参考照片，创建一个干净、极简的时尚信息图。\n\n提取该人物所穿的服装，仅呈现衣物和配饰，不要有身体、模特或鼓胀/充气状的形态。\n\n每件服装应呈现自然放松的状态，仿佛平铺在干净的摄影棚表面或被重力轻轻悬挂，具有真实的褶皱、折痕和面料垂坠感（连帽衫轻微塌陷、夹克柔和折叠、裤子放松、鞋子自然安放）。\n\n将服装按从上到下的垂直顺序排列（头饰 → 外套 → 上装 → 裤装 → 鞋履 → 配件），在平静的爆炸视图布局中清晰间隔。\n\n角色插图\n\n在左上角，包含一个小型风格化卡通/动漫风格的人物形象，基于上传的参考图片：\n• 穿着与拆解中相同的服装\n• 像收藏级动作公仔一样笔直站立\n• 略带蓬松的比例（柔软的高级乙烯基玩具质感）\n• 干净的明暗处理，面部细节简约\n\n在角色上方展示该人物的姓名：\n• 字号清晰可读\n• 黑色、干净的现代无衬线字体\n• 无背景框\n\n物品标签与价格牌\n\n对每件服装，包含：\n• 一条细、干净的连接线指向该物品\n• 一个大且高度可读的零售风格价格牌\n\n每个价格牌必须：\n• 将价格作为主要视觉元素（大号、加粗、立即可读）\n• 在较小的次要文字中包含物品名称\n• 在视觉上与连接线相连\n\n价格牌设计：\n• 矩形或圆角零售标签样式\n• 浅中色调背景（米白或浅灰）\n• 深色高对比文字\n• 细微阴影以体现层次\n• 价格文字明显大于标签上其他所有文字\n\n不要包含品牌名称。\n\n视觉风格\n• 纯白工作室背景\n• 柔和均匀的光线与细微接触阴影\n• 编辑级时尚杂志信息图美学\n• 真实的面料颜色与纹理\n• 干净的现代无衬线排版\n\n构图\n• 服装垂直居中排列\n• 角色插图固定在左上角\n• 价格一目了然\n• 留白平衡、布局简洁\n• 无道具、无装饰性元素\n\n输出\n• 超清、高端的时尚拆解图\n• 优化用于社交媒体信息流\n• 无水印。", this)'>📋 复制</button>
         </div>
-        <p>根据上传的人物参考照片，创建一个干净、极简的时尚信息图。</p><p>提取该人物所穿的服装，仅呈现衣物和配饰，不要有身体、模特或鼓胀/充气状的形态。</p><p>每件服装应呈现自然放松的状态，仿佛平铺在干净的摄影棚表面或被重力轻轻悬挂，具有真实的褶皱、折痕和面料垂坠感（连帽衫轻微塌陷、夹克柔和折叠、裤子放松、鞋子自然安放）。</p><p>将服装按从上到下的垂直顺序排列（头饰 → 外套 → 上装 → 裤装 → 鞋履 → 配件），在平静的爆炸视图布局中清晰间隔。</p><p>角色插图</p><p>在左上角，包含一个小型风格化卡通/动漫风格的人物形象，基于上传的参考图片：<br>• 穿着与拆解中相同的服装<br>• 像收藏级动作公仔一样笔直站立<br>• 略带蓬松的比例（柔软的高级乙烯基玩具质感）<br>• 干净的明暗处理，面部细节简约</p><p>在角色上方展示该人物的姓名：<br>• 字号清晰可读<br>• 黑色、干净的现代无衬线字体<br>• 无背景框</p><p>物品标签与价格牌</p><p>对每件服装，包含：<br>• 一条细、干净的连接线指向该物品<br>• 一个大且高度可读的零售风格价格牌</p><p>每个价格牌必须：<br>• 将价格作为主要视觉元素（大号、加粗、立即可读）<br>• 在较小的次要文字中包含物品名称<br>• 在视觉上与连接线相连</p><p>价格牌设计：<br>• 矩形或圆角零售标签样式<br>• 浅中色调背景（米白或浅灰）<br>• 深色高对比文字<br>• 细微阴影以体现层次<br>• 价格文字明显大于标签上其他所有文字</p><p>不要包含品牌名称。</p><p>视觉风格<br>• 纯白工作室背景<br>• 柔和均匀的光线与细微接触阴影<br>• 编辑级时尚杂志信息图美学<br>• 真实的面料颜色与纹理<br>• 干净的现代无衬线排版</p><p>构图<br>• 服装垂直居中排列<br>• 角色插图固定在左上角<br>• 价格一目了然<br>• 留白平衡、布局简洁<br>• 无道具、无装饰性元素</p><p>输出<br>• 超清、高端的时尚拆解图<br>• 优化用于社交媒体信息流<br>• 无水印。</p>
+        <div data-nosnippet><p>根据上传的人物参考照片，创建一个干净、极简的时尚信息图。</p><p>提取该人物所穿的服装，仅呈现衣物和配饰，不要有身体、模特或鼓胀/充气状的形态。</p><p>每件服装应呈现自然放松的状态，仿佛平铺在干净的摄影棚表面或被重力轻轻悬挂，具有真实的褶皱、折痕和面料垂坠感（连帽衫轻微塌陷、夹克柔和折叠、裤子放松、鞋子自然安放）。</p><p>将服装按从上到下的垂直顺序排列（头饰 → 外套 → 上装 → 裤装 → 鞋履 → 配件），在平静的爆炸视图布局中清晰间隔。</p><p>角色插图</p><p>在左上角，包含一个小型风格化卡通/动漫风格的人物形象，基于上传的参考图片：<br>• 穿着与拆解中相同的服装<br>• 像收藏级动作公仔一样笔直站立<br>• 略带蓬松的比例（柔软的高级乙烯基玩具质感）<br>• 干净的明暗处理，面部细节简约</p><p>在角色上方展示该人物的姓名：<br>• 字号清晰可读<br>• 黑色、干净的现代无衬线字体<br>• 无背景框</p><p>物品标签与价格牌</p><p>对每件服装，包含：<br>• 一条细、干净的连接线指向该物品<br>• 一个大且高度可读的零售风格价格牌</p><p>每个价格牌必须：<br>• 将价格作为主要视觉元素（大号、加粗、立即可读）<br>• 在较小的次要文字中包含物品名称<br>• 在视觉上与连接线相连</p><p>价格牌设计：<br>• 矩形或圆角零售标签样式<br>• 浅中色调背景（米白或浅灰）<br>• 深色高对比文字<br>• 细微阴影以体现层次<br>• 价格文字明显大于标签上其他所有文字</p><p>不要包含品牌名称。</p><p>视觉风格<br>• 纯白工作室背景<br>• 柔和均匀的光线与细微接触阴影<br>• 编辑级时尚杂志信息图美学<br>• 真实的面料颜色与纹理<br>• 干净的现代无衬线排版</p><p>构图<br>• 服装垂直居中排列<br>• 角色插图固定在左上角<br>• 价格一目了然<br>• 留白平衡、布局简洁<br>• 无道具、无装饰性元素</p><p>输出<br>• 超清、高端的时尚拆解图<br>• 优化用于社交媒体信息流<br>• 无水印。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a clean, minimalist fashion infographic from an uploaded reference photo of a person.\n\nExtract the outfit worn by the person and present only the clothing and accessories, with no body, no mannequin, and no inflated or air-filled shapes.\n\nEach clothing item should appear naturally relaxed, as if laid flat on a clean studio surface or gently suspended by gravity, with realistic folds, creases, and fabric drape (hoodies slightly collapsed, jackets softly folded, pants relaxed, shoes resting naturally).\n\nArrange the outfit pieces in a top-to-bottom vertical order (headwear → outerwear → top → bottoms → footwear → accessories), spaced clearly in a calm exploded-view layout.\n\nCharacter Illustration\n\nIn the top-left corner, include a small stylized cartoon / anime-inspired figure of the person from the uploaded reference image:\n•Wearing the same outfit shown in the breakdown\n•Standing straight like a collectible action figure\n•Slightly puffy proportions (soft premium vinyl-toy feel)\n•Clean shading, minimal facial detail\n\nAbove the character, display the person’s name:\n•Clearly readable size\n•Black, clean modern sans-serif typography\n•No background box\n\nItem Labels & Price Tags\n\nFor each clothing item, include:\n•A thin, clean connector line pointing to the item\n•A large, highly readable retail-style price tag\n\nEach price tag must:\n•Display the price as the primary visual element (large, bold, instantly readable)\n•Include the item name in smaller secondary text\n•Be visually attached to the connector line\n\nPrice tag design:\n•Rectangular or rounded retail tag style\n•Light neutral background (off-white or light gray)\n•Dark high-contrast text\n•Subtle shadow for depth\n•Price text significantly larger than all other tag text\n\nDo not include brand names.\n\nVisual Style\n•Pure white studio background\n•Soft, even lighting with subtle contact shadows\n•Editorial fashion-magazine infographic aesthetic\n•Realistic fabric colors and textures\n•Clean modern sans-serif typography\n\nComposition\n•Centered vertical outfit layout\n•Character illustration anchored in the top-left corner\n•Strong readability of prices at first glance\n•Balanced negative space, uncluttered\n•No props, no decorative elements\n\nOutput\nUltra-sharp, high-end fashion breakdown\nSocial-feed optimized\nNo watermark.", this)'>📋 复制</button>
         </div>
-        <p>Create a clean, minimalist fashion infographic from an uploaded reference photo of a person.</p><p>Extract the outfit worn by the person and present only the clothing and accessories, with no body, no mannequin, and no inflated or air-filled shapes.</p><p>Each clothing item should appear naturally relaxed, as if laid flat on a clean studio surface or gently suspended by gravity, with realistic folds, creases, and fabric drape (hoodies slightly collapsed, jackets softly folded, pants relaxed, shoes resting naturally).</p><p>Arrange the outfit pieces in a top-to-bottom vertical order (headwear → outerwear → top → bottoms → footwear → accessories), spaced clearly in a calm exploded-view layout.</p><p>Character Illustration</p><p>In the top-left corner, include a small stylized cartoon / anime-inspired figure of the person from the uploaded reference image:<br>•Wearing the same outfit shown in the breakdown<br>•Standing straight like a collectible action figure<br>•Slightly puffy proportions (soft premium vinyl-toy feel)<br>•Clean shading, minimal facial detail</p><p>Above the character, display the person’s name:<br>•Clearly readable size<br>•Black, clean modern sans-serif typography<br>•No background box</p><p>Item Labels &amp; Price Tags</p><p>For each clothing item, include:<br>•A thin, clean connector line pointing to the item<br>•A large, highly readable retail-style price tag</p><p>Each price tag must:<br>•Display the price as the primary visual element (large, bold, instantly readable)<br>•Include the item name in smaller secondary text<br>•Be visually attached to the connector line</p><p>Price tag design:<br>•Rectangular or rounded retail tag style<br>•Light neutral background (off-white or light gray)<br>•Dark high-contrast text<br>•Subtle shadow for depth<br>•Price text significantly larger than all other tag text</p><p>Do not include brand names.</p><p>Visual Style<br>•Pure white studio background<br>•Soft, even lighting with subtle contact shadows<br>•Editorial fashion-magazine infographic aesthetic<br>•Realistic fabric colors and textures<br>•Clean modern sans-serif typography</p><p>Composition<br>•Centered vertical outfit layout<br>•Character illustration anchored in the top-left corner<br>•Strong readability of prices at first glance<br>•Balanced negative space, uncluttered<br>•No props, no decorative elements</p><p>Output<br>Ultra-sharp, high-end fashion breakdown<br>Social-feed optimized<br>No watermark.</p>
+        <div data-nosnippet><p>Create a clean, minimalist fashion infographic from an uploaded reference photo of a person.</p><p>Extract the outfit worn by the person and present only the clothing and accessories, with no body, no mannequin, and no inflated or air-filled shapes.</p><p>Each clothing item should appear naturally relaxed, as if laid flat on a clean studio surface or gently suspended by gravity, with realistic folds, creases, and fabric drape (hoodies slightly collapsed, jackets softly folded, pants relaxed, shoes resting naturally).</p><p>Arrange the outfit pieces in a top-to-bottom vertical order (headwear → outerwear → top → bottoms → footwear → accessories), spaced clearly in a calm exploded-view layout.</p><p>Character Illustration</p><p>In the top-left corner, include a small stylized cartoon / anime-inspired figure of the person from the uploaded reference image:<br>•Wearing the same outfit shown in the breakdown<br>•Standing straight like a collectible action figure<br>•Slightly puffy proportions (soft premium vinyl-toy feel)<br>•Clean shading, minimal facial detail</p><p>Above the character, display the person’s name:<br>•Clearly readable size<br>•Black, clean modern sans-serif typography<br>•No background box</p><p>Item Labels &amp; Price Tags</p><p>For each clothing item, include:<br>•A thin, clean connector line pointing to the item<br>•A large, highly readable retail-style price tag</p><p>Each price tag must:<br>•Display the price as the primary visual element (large, bold, instantly readable)<br>•Include the item name in smaller secondary text<br>•Be visually attached to the connector line</p><p>Price tag design:<br>•Rectangular or rounded retail tag style<br>•Light neutral background (off-white or light gray)<br>•Dark high-contrast text<br>•Subtle shadow for depth<br>•Price text significantly larger than all other tag text</p><p>Do not include brand names.</p><p>Visual Style<br>•Pure white studio background<br>•Soft, even lighting with subtle contact shadows<br>•Editorial fashion-magazine infographic aesthetic<br>•Realistic fabric colors and textures<br>•Clean modern sans-serif typography</p><p>Composition<br>•Centered vertical outfit layout<br>•Character illustration anchored in the top-left corner<br>•Strong readability of prices at first glance<br>•Balanced negative space, uncluttered<br>•No props, no decorative elements</p><p>Output<br>Ultra-sharp, high-end fashion breakdown<br>Social-feed optimized<br>No watermark.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2017599847025520679-1.jpg" alt="Create a clean, minimalist fashion infographic from an upload..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1858,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

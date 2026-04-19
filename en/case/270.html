@@ -7,11 +7,13 @@
     <title>Create manga-style illustrations. #270 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Creating manga-style illustrations — AI image-generation prompts.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/270.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/270.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/270.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846302">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023898">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创作漫画风格插画：\n{\n\"风格\": \"漫画书插画\",\n\"线稿\": {\n\"类型\": \"粗黑轮廓线\",\n\"粗细\": \"中等\",\n\"细节\": \"突出的轮廓和阴影线条\"\n},\n\"上色\": {\n\"调色板\": \"鲜艳饱和的色彩\",\n\"阴影\": \"半色调网点和赛璐珞 shading\",\n\"高光\": \"强烈对比，带有波普艺术效果\"\n},\n\"质感\": {\n\"表面\": \"平坦，带有可见的笔触\",\n\"效果\": \"印刷漫画纸质感\"\n},\n\"构图\": {\n\"布局\": \"主体居中\",\n\"背景\": \"简洁，带有放射状爆发图案或漫画风格线条\",\n\"边框\": \"漫画分镜边框\"\n},\n\"光线\": {\n\"类型\": \"戏剧性\",\n\"角度\": \"左上角，带有强烈的高光和阴影\"\n},\n\"后期处理\": {\n\"效果\": [\"半色调网点\", \"墨水轮廓\", \"颗粒感\"],\n\"饱和度\": \"高\",\n\"对比度\": \"高\"\n},\n\"氛围\": \"充满动感和动作感\",\n\"格式\": \"根据原图，为竖版或正方形\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>创作漫画风格插画：<br>{<br>&quot;风格&quot;: &quot;漫画书插画&quot;,<br>&quot;线稿&quot;: {<br>&quot;类型&quot;: &quot;粗黑轮廓线&quot;,<br>&quot;粗细&quot;: &quot;中等&quot;,<br>&quot;细节&quot;: &quot;突出的轮廓和阴影线条&quot;<br>},<br>&quot;上色&quot;: {<br>&quot;调色板&quot;: &quot;鲜艳饱和的色彩&quot;,<br>&quot;阴影&quot;: &quot;半色调网点和赛璐珞 shading&quot;,<br>&quot;高光&quot;: &quot;强烈对比，带有波普艺术效果&quot;<br>},<br>&quot;质感&quot;: {<br>&quot;表面&quot;: &quot;平坦，带有可见的笔触&quot;,<br>&quot;效果&quot;: &quot;印刷漫画纸质感&quot;<br>},<br>&quot;构图&quot;: {<br>&quot;布局&quot;: &quot;主体居中&quot;,<br>&quot;背景&quot;: &quot;简洁，带有放射状爆发图案或漫画风格线条&quot;,<br>&quot;边框&quot;: &quot;漫画分镜边框&quot;<br>},<br>&quot;光线&quot;: {<br>&quot;类型&quot;: &quot;戏剧性&quot;,<br>&quot;角度&quot;: &quot;左上角，带有强烈的高光和阴影&quot;<br>},<br>&quot;后期处理&quot;: {<br>&quot;效果&quot;: [&quot;半色调网点&quot;, &quot;墨水轮廓&quot;, &quot;颗粒感&quot;],<br>&quot;饱和度&quot;: &quot;高&quot;,<br>&quot;对比度&quot;: &quot;高&quot;<br>},<br>&quot;氛围&quot;: &quot;充满动感和动作感&quot;,<br>&quot;格式&quot;: &quot;根据原图，为竖版或正方形&quot;<br>}</p>
+        <div data-nosnippet><p>创作漫画风格插画：<br>{<br>&quot;风格&quot;: &quot;漫画书插画&quot;,<br>&quot;线稿&quot;: {<br>&quot;类型&quot;: &quot;粗黑轮廓线&quot;,<br>&quot;粗细&quot;: &quot;中等&quot;,<br>&quot;细节&quot;: &quot;突出的轮廓和阴影线条&quot;<br>},<br>&quot;上色&quot;: {<br>&quot;调色板&quot;: &quot;鲜艳饱和的色彩&quot;,<br>&quot;阴影&quot;: &quot;半色调网点和赛璐珞 shading&quot;,<br>&quot;高光&quot;: &quot;强烈对比，带有波普艺术效果&quot;<br>},<br>&quot;质感&quot;: {<br>&quot;表面&quot;: &quot;平坦，带有可见的笔触&quot;,<br>&quot;效果&quot;: &quot;印刷漫画纸质感&quot;<br>},<br>&quot;构图&quot;: {<br>&quot;布局&quot;: &quot;主体居中&quot;,<br>&quot;背景&quot;: &quot;简洁，带有放射状爆发图案或漫画风格线条&quot;,<br>&quot;边框&quot;: &quot;漫画分镜边框&quot;<br>},<br>&quot;光线&quot;: {<br>&quot;类型&quot;: &quot;戏剧性&quot;,<br>&quot;角度&quot;: &quot;左上角，带有强烈的高光和阴影&quot;<br>},<br>&quot;后期处理&quot;: {<br>&quot;效果&quot;: [&quot;半色调网点&quot;, &quot;墨水轮廓&quot;, &quot;颗粒感&quot;],<br>&quot;饱和度&quot;: &quot;高&quot;,<br>&quot;对比度&quot;: &quot;高&quot;<br>},<br>&quot;氛围&quot;: &quot;充满动感和动作感&quot;,<br>&quot;格式&quot;: &quot;根据原图，为竖版或正方形&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("create comic style illustration:\n{\n\"style\": \"comic book illustration\",\n\"line_art\": {\n\"type\": \"bold black outlines\",\n\"thickness\": \"medium\",\n\"detail\": \"emphasized contours and shading lines\"\n},\n\"coloring\": {\n\"palette\": \"vibrant and saturated colors\",\n\"shading\": \"halftone dots and cel shading\",\n\"highlighting\": \"strong contrast with pop art effects\"\n},\n\"texture\": {\n\"surface\": \"flat with visible ink strokes\",\n\"effect\": \"printed comic paper texture\"\n},\n\"composition\": {\n\"layout\": \"centered subject\",\n\"background\": \"simple with radial burst or comic-style lines\",\n\"framing\": \"comic panel border\"\n},\n\"lighting\": {\n\"type\": \"dramatic\",\n\"angle\": \"top-left with bold highlights and shadows\"\n},\n\"post_processing\": {\n\"effect\": [\"halftone dots\", \"ink outline\", \"grain\"],\n\"saturation\": \"high\",\n\"contrast\": \"high\"\n},\n\"mood\": \"dynamic and action-oriented\",\n\"format\": \"vertical or square depending on original image\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>create comic style illustration:<br>{<br>&quot;style&quot;: &quot;comic book illustration&quot;,<br>&quot;line_art&quot;: {<br>&quot;type&quot;: &quot;bold black outlines&quot;,<br>&quot;thickness&quot;: &quot;medium&quot;,<br>&quot;detail&quot;: &quot;emphasized contours and shading lines&quot;<br>},<br>&quot;coloring&quot;: {<br>&quot;palette&quot;: &quot;vibrant and saturated colors&quot;,<br>&quot;shading&quot;: &quot;halftone dots and cel shading&quot;,<br>&quot;highlighting&quot;: &quot;strong contrast with pop art effects&quot;<br>},<br>&quot;texture&quot;: {<br>&quot;surface&quot;: &quot;flat with visible ink strokes&quot;,<br>&quot;effect&quot;: &quot;printed comic paper texture&quot;<br>},<br>&quot;composition&quot;: {<br>&quot;layout&quot;: &quot;centered subject&quot;,<br>&quot;background&quot;: &quot;simple with radial burst or comic-style lines&quot;,<br>&quot;framing&quot;: &quot;comic panel border&quot;<br>},<br>&quot;lighting&quot;: {<br>&quot;type&quot;: &quot;dramatic&quot;,<br>&quot;angle&quot;: &quot;top-left with bold highlights and shadows&quot;<br>},<br>&quot;post_processing&quot;: {<br>&quot;effect&quot;: [&quot;halftone dots&quot;, &quot;ink outline&quot;, &quot;grain&quot;],<br>&quot;saturation&quot;: &quot;high&quot;,<br>&quot;contrast&quot;: &quot;high&quot;<br>},<br>&quot;mood&quot;: &quot;dynamic and action-oriented&quot;,<br>&quot;format&quot;: &quot;vertical or square depending on original image&quot;<br>}</p>
+        <div data-nosnippet><p>create comic style illustration:<br>{<br>&quot;style&quot;: &quot;comic book illustration&quot;,<br>&quot;line_art&quot;: {<br>&quot;type&quot;: &quot;bold black outlines&quot;,<br>&quot;thickness&quot;: &quot;medium&quot;,<br>&quot;detail&quot;: &quot;emphasized contours and shading lines&quot;<br>},<br>&quot;coloring&quot;: {<br>&quot;palette&quot;: &quot;vibrant and saturated colors&quot;,<br>&quot;shading&quot;: &quot;halftone dots and cel shading&quot;,<br>&quot;highlighting&quot;: &quot;strong contrast with pop art effects&quot;<br>},<br>&quot;texture&quot;: {<br>&quot;surface&quot;: &quot;flat with visible ink strokes&quot;,<br>&quot;effect&quot;: &quot;printed comic paper texture&quot;<br>},<br>&quot;composition&quot;: {<br>&quot;layout&quot;: &quot;centered subject&quot;,<br>&quot;background&quot;: &quot;simple with radial burst or comic-style lines&quot;,<br>&quot;framing&quot;: &quot;comic panel border&quot;<br>},<br>&quot;lighting&quot;: {<br>&quot;type&quot;: &quot;dramatic&quot;,<br>&quot;angle&quot;: &quot;top-left with bold highlights and shadows&quot;<br>},<br>&quot;post_processing&quot;: {<br>&quot;effect&quot;: [&quot;halftone dots&quot;, &quot;ink outline&quot;, &quot;grain&quot;],<br>&quot;saturation&quot;: &quot;high&quot;,<br>&quot;contrast&quot;: &quot;high&quot;<br>},<br>&quot;mood&quot;: &quot;dynamic and action-oriented&quot;,<br>&quot;format&quot;: &quot;vertical or square depending on original image&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/274.png" alt="创作漫画风格插画" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 270,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

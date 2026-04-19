@@ -7,11 +7,13 @@
     <title>Seedance 2.0：魔镜 #2780 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Seedance 2.0 面向影视广告行业，支持多模态输入并进行视频生成与编辑，支持网页端与API按次计费。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2780.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2780.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2780.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839534">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022154">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item active">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        
+        <button class="view-full-btn" id="publishXhsVideoBtn" onclick="publishCurrentCaseToXhs(this, 'video')">发布视频到小红书</button>
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,17 +206,17 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("屏幕右侧是地上的镜子，左侧则是一位美丽、甜美、年轻的中国美女，正凝视着镜子。她侧身站着，镜中的倒影变成了一个同样体型的2D时尚动画女孩（而且不是真人）。动画中的女孩的服装和发型与真实女性完全相同。固定镜头角度，屏幕同时显示真美的侧脸、镜子和动画女孩的正面视角。真正的美人在镜子前跳着可爱的舞蹈，镜中活泼的女孩也跳着和她一模一样的舞步。随着舞蹈，这位生动的女孩越来越显得无言且不耐烦——不仅眼睛开始随机地侧移，动作也变得敷衍。最终，她完全停止跳舞，双臂交叉于胸前，静静站立，与那个热情的真实人物形成鲜明对比。真人继续跳舞，但过了一会儿，她开始焦虑，迅速走到镜子前，弯腰用食指敲击镜面，表情混合着恼怒和无助。动画女孩站在原地，显得不悦，然后弯腰从屏幕底部拉起一块米色迷你窗帘，宽度和镜框一样，从上拉到下覆盖整个镜面。窗帘正中央挂着一个小木牌，上面写着三个大字“下班”。真实的人呆站在镜子前，双手慢慢垂下，脸上满是震惊。", this)'>📋 复制</button>
         </div>
-        <p>屏幕右侧是地上的镜子，左侧则是一位美丽、甜美、年轻的中国美女，正凝视着镜子。她侧身站着，镜中的倒影变成了一个同样体型的2D时尚动画女孩（而且不是真人）。动画中的女孩的服装和发型与真实女性完全相同。固定镜头角度，屏幕同时显示真美的侧脸、镜子和动画女孩的正面视角。真正的美人在镜子前跳着可爱的舞蹈，镜中活泼的女孩也跳着和她一模一样的舞步。随着舞蹈，这位生动的女孩越来越显得无言且不耐烦——不仅眼睛开始随机地侧移，动作也变得敷衍。最终，她完全停止跳舞，双臂交叉于胸前，静静站立，与那个热情的真实人物形成鲜明对比。真人继续跳舞，但过了一会儿，她开始焦虑，迅速走到镜子前，弯腰用食指敲击镜面，表情混合着恼怒和无助。动画女孩站在原地，显得不悦，然后弯腰从屏幕底部拉起一块米色迷你窗帘，宽度和镜框一样，从上拉到下覆盖整个镜面。窗帘正中央挂着一个小木牌，上面写着三个大字“下班”。真实的人呆站在镜子前，双手慢慢垂下，脸上满是震惊。</p>
+        <div data-nosnippet><p>屏幕右侧是地上的镜子，左侧则是一位美丽、甜美、年轻的中国美女，正凝视着镜子。她侧身站着，镜中的倒影变成了一个同样体型的2D时尚动画女孩（而且不是真人）。动画中的女孩的服装和发型与真实女性完全相同。固定镜头角度，屏幕同时显示真美的侧脸、镜子和动画女孩的正面视角。真正的美人在镜子前跳着可爱的舞蹈，镜中活泼的女孩也跳着和她一模一样的舞步。随着舞蹈，这位生动的女孩越来越显得无言且不耐烦——不仅眼睛开始随机地侧移，动作也变得敷衍。最终，她完全停止跳舞，双臂交叉于胸前，静静站立，与那个热情的真实人物形成鲜明对比。真人继续跳舞，但过了一会儿，她开始焦虑，迅速走到镜子前，弯腰用食指敲击镜面，表情混合着恼怒和无助。动画女孩站在原地，显得不悦，然后弯腰从屏幕底部拉起一块米色迷你窗帘，宽度和镜框一样，从上拉到下覆盖整个镜面。窗帘正中央挂着一个小木牌，上面写着三个大字“下班”。真实的人呆站在镜子前，双手慢慢垂下，脸上满是震惊。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("On the right side of the screen is a mirror standing on the ground, and on the left side, there's a beautiful, sweet, youthful real Chinese beauty looking into the mirror. She's standing sideways, and the reflection of her in the mirror turns into a 2D fashionable animated style girl of the same proportions (and not a real person). The animated girl's outfit and hairstyle are exactly the same as the real woman's. Fixed camera angle, with the screen simultaneously showing the real beauty's side profile, the mirror, and the animated girl's front view. The real beauty dances a cute dance in front of the mirror, and the animated girl in the mirror dances exactly the same way as her. As they dance, the animated girl starts to look more and more speechless and impatient—not only do her eyes start drifting sideways randomly, but her movements also become perfunctory. Eventually, she stops dancing altogether, crosses her arms over her chest and stands still, forming a stark contrast with the enthusiastic real person. The real person keeps dancing, but after a while, she gets anxious, quickly steps up to the mirror, bends down and taps the mirror surface with her index finger, her expression a mix of annoyance and helplessness. The animated girl remains standing in place, looking displeased, then bends down to pull up a beige mini-curtain from the bottom of the screen that's as wide as the mirror frame, drawing it down from top to bottom to cover the entire mirror surface. Right in the center of the curtain hangs a small wooden sign with the three big characters \"Off Duty\" written on it. The real person stands dumbfounded in front of the mirror, her hands slowly dropping to her sides, her face full of shock.", this)'>📋 复制</button>
         </div>
-        <p>On the right side of the screen is a mirror standing on the ground, and on the left side, there&#39;s a beautiful, sweet, youthful real Chinese beauty looking into the mirror. She&#39;s standing sideways, and the reflection of her in the mirror turns into a 2D fashionable animated style girl of the same proportions (and not a real person). The animated girl&#39;s outfit and hairstyle are exactly the same as the real woman&#39;s. Fixed camera angle, with the screen simultaneously showing the real beauty&#39;s side profile, the mirror, and the animated girl&#39;s front view. The real beauty dances a cute dance in front of the mirror, and the animated girl in the mirror dances exactly the same way as her. As they dance, the animated girl starts to look more and more speechless and impatient—not only do her eyes start drifting sideways randomly, but her movements also become perfunctory. Eventually, she stops dancing altogether, crosses her arms over her chest and stands still, forming a stark contrast with the enthusiastic real person. The real person keeps dancing, but after a while, she gets anxious, quickly steps up to the mirror, bends down and taps the mirror surface with her index finger, her expression a mix of annoyance and helplessness. The animated girl remains standing in place, looking displeased, then bends down to pull up a beige mini-curtain from the bottom of the screen that&#39;s as wide as the mirror frame, drawing it down from top to bottom to cover the entire mirror surface. Right in the center of the curtain hangs a small wooden sign with the three big characters &quot;Off Duty&quot; written on it. The real person stands dumbfounded in front of the mirror, her hands slowly dropping to her sides, her face full of shock.</p>
+        <div data-nosnippet><p>On the right side of the screen is a mirror standing on the ground, and on the left side, there&#39;s a beautiful, sweet, youthful real Chinese beauty looking into the mirror. She&#39;s standing sideways, and the reflection of her in the mirror turns into a 2D fashionable animated style girl of the same proportions (and not a real person). The animated girl&#39;s outfit and hairstyle are exactly the same as the real woman&#39;s. Fixed camera angle, with the screen simultaneously showing the real beauty&#39;s side profile, the mirror, and the animated girl&#39;s front view. The real beauty dances a cute dance in front of the mirror, and the animated girl in the mirror dances exactly the same way as her. As they dance, the animated girl starts to look more and more speechless and impatient—not only do her eyes start drifting sideways randomly, but her movements also become perfunctory. Eventually, she stops dancing altogether, crosses her arms over her chest and stands still, forming a stark contrast with the enthusiastic real person. The real person keeps dancing, but after a while, she gets anxious, quickly steps up to the mirror, bends down and taps the mirror surface with her index finger, her expression a mix of annoyance and helplessness. The animated girl remains standing in place, looking displeased, then bends down to pull up a beige mini-curtain from the bottom of the screen that&#39;s as wide as the mirror frame, drawing it down from top to bottom to cover the entire mirror surface. Right in the center of the curtain hangs a small wooden sign with the three big characters &quot;Off Duty&quot; written on it. The real person stands dumbfounded in front of the mirror, her hands slowly dropping to her sides, her face full of shock.</p></div>
       </div>
       
-      <div class="detail-block"><h3>🎬 视频</h3><div class="detail-media-grid"><video controls><source src="/../videos/tweet-2043995674338046123-1.mp4" type="video/mp4"></video><video controls><source src="/../videos/tweet-2043995674338046123-2.mp4" type="video/mp4"></video></div></div>
+      <div class="detail-block"><h3>🎬 视频</h3><div class="detail-media-grid"><video controls><source src="/videos/tweet-2043995674338046123-1.mp4" type="video/mp4"></video><video controls><source src="/videos/tweet-2043995674338046123-2.mp4" type="video/mp4"></video></div></div>
       
     </div>
 
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2780,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

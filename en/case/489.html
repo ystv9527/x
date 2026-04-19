@@ -7,11 +7,13 @@
     <title>Custom claw machine #489 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Custom Claw Machine - Nano Banana AI Image Generation Case  Input: You need to upload a reference image.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/489.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/489.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/489.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846097">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023859">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -204,14 +208,14 @@ Input: You need to upload a reference image.</p></div>
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("生成一张图像，展示该动物被简化并变形为动漫风格的毛绒玩具（材质为短绒、触感柔软的聚酯针织布），放置在 UFO 捞娃娃机中。\n两侧各有一台额外的 UFO 捞娃娃机，里面摆放着不同动物的毛绒玩具，与主图像的动物不同。\n场景设定在日本游戏中心，整体明亮。UFO 捞娃娃机的上部涂有鲜艳颜色，下部涂为白色。背景为墙面，UFO 捞娃娃机背后的区域模糊处理。地面铺有地毯。\n拍摄角度为正面。最重要的是，图像中绝对不要出现任何文字或标志。", this)'>📋 Copy</button>
         </div>
-        <p>生成一张图像，展示该动物被简化并变形为动漫风格的毛绒玩具（材质为短绒、触感柔软的聚酯针织布），放置在 UFO 捞娃娃机中。<br>两侧各有一台额外的 UFO 捞娃娃机，里面摆放着不同动物的毛绒玩具，与主图像的动物不同。<br>场景设定在日本游戏中心，整体明亮。UFO 捞娃娃机的上部涂有鲜艳颜色，下部涂为白色。背景为墙面，UFO 捞娃娃机背后的区域模糊处理。地面铺有地毯。<br>拍摄角度为正面。最重要的是，图像中绝对不要出现任何文字或标志。</p>
+        <div data-nosnippet><p>生成一张图像，展示该动物被简化并变形为动漫风格的毛绒玩具（材质为短绒、触感柔软的聚酯针织布），放置在 UFO 捞娃娃机中。<br>两侧各有一台额外的 UFO 捞娃娃机，里面摆放着不同动物的毛绒玩具，与主图像的动物不同。<br>场景设定在日本游戏中心，整体明亮。UFO 捞娃娃机的上部涂有鲜艳颜色，下部涂为白色。背景为墙面，UFO 捞娃娃机背后的区域模糊处理。地面铺有地毯。<br>拍摄角度为正面。最重要的是，图像中绝对不要出现任何文字或标志。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an image depicting an animal that has been simplified and stylized into a plush toy in anime style (made of short-pile, soft-touch polyester knitted fabric), placed inside a UFO claw machine. On each side, there are additional UFO claw machines containing different animal plush toys, which are different from the main animal. The scene is set in a Japanese arcade, with a bright overall lighting. The top of the UFO claw machine is painted in vibrant colors, while the bottom is white. The background features a wall, with the area behind the claw machine blurred. The floor is carpeted. The camera angle is frontal. Most importantly, the image must contain no text or logos whatsoever.", this)'>📋 Copy</button>
         </div>
-        <p>Create an image depicting an animal that has been simplified and stylized into a plush toy in anime style (made of short-pile, soft-touch polyester knitted fabric), placed inside a UFO claw machine. On each side, there are additional UFO claw machines containing different animal plush toys, which are different from the main animal. The scene is set in a Japanese arcade, with a bright overall lighting. The top of the UFO claw machine is painted in vibrant colors, while the bottom is white. The background features a wall, with the area behind the claw machine blurred. The floor is carpeted. The camera angle is frontal. Most importantly, the image must contain no text or logos whatsoever.</p>
+        <div data-nosnippet><p>Create an image depicting an animal that has been simplified and stylized into a plush toy in anime style (made of short-pile, soft-touch polyester knitted fabric), placed inside a UFO claw machine. On each side, there are additional UFO claw machines containing different animal plush toys, which are different from the main animal. The scene is set in a Japanese arcade, with a bright overall lighting. The top of the UFO claw machine is painted in vibrant colors, while the bottom is white. The background features a wall, with the area behind the claw machine blurred. The floor is carpeted. The camera angle is frontal. Most importantly, the image must contain no text or logos whatsoever.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/nano-case103-input.jpg" alt="自定义娃娃机" loading="lazy"><img src="/images/nano-case103-output.jpg" alt="自定义娃娃机" loading="lazy"></div></div>
       
@@ -277,6 +281,33 @@ Input: You need to upload a reference image.</p></div>
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 489,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

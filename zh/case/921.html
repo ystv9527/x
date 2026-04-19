@@ -7,11 +7,13 @@
     <title>[BRAND NAME]. Act as a vector illustrator designing a trendy,... #921 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[BRAND NAME]. Act as a vector illustrator designing a trendy, high end &quot;Sticker Sheet&quot; set. THE TASK: Deconstruct the...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/921.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/921.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/921.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841391">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022579">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]。扮演一名矢量插画师，设计一套时髦、高端的“贴纸页”套装。\n任务：\n将[BRAND NAME]的品牌识别解构为一个有趣、统一的贴纸集合，约8–10个独特贴纸设计，排列在同一张贴纸页上。\n内容生成：不要只做标志。自主创作以下混合内容：\n吉祥物/角色：风格化的人物胸像，佩戴与品牌相关的配饰或表现特定情绪。\n代表性产品：与品牌相关的标志性物品。\n符号/物件：与品牌生活方式相关的抽象形状或工具。\n\n视觉风格（单线矢量）：\n艺术风格必须严格符合“现代时尚线描”。\n线条：对所有内部细节使用粗且均匀的线重（单线）。线条应平滑、圆润且自信。\n着色：贴纸填充为纯实心米白或奶油色，细节由线色呈现。禁止渐变、阴影和三维效果。保持扁平二维矢量外观。\n“贴纸”效果：每个元素须有明显且厚实的白色（或奶油色）模切边框，将其与背景区隔开。\n色彩方案（高对比）：\n背景：使用纯色、深且饱和的颜色以创造最大对比。\n贴纸：高亮度的奶油色或白色填充，搭配深色（黑色或深棕）描线。\n构图：\n贴纸自然散布于贴纸页上（knolling 布局），间距均匀。不得重叠。", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]。扮演一名矢量插画师，设计一套时髦、高端的“贴纸页”套装。<br>任务：<br>将[BRAND NAME]的品牌识别解构为一个有趣、统一的贴纸集合，约8–10个独特贴纸设计，排列在同一张贴纸页上。<br>内容生成：不要只做标志。自主创作以下混合内容：<br>吉祥物/角色：风格化的人物胸像，佩戴与品牌相关的配饰或表现特定情绪。<br>代表性产品：与品牌相关的标志性物品。<br>符号/物件：与品牌生活方式相关的抽象形状或工具。</p><p>视觉风格（单线矢量）：<br>艺术风格必须严格符合“现代时尚线描”。<br>线条：对所有内部细节使用粗且均匀的线重（单线）。线条应平滑、圆润且自信。<br>着色：贴纸填充为纯实心米白或奶油色，细节由线色呈现。禁止渐变、阴影和三维效果。保持扁平二维矢量外观。<br>“贴纸”效果：每个元素须有明显且厚实的白色（或奶油色）模切边框，将其与背景区隔开。<br>色彩方案（高对比）：<br>背景：使用纯色、深且饱和的颜色以创造最大对比。<br>贴纸：高亮度的奶油色或白色填充，搭配深色（黑色或深棕）描线。<br>构图：<br>贴纸自然散布于贴纸页上（knolling 布局），间距均匀。不得重叠。</p>
+        <div data-nosnippet><p>[BRAND NAME]。扮演一名矢量插画师，设计一套时髦、高端的“贴纸页”套装。<br>任务：<br>将[BRAND NAME]的品牌识别解构为一个有趣、统一的贴纸集合，约8–10个独特贴纸设计，排列在同一张贴纸页上。<br>内容生成：不要只做标志。自主创作以下混合内容：<br>吉祥物/角色：风格化的人物胸像，佩戴与品牌相关的配饰或表现特定情绪。<br>代表性产品：与品牌相关的标志性物品。<br>符号/物件：与品牌生活方式相关的抽象形状或工具。</p><p>视觉风格（单线矢量）：<br>艺术风格必须严格符合“现代时尚线描”。<br>线条：对所有内部细节使用粗且均匀的线重（单线）。线条应平滑、圆润且自信。<br>着色：贴纸填充为纯实心米白或奶油色，细节由线色呈现。禁止渐变、阴影和三维效果。保持扁平二维矢量外观。<br>“贴纸”效果：每个元素须有明显且厚实的白色（或奶油色）模切边框，将其与背景区隔开。<br>色彩方案（高对比）：<br>背景：使用纯色、深且饱和的颜色以创造最大对比。<br>贴纸：高亮度的奶油色或白色填充，搭配深色（黑色或深棕）描线。<br>构图：<br>贴纸自然散布于贴纸页上（knolling 布局），间距均匀。不得重叠。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]. Act as a vector illustrator designing a trendy, high-end \"Sticker Sheet\" set.\nTHE TASK:\nDeconstruct the brand identity of [BRAND NAME] into a playful, cohesive set of approximately 8-10 unique sticker designs arranged on a single sheet.\nContent Generation: Do not just make logos. Autonomously invent a mix of:\nMascots/Characters: Stylized busts of people wearing brand-relevant accessories or expressing emotions.\nKey Products: Iconic items associated with the brand.\nSymbols/Objects: Abstract shapes or tools relevant to the brand's lifestyle.\n\nVISUAL STYLE (MONOLINE VECTOR):\nThe art style must strictly match \"Modern Trendy Line Art.\"\nLine Work: Use a THICK, UNIFORM line weight (monoline) for all internal details. The lines should be smooth, rounded, and confident.\nColoring: The stickers must be filled with Solid Off-White or Cream, utilizing the line color for details. NO gradients, NO shading, NO 3D effects. Flat 2D vector look.\nThe \"Sticker\" Effect: Every element must have a thick, distinct White (or Cream) Die-Cut Border surrounding it, separating it from the background.\nCOLOR PALETTE (HIGH CONTRAST):\nBackground: A solid, deep, saturated color to create maximum contrast.\nStickers: High-brightness Cream or White fill with Dark (Black or Dark Brown) outlines.\nCOMPOSITION:\nThe stickers are scattered naturally across the sheet (knolling layout) with even spacing. No overlapping.", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]. Act as a vector illustrator designing a trendy, high-end &quot;Sticker Sheet&quot; set.<br>THE TASK:<br>Deconstruct the brand identity of [BRAND NAME] into a playful, cohesive set of approximately 8-10 unique sticker designs arranged on a single sheet.<br>Content Generation: Do not just make logos. Autonomously invent a mix of:<br>Mascots/Characters: Stylized busts of people wearing brand-relevant accessories or expressing emotions.<br>Key Products: Iconic items associated with the brand.<br>Symbols/Objects: Abstract shapes or tools relevant to the brand&#39;s lifestyle.</p><p>VISUAL STYLE (MONOLINE VECTOR):<br>The art style must strictly match &quot;Modern Trendy Line Art.&quot;<br>Line Work: Use a THICK, UNIFORM line weight (monoline) for all internal details. The lines should be smooth, rounded, and confident.<br>Coloring: The stickers must be filled with Solid Off-White or Cream, utilizing the line color for details. NO gradients, NO shading, NO 3D effects. Flat 2D vector look.<br>The &quot;Sticker&quot; Effect: Every element must have a thick, distinct White (or Cream) Die-Cut Border surrounding it, separating it from the background.<br>COLOR PALETTE (HIGH CONTRAST):<br>Background: A solid, deep, saturated color to create maximum contrast.<br>Stickers: High-brightness Cream or White fill with Dark (Black or Dark Brown) outlines.<br>COMPOSITION:<br>The stickers are scattered naturally across the sheet (knolling layout) with even spacing. No overlapping.</p>
+        <div data-nosnippet><p>[BRAND NAME]. Act as a vector illustrator designing a trendy, high-end &quot;Sticker Sheet&quot; set.<br>THE TASK:<br>Deconstruct the brand identity of [BRAND NAME] into a playful, cohesive set of approximately 8-10 unique sticker designs arranged on a single sheet.<br>Content Generation: Do not just make logos. Autonomously invent a mix of:<br>Mascots/Characters: Stylized busts of people wearing brand-relevant accessories or expressing emotions.<br>Key Products: Iconic items associated with the brand.<br>Symbols/Objects: Abstract shapes or tools relevant to the brand&#39;s lifestyle.</p><p>VISUAL STYLE (MONOLINE VECTOR):<br>The art style must strictly match &quot;Modern Trendy Line Art.&quot;<br>Line Work: Use a THICK, UNIFORM line weight (monoline) for all internal details. The lines should be smooth, rounded, and confident.<br>Coloring: The stickers must be filled with Solid Off-White or Cream, utilizing the line color for details. NO gradients, NO shading, NO 3D effects. Flat 2D vector look.<br>The &quot;Sticker&quot; Effect: Every element must have a thick, distinct White (or Cream) Die-Cut Border surrounding it, separating it from the background.<br>COLOR PALETTE (HIGH CONTRAST):<br>Background: A solid, deep, saturated color to create maximum contrast.<br>Stickers: High-brightness Cream or White fill with Dark (Black or Dark Brown) outlines.<br>COMPOSITION:<br>The stickers are scattered naturally across the sheet (knolling layout) with even spacing. No overlapping.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009717451710509473-1.jpg" alt="[BRAND NAME]. Act as a vector illustrator designing a trendy,..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 921,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

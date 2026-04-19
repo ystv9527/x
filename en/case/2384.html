@@ -7,11 +7,13 @@
     <title>&quot;image generation prompt&quot;: { #2384 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image generation prompt&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;Young woman with a strong resemblance to Anya Taylor Joy....">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2384.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2384.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2384.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844123">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023451">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"description\": \"一位与安雅·泰勒-乔伊（Anya Taylor-Joy）极为相似的年轻女性。\",\n      \"hair\": \"迎风飘扬，自然轻盈的发质；发丝被微风吹起，散落在她的肩膀和汽车表面上。\",\n      \"face\": \"惊艳的高端时尚表情，轮廓分明、颧骨突出，皮肤质感柔和哑光；唇色为低调珊瑚色，目光专注。\",\n      \"body\": \"纤细优雅的体态，肤色均匀光滑，带有阳光自然的高光。\"\n    },\n    \"attire\": {\n      \"clothing\": \"一件复古灵感的泡泡糖粉色连体泳衣，特点是皱褶胸身和一条同色面料腰带，腰带配有圆形扣环并勒紧于腰部。\",\n      \"style\": \"复古美式风格 / 1950年代高级时装。\"\n    },\n    \"styling_and_accessories\": {\n      \"jewelry\": []\n    },\n    \"environment\": {\n      \"setting\": \"海滩边的户外场景，有一辆经典复古粉色敞篷车停在白色沙滩上。\",\n      \"background\": \"晴朗开阔的碧绿蓝色天空，布满柔软稀薄的白云；远处隐约可见一抹绿色的热带植物。\",\n      \"water\": \"无\"\n    },\n    \"pose\": {\n      \"posture\": \"水平横卧在复古汽车的平坦后备箱和侧面板上，优雅地斜靠。\",\n      \"arms\": \"一只手臂弯曲于肘部，头轻靠在前臂上；另一只手臂优雅地垂放在臀部，手放在大腿上方。\",\n      \"angle\": \"低角度拍摄，向上仰视以突出主体与天空的对比。\"\n    },\n    \"lighting_and_mood\": {\n      \"lighting\": \"明亮均匀的自然日光，带有柔和的胶片质感；轻柔的阴影勾勒出身体和汽车的轮廓。\",\n      \"mood\": \"充满电影感、怀旧且精致；唤起奢华夏日旅行的美感。\",\n      \"colors\": \"以粉彩粉色和深碧绿蓝为主的鲜明色彩调。\"\n    },\n    \"camera_and_technical\": {\n      \"style\": \"超写实、RAW 照片。\",\n      \"lens\": \"35mm 广角镜头，用以同时捕捉主体和环境。\",\n      \"aperture\": \"光圈 f/5.6，以获得深景深和整幅画面清晰的细节。\",\n      \"quality_tags\": [\n        \"8k 分辨率\",\n        \"细节丰富\",\n        \"体积光照\",\n        \"光线追踪反射\",\n        \"超真实质感\",\n        \"哈苏（Hasselblad）摄影\"\n      ]\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;一位与安雅·泰勒-乔伊（Anya Taylor-Joy）极为相似的年轻女性。&quot;,<br>      &quot;hair&quot;: &quot;迎风飘扬，自然轻盈的发质；发丝被微风吹起，散落在她的肩膀和汽车表面上。&quot;,<br>      &quot;face&quot;: &quot;惊艳的高端时尚表情，轮廓分明、颧骨突出，皮肤质感柔和哑光；唇色为低调珊瑚色，目光专注。&quot;,<br>      &quot;body&quot;: &quot;纤细优雅的体态，肤色均匀光滑，带有阳光自然的高光。&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;clothing&quot;: &quot;一件复古灵感的泡泡糖粉色连体泳衣，特点是皱褶胸身和一条同色面料腰带，腰带配有圆形扣环并勒紧于腰部。&quot;,<br>      &quot;style&quot;: &quot;复古美式风格 / 1950年代高级时装。&quot;<br>    },<br>    &quot;styling_and_accessories&quot;: {<br>      &quot;jewelry&quot;: []<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;海滩边的户外场景，有一辆经典复古粉色敞篷车停在白色沙滩上。&quot;,<br>      &quot;background&quot;: &quot;晴朗开阔的碧绿蓝色天空，布满柔软稀薄的白云；远处隐约可见一抹绿色的热带植物。&quot;,<br>      &quot;water&quot;: &quot;无&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;posture&quot;: &quot;水平横卧在复古汽车的平坦后备箱和侧面板上，优雅地斜靠。&quot;,<br>      &quot;arms&quot;: &quot;一只手臂弯曲于肘部，头轻靠在前臂上；另一只手臂优雅地垂放在臀部，手放在大腿上方。&quot;,<br>      &quot;angle&quot;: &quot;低角度拍摄，向上仰视以突出主体与天空的对比。&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;明亮均匀的自然日光，带有柔和的胶片质感；轻柔的阴影勾勒出身体和汽车的轮廓。&quot;,<br>      &quot;mood&quot;: &quot;充满电影感、怀旧且精致；唤起奢华夏日旅行的美感。&quot;,<br>      &quot;colors&quot;: &quot;以粉彩粉色和深碧绿蓝为主的鲜明色彩调。&quot;<br>    },<br>    &quot;camera_and_technical&quot;: {<br>      &quot;style&quot;: &quot;超写实、RAW 照片。&quot;,<br>      &quot;lens&quot;: &quot;35mm 广角镜头，用以同时捕捉主体和环境。&quot;,<br>      &quot;aperture&quot;: &quot;光圈 f/5.6，以获得深景深和整幅画面清晰的细节。&quot;,<br>      &quot;quality_tags&quot;: [<br>        &quot;8k 分辨率&quot;,<br>        &quot;细节丰富&quot;,<br>        &quot;体积光照&quot;,<br>        &quot;光线追踪反射&quot;,<br>        &quot;超真实质感&quot;,<br>        &quot;哈苏（Hasselblad）摄影&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;一位与安雅·泰勒-乔伊（Anya Taylor-Joy）极为相似的年轻女性。&quot;,<br>      &quot;hair&quot;: &quot;迎风飘扬，自然轻盈的发质；发丝被微风吹起，散落在她的肩膀和汽车表面上。&quot;,<br>      &quot;face&quot;: &quot;惊艳的高端时尚表情，轮廓分明、颧骨突出，皮肤质感柔和哑光；唇色为低调珊瑚色，目光专注。&quot;,<br>      &quot;body&quot;: &quot;纤细优雅的体态，肤色均匀光滑，带有阳光自然的高光。&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;clothing&quot;: &quot;一件复古灵感的泡泡糖粉色连体泳衣，特点是皱褶胸身和一条同色面料腰带，腰带配有圆形扣环并勒紧于腰部。&quot;,<br>      &quot;style&quot;: &quot;复古美式风格 / 1950年代高级时装。&quot;<br>    },<br>    &quot;styling_and_accessories&quot;: {<br>      &quot;jewelry&quot;: []<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;海滩边的户外场景，有一辆经典复古粉色敞篷车停在白色沙滩上。&quot;,<br>      &quot;background&quot;: &quot;晴朗开阔的碧绿蓝色天空，布满柔软稀薄的白云；远处隐约可见一抹绿色的热带植物。&quot;,<br>      &quot;water&quot;: &quot;无&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;posture&quot;: &quot;水平横卧在复古汽车的平坦后备箱和侧面板上，优雅地斜靠。&quot;,<br>      &quot;arms&quot;: &quot;一只手臂弯曲于肘部，头轻靠在前臂上；另一只手臂优雅地垂放在臀部，手放在大腿上方。&quot;,<br>      &quot;angle&quot;: &quot;低角度拍摄，向上仰视以突出主体与天空的对比。&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;明亮均匀的自然日光，带有柔和的胶片质感；轻柔的阴影勾勒出身体和汽车的轮廓。&quot;,<br>      &quot;mood&quot;: &quot;充满电影感、怀旧且精致；唤起奢华夏日旅行的美感。&quot;,<br>      &quot;colors&quot;: &quot;以粉彩粉色和深碧绿蓝为主的鲜明色彩调。&quot;<br>    },<br>    &quot;camera_and_technical&quot;: {<br>      &quot;style&quot;: &quot;超写实、RAW 照片。&quot;,<br>      &quot;lens&quot;: &quot;35mm 广角镜头，用以同时捕捉主体和环境。&quot;,<br>      &quot;aperture&quot;: &quot;光圈 f/5.6，以获得深景深和整幅画面清晰的细节。&quot;,<br>      &quot;quality_tags&quot;: [<br>        &quot;8k 分辨率&quot;,<br>        &quot;细节丰富&quot;,<br>        &quot;体积光照&quot;,<br>        &quot;光线追踪反射&quot;,<br>        &quot;超真实质感&quot;,<br>        &quot;哈苏（Hasselblad）摄影&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"description\": \"Young woman with a strong resemblance to Anya Taylor-Joy.\",\n      \"hair\": \"Wind-swept and free-flowing with a natural, airy texture; the strands are caught in a light breeze, spreading across her shoulder and the car's surface.\",\n      \"face\": \"Stunning high-fashion expression with sharp features, defined cheekbones, and soft matte skin texture; subtle coral-toned lip color and focused gaze.\",\n      \"body\": \"Slender and graceful physique with smooth, even skin tone and natural highlights from the sun.\"\n    },\n    \"attire\": {\n      \"clothing\": \"A vintage-inspired bubblegum pink one-piece swimsuit featuring a ruched bodice and a matching fabric belt with a circular buckle cinched at the waist.\",\n      \"style\": \"Retro Americana / 1950s High Fashion.\"\n    },\n    \"styling_and_accessories\": {\n      \"jewelry\": []\n    },\n    \"environment\": {\n      \"setting\": \"An outdoor beach-side location featuring a classic vintage pink convertible car parked on white sand.\",\n      \"background\": \"A clear, expansive turquoise sky filled with soft, wispy white clouds; a hint of green tropical foliage is visible in the far distance.\",\n      \"water\": \"None\"\n    },\n    \"pose\": {\n      \"posture\": \"Lying horizontally across the flat trunk and side panel of a vintage car, reclining elegantly.\",\n      \"arms\": \"One arm is bent at the elbow with the head resting lightly on the forearm; the other arm is draped gracefully over the hip, hand resting on the upper thigh.\",\n      \"angle\": \"Low-angle shot, looking up to emphasize the subject against the sky.\"\n    },\n    \"lighting_and_mood\": {\n      \"lighting\": \"Bright, even natural daylight with a soft film-like quality; gentle shadows that define the contours of the body and car.\",\n      \"mood\": \"Cinematic, nostalgic, and sophisticated; evokes a luxury summer travel aesthetic.\",\n      \"colors\": \"A vibrant palette dominated by pastel pink and deep turquoise blue.\"\n    },\n    \"camera_and_technical\": {\n      \"style\": \"Ultra Photorealistic, RAW photo.\",\n      \"lens\": \"35mm wide-angle lens to capture both subject and environment.\",\n      \"aperture\": \"f/5.6 for deep focus and crisp details across the entire frame.\",\n      \"quality_tags\": [\n        \"8k resolution\",\n        \"highly detailed\",\n        \"volumetric lighting\",\n        \"ray tracing reflections\",\n        \"hyper-realistic texture\",\n        \"Hasselblad photography\"\n      ]\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Young woman with a strong resemblance to Anya Taylor-Joy.&quot;,<br>      &quot;hair&quot;: &quot;Wind-swept and free-flowing with a natural, airy texture; the strands are caught in a light breeze, spreading across her shoulder and the car&#39;s surface.&quot;,<br>      &quot;face&quot;: &quot;Stunning high-fashion expression with sharp features, defined cheekbones, and soft matte skin texture; subtle coral-toned lip color and focused gaze.&quot;,<br>      &quot;body&quot;: &quot;Slender and graceful physique with smooth, even skin tone and natural highlights from the sun.&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;clothing&quot;: &quot;A vintage-inspired bubblegum pink one-piece swimsuit featuring a ruched bodice and a matching fabric belt with a circular buckle cinched at the waist.&quot;,<br>      &quot;style&quot;: &quot;Retro Americana / 1950s High Fashion.&quot;<br>    },<br>    &quot;styling_and_accessories&quot;: {<br>      &quot;jewelry&quot;: []<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;An outdoor beach-side location featuring a classic vintage pink convertible car parked on white sand.&quot;,<br>      &quot;background&quot;: &quot;A clear, expansive turquoise sky filled with soft, wispy white clouds; a hint of green tropical foliage is visible in the far distance.&quot;,<br>      &quot;water&quot;: &quot;None&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;posture&quot;: &quot;Lying horizontally across the flat trunk and side panel of a vintage car, reclining elegantly.&quot;,<br>      &quot;arms&quot;: &quot;One arm is bent at the elbow with the head resting lightly on the forearm; the other arm is draped gracefully over the hip, hand resting on the upper thigh.&quot;,<br>      &quot;angle&quot;: &quot;Low-angle shot, looking up to emphasize the subject against the sky.&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;Bright, even natural daylight with a soft film-like quality; gentle shadows that define the contours of the body and car.&quot;,<br>      &quot;mood&quot;: &quot;Cinematic, nostalgic, and sophisticated; evokes a luxury summer travel aesthetic.&quot;,<br>      &quot;colors&quot;: &quot;A vibrant palette dominated by pastel pink and deep turquoise blue.&quot;<br>    },<br>    &quot;camera_and_technical&quot;: {<br>      &quot;style&quot;: &quot;Ultra Photorealistic, RAW photo.&quot;,<br>      &quot;lens&quot;: &quot;35mm wide-angle lens to capture both subject and environment.&quot;,<br>      &quot;aperture&quot;: &quot;f/5.6 for deep focus and crisp details across the entire frame.&quot;,<br>      &quot;quality_tags&quot;: [<br>        &quot;8k resolution&quot;,<br>        &quot;highly detailed&quot;,<br>        &quot;volumetric lighting&quot;,<br>        &quot;ray tracing reflections&quot;,<br>        &quot;hyper-realistic texture&quot;,<br>        &quot;Hasselblad photography&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Young woman with a strong resemblance to Anya Taylor-Joy.&quot;,<br>      &quot;hair&quot;: &quot;Wind-swept and free-flowing with a natural, airy texture; the strands are caught in a light breeze, spreading across her shoulder and the car&#39;s surface.&quot;,<br>      &quot;face&quot;: &quot;Stunning high-fashion expression with sharp features, defined cheekbones, and soft matte skin texture; subtle coral-toned lip color and focused gaze.&quot;,<br>      &quot;body&quot;: &quot;Slender and graceful physique with smooth, even skin tone and natural highlights from the sun.&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;clothing&quot;: &quot;A vintage-inspired bubblegum pink one-piece swimsuit featuring a ruched bodice and a matching fabric belt with a circular buckle cinched at the waist.&quot;,<br>      &quot;style&quot;: &quot;Retro Americana / 1950s High Fashion.&quot;<br>    },<br>    &quot;styling_and_accessories&quot;: {<br>      &quot;jewelry&quot;: []<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;An outdoor beach-side location featuring a classic vintage pink convertible car parked on white sand.&quot;,<br>      &quot;background&quot;: &quot;A clear, expansive turquoise sky filled with soft, wispy white clouds; a hint of green tropical foliage is visible in the far distance.&quot;,<br>      &quot;water&quot;: &quot;None&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;posture&quot;: &quot;Lying horizontally across the flat trunk and side panel of a vintage car, reclining elegantly.&quot;,<br>      &quot;arms&quot;: &quot;One arm is bent at the elbow with the head resting lightly on the forearm; the other arm is draped gracefully over the hip, hand resting on the upper thigh.&quot;,<br>      &quot;angle&quot;: &quot;Low-angle shot, looking up to emphasize the subject against the sky.&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;Bright, even natural daylight with a soft film-like quality; gentle shadows that define the contours of the body and car.&quot;,<br>      &quot;mood&quot;: &quot;Cinematic, nostalgic, and sophisticated; evokes a luxury summer travel aesthetic.&quot;,<br>      &quot;colors&quot;: &quot;A vibrant palette dominated by pastel pink and deep turquoise blue.&quot;<br>    },<br>    &quot;camera_and_technical&quot;: {<br>      &quot;style&quot;: &quot;Ultra Photorealistic, RAW photo.&quot;,<br>      &quot;lens&quot;: &quot;35mm wide-angle lens to capture both subject and environment.&quot;,<br>      &quot;aperture&quot;: &quot;f/5.6 for deep focus and crisp details across the entire frame.&quot;,<br>      &quot;quality_tags&quot;: [<br>        &quot;8k resolution&quot;,<br>        &quot;highly detailed&quot;,<br>        &quot;volumetric lighting&quot;,<br>        &quot;ray tracing reflections&quot;,<br>        &quot;hyper-realistic texture&quot;,<br>        &quot;Hasselblad photography&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2029167737776349366-1.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"><img src="/images/tweet-2029167737776349366-2.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"><img src="/images/tweet-2029167737776349366-3.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2384,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

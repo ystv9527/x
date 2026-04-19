@@ -7,11 +7,13 @@
     <title>Long-exposure street portrait: the contrast between a silent woman and a ginger cat in the dusk square. #574 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="In a twilight city square, a young woman and a ginger cat stand side by side in silence, using long exposure and background blur to create contrast, conveying a quiet and deeply affectionate mood. The image emphasizes the tactile quality of fabrics, warm color accents, and the artistic effect of ultra-high resolution.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/574.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/574.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/574.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846000">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023841">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n  \"场景构图\": {\r\n    \"主要主题\": {\r\n\"woman\": {\r\n        \"description\": \"一位年轻女子，拥有被风吹乱的浅金色短发，表情沉思而疏离\",\r\n        \"gaze\": \"目光略微向上，偏离镜头\",\r\n        \"clothing\": \"搭配了大地色系的丝绒连衣裙和厚重、纹理明显的橄榄绿色粗花呢大衣\"\r\n      },\r\n\"companion\": \"一个平静、安静的姜黄色猫，静静地坐在她旁边的长椅上\"\r\n    },\r\n    \"environment\": {\r\n\"设置\": \"黄昏时拥挤的都市广场\",\r\n      \"动态元素\": \"行人被捕捉为抽象的、画家的运动模糊条纹，向两个方向飞驰\",\r\n      \"对比\": \"主体完美的静止与周围人群混乱的模糊形成鲜明对比\"\r\n    }\r\n  },\r\n\"技术美学\": {\r\n    \"摄影风格\": \"长曝光电影感街头摄影，强烈的主体分离\",\r\n    \"光线\": \"柔和的自然阴天光线，带有温暖的琥珀色街灯点缀\"\r\n\"色彩搭配\": [\"柔和的森林绿\", \"温暖的赭石色\", \"深邃的天鹅绒棕色\", \"去饱和的城市灰色\"],\r\n\"镜头效果\": \"浅景深，主体纹理清晰对焦，背景柔焦\",\r\n\"图像质量\": [\"8k 分辨率\", \"超写实\", \"艺术感编辑颗粒感\", \"触感织物纹理\"]\r\n  },\r\n\"mood\": \"安静而富有情感，内省，忧郁，且永恒\"\r\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;场景构图&quot;: {<br>    &quot;主要主题&quot;: {<br>&quot;woman&quot;: {<br>        &quot;description&quot;: &quot;一位年轻女子，拥有被风吹乱的浅金色短发，表情沉思而疏离&quot;,<br>        &quot;gaze&quot;: &quot;目光略微向上，偏离镜头&quot;,<br>        &quot;clothing&quot;: &quot;搭配了大地色系的丝绒连衣裙和厚重、纹理明显的橄榄绿色粗花呢大衣&quot;<br>      },<br>&quot;companion&quot;: &quot;一个平静、安静的姜黄色猫，静静地坐在她旁边的长椅上&quot;<br>    },<br>    &quot;environment&quot;: {<br>&quot;设置&quot;: &quot;黄昏时拥挤的都市广场&quot;,<br>      &quot;动态元素&quot;: &quot;行人被捕捉为抽象的、画家的运动模糊条纹，向两个方向飞驰&quot;,<br>      &quot;对比&quot;: &quot;主体完美的静止与周围人群混乱的模糊形成鲜明对比&quot;<br>    }<br>  },<br>&quot;技术美学&quot;: {<br>    &quot;摄影风格&quot;: &quot;长曝光电影感街头摄影，强烈的主体分离&quot;,<br>    &quot;光线&quot;: &quot;柔和的自然阴天光线，带有温暖的琥珀色街灯点缀&quot;<br>&quot;色彩搭配&quot;: [&quot;柔和的森林绿&quot;, &quot;温暖的赭石色&quot;, &quot;深邃的天鹅绒棕色&quot;, &quot;去饱和的城市灰色&quot;],<br>&quot;镜头效果&quot;: &quot;浅景深，主体纹理清晰对焦，背景柔焦&quot;,<br>&quot;图像质量&quot;: [&quot;8k 分辨率&quot;, &quot;超写实&quot;, &quot;艺术感编辑颗粒感&quot;, &quot;触感织物纹理&quot;]<br>  },<br>&quot;mood&quot;: &quot;安静而富有情感，内省，忧郁，且永恒&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;场景构图&quot;: {<br>    &quot;主要主题&quot;: {<br>&quot;woman&quot;: {<br>        &quot;description&quot;: &quot;一位年轻女子，拥有被风吹乱的浅金色短发，表情沉思而疏离&quot;,<br>        &quot;gaze&quot;: &quot;目光略微向上，偏离镜头&quot;,<br>        &quot;clothing&quot;: &quot;搭配了大地色系的丝绒连衣裙和厚重、纹理明显的橄榄绿色粗花呢大衣&quot;<br>      },<br>&quot;companion&quot;: &quot;一个平静、安静的姜黄色猫，静静地坐在她旁边的长椅上&quot;<br>    },<br>    &quot;environment&quot;: {<br>&quot;设置&quot;: &quot;黄昏时拥挤的都市广场&quot;,<br>      &quot;动态元素&quot;: &quot;行人被捕捉为抽象的、画家的运动模糊条纹，向两个方向飞驰&quot;,<br>      &quot;对比&quot;: &quot;主体完美的静止与周围人群混乱的模糊形成鲜明对比&quot;<br>    }<br>  },<br>&quot;技术美学&quot;: {<br>    &quot;摄影风格&quot;: &quot;长曝光电影感街头摄影，强烈的主体分离&quot;,<br>    &quot;光线&quot;: &quot;柔和的自然阴天光线，带有温暖的琥珀色街灯点缀&quot;<br>&quot;色彩搭配&quot;: [&quot;柔和的森林绿&quot;, &quot;温暖的赭石色&quot;, &quot;深邃的天鹅绒棕色&quot;, &quot;去饱和的城市灰色&quot;],<br>&quot;镜头效果&quot;: &quot;浅景深，主体纹理清晰对焦，背景柔焦&quot;,<br>&quot;图像质量&quot;: [&quot;8k 分辨率&quot;, &quot;超写实&quot;, &quot;艺术感编辑颗粒感&quot;, &quot;触感织物纹理&quot;]<br>  },<br>&quot;mood&quot;: &quot;安静而富有情感，内省，忧郁，且永恒&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Nano Banana pro on Gemini app.\r\nPrompt {\r\n  \"scene_composition\": {\r\n    \"primary_subjects\": {\r\n      \"woman\": {\r\n        \"description\": \"Young woman with short, wind-tossed blonde hair and a thoughtful, distant expression\",\r\n        \"gaze\": \"Looking slightly upward and away from the lens\",\r\n        \"clothing\": \"Earthy brown velvet dress paired with a heavy, textured olive green tweed coat\"\r\n      },\r\n      \"companion\": \"A calm, still ginger cat sitting closely beside her on the bench\"\r\n    },\r\n    \"environment\": {\r\n      \"setting\": \"Crowded metropolitan city square at dusk\",\r\n      \"dynamic_elements\": \"Pedestrians captured as abstract, painterly motion-blurred streaks rushing in both directions\",\r\n      \"contrast\": \"Perfect stillness of the subjects vs. the chaotic blur of the surrounding crowd\"\r\n    }\r\n  },\r\n  \"technical_aesthetic\": {\r\n    \"photography_style\": \"Long-exposure cinematic street photography, heavy subject isolation\",\r\n    \"lighting\": \"Soft natural overcast light with warm amber street-glow accents\",\r\n    \"color_palette\": [\"Muted forest greens\", \"Warm ochre\", \"Deep velvet brown\", \"Desaturated urban grays\"],\r\n    \"lens_effects\": \"Shallow depth of field, sharp focus on subject textures, soft-focus background\",\r\n    \"image_quality\": [\"8k resolution\", \"Ultra-realistic\", \"Fine-art editorial grain\", \"Tactile fabric textures\"]\r\n  },\r\n  \"mood\": \"Quietly emotional, introspective, melancholic, and timeless\"\r\n}", this)'>📋 Copy</button>
         </div>
-        <p>Nano Banana pro on Gemini app.<br>Prompt {<br>  &quot;scene_composition&quot;: {<br>    &quot;primary_subjects&quot;: {<br>      &quot;woman&quot;: {<br>        &quot;description&quot;: &quot;Young woman with short, wind-tossed blonde hair and a thoughtful, distant expression&quot;,<br>        &quot;gaze&quot;: &quot;Looking slightly upward and away from the lens&quot;,<br>        &quot;clothing&quot;: &quot;Earthy brown velvet dress paired with a heavy, textured olive green tweed coat&quot;<br>      },<br>      &quot;companion&quot;: &quot;A calm, still ginger cat sitting closely beside her on the bench&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Crowded metropolitan city square at dusk&quot;,<br>      &quot;dynamic_elements&quot;: &quot;Pedestrians captured as abstract, painterly motion-blurred streaks rushing in both directions&quot;,<br>      &quot;contrast&quot;: &quot;Perfect stillness of the subjects vs. the chaotic blur of the surrounding crowd&quot;<br>    }<br>  },<br>  &quot;technical_aesthetic&quot;: {<br>    &quot;photography_style&quot;: &quot;Long-exposure cinematic street photography, heavy subject isolation&quot;,<br>    &quot;lighting&quot;: &quot;Soft natural overcast light with warm amber street-glow accents&quot;,<br>    &quot;color_palette&quot;: [&quot;Muted forest greens&quot;, &quot;Warm ochre&quot;, &quot;Deep velvet brown&quot;, &quot;Desaturated urban grays&quot;],<br>    &quot;lens_effects&quot;: &quot;Shallow depth of field, sharp focus on subject textures, soft-focus background&quot;,<br>    &quot;image_quality&quot;: [&quot;8k resolution&quot;, &quot;Ultra-realistic&quot;, &quot;Fine-art editorial grain&quot;, &quot;Tactile fabric textures&quot;]<br>  },<br>  &quot;mood&quot;: &quot;Quietly emotional, introspective, melancholic, and timeless&quot;<br>}</p>
+        <div data-nosnippet><p>Nano Banana pro on Gemini app.<br>Prompt {<br>  &quot;scene_composition&quot;: {<br>    &quot;primary_subjects&quot;: {<br>      &quot;woman&quot;: {<br>        &quot;description&quot;: &quot;Young woman with short, wind-tossed blonde hair and a thoughtful, distant expression&quot;,<br>        &quot;gaze&quot;: &quot;Looking slightly upward and away from the lens&quot;,<br>        &quot;clothing&quot;: &quot;Earthy brown velvet dress paired with a heavy, textured olive green tweed coat&quot;<br>      },<br>      &quot;companion&quot;: &quot;A calm, still ginger cat sitting closely beside her on the bench&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Crowded metropolitan city square at dusk&quot;,<br>      &quot;dynamic_elements&quot;: &quot;Pedestrians captured as abstract, painterly motion-blurred streaks rushing in both directions&quot;,<br>      &quot;contrast&quot;: &quot;Perfect stillness of the subjects vs. the chaotic blur of the surrounding crowd&quot;<br>    }<br>  },<br>  &quot;technical_aesthetic&quot;: {<br>    &quot;photography_style&quot;: &quot;Long-exposure cinematic street photography, heavy subject isolation&quot;,<br>    &quot;lighting&quot;: &quot;Soft natural overcast light with warm amber street-glow accents&quot;,<br>    &quot;color_palette&quot;: [&quot;Muted forest greens&quot;, &quot;Warm ochre&quot;, &quot;Deep velvet brown&quot;, &quot;Desaturated urban grays&quot;],<br>    &quot;lens_effects&quot;: &quot;Shallow depth of field, sharp focus on subject textures, soft-focus background&quot;,<br>    &quot;image_quality&quot;: [&quot;8k resolution&quot;, &quot;Ultra-realistic&quot;, &quot;Fine-art editorial grain&quot;, &quot;Tactile fabric textures&quot;]<br>  },<br>  &quot;mood&quot;: &quot;Quietly emotional, introspective, melancholic, and timeless&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2012533640769814534-1.jpg" alt="长曝光街头人像：静默女子与姜猫在黄昏广场的对比" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 574,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

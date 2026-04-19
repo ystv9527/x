@@ -7,11 +7,13 @@
     <title>Use a user uploaded image as the source and convert the perso... #2053 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Use a user uploaded image as the source and convert the person into a stylized 3D character while preserving identity...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2053.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2053.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2053.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840298">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022313">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用用户上传的图片作为素材，在保持身份、面部结构、姿势、发型、穿着以及照片中所示的整体构图的前提下，将人物转换为风格化的3D角色，且要与照片中完全一致地呈现原照片中的形象。结果应清晰地与真人人物相似。\n\n视觉风格为柔和极简卡通风格的3D角色，灵感来源于皮克斯般的视觉效果，但更简约、偏玩具人偶渲染，以及干净的产品风格角色设计。平衡应偏向风格化而非写实，同时不改变人物在现实世界中的外貌。\n\n皮肤应呈现光滑的哑光塑料质感，纹理柔和、均匀，具备轻微的次表面散射。面部特征应在忠于原始图像的同时，形式上进行简化。表情应保持中性、自然，与原始照片一致。\n\n照明应清晰、受控，类似工作室柔光箱布光，阴影非常柔和、对比度低、高光微妙。背景应为纯色 [BACKGROUND COLOR]，无渐变。\n\n相机应呈前置视角，采用中景近拍构图，类似50mm镜头，且无失真。输出质量应为高分辨率，边缘干净、无噪点、风格一致性强，且呈现出明显的非写实完成度。", this)'>📋 复制</button>
         </div>
-        <p>使用用户上传的图片作为素材，在保持身份、面部结构、姿势、发型、穿着以及照片中所示的整体构图的前提下，将人物转换为风格化的3D角色，且要与照片中完全一致地呈现原照片中的形象。结果应清晰地与真人人物相似。</p><p>视觉风格为柔和极简卡通风格的3D角色，灵感来源于皮克斯般的视觉效果，但更简约、偏玩具人偶渲染，以及干净的产品风格角色设计。平衡应偏向风格化而非写实，同时不改变人物在现实世界中的外貌。</p><p>皮肤应呈现光滑的哑光塑料质感，纹理柔和、均匀，具备轻微的次表面散射。面部特征应在忠于原始图像的同时，形式上进行简化。表情应保持中性、自然，与原始照片一致。</p><p>照明应清晰、受控，类似工作室柔光箱布光，阴影非常柔和、对比度低、高光微妙。背景应为纯色 [BACKGROUND COLOR]，无渐变。</p><p>相机应呈前置视角，采用中景近拍构图，类似50mm镜头，且无失真。输出质量应为高分辨率，边缘干净、无噪点、风格一致性强，且呈现出明显的非写实完成度。</p>
+        <div data-nosnippet><p>使用用户上传的图片作为素材，在保持身份、面部结构、姿势、发型、穿着以及照片中所示的整体构图的前提下，将人物转换为风格化的3D角色，且要与照片中完全一致地呈现原照片中的形象。结果应清晰地与真人人物相似。</p><p>视觉风格为柔和极简卡通风格的3D角色，灵感来源于皮克斯般的视觉效果，但更简约、偏玩具人偶渲染，以及干净的产品风格角色设计。平衡应偏向风格化而非写实，同时不改变人物在现实世界中的外貌。</p><p>皮肤应呈现光滑的哑光塑料质感，纹理柔和、均匀，具备轻微的次表面散射。面部特征应在忠于原始图像的同时，形式上进行简化。表情应保持中性、自然，与原始照片一致。</p><p>照明应清晰、受控，类似工作室柔光箱布光，阴影非常柔和、对比度低、高光微妙。背景应为纯色 [BACKGROUND COLOR]，无渐变。</p><p>相机应呈前置视角，采用中景近拍构图，类似50mm镜头，且无失真。输出质量应为高分辨率，边缘干净、无噪点、风格一致性强，且呈现出明显的非写实完成度。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use a user-uploaded image as the source and convert the person into a stylized 3D character while preserving identity, facial structure, pose, hairstyle, clothing, and overall composition exactly as shown in the photo. The result should clearly resemble the real person.\n\nThe visual style is a stylized 3D character with a soft minimal cartoon 3D aesthetic, inspired by Pixar-like visuals but more minimal, toy-figure renders, and clean product-style character design. The balance should favor stylization over realism without changing the person’s real-world appearance.\n\nSkin should appear as smooth matte plastic with a soft, uniform texture and gentle subsurface scattering. Facial features should remain faithful to the original image while being simplified in form. The expression should stay neutral and natural to the source photo.\n\nLighting should be clean and controlled, similar to a studio softbox setup, with very soft shadows, low contrast, and subtle highlights. The background should be a solid [BACKGROUND COLOR] with no gradient.\n\nThe camera should feel front-facing with a medium close-up framing, similar to a 50mm lens, with no distortion. Output quality should be high resolution with clean edges, no noise, strong style consistency, and a clearly non-photorealistic finish.", this)'>📋 复制</button>
         </div>
-        <p>Use a user-uploaded image as the source and convert the person into a stylized 3D character while preserving identity, facial structure, pose, hairstyle, clothing, and overall composition exactly as shown in the photo. The result should clearly resemble the real person.</p><p>The visual style is a stylized 3D character with a soft minimal cartoon 3D aesthetic, inspired by Pixar-like visuals but more minimal, toy-figure renders, and clean product-style character design. The balance should favor stylization over realism without changing the person’s real-world appearance.</p><p>Skin should appear as smooth matte plastic with a soft, uniform texture and gentle subsurface scattering. Facial features should remain faithful to the original image while being simplified in form. The expression should stay neutral and natural to the source photo.</p><p>Lighting should be clean and controlled, similar to a studio softbox setup, with very soft shadows, low contrast, and subtle highlights. The background should be a solid [BACKGROUND COLOR] with no gradient.</p><p>The camera should feel front-facing with a medium close-up framing, similar to a 50mm lens, with no distortion. Output quality should be high resolution with clean edges, no noise, strong style consistency, and a clearly non-photorealistic finish.</p>
+        <div data-nosnippet><p>Use a user-uploaded image as the source and convert the person into a stylized 3D character while preserving identity, facial structure, pose, hairstyle, clothing, and overall composition exactly as shown in the photo. The result should clearly resemble the real person.</p><p>The visual style is a stylized 3D character with a soft minimal cartoon 3D aesthetic, inspired by Pixar-like visuals but more minimal, toy-figure renders, and clean product-style character design. The balance should favor stylization over realism without changing the person’s real-world appearance.</p><p>Skin should appear as smooth matte plastic with a soft, uniform texture and gentle subsurface scattering. Facial features should remain faithful to the original image while being simplified in form. The expression should stay neutral and natural to the source photo.</p><p>Lighting should be clean and controlled, similar to a studio softbox setup, with very soft shadows, low contrast, and subtle highlights. The background should be a solid [BACKGROUND COLOR] with no gradient.</p><p>The camera should feel front-facing with a medium close-up framing, similar to a 50mm lens, with no distortion. Output quality should be high resolution with clean edges, no noise, strong style consistency, and a clearly non-photorealistic finish.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2020837883549298730-1.jpg" alt="Use a user uploaded image as the source and convert the perso..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2053,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

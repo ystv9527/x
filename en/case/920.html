@@ -7,11 +7,13 @@
     <title>Depict [LANDMARK] frozen in an eternal state of construction.... #920 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Depict [LANDMARK] frozen in an eternal state of construction. Camera &amp; Angle (LOCKED): 45° elevated isometric view, c...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/920.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/920.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/920.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845657">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023762">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("描绘 [LANDMARK] 冻结在永恒的施工状态中。 摄像机与角度（锁定）：45° 提升等距视角，摄像机距离固定，使整个地标约占画面70%。无倾斜变化。 结构：下部区域完全竣工，坚固且一眼可辨。上部区域平滑过渡为未完成的施工：脚手架、起重机、裸露的梁、缆线和骨架式结构。完成与未完成之间的过渡线清晰可见且在建筑上精确定位。 比例与细节：在脚手架上放置小型静止的施工工人以示比例。恰好包含1–2台施工机械（起重臂、升降机或吊装机），静止不动。无运动，无模糊，无掉落的碎屑。 材料（保持一致）：已完成区域：抛光石材 / 玻璃 / 钢（根据地标适配）。未完成区域：原始混凝土、钢梁、缆线、结构框架。材料干净、真实，并在所有渲染中保持一致。 光线（锁定）：来自左上方的柔和中性电影灯光。曝光平衡，阴影柔和，无戏剧性高光。 构图（锁定）：完美居中，对称平衡。地标置于微妙的基座或地面平面上。方形画幅 1080×1080。 背景（锁定）：极简中性天空或工作室灰背景。无云，无渐变，无干扰。 风格：超写实建筑渲染。干净、精确、宁静且宏伟。无风格化处理，无绘画效果。 氛围：永恒、安静、沉思。冻结的进度——永不完工，永不衰败。", this)'>📋 Copy</button>
         </div>
-        <p>描绘 [LANDMARK] 冻结在永恒的施工状态中。 摄像机与角度（锁定）：45° 提升等距视角，摄像机距离固定，使整个地标约占画面70%。无倾斜变化。 结构：下部区域完全竣工，坚固且一眼可辨。上部区域平滑过渡为未完成的施工：脚手架、起重机、裸露的梁、缆线和骨架式结构。完成与未完成之间的过渡线清晰可见且在建筑上精确定位。 比例与细节：在脚手架上放置小型静止的施工工人以示比例。恰好包含1–2台施工机械（起重臂、升降机或吊装机），静止不动。无运动，无模糊，无掉落的碎屑。 材料（保持一致）：已完成区域：抛光石材 / 玻璃 / 钢（根据地标适配）。未完成区域：原始混凝土、钢梁、缆线、结构框架。材料干净、真实，并在所有渲染中保持一致。 光线（锁定）：来自左上方的柔和中性电影灯光。曝光平衡，阴影柔和，无戏剧性高光。 构图（锁定）：完美居中，对称平衡。地标置于微妙的基座或地面平面上。方形画幅 1080×1080。 背景（锁定）：极简中性天空或工作室灰背景。无云，无渐变，无干扰。 风格：超写实建筑渲染。干净、精确、宁静且宏伟。无风格化处理，无绘画效果。 氛围：永恒、安静、沉思。冻结的进度——永不完工，永不衰败。</p>
+        <div data-nosnippet><p>描绘 [LANDMARK] 冻结在永恒的施工状态中。 摄像机与角度（锁定）：45° 提升等距视角，摄像机距离固定，使整个地标约占画面70%。无倾斜变化。 结构：下部区域完全竣工，坚固且一眼可辨。上部区域平滑过渡为未完成的施工：脚手架、起重机、裸露的梁、缆线和骨架式结构。完成与未完成之间的过渡线清晰可见且在建筑上精确定位。 比例与细节：在脚手架上放置小型静止的施工工人以示比例。恰好包含1–2台施工机械（起重臂、升降机或吊装机），静止不动。无运动，无模糊，无掉落的碎屑。 材料（保持一致）：已完成区域：抛光石材 / 玻璃 / 钢（根据地标适配）。未完成区域：原始混凝土、钢梁、缆线、结构框架。材料干净、真实，并在所有渲染中保持一致。 光线（锁定）：来自左上方的柔和中性电影灯光。曝光平衡，阴影柔和，无戏剧性高光。 构图（锁定）：完美居中，对称平衡。地标置于微妙的基座或地面平面上。方形画幅 1080×1080。 背景（锁定）：极简中性天空或工作室灰背景。无云，无渐变，无干扰。 风格：超写实建筑渲染。干净、精确、宁静且宏伟。无风格化处理，无绘画效果。 氛围：永恒、安静、沉思。冻结的进度——永不完工，永不衰败。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Depict [LANDMARK] frozen in an eternal state of construction. Camera & Angle (LOCKED): 45° elevated isometric view, camera distance fixed so the full landmark fills ~70% of the frame. No tilt variation. Structure: Lower sections are fully completed, solid, and instantly recognizable. Upper sections transition cleanly into unfinished construction: scaffolding, cranes, exposed beams, cables, and skeletal frameworks. The transition line between finished and unfinished is clearly visible and architecturally precise. Scale & Detail: Include small, static construction workers placed on scaffolding for scale. Include exactly 1–2 construction machines (crane arm, lift, or hoist), frozen in place. No motion, no blur, no debris falling. Materials (CONSISTENT): Finished areas: polished stone / glass / steel (appropriate to the landmark). Unfinished areas: raw concrete, steel beams, cables, structural frames. Materials are clean, realistic, and consistent across all renders. Lighting (LOCKED): Soft neutral cinematic lighting from upper left. Balanced exposure, gentle shadows, no dramatic highlights. Composition (LOCKED): Perfectly centered, symmetrical balance. Landmark sits on a subtle base or ground plane. Square format 1080×1080. Background (LOCKED): Minimal neutral sky or studio-gray backdrop. No clouds, no gradients, no distractions. Style: Hyper-realistic architectural render. Clean, precise, calm, and monumental. No stylization, no painterly effects. Mood: Timeless, quiet, contemplative. Frozen progress — never finished, never decaying.", this)'>📋 Copy</button>
         </div>
-        <p>Depict [LANDMARK] frozen in an eternal state of construction. Camera &amp; Angle (LOCKED): 45° elevated isometric view, camera distance fixed so the full landmark fills ~70% of the frame. No tilt variation. Structure: Lower sections are fully completed, solid, and instantly recognizable. Upper sections transition cleanly into unfinished construction: scaffolding, cranes, exposed beams, cables, and skeletal frameworks. The transition line between finished and unfinished is clearly visible and architecturally precise. Scale &amp; Detail: Include small, static construction workers placed on scaffolding for scale. Include exactly 1–2 construction machines (crane arm, lift, or hoist), frozen in place. No motion, no blur, no debris falling. Materials (CONSISTENT): Finished areas: polished stone / glass / steel (appropriate to the landmark). Unfinished areas: raw concrete, steel beams, cables, structural frames. Materials are clean, realistic, and consistent across all renders. Lighting (LOCKED): Soft neutral cinematic lighting from upper left. Balanced exposure, gentle shadows, no dramatic highlights. Composition (LOCKED): Perfectly centered, symmetrical balance. Landmark sits on a subtle base or ground plane. Square format 1080×1080. Background (LOCKED): Minimal neutral sky or studio-gray backdrop. No clouds, no gradients, no distractions. Style: Hyper-realistic architectural render. Clean, precise, calm, and monumental. No stylization, no painterly effects. Mood: Timeless, quiet, contemplative. Frozen progress — never finished, never decaying.</p>
+        <div data-nosnippet><p>Depict [LANDMARK] frozen in an eternal state of construction. Camera &amp; Angle (LOCKED): 45° elevated isometric view, camera distance fixed so the full landmark fills ~70% of the frame. No tilt variation. Structure: Lower sections are fully completed, solid, and instantly recognizable. Upper sections transition cleanly into unfinished construction: scaffolding, cranes, exposed beams, cables, and skeletal frameworks. The transition line between finished and unfinished is clearly visible and architecturally precise. Scale &amp; Detail: Include small, static construction workers placed on scaffolding for scale. Include exactly 1–2 construction machines (crane arm, lift, or hoist), frozen in place. No motion, no blur, no debris falling. Materials (CONSISTENT): Finished areas: polished stone / glass / steel (appropriate to the landmark). Unfinished areas: raw concrete, steel beams, cables, structural frames. Materials are clean, realistic, and consistent across all renders. Lighting (LOCKED): Soft neutral cinematic lighting from upper left. Balanced exposure, gentle shadows, no dramatic highlights. Composition (LOCKED): Perfectly centered, symmetrical balance. Landmark sits on a subtle base or ground plane. Square format 1080×1080. Background (LOCKED): Minimal neutral sky or studio-gray backdrop. No clouds, no gradients, no distractions. Style: Hyper-realistic architectural render. Clean, precise, calm, and monumental. No stylization, no painterly effects. Mood: Timeless, quiet, contemplative. Frozen progress — never finished, never decaying.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2009695503664239086-1.jpg" alt="Depict [LANDMARK] frozen in an eternal state of construction...." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 920,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

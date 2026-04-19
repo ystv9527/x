@@ -7,11 +7,13 @@
     <title>Gemini Nano Banana Pro Prompt:{  &quot;image_generation_prompt&quot;: {    &quot;subject&quot;: {      &quot;description&quot; #546 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Gemini Nano Banana Pro Prompt:{  &quot;image_generation_prompt&quot;: {    &quot;subject&quot;: {      &quot;description&quot;">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/546.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/546.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/546.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841753">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022669">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n\"image_generation_prompt\": {\r\n“主题”： {\r\n描述：一位穿着休闲、带有“下班模特”风格的年轻女性。\r\n“头发”：长长的深棕色头发自然披散，略显凌乱，略带纹理感和不修边幅的波浪。中分。\r\n“脸”： {\r\n表情：一副百无聊赖、漠不关心、漫不经心、一副“老子不在乎”的样子。下巴重重地搁在左手掌上。\r\n特征：白皙的肤色，丰满的嘴唇，轮廓分明的眉毛，脸颊上泛着淡淡的红晕。\r\n“配饰”：“银色矩形金属框眼镜（Y2K/‘办公室女郎’风格）。”\r\n      }\r\n    },\r\n\"服装\": {\r\n上衣：紧身罗纹米色或灰褐色吊带背心/吊带衫，细肩带。\r\n“下装”：“宽松的灰色水洗牛仔裤或厚重的运动裤，右膝盖处有大面积的破洞。”\r\n“风格”：“休闲街头服饰、慵懒时尚、Z 世代都市时尚。”\r\n    },\r\n\"pose_and_action\": {\r\n身体姿势：随意地坐在水泥路沿上，身体略微前倾，手肘放在膝盖上。\r\n\"手势\": \"右手向前伸出，拿着智能手机，镜头正对着观看者的视角。\"\r\n\"composition_element\": \"智能手机屏幕清晰可见且对焦准确，显示相机应用程序取景器，其中显示被摄对象面部的实时图像（画中画效果）。\"\r\n“互动”：“打破第四面墙，元摄影概念。”\r\n    },\r\n“环境”： {\r\n“场景”：“城市人行道。”\r\n“背景”：“纹理灰色的石材建筑外墙、混凝土路面、远处可见的金属格栅或门口。”\r\n“地面”：沥青路面与混凝土路缘石相接。\r\n    },\r\n\"lighting_and_atmosphere\": {\r\n\"lighting_type\": \"自然日光，柔和的阴天，漫射光，无明显阴影。\"\r\n“氛围”：“坦率、轻松、忧郁、无聊、都市生活片段。”\r\n“color_palette”: “柔和的中性色、灰色、米色、柔和的肤色。”\r\n    },\r\n\"camera_and_technical\": {\r\n“视角”：高角度视角（俯视坐在路边的拍摄对象）或相对于站立摄影师的视线水平视角。\r\n“对焦”：“清晰对焦于拍摄对象的面部和手机屏幕，略微虚化石墙背景。”\r\n风格： “iPhone 摄影美学，快照风格，高分辨率。”\r\n\"quality_keywords\": [\r\n“超逼真”\r\n“8K 分辨率”，\r\n“高度精细的纹理”，\r\n“皮肤纹理真实感”，\r\n“自然光”，\r\n“抓拍照片”\r\n“富士胶片模拟”\r\n      ]\r\n    }\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;image_generation_prompt&quot;: {<br>“主题”： {<br>描述：一位穿着休闲、带有“下班模特”风格的年轻女性。<br>“头发”：长长的深棕色头发自然披散，略显凌乱，略带纹理感和不修边幅的波浪。中分。<br>“脸”： {<br>表情：一副百无聊赖、漠不关心、漫不经心、一副“老子不在乎”的样子。下巴重重地搁在左手掌上。<br>特征：白皙的肤色，丰满的嘴唇，轮廓分明的眉毛，脸颊上泛着淡淡的红晕。<br>“配饰”：“银色矩形金属框眼镜（Y2K/‘办公室女郎’风格）。”<br>      }<br>    },<br>&quot;服装&quot;: {<br>上衣：紧身罗纹米色或灰褐色吊带背心/吊带衫，细肩带。<br>“下装”：“宽松的灰色水洗牛仔裤或厚重的运动裤，右膝盖处有大面积的破洞。”<br>“风格”：“休闲街头服饰、慵懒时尚、Z 世代都市时尚。”<br>    },<br>&quot;pose_and_action&quot;: {<br>身体姿势：随意地坐在水泥路沿上，身体略微前倾，手肘放在膝盖上。<br>&quot;手势&quot;: &quot;右手向前伸出，拿着智能手机，镜头正对着观看者的视角。&quot;<br>&quot;composition_element&quot;: &quot;智能手机屏幕清晰可见且对焦准确，显示相机应用程序取景器，其中显示被摄对象面部的实时图像（画中画效果）。&quot;<br>“互动”：“打破第四面墙，元摄影概念。”<br>    },<br>“环境”： {<br>“场景”：“城市人行道。”<br>“背景”：“纹理灰色的石材建筑外墙、混凝土路面、远处可见的金属格栅或门口。”<br>“地面”：沥青路面与混凝土路缘石相接。<br>    },<br>&quot;lighting_and_atmosphere&quot;: {<br>&quot;lighting_type&quot;: &quot;自然日光，柔和的阴天，漫射光，无明显阴影。&quot;<br>“氛围”：“坦率、轻松、忧郁、无聊、都市生活片段。”<br>“color_palette”: “柔和的中性色、灰色、米色、柔和的肤色。”<br>    },<br>&quot;camera_and_technical&quot;: {<br>“视角”：高角度视角（俯视坐在路边的拍摄对象）或相对于站立摄影师的视线水平视角。<br>“对焦”：“清晰对焦于拍摄对象的面部和手机屏幕，略微虚化石墙背景。”<br>风格： “iPhone 摄影美学，快照风格，高分辨率。”<br>&quot;quality_keywords&quot;: [<br>“超逼真”<br>“8K 分辨率”，<br>“高度精细的纹理”，<br>“皮肤纹理真实感”，<br>“自然光”，<br>“抓拍照片”<br>“富士胶片模拟”<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;image_generation_prompt&quot;: {<br>“主题”： {<br>描述：一位穿着休闲、带有“下班模特”风格的年轻女性。<br>“头发”：长长的深棕色头发自然披散，略显凌乱，略带纹理感和不修边幅的波浪。中分。<br>“脸”： {<br>表情：一副百无聊赖、漠不关心、漫不经心、一副“老子不在乎”的样子。下巴重重地搁在左手掌上。<br>特征：白皙的肤色，丰满的嘴唇，轮廓分明的眉毛，脸颊上泛着淡淡的红晕。<br>“配饰”：“银色矩形金属框眼镜（Y2K/‘办公室女郎’风格）。”<br>      }<br>    },<br>&quot;服装&quot;: {<br>上衣：紧身罗纹米色或灰褐色吊带背心/吊带衫，细肩带。<br>“下装”：“宽松的灰色水洗牛仔裤或厚重的运动裤，右膝盖处有大面积的破洞。”<br>“风格”：“休闲街头服饰、慵懒时尚、Z 世代都市时尚。”<br>    },<br>&quot;pose_and_action&quot;: {<br>身体姿势：随意地坐在水泥路沿上，身体略微前倾，手肘放在膝盖上。<br>&quot;手势&quot;: &quot;右手向前伸出，拿着智能手机，镜头正对着观看者的视角。&quot;<br>&quot;composition_element&quot;: &quot;智能手机屏幕清晰可见且对焦准确，显示相机应用程序取景器，其中显示被摄对象面部的实时图像（画中画效果）。&quot;<br>“互动”：“打破第四面墙，元摄影概念。”<br>    },<br>“环境”： {<br>“场景”：“城市人行道。”<br>“背景”：“纹理灰色的石材建筑外墙、混凝土路面、远处可见的金属格栅或门口。”<br>“地面”：沥青路面与混凝土路缘石相接。<br>    },<br>&quot;lighting_and_atmosphere&quot;: {<br>&quot;lighting_type&quot;: &quot;自然日光，柔和的阴天，漫射光，无明显阴影。&quot;<br>“氛围”：“坦率、轻松、忧郁、无聊、都市生活片段。”<br>“color_palette”: “柔和的中性色、灰色、米色、柔和的肤色。”<br>    },<br>&quot;camera_and_technical&quot;: {<br>“视角”：高角度视角（俯视坐在路边的拍摄对象）或相对于站立摄影师的视线水平视角。<br>“对焦”：“清晰对焦于拍摄对象的面部和手机屏幕，略微虚化石墙背景。”<br>风格： “iPhone 摄影美学，快照风格，高分辨率。”<br>&quot;quality_keywords&quot;: [<br>“超逼真”<br>“8K 分辨率”，<br>“高度精细的纹理”，<br>“皮肤纹理真实感”，<br>“自然光”，<br>“抓拍照片”<br>“富士胶片模拟”<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Gemini Nano Banana Pro Prompt:\r\n{\r\n  \"image_generation_prompt\": {\r\n    \"subject\": {\r\n      \"description\": \"Young woman with a casual, 'off-duty model' aesthetic.\",\r\n      \"hair\": \"Long, dark brown hair worn loose with a messy, textured, slightly unkempt wave. Center part.\",\r\n      \"face\": {\r\n        \"expression\": \"Bored, indifferent, nonchalant, 'over it' attitude. Resting chin heavily in left palm.\",\r\n        \"features\": \"White complexion, full lips, defined eyebrows, soft blush on cheeks.\",\r\n        \"accessories\": \"Silver, rectangular wire-rimmed glasses (Y2K / 'office siren' style).\"\r\n      }\r\n    },\r\n    \"apparel\": {\r\n      \"top\": \"Tight-fitting, ribbed beige or taupe tank top/camisole with thin straps.\",\r\n      \"bottoms\": \"Baggy, grey washed denim jeans or heavy sweatpants featuring a large distressed rip over the right knee.\",\r\n      \"style\": \"Casual streetwear, lazy-day chic, Gen Z urban fashion.\"\r\n    },\r\n    \"pose_and_action\": {\r\n      \"body_position\": \"Sitting casually on a concrete street curb. Leaning forward slightly with elbows on knees.\",\r\n      \"hand_gesture\": \"Right hand is extended forward holding a smartphone directly towards the viewer's POV.\",\r\n      \"composition_element\": \"The smartphone screen is visible and in focus, displaying the camera app viewfinder which shows a live image of the subject's face (picture-in-picture effect).\",\r\n      \"interaction\": \"Breaking the fourth wall, meta-photography concept.\"\r\n    },\r\n    \"environment\": {\r\n      \"setting\": \"Urban city sidewalk.\",\r\n      \"background\": \"Textured grey stone building facade, concrete pavement, metal grate or doorway visible in the distance.\",\r\n      \"ground\": \"Asphalt road meeting a concrete curb.\"\r\n    },\r\n    \"lighting_and_atmosphere\": {\r\n      \"lighting_type\": \"Natural daylight, soft overcast sky, diffuse lighting with no harsh shadows.\",\r\n      \"mood\": \"Candid, effortless, moody, bored, urban slice-of-life.\",\r\n      \"color_palette\": \"Muted neutrals, greys, beiges, soft skin tones.\"\r\n    },\r\n    \"camera_and_technical\": {\r\n      \"perspective\": \"High-angle POV (looking down at the subject sitting on the curb) or eye-level relative to the standing photographer.\",\r\n      \"focus\": \"Sharp focus on the subject's face and the phone screen, with slight depth of field blurring the stone wall background.\",\r\n      \"style\": \"Iphone photography aesthetic, snapshot style, high resolution.\",\r\n      \"quality_keywords\": [\r\n        \"Ultra Photorealistic\",\r\n        \"8k resolution\",\r\n        \"highly detailed texture\",\r\n        \"skin texture realism\",\r\n        \"natural lighting\",\r\n        \"candid photography\",\r\n        \"Fujifilm simulation\"\r\n      ]\r\n    }\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>Gemini Nano Banana Pro Prompt:<br>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Young woman with a casual, &#39;off-duty model&#39; aesthetic.&quot;,<br>      &quot;hair&quot;: &quot;Long, dark brown hair worn loose with a messy, textured, slightly unkempt wave. Center part.&quot;,<br>      &quot;face&quot;: {<br>        &quot;expression&quot;: &quot;Bored, indifferent, nonchalant, &#39;over it&#39; attitude. Resting chin heavily in left palm.&quot;,<br>        &quot;features&quot;: &quot;White complexion, full lips, defined eyebrows, soft blush on cheeks.&quot;,<br>        &quot;accessories&quot;: &quot;Silver, rectangular wire-rimmed glasses (Y2K / &#39;office siren&#39; style).&quot;<br>      }<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;top&quot;: &quot;Tight-fitting, ribbed beige or taupe tank top/camisole with thin straps.&quot;,<br>      &quot;bottoms&quot;: &quot;Baggy, grey washed denim jeans or heavy sweatpants featuring a large distressed rip over the right knee.&quot;,<br>      &quot;style&quot;: &quot;Casual streetwear, lazy-day chic, Gen Z urban fashion.&quot;<br>    },<br>    &quot;pose_and_action&quot;: {<br>      &quot;body_position&quot;: &quot;Sitting casually on a concrete street curb. Leaning forward slightly with elbows on knees.&quot;,<br>      &quot;hand_gesture&quot;: &quot;Right hand is extended forward holding a smartphone directly towards the viewer&#39;s POV.&quot;,<br>      &quot;composition_element&quot;: &quot;The smartphone screen is visible and in focus, displaying the camera app viewfinder which shows a live image of the subject&#39;s face (picture-in-picture effect).&quot;,<br>      &quot;interaction&quot;: &quot;Breaking the fourth wall, meta-photography concept.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Urban city sidewalk.&quot;,<br>      &quot;background&quot;: &quot;Textured grey stone building facade, concrete pavement, metal grate or doorway visible in the distance.&quot;,<br>      &quot;ground&quot;: &quot;Asphalt road meeting a concrete curb.&quot;<br>    },<br>    &quot;lighting_and_atmosphere&quot;: {<br>      &quot;lighting_type&quot;: &quot;Natural daylight, soft overcast sky, diffuse lighting with no harsh shadows.&quot;,<br>      &quot;mood&quot;: &quot;Candid, effortless, moody, bored, urban slice-of-life.&quot;,<br>      &quot;color_palette&quot;: &quot;Muted neutrals, greys, beiges, soft skin tones.&quot;<br>    },<br>    &quot;camera_and_technical&quot;: {<br>      &quot;perspective&quot;: &quot;High-angle POV (looking down at the subject sitting on the curb) or eye-level relative to the standing photographer.&quot;,<br>      &quot;focus&quot;: &quot;Sharp focus on the subject&#39;s face and the phone screen, with slight depth of field blurring the stone wall background.&quot;,<br>      &quot;style&quot;: &quot;Iphone photography aesthetic, snapshot style, high resolution.&quot;,<br>      &quot;quality_keywords&quot;: [<br>        &quot;Ultra Photorealistic&quot;,<br>        &quot;8k resolution&quot;,<br>        &quot;highly detailed texture&quot;,<br>        &quot;skin texture realism&quot;,<br>        &quot;natural lighting&quot;,<br>        &quot;candid photography&quot;,<br>        &quot;Fujifilm simulation&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>Gemini Nano Banana Pro Prompt:<br>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Young woman with a casual, &#39;off-duty model&#39; aesthetic.&quot;,<br>      &quot;hair&quot;: &quot;Long, dark brown hair worn loose with a messy, textured, slightly unkempt wave. Center part.&quot;,<br>      &quot;face&quot;: {<br>        &quot;expression&quot;: &quot;Bored, indifferent, nonchalant, &#39;over it&#39; attitude. Resting chin heavily in left palm.&quot;,<br>        &quot;features&quot;: &quot;White complexion, full lips, defined eyebrows, soft blush on cheeks.&quot;,<br>        &quot;accessories&quot;: &quot;Silver, rectangular wire-rimmed glasses (Y2K / &#39;office siren&#39; style).&quot;<br>      }<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;top&quot;: &quot;Tight-fitting, ribbed beige or taupe tank top/camisole with thin straps.&quot;,<br>      &quot;bottoms&quot;: &quot;Baggy, grey washed denim jeans or heavy sweatpants featuring a large distressed rip over the right knee.&quot;,<br>      &quot;style&quot;: &quot;Casual streetwear, lazy-day chic, Gen Z urban fashion.&quot;<br>    },<br>    &quot;pose_and_action&quot;: {<br>      &quot;body_position&quot;: &quot;Sitting casually on a concrete street curb. Leaning forward slightly with elbows on knees.&quot;,<br>      &quot;hand_gesture&quot;: &quot;Right hand is extended forward holding a smartphone directly towards the viewer&#39;s POV.&quot;,<br>      &quot;composition_element&quot;: &quot;The smartphone screen is visible and in focus, displaying the camera app viewfinder which shows a live image of the subject&#39;s face (picture-in-picture effect).&quot;,<br>      &quot;interaction&quot;: &quot;Breaking the fourth wall, meta-photography concept.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Urban city sidewalk.&quot;,<br>      &quot;background&quot;: &quot;Textured grey stone building facade, concrete pavement, metal grate or doorway visible in the distance.&quot;,<br>      &quot;ground&quot;: &quot;Asphalt road meeting a concrete curb.&quot;<br>    },<br>    &quot;lighting_and_atmosphere&quot;: {<br>      &quot;lighting_type&quot;: &quot;Natural daylight, soft overcast sky, diffuse lighting with no harsh shadows.&quot;,<br>      &quot;mood&quot;: &quot;Candid, effortless, moody, bored, urban slice-of-life.&quot;,<br>      &quot;color_palette&quot;: &quot;Muted neutrals, greys, beiges, soft skin tones.&quot;<br>    },<br>    &quot;camera_and_technical&quot;: {<br>      &quot;perspective&quot;: &quot;High-angle POV (looking down at the subject sitting on the curb) or eye-level relative to the standing photographer.&quot;,<br>      &quot;focus&quot;: &quot;Sharp focus on the subject&#39;s face and the phone screen, with slight depth of field blurring the stone wall background.&quot;,<br>      &quot;style&quot;: &quot;Iphone photography aesthetic, snapshot style, high resolution.&quot;,<br>      &quot;quality_keywords&quot;: [<br>        &quot;Ultra Photorealistic&quot;,<br>        &quot;8k resolution&quot;,<br>        &quot;highly detailed texture&quot;,<br>        &quot;skin texture realism&quot;,<br>        &quot;natural lighting&quot;,<br>        &quot;candid photography&quot;,<br>        &quot;Fujifilm simulation&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2007360807915446465-1.jpg" alt="Gemini Nano Banana Pro Prompt:{  &quot;image_generation_prompt&quot;: {    &quot;subject&quot;: {      &quot;description&quot;" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 546,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

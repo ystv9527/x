@@ -7,11 +7,13 @@
     <title>A sharp, top down macro photograph of a single, #1376 | Gem Nana AI 提示词库</title>
     <meta name="description" content="A sharp, top down macro photograph of a single, heavily crumpled circular vinyl sticker featuring the official [BRAND...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1376.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1376.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1376.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840951">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022468">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一张锐利的、正上方俯拍的微距照片，主体为一枚严重皱褶的圆形乙烯基贴纸，贴纸上带有官方 [BRAND NAME] 标志。\n\n材质与质感（乙烯基）：\n该贴纸由耐用、微带光泽的乙烯基材质制成，而非纸质。表面严重起皱，遍布清晰、锐利的脊状褶皱和深度应力折痕。不同于柔软纸张的折痕，这些乙烯基皱褶显示出塑料应力，并在折峰处以细微的镜面高光捕捉光线。边缘因磨损略微卷曲。\n\n颜色调色板（品牌主色）：\n圆形贴纸本身的背景色为与 [BRAND NAME] 官方品牌调色板相关的主色（例如：若为法拉利，则为红色；若为约翰迪尔，则为绿色）。标志以其标准的对比色（例如白色或黑色）清晰印刷。\n\n照明（工作室高亮）：\n明亮、干净的高调顶光白色工作室照明。强烈的光线在乙烯基的皱褶脊峰上形成强烈、干净的高光，在皱褶谷底形成清晰、利落的阴影，戏剧性地强调损伤的三维地形。\n\n背景与构图：\n相机固定在严格、完全平行的正上方平铺俯拍视角。贴纸被平整粘贴在纯白色塑料表面上，该表面具有细微的颗粒质感（类似珠状喷砂塑料），以与光滑的乙烯基形成触觉对比。整个贴纸均处于清晰对焦状态。", this)'>📋 复制</button>
         </div>
-        <p>一张锐利的、正上方俯拍的微距照片，主体为一枚严重皱褶的圆形乙烯基贴纸，贴纸上带有官方 [BRAND NAME] 标志。</p><p>材质与质感（乙烯基）：<br>该贴纸由耐用、微带光泽的乙烯基材质制成，而非纸质。表面严重起皱，遍布清晰、锐利的脊状褶皱和深度应力折痕。不同于柔软纸张的折痕，这些乙烯基皱褶显示出塑料应力，并在折峰处以细微的镜面高光捕捉光线。边缘因磨损略微卷曲。</p><p>颜色调色板（品牌主色）：<br>圆形贴纸本身的背景色为与 [BRAND NAME] 官方品牌调色板相关的主色（例如：若为法拉利，则为红色；若为约翰迪尔，则为绿色）。标志以其标准的对比色（例如白色或黑色）清晰印刷。</p><p>照明（工作室高亮）：<br>明亮、干净的高调顶光白色工作室照明。强烈的光线在乙烯基的皱褶脊峰上形成强烈、干净的高光，在皱褶谷底形成清晰、利落的阴影，戏剧性地强调损伤的三维地形。</p><p>背景与构图：<br>相机固定在严格、完全平行的正上方平铺俯拍视角。贴纸被平整粘贴在纯白色塑料表面上，该表面具有细微的颗粒质感（类似珠状喷砂塑料），以与光滑的乙烯基形成触觉对比。整个贴纸均处于清晰对焦状态。</p>
+        <div data-nosnippet><p>一张锐利的、正上方俯拍的微距照片，主体为一枚严重皱褶的圆形乙烯基贴纸，贴纸上带有官方 [BRAND NAME] 标志。</p><p>材质与质感（乙烯基）：<br>该贴纸由耐用、微带光泽的乙烯基材质制成，而非纸质。表面严重起皱，遍布清晰、锐利的脊状褶皱和深度应力折痕。不同于柔软纸张的折痕，这些乙烯基皱褶显示出塑料应力，并在折峰处以细微的镜面高光捕捉光线。边缘因磨损略微卷曲。</p><p>颜色调色板（品牌主色）：<br>圆形贴纸本身的背景色为与 [BRAND NAME] 官方品牌调色板相关的主色（例如：若为法拉利，则为红色；若为约翰迪尔，则为绿色）。标志以其标准的对比色（例如白色或黑色）清晰印刷。</p><p>照明（工作室高亮）：<br>明亮、干净的高调顶光白色工作室照明。强烈的光线在乙烯基的皱褶脊峰上形成强烈、干净的高光，在皱褶谷底形成清晰、利落的阴影，戏剧性地强调损伤的三维地形。</p><p>背景与构图：<br>相机固定在严格、完全平行的正上方平铺俯拍视角。贴纸被平整粘贴在纯白色塑料表面上，该表面具有细微的颗粒质感（类似珠状喷砂塑料），以与光滑的乙烯基形成触觉对比。整个贴纸均处于清晰对焦状态。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A sharp, top-down macro photograph of a single, \nheavily crumpled circular vinyl sticker featuring the official [BRAND NAME] logo.\n\nMATERIAL & TEXTURE (VINYL):\nThe sticker is made of durable, slight-gloss vinyl material, not paper. It is severely crinkled with sharp, defined ridges and deep stress folds across its entire surface. Unlike soft paper creases, these vinyl wrinkles show plastic stress and catch the light with subtle specular highlights on the peaks of the folds. The edges are slightly curled from wear.\nCOLOR PALETTE (BRAND DYNAMIC):\nThe background color of the circular sticker itself is the dominant primary color associated with [BRAND NAME]'s official brand palette (e.g., if Ferrari, red; if John Deere, green). The logo is printed clearly in its standard contrasting color (e.g., white or black).\nLIGHTING (STUDIO BRIGHT):\nBright, clean, high-key overhead white studio lighting. This intense lighting creates strong, clean highlights on the vinyl's crumpled ridges and defined, crisp shadows in the valleys, dramatically emphasizing the 3D topography of the damage.\nBACKGROUND & COMPOSITION:\nThe camera is locked in a strict, perfectly parallel top-down flat lay view. The sticker is adhered flat onto a pure white plastic surface which has a subtle, fine granular texture (like bead-blasted plastic) to provide tactile contrast to the smooth vinyl. The entire sticker is in sharp focus.", this)'>📋 复制</button>
         </div>
-        <p>A sharp, top-down macro photograph of a single, <br>heavily crumpled circular vinyl sticker featuring the official [BRAND NAME] logo.</p><p>MATERIAL &amp; TEXTURE (VINYL):<br>The sticker is made of durable, slight-gloss vinyl material, not paper. It is severely crinkled with sharp, defined ridges and deep stress folds across its entire surface. Unlike soft paper creases, these vinyl wrinkles show plastic stress and catch the light with subtle specular highlights on the peaks of the folds. The edges are slightly curled from wear.<br>COLOR PALETTE (BRAND DYNAMIC):<br>The background color of the circular sticker itself is the dominant primary color associated with [BRAND NAME]&#39;s official brand palette (e.g., if Ferrari, red; if John Deere, green). The logo is printed clearly in its standard contrasting color (e.g., white or black).<br>LIGHTING (STUDIO BRIGHT):<br>Bright, clean, high-key overhead white studio lighting. This intense lighting creates strong, clean highlights on the vinyl&#39;s crumpled ridges and defined, crisp shadows in the valleys, dramatically emphasizing the 3D topography of the damage.<br>BACKGROUND &amp; COMPOSITION:<br>The camera is locked in a strict, perfectly parallel top-down flat lay view. The sticker is adhered flat onto a pure white plastic surface which has a subtle, fine granular texture (like bead-blasted plastic) to provide tactile contrast to the smooth vinyl. The entire sticker is in sharp focus.</p>
+        <div data-nosnippet><p>A sharp, top-down macro photograph of a single, <br>heavily crumpled circular vinyl sticker featuring the official [BRAND NAME] logo.</p><p>MATERIAL &amp; TEXTURE (VINYL):<br>The sticker is made of durable, slight-gloss vinyl material, not paper. It is severely crinkled with sharp, defined ridges and deep stress folds across its entire surface. Unlike soft paper creases, these vinyl wrinkles show plastic stress and catch the light with subtle specular highlights on the peaks of the folds. The edges are slightly curled from wear.<br>COLOR PALETTE (BRAND DYNAMIC):<br>The background color of the circular sticker itself is the dominant primary color associated with [BRAND NAME]&#39;s official brand palette (e.g., if Ferrari, red; if John Deere, green). The logo is printed clearly in its standard contrasting color (e.g., white or black).<br>LIGHTING (STUDIO BRIGHT):<br>Bright, clean, high-key overhead white studio lighting. This intense lighting creates strong, clean highlights on the vinyl&#39;s crumpled ridges and defined, crisp shadows in the valleys, dramatically emphasizing the 3D topography of the damage.<br>BACKGROUND &amp; COMPOSITION:<br>The camera is locked in a strict, perfectly parallel top-down flat lay view. The sticker is adhered flat onto a pure white plastic surface which has a subtle, fine granular texture (like bead-blasted plastic) to provide tactile contrast to the smooth vinyl. The entire sticker is in sharp focus.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011878056755966363-1.jpg" alt="A sharp, top down macro photograph of a single," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1376,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

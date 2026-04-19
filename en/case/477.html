@@ -7,11 +7,13 @@
     <title>glass bottle souvenir #477 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Glass Bottle Souvenir - Nano Banana AI Image Generation Case  Input: A reference image must be uploaded.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/477.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/477.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/477.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846109">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023861">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -204,14 +208,14 @@ Input: A reference image must be uploaded.</p></div>
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("1/7比例的商品化收藏级人偶，以照片中人物为原型，高度写实的风格打造。人偶置于细致的沙滩环境中，沙滩、贝壳和轻柔的海浪交织在一起。整个玩具展示架被封装在一个透明的纪念品玻璃瓶中，使其呈现出高端的微缩立体模型效果，并拥有逼真的光影效果。", this)'>📋 Copy</button>
         </div>
-        <p>1/7比例的商品化收藏级人偶，以照片中人物为原型，高度写实的风格打造。人偶置于细致的沙滩环境中，沙滩、贝壳和轻柔的海浪交织在一起。整个玩具展示架被封装在一个透明的纪念品玻璃瓶中，使其呈现出高端的微缩立体模型效果，并拥有逼真的光影效果。</p>
+        <div data-nosnippet><p>1/7比例的商品化收藏级人偶，以照片中人物为原型，高度写实的风格打造。人偶置于细致的沙滩环境中，沙滩、贝壳和轻柔的海浪交织在一起。整个玩具展示架被封装在一个透明的纪念品玻璃瓶中，使其呈现出高端的微缩立体模型效果，并拥有逼真的光影效果。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A collectible, highly realistic doll in a 1/7 scale, modeled after the person in the photograph. The doll is set in a detailed beach scene with sand, shells, and gentle waves blending together. The entire display is encased inside a transparent souvenir glass bottle, creating a high-end miniature three-dimensional model with realistic lighting and shadow effects.", this)'>📋 Copy</button>
         </div>
-        <p>A collectible, highly realistic doll in a 1/7 scale, modeled after the person in the photograph. The doll is set in a detailed beach scene with sand, shells, and gentle waves blending together. The entire display is encased inside a transparent souvenir glass bottle, creating a high-end miniature three-dimensional model with realistic lighting and shadow effects.</p>
+        <div data-nosnippet><p>A collectible, highly realistic doll in a 1/7 scale, modeled after the person in the photograph. The doll is set in a detailed beach scene with sand, shells, and gentle waves blending together. The entire display is encased inside a transparent souvenir glass bottle, creating a high-end miniature three-dimensional model with realistic lighting and shadow effects.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/nano-case88-output.png" alt="玻璃瓶纪念品" loading="lazy"></div></div>
       
@@ -277,6 +281,33 @@ Input: A reference image must be uploaded.</p></div>
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 477,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

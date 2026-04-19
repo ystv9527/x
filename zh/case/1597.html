@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #1597 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;person&quot;: &quot;Ana de Armas&quot;, &quot;hair&quot;: &quot;Shoulder length wavy brunette hair&quot;, &quot;makeup&quot;: &quot;Dark eye makeup, re...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1597.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1597.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1597.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840747">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022418">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"person\": \"Ana de Armas\",\n    \"hair\": \"及肩波浪式褐色头发\",\n    \"makeup\": \"深色眼妆，红色口红\"\n  },\n  \"attire\": {\n    \"dress\": \"金属光泽的金色细肩带吊带裙\"\n  },\n  \"action_and_pose\": {\n    \"pose\": \"站立，左手放在桌上\",\n    \"action\": \"右手拿着一杯香槟\"\n  },\n  \"setting_and_props\": {\n    \"location\": \"节日晚宴的餐桌\",\n    \"table_items\": [\n      \"白色瓷器\",\n      \"金色餐具\",\n      \"点燃的蜡烛\",\n      \"彩色纸屑\"\n    ],\n    \"background\": \"温暖的、背景虚化的金色散景灯光和丝带\"\n  },\n  \"lighting_and_atmosphere\": {\n    \"lighting\": \"温暖而亲密的灯光\",\n    \"mood\": \"喜庆、优雅\"\n  },\n  \"style_and_framing\": {\n    \"shot_type\": \"中景肖像\",\n    \"style\": \"写实风格照片\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;Ana de Armas&quot;,<br>    &quot;hair&quot;: &quot;及肩波浪式褐色头发&quot;,<br>    &quot;makeup&quot;: &quot;深色眼妆，红色口红&quot;<br>  },<br>  &quot;attire&quot;: {<br>    &quot;dress&quot;: &quot;金属光泽的金色细肩带吊带裙&quot;<br>  },<br>  &quot;action_and_pose&quot;: {<br>    &quot;pose&quot;: &quot;站立，左手放在桌上&quot;,<br>    &quot;action&quot;: &quot;右手拿着一杯香槟&quot;<br>  },<br>  &quot;setting_and_props&quot;: {<br>    &quot;location&quot;: &quot;节日晚宴的餐桌&quot;,<br>    &quot;table_items&quot;: [<br>      &quot;白色瓷器&quot;,<br>      &quot;金色餐具&quot;,<br>      &quot;点燃的蜡烛&quot;,<br>      &quot;彩色纸屑&quot;<br>    ],<br>    &quot;background&quot;: &quot;温暖的、背景虚化的金色散景灯光和丝带&quot;<br>  },<br>  &quot;lighting_and_atmosphere&quot;: {<br>    &quot;lighting&quot;: &quot;温暖而亲密的灯光&quot;,<br>    &quot;mood&quot;: &quot;喜庆、优雅&quot;<br>  },<br>  &quot;style_and_framing&quot;: {<br>    &quot;shot_type&quot;: &quot;中景肖像&quot;,<br>    &quot;style&quot;: &quot;写实风格照片&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;Ana de Armas&quot;,<br>    &quot;hair&quot;: &quot;及肩波浪式褐色头发&quot;,<br>    &quot;makeup&quot;: &quot;深色眼妆，红色口红&quot;<br>  },<br>  &quot;attire&quot;: {<br>    &quot;dress&quot;: &quot;金属光泽的金色细肩带吊带裙&quot;<br>  },<br>  &quot;action_and_pose&quot;: {<br>    &quot;pose&quot;: &quot;站立，左手放在桌上&quot;,<br>    &quot;action&quot;: &quot;右手拿着一杯香槟&quot;<br>  },<br>  &quot;setting_and_props&quot;: {<br>    &quot;location&quot;: &quot;节日晚宴的餐桌&quot;,<br>    &quot;table_items&quot;: [<br>      &quot;白色瓷器&quot;,<br>      &quot;金色餐具&quot;,<br>      &quot;点燃的蜡烛&quot;,<br>      &quot;彩色纸屑&quot;<br>    ],<br>    &quot;background&quot;: &quot;温暖的、背景虚化的金色散景灯光和丝带&quot;<br>  },<br>  &quot;lighting_and_atmosphere&quot;: {<br>    &quot;lighting&quot;: &quot;温暖而亲密的灯光&quot;,<br>    &quot;mood&quot;: &quot;喜庆、优雅&quot;<br>  },<br>  &quot;style_and_framing&quot;: {<br>    &quot;shot_type&quot;: &quot;中景肖像&quot;,<br>    &quot;style&quot;: &quot;写实风格照片&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"person\": \"Ana de Armas\",\n    \"hair\": \"Shoulder-length wavy brunette hair\",\n    \"makeup\": \"Dark eye makeup, red lipstick\"\n  },\n  \"attire\": {\n    \"dress\": \"Metallic gold spaghetti strap slip dress\"\n  },\n  \"action_and_pose\": {\n    \"pose\": \"Standing, left hand resting on the table\",\n    \"action\": \"Holding a glass of champagne in her right hand\"\n  },\n  \"setting_and_props\": {\n    \"location\": \"Festive dinner table\",\n    \"table_items\": [\n      \"White china\",\n      \"Gold cutlery\",\n      \"Lit candles\",\n      \"Confetti\"\n    ],\n    \"background\": \"Warm, out-of-focus wall of golden bokeh lights and ribbons\"\n  },\n  \"lighting_and_atmosphere\": {\n    \"lighting\": \"Warm and intimate\",\n    \"mood\": \"Festive, elegant\"\n  },\n  \"style_and_framing\": {\n    \"shot_type\": \"Medium portrait\",\n    \"style\": \"Photorealistic photo\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;Ana de Armas&quot;,<br>    &quot;hair&quot;: &quot;Shoulder-length wavy brunette hair&quot;,<br>    &quot;makeup&quot;: &quot;Dark eye makeup, red lipstick&quot;<br>  },<br>  &quot;attire&quot;: {<br>    &quot;dress&quot;: &quot;Metallic gold spaghetti strap slip dress&quot;<br>  },<br>  &quot;action_and_pose&quot;: {<br>    &quot;pose&quot;: &quot;Standing, left hand resting on the table&quot;,<br>    &quot;action&quot;: &quot;Holding a glass of champagne in her right hand&quot;<br>  },<br>  &quot;setting_and_props&quot;: {<br>    &quot;location&quot;: &quot;Festive dinner table&quot;,<br>    &quot;table_items&quot;: [<br>      &quot;White china&quot;,<br>      &quot;Gold cutlery&quot;,<br>      &quot;Lit candles&quot;,<br>      &quot;Confetti&quot;<br>    ],<br>    &quot;background&quot;: &quot;Warm, out-of-focus wall of golden bokeh lights and ribbons&quot;<br>  },<br>  &quot;lighting_and_atmosphere&quot;: {<br>    &quot;lighting&quot;: &quot;Warm and intimate&quot;,<br>    &quot;mood&quot;: &quot;Festive, elegant&quot;<br>  },<br>  &quot;style_and_framing&quot;: {<br>    &quot;shot_type&quot;: &quot;Medium portrait&quot;,<br>    &quot;style&quot;: &quot;Photorealistic photo&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;Ana de Armas&quot;,<br>    &quot;hair&quot;: &quot;Shoulder-length wavy brunette hair&quot;,<br>    &quot;makeup&quot;: &quot;Dark eye makeup, red lipstick&quot;<br>  },<br>  &quot;attire&quot;: {<br>    &quot;dress&quot;: &quot;Metallic gold spaghetti strap slip dress&quot;<br>  },<br>  &quot;action_and_pose&quot;: {<br>    &quot;pose&quot;: &quot;Standing, left hand resting on the table&quot;,<br>    &quot;action&quot;: &quot;Holding a glass of champagne in her right hand&quot;<br>  },<br>  &quot;setting_and_props&quot;: {<br>    &quot;location&quot;: &quot;Festive dinner table&quot;,<br>    &quot;table_items&quot;: [<br>      &quot;White china&quot;,<br>      &quot;Gold cutlery&quot;,<br>      &quot;Lit candles&quot;,<br>      &quot;Confetti&quot;<br>    ],<br>    &quot;background&quot;: &quot;Warm, out-of-focus wall of golden bokeh lights and ribbons&quot;<br>  },<br>  &quot;lighting_and_atmosphere&quot;: {<br>    &quot;lighting&quot;: &quot;Warm and intimate&quot;,<br>    &quot;mood&quot;: &quot;Festive, elegant&quot;<br>  },<br>  &quot;style_and_framing&quot;: {<br>    &quot;shot_type&quot;: &quot;Medium portrait&quot;,<br>    &quot;style&quot;: &quot;Photorealistic photo&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2013319840644112642-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2013319840644112642-2.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2013319840644112642-3.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1597,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;image generation parameters&quot;: { #1462 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image generation parameters&quot;: { &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;subject description&quot;: { &quot;character&quot;: &quot;A stunning young wo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1462.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1462.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1462.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840859">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022449">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图像生成参数\": {\n    \"纵横比\": \"9:16\",\n    \"主体描述\": {\n      \"人物\": \"一位令人惊艳的年轻女性，长而顺滑的深色头发在白色枕头上铺展开。她带着柔和、自信的微笑，戴着时尚的黑色矩形太阳镜。\",\n      \"服装\": \"她穿着一件白色罗纹针织无肩带抹胸，上面显示出细腻的面料纹理，以及一条极简风格的黑色比基尼下装。\",\n      \"配饰\": \"一条纤细的黑色颈圈项链，带着一个小小的吊坠，清晰可见在她的脖子上。她的指甲修剪整齐，涂着浅色中性指甲油。\",\n      \"姿势\": \"平躺在床上，从高角度“自拍”视角俯瞰。她的右臂伸向相机，营造出深度感。双腿在膝盖处微微弯曲，放在床上。\"\n    },\n    \"环境与构图\": {\n      \"场景\": \"夜晚昏暗的卧室。床上是有褶皱的白色棉质床单和柔软的枕头，捕捉到光与影的细节。\",\n      \"背景元素\": \"在浅景深的背景中，可以看到深色木质床架和几张海报/宝丽来照片别在昏暗的墙上，增添了个性化的生活氛围。\",\n      \"前景物体\": \"一只黑色电视遥控器放在她腿旁的白色床单上，增加了画面随性、抓拍的感觉。\"\n    },\n    \"技术与风格\": {\n      \"灯光\": \"类似深夜手机拍摄的强烈直闪摄影风格。这会产生高对比度，皮肤和衣物上的明亮高光，以及主体后方深而清晰的阴影。\",\n      \"相机设置\": \"使用高端手机相机拍摄，f/1.8 光圈以产生轻微背景虚化，高 ISO 导致细腻的美学胶片颗粒感。\",\n      \"图像质量\": \"超写实，8k 分辨率，高度细节化的皮肤毛孔，可见的面料纤维，电影感构图，超细节纹理，RAW 照片品质。\"\n    },\n    \"负面提示\": \"卡通，绘画，动漫，低质量，面部扭曲，多余的手指，手部畸形，模糊，低分辨率，水印，文字，签名，明亮日光，顶灯。\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;图像生成参数&quot;: {<br>    &quot;纵横比&quot;: &quot;9:16&quot;,<br>    &quot;主体描述&quot;: {<br>      &quot;人物&quot;: &quot;一位令人惊艳的年轻女性，长而顺滑的深色头发在白色枕头上铺展开。她带着柔和、自信的微笑，戴着时尚的黑色矩形太阳镜。&quot;,<br>      &quot;服装&quot;: &quot;她穿着一件白色罗纹针织无肩带抹胸，上面显示出细腻的面料纹理，以及一条极简风格的黑色比基尼下装。&quot;,<br>      &quot;配饰&quot;: &quot;一条纤细的黑色颈圈项链，带着一个小小的吊坠，清晰可见在她的脖子上。她的指甲修剪整齐，涂着浅色中性指甲油。&quot;,<br>      &quot;姿势&quot;: &quot;平躺在床上，从高角度“自拍”视角俯瞰。她的右臂伸向相机，营造出深度感。双腿在膝盖处微微弯曲，放在床上。&quot;<br>    },<br>    &quot;环境与构图&quot;: {<br>      &quot;场景&quot;: &quot;夜晚昏暗的卧室。床上是有褶皱的白色棉质床单和柔软的枕头，捕捉到光与影的细节。&quot;,<br>      &quot;背景元素&quot;: &quot;在浅景深的背景中，可以看到深色木质床架和几张海报/宝丽来照片别在昏暗的墙上，增添了个性化的生活氛围。&quot;,<br>      &quot;前景物体&quot;: &quot;一只黑色电视遥控器放在她腿旁的白色床单上，增加了画面随性、抓拍的感觉。&quot;<br>    },<br>    &quot;技术与风格&quot;: {<br>      &quot;灯光&quot;: &quot;类似深夜手机拍摄的强烈直闪摄影风格。这会产生高对比度，皮肤和衣物上的明亮高光，以及主体后方深而清晰的阴影。&quot;,<br>      &quot;相机设置&quot;: &quot;使用高端手机相机拍摄，f/1.8 光圈以产生轻微背景虚化，高 ISO 导致细腻的美学胶片颗粒感。&quot;,<br>      &quot;图像质量&quot;: &quot;超写实，8k 分辨率，高度细节化的皮肤毛孔，可见的面料纤维，电影感构图，超细节纹理，RAW 照片品质。&quot;<br>    },<br>    &quot;负面提示&quot;: &quot;卡通，绘画，动漫，低质量，面部扭曲，多余的手指，手部畸形，模糊，低分辨率，水印，文字，签名，明亮日光，顶灯。&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图像生成参数&quot;: {<br>    &quot;纵横比&quot;: &quot;9:16&quot;,<br>    &quot;主体描述&quot;: {<br>      &quot;人物&quot;: &quot;一位令人惊艳的年轻女性，长而顺滑的深色头发在白色枕头上铺展开。她带着柔和、自信的微笑，戴着时尚的黑色矩形太阳镜。&quot;,<br>      &quot;服装&quot;: &quot;她穿着一件白色罗纹针织无肩带抹胸，上面显示出细腻的面料纹理，以及一条极简风格的黑色比基尼下装。&quot;,<br>      &quot;配饰&quot;: &quot;一条纤细的黑色颈圈项链，带着一个小小的吊坠，清晰可见在她的脖子上。她的指甲修剪整齐，涂着浅色中性指甲油。&quot;,<br>      &quot;姿势&quot;: &quot;平躺在床上，从高角度“自拍”视角俯瞰。她的右臂伸向相机，营造出深度感。双腿在膝盖处微微弯曲，放在床上。&quot;<br>    },<br>    &quot;环境与构图&quot;: {<br>      &quot;场景&quot;: &quot;夜晚昏暗的卧室。床上是有褶皱的白色棉质床单和柔软的枕头，捕捉到光与影的细节。&quot;,<br>      &quot;背景元素&quot;: &quot;在浅景深的背景中，可以看到深色木质床架和几张海报/宝丽来照片别在昏暗的墙上，增添了个性化的生活氛围。&quot;,<br>      &quot;前景物体&quot;: &quot;一只黑色电视遥控器放在她腿旁的白色床单上，增加了画面随性、抓拍的感觉。&quot;<br>    },<br>    &quot;技术与风格&quot;: {<br>      &quot;灯光&quot;: &quot;类似深夜手机拍摄的强烈直闪摄影风格。这会产生高对比度，皮肤和衣物上的明亮高光，以及主体后方深而清晰的阴影。&quot;,<br>      &quot;相机设置&quot;: &quot;使用高端手机相机拍摄，f/1.8 光圈以产生轻微背景虚化，高 ISO 导致细腻的美学胶片颗粒感。&quot;,<br>      &quot;图像质量&quot;: &quot;超写实，8k 分辨率，高度细节化的皮肤毛孔，可见的面料纤维，电影感构图，超细节纹理，RAW 照片品质。&quot;<br>    },<br>    &quot;负面提示&quot;: &quot;卡通，绘画，动漫，低质量，面部扭曲，多余的手指，手部畸形，模糊，低分辨率，水印，文字，签名，明亮日光，顶灯。&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_parameters\": {\n    \"aspect_ratio\": \"9:16\",\n    \"subject_description\": {\n      \"character\": \"A stunning young woman with long, sleek dark hair fanned out across white pillows. She has a soft, confident smile and is wearing stylish black rectangular sunglasses.\",\n      \"apparel\": \"She is wearing a white ribbed-knit tube top that shows detailed fabric texture and a pair of minimalist black bikini bottoms.\",\n      \"accessories\": \"A delicate thin black choker necklace with a tiny pendant is visible on her neck. Her nails are manicured with a light, neutral polish.\",\n      \"pose\": \"Lying flat on her back on a bed, viewed from a high-angle 'selfie' perspective. Her right arm is extended toward the camera, creating a sense of depth. Her legs are slightly bent at the knees, resting on the bed.\"\n    },\n    \"environment_and_composition\": {\n      \"setting\": \"A dimly lit bedroom at night. The bed has rumpled white cotton sheets and soft pillows that catch the light and shadow.\",\n      \"background_elements\": \"In the soft-focus background, a dark wooden bed frame and several posters/polaroids are pinned to a dimly lit wall, adding a personal, lived-in atmosphere.\",\n      \"foreground_objects\": \"A black television remote control lies on the white sheets next to her leg, adding to the casual, candid nature of the shot.\"\n    },\n    \"technical_style\": {\n      \"lighting\": \"Harsh direct flash photography style, reminiscent of a late-night smartphone capture. This creates high contrast, bright highlights on the skin and clothing, and deep, sharp shadows behind the subject.\",\n      \"camera_settings\": \"Shot on a high-end mobile camera, f/1.8 aperture for slight background blur, high ISO resulting in a subtle, aesthetic film grain.\",\n      \"image_quality\": \"Ultra-photorealistic, 8k resolution, highly detailed skin pores, visible fabric fibers, cinematic composition, hyper-detailed textures, RAW photo quality.\"\n    },\n    \"negative_prompt\": \"cartoon, drawing, anime, low quality, distorted face, extra fingers, deformed hands, blurry, low resolution, watermark, text, signature, bright daylight, overhead ceiling light.\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation_parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;subject_description&quot;: {<br>      &quot;character&quot;: &quot;A stunning young woman with long, sleek dark hair fanned out across white pillows. She has a soft, confident smile and is wearing stylish black rectangular sunglasses.&quot;,<br>      &quot;apparel&quot;: &quot;She is wearing a white ribbed-knit tube top that shows detailed fabric texture and a pair of minimalist black bikini bottoms.&quot;,<br>      &quot;accessories&quot;: &quot;A delicate thin black choker necklace with a tiny pendant is visible on her neck. Her nails are manicured with a light, neutral polish.&quot;,<br>      &quot;pose&quot;: &quot;Lying flat on her back on a bed, viewed from a high-angle &#39;selfie&#39; perspective. Her right arm is extended toward the camera, creating a sense of depth. Her legs are slightly bent at the knees, resting on the bed.&quot;<br>    },<br>    &quot;environment_and_composition&quot;: {<br>      &quot;setting&quot;: &quot;A dimly lit bedroom at night. The bed has rumpled white cotton sheets and soft pillows that catch the light and shadow.&quot;,<br>      &quot;background_elements&quot;: &quot;In the soft-focus background, a dark wooden bed frame and several posters/polaroids are pinned to a dimly lit wall, adding a personal, lived-in atmosphere.&quot;,<br>      &quot;foreground_objects&quot;: &quot;A black television remote control lies on the white sheets next to her leg, adding to the casual, candid nature of the shot.&quot;<br>    },<br>    &quot;technical_style&quot;: {<br>      &quot;lighting&quot;: &quot;Harsh direct flash photography style, reminiscent of a late-night smartphone capture. This creates high contrast, bright highlights on the skin and clothing, and deep, sharp shadows behind the subject.&quot;,<br>      &quot;camera_settings&quot;: &quot;Shot on a high-end mobile camera, f/1.8 aperture for slight background blur, high ISO resulting in a subtle, aesthetic film grain.&quot;,<br>      &quot;image_quality&quot;: &quot;Ultra-photorealistic, 8k resolution, highly detailed skin pores, visible fabric fibers, cinematic composition, hyper-detailed textures, RAW photo quality.&quot;<br>    },<br>    &quot;negative_prompt&quot;: &quot;cartoon, drawing, anime, low quality, distorted face, extra fingers, deformed hands, blurry, low resolution, watermark, text, signature, bright daylight, overhead ceiling light.&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;subject_description&quot;: {<br>      &quot;character&quot;: &quot;A stunning young woman with long, sleek dark hair fanned out across white pillows. She has a soft, confident smile and is wearing stylish black rectangular sunglasses.&quot;,<br>      &quot;apparel&quot;: &quot;She is wearing a white ribbed-knit tube top that shows detailed fabric texture and a pair of minimalist black bikini bottoms.&quot;,<br>      &quot;accessories&quot;: &quot;A delicate thin black choker necklace with a tiny pendant is visible on her neck. Her nails are manicured with a light, neutral polish.&quot;,<br>      &quot;pose&quot;: &quot;Lying flat on her back on a bed, viewed from a high-angle &#39;selfie&#39; perspective. Her right arm is extended toward the camera, creating a sense of depth. Her legs are slightly bent at the knees, resting on the bed.&quot;<br>    },<br>    &quot;environment_and_composition&quot;: {<br>      &quot;setting&quot;: &quot;A dimly lit bedroom at night. The bed has rumpled white cotton sheets and soft pillows that catch the light and shadow.&quot;,<br>      &quot;background_elements&quot;: &quot;In the soft-focus background, a dark wooden bed frame and several posters/polaroids are pinned to a dimly lit wall, adding a personal, lived-in atmosphere.&quot;,<br>      &quot;foreground_objects&quot;: &quot;A black television remote control lies on the white sheets next to her leg, adding to the casual, candid nature of the shot.&quot;<br>    },<br>    &quot;technical_style&quot;: {<br>      &quot;lighting&quot;: &quot;Harsh direct flash photography style, reminiscent of a late-night smartphone capture. This creates high contrast, bright highlights on the skin and clothing, and deep, sharp shadows behind the subject.&quot;,<br>      &quot;camera_settings&quot;: &quot;Shot on a high-end mobile camera, f/1.8 aperture for slight background blur, high ISO resulting in a subtle, aesthetic film grain.&quot;,<br>      &quot;image_quality&quot;: &quot;Ultra-photorealistic, 8k resolution, highly detailed skin pores, visible fabric fibers, cinematic composition, hyper-detailed textures, RAW photo quality.&quot;<br>    },<br>    &quot;negative_prompt&quot;: &quot;cartoon, drawing, anime, low quality, distorted face, extra fingers, deformed hands, blurry, low resolution, watermark, text, signature, bright daylight, overhead ceiling light.&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012238711275057344-1.jpg" alt="&quot;image generation parameters&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1462,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

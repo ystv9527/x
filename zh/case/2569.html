@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Three K pop idols sitting on a train. Left girl is... #2569 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Three K pop idols sitting on a train. Left girl is Rosé with pale skin and long blonde hair, looking at...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2569.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2569.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2569.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839758">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022199">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"prompt\": \"三位韩流偶像坐在火车上。左侧女孩是Rosé，皮肤白皙，长直金发，正在看手机。中间女孩是Tzuyu，偏暖的白皙肤色，深棕色长卷发，正在睡觉，做出胜利手势（比V）。右侧女孩是Karina，下颌呈尖V线条，小脸，白皙皮肤，长直乌黑发，睡着，穿着藏青色背心。制服：白色衬衫、藏青格子百褶裙、蝴蝶结领结。车窗为背景。 --ar 3:4\",\n\"aspect_ratio\": \"3:4\",\n\"subjects\": [\n{\n\"position\": \"left\",\n\"identity\": \"Rosé\",\n\"physical_characteristics\": \"脸型纤细，皮肤白皙，长直金色头发，单眼皮眼神柔和，身材娇小\",\n\"pose\": \"低头，手持手机\",\n\"outfit\": \"白色棉质长袖衬衫，藏青/白格子百褶裙，藏青条纹蝴蝶结领结\",\n\"items\": \"智能手机\"\n},\n{\n\"position\": \"middle\",\n\"identity\": \"Tzuyu\",\n\"physical_characteristics\": \"气质优雅，偏暖的白皙肤色，大而水汪的眼睛，深棕色长波浪卷发，身材高挑\",\n\"pose\": \"头向左倾，闭眼，右手比出胜利手势（V）\",\n\"outfit\": \"白色棉质长袖衬衫，藏青/白格子百褶裙，藏青条纹蝴蝶结领结\"\n},\n{\n\"position\": \"right\",\n\"identity\": \"Karina\",\n\"physical_characteristics\": \"V形尖下颌，小脸，白皙皮肤，长直深黑发，宛如AI般无瑕的五官\",\n\"pose\": \"头向右倾，闭眼休息，双腿交叉\",\n\"outfit\": \"白色棉质衬衫，藏青针织背心，藏青/白格子百褶裙，藏青条纹蝴蝶结领结，黑色漆皮乐福鞋\"\n}\n],\n\"background\": {\n\"setting\": \"火车车厢内\",\n\"details\": \"黑色带肋纹座椅，车窗外可见白天的郊区房屋和电线\"\n},\n\"color_grading\": {\n\"style\": \"自然日光，色调略显柔和，对比度柔和\",\n\"lighting\": \"窗外逆光，车内漫射柔和补光\"\n},\n\"color_palette\": {\n\"navy_blue\": \"#1C2841\",\n\"white\": \"#F0F0F0\",\n\"plaid_grey\": \"#5A6A7A\",\n\"skin_tone_pale\": \"#F3E3D3\",\n\"skin_tone_warm\": \"#EACCA9\",\n\"hair_blonde\": \"#E8D3A2\",\n\"hair_dark\": \"#1A1A1A\",\n\"shoe_black\": \"#050505\"\n}\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;prompt&quot;: &quot;三位韩流偶像坐在火车上。左侧女孩是Rosé，皮肤白皙，长直金发，正在看手机。中间女孩是Tzuyu，偏暖的白皙肤色，深棕色长卷发，正在睡觉，做出胜利手势（比V）。右侧女孩是Karina，下颌呈尖V线条，小脸，白皙皮肤，长直乌黑发，睡着，穿着藏青色背心。制服：白色衬衫、藏青格子百褶裙、蝴蝶结领结。车窗为背景。 --ar 3:4&quot;,<br>&quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>&quot;subjects&quot;: [<br>{<br>&quot;position&quot;: &quot;left&quot;,<br>&quot;identity&quot;: &quot;Rosé&quot;,<br>&quot;physical_characteristics&quot;: &quot;脸型纤细，皮肤白皙，长直金色头发，单眼皮眼神柔和，身材娇小&quot;,<br>&quot;pose&quot;: &quot;低头，手持手机&quot;,<br>&quot;outfit&quot;: &quot;白色棉质长袖衬衫，藏青/白格子百褶裙，藏青条纹蝴蝶结领结&quot;,<br>&quot;items&quot;: &quot;智能手机&quot;<br>},<br>{<br>&quot;position&quot;: &quot;middle&quot;,<br>&quot;identity&quot;: &quot;Tzuyu&quot;,<br>&quot;physical_characteristics&quot;: &quot;气质优雅，偏暖的白皙肤色，大而水汪的眼睛，深棕色长波浪卷发，身材高挑&quot;,<br>&quot;pose&quot;: &quot;头向左倾，闭眼，右手比出胜利手势（V）&quot;,<br>&quot;outfit&quot;: &quot;白色棉质长袖衬衫，藏青/白格子百褶裙，藏青条纹蝴蝶结领结&quot;<br>},<br>{<br>&quot;position&quot;: &quot;right&quot;,<br>&quot;identity&quot;: &quot;Karina&quot;,<br>&quot;physical_characteristics&quot;: &quot;V形尖下颌，小脸，白皙皮肤，长直深黑发，宛如AI般无瑕的五官&quot;,<br>&quot;pose&quot;: &quot;头向右倾，闭眼休息，双腿交叉&quot;,<br>&quot;outfit&quot;: &quot;白色棉质衬衫，藏青针织背心，藏青/白格子百褶裙，藏青条纹蝴蝶结领结，黑色漆皮乐福鞋&quot;<br>}<br>],<br>&quot;background&quot;: {<br>&quot;setting&quot;: &quot;火车车厢内&quot;,<br>&quot;details&quot;: &quot;黑色带肋纹座椅，车窗外可见白天的郊区房屋和电线&quot;<br>},<br>&quot;color_grading&quot;: {<br>&quot;style&quot;: &quot;自然日光，色调略显柔和，对比度柔和&quot;,<br>&quot;lighting&quot;: &quot;窗外逆光，车内漫射柔和补光&quot;<br>},<br>&quot;color_palette&quot;: {<br>&quot;navy_blue&quot;: &quot;#1C2841&quot;,<br>&quot;white&quot;: &quot;#F0F0F0&quot;,<br>&quot;plaid_grey&quot;: &quot;#5A6A7A&quot;,<br>&quot;skin_tone_pale&quot;: &quot;#F3E3D3&quot;,<br>&quot;skin_tone_warm&quot;: &quot;#EACCA9&quot;,<br>&quot;hair_blonde&quot;: &quot;#E8D3A2&quot;,<br>&quot;hair_dark&quot;: &quot;#1A1A1A&quot;,<br>&quot;shoe_black&quot;: &quot;#050505&quot;<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;prompt&quot;: &quot;三位韩流偶像坐在火车上。左侧女孩是Rosé，皮肤白皙，长直金发，正在看手机。中间女孩是Tzuyu，偏暖的白皙肤色，深棕色长卷发，正在睡觉，做出胜利手势（比V）。右侧女孩是Karina，下颌呈尖V线条，小脸，白皙皮肤，长直乌黑发，睡着，穿着藏青色背心。制服：白色衬衫、藏青格子百褶裙、蝴蝶结领结。车窗为背景。 --ar 3:4&quot;,<br>&quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>&quot;subjects&quot;: [<br>{<br>&quot;position&quot;: &quot;left&quot;,<br>&quot;identity&quot;: &quot;Rosé&quot;,<br>&quot;physical_characteristics&quot;: &quot;脸型纤细，皮肤白皙，长直金色头发，单眼皮眼神柔和，身材娇小&quot;,<br>&quot;pose&quot;: &quot;低头，手持手机&quot;,<br>&quot;outfit&quot;: &quot;白色棉质长袖衬衫，藏青/白格子百褶裙，藏青条纹蝴蝶结领结&quot;,<br>&quot;items&quot;: &quot;智能手机&quot;<br>},<br>{<br>&quot;position&quot;: &quot;middle&quot;,<br>&quot;identity&quot;: &quot;Tzuyu&quot;,<br>&quot;physical_characteristics&quot;: &quot;气质优雅，偏暖的白皙肤色，大而水汪的眼睛，深棕色长波浪卷发，身材高挑&quot;,<br>&quot;pose&quot;: &quot;头向左倾，闭眼，右手比出胜利手势（V）&quot;,<br>&quot;outfit&quot;: &quot;白色棉质长袖衬衫，藏青/白格子百褶裙，藏青条纹蝴蝶结领结&quot;<br>},<br>{<br>&quot;position&quot;: &quot;right&quot;,<br>&quot;identity&quot;: &quot;Karina&quot;,<br>&quot;physical_characteristics&quot;: &quot;V形尖下颌，小脸，白皙皮肤，长直深黑发，宛如AI般无瑕的五官&quot;,<br>&quot;pose&quot;: &quot;头向右倾，闭眼休息，双腿交叉&quot;,<br>&quot;outfit&quot;: &quot;白色棉质衬衫，藏青针织背心，藏青/白格子百褶裙，藏青条纹蝴蝶结领结，黑色漆皮乐福鞋&quot;<br>}<br>],<br>&quot;background&quot;: {<br>&quot;setting&quot;: &quot;火车车厢内&quot;,<br>&quot;details&quot;: &quot;黑色带肋纹座椅，车窗外可见白天的郊区房屋和电线&quot;<br>},<br>&quot;color_grading&quot;: {<br>&quot;style&quot;: &quot;自然日光，色调略显柔和，对比度柔和&quot;,<br>&quot;lighting&quot;: &quot;窗外逆光，车内漫射柔和补光&quot;<br>},<br>&quot;color_palette&quot;: {<br>&quot;navy_blue&quot;: &quot;#1C2841&quot;,<br>&quot;white&quot;: &quot;#F0F0F0&quot;,<br>&quot;plaid_grey&quot;: &quot;#5A6A7A&quot;,<br>&quot;skin_tone_pale&quot;: &quot;#F3E3D3&quot;,<br>&quot;skin_tone_warm&quot;: &quot;#EACCA9&quot;,<br>&quot;hair_blonde&quot;: &quot;#E8D3A2&quot;,<br>&quot;hair_dark&quot;: &quot;#1A1A1A&quot;,<br>&quot;shoe_black&quot;: &quot;#050505&quot;<br>}<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"prompt\": \"Three K-pop idols sitting on a train. Left girl is Rosé with pale skin and long blonde hair, looking at a phone. Middle girl is Tzuyu with warm fair skin and dark brown hair, sleeping, making a peace sign. Right girl is Karina with sharp facial features and long dark hair, sleeping, wearing a navy vest. Uniforms: white shirts, navy plaid skirts, bow ties. Train window background. --ar 3:4\",\n\"aspect_ratio\": \"3:4\",\n\"subjects\": [\n{\n\"position\": \"left\",\n\"identity\": \"Rosé\",\n\"physical_characteristics\": \"slender face, pale skin, long straight blonde hair, soft monolid eyes, petite build\",\n\"pose\": \"looking down, holding phone\",\n\"outfit\": \"white cotton long-sleeve shirt, navy/white plaid pleated skirt, navy striped bow tie\",\n\"items\": \"smartphone\"\n},\n{\n\"position\": \"middle\",\n\"identity\": \"Tzuyu\",\n\"physical_characteristics\": \"elegant features, warm fair skin, large doe eyes, long dark brown wavy hair, tall build\",\n\"pose\": \"head tilted left, eyes closed, right hand making peace sign\",\n\"outfit\": \"white cotton long-sleeve shirt, navy/white plaid pleated skirt, navy striped bow tie\"\n},\n{\n\"position\": \"right\",\n\"identity\": \"Karina\",\n\"physical_characteristics\": \"sharp V-line jaw, small face, fair skin, long straight dark black hair, AI-like flawless features\",\n\"pose\": \"head tilted right, eyes closed, resting, legs crossed\",\n\"outfit\": \"white cotton shirt, navy knit vest, navy/white plaid pleated skirt, navy striped bow tie, black patent leather loafers\"\n}\n],\n\"background\": {\n\"setting\": \"Train interior\",\n\"details\": \"Black ribbed seat, window showing daytime suburban houses and power lines.\"\n},\n\"color_grading\": {\n\"style\": \"Natural daylight, slightly muted, soft contrast\",\n\"lighting\": \"Backlit from window, diffuse interior fill\"\n},\n\"color_palette\": {\n\"navy_blue\": \"#1C2841\",\n\"white\": \"#F0F0F0\",\n\"plaid_grey\": \"#5A6A7A\",\n\"skin_tone_pale\": \"#F3E3D3\",\n\"skin_tone_warm\": \"#EACCA9\",\n\"hair_blonde\": \"#E8D3A2\",\n\"hair_dark\": \"#1A1A1A\",\n\"shoe_black\": \"#050505\"\n}\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;prompt&quot;: &quot;Three K-pop idols sitting on a train. Left girl is Rosé with pale skin and long blonde hair, looking at a phone. Middle girl is Tzuyu with warm fair skin and dark brown hair, sleeping, making a peace sign. Right girl is Karina with sharp facial features and long dark hair, sleeping, wearing a navy vest. Uniforms: white shirts, navy plaid skirts, bow ties. Train window background. --ar 3:4&quot;,<br>&quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>&quot;subjects&quot;: [<br>{<br>&quot;position&quot;: &quot;left&quot;,<br>&quot;identity&quot;: &quot;Rosé&quot;,<br>&quot;physical_characteristics&quot;: &quot;slender face, pale skin, long straight blonde hair, soft monolid eyes, petite build&quot;,<br>&quot;pose&quot;: &quot;looking down, holding phone&quot;,<br>&quot;outfit&quot;: &quot;white cotton long-sleeve shirt, navy/white plaid pleated skirt, navy striped bow tie&quot;,<br>&quot;items&quot;: &quot;smartphone&quot;<br>},<br>{<br>&quot;position&quot;: &quot;middle&quot;,<br>&quot;identity&quot;: &quot;Tzuyu&quot;,<br>&quot;physical_characteristics&quot;: &quot;elegant features, warm fair skin, large doe eyes, long dark brown wavy hair, tall build&quot;,<br>&quot;pose&quot;: &quot;head tilted left, eyes closed, right hand making peace sign&quot;,<br>&quot;outfit&quot;: &quot;white cotton long-sleeve shirt, navy/white plaid pleated skirt, navy striped bow tie&quot;<br>},<br>{<br>&quot;position&quot;: &quot;right&quot;,<br>&quot;identity&quot;: &quot;Karina&quot;,<br>&quot;physical_characteristics&quot;: &quot;sharp V-line jaw, small face, fair skin, long straight dark black hair, AI-like flawless features&quot;,<br>&quot;pose&quot;: &quot;head tilted right, eyes closed, resting, legs crossed&quot;,<br>&quot;outfit&quot;: &quot;white cotton shirt, navy knit vest, navy/white plaid pleated skirt, navy striped bow tie, black patent leather loafers&quot;<br>}<br>],<br>&quot;background&quot;: {<br>&quot;setting&quot;: &quot;Train interior&quot;,<br>&quot;details&quot;: &quot;Black ribbed seat, window showing daytime suburban houses and power lines.&quot;<br>},<br>&quot;color_grading&quot;: {<br>&quot;style&quot;: &quot;Natural daylight, slightly muted, soft contrast&quot;,<br>&quot;lighting&quot;: &quot;Backlit from window, diffuse interior fill&quot;<br>},<br>&quot;color_palette&quot;: {<br>&quot;navy_blue&quot;: &quot;#1C2841&quot;,<br>&quot;white&quot;: &quot;#F0F0F0&quot;,<br>&quot;plaid_grey&quot;: &quot;#5A6A7A&quot;,<br>&quot;skin_tone_pale&quot;: &quot;#F3E3D3&quot;,<br>&quot;skin_tone_warm&quot;: &quot;#EACCA9&quot;,<br>&quot;hair_blonde&quot;: &quot;#E8D3A2&quot;,<br>&quot;hair_dark&quot;: &quot;#1A1A1A&quot;,<br>&quot;shoe_black&quot;: &quot;#050505&quot;<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;prompt&quot;: &quot;Three K-pop idols sitting on a train. Left girl is Rosé with pale skin and long blonde hair, looking at a phone. Middle girl is Tzuyu with warm fair skin and dark brown hair, sleeping, making a peace sign. Right girl is Karina with sharp facial features and long dark hair, sleeping, wearing a navy vest. Uniforms: white shirts, navy plaid skirts, bow ties. Train window background. --ar 3:4&quot;,<br>&quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>&quot;subjects&quot;: [<br>{<br>&quot;position&quot;: &quot;left&quot;,<br>&quot;identity&quot;: &quot;Rosé&quot;,<br>&quot;physical_characteristics&quot;: &quot;slender face, pale skin, long straight blonde hair, soft monolid eyes, petite build&quot;,<br>&quot;pose&quot;: &quot;looking down, holding phone&quot;,<br>&quot;outfit&quot;: &quot;white cotton long-sleeve shirt, navy/white plaid pleated skirt, navy striped bow tie&quot;,<br>&quot;items&quot;: &quot;smartphone&quot;<br>},<br>{<br>&quot;position&quot;: &quot;middle&quot;,<br>&quot;identity&quot;: &quot;Tzuyu&quot;,<br>&quot;physical_characteristics&quot;: &quot;elegant features, warm fair skin, large doe eyes, long dark brown wavy hair, tall build&quot;,<br>&quot;pose&quot;: &quot;head tilted left, eyes closed, right hand making peace sign&quot;,<br>&quot;outfit&quot;: &quot;white cotton long-sleeve shirt, navy/white plaid pleated skirt, navy striped bow tie&quot;<br>},<br>{<br>&quot;position&quot;: &quot;right&quot;,<br>&quot;identity&quot;: &quot;Karina&quot;,<br>&quot;physical_characteristics&quot;: &quot;sharp V-line jaw, small face, fair skin, long straight dark black hair, AI-like flawless features&quot;,<br>&quot;pose&quot;: &quot;head tilted right, eyes closed, resting, legs crossed&quot;,<br>&quot;outfit&quot;: &quot;white cotton shirt, navy knit vest, navy/white plaid pleated skirt, navy striped bow tie, black patent leather loafers&quot;<br>}<br>],<br>&quot;background&quot;: {<br>&quot;setting&quot;: &quot;Train interior&quot;,<br>&quot;details&quot;: &quot;Black ribbed seat, window showing daytime suburban houses and power lines.&quot;<br>},<br>&quot;color_grading&quot;: {<br>&quot;style&quot;: &quot;Natural daylight, slightly muted, soft contrast&quot;,<br>&quot;lighting&quot;: &quot;Backlit from window, diffuse interior fill&quot;<br>},<br>&quot;color_palette&quot;: {<br>&quot;navy_blue&quot;: &quot;#1C2841&quot;,<br>&quot;white&quot;: &quot;#F0F0F0&quot;,<br>&quot;plaid_grey&quot;: &quot;#5A6A7A&quot;,<br>&quot;skin_tone_pale&quot;: &quot;#F3E3D3&quot;,<br>&quot;skin_tone_warm&quot;: &quot;#EACCA9&quot;,<br>&quot;hair_blonde&quot;: &quot;#E8D3A2&quot;,<br>&quot;hair_dark&quot;: &quot;#1A1A1A&quot;,<br>&quot;shoe_black&quot;: &quot;#050505&quot;<br>}<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2033747149994045758-1.jpg" alt="&quot;prompt&quot;: &quot;Three K pop idols sitting on a train. Left girl is..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2569,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;style&quot;: &quot;cinematic, symbolic, minimal, realistic&quot;, #1843 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;style&quot;: &quot;cinematic, symbolic, minimal, realistic&quot;, &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;scenes&quot;: [ { &quot;scene number&quot;: 1, &quot;descr...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1843.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1843.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1843.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840537">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022363">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"style\": \"电影感、象征性、极简、写实\",\n  \"aspect_ratio\": \"9:16\",\n  \"scenes\": [\n    {\n      \"scene_number\": 1,\n      \"description\": \"柔和自然光下的安静户外场景，干净的台面上并排放着两个一模一样的太妃糖。\",\n      \"camera\": \"慢速推近\",\n      \"mood\": \"平静、中性\"\n    },\n    {\n      \"scene_number\": 2,\n      \"description\": \"一个太妃糖整齐地用闪亮的纸包着，另一个太妃糖未包装，完全暴露。\",\n      \"camera\": \"静态特写\",\n      \"mood\": \"对比、期待\"\n    },\n    {\n      \"scene_number\": 3,\n      \"description\": \"蚂蚁开始出现，缓慢爬向未包裹的太妃糖，完全无视被包裹的那个。\",\n      \"camera\": \"微距镜头，慢动作\",\n      \"mood\": \"令人不安、揭示\"\n    },\n    {\n      \"scene_number\": 4,\n      \"description\": \"更多蚂蚁聚集在未包裹的太妃糖周围，将其覆盖，而被包裹的太妃糖保持完好无损，未被触碰。\",\n      \"camera\": \"俯拍\",\n      \"mood\": \"警示、觉醒\"\n    },\n    {\n      \"scene_number\": 5,\n      \"description\": \"当蚂蚁包围未包裹的太妃糖时，屏幕上淡入文字。\",\n      \"text_overlay\": \"当你过于开放时，你可能会被利用。\",\n      \"camera\": \"轻柔淡入\",\n      \"mood\": \"反思\"\n    },\n    {\n      \"scene_number\": 6,\n      \"description\": \"最后一帧聚焦于独自矗立的被包裹的太妃糖，干净且完好无损。\",\n      \"text_overlay\": \"界限保护你的价值。\",\n      \"camera\": \"慢速拉远\",\n      \"mood\": \"鼓舞、平静\"\n    }\n  ],\n  \"audio\": {\n    \"background_music\": \"柔和的氛围钢琴\",\n    \"sound_effects\": \"细微的自然氛围音\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;style&quot;: &quot;电影感、象征性、极简、写实&quot;,<br>  &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>  &quot;scenes&quot;: [<br>    {<br>      &quot;scene_number&quot;: 1,<br>      &quot;description&quot;: &quot;柔和自然光下的安静户外场景，干净的台面上并排放着两个一模一样的太妃糖。&quot;,<br>      &quot;camera&quot;: &quot;慢速推近&quot;,<br>      &quot;mood&quot;: &quot;平静、中性&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 2,<br>      &quot;description&quot;: &quot;一个太妃糖整齐地用闪亮的纸包着，另一个太妃糖未包装，完全暴露。&quot;,<br>      &quot;camera&quot;: &quot;静态特写&quot;,<br>      &quot;mood&quot;: &quot;对比、期待&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 3,<br>      &quot;description&quot;: &quot;蚂蚁开始出现，缓慢爬向未包裹的太妃糖，完全无视被包裹的那个。&quot;,<br>      &quot;camera&quot;: &quot;微距镜头，慢动作&quot;,<br>      &quot;mood&quot;: &quot;令人不安、揭示&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 4,<br>      &quot;description&quot;: &quot;更多蚂蚁聚集在未包裹的太妃糖周围，将其覆盖，而被包裹的太妃糖保持完好无损，未被触碰。&quot;,<br>      &quot;camera&quot;: &quot;俯拍&quot;,<br>      &quot;mood&quot;: &quot;警示、觉醒&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 5,<br>      &quot;description&quot;: &quot;当蚂蚁包围未包裹的太妃糖时，屏幕上淡入文字。&quot;,<br>      &quot;text_overlay&quot;: &quot;当你过于开放时，你可能会被利用。&quot;,<br>      &quot;camera&quot;: &quot;轻柔淡入&quot;,<br>      &quot;mood&quot;: &quot;反思&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 6,<br>      &quot;description&quot;: &quot;最后一帧聚焦于独自矗立的被包裹的太妃糖，干净且完好无损。&quot;,<br>      &quot;text_overlay&quot;: &quot;界限保护你的价值。&quot;,<br>      &quot;camera&quot;: &quot;慢速拉远&quot;,<br>      &quot;mood&quot;: &quot;鼓舞、平静&quot;<br>    }<br>  ],<br>  &quot;audio&quot;: {<br>    &quot;background_music&quot;: &quot;柔和的氛围钢琴&quot;,<br>    &quot;sound_effects&quot;: &quot;细微的自然氛围音&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;style&quot;: &quot;电影感、象征性、极简、写实&quot;,<br>  &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>  &quot;scenes&quot;: [<br>    {<br>      &quot;scene_number&quot;: 1,<br>      &quot;description&quot;: &quot;柔和自然光下的安静户外场景，干净的台面上并排放着两个一模一样的太妃糖。&quot;,<br>      &quot;camera&quot;: &quot;慢速推近&quot;,<br>      &quot;mood&quot;: &quot;平静、中性&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 2,<br>      &quot;description&quot;: &quot;一个太妃糖整齐地用闪亮的纸包着，另一个太妃糖未包装，完全暴露。&quot;,<br>      &quot;camera&quot;: &quot;静态特写&quot;,<br>      &quot;mood&quot;: &quot;对比、期待&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 3,<br>      &quot;description&quot;: &quot;蚂蚁开始出现，缓慢爬向未包裹的太妃糖，完全无视被包裹的那个。&quot;,<br>      &quot;camera&quot;: &quot;微距镜头，慢动作&quot;,<br>      &quot;mood&quot;: &quot;令人不安、揭示&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 4,<br>      &quot;description&quot;: &quot;更多蚂蚁聚集在未包裹的太妃糖周围，将其覆盖，而被包裹的太妃糖保持完好无损，未被触碰。&quot;,<br>      &quot;camera&quot;: &quot;俯拍&quot;,<br>      &quot;mood&quot;: &quot;警示、觉醒&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 5,<br>      &quot;description&quot;: &quot;当蚂蚁包围未包裹的太妃糖时，屏幕上淡入文字。&quot;,<br>      &quot;text_overlay&quot;: &quot;当你过于开放时，你可能会被利用。&quot;,<br>      &quot;camera&quot;: &quot;轻柔淡入&quot;,<br>      &quot;mood&quot;: &quot;反思&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 6,<br>      &quot;description&quot;: &quot;最后一帧聚焦于独自矗立的被包裹的太妃糖，干净且完好无损。&quot;,<br>      &quot;text_overlay&quot;: &quot;界限保护你的价值。&quot;,<br>      &quot;camera&quot;: &quot;慢速拉远&quot;,<br>      &quot;mood&quot;: &quot;鼓舞、平静&quot;<br>    }<br>  ],<br>  &quot;audio&quot;: {<br>    &quot;background_music&quot;: &quot;柔和的氛围钢琴&quot;,<br>    &quot;sound_effects&quot;: &quot;细微的自然氛围音&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"style\": \"cinematic, symbolic, minimal, realistic\",\n  \"aspect_ratio\": \"9:16\",\n  \"scenes\": [\n    {\n      \"scene_number\": 1,\n      \"description\": \"A quiet outdoor setting with a clean surface under soft natural light. Two identical toffees are placed side by side.\",\n      \"camera\": \"slow zoom-in\",\n      \"mood\": \"calm, neutral\"\n    },\n    {\n      \"scene_number\": 2,\n      \"description\": \"One toffee is neatly wrapped in shiny paper. The other toffee is unwrapped, fully exposed.\",\n      \"camera\": \"static close-up\",\n      \"mood\": \"contrast, anticipation\"\n    },\n    {\n      \"scene_number\": 3,\n      \"description\": \"Ants begin to appear and slowly crawl toward the unwrapped toffee, completely ignoring the wrapped one.\",\n      \"camera\": \"macro shot, slow motion\",\n      \"mood\": \"uneasy, revealing\"\n    },\n    {\n      \"scene_number\": 4,\n      \"description\": \"More ants gather around the unwrapped toffee, covering it, while the wrapped toffee remains untouched and protected.\",\n      \"camera\": \"top-down shot\",\n      \"mood\": \"warning, realization\"\n    },\n    {\n      \"scene_number\": 5,\n      \"description\": \"Text fades in on screen as the ants swarm the unwrapped toffee.\",\n      \"text_overlay\": \"When you are too open, you can be used.\",\n      \"camera\": \"gentle fade\",\n      \"mood\": \"reflective\"\n    },\n    {\n      \"scene_number\": 6,\n      \"description\": \"Final frame focuses on the wrapped toffee standing alone, clean and intact.\",\n      \"text_overlay\": \"Boundaries protect your value.\",\n      \"camera\": \"slow zoom-out\",\n      \"mood\": \"empowering, calm\"\n    }\n  ],\n  \"audio\": {\n    \"background_music\": \"soft ambient piano\",\n    \"sound_effects\": \"subtle nature ambience\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;style&quot;: &quot;cinematic, symbolic, minimal, realistic&quot;,<br>  &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>  &quot;scenes&quot;: [<br>    {<br>      &quot;scene_number&quot;: 1,<br>      &quot;description&quot;: &quot;A quiet outdoor setting with a clean surface under soft natural light. Two identical toffees are placed side by side.&quot;,<br>      &quot;camera&quot;: &quot;slow zoom-in&quot;,<br>      &quot;mood&quot;: &quot;calm, neutral&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 2,<br>      &quot;description&quot;: &quot;One toffee is neatly wrapped in shiny paper. The other toffee is unwrapped, fully exposed.&quot;,<br>      &quot;camera&quot;: &quot;static close-up&quot;,<br>      &quot;mood&quot;: &quot;contrast, anticipation&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 3,<br>      &quot;description&quot;: &quot;Ants begin to appear and slowly crawl toward the unwrapped toffee, completely ignoring the wrapped one.&quot;,<br>      &quot;camera&quot;: &quot;macro shot, slow motion&quot;,<br>      &quot;mood&quot;: &quot;uneasy, revealing&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 4,<br>      &quot;description&quot;: &quot;More ants gather around the unwrapped toffee, covering it, while the wrapped toffee remains untouched and protected.&quot;,<br>      &quot;camera&quot;: &quot;top-down shot&quot;,<br>      &quot;mood&quot;: &quot;warning, realization&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 5,<br>      &quot;description&quot;: &quot;Text fades in on screen as the ants swarm the unwrapped toffee.&quot;,<br>      &quot;text_overlay&quot;: &quot;When you are too open, you can be used.&quot;,<br>      &quot;camera&quot;: &quot;gentle fade&quot;,<br>      &quot;mood&quot;: &quot;reflective&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 6,<br>      &quot;description&quot;: &quot;Final frame focuses on the wrapped toffee standing alone, clean and intact.&quot;,<br>      &quot;text_overlay&quot;: &quot;Boundaries protect your value.&quot;,<br>      &quot;camera&quot;: &quot;slow zoom-out&quot;,<br>      &quot;mood&quot;: &quot;empowering, calm&quot;<br>    }<br>  ],<br>  &quot;audio&quot;: {<br>    &quot;background_music&quot;: &quot;soft ambient piano&quot;,<br>    &quot;sound_effects&quot;: &quot;subtle nature ambience&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;style&quot;: &quot;cinematic, symbolic, minimal, realistic&quot;,<br>  &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>  &quot;scenes&quot;: [<br>    {<br>      &quot;scene_number&quot;: 1,<br>      &quot;description&quot;: &quot;A quiet outdoor setting with a clean surface under soft natural light. Two identical toffees are placed side by side.&quot;,<br>      &quot;camera&quot;: &quot;slow zoom-in&quot;,<br>      &quot;mood&quot;: &quot;calm, neutral&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 2,<br>      &quot;description&quot;: &quot;One toffee is neatly wrapped in shiny paper. The other toffee is unwrapped, fully exposed.&quot;,<br>      &quot;camera&quot;: &quot;static close-up&quot;,<br>      &quot;mood&quot;: &quot;contrast, anticipation&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 3,<br>      &quot;description&quot;: &quot;Ants begin to appear and slowly crawl toward the unwrapped toffee, completely ignoring the wrapped one.&quot;,<br>      &quot;camera&quot;: &quot;macro shot, slow motion&quot;,<br>      &quot;mood&quot;: &quot;uneasy, revealing&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 4,<br>      &quot;description&quot;: &quot;More ants gather around the unwrapped toffee, covering it, while the wrapped toffee remains untouched and protected.&quot;,<br>      &quot;camera&quot;: &quot;top-down shot&quot;,<br>      &quot;mood&quot;: &quot;warning, realization&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 5,<br>      &quot;description&quot;: &quot;Text fades in on screen as the ants swarm the unwrapped toffee.&quot;,<br>      &quot;text_overlay&quot;: &quot;When you are too open, you can be used.&quot;,<br>      &quot;camera&quot;: &quot;gentle fade&quot;,<br>      &quot;mood&quot;: &quot;reflective&quot;<br>    },<br>    {<br>      &quot;scene_number&quot;: 6,<br>      &quot;description&quot;: &quot;Final frame focuses on the wrapped toffee standing alone, clean and intact.&quot;,<br>      &quot;text_overlay&quot;: &quot;Boundaries protect your value.&quot;,<br>      &quot;camera&quot;: &quot;slow zoom-out&quot;,<br>      &quot;mood&quot;: &quot;empowering, calm&quot;<br>    }<br>  ],<br>  &quot;audio&quot;: {<br>    &quot;background_music&quot;: &quot;soft ambient piano&quot;,<br>    &quot;sound_effects&quot;: &quot;subtle nature ambience&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2017460732938621180-1.jpg" alt="&quot;style&quot;: &quot;cinematic, symbolic, minimal, realistic&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1843,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

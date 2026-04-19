@@ -7,11 +7,13 @@
     <title>&quot;Objective&quot;: &quot;Create a dreamy fine art portrait with a romant... #838 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;Objective&quot;: &quot;Create a dreamy fine art portrait with a romantic, ethereal garden atmosphere&quot;, &quot;PersonaDetails&quot;: { &quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/838.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/838.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/838.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845736">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023779">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"目标\": \"创建一个梦幻般的艺术人像，带有浪漫、空灵的花园氛围\",\n  \"人物详情\": {\n    \"主体\": {\n      \"类型\": \"年轻女性\",\n      \"发型\": \"短发，柔和蓬乱的深色头发\",\n      \"表情\": \"平静、内省、略带忧郁\",\n      \"凝视\": \"温柔地朝镜头凝视\",\n      \"服装\": {\n        \"连衣裙\": \"柔和青绿色花卉连衣裙，带有细微复古图案\"\n      }\n    }\n  },\n  \"场景描述\": {\n    \"地点\": \"繁花盛开的茂密花园\",\n    \"环境细节\": [\n      \"大量开花植物\",\n      \"柔和的绿植充满画面\"\n    ],\n    \"氛围要素\": {\n      \"飘落花瓣\": \"白色和淡桃色花瓣在空气中飘荡\",\n      \"动作\": \"花瓣被微风定格于半空中\"\n    }\n  },\n  \"构图\": {\n    \"取景\": \"腰部以上的艺术人像\",\n    \"平衡\": \"优雅、居中构图\",\n    \"景深\": \"浅景深\",\n    \"背景\": \"柔和虚化的花园，奶油般的散景\"\n  },\n  \"光线与色彩\": {\n    \"光线\": \"阴天下的柔和自然光\",\n    \"色彩调色板\": [\n      \"柔和的绿色\",\n      \"柔和的青绿色\",\n      \"淡桃色和白色点缀\"\n    ],\n    \"色彩分级\": \"绘画感、去饱和的浪漫色调\"\n  },\n  \"艺术指导\": {\n    \"风格\": \"艺术摄影与电影写实融合\",\n    \"美学\": \"浪漫、空灵、永恒\",\n    \"质感质量\": \"超细节的面料与自然皮肤质感\"\n  },\n  \"摄影风格\": {\n    \"镜头视角\": \"85mm 镜头视角\",\n    \"题材\": \"艺术人像摄影\",\n    \"图像质量\": \"高分辨率，精致细节\",\n    \"对焦风格\": \"柔和但精确的主体对焦\"\n  },\n  \"情绪\": {\n    \"基调\": \"梦幻、沉思、诗意\",\n    \"情感感受\": \"温柔的忧郁与静谧之美\"\n  },\n  \"负面提示\": [\n    \"强烈光照\",\n    \"现代时尚编辑风格\",\n    \"颜色过饱和\",\n    \"杂乱背景\",\n    \"塑料感皮肤\",\n    \"卡通\",\n    \"动漫\"\n  ],\n  \"响应格式\": {\n    \"类型\": \"单张图像\",\n    \"方向\": \"纵向\",\n    \"宽高比\": \"2:3\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;目标&quot;: &quot;创建一个梦幻般的艺术人像，带有浪漫、空灵的花园氛围&quot;,<br>  &quot;人物详情&quot;: {<br>    &quot;主体&quot;: {<br>      &quot;类型&quot;: &quot;年轻女性&quot;,<br>      &quot;发型&quot;: &quot;短发，柔和蓬乱的深色头发&quot;,<br>      &quot;表情&quot;: &quot;平静、内省、略带忧郁&quot;,<br>      &quot;凝视&quot;: &quot;温柔地朝镜头凝视&quot;,<br>      &quot;服装&quot;: {<br>        &quot;连衣裙&quot;: &quot;柔和青绿色花卉连衣裙，带有细微复古图案&quot;<br>      }<br>    }<br>  },<br>  &quot;场景描述&quot;: {<br>    &quot;地点&quot;: &quot;繁花盛开的茂密花园&quot;,<br>    &quot;环境细节&quot;: [<br>      &quot;大量开花植物&quot;,<br>      &quot;柔和的绿植充满画面&quot;<br>    ],<br>    &quot;氛围要素&quot;: {<br>      &quot;飘落花瓣&quot;: &quot;白色和淡桃色花瓣在空气中飘荡&quot;,<br>      &quot;动作&quot;: &quot;花瓣被微风定格于半空中&quot;<br>    }<br>  },<br>  &quot;构图&quot;: {<br>    &quot;取景&quot;: &quot;腰部以上的艺术人像&quot;,<br>    &quot;平衡&quot;: &quot;优雅、居中构图&quot;,<br>    &quot;景深&quot;: &quot;浅景深&quot;,<br>    &quot;背景&quot;: &quot;柔和虚化的花园，奶油般的散景&quot;<br>  },<br>  &quot;光线与色彩&quot;: {<br>    &quot;光线&quot;: &quot;阴天下的柔和自然光&quot;,<br>    &quot;色彩调色板&quot;: [<br>      &quot;柔和的绿色&quot;,<br>      &quot;柔和的青绿色&quot;,<br>      &quot;淡桃色和白色点缀&quot;<br>    ],<br>    &quot;色彩分级&quot;: &quot;绘画感、去饱和的浪漫色调&quot;<br>  },<br>  &quot;艺术指导&quot;: {<br>    &quot;风格&quot;: &quot;艺术摄影与电影写实融合&quot;,<br>    &quot;美学&quot;: &quot;浪漫、空灵、永恒&quot;,<br>    &quot;质感质量&quot;: &quot;超细节的面料与自然皮肤质感&quot;<br>  },<br>  &quot;摄影风格&quot;: {<br>    &quot;镜头视角&quot;: &quot;85mm 镜头视角&quot;,<br>    &quot;题材&quot;: &quot;艺术人像摄影&quot;,<br>    &quot;图像质量&quot;: &quot;高分辨率，精致细节&quot;,<br>    &quot;对焦风格&quot;: &quot;柔和但精确的主体对焦&quot;<br>  },<br>  &quot;情绪&quot;: {<br>    &quot;基调&quot;: &quot;梦幻、沉思、诗意&quot;,<br>    &quot;情感感受&quot;: &quot;温柔的忧郁与静谧之美&quot;<br>  },<br>  &quot;负面提示&quot;: [<br>    &quot;强烈光照&quot;,<br>    &quot;现代时尚编辑风格&quot;,<br>    &quot;颜色过饱和&quot;,<br>    &quot;杂乱背景&quot;,<br>    &quot;塑料感皮肤&quot;,<br>    &quot;卡通&quot;,<br>    &quot;动漫&quot;<br>  ],<br>  &quot;响应格式&quot;: {<br>    &quot;类型&quot;: &quot;单张图像&quot;,<br>    &quot;方向&quot;: &quot;纵向&quot;,<br>    &quot;宽高比&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;目标&quot;: &quot;创建一个梦幻般的艺术人像，带有浪漫、空灵的花园氛围&quot;,<br>  &quot;人物详情&quot;: {<br>    &quot;主体&quot;: {<br>      &quot;类型&quot;: &quot;年轻女性&quot;,<br>      &quot;发型&quot;: &quot;短发，柔和蓬乱的深色头发&quot;,<br>      &quot;表情&quot;: &quot;平静、内省、略带忧郁&quot;,<br>      &quot;凝视&quot;: &quot;温柔地朝镜头凝视&quot;,<br>      &quot;服装&quot;: {<br>        &quot;连衣裙&quot;: &quot;柔和青绿色花卉连衣裙，带有细微复古图案&quot;<br>      }<br>    }<br>  },<br>  &quot;场景描述&quot;: {<br>    &quot;地点&quot;: &quot;繁花盛开的茂密花园&quot;,<br>    &quot;环境细节&quot;: [<br>      &quot;大量开花植物&quot;,<br>      &quot;柔和的绿植充满画面&quot;<br>    ],<br>    &quot;氛围要素&quot;: {<br>      &quot;飘落花瓣&quot;: &quot;白色和淡桃色花瓣在空气中飘荡&quot;,<br>      &quot;动作&quot;: &quot;花瓣被微风定格于半空中&quot;<br>    }<br>  },<br>  &quot;构图&quot;: {<br>    &quot;取景&quot;: &quot;腰部以上的艺术人像&quot;,<br>    &quot;平衡&quot;: &quot;优雅、居中构图&quot;,<br>    &quot;景深&quot;: &quot;浅景深&quot;,<br>    &quot;背景&quot;: &quot;柔和虚化的花园，奶油般的散景&quot;<br>  },<br>  &quot;光线与色彩&quot;: {<br>    &quot;光线&quot;: &quot;阴天下的柔和自然光&quot;,<br>    &quot;色彩调色板&quot;: [<br>      &quot;柔和的绿色&quot;,<br>      &quot;柔和的青绿色&quot;,<br>      &quot;淡桃色和白色点缀&quot;<br>    ],<br>    &quot;色彩分级&quot;: &quot;绘画感、去饱和的浪漫色调&quot;<br>  },<br>  &quot;艺术指导&quot;: {<br>    &quot;风格&quot;: &quot;艺术摄影与电影写实融合&quot;,<br>    &quot;美学&quot;: &quot;浪漫、空灵、永恒&quot;,<br>    &quot;质感质量&quot;: &quot;超细节的面料与自然皮肤质感&quot;<br>  },<br>  &quot;摄影风格&quot;: {<br>    &quot;镜头视角&quot;: &quot;85mm 镜头视角&quot;,<br>    &quot;题材&quot;: &quot;艺术人像摄影&quot;,<br>    &quot;图像质量&quot;: &quot;高分辨率，精致细节&quot;,<br>    &quot;对焦风格&quot;: &quot;柔和但精确的主体对焦&quot;<br>  },<br>  &quot;情绪&quot;: {<br>    &quot;基调&quot;: &quot;梦幻、沉思、诗意&quot;,<br>    &quot;情感感受&quot;: &quot;温柔的忧郁与静谧之美&quot;<br>  },<br>  &quot;负面提示&quot;: [<br>    &quot;强烈光照&quot;,<br>    &quot;现代时尚编辑风格&quot;,<br>    &quot;颜色过饱和&quot;,<br>    &quot;杂乱背景&quot;,<br>    &quot;塑料感皮肤&quot;,<br>    &quot;卡通&quot;,<br>    &quot;动漫&quot;<br>  ],<br>  &quot;响应格式&quot;: {<br>    &quot;类型&quot;: &quot;单张图像&quot;,<br>    &quot;方向&quot;: &quot;纵向&quot;,<br>    &quot;宽高比&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"Objective\": \"Create a dreamy fine-art portrait with a romantic, ethereal garden atmosphere\",\n  \"PersonaDetails\": {\n    \"Subject\": {\n      \"Type\": \"Young woman\",\n      \"Hair\": \"Short, softly tousled dark hair\",\n      \"Expression\": \"Calm, introspective, slightly melancholic\",\n      \"Gaze\": \"Looking gently toward the camera\",\n      \"Wardrobe\": {\n        \"Dress\": \"Muted teal floral dress with subtle vintage patterns\"\n      }\n    }\n  },\n  \"SceneDescription\": {\n    \"Location\": \"Lush garden in full bloom\",\n    \"EnvironmentDetails\": [\n      \"Abundant flowering plants\",\n      \"Soft greenery filling the frame\"\n    ],\n    \"AtmosphericElements\": {\n      \"FloatingPetals\": \"White and pale peach flower petals drifting through the air\",\n      \"Motion\": \"Petals caught mid-motion by a gentle breeze\"\n    }\n  },\n  \"Composition\": {\n    \"Framing\": \"Waist-up fine-art portrait\",\n    \"Balance\": \"Elegant, centered composition\",\n    \"DepthOfField\": \"Shallow depth of field\",\n    \"Background\": \"Softly blurred garden with creamy bokeh\"\n  },\n  \"LightingAndColor\": {\n    \"Lighting\": \"Soft natural light under overcast sky\",\n    \"ColorPalette\": [\n      \"Muted greens\",\n      \"Soft teals\",\n      \"Pale peach and white accents\"\n    ],\n    \"ColorGrading\": \"Painterly, desaturated, romantic tones\"\n  },\n  \"ArtDirection\": {\n    \"Style\": \"Fine-art photography blended with cinematic realism\",\n    \"Aesthetic\": \"Romantic, ethereal, timeless\",\n    \"TextureQuality\": \"Ultra-detailed fabric and natural skin texture\"\n  },\n  \"PhotographyStyle\": {\n    \"LensLook\": \"85mm lens perspective\",\n    \"Genre\": \"Fine-art portrait photography\",\n    \"ImageQuality\": \"High resolution, refined detail\",\n    \"FocusStyle\": \"Soft yet precise subject focus\"\n  },\n  \"Mood\": {\n    \"Tone\": \"Dreamy, reflective, poetic\",\n    \"EmotionalFeel\": \"Gentle melancholy and quiet beauty\"\n  },\n  \"NegativePrompt\": [\n    \"harsh lighting\",\n    \"modern fashion editorial\",\n    \"oversaturated colors\",\n    \"busy background\",\n    \"plastic skin\",\n    \"cartoon\",\n    \"anime\"\n  ],\n  \"ResponseFormat\": {\n    \"Type\": \"Single image\",\n    \"Orientation\": \"Portrait\",\n    \"AspectRatio\": \"2:3\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;Objective&quot;: &quot;Create a dreamy fine-art portrait with a romantic, ethereal garden atmosphere&quot;,<br>  &quot;PersonaDetails&quot;: {<br>    &quot;Subject&quot;: {<br>      &quot;Type&quot;: &quot;Young woman&quot;,<br>      &quot;Hair&quot;: &quot;Short, softly tousled dark hair&quot;,<br>      &quot;Expression&quot;: &quot;Calm, introspective, slightly melancholic&quot;,<br>      &quot;Gaze&quot;: &quot;Looking gently toward the camera&quot;,<br>      &quot;Wardrobe&quot;: {<br>        &quot;Dress&quot;: &quot;Muted teal floral dress with subtle vintage patterns&quot;<br>      }<br>    }<br>  },<br>  &quot;SceneDescription&quot;: {<br>    &quot;Location&quot;: &quot;Lush garden in full bloom&quot;,<br>    &quot;EnvironmentDetails&quot;: [<br>      &quot;Abundant flowering plants&quot;,<br>      &quot;Soft greenery filling the frame&quot;<br>    ],<br>    &quot;AtmosphericElements&quot;: {<br>      &quot;FloatingPetals&quot;: &quot;White and pale peach flower petals drifting through the air&quot;,<br>      &quot;Motion&quot;: &quot;Petals caught mid-motion by a gentle breeze&quot;<br>    }<br>  },<br>  &quot;Composition&quot;: {<br>    &quot;Framing&quot;: &quot;Waist-up fine-art portrait&quot;,<br>    &quot;Balance&quot;: &quot;Elegant, centered composition&quot;,<br>    &quot;DepthOfField&quot;: &quot;Shallow depth of field&quot;,<br>    &quot;Background&quot;: &quot;Softly blurred garden with creamy bokeh&quot;<br>  },<br>  &quot;LightingAndColor&quot;: {<br>    &quot;Lighting&quot;: &quot;Soft natural light under overcast sky&quot;,<br>    &quot;ColorPalette&quot;: [<br>      &quot;Muted greens&quot;,<br>      &quot;Soft teals&quot;,<br>      &quot;Pale peach and white accents&quot;<br>    ],<br>    &quot;ColorGrading&quot;: &quot;Painterly, desaturated, romantic tones&quot;<br>  },<br>  &quot;ArtDirection&quot;: {<br>    &quot;Style&quot;: &quot;Fine-art photography blended with cinematic realism&quot;,<br>    &quot;Aesthetic&quot;: &quot;Romantic, ethereal, timeless&quot;,<br>    &quot;TextureQuality&quot;: &quot;Ultra-detailed fabric and natural skin texture&quot;<br>  },<br>  &quot;PhotographyStyle&quot;: {<br>    &quot;LensLook&quot;: &quot;85mm lens perspective&quot;,<br>    &quot;Genre&quot;: &quot;Fine-art portrait photography&quot;,<br>    &quot;ImageQuality&quot;: &quot;High resolution, refined detail&quot;,<br>    &quot;FocusStyle&quot;: &quot;Soft yet precise subject focus&quot;<br>  },<br>  &quot;Mood&quot;: {<br>    &quot;Tone&quot;: &quot;Dreamy, reflective, poetic&quot;,<br>    &quot;EmotionalFeel&quot;: &quot;Gentle melancholy and quiet beauty&quot;<br>  },<br>  &quot;NegativePrompt&quot;: [<br>    &quot;harsh lighting&quot;,<br>    &quot;modern fashion editorial&quot;,<br>    &quot;oversaturated colors&quot;,<br>    &quot;busy background&quot;,<br>    &quot;plastic skin&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;<br>  ],<br>  &quot;ResponseFormat&quot;: {<br>    &quot;Type&quot;: &quot;Single image&quot;,<br>    &quot;Orientation&quot;: &quot;Portrait&quot;,<br>    &quot;AspectRatio&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;Objective&quot;: &quot;Create a dreamy fine-art portrait with a romantic, ethereal garden atmosphere&quot;,<br>  &quot;PersonaDetails&quot;: {<br>    &quot;Subject&quot;: {<br>      &quot;Type&quot;: &quot;Young woman&quot;,<br>      &quot;Hair&quot;: &quot;Short, softly tousled dark hair&quot;,<br>      &quot;Expression&quot;: &quot;Calm, introspective, slightly melancholic&quot;,<br>      &quot;Gaze&quot;: &quot;Looking gently toward the camera&quot;,<br>      &quot;Wardrobe&quot;: {<br>        &quot;Dress&quot;: &quot;Muted teal floral dress with subtle vintage patterns&quot;<br>      }<br>    }<br>  },<br>  &quot;SceneDescription&quot;: {<br>    &quot;Location&quot;: &quot;Lush garden in full bloom&quot;,<br>    &quot;EnvironmentDetails&quot;: [<br>      &quot;Abundant flowering plants&quot;,<br>      &quot;Soft greenery filling the frame&quot;<br>    ],<br>    &quot;AtmosphericElements&quot;: {<br>      &quot;FloatingPetals&quot;: &quot;White and pale peach flower petals drifting through the air&quot;,<br>      &quot;Motion&quot;: &quot;Petals caught mid-motion by a gentle breeze&quot;<br>    }<br>  },<br>  &quot;Composition&quot;: {<br>    &quot;Framing&quot;: &quot;Waist-up fine-art portrait&quot;,<br>    &quot;Balance&quot;: &quot;Elegant, centered composition&quot;,<br>    &quot;DepthOfField&quot;: &quot;Shallow depth of field&quot;,<br>    &quot;Background&quot;: &quot;Softly blurred garden with creamy bokeh&quot;<br>  },<br>  &quot;LightingAndColor&quot;: {<br>    &quot;Lighting&quot;: &quot;Soft natural light under overcast sky&quot;,<br>    &quot;ColorPalette&quot;: [<br>      &quot;Muted greens&quot;,<br>      &quot;Soft teals&quot;,<br>      &quot;Pale peach and white accents&quot;<br>    ],<br>    &quot;ColorGrading&quot;: &quot;Painterly, desaturated, romantic tones&quot;<br>  },<br>  &quot;ArtDirection&quot;: {<br>    &quot;Style&quot;: &quot;Fine-art photography blended with cinematic realism&quot;,<br>    &quot;Aesthetic&quot;: &quot;Romantic, ethereal, timeless&quot;,<br>    &quot;TextureQuality&quot;: &quot;Ultra-detailed fabric and natural skin texture&quot;<br>  },<br>  &quot;PhotographyStyle&quot;: {<br>    &quot;LensLook&quot;: &quot;85mm lens perspective&quot;,<br>    &quot;Genre&quot;: &quot;Fine-art portrait photography&quot;,<br>    &quot;ImageQuality&quot;: &quot;High resolution, refined detail&quot;,<br>    &quot;FocusStyle&quot;: &quot;Soft yet precise subject focus&quot;<br>  },<br>  &quot;Mood&quot;: {<br>    &quot;Tone&quot;: &quot;Dreamy, reflective, poetic&quot;,<br>    &quot;EmotionalFeel&quot;: &quot;Gentle melancholy and quiet beauty&quot;<br>  },<br>  &quot;NegativePrompt&quot;: [<br>    &quot;harsh lighting&quot;,<br>    &quot;modern fashion editorial&quot;,<br>    &quot;oversaturated colors&quot;,<br>    &quot;busy background&quot;,<br>    &quot;plastic skin&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;<br>  ],<br>  &quot;ResponseFormat&quot;: {<br>    &quot;Type&quot;: &quot;Single image&quot;,<br>    &quot;Orientation&quot;: &quot;Portrait&quot;,<br>    &quot;AspectRatio&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2009183590035411178-1.jpg" alt="&quot;Objective&quot;: &quot;Create a dreamy fine art portrait with a romant..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 838,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

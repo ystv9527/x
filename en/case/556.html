@@ -7,11 +7,13 @@
     <title>Kling AI and Gemini Nano Banana Pro: Hamburger Infographic #556 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Show the precise motion cues of a burger slowly rotating and separating layer by layer, accompanied by two high-quality visuals: a professional product shot and an ultra-realistic exploded infographic, both presented on a pure white background.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/556.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/556.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/556.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846024">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023846">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item active">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        <button class="view-full-btn" id="publishXhsVideoBtn" onclick="publishCurrentCaseToXhs(this, 'video')">Publish Video Post to XHS</button>
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("动作提示：汉堡开始缓慢、平稳地旋转，其各层逐一分离开来，保持完美的对齐、间距和比例。每个配料以精确、受控的运动飘散开来。运动干净利落，流畅自然，没有额外的效果或干扰。\r\n\r\n图片 1 :- 一张高质量的、专业的产品照片，展示一个酥脆的香辣汉堡，配有金黄酥脆的炸鸡排、新鲜的生菜和柔软的芝麻面包。汉堡看起来多汁且堆叠整齐，可见纹理和酥脆感。极简风格，在纯色纯白的背景下拍摄，带有柔和的自然阴影。8K 分辨率，清晰对焦，简洁现代的审美。\r\n\r\n图 2 :- 创建一个超逼真的爆炸式垂直信息图表组合，展示一个美食汉堡。顶部是一个柔软光泽的芝麻面包冠，可见芝麻籽和轻盈的纹理。下方是自然漂浮的新鲜脆生菜叶，接着是成熟番茄片，带有多汁的果肉和籽。在那之下，融化的芝士片略微延伸，覆盖在厚实的完美烤牛肉或酥脆鸡排上，可见焦痕或酥脆的纹理和湿润感。鸡排下方，薄层洋葱和泡菜悬浮在空中。底部是一个与顶部完美对齐的软面包底。纯固体白色背景，柔和的影棚灯光，每个漂浮层下方有微妙的逼真阴影，超锐利的焦点，数码单反微距摄影风格。简洁、极简的信息图表文字标签，每层配有细指针线。高端快餐生活方式美学，照片级真实感。", this)'>📋 Copy</button>
         </div>
-        <p>动作提示：汉堡开始缓慢、平稳地旋转，其各层逐一分离开来，保持完美的对齐、间距和比例。每个配料以精确、受控的运动飘散开来。运动干净利落，流畅自然，没有额外的效果或干扰。<br><br>图片 1 :- 一张高质量的、专业的产品照片，展示一个酥脆的香辣汉堡，配有金黄酥脆的炸鸡排、新鲜的生菜和柔软的芝麻面包。汉堡看起来多汁且堆叠整齐，可见纹理和酥脆感。极简风格，在纯色纯白的背景下拍摄，带有柔和的自然阴影。8K 分辨率，清晰对焦，简洁现代的审美。<br><br>图 2 :- 创建一个超逼真的爆炸式垂直信息图表组合，展示一个美食汉堡。顶部是一个柔软光泽的芝麻面包冠，可见芝麻籽和轻盈的纹理。下方是自然漂浮的新鲜脆生菜叶，接着是成熟番茄片，带有多汁的果肉和籽。在那之下，融化的芝士片略微延伸，覆盖在厚实的完美烤牛肉或酥脆鸡排上，可见焦痕或酥脆的纹理和湿润感。鸡排下方，薄层洋葱和泡菜悬浮在空中。底部是一个与顶部完美对齐的软面包底。纯固体白色背景，柔和的影棚灯光，每个漂浮层下方有微妙的逼真阴影，超锐利的焦点，数码单反微距摄影风格。简洁、极简的信息图表文字标签，每层配有细指针线。高端快餐生活方式美学，照片级真实感。</p>
+        <div data-nosnippet><p>动作提示：汉堡开始缓慢、平稳地旋转，其各层逐一分离开来，保持完美的对齐、间距和比例。每个配料以精确、受控的运动飘散开来。运动干净利落，流畅自然，没有额外的效果或干扰。<br><br>图片 1 :- 一张高质量的、专业的产品照片，展示一个酥脆的香辣汉堡，配有金黄酥脆的炸鸡排、新鲜的生菜和柔软的芝麻面包。汉堡看起来多汁且堆叠整齐，可见纹理和酥脆感。极简风格，在纯色纯白的背景下拍摄，带有柔和的自然阴影。8K 分辨率，清晰对焦，简洁现代的审美。<br><br>图 2 :- 创建一个超逼真的爆炸式垂直信息图表组合，展示一个美食汉堡。顶部是一个柔软光泽的芝麻面包冠，可见芝麻籽和轻盈的纹理。下方是自然漂浮的新鲜脆生菜叶，接着是成熟番茄片，带有多汁的果肉和籽。在那之下，融化的芝士片略微延伸，覆盖在厚实的完美烤牛肉或酥脆鸡排上，可见焦痕或酥脆的纹理和湿润感。鸡排下方，薄层洋葱和泡菜悬浮在空中。底部是一个与顶部完美对齐的软面包底。纯固体白色背景，柔和的影棚灯光，每个漂浮层下方有微妙的逼真阴影，超锐利的焦点，数码单反微距摄影风格。简洁、极简的信息图表文字标签，每层配有细指针线。高端快餐生活方式美学，照片级真实感。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Kling AI  + Gemini Nano Banana Pro\r\n\r\nMotion Prompt: The burger begins a slow, smooth rotation while its layers gently separate one by one, maintaining perfect alignment, spacing, and scale. Each ingredient floats apart with precise, controlled motion. The movement is clean and fluid, with no extra effects or distractions.\r\n\r\nImage 1 :-  A high-quality, professional product photograph of a crispy zinger burger with a golden, crunchy fried chicken fillet, fresh lettuce, and soft sesame bun. The burger looks juicy and well-stacked with visible texture and crunch. Minimalist style, shot against a pure solid white background with soft, natural shadows. 8K resolution, sharp focus, clean and modern aesthetic.\r\n\r\nImage 2 :- Create a hyper-realistic exploded vertical infographic composition of a gourmet burger. At the top, a soft glossy sesame bun crown with visible sesame seeds and light texture. Below it, fresh crisp lettuce leaves floating naturally, followed by ripe tomato slices with juicy pulp and seeds. Beneath that, melted cheese slices stretching slightly over a thick, perfectly grilled beef or crispy chicken patty with visible char or crunch texture and moisture. Under the patty, thinly layered onions and pickles suspended mid-air. At the bottom, a soft bun base aligned perfectly. Pure solid white background, soft studio lighting, subtle realistic shadows beneath each floating layer, ultra-sharp focus, DSLR macro photography look. Clean, minimalist infographic text labels with thin pointer lines for each layer. Premium fast-food lifestyle aesthetic, photorealistic.Kling AI  + Gemini Nano Banana Pro", this)'>📋 Copy</button>
         </div>
-        <p>Kling AI  + Gemini Nano Banana Pro<br><br>Motion Prompt: The burger begins a slow, smooth rotation while its layers gently separate one by one, maintaining perfect alignment, spacing, and scale. Each ingredient floats apart with precise, controlled motion. The movement is clean and fluid, with no extra effects or distractions.<br><br>Image 1 :-  A high-quality, professional product photograph of a crispy zinger burger with a golden, crunchy fried chicken fillet, fresh lettuce, and soft sesame bun. The burger looks juicy and well-stacked with visible texture and crunch. Minimalist style, shot against a pure solid white background with soft, natural shadows. 8K resolution, sharp focus, clean and modern aesthetic.<br><br>Image 2 :- Create a hyper-realistic exploded vertical infographic composition of a gourmet burger. At the top, a soft glossy sesame bun crown with visible sesame seeds and light texture. Below it, fresh crisp lettuce leaves floating naturally, followed by ripe tomato slices with juicy pulp and seeds. Beneath that, melted cheese slices stretching slightly over a thick, perfectly grilled beef or crispy chicken patty with visible char or crunch texture and moisture. Under the patty, thinly layered onions and pickles suspended mid-air. At the bottom, a soft bun base aligned perfectly. Pure solid white background, soft studio lighting, subtle realistic shadows beneath each floating layer, ultra-sharp focus, DSLR macro photography look. Clean, minimalist infographic text labels with thin pointer lines for each layer. Premium fast-food lifestyle aesthetic, photorealistic.Kling AI  + Gemini Nano Banana Pro</p>
+        <div data-nosnippet><p>Kling AI  + Gemini Nano Banana Pro<br><br>Motion Prompt: The burger begins a slow, smooth rotation while its layers gently separate one by one, maintaining perfect alignment, spacing, and scale. Each ingredient floats apart with precise, controlled motion. The movement is clean and fluid, with no extra effects or distractions.<br><br>Image 1 :-  A high-quality, professional product photograph of a crispy zinger burger with a golden, crunchy fried chicken fillet, fresh lettuce, and soft sesame bun. The burger looks juicy and well-stacked with visible texture and crunch. Minimalist style, shot against a pure solid white background with soft, natural shadows. 8K resolution, sharp focus, clean and modern aesthetic.<br><br>Image 2 :- Create a hyper-realistic exploded vertical infographic composition of a gourmet burger. At the top, a soft glossy sesame bun crown with visible sesame seeds and light texture. Below it, fresh crisp lettuce leaves floating naturally, followed by ripe tomato slices with juicy pulp and seeds. Beneath that, melted cheese slices stretching slightly over a thick, perfectly grilled beef or crispy chicken patty with visible char or crunch texture and moisture. Under the patty, thinly layered onions and pickles suspended mid-air. At the bottom, a soft bun base aligned perfectly. Pure solid white background, soft studio lighting, subtle realistic shadows beneath each floating layer, ultra-sharp focus, DSLR macro photography look. Clean, minimalist infographic text labels with thin pointer lines for each layer. Premium fast-food lifestyle aesthetic, photorealistic.Kling AI  + Gemini Nano Banana Pro</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2008910386008125614-1.jpg" alt="Kling AI 与 Gemini Nano Banana Pro：汉堡信息图" loading="lazy"></div></div>
       <div class="detail-block"><h3>🎬 Videos</h3><div class="detail-media-grid"><video controls><source src="/videos/tweet-2008910386008125614-1.mp4" type="video/mp4"></video></div></div>
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 556,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>Generate realistic movie posters. #134 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create realistic movie posters — prompts for AI image generation.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/134.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/134.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/134.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846431">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023929">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("“[MOVIE NAME ]” — 超逼真、高清风格的电影海报设计。根据电影的标题捕捉一个充满戏剧性和情感的场景。使用高开尔文色温来消除黄色调，偏爱冷色调、蓝色调或中性白色。添加体积雾、锐利阴影和深景深。模拟具有柔和泛光、细微镜头光晕和胶片颗粒的电影镜头。\n\n以富有表现力的动态排版呈现标题“[MOVIE TITLE ]”，在视觉上体现单词的含义（例如，溶解、破裂、融化、发光）。排版应该感觉与环境融为一体，大胆而标志性。\n\n在标题下方包括一个简短的、能引起情感共鸣的标语。整体构图必须类似于高预算的大片电影海报，具有 2.35：1 的纵横比和强烈的视觉叙事性。", this)'>📋 Copy</button>
         </div>
-        <p>“[MOVIE NAME ]” — 超逼真、高清风格的电影海报设计。根据电影的标题捕捉一个充满戏剧性和情感的场景。使用高开尔文色温来消除黄色调，偏爱冷色调、蓝色调或中性白色。添加体积雾、锐利阴影和深景深。模拟具有柔和泛光、细微镜头光晕和胶片颗粒的电影镜头。</p><p>以富有表现力的动态排版呈现标题“[MOVIE TITLE ]”，在视觉上体现单词的含义（例如，溶解、破裂、融化、发光）。排版应该感觉与环境融为一体，大胆而标志性。</p><p>在标题下方包括一个简短的、能引起情感共鸣的标语。整体构图必须类似于高预算的大片电影海报，具有 2.35：1 的纵横比和强烈的视觉叙事性。</p>
+        <div data-nosnippet><p>“[MOVIE NAME ]” — 超逼真、高清风格的电影海报设计。根据电影的标题捕捉一个充满戏剧性和情感的场景。使用高开尔文色温来消除黄色调，偏爱冷色调、蓝色调或中性白色。添加体积雾、锐利阴影和深景深。模拟具有柔和泛光、细微镜头光晕和胶片颗粒的电影镜头。</p><p>以富有表现力的动态排版呈现标题“[MOVIE TITLE ]”，在视觉上体现单词的含义（例如，溶解、破裂、融化、发光）。排版应该感觉与环境融为一体，大胆而标志性。</p><p>在标题下方包括一个简短的、能引起情感共鸣的标语。整体构图必须类似于高预算的大片电影海报，具有 2.35：1 的纵横比和强烈的视觉叙事性。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"[MOVIE NAME]\" — Ultra-realistic, high-definition style movie poster design. Capture a dramatic and emotionally charged scene that reflects the movie's title. Use a high Kelvin color temperature to eliminate yellow tones, favoring cool, blue, or neutral white hues. Add volumetric fog, sharp shadows, and deep depth of field. Simulate cinematic lens effects with soft glow, subtle lens flare, and film grain.\n\nPresent the title \"[MOVIE TITLE]\" with expressive, dynamic typography that visually embodies the meaning of the words (e.g., dissolving, cracking, melting, glowing). The typography should seamlessly integrate with the environment, bold and iconic.\n\nInclude a short, emotionally resonant tagline below the title. The overall composition should resemble a high-budget blockbuster movie poster, with a 2.35:1 aspect ratio and strong visual storytelling.", this)'>📋 Copy</button>
         </div>
-        <p>&quot;[MOVIE NAME]&quot; — Ultra-realistic, high-definition style movie poster design. Capture a dramatic and emotionally charged scene that reflects the movie&#39;s title. Use a high Kelvin color temperature to eliminate yellow tones, favoring cool, blue, or neutral white hues. Add volumetric fog, sharp shadows, and deep depth of field. Simulate cinematic lens effects with soft glow, subtle lens flare, and film grain.</p><p>Present the title &quot;[MOVIE TITLE]&quot; with expressive, dynamic typography that visually embodies the meaning of the words (e.g., dissolving, cracking, melting, glowing). The typography should seamlessly integrate with the environment, bold and iconic.</p><p>Include a short, emotionally resonant tagline below the title. The overall composition should resemble a high-budget blockbuster movie poster, with a 2.35:1 aspect ratio and strong visual storytelling.</p>
+        <div data-nosnippet><p>&quot;[MOVIE NAME]&quot; — Ultra-realistic, high-definition style movie poster design. Capture a dramatic and emotionally charged scene that reflects the movie&#39;s title. Use a high Kelvin color temperature to eliminate yellow tones, favoring cool, blue, or neutral white hues. Add volumetric fog, sharp shadows, and deep depth of field. Simulate cinematic lens effects with soft glow, subtle lens flare, and film grain.</p><p>Present the title &quot;[MOVIE TITLE]&quot; with expressive, dynamic typography that visually embodies the meaning of the words (e.g., dissolving, cracking, melting, glowing). The typography should seamlessly integrate with the environment, bold and iconic.</p><p>Include a short, emotionally resonant tagline below the title. The overall composition should resemble a high-budget blockbuster movie poster, with a 2.35:1 aspect ratio and strong visual storytelling.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/134.jpeg" alt="生成真实电影海报" loading="lazy"><img src="/images/134-2.jpeg" alt="生成真实电影海报" loading="lazy"><img src="/images/134-3.jpeg" alt="生成真实电影海报" loading="lazy"><img src="/images/134-4.jpeg" alt="生成真实电影海报" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 134,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>Use the uploaded product image as reference. Create an ultra... #1623 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Use the uploaded product image as reference. Create an ultra realistic commercial image of a Garoto chocolate bar. Sh...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1623.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1623.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1623.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844941">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023615">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用上传的产品图片作为参考。创建一张 Garoto 巧克力棒的超真实广告图像。展示一块断裂的巧克力棒，具有融化的巧克力质感、可清晰看到的可可细节和丰富的光泽。添加细腻的巧克力飞溅和飘浮的碎屑。清洁的工作室布景、鲜艳多彩的背景、面向社交媒体的大胆广告风格。8K 超真实、高锐度、高对比度、专业照明，写实的阴影与高光；不含文字、无水印、无模糊、无失真、无低质量、无卡通风格。", this)'>📋 Copy</button>
         </div>
-        <p>使用上传的产品图片作为参考。创建一张 Garoto 巧克力棒的超真实广告图像。展示一块断裂的巧克力棒，具有融化的巧克力质感、可清晰看到的可可细节和丰富的光泽。添加细腻的巧克力飞溅和飘浮的碎屑。清洁的工作室布景、鲜艳多彩的背景、面向社交媒体的大胆广告风格。8K 超真实、高锐度、高对比度、专业照明，写实的阴影与高光；不含文字、无水印、无模糊、无失真、无低质量、无卡通风格。</p>
+        <div data-nosnippet><p>使用上传的产品图片作为参考。创建一张 Garoto 巧克力棒的超真实广告图像。展示一块断裂的巧克力棒，具有融化的巧克力质感、可清晰看到的可可细节和丰富的光泽。添加细腻的巧克力飞溅和飘浮的碎屑。清洁的工作室布景、鲜艳多彩的背景、面向社交媒体的大胆广告风格。8K 超真实、高锐度、高对比度、专业照明，写实的阴影与高光；不含文字、无水印、无模糊、无失真、无低质量、无卡通风格。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use the uploaded product image as reference. Create an ultra-realistic commercial image of a Garoto chocolate bar. Show a broken bar with melted chocolate texture, visible cocoa details and rich gloss. Add subtle chocolate splashes and floating crumbs. Clean studio setup, vibrant colored background, bold advertising style for social media. 8K ultra realistic, high sharpness, high contrast, professional lighting with realistic shadows and highlights, no text, no watermark, no blur, no distortion, no low quality, no cartoonish style", this)'>📋 Copy</button>
         </div>
-        <p>Use the uploaded product image as reference. Create an ultra-realistic commercial image of a Garoto chocolate bar. Show a broken bar with melted chocolate texture, visible cocoa details and rich gloss. Add subtle chocolate splashes and floating crumbs. Clean studio setup, vibrant colored background, bold advertising style for social media. 8K ultra realistic, high sharpness, high contrast, professional lighting with realistic shadows and highlights, no text, no watermark, no blur, no distortion, no low quality, no cartoonish style</p>
+        <div data-nosnippet><p>Use the uploaded product image as reference. Create an ultra-realistic commercial image of a Garoto chocolate bar. Show a broken bar with melted chocolate texture, visible cocoa details and rich gloss. Add subtle chocolate splashes and floating crumbs. Clean studio setup, vibrant colored background, bold advertising style for social media. 8K ultra realistic, high sharpness, high contrast, professional lighting with realistic shadows and highlights, no text, no watermark, no blur, no distortion, no low quality, no cartoonish style</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2013579683686961503-1.jpg" alt="Use the uploaded product image as reference. Create an ultra..." loading="lazy"><img src="/images/tweet-2013579683686961503-2.jpg" alt="Use the uploaded product image as reference. Create an ultra..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1623,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

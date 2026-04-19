@@ -7,11 +7,13 @@
     <title>Use the uploaded photo as the main face referenc. Preserve th... #1568 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Use the uploaded photo as the main face referenc. Preserve the exact facial structure, skin tone, beard shape, nose,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1568.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1568.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1568.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840768">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022425">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用上传的照片作为主要面部参考。保留参考图像中准确的面部结构、肤色、胡须形状、鼻子、眼睛和表情。  \n一幅戏剧性、冲击力强的肖像，采用表现性的墨线速写与混合媒介插画风格呈现，使用上传的图像以确保面部高度相似与比例准确。  \n该男子以侧面轮廓展示，气场强烈且混乱。  \n他的面部和上半身覆盖着神秘的手写文字、符号和抽象字形，部分沿面部轮廓环绕，暗示内心的动荡与隐藏的含义。  \n他穿着一件深色、抽象的夹克，采用厚重的质感笔触、尖锐的角线，并以鲜活的墨色创造出粗粝、反叛的视觉能量。  \n插画大胆且实验性强，融合了精细的钢笔细节、激进的刷痕、飞溅和受控笔触。  \n背景是浅色、古旧羊皮纸色调纹理，褪色的纸张质感，精致的线条，带有污渍——唤起旧手稿或被遗忘之物的感觉。  \n高对比、富有表现力的构图，艺术性兼具精确，编辑艺术与概念插画相汇，强烈且情感充沛。", this)'>📋 复制</button>
         </div>
-        <p>使用上传的照片作为主要面部参考。保留参考图像中准确的面部结构、肤色、胡须形状、鼻子、眼睛和表情。  <br>一幅戏剧性、冲击力强的肖像，采用表现性的墨线速写与混合媒介插画风格呈现，使用上传的图像以确保面部高度相似与比例准确。  <br>该男子以侧面轮廓展示，气场强烈且混乱。  <br>他的面部和上半身覆盖着神秘的手写文字、符号和抽象字形，部分沿面部轮廓环绕，暗示内心的动荡与隐藏的含义。  <br>他穿着一件深色、抽象的夹克，采用厚重的质感笔触、尖锐的角线，并以鲜活的墨色创造出粗粝、反叛的视觉能量。  <br>插画大胆且实验性强，融合了精细的钢笔细节、激进的刷痕、飞溅和受控笔触。  <br>背景是浅色、古旧羊皮纸色调纹理，褪色的纸张质感，精致的线条，带有污渍——唤起旧手稿或被遗忘之物的感觉。  <br>高对比、富有表现力的构图，艺术性兼具精确，编辑艺术与概念插画相汇，强烈且情感充沛。</p>
+        <div data-nosnippet><p>使用上传的照片作为主要面部参考。保留参考图像中准确的面部结构、肤色、胡须形状、鼻子、眼睛和表情。  <br>一幅戏剧性、冲击力强的肖像，采用表现性的墨线速写与混合媒介插画风格呈现，使用上传的图像以确保面部高度相似与比例准确。  <br>该男子以侧面轮廓展示，气场强烈且混乱。  <br>他的面部和上半身覆盖着神秘的手写文字、符号和抽象字形，部分沿面部轮廓环绕，暗示内心的动荡与隐藏的含义。  <br>他穿着一件深色、抽象的夹克，采用厚重的质感笔触、尖锐的角线，并以鲜活的墨色创造出粗粝、反叛的视觉能量。  <br>插画大胆且实验性强，融合了精细的钢笔细节、激进的刷痕、飞溅和受控笔触。  <br>背景是浅色、古旧羊皮纸色调纹理，褪色的纸张质感，精致的线条，带有污渍——唤起旧手稿或被遗忘之物的感觉。  <br>高对比、富有表现力的构图，艺术性兼具精确，编辑艺术与概念插画相汇，强烈且情感充沛。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use the uploaded photo as the main face referenc. Preserve the exact facial structure, skin tone, beard shape, nose, eyes and expression from the reference image. A dramatic, high-impact portrait rendered in an expressive ink sketch and mixed-media illustration style, using the uploaded image for exact facial likeness and proportions. The man is shown in side profile, his presence intense and chaotic. His face and upper body are layered with cryptic￼ handwritten text, symbols, and abstract glyphs, partially wrapping around facial contours, suggesting inner turmoil and hidden meaning He wears a dark, abstract jacket, heavily texture strokes, sharp angular linework, and vibrant ink creating a raw, rebellious visual energy. The illu bold and experimental, blending fine pen detaili aggressive brush marks, splashes, and controll The background is a pale, aged parchment ton grain, faded paper texture, delicate linework, in! stains-evoking an old￼ manuscript Or forgotten High contrast, expressive composition, artistic with precision, editorial art meets conceptual il intense, and emotionally charged.￼", this)'>📋 复制</button>
         </div>
-        <p>Use the uploaded photo as the main face referenc. Preserve the exact facial structure, skin tone, beard shape, nose, eyes and expression from the reference image. A dramatic, high-impact portrait rendered in an expressive ink sketch and mixed-media illustration style, using the uploaded image for exact facial likeness and proportions. The man is shown in side profile, his presence intense and chaotic. His face and upper body are layered with cryptic￼ handwritten text, symbols, and abstract glyphs, partially wrapping around facial contours, suggesting inner turmoil and hidden meaning He wears a dark, abstract jacket, heavily texture strokes, sharp angular linework, and vibrant ink creating a raw, rebellious visual energy. The illu bold and experimental, blending fine pen detaili aggressive brush marks, splashes, and controll The background is a pale, aged parchment ton grain, faded paper texture, delicate linework, in! stains-evoking an old￼ manuscript Or forgotten High contrast, expressive composition, artistic with precision, editorial art meets conceptual il intense, and emotionally charged.￼</p>
+        <div data-nosnippet><p>Use the uploaded photo as the main face referenc. Preserve the exact facial structure, skin tone, beard shape, nose, eyes and expression from the reference image. A dramatic, high-impact portrait rendered in an expressive ink sketch and mixed-media illustration style, using the uploaded image for exact facial likeness and proportions. The man is shown in side profile, his presence intense and chaotic. His face and upper body are layered with cryptic￼ handwritten text, symbols, and abstract glyphs, partially wrapping around facial contours, suggesting inner turmoil and hidden meaning He wears a dark, abstract jacket, heavily texture strokes, sharp angular linework, and vibrant ink creating a raw, rebellious visual energy. The illu bold and experimental, blending fine pen detaili aggressive brush marks, splashes, and controll The background is a pale, aged parchment ton grain, faded paper texture, delicate linework, in! stains-evoking an old￼ manuscript Or forgotten High contrast, expressive composition, artistic with precision, editorial art meets conceptual il intense, and emotionally charged.￼</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2013084813037814209-1.jpg" alt="Use the uploaded photo as the main face referenc. Preserve th..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1568,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>A cinematic 4 panel photo collage showing a quiet, introspect... #750 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="A cinematic 4 panel photo collage showing a quiet, introspective city walk, with smoking as a character detail. • Fra...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/750.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/750.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/750.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845828">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023806">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一组电影感的四格照片拼贴，呈现一次安静、内省的城市漫步，以吸烟为人物细节。\n• 帧1：在宽阔的石阶上短暂坐着，点着烟，身后是城市灯光闪烁。\n• 帧2：站在温暖的路灯下，缓慢的烟雾往上飘。\n• 帧3：走过古老的欧洲建筑，烟夹在指间。\n• 帧4：在关着的商店橱窗前停留，烟雾中可见倒影。\n统一的穿着风格——极简黑色服装，配及踝靴。\n低调灯光、柔和散景、电影感阴影、电影静态写实、编辑感氛围，1:1 纵横比。", this)'>📋 Copy</button>
         </div>
-        <p>一组电影感的四格照片拼贴，呈现一次安静、内省的城市漫步，以吸烟为人物细节。<br>• 帧1：在宽阔的石阶上短暂坐着，点着烟，身后是城市灯光闪烁。<br>• 帧2：站在温暖的路灯下，缓慢的烟雾往上飘。<br>• 帧3：走过古老的欧洲建筑，烟夹在指间。<br>• 帧4：在关着的商店橱窗前停留，烟雾中可见倒影。<br>统一的穿着风格——极简黑色服装，配及踝靴。<br>低调灯光、柔和散景、电影感阴影、电影静态写实、编辑感氛围，1:1 纵横比。</p>
+        <div data-nosnippet><p>一组电影感的四格照片拼贴，呈现一次安静、内省的城市漫步，以吸烟为人物细节。<br>• 帧1：在宽阔的石阶上短暂坐着，点着烟，身后是城市灯光闪烁。<br>• 帧2：站在温暖的路灯下，缓慢的烟雾往上飘。<br>• 帧3：走过古老的欧洲建筑，烟夹在指间。<br>• 帧4：在关着的商店橱窗前停留，烟雾中可见倒影。<br>统一的穿着风格——极简黑色服装，配及踝靴。<br>低调灯光、柔和散景、电影感阴影、电影静态写实、编辑感氛围，1:1 纵横比。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A cinematic 4-panel photo collage showing a quiet, introspective city walk, with smoking as a character detail.\n• Frame 1: Sitting briefly on wide stone stairs, cigarette lit, city lights glowing behind.\n• Frame 2: Standing under a warm streetlamp, slow smoke drifting upward.\n• Frame 3: Walking past old European buildings, cigarette held between fingers.\n• Frame 4: Pausing near a closed shop window, reflection visible through smoke haze.\nConsistent outfit — minimalist black clothing with ankle boots.\nLow-key lighting, soft bokeh, cinematic shadows, film-still realism, editorial mood, 1:1 aspect ratio.", this)'>📋 Copy</button>
         </div>
-        <p>A cinematic 4-panel photo collage showing a quiet, introspective city walk, with smoking as a character detail.<br>• Frame 1: Sitting briefly on wide stone stairs, cigarette lit, city lights glowing behind.<br>• Frame 2: Standing under a warm streetlamp, slow smoke drifting upward.<br>• Frame 3: Walking past old European buildings, cigarette held between fingers.<br>• Frame 4: Pausing near a closed shop window, reflection visible through smoke haze.<br>Consistent outfit — minimalist black clothing with ankle boots.<br>Low-key lighting, soft bokeh, cinematic shadows, film-still realism, editorial mood, 1:1 aspect ratio.</p>
+        <div data-nosnippet><p>A cinematic 4-panel photo collage showing a quiet, introspective city walk, with smoking as a character detail.<br>• Frame 1: Sitting briefly on wide stone stairs, cigarette lit, city lights glowing behind.<br>• Frame 2: Standing under a warm streetlamp, slow smoke drifting upward.<br>• Frame 3: Walking past old European buildings, cigarette held between fingers.<br>• Frame 4: Pausing near a closed shop window, reflection visible through smoke haze.<br>Consistent outfit — minimalist black clothing with ankle boots.<br>Low-key lighting, soft bokeh, cinematic shadows, film-still realism, editorial mood, 1:1 aspect ratio.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2008555126127051059-1.jpg" alt="A cinematic 4 panel photo collage showing a quiet, introspect..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 750,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

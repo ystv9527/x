@@ -7,11 +7,13 @@
     <title>对童年的自己治疗 #495 | Gem Nana AI 提示词库</title>
     <meta name="description" content="对童年的自己治疗 - Nano Banana AI图片生成案例  📥 输入：需上传一张人物参考图像">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/495.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/495.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/495.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841802">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022682">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -204,14 +208,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("超逼真极简主义治疗室场景：\n墙面浅色，灰色沙发，木质咖啡桌，上面放置纸巾盒、笔记本和一杯水；简约的装饰画和落地灯。\n柔和自然光照射室内。\n同一人以两种年龄状态并排而坐：左侧为成年人，双手打开交谈；右侧为儿童，微微低头倾听。\n两人穿相同 [服装]（颜色与款式一致）。\n风格干净，具有工作室氛围，构图居中，浅景深，50mm 镜头效果。\n分辨率 4K，纵向 3:4。\n场景中无其他人物，无文字，无水印。\n> [!NOTE]\n> **将 [方括号] 中的文字改为您需要的服装**", this)'>📋 复制</button>
         </div>
-        <p>超逼真极简主义治疗室场景：<br>墙面浅色，灰色沙发，木质咖啡桌，上面放置纸巾盒、笔记本和一杯水；简约的装饰画和落地灯。<br>柔和自然光照射室内。<br>同一人以两种年龄状态并排而坐：左侧为成年人，双手打开交谈；右侧为儿童，微微低头倾听。<br>两人穿相同 [服装]（颜色与款式一致）。<br>风格干净，具有工作室氛围，构图居中，浅景深，50mm 镜头效果。<br>分辨率 4K，纵向 3:4。<br>场景中无其他人物，无文字，无水印。<br>&gt; [!NOTE]<br>&gt; **将 [方括号] 中的文字改为您需要的服装**</p>
+        <div data-nosnippet><p>超逼真极简主义治疗室场景：<br>墙面浅色，灰色沙发，木质咖啡桌，上面放置纸巾盒、笔记本和一杯水；简约的装饰画和落地灯。<br>柔和自然光照射室内。<br>同一人以两种年龄状态并排而坐：左侧为成年人，双手打开交谈；右侧为儿童，微微低头倾听。<br>两人穿相同 [服装]（颜色与款式一致）。<br>风格干净，具有工作室氛围，构图居中，浅景深，50mm 镜头效果。<br>分辨率 4K，纵向 3:4。<br>场景中无其他人物，无文字，无水印。<br>&gt; [!NOTE]<br>&gt; **将 [方括号] 中的文字改为您需要的服装**</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Ultra-realistic minimalist therapy room scene:  \nLight-colored walls, gray sofa, wooden coffee table with tissue box, notebook, and a glass of water on top; simple artwork and a floor lamp.  \nSoft natural light illuminating the interior.  \nThe same person sitting side by side in two different age states: on the left, an adult with arms open, engaging in conversation; on the right, a child slightly bowing their head, listening attentively.  \nBoth are wearing the same [clothing] (same color and style).  \nClean style with a studio atmosphere, centered composition, shallow depth of field, 50mm lens effect.  \nResolution 4K, vertical 3:4 aspect ratio.  \nNo other people, no text, no watermarks in the scene.  \n> [!NOTE]  \n> **Replace the text inside [brackets] with the clothing you need**", this)'>📋 复制</button>
         </div>
-        <p>Ultra-realistic minimalist therapy room scene:  <br>Light-colored walls, gray sofa, wooden coffee table with tissue box, notebook, and a glass of water on top; simple artwork and a floor lamp.  <br>Soft natural light illuminating the interior.  <br>The same person sitting side by side in two different age states: on the left, an adult with arms open, engaging in conversation; on the right, a child slightly bowing their head, listening attentively.  <br>Both are wearing the same [clothing] (same color and style).  <br>Clean style with a studio atmosphere, centered composition, shallow depth of field, 50mm lens effect.  <br>Resolution 4K, vertical 3:4 aspect ratio.  <br>No other people, no text, no watermarks in the scene.  <br>&gt; [!NOTE]  <br>&gt; **Replace the text inside [brackets] with the clothing you need**</p>
+        <div data-nosnippet><p>Ultra-realistic minimalist therapy room scene:  <br>Light-colored walls, gray sofa, wooden coffee table with tissue box, notebook, and a glass of water on top; simple artwork and a floor lamp.  <br>Soft natural light illuminating the interior.  <br>The same person sitting side by side in two different age states: on the left, an adult with arms open, engaging in conversation; on the right, a child slightly bowing their head, listening attentively.  <br>Both are wearing the same [clothing] (same color and style).  <br>Clean style with a studio atmosphere, centered composition, shallow depth of field, 50mm lens effect.  <br>Resolution 4K, vertical 3:4 aspect ratio.  <br>No other people, no text, no watermarks in the scene.  <br>&gt; [!NOTE]  <br>&gt; **Replace the text inside [brackets] with the clothing you need**</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/nano-case109-output.jpg" alt="对童年的自己治疗" loading="lazy"></div></div>
       
@@ -277,6 +281,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 495,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

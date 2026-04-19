@@ -7,11 +7,13 @@
     <title>prism-shaped crystal #172 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Prismatic Crystal - AI Image Generation Prompts">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/172.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/172.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/172.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846394">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023914">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用提供的 JSON 的参数重新创建此图像。\n{\n“style_transfer”：{\n“name”： “棱柱晶体”，\n“description”： “使用精确的光扩散和照片清晰度，将高度逼真的棱柱形水晶样式应用于任何对象。非常适合为金属或结构化形式添加优质的宝石般的饰面。\n“style_attributes”：{\n“surface_texture”： “抛光的刻面水晶，锋利干净的边缘，无瑕的透明度”，\n“lighting”： “柔和的工作室照明，具有清晰的镜面高光和平滑的环境阴影”，\n“color_palette”： [“宝石蓝”， “电青色”， “日落琥珀色”， “紫罗兰色”， “品红色”， “中性白”]，\n“material”： “密集的光学玻璃或切割宝石，具有棱柱形内部反射”，\n“effects”： [\n“真实光谱色散”，\n“沿边缘的微折射”，\n“相邻曲面上的软焦散”，\n“镜片般锐利的光泽饰面”，\n“高对比度区域中的微妙光晕”\n],\n“contrast”： “平衡，边缘清晰度高，深度衰减自然”\n    },\n“application_method”： {\n“blend_mode”： “摄影叠加”，\n“intensity”：1.0、\n“masking”： “精确蒙版以保留结构并投射阴影”，\n“edge_enhancement”： “仅针对小平面的受控锐化”，\n“preserve_original_shape”： true，\n“realism_priority”：true、\n“depth_mapping”：true、\n“chromatic_aberration_limit”： “最小”\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>使用提供的 JSON 的参数重新创建此图像。<br>{<br>“style_transfer”：{<br>“name”： “棱柱晶体”，<br>“description”： “使用精确的光扩散和照片清晰度，将高度逼真的棱柱形水晶样式应用于任何对象。非常适合为金属或结构化形式添加优质的宝石般的饰面。<br>“style_attributes”：{<br>“surface_texture”： “抛光的刻面水晶，锋利干净的边缘，无瑕的透明度”，<br>“lighting”： “柔和的工作室照明，具有清晰的镜面高光和平滑的环境阴影”，<br>“color_palette”： [“宝石蓝”， “电青色”， “日落琥珀色”， “紫罗兰色”， “品红色”， “中性白”]，<br>“material”： “密集的光学玻璃或切割宝石，具有棱柱形内部反射”，<br>“effects”： [<br>“真实光谱色散”，<br>“沿边缘的微折射”，<br>“相邻曲面上的软焦散”，<br>“镜片般锐利的光泽饰面”，<br>“高对比度区域中的微妙光晕”<br>],<br>“contrast”： “平衡，边缘清晰度高，深度衰减自然”<br>    },<br>“application_method”： {<br>“blend_mode”： “摄影叠加”，<br>“intensity”：1.0、<br>“masking”： “精确蒙版以保留结构并投射阴影”，<br>“edge_enhancement”： “仅针对小平面的受控锐化”，<br>“preserve_original_shape”： true，<br>“realism_priority”：true、<br>“depth_mapping”：true、<br>“chromatic_aberration_limit”： “最小”<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>使用提供的 JSON 的参数重新创建此图像。<br>{<br>“style_transfer”：{<br>“name”： “棱柱晶体”，<br>“description”： “使用精确的光扩散和照片清晰度，将高度逼真的棱柱形水晶样式应用于任何对象。非常适合为金属或结构化形式添加优质的宝石般的饰面。<br>“style_attributes”：{<br>“surface_texture”： “抛光的刻面水晶，锋利干净的边缘，无瑕的透明度”，<br>“lighting”： “柔和的工作室照明，具有清晰的镜面高光和平滑的环境阴影”，<br>“color_palette”： [“宝石蓝”， “电青色”， “日落琥珀色”， “紫罗兰色”， “品红色”， “中性白”]，<br>“material”： “密集的光学玻璃或切割宝石，具有棱柱形内部反射”，<br>“effects”： [<br>“真实光谱色散”，<br>“沿边缘的微折射”，<br>“相邻曲面上的软焦散”，<br>“镜片般锐利的光泽饰面”，<br>“高对比度区域中的微妙光晕”<br>],<br>“contrast”： “平衡，边缘清晰度高，深度衰减自然”<br>    },<br>“application_method”： {<br>“blend_mode”： “摄影叠加”，<br>“intensity”：1.0、<br>“masking”： “精确蒙版以保留结构并投射阴影”，<br>“edge_enhancement”： “仅针对小平面的受控锐化”，<br>“preserve_original_shape”： true，<br>“realism_priority”：true、<br>“depth_mapping”：true、<br>“chromatic_aberration_limit”： “最小”<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Recreate this image using the parameters of the JSON provided.\n{\n  \"style_transfer\": {\n    \"name\": \"Prismatic Crystal\",\n    \"description\": \"Applies a highly realistic prismatic crystal style to any object, using precise light dispersion and photographic clarity. Ideal for adding a premium, gem-like finish to metallic or structured forms.\",\n    \"style_attributes\": {\n      \"surface_texture\": \"polished faceted crystal, sharp and clean edges, flawless transparency\",\n      \"lighting\": \"soft studio lighting with clear specular highlights and smooth ambient shadows\",\n      \"color_palette\": [\"sapphire blue\", \"electric cyan\", \"sunset amber\", \"violet\", \"magenta\", \"neutral white\"],\n      \"material\": \"dense optical glass or cut gemstone with prismatic inner reflections\",\n      \"effects\": [\n        \"realistic spectral dispersion\",\n        \"micro-refractions along edges\",\n        \"soft caustics on adjacent surfaces\",\n        \"lens-sharp gloss finish\",\n        \"subtle light blooming in high contrast areas\"\n      ],\n      \"contrast\": \"balanced with high edge definition and natural depth falloff\"\n    },\n    \"application_method\": {\n      \"blend_mode\": \"photographic overlay\",\n      \"intensity\": 1.0,\n      \"masking\": \"precise masking to preserve structure and cast shadows\",\n      \"edge_enhancement\": \"controlled sharpening for facets only\",\n      \"preserve_original_shape\": true,\n      \"realism_priority\": true,\n      \"depth_mapping\": true,\n      \"chromatic_aberration_limit\": \"minimal\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>Recreate this image using the parameters of the JSON provided.<br>{<br>  &quot;style_transfer&quot;: {<br>    &quot;name&quot;: &quot;Prismatic Crystal&quot;,<br>    &quot;description&quot;: &quot;Applies a highly realistic prismatic crystal style to any object, using precise light dispersion and photographic clarity. Ideal for adding a premium, gem-like finish to metallic or structured forms.&quot;,<br>    &quot;style_attributes&quot;: {<br>      &quot;surface_texture&quot;: &quot;polished faceted crystal, sharp and clean edges, flawless transparency&quot;,<br>      &quot;lighting&quot;: &quot;soft studio lighting with clear specular highlights and smooth ambient shadows&quot;,<br>      &quot;color_palette&quot;: [&quot;sapphire blue&quot;, &quot;electric cyan&quot;, &quot;sunset amber&quot;, &quot;violet&quot;, &quot;magenta&quot;, &quot;neutral white&quot;],<br>      &quot;material&quot;: &quot;dense optical glass or cut gemstone with prismatic inner reflections&quot;,<br>      &quot;effects&quot;: [<br>        &quot;realistic spectral dispersion&quot;,<br>        &quot;micro-refractions along edges&quot;,<br>        &quot;soft caustics on adjacent surfaces&quot;,<br>        &quot;lens-sharp gloss finish&quot;,<br>        &quot;subtle light blooming in high contrast areas&quot;<br>      ],<br>      &quot;contrast&quot;: &quot;balanced with high edge definition and natural depth falloff&quot;<br>    },<br>    &quot;application_method&quot;: {<br>      &quot;blend_mode&quot;: &quot;photographic overlay&quot;,<br>      &quot;intensity&quot;: 1.0,<br>      &quot;masking&quot;: &quot;precise masking to preserve structure and cast shadows&quot;,<br>      &quot;edge_enhancement&quot;: &quot;controlled sharpening for facets only&quot;,<br>      &quot;preserve_original_shape&quot;: true,<br>      &quot;realism_priority&quot;: true,<br>      &quot;depth_mapping&quot;: true,<br>      &quot;chromatic_aberration_limit&quot;: &quot;minimal&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>Recreate this image using the parameters of the JSON provided.<br>{<br>  &quot;style_transfer&quot;: {<br>    &quot;name&quot;: &quot;Prismatic Crystal&quot;,<br>    &quot;description&quot;: &quot;Applies a highly realistic prismatic crystal style to any object, using precise light dispersion and photographic clarity. Ideal for adding a premium, gem-like finish to metallic or structured forms.&quot;,<br>    &quot;style_attributes&quot;: {<br>      &quot;surface_texture&quot;: &quot;polished faceted crystal, sharp and clean edges, flawless transparency&quot;,<br>      &quot;lighting&quot;: &quot;soft studio lighting with clear specular highlights and smooth ambient shadows&quot;,<br>      &quot;color_palette&quot;: [&quot;sapphire blue&quot;, &quot;electric cyan&quot;, &quot;sunset amber&quot;, &quot;violet&quot;, &quot;magenta&quot;, &quot;neutral white&quot;],<br>      &quot;material&quot;: &quot;dense optical glass or cut gemstone with prismatic inner reflections&quot;,<br>      &quot;effects&quot;: [<br>        &quot;realistic spectral dispersion&quot;,<br>        &quot;micro-refractions along edges&quot;,<br>        &quot;soft caustics on adjacent surfaces&quot;,<br>        &quot;lens-sharp gloss finish&quot;,<br>        &quot;subtle light blooming in high contrast areas&quot;<br>      ],<br>      &quot;contrast&quot;: &quot;balanced with high edge definition and natural depth falloff&quot;<br>    },<br>    &quot;application_method&quot;: {<br>      &quot;blend_mode&quot;: &quot;photographic overlay&quot;,<br>      &quot;intensity&quot;: 1.0,<br>      &quot;masking&quot;: &quot;precise masking to preserve structure and cast shadows&quot;,<br>      &quot;edge_enhancement&quot;: &quot;controlled sharpening for facets only&quot;,<br>      &quot;preserve_original_shape&quot;: true,<br>      &quot;realism_priority&quot;: true,<br>      &quot;depth_mapping&quot;: true,<br>      &quot;chromatic_aberration_limit&quot;: &quot;minimal&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/172.jpeg" alt="棱柱形水晶" loading="lazy"><img src="/images/172-2.jpeg" alt="棱柱形水晶" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 172,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

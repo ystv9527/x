@@ -7,11 +7,13 @@
     <title>用ChatGPT轻松制作个性化3D卡哇伊贴纸教程 #498 | Gem Nana AI 提示词库</title>
     <meta name="description" content="本文介绍如何通过ChatGPT上传图片并使用提示语，快速创建九张风格多样、表情丰富的3D卡哇伊贴纸，适合提升表情包和个性化设计。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/498.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/498.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/498.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841799">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022681">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一个 3D 卡哇伊 10：16 画布，其中包含九张各种服装、姿势和表情的赤壁风格贴纸。使用所附图片作为参考。每张贴纸都有一个白色边框，并包含一个对话气泡，上面写着“早安”、“午餐假名”、“呵呵”、“拥抱”、“谢谢”、“晚安”、“你是最好的”、“想念你”、“呜   ”、“干得好”和“Ingat ka”。以柔和的白色到柔和的蓝色渐变背景为背景，营造出有趣、积极的氛围。", this)'>📋 复制</button>
         </div>
-        <p>创建一个 3D 卡哇伊 10：16 画布，其中包含九张各种服装、姿势和表情的赤壁风格贴纸。使用所附图片作为参考。每张贴纸都有一个白色边框，并包含一个对话气泡，上面写着“早安”、“午餐假名”、“呵呵”、“拥抱”、“谢谢”、“晚安”、“你是最好的”、“想念你”、“呜   ”、“干得好”和“Ingat ka”。以柔和的白色到柔和的蓝色渐变背景为背景，营造出有趣、积极的氛围。</p>
+        <div data-nosnippet><p>创建一个 3D 卡哇伊 10：16 画布，其中包含九张各种服装、姿势和表情的赤壁风格贴纸。使用所附图片作为参考。每张贴纸都有一个白色边框，并包含一个对话气泡，上面写着“早安”、“午餐假名”、“呵呵”、“拥抱”、“谢谢”、“晚安”、“你是最好的”、“想念你”、“呜   ”、“干得好”和“Ingat ka”。以柔和的白色到柔和的蓝色渐变背景为背景，营造出有趣、积极的氛围。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Prompt  \r\n\r\nCreate a 3D kawaii 10:16 canvas featuring nine chibi-style stickers in various outfits, poses, and expressions. Use the attached image for reference. Each sticker has a white border and includes a speech bubble with phrases like \"Goodmorning\", \"Lunch kana\", \"Huh\", \"Hugs\", \"Thank you\", \"Goodnight\", \"You're the best\" \"miss you\" \"mwah \" \"good job\" and \"Ingat ka\". Set on a soft white-to-pastel blue gradient background for a fun, positive vibe.", this)'>📋 复制</button>
         </div>
-        <p>Prompt  <br><br>Create a 3D kawaii 10:16 canvas featuring nine chibi-style stickers in various outfits, poses, and expressions. Use the attached image for reference. Each sticker has a white border and includes a speech bubble with phrases like &quot;Goodmorning&quot;, &quot;Lunch kana&quot;, &quot;Huh&quot;, &quot;Hugs&quot;, &quot;Thank you&quot;, &quot;Goodnight&quot;, &quot;You&#39;re the best&quot; &quot;miss you&quot; &quot;mwah &quot; &quot;good job&quot; and &quot;Ingat ka&quot;. Set on a soft white-to-pastel blue gradient background for a fun, positive vibe.</p>
+        <div data-nosnippet><p>Prompt  <br><br>Create a 3D kawaii 10:16 canvas featuring nine chibi-style stickers in various outfits, poses, and expressions. Use the attached image for reference. Each sticker has a white border and includes a speech bubble with phrases like &quot;Goodmorning&quot;, &quot;Lunch kana&quot;, &quot;Huh&quot;, &quot;Hugs&quot;, &quot;Thank you&quot;, &quot;Goodnight&quot;, &quot;You&#39;re the best&quot; &quot;miss you&quot; &quot;mwah &quot; &quot;good job&quot; and &quot;Ingat ka&quot;. Set on a soft white-to-pastel blue gradient background for a fun, positive vibe.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-1985738257708302430-1.jpg" alt="用ChatGPT轻松制作个性化3D卡哇伊贴纸教程" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 498,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

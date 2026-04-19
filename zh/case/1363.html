@@ -7,11 +7,13 @@
     <title>&quot;image style&quot;: { #1363 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image style&quot;: { &quot;type&quot;: &quot;photorealistic&quot;, &quot;aesthetic&quot;: &quot;Instagram shot&quot;, &quot;effects&quot;: [ &quot;film grain&quot;, &quot;direct flash&quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1363.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1363.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1363.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840967">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022471">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图像风格\": {\n    \"类型\": \"写实\",\n    \"美学\": \"Instagram 风格拍摄\",\n    \"效果\": [\n      \"胶片颗粒\",\n      \"直接闪光\"\n    ]\n  },\n  \"构图\": {\n    \"取景\": \"腰部以上的照片\",\n    \"纵横比\": \"9:16\"\n  },\n  \"主体\": {\n    \"描述\": \"年轻女性\",\n    \"约束说明\": \"不要改变面部和特征的敏感性\",\n    \"姿势\": {\n      \"朝向\": \"直接面向镜头\",\n      \"头部\": \"略微侧倾\",\n      \"眼睛\": \"闭着\",\n      \"动作\": \"用手遮住脸，将肘部向外拉并抬向一侧\",\n      \"情绪\": [\n        \"优雅\",\n        \"沉思\",\n        \"俏皮\"\n      ]\n    },\n    \"外观\": {\n      \"服装\": [\n        \"黑色天鹅绒紧身胸衣\",\n        \"昂贵的黑色披风\"\n      ],\n      \"头发\": \"披散\",\n      \"妆容\": {\n        \"风格\": \"裸妆\",\n        \"口红\": \"哑光裸色\"\n      },\n      \"细节\": [\n        \"突出胸前低胸部位\",\n        \"长方形黑色指甲\"\n      ]\n    }\n  },\n  \"场景\": {\n    \"背景\": \"白色墙面\",\n    \"前景元素\": \"放置在墙前的艺术品\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;图像风格&quot;: {<br>    &quot;类型&quot;: &quot;写实&quot;,<br>    &quot;美学&quot;: &quot;Instagram 风格拍摄&quot;,<br>    &quot;效果&quot;: [<br>      &quot;胶片颗粒&quot;,<br>      &quot;直接闪光&quot;<br>    ]<br>  },<br>  &quot;构图&quot;: {<br>    &quot;取景&quot;: &quot;腰部以上的照片&quot;,<br>    &quot;纵横比&quot;: &quot;9:16&quot;<br>  },<br>  &quot;主体&quot;: {<br>    &quot;描述&quot;: &quot;年轻女性&quot;,<br>    &quot;约束说明&quot;: &quot;不要改变面部和特征的敏感性&quot;,<br>    &quot;姿势&quot;: {<br>      &quot;朝向&quot;: &quot;直接面向镜头&quot;,<br>      &quot;头部&quot;: &quot;略微侧倾&quot;,<br>      &quot;眼睛&quot;: &quot;闭着&quot;,<br>      &quot;动作&quot;: &quot;用手遮住脸，将肘部向外拉并抬向一侧&quot;,<br>      &quot;情绪&quot;: [<br>        &quot;优雅&quot;,<br>        &quot;沉思&quot;,<br>        &quot;俏皮&quot;<br>      ]<br>    },<br>    &quot;外观&quot;: {<br>      &quot;服装&quot;: [<br>        &quot;黑色天鹅绒紧身胸衣&quot;,<br>        &quot;昂贵的黑色披风&quot;<br>      ],<br>      &quot;头发&quot;: &quot;披散&quot;,<br>      &quot;妆容&quot;: {<br>        &quot;风格&quot;: &quot;裸妆&quot;,<br>        &quot;口红&quot;: &quot;哑光裸色&quot;<br>      },<br>      &quot;细节&quot;: [<br>        &quot;突出胸前低胸部位&quot;,<br>        &quot;长方形黑色指甲&quot;<br>      ]<br>    }<br>  },<br>  &quot;场景&quot;: {<br>    &quot;背景&quot;: &quot;白色墙面&quot;,<br>    &quot;前景元素&quot;: &quot;放置在墙前的艺术品&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图像风格&quot;: {<br>    &quot;类型&quot;: &quot;写实&quot;,<br>    &quot;美学&quot;: &quot;Instagram 风格拍摄&quot;,<br>    &quot;效果&quot;: [<br>      &quot;胶片颗粒&quot;,<br>      &quot;直接闪光&quot;<br>    ]<br>  },<br>  &quot;构图&quot;: {<br>    &quot;取景&quot;: &quot;腰部以上的照片&quot;,<br>    &quot;纵横比&quot;: &quot;9:16&quot;<br>  },<br>  &quot;主体&quot;: {<br>    &quot;描述&quot;: &quot;年轻女性&quot;,<br>    &quot;约束说明&quot;: &quot;不要改变面部和特征的敏感性&quot;,<br>    &quot;姿势&quot;: {<br>      &quot;朝向&quot;: &quot;直接面向镜头&quot;,<br>      &quot;头部&quot;: &quot;略微侧倾&quot;,<br>      &quot;眼睛&quot;: &quot;闭着&quot;,<br>      &quot;动作&quot;: &quot;用手遮住脸，将肘部向外拉并抬向一侧&quot;,<br>      &quot;情绪&quot;: [<br>        &quot;优雅&quot;,<br>        &quot;沉思&quot;,<br>        &quot;俏皮&quot;<br>      ]<br>    },<br>    &quot;外观&quot;: {<br>      &quot;服装&quot;: [<br>        &quot;黑色天鹅绒紧身胸衣&quot;,<br>        &quot;昂贵的黑色披风&quot;<br>      ],<br>      &quot;头发&quot;: &quot;披散&quot;,<br>      &quot;妆容&quot;: {<br>        &quot;风格&quot;: &quot;裸妆&quot;,<br>        &quot;口红&quot;: &quot;哑光裸色&quot;<br>      },<br>      &quot;细节&quot;: [<br>        &quot;突出胸前低胸部位&quot;,<br>        &quot;长方形黑色指甲&quot;<br>      ]<br>    }<br>  },<br>  &quot;场景&quot;: {<br>    &quot;背景&quot;: &quot;白色墙面&quot;,<br>    &quot;前景元素&quot;: &quot;放置在墙前的艺术品&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_style\": {\n    \"type\": \"photorealistic\",\n    \"aesthetic\": \"Instagram shot\",\n    \"effects\": [\n      \"film grain\",\n      \"direct flash\"\n    ]\n  },\n  \"composition\": {\n    \"framing\": \"waist-up photograph\",\n    \"aspect_ratio\": \"9:16\"\n  },\n  \"subject\": {\n    \"description\": \"young woman\",\n    \"constraint_note\": \"do not alter the sensitivity of the face and features\",\n    \"pose\": {\n      \"orientation\": \"facing the camera directly\",\n      \"head\": \"tilted slightly to the side\",\n      \"eyes\": \"closed\",\n      \"action\": \"covering her face with her hand, pulling her elbow away and lifting it to the side\",\n      \"mood\": [\n        \"elegant\",\n        \"pensive\",\n        \"playful\"\n      ]\n    },\n    \"appearance\": {\n      \"attire\": [\n        \"black velvet corset\",\n        \"expensive black cape\"\n      ],\n      \"hair\": \"loose\",\n      \"makeup\": {\n        \"style\": \"nude\",\n        \"lipstick\": \"matte nude\"\n      },\n      \"details\": [\n        \"décolletage highlighted\",\n        \"long, square black nails\"\n      ]\n    }\n  },\n  \"setting\": {\n    \"background\": \"white wall\",\n    \"foreground_elements\": \"art object placed in front of the wall\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_style&quot;: {<br>    &quot;type&quot;: &quot;photorealistic&quot;,<br>    &quot;aesthetic&quot;: &quot;Instagram shot&quot;,<br>    &quot;effects&quot;: [<br>      &quot;film grain&quot;,<br>      &quot;direct flash&quot;<br>    ]<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;waist-up photograph&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;young woman&quot;,<br>    &quot;constraint_note&quot;: &quot;do not alter the sensitivity of the face and features&quot;,<br>    &quot;pose&quot;: {<br>      &quot;orientation&quot;: &quot;facing the camera directly&quot;,<br>      &quot;head&quot;: &quot;tilted slightly to the side&quot;,<br>      &quot;eyes&quot;: &quot;closed&quot;,<br>      &quot;action&quot;: &quot;covering her face with her hand, pulling her elbow away and lifting it to the side&quot;,<br>      &quot;mood&quot;: [<br>        &quot;elegant&quot;,<br>        &quot;pensive&quot;,<br>        &quot;playful&quot;<br>      ]<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;attire&quot;: [<br>        &quot;black velvet corset&quot;,<br>        &quot;expensive black cape&quot;<br>      ],<br>      &quot;hair&quot;: &quot;loose&quot;,<br>      &quot;makeup&quot;: {<br>        &quot;style&quot;: &quot;nude&quot;,<br>        &quot;lipstick&quot;: &quot;matte nude&quot;<br>      },<br>      &quot;details&quot;: [<br>        &quot;décolletage highlighted&quot;,<br>        &quot;long, square black nails&quot;<br>      ]<br>    }<br>  },<br>  &quot;setting&quot;: {<br>    &quot;background&quot;: &quot;white wall&quot;,<br>    &quot;foreground_elements&quot;: &quot;art object placed in front of the wall&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_style&quot;: {<br>    &quot;type&quot;: &quot;photorealistic&quot;,<br>    &quot;aesthetic&quot;: &quot;Instagram shot&quot;,<br>    &quot;effects&quot;: [<br>      &quot;film grain&quot;,<br>      &quot;direct flash&quot;<br>    ]<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;waist-up photograph&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;young woman&quot;,<br>    &quot;constraint_note&quot;: &quot;do not alter the sensitivity of the face and features&quot;,<br>    &quot;pose&quot;: {<br>      &quot;orientation&quot;: &quot;facing the camera directly&quot;,<br>      &quot;head&quot;: &quot;tilted slightly to the side&quot;,<br>      &quot;eyes&quot;: &quot;closed&quot;,<br>      &quot;action&quot;: &quot;covering her face with her hand, pulling her elbow away and lifting it to the side&quot;,<br>      &quot;mood&quot;: [<br>        &quot;elegant&quot;,<br>        &quot;pensive&quot;,<br>        &quot;playful&quot;<br>      ]<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;attire&quot;: [<br>        &quot;black velvet corset&quot;,<br>        &quot;expensive black cape&quot;<br>      ],<br>      &quot;hair&quot;: &quot;loose&quot;,<br>      &quot;makeup&quot;: {<br>        &quot;style&quot;: &quot;nude&quot;,<br>        &quot;lipstick&quot;: &quot;matte nude&quot;<br>      },<br>      &quot;details&quot;: [<br>        &quot;décolletage highlighted&quot;,<br>        &quot;long, square black nails&quot;<br>      ]<br>    }<br>  },<br>  &quot;setting&quot;: {<br>    &quot;background&quot;: &quot;white wall&quot;,<br>    &quot;foreground_elements&quot;: &quot;art object placed in front of the wall&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011830747439481225-1.jpg" alt="&quot;image style&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1363,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

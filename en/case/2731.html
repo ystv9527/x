@@ -7,11 +7,13 @@
     <title>Create a 3:4 cinematic, atmospheric editorial portrait using... #2731 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create a 3:4 cinematic, atmospheric editorial portrait using the attached photo as the exact face and identity refere...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2731.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2731.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2731.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843797">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023374">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一张 3:4 电影感、氛围浓厚的社论肖像，使用所附照片作为面部和身份的精确参考。一位孤独的男性/女性独自站在广阔、被风吹拂的鼠尾草绿色草地中。高高的草完全包围着主体，像海浪一样形成强烈的流动，部分遮蔽身体，营造出运动感、深度和孤独感。主体穿着一件简单、宽松的白衬衫，与浓郁的绿色景观柔和地形成对比。\n\n深色头发略显凌乱，随风自然飘动。头部微微低垂，目光朝向地面，传达出一种安静、内省、忧郁的情绪。表情平静、疏远且情感克制。构图略微偏离中心，从一个微妙的俯视角度拍摄。不出现可见地平线，画面完全沉浸于草的质感中。使用柔和的自然色调：鼠尾草绿、深橄榄绿和柔和的米白色。纵向 3:4 拍摄，远摄视角，浅景深，电影式构图。模拟胶片摄影美学，带有可见颗粒感、柔和的画面边缘过渡、氛围光线，以及草丛中被风带动的运动模糊。安静、诗意的叙事；超细致却保持自然，杂志封面级社论质量。无文字，无水印。", this)'>📋 Copy</button>
         </div>
-        <p>创建一张 3:4 电影感、氛围浓厚的社论肖像，使用所附照片作为面部和身份的精确参考。一位孤独的男性/女性独自站在广阔、被风吹拂的鼠尾草绿色草地中。高高的草完全包围着主体，像海浪一样形成强烈的流动，部分遮蔽身体，营造出运动感、深度和孤独感。主体穿着一件简单、宽松的白衬衫，与浓郁的绿色景观柔和地形成对比。</p><p>深色头发略显凌乱，随风自然飘动。头部微微低垂，目光朝向地面，传达出一种安静、内省、忧郁的情绪。表情平静、疏远且情感克制。构图略微偏离中心，从一个微妙的俯视角度拍摄。不出现可见地平线，画面完全沉浸于草的质感中。使用柔和的自然色调：鼠尾草绿、深橄榄绿和柔和的米白色。纵向 3:4 拍摄，远摄视角，浅景深，电影式构图。模拟胶片摄影美学，带有可见颗粒感、柔和的画面边缘过渡、氛围光线，以及草丛中被风带动的运动模糊。安静、诗意的叙事；超细致却保持自然，杂志封面级社论质量。无文字，无水印。</p>
+        <div data-nosnippet><p>创建一张 3:4 电影感、氛围浓厚的社论肖像，使用所附照片作为面部和身份的精确参考。一位孤独的男性/女性独自站在广阔、被风吹拂的鼠尾草绿色草地中。高高的草完全包围着主体，像海浪一样形成强烈的流动，部分遮蔽身体，营造出运动感、深度和孤独感。主体穿着一件简单、宽松的白衬衫，与浓郁的绿色景观柔和地形成对比。</p><p>深色头发略显凌乱，随风自然飘动。头部微微低垂，目光朝向地面，传达出一种安静、内省、忧郁的情绪。表情平静、疏远且情感克制。构图略微偏离中心，从一个微妙的俯视角度拍摄。不出现可见地平线，画面完全沉浸于草的质感中。使用柔和的自然色调：鼠尾草绿、深橄榄绿和柔和的米白色。纵向 3:4 拍摄，远摄视角，浅景深，电影式构图。模拟胶片摄影美学，带有可见颗粒感、柔和的画面边缘过渡、氛围光线，以及草丛中被风带动的运动模糊。安静、诗意的叙事；超细致却保持自然，杂志封面级社论质量。无文字，无水印。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a 3:4 cinematic, atmospheric editorial portrait using the attached photo as the exact face and identity reference. A solitary man/woman stands alone in the middle of vast, wind-swept sage green grass fields. Tall grass surrounds the subject completely, flowing in strong currents like ocean waves, partially obscuring the body and creating motion,depth, and solitude. The subject wears a simple, loose white shirt that softly contrasts with the rich green landscape.\nDark hair is slightly messy, with natural strands moving in the wind. The head is gently tilted downward, eyes cast toward the ground, conveying a quiet, introspective, melancholic mood. Expression is calm, distant, and emotionally restrained. Compose the frame slightly off-center, from a subtle elevated angle. No visible horizon, the frame is fully immersed in grass texture. Use a muted natural palette of sage green, deep olive, and soft off-white. Shoot vertical 3:4, telephoto perspective, shallow depth of field, cinematic framing. Film photography aesthetic with visible grain, soft edge falloff, atmospheric light, wind-driven motion blur in the grass. Quiet, poetic storytelling; ultra-detailed yet natural, magazine-cover editorial quality. No text, no watermark.", this)'>📋 Copy</button>
         </div>
-        <p>Create a 3:4 cinematic, atmospheric editorial portrait using the attached photo as the exact face and identity reference. A solitary man/woman stands alone in the middle of vast, wind-swept sage green grass fields. Tall grass surrounds the subject completely, flowing in strong currents like ocean waves, partially obscuring the body and creating motion,depth, and solitude. The subject wears a simple, loose white shirt that softly contrasts with the rich green landscape.<br>Dark hair is slightly messy, with natural strands moving in the wind. The head is gently tilted downward, eyes cast toward the ground, conveying a quiet, introspective, melancholic mood. Expression is calm, distant, and emotionally restrained. Compose the frame slightly off-center, from a subtle elevated angle. No visible horizon, the frame is fully immersed in grass texture. Use a muted natural palette of sage green, deep olive, and soft off-white. Shoot vertical 3:4, telephoto perspective, shallow depth of field, cinematic framing. Film photography aesthetic with visible grain, soft edge falloff, atmospheric light, wind-driven motion blur in the grass. Quiet, poetic storytelling; ultra-detailed yet natural, magazine-cover editorial quality. No text, no watermark.</p>
+        <div data-nosnippet><p>Create a 3:4 cinematic, atmospheric editorial portrait using the attached photo as the exact face and identity reference. A solitary man/woman stands alone in the middle of vast, wind-swept sage green grass fields. Tall grass surrounds the subject completely, flowing in strong currents like ocean waves, partially obscuring the body and creating motion,depth, and solitude. The subject wears a simple, loose white shirt that softly contrasts with the rich green landscape.<br>Dark hair is slightly messy, with natural strands moving in the wind. The head is gently tilted downward, eyes cast toward the ground, conveying a quiet, introspective, melancholic mood. Expression is calm, distant, and emotionally restrained. Compose the frame slightly off-center, from a subtle elevated angle. No visible horizon, the frame is fully immersed in grass texture. Use a muted natural palette of sage green, deep olive, and soft off-white. Shoot vertical 3:4, telephoto perspective, shallow depth of field, cinematic framing. Film photography aesthetic with visible grain, soft edge falloff, atmospheric light, wind-driven motion blur in the grass. Quiet, poetic storytelling; ultra-detailed yet natural, magazine-cover editorial quality. No text, no watermark.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2038617381388583283-1.jpg" alt="Create a 3:4 cinematic, atmospheric editorial portrait using..." loading="lazy"><img src="/images/tweet-2038617381388583283-2.jpg" alt="Create a 3:4 cinematic, atmospheric editorial portrait using..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2731,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>树屋 #15 | Gem Nana AI 提示词库</title>
     <meta name="description" content="树屋 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/15.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/15.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/15.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842216">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022796">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("由 [BRAND NAME] 打造的豪华树屋度假区的安静清晨——金色光线透过以品牌标志色框起来的窗户洒进室内。一个舒适的休息区摆放着俏皮、主题化的家具，一个圆形地毯灵感来自 [BRAND SYMBOL OR PRODUCT]。茶几上压印着品牌标志，而墙上的屏幕循环播放短语：“[BRAND SLOGAN]。” 精心陈列的标志性物品营造出怀旧感。微妙的环境照明以品牌色调发光，窗边放着一个放有招牌点心的托盘。它温馨、富有想象力，并且无疑地展现出 [BRAND NAME] 的气质。", this)'>📋 复制</button>
         </div>
-        <p>由 [BRAND NAME] 打造的豪华树屋度假区的安静清晨——金色光线透过以品牌标志色框起来的窗户洒进室内。一个舒适的休息区摆放着俏皮、主题化的家具，一个圆形地毯灵感来自 [BRAND SYMBOL OR PRODUCT]。茶几上压印着品牌标志，而墙上的屏幕循环播放短语：“[BRAND SLOGAN]。” 精心陈列的标志性物品营造出怀旧感。微妙的环境照明以品牌色调发光，窗边放着一个放有招牌点心的托盘。它温馨、富有想象力，并且无疑地展现出 [BRAND NAME] 的气质。</p>
+        <div data-nosnippet><p>由 [BRAND NAME] 打造的豪华树屋度假区的安静清晨——金色光线透过以品牌标志色框起来的窗户洒进室内。一个舒适的休息区摆放着俏皮、主题化的家具，一个圆形地毯灵感来自 [BRAND SYMBOL OR PRODUCT]。茶几上压印着品牌标志，而墙上的屏幕循环播放短语：“[BRAND SLOGAN]。” 精心陈列的标志性物品营造出怀旧感。微妙的环境照明以品牌色调发光，窗边放着一个放有招牌点心的托盘。它温馨、富有想象力，并且无疑地展现出 [BRAND NAME] 的气质。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A quiet morning in a luxury treehouse retreat created by [BRAND NAME] — golden light pours through windows framed in the brand’s signature colors. A cozy seating area features playful, thematic furniture, and a circular rug inspired by [BRAND SYMBOL OR PRODUCT]. The coffee table bears the embossed logo, while a screen on the wall loops the phrase: “[BRAND SLOGAN].” A curated display of iconic items adds a sense of nostalgia. Subtle ambient lighting glows in brand tones, and a tray with signature treats sits near the window. It’s cozy, imaginative, and unmistakably [BRAND NAME]", this)'>📋 复制</button>
         </div>
-        <p>A quiet morning in a luxury treehouse retreat created by [BRAND NAME] — golden light pours through windows framed in the brand’s signature colors. A cozy seating area features playful, thematic furniture, and a circular rug inspired by [BRAND SYMBOL OR PRODUCT]. The coffee table bears the embossed logo, while a screen on the wall loops the phrase: “[BRAND SLOGAN].” A curated display of iconic items adds a sense of nostalgia. Subtle ambient lighting glows in brand tones, and a tray with signature treats sits near the window. It’s cozy, imaginative, and unmistakably [BRAND NAME]</p>
+        <div data-nosnippet><p>A quiet morning in a luxury treehouse retreat created by [BRAND NAME] — golden light pours through windows framed in the brand’s signature colors. A cozy seating area features playful, thematic furniture, and a circular rug inspired by [BRAND SYMBOL OR PRODUCT]. The coffee table bears the embossed logo, while a screen on the wall loops the phrase: “[BRAND SLOGAN].” A curated display of iconic items adds a sense of nostalgia. Subtle ambient lighting glows in brand tones, and a tray with signature treats sits near the window. It’s cozy, imaginative, and unmistakably [BRAND NAME]</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/15.png" alt="树屋" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 15,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

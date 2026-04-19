@@ -7,11 +7,13 @@
     <title>&quot;style&quot;: &quot;ultra realistic studio portrait&quot;, #1383 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;style&quot;: &quot;ultra realistic studio portrait&quot;, &quot;subject&quot;: { &quot;gender&quot;: &quot;female&quot;, &quot;age&quot;: &quot;young adult&quot;, &quot;pose&quot;: &quot;leaning...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1383.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1383.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1383.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845170">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023669">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"风格\": \"超写实影棚肖像\",\n  \"主体\": {\n    \"性别\": \"女性\",\n    \"年龄\": \"年轻成人\",\n    \"姿势\": \"微微向镜头前倾\",\n    \"表情\": \"俏皮、挑逗\",\n    \"面部细节\": {\n      \"眨眼\": true,\n      \"舌头伸出\": true,\n      \"雀斑\": \"白皙皮肤上自然分布的雀斑\",\n      \"化妆\": {\n        \"腮红\": \"柔和的粉色\",\n        \"嘴唇\": \"有光泽\"\n      }\n    },\n    \"头发\": {\n      \"颜色\": \"金色\",\n      \"长度\": \"长发\",\n      \"发缝\": \"侧分\",\n      \"风格\": \"自然披于肩上\"\n    },\n    \"服装\": {\n      \"连衣裙\": \"黑色贴身露肩连衣裙\",\n      \"首饰\": {\n        \"耳环\": \"长款垂坠金色耳环\",\n        \"项链\": \"叠戴的金色项链，带有小心形吊坠\"\n      }\n    }\n  },\n  \"环境\": {\n    \"场景\": \"摄影棚\",\n    \"背景\": \"干净简约的浅色中性基调\"\n  },\n  \"照明\": {\n    \"类型\": \"柔和漫射的影棚照明\",\n    \"阴影\": \"柔和自然的阴影\"\n  },\n  \"相机\": {\n    \"镜头\": \"50mm\",\n    \"光圈\": \"f/1.8\",\n    \"景深\": \"浅\"\n  },\n  \"质量\": {\n    \"分辨率\": \"高分辨率\",\n    \"细节\": \"超高细节\",\n    \"皮肤纹理\": \"逼真的皮肤质感\",\n    \"对焦\": \"锐利对焦\",\n    \"摄影风格\": \"高级时尚生活方式摄影\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;风格&quot;: &quot;超写实影棚肖像&quot;,<br>  &quot;主体&quot;: {<br>    &quot;性别&quot;: &quot;女性&quot;,<br>    &quot;年龄&quot;: &quot;年轻成人&quot;,<br>    &quot;姿势&quot;: &quot;微微向镜头前倾&quot;,<br>    &quot;表情&quot;: &quot;俏皮、挑逗&quot;,<br>    &quot;面部细节&quot;: {<br>      &quot;眨眼&quot;: true,<br>      &quot;舌头伸出&quot;: true,<br>      &quot;雀斑&quot;: &quot;白皙皮肤上自然分布的雀斑&quot;,<br>      &quot;化妆&quot;: {<br>        &quot;腮红&quot;: &quot;柔和的粉色&quot;,<br>        &quot;嘴唇&quot;: &quot;有光泽&quot;<br>      }<br>    },<br>    &quot;头发&quot;: {<br>      &quot;颜色&quot;: &quot;金色&quot;,<br>      &quot;长度&quot;: &quot;长发&quot;,<br>      &quot;发缝&quot;: &quot;侧分&quot;,<br>      &quot;风格&quot;: &quot;自然披于肩上&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;连衣裙&quot;: &quot;黑色贴身露肩连衣裙&quot;,<br>      &quot;首饰&quot;: {<br>        &quot;耳环&quot;: &quot;长款垂坠金色耳环&quot;,<br>        &quot;项链&quot;: &quot;叠戴的金色项链，带有小心形吊坠&quot;<br>      }<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;场景&quot;: &quot;摄影棚&quot;,<br>    &quot;背景&quot;: &quot;干净简约的浅色中性基调&quot;<br>  },<br>  &quot;照明&quot;: {<br>    &quot;类型&quot;: &quot;柔和漫射的影棚照明&quot;,<br>    &quot;阴影&quot;: &quot;柔和自然的阴影&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;镜头&quot;: &quot;50mm&quot;,<br>    &quot;光圈&quot;: &quot;f/1.8&quot;,<br>    &quot;景深&quot;: &quot;浅&quot;<br>  },<br>  &quot;质量&quot;: {<br>    &quot;分辨率&quot;: &quot;高分辨率&quot;,<br>    &quot;细节&quot;: &quot;超高细节&quot;,<br>    &quot;皮肤纹理&quot;: &quot;逼真的皮肤质感&quot;,<br>    &quot;对焦&quot;: &quot;锐利对焦&quot;,<br>    &quot;摄影风格&quot;: &quot;高级时尚生活方式摄影&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;风格&quot;: &quot;超写实影棚肖像&quot;,<br>  &quot;主体&quot;: {<br>    &quot;性别&quot;: &quot;女性&quot;,<br>    &quot;年龄&quot;: &quot;年轻成人&quot;,<br>    &quot;姿势&quot;: &quot;微微向镜头前倾&quot;,<br>    &quot;表情&quot;: &quot;俏皮、挑逗&quot;,<br>    &quot;面部细节&quot;: {<br>      &quot;眨眼&quot;: true,<br>      &quot;舌头伸出&quot;: true,<br>      &quot;雀斑&quot;: &quot;白皙皮肤上自然分布的雀斑&quot;,<br>      &quot;化妆&quot;: {<br>        &quot;腮红&quot;: &quot;柔和的粉色&quot;,<br>        &quot;嘴唇&quot;: &quot;有光泽&quot;<br>      }<br>    },<br>    &quot;头发&quot;: {<br>      &quot;颜色&quot;: &quot;金色&quot;,<br>      &quot;长度&quot;: &quot;长发&quot;,<br>      &quot;发缝&quot;: &quot;侧分&quot;,<br>      &quot;风格&quot;: &quot;自然披于肩上&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;连衣裙&quot;: &quot;黑色贴身露肩连衣裙&quot;,<br>      &quot;首饰&quot;: {<br>        &quot;耳环&quot;: &quot;长款垂坠金色耳环&quot;,<br>        &quot;项链&quot;: &quot;叠戴的金色项链，带有小心形吊坠&quot;<br>      }<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;场景&quot;: &quot;摄影棚&quot;,<br>    &quot;背景&quot;: &quot;干净简约的浅色中性基调&quot;<br>  },<br>  &quot;照明&quot;: {<br>    &quot;类型&quot;: &quot;柔和漫射的影棚照明&quot;,<br>    &quot;阴影&quot;: &quot;柔和自然的阴影&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;镜头&quot;: &quot;50mm&quot;,<br>    &quot;光圈&quot;: &quot;f/1.8&quot;,<br>    &quot;景深&quot;: &quot;浅&quot;<br>  },<br>  &quot;质量&quot;: {<br>    &quot;分辨率&quot;: &quot;高分辨率&quot;,<br>    &quot;细节&quot;: &quot;超高细节&quot;,<br>    &quot;皮肤纹理&quot;: &quot;逼真的皮肤质感&quot;,<br>    &quot;对焦&quot;: &quot;锐利对焦&quot;,<br>    &quot;摄影风格&quot;: &quot;高级时尚生活方式摄影&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"style\": \"ultra-realistic studio portrait\",\n  \"subject\": {\n    \"gender\": \"female\",\n    \"age\": \"young adult\",\n    \"pose\": \"leaning slightly forward toward the camera\",\n    \"expression\": \"playful, flirty\",\n    \"facial_details\": {\n      \"wink\": true,\n      \"tongue_out\": true,\n      \"freckles\": \"natural across fair skin\",\n      \"makeup\": {\n        \"blush\": \"soft pink\",\n        \"lips\": \"glossy\"\n      }\n    },\n    \"hair\": {\n      \"color\": \"blonde\",\n      \"length\": \"long\",\n      \"part\": \"side-parted\",\n      \"style\": \"falling naturally over shoulders\"\n    },\n    \"outfit\": {\n      \"dress\": \"off-shoulder fitted black dress\",\n      \"jewelry\": {\n        \"earrings\": \"long dangling gold earrings\",\n        \"necklaces\": \"layered gold necklaces with small heart pendant\"\n      }\n    }\n  },\n  \"environment\": {\n    \"setting\": \"studio\",\n    \"background\": \"clean minimal light neutral tones\"\n  },\n  \"lighting\": {\n    \"type\": \"soft diffused studio lighting\",\n    \"shadows\": \"smooth natural shadows\"\n  },\n  \"camera\": {\n    \"lens\": \"50mm\",\n    \"aperture\": \"f/1.8\",\n    \"depth_of_field\": \"shallow\"\n  },\n  \"quality\": {\n    \"resolution\": \"high resolution\",\n    \"detail\": \"ultra-detailed\",\n    \"skin_texture\": \"photorealistic\",\n    \"focus\": \"sharp focus\",\n    \"photography_style\": \"high fashion lifestyle photography\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;style&quot;: &quot;ultra-realistic studio portrait&quot;,<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;age&quot;: &quot;young adult&quot;,<br>    &quot;pose&quot;: &quot;leaning slightly forward toward the camera&quot;,<br>    &quot;expression&quot;: &quot;playful, flirty&quot;,<br>    &quot;facial_details&quot;: {<br>      &quot;wink&quot;: true,<br>      &quot;tongue_out&quot;: true,<br>      &quot;freckles&quot;: &quot;natural across fair skin&quot;,<br>      &quot;makeup&quot;: {<br>        &quot;blush&quot;: &quot;soft pink&quot;,<br>        &quot;lips&quot;: &quot;glossy&quot;<br>      }<br>    },<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;blonde&quot;,<br>      &quot;length&quot;: &quot;long&quot;,<br>      &quot;part&quot;: &quot;side-parted&quot;,<br>      &quot;style&quot;: &quot;falling naturally over shoulders&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;dress&quot;: &quot;off-shoulder fitted black dress&quot;,<br>      &quot;jewelry&quot;: {<br>        &quot;earrings&quot;: &quot;long dangling gold earrings&quot;,<br>        &quot;necklaces&quot;: &quot;layered gold necklaces with small heart pendant&quot;<br>      }<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;studio&quot;,<br>    &quot;background&quot;: &quot;clean minimal light neutral tones&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft diffused studio lighting&quot;,<br>    &quot;shadows&quot;: &quot;smooth natural shadows&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;lens&quot;: &quot;50mm&quot;,<br>    &quot;aperture&quot;: &quot;f/1.8&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;high resolution&quot;,<br>    &quot;detail&quot;: &quot;ultra-detailed&quot;,<br>    &quot;skin_texture&quot;: &quot;photorealistic&quot;,<br>    &quot;focus&quot;: &quot;sharp focus&quot;,<br>    &quot;photography_style&quot;: &quot;high fashion lifestyle photography&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;style&quot;: &quot;ultra-realistic studio portrait&quot;,<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;age&quot;: &quot;young adult&quot;,<br>    &quot;pose&quot;: &quot;leaning slightly forward toward the camera&quot;,<br>    &quot;expression&quot;: &quot;playful, flirty&quot;,<br>    &quot;facial_details&quot;: {<br>      &quot;wink&quot;: true,<br>      &quot;tongue_out&quot;: true,<br>      &quot;freckles&quot;: &quot;natural across fair skin&quot;,<br>      &quot;makeup&quot;: {<br>        &quot;blush&quot;: &quot;soft pink&quot;,<br>        &quot;lips&quot;: &quot;glossy&quot;<br>      }<br>    },<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;blonde&quot;,<br>      &quot;length&quot;: &quot;long&quot;,<br>      &quot;part&quot;: &quot;side-parted&quot;,<br>      &quot;style&quot;: &quot;falling naturally over shoulders&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;dress&quot;: &quot;off-shoulder fitted black dress&quot;,<br>      &quot;jewelry&quot;: {<br>        &quot;earrings&quot;: &quot;long dangling gold earrings&quot;,<br>        &quot;necklaces&quot;: &quot;layered gold necklaces with small heart pendant&quot;<br>      }<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;studio&quot;,<br>    &quot;background&quot;: &quot;clean minimal light neutral tones&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft diffused studio lighting&quot;,<br>    &quot;shadows&quot;: &quot;smooth natural shadows&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;lens&quot;: &quot;50mm&quot;,<br>    &quot;aperture&quot;: &quot;f/1.8&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;high resolution&quot;,<br>    &quot;detail&quot;: &quot;ultra-detailed&quot;,<br>    &quot;skin_texture&quot;: &quot;photorealistic&quot;,<br>    &quot;focus&quot;: &quot;sharp focus&quot;,<br>    &quot;photography_style&quot;: &quot;high fashion lifestyle photography&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011913223964852336-1.jpg" alt="&quot;style&quot;: &quot;ultra realistic studio portrait&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1383,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

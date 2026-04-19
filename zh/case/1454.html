@@ -7,11 +7,13 @@
     <title>&quot;type&quot;: &quot;2x2 Photo Collage (4 Panel Grid).&quot;, #1454 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;type&quot;: &quot;2x2 Photo Collage (4 Panel Grid).&quot;, &quot;theme&quot;: &quot;Tropical Beach Vacation Photoshoot.&quot;, &quot;layout&quot;: &quot;Four differ...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1454.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1454.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1454.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840868">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022451">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"类型\": \"2x2 照片拼贴（4 格网格）。\",\n  \"主题\": \"热带海滩度假拍摄。\",\n  \"布局\": \"在白色沙滩上同一主体的四张不同镜头。\",\n  \"一致性\": \"所有面板中主体、服装和地点一致。\",\n  \"主体细节\": {\n    \"人口统计\": \"年轻的亚洲女性，肤色白皙。\",\n    \"发型\": \"长黑发，扎成两股松散的辫子（双马尾）。\",\n    \"服装\": {\n      \"泳装\": \"黑色连体泳衣（monokini），中间有镂空且领口深V。\",\n      \"下装\": \"白色超迷你裙或围腰，系在腰间。\",\n      \"配饰\": \"宽檐草帽、长珍珠项链（系在帽子或眼镜上）、金色手镯式臂环、耳后夹着的大黄花。\"\n    }\n  },\n  \"环境\": {\n    \"地点\": \"阳光明媚的热带海滩。\",\n    \"元素\": \"白色沙滩、绿松石色海水、远处的绿色岛屿/小山、蓝天白云。\",\n    \"道具\": \"红白条纹手提袋/沙滩毛巾。\"\n  },\n  \"面板分解_姿势\": {\n    \"面板1_左上\": {\n      \"取景\": \"低角度，全身。\",\n      \"姿势\": \"站立，微向后仰，仰望太阳。手持条纹包。\",\n      \"背景\": \"顶部可见棕榈树叶，蓝天。\"\n    },\n    \"面板2_右上\": {\n      \"取景\": \"高角度/俯拍。\",\n      \"姿势\": \"仰躺在沙滩上，双腿伸展（一膝抬起），头转向一侧朝向镜头。下面铺着红色条纹毛巾。\",\n      \"背景\": \"沙子纹理和靠近水边的一艘红色小船。\"\n    },\n    \"面板3_左下\": {\n      \"取景\": \"自拍角度/特写。\",\n      \"姿势\": \"主体伸手持相机（手臂伸出），直视镜头。头部倾斜，展示帽子和花朵。\",\n      \"背景\": \"以蓝天为主。\"\n    },\n    \"面板4_右下\": {\n      \"取景\": \"中景，坐姿。\",\n      \"姿势\": \"坐在沙滩上，调整泳衣肩带或项链。自然地低头或侧看。\",\n      \"背景\": \"海平线和远处的山脉。\"\n    }\n  },\n  \"相机技术参数\": {\n    \"镜头\": \"广角（16mm - 24mm），用于自拍和低角度拍摄以强调身高和背景景观。\",\n    \"光圈\": \"f/8.0（大景深，保持明亮阳光背景清晰）。\",\n    \"快门速度\": \"1/500s（明亮日光）。\",\n    \"ISO\": \"ISO 100。\",\n    \"光照\": \"强烈自然阳光。高对比、清晰的阴影、色彩鲜艳。\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;类型&quot;: &quot;2x2 照片拼贴（4 格网格）。&quot;,<br>  &quot;主题&quot;: &quot;热带海滩度假拍摄。&quot;,<br>  &quot;布局&quot;: &quot;在白色沙滩上同一主体的四张不同镜头。&quot;,<br>  &quot;一致性&quot;: &quot;所有面板中主体、服装和地点一致。&quot;,<br>  &quot;主体细节&quot;: {<br>    &quot;人口统计&quot;: &quot;年轻的亚洲女性，肤色白皙。&quot;,<br>    &quot;发型&quot;: &quot;长黑发，扎成两股松散的辫子（双马尾）。&quot;,<br>    &quot;服装&quot;: {<br>      &quot;泳装&quot;: &quot;黑色连体泳衣（monokini），中间有镂空且领口深V。&quot;,<br>      &quot;下装&quot;: &quot;白色超迷你裙或围腰，系在腰间。&quot;,<br>      &quot;配饰&quot;: &quot;宽檐草帽、长珍珠项链（系在帽子或眼镜上）、金色手镯式臂环、耳后夹着的大黄花。&quot;<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;地点&quot;: &quot;阳光明媚的热带海滩。&quot;,<br>    &quot;元素&quot;: &quot;白色沙滩、绿松石色海水、远处的绿色岛屿/小山、蓝天白云。&quot;,<br>    &quot;道具&quot;: &quot;红白条纹手提袋/沙滩毛巾。&quot;<br>  },<br>  &quot;面板分解_姿势&quot;: {<br>    &quot;面板1_左上&quot;: {<br>      &quot;取景&quot;: &quot;低角度，全身。&quot;,<br>      &quot;姿势&quot;: &quot;站立，微向后仰，仰望太阳。手持条纹包。&quot;,<br>      &quot;背景&quot;: &quot;顶部可见棕榈树叶，蓝天。&quot;<br>    },<br>    &quot;面板2_右上&quot;: {<br>      &quot;取景&quot;: &quot;高角度/俯拍。&quot;,<br>      &quot;姿势&quot;: &quot;仰躺在沙滩上，双腿伸展（一膝抬起），头转向一侧朝向镜头。下面铺着红色条纹毛巾。&quot;,<br>      &quot;背景&quot;: &quot;沙子纹理和靠近水边的一艘红色小船。&quot;<br>    },<br>    &quot;面板3_左下&quot;: {<br>      &quot;取景&quot;: &quot;自拍角度/特写。&quot;,<br>      &quot;姿势&quot;: &quot;主体伸手持相机（手臂伸出），直视镜头。头部倾斜，展示帽子和花朵。&quot;,<br>      &quot;背景&quot;: &quot;以蓝天为主。&quot;<br>    },<br>    &quot;面板4_右下&quot;: {<br>      &quot;取景&quot;: &quot;中景，坐姿。&quot;,<br>      &quot;姿势&quot;: &quot;坐在沙滩上，调整泳衣肩带或项链。自然地低头或侧看。&quot;,<br>      &quot;背景&quot;: &quot;海平线和远处的山脉。&quot;<br>    }<br>  },<br>  &quot;相机技术参数&quot;: {<br>    &quot;镜头&quot;: &quot;广角（16mm - 24mm），用于自拍和低角度拍摄以强调身高和背景景观。&quot;,<br>    &quot;光圈&quot;: &quot;f/8.0（大景深，保持明亮阳光背景清晰）。&quot;,<br>    &quot;快门速度&quot;: &quot;1/500s（明亮日光）。&quot;,<br>    &quot;ISO&quot;: &quot;ISO 100。&quot;,<br>    &quot;光照&quot;: &quot;强烈自然阳光。高对比、清晰的阴影、色彩鲜艳。&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;类型&quot;: &quot;2x2 照片拼贴（4 格网格）。&quot;,<br>  &quot;主题&quot;: &quot;热带海滩度假拍摄。&quot;,<br>  &quot;布局&quot;: &quot;在白色沙滩上同一主体的四张不同镜头。&quot;,<br>  &quot;一致性&quot;: &quot;所有面板中主体、服装和地点一致。&quot;,<br>  &quot;主体细节&quot;: {<br>    &quot;人口统计&quot;: &quot;年轻的亚洲女性，肤色白皙。&quot;,<br>    &quot;发型&quot;: &quot;长黑发，扎成两股松散的辫子（双马尾）。&quot;,<br>    &quot;服装&quot;: {<br>      &quot;泳装&quot;: &quot;黑色连体泳衣（monokini），中间有镂空且领口深V。&quot;,<br>      &quot;下装&quot;: &quot;白色超迷你裙或围腰，系在腰间。&quot;,<br>      &quot;配饰&quot;: &quot;宽檐草帽、长珍珠项链（系在帽子或眼镜上）、金色手镯式臂环、耳后夹着的大黄花。&quot;<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;地点&quot;: &quot;阳光明媚的热带海滩。&quot;,<br>    &quot;元素&quot;: &quot;白色沙滩、绿松石色海水、远处的绿色岛屿/小山、蓝天白云。&quot;,<br>    &quot;道具&quot;: &quot;红白条纹手提袋/沙滩毛巾。&quot;<br>  },<br>  &quot;面板分解_姿势&quot;: {<br>    &quot;面板1_左上&quot;: {<br>      &quot;取景&quot;: &quot;低角度，全身。&quot;,<br>      &quot;姿势&quot;: &quot;站立，微向后仰，仰望太阳。手持条纹包。&quot;,<br>      &quot;背景&quot;: &quot;顶部可见棕榈树叶，蓝天。&quot;<br>    },<br>    &quot;面板2_右上&quot;: {<br>      &quot;取景&quot;: &quot;高角度/俯拍。&quot;,<br>      &quot;姿势&quot;: &quot;仰躺在沙滩上，双腿伸展（一膝抬起），头转向一侧朝向镜头。下面铺着红色条纹毛巾。&quot;,<br>      &quot;背景&quot;: &quot;沙子纹理和靠近水边的一艘红色小船。&quot;<br>    },<br>    &quot;面板3_左下&quot;: {<br>      &quot;取景&quot;: &quot;自拍角度/特写。&quot;,<br>      &quot;姿势&quot;: &quot;主体伸手持相机（手臂伸出），直视镜头。头部倾斜，展示帽子和花朵。&quot;,<br>      &quot;背景&quot;: &quot;以蓝天为主。&quot;<br>    },<br>    &quot;面板4_右下&quot;: {<br>      &quot;取景&quot;: &quot;中景，坐姿。&quot;,<br>      &quot;姿势&quot;: &quot;坐在沙滩上，调整泳衣肩带或项链。自然地低头或侧看。&quot;,<br>      &quot;背景&quot;: &quot;海平线和远处的山脉。&quot;<br>    }<br>  },<br>  &quot;相机技术参数&quot;: {<br>    &quot;镜头&quot;: &quot;广角（16mm - 24mm），用于自拍和低角度拍摄以强调身高和背景景观。&quot;,<br>    &quot;光圈&quot;: &quot;f/8.0（大景深，保持明亮阳光背景清晰）。&quot;,<br>    &quot;快门速度&quot;: &quot;1/500s（明亮日光）。&quot;,<br>    &quot;ISO&quot;: &quot;ISO 100。&quot;,<br>    &quot;光照&quot;: &quot;强烈自然阳光。高对比、清晰的阴影、色彩鲜艳。&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n      \"type\": \"2x2 Photo Collage (4-Panel Grid).\",\n      \"theme\": \"Tropical Beach Vacation Photoshoot.\",\n      \"layout\": \"Four different shots of the same subject on a white sand beach.\",\n      \"consistency\": \"Same subject, outfit, and location across all panels.\"\n    },\n    \"subject_details\": {\n      \"demographics\": \"Young Asian woman, fair skin tone.\",\n      \"hair\": \"Long black hair styled in two loose braids (pigtails).\",\n      \"outfit\": {\n        \"swimwear\": \"Black one-piece swimsuit (monokini) with a center cutout and plunging neckline.\",\n        \"bottoms\": \"White micro-mini skirt or sarong wrapped around the waist.\",\n        \"accessories\": \"Wide-brimmed straw sun hat, long pearl necklace chain attached to the hat or glasses, gold bracelet cuff, large yellow flower tucked behind the ear.\"\n      }\n    },\n    \"environment\": {\n      \"location\": \"Sunny tropical beach.\",\n      \"elements\": \"White sand, turquoise blue ocean water, distant green islands/hills, blue sky with white clouds.\",\n      \"props\": \"Red and white striped tote bag/beach towel.\"\n    },\n    \"panel_breakdown_poses\": {\n      \"panel_1_top_left\": {\n        \"framing\": \"Low Angle, Full Body.\",\n        \"pose\": \"Standing, leaning back slightly, looking up towards the sun. Holding the striped bag.\",\n        \"background\": \"Palm tree fronds visible at the top, blue sky.\"\n      },\n      \"panel_2_top_right\": {\n        \"framing\": \"High Angle / Top Down.\",\n        \"pose\": \"Lying on back on the sand, legs extended (one knee bent up), head turned to the side facing the camera. Red striped towel underneath.\",\n        \"background\": \"Sand texture and a red boat on the water edge.\"\n      },\n      \"panel_3_bottom_left\": {\n        \"framing\": \"Selfie Angle / Close-up.\",\n        \"pose\": \"Subject holding the camera (arm extended), looking directly into the lens. Head tilted, showcasing the hat and flower.\",\n        \"background\": \"Blue sky dominant.\"\n      },\n      \"panel_4_bottom_right\": {\n        \"framing\": \"Medium Shot, Seated.\",\n        \"pose\": \"Sitting on the sand, adjusting the straps of the swimsuit or necklace. Looking down or to the side candidly.\",\n        \"background\": \"Ocean horizon line and distant mountains.\"\n      }\n    },\n    \"camera_technical_values\": {\n      \"lens\": \"Wide Angle (16mm - 24mm) for the selfie and low angle shots to accentuate height and background scenery.\",\n      \"aperture\": \"f/8.0 (Deep depth of field, keeping the bright sunny background sharp).\",\n      \"shutter_speed\": \"1/500s (Bright daylight).\",\n      \"iso\": \"ISO 100.\",\n      \"lighting\": \"Hard Natural Sunlight. High contrast, distinct shadows, vibrant colors.\"\n    }", this)'>📋 复制</button>
         </div>
-        <p>{<br>      &quot;type&quot;: &quot;2x2 Photo Collage (4-Panel Grid).&quot;,<br>      &quot;theme&quot;: &quot;Tropical Beach Vacation Photoshoot.&quot;,<br>      &quot;layout&quot;: &quot;Four different shots of the same subject on a white sand beach.&quot;,<br>      &quot;consistency&quot;: &quot;Same subject, outfit, and location across all panels.&quot;<br>    },<br>    &quot;subject_details&quot;: {<br>      &quot;demographics&quot;: &quot;Young Asian woman, fair skin tone.&quot;,<br>      &quot;hair&quot;: &quot;Long black hair styled in two loose braids (pigtails).&quot;,<br>      &quot;outfit&quot;: {<br>        &quot;swimwear&quot;: &quot;Black one-piece swimsuit (monokini) with a center cutout and plunging neckline.&quot;,<br>        &quot;bottoms&quot;: &quot;White micro-mini skirt or sarong wrapped around the waist.&quot;,<br>        &quot;accessories&quot;: &quot;Wide-brimmed straw sun hat, long pearl necklace chain attached to the hat or glasses, gold bracelet cuff, large yellow flower tucked behind the ear.&quot;<br>      }<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Sunny tropical beach.&quot;,<br>      &quot;elements&quot;: &quot;White sand, turquoise blue ocean water, distant green islands/hills, blue sky with white clouds.&quot;,<br>      &quot;props&quot;: &quot;Red and white striped tote bag/beach towel.&quot;<br>    },<br>    &quot;panel_breakdown_poses&quot;: {<br>      &quot;panel_1_top_left&quot;: {<br>        &quot;framing&quot;: &quot;Low Angle, Full Body.&quot;,<br>        &quot;pose&quot;: &quot;Standing, leaning back slightly, looking up towards the sun. Holding the striped bag.&quot;,<br>        &quot;background&quot;: &quot;Palm tree fronds visible at the top, blue sky.&quot;<br>      },<br>      &quot;panel_2_top_right&quot;: {<br>        &quot;framing&quot;: &quot;High Angle / Top Down.&quot;,<br>        &quot;pose&quot;: &quot;Lying on back on the sand, legs extended (one knee bent up), head turned to the side facing the camera. Red striped towel underneath.&quot;,<br>        &quot;background&quot;: &quot;Sand texture and a red boat on the water edge.&quot;<br>      },<br>      &quot;panel_3_bottom_left&quot;: {<br>        &quot;framing&quot;: &quot;Selfie Angle / Close-up.&quot;,<br>        &quot;pose&quot;: &quot;Subject holding the camera (arm extended), looking directly into the lens. Head tilted, showcasing the hat and flower.&quot;,<br>        &quot;background&quot;: &quot;Blue sky dominant.&quot;<br>      },<br>      &quot;panel_4_bottom_right&quot;: {<br>        &quot;framing&quot;: &quot;Medium Shot, Seated.&quot;,<br>        &quot;pose&quot;: &quot;Sitting on the sand, adjusting the straps of the swimsuit or necklace. Looking down or to the side candidly.&quot;,<br>        &quot;background&quot;: &quot;Ocean horizon line and distant mountains.&quot;<br>      }<br>    },<br>    &quot;camera_technical_values&quot;: {<br>      &quot;lens&quot;: &quot;Wide Angle (16mm - 24mm) for the selfie and low angle shots to accentuate height and background scenery.&quot;,<br>      &quot;aperture&quot;: &quot;f/8.0 (Deep depth of field, keeping the bright sunny background sharp).&quot;,<br>      &quot;shutter_speed&quot;: &quot;1/500s (Bright daylight).&quot;,<br>      &quot;iso&quot;: &quot;ISO 100.&quot;,<br>      &quot;lighting&quot;: &quot;Hard Natural Sunlight. High contrast, distinct shadows, vibrant colors.&quot;<br>    }</p>
+        <div data-nosnippet><p>{<br>      &quot;type&quot;: &quot;2x2 Photo Collage (4-Panel Grid).&quot;,<br>      &quot;theme&quot;: &quot;Tropical Beach Vacation Photoshoot.&quot;,<br>      &quot;layout&quot;: &quot;Four different shots of the same subject on a white sand beach.&quot;,<br>      &quot;consistency&quot;: &quot;Same subject, outfit, and location across all panels.&quot;<br>    },<br>    &quot;subject_details&quot;: {<br>      &quot;demographics&quot;: &quot;Young Asian woman, fair skin tone.&quot;,<br>      &quot;hair&quot;: &quot;Long black hair styled in two loose braids (pigtails).&quot;,<br>      &quot;outfit&quot;: {<br>        &quot;swimwear&quot;: &quot;Black one-piece swimsuit (monokini) with a center cutout and plunging neckline.&quot;,<br>        &quot;bottoms&quot;: &quot;White micro-mini skirt or sarong wrapped around the waist.&quot;,<br>        &quot;accessories&quot;: &quot;Wide-brimmed straw sun hat, long pearl necklace chain attached to the hat or glasses, gold bracelet cuff, large yellow flower tucked behind the ear.&quot;<br>      }<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Sunny tropical beach.&quot;,<br>      &quot;elements&quot;: &quot;White sand, turquoise blue ocean water, distant green islands/hills, blue sky with white clouds.&quot;,<br>      &quot;props&quot;: &quot;Red and white striped tote bag/beach towel.&quot;<br>    },<br>    &quot;panel_breakdown_poses&quot;: {<br>      &quot;panel_1_top_left&quot;: {<br>        &quot;framing&quot;: &quot;Low Angle, Full Body.&quot;,<br>        &quot;pose&quot;: &quot;Standing, leaning back slightly, looking up towards the sun. Holding the striped bag.&quot;,<br>        &quot;background&quot;: &quot;Palm tree fronds visible at the top, blue sky.&quot;<br>      },<br>      &quot;panel_2_top_right&quot;: {<br>        &quot;framing&quot;: &quot;High Angle / Top Down.&quot;,<br>        &quot;pose&quot;: &quot;Lying on back on the sand, legs extended (one knee bent up), head turned to the side facing the camera. Red striped towel underneath.&quot;,<br>        &quot;background&quot;: &quot;Sand texture and a red boat on the water edge.&quot;<br>      },<br>      &quot;panel_3_bottom_left&quot;: {<br>        &quot;framing&quot;: &quot;Selfie Angle / Close-up.&quot;,<br>        &quot;pose&quot;: &quot;Subject holding the camera (arm extended), looking directly into the lens. Head tilted, showcasing the hat and flower.&quot;,<br>        &quot;background&quot;: &quot;Blue sky dominant.&quot;<br>      },<br>      &quot;panel_4_bottom_right&quot;: {<br>        &quot;framing&quot;: &quot;Medium Shot, Seated.&quot;,<br>        &quot;pose&quot;: &quot;Sitting on the sand, adjusting the straps of the swimsuit or necklace. Looking down or to the side candidly.&quot;,<br>        &quot;background&quot;: &quot;Ocean horizon line and distant mountains.&quot;<br>      }<br>    },<br>    &quot;camera_technical_values&quot;: {<br>      &quot;lens&quot;: &quot;Wide Angle (16mm - 24mm) for the selfie and low angle shots to accentuate height and background scenery.&quot;,<br>      &quot;aperture&quot;: &quot;f/8.0 (Deep depth of field, keeping the bright sunny background sharp).&quot;,<br>      &quot;shutter_speed&quot;: &quot;1/500s (Bright daylight).&quot;,<br>      &quot;iso&quot;: &quot;ISO 100.&quot;,<br>      &quot;lighting&quot;: &quot;Hard Natural Sunlight. High contrast, distinct shadows, vibrant colors.&quot;<br>    }</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012212605071581261-1.jpg" alt="&quot;type&quot;: &quot;2x2 Photo Collage (4 Panel Grid).&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1454,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

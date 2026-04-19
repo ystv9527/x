@@ -7,11 +7,13 @@
     <title>&quot;image&quot;: { #1403 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image&quot;: { &quot;general&quot;: { &quot;style&quot;: &quot;Masterpiece&quot;, &quot;quality&quot;: &quot;Best&quot;, &quot;photorealism&quot;: 1.4, &quot;resolution&quot;: &quot;8k&quot;, &quot;aspect...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1403.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1403.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1403.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840926">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022462">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图片\": {\n    \"整体\": {\n      \"风格\": \"杰作\",\n      \"质量\": \"最佳\",\n      \"照片真实度\": 1.4,\n      \"分辨率\": \"8k\",\n      \"纵横比\": \"3:4\"\n    },\n    \"光效\": {\n      \"类型\": \"焦散\",\n      \"强度\": \"明亮的阳光\",\n      \"对比度\": \"高\",\n      \"氛围\": \"清爽\",\n      \"闪亮的水面\": true\n    },\n    \"摄影\": {\n      \"类型\": \"高速摄影\",\n      \"焦点\": \"清晰\",\n      \"细节\": {\n        \"水花飞溅\": true,\n        \"空中凝固的水滴\": true,\n        \"动态飞溅\": true\n      }\n    },\n    \"水效果\": {\n      \"飞溅\": {\n        \"强度\": 1.3,\n        \"动态\": true,\n        \"水滴\": {\n          \"空中凝固\": true\n        }\n      }\n    },\n    \"背景\": {\n      \"颜色\": \"蓝绿色\",\n      \"类型\": \"模糊\",\n      \"风格\": \"散景\",\n      \"氛围\": \"夏日\"\n    }\n  },\n  \"主体\": {\n    \"人物\": {\n      \"姓名\": \"我上传的人\",\n      \"姿态\": \"特写肖像\",\n      \"表情\": \"宁静\",\n      \"眼睛\": {\n        \"状态\": \"闭着\"\n      },\n      \"头发\": {\n        \"颜色\": \"黑色\",\n        \"造型\": \"向后梳\",\n        \"湿\": true\n      },\n      \"皮肤\": {\n        \"质感\": \"自然\",\n        \"雀斑\": true,\n        \"湿\": true,\n        \"细致特征\": {\n          \"毛孔\": true\n        }\n      },\n      \"嘴唇\": {\n        \"状态\": \"湿\"\n      },\n      \"身体\": {\n        \"肩膀\": \"裸露\",\n        \"皮肤\": \"湿\"\n      }\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;图片&quot;: {<br>    &quot;整体&quot;: {<br>      &quot;风格&quot;: &quot;杰作&quot;,<br>      &quot;质量&quot;: &quot;最佳&quot;,<br>      &quot;照片真实度&quot;: 1.4,<br>      &quot;分辨率&quot;: &quot;8k&quot;,<br>      &quot;纵横比&quot;: &quot;3:4&quot;<br>    },<br>    &quot;光效&quot;: {<br>      &quot;类型&quot;: &quot;焦散&quot;,<br>      &quot;强度&quot;: &quot;明亮的阳光&quot;,<br>      &quot;对比度&quot;: &quot;高&quot;,<br>      &quot;氛围&quot;: &quot;清爽&quot;,<br>      &quot;闪亮的水面&quot;: true<br>    },<br>    &quot;摄影&quot;: {<br>      &quot;类型&quot;: &quot;高速摄影&quot;,<br>      &quot;焦点&quot;: &quot;清晰&quot;,<br>      &quot;细节&quot;: {<br>        &quot;水花飞溅&quot;: true,<br>        &quot;空中凝固的水滴&quot;: true,<br>        &quot;动态飞溅&quot;: true<br>      }<br>    },<br>    &quot;水效果&quot;: {<br>      &quot;飞溅&quot;: {<br>        &quot;强度&quot;: 1.3,<br>        &quot;动态&quot;: true,<br>        &quot;水滴&quot;: {<br>          &quot;空中凝固&quot;: true<br>        }<br>      }<br>    },<br>    &quot;背景&quot;: {<br>      &quot;颜色&quot;: &quot;蓝绿色&quot;,<br>      &quot;类型&quot;: &quot;模糊&quot;,<br>      &quot;风格&quot;: &quot;散景&quot;,<br>      &quot;氛围&quot;: &quot;夏日&quot;<br>    }<br>  },<br>  &quot;主体&quot;: {<br>    &quot;人物&quot;: {<br>      &quot;姓名&quot;: &quot;我上传的人&quot;,<br>      &quot;姿态&quot;: &quot;特写肖像&quot;,<br>      &quot;表情&quot;: &quot;宁静&quot;,<br>      &quot;眼睛&quot;: {<br>        &quot;状态&quot;: &quot;闭着&quot;<br>      },<br>      &quot;头发&quot;: {<br>        &quot;颜色&quot;: &quot;黑色&quot;,<br>        &quot;造型&quot;: &quot;向后梳&quot;,<br>        &quot;湿&quot;: true<br>      },<br>      &quot;皮肤&quot;: {<br>        &quot;质感&quot;: &quot;自然&quot;,<br>        &quot;雀斑&quot;: true,<br>        &quot;湿&quot;: true,<br>        &quot;细致特征&quot;: {<br>          &quot;毛孔&quot;: true<br>        }<br>      },<br>      &quot;嘴唇&quot;: {<br>        &quot;状态&quot;: &quot;湿&quot;<br>      },<br>      &quot;身体&quot;: {<br>        &quot;肩膀&quot;: &quot;裸露&quot;,<br>        &quot;皮肤&quot;: &quot;湿&quot;<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图片&quot;: {<br>    &quot;整体&quot;: {<br>      &quot;风格&quot;: &quot;杰作&quot;,<br>      &quot;质量&quot;: &quot;最佳&quot;,<br>      &quot;照片真实度&quot;: 1.4,<br>      &quot;分辨率&quot;: &quot;8k&quot;,<br>      &quot;纵横比&quot;: &quot;3:4&quot;<br>    },<br>    &quot;光效&quot;: {<br>      &quot;类型&quot;: &quot;焦散&quot;,<br>      &quot;强度&quot;: &quot;明亮的阳光&quot;,<br>      &quot;对比度&quot;: &quot;高&quot;,<br>      &quot;氛围&quot;: &quot;清爽&quot;,<br>      &quot;闪亮的水面&quot;: true<br>    },<br>    &quot;摄影&quot;: {<br>      &quot;类型&quot;: &quot;高速摄影&quot;,<br>      &quot;焦点&quot;: &quot;清晰&quot;,<br>      &quot;细节&quot;: {<br>        &quot;水花飞溅&quot;: true,<br>        &quot;空中凝固的水滴&quot;: true,<br>        &quot;动态飞溅&quot;: true<br>      }<br>    },<br>    &quot;水效果&quot;: {<br>      &quot;飞溅&quot;: {<br>        &quot;强度&quot;: 1.3,<br>        &quot;动态&quot;: true,<br>        &quot;水滴&quot;: {<br>          &quot;空中凝固&quot;: true<br>        }<br>      }<br>    },<br>    &quot;背景&quot;: {<br>      &quot;颜色&quot;: &quot;蓝绿色&quot;,<br>      &quot;类型&quot;: &quot;模糊&quot;,<br>      &quot;风格&quot;: &quot;散景&quot;,<br>      &quot;氛围&quot;: &quot;夏日&quot;<br>    }<br>  },<br>  &quot;主体&quot;: {<br>    &quot;人物&quot;: {<br>      &quot;姓名&quot;: &quot;我上传的人&quot;,<br>      &quot;姿态&quot;: &quot;特写肖像&quot;,<br>      &quot;表情&quot;: &quot;宁静&quot;,<br>      &quot;眼睛&quot;: {<br>        &quot;状态&quot;: &quot;闭着&quot;<br>      },<br>      &quot;头发&quot;: {<br>        &quot;颜色&quot;: &quot;黑色&quot;,<br>        &quot;造型&quot;: &quot;向后梳&quot;,<br>        &quot;湿&quot;: true<br>      },<br>      &quot;皮肤&quot;: {<br>        &quot;质感&quot;: &quot;自然&quot;,<br>        &quot;雀斑&quot;: true,<br>        &quot;湿&quot;: true,<br>        &quot;细致特征&quot;: {<br>          &quot;毛孔&quot;: true<br>        }<br>      },<br>      &quot;嘴唇&quot;: {<br>        &quot;状态&quot;: &quot;湿&quot;<br>      },<br>      &quot;身体&quot;: {<br>        &quot;肩膀&quot;: &quot;裸露&quot;,<br>        &quot;皮肤&quot;: &quot;湿&quot;<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image\": {\n    \"general\": {\n      \"style\": \"Masterpiece\",\n      \"quality\": \"Best\",\n      \"photorealism\": 1.4,\n      \"resolution\": \"8k\",\n      \"aspect_ratio\": \"3:4\"\n    },\n    \"lighting\": {\n      \"type\": \"Caustic\",\n      \"intensity\": \"Bright sunlight\",\n      \"contrast\": \"High\",\n      \"atmosphere\": \"Refreshing\",\n      \"glistening_water\": true\n    },\n    \"photography\": {\n      \"type\": \"High-speed\",\n      \"focus\": \"Sharp\",\n      \"details\": {\n        \"water_splash\": true,\n        \"water_drops_freezing_in_air\": true,\n        \"dynamic_splash\": true\n      }\n    },\n    \"water_effect\": {\n      \"splash\": {\n        \"intensity\": 1.3,\n        \"dynamic\": true,\n        \"droplets\": {\n          \"freezing_in_air\": true\n        }\n      }\n    },\n    \"background\": {\n      \"color\": \"Turquoise blue\",\n      \"type\": \"Blurred\",\n      \"style\": \"Bokeh\",\n      \"vibes\": \"Summer\"\n    }\n  },\n  \"subject\": {\n    \"person\": {\n      \"name\": \"the person I uploaded\",\n      \"pose\": \"Close-up portrait\",\n      \"expression\": \"Serene\",\n      \"eyes\": {\n        \"status\": \"Closed\",\n      },\n      \"hair\": {\n        \"color\": \"Black\",\n        \"style\": \"Slicked back\",\n        \"wet\": true\n      },\n      \"skin\": {\n        \"texture\": \"Natural\",\n        \"freckles\": true,\n        \"wet\": true,\n        \"detailed_features\": {\n          \"pores\": true\n        }\n      },\n      \"lips\": {\n        \"status\": \"Wet\"\n      },\n      \"body\": {\n        \"shoulders\": \"Bare\",\n        \"skin\": \"Wet\"\n      }\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image&quot;: {<br>    &quot;general&quot;: {<br>      &quot;style&quot;: &quot;Masterpiece&quot;,<br>      &quot;quality&quot;: &quot;Best&quot;,<br>      &quot;photorealism&quot;: 1.4,<br>      &quot;resolution&quot;: &quot;8k&quot;,<br>      &quot;aspect_ratio&quot;: &quot;3:4&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Caustic&quot;,<br>      &quot;intensity&quot;: &quot;Bright sunlight&quot;,<br>      &quot;contrast&quot;: &quot;High&quot;,<br>      &quot;atmosphere&quot;: &quot;Refreshing&quot;,<br>      &quot;glistening_water&quot;: true<br>    },<br>    &quot;photography&quot;: {<br>      &quot;type&quot;: &quot;High-speed&quot;,<br>      &quot;focus&quot;: &quot;Sharp&quot;,<br>      &quot;details&quot;: {<br>        &quot;water_splash&quot;: true,<br>        &quot;water_drops_freezing_in_air&quot;: true,<br>        &quot;dynamic_splash&quot;: true<br>      }<br>    },<br>    &quot;water_effect&quot;: {<br>      &quot;splash&quot;: {<br>        &quot;intensity&quot;: 1.3,<br>        &quot;dynamic&quot;: true,<br>        &quot;droplets&quot;: {<br>          &quot;freezing_in_air&quot;: true<br>        }<br>      }<br>    },<br>    &quot;background&quot;: {<br>      &quot;color&quot;: &quot;Turquoise blue&quot;,<br>      &quot;type&quot;: &quot;Blurred&quot;,<br>      &quot;style&quot;: &quot;Bokeh&quot;,<br>      &quot;vibes&quot;: &quot;Summer&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: {<br>      &quot;name&quot;: &quot;the person I uploaded&quot;,<br>      &quot;pose&quot;: &quot;Close-up portrait&quot;,<br>      &quot;expression&quot;: &quot;Serene&quot;,<br>      &quot;eyes&quot;: {<br>        &quot;status&quot;: &quot;Closed&quot;,<br>      },<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Black&quot;,<br>        &quot;style&quot;: &quot;Slicked back&quot;,<br>        &quot;wet&quot;: true<br>      },<br>      &quot;skin&quot;: {<br>        &quot;texture&quot;: &quot;Natural&quot;,<br>        &quot;freckles&quot;: true,<br>        &quot;wet&quot;: true,<br>        &quot;detailed_features&quot;: {<br>          &quot;pores&quot;: true<br>        }<br>      },<br>      &quot;lips&quot;: {<br>        &quot;status&quot;: &quot;Wet&quot;<br>      },<br>      &quot;body&quot;: {<br>        &quot;shoulders&quot;: &quot;Bare&quot;,<br>        &quot;skin&quot;: &quot;Wet&quot;<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image&quot;: {<br>    &quot;general&quot;: {<br>      &quot;style&quot;: &quot;Masterpiece&quot;,<br>      &quot;quality&quot;: &quot;Best&quot;,<br>      &quot;photorealism&quot;: 1.4,<br>      &quot;resolution&quot;: &quot;8k&quot;,<br>      &quot;aspect_ratio&quot;: &quot;3:4&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Caustic&quot;,<br>      &quot;intensity&quot;: &quot;Bright sunlight&quot;,<br>      &quot;contrast&quot;: &quot;High&quot;,<br>      &quot;atmosphere&quot;: &quot;Refreshing&quot;,<br>      &quot;glistening_water&quot;: true<br>    },<br>    &quot;photography&quot;: {<br>      &quot;type&quot;: &quot;High-speed&quot;,<br>      &quot;focus&quot;: &quot;Sharp&quot;,<br>      &quot;details&quot;: {<br>        &quot;water_splash&quot;: true,<br>        &quot;water_drops_freezing_in_air&quot;: true,<br>        &quot;dynamic_splash&quot;: true<br>      }<br>    },<br>    &quot;water_effect&quot;: {<br>      &quot;splash&quot;: {<br>        &quot;intensity&quot;: 1.3,<br>        &quot;dynamic&quot;: true,<br>        &quot;droplets&quot;: {<br>          &quot;freezing_in_air&quot;: true<br>        }<br>      }<br>    },<br>    &quot;background&quot;: {<br>      &quot;color&quot;: &quot;Turquoise blue&quot;,<br>      &quot;type&quot;: &quot;Blurred&quot;,<br>      &quot;style&quot;: &quot;Bokeh&quot;,<br>      &quot;vibes&quot;: &quot;Summer&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: {<br>      &quot;name&quot;: &quot;the person I uploaded&quot;,<br>      &quot;pose&quot;: &quot;Close-up portrait&quot;,<br>      &quot;expression&quot;: &quot;Serene&quot;,<br>      &quot;eyes&quot;: {<br>        &quot;status&quot;: &quot;Closed&quot;,<br>      },<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Black&quot;,<br>        &quot;style&quot;: &quot;Slicked back&quot;,<br>        &quot;wet&quot;: true<br>      },<br>      &quot;skin&quot;: {<br>        &quot;texture&quot;: &quot;Natural&quot;,<br>        &quot;freckles&quot;: true,<br>        &quot;wet&quot;: true,<br>        &quot;detailed_features&quot;: {<br>          &quot;pores&quot;: true<br>        }<br>      },<br>      &quot;lips&quot;: {<br>        &quot;status&quot;: &quot;Wet&quot;<br>      },<br>      &quot;body&quot;: {<br>        &quot;shoulders&quot;: &quot;Bare&quot;,<br>        &quot;skin&quot;: &quot;Wet&quot;<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012011705124208672-1.jpg" alt="&quot;image&quot;: {" loading="lazy"><img src="/images/tweet-2012011705124208672-2.jpg" alt="&quot;image&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1403,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

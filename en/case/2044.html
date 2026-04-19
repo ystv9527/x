@@ -7,11 +7,13 @@
     <title>&quot;ENVIRONMENT&quot;: { #2044 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;ENVIRONMENT&quot;: { &quot;Background&quot;: &quot;Gradient(Dark Warm Brown)&quot;, &quot;Atmospheric FX&quot;: [&quot;Floating Particles&quot;, &quot;Depth Blur&quot;,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2044.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2044.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2044.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844507">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023532">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"ENVIRONMENT\": {\n    \"Background\": \"渐变（深暖棕）\",\n    \"Atmospheric_FX\": [\"漂浮粒子\", \"景深模糊\", \"电影散景\"],\n    \"Lighting\": {\n      \"Type\": \"定向工作室暖光\",\n      \"Highlights\": \"镜面光泽反射\",\n      \"Shadow_Softness\": \"高\"\n    }\n  },\n\n  \"CORE_ASSETS\": {\n    \"Primary_Subject\": \"威化卷\",\n    \"Physics\": \"零重力对角 X 构图\",\n    \"Material_Properties\": {\n      \"Outer\": \"牛奶巧克力涂层\",\n      \"Surface_Texture\": \"表面嵌入不规则坚果簇\",\n      \"Interior_Cross_Section\": {\n        \"Structure\": \"酥脆空心威化结构\",\n        \"Core\": \"丝滑巧克力奶油馅\"\n      }\n    }\n  },\n\n  \"PARTICLE_SYSTEMS\": [\n    {\n      \"Object\": \"巧克力块\",\n      \"Detail\": \"矩形浮雕字母 B\",\n      \"State\": \"漂浮\"\n    },\n    {\n      \"Object\": \"榛子\",\n      \"State\": \"切半并碎裂\",\n      \"Distribution\": \"随机轨道分布\"\n    }\n  ],\n\n  \"FLUID_DYNAMICS\": {\n    \"Element\": \"巧克力飞溅\",\n    \"Behavior\": \"动态背景流动\",\n    \"Viscosity\": \"浓稠光泽\"\n  },\n\n  \"RENDER_OUTPUT\": {\n    \"Resolution\": \"8K 超高清\",\n    \"Aspect_Ratio\": \"3:4\",\n    \"Quality_Flags\": [\"超写实\", \"前景清晰\", \"放纵氛围\"]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;ENVIRONMENT&quot;: {<br>    &quot;Background&quot;: &quot;渐变（深暖棕）&quot;,<br>    &quot;Atmospheric_FX&quot;: [&quot;漂浮粒子&quot;, &quot;景深模糊&quot;, &quot;电影散景&quot;],<br>    &quot;Lighting&quot;: {<br>      &quot;Type&quot;: &quot;定向工作室暖光&quot;,<br>      &quot;Highlights&quot;: &quot;镜面光泽反射&quot;,<br>      &quot;Shadow_Softness&quot;: &quot;高&quot;<br>    }<br>  },</p><p>&quot;CORE_ASSETS&quot;: {<br>    &quot;Primary_Subject&quot;: &quot;威化卷&quot;,<br>    &quot;Physics&quot;: &quot;零重力对角 X 构图&quot;,<br>    &quot;Material_Properties&quot;: {<br>      &quot;Outer&quot;: &quot;牛奶巧克力涂层&quot;,<br>      &quot;Surface_Texture&quot;: &quot;表面嵌入不规则坚果簇&quot;,<br>      &quot;Interior_Cross_Section&quot;: {<br>        &quot;Structure&quot;: &quot;酥脆空心威化结构&quot;,<br>        &quot;Core&quot;: &quot;丝滑巧克力奶油馅&quot;<br>      }<br>    }<br>  },</p><p>&quot;PARTICLE_SYSTEMS&quot;: [<br>    {<br>      &quot;Object&quot;: &quot;巧克力块&quot;,<br>      &quot;Detail&quot;: &quot;矩形浮雕字母 B&quot;,<br>      &quot;State&quot;: &quot;漂浮&quot;<br>    },<br>    {<br>      &quot;Object&quot;: &quot;榛子&quot;,<br>      &quot;State&quot;: &quot;切半并碎裂&quot;,<br>      &quot;Distribution&quot;: &quot;随机轨道分布&quot;<br>    }<br>  ],</p><p>&quot;FLUID_DYNAMICS&quot;: {<br>    &quot;Element&quot;: &quot;巧克力飞溅&quot;,<br>    &quot;Behavior&quot;: &quot;动态背景流动&quot;,<br>    &quot;Viscosity&quot;: &quot;浓稠光泽&quot;<br>  },</p><p>&quot;RENDER_OUTPUT&quot;: {<br>    &quot;Resolution&quot;: &quot;8K 超高清&quot;,<br>    &quot;Aspect_Ratio&quot;: &quot;3:4&quot;,<br>    &quot;Quality_Flags&quot;: [&quot;超写实&quot;, &quot;前景清晰&quot;, &quot;放纵氛围&quot;]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;ENVIRONMENT&quot;: {<br>    &quot;Background&quot;: &quot;渐变（深暖棕）&quot;,<br>    &quot;Atmospheric_FX&quot;: [&quot;漂浮粒子&quot;, &quot;景深模糊&quot;, &quot;电影散景&quot;],<br>    &quot;Lighting&quot;: {<br>      &quot;Type&quot;: &quot;定向工作室暖光&quot;,<br>      &quot;Highlights&quot;: &quot;镜面光泽反射&quot;,<br>      &quot;Shadow_Softness&quot;: &quot;高&quot;<br>    }<br>  },</p><p>&quot;CORE_ASSETS&quot;: {<br>    &quot;Primary_Subject&quot;: &quot;威化卷&quot;,<br>    &quot;Physics&quot;: &quot;零重力对角 X 构图&quot;,<br>    &quot;Material_Properties&quot;: {<br>      &quot;Outer&quot;: &quot;牛奶巧克力涂层&quot;,<br>      &quot;Surface_Texture&quot;: &quot;表面嵌入不规则坚果簇&quot;,<br>      &quot;Interior_Cross_Section&quot;: {<br>        &quot;Structure&quot;: &quot;酥脆空心威化结构&quot;,<br>        &quot;Core&quot;: &quot;丝滑巧克力奶油馅&quot;<br>      }<br>    }<br>  },</p><p>&quot;PARTICLE_SYSTEMS&quot;: [<br>    {<br>      &quot;Object&quot;: &quot;巧克力块&quot;,<br>      &quot;Detail&quot;: &quot;矩形浮雕字母 B&quot;,<br>      &quot;State&quot;: &quot;漂浮&quot;<br>    },<br>    {<br>      &quot;Object&quot;: &quot;榛子&quot;,<br>      &quot;State&quot;: &quot;切半并碎裂&quot;,<br>      &quot;Distribution&quot;: &quot;随机轨道分布&quot;<br>    }<br>  ],</p><p>&quot;FLUID_DYNAMICS&quot;: {<br>    &quot;Element&quot;: &quot;巧克力飞溅&quot;,<br>    &quot;Behavior&quot;: &quot;动态背景流动&quot;,<br>    &quot;Viscosity&quot;: &quot;浓稠光泽&quot;<br>  },</p><p>&quot;RENDER_OUTPUT&quot;: {<br>    &quot;Resolution&quot;: &quot;8K 超高清&quot;,<br>    &quot;Aspect_Ratio&quot;: &quot;3:4&quot;,<br>    &quot;Quality_Flags&quot;: [&quot;超写实&quot;, &quot;前景清晰&quot;, &quot;放纵氛围&quot;]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"ENVIRONMENT\": {\n    \"Background\": \"Gradient(Dark_Warm_Brown)\",\n    \"Atmospheric_FX\": [\"Floating_Particles\", \"Depth_Blur\", \"Cinematic_Bokeh\"],\n    \"Lighting\": {\n      \"Type\": \"Directional_Studio_Warmer\",\n      \"Highlights\": \"Specular_Glossy_Reflections\",\n      \"Shadow_Softness\": \"High\"\n    }\n  },\n\n  \"CORE_ASSETS\": {\n    \"Primary_Subject\": \"Wafer_Rolls\",\n    \"Physics\": \"Zero_Gravity_Diagonal_X_Composition\",\n    \"Material_Properties\": {\n      \"Outer\": \"Milk_Chocolate_Coating\",\n      \"Surface_Texture\": \"Irregular_Nut_Clusters_Embedded\",\n      \"Interior_Cross_Section\": {\n        \"Structure\": \"Crispy_Hollow_Wafer\",\n        \"Core\": \"Silky_Chocolate_Cream_Filling\"\n      }\n    }\n  },\n\n  \"PARTICLE_SYSTEMS\": [\n    {\n      \"Object\": \"Chocolate_Blocks\",\n      \"Detail\": \"Rectangular_Embossed_Letter_B\",\n      \"State\": \"Floating\"\n    },\n    {\n      \"Object\": \"Hazelnuts\",\n      \"State\": \"Halved_and_Fragmented\",\n      \"Distribution\": \"Random_Orbit\"\n    }\n  ],\n\n  \"FLUID_DYNAMICS\": {\n    \"Element\": \"Chocolate_Splash\",\n    \"Behavior\": \"Dynamic_Backdrop_Flow\",\n    \"Viscosity\": \"Thick_Glossy\"\n  },\n\n  \"RENDER_OUTPUT\": {\n    \"Resolution\": \"8K_UHD\",\n    \"Aspect_Ratio\": \"3:4\",\n    \"Quality_Flags\": [\"Hyper_Realistic\", \"Sharp_Foreground\", \"Indulgent_Mood\"]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;ENVIRONMENT&quot;: {<br>    &quot;Background&quot;: &quot;Gradient(Dark_Warm_Brown)&quot;,<br>    &quot;Atmospheric_FX&quot;: [&quot;Floating_Particles&quot;, &quot;Depth_Blur&quot;, &quot;Cinematic_Bokeh&quot;],<br>    &quot;Lighting&quot;: {<br>      &quot;Type&quot;: &quot;Directional_Studio_Warmer&quot;,<br>      &quot;Highlights&quot;: &quot;Specular_Glossy_Reflections&quot;,<br>      &quot;Shadow_Softness&quot;: &quot;High&quot;<br>    }<br>  },</p><p>&quot;CORE_ASSETS&quot;: {<br>    &quot;Primary_Subject&quot;: &quot;Wafer_Rolls&quot;,<br>    &quot;Physics&quot;: &quot;Zero_Gravity_Diagonal_X_Composition&quot;,<br>    &quot;Material_Properties&quot;: {<br>      &quot;Outer&quot;: &quot;Milk_Chocolate_Coating&quot;,<br>      &quot;Surface_Texture&quot;: &quot;Irregular_Nut_Clusters_Embedded&quot;,<br>      &quot;Interior_Cross_Section&quot;: {<br>        &quot;Structure&quot;: &quot;Crispy_Hollow_Wafer&quot;,<br>        &quot;Core&quot;: &quot;Silky_Chocolate_Cream_Filling&quot;<br>      }<br>    }<br>  },</p><p>&quot;PARTICLE_SYSTEMS&quot;: [<br>    {<br>      &quot;Object&quot;: &quot;Chocolate_Blocks&quot;,<br>      &quot;Detail&quot;: &quot;Rectangular_Embossed_Letter_B&quot;,<br>      &quot;State&quot;: &quot;Floating&quot;<br>    },<br>    {<br>      &quot;Object&quot;: &quot;Hazelnuts&quot;,<br>      &quot;State&quot;: &quot;Halved_and_Fragmented&quot;,<br>      &quot;Distribution&quot;: &quot;Random_Orbit&quot;<br>    }<br>  ],</p><p>&quot;FLUID_DYNAMICS&quot;: {<br>    &quot;Element&quot;: &quot;Chocolate_Splash&quot;,<br>    &quot;Behavior&quot;: &quot;Dynamic_Backdrop_Flow&quot;,<br>    &quot;Viscosity&quot;: &quot;Thick_Glossy&quot;<br>  },</p><p>&quot;RENDER_OUTPUT&quot;: {<br>    &quot;Resolution&quot;: &quot;8K_UHD&quot;,<br>    &quot;Aspect_Ratio&quot;: &quot;3:4&quot;,<br>    &quot;Quality_Flags&quot;: [&quot;Hyper_Realistic&quot;, &quot;Sharp_Foreground&quot;, &quot;Indulgent_Mood&quot;]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;ENVIRONMENT&quot;: {<br>    &quot;Background&quot;: &quot;Gradient(Dark_Warm_Brown)&quot;,<br>    &quot;Atmospheric_FX&quot;: [&quot;Floating_Particles&quot;, &quot;Depth_Blur&quot;, &quot;Cinematic_Bokeh&quot;],<br>    &quot;Lighting&quot;: {<br>      &quot;Type&quot;: &quot;Directional_Studio_Warmer&quot;,<br>      &quot;Highlights&quot;: &quot;Specular_Glossy_Reflections&quot;,<br>      &quot;Shadow_Softness&quot;: &quot;High&quot;<br>    }<br>  },</p><p>&quot;CORE_ASSETS&quot;: {<br>    &quot;Primary_Subject&quot;: &quot;Wafer_Rolls&quot;,<br>    &quot;Physics&quot;: &quot;Zero_Gravity_Diagonal_X_Composition&quot;,<br>    &quot;Material_Properties&quot;: {<br>      &quot;Outer&quot;: &quot;Milk_Chocolate_Coating&quot;,<br>      &quot;Surface_Texture&quot;: &quot;Irregular_Nut_Clusters_Embedded&quot;,<br>      &quot;Interior_Cross_Section&quot;: {<br>        &quot;Structure&quot;: &quot;Crispy_Hollow_Wafer&quot;,<br>        &quot;Core&quot;: &quot;Silky_Chocolate_Cream_Filling&quot;<br>      }<br>    }<br>  },</p><p>&quot;PARTICLE_SYSTEMS&quot;: [<br>    {<br>      &quot;Object&quot;: &quot;Chocolate_Blocks&quot;,<br>      &quot;Detail&quot;: &quot;Rectangular_Embossed_Letter_B&quot;,<br>      &quot;State&quot;: &quot;Floating&quot;<br>    },<br>    {<br>      &quot;Object&quot;: &quot;Hazelnuts&quot;,<br>      &quot;State&quot;: &quot;Halved_and_Fragmented&quot;,<br>      &quot;Distribution&quot;: &quot;Random_Orbit&quot;<br>    }<br>  ],</p><p>&quot;FLUID_DYNAMICS&quot;: {<br>    &quot;Element&quot;: &quot;Chocolate_Splash&quot;,<br>    &quot;Behavior&quot;: &quot;Dynamic_Backdrop_Flow&quot;,<br>    &quot;Viscosity&quot;: &quot;Thick_Glossy&quot;<br>  },</p><p>&quot;RENDER_OUTPUT&quot;: {<br>    &quot;Resolution&quot;: &quot;8K_UHD&quot;,<br>    &quot;Aspect_Ratio&quot;: &quot;3:4&quot;,<br>    &quot;Quality_Flags&quot;: [&quot;Hyper_Realistic&quot;, &quot;Sharp_Foreground&quot;, &quot;Indulgent_Mood&quot;]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2020693181730598932-1.jpg" alt="&quot;ENVIRONMENT&quot;: {" loading="lazy"><img src="/images/tweet-2020693181730598932-2.jpg" alt="&quot;ENVIRONMENT&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2044,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

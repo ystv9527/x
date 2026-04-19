@@ -7,11 +7,13 @@
     <title>[BRAND NAME]. Act as a Master of Material Science and World C... #2084 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[BRAND NAME]. Act as a Master of Material Science and World Class 3D Visualizer. PHASE 1: DYNAMIC ELEMENTAL RECONSTRU...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2084.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2084.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2084.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840263">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022306">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]. 担任材料科学大师与世界级 3D 可视化专家。\nPHASE 1: 动态元素重构。\n中心主题是标志性的 [BRAND NAME] 徽标，物理上由任意天然原料构成。\n关键：这包括但不限于植物元素（花朵、玫瑰花瓣、刺、扭曲的木材、苔藓、树叶）以及地质/元素材料（黑曜石、水晶、流动的水、冰、火山岩）。\n徽标须为中等大小，悬浮，并以动态的 3D 角度（3/4 视角）旋转以展示其体积感。\nPHASE 2: 超触感纹理与真实感。\n目标是“感官真实”——观者应感到可以触摸到物体。\n- 如果为植物：在花瓣上渲染微观细胞结构、带有折射的露珠，以及茎上的天鹅绒般绒毛。\n- 如果为矿物：渲染微孔、晶体夹杂物，以及刀锋般锋利的边缘。\n加入细微“不完美”，如灰尘颗粒或有机不规则性，以打破 CG 感，实现 100% 照片级真实感。\nPHASE 3: 构图、照明与品牌呈现。\n- 环境：纯净的纯白背景，呈现高调（High-Key）商业外观。\n- 排版：在画面顶部放置非常小、极简的黑色 [BRAND NAME] 文本徽标。\n- 照明：精确的影棚布光，带有锐利的镜面高光（微光）和在白色地面下的柔和真实接触阴影，以使悬浮物体有落地感。\n技术规格：\n极端微距摄影，100mm 镜头，f/8，光线追踪（Path Tracing），次表面散射以表现光线深度，8k 分辨率，Unreal Engine 5.4 / Octane Render 风格美学。", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]. 担任材料科学大师与世界级 3D 可视化专家。<br>PHASE 1: 动态元素重构。<br>中心主题是标志性的 [BRAND NAME] 徽标，物理上由任意天然原料构成。<br>关键：这包括但不限于植物元素（花朵、玫瑰花瓣、刺、扭曲的木材、苔藓、树叶）以及地质/元素材料（黑曜石、水晶、流动的水、冰、火山岩）。<br>徽标须为中等大小，悬浮，并以动态的 3D 角度（3/4 视角）旋转以展示其体积感。<br>PHASE 2: 超触感纹理与真实感。<br>目标是“感官真实”——观者应感到可以触摸到物体。<br>- 如果为植物：在花瓣上渲染微观细胞结构、带有折射的露珠，以及茎上的天鹅绒般绒毛。<br>- 如果为矿物：渲染微孔、晶体夹杂物，以及刀锋般锋利的边缘。<br>加入细微“不完美”，如灰尘颗粒或有机不规则性，以打破 CG 感，实现 100% 照片级真实感。<br>PHASE 3: 构图、照明与品牌呈现。<br>- 环境：纯净的纯白背景，呈现高调（High-Key）商业外观。<br>- 排版：在画面顶部放置非常小、极简的黑色 [BRAND NAME] 文本徽标。<br>- 照明：精确的影棚布光，带有锐利的镜面高光（微光）和在白色地面下的柔和真实接触阴影，以使悬浮物体有落地感。<br>技术规格：<br>极端微距摄影，100mm 镜头，f/8，光线追踪（Path Tracing），次表面散射以表现光线深度，8k 分辨率，Unreal Engine 5.4 / Octane Render 风格美学。</p>
+        <div data-nosnippet><p>[BRAND NAME]. 担任材料科学大师与世界级 3D 可视化专家。<br>PHASE 1: 动态元素重构。<br>中心主题是标志性的 [BRAND NAME] 徽标，物理上由任意天然原料构成。<br>关键：这包括但不限于植物元素（花朵、玫瑰花瓣、刺、扭曲的木材、苔藓、树叶）以及地质/元素材料（黑曜石、水晶、流动的水、冰、火山岩）。<br>徽标须为中等大小，悬浮，并以动态的 3D 角度（3/4 视角）旋转以展示其体积感。<br>PHASE 2: 超触感纹理与真实感。<br>目标是“感官真实”——观者应感到可以触摸到物体。<br>- 如果为植物：在花瓣上渲染微观细胞结构、带有折射的露珠，以及茎上的天鹅绒般绒毛。<br>- 如果为矿物：渲染微孔、晶体夹杂物，以及刀锋般锋利的边缘。<br>加入细微“不完美”，如灰尘颗粒或有机不规则性，以打破 CG 感，实现 100% 照片级真实感。<br>PHASE 3: 构图、照明与品牌呈现。<br>- 环境：纯净的纯白背景，呈现高调（High-Key）商业外观。<br>- 排版：在画面顶部放置非常小、极简的黑色 [BRAND NAME] 文本徽标。<br>- 照明：精确的影棚布光，带有锐利的镜面高光（微光）和在白色地面下的柔和真实接触阴影，以使悬浮物体有落地感。<br>技术规格：<br>极端微距摄影，100mm 镜头，f/8，光线追踪（Path Tracing），次表面散射以表现光线深度，8k 分辨率，Unreal Engine 5.4 / Octane Render 风格美学。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]. Act as a Master of Material Science and World-Class 3D Visualizer.\nPHASE 1: DYNAMIC ELEMENTAL RECONSTRUCTION.\nThe central subject is the iconic logo of [BRAND NAME], physically constructed from ANY raw natural element.\nCRITICAL: This includes, but is not limited to, botanical elements (flowers, rose petals, thorns, gnarled wood, moss, leaves) and geological/elemental materials (obsidian, crystals, flowing water, ice, volcanic rock).\nThe logo must be medium-sized, levitating, and rotated at a dynamic 3D angle (3/4 view) to showcase its volume.\nPHASE 2: HYPER-TACTILE TEXTURE & REALISM.\nThe goal is \"Sensory Realism\" — the viewer should feel they can touch the object.\n- If BOTANICAL: Render microscopic cellular structures on petals, dew droplets with refraction, and the velvety fuzz on stems.\n- If MINERAL: Render micro-pores, crystalline inclusions, and razor-sharp edges.\nInclude subtle \"imperfections\" like dust particles or organic irregularities to break the CG look and achieve 100% photorealism.\nPHASE 3: COMPOSITION, LIGHTING & BRANDING.\n- ENVIRONMENT: A pure, clinical, solid white background for a High-Key commercial look.\n- TYPOGRAPHY: At the top of the frame, place a very small, minimalist [BRAND NAME] text logo in black.\n- LIGHTING: Precise studio setup with sharp specular highlights (glints) and a soft, realistic contact shadow on the white floor below to ground the levitating object.\nTECH SPECS:\nExtreme Macro photography, 100mm lens, f/8, Ray Tracing (Path Tracing), Subsurface Scattering for light depth, 8k resolution, Unreal Engine 5.4 / Octane Render aesthetic.", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]. Act as a Master of Material Science and World-Class 3D Visualizer.<br>PHASE 1: DYNAMIC ELEMENTAL RECONSTRUCTION.<br>The central subject is the iconic logo of [BRAND NAME], physically constructed from ANY raw natural element.<br>CRITICAL: This includes, but is not limited to, botanical elements (flowers, rose petals, thorns, gnarled wood, moss, leaves) and geological/elemental materials (obsidian, crystals, flowing water, ice, volcanic rock).<br>The logo must be medium-sized, levitating, and rotated at a dynamic 3D angle (3/4 view) to showcase its volume.<br>PHASE 2: HYPER-TACTILE TEXTURE &amp; REALISM.<br>The goal is &quot;Sensory Realism&quot; — the viewer should feel they can touch the object.<br>- If BOTANICAL: Render microscopic cellular structures on petals, dew droplets with refraction, and the velvety fuzz on stems.<br>- If MINERAL: Render micro-pores, crystalline inclusions, and razor-sharp edges.<br>Include subtle &quot;imperfections&quot; like dust particles or organic irregularities to break the CG look and achieve 100% photorealism.<br>PHASE 3: COMPOSITION, LIGHTING &amp; BRANDING.<br>- ENVIRONMENT: A pure, clinical, solid white background for a High-Key commercial look.<br>- TYPOGRAPHY: At the top of the frame, place a very small, minimalist [BRAND NAME] text logo in black.<br>- LIGHTING: Precise studio setup with sharp specular highlights (glints) and a soft, realistic contact shadow on the white floor below to ground the levitating object.<br>TECH SPECS:<br>Extreme Macro photography, 100mm lens, f/8, Ray Tracing (Path Tracing), Subsurface Scattering for light depth, 8k resolution, Unreal Engine 5.4 / Octane Render aesthetic.</p>
+        <div data-nosnippet><p>[BRAND NAME]. Act as a Master of Material Science and World-Class 3D Visualizer.<br>PHASE 1: DYNAMIC ELEMENTAL RECONSTRUCTION.<br>The central subject is the iconic logo of [BRAND NAME], physically constructed from ANY raw natural element.<br>CRITICAL: This includes, but is not limited to, botanical elements (flowers, rose petals, thorns, gnarled wood, moss, leaves) and geological/elemental materials (obsidian, crystals, flowing water, ice, volcanic rock).<br>The logo must be medium-sized, levitating, and rotated at a dynamic 3D angle (3/4 view) to showcase its volume.<br>PHASE 2: HYPER-TACTILE TEXTURE &amp; REALISM.<br>The goal is &quot;Sensory Realism&quot; — the viewer should feel they can touch the object.<br>- If BOTANICAL: Render microscopic cellular structures on petals, dew droplets with refraction, and the velvety fuzz on stems.<br>- If MINERAL: Render micro-pores, crystalline inclusions, and razor-sharp edges.<br>Include subtle &quot;imperfections&quot; like dust particles or organic irregularities to break the CG look and achieve 100% photorealism.<br>PHASE 3: COMPOSITION, LIGHTING &amp; BRANDING.<br>- ENVIRONMENT: A pure, clinical, solid white background for a High-Key commercial look.<br>- TYPOGRAPHY: At the top of the frame, place a very small, minimalist [BRAND NAME] text logo in black.<br>- LIGHTING: Precise studio setup with sharp specular highlights (glints) and a soft, realistic contact shadow on the white floor below to ground the levitating object.<br>TECH SPECS:<br>Extreme Macro photography, 100mm lens, f/8, Ray Tracing (Path Tracing), Subsurface Scattering for light depth, 8k resolution, Unreal Engine 5.4 / Octane Render aesthetic.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2021588846849282513-1.jpg" alt="[BRAND NAME]. Act as a Master of Material Science and World C..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2084,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

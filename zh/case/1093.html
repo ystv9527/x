@@ -7,11 +7,13 @@
     <title>────迷いは、 #1093 | Gem Nana AI 提示词库</title>
     <meta name="description" content="────迷いは、 踏み出したあとに置いてきた。 I left my doubts behind the first step. ※良ければ長押しで4Kで見て下さい 👇 プロンプトは「さらに表示」👇 Prompt / Spell N...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1093.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1093.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1093.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841248">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022534">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("────犹豫，\n我把它留在了迈出的那一步之后。\n\n我把疑虑留在了第一步之后。\n\n※如果可以，请长按以4K查看\n👇 提示词在「更多显示」👇\n提示词 / 拼写 Nijijourney 7 / Midjourney\n\n质量: 高清分辨率的动漫风格插画。超写实角色。高对比度。全身。8K。\n相机/角度: 强烈的透视夸张（近大远小），一把巨大的日本刀从画面向镜头刺出。动态范围。\n主题: 持日本刀的美丽女性的动作肖像。角色以强大的冲力向前飞扑，周围环绕着发光的蓝色光粒子。\n发色: 闪亮的浅蓝色头发，带有闪烁的鳞片光泽，内层呈绿色，短发并带有绿色发梢和刘海。\n效果: 一把巨大的、炫目强烈发光的日本刀。\n眼睛: 淡蓝与绿色的渐变。略带自然光晕。大眼睛。\n服装: 明治时代风格的日本军装，材质为有光泽的皮革。长款工程靴。\n背景: 横滨中华街，充满五彩炫目的霓虹招牌。动态运动模糊。各种塔罗牌被红光环绕着旋转。\n--stylize 550\n--no 文字, 头盔, 黑面妆, 晒黑, 深色皮肤, 噪点, 短裤, 面部穿环, 断指, 血.", this)'>📋 复制</button>
         </div>
-        <p>────犹豫，<br>我把它留在了迈出的那一步之后。</p><p>我把疑虑留在了第一步之后。</p><p>※如果可以，请长按以4K查看<br>👇 提示词在「更多显示」👇<br>提示词 / 拼写 Nijijourney 7 / Midjourney</p><p>质量: 高清分辨率的动漫风格插画。超写实角色。高对比度。全身。8K。<br>相机/角度: 强烈的透视夸张（近大远小），一把巨大的日本刀从画面向镜头刺出。动态范围。<br>主题: 持日本刀的美丽女性的动作肖像。角色以强大的冲力向前飞扑，周围环绕着发光的蓝色光粒子。<br>发色: 闪亮的浅蓝色头发，带有闪烁的鳞片光泽，内层呈绿色，短发并带有绿色发梢和刘海。<br>效果: 一把巨大的、炫目强烈发光的日本刀。<br>眼睛: 淡蓝与绿色的渐变。略带自然光晕。大眼睛。<br>服装: 明治时代风格的日本军装，材质为有光泽的皮革。长款工程靴。<br>背景: 横滨中华街，充满五彩炫目的霓虹招牌。动态运动模糊。各种塔罗牌被红光环绕着旋转。<br>--stylize 550<br>--no 文字, 头盔, 黑面妆, 晒黑, 深色皮肤, 噪点, 短裤, 面部穿环, 断指, 血.</p>
+        <div data-nosnippet><p>────犹豫，<br>我把它留在了迈出的那一步之后。</p><p>我把疑虑留在了第一步之后。</p><p>※如果可以，请长按以4K查看<br>👇 提示词在「更多显示」👇<br>提示词 / 拼写 Nijijourney 7 / Midjourney</p><p>质量: 高清分辨率的动漫风格插画。超写实角色。高对比度。全身。8K。<br>相机/角度: 强烈的透视夸张（近大远小），一把巨大的日本刀从画面向镜头刺出。动态范围。<br>主题: 持日本刀的美丽女性的动作肖像。角色以强大的冲力向前飞扑，周围环绕着发光的蓝色光粒子。<br>发色: 闪亮的浅蓝色头发，带有闪烁的鳞片光泽，内层呈绿色，短发并带有绿色发梢和刘海。<br>效果: 一把巨大的、炫目强烈发光的日本刀。<br>眼睛: 淡蓝与绿色的渐变。略带自然光晕。大眼睛。<br>服装: 明治时代风格的日本军装，材质为有光泽的皮革。长款工程靴。<br>背景: 横滨中华街，充满五彩炫目的霓虹招牌。动态运动模糊。各种塔罗牌被红光环绕着旋转。<br>--stylize 550<br>--no 文字, 头盔, 黑面妆, 晒黑, 深色皮肤, 噪点, 短裤, 面部穿环, 断指, 血.</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("────迷いは、\n踏み出したあとに置いてきた。\n\nI left my doubts\nbehind the first step.\n\n※良ければ長押しで4Kで見て下さい\n👇 プロンプトは「さらに表示」👇\nPrompt / Spell Nijijourney 7 / Midjourney\n\nQuality: High-resolution anime-style illustration. Ultra-realistic character. High contrast. Full body. 8K.\nCamera/angle: Strong foreshortening perspective with a large Japanese sword thrusting toward the camera. Dynamic range.\nTheme: Action portrait of a beautiful woman with a Japanese sword. The character flies forward with great momentum, surrounded by glowing blue light particles.\nHair color: Shiny light blue hair with a shimmering cuticle, a green inner color, short hair with green tips, and bangs.\nEffect: A large, intensely shining Japanese sword.\nEyes: A gradient of light blue and green. Slightly natural glow. Large eyes.\nClothes: Japanese military uniform from the Meiji era made of shiny leather. Long engineer boots.\nBackground: Yokohama Chinatown, filled with colorful, shining neon signs. Dynamic motion blur. Various tarot cards swirling with red light.\n--stylize 550\n--no text, helmet, blackface, tan, dark skin, noise, shorts, facial piercings, broken fingers, blood.", this)'>📋 复制</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("────I left my hesitation behind.\n\nI left my doubts\nbehind the first step.\n\nIf you’d like, please press and hold to view in 4K\n👇 Press “Show more” for the prompt 👇\nPrompt / Spell Nijijourney 7 / Midjourney\n\nQuality: High-resolution anime-style illustration. Ultra-realistic character. High contrast. Full body. 8K.\nCamera/angle: Strong foreshortening perspective with a large Japanese sword thrusting toward the camera. Dynamic range.\nTheme: Action portrait of a beautiful woman with a Japanese sword. The character flies forward with great momentum, surrounded by glowing blue light particles.\nHair color: Shiny light blue hair with a shimmering cuticle, a green inner color, short hair with green tips, and bangs.\nEffect: A large, intensely shining Japanese sword.\nEyes: A gradient of light blue and green. Slightly natural glow. Large eyes.\nClothes: Japanese military uniform from the Meiji era made of shiny leather. Long engineer boots.\nBackground: Yokohama Chinatown, filled with colorful, shining neon signs. Dynamic motion blur. Various tarot cards swirling with red light.\n--stylize 550\n--no text, helmet, blackface, tan, dark skin, noise, shorts, facial piercings, broken fingers, blood.", this)'>📋 复制</button>
         </div>
-        <p>────迷いは、<br>踏み出したあとに置いてきた。</p><p>I left my doubts<br>behind the first step.</p><p>※良ければ長押しで4Kで見て下さい<br>👇 プロンプトは「さらに表示」👇<br>Prompt / Spell Nijijourney 7 / Midjourney</p><p>Quality: High-resolution anime-style illustration. Ultra-realistic character. High contrast. Full body. 8K.<br>Camera/angle: Strong foreshortening perspective with a large Japanese sword thrusting toward the camera. Dynamic range.<br>Theme: Action portrait of a beautiful woman with a Japanese sword. The character flies forward with great momentum, surrounded by glowing blue light particles.<br>Hair color: Shiny light blue hair with a shimmering cuticle, a green inner color, short hair with green tips, and bangs.<br>Effect: A large, intensely shining Japanese sword.<br>Eyes: A gradient of light blue and green. Slightly natural glow. Large eyes.<br>Clothes: Japanese military uniform from the Meiji era made of shiny leather. Long engineer boots.<br>Background: Yokohama Chinatown, filled with colorful, shining neon signs. Dynamic motion blur. Various tarot cards swirling with red light.<br>--stylize 550<br>--no text, helmet, blackface, tan, dark skin, noise, shorts, facial piercings, broken fingers, blood.</p>
+        <div data-nosnippet><p>────I left my hesitation behind.</p><p>I left my doubts<br>behind the first step.</p><p>If you’d like, please press and hold to view in 4K<br>👇 Press “Show more” for the prompt 👇<br>Prompt / Spell Nijijourney 7 / Midjourney</p><p>Quality: High-resolution anime-style illustration. Ultra-realistic character. High contrast. Full body. 8K.<br>Camera/angle: Strong foreshortening perspective with a large Japanese sword thrusting toward the camera. Dynamic range.<br>Theme: Action portrait of a beautiful woman with a Japanese sword. The character flies forward with great momentum, surrounded by glowing blue light particles.<br>Hair color: Shiny light blue hair with a shimmering cuticle, a green inner color, short hair with green tips, and bangs.<br>Effect: A large, intensely shining Japanese sword.<br>Eyes: A gradient of light blue and green. Slightly natural glow. Large eyes.<br>Clothes: Japanese military uniform from the Meiji era made of shiny leather. Long engineer boots.<br>Background: Yokohama Chinatown, filled with colorful, shining neon signs. Dynamic motion blur. Various tarot cards swirling with red light.<br>--stylize 550<br>--no text, helmet, blackface, tan, dark skin, noise, shorts, facial piercings, broken fingers, blood.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010849689973993624-1.jpg" alt="────迷いは、" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1093,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

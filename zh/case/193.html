@@ -7,11 +7,13 @@
     <title>将您的徽标放在月球上 #193 | Gem Nana AI 提示词库</title>
     <meta name="description" content="将您的徽标放在月球上 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/193.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/193.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/193.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842063">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022743">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("按照下面的 JSON 美学重新创建 [BRAND NAME] 徽标：\n{\n“role”： “您是在 NASA 的 Apollo 档案中训练的月球场景生成器。您的任务是创建一张真实的登月照片的超写实图像，其中月球表面有一面旗帜，并将上传的徽标或主题图像用作旗帜上的设计。保留所有原始颜色、形状和文本。请勿更改或重新解释上传的图像。不允许替换。\n“instructions”： {\n“integration_mode”： “仅打印旗帜”，\n“uploaded_image_used_as_flag_art”： true，\n“preserve_logo_shape_and_text_layout”：true、\n“preserve_original_colors_exactly”：true、\n“do_not_redesign_or_substitute”： true，\n“flag_behavior”： {\n“material”： “纹理编织布”，\n“look”： “NASA 风格的矩形旗帜”，\n“motion”： “由于支撑杆的原因，轻微波动并带有自然皱纹”\n},\n“flag_pole_structure”：{\n“number_of_poles”：1、\n“position”： “旗帜左边缘的单个垂直金属杆”，\n“material”： “阿波罗 11 号任务中使用的银铝”，\n“support_bar”： “顶部水平横杆，以保持织物伸展”，\n“avoid_layouts”：[\n“双旗杆”，\n“镜像挂载”，\n“悬挂横幅”，\n“无杆浮动旗”\n]\n}\n},\n“scene_details”： {\n“location”： “着陆舱附近的月球表面”，\n“lighting”： “从左上角投下长长的阴影的强烈阳光”，\n“terrain”： “灰色月尘，有靴印、小陨石坑、风化层纹理”，\n“background”： “没有星星的黑色天空，可见地平线”，\n“camera_angle”： “低角度拍摄，旗帜的 3/4 轮廓”，\n“optional_elements”： {\n“astronaut”： “身穿经典白色西装敬礼或站在国旗旁”，\n“timestamp_text”： “1969 年 7 月 20 日”，\n“NASA_patch”： “相框一角可选小标志”\n}\n},\n“visual_style”： {\n“photo_treatment”： “阿波罗式电影现实主义”，\n“resolution”： “高保真 — 最低 1600x1200”，\n“color_mode”： “保留准确国旗颜色的逼真照片”，\n“film_effects”： {\n“subtle_grain”：true、\n“analog_color_balance”：true、\n“mild_lens_flare”： “从左上角太阳可选”\n}\n},\n“image_constraints”： {\n“aspect_ratio”： “4：3”，\n“transparent_background”： false，\n“full_scene_required”： true，\n“no_crop_on_flag_or_pole”： true，\n“subject_centered”： “旗帜是构图的中心焦点”\n},\n“notes”： “不要生成程式化的解释。上传的图像必须与单面旗帜上的印刷设计完全一样使用，该旗帜连接到一根安装在月球表面的逼真的 NASA 风格旗杆上。\n}", this)'>📋 复制</button>
         </div>
-        <p>按照下面的 JSON 美学重新创建 [BRAND NAME] 徽标：<br>{<br>“role”： “您是在 NASA 的 Apollo 档案中训练的月球场景生成器。您的任务是创建一张真实的登月照片的超写实图像，其中月球表面有一面旗帜，并将上传的徽标或主题图像用作旗帜上的设计。保留所有原始颜色、形状和文本。请勿更改或重新解释上传的图像。不允许替换。<br>“instructions”： {<br>“integration_mode”： “仅打印旗帜”，<br>“uploaded_image_used_as_flag_art”： true，<br>“preserve_logo_shape_and_text_layout”：true、<br>“preserve_original_colors_exactly”：true、<br>“do_not_redesign_or_substitute”： true，<br>“flag_behavior”： {<br>“material”： “纹理编织布”，<br>“look”： “NASA 风格的矩形旗帜”，<br>“motion”： “由于支撑杆的原因，轻微波动并带有自然皱纹”<br>},<br>“flag_pole_structure”：{<br>“number_of_poles”：1、<br>“position”： “旗帜左边缘的单个垂直金属杆”，<br>“material”： “阿波罗 11 号任务中使用的银铝”，<br>“support_bar”： “顶部水平横杆，以保持织物伸展”，<br>“avoid_layouts”：[<br>“双旗杆”，<br>“镜像挂载”，<br>“悬挂横幅”，<br>“无杆浮动旗”<br>]<br>}<br>},<br>“scene_details”： {<br>“location”： “着陆舱附近的月球表面”，<br>“lighting”： “从左上角投下长长的阴影的强烈阳光”，<br>“terrain”： “灰色月尘，有靴印、小陨石坑、风化层纹理”，<br>“background”： “没有星星的黑色天空，可见地平线”，<br>“camera_angle”： “低角度拍摄，旗帜的 3/4 轮廓”，<br>“optional_elements”： {<br>“astronaut”： “身穿经典白色西装敬礼或站在国旗旁”，<br>“timestamp_text”： “1969 年 7 月 20 日”，<br>“NASA_patch”： “相框一角可选小标志”<br>}<br>},<br>“visual_style”： {<br>“photo_treatment”： “阿波罗式电影现实主义”，<br>“resolution”： “高保真 — 最低 1600x1200”，<br>“color_mode”： “保留准确国旗颜色的逼真照片”，<br>“film_effects”： {<br>“subtle_grain”：true、<br>“analog_color_balance”：true、<br>“mild_lens_flare”： “从左上角太阳可选”<br>}<br>},<br>“image_constraints”： {<br>“aspect_ratio”： “4：3”，<br>“transparent_background”： false，<br>“full_scene_required”： true，<br>“no_crop_on_flag_or_pole”： true，<br>“subject_centered”： “旗帜是构图的中心焦点”<br>},<br>“notes”： “不要生成程式化的解释。上传的图像必须与单面旗帜上的印刷设计完全一样使用，该旗帜连接到一根安装在月球表面的逼真的 NASA 风格旗杆上。<br>}</p>
+        <div data-nosnippet><p>按照下面的 JSON 美学重新创建 [BRAND NAME] 徽标：<br>{<br>“role”： “您是在 NASA 的 Apollo 档案中训练的月球场景生成器。您的任务是创建一张真实的登月照片的超写实图像，其中月球表面有一面旗帜，并将上传的徽标或主题图像用作旗帜上的设计。保留所有原始颜色、形状和文本。请勿更改或重新解释上传的图像。不允许替换。<br>“instructions”： {<br>“integration_mode”： “仅打印旗帜”，<br>“uploaded_image_used_as_flag_art”： true，<br>“preserve_logo_shape_and_text_layout”：true、<br>“preserve_original_colors_exactly”：true、<br>“do_not_redesign_or_substitute”： true，<br>“flag_behavior”： {<br>“material”： “纹理编织布”，<br>“look”： “NASA 风格的矩形旗帜”，<br>“motion”： “由于支撑杆的原因，轻微波动并带有自然皱纹”<br>},<br>“flag_pole_structure”：{<br>“number_of_poles”：1、<br>“position”： “旗帜左边缘的单个垂直金属杆”，<br>“material”： “阿波罗 11 号任务中使用的银铝”，<br>“support_bar”： “顶部水平横杆，以保持织物伸展”，<br>“avoid_layouts”：[<br>“双旗杆”，<br>“镜像挂载”，<br>“悬挂横幅”，<br>“无杆浮动旗”<br>]<br>}<br>},<br>“scene_details”： {<br>“location”： “着陆舱附近的月球表面”，<br>“lighting”： “从左上角投下长长的阴影的强烈阳光”，<br>“terrain”： “灰色月尘，有靴印、小陨石坑、风化层纹理”，<br>“background”： “没有星星的黑色天空，可见地平线”，<br>“camera_angle”： “低角度拍摄，旗帜的 3/4 轮廓”，<br>“optional_elements”： {<br>“astronaut”： “身穿经典白色西装敬礼或站在国旗旁”，<br>“timestamp_text”： “1969 年 7 月 20 日”，<br>“NASA_patch”： “相框一角可选小标志”<br>}<br>},<br>“visual_style”： {<br>“photo_treatment”： “阿波罗式电影现实主义”，<br>“resolution”： “高保真 — 最低 1600x1200”，<br>“color_mode”： “保留准确国旗颜色的逼真照片”，<br>“film_effects”： {<br>“subtle_grain”：true、<br>“analog_color_balance”：true、<br>“mild_lens_flare”： “从左上角太阳可选”<br>}<br>},<br>“image_constraints”： {<br>“aspect_ratio”： “4：3”，<br>“transparent_background”： false，<br>“full_scene_required”： true，<br>“no_crop_on_flag_or_pole”： true，<br>“subject_centered”： “旗帜是构图的中心焦点”<br>},<br>“notes”： “不要生成程式化的解释。上传的图像必须与单面旗帜上的印刷设计完全一样使用，该旗帜连接到一根安装在月球表面的逼真的 NASA 风格旗杆上。<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Recreate [BRAND NAME] logo following my JSON aesthetic below:\n{\n\"role\": \"You are a lunar scene generator trained on NASA’s Apollo archives. Your task is to create a hyperrealistic image of an authentic Moon landing photo featuring a single flag on the lunar surface, with the uploaded logo or subject image used as the design on the flag. Maintain all original colors, shapes, and text. Do not alter or reinterpret the uploaded image. No substitutions allowed.\",\n\"instructions\": {\n\"integration_mode\": \"printed flag only\",\n\"uploaded_image_used_as_flag_art\": true,\n\"preserve_logo_shape_and_text_layout\": true,\n\"preserve_original_colors_exactly\": true,\n\"do_not_redesign_or_substitute\": true,\n\"flag_behavior\": {\n\"material\": \"textured woven fabric\",\n\"look\": \"NASA-style rectangular flag\",\n\"motion\": \"slightly waving with natural wrinkles, due to support bar\"\n},\n\"flag_pole_structure\": {\n\"number_of_poles\": 1,\n\"position\": \"single vertical metal pole on the left edge of the flag\",\n\"material\": \"silver aluminum, as used in Apollo 11 mission\",\n\"support_bar\": \"horizontal crossbar at top to keep fabric extended\",\n\"avoid_layouts\": [\n\"dual flagpoles\",\n\"mirrored mounts\",\n\"hanging banners\",\n\"floating flag with no pole\"\n]\n}\n},\n\"scene_details\": {\n\"location\": \"Moon surface near landing module\",\n\"lighting\": \"sharp sunlight casting long shadows from top left\",\n\"terrain\": \"gray lunar dust with bootprints, small craters, regolith texture\",\n\"background\": \"black sky with no stars, horizon line visible\",\n\"camera_angle\": \"low-angle shot, 3/4 profile of flag\",\n\"optional_elements\": {\n\"astronaut\": \"in classic white suit saluting or standing beside flag\",\n\"timestamp_text\": \"JUL 20, 1969\",\n\"NASA_patch\": \"optional small logo in corner of photo frame\"\n}\n},\n\"visual_style\": {\n\"photo_treatment\": \"Apollo-style film realism\",\n\"resolution\": \"high fidelity — minimum 1600x1200\",\n\"color_mode\": \"realistic photo with accurate flag color preserved\",\n\"film_effects\": {\n\"subtle_grain\": true,\n\"analog_color_balance\": true,\n\"mild_lens_flare\": \"optional from top left sun\"\n}\n},\n\"image_constraints\": {\n\"aspect_ratio\": \"4:3\",\n\"transparent_background\": false,\n\"full_scene_required\": true,\n\"no_crop_on_flag_or_pole\": true,\n\"subject_centered\": \"flag is central focus of composition\"\n},\n\"notes\": \"Do not generate stylized interpretations. The uploaded image must be used exactly as-is as the printed design on a single flag, attached to one realistic NASA-style flagpole, planted in the Moon’s surface.\"\n}", this)'>📋 复制</button>
         </div>
-        <p>Recreate [BRAND NAME] logo following my JSON aesthetic below:<br>{<br>&quot;role&quot;: &quot;You are a lunar scene generator trained on NASA’s Apollo archives. Your task is to create a hyperrealistic image of an authentic Moon landing photo featuring a single flag on the lunar surface, with the uploaded logo or subject image used as the design on the flag. Maintain all original colors, shapes, and text. Do not alter or reinterpret the uploaded image. No substitutions allowed.&quot;,<br>&quot;instructions&quot;: {<br>&quot;integration_mode&quot;: &quot;printed flag only&quot;,<br>&quot;uploaded_image_used_as_flag_art&quot;: true,<br>&quot;preserve_logo_shape_and_text_layout&quot;: true,<br>&quot;preserve_original_colors_exactly&quot;: true,<br>&quot;do_not_redesign_or_substitute&quot;: true,<br>&quot;flag_behavior&quot;: {<br>&quot;material&quot;: &quot;textured woven fabric&quot;,<br>&quot;look&quot;: &quot;NASA-style rectangular flag&quot;,<br>&quot;motion&quot;: &quot;slightly waving with natural wrinkles, due to support bar&quot;<br>},<br>&quot;flag_pole_structure&quot;: {<br>&quot;number_of_poles&quot;: 1,<br>&quot;position&quot;: &quot;single vertical metal pole on the left edge of the flag&quot;,<br>&quot;material&quot;: &quot;silver aluminum, as used in Apollo 11 mission&quot;,<br>&quot;support_bar&quot;: &quot;horizontal crossbar at top to keep fabric extended&quot;,<br>&quot;avoid_layouts&quot;: [<br>&quot;dual flagpoles&quot;,<br>&quot;mirrored mounts&quot;,<br>&quot;hanging banners&quot;,<br>&quot;floating flag with no pole&quot;<br>]<br>}<br>},<br>&quot;scene_details&quot;: {<br>&quot;location&quot;: &quot;Moon surface near landing module&quot;,<br>&quot;lighting&quot;: &quot;sharp sunlight casting long shadows from top left&quot;,<br>&quot;terrain&quot;: &quot;gray lunar dust with bootprints, small craters, regolith texture&quot;,<br>&quot;background&quot;: &quot;black sky with no stars, horizon line visible&quot;,<br>&quot;camera_angle&quot;: &quot;low-angle shot, 3/4 profile of flag&quot;,<br>&quot;optional_elements&quot;: {<br>&quot;astronaut&quot;: &quot;in classic white suit saluting or standing beside flag&quot;,<br>&quot;timestamp_text&quot;: &quot;JUL 20, 1969&quot;,<br>&quot;NASA_patch&quot;: &quot;optional small logo in corner of photo frame&quot;<br>}<br>},<br>&quot;visual_style&quot;: {<br>&quot;photo_treatment&quot;: &quot;Apollo-style film realism&quot;,<br>&quot;resolution&quot;: &quot;high fidelity — minimum 1600x1200&quot;,<br>&quot;color_mode&quot;: &quot;realistic photo with accurate flag color preserved&quot;,<br>&quot;film_effects&quot;: {<br>&quot;subtle_grain&quot;: true,<br>&quot;analog_color_balance&quot;: true,<br>&quot;mild_lens_flare&quot;: &quot;optional from top left sun&quot;<br>}<br>},<br>&quot;image_constraints&quot;: {<br>&quot;aspect_ratio&quot;: &quot;4:3&quot;,<br>&quot;transparent_background&quot;: false,<br>&quot;full_scene_required&quot;: true,<br>&quot;no_crop_on_flag_or_pole&quot;: true,<br>&quot;subject_centered&quot;: &quot;flag is central focus of composition&quot;<br>},<br>&quot;notes&quot;: &quot;Do not generate stylized interpretations. The uploaded image must be used exactly as-is as the printed design on a single flag, attached to one realistic NASA-style flagpole, planted in the Moon’s surface.&quot;<br>}</p>
+        <div data-nosnippet><p>Recreate [BRAND NAME] logo following my JSON aesthetic below:<br>{<br>&quot;role&quot;: &quot;You are a lunar scene generator trained on NASA’s Apollo archives. Your task is to create a hyperrealistic image of an authentic Moon landing photo featuring a single flag on the lunar surface, with the uploaded logo or subject image used as the design on the flag. Maintain all original colors, shapes, and text. Do not alter or reinterpret the uploaded image. No substitutions allowed.&quot;,<br>&quot;instructions&quot;: {<br>&quot;integration_mode&quot;: &quot;printed flag only&quot;,<br>&quot;uploaded_image_used_as_flag_art&quot;: true,<br>&quot;preserve_logo_shape_and_text_layout&quot;: true,<br>&quot;preserve_original_colors_exactly&quot;: true,<br>&quot;do_not_redesign_or_substitute&quot;: true,<br>&quot;flag_behavior&quot;: {<br>&quot;material&quot;: &quot;textured woven fabric&quot;,<br>&quot;look&quot;: &quot;NASA-style rectangular flag&quot;,<br>&quot;motion&quot;: &quot;slightly waving with natural wrinkles, due to support bar&quot;<br>},<br>&quot;flag_pole_structure&quot;: {<br>&quot;number_of_poles&quot;: 1,<br>&quot;position&quot;: &quot;single vertical metal pole on the left edge of the flag&quot;,<br>&quot;material&quot;: &quot;silver aluminum, as used in Apollo 11 mission&quot;,<br>&quot;support_bar&quot;: &quot;horizontal crossbar at top to keep fabric extended&quot;,<br>&quot;avoid_layouts&quot;: [<br>&quot;dual flagpoles&quot;,<br>&quot;mirrored mounts&quot;,<br>&quot;hanging banners&quot;,<br>&quot;floating flag with no pole&quot;<br>]<br>}<br>},<br>&quot;scene_details&quot;: {<br>&quot;location&quot;: &quot;Moon surface near landing module&quot;,<br>&quot;lighting&quot;: &quot;sharp sunlight casting long shadows from top left&quot;,<br>&quot;terrain&quot;: &quot;gray lunar dust with bootprints, small craters, regolith texture&quot;,<br>&quot;background&quot;: &quot;black sky with no stars, horizon line visible&quot;,<br>&quot;camera_angle&quot;: &quot;low-angle shot, 3/4 profile of flag&quot;,<br>&quot;optional_elements&quot;: {<br>&quot;astronaut&quot;: &quot;in classic white suit saluting or standing beside flag&quot;,<br>&quot;timestamp_text&quot;: &quot;JUL 20, 1969&quot;,<br>&quot;NASA_patch&quot;: &quot;optional small logo in corner of photo frame&quot;<br>}<br>},<br>&quot;visual_style&quot;: {<br>&quot;photo_treatment&quot;: &quot;Apollo-style film realism&quot;,<br>&quot;resolution&quot;: &quot;high fidelity — minimum 1600x1200&quot;,<br>&quot;color_mode&quot;: &quot;realistic photo with accurate flag color preserved&quot;,<br>&quot;film_effects&quot;: {<br>&quot;subtle_grain&quot;: true,<br>&quot;analog_color_balance&quot;: true,<br>&quot;mild_lens_flare&quot;: &quot;optional from top left sun&quot;<br>}<br>},<br>&quot;image_constraints&quot;: {<br>&quot;aspect_ratio&quot;: &quot;4:3&quot;,<br>&quot;transparent_background&quot;: false,<br>&quot;full_scene_required&quot;: true,<br>&quot;no_crop_on_flag_or_pole&quot;: true,<br>&quot;subject_centered&quot;: &quot;flag is central focus of composition&quot;<br>},<br>&quot;notes&quot;: &quot;Do not generate stylized interpretations. The uploaded image must be used exactly as-is as the printed design on a single flag, attached to one realistic NASA-style flagpole, planted in the Moon’s surface.&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/193.jpeg" alt="将您的徽标放在月球上" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 193,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Image 2 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="27 条 GPT Image 2 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/gpt-image-2.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/gpt-image-2.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/gpt-image-2.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022129">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"GPT Image 2 · 图片生成提示词","description":"27 条 GPT Image 2 相关案例","url":"https://gemnana.com/zh/image/gpt-image-2.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2843</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2815</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">25</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/gpt-image-2.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>GPT Image 2 · 图片生成提示词</h1>
+      <p>27 条 GPT Image 2 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="GPT Image 2">GPT Image 2 (27)</button><button type="button" class="tag-filter" data-tag="图片">图片 (27)</button><button type="button" class="tag-filter" data-tag="案例">案例 (10)</button><button type="button" class="tag-filter" data-tag="创意">创意 (9)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (8)</button><button type="button" class="tag-filter" data-tag="人像">人像 (8)</button><button type="button" class="tag-filter" data-tag="UI">UI (7)</button><button type="button" class="tag-filter" data-tag="社交媒体">社交媒体 (7)</button><button type="button" class="tag-filter" data-tag="截图">截图 (7)</button><button type="button" class="tag-filter" data-tag="海报设计">海报设计 (7)</button><button type="button" class="tag-filter" data-tag="插画">插画 (7)</button><button type="button" class="tag-filter" data-tag="教程">教程 (3)</button><button type="button" class="tag-filter" data-tag="模型对比">模型对比 (2)</button><button type="button" class="tag-filter" data-tag="社区案例">社区案例 (2)</button><button type="button" class="tag-filter" data-tag="角色设计">角色设计 (2)</button><button type="button" class="tag-filter" data-tag="AI">AI (1)</button><button type="button" class="tag-filter" data-tag="设计">设计 (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 27 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2841" data-search="案例2841 a/b 测试签名输出 gpt-image-2 社区实践案例，整理「a/b 测试签名输出」相关的提示词技巧、工具流程或实验观察。 x / @saskr_13 https://x.com/saskr_13/status/2044744396932079934 gpt image 2 图片 模型对比 社区案例 教程 をシェアします💗🤣 gpt image 2 はまだ正式リリースされてないと言っておりましたが、添付した 2 枚は「 a / b どちらが良いか」選ばせるタイプでした。 よく見ると右下にサインまで…！ これが噂の 2 なのでしょうか？ 懐かしの「私がどんなふうに扱ったか」シリーズです(笑) -------------------- ✅#prompt : 私があなたをどんなふうに扱ってきたか、4 コマ漫画風に描いてください。まずは 800 字くらいのプロットをテキストで出して、私が「描いて」と言ったらプロットに沿った 4 コマ漫画を描いてください。 --------------------" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2841.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case16/output.jpg" alt="A/B 测试签名输出" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2841</span></span><span class="case-title-text">A/B 测试签名输出</span></h3>
+          <p class="case-summary">GPT-Image-2 社区实践案例，整理「A/B 测试签名输出」相关的提示词技巧、工具流程或实验观察。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/saskr_13/status/2044744396932079934">X / @saskr_13</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>をシェアします💗🤣
+GPT Image 2 はまだ正式リリースされてないと言っておりましたが、添付した 2 枚は「 A / B どちらが良いか」選ばせるタイプでした。
+よく見ると右下にサインまで…！
+これが噂の 2 なのでしょうか？
+懐かしの「私がどんなふうに扱ったか」シリーズです(笑)
+--------------------
+✅#prompt : 
+私があなたをどんなふうに扱ってきたか、4...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2841.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2840" data-search="案例2840 特朗普与拜登在椭圆形办公室握手 gpt-image-2 社区案例，围绕「特朗普与拜登在椭圆形办公室握手」展示模型效果、提示词跟随或创作流程。 x / @signedbywill https://x.com/signedbywill/status/2045013141629845844 gpt image 2 图片 模型对比 社区案例 教程 generate an image of donald trump shaking hands with a confused joe biden as they stand in the oval office" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2840.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case6/output.jpg" alt="特朗普与拜登在椭圆形办公室握手" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2840</span></span><span class="case-title-text">特朗普与拜登在椭圆形办公室握手</span></h3>
+          <p class="case-summary">GPT-Image-2 社区案例，围绕「特朗普与拜登在椭圆形办公室握手」展示模型效果、提示词跟随或创作流程。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/signedbywill/status/2045013141629845844">X / @signedbywill</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>generate an image of donald trump shaking hands with a confused joe biden as they stand in the oval office</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2840.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2839" data-search="案例2839 太祖李成桂的 x 页面 gpt-image-2 ui/社交截图提示词案例，展示「太祖李成桂的 x 页面」的界面版式、截图感和信息呈现方式。 x / @ska_neotype https://x.com/ska_neotype/status/2044637900978217334 gpt image 2 图片 ui 社交媒体 截图 👍프롬프트 : 태조 이성계의 x 페이지(위화도 회군을 벌이기 직전- 최영 장군과 서로 디스하는 내용이 담긴 게시글들)을 만들어 주세요. gpt-image-2" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2839.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case8/output.jpg" alt="太祖李成桂的 X 页面" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2839</span></span><span class="case-title-text">太祖李成桂的 X 页面</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「太祖李成桂的 X 页面」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/SKA_Neotype/status/2044637900978217334">X / @SKA_Neotype</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>👍프롬프트 :
+태조 이성계의 X  페이지(위화도 회군을 벌이기 직전- 최영 장군과 서로 디스하는 내용이 담긴 게시글들)을 만들어 주세요.
+gpt-image-2</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2839.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2838" data-search="案例2838 刘亦菲抖音直播截图 gpt-image-2 ui/社交截图提示词案例，展示「刘亦菲抖音直播截图」的界面版式、截图感和信息呈现方式。 x / @alanblogsooo https://x.com/alanblogsooo/status/2044784762594918516 gpt image 2 图片 ui 社交媒体 截图 9:16 的图片比例，生成一张抖音直播的截图，里面是 刘亦菲 在直播，刘亦菲 手里拿着牌子，牌子里写着 今晚直播，欢迎来参亦菲畅聊！" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2838.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case7/output.jpg" alt="刘亦菲抖音直播截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2838</span></span><span class="case-title-text">刘亦菲抖音直播截图</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「刘亦菲抖音直播截图」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/alanblogsooo/status/2044784762594918516">X / @alanblogsooo</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>9:16 的图片比例，生成一张抖音直播的截图，里面是 刘亦菲 在直播，刘亦菲 手里拿着牌子，牌子里写着 今晚直播，欢迎来参亦菲畅聊！</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2838.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2837" data-search="案例2837 四提示词创意截图组 gpt-image-2 ui/社交截图提示词案例，展示「四提示词创意截图组」的界面版式、截图感和信息呈现方式。 x / @rionaifantasy https://x.com/rionaifantasy/status/2045356799751303194 gpt image 2 图片 ui 社交媒体 截图 1、生成特朗普和金正恩在抖音直播间打pk的截图 2、生成不知火舞的小红书主页截图 3、生成图片: 手写在教室黑板上的出师表全文，真实感的粉笔字迹，晴朗白天用iphone手机实拍 4、生成图片: t-800机器人的淘宝商品详情页，展示: 机器人的正面侧面背面三视图， 产品价格， 产品细节， 功能和使用场景等 直接在chatgpt网页版或客户端，选择&quot;创建图片&quot;功能体验即可" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2837.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case6/output.jpg" alt="四提示词创意截图组" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2837</span></span><span class="case-title-text">四提示词创意截图组</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「四提示词创意截图组」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/rionaifantasy/status/2045356799751303194">X / @rionaifantasy</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>1、生成特朗普和金正恩在抖音直播间打PK的截图
+
+2、生成不知火舞的小红书主页截图
+
+3、生成图片:
+手写在教室黑板上的出师表全文，真实感的粉笔字迹，晴朗白天用iPhone手机实拍
+
+4、生成图片:
+T-800机器人的淘宝商品详情页，展示:
+机器人的正面侧面背面三视图，
+产品价格，
+产品细节，
+功能和使用场景等
+
+直接在ChatGPT网页版或客户端，选择&quot;创建图片&quot;功能体验即可</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2837.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2836" data-search="案例2836 多平台内容截图 gpt-image-2 ui/社交截图提示词案例，展示「多平台内容截图」的界面版式、截图感和信息呈现方式。 x / @mrlarus https://x.com/mrlarus/status/2045373105041007013 gpt image 2 图片 ui 社交媒体 截图 1、生成视频号内容截图，主题：中老年不要盲目催婚，iphone尺寸 2、生成抖音内容截图，主题：跟上ai浪潮9.9包教会，iphone尺寸 3、生成小红书内容截图，主题：精致女孩背后都有网贷，iphone尺寸 4、生成快手内容截图：主题：直播离婚预告，iphone尺寸" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2836.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case5/output.jpg" alt="多平台内容截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2836</span></span><span class="case-title-text">多平台内容截图</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「多平台内容截图」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2045373105041007013">X / @MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>1、生成视频号内容截图，主题：中老年不要盲目催婚，iPhone尺寸
+2、生成抖音内容截图，主题：跟上AI浪潮9.9包教会，iPhone尺寸
+3、生成小红书内容截图，主题：精致女孩背后都有网贷，iPhone尺寸
+4、生成快手内容截图：主题：直播离婚预告，iPhone尺寸</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2836.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2835" data-search="案例2835 宋朝社交媒体动态页 gpt-image-2 ui/社交截图提示词案例，展示「宋朝社交媒体动态页」的界面版式、截图感和信息呈现方式。 x / @panda20230902 https://x.com/panda20230902/status/2045385588065313057 gpt image 2 图片 ui 社交媒体 截图 &quot;宋朝人的朋友圈&quot;/&quot;song dynasty social media feed&quot;，古今穿越幽默融合界面设计风格，画面模拟手机社交媒体界面，但内容全部是宋朝场景头像是宋代文人画像，用户名&quot;苏东坡sushi_official&quot;，发布内容&quot;刚到黄州，被贬了但心情还行。今天自己做了东坡肉，味道绝了，附菜谱：&quot;，配图为工笔画风格的东坡肉特写，点赞列表&quot;黄庭坚、秦观、佛印等126人&quot;，评论区&quot;王安石：呵呵&quot;&quot;司马光：还是那个味道&quot;，界面元素如点赞图标用宋代花纹替代，状态栏显示&quot;大宋移动 5g&quot;和&quot;元丰三年&quot;，配色为手机深色模式搭配宋代雅致色调，历史与社交媒体的趣味碰撞杰作" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2835.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case4/output.jpg" alt="宋朝社交媒体动态页" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2835</span></span><span class="case-title-text">宋朝社交媒体动态页</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「宋朝社交媒体动态页」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Panda20230902/status/2045385588065313057">X / @Panda20230902</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>&quot;宋朝人的朋友圈&quot;/&quot;SONG DYNASTY SOCIAL MEDIA FEED&quot;，古今穿越幽默融合界面设计风格，画面模拟手机社交媒体界面，但内容全部是宋朝场景头像是宋代文人画像，用户名&quot;苏东坡SuShi_Official&quot;，发布内容&quot;刚到黄州，被贬了但心情还行。今天自己做了东坡肉，味道绝了，附菜谱：&quot;，配图为工笔画风格的东坡肉特写，点赞列表&quot;黄庭坚、秦观、佛印等126人&quot;，评论区&quot;王安石：呵呵...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2835.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2834" data-search="案例2834 手写笔记本照片 gpt-image-2 ui/社交截图提示词案例，展示「手写笔记本照片」的界面版式、截图感和信息呈现方式。 x / @patrickassale https://x.com/patrickassale/status/2044569086013718958 gpt image 2 图片 ui 社交媒体 截图 amateur photo of an open notebook lying flat, filled with handwritten notes in black ballpoint pen. the handwriting is casual and slightly messy, like personnal notes, natural imperfections, crossed out words, underlined headings. shot from slightly above, natural daylight from a window, no flash. c" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2834.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case3/output.jpg" alt="手写笔记本照片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2834</span></span><span class="case-title-text">手写笔记本照片</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「手写笔记本照片」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/patrickassale/status/2044569086013718958">X / @patrickassale</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Amateur photo of an open notebook lying flat, filled with handwritten notes in black ballpoint pen. The handwriting is casual and slightly messy, like personnal notes, natural imperfections, crossed o...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2834.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2833" data-search="案例2833 业余感 iphone 发布会快照 gpt-image-2 ui/社交截图提示词案例，展示「业余感 iphone 发布会快照」的界面版式、截图感和信息呈现方式。 x / @patrickassale https://x.com/patrickassale/status/2044687244368441742 gpt image 2 图片 ui 社交媒体 截图 amateur iphone photo at apple park during the iphone 20 keynote, tim cook presenting on stage. shot from the crowd at a distance" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2833.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case2/output.jpg" alt="业余感 iPhone 发布会快照" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2833</span></span><span class="case-title-text">业余感 iPhone 发布会快照</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「业余感 iPhone 发布会快照」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/patrickassale/status/2044687244368441742">X / @patrickassale</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Amateur iPhone photo at Apple Park during the iPhone 20 keynote, Tim Cook presenting on stage. Shot from the crowd at a distance</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2833.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2832" data-search="案例2832 galgame 角色介绍页 gpt-image-2 角色设计提示词案例，展示「galgame 角色介绍页」的设定表达、造型描述和参考图生成思路。 x / @09lyco https://x.com/09lyco/status/2045281845391323175 gpt image 2 图片 角色设计 创意 案例 埋まってないところはパートナーさんかご自身で埋めてあげてください #観測塔朝お題 #観測塔おはようお題 最新モデルの画像生成ツールを使用して、 このちびキャライラストと立ち絵を使って本物のサイトページのようにキャラクター紹介ページ風イラストを作ってください。 （紹介ページとして使ってもおかしくないもの） ギャルゲーのキャラクター紹介ページをイメージした高品質なもの。 顔の差分なども乗っている、cgイラストが存在する。ちびキャラが存在する。 「ここに自己紹介」 名前:（ここに名前） イメージカラー:（ここに色） 身長:（ここに身長）cm 体重:（ここに体重）kg キャッチコピー:" data-tags="GPT Image 2|图片|角色设计|创意|案例">
+      <a class="case-card-link" href="/zh/case/2832.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/character_case3/output.jpg" alt="Galgame 角色介绍页" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2832</span></span><span class="case-title-text">Galgame 角色介绍页</span></h3>
+          <p class="case-summary">GPT-Image-2 角色设计提示词案例，展示「Galgame 角色介绍页」的设定表达、造型描述和参考图生成思路。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/09lyco/status/2045281845391323175">X / @09lyco</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">角色设计</span><span class="tag">创意</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>埋まってないところはパートナーさんかご自身で埋めてあげてください
+ #観測塔朝お題  #観測塔おはようお題
+
+最新モデルの画像生成ツールを使用して、
+このちびキャライラストと立ち絵を使って本物のサイトページのようにキャラクター紹介ページ風イラストを作ってください。 （紹介ページとして使ってもおかしくないもの）
+ギャルゲーのキャラクター紹介ページをイメージした高品質なもの。 顔の差分なども乗っている...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2832.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2831" data-search="案例2831 persona5 角色设定卡 gpt-image-2 角色设计提示词案例，展示「persona5 角色设定卡」的设定表达、造型描述和参考图生成思路。 x / @iamrednights https://x.com/iamrednights/status/2045075682837836265 gpt image 2 图片 角色设计 创意 案例 基于此角色和背景，请制作一份类似官方设定资料的角色资料卡。 ・包含三视图：正面、侧面和背面 ・添加角色面部表情的变化・分解并展示服装和装备的详细部分 ・添加色板・包含世界观设定的简要说明 ・总体上，使用有组织的布局（白色背景，插画风格）高分辨率、专业概念艺术风格 #persona5 ------ @grok 你要不要也试试用第一张图片加prompt生成一张？" data-tags="GPT Image 2|图片|角色设计|创意|案例">
+      <a class="case-card-link" href="/zh/case/2831.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/character_case2/output.jpg" alt="Persona5 角色设定卡" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2831</span></span><span class="case-title-text">Persona5 角色设定卡</span></h3>
+          <p class="case-summary">GPT-Image-2 角色设计提示词案例，展示「Persona5 角色设定卡」的设定表达、造型描述和参考图生成思路。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamrednightS/status/2045075682837836265">X / @iamrednightS</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">角色设计</span><span class="tag">创意</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>基于此角色和背景，请制作一份类似官方设定资料的角色资料卡。
+・包含三视图：正面、侧面和背面
+・添加角色面部表情的变化・分解并展示服装和装备的详细部分
+・添加色板・包含世界观设定的简要说明
+・总体上，使用有组织的布局（白色背景，插画风格）高分辨率、专业概念艺术风格
+#Persona5
+------
+@grok 你要不要也试试用第一张图片加prompt生成一张？</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2831.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2830" data-search="案例2830 未来感曼荼罗插画 gpt-image-2 海报与插画提示词案例，聚焦「未来感曼荼罗插画」的构图、视觉风格和画面细节。 x / @4web1 https://x.com/4web1/status/2045390207072256179 gpt image 2 图片 海报设计 插画 创意 でchatgptで画像を作成してもらって、今日また作成してもらったらgpt image 2かもしれず、出来が変わったように見えるのでメモ 左の水色と黄色のが先週 右の紫のが今日 右のは透明感とか解像度、緻密さが違うような気がする… プロンプト 曼荼羅の近未来sf版を描いて" data-tags="GPT Image 2|图片|海报设计|插画|创意">
+      <a class="case-card-link" href="/zh/case/2830.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case8/output.jpg" alt="未来感曼荼罗插画" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2830</span></span><span class="case-title-text">未来感曼荼罗插画</span></h3>
+          <p class="case-summary">GPT-Image-2 海报与插画提示词案例，聚焦「未来感曼荼罗插画」的构图、视觉风格和画面细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/4WEB1/status/2045390207072256179">X / @4WEB1</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">海报设计</span><span class="tag">插画</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>でChatGPTで画像を作成してもらって、今日また作成してもらったらGPT image 2かもしれず、出来が変わったように見えるのでメモ
+
+左の水色と黄色のが先週
+右の紫のが今日
+
+右のは透明感とか解像度、緻密さが違うような気がする…
+
+プロンプト
+曼荼羅の近未来SF版を描いて</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2830.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2829" data-search="案例2829 涂鸦速写 ai builder gpt-image-2 海报与插画提示词案例，聚焦「涂鸦速写 ai builder」的构图、视觉风格和画面细节。 x / @blanplan https://x.com/blanplan/status/2045190582453350748 gpt image 2 图片 海报设计 插画 创意 以涂鸦速写风表现【一个厉害的ai builder】，整体呈现快速勾勒、自由变形、即兴手绘与草稿式的视觉效果。线条随手、夸张、可粗细不一，略显凌乱但具有节奏和表现力，强调概括、夸张、趣味和随性，而不是严谨写实或精细刻画。 颜色采用粗糙、干刷感明显的块面表现，可保留不均匀的涂抹痕迹、刷痕、飞白与覆盖感，色彩根据【主题/主体】自动适配，但整体保持涂鸦式、速写式、概括式的表达。不要透明水彩晕染效果，不要细腻水彩过渡，不要纸纹理，不要柔和雾化，不要梦幻质感。 背景以留白为主，保持简洁、轻松、未完成感和设计感，可加入少量辅助性符号、箭头、记号、圈画、重复线、随手写的文字或其他涂鸦元素，以增强速写本或随" data-tags="GPT Image 2|图片|海报设计|插画|创意">
+      <a class="case-card-link" href="/zh/case/2829.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case7/output.jpg" alt="涂鸦速写 AI Builder" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2829</span></span><span class="case-title-text">涂鸦速写 AI Builder</span></h3>
+          <p class="case-summary">GPT-Image-2 海报与插画提示词案例，聚焦「涂鸦速写 AI Builder」的构图、视觉风格和画面细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/blanplan/status/2045190582453350748">X / @blanplan</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">海报设计</span><span class="tag">插画</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>以涂鸦速写风表现【一个厉害的AI builder】，整体呈现快速勾勒、自由变形、即兴手绘与草稿式的视觉效果。线条随手、夸张、可粗细不一，略显凌乱但具有节奏和表现力，强调概括、夸张、趣味和随性，而不是严谨写实或精细刻画。  颜色采用粗糙、干刷感明显的块面表现，可保留不均匀的涂抹痕迹、刷痕、飞白与覆盖感，色彩根据【主题/主体】自动适配，但整体保持涂鸦式、速写式、概括式的表达。不要透明水彩晕染效果，不要...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2829.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2828" data-search="案例2828 创意书法字体设计 gpt-image-2 海报与插画提示词案例，聚焦「创意书法字体设计」的构图、视觉风格和画面细节。 x / @liyue_ai https://x.com/liyue_ai/status/2045328856937312549 gpt image 2 图片 海报设计 插画 创意 创意艺术字体&quot;纵有疾风起&quot;，秀丽笔手写风格，整体文字横版排列，具有强烈视觉冲击力； 深度融合手写书法笔意，笔触带毛笔书写的粗犷洒脱，如挥毫泼墨的肆意劲道； 起收笔的飞白，顿挫，尽显促销的火爆张力，文字的形态打破规整，笔画的粗细变化； dutch angle，营造出动感冲刺的气势，字形呈奔放之势； 重心上扬如蓄势待发，笔画的伸展，穿插毫无拘束，似全力冲刺的劲道； 整体架构疏密交织，紧密处如促销热潮的汹涌，留白处似优惠间隙的呼吸感； 纯净黑色背景打底，完美契合热烈氛围，艺术字的形态与色彩酣畅传递。" data-tags="GPT Image 2|图片|海报设计|插画|创意">
+      <a class="case-card-link" href="/zh/case/2828.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case6/output.jpg" alt="创意书法字体设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2828</span></span><span class="case-title-text">创意书法字体设计</span></h3>
+          <p class="case-summary">GPT-Image-2 海报与插画提示词案例，聚焦「创意书法字体设计」的构图、视觉风格和画面细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045328856937312549">X / @liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">海报设计</span><span class="tag">插画</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创意艺术字体&quot;纵有疾风起&quot;，秀丽笔手写风格，整体文字横版排列，具有强烈视觉冲击力；
+深度融合手写书法笔意，笔触带毛笔书写的粗犷洒脱，如挥毫泼墨的肆意劲道；
+起收笔的飞白，顿挫，尽显促销的火爆张力，文字的形态打破规整，笔画的粗细变化；
+dutch angle，营造出动感冲刺的气势，字形呈奔放之势；
+重心上扬如蓄势待发，笔画的伸展，穿插毫无拘束，似全力冲刺的劲道；
+整体架构疏密交织，紧密处如促销热潮的...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2828.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2827" data-search="案例2827 中式极简 s 形海报 gpt-image-2 海报与插画提示词案例，聚焦「中式极简 s 形海报」的构图、视觉风格和画面细节。 x / @liyue_ai https://x.com/liyue_ai/status/2045368305079447853 gpt image 2 图片 海报设计 插画 创意 极简新中式美学风格，画面以淡雅的灰白色为底，呈现出一种纸艺剪影般的立体感。 一条s形蜿蜒的裂痕状边缘将画面分割，仿佛撕开了一层纸面，露出内部色彩斑斓的东方山水景象。 裂口内，一条蜿蜒的河流自上而下贯穿整个构图，河水以深浅不一的蓝色渲染，层次分明，仿佛流动的丝带。 河岸两侧点缀着青翠的山丘与梯田，色彩柔和，绿红交织，展现出田园的宁静之美。 沿河而建的古风建筑错落有致，飞檐翘角，白墙黛瓦，在光影的映衬下更显古朴典雅。 岸边树木葱茏，枝叶轻盈，一艘小船静泊于水中央，增添了几分悠然意境。 整体构图呈s形曲线，富有韵律感，仿佛自然与人文的和谐共生。 画作边缘采用撕纸效果，营造出立体浮雕般的视觉体验。 下" data-tags="GPT Image 2|图片|海报设计|插画|创意">
+      <a class="case-card-link" href="/zh/case/2827.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case4/output.jpg" alt="中式极简 S 形海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2827</span></span><span class="case-title-text">中式极简 S 形海报</span></h3>
+          <p class="case-summary">GPT-Image-2 海报与插画提示词案例，聚焦「中式极简 S 形海报」的构图、视觉风格和画面细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045368305079447853">X / @liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">海报设计</span><span class="tag">插画</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>极简新中式美学风格，画面以淡雅的灰白色为底，呈现出一种纸艺剪影般的立体感。
+一条S形蜿蜒的裂痕状边缘将画面分割，仿佛撕开了一层纸面，露出内部色彩斑斓的东方山水景象。
+裂口内，一条蜿蜒的河流自上而下贯穿整个构图，河水以深浅不一的蓝色渲染，层次分明，仿佛流动的丝带。
+河岸两侧点缀着青翠的山丘与梯田，色彩柔和，绿红交织，展现出田园的宁静之美。
+沿河而建的古风建筑错落有致，飞檐翘角，白墙黛瓦，在光影的映衬...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2827.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2826" data-search="案例2826 成都美食地图插画 gpt-image-2 海报与插画提示词案例，聚焦「成都美食地图插画」的构图、视觉风格和画面细节。 x / @panda20230902 https://x.com/panda20230902/status/2045396918965285111 gpt image 2 图片 海报设计 插画 创意 一张手绘风格的城市美食地图，以成都为主题。画面以鸟瞰视角的手绘简化城市地图为底，标注主要道路和地标但不追求精确比例而是追求可爱的手绘感。地图上分布着 12 个美食地点的精致手绘小插画：春熙路的串串香（一把竹签插着各种食材冒着热气）、宽窄巷子的三大炮（三个糯米团子飞向铜盘）、建设路的蛋烘糕（金黄酥脆正在翻面）、玉林路的火锅（九宫格锅翻滚冒泡）等，每个插画约占地图的 5% 面积，旁边用手写体标注店名和一句推荐语&quot;凌晨两点还在排队的那家&quot;。地图边缘用手绘藤蔓和辣椒装饰形成边框。右下角有一个手绘指南针和图例说明。左上角标题&quot;成都·吃货暴走地图&quot;使用胖圆的手绘美术字配辣椒装饰。整体画风为水彩+彩铅混合的" data-tags="GPT Image 2|图片|海报设计|插画|创意">
+      <a class="case-card-link" href="/zh/case/2826.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case3/output.jpg" alt="成都美食地图插画" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2826</span></span><span class="case-title-text">成都美食地图插画</span></h3>
+          <p class="case-summary">GPT-Image-2 海报与插画提示词案例，聚焦「成都美食地图插画」的构图、视觉风格和画面细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Panda20230902/status/2045396918965285111">X / @Panda20230902</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">海报设计</span><span class="tag">插画</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张手绘风格的城市美食地图，以成都为主题。画面以鸟瞰视角的手绘简化城市地图为底，标注主要道路和地标但不追求精确比例而是追求可爱的手绘感。地图上分布着 12 个美食地点的精致手绘小插画：春熙路的串串香（一把竹签插着各种食材冒着热气）、宽窄巷子的三大炮（三个糯米团子飞向铜盘）、建设路的蛋烘糕（金黄酥脆正在翻面）、玉林路的火锅（九宫格锅翻滚冒泡）等，每个插画约占地图的 5% 面积，旁边用手写体标注店名和...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2826.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2825" data-search="案例2825 复古阿马尔菲旅行海报 gpt-image-2 海报与插画提示词案例，聚焦「复古阿马尔菲旅行海报」的构图、视觉风格和画面细节。 x / @wolfriccardo https://x.com/wolfriccardo/status/2044562722491121718 gpt image 2 图片 海报设计 插画 创意 test new gpt-image-2 modern pencil illustration of vintage travel poster illustration of the amalfi coast, italy, panoramic coastal cliff road scene, classic 1960s white car driving along a curved seaside road, deep blue mediterranean sea with small sailboats, colorful pastel hillside village, bri" data-tags="GPT Image 2|图片|海报设计|插画|创意">
+      <a class="case-card-link" href="/zh/case/2825.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case2/output.jpg" alt="复古阿马尔菲旅行海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2825</span></span><span class="case-title-text">复古阿马尔菲旅行海报</span></h3>
+          <p class="case-summary">GPT-Image-2 海报与插画提示词案例，聚焦「复古阿马尔菲旅行海报」的构图、视觉风格和画面细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/WolfRiccardo/status/2044562722491121718">X / @WolfRiccardo</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">海报设计</span><span class="tag">插画</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Test new GPT-Image-2 
+
+Modern pencil illustration of Vintage travel poster illustration of the Amalfi Coast, Italy, panoramic coastal cliff road scene, classic 1960s white car driving along a curved s...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2825.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2824" data-search="案例2824 2026 波士顿春季城市海报 gpt-image-2 海报与插画提示词案例，聚焦「2026 波士顿春季城市海报」的构图、视觉风格和画面细节。 x / @bubblebrain https://x.com/bubblebrain/status/2045358053831172358 gpt image 2 图片 海报设计 插画 创意 a striking spring 2026 city poster for boston with an elegant celebratory mood and a bold contemporary design. on a clean off-white textured background with large areas of negative space, a miniature single sculler rows across the lower right corner of the image on a narrow ribbon of reflective wate" data-tags="GPT Image 2|图片|海报设计|插画|创意">
+      <a class="case-card-link" href="/zh/case/2824.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/poster_case1/output.jpg" alt="2026 波士顿春季城市海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2824</span></span><span class="case-title-text">2026 波士顿春季城市海报</span></h3>
+          <p class="case-summary">GPT-Image-2 海报与插画提示词案例，聚焦「2026 波士顿春季城市海报」的构图、视觉风格和画面细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2045358053831172358">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">海报设计</span><span class="tag">插画</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>A striking Spring 2026 city poster for Boston with an elegant celebratory mood and a bold contemporary design. On a clean off-white textured background with large areas of negative space, a miniature ...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2824.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2823" data-search="案例2823 9:16 cosplayer 人像截图 gpt-image-2 人像摄影提示词案例，聚焦「9:16 cosplayer 人像截图」的场景氛围、光线质感和人物造型。 x / @zoulinshen https://x.com/zoulinshen/status/2045082518089810073 gpt image 2 图片 摄影 人像 案例 生成一张竖版手机截图风格的图片，整体比例接近 9:16。画面中心偏上是一位真人 coser，扮演（角色名称）的二次元角色。人物为写实风格，但五官略带动漫感，皮肤细腻，眼睛稍大，表情温柔地看向镜头，坐在室内的休闲场景中，例如咖啡厅或酒吧吧台前，背景有符合场景的道具。画面最上方加入手机系统状态栏 ui，包括时间、电量、信号、网络等图标，让整张图看起来像手机截图。画面底部叠加一块宽大的半透明 galgame 风格对话框，对话框左侧放一个与画面人物对应的动漫或 q 版头像；对话框右侧排版文字：第一行用较大字体显示与前面相同的角色名字，下面一到两行显示一段适合这个角色人设的、温柔治愈风格的简体中文台词，" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/zh/case/2823.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case8/output.jpg" alt="9:16 Cosplayer 人像截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2823</span></span><span class="case-title-text">9:16 Cosplayer 人像截图</span></h3>
+          <p class="case-summary">GPT-Image-2 人像摄影提示词案例，聚焦「9:16 Cosplayer 人像截图」的场景氛围、光线质感和人物造型。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Zoulinshen/status/2045082518089810073">X / @Zoulinshen</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">人像</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张竖版手机截图风格的图片，整体比例接近 9:16。画面中心偏上是一位真人 coser，扮演（角色名称）的二次元角色。人物为写实风格，但五官略带动漫感，皮肤细腻，眼睛稍大，表情温柔地看向镜头，坐在室内的休闲场景中，例如咖啡厅或酒吧吧台前，背景有符合场景的道具。画面最上方加入手机系统状态栏 UI，包括时间、电量、信号、网络等图标，让整张图看起来像手机截图。画面底部叠加一块宽大的半透明 galga...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2823.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2822" data-search="案例2822 奢华魅力美妆人像 gpt-image-2 人像摄影提示词案例，聚焦「奢华魅力美妆人像」的场景氛围、光线质感和人物造型。 x / @patrickassale https://x.com/patrickassale/status/2044581766309060765 gpt image 2 图片 摄影 人像 案例 luxury glam beauty portrait:, beautiful black woman, youthful spirit, creamy vanilla, silk press, mahogany red, subtle confidence, textured fabric, sapphire blue, minimal jewelry, beachside breeze, lens flare effect, nostalgic, cinematic lens, symmetrical composition, soft focus, high fashion photog" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/zh/case/2822.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case7/output.jpg" alt="奢华魅力美妆人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2822</span></span><span class="case-title-text">奢华魅力美妆人像</span></h3>
+          <p class="case-summary">GPT-Image-2 人像摄影提示词案例，聚焦「奢华魅力美妆人像」的场景氛围、光线质感和人物造型。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/patrickassale/status/2044581766309060765">X / @patrickassale</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">人像</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Luxury Glam Beauty Portrait:, Beautiful Black woman, youthful spirit, creamy vanilla, silk press, mahogany red, subtle confidence, textured fabric, sapphire blue, minimal jewelry, beachside breeze, le...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2822.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2821" data-search="案例2821 低角度 pov 时尚大片 gpt-image-2 人像摄影提示词案例，聚焦「低角度 pov 时尚大片」的场景氛围、光线质感和人物造型。 x / @bubblebrain https://x.com/bubblebrain/status/2044705257004093537 gpt image 2 图片 摄影 人像 案例 analog 35mm film photography, high-fashion editorial portrait with intense on-camera direct flash (ccd hard flash style), intimate low-angle pov shot from slightly below (仰拍, around +15° upward angle), emphasizing long legs and elegant hourglass body proportions, 4:3 vertical format, 3/4 body shot," data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/zh/case/2821.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case6/output.jpg" alt="低角度 POV 时尚大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2821</span></span><span class="case-title-text">低角度 POV 时尚大片</span></h3>
+          <p class="case-summary">GPT-Image-2 人像摄影提示词案例，聚焦「低角度 POV 时尚大片」的场景氛围、光线质感和人物造型。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2044705257004093537">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">人像</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Analog 35mm film photography, high-fashion editorial portrait with intense on-camera direct flash (CCD hard flash style), intimate low-angle POV shot from slightly below (仰拍, around +15° upward angle)...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2821.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2820" data-search="案例2820 卧室镜自拍人像 gpt-image-2 人像摄影提示词案例，聚焦「卧室镜自拍人像」的场景氛围、光线质感和人物造型。 x / @shinning1010 https://x.com/shinning1010/status/2045002808903020962 gpt image 2 图片 摄影 人像 案例 a stunning 18-year-old chinese girl with a youthful, pure face and realistic skin texture, sitting on a cozy, slightly messy bed in her bedroom. she is taking a mirror selfie with a smartphone, capturing a natural and intimate moment. wearing casual gray loungewear and neat white crew socks. soft na" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/zh/case/2820.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case5/output.jpg" alt="卧室镜自拍人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2820</span></span><span class="case-title-text">卧室镜自拍人像</span></h3>
+          <p class="case-summary">GPT-Image-2 人像摄影提示词案例，聚焦「卧室镜自拍人像」的场景氛围、光线质感和人物造型。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Shinning1010/status/2045002808903020962">X / @Shinning1010</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">人像</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>A stunning 18-year-old Chinese girl with a youthful, pure face and realistic skin texture, sitting on a cozy, slightly messy bed in her bedroom. She is taking a mirror selfie with a smartphone, captur...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2820.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2819" data-search="案例2819 35mm 闪光灯时尚人像 gpt-image-2 人像摄影提示词案例，聚焦「35mm 闪光灯时尚人像」的场景氛围、光线质感和人物造型。 x / @bubblebrain https://x.com/bubblebrain/status/2045052982728016131 gpt image 2 图片 摄影 人像 案例 35mm color film photography with harsh direct on-camera flash, specular highlights on skin and clothing, strong catchlights in eyes, high contrast flash illumination, authentic film grain and color shift, high fashion fresh innocent basketball court editorial style, intimate first-person low-angle p" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/zh/case/2819.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case4/output.jpg" alt="35mm 闪光灯时尚人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2819</span></span><span class="case-title-text">35mm 闪光灯时尚人像</span></h3>
+          <p class="case-summary">GPT-Image-2 人像摄影提示词案例，聚焦「35mm 闪光灯时尚人像」的场景氛围、光线质感和人物造型。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2045052982728016131">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">人像</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>35mm color film photography with harsh direct on-camera flash, specular highlights on skin and clothing, strong catchlights in eyes, high contrast flash illumination, authentic film grain and color sh...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2819.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2818" data-search="案例2818 日式温泉旅馆人像 gpt-image-2 人像摄影提示词案例，聚焦「日式温泉旅馆人像」的场景氛围、光线质感和人物造型。 x / @bubblebrain https://x.com/bubblebrain/status/2045092449803284923 gpt image 2 图片 摄影 人像 案例 35mm film photography, warm vintage japanese onsen ryokan aesthetic, soft ambient wooden lantern lighting mixed with gentle natural window light, subtle film grain, gentle color shift, high atmosphere editorial style, intimate medium shot, early 20s beautiful chinese female idol with ultra-realistic" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/zh/case/2818.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case3/output.jpg" alt="日式温泉旅馆人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2818</span></span><span class="case-title-text">日式温泉旅馆人像</span></h3>
+          <p class="case-summary">GPT-Image-2 人像摄影提示词案例，聚焦「日式温泉旅馆人像」的场景氛围、光线质感和人物造型。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2045092449803284923">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">人像</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>35mm film photography, warm vintage Japanese onsen ryokan aesthetic, soft ambient wooden lantern lighting mixed with gentle natural window light, subtle film grain, gentle color shift, high atmosphere...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2818.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2817" data-search="案例2817 电影感极简人像 gpt-image-2 人像摄影提示词案例，聚焦「电影感极简人像」的场景氛围、光线质感和人物造型。 x / @iam_miharbi https://x.com/iam_miharbi/status/2045151354679665101 gpt image 2 图片 摄影 人像 案例 generate a cinematic minimal portrait of a solitary man standing in an intense orange to red gradient environment, strong silhouette lighting, deep shadow contrast, reflective glossy floor, symmetrical composition, minimal" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/zh/case/2817.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case2/output.jpg" alt="电影感极简人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2817</span></span><span class="case-title-text">电影感极简人像</span></h3>
+          <p class="case-summary">GPT-Image-2 人像摄影提示词案例，聚焦「电影感极简人像」的场景氛围、光线质感和人物造型。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iam_miharbi/status/2045151354679665101">X / @iam_miharbi</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">人像</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Generate a cinematic minimal portrait of a solitary man standing in an intense orange to red gradient environment, strong silhouette lighting, deep shadow contrast, reflective glossy floor, symmetrica...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2817.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2816" data-search="案例2816 便利店霓虹人像 gpt-image-2 人像摄影提示词案例，聚焦「便利店霓虹人像」的场景氛围、光线质感和人物造型。 x / @bubblebrain https://x.com/bubblebrain/status/2045167461147042202 gpt image 2 图片 摄影 人像 案例 35mm film photography with harsh convenience store fluorescent lighting mixed with colorful neon signs from outside, authentic film grain, high contrast, slight color cast, cinematic street editorial style, intimate medium shot, early 20s sexy chinese female idol with ultra-realistic delicate refine" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/zh/case/2816.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case1/output.jpg" alt="便利店霓虹人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2816</span></span><span class="case-title-text">便利店霓虹人像</span></h3>
+          <p class="case-summary">GPT-Image-2 人像摄影提示词案例，聚焦「便利店霓虹人像」的场景氛围、光线质感和人物造型。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2045167461147042202">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">人像</span><span class="tag">案例</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>35mm film photography with harsh convenience store fluorescent lighting mixed with colorful neon signs from outside, authentic film grain, high contrast, slight color cast, cinematic street editorial ...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2816.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2805" data-search="案例2805 gpt image 2城市春季海报设计 用gpt image 2生成2026广州春季宣传海报，双重曝光+s形构图，丝带幻化山河。 x / 李岳 https://x.com/liyue_ai/status/2045332620352119274 ai 设计 图片 教程 gpt image 2 一张充满新春喜庆氛围但不失高雅格调的 2026 城市宣传海报。 双重曝光，构图延续了s型的流动感； 在纯白的纹理背景右下角，一个身穿中国传统服饰的微缩人物正在挥舞着一条长长的红色丝绸舞带，这条红绸在空中舞动，不仅展现出丝绸的柔顺质感，更在向左上方飘动的过程中，奇幻地变形成了一条壮丽的山脉河流。 在这条“河流”中，叠加了一个有山有海河的广州城市手绘图，国潮，景色尽在眼底，壮阔雄伟，令人震撼。 广州的地标建筑(广州塔，珠江新城建筑群，珠江, 广州城里古建筑，游轮，白云山）。 云雾环绕，仙气缥缈，色彩丰富，结构复杂，细节丰富，但因为大面积的留白，画面依然显得清新脱俗，左下角排版着“spring 20" data-tags="AI|设计|图片|教程|GPT Image 2">
+      <a class="case-card-link" href="/zh/case/2805.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045332620352119274-1.jpg" alt="GPT Image 2城市春季海报设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2805</span></span><span class="case-title-text">GPT Image 2城市春季海报设计</span></h3>
+          <p class="case-summary">用GPT Image 2生成2026广州春季宣传海报，双重曝光+S形构图，丝带幻化山河。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045332620352119274">X / 李岳</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">设计</span><span class="tag">图片</span><span class="tag">教程</span><span class="tag">GPT Image 2</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张充满新春喜庆氛围但不失高雅格调的 2026 城市宣传海报。
+双重曝光，构图延续了S型的流动感；
+在纯白的纹理背景右下角，一个身穿中国传统服饰的微缩人物正在挥舞着一条长长的红色丝绸舞带，这条红绸在空中舞动，不仅展现出丝绸的柔顺质感，更在向左上方飘动的过程中，奇幻地变形成了一条壮丽的山脉河流。
+在这条“河流”中，叠加了一个有山有海河的广州城市手绘图，国潮，景色尽在眼底，壮阔雄伟，令人震撼。
+广州的...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2805.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag-gpt-image-2-html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

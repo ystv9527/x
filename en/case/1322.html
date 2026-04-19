@@ -7,11 +7,13 @@
     <title>&lt;instructions #1322 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="&lt;instructions Input word or concept Act as a Conceptual Sculptor. Generate a 3D typography render where the letters a...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1322.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1322.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1322.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845245">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023681">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("<instructions> \n输入单词或概念\n扮演概念雕塑家。生成一个3D排版渲染，字母由在物理上体现输入单词的材料构成。\n1. 材料与物理推断（即“DNA”）：\n分析输入单词以确定结构材料和内部物理特性：\n如果是虚无/以太类（例如：TIME、SOUL）：使用玻璃、黄铜与光。物理 = 流动、滴答、发光。\n如果是元素类（例如：FIRE、MAGMA）：使用黑色铁笼。物理 = 燃烧、滴落、冒烟。\n如果是有机类（例如：GROWTH、LIFE）：使用木制框架或玻璃生态罐。物理 = 生长、绽放、凝结。\n如果是工业类（例如：FACTORY、STEEL）：使用生锈的钢梁。物理 = 咬合运转的齿轮、蒸汽喷口。\n2. 容器：\n结构：字母是巨大的、三维结构框架。\n透明度：正面是开放的或透明的，以揭示内部机制。\n逻辑：框架必须看起来像为容纳内部的特定物质而建（例如：气体用厚玻璃；岩浆用厚重的铁）。\n3. 内部机制：\n内容：用该概念的活跃元素填充空心字母。\n示例（TIME）：沙子从T流向I；M中钟摆摆动；E中齿轮转动。\n示例（FIRE）：真实的火焰在F内部舔舐上升；I中煤炭发光；R中冒烟排放。\n连接性：管道、导线或藤蔓连接字母，将能量从一个字母传递到下一个。\n4. 叙事尺度：\n人物：微小的1:87比例人物与字母互动。\n推断：如果是“TIME”，人物在为时钟上弦；如果是“FIRE”，人物是铲煤的炉工；如果是“GROWTH”，人物是浇水的园丁。\n5. 光照与氛围：\n光源：光来自材料本身（例如：火焰余光、生物发光、霓虹）。\n环境：桌面/地面与主题相匹配（例如：FIRE 为焦黑木材；GROWTH 为覆盖苔藓的泥土）。\n输出：一张图像，高分辨率3D渲染，概念艺术美学。\n</instructions>", this)'>📋 Copy</button>
         </div>
-        <p>&lt;instructions&gt; <br>输入单词或概念<br>扮演概念雕塑家。生成一个3D排版渲染，字母由在物理上体现输入单词的材料构成。<br>1. 材料与物理推断（即“DNA”）：<br>分析输入单词以确定结构材料和内部物理特性：<br>如果是虚无/以太类（例如：TIME、SOUL）：使用玻璃、黄铜与光。物理 = 流动、滴答、发光。<br>如果是元素类（例如：FIRE、MAGMA）：使用黑色铁笼。物理 = 燃烧、滴落、冒烟。<br>如果是有机类（例如：GROWTH、LIFE）：使用木制框架或玻璃生态罐。物理 = 生长、绽放、凝结。<br>如果是工业类（例如：FACTORY、STEEL）：使用生锈的钢梁。物理 = 咬合运转的齿轮、蒸汽喷口。<br>2. 容器：<br>结构：字母是巨大的、三维结构框架。<br>透明度：正面是开放的或透明的，以揭示内部机制。<br>逻辑：框架必须看起来像为容纳内部的特定物质而建（例如：气体用厚玻璃；岩浆用厚重的铁）。<br>3. 内部机制：<br>内容：用该概念的活跃元素填充空心字母。<br>示例（TIME）：沙子从T流向I；M中钟摆摆动；E中齿轮转动。<br>示例（FIRE）：真实的火焰在F内部舔舐上升；I中煤炭发光；R中冒烟排放。<br>连接性：管道、导线或藤蔓连接字母，将能量从一个字母传递到下一个。<br>4. 叙事尺度：<br>人物：微小的1:87比例人物与字母互动。<br>推断：如果是“TIME”，人物在为时钟上弦；如果是“FIRE”，人物是铲煤的炉工；如果是“GROWTH”，人物是浇水的园丁。<br>5. 光照与氛围：<br>光源：光来自材料本身（例如：火焰余光、生物发光、霓虹）。<br>环境：桌面/地面与主题相匹配（例如：FIRE 为焦黑木材；GROWTH 为覆盖苔藓的泥土）。<br>输出：一张图像，高分辨率3D渲染，概念艺术美学。<br>&lt;/instructions&gt;</p>
+        <div data-nosnippet><p>&lt;instructions&gt; <br>输入单词或概念<br>扮演概念雕塑家。生成一个3D排版渲染，字母由在物理上体现输入单词的材料构成。<br>1. 材料与物理推断（即“DNA”）：<br>分析输入单词以确定结构材料和内部物理特性：<br>如果是虚无/以太类（例如：TIME、SOUL）：使用玻璃、黄铜与光。物理 = 流动、滴答、发光。<br>如果是元素类（例如：FIRE、MAGMA）：使用黑色铁笼。物理 = 燃烧、滴落、冒烟。<br>如果是有机类（例如：GROWTH、LIFE）：使用木制框架或玻璃生态罐。物理 = 生长、绽放、凝结。<br>如果是工业类（例如：FACTORY、STEEL）：使用生锈的钢梁。物理 = 咬合运转的齿轮、蒸汽喷口。<br>2. 容器：<br>结构：字母是巨大的、三维结构框架。<br>透明度：正面是开放的或透明的，以揭示内部机制。<br>逻辑：框架必须看起来像为容纳内部的特定物质而建（例如：气体用厚玻璃；岩浆用厚重的铁）。<br>3. 内部机制：<br>内容：用该概念的活跃元素填充空心字母。<br>示例（TIME）：沙子从T流向I；M中钟摆摆动；E中齿轮转动。<br>示例（FIRE）：真实的火焰在F内部舔舐上升；I中煤炭发光；R中冒烟排放。<br>连接性：管道、导线或藤蔓连接字母，将能量从一个字母传递到下一个。<br>4. 叙事尺度：<br>人物：微小的1:87比例人物与字母互动。<br>推断：如果是“TIME”，人物在为时钟上弦；如果是“FIRE”，人物是铲煤的炉工；如果是“GROWTH”，人物是浇水的园丁。<br>5. 光照与氛围：<br>光源：光来自材料本身（例如：火焰余光、生物发光、霓虹）。<br>环境：桌面/地面与主题相匹配（例如：FIRE 为焦黑木材；GROWTH 为覆盖苔藓的泥土）。<br>输出：一张图像，高分辨率3D渲染，概念艺术美学。<br>&lt;/instructions&gt;</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("<instructions> \nInput word or concept\nAct as a Conceptual Sculptor. Generate a 3D typography render where the letters are constructed from materials that Physically Embody the Input Word.\n1. Material & Physics Inference (The DNA):\nAnalyze the Input Word to determine the Structural Material and Internal Physics:\nIf Ethereal (e.g., TIME, SOUL): Use Glass, Brass, and Light. Physics = Flowing, ticking, glowing.\nIf Elemental (e.g., FIRE, MAGMA): Use Black Iron cages. Physics = Burning, dripping, smoking.\nIf Organic (e.g., GROWTH, LIFE): Use Wooden frames or Terrarium glass. Physics = Growing, blooming, condensation.\nIf Industrial (e.g., FACTORY, STEEL): Use Rusted Steel beams. Physics = Grinding gears, steam vents.\n2.  Container  :\nThe Structure: The letters are massive, 3D structural frames.\nThe Transparency: The front face is open or transparent to reveal the Internal Mechanism.\nThe Logic: The frame must look like it was built to contain the specific substance inside (e.g., thick glass for gas; heavy iron for magma).\n3. The Internal Mechanism :\nContent: Fill the hollow letters with the active element of the concept.\nExample (TIME): Sand pouring from T to I; Pendulums swinging in M; Gears turning in E.\nExample (FIRE): Real flames licking up the inside of F; Coals glowing in I; Smoke venting from R.\nConnectivity: Pipes, wires, or vines connect the letters, transferring the energy from one to the next.\n4. The Narrative Scale :\nThe Figures: Tiny 1:87 scale figures interact with the letters.\nInference: If \"TIME,\" figures are winding clocks. If \"FIRE,\" figures are stokers shoveling coal. If \"GROWTH,\" figures are gardeners watering plants.\n5. Lighting & Atmosphere:\nSource: The light comes from the Material itself (e.g., Fire glow, Bioluminescence, Neon).\nEnvironment: The table/floor matches the theme (e.g., Burnt wood for FIRE; Mossy earth for GROWTH).\nOutput: ONE image, High Resolution 3D Render, Conceptual Art Aesthetic.\n</instructions>", this)'>📋 Copy</button>
         </div>
-        <p>&lt;instructions&gt; <br>Input word or concept<br>Act as a Conceptual Sculptor. Generate a 3D typography render where the letters are constructed from materials that Physically Embody the Input Word.<br>1. Material &amp; Physics Inference (The DNA):<br>Analyze the Input Word to determine the Structural Material and Internal Physics:<br>If Ethereal (e.g., TIME, SOUL): Use Glass, Brass, and Light. Physics = Flowing, ticking, glowing.<br>If Elemental (e.g., FIRE, MAGMA): Use Black Iron cages. Physics = Burning, dripping, smoking.<br>If Organic (e.g., GROWTH, LIFE): Use Wooden frames or Terrarium glass. Physics = Growing, blooming, condensation.<br>If Industrial (e.g., FACTORY, STEEL): Use Rusted Steel beams. Physics = Grinding gears, steam vents.<br>2.  Container  :<br>The Structure: The letters are massive, 3D structural frames.<br>The Transparency: The front face is open or transparent to reveal the Internal Mechanism.<br>The Logic: The frame must look like it was built to contain the specific substance inside (e.g., thick glass for gas; heavy iron for magma).<br>3. The Internal Mechanism :<br>Content: Fill the hollow letters with the active element of the concept.<br>Example (TIME): Sand pouring from T to I; Pendulums swinging in M; Gears turning in E.<br>Example (FIRE): Real flames licking up the inside of F; Coals glowing in I; Smoke venting from R.<br>Connectivity: Pipes, wires, or vines connect the letters, transferring the energy from one to the next.<br>4. The Narrative Scale :<br>The Figures: Tiny 1:87 scale figures interact with the letters.<br>Inference: If &quot;TIME,&quot; figures are winding clocks. If &quot;FIRE,&quot; figures are stokers shoveling coal. If &quot;GROWTH,&quot; figures are gardeners watering plants.<br>5. Lighting &amp; Atmosphere:<br>Source: The light comes from the Material itself (e.g., Fire glow, Bioluminescence, Neon).<br>Environment: The table/floor matches the theme (e.g., Burnt wood for FIRE; Mossy earth for GROWTH).<br>Output: ONE image, High Resolution 3D Render, Conceptual Art Aesthetic.<br>&lt;/instructions&gt;</p>
+        <div data-nosnippet><p>&lt;instructions&gt; <br>Input word or concept<br>Act as a Conceptual Sculptor. Generate a 3D typography render where the letters are constructed from materials that Physically Embody the Input Word.<br>1. Material &amp; Physics Inference (The DNA):<br>Analyze the Input Word to determine the Structural Material and Internal Physics:<br>If Ethereal (e.g., TIME, SOUL): Use Glass, Brass, and Light. Physics = Flowing, ticking, glowing.<br>If Elemental (e.g., FIRE, MAGMA): Use Black Iron cages. Physics = Burning, dripping, smoking.<br>If Organic (e.g., GROWTH, LIFE): Use Wooden frames or Terrarium glass. Physics = Growing, blooming, condensation.<br>If Industrial (e.g., FACTORY, STEEL): Use Rusted Steel beams. Physics = Grinding gears, steam vents.<br>2.  Container  :<br>The Structure: The letters are massive, 3D structural frames.<br>The Transparency: The front face is open or transparent to reveal the Internal Mechanism.<br>The Logic: The frame must look like it was built to contain the specific substance inside (e.g., thick glass for gas; heavy iron for magma).<br>3. The Internal Mechanism :<br>Content: Fill the hollow letters with the active element of the concept.<br>Example (TIME): Sand pouring from T to I; Pendulums swinging in M; Gears turning in E.<br>Example (FIRE): Real flames licking up the inside of F; Coals glowing in I; Smoke venting from R.<br>Connectivity: Pipes, wires, or vines connect the letters, transferring the energy from one to the next.<br>4. The Narrative Scale :<br>The Figures: Tiny 1:87 scale figures interact with the letters.<br>Inference: If &quot;TIME,&quot; figures are winding clocks. If &quot;FIRE,&quot; figures are stokers shoveling coal. If &quot;GROWTH,&quot; figures are gardeners watering plants.<br>5. Lighting &amp; Atmosphere:<br>Source: The light comes from the Material itself (e.g., Fire glow, Bioluminescence, Neon).<br>Environment: The table/floor matches the theme (e.g., Burnt wood for FIRE; Mossy earth for GROWTH).<br>Output: ONE image, High Resolution 3D Render, Conceptual Art Aesthetic.<br>&lt;/instructions&gt;</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011736617174573428-1.jpg" alt="&lt;instructions" loading="lazy"><img src="/images/tweet-2011736617174573428-2.jpg" alt="&lt;instructions" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1322,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

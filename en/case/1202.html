@@ -7,11 +7,13 @@
     <title>Gemini Nano Banana Pro #1202 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Gemini Nano Banana Pro Prompt: { &quot;image prompt structure&quot;: { &quot;subject&quot;: { &quot;demographics&quot;: &quot; female celebrity &quot;hair&quot;:...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1202.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1202.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1202.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845365">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023705">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt_structure\": {\n    \"subject\": {\n      \"demographics\": \"女性名人\",\n      \"hair\": \"到肩的纹理短发，深金色发根渐变为蜂蜜金色波浪，凌乱风格\",\n      \"face\": \"五官对称，蓝色眼睛带翼形眼线，修饰整齐的眉毛，白皙肌肤可见质感和毛孔，裸色有光泽的嘴唇，柔和玫瑰色腮红\",\n      \"pose\": \"正面站立，头略微向左转，直视镜头，双臂自然垂放\",\n      \"expression\": \"端庄、自信、柔和的凝视，优雅\"\n    },\n    \"fashion\": {\n      \"garment\": \"淡冰蓝色定制缎面礼服\",\n      \"design_details\": [\n        \"深垂褶领口，饰以水晶镶边\",\n        \"细吊带\",\n        \"落肩式镶水晶手臂环/袖口\",\n        \"贴身胸衣\",\n        \"高光泽丝绸缎面面料\",\n        \"垂褶廓形\"\n      ],\n      \"jewelry\": [\n        \"精致钻石网球项链\",\n        \"大颗钻石耳钉\"\n      ]\n    },\n    \"environment\": {\n      \"location\": \"红毯活动，重复媒体背景墙\",\n      \"background\": \"深海军蓝或黑色的新闻背景墙，上面有白色重复标识（部分可见文字如 'glaad'），浅景深（散景）以突出主体\"\n    },\n    \"lighting\": {\n      \"type\": \"专业活动闪光摄影\",\n      \"qualities\": \"正面强光，高对比，缎面面料和水晶上的镜面高光，眼睛中清晰的高光点，最小阴影\"\n    },\n    \"technical_specifications\": {\n      \"camera_gear\": \"Sony A7R V 配 85mm f/1.4 GM 镜头\",\n      \"settings\": \"光圈 f/2.8，ISO 100，快门速度 1/200\",\n      \"style_modifiers\": [\n        \"超写实\",\n        \"超高细节\",\n        \"8k 分辨率\",\n        \"Raw 照片\",\n        \"次表面散射\",\n        \"时尚摄影\",\n        \"电影感照明\",\n        \"Masterpiece，比例 3.4，将女孩改为安娜·德·阿玛斯，礼服颜色应为红色\"\n      ]\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_prompt_structure&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;demographics&quot;: &quot;女性名人&quot;,<br>      &quot;hair&quot;: &quot;到肩的纹理短发，深金色发根渐变为蜂蜜金色波浪，凌乱风格&quot;,<br>      &quot;face&quot;: &quot;五官对称，蓝色眼睛带翼形眼线，修饰整齐的眉毛，白皙肌肤可见质感和毛孔，裸色有光泽的嘴唇，柔和玫瑰色腮红&quot;,<br>      &quot;pose&quot;: &quot;正面站立，头略微向左转，直视镜头，双臂自然垂放&quot;,<br>      &quot;expression&quot;: &quot;端庄、自信、柔和的凝视，优雅&quot;<br>    },<br>    &quot;fashion&quot;: {<br>      &quot;garment&quot;: &quot;淡冰蓝色定制缎面礼服&quot;,<br>      &quot;design_details&quot;: [<br>        &quot;深垂褶领口，饰以水晶镶边&quot;,<br>        &quot;细吊带&quot;,<br>        &quot;落肩式镶水晶手臂环/袖口&quot;,<br>        &quot;贴身胸衣&quot;,<br>        &quot;高光泽丝绸缎面面料&quot;,<br>        &quot;垂褶廓形&quot;<br>      ],<br>      &quot;jewelry&quot;: [<br>        &quot;精致钻石网球项链&quot;,<br>        &quot;大颗钻石耳钉&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;红毯活动，重复媒体背景墙&quot;,<br>      &quot;background&quot;: &quot;深海军蓝或黑色的新闻背景墙，上面有白色重复标识（部分可见文字如 &#39;glaad&#39;），浅景深（散景）以突出主体&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;专业活动闪光摄影&quot;,<br>      &quot;qualities&quot;: &quot;正面强光，高对比，缎面面料和水晶上的镜面高光，眼睛中清晰的高光点，最小阴影&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;camera_gear&quot;: &quot;Sony A7R V 配 85mm f/1.4 GM 镜头&quot;,<br>      &quot;settings&quot;: &quot;光圈 f/2.8，ISO 100，快门速度 1/200&quot;,<br>      &quot;style_modifiers&quot;: [<br>        &quot;超写实&quot;,<br>        &quot;超高细节&quot;,<br>        &quot;8k 分辨率&quot;,<br>        &quot;Raw 照片&quot;,<br>        &quot;次表面散射&quot;,<br>        &quot;时尚摄影&quot;,<br>        &quot;电影感照明&quot;,<br>        &quot;Masterpiece，比例 3.4，将女孩改为安娜·德·阿玛斯，礼服颜色应为红色&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt_structure&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;demographics&quot;: &quot;女性名人&quot;,<br>      &quot;hair&quot;: &quot;到肩的纹理短发，深金色发根渐变为蜂蜜金色波浪，凌乱风格&quot;,<br>      &quot;face&quot;: &quot;五官对称，蓝色眼睛带翼形眼线，修饰整齐的眉毛，白皙肌肤可见质感和毛孔，裸色有光泽的嘴唇，柔和玫瑰色腮红&quot;,<br>      &quot;pose&quot;: &quot;正面站立，头略微向左转，直视镜头，双臂自然垂放&quot;,<br>      &quot;expression&quot;: &quot;端庄、自信、柔和的凝视，优雅&quot;<br>    },<br>    &quot;fashion&quot;: {<br>      &quot;garment&quot;: &quot;淡冰蓝色定制缎面礼服&quot;,<br>      &quot;design_details&quot;: [<br>        &quot;深垂褶领口，饰以水晶镶边&quot;,<br>        &quot;细吊带&quot;,<br>        &quot;落肩式镶水晶手臂环/袖口&quot;,<br>        &quot;贴身胸衣&quot;,<br>        &quot;高光泽丝绸缎面面料&quot;,<br>        &quot;垂褶廓形&quot;<br>      ],<br>      &quot;jewelry&quot;: [<br>        &quot;精致钻石网球项链&quot;,<br>        &quot;大颗钻石耳钉&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;红毯活动，重复媒体背景墙&quot;,<br>      &quot;background&quot;: &quot;深海军蓝或黑色的新闻背景墙，上面有白色重复标识（部分可见文字如 &#39;glaad&#39;），浅景深（散景）以突出主体&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;专业活动闪光摄影&quot;,<br>      &quot;qualities&quot;: &quot;正面强光，高对比，缎面面料和水晶上的镜面高光，眼睛中清晰的高光点，最小阴影&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;camera_gear&quot;: &quot;Sony A7R V 配 85mm f/1.4 GM 镜头&quot;,<br>      &quot;settings&quot;: &quot;光圈 f/2.8，ISO 100，快门速度 1/200&quot;,<br>      &quot;style_modifiers&quot;: [<br>        &quot;超写实&quot;,<br>        &quot;超高细节&quot;,<br>        &quot;8k 分辨率&quot;,<br>        &quot;Raw 照片&quot;,<br>        &quot;次表面散射&quot;,<br>        &quot;时尚摄影&quot;,<br>        &quot;电影感照明&quot;,<br>        &quot;Masterpiece，比例 3.4，将女孩改为安娜·德·阿玛斯，礼服颜色应为红色&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Gemini Nano Banana Pro\n\nPrompt:\n\n{\n  \"image_prompt_structure\": {\n    \"subject\": {\n      \"demographics\": \" female celebrity \n      \"hair\": \"Shoulder-length textured bob, dark blonde roots fading to honey blonde waves, tousled style\",\n      \"face\": \"Symmetrical features, blue eyes with winged eyeliner, groomed brows, fair skin with visible texture and pores, nude glossy lips, soft rosy blush\",\n      \"pose\": \"Standing front-facing, head slightly turned to the left, direct eye contact, arms relaxed by sides\",\n      \"expression\": \"Poised, confident, soft glare, elegant\"\n    },\n    \"fashion\": {\n      \"garment\": \"Pale ice-blue custom satin gown\",\n      \"design_details\": [\n        \"Deep cowl neckline with crystal-embellished trim\",\n        \"Thin spaghetti straps\",\n        \"Off-the-shoulder crystal-encrusted arm bands/cuffs\",\n        \"Fitted bodice\",\n        \"High-sheen silk satin fabric\",\n        \"Draped silhouette\"\n      ],\n      \"jewelry\": [\n        \"Delicate diamond tennis necklace\",\n        \"Large diamond stud earrings\"\n      ]\n    },\n    \"environment\": {\n      \"location\": \"Red carpet event, step-and-repeat media wall\",\n      \"background\": \"Dark navy or black press wall with white repeated logos (partially visible text like 'glaad'), shallow depth of field (bokeh) to isolate subject\"\n    },\n    \"lighting\": {\n      \"type\": \"Professional event flash photography\",\n      \"qualities\": \"Bright frontal lighting, high contrast, specular highlights on the satin fabric and crystals, distinct catchlights in eyes, minimal shadows\"\n    },\n    \"technical_specifications\": {\n      \"camera_gear\": \"Sony A7R V with 85mm f/1.4 GM lens\",\n      \"settings\": \"f/2.8 aperture, ISO 100, shutter speed 1/200\",\n      \"style_modifiers\": [\n        \"Ultra photorealistic\",\n        \"Hyper-detailed\",\n        \"8k resolution\",\n        \"Raw photo\",\n        \"Subsurface scattering\",\n        \"Fashion photography\",\n        \"Cinematic lighting\",\n        \"Masterpiece\" Ratio 3.4 change the girl to Ana de Armas and the dress color should be red\n      ]\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>Gemini Nano Banana Pro</p><p>Prompt:</p><p>{<br>  &quot;image_prompt_structure&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;demographics&quot;: &quot; female celebrity <br>      &quot;hair&quot;: &quot;Shoulder-length textured bob, dark blonde roots fading to honey blonde waves, tousled style&quot;,<br>      &quot;face&quot;: &quot;Symmetrical features, blue eyes with winged eyeliner, groomed brows, fair skin with visible texture and pores, nude glossy lips, soft rosy blush&quot;,<br>      &quot;pose&quot;: &quot;Standing front-facing, head slightly turned to the left, direct eye contact, arms relaxed by sides&quot;,<br>      &quot;expression&quot;: &quot;Poised, confident, soft glare, elegant&quot;<br>    },<br>    &quot;fashion&quot;: {<br>      &quot;garment&quot;: &quot;Pale ice-blue custom satin gown&quot;,<br>      &quot;design_details&quot;: [<br>        &quot;Deep cowl neckline with crystal-embellished trim&quot;,<br>        &quot;Thin spaghetti straps&quot;,<br>        &quot;Off-the-shoulder crystal-encrusted arm bands/cuffs&quot;,<br>        &quot;Fitted bodice&quot;,<br>        &quot;High-sheen silk satin fabric&quot;,<br>        &quot;Draped silhouette&quot;<br>      ],<br>      &quot;jewelry&quot;: [<br>        &quot;Delicate diamond tennis necklace&quot;,<br>        &quot;Large diamond stud earrings&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Red carpet event, step-and-repeat media wall&quot;,<br>      &quot;background&quot;: &quot;Dark navy or black press wall with white repeated logos (partially visible text like &#39;glaad&#39;), shallow depth of field (bokeh) to isolate subject&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Professional event flash photography&quot;,<br>      &quot;qualities&quot;: &quot;Bright frontal lighting, high contrast, specular highlights on the satin fabric and crystals, distinct catchlights in eyes, minimal shadows&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;camera_gear&quot;: &quot;Sony A7R V with 85mm f/1.4 GM lens&quot;,<br>      &quot;settings&quot;: &quot;f/2.8 aperture, ISO 100, shutter speed 1/200&quot;,<br>      &quot;style_modifiers&quot;: [<br>        &quot;Ultra photorealistic&quot;,<br>        &quot;Hyper-detailed&quot;,<br>        &quot;8k resolution&quot;,<br>        &quot;Raw photo&quot;,<br>        &quot;Subsurface scattering&quot;,<br>        &quot;Fashion photography&quot;,<br>        &quot;Cinematic lighting&quot;,<br>        &quot;Masterpiece&quot; Ratio 3.4 change the girl to Ana de Armas and the dress color should be red<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>Gemini Nano Banana Pro</p><p>Prompt:</p><p>{<br>  &quot;image_prompt_structure&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;demographics&quot;: &quot; female celebrity <br>      &quot;hair&quot;: &quot;Shoulder-length textured bob, dark blonde roots fading to honey blonde waves, tousled style&quot;,<br>      &quot;face&quot;: &quot;Symmetrical features, blue eyes with winged eyeliner, groomed brows, fair skin with visible texture and pores, nude glossy lips, soft rosy blush&quot;,<br>      &quot;pose&quot;: &quot;Standing front-facing, head slightly turned to the left, direct eye contact, arms relaxed by sides&quot;,<br>      &quot;expression&quot;: &quot;Poised, confident, soft glare, elegant&quot;<br>    },<br>    &quot;fashion&quot;: {<br>      &quot;garment&quot;: &quot;Pale ice-blue custom satin gown&quot;,<br>      &quot;design_details&quot;: [<br>        &quot;Deep cowl neckline with crystal-embellished trim&quot;,<br>        &quot;Thin spaghetti straps&quot;,<br>        &quot;Off-the-shoulder crystal-encrusted arm bands/cuffs&quot;,<br>        &quot;Fitted bodice&quot;,<br>        &quot;High-sheen silk satin fabric&quot;,<br>        &quot;Draped silhouette&quot;<br>      ],<br>      &quot;jewelry&quot;: [<br>        &quot;Delicate diamond tennis necklace&quot;,<br>        &quot;Large diamond stud earrings&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Red carpet event, step-and-repeat media wall&quot;,<br>      &quot;background&quot;: &quot;Dark navy or black press wall with white repeated logos (partially visible text like &#39;glaad&#39;), shallow depth of field (bokeh) to isolate subject&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Professional event flash photography&quot;,<br>      &quot;qualities&quot;: &quot;Bright frontal lighting, high contrast, specular highlights on the satin fabric and crystals, distinct catchlights in eyes, minimal shadows&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;camera_gear&quot;: &quot;Sony A7R V with 85mm f/1.4 GM lens&quot;,<br>      &quot;settings&quot;: &quot;f/2.8 aperture, ISO 100, shutter speed 1/200&quot;,<br>      &quot;style_modifiers&quot;: [<br>        &quot;Ultra photorealistic&quot;,<br>        &quot;Hyper-detailed&quot;,<br>        &quot;8k resolution&quot;,<br>        &quot;Raw photo&quot;,<br>        &quot;Subsurface scattering&quot;,<br>        &quot;Fashion photography&quot;,<br>        &quot;Cinematic lighting&quot;,<br>        &quot;Masterpiece&quot; Ratio 3.4 change the girl to Ana de Armas and the dress color should be red<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011346041363423654-1.jpg" alt="Gemini Nano Banana Pro" loading="lazy"><img src="/images/tweet-2011346041363423654-2.jpg" alt="Gemini Nano Banana Pro" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1202,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

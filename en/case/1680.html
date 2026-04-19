@@ -7,11 +7,13 @@
     <title>&quot;image generation&quot;: { #1680 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image generation&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;young woman enjoying a calm self care moment&quot;, &quot;expression&quot;: &quot;re...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1680.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1680.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1680.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844888">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023605">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"subject\": {\n      \"description\": \"年轻女性享受宁静的自我护理时刻\",\n      \"expression\": \"放松、沉思、平和\",\n      \"face\": \"自然面部特征，均匀敷有灰色粘土面膜\",\n      \"skin\": \"自然肤色，质地柔和\"\n    },\n    \"hair\": {\n      \"style\": \"头发缠成白色毛巾包头\",\n      \"appearance\": \"清爽的水疗风格外观\"\n    },\n    \"outfit\": {\n      \"clothing\": \"白色浴袍\",\n      \"style\": \"简约、舒适、水疗美学\",\n      \"accessories\": \"小号金色圆环耳环，精致金项链\"\n    },\n    \"pose\": {\n      \"hands\": \"一只手握着陶瓷杯，另一只手轻触头侧\",\n      \"posture\": \"挺直且放松的姿态\"\n    },\n    \"props\": {\n      \"mug\": \"带可爱猫咪图案的白色陶瓷杯\",\n      \"theme\": \"早晨放松，健康护理日常\"\n    },\n    \"environment\": {\n      \"setting\": \"靠窗的明亮室内空间\",\n      \"background\": \"柔和的白色墙面，天然窗光和绿叶室内植物\",\n      \"mood\": \"平静、清新、简约\"\n    },\n    \"lighting\": {\n      \"type\": \"自然阳光\",\n      \"direction\": \"从窗户侧面照入\",\n      \"effect\": \"柔和的阴影，温暖的高光\"\n    },\n    \"camera\": {\n      \"style\": \"生活方式摄影\",\n      \"angle\": \"中近景\",\n      \"focus\": \"主体清晰对焦，背景柔和模糊\",\n      \"quality\": \"高分辨率，照片级真实感\"\n    },\n    \"aesthetic\": {\n      \"theme\": \"自我护理、健康、晨间例行\",\n      \"color_palette\": \"柔和白色、中性色调、自然绿色\",\n      \"vibe\": \"干净、宁静、奢华却简约\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;年轻女性享受宁静的自我护理时刻&quot;,<br>      &quot;expression&quot;: &quot;放松、沉思、平和&quot;,<br>      &quot;face&quot;: &quot;自然面部特征，均匀敷有灰色粘土面膜&quot;,<br>      &quot;skin&quot;: &quot;自然肤色，质地柔和&quot;<br>    },<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;头发缠成白色毛巾包头&quot;,<br>      &quot;appearance&quot;: &quot;清爽的水疗风格外观&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;白色浴袍&quot;,<br>      &quot;style&quot;: &quot;简约、舒适、水疗美学&quot;,<br>      &quot;accessories&quot;: &quot;小号金色圆环耳环，精致金项链&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;hands&quot;: &quot;一只手握着陶瓷杯，另一只手轻触头侧&quot;,<br>      &quot;posture&quot;: &quot;挺直且放松的姿态&quot;<br>    },<br>    &quot;props&quot;: {<br>      &quot;mug&quot;: &quot;带可爱猫咪图案的白色陶瓷杯&quot;,<br>      &quot;theme&quot;: &quot;早晨放松，健康护理日常&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;靠窗的明亮室内空间&quot;,<br>      &quot;background&quot;: &quot;柔和的白色墙面，天然窗光和绿叶室内植物&quot;,<br>      &quot;mood&quot;: &quot;平静、清新、简约&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;自然阳光&quot;,<br>      &quot;direction&quot;: &quot;从窗户侧面照入&quot;,<br>      &quot;effect&quot;: &quot;柔和的阴影，温暖的高光&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;style&quot;: &quot;生活方式摄影&quot;,<br>      &quot;angle&quot;: &quot;中近景&quot;,<br>      &quot;focus&quot;: &quot;主体清晰对焦，背景柔和模糊&quot;,<br>      &quot;quality&quot;: &quot;高分辨率，照片级真实感&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;theme&quot;: &quot;自我护理、健康、晨间例行&quot;,<br>      &quot;color_palette&quot;: &quot;柔和白色、中性色调、自然绿色&quot;,<br>      &quot;vibe&quot;: &quot;干净、宁静、奢华却简约&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;年轻女性享受宁静的自我护理时刻&quot;,<br>      &quot;expression&quot;: &quot;放松、沉思、平和&quot;,<br>      &quot;face&quot;: &quot;自然面部特征，均匀敷有灰色粘土面膜&quot;,<br>      &quot;skin&quot;: &quot;自然肤色，质地柔和&quot;<br>    },<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;头发缠成白色毛巾包头&quot;,<br>      &quot;appearance&quot;: &quot;清爽的水疗风格外观&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;白色浴袍&quot;,<br>      &quot;style&quot;: &quot;简约、舒适、水疗美学&quot;,<br>      &quot;accessories&quot;: &quot;小号金色圆环耳环，精致金项链&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;hands&quot;: &quot;一只手握着陶瓷杯，另一只手轻触头侧&quot;,<br>      &quot;posture&quot;: &quot;挺直且放松的姿态&quot;<br>    },<br>    &quot;props&quot;: {<br>      &quot;mug&quot;: &quot;带可爱猫咪图案的白色陶瓷杯&quot;,<br>      &quot;theme&quot;: &quot;早晨放松，健康护理日常&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;靠窗的明亮室内空间&quot;,<br>      &quot;background&quot;: &quot;柔和的白色墙面，天然窗光和绿叶室内植物&quot;,<br>      &quot;mood&quot;: &quot;平静、清新、简约&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;自然阳光&quot;,<br>      &quot;direction&quot;: &quot;从窗户侧面照入&quot;,<br>      &quot;effect&quot;: &quot;柔和的阴影，温暖的高光&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;style&quot;: &quot;生活方式摄影&quot;,<br>      &quot;angle&quot;: &quot;中近景&quot;,<br>      &quot;focus&quot;: &quot;主体清晰对焦，背景柔和模糊&quot;,<br>      &quot;quality&quot;: &quot;高分辨率，照片级真实感&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;theme&quot;: &quot;自我护理、健康、晨间例行&quot;,<br>      &quot;color_palette&quot;: &quot;柔和白色、中性色调、自然绿色&quot;,<br>      &quot;vibe&quot;: &quot;干净、宁静、奢华却简约&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"subject\": {\n      \"description\": \"young woman enjoying a calm self-care moment\",\n      \"expression\": \"relaxed, thoughtful, peaceful\",\n      \"face\": \"natural facial features with a gray clay face mask applied evenly\",\n      \"skin\": \"natural skin tone, soft texture\"\n    },\n    \"hair\": {\n      \"style\": \"hair wrapped in a white towel turban\",\n      \"appearance\": \"clean, spa-style look\"\n    },\n    \"outfit\": {\n      \"clothing\": \"white bathrobe\",\n      \"style\": \"minimal, cozy, spa aesthetic\",\n      \"accessories\": \"small gold hoop earrings, delicate gold necklace\"\n    },\n    \"pose\": {\n      \"hands\": \"one hand holding a ceramic mug, other hand lightly touching the side of the head\",\n      \"posture\": \"upright, relaxed stance\"\n    },\n    \"props\": {\n      \"mug\": \"white ceramic mug with a cute cat design\",\n      \"theme\": \"morning relaxation, wellness routine\"\n    },\n    \"environment\": {\n      \"setting\": \"bright indoor space near a window\",\n      \"background\": \"soft white wall with natural window light and leafy green houseplant\",\n      \"mood\": \"calm, fresh, minimal\"\n    },\n    \"lighting\": {\n      \"type\": \"natural sunlight\",\n      \"direction\": \"side-lit through a window\",\n      \"effect\": \"soft shadows, warm highlights\"\n    },\n    \"camera\": {\n      \"style\": \"lifestyle photography\",\n      \"angle\": \"medium close-up\",\n      \"focus\": \"sharp focus on subject, softly blurred background\",\n      \"quality\": \"high-resolution, photorealistic\"\n    },\n    \"aesthetic\": {\n      \"theme\": \"self-care, wellness, morning routine\",\n      \"color_palette\": \"soft whites, neutral tones, natural greens\",\n      \"vibe\": \"clean, peaceful, luxurious yet minimal\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;young woman enjoying a calm self-care moment&quot;,<br>      &quot;expression&quot;: &quot;relaxed, thoughtful, peaceful&quot;,<br>      &quot;face&quot;: &quot;natural facial features with a gray clay face mask applied evenly&quot;,<br>      &quot;skin&quot;: &quot;natural skin tone, soft texture&quot;<br>    },<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;hair wrapped in a white towel turban&quot;,<br>      &quot;appearance&quot;: &quot;clean, spa-style look&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;white bathrobe&quot;,<br>      &quot;style&quot;: &quot;minimal, cozy, spa aesthetic&quot;,<br>      &quot;accessories&quot;: &quot;small gold hoop earrings, delicate gold necklace&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;hands&quot;: &quot;one hand holding a ceramic mug, other hand lightly touching the side of the head&quot;,<br>      &quot;posture&quot;: &quot;upright, relaxed stance&quot;<br>    },<br>    &quot;props&quot;: {<br>      &quot;mug&quot;: &quot;white ceramic mug with a cute cat design&quot;,<br>      &quot;theme&quot;: &quot;morning relaxation, wellness routine&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;bright indoor space near a window&quot;,<br>      &quot;background&quot;: &quot;soft white wall with natural window light and leafy green houseplant&quot;,<br>      &quot;mood&quot;: &quot;calm, fresh, minimal&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;natural sunlight&quot;,<br>      &quot;direction&quot;: &quot;side-lit through a window&quot;,<br>      &quot;effect&quot;: &quot;soft shadows, warm highlights&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;style&quot;: &quot;lifestyle photography&quot;,<br>      &quot;angle&quot;: &quot;medium close-up&quot;,<br>      &quot;focus&quot;: &quot;sharp focus on subject, softly blurred background&quot;,<br>      &quot;quality&quot;: &quot;high-resolution, photorealistic&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;theme&quot;: &quot;self-care, wellness, morning routine&quot;,<br>      &quot;color_palette&quot;: &quot;soft whites, neutral tones, natural greens&quot;,<br>      &quot;vibe&quot;: &quot;clean, peaceful, luxurious yet minimal&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;young woman enjoying a calm self-care moment&quot;,<br>      &quot;expression&quot;: &quot;relaxed, thoughtful, peaceful&quot;,<br>      &quot;face&quot;: &quot;natural facial features with a gray clay face mask applied evenly&quot;,<br>      &quot;skin&quot;: &quot;natural skin tone, soft texture&quot;<br>    },<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;hair wrapped in a white towel turban&quot;,<br>      &quot;appearance&quot;: &quot;clean, spa-style look&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;white bathrobe&quot;,<br>      &quot;style&quot;: &quot;minimal, cozy, spa aesthetic&quot;,<br>      &quot;accessories&quot;: &quot;small gold hoop earrings, delicate gold necklace&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;hands&quot;: &quot;one hand holding a ceramic mug, other hand lightly touching the side of the head&quot;,<br>      &quot;posture&quot;: &quot;upright, relaxed stance&quot;<br>    },<br>    &quot;props&quot;: {<br>      &quot;mug&quot;: &quot;white ceramic mug with a cute cat design&quot;,<br>      &quot;theme&quot;: &quot;morning relaxation, wellness routine&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;bright indoor space near a window&quot;,<br>      &quot;background&quot;: &quot;soft white wall with natural window light and leafy green houseplant&quot;,<br>      &quot;mood&quot;: &quot;calm, fresh, minimal&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;natural sunlight&quot;,<br>      &quot;direction&quot;: &quot;side-lit through a window&quot;,<br>      &quot;effect&quot;: &quot;soft shadows, warm highlights&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;style&quot;: &quot;lifestyle photography&quot;,<br>      &quot;angle&quot;: &quot;medium close-up&quot;,<br>      &quot;focus&quot;: &quot;sharp focus on subject, softly blurred background&quot;,<br>      &quot;quality&quot;: &quot;high-resolution, photorealistic&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;theme&quot;: &quot;self-care, wellness, morning routine&quot;,<br>      &quot;color_palette&quot;: &quot;soft whites, neutral tones, natural greens&quot;,<br>      &quot;vibe&quot;: &quot;clean, peaceful, luxurious yet minimal&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2015284406307692759-1.jpg" alt="&quot;image generation&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1680,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

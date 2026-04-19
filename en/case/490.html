@@ -7,11 +7,13 @@
     <title>Typography logo design. #490 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Typography logo design — Nano Banana AI image generation case study">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/490.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/490.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/490.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846096">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023858">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一个 [OBJECT] 形状的文字插画，文字本身构成该形状——\n字体风格：粗体且活泼，填满整个轮廓\n文字沿对象的曲线和轮廓自然排列\n色彩：鲜明对比且契合主题\n背景：纯色，以突出主体形状\n风格：矢量风格，干净整洁\n分辨率高，适合海报格式\n长宽比：1:1\n> [!NOTE]\n> **将 [方括号] 中的文字改为您需要的物体**", this)'>📋 Copy</button>
         </div>
-        <p>创建一个 [OBJECT] 形状的文字插画，文字本身构成该形状——<br>字体风格：粗体且活泼，填满整个轮廓<br>文字沿对象的曲线和轮廓自然排列<br>色彩：鲜明对比且契合主题<br>背景：纯色，以突出主体形状<br>风格：矢量风格，干净整洁<br>分辨率高，适合海报格式<br>长宽比：1:1<br>&gt; [!NOTE]<br>&gt; **将 [方括号] 中的文字改为您需要的物体**</p>
+        <div data-nosnippet><p>创建一个 [OBJECT] 形状的文字插画，文字本身构成该形状——<br>字体风格：粗体且活泼，填满整个轮廓<br>文字沿对象的曲线和轮廓自然排列<br>色彩：鲜明对比且契合主题<br>背景：纯色，以突出主体形状<br>风格：矢量风格，干净整洁<br>分辨率高，适合海报格式<br>长宽比：1:1<br>&gt; [!NOTE]<br>&gt; **将 [方括号] 中的文字改为您需要的物体**</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a text illustration in the shape of a [OBJECT], with the text itself forming the shape—  \nFont style: bold and lively, filling the entire outline  \nText arranged naturally along the object's curves and contours  \nColors: vibrant contrast that matches the theme  \nBackground: solid color to highlight the main shape  \nStyle: vector style, clean and neat  \nHigh resolution, suitable for poster format  \nAspect ratio: 1:1  \n> [NOTE]  \n> **Replace the text inside [brackets] with the object you need**", this)'>📋 Copy</button>
         </div>
-        <p>Create a text illustration in the shape of a [OBJECT], with the text itself forming the shape—  <br>Font style: bold and lively, filling the entire outline  <br>Text arranged naturally along the object&#39;s curves and contours  <br>Colors: vibrant contrast that matches the theme  <br>Background: solid color to highlight the main shape  <br>Style: vector style, clean and neat  <br>High resolution, suitable for poster format  <br>Aspect ratio: 1:1  <br>&gt; [NOTE]  <br>&gt; **Replace the text inside [brackets] with the object you need**</p>
+        <div data-nosnippet><p>Create a text illustration in the shape of a [OBJECT], with the text itself forming the shape—  <br>Font style: bold and lively, filling the entire outline  <br>Text arranged naturally along the object&#39;s curves and contours  <br>Colors: vibrant contrast that matches the theme  <br>Background: solid color to highlight the main shape  <br>Style: vector style, clean and neat  <br>High resolution, suitable for poster format  <br>Aspect ratio: 1:1  <br>&gt; [NOTE]  <br>&gt; **Replace the text inside [brackets] with the object you need**</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/nano-case104-output.jpg" alt="字体logo设计" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 490,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

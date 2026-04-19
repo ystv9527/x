@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;A realistic, needle felted sculpture of a product... #891 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;A realistic, needle felted sculpture of a product from a photo, captured in a high detail macro studio s...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/891.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/891.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/891.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841417">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022586">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"基于照片的写实针毡产品雕塑，在高细节的微距工作室拍摄中呈现，带有异想天开的美学。\",\n  \"subject\": {\n    \"type\": \"针毡雕塑\",\n    \"based_on\": \"用户提供的产品照片\",\n    \"material\": \"柔软羊毛毡\",\n    \"attributes\": [\n      \"蓬松质感\",\n      \"手工毡制细节\",\n      \"柔和边缘\",\n      \"舒适外观\",\n      \"立体感\"\n    ]\n  },\n  \"photography\": {\n    \"shot_type\": \"工作室拍摄\",\n    \"focus\": \"微距对焦\",\n    \"detail_level\": \"高细节\"\n  },\n  \"lighting\": {\n    \"type\": \"柔和、漫射的光线\",\n    \"mood\": \"温暖且柔和\"\n  },\n  \"setting\": {\n    \"background\": \"简约的纯色粉彩背景\"\n  },\n  \"aesthetics\": {\n    \"overall_style\": \"异想天开且迷人\"\n  },\n  \"parameters\": {\n    \"aspect_ratio\": \"4:5\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;基于照片的写实针毡产品雕塑，在高细节的微距工作室拍摄中呈现，带有异想天开的美学。&quot;,<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;针毡雕塑&quot;,<br>    &quot;based_on&quot;: &quot;用户提供的产品照片&quot;,<br>    &quot;material&quot;: &quot;柔软羊毛毡&quot;,<br>    &quot;attributes&quot;: [<br>      &quot;蓬松质感&quot;,<br>      &quot;手工毡制细节&quot;,<br>      &quot;柔和边缘&quot;,<br>      &quot;舒适外观&quot;,<br>      &quot;立体感&quot;<br>    ]<br>  },<br>  &quot;photography&quot;: {<br>    &quot;shot_type&quot;: &quot;工作室拍摄&quot;,<br>    &quot;focus&quot;: &quot;微距对焦&quot;,<br>    &quot;detail_level&quot;: &quot;高细节&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和、漫射的光线&quot;,<br>    &quot;mood&quot;: &quot;温暖且柔和&quot;<br>  },<br>  &quot;setting&quot;: {<br>    &quot;background&quot;: &quot;简约的纯色粉彩背景&quot;<br>  },<br>  &quot;aesthetics&quot;: {<br>    &quot;overall_style&quot;: &quot;异想天开且迷人&quot;<br>  },<br>  &quot;parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;基于照片的写实针毡产品雕塑，在高细节的微距工作室拍摄中呈现，带有异想天开的美学。&quot;,<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;针毡雕塑&quot;,<br>    &quot;based_on&quot;: &quot;用户提供的产品照片&quot;,<br>    &quot;material&quot;: &quot;柔软羊毛毡&quot;,<br>    &quot;attributes&quot;: [<br>      &quot;蓬松质感&quot;,<br>      &quot;手工毡制细节&quot;,<br>      &quot;柔和边缘&quot;,<br>      &quot;舒适外观&quot;,<br>      &quot;立体感&quot;<br>    ]<br>  },<br>  &quot;photography&quot;: {<br>    &quot;shot_type&quot;: &quot;工作室拍摄&quot;,<br>    &quot;focus&quot;: &quot;微距对焦&quot;,<br>    &quot;detail_level&quot;: &quot;高细节&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和、漫射的光线&quot;,<br>    &quot;mood&quot;: &quot;温暖且柔和&quot;<br>  },<br>  &quot;setting&quot;: {<br>    &quot;background&quot;: &quot;简约的纯色粉彩背景&quot;<br>  },<br>  &quot;aesthetics&quot;: {<br>    &quot;overall_style&quot;: &quot;异想天开且迷人&quot;<br>  },<br>  &quot;parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"A realistic, needle-felted sculpture of a product from a photo, captured in a high-detail macro studio shot with a whimsical aesthetic.\",\n  \"subject\": {\n    \"type\": \"Needle-felted sculpture\",\n    \"based_on\": \"User-provided product photograph\",\n    \"material\": \"Soft wool felt\",\n    \"attributes\": [\n      \"Fluffy textures\",\n      \"Hand-felted details\",\n      \"Soft edges\",\n      \"Cozy appearance\",\n      \"3D look\"\n    ]\n  },\n  \"photography\": {\n    \"shot_type\": \"Studio shot\",\n    \"focus\": \"Macro focus\",\n    \"detail_level\": \"High detail\"\n  },\n  \"lighting\": {\n    \"type\": \"Soft, diffused lighting\",\n    \"mood\": \"Warm and gentle\"\n  },\n  \"setting\": {\n    \"background\": \"Minimal, solid pastel color\"\n  },\n  \"aesthetics\": {\n    \"overall_style\": \"Whimsical and charming\"\n  },\n  \"parameters\": {\n    \"aspect_ratio\": \"4:5\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;A realistic, needle-felted sculpture of a product from a photo, captured in a high-detail macro studio shot with a whimsical aesthetic.&quot;,<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;Needle-felted sculpture&quot;,<br>    &quot;based_on&quot;: &quot;User-provided product photograph&quot;,<br>    &quot;material&quot;: &quot;Soft wool felt&quot;,<br>    &quot;attributes&quot;: [<br>      &quot;Fluffy textures&quot;,<br>      &quot;Hand-felted details&quot;,<br>      &quot;Soft edges&quot;,<br>      &quot;Cozy appearance&quot;,<br>      &quot;3D look&quot;<br>    ]<br>  },<br>  &quot;photography&quot;: {<br>    &quot;shot_type&quot;: &quot;Studio shot&quot;,<br>    &quot;focus&quot;: &quot;Macro focus&quot;,<br>    &quot;detail_level&quot;: &quot;High detail&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Soft, diffused lighting&quot;,<br>    &quot;mood&quot;: &quot;Warm and gentle&quot;<br>  },<br>  &quot;setting&quot;: {<br>    &quot;background&quot;: &quot;Minimal, solid pastel color&quot;<br>  },<br>  &quot;aesthetics&quot;: {<br>    &quot;overall_style&quot;: &quot;Whimsical and charming&quot;<br>  },<br>  &quot;parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;A realistic, needle-felted sculpture of a product from a photo, captured in a high-detail macro studio shot with a whimsical aesthetic.&quot;,<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;Needle-felted sculpture&quot;,<br>    &quot;based_on&quot;: &quot;User-provided product photograph&quot;,<br>    &quot;material&quot;: &quot;Soft wool felt&quot;,<br>    &quot;attributes&quot;: [<br>      &quot;Fluffy textures&quot;,<br>      &quot;Hand-felted details&quot;,<br>      &quot;Soft edges&quot;,<br>      &quot;Cozy appearance&quot;,<br>      &quot;3D look&quot;<br>    ]<br>  },<br>  &quot;photography&quot;: {<br>    &quot;shot_type&quot;: &quot;Studio shot&quot;,<br>    &quot;focus&quot;: &quot;Macro focus&quot;,<br>    &quot;detail_level&quot;: &quot;High detail&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Soft, diffused lighting&quot;,<br>    &quot;mood&quot;: &quot;Warm and gentle&quot;<br>  },<br>  &quot;setting&quot;: {<br>    &quot;background&quot;: &quot;Minimal, solid pastel color&quot;<br>  },<br>  &quot;aesthetics&quot;: {<br>    &quot;overall_style&quot;: &quot;Whimsical and charming&quot;<br>  },<br>  &quot;parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009566056227238069-1.jpg" alt="&quot;prompt&quot;: &quot;A realistic, needle felted sculpture of a product..." loading="lazy"><img src="/images/tweet-2009566056227238069-2.jpg" alt="&quot;prompt&quot;: &quot;A realistic, needle felted sculpture of a product..." loading="lazy"><img src="/images/tweet-2009566056227238069-3.jpg" alt="&quot;prompt&quot;: &quot;A realistic, needle felted sculpture of a product..." loading="lazy"><img src="/images/tweet-2009566056227238069-4.jpg" alt="&quot;prompt&quot;: &quot;A realistic, needle felted sculpture of a product..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 891,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

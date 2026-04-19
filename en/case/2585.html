@@ -7,11 +7,13 @@
     <title>Create a 3 image vertical collage (aspect ratio 9:16) featuri... #2585 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create a 3 image vertical collage (aspect ratio 9:16) featuring Le Sserafim&#39;s Kim Chaewon, showcasing her distinct fe...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2585.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2585.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2585.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843927">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023405">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一幅 3 张图的竖直拼贴（纵横比 9:16），以 Le Sserafim 的 Kim Chaewon 为主题，展示她的独特特征和带齐刘海的短黑色波波头，穿着一件有光泽的樱桃红无肩带乳胶连衣裙。她手持一根红色棒棒糖摆姿势。\n图像 1：特写肖像 — Kim Chaewon 直视镜头，露出温柔、俏皮的微笑，光泽的双唇微微开启，红色棒棒糖靠近她的嘴唇。镜头突显她精致的五官和深色头发。暖色灯光、肤色平滑、浅景深、电影般的光晕。\n图像 2：中景 — Kim Chaewon 微微侧头，棒棒糖轻轻靠在唇边，深邃的眼神带着俏皮表情。短发轻柔飘动，呈现细微高光。她身着红色无肩带乳胶连衣裙。现代美学背景，柔和的粉红与红色色调。\n图像 3：侧面造型 — Kim Chaewon 回头看向镜头，一手将棒棒糖靠近下巴，展示她独特的侧脸，表情自信且带有挑逗感。红色乳胶连衣裙的材质质感可见。柔和的工作室光线、虚化背景、高级时尚编辑风格。\n整体风格：高分辨率、光泽感的杂志社编辑外观、柔和魅力妆容、樱桃红色主题、平滑皮肤修图、美学 Instagram 拼贴布局、图片之间干净的白色边框。", this)'>📋 Copy</button>
         </div>
-        <p>创建一幅 3 张图的竖直拼贴（纵横比 9:16），以 Le Sserafim 的 Kim Chaewon 为主题，展示她的独特特征和带齐刘海的短黑色波波头，穿着一件有光泽的樱桃红无肩带乳胶连衣裙。她手持一根红色棒棒糖摆姿势。<br>图像 1：特写肖像 — Kim Chaewon 直视镜头，露出温柔、俏皮的微笑，光泽的双唇微微开启，红色棒棒糖靠近她的嘴唇。镜头突显她精致的五官和深色头发。暖色灯光、肤色平滑、浅景深、电影般的光晕。<br>图像 2：中景 — Kim Chaewon 微微侧头，棒棒糖轻轻靠在唇边，深邃的眼神带着俏皮表情。短发轻柔飘动，呈现细微高光。她身着红色无肩带乳胶连衣裙。现代美学背景，柔和的粉红与红色色调。<br>图像 3：侧面造型 — Kim Chaewon 回头看向镜头，一手将棒棒糖靠近下巴，展示她独特的侧脸，表情自信且带有挑逗感。红色乳胶连衣裙的材质质感可见。柔和的工作室光线、虚化背景、高级时尚编辑风格。<br>整体风格：高分辨率、光泽感的杂志社编辑外观、柔和魅力妆容、樱桃红色主题、平滑皮肤修图、美学 Instagram 拼贴布局、图片之间干净的白色边框。</p>
+        <div data-nosnippet><p>创建一幅 3 张图的竖直拼贴（纵横比 9:16），以 Le Sserafim 的 Kim Chaewon 为主题，展示她的独特特征和带齐刘海的短黑色波波头，穿着一件有光泽的樱桃红无肩带乳胶连衣裙。她手持一根红色棒棒糖摆姿势。<br>图像 1：特写肖像 — Kim Chaewon 直视镜头，露出温柔、俏皮的微笑，光泽的双唇微微开启，红色棒棒糖靠近她的嘴唇。镜头突显她精致的五官和深色头发。暖色灯光、肤色平滑、浅景深、电影般的光晕。<br>图像 2：中景 — Kim Chaewon 微微侧头，棒棒糖轻轻靠在唇边，深邃的眼神带着俏皮表情。短发轻柔飘动，呈现细微高光。她身着红色无肩带乳胶连衣裙。现代美学背景，柔和的粉红与红色色调。<br>图像 3：侧面造型 — Kim Chaewon 回头看向镜头，一手将棒棒糖靠近下巴，展示她独特的侧脸，表情自信且带有挑逗感。红色乳胶连衣裙的材质质感可见。柔和的工作室光线、虚化背景、高级时尚编辑风格。<br>整体风格：高分辨率、光泽感的杂志社编辑外观、柔和魅力妆容、樱桃红色主题、平滑皮肤修图、美学 Instagram 拼贴布局、图片之间干净的白色边框。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a 3-image vertical collage (aspect ratio 9:16) featuring Le Sserafim's Kim Chaewon, showcasing her distinct features and short black bob with bangs, wearing a vibrant cherry-red strapless latex dress with a glossy finish. She is posing with a red lollipop.\nImage 1: Close-up portrait — Kim Chaewon looks directly at the camera with a soft, teasing smile, her glossy lips slightly parted, holding the red lollipop near her mouth. The shot highlights her precise features and dark hair. Warm lighting, smooth skin tones, shallow depth of field, cinematic glow.\nImage 2: Mid-shot — Kim Chaewon tilts her head slightly, the lollipop resting gently against her lips, a playful expression in her dark eyes. Her short hair is softly flowing, showing subtle highlights. She wears the red strapless latex dress. Modern aesthetic background with soft pink and red tones.\nImage 3: Side profile pose — Kim Chaewon looks over her shoulder while holding the lollipop near her chin, her distinctive profile on display with a confident and flirty expression. The texture of the red latex dress is visible. Soft studio lighting, blurred background, high-fashion editorial style.\nOverall Style: High-resolution, glossy magazine editorial look, soft glam makeup, cherry-red color theme, smooth skin retouching, aesthetic Instagram collage layout, clean white borders between images.", this)'>📋 Copy</button>
         </div>
-        <p>Create a 3-image vertical collage (aspect ratio 9:16) featuring Le Sserafim&#39;s Kim Chaewon, showcasing her distinct features and short black bob with bangs, wearing a vibrant cherry-red strapless latex dress with a glossy finish. She is posing with a red lollipop.<br>Image 1: Close-up portrait — Kim Chaewon looks directly at the camera with a soft, teasing smile, her glossy lips slightly parted, holding the red lollipop near her mouth. The shot highlights her precise features and dark hair. Warm lighting, smooth skin tones, shallow depth of field, cinematic glow.<br>Image 2: Mid-shot — Kim Chaewon tilts her head slightly, the lollipop resting gently against her lips, a playful expression in her dark eyes. Her short hair is softly flowing, showing subtle highlights. She wears the red strapless latex dress. Modern aesthetic background with soft pink and red tones.<br>Image 3: Side profile pose — Kim Chaewon looks over her shoulder while holding the lollipop near her chin, her distinctive profile on display with a confident and flirty expression. The texture of the red latex dress is visible. Soft studio lighting, blurred background, high-fashion editorial style.<br>Overall Style: High-resolution, glossy magazine editorial look, soft glam makeup, cherry-red color theme, smooth skin retouching, aesthetic Instagram collage layout, clean white borders between images.</p>
+        <div data-nosnippet><p>Create a 3-image vertical collage (aspect ratio 9:16) featuring Le Sserafim&#39;s Kim Chaewon, showcasing her distinct features and short black bob with bangs, wearing a vibrant cherry-red strapless latex dress with a glossy finish. She is posing with a red lollipop.<br>Image 1: Close-up portrait — Kim Chaewon looks directly at the camera with a soft, teasing smile, her glossy lips slightly parted, holding the red lollipop near her mouth. The shot highlights her precise features and dark hair. Warm lighting, smooth skin tones, shallow depth of field, cinematic glow.<br>Image 2: Mid-shot — Kim Chaewon tilts her head slightly, the lollipop resting gently against her lips, a playful expression in her dark eyes. Her short hair is softly flowing, showing subtle highlights. She wears the red strapless latex dress. Modern aesthetic background with soft pink and red tones.<br>Image 3: Side profile pose — Kim Chaewon looks over her shoulder while holding the lollipop near her chin, her distinctive profile on display with a confident and flirty expression. The texture of the red latex dress is visible. Soft studio lighting, blurred background, high-fashion editorial style.<br>Overall Style: High-resolution, glossy magazine editorial look, soft glam makeup, cherry-red color theme, smooth skin retouching, aesthetic Instagram collage layout, clean white borders between images.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2034002331340320770-1.jpg" alt="Create a 3 image vertical collage (aspect ratio 9:16) featuri..." loading="lazy"><img src="/images/tweet-2034002331340320770-2.jpg" alt="Create a 3 image vertical collage (aspect ratio 9:16) featuri..." loading="lazy"><img src="/images/tweet-2034002331340320770-3.jpg" alt="Create a 3 image vertical collage (aspect ratio 9:16) featuri..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2585,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

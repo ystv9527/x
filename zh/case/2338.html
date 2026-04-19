@@ -7,11 +7,13 @@
     <title>&quot;master prompt&quot;: { #2338 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;master prompt&quot;: { &quot;scene type&quot;: &quot;high speed commercial luxury shake photography&quot;, &quot;product&quot;: { &quot;type&quot;: &quot;elegant fr...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2338.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2338.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2338.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839998">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022251">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"master_prompt\": {\n    \"scene_type\": \"高速商业级奢华奶昔摄影\",\n    \"product\": {\n      \"type\": \"优雅的磨砂玻璃瓶，盛装绒滑的草莓奶昔\",\n      \"brand_name\": \"ROSÉ VELVET\",\n      \"label_design\": \"极简纵向腮红色标签，带有浮雕玫瑰金衬线字体\",\n      \"liquid_color\": \"奶油般的粉色，伴有天然草莓旋涡\"\n    },\n    \"composition\": {\n      \"action\": \"动态高速奶油飞溅爆炸\",\n      \"surrounding_elements\": [\n        \"厚实草莓奶昔的雕塑般波浪向外飞溅\",\n        \"丝滑草莓泥带状丝带悬浮在半空\",\n        \"悬浮的草莓新鲜半颗，籽粒可见，汁感十足\",\n        \"软粉状糖粉细腻扩散\",\n        \"捕捉光线的细小奶粉粉雾滴\"\n      ],\n      \"placement\": \"居中主角瓶身，在光滑的白色大理石表面呈现清晰倒影\"\n    },\n    \"lighting\": {\n      \"style\": \"奢华光泽感的工作室产品照明\",\n      \"effects\": [\n        \"锐利的轮廓灯线，勾勒瓶身轮廓\",\n        \"奶油飞溅和草莓表面呈现鲜明高光\",\n        \"背景柔和玫瑰色光晕，营造温暖与优雅\"\n      ]\n    },\n    \"color_palette\": {\n      \"background\": \"柔和的腮红粉渐变，渐变至柔和的香槟象牙色\",\n      \"accents\": \"新鲜草莓红、玫瑰金，以及奶油香草色调\"\n    },\n    \"technical_specs\": {\n      \"camera\": \"微距镜头，水平视角（与眼睛同高度）\",\n      \"shutter\": \"超高速冻结运动捕捉\",\n      \"depth_of_field\": \"对标签采用浅景深，动态飞溅元素轻微虚化\",\n      \"quality\": \"8K分辨率，超写实质感\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;scene_type&quot;: &quot;高速商业级奢华奶昔摄影&quot;,<br>    &quot;product&quot;: {<br>      &quot;type&quot;: &quot;优雅的磨砂玻璃瓶，盛装绒滑的草莓奶昔&quot;,<br>      &quot;brand_name&quot;: &quot;ROSÉ VELVET&quot;,<br>      &quot;label_design&quot;: &quot;极简纵向腮红色标签，带有浮雕玫瑰金衬线字体&quot;,<br>      &quot;liquid_color&quot;: &quot;奶油般的粉色，伴有天然草莓旋涡&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;action&quot;: &quot;动态高速奶油飞溅爆炸&quot;,<br>      &quot;surrounding_elements&quot;: [<br>        &quot;厚实草莓奶昔的雕塑般波浪向外飞溅&quot;,<br>        &quot;丝滑草莓泥带状丝带悬浮在半空&quot;,<br>        &quot;悬浮的草莓新鲜半颗，籽粒可见，汁感十足&quot;,<br>        &quot;软粉状糖粉细腻扩散&quot;,<br>        &quot;捕捉光线的细小奶粉粉雾滴&quot;<br>      ],<br>      &quot;placement&quot;: &quot;居中主角瓶身，在光滑的白色大理石表面呈现清晰倒影&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;奢华光泽感的工作室产品照明&quot;,<br>      &quot;effects&quot;: [<br>        &quot;锐利的轮廓灯线，勾勒瓶身轮廓&quot;,<br>        &quot;奶油飞溅和草莓表面呈现鲜明高光&quot;,<br>        &quot;背景柔和玫瑰色光晕，营造温暖与优雅&quot;<br>      ]<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;background&quot;: &quot;柔和的腮红粉渐变，渐变至柔和的香槟象牙色&quot;,<br>      &quot;accents&quot;: &quot;新鲜草莓红、玫瑰金，以及奶油香草色调&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera&quot;: &quot;微距镜头，水平视角（与眼睛同高度）&quot;,<br>      &quot;shutter&quot;: &quot;超高速冻结运动捕捉&quot;,<br>      &quot;depth_of_field&quot;: &quot;对标签采用浅景深，动态飞溅元素轻微虚化&quot;,<br>      &quot;quality&quot;: &quot;8K分辨率，超写实质感&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;scene_type&quot;: &quot;高速商业级奢华奶昔摄影&quot;,<br>    &quot;product&quot;: {<br>      &quot;type&quot;: &quot;优雅的磨砂玻璃瓶，盛装绒滑的草莓奶昔&quot;,<br>      &quot;brand_name&quot;: &quot;ROSÉ VELVET&quot;,<br>      &quot;label_design&quot;: &quot;极简纵向腮红色标签，带有浮雕玫瑰金衬线字体&quot;,<br>      &quot;liquid_color&quot;: &quot;奶油般的粉色，伴有天然草莓旋涡&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;action&quot;: &quot;动态高速奶油飞溅爆炸&quot;,<br>      &quot;surrounding_elements&quot;: [<br>        &quot;厚实草莓奶昔的雕塑般波浪向外飞溅&quot;,<br>        &quot;丝滑草莓泥带状丝带悬浮在半空&quot;,<br>        &quot;悬浮的草莓新鲜半颗，籽粒可见，汁感十足&quot;,<br>        &quot;软粉状糖粉细腻扩散&quot;,<br>        &quot;捕捉光线的细小奶粉粉雾滴&quot;<br>      ],<br>      &quot;placement&quot;: &quot;居中主角瓶身，在光滑的白色大理石表面呈现清晰倒影&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;奢华光泽感的工作室产品照明&quot;,<br>      &quot;effects&quot;: [<br>        &quot;锐利的轮廓灯线，勾勒瓶身轮廓&quot;,<br>        &quot;奶油飞溅和草莓表面呈现鲜明高光&quot;,<br>        &quot;背景柔和玫瑰色光晕，营造温暖与优雅&quot;<br>      ]<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;background&quot;: &quot;柔和的腮红粉渐变，渐变至柔和的香槟象牙色&quot;,<br>      &quot;accents&quot;: &quot;新鲜草莓红、玫瑰金，以及奶油香草色调&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera&quot;: &quot;微距镜头，水平视角（与眼睛同高度）&quot;,<br>      &quot;shutter&quot;: &quot;超高速冻结运动捕捉&quot;,<br>      &quot;depth_of_field&quot;: &quot;对标签采用浅景深，动态飞溅元素轻微虚化&quot;,<br>      &quot;quality&quot;: &quot;8K分辨率，超写实质感&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"master_prompt\": {\n    \"scene_type\": \"high-speed commercial luxury shake photography\",\n    \"product\": {\n      \"type\": \"elegant frosted glass bottle filled with velvety strawberry shake\",\n      \"brand_name\": \"ROSÉ VELVET\",\n      \"label_design\": \"minimalist vertical blush label with embossed rose-gold serif typography\",\n      \"liquid_color\": \"creamy pastel pink with natural strawberry swirls\"\n    },\n    \"composition\": {\n      \"action\": \"dynamic high-velocity creamy splash explosion\",\n      \"surrounding_elements\": [\n        \"sculptural waves of thick strawberry shake splashing outward\",\n        \"silky ribbons of strawberry puree suspended mid-air\",\n        \"floating fresh strawberry halves with visible seeds and juicy texture\",\n        \"soft dusting of powdered sugar diffusing delicately\",\n        \"fine droplets of creamy pink mist catching the light\"\n      ],\n      \"placement\": \"centered hero bottle with a crisp reflection on a polished white marble surface\"\n    },\n    \"lighting\": {\n      \"style\": \"luxury glossy studio product lighting\",\n      \"effects\": [\n        \"sharp rim lighting to define bottle silhouette\",\n        \"brilliant highlights on creamy splashes and glossy strawberry surfaces\",\n        \"soft rosy glow in the background for warmth and elegance\"\n      ]\n    },\n    \"color_palette\": {\n      \"background\": \"smooth gradient of blush pink fading into soft champagne ivory\",\n      \"accents\": \"fresh strawberry red, rose gold, and creamy vanilla tones\"\n    },\n    \"technical_specs\": {\n      \"camera\": \"macro lens, eye-level angle\",\n      \"shutter\": \"ultra-fast freeze-motion capture\",\n      \"depth_of_field\": \"shallow focus on the label, gentle blur on dynamic splash elements\",\n      \"quality\": \"8K resolution, ultra-photorealistic texture\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;scene_type&quot;: &quot;high-speed commercial luxury shake photography&quot;,<br>    &quot;product&quot;: {<br>      &quot;type&quot;: &quot;elegant frosted glass bottle filled with velvety strawberry shake&quot;,<br>      &quot;brand_name&quot;: &quot;ROSÉ VELVET&quot;,<br>      &quot;label_design&quot;: &quot;minimalist vertical blush label with embossed rose-gold serif typography&quot;,<br>      &quot;liquid_color&quot;: &quot;creamy pastel pink with natural strawberry swirls&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;action&quot;: &quot;dynamic high-velocity creamy splash explosion&quot;,<br>      &quot;surrounding_elements&quot;: [<br>        &quot;sculptural waves of thick strawberry shake splashing outward&quot;,<br>        &quot;silky ribbons of strawberry puree suspended mid-air&quot;,<br>        &quot;floating fresh strawberry halves with visible seeds and juicy texture&quot;,<br>        &quot;soft dusting of powdered sugar diffusing delicately&quot;,<br>        &quot;fine droplets of creamy pink mist catching the light&quot;<br>      ],<br>      &quot;placement&quot;: &quot;centered hero bottle with a crisp reflection on a polished white marble surface&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;luxury glossy studio product lighting&quot;,<br>      &quot;effects&quot;: [<br>        &quot;sharp rim lighting to define bottle silhouette&quot;,<br>        &quot;brilliant highlights on creamy splashes and glossy strawberry surfaces&quot;,<br>        &quot;soft rosy glow in the background for warmth and elegance&quot;<br>      ]<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;background&quot;: &quot;smooth gradient of blush pink fading into soft champagne ivory&quot;,<br>      &quot;accents&quot;: &quot;fresh strawberry red, rose gold, and creamy vanilla tones&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera&quot;: &quot;macro lens, eye-level angle&quot;,<br>      &quot;shutter&quot;: &quot;ultra-fast freeze-motion capture&quot;,<br>      &quot;depth_of_field&quot;: &quot;shallow focus on the label, gentle blur on dynamic splash elements&quot;,<br>      &quot;quality&quot;: &quot;8K resolution, ultra-photorealistic texture&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;scene_type&quot;: &quot;high-speed commercial luxury shake photography&quot;,<br>    &quot;product&quot;: {<br>      &quot;type&quot;: &quot;elegant frosted glass bottle filled with velvety strawberry shake&quot;,<br>      &quot;brand_name&quot;: &quot;ROSÉ VELVET&quot;,<br>      &quot;label_design&quot;: &quot;minimalist vertical blush label with embossed rose-gold serif typography&quot;,<br>      &quot;liquid_color&quot;: &quot;creamy pastel pink with natural strawberry swirls&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;action&quot;: &quot;dynamic high-velocity creamy splash explosion&quot;,<br>      &quot;surrounding_elements&quot;: [<br>        &quot;sculptural waves of thick strawberry shake splashing outward&quot;,<br>        &quot;silky ribbons of strawberry puree suspended mid-air&quot;,<br>        &quot;floating fresh strawberry halves with visible seeds and juicy texture&quot;,<br>        &quot;soft dusting of powdered sugar diffusing delicately&quot;,<br>        &quot;fine droplets of creamy pink mist catching the light&quot;<br>      ],<br>      &quot;placement&quot;: &quot;centered hero bottle with a crisp reflection on a polished white marble surface&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;luxury glossy studio product lighting&quot;,<br>      &quot;effects&quot;: [<br>        &quot;sharp rim lighting to define bottle silhouette&quot;,<br>        &quot;brilliant highlights on creamy splashes and glossy strawberry surfaces&quot;,<br>        &quot;soft rosy glow in the background for warmth and elegance&quot;<br>      ]<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;background&quot;: &quot;smooth gradient of blush pink fading into soft champagne ivory&quot;,<br>      &quot;accents&quot;: &quot;fresh strawberry red, rose gold, and creamy vanilla tones&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera&quot;: &quot;macro lens, eye-level angle&quot;,<br>      &quot;shutter&quot;: &quot;ultra-fast freeze-motion capture&quot;,<br>      &quot;depth_of_field&quot;: &quot;shallow focus on the label, gentle blur on dynamic splash elements&quot;,<br>      &quot;quality&quot;: &quot;8K resolution, ultra-photorealistic texture&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2028279420419752307-1.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"><img src="/images/tweet-2028279420419752307-2.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2338,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

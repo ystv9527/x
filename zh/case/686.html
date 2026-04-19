@@ -7,11 +7,13 @@
     <title>Create an infographic image of [LANDMARK], combining a real p... #686 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create an infographic image of [LANDMARK], combining a real photograph of the landmark with blueprint style technical...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/686.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/686.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/686.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841607">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022635">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("制作一张以 [LANDMARK] 为主题的信息图像，将地标的真实照片与蓝图风格的技术标注和图解叠加在图片上。在角落用手绘框呈现标题 “[LANDMARK]”。添加白色粉笔风格的素描，展示关键结构数据、重要尺寸、材料用量、内部示意图、荷载流向箭头、截面、平面图，以及显著的建筑或工程特征。风格：蓝图美学，照片上以白色线条绘制，具有技术/建筑标注风格，带有教育信息图的质感，并且能在标注之下看到真实环境。", this)'>📋 复制</button>
         </div>
-        <p>制作一张以 [LANDMARK] 为主题的信息图像，将地标的真实照片与蓝图风格的技术标注和图解叠加在图片上。在角落用手绘框呈现标题 “[LANDMARK]”。添加白色粉笔风格的素描，展示关键结构数据、重要尺寸、材料用量、内部示意图、荷载流向箭头、截面、平面图，以及显著的建筑或工程特征。风格：蓝图美学，照片上以白色线条绘制，具有技术/建筑标注风格，带有教育信息图的质感，并且能在标注之下看到真实环境。</p>
+        <div data-nosnippet><p>制作一张以 [LANDMARK] 为主题的信息图像，将地标的真实照片与蓝图风格的技术标注和图解叠加在图片上。在角落用手绘框呈现标题 “[LANDMARK]”。添加白色粉笔风格的素描，展示关键结构数据、重要尺寸、材料用量、内部示意图、荷载流向箭头、截面、平面图，以及显著的建筑或工程特征。风格：蓝图美学，照片上以白色线条绘制，具有技术/建筑标注风格，带有教育信息图的质感，并且能在标注之下看到真实环境。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an infographic image of [LANDMARK], combining a real photograph of the landmark with blueprint-style technical annotations and diagrams overlaid on the image. Include the title “[LANDMARK]” in a hand-drawn box in the corner. Add white chalk-style sketches showing key structural data, important measurements, material quantities, internal diagrams, load-flow arrows, cross-sections, floor plans, and notable architectural or engineering features. Style: blueprint aesthetic with white line drawings on the photograph, technical/architectural annotation style, educational infographic feel, with the real environment visible behind the annotations.", this)'>📋 复制</button>
         </div>
-        <p>Create an infographic image of [LANDMARK], combining a real photograph of the landmark with blueprint-style technical annotations and diagrams overlaid on the image. Include the title “[LANDMARK]” in a hand-drawn box in the corner. Add white chalk-style sketches showing key structural data, important measurements, material quantities, internal diagrams, load-flow arrows, cross-sections, floor plans, and notable architectural or engineering features. Style: blueprint aesthetic with white line drawings on the photograph, technical/architectural annotation style, educational infographic feel, with the real environment visible behind the annotations.</p>
+        <div data-nosnippet><p>Create an infographic image of [LANDMARK], combining a real photograph of the landmark with blueprint-style technical annotations and diagrams overlaid on the image. Include the title “[LANDMARK]” in a hand-drawn box in the corner. Add white chalk-style sketches showing key structural data, important measurements, material quantities, internal diagrams, load-flow arrows, cross-sections, floor plans, and notable architectural or engineering features. Style: blueprint aesthetic with white line drawings on the photograph, technical/architectural annotation style, educational infographic feel, with the real environment visible behind the annotations.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008190630317764651-1.jpg" alt="Create an infographic image of [LANDMARK], combining a real p..." loading="lazy"><img src="/images/tweet-2008190630317764651-2.jpg" alt="Create an infographic image of [LANDMARK], combining a real p..." loading="lazy"><img src="/images/tweet-2008190630317764651-3.jpg" alt="Create an infographic image of [LANDMARK], combining a real p..." loading="lazy"><img src="/images/tweet-2008190630317764651-4.jpg" alt="Create an infographic image of [LANDMARK], combining a real p..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 686,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

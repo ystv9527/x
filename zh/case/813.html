@@ -7,11 +7,13 @@
     <title>Concept: A hyper realistic 3D isometric view of a [INSERT LOC... #813 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Concept: A hyper realistic 3D isometric view of a [INSERT LOCATION] scene on a circular base. Subject (Visuals): A fu...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/813.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/813.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/813.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841485">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022606">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("概念：在圆形底座上的一个[插入地点]场景的超写实 3D 等轴测视角。\n主体（视觉）：一个全身、逼真的人类[插入描述]。\n* 纹理规则：主体必须具有“活人皮肤”纹理（次表面散射、毛孔、自然瑕疵）。\n* 重要：他不是玩具/洋娃娃。他看起来像被真实人物插入场景中。\n* 姿势：[插入姿势，例如：自然坐着]。\n\n构图与比例（关键）：\n* 相机：等轴测广角镜头（全景）。确保整个圆形底座、主体和所有道具都在画面内可见。\n* 比例：完美的相对比例。道具（例如：踏板车、桌子等）必须与人物尺寸相符。不要把人物弄得巨大或把道具做得很小。\n\n环境：主体背后是一个真实的[插入墙/建筑]局部。\n* 材质：真实的风化纹理（砖、混凝土、木材），不是涂漆的模型纹理。\n\n道具：\n* [插入道具1，例如：复古维斯帕]（真实金属与镀铬质感）。\n* [插入道具2，例如：比萨和葡萄酒]（真实食物质感）。\n* *注意：* 确保所有道具都存在并紧贴在底座上。\n\n技术规格：Unreal Engine 5 渲染风格，8k 分辨率，全局光照，光线追踪，整个场景清晰对焦（大景深），纯中性灰背景。\n\n负面提示：玩具、塑料、洋娃娃、动作人偶、粘土、树脂、浅景深（模糊）、特写、裁切、比例畸变、巨大头部、卡通化、缺肢、未完成。", this)'>📋 复制</button>
         </div>
-        <p>概念：在圆形底座上的一个[插入地点]场景的超写实 3D 等轴测视角。<br>主体（视觉）：一个全身、逼真的人类[插入描述]。<br>* 纹理规则：主体必须具有“活人皮肤”纹理（次表面散射、毛孔、自然瑕疵）。<br>* 重要：他不是玩具/洋娃娃。他看起来像被真实人物插入场景中。<br>* 姿势：[插入姿势，例如：自然坐着]。</p><p>构图与比例（关键）：<br>* 相机：等轴测广角镜头（全景）。确保整个圆形底座、主体和所有道具都在画面内可见。<br>* 比例：完美的相对比例。道具（例如：踏板车、桌子等）必须与人物尺寸相符。不要把人物弄得巨大或把道具做得很小。</p><p>环境：主体背后是一个真实的[插入墙/建筑]局部。<br>* 材质：真实的风化纹理（砖、混凝土、木材），不是涂漆的模型纹理。</p><p>道具：<br>* [插入道具1，例如：复古维斯帕]（真实金属与镀铬质感）。<br>* [插入道具2，例如：比萨和葡萄酒]（真实食物质感）。<br>* *注意：* 确保所有道具都存在并紧贴在底座上。</p><p>技术规格：Unreal Engine 5 渲染风格，8k 分辨率，全局光照，光线追踪，整个场景清晰对焦（大景深），纯中性灰背景。</p><p>负面提示：玩具、塑料、洋娃娃、动作人偶、粘土、树脂、浅景深（模糊）、特写、裁切、比例畸变、巨大头部、卡通化、缺肢、未完成。</p>
+        <div data-nosnippet><p>概念：在圆形底座上的一个[插入地点]场景的超写实 3D 等轴测视角。<br>主体（视觉）：一个全身、逼真的人类[插入描述]。<br>* 纹理规则：主体必须具有“活人皮肤”纹理（次表面散射、毛孔、自然瑕疵）。<br>* 重要：他不是玩具/洋娃娃。他看起来像被真实人物插入场景中。<br>* 姿势：[插入姿势，例如：自然坐着]。</p><p>构图与比例（关键）：<br>* 相机：等轴测广角镜头（全景）。确保整个圆形底座、主体和所有道具都在画面内可见。<br>* 比例：完美的相对比例。道具（例如：踏板车、桌子等）必须与人物尺寸相符。不要把人物弄得巨大或把道具做得很小。</p><p>环境：主体背后是一个真实的[插入墙/建筑]局部。<br>* 材质：真实的风化纹理（砖、混凝土、木材），不是涂漆的模型纹理。</p><p>道具：<br>* [插入道具1，例如：复古维斯帕]（真实金属与镀铬质感）。<br>* [插入道具2，例如：比萨和葡萄酒]（真实食物质感）。<br>* *注意：* 确保所有道具都存在并紧贴在底座上。</p><p>技术规格：Unreal Engine 5 渲染风格，8k 分辨率，全局光照，光线追踪，整个场景清晰对焦（大景深），纯中性灰背景。</p><p>负面提示：玩具、塑料、洋娃娃、动作人偶、粘土、树脂、浅景深（模糊）、特写、裁切、比例畸变、巨大头部、卡通化、缺肢、未完成。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Concept: A hyper-realistic 3D isometric view of a [INSERT LOCATION] scene on a circular base.\nSubject (Visuals): A full-body, realistic human [INSERT DESCRIPTION].\n* Texture Rule: The subject must have \"Living Human Skin\" texture (subsurface scattering, pores, natural imperfections).\n* Important: He is NOT a toy/doll. He looks like a real person inserted into the scene.\n* Pose: [INSERT POSE, e.g., Sitting naturally].\n\nComposition & Scale (Crucial):\n* Camera: Isometric wide shot (Full view). ensure the entire circular base, the subject, and all props are visible within the frame.\n* Proportions: PERFECT RELATIVE SCALE. The props (e.g., scooter, table etc.) must be the correct size relative to the human. Do not make the human giant or the props tiny.\n\nEnvironment: A realistic section of a [INSERT WALL/BUILDING] behind the subject.\n* Material: Real weathered textures (brick, cement, wood), not painted model textures.\n\nProps:\n* [INSERT PROP 1, e.g., Vintage Vespa] (Real metal and chrome texture).\n* [INSERT PROP 2, e.g., Pizza and Wine] (Real food texture).\n* *Note:* Ensure all props are present and grounded on the base.\n\nTechnical Specs: Unreal Engine 5 render style, 8k resolution, global illumination, raytracing, sharp focus on the entire scene (deep depth of field), solid neutral grey background.\n\nNegative Prompt: Toy, plastic, doll, action figure, clay, resin, shallow depth of field (blur), close-up, cropped, distorted proportions, giant head, cartoonish, missing limbs, unfinished.", this)'>📋 复制</button>
         </div>
-        <p>Concept: A hyper-realistic 3D isometric view of a [INSERT LOCATION] scene on a circular base.<br>Subject (Visuals): A full-body, realistic human [INSERT DESCRIPTION].<br>* Texture Rule: The subject must have &quot;Living Human Skin&quot; texture (subsurface scattering, pores, natural imperfections).<br>* Important: He is NOT a toy/doll. He looks like a real person inserted into the scene.<br>* Pose: [INSERT POSE, e.g., Sitting naturally].</p><p>Composition &amp; Scale (Crucial):<br>* Camera: Isometric wide shot (Full view). ensure the entire circular base, the subject, and all props are visible within the frame.<br>* Proportions: PERFECT RELATIVE SCALE. The props (e.g., scooter, table etc.) must be the correct size relative to the human. Do not make the human giant or the props tiny.</p><p>Environment: A realistic section of a [INSERT WALL/BUILDING] behind the subject.<br>* Material: Real weathered textures (brick, cement, wood), not painted model textures.</p><p>Props:<br>* [INSERT PROP 1, e.g., Vintage Vespa] (Real metal and chrome texture).<br>* [INSERT PROP 2, e.g., Pizza and Wine] (Real food texture).<br>* *Note:* Ensure all props are present and grounded on the base.</p><p>Technical Specs: Unreal Engine 5 render style, 8k resolution, global illumination, raytracing, sharp focus on the entire scene (deep depth of field), solid neutral grey background.</p><p>Negative Prompt: Toy, plastic, doll, action figure, clay, resin, shallow depth of field (blur), close-up, cropped, distorted proportions, giant head, cartoonish, missing limbs, unfinished.</p>
+        <div data-nosnippet><p>Concept: A hyper-realistic 3D isometric view of a [INSERT LOCATION] scene on a circular base.<br>Subject (Visuals): A full-body, realistic human [INSERT DESCRIPTION].<br>* Texture Rule: The subject must have &quot;Living Human Skin&quot; texture (subsurface scattering, pores, natural imperfections).<br>* Important: He is NOT a toy/doll. He looks like a real person inserted into the scene.<br>* Pose: [INSERT POSE, e.g., Sitting naturally].</p><p>Composition &amp; Scale (Crucial):<br>* Camera: Isometric wide shot (Full view). ensure the entire circular base, the subject, and all props are visible within the frame.<br>* Proportions: PERFECT RELATIVE SCALE. The props (e.g., scooter, table etc.) must be the correct size relative to the human. Do not make the human giant or the props tiny.</p><p>Environment: A realistic section of a [INSERT WALL/BUILDING] behind the subject.<br>* Material: Real weathered textures (brick, cement, wood), not painted model textures.</p><p>Props:<br>* [INSERT PROP 1, e.g., Vintage Vespa] (Real metal and chrome texture).<br>* [INSERT PROP 2, e.g., Pizza and Wine] (Real food texture).<br>* *Note:* Ensure all props are present and grounded on the base.</p><p>Technical Specs: Unreal Engine 5 render style, 8k resolution, global illumination, raytracing, sharp focus on the entire scene (deep depth of field), solid neutral grey background.</p><p>Negative Prompt: Toy, plastic, doll, action figure, clay, resin, shallow depth of field (blur), close-up, cropped, distorted proportions, giant head, cartoonish, missing limbs, unfinished.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008952931484098637-1.jpg" alt="Concept: A hyper realistic 3D isometric view of a [INSERT LOC..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 813,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

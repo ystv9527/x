@@ -7,11 +7,13 @@
     <title>&quot;meta data&quot;: { #1575 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;meta data&quot;: { &quot;prompt version&quot;: &quot;2.0&quot;, &quot;use case&quot;: &quot;High Fashion Photorealistic Image Generation&quot;, &quot;main subject c...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1575.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1575.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1575.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840762">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022423">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta_data\": {\n    \"prompt_version\": \"2.0\",\n    \"use_case\": \"高端时尚写实图像生成\",\n    \"main_subject_count\": 1,\n    \"reference_image\": {\n      \"face_consistency\": true,\n      \"instruction\": \"使用参考图片中的相同面孔，不改变面部特征\"\n    }\n  },\n  \"subject_layer\": {\n    \"anatomy\": {\n      \"gender\": \"女性\",\n      \"age_group\": \"年轻成人\",\n      \"ethnicity\": \"西方\",\n      \"build\": \"苗条、优雅\"\n    },\n    \"pose_expression\": {\n      \"pose\": \"全身肖像，身体微微转开，回头望向镜头\",\n      \"expression\": \"柔和、迷人、自信\"\n    },\n    \"hair_makeup\": {\n      \"hair\": {\n        \"color\": \"金色\",\n        \"length\": \"长发\",\n        \"style\": \"顺滑，自然披落于肩上\"\n      },\n      \"makeup\": {\n        \"eyes\": \"柔和的翼状眼线\",\n        \"lips\": \"有光泽、光感的唇妆\",\n        \"overall_style\": \"精致的编辑风格魅力妆容\"\n      }\n    },\n    \"wardrobe\": {\n      \"outfit\": \"浅粉色缎面迷你连衣裙\",\n      \"design_details\": [\n        \"结构化束腰背部\",\n        \"系带细节\",\n        \"水晶花卉镶饰散落于面料上\"\n      ],\n      \"material_texture\": \"高品质缎面，带有细腻光泽\",\n      \"embellishments\": \"闪亮的水钻，细节清晰\"\n    }\n  },\n  \"photography_style\": {\n    \"aesthetic\": \"1990年代复古编辑风格\",\n    \"camera_effects\": [\n      \"细腻的胶片颗粒感\",\n      \"高对比度\",\n      \"温暖、饱和的色调\"\n    ],\n    \"lighting\": {\n      \"type\": \"直射硬闪光\",\n      \"effect\": \"在背景上产生轻微阴影\",\n      \"vibe\": \"狗仔风格/一次性相机外观\"\n    },\n    \"background\": {\n      \"setting\": \"纯色摄影棚墙面\",\n      \"color\": \"米白色\"\n    },\n    \"focus_details\": [\n      \"对束腰系带清晰对焦\",\n      \"缎面纹理清晰可见\",\n      \"水钻反光清晰\"\n    ]\n  },\n  \"image_quality\": {\n    \"realism\": \"照片级写实\",\n    \"resolution\": \"超高清\",\n    \"detail_level\": \"编辑级的清晰度与质感\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta_data&quot;: {<br>    &quot;prompt_version&quot;: &quot;2.0&quot;,<br>    &quot;use_case&quot;: &quot;高端时尚写实图像生成&quot;,<br>    &quot;main_subject_count&quot;: 1,<br>    &quot;reference_image&quot;: {<br>      &quot;face_consistency&quot;: true,<br>      &quot;instruction&quot;: &quot;使用参考图片中的相同面孔，不改变面部特征&quot;<br>    }<br>  },<br>  &quot;subject_layer&quot;: {<br>    &quot;anatomy&quot;: {<br>      &quot;gender&quot;: &quot;女性&quot;,<br>      &quot;age_group&quot;: &quot;年轻成人&quot;,<br>      &quot;ethnicity&quot;: &quot;西方&quot;,<br>      &quot;build&quot;: &quot;苗条、优雅&quot;<br>    },<br>    &quot;pose_expression&quot;: {<br>      &quot;pose&quot;: &quot;全身肖像，身体微微转开，回头望向镜头&quot;,<br>      &quot;expression&quot;: &quot;柔和、迷人、自信&quot;<br>    },<br>    &quot;hair_makeup&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;金色&quot;,<br>        &quot;length&quot;: &quot;长发&quot;,<br>        &quot;style&quot;: &quot;顺滑，自然披落于肩上&quot;<br>      },<br>      &quot;makeup&quot;: {<br>        &quot;eyes&quot;: &quot;柔和的翼状眼线&quot;,<br>        &quot;lips&quot;: &quot;有光泽、光感的唇妆&quot;,<br>        &quot;overall_style&quot;: &quot;精致的编辑风格魅力妆容&quot;<br>      }<br>    },<br>    &quot;wardrobe&quot;: {<br>      &quot;outfit&quot;: &quot;浅粉色缎面迷你连衣裙&quot;,<br>      &quot;design_details&quot;: [<br>        &quot;结构化束腰背部&quot;,<br>        &quot;系带细节&quot;,<br>        &quot;水晶花卉镶饰散落于面料上&quot;<br>      ],<br>      &quot;material_texture&quot;: &quot;高品质缎面，带有细腻光泽&quot;,<br>      &quot;embellishments&quot;: &quot;闪亮的水钻，细节清晰&quot;<br>    }<br>  },<br>  &quot;photography_style&quot;: {<br>    &quot;aesthetic&quot;: &quot;1990年代复古编辑风格&quot;,<br>    &quot;camera_effects&quot;: [<br>      &quot;细腻的胶片颗粒感&quot;,<br>      &quot;高对比度&quot;,<br>      &quot;温暖、饱和的色调&quot;<br>    ],<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;直射硬闪光&quot;,<br>      &quot;effect&quot;: &quot;在背景上产生轻微阴影&quot;,<br>      &quot;vibe&quot;: &quot;狗仔风格/一次性相机外观&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;setting&quot;: &quot;纯色摄影棚墙面&quot;,<br>      &quot;color&quot;: &quot;米白色&quot;<br>    },<br>    &quot;focus_details&quot;: [<br>      &quot;对束腰系带清晰对焦&quot;,<br>      &quot;缎面纹理清晰可见&quot;,<br>      &quot;水钻反光清晰&quot;<br>    ]<br>  },<br>  &quot;image_quality&quot;: {<br>    &quot;realism&quot;: &quot;照片级写实&quot;,<br>    &quot;resolution&quot;: &quot;超高清&quot;,<br>    &quot;detail_level&quot;: &quot;编辑级的清晰度与质感&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta_data&quot;: {<br>    &quot;prompt_version&quot;: &quot;2.0&quot;,<br>    &quot;use_case&quot;: &quot;高端时尚写实图像生成&quot;,<br>    &quot;main_subject_count&quot;: 1,<br>    &quot;reference_image&quot;: {<br>      &quot;face_consistency&quot;: true,<br>      &quot;instruction&quot;: &quot;使用参考图片中的相同面孔，不改变面部特征&quot;<br>    }<br>  },<br>  &quot;subject_layer&quot;: {<br>    &quot;anatomy&quot;: {<br>      &quot;gender&quot;: &quot;女性&quot;,<br>      &quot;age_group&quot;: &quot;年轻成人&quot;,<br>      &quot;ethnicity&quot;: &quot;西方&quot;,<br>      &quot;build&quot;: &quot;苗条、优雅&quot;<br>    },<br>    &quot;pose_expression&quot;: {<br>      &quot;pose&quot;: &quot;全身肖像，身体微微转开，回头望向镜头&quot;,<br>      &quot;expression&quot;: &quot;柔和、迷人、自信&quot;<br>    },<br>    &quot;hair_makeup&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;金色&quot;,<br>        &quot;length&quot;: &quot;长发&quot;,<br>        &quot;style&quot;: &quot;顺滑，自然披落于肩上&quot;<br>      },<br>      &quot;makeup&quot;: {<br>        &quot;eyes&quot;: &quot;柔和的翼状眼线&quot;,<br>        &quot;lips&quot;: &quot;有光泽、光感的唇妆&quot;,<br>        &quot;overall_style&quot;: &quot;精致的编辑风格魅力妆容&quot;<br>      }<br>    },<br>    &quot;wardrobe&quot;: {<br>      &quot;outfit&quot;: &quot;浅粉色缎面迷你连衣裙&quot;,<br>      &quot;design_details&quot;: [<br>        &quot;结构化束腰背部&quot;,<br>        &quot;系带细节&quot;,<br>        &quot;水晶花卉镶饰散落于面料上&quot;<br>      ],<br>      &quot;material_texture&quot;: &quot;高品质缎面，带有细腻光泽&quot;,<br>      &quot;embellishments&quot;: &quot;闪亮的水钻，细节清晰&quot;<br>    }<br>  },<br>  &quot;photography_style&quot;: {<br>    &quot;aesthetic&quot;: &quot;1990年代复古编辑风格&quot;,<br>    &quot;camera_effects&quot;: [<br>      &quot;细腻的胶片颗粒感&quot;,<br>      &quot;高对比度&quot;,<br>      &quot;温暖、饱和的色调&quot;<br>    ],<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;直射硬闪光&quot;,<br>      &quot;effect&quot;: &quot;在背景上产生轻微阴影&quot;,<br>      &quot;vibe&quot;: &quot;狗仔风格/一次性相机外观&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;setting&quot;: &quot;纯色摄影棚墙面&quot;,<br>      &quot;color&quot;: &quot;米白色&quot;<br>    },<br>    &quot;focus_details&quot;: [<br>      &quot;对束腰系带清晰对焦&quot;,<br>      &quot;缎面纹理清晰可见&quot;,<br>      &quot;水钻反光清晰&quot;<br>    ]<br>  },<br>  &quot;image_quality&quot;: {<br>    &quot;realism&quot;: &quot;照片级写实&quot;,<br>    &quot;resolution&quot;: &quot;超高清&quot;,<br>    &quot;detail_level&quot;: &quot;编辑级的清晰度与质感&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta_data\": {\n    \"prompt_version\": \"2.0\",\n    \"use_case\": \"High-Fashion Photorealistic Image Generation\",\n    \"main_subject_count\": 1,\n    \"reference_image\": {\n      \"face_consistency\": true,\n      \"instruction\": \"Use the same face from the reference image without changing facial features\"\n    }\n  },\n  \"subject_layer\": {\n    \"anatomy\": {\n      \"gender\": \"Female\",\n      \"age_group\": \"Young adult\",\n      \"ethnicity\": \"Western\",\n      \"build\": \"Slim, elegant\"\n    },\n    \"pose_expression\": {\n      \"pose\": \"Full-body portrait, body angled away, looking over her shoulder toward the camera\",\n      \"expression\": \"Soft, glamorous, confident\"\n    },\n    \"hair_makeup\": {\n      \"hair\": {\n        \"color\": \"Blonde\",\n        \"length\": \"Long\",\n        \"style\": \"Smooth, flowing naturally over shoulders\"\n      },\n      \"makeup\": {\n        \"eyes\": \"Soft winged eyeliner\",\n        \"lips\": \"Glossy, luminous finish\",\n        \"overall_style\": \"Polished, editorial glamour\"\n      }\n    },\n    \"wardrobe\": {\n      \"outfit\": \"Pale pink satin mini dress\",\n      \"design_details\": [\n        \"Structured corset back\",\n        \"Lace-up detailing\",\n        \"Crystal floral embellishments scattered across fabric\"\n      ],\n      \"material_texture\": \"High-quality satin with subtle sheen\",\n      \"embellishments\": \"Shimmering rhinestones with sharp detail\"\n    }\n  },\n  \"photography_style\": {\n    \"aesthetic\": \"1990s vintage editorial\",\n    \"camera_effects\": [\n      \"Subtle film grain\",\n      \"High contrast\",\n      \"Warm, saturated color tones\"\n    ],\n    \"lighting\": {\n      \"type\": \"Direct hard flash\",\n      \"effect\": \"Creates slight shadow on background\",\n      \"vibe\": \"Paparazzi / disposable camera look\"\n    },\n    \"background\": {\n      \"setting\": \"Plain studio wall\",\n      \"color\": \"Off-white\"\n    },\n    \"focus_details\": [\n      \"Sharp focus on corset lacing\",\n      \"Visible satin texture\",\n      \"Crisp rhinestone reflections\"\n    ]\n  },\n  \"image_quality\": {\n    \"realism\": \"Photorealistic\",\n    \"resolution\": \"Ultra high-definition\",\n    \"detail_level\": \"Editorial-grade clarity and texture\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta_data&quot;: {<br>    &quot;prompt_version&quot;: &quot;2.0&quot;,<br>    &quot;use_case&quot;: &quot;High-Fashion Photorealistic Image Generation&quot;,<br>    &quot;main_subject_count&quot;: 1,<br>    &quot;reference_image&quot;: {<br>      &quot;face_consistency&quot;: true,<br>      &quot;instruction&quot;: &quot;Use the same face from the reference image without changing facial features&quot;<br>    }<br>  },<br>  &quot;subject_layer&quot;: {<br>    &quot;anatomy&quot;: {<br>      &quot;gender&quot;: &quot;Female&quot;,<br>      &quot;age_group&quot;: &quot;Young adult&quot;,<br>      &quot;ethnicity&quot;: &quot;Western&quot;,<br>      &quot;build&quot;: &quot;Slim, elegant&quot;<br>    },<br>    &quot;pose_expression&quot;: {<br>      &quot;pose&quot;: &quot;Full-body portrait, body angled away, looking over her shoulder toward the camera&quot;,<br>      &quot;expression&quot;: &quot;Soft, glamorous, confident&quot;<br>    },<br>    &quot;hair_makeup&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Blonde&quot;,<br>        &quot;length&quot;: &quot;Long&quot;,<br>        &quot;style&quot;: &quot;Smooth, flowing naturally over shoulders&quot;<br>      },<br>      &quot;makeup&quot;: {<br>        &quot;eyes&quot;: &quot;Soft winged eyeliner&quot;,<br>        &quot;lips&quot;: &quot;Glossy, luminous finish&quot;,<br>        &quot;overall_style&quot;: &quot;Polished, editorial glamour&quot;<br>      }<br>    },<br>    &quot;wardrobe&quot;: {<br>      &quot;outfit&quot;: &quot;Pale pink satin mini dress&quot;,<br>      &quot;design_details&quot;: [<br>        &quot;Structured corset back&quot;,<br>        &quot;Lace-up detailing&quot;,<br>        &quot;Crystal floral embellishments scattered across fabric&quot;<br>      ],<br>      &quot;material_texture&quot;: &quot;High-quality satin with subtle sheen&quot;,<br>      &quot;embellishments&quot;: &quot;Shimmering rhinestones with sharp detail&quot;<br>    }<br>  },<br>  &quot;photography_style&quot;: {<br>    &quot;aesthetic&quot;: &quot;1990s vintage editorial&quot;,<br>    &quot;camera_effects&quot;: [<br>      &quot;Subtle film grain&quot;,<br>      &quot;High contrast&quot;,<br>      &quot;Warm, saturated color tones&quot;<br>    ],<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Direct hard flash&quot;,<br>      &quot;effect&quot;: &quot;Creates slight shadow on background&quot;,<br>      &quot;vibe&quot;: &quot;Paparazzi / disposable camera look&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;setting&quot;: &quot;Plain studio wall&quot;,<br>      &quot;color&quot;: &quot;Off-white&quot;<br>    },<br>    &quot;focus_details&quot;: [<br>      &quot;Sharp focus on corset lacing&quot;,<br>      &quot;Visible satin texture&quot;,<br>      &quot;Crisp rhinestone reflections&quot;<br>    ]<br>  },<br>  &quot;image_quality&quot;: {<br>    &quot;realism&quot;: &quot;Photorealistic&quot;,<br>    &quot;resolution&quot;: &quot;Ultra high-definition&quot;,<br>    &quot;detail_level&quot;: &quot;Editorial-grade clarity and texture&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta_data&quot;: {<br>    &quot;prompt_version&quot;: &quot;2.0&quot;,<br>    &quot;use_case&quot;: &quot;High-Fashion Photorealistic Image Generation&quot;,<br>    &quot;main_subject_count&quot;: 1,<br>    &quot;reference_image&quot;: {<br>      &quot;face_consistency&quot;: true,<br>      &quot;instruction&quot;: &quot;Use the same face from the reference image without changing facial features&quot;<br>    }<br>  },<br>  &quot;subject_layer&quot;: {<br>    &quot;anatomy&quot;: {<br>      &quot;gender&quot;: &quot;Female&quot;,<br>      &quot;age_group&quot;: &quot;Young adult&quot;,<br>      &quot;ethnicity&quot;: &quot;Western&quot;,<br>      &quot;build&quot;: &quot;Slim, elegant&quot;<br>    },<br>    &quot;pose_expression&quot;: {<br>      &quot;pose&quot;: &quot;Full-body portrait, body angled away, looking over her shoulder toward the camera&quot;,<br>      &quot;expression&quot;: &quot;Soft, glamorous, confident&quot;<br>    },<br>    &quot;hair_makeup&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Blonde&quot;,<br>        &quot;length&quot;: &quot;Long&quot;,<br>        &quot;style&quot;: &quot;Smooth, flowing naturally over shoulders&quot;<br>      },<br>      &quot;makeup&quot;: {<br>        &quot;eyes&quot;: &quot;Soft winged eyeliner&quot;,<br>        &quot;lips&quot;: &quot;Glossy, luminous finish&quot;,<br>        &quot;overall_style&quot;: &quot;Polished, editorial glamour&quot;<br>      }<br>    },<br>    &quot;wardrobe&quot;: {<br>      &quot;outfit&quot;: &quot;Pale pink satin mini dress&quot;,<br>      &quot;design_details&quot;: [<br>        &quot;Structured corset back&quot;,<br>        &quot;Lace-up detailing&quot;,<br>        &quot;Crystal floral embellishments scattered across fabric&quot;<br>      ],<br>      &quot;material_texture&quot;: &quot;High-quality satin with subtle sheen&quot;,<br>      &quot;embellishments&quot;: &quot;Shimmering rhinestones with sharp detail&quot;<br>    }<br>  },<br>  &quot;photography_style&quot;: {<br>    &quot;aesthetic&quot;: &quot;1990s vintage editorial&quot;,<br>    &quot;camera_effects&quot;: [<br>      &quot;Subtle film grain&quot;,<br>      &quot;High contrast&quot;,<br>      &quot;Warm, saturated color tones&quot;<br>    ],<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Direct hard flash&quot;,<br>      &quot;effect&quot;: &quot;Creates slight shadow on background&quot;,<br>      &quot;vibe&quot;: &quot;Paparazzi / disposable camera look&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;setting&quot;: &quot;Plain studio wall&quot;,<br>      &quot;color&quot;: &quot;Off-white&quot;<br>    },<br>    &quot;focus_details&quot;: [<br>      &quot;Sharp focus on corset lacing&quot;,<br>      &quot;Visible satin texture&quot;,<br>      &quot;Crisp rhinestone reflections&quot;<br>    ]<br>  },<br>  &quot;image_quality&quot;: {<br>    &quot;realism&quot;: &quot;Photorealistic&quot;,<br>    &quot;resolution&quot;: &quot;Ultra high-definition&quot;,<br>    &quot;detail_level&quot;: &quot;Editorial-grade clarity and texture&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2013218438341394581-1.jpg" alt="&quot;meta data&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1575,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

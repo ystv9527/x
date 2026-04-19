@@ -7,11 +7,13 @@
     <title>高品质3D动画幻灯片与肖像创作展示 #542 | Gem Nana AI 提示词库</title>
     <meta name="description" content="本推文介绍了由Google Gemini Nano Banana AI生成的高分辨率3D动画幻灯片与肖像，包括细腻的角色细节、光影效果和丰富的纹理，展现了先进的数字艺术与动画技术应用。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/542.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/542.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/542.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841756">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022670">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("1. 这是一幅高质量的 3D 数字动画风格插画，描绘了一位年轻女子，她有着一双碧绿的大眼睛和一头略显凌乱、被阳光亲吻过的棕色头发。她神情温柔而沉思，鼻梁上点缀着淡淡的雀斑。她身穿一件质朴的赤陶色短袖衬衫和一条做旧的蓝色牛仔裤。\r\n布景和灯光：\r\n她倚靠在一堵古朴斑驳的木栅栏或谷仓墙上，栅栏或谷仓的墙壁由竖直的木板组成。傍晚时分，阳光温暖而灿烂，洒在她头发周围，形成柔和的轮廓光。背景中是模糊的绿草（散景效果），赋予画面电影般的景深。\r\n技术细节：\r\n采用 8K 分辨率渲染、光线追踪、电影级光照、鲜艳色彩、木材和织物纹理高度精细，角色设计灵感源自皮克斯和迪士尼。\r\n2. 这是一幅高清 3D 动画风格的肖像画，描绘了一位年轻女孩，她有着蓬松凌乱的深棕色头发和明亮的绿色眼睛。她的鼻子和脸颊上点缀着淡淡的雀斑，笑容温暖自然。她身着叠穿的服装：奶油色 T 恤外搭一件敞开的橄榄绿色衬衫，下身穿着牛仔裤，腰间系着一条复古的棕色皮带。她随意地倚靠在一段斑驳的、油漆剥落的古朴木栅栏上。温暖的日落阳光洒在她头发上，营造出柔和的光影效果，带来一种电影般的温馨氛围。8K 分辨率，皮克斯风格的画面，纹理细节丰富。", this)'>📋 复制</button>
         </div>
-        <p>1. 这是一幅高质量的 3D 数字动画风格插画，描绘了一位年轻女子，她有着一双碧绿的大眼睛和一头略显凌乱、被阳光亲吻过的棕色头发。她神情温柔而沉思，鼻梁上点缀着淡淡的雀斑。她身穿一件质朴的赤陶色短袖衬衫和一条做旧的蓝色牛仔裤。<br>布景和灯光：<br>她倚靠在一堵古朴斑驳的木栅栏或谷仓墙上，栅栏或谷仓的墙壁由竖直的木板组成。傍晚时分，阳光温暖而灿烂，洒在她头发周围，形成柔和的轮廓光。背景中是模糊的绿草（散景效果），赋予画面电影般的景深。<br>技术细节：<br>采用 8K 分辨率渲染、光线追踪、电影级光照、鲜艳色彩、木材和织物纹理高度精细，角色设计灵感源自皮克斯和迪士尼。<br>2. 这是一幅高清 3D 动画风格的肖像画，描绘了一位年轻女孩，她有着蓬松凌乱的深棕色头发和明亮的绿色眼睛。她的鼻子和脸颊上点缀着淡淡的雀斑，笑容温暖自然。她身着叠穿的服装：奶油色 T 恤外搭一件敞开的橄榄绿色衬衫，下身穿着牛仔裤，腰间系着一条复古的棕色皮带。她随意地倚靠在一段斑驳的、油漆剥落的古朴木栅栏上。温暖的日落阳光洒在她头发上，营造出柔和的光影效果，带来一种电影般的温馨氛围。8K 分辨率，皮克斯风格的画面，纹理细节丰富。</p>
+        <div data-nosnippet><p>1. 这是一幅高质量的 3D 数字动画风格插画，描绘了一位年轻女子，她有着一双碧绿的大眼睛和一头略显凌乱、被阳光亲吻过的棕色头发。她神情温柔而沉思，鼻梁上点缀着淡淡的雀斑。她身穿一件质朴的赤陶色短袖衬衫和一条做旧的蓝色牛仔裤。<br>布景和灯光：<br>她倚靠在一堵古朴斑驳的木栅栏或谷仓墙上，栅栏或谷仓的墙壁由竖直的木板组成。傍晚时分，阳光温暖而灿烂，洒在她头发周围，形成柔和的轮廓光。背景中是模糊的绿草（散景效果），赋予画面电影般的景深。<br>技术细节：<br>采用 8K 分辨率渲染、光线追踪、电影级光照、鲜艳色彩、木材和织物纹理高度精细，角色设计灵感源自皮克斯和迪士尼。<br>2. 这是一幅高清 3D 动画风格的肖像画，描绘了一位年轻女孩，她有着蓬松凌乱的深棕色头发和明亮的绿色眼睛。她的鼻子和脸颊上点缀着淡淡的雀斑，笑容温暖自然。她身着叠穿的服装：奶油色 T 恤外搭一件敞开的橄榄绿色衬衫，下身穿着牛仔裤，腰间系着一条复古的棕色皮带。她随意地倚靠在一段斑驳的、油漆剥落的古朴木栅栏上。温暖的日落阳光洒在她头发上，营造出柔和的光影效果，带来一种电影般的温馨氛围。8K 分辨率，皮克斯风格的画面，纹理细节丰富。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Making some 3D animated slides. 制作一些 3D 动画幻灯片。  By Google Gemini Nano Banana ai. \r\nPrompt由 Google Gemini Nano Banana ai 提供。提示  1. A high-quality 3D digital animation style illustration of a young woman with large, expressive green eyes and messy, sun-kissed brown hair. She has a gentle, pensive expression with light freckles across her nose. She is wearing a rustic, textured terracotta-colored short-sleeved shirt and weathered blue denim jeans.\r\n​Setting and Lighting:\r\nShe is leaning against a rustic, weathered wooden fence or barn wall made of vertical planks. The scene is bathed in the warm, golden glow of a late afternoon 'golden hour' sun, creating soft rim lighting around her hair. The background shows blurred green grass (bokeh effect), giving the image a cinematic depth of field.\"\r\n​Technical Details:\r\nRendered in 8k resolution, Ray Tracing, cinematic lighting, vibrant colors, highly detailed textures on the wood and fabric, Pixar and Disney-inspired character design.\r\n2. A high-definition 3D animation style portrait of a young girl with messy, voluminous dark brown hair and bright green eyes. She has light freckles across her nose and cheeks and a warm, natural smile. She is wearing a layered outfit: a cream-colored t-shirt under an open olive green button-down shirt, paired with denim jeans and a rustic brown leather belt. She is leaning casually against a weathered, rustic wooden fence with peeling paint. The lighting is warm golden hour sunlight, creating soft highlights on her hair and a cinematic, cozy atmosphere. 8k resolution, Pixar-inspired aesthetic, highly detailed textures.", this)'>📋 复制</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Making some 3D animated slides.  \nCreate some 3D animated slides. By Google Gemini Nano Banana AI.  \n\nPrompt provided by Google Gemini Nano Banana AI.  \n\nPrompt 1. A high-quality 3D digital animation style illustration of a young woman with large, expressive green eyes and messy, sun-kissed brown hair. She has a gentle, pensive expression with light freckles across her nose. She is wearing a rustic, textured terracotta-colored short-sleeved shirt and weathered blue denim jeans.  \n\nSetting and Lighting:  \nShe is leaning against a rustic, weathered wooden fence or barn wall made of vertical planks. The scene is bathed in the warm, golden glow of a late afternoon “golden hour” sun, creating soft rim lighting around her hair. The background shows blurred green grass (bokeh effect), giving the image cinematic depth of field.  \n\nTechnical Details:  \nRendered in 8k resolution, ray tracing, cinematic lighting, vibrant colors, highly detailed textures on the wood and fabric, Pixar and Disney-inspired character design.  \n\n2. A high-definition 3D animation style portrait of a young girl with messy, voluminous dark brown hair and bright green eyes. She has light freckles across her nose and cheeks and a warm, natural smile. She is wearing a layered outfit: a cream-colored t-shirt under an open olive green button-down shirt, paired with denim jeans and a rustic brown leather belt. She is leaning casually against a weathered, rustic wooden fence with peeling paint. The lighting is warm golden hour sunlight, creating soft highlights on her hair and a cinematic, cozy atmosphere. 8k resolution, Pixar-inspired aesthetic, highly detailed textures.", this)'>📋 复制</button>
         </div>
-        <p>Making some 3D animated slides. 制作一些 3D 动画幻灯片。  By Google Gemini Nano Banana ai. <br>Prompt由 Google Gemini Nano Banana ai 提供。提示  1. A high-quality 3D digital animation style illustration of a young woman with large, expressive green eyes and messy, sun-kissed brown hair. She has a gentle, pensive expression with light freckles across her nose. She is wearing a rustic, textured terracotta-colored short-sleeved shirt and weathered blue denim jeans.<br>​Setting and Lighting:<br>She is leaning against a rustic, weathered wooden fence or barn wall made of vertical planks. The scene is bathed in the warm, golden glow of a late afternoon &#39;golden hour&#39; sun, creating soft rim lighting around her hair. The background shows blurred green grass (bokeh effect), giving the image a cinematic depth of field.&quot;<br>​Technical Details:<br>Rendered in 8k resolution, Ray Tracing, cinematic lighting, vibrant colors, highly detailed textures on the wood and fabric, Pixar and Disney-inspired character design.<br>2. A high-definition 3D animation style portrait of a young girl with messy, voluminous dark brown hair and bright green eyes. She has light freckles across her nose and cheeks and a warm, natural smile. She is wearing a layered outfit: a cream-colored t-shirt under an open olive green button-down shirt, paired with denim jeans and a rustic brown leather belt. She is leaning casually against a weathered, rustic wooden fence with peeling paint. The lighting is warm golden hour sunlight, creating soft highlights on her hair and a cinematic, cozy atmosphere. 8k resolution, Pixar-inspired aesthetic, highly detailed textures.</p>
+        <div data-nosnippet><p>Making some 3D animated slides.  <br>Create some 3D animated slides. By Google Gemini Nano Banana AI.</p><p>Prompt provided by Google Gemini Nano Banana AI.</p><p>Prompt 1. A high-quality 3D digital animation style illustration of a young woman with large, expressive green eyes and messy, sun-kissed brown hair. She has a gentle, pensive expression with light freckles across her nose. She is wearing a rustic, textured terracotta-colored short-sleeved shirt and weathered blue denim jeans.</p><p>Setting and Lighting:  <br>She is leaning against a rustic, weathered wooden fence or barn wall made of vertical planks. The scene is bathed in the warm, golden glow of a late afternoon “golden hour” sun, creating soft rim lighting around her hair. The background shows blurred green grass (bokeh effect), giving the image cinematic depth of field.</p><p>Technical Details:  <br>Rendered in 8k resolution, ray tracing, cinematic lighting, vibrant colors, highly detailed textures on the wood and fabric, Pixar and Disney-inspired character design.</p><p>2. A high-definition 3D animation style portrait of a young girl with messy, voluminous dark brown hair and bright green eyes. She has light freckles across her nose and cheeks and a warm, natural smile. She is wearing a layered outfit: a cream-colored t-shirt under an open olive green button-down shirt, paired with denim jeans and a rustic brown leather belt. She is leaning casually against a weathered, rustic wooden fence with peeling paint. The lighting is warm golden hour sunlight, creating soft highlights on her hair and a cinematic, cozy atmosphere. 8k resolution, Pixar-inspired aesthetic, highly detailed textures.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2007444051537342855-1.jpg" alt="高品质3D动画幻灯片与肖像创作展示" loading="lazy"><img src="/images/tweet-2007444051537342855-2.jpg" alt="高品质3D动画幻灯片与肖像创作展示" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 542,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

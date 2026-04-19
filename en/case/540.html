@@ -7,11 +7,13 @@
     <title>Retro technical illustration: Google Gemini Nano Banana Pro 3.0 tool showcase #540 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="This image is a retro-tech illustration for Google&#39;s Gemini Nano Banana Pro 3.0, depicting a gloved hand gripping a brass drawing compass and an antique fountain pen, with a background of architectural blueprints and mechanical elements, illustrating the fusion of traditional drafting and modern technology.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/540.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/540.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/540.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846040">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023849">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n\r\n“main_focus”: “一只戴着手套的手拿着一个黄铜绘图圆规和一支老式钢笔”\r\n“背景元素”：[\r\n“房屋的建筑蓝图”\r\n“机械的", this)'>📋 Copy</button>
         </div>
-        <p>{<br><br>“main_focus”: “一只戴着手套的手拿着一个黄铜绘图圆规和一支老式钢笔”<br>“背景元素”：[<br>“房屋的建筑蓝图”<br>“机械的</p>
+        <div data-nosnippet><p>{<br><br>“main_focus”: “一只戴着手套的手拿着一个黄铜绘图圆规和一支老式钢笔”<br>“背景元素”：[<br>“房屋的建筑蓝图”<br>“机械的</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Vintage Technical illustration by Google Gemini Nano Banana pro 3.0\r\n\r\nPrompt\r\n\r\n{\r\n  \"subject\": {\r\n    \"main_focus\": \"A gloved hand holding a brass drafting compass and a vintage fountain pen\",\r\n    \"background_elements\": [\r\n      \"Architectural blueprints of a house\",", this)'>📋 Copy</button>
         </div>
-        <p>Vintage Technical illustration by Google Gemini Nano Banana pro 3.0<br><br>Prompt<br><br>{<br>  &quot;subject&quot;: {<br>    &quot;main_focus&quot;: &quot;A gloved hand holding a brass drafting compass and a vintage fountain pen&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;Architectural blueprints of a house&quot;,</p>
+        <div data-nosnippet><p>Vintage Technical illustration by Google Gemini Nano Banana pro 3.0<br><br>Prompt<br><br>{<br>  &quot;subject&quot;: {<br>    &quot;main_focus&quot;: &quot;A gloved hand holding a brass drafting compass and a vintage fountain pen&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;Architectural blueprints of a house&quot;,</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2007417297103921324-1.jpg" alt="复古技术插图：谷歌 Gemini Nano Banana pro 3.0 工具展示" loading="lazy"><img src="/images/tweet-2007417297103921324-2.jpg" alt="复古技术插图：谷歌 Gemini Nano Banana pro 3.0 工具展示" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 540,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

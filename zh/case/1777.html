@@ -7,11 +7,13 @@
     <title>&quot;version control&quot;: { #1777 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;version control&quot;: { &quot;target style&quot;: &quot;High End Fashion Editorial&quot;, &quot;fidelity level&quot;: &quot;Absolute 1:1 Identity Lock&quot;,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1777.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1777.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1777.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840591">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022377">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"版本控制\": {\n    \"目标风格\": \"高端时尚编辑风格\",\n    \"保真度\": \"绝对1:1身份锁定\",\n    \"渲染引擎限制\": \"禁止CGI、插画与AI磨皮\"\n  },\n  \"主体档案\": {\n    \"身份\": {\n      \"姓名\": \"Ana de Armas\",\n      \"年龄组\": \"成年女性\",\n      \"生物识别完整性\": \"保留100%原始骨骼结构、面部不对称、痣与眼形。零变形或增强。\"\n    },\n    \"解剖与皮肤\": {\n      \"纹理\": \"可见毛孔、微细皱褶、微妙半透明感\",\n      \"物理表现\": \"自然水滴、柔和湿光泽、皮肤表面张力真实\",\n      \"基调\": \"自然基底肤色、日晒暖色调、无人工光泽\"\n    },\n    \"面部细节\": {\n      \"眼睛\": \"自然眼色，柔和中性粉色光泽眼影，细眼线（无外翘），分离卷翘睫毛\",\n      \"眉毛\": \"自然密度，直至微圆的眉形\",\n      \"鼻与唇\": \"鼻梁淡淡的粉色暖意；丰唇，玫瑰粉渐变，湿润光泽，边缘模糊，不外描\"\n    },\n    \"发型\": {\n      \"状态\": \"明显湿发、根部抹平、发丝潮湿\",\n      \"布置\": \"松散，披肩与背部，自然凌乱质感\",\n      \"颜色与风格匹配参考\": \"1:1颜色与风格匹配\"\n    }\n  },\n  \"构图与姿势\": {\n    \"动作\": \"倚靠泳池边缘，身体呈45度角\",\n    \"手臂位置\": \"一只手臂自然放在泳池护缘上\",\n    \"构图\": \"中近景，四分之三角度\",\n    \"情绪\": \"亲密、平静、稳重、自信\"\n  },\n  \"服装与外观\": {\n    \"主要服装\": \"极简白色泳衣，细肩带，线条简洁\",\n    \"布料物理\": \"湿贴肌肤的真实张力，自然褶皱与聚拢\",\n    \"珠宝\": \"夸张耳环，天然宝石/黄金，真实的微划痕与反光\"\n  },\n  \"环境与照明\": {\n    \"背景\": {\n      \"元素\": \"绿松石色泳池水\",\n      \"物理表现\": \"折射，泳池底光影变化，细微涟漪，真实的运动感\"\n    },\n    \"照明设计\": {\n      \"光源\": \"单向自然阳光\",\n      \"色温\": \"温暖日光色调\",\n      \"曝光\": \"略微欠曝（降低曝光）\",\n      \"阴影\": \"锁骨和胸部的物理精准接触阴影\"\n    }\n  },\n  \"技术参数\": {\n    \"光学\": \"50mm–85mm 等效焦距，逼真摄影透视\",\n    \"景深\": \"浅景深，有机散景，自然衰减\",\n    \"分辨率质量\": \"16k 超写实\",\n    \"纵横比\": \"3:4\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;版本控制&quot;: {<br>    &quot;目标风格&quot;: &quot;高端时尚编辑风格&quot;,<br>    &quot;保真度&quot;: &quot;绝对1:1身份锁定&quot;,<br>    &quot;渲染引擎限制&quot;: &quot;禁止CGI、插画与AI磨皮&quot;<br>  },<br>  &quot;主体档案&quot;: {<br>    &quot;身份&quot;: {<br>      &quot;姓名&quot;: &quot;Ana de Armas&quot;,<br>      &quot;年龄组&quot;: &quot;成年女性&quot;,<br>      &quot;生物识别完整性&quot;: &quot;保留100%原始骨骼结构、面部不对称、痣与眼形。零变形或增强。&quot;<br>    },<br>    &quot;解剖与皮肤&quot;: {<br>      &quot;纹理&quot;: &quot;可见毛孔、微细皱褶、微妙半透明感&quot;,<br>      &quot;物理表现&quot;: &quot;自然水滴、柔和湿光泽、皮肤表面张力真实&quot;,<br>      &quot;基调&quot;: &quot;自然基底肤色、日晒暖色调、无人工光泽&quot;<br>    },<br>    &quot;面部细节&quot;: {<br>      &quot;眼睛&quot;: &quot;自然眼色，柔和中性粉色光泽眼影，细眼线（无外翘），分离卷翘睫毛&quot;,<br>      &quot;眉毛&quot;: &quot;自然密度，直至微圆的眉形&quot;,<br>      &quot;鼻与唇&quot;: &quot;鼻梁淡淡的粉色暖意；丰唇，玫瑰粉渐变，湿润光泽，边缘模糊，不外描&quot;<br>    },<br>    &quot;发型&quot;: {<br>      &quot;状态&quot;: &quot;明显湿发、根部抹平、发丝潮湿&quot;,<br>      &quot;布置&quot;: &quot;松散，披肩与背部，自然凌乱质感&quot;,<br>      &quot;颜色与风格匹配参考&quot;: &quot;1:1颜色与风格匹配&quot;<br>    }<br>  },<br>  &quot;构图与姿势&quot;: {<br>    &quot;动作&quot;: &quot;倚靠泳池边缘，身体呈45度角&quot;,<br>    &quot;手臂位置&quot;: &quot;一只手臂自然放在泳池护缘上&quot;,<br>    &quot;构图&quot;: &quot;中近景，四分之三角度&quot;,<br>    &quot;情绪&quot;: &quot;亲密、平静、稳重、自信&quot;<br>  },<br>  &quot;服装与外观&quot;: {<br>    &quot;主要服装&quot;: &quot;极简白色泳衣，细肩带，线条简洁&quot;,<br>    &quot;布料物理&quot;: &quot;湿贴肌肤的真实张力，自然褶皱与聚拢&quot;,<br>    &quot;珠宝&quot;: &quot;夸张耳环，天然宝石/黄金，真实的微划痕与反光&quot;<br>  },<br>  &quot;环境与照明&quot;: {<br>    &quot;背景&quot;: {<br>      &quot;元素&quot;: &quot;绿松石色泳池水&quot;,<br>      &quot;物理表现&quot;: &quot;折射，泳池底光影变化，细微涟漪，真实的运动感&quot;<br>    },<br>    &quot;照明设计&quot;: {<br>      &quot;光源&quot;: &quot;单向自然阳光&quot;,<br>      &quot;色温&quot;: &quot;温暖日光色调&quot;,<br>      &quot;曝光&quot;: &quot;略微欠曝（降低曝光）&quot;,<br>      &quot;阴影&quot;: &quot;锁骨和胸部的物理精准接触阴影&quot;<br>    }<br>  },<br>  &quot;技术参数&quot;: {<br>    &quot;光学&quot;: &quot;50mm–85mm 等效焦距，逼真摄影透视&quot;,<br>    &quot;景深&quot;: &quot;浅景深，有机散景，自然衰减&quot;,<br>    &quot;分辨率质量&quot;: &quot;16k 超写实&quot;,<br>    &quot;纵横比&quot;: &quot;3:4&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;版本控制&quot;: {<br>    &quot;目标风格&quot;: &quot;高端时尚编辑风格&quot;,<br>    &quot;保真度&quot;: &quot;绝对1:1身份锁定&quot;,<br>    &quot;渲染引擎限制&quot;: &quot;禁止CGI、插画与AI磨皮&quot;<br>  },<br>  &quot;主体档案&quot;: {<br>    &quot;身份&quot;: {<br>      &quot;姓名&quot;: &quot;Ana de Armas&quot;,<br>      &quot;年龄组&quot;: &quot;成年女性&quot;,<br>      &quot;生物识别完整性&quot;: &quot;保留100%原始骨骼结构、面部不对称、痣与眼形。零变形或增强。&quot;<br>    },<br>    &quot;解剖与皮肤&quot;: {<br>      &quot;纹理&quot;: &quot;可见毛孔、微细皱褶、微妙半透明感&quot;,<br>      &quot;物理表现&quot;: &quot;自然水滴、柔和湿光泽、皮肤表面张力真实&quot;,<br>      &quot;基调&quot;: &quot;自然基底肤色、日晒暖色调、无人工光泽&quot;<br>    },<br>    &quot;面部细节&quot;: {<br>      &quot;眼睛&quot;: &quot;自然眼色，柔和中性粉色光泽眼影，细眼线（无外翘），分离卷翘睫毛&quot;,<br>      &quot;眉毛&quot;: &quot;自然密度，直至微圆的眉形&quot;,<br>      &quot;鼻与唇&quot;: &quot;鼻梁淡淡的粉色暖意；丰唇，玫瑰粉渐变，湿润光泽，边缘模糊，不外描&quot;<br>    },<br>    &quot;发型&quot;: {<br>      &quot;状态&quot;: &quot;明显湿发、根部抹平、发丝潮湿&quot;,<br>      &quot;布置&quot;: &quot;松散，披肩与背部，自然凌乱质感&quot;,<br>      &quot;颜色与风格匹配参考&quot;: &quot;1:1颜色与风格匹配&quot;<br>    }<br>  },<br>  &quot;构图与姿势&quot;: {<br>    &quot;动作&quot;: &quot;倚靠泳池边缘，身体呈45度角&quot;,<br>    &quot;手臂位置&quot;: &quot;一只手臂自然放在泳池护缘上&quot;,<br>    &quot;构图&quot;: &quot;中近景，四分之三角度&quot;,<br>    &quot;情绪&quot;: &quot;亲密、平静、稳重、自信&quot;<br>  },<br>  &quot;服装与外观&quot;: {<br>    &quot;主要服装&quot;: &quot;极简白色泳衣，细肩带，线条简洁&quot;,<br>    &quot;布料物理&quot;: &quot;湿贴肌肤的真实张力，自然褶皱与聚拢&quot;,<br>    &quot;珠宝&quot;: &quot;夸张耳环，天然宝石/黄金，真实的微划痕与反光&quot;<br>  },<br>  &quot;环境与照明&quot;: {<br>    &quot;背景&quot;: {<br>      &quot;元素&quot;: &quot;绿松石色泳池水&quot;,<br>      &quot;物理表现&quot;: &quot;折射，泳池底光影变化，细微涟漪，真实的运动感&quot;<br>    },<br>    &quot;照明设计&quot;: {<br>      &quot;光源&quot;: &quot;单向自然阳光&quot;,<br>      &quot;色温&quot;: &quot;温暖日光色调&quot;,<br>      &quot;曝光&quot;: &quot;略微欠曝（降低曝光）&quot;,<br>      &quot;阴影&quot;: &quot;锁骨和胸部的物理精准接触阴影&quot;<br>    }<br>  },<br>  &quot;技术参数&quot;: {<br>    &quot;光学&quot;: &quot;50mm–85mm 等效焦距，逼真摄影透视&quot;,<br>    &quot;景深&quot;: &quot;浅景深，有机散景，自然衰减&quot;,<br>    &quot;分辨率质量&quot;: &quot;16k 超写实&quot;,<br>    &quot;纵横比&quot;: &quot;3:4&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"version_control\": {\n    \"target_style\": \"High-End Fashion Editorial\",\n    \"fidelity_level\": \"Absolute 1:1 Identity Lock\",\n    \"rendering_engine_constraints\": \"No CGI, No Illustration, No AI Smoothing\"\n  },\n  \"subject_profile\": {\n    \"identity\": {\n      \"name\": \"Ana de Armas\",\n      \"age_group\": \"Adult Woman\",\n      \"biometric_integrity\": \"Preserve 100% original bone structure, facial asymmetry, moles, and eye shape. Zero morphing or enhancement.\"\n    },\n    \"anatomy_and_skin\": {\n      \"texture\": \"Visible pores, micro-creases, subtle translucency\",\n      \"physics\": \"Natural water droplets, soft wet sheen, realistic surface tension on skin\",\n      \"tone\": \"Natural base skin tone, sun-kissed warmth, no artificial glow\"\n    },\n    \"face_details\": {\n      \"eyes\": \"Natural eye color, soft neutral-pink glossy shadow, thin lash-line eyeliner (no wing), separated curled lashes\",\n      \"brows\": \"Natural density, straight-to-softly-rounded architecture\",\n      \"nose_and_lips\": \"Subtle pink warmth on nose bridge; full lips, rose-pink gradient, wet glossy finish, blurred edges, no overlining\"\n    },\n    \"hair_styling\": {\n      \"state\": \"Visibly wet, slicked at roots, damp strands\",\n      \"arrangement\": \"Loose, flowing over shoulders and back, natural messy texture\",\n      \"match_reference\": \"1:1 color and style match\"\n    }\n  },\n  \"composition_and_pose\": {\n    \"action\": \"Leaning on swimming pool edge, body angled 45-degrees\",\n    \"arm_placement\": \"One arm naturally resting on pool coping\",\n    \"framing\": \"Medium close-up, three-quarter angle\",\n    \"mood\": \"Intimate, calm, grounded, confident\"\n  },\n  \"attire_and_wardrobe\": {\n    \"primary_garment\": \"Minimalist white swimsuit, thin straps, clean lines\",\n    \"fabric_physics\": \"Realistic tension against wet skin, natural folds and bunching\",\n    \"jewelry\": \"Statement earrings, natural stones/gold, realistic micro-scratches and reflections\"\n  },\n  \"environment_and_lighting\": {\n    \"background\": {\n      \"element\": \"Turquoise pool water\",\n      \"physics\": \"Refraction, light-play on pool floor, subtle ripples, realistic movement\"\n    },\n    \"lighting_design\": {\n      \"source\": \"Single-direction natural sunlight\",\n      \"color_temp\": \"Warm sun-lit tones\",\n      \"exposure\": \"Slightly underexposed (lowered exposure)\",\n      \"shadows\": \"Physically accurate contact shadows on collarbones and chest\"\n    }\n  },\n  \"technical_parameters\": {\n    \"optics\": \"50mm–85mm focal length equivalent, realistic photographic perspective\",\n    \"depth_of_field\": \"Shallow, organic bokeh, natural fall-off\",\n    \"resolution_quality\": \"16k Hyper-Realistic\",\n    \"aspect_ratio\": \"3:4\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;version_control&quot;: {<br>    &quot;target_style&quot;: &quot;High-End Fashion Editorial&quot;,<br>    &quot;fidelity_level&quot;: &quot;Absolute 1:1 Identity Lock&quot;,<br>    &quot;rendering_engine_constraints&quot;: &quot;No CGI, No Illustration, No AI Smoothing&quot;<br>  },<br>  &quot;subject_profile&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;age_group&quot;: &quot;Adult Woman&quot;,<br>      &quot;biometric_integrity&quot;: &quot;Preserve 100% original bone structure, facial asymmetry, moles, and eye shape. Zero morphing or enhancement.&quot;<br>    },<br>    &quot;anatomy_and_skin&quot;: {<br>      &quot;texture&quot;: &quot;Visible pores, micro-creases, subtle translucency&quot;,<br>      &quot;physics&quot;: &quot;Natural water droplets, soft wet sheen, realistic surface tension on skin&quot;,<br>      &quot;tone&quot;: &quot;Natural base skin tone, sun-kissed warmth, no artificial glow&quot;<br>    },<br>    &quot;face_details&quot;: {<br>      &quot;eyes&quot;: &quot;Natural eye color, soft neutral-pink glossy shadow, thin lash-line eyeliner (no wing), separated curled lashes&quot;,<br>      &quot;brows&quot;: &quot;Natural density, straight-to-softly-rounded architecture&quot;,<br>      &quot;nose_and_lips&quot;: &quot;Subtle pink warmth on nose bridge; full lips, rose-pink gradient, wet glossy finish, blurred edges, no overlining&quot;<br>    },<br>    &quot;hair_styling&quot;: {<br>      &quot;state&quot;: &quot;Visibly wet, slicked at roots, damp strands&quot;,<br>      &quot;arrangement&quot;: &quot;Loose, flowing over shoulders and back, natural messy texture&quot;,<br>      &quot;match_reference&quot;: &quot;1:1 color and style match&quot;<br>    }<br>  },<br>  &quot;composition_and_pose&quot;: {<br>    &quot;action&quot;: &quot;Leaning on swimming pool edge, body angled 45-degrees&quot;,<br>    &quot;arm_placement&quot;: &quot;One arm naturally resting on pool coping&quot;,<br>    &quot;framing&quot;: &quot;Medium close-up, three-quarter angle&quot;,<br>    &quot;mood&quot;: &quot;Intimate, calm, grounded, confident&quot;<br>  },<br>  &quot;attire_and_wardrobe&quot;: {<br>    &quot;primary_garment&quot;: &quot;Minimalist white swimsuit, thin straps, clean lines&quot;,<br>    &quot;fabric_physics&quot;: &quot;Realistic tension against wet skin, natural folds and bunching&quot;,<br>    &quot;jewelry&quot;: &quot;Statement earrings, natural stones/gold, realistic micro-scratches and reflections&quot;<br>  },<br>  &quot;environment_and_lighting&quot;: {<br>    &quot;background&quot;: {<br>      &quot;element&quot;: &quot;Turquoise pool water&quot;,<br>      &quot;physics&quot;: &quot;Refraction, light-play on pool floor, subtle ripples, realistic movement&quot;<br>    },<br>    &quot;lighting_design&quot;: {<br>      &quot;source&quot;: &quot;Single-direction natural sunlight&quot;,<br>      &quot;color_temp&quot;: &quot;Warm sun-lit tones&quot;,<br>      &quot;exposure&quot;: &quot;Slightly underexposed (lowered exposure)&quot;,<br>      &quot;shadows&quot;: &quot;Physically accurate contact shadows on collarbones and chest&quot;<br>    }<br>  },<br>  &quot;technical_parameters&quot;: {<br>    &quot;optics&quot;: &quot;50mm–85mm focal length equivalent, realistic photographic perspective&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow, organic bokeh, natural fall-off&quot;,<br>    &quot;resolution_quality&quot;: &quot;16k Hyper-Realistic&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;version_control&quot;: {<br>    &quot;target_style&quot;: &quot;High-End Fashion Editorial&quot;,<br>    &quot;fidelity_level&quot;: &quot;Absolute 1:1 Identity Lock&quot;,<br>    &quot;rendering_engine_constraints&quot;: &quot;No CGI, No Illustration, No AI Smoothing&quot;<br>  },<br>  &quot;subject_profile&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;age_group&quot;: &quot;Adult Woman&quot;,<br>      &quot;biometric_integrity&quot;: &quot;Preserve 100% original bone structure, facial asymmetry, moles, and eye shape. Zero morphing or enhancement.&quot;<br>    },<br>    &quot;anatomy_and_skin&quot;: {<br>      &quot;texture&quot;: &quot;Visible pores, micro-creases, subtle translucency&quot;,<br>      &quot;physics&quot;: &quot;Natural water droplets, soft wet sheen, realistic surface tension on skin&quot;,<br>      &quot;tone&quot;: &quot;Natural base skin tone, sun-kissed warmth, no artificial glow&quot;<br>    },<br>    &quot;face_details&quot;: {<br>      &quot;eyes&quot;: &quot;Natural eye color, soft neutral-pink glossy shadow, thin lash-line eyeliner (no wing), separated curled lashes&quot;,<br>      &quot;brows&quot;: &quot;Natural density, straight-to-softly-rounded architecture&quot;,<br>      &quot;nose_and_lips&quot;: &quot;Subtle pink warmth on nose bridge; full lips, rose-pink gradient, wet glossy finish, blurred edges, no overlining&quot;<br>    },<br>    &quot;hair_styling&quot;: {<br>      &quot;state&quot;: &quot;Visibly wet, slicked at roots, damp strands&quot;,<br>      &quot;arrangement&quot;: &quot;Loose, flowing over shoulders and back, natural messy texture&quot;,<br>      &quot;match_reference&quot;: &quot;1:1 color and style match&quot;<br>    }<br>  },<br>  &quot;composition_and_pose&quot;: {<br>    &quot;action&quot;: &quot;Leaning on swimming pool edge, body angled 45-degrees&quot;,<br>    &quot;arm_placement&quot;: &quot;One arm naturally resting on pool coping&quot;,<br>    &quot;framing&quot;: &quot;Medium close-up, three-quarter angle&quot;,<br>    &quot;mood&quot;: &quot;Intimate, calm, grounded, confident&quot;<br>  },<br>  &quot;attire_and_wardrobe&quot;: {<br>    &quot;primary_garment&quot;: &quot;Minimalist white swimsuit, thin straps, clean lines&quot;,<br>    &quot;fabric_physics&quot;: &quot;Realistic tension against wet skin, natural folds and bunching&quot;,<br>    &quot;jewelry&quot;: &quot;Statement earrings, natural stones/gold, realistic micro-scratches and reflections&quot;<br>  },<br>  &quot;environment_and_lighting&quot;: {<br>    &quot;background&quot;: {<br>      &quot;element&quot;: &quot;Turquoise pool water&quot;,<br>      &quot;physics&quot;: &quot;Refraction, light-play on pool floor, subtle ripples, realistic movement&quot;<br>    },<br>    &quot;lighting_design&quot;: {<br>      &quot;source&quot;: &quot;Single-direction natural sunlight&quot;,<br>      &quot;color_temp&quot;: &quot;Warm sun-lit tones&quot;,<br>      &quot;exposure&quot;: &quot;Slightly underexposed (lowered exposure)&quot;,<br>      &quot;shadows&quot;: &quot;Physically accurate contact shadows on collarbones and chest&quot;<br>    }<br>  },<br>  &quot;technical_parameters&quot;: {<br>    &quot;optics&quot;: &quot;50mm–85mm focal length equivalent, realistic photographic perspective&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow, organic bokeh, natural fall-off&quot;,<br>    &quot;resolution_quality&quot;: &quot;16k Hyper-Realistic&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2016201701254951241-1.jpg" alt="&quot;version control&quot;: {" loading="lazy"><img src="/images/tweet-2016201701254951241-2.jpg" alt="&quot;version control&quot;: {" loading="lazy"><img src="/images/tweet-2016201701254951241-3.jpg" alt="&quot;version control&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1777,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

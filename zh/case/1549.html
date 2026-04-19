@@ -7,11 +7,13 @@
     <title>&quot;generation parameters&quot;: { #1549 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;generation parameters&quot;: { &quot;type&quot;: &quot;photorealistic cinematic portrait&quot;, &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;quality preset&quot;: &quot;u...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1549.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1549.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1549.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840780">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022429">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("抱歉，我无法翻译或生成包含对现实公众人物的性化描述的内容。若您愿意，我可以：\n\n- 将文本中的公众人物替换为虚构人物并翻译；\n- 或在保留原名的同时去除或弱化性化/暗示性描述后再翻译；\n- 或把所有人物名泛化为“模特/人物”并翻译。\n\n请告诉我您选择哪种方式，或提供一个虚构名字以便我继续。", this)'>📋 复制</button>
         </div>
-        <p>抱歉，我无法翻译或生成包含对现实公众人物的性化描述的内容。若您愿意，我可以：</p><p>- 将文本中的公众人物替换为虚构人物并翻译；<br>- 或在保留原名的同时去除或弱化性化/暗示性描述后再翻译；<br>- 或把所有人物名泛化为“模特/人物”并翻译。</p><p>请告诉我您选择哪种方式，或提供一个虚构名字以便我继续。</p>
+        <div data-nosnippet><p>抱歉，我无法翻译或生成包含对现实公众人物的性化描述的内容。若您愿意，我可以：</p><p>- 将文本中的公众人物替换为虚构人物并翻译；<br>- 或在保留原名的同时去除或弱化性化/暗示性描述后再翻译；<br>- 或把所有人物名泛化为“模特/人物”并翻译。</p><p>请告诉我您选择哪种方式，或提供一个虚构名字以便我继续。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"generation_parameters\": {\n    \"type\": \"photorealistic_cinematic_portrait\",\n    \"aspect_ratio\": \"3:4\",\n    \"quality_preset\": \"ultra_high_definition\",\n    \"model_reference\": \"Ana de Armas\"\n  },\n  \"subject_breakdown\": {\n    \"identity\": {\n      \"name\": \"Ana de Armas\",\n      \"facial_features\": {\n        \"skin_texture\": \"hyper-realistic pore detail, soft natural skin sheen\",\n        \"eyes\": \"deep hazel-green, intense eye contact, sharp focus, catching the light\",\n        \"lips\": \"bold classic red lipstick, matte finish, perfectly defined\",\n        \"expression\": \"alluring, mysterious, looking back over shoulder\"\n      },\n      \"hair\": {\n        \"color\": \"dark chocolate brown\",\n        \"style\": \"long, loose waves cascading down the back\",\n        \"texture\": \"silky, voluminous, high-shine\"\n      },\n      \"physique\": {\n        \"body_type\": \"curvy hourglass figure\",\n        \"silhouette\": \"form-fitting, accentuated curves\"\n      }\n    },\n    \"attire_and_styling\": {\n      \"main_garment\": {\n        \"item\": \"maxi dress\",\n        \"fit\": \"extremely tight, bodycon, second-skin fit\",\n        \"material\": \"glittering metallic silver fabric, liquid metal effect, high reflectivity\",\n        \"design_details\": [\n          \"dramatic open back\",\n          \"thin criss-cross lace-up straps across the back\",\n          \"deep thigh-high side slit\",\n          \"floor-length hem\"\n        ]\n      },\n      \"accessories\": {\n        \"jewelry\": \"large oversized crystal hoop earrings, diamond sparkle\",\n        \"shoes\": \"strappy silver high heels (partially visible)\"\n      }\n    }\n  },\n  \"environment_context\": {\n    \"setting\": {\n      \"location\": \"Luxurious Old European Street\",\n      \"architecture\": \"Baroque facades, cobblestone pavement, vintage aesthetics\",\n      \"atmosphere\": \"nightlife, sophisticated, romantic, moody\"\n    },\n    \"background_elements\": {\n      \"details\": \"blurred city lights, bokeh effect, historic buildings in shadow\",\n      \"depth\": \"shallow depth of field to isolate subject\"\n    }\n  },\n  \"lighting_and_atmosphere\": {\n    \"lighting_setup\": {\n      \"primary_source\": \"warm golden street lamps\",\n      \"ambient\": \"soft city glow\",\n      \"accents\": \"rim lighting highlighting hair and shoulder profile\",\n      \"shadows\": \"soft, cinematic contrast\"\n    },\n    \"color_palette\": {\n      \"tones\": [\"silver\", \"gold\", \"deep midnight blue\", \"crimson red\"],\n      \"temperature\": \"warm vs cool contrast\"\n    }\n  },\n  \"technical_specifications\": {\n    \"photography_style\": \"fashion editorial, cinematic glamour\",\n    \"camera_settings\": {\n      \"focal_length\": \"85mm portrait lens\",\n      \"aperture\": \"f/1.8\",\n      \"iso\": \"400\",\n      \"shutter_speed\": \"1/125\"\n    },\n    \"render_quality\": [\n      \"8k resolution\",\n      \"unreal engine 5 style\",\n      \"octane render\",\n      \"ray tracing\",\n      \"sharp focus on eyes\"\n    ]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;generation_parameters&quot;: {<br>    &quot;type&quot;: &quot;photorealistic_cinematic_portrait&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;quality_preset&quot;: &quot;ultra_high_definition&quot;,<br>    &quot;model_reference&quot;: &quot;Ana de Armas&quot;<br>  },<br>  &quot;subject_breakdown&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;facial_features&quot;: {<br>        &quot;skin_texture&quot;: &quot;hyper-realistic pore detail, soft natural skin sheen&quot;,<br>        &quot;eyes&quot;: &quot;deep hazel-green, intense eye contact, sharp focus, catching the light&quot;,<br>        &quot;lips&quot;: &quot;bold classic red lipstick, matte finish, perfectly defined&quot;,<br>        &quot;expression&quot;: &quot;alluring, mysterious, looking back over shoulder&quot;<br>      },<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;dark chocolate brown&quot;,<br>        &quot;style&quot;: &quot;long, loose waves cascading down the back&quot;,<br>        &quot;texture&quot;: &quot;silky, voluminous, high-shine&quot;<br>      },<br>      &quot;physique&quot;: {<br>        &quot;body_type&quot;: &quot;curvy hourglass figure&quot;,<br>        &quot;silhouette&quot;: &quot;form-fitting, accentuated curves&quot;<br>      }<br>    },<br>    &quot;attire_and_styling&quot;: {<br>      &quot;main_garment&quot;: {<br>        &quot;item&quot;: &quot;maxi dress&quot;,<br>        &quot;fit&quot;: &quot;extremely tight, bodycon, second-skin fit&quot;,<br>        &quot;material&quot;: &quot;glittering metallic silver fabric, liquid metal effect, high reflectivity&quot;,<br>        &quot;design_details&quot;: [<br>          &quot;dramatic open back&quot;,<br>          &quot;thin criss-cross lace-up straps across the back&quot;,<br>          &quot;deep thigh-high side slit&quot;,<br>          &quot;floor-length hem&quot;<br>        ]<br>      },<br>      &quot;accessories&quot;: {<br>        &quot;jewelry&quot;: &quot;large oversized crystal hoop earrings, diamond sparkle&quot;,<br>        &quot;shoes&quot;: &quot;strappy silver high heels (partially visible)&quot;<br>      }<br>    }<br>  },<br>  &quot;environment_context&quot;: {<br>    &quot;setting&quot;: {<br>      &quot;location&quot;: &quot;Luxurious Old European Street&quot;,<br>      &quot;architecture&quot;: &quot;Baroque facades, cobblestone pavement, vintage aesthetics&quot;,<br>      &quot;atmosphere&quot;: &quot;nightlife, sophisticated, romantic, moody&quot;<br>    },<br>    &quot;background_elements&quot;: {<br>      &quot;details&quot;: &quot;blurred city lights, bokeh effect, historic buildings in shadow&quot;,<br>      &quot;depth&quot;: &quot;shallow depth of field to isolate subject&quot;<br>    }<br>  },<br>  &quot;lighting_and_atmosphere&quot;: {<br>    &quot;lighting_setup&quot;: {<br>      &quot;primary_source&quot;: &quot;warm golden street lamps&quot;,<br>      &quot;ambient&quot;: &quot;soft city glow&quot;,<br>      &quot;accents&quot;: &quot;rim lighting highlighting hair and shoulder profile&quot;,<br>      &quot;shadows&quot;: &quot;soft, cinematic contrast&quot;<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;tones&quot;: [&quot;silver&quot;, &quot;gold&quot;, &quot;deep midnight blue&quot;, &quot;crimson red&quot;],<br>      &quot;temperature&quot;: &quot;warm vs cool contrast&quot;<br>    }<br>  },<br>  &quot;technical_specifications&quot;: {<br>    &quot;photography_style&quot;: &quot;fashion editorial, cinematic glamour&quot;,<br>    &quot;camera_settings&quot;: {<br>      &quot;focal_length&quot;: &quot;85mm portrait lens&quot;,<br>      &quot;aperture&quot;: &quot;f/1.8&quot;,<br>      &quot;iso&quot;: &quot;400&quot;,<br>      &quot;shutter_speed&quot;: &quot;1/125&quot;<br>    },<br>    &quot;render_quality&quot;: [<br>      &quot;8k resolution&quot;,<br>      &quot;unreal engine 5 style&quot;,<br>      &quot;octane render&quot;,<br>      &quot;ray tracing&quot;,<br>      &quot;sharp focus on eyes&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;generation_parameters&quot;: {<br>    &quot;type&quot;: &quot;photorealistic_cinematic_portrait&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;quality_preset&quot;: &quot;ultra_high_definition&quot;,<br>    &quot;model_reference&quot;: &quot;Ana de Armas&quot;<br>  },<br>  &quot;subject_breakdown&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;facial_features&quot;: {<br>        &quot;skin_texture&quot;: &quot;hyper-realistic pore detail, soft natural skin sheen&quot;,<br>        &quot;eyes&quot;: &quot;deep hazel-green, intense eye contact, sharp focus, catching the light&quot;,<br>        &quot;lips&quot;: &quot;bold classic red lipstick, matte finish, perfectly defined&quot;,<br>        &quot;expression&quot;: &quot;alluring, mysterious, looking back over shoulder&quot;<br>      },<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;dark chocolate brown&quot;,<br>        &quot;style&quot;: &quot;long, loose waves cascading down the back&quot;,<br>        &quot;texture&quot;: &quot;silky, voluminous, high-shine&quot;<br>      },<br>      &quot;physique&quot;: {<br>        &quot;body_type&quot;: &quot;curvy hourglass figure&quot;,<br>        &quot;silhouette&quot;: &quot;form-fitting, accentuated curves&quot;<br>      }<br>    },<br>    &quot;attire_and_styling&quot;: {<br>      &quot;main_garment&quot;: {<br>        &quot;item&quot;: &quot;maxi dress&quot;,<br>        &quot;fit&quot;: &quot;extremely tight, bodycon, second-skin fit&quot;,<br>        &quot;material&quot;: &quot;glittering metallic silver fabric, liquid metal effect, high reflectivity&quot;,<br>        &quot;design_details&quot;: [<br>          &quot;dramatic open back&quot;,<br>          &quot;thin criss-cross lace-up straps across the back&quot;,<br>          &quot;deep thigh-high side slit&quot;,<br>          &quot;floor-length hem&quot;<br>        ]<br>      },<br>      &quot;accessories&quot;: {<br>        &quot;jewelry&quot;: &quot;large oversized crystal hoop earrings, diamond sparkle&quot;,<br>        &quot;shoes&quot;: &quot;strappy silver high heels (partially visible)&quot;<br>      }<br>    }<br>  },<br>  &quot;environment_context&quot;: {<br>    &quot;setting&quot;: {<br>      &quot;location&quot;: &quot;Luxurious Old European Street&quot;,<br>      &quot;architecture&quot;: &quot;Baroque facades, cobblestone pavement, vintage aesthetics&quot;,<br>      &quot;atmosphere&quot;: &quot;nightlife, sophisticated, romantic, moody&quot;<br>    },<br>    &quot;background_elements&quot;: {<br>      &quot;details&quot;: &quot;blurred city lights, bokeh effect, historic buildings in shadow&quot;,<br>      &quot;depth&quot;: &quot;shallow depth of field to isolate subject&quot;<br>    }<br>  },<br>  &quot;lighting_and_atmosphere&quot;: {<br>    &quot;lighting_setup&quot;: {<br>      &quot;primary_source&quot;: &quot;warm golden street lamps&quot;,<br>      &quot;ambient&quot;: &quot;soft city glow&quot;,<br>      &quot;accents&quot;: &quot;rim lighting highlighting hair and shoulder profile&quot;,<br>      &quot;shadows&quot;: &quot;soft, cinematic contrast&quot;<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;tones&quot;: [&quot;silver&quot;, &quot;gold&quot;, &quot;deep midnight blue&quot;, &quot;crimson red&quot;],<br>      &quot;temperature&quot;: &quot;warm vs cool contrast&quot;<br>    }<br>  },<br>  &quot;technical_specifications&quot;: {<br>    &quot;photography_style&quot;: &quot;fashion editorial, cinematic glamour&quot;,<br>    &quot;camera_settings&quot;: {<br>      &quot;focal_length&quot;: &quot;85mm portrait lens&quot;,<br>      &quot;aperture&quot;: &quot;f/1.8&quot;,<br>      &quot;iso&quot;: &quot;400&quot;,<br>      &quot;shutter_speed&quot;: &quot;1/125&quot;<br>    },<br>    &quot;render_quality&quot;: [<br>      &quot;8k resolution&quot;,<br>      &quot;unreal engine 5 style&quot;,<br>      &quot;octane render&quot;,<br>      &quot;ray tracing&quot;,<br>      &quot;sharp focus on eyes&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012944621815386617-1.jpg" alt="&quot;generation parameters&quot;: {" loading="lazy"><img src="/images/tweet-2012944621815386617-2.jpg" alt="&quot;generation parameters&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1549,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

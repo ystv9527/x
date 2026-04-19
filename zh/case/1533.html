@@ -7,11 +7,13 @@
     <title>&quot;image prompt data&quot;: { #1533 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image prompt data&quot;: { &quot;subject&quot;: { &quot;appearance&quot;: &quot;Young Sadie Sink woman with long, straight, dark brown hair part...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1533.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1533.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1533.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840791">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022434">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt_data\": {\n    \"subject\": {\n      \"appearance\": \"年轻的 Sadie Sink 女性，长而直的深棕色头发，中分。肤色偏小麦色。长相类似 Charli D'Amelio。\",\n      \"expression\": \"表情中性至略显严肃，自信的凝视，目光直接朝下看向相机镜头。\",\n      \"pose\": \"坐在红色皮革吧凳上，身体略向左侧倾斜，膝盖交叉，双手轻放在大腿上。\"\n    },\n    \"apparel\": {\n      \"clothing\": \"贴身黑色迷你连衣裙（吊带睡衣风格），配有细薄、闪亮的水钻或银链细肩带。\",\n      \"footwear\": \"黑色缎面厚底凉鞋，粗跟高跟，踝部带搭扣绑带。\",\n      \"accessories\": \"大号银色圆环耳环，手指上有纤细的银色戒指。\"\n    },\n    \"environment\": {\n      \"setting\": \"赌场内部，背景光线昏暗。\",\n      \"objects\": \"左侧有一台大型老虎机，带有发光的霓虹标牌，上面写着 'TRIPLE JACKPOT GEMS'。\",\n      \"furniture\": \"红色坐垫旋转吧凳，金属青铜色底座。\",\n      \"flooring\": \"复古图案的赌场地毯，呈现青绿色、蓝色和橙色的旋涡式设计。\",\n      \"background_details\": \"模糊的赌场灯光、木质镶板，老虎机玻璃上的微弱反光。\"\n    },\n    \"technical_specs\": {\n      \"camera_angle\": \"低角度拍摄（虫视角），仰视被摄主体以突出双腿和鞋子。\",\n      \"lighting\": \"直接在机身上的闪光灯拍摄。硬光，主体背后有明显的阴影，对比度高。\",\n      \"aesthetic\": \"Y2K 年代风格的复古数码相机氛围，狗仔风格，名人抓拍式，轻微胶片颗粒感，高饱和度。\"\n    }\n  },\n  \"full_prompt_string\": \"低角度闪光摄影，一位长得像 Charli D'Amelio 的年轻女性坐在红色赌场凳上。她穿着带有水钻肩带的黑色迷你连衣裙，脚踩黑色厚底粗跟高跟鞋。她旁边是一台写着 'TRIPLE JACKPOT GEMS' 的老虎机。复古赌场地毯地面。直接闪光，强烈阴影，2000 年代数码相机美学，既华丽又粗粝。\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt_data&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;年轻的 Sadie Sink 女性，长而直的深棕色头发，中分。肤色偏小麦色。长相类似 Charli D&#39;Amelio。&quot;,<br>      &quot;expression&quot;: &quot;表情中性至略显严肃，自信的凝视，目光直接朝下看向相机镜头。&quot;,<br>      &quot;pose&quot;: &quot;坐在红色皮革吧凳上，身体略向左侧倾斜，膝盖交叉，双手轻放在大腿上。&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;clothing&quot;: &quot;贴身黑色迷你连衣裙（吊带睡衣风格），配有细薄、闪亮的水钻或银链细肩带。&quot;,<br>      &quot;footwear&quot;: &quot;黑色缎面厚底凉鞋，粗跟高跟，踝部带搭扣绑带。&quot;,<br>      &quot;accessories&quot;: &quot;大号银色圆环耳环，手指上有纤细的银色戒指。&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;赌场内部，背景光线昏暗。&quot;,<br>      &quot;objects&quot;: &quot;左侧有一台大型老虎机，带有发光的霓虹标牌，上面写着 &#39;TRIPLE JACKPOT GEMS&#39;。&quot;,<br>      &quot;furniture&quot;: &quot;红色坐垫旋转吧凳，金属青铜色底座。&quot;,<br>      &quot;flooring&quot;: &quot;复古图案的赌场地毯，呈现青绿色、蓝色和橙色的旋涡式设计。&quot;,<br>      &quot;background_details&quot;: &quot;模糊的赌场灯光、木质镶板，老虎机玻璃上的微弱反光。&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_angle&quot;: &quot;低角度拍摄（虫视角），仰视被摄主体以突出双腿和鞋子。&quot;,<br>      &quot;lighting&quot;: &quot;直接在机身上的闪光灯拍摄。硬光，主体背后有明显的阴影，对比度高。&quot;,<br>      &quot;aesthetic&quot;: &quot;Y2K 年代风格的复古数码相机氛围，狗仔风格，名人抓拍式，轻微胶片颗粒感，高饱和度。&quot;<br>    }<br>  },<br>  &quot;full_prompt_string&quot;: &quot;低角度闪光摄影，一位长得像 Charli D&#39;Amelio 的年轻女性坐在红色赌场凳上。她穿着带有水钻肩带的黑色迷你连衣裙，脚踩黑色厚底粗跟高跟鞋。她旁边是一台写着 &#39;TRIPLE JACKPOT GEMS&#39; 的老虎机。复古赌场地毯地面。直接闪光，强烈阴影，2000 年代数码相机美学，既华丽又粗粝。&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt_data&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;年轻的 Sadie Sink 女性，长而直的深棕色头发，中分。肤色偏小麦色。长相类似 Charli D&#39;Amelio。&quot;,<br>      &quot;expression&quot;: &quot;表情中性至略显严肃，自信的凝视，目光直接朝下看向相机镜头。&quot;,<br>      &quot;pose&quot;: &quot;坐在红色皮革吧凳上，身体略向左侧倾斜，膝盖交叉，双手轻放在大腿上。&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;clothing&quot;: &quot;贴身黑色迷你连衣裙（吊带睡衣风格），配有细薄、闪亮的水钻或银链细肩带。&quot;,<br>      &quot;footwear&quot;: &quot;黑色缎面厚底凉鞋，粗跟高跟，踝部带搭扣绑带。&quot;,<br>      &quot;accessories&quot;: &quot;大号银色圆环耳环，手指上有纤细的银色戒指。&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;赌场内部，背景光线昏暗。&quot;,<br>      &quot;objects&quot;: &quot;左侧有一台大型老虎机，带有发光的霓虹标牌，上面写着 &#39;TRIPLE JACKPOT GEMS&#39;。&quot;,<br>      &quot;furniture&quot;: &quot;红色坐垫旋转吧凳，金属青铜色底座。&quot;,<br>      &quot;flooring&quot;: &quot;复古图案的赌场地毯，呈现青绿色、蓝色和橙色的旋涡式设计。&quot;,<br>      &quot;background_details&quot;: &quot;模糊的赌场灯光、木质镶板，老虎机玻璃上的微弱反光。&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_angle&quot;: &quot;低角度拍摄（虫视角），仰视被摄主体以突出双腿和鞋子。&quot;,<br>      &quot;lighting&quot;: &quot;直接在机身上的闪光灯拍摄。硬光，主体背后有明显的阴影，对比度高。&quot;,<br>      &quot;aesthetic&quot;: &quot;Y2K 年代风格的复古数码相机氛围，狗仔风格，名人抓拍式，轻微胶片颗粒感，高饱和度。&quot;<br>    }<br>  },<br>  &quot;full_prompt_string&quot;: &quot;低角度闪光摄影，一位长得像 Charli D&#39;Amelio 的年轻女性坐在红色赌场凳上。她穿着带有水钻肩带的黑色迷你连衣裙，脚踩黑色厚底粗跟高跟鞋。她旁边是一台写着 &#39;TRIPLE JACKPOT GEMS&#39; 的老虎机。复古赌场地毯地面。直接闪光，强烈阴影，2000 年代数码相机美学，既华丽又粗粝。&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt_data\": {\n    \"subject\": {\n      \"appearance\": \"Young Sadie Sink woman with long, straight, dark brown hair parted in the middle. Tan complexion. Resembles Charli D'Amelio.\",\n      \"expression\": \"Neutral to slightly serious, confident gaze, looking directly down at the camera lens.\",\n      \"pose\": \"Sitting on a red leather bar stool, body angled slightly to the left, legs crossed at the knees, hands resting gently on her thighs.\"\n    },\n    \"apparel\": {\n      \"clothing\": \"Fitted black mini dress (slip dress style) with thin, sparkling rhinestone or silver chain spaghetti straps.\",\n      \"footwear\": \"Black satin platform sandals with high block heels and buckle ankle straps.\",\n      \"accessories\": \"Large silver hoop earrings, delicate silver rings on fingers.\"\n    },\n    \"environment\": {\n      \"setting\": \"Casino interior, dimly lit background.\",\n      \"objects\": \"Large slot machine to the left with illuminated neon signage reading 'TRIPLE JACKPOT GEMS'.\",\n      \"furniture\": \"Red cushioned swivel bar stool with a metallic bronze base.\",\n      \"flooring\": \"Retro-patterned casino carpet featuring swirling designs in teal, blue, and orange.\",\n      \"background_details\": \"Blurred casino lights, wooden paneling, slight reflection on the slot machine glass.\"\n    },\n    \"technical_specs\": {\n      \"camera_angle\": \"Low angle shot (worm's-eye view), looking up at the subject to emphasize the legs and shoes.\",\n      \"lighting\": \"Direct on-camera flash photography. Hard lighting with distinct shadows behind the subject and high contrast.\",\n      \"aesthetic\": \"Y2K vintage digital camera vibe, paparazzi style, candid celebrity snapshot, slight film grain, high saturation.\"\n    }\n  },\n  \"full_prompt_string\": \"Low angle flash photography of a young woman resembling Charli D'Amelio sitting on a red casino stool. She is wearing a black mini dress with rhinestone straps and black platform block heels. She is next to a slot machine that says 'TRIPLE JACKPOT GEMS'. Retro casino carpet floor. Direct flash, harsh shadows, 2000s digicam aesthetic, glamorous but gritty.\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt_data&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;Young Sadie Sink woman with long, straight, dark brown hair parted in the middle. Tan complexion. Resembles Charli D&#39;Amelio.&quot;,<br>      &quot;expression&quot;: &quot;Neutral to slightly serious, confident gaze, looking directly down at the camera lens.&quot;,<br>      &quot;pose&quot;: &quot;Sitting on a red leather bar stool, body angled slightly to the left, legs crossed at the knees, hands resting gently on her thighs.&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;clothing&quot;: &quot;Fitted black mini dress (slip dress style) with thin, sparkling rhinestone or silver chain spaghetti straps.&quot;,<br>      &quot;footwear&quot;: &quot;Black satin platform sandals with high block heels and buckle ankle straps.&quot;,<br>      &quot;accessories&quot;: &quot;Large silver hoop earrings, delicate silver rings on fingers.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Casino interior, dimly lit background.&quot;,<br>      &quot;objects&quot;: &quot;Large slot machine to the left with illuminated neon signage reading &#39;TRIPLE JACKPOT GEMS&#39;.&quot;,<br>      &quot;furniture&quot;: &quot;Red cushioned swivel bar stool with a metallic bronze base.&quot;,<br>      &quot;flooring&quot;: &quot;Retro-patterned casino carpet featuring swirling designs in teal, blue, and orange.&quot;,<br>      &quot;background_details&quot;: &quot;Blurred casino lights, wooden paneling, slight reflection on the slot machine glass.&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_angle&quot;: &quot;Low angle shot (worm&#39;s-eye view), looking up at the subject to emphasize the legs and shoes.&quot;,<br>      &quot;lighting&quot;: &quot;Direct on-camera flash photography. Hard lighting with distinct shadows behind the subject and high contrast.&quot;,<br>      &quot;aesthetic&quot;: &quot;Y2K vintage digital camera vibe, paparazzi style, candid celebrity snapshot, slight film grain, high saturation.&quot;<br>    }<br>  },<br>  &quot;full_prompt_string&quot;: &quot;Low angle flash photography of a young woman resembling Charli D&#39;Amelio sitting on a red casino stool. She is wearing a black mini dress with rhinestone straps and black platform block heels. She is next to a slot machine that says &#39;TRIPLE JACKPOT GEMS&#39;. Retro casino carpet floor. Direct flash, harsh shadows, 2000s digicam aesthetic, glamorous but gritty.&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt_data&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;Young Sadie Sink woman with long, straight, dark brown hair parted in the middle. Tan complexion. Resembles Charli D&#39;Amelio.&quot;,<br>      &quot;expression&quot;: &quot;Neutral to slightly serious, confident gaze, looking directly down at the camera lens.&quot;,<br>      &quot;pose&quot;: &quot;Sitting on a red leather bar stool, body angled slightly to the left, legs crossed at the knees, hands resting gently on her thighs.&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;clothing&quot;: &quot;Fitted black mini dress (slip dress style) with thin, sparkling rhinestone or silver chain spaghetti straps.&quot;,<br>      &quot;footwear&quot;: &quot;Black satin platform sandals with high block heels and buckle ankle straps.&quot;,<br>      &quot;accessories&quot;: &quot;Large silver hoop earrings, delicate silver rings on fingers.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Casino interior, dimly lit background.&quot;,<br>      &quot;objects&quot;: &quot;Large slot machine to the left with illuminated neon signage reading &#39;TRIPLE JACKPOT GEMS&#39;.&quot;,<br>      &quot;furniture&quot;: &quot;Red cushioned swivel bar stool with a metallic bronze base.&quot;,<br>      &quot;flooring&quot;: &quot;Retro-patterned casino carpet featuring swirling designs in teal, blue, and orange.&quot;,<br>      &quot;background_details&quot;: &quot;Blurred casino lights, wooden paneling, slight reflection on the slot machine glass.&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_angle&quot;: &quot;Low angle shot (worm&#39;s-eye view), looking up at the subject to emphasize the legs and shoes.&quot;,<br>      &quot;lighting&quot;: &quot;Direct on-camera flash photography. Hard lighting with distinct shadows behind the subject and high contrast.&quot;,<br>      &quot;aesthetic&quot;: &quot;Y2K vintage digital camera vibe, paparazzi style, candid celebrity snapshot, slight film grain, high saturation.&quot;<br>    }<br>  },<br>  &quot;full_prompt_string&quot;: &quot;Low angle flash photography of a young woman resembling Charli D&#39;Amelio sitting on a red casino stool. She is wearing a black mini dress with rhinestone straps and black platform block heels. She is next to a slot machine that says &#39;TRIPLE JACKPOT GEMS&#39;. Retro casino carpet floor. Direct flash, harsh shadows, 2000s digicam aesthetic, glamorous but gritty.&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012893873866145840-1.jpg" alt="&quot;image prompt data&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1533,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

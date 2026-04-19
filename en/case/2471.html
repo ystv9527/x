@@ -7,11 +7,13 @@
     <title>&quot;id&quot;: &quot;subject&quot;, #2471 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="[ { &quot;id&quot;: &quot;subject&quot;, &quot;type&quot;: &quot;person&quot;, &quot;description&quot;: &quot;Madelyn Cline with long blonde hair, looking at the camera.&quot;,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2471.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2471.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2471.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844033">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023430">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[\n  {\n    \"id\": \"subject\",\n    \"type\": \"person\",\n    \"description\": \"Madelyn Cline，长发金色，正看着镜头。\",\n    \"pose\": \"她正跨步走过镜面结构，半步之间，一只手轻轻拂过金属框架，另一只手整理头发，同时回望镜头。\",\n    \"clothing\": {\n      \"dress\": {\n        \"color\": \"深紫色\",\n        \"material\": \"漆皮\",\n        \"style\": \"无肩带迷你裙\"\n      },\n      \"legwear\": {\n        \"color\": \"黑色\",\n        \"type\": \"薄透丝袜\"\n      },\n      \"footwear\": {\n        \"color\": \"紫色\",\n        \"material\": \"漆皮\",\n        \"style\": \"带红底的 Louboutin So Kate\"\n      }\n    }\n  },\n  {\n    \"id\": \"environment\",\n    \"type\": \"room\",\n    \"description\": \"一个几何设计的镜面房间，呈现出碎片化、万花筒般的效果。\",\n    \"elements\": [\n      {\n        \"type\": \"mirrors\",\n        \"description\": \"多个倾斜的镜面板反射出主体与房间结构。\"\n      },\n      {\n        \"type\": \"structure\",\n        \"description\": \"承托镜面板的黑色金属框架。\"\n      }\n    ],\n    \"lighting\": \"来自结构内 LED 条的明亮、高对比度光线，产生清晰的高光与反射，优质、电影感、超真实的照片与灯光，高质量照片，景深，非 AI 或 CGI 风格，8K 分辨率。\"\n  }\n]", this)'>📋 Copy</button>
         </div>
-        <p>[<br>  {<br>    &quot;id&quot;: &quot;subject&quot;,<br>    &quot;type&quot;: &quot;person&quot;,<br>    &quot;description&quot;: &quot;Madelyn Cline，长发金色，正看着镜头。&quot;,<br>    &quot;pose&quot;: &quot;她正跨步走过镜面结构，半步之间，一只手轻轻拂过金属框架，另一只手整理头发，同时回望镜头。&quot;,<br>    &quot;clothing&quot;: {<br>      &quot;dress&quot;: {<br>        &quot;color&quot;: &quot;深紫色&quot;,<br>        &quot;material&quot;: &quot;漆皮&quot;,<br>        &quot;style&quot;: &quot;无肩带迷你裙&quot;<br>      },<br>      &quot;legwear&quot;: {<br>        &quot;color&quot;: &quot;黑色&quot;,<br>        &quot;type&quot;: &quot;薄透丝袜&quot;<br>      },<br>      &quot;footwear&quot;: {<br>        &quot;color&quot;: &quot;紫色&quot;,<br>        &quot;material&quot;: &quot;漆皮&quot;,<br>        &quot;style&quot;: &quot;带红底的 Louboutin So Kate&quot;<br>      }<br>    }<br>  },<br>  {<br>    &quot;id&quot;: &quot;environment&quot;,<br>    &quot;type&quot;: &quot;room&quot;,<br>    &quot;description&quot;: &quot;一个几何设计的镜面房间，呈现出碎片化、万花筒般的效果。&quot;,<br>    &quot;elements&quot;: [<br>      {<br>        &quot;type&quot;: &quot;mirrors&quot;,<br>        &quot;description&quot;: &quot;多个倾斜的镜面板反射出主体与房间结构。&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;structure&quot;,<br>        &quot;description&quot;: &quot;承托镜面板的黑色金属框架。&quot;<br>      }<br>    ],<br>    &quot;lighting&quot;: &quot;来自结构内 LED 条的明亮、高对比度光线，产生清晰的高光与反射，优质、电影感、超真实的照片与灯光，高质量照片，景深，非 AI 或 CGI 风格，8K 分辨率。&quot;<br>  }<br>]</p>
+        <div data-nosnippet><p>[<br>  {<br>    &quot;id&quot;: &quot;subject&quot;,<br>    &quot;type&quot;: &quot;person&quot;,<br>    &quot;description&quot;: &quot;Madelyn Cline，长发金色，正看着镜头。&quot;,<br>    &quot;pose&quot;: &quot;她正跨步走过镜面结构，半步之间，一只手轻轻拂过金属框架，另一只手整理头发，同时回望镜头。&quot;,<br>    &quot;clothing&quot;: {<br>      &quot;dress&quot;: {<br>        &quot;color&quot;: &quot;深紫色&quot;,<br>        &quot;material&quot;: &quot;漆皮&quot;,<br>        &quot;style&quot;: &quot;无肩带迷你裙&quot;<br>      },<br>      &quot;legwear&quot;: {<br>        &quot;color&quot;: &quot;黑色&quot;,<br>        &quot;type&quot;: &quot;薄透丝袜&quot;<br>      },<br>      &quot;footwear&quot;: {<br>        &quot;color&quot;: &quot;紫色&quot;,<br>        &quot;material&quot;: &quot;漆皮&quot;,<br>        &quot;style&quot;: &quot;带红底的 Louboutin So Kate&quot;<br>      }<br>    }<br>  },<br>  {<br>    &quot;id&quot;: &quot;environment&quot;,<br>    &quot;type&quot;: &quot;room&quot;,<br>    &quot;description&quot;: &quot;一个几何设计的镜面房间，呈现出碎片化、万花筒般的效果。&quot;,<br>    &quot;elements&quot;: [<br>      {<br>        &quot;type&quot;: &quot;mirrors&quot;,<br>        &quot;description&quot;: &quot;多个倾斜的镜面板反射出主体与房间结构。&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;structure&quot;,<br>        &quot;description&quot;: &quot;承托镜面板的黑色金属框架。&quot;<br>      }<br>    ],<br>    &quot;lighting&quot;: &quot;来自结构内 LED 条的明亮、高对比度光线，产生清晰的高光与反射，优质、电影感、超真实的照片与灯光，高质量照片，景深，非 AI 或 CGI 风格，8K 分辨率。&quot;<br>  }<br>]</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[\n  {\n    \"id\": \"subject\",\n    \"type\": \"person\",\n    \"description\": \"Madelyn Cline with long blonde hair, looking at the camera.\",\n    \"pose\": \"She is walking forward through the mirrored structure mid-step, one hand lightly brushing the metal framework while the other adjusts her hair as she glances toward the camera.\",\n    \"clothing\": {\n      \"dress\": {\n        \"color\": \"deep violet\",\n        \"material\": \"patent leather\",\n        \"style\": \"strapless mini-dress\"\n      },\n      \"legwear\": {\n        \"color\": \"black\",\n        \"type\": \"sheer pantyhose\"\n      },\n      \"footwear\": {\n        \"color\": \"Violet\",\n        \"material\": \"patent leather\",\n        \"style\": \"Louboutin So Kate with red sole\"\n      }\n    }\n  },\n  {\n    \"id\": \"environment\",\n    \"type\": \"room\",\n    \"description\": \"A geometrically designed mirrored room with a fractured, kaleidoscopic effect.\",\n    \"elements\": [\n      {\n        \"type\": \"mirrors\",\n        \"description\": \"Multiple angled mirror panels reflecting the subject and the room structure.\"\n      },\n      {\n        \"type\": \"structure\",\n        \"description\": \"Black metal framework holding the mirror panels.\"\n      }\n    ],\n    \"lighting\": \"Bright, high-contrast light from LED strips within the structure, creating sharp highlights and reflections, high-quality, cinematic, Ultra-realistic photo and lighting, high quality photo, depth of field, no Ai or cgi look, 8k resolution.\"\n  }\n]", this)'>📋 Copy</button>
         </div>
-        <p>[<br>  {<br>    &quot;id&quot;: &quot;subject&quot;,<br>    &quot;type&quot;: &quot;person&quot;,<br>    &quot;description&quot;: &quot;Madelyn Cline with long blonde hair, looking at the camera.&quot;,<br>    &quot;pose&quot;: &quot;She is walking forward through the mirrored structure mid-step, one hand lightly brushing the metal framework while the other adjusts her hair as she glances toward the camera.&quot;,<br>    &quot;clothing&quot;: {<br>      &quot;dress&quot;: {<br>        &quot;color&quot;: &quot;deep violet&quot;,<br>        &quot;material&quot;: &quot;patent leather&quot;,<br>        &quot;style&quot;: &quot;strapless mini-dress&quot;<br>      },<br>      &quot;legwear&quot;: {<br>        &quot;color&quot;: &quot;black&quot;,<br>        &quot;type&quot;: &quot;sheer pantyhose&quot;<br>      },<br>      &quot;footwear&quot;: {<br>        &quot;color&quot;: &quot;Violet&quot;,<br>        &quot;material&quot;: &quot;patent leather&quot;,<br>        &quot;style&quot;: &quot;Louboutin So Kate with red sole&quot;<br>      }<br>    }<br>  },<br>  {<br>    &quot;id&quot;: &quot;environment&quot;,<br>    &quot;type&quot;: &quot;room&quot;,<br>    &quot;description&quot;: &quot;A geometrically designed mirrored room with a fractured, kaleidoscopic effect.&quot;,<br>    &quot;elements&quot;: [<br>      {<br>        &quot;type&quot;: &quot;mirrors&quot;,<br>        &quot;description&quot;: &quot;Multiple angled mirror panels reflecting the subject and the room structure.&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;structure&quot;,<br>        &quot;description&quot;: &quot;Black metal framework holding the mirror panels.&quot;<br>      }<br>    ],<br>    &quot;lighting&quot;: &quot;Bright, high-contrast light from LED strips within the structure, creating sharp highlights and reflections, high-quality, cinematic, Ultra-realistic photo and lighting, high quality photo, depth of field, no Ai or cgi look, 8k resolution.&quot;<br>  }<br>]</p>
+        <div data-nosnippet><p>[<br>  {<br>    &quot;id&quot;: &quot;subject&quot;,<br>    &quot;type&quot;: &quot;person&quot;,<br>    &quot;description&quot;: &quot;Madelyn Cline with long blonde hair, looking at the camera.&quot;,<br>    &quot;pose&quot;: &quot;She is walking forward through the mirrored structure mid-step, one hand lightly brushing the metal framework while the other adjusts her hair as she glances toward the camera.&quot;,<br>    &quot;clothing&quot;: {<br>      &quot;dress&quot;: {<br>        &quot;color&quot;: &quot;deep violet&quot;,<br>        &quot;material&quot;: &quot;patent leather&quot;,<br>        &quot;style&quot;: &quot;strapless mini-dress&quot;<br>      },<br>      &quot;legwear&quot;: {<br>        &quot;color&quot;: &quot;black&quot;,<br>        &quot;type&quot;: &quot;sheer pantyhose&quot;<br>      },<br>      &quot;footwear&quot;: {<br>        &quot;color&quot;: &quot;Violet&quot;,<br>        &quot;material&quot;: &quot;patent leather&quot;,<br>        &quot;style&quot;: &quot;Louboutin So Kate with red sole&quot;<br>      }<br>    }<br>  },<br>  {<br>    &quot;id&quot;: &quot;environment&quot;,<br>    &quot;type&quot;: &quot;room&quot;,<br>    &quot;description&quot;: &quot;A geometrically designed mirrored room with a fractured, kaleidoscopic effect.&quot;,<br>    &quot;elements&quot;: [<br>      {<br>        &quot;type&quot;: &quot;mirrors&quot;,<br>        &quot;description&quot;: &quot;Multiple angled mirror panels reflecting the subject and the room structure.&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;structure&quot;,<br>        &quot;description&quot;: &quot;Black metal framework holding the mirror panels.&quot;<br>      }<br>    ],<br>    &quot;lighting&quot;: &quot;Bright, high-contrast light from LED strips within the structure, creating sharp highlights and reflections, high-quality, cinematic, Ultra-realistic photo and lighting, high quality photo, depth of field, no Ai or cgi look, 8k resolution.&quot;<br>  }<br>]</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2031334187689718167-1.jpg" alt="&quot;id&quot;: &quot;subject&quot;," loading="lazy"><img src="/images/tweet-2031334187689718167-2.jpg" alt="&quot;id&quot;: &quot;subject&quot;," loading="lazy"><img src="/images/tweet-2031334187689718167-3.jpg" alt="&quot;id&quot;: &quot;subject&quot;," loading="lazy"><img src="/images/tweet-2031334187689718167-4.jpg" alt="&quot;id&quot;: &quot;subject&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2471,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

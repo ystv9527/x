@@ -7,11 +7,13 @@
     <title>[BRAND NAME]. #1779 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="[BRAND NAME]. Act as a Creative Director for a technical outerwear brand and a High End Product Photographer. THE TAS...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1779.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1779.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1779.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844791">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023584">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME].\n担任技术外套品牌的创意总监和高端产品摄影师。\n\n任务：\n自主构思并呈现一张“技术外套广告形象图”，展示输入品牌（[BRAND NAME]）与相关性能时尚品牌的合作。\n\nPHASE 1: PARTNER SELECTION & GEAR DESIGN（战略师）\n分析 [BRAND NAME]：它是奢侈（Luxury）、运动（Sport）、工业（Industrial）还是生活方式（Lifestyle）？\n选择服装合作方：\n    奢侈/生活方式 -> The North Face、Moncler。\n    技术/工业 -> Arc'teryx、Stone Island Shadow Project。\n    运动/速度 -> Nike ACG、Salomon。\n装备：设计一件重型技术外套（Parka、壳式夹克或Anorak），配备结构化帽兜或高领。\n颜色：服装必须采用 [BRAND NAME] 的标志色。\n材质：坚挺的高性能面料（GORE-TEX 3L、Ripstop），哑光表面。\n实体品牌标识集成（关键）：\n    必须将 [BRAND NAME] 徽标以看起来昂贵且高科技的方式实体化地集成到服装上。\n\nPHASE 2: PHOTOGRAPHY & LIGHTING（侧面肖像）\n构图：紧凑的头部与肩部侧面照。模特面向左侧。\n姿势：抬下巴，目视前方。帽兜框住面部。\n灯光（明暗对比技术）：\n    主光：硬光打在面部侧面和夹克上的 [BRAND NAME] 徽标，形成强烈反差。\n    虚空：背景为纯黑（#000000）。\n    纹理优先：最大化呈现织物经纬纹理和实体徽标材质的细节。\n\nPHASE 3: UI & SCHEMATIC OVERLAY（蓝图美学）\n覆盖“技术蓝图”界面（细白线）：\n    网格：垂直极细白线贯穿画面。\n    左侧边栏：垂直排列的技术规格（例如：“75D 133g/m2”、“GORE-TEX 3L”）。\n    中央：标题 “[PARTNER] x [BRAND NAME]”。\n    右侧：合作方徽标（例如 The North Face 徽标），白色呈现。\n\nPHASE 4: TECH SPECS\n100mm 微距镜头，f/8，高对比，Unreal Engine 5 渲染品质，商业科技服外观。", this)'>📋 Copy</button>
         </div>
-        <p>[BRAND NAME].<br>担任技术外套品牌的创意总监和高端产品摄影师。</p><p>任务：<br>自主构思并呈现一张“技术外套广告形象图”，展示输入品牌（[BRAND NAME]）与相关性能时尚品牌的合作。</p><p>PHASE 1: PARTNER SELECTION &amp; GEAR DESIGN（战略师）<br>分析 [BRAND NAME]：它是奢侈（Luxury）、运动（Sport）、工业（Industrial）还是生活方式（Lifestyle）？<br>选择服装合作方：<br>    奢侈/生活方式 -&gt; The North Face、Moncler。<br>    技术/工业 -&gt; Arc&#39;teryx、Stone Island Shadow Project。<br>    运动/速度 -&gt; Nike ACG、Salomon。<br>装备：设计一件重型技术外套（Parka、壳式夹克或Anorak），配备结构化帽兜或高领。<br>颜色：服装必须采用 [BRAND NAME] 的标志色。<br>材质：坚挺的高性能面料（GORE-TEX 3L、Ripstop），哑光表面。<br>实体品牌标识集成（关键）：<br>    必须将 [BRAND NAME] 徽标以看起来昂贵且高科技的方式实体化地集成到服装上。</p><p>PHASE 2: PHOTOGRAPHY &amp; LIGHTING（侧面肖像）<br>构图：紧凑的头部与肩部侧面照。模特面向左侧。<br>姿势：抬下巴，目视前方。帽兜框住面部。<br>灯光（明暗对比技术）：<br>    主光：硬光打在面部侧面和夹克上的 [BRAND NAME] 徽标，形成强烈反差。<br>    虚空：背景为纯黑（#000000）。<br>    纹理优先：最大化呈现织物经纬纹理和实体徽标材质的细节。</p><p>PHASE 3: UI &amp; SCHEMATIC OVERLAY（蓝图美学）<br>覆盖“技术蓝图”界面（细白线）：<br>    网格：垂直极细白线贯穿画面。<br>    左侧边栏：垂直排列的技术规格（例如：“75D 133g/m2”、“GORE-TEX 3L”）。<br>    中央：标题 “[PARTNER] x [BRAND NAME]”。<br>    右侧：合作方徽标（例如 The North Face 徽标），白色呈现。</p><p>PHASE 4: TECH SPECS<br>100mm 微距镜头，f/8，高对比，Unreal Engine 5 渲染品质，商业科技服外观。</p>
+        <div data-nosnippet><p>[BRAND NAME].<br>担任技术外套品牌的创意总监和高端产品摄影师。</p><p>任务：<br>自主构思并呈现一张“技术外套广告形象图”，展示输入品牌（[BRAND NAME]）与相关性能时尚品牌的合作。</p><p>PHASE 1: PARTNER SELECTION &amp; GEAR DESIGN（战略师）<br>分析 [BRAND NAME]：它是奢侈（Luxury）、运动（Sport）、工业（Industrial）还是生活方式（Lifestyle）？<br>选择服装合作方：<br>    奢侈/生活方式 -&gt; The North Face、Moncler。<br>    技术/工业 -&gt; Arc&#39;teryx、Stone Island Shadow Project。<br>    运动/速度 -&gt; Nike ACG、Salomon。<br>装备：设计一件重型技术外套（Parka、壳式夹克或Anorak），配备结构化帽兜或高领。<br>颜色：服装必须采用 [BRAND NAME] 的标志色。<br>材质：坚挺的高性能面料（GORE-TEX 3L、Ripstop），哑光表面。<br>实体品牌标识集成（关键）：<br>    必须将 [BRAND NAME] 徽标以看起来昂贵且高科技的方式实体化地集成到服装上。</p><p>PHASE 2: PHOTOGRAPHY &amp; LIGHTING（侧面肖像）<br>构图：紧凑的头部与肩部侧面照。模特面向左侧。<br>姿势：抬下巴，目视前方。帽兜框住面部。<br>灯光（明暗对比技术）：<br>    主光：硬光打在面部侧面和夹克上的 [BRAND NAME] 徽标，形成强烈反差。<br>    虚空：背景为纯黑（#000000）。<br>    纹理优先：最大化呈现织物经纬纹理和实体徽标材质的细节。</p><p>PHASE 3: UI &amp; SCHEMATIC OVERLAY（蓝图美学）<br>覆盖“技术蓝图”界面（细白线）：<br>    网格：垂直极细白线贯穿画面。<br>    左侧边栏：垂直排列的技术规格（例如：“75D 133g/m2”、“GORE-TEX 3L”）。<br>    中央：标题 “[PARTNER] x [BRAND NAME]”。<br>    右侧：合作方徽标（例如 The North Face 徽标），白色呈现。</p><p>PHASE 4: TECH SPECS<br>100mm 微距镜头，f/8，高对比，Unreal Engine 5 渲染品质，商业科技服外观。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]. \nAct as a Creative Director for a technical outerwear brand and a High-End Product Photographer.\n\nTHE TASK:\nAutonomously conceptualize and render a \"Technical Outerwear Campaign Image\" featuring a collaboration between the input brand ([BRAND NAME]) and a relevant performance fashion label.\nPHASE 1: PARTNER SELECTION & GEAR DESIGN (THE STRATEGIST)\nAnalyze [BRAND NAME]: Is it Luxury, Sport, Industrial, or Lifestyle?\nSelect the Apparel Partner:\nLuxury/Lifestyle -> The North Face, Moncler.\nTech/Industrial -> Arc'teryx, Stone Island Shadow Project.\nSport/Speed -> Nike ACG, Salomon.\nThe Gear: Design a Heavy Technical Outerwear Piece (Parka, Shell Jacket, or Anorak) with a structured HOOD or HIGH COLLAR.\nColor: The garment must be the Signature Color of [BRAND NAME].\nMaterial: Stiff, high-performance fabrics (Gore-Tex 3L, Ripstop) with matte finish.\nPHYSICAL BRANDING INTEGRATION (CRITICAL):\n    You must integrate the [BRAND NAME] logo physically onto the garment in a way that looks expensive and high-tech.\nPHASE 2: PHOTOGRAPHY & LIGHTING (THE PROFILE)\nFraming: A tight Head-and-Shoulders Side Profile Shot. Model faces Left.\nPose: Chin up, looking forward. Hood frames the face.\nLighting (Chiaroscuro Tech):\nKey Light: Hard light hitting the face profile and the [BRAND NAME] LOGO on the jacket, creating sharp contrast.\nThe Void: Background is Pure Void Black (#000000).\nTexture Priority: Maximize detail of fabric weave and the physical logo material.\nPHASE 3: UI & SCHEMATIC OVERLAY (BLUEPRINT AESTHETIC)\nOverlay a \"Technical Blueprint\" Interface (thin white lines):\nThe Grid: Vertical hairline white lines cutting through the image.\nLeft Sidebar: Vertical tech specs (e.g., \"75D 133g/m2\", \"GORE-TEX 3L\").\nCenter: Title \"[PARTNER] x [BRAND NAME]\".\nRight Side: The Partner Logo (e.g., The North Face logo) in white.\nPHASE 4: TECH SPECS\n100mm Macro Lens, f/8, High Contrast, Unreal Engine 5 render quality, Commercial Techwear Look.", this)'>📋 Copy</button>
         </div>
-        <p>[BRAND NAME]. <br>Act as a Creative Director for a technical outerwear brand and a High-End Product Photographer.</p><p>THE TASK:<br>Autonomously conceptualize and render a &quot;Technical Outerwear Campaign Image&quot; featuring a collaboration between the input brand ([BRAND NAME]) and a relevant performance fashion label.<br>PHASE 1: PARTNER SELECTION &amp; GEAR DESIGN (THE STRATEGIST)<br>Analyze [BRAND NAME]: Is it Luxury, Sport, Industrial, or Lifestyle?<br>Select the Apparel Partner:<br>Luxury/Lifestyle -&gt; The North Face, Moncler.<br>Tech/Industrial -&gt; Arc&#39;teryx, Stone Island Shadow Project.<br>Sport/Speed -&gt; Nike ACG, Salomon.<br>The Gear: Design a Heavy Technical Outerwear Piece (Parka, Shell Jacket, or Anorak) with a structured HOOD or HIGH COLLAR.<br>Color: The garment must be the Signature Color of [BRAND NAME].<br>Material: Stiff, high-performance fabrics (Gore-Tex 3L, Ripstop) with matte finish.<br>PHYSICAL BRANDING INTEGRATION (CRITICAL):<br>    You must integrate the [BRAND NAME] logo physically onto the garment in a way that looks expensive and high-tech.<br>PHASE 2: PHOTOGRAPHY &amp; LIGHTING (THE PROFILE)<br>Framing: A tight Head-and-Shoulders Side Profile Shot. Model faces Left.<br>Pose: Chin up, looking forward. Hood frames the face.<br>Lighting (Chiaroscuro Tech):<br>Key Light: Hard light hitting the face profile and the [BRAND NAME] LOGO on the jacket, creating sharp contrast.<br>The Void: Background is Pure Void Black (#000000).<br>Texture Priority: Maximize detail of fabric weave and the physical logo material.<br>PHASE 3: UI &amp; SCHEMATIC OVERLAY (BLUEPRINT AESTHETIC)<br>Overlay a &quot;Technical Blueprint&quot; Interface (thin white lines):<br>The Grid: Vertical hairline white lines cutting through the image.<br>Left Sidebar: Vertical tech specs (e.g., &quot;75D 133g/m2&quot;, &quot;GORE-TEX 3L&quot;).<br>Center: Title &quot;[PARTNER] x [BRAND NAME]&quot;.<br>Right Side: The Partner Logo (e.g., The North Face logo) in white.<br>PHASE 4: TECH SPECS<br>100mm Macro Lens, f/8, High Contrast, Unreal Engine 5 render quality, Commercial Techwear Look.</p>
+        <div data-nosnippet><p>[BRAND NAME]. <br>Act as a Creative Director for a technical outerwear brand and a High-End Product Photographer.</p><p>THE TASK:<br>Autonomously conceptualize and render a &quot;Technical Outerwear Campaign Image&quot; featuring a collaboration between the input brand ([BRAND NAME]) and a relevant performance fashion label.<br>PHASE 1: PARTNER SELECTION &amp; GEAR DESIGN (THE STRATEGIST)<br>Analyze [BRAND NAME]: Is it Luxury, Sport, Industrial, or Lifestyle?<br>Select the Apparel Partner:<br>Luxury/Lifestyle -&gt; The North Face, Moncler.<br>Tech/Industrial -&gt; Arc&#39;teryx, Stone Island Shadow Project.<br>Sport/Speed -&gt; Nike ACG, Salomon.<br>The Gear: Design a Heavy Technical Outerwear Piece (Parka, Shell Jacket, or Anorak) with a structured HOOD or HIGH COLLAR.<br>Color: The garment must be the Signature Color of [BRAND NAME].<br>Material: Stiff, high-performance fabrics (Gore-Tex 3L, Ripstop) with matte finish.<br>PHYSICAL BRANDING INTEGRATION (CRITICAL):<br>    You must integrate the [BRAND NAME] logo physically onto the garment in a way that looks expensive and high-tech.<br>PHASE 2: PHOTOGRAPHY &amp; LIGHTING (THE PROFILE)<br>Framing: A tight Head-and-Shoulders Side Profile Shot. Model faces Left.<br>Pose: Chin up, looking forward. Hood frames the face.<br>Lighting (Chiaroscuro Tech):<br>Key Light: Hard light hitting the face profile and the [BRAND NAME] LOGO on the jacket, creating sharp contrast.<br>The Void: Background is Pure Void Black (#000000).<br>Texture Priority: Maximize detail of fabric weave and the physical logo material.<br>PHASE 3: UI &amp; SCHEMATIC OVERLAY (BLUEPRINT AESTHETIC)<br>Overlay a &quot;Technical Blueprint&quot; Interface (thin white lines):<br>The Grid: Vertical hairline white lines cutting through the image.<br>Left Sidebar: Vertical tech specs (e.g., &quot;75D 133g/m2&quot;, &quot;GORE-TEX 3L&quot;).<br>Center: Title &quot;[PARTNER] x [BRAND NAME]&quot;.<br>Right Side: The Partner Logo (e.g., The North Face logo) in white.<br>PHASE 4: TECH SPECS<br>100mm Macro Lens, f/8, High Contrast, Unreal Engine 5 render quality, Commercial Techwear Look.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2016245336948244946-1.jpg" alt="[BRAND NAME]." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1779,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

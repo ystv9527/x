@@ -7,11 +7,13 @@
     <title>Create a refined, gallery quality tribute poster built around... #2254 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create a refined, gallery quality tribute poster built around a central portrait silhouette filled with a textured ph...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2254.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2254.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2254.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844247">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023483">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一幅精致、画廊级的纪念海报，围绕一个中央肖像轮廓，并由纹理化的照片马赛克填充。设计应具有触感、层次感和高级感，而非平面的数字拼贴风格。\n\nCentral Structure : The Vessel\n中央结构：容器（The Vessel）\n中心焦点必须是[Persons name]的大尺寸、高对比度黑白肖像轮廓。该轮廓作为内部视觉叙事的容器。它必须在画布上精确居中。\n\nThe Grid Fill and Mixed Media Textures\n网格填充与混合媒材纹理\n轮廓内部应由密集的照片马赛克网格填充，素材来自该人在职业生涯中的动态镜头。\n\nCritical Texture Direction\n关键纹理指示\n不要直接粘贴平面照片。每个网格单元都应经过艺术处理，以营造触感的拼贴美学。选择性地在不同单元中混合使用以下纹理：\n- 网点（漫画风格的栅格图案）\n- 布料或刺绣质感，暗示球衣材质或缝制补丁\n- 影像颗粒或在高对比动作镜头上加入重噪点\n整体效果应感觉为手工制作、层次丰富，而非数字拼接。\n\nColor Strategy\n色彩策略\n基础配色：黑白单色。仅在特定网格单元上引入选择性的颜色叠加。强调色应与相关球队、品牌或国旗相关。谨慎使用颜色以营造视觉节奏和重点。\n\nTypography and Branding – Strict Micro-Scaling\n排版与品牌 — 严格微缩比例\nTop Left (The name)\n左上角（姓名）\n使用字体 Inter Semibold 写 “[person name]”。字距：紧密的负字距。尺寸：小且低调。该姓名最多占画布总宽度的20%。不要做得大或显眼。\n\nTop Right (The symbol)\n右上角（标识）\n放置主标志（球队、品牌或国旗）。尺寸：非常小。其最多占画布总宽度的10%。\n\nComposition and Background\n构图与背景\nBackground\n背景\n使用米白或浅灰。包含可见的高质量纸张或细微的混凝土纹理。避免平面的数字纯白。\n\nAlignment\n对齐\n将轮廓精确居中。在人物周围保留充足的负空间以保持优雅与平衡。", this)'>📋 Copy</button>
         </div>
-        <p>创建一幅精致、画廊级的纪念海报，围绕一个中央肖像轮廓，并由纹理化的照片马赛克填充。设计应具有触感、层次感和高级感，而非平面的数字拼贴风格。</p><p>Central Structure : The Vessel<br>中央结构：容器（The Vessel）<br>中心焦点必须是[Persons name]的大尺寸、高对比度黑白肖像轮廓。该轮廓作为内部视觉叙事的容器。它必须在画布上精确居中。</p><p>The Grid Fill and Mixed Media Textures<br>网格填充与混合媒材纹理<br>轮廓内部应由密集的照片马赛克网格填充，素材来自该人在职业生涯中的动态镜头。</p><p>Critical Texture Direction<br>关键纹理指示<br>不要直接粘贴平面照片。每个网格单元都应经过艺术处理，以营造触感的拼贴美学。选择性地在不同单元中混合使用以下纹理：<br>- 网点（漫画风格的栅格图案）<br>- 布料或刺绣质感，暗示球衣材质或缝制补丁<br>- 影像颗粒或在高对比动作镜头上加入重噪点<br>整体效果应感觉为手工制作、层次丰富，而非数字拼接。</p><p>Color Strategy<br>色彩策略<br>基础配色：黑白单色。仅在特定网格单元上引入选择性的颜色叠加。强调色应与相关球队、品牌或国旗相关。谨慎使用颜色以营造视觉节奏和重点。</p><p>Typography and Branding – Strict Micro-Scaling<br>排版与品牌 — 严格微缩比例<br>Top Left (The name)<br>左上角（姓名）<br>使用字体 Inter Semibold 写 “[person name]”。字距：紧密的负字距。尺寸：小且低调。该姓名最多占画布总宽度的20%。不要做得大或显眼。</p><p>Top Right (The symbol)<br>右上角（标识）<br>放置主标志（球队、品牌或国旗）。尺寸：非常小。其最多占画布总宽度的10%。</p><p>Composition and Background<br>构图与背景<br>Background<br>背景<br>使用米白或浅灰。包含可见的高质量纸张或细微的混凝土纹理。避免平面的数字纯白。</p><p>Alignment<br>对齐<br>将轮廓精确居中。在人物周围保留充足的负空间以保持优雅与平衡。</p>
+        <div data-nosnippet><p>创建一幅精致、画廊级的纪念海报，围绕一个中央肖像轮廓，并由纹理化的照片马赛克填充。设计应具有触感、层次感和高级感，而非平面的数字拼贴风格。</p><p>Central Structure : The Vessel<br>中央结构：容器（The Vessel）<br>中心焦点必须是[Persons name]的大尺寸、高对比度黑白肖像轮廓。该轮廓作为内部视觉叙事的容器。它必须在画布上精确居中。</p><p>The Grid Fill and Mixed Media Textures<br>网格填充与混合媒材纹理<br>轮廓内部应由密集的照片马赛克网格填充，素材来自该人在职业生涯中的动态镜头。</p><p>Critical Texture Direction<br>关键纹理指示<br>不要直接粘贴平面照片。每个网格单元都应经过艺术处理，以营造触感的拼贴美学。选择性地在不同单元中混合使用以下纹理：<br>- 网点（漫画风格的栅格图案）<br>- 布料或刺绣质感，暗示球衣材质或缝制补丁<br>- 影像颗粒或在高对比动作镜头上加入重噪点<br>整体效果应感觉为手工制作、层次丰富，而非数字拼接。</p><p>Color Strategy<br>色彩策略<br>基础配色：黑白单色。仅在特定网格单元上引入选择性的颜色叠加。强调色应与相关球队、品牌或国旗相关。谨慎使用颜色以营造视觉节奏和重点。</p><p>Typography and Branding – Strict Micro-Scaling<br>排版与品牌 — 严格微缩比例<br>Top Left (The name)<br>左上角（姓名）<br>使用字体 Inter Semibold 写 “[person name]”。字距：紧密的负字距。尺寸：小且低调。该姓名最多占画布总宽度的20%。不要做得大或显眼。</p><p>Top Right (The symbol)<br>右上角（标识）<br>放置主标志（球队、品牌或国旗）。尺寸：非常小。其最多占画布总宽度的10%。</p><p>Composition and Background<br>构图与背景<br>Background<br>背景<br>使用米白或浅灰。包含可见的高质量纸张或细微的混凝土纹理。避免平面的数字纯白。</p><p>Alignment<br>对齐<br>将轮廓精确居中。在人物周围保留充足的负空间以保持优雅与平衡。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a refined, gallery-quality tribute poster built around a central portrait silhouette filled with a textured photo mosaic. The design should feel tactile, layered, and premium not like flat digital collage work. \n\nCentral Structure : The Vessel The central focus must be a large-scale, high-contrast black and white portrait silhouette of [Persons name].\nThis silhouette acts as the container for the internal visual narrative. It must be centered perfectly on the canvas. The Grid Fill and Mixed Media Textures The interior of the silhouette should be populated by a dense photo mosaic grid made from action shots throughout the person’s career. Critical Texture Direction Do not paste flat photos. Each grid cell should have artistic treatment to create a tactile, collage-like aesthetic. Incorporate a mix of the following textures selectively across different cells: Halftone dots (comic-book style raster patterns) \nFabric or embroidery textures suggesting jersey material or stitched patches Film grain or heavy noise on high-contrast action shots The result should feel handcrafted and layered rather than digitally assembled. \n\nColor Strategy Base palette: monochrome black and white. Introduce selective color overlays only on specific grid cells. The accent colors should relate to the relevant team, brand, or national flag. Use color sparingly to create visual rhythm and emphasis. \n\nTypography and Branding – Strict Micro-Scaling Top Left (The name) Write “[person name]” using the font Inter Semibold. Kerning: tight negative kerning , Size: small and discreet. The name must occupy a maximum of 20% of the total canvas width. Do not make it large or dominant. \nTop Right (The symbol) Place the primary logo (Team, Brand, or Flag). Size: very small. It must occupy a maximum of 10% of the total canvas width. \n\nComposition and Background Background Use off-white or light grey. Include a visible high-quality paper or subtle concrete texture. Avoid flat digital white. \nAlignment Center the silhouette precisely. Maintain generous negative space around the figure to preserve elegance and balance.", this)'>📋 Copy</button>
         </div>
-        <p>Create a refined, gallery-quality tribute poster built around a central portrait silhouette filled with a textured photo mosaic. The design should feel tactile, layered, and premium not like flat digital collage work.</p><p>Central Structure : The Vessel The central focus must be a large-scale, high-contrast black and white portrait silhouette of [Persons name].<br>This silhouette acts as the container for the internal visual narrative. It must be centered perfectly on the canvas. The Grid Fill and Mixed Media Textures The interior of the silhouette should be populated by a dense photo mosaic grid made from action shots throughout the person’s career. Critical Texture Direction Do not paste flat photos. Each grid cell should have artistic treatment to create a tactile, collage-like aesthetic. Incorporate a mix of the following textures selectively across different cells: Halftone dots (comic-book style raster patterns) <br>Fabric or embroidery textures suggesting jersey material or stitched patches Film grain or heavy noise on high-contrast action shots The result should feel handcrafted and layered rather than digitally assembled.</p><p>Color Strategy Base palette: monochrome black and white. Introduce selective color overlays only on specific grid cells. The accent colors should relate to the relevant team, brand, or national flag. Use color sparingly to create visual rhythm and emphasis.</p><p>Typography and Branding – Strict Micro-Scaling Top Left (The name) Write “[person name]” using the font Inter Semibold. Kerning: tight negative kerning , Size: small and discreet. The name must occupy a maximum of 20% of the total canvas width. Do not make it large or dominant. <br>Top Right (The symbol) Place the primary logo (Team, Brand, or Flag). Size: very small. It must occupy a maximum of 10% of the total canvas width.</p><p>Composition and Background Background Use off-white or light grey. Include a visible high-quality paper or subtle concrete texture. Avoid flat digital white. <br>Alignment Center the silhouette precisely. Maintain generous negative space around the figure to preserve elegance and balance.</p>
+        <div data-nosnippet><p>Create a refined, gallery-quality tribute poster built around a central portrait silhouette filled with a textured photo mosaic. The design should feel tactile, layered, and premium not like flat digital collage work.</p><p>Central Structure : The Vessel The central focus must be a large-scale, high-contrast black and white portrait silhouette of [Persons name].<br>This silhouette acts as the container for the internal visual narrative. It must be centered perfectly on the canvas. The Grid Fill and Mixed Media Textures The interior of the silhouette should be populated by a dense photo mosaic grid made from action shots throughout the person’s career. Critical Texture Direction Do not paste flat photos. Each grid cell should have artistic treatment to create a tactile, collage-like aesthetic. Incorporate a mix of the following textures selectively across different cells: Halftone dots (comic-book style raster patterns) <br>Fabric or embroidery textures suggesting jersey material or stitched patches Film grain or heavy noise on high-contrast action shots The result should feel handcrafted and layered rather than digitally assembled.</p><p>Color Strategy Base palette: monochrome black and white. Introduce selective color overlays only on specific grid cells. The accent colors should relate to the relevant team, brand, or national flag. Use color sparingly to create visual rhythm and emphasis.</p><p>Typography and Branding – Strict Micro-Scaling Top Left (The name) Write “[person name]” using the font Inter Semibold. Kerning: tight negative kerning , Size: small and discreet. The name must occupy a maximum of 20% of the total canvas width. Do not make it large or dominant. <br>Top Right (The symbol) Place the primary logo (Team, Brand, or Flag). Size: very small. It must occupy a maximum of 10% of the total canvas width.</p><p>Composition and Background Background Use off-white or light grey. Include a visible high-quality paper or subtle concrete texture. Avoid flat digital white. <br>Alignment Center the silhouette precisely. Maintain generous negative space around the figure to preserve elegance and balance.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2026459981932109865-1.jpg" alt="Create a refined, gallery quality tribute poster built around..." loading="lazy"><img src="/images/tweet-2026459981932109865-2.jpg" alt="Create a refined, gallery quality tribute poster built around..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2254,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

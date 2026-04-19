@@ -7,11 +7,13 @@
     <title>Create a hyper realistic winter scene in a vertical 3:4 aspec... #702 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create a hyper realistic winter scene in a vertical 3:4 aspect ratio with cinematic realism and natural detail. The f...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/702.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/702.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/702.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845869">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023815">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一幅极其写实的冬季场景，纵向比例为3:4，具备电影感的现实主义和自然细节。前景以紧实的雪地为主，带有微妙的冰晶闪烁、冷蓝色阴影和寒冷的环境光。一个智能手机水平放置在黑色滑雪靴上，稳定且居中，屏幕上可见污迹、微反射、边缘高光和轻微的屏幕眩光。iPhone 相机 UI 清晰可见，包括图标和快门按钮，强化真实、未编辑的 iPhone 拍摄感。手机屏幕上，主体1和主体2并肩坐在雪地上，采用低角度取景，只露出上半身，呈现出亲密的镜中自拍式构图。主体2稍微向前坐着，手臂伸出将手机举至臂长距离，手机背部可见，穿着光泽粉色羽绒夹克，绗缝真实、自然褶皱，戴着头盔和护目镜；她的脸部完全清晰可见，表情放松且自信。主体1直接坐在她旁边，肩膀几乎相触，穿着中性滑雪夹克并带有轻微雪尘，头盔和深色太阳镜反射出雪地环境；他的脸部同样完全清晰可见，姿态平静、放松。屏幕中的背景展示雪坡和远处滑雪区元素，通过真实的景深和大气雾效处理显得柔和。灯光将冷冽的冬日色调与温暖的阳光反射融合，产生自然的阴影、逼真的高光以及细微的瑕疵感。最终图像应呈现高清、真实、自然且具电影感的效果，且两位主体的面部特征必须被严格保留，与上传的图片完全一致，达到1000%的相同度。", this)'>📋 Copy</button>
         </div>
-        <p>创建一幅极其写实的冬季场景，纵向比例为3:4，具备电影感的现实主义和自然细节。前景以紧实的雪地为主，带有微妙的冰晶闪烁、冷蓝色阴影和寒冷的环境光。一个智能手机水平放置在黑色滑雪靴上，稳定且居中，屏幕上可见污迹、微反射、边缘高光和轻微的屏幕眩光。iPhone 相机 UI 清晰可见，包括图标和快门按钮，强化真实、未编辑的 iPhone 拍摄感。手机屏幕上，主体1和主体2并肩坐在雪地上，采用低角度取景，只露出上半身，呈现出亲密的镜中自拍式构图。主体2稍微向前坐着，手臂伸出将手机举至臂长距离，手机背部可见，穿着光泽粉色羽绒夹克，绗缝真实、自然褶皱，戴着头盔和护目镜；她的脸部完全清晰可见，表情放松且自信。主体1直接坐在她旁边，肩膀几乎相触，穿着中性滑雪夹克并带有轻微雪尘，头盔和深色太阳镜反射出雪地环境；他的脸部同样完全清晰可见，姿态平静、放松。屏幕中的背景展示雪坡和远处滑雪区元素，通过真实的景深和大气雾效处理显得柔和。灯光将冷冽的冬日色调与温暖的阳光反射融合，产生自然的阴影、逼真的高光以及细微的瑕疵感。最终图像应呈现高清、真实、自然且具电影感的效果，且两位主体的面部特征必须被严格保留，与上传的图片完全一致，达到1000%的相同度。</p>
+        <div data-nosnippet><p>创建一幅极其写实的冬季场景，纵向比例为3:4，具备电影感的现实主义和自然细节。前景以紧实的雪地为主，带有微妙的冰晶闪烁、冷蓝色阴影和寒冷的环境光。一个智能手机水平放置在黑色滑雪靴上，稳定且居中，屏幕上可见污迹、微反射、边缘高光和轻微的屏幕眩光。iPhone 相机 UI 清晰可见，包括图标和快门按钮，强化真实、未编辑的 iPhone 拍摄感。手机屏幕上，主体1和主体2并肩坐在雪地上，采用低角度取景，只露出上半身，呈现出亲密的镜中自拍式构图。主体2稍微向前坐着，手臂伸出将手机举至臂长距离，手机背部可见，穿着光泽粉色羽绒夹克，绗缝真实、自然褶皱，戴着头盔和护目镜；她的脸部完全清晰可见，表情放松且自信。主体1直接坐在她旁边，肩膀几乎相触，穿着中性滑雪夹克并带有轻微雪尘，头盔和深色太阳镜反射出雪地环境；他的脸部同样完全清晰可见，姿态平静、放松。屏幕中的背景展示雪坡和远处滑雪区元素，通过真实的景深和大气雾效处理显得柔和。灯光将冷冽的冬日色调与温暖的阳光反射融合，产生自然的阴影、逼真的高光以及细微的瑕疵感。最终图像应呈现高清、真实、自然且具电影感的效果，且两位主体的面部特征必须被严格保留，与上传的图片完全一致，达到1000%的相同度。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a hyper-realistic winter scene in a vertical 3:4 aspect ratio with cinematic realism and natural detail. The foreground features compacted snow with subtle ice sparkle, cool blue shadows, and cold ambient light. A smartphone is placed perfectly horizontally across black ski boots, stable and centered, with visible smudges, micro-reflections, edge highlights, and slight screen glare. The iPhone camera Ul is clearly visible, including icons and the shutter button, reinforcing an authentic, unedited iPhone capture. On the phone screen, Subject 1 and Subject 2 are seated closely together on the snow, framed from a low angle so only their upper bodies are visible, creating an intimate mirror-selfie-style composition. Subject 2 sits slightly forward, holding the phone at arm's length with the phone back visible, wearing a glossy pink puffer jacket with realistic quilting, natural folds, helmet, and goggles; her face is fully clear and visible with a relaxed, confident expression. Subject 1 sits directly beside her, shoulders nearly touching, wearing a neutral ski jacket with light snow dusting, a helmet, and dark sunglasses reflecting the snowy environment: his face is also fully clear and visible, with a calm, relaxed posture. The background within the screen shows a snowy slope and distant ski-area elements softened by realistic depth and atmospheric haze. Lighting blends cool winter tones with warm sunlight reflections, producing natural shadows, lifelike highlights, and subtle imperfections. The final image must feel HD, realistic, candid, and cinematic, with both subjects facial features preserved exactly and remaining 1000% identical to the uploaded images.", this)'>📋 Copy</button>
         </div>
-        <p>Create a hyper-realistic winter scene in a vertical 3:4 aspect ratio with cinematic realism and natural detail. The foreground features compacted snow with subtle ice sparkle, cool blue shadows, and cold ambient light. A smartphone is placed perfectly horizontally across black ski boots, stable and centered, with visible smudges, micro-reflections, edge highlights, and slight screen glare. The iPhone camera Ul is clearly visible, including icons and the shutter button, reinforcing an authentic, unedited iPhone capture. On the phone screen, Subject 1 and Subject 2 are seated closely together on the snow, framed from a low angle so only their upper bodies are visible, creating an intimate mirror-selfie-style composition. Subject 2 sits slightly forward, holding the phone at arm&#39;s length with the phone back visible, wearing a glossy pink puffer jacket with realistic quilting, natural folds, helmet, and goggles; her face is fully clear and visible with a relaxed, confident expression. Subject 1 sits directly beside her, shoulders nearly touching, wearing a neutral ski jacket with light snow dusting, a helmet, and dark sunglasses reflecting the snowy environment: his face is also fully clear and visible, with a calm, relaxed posture. The background within the screen shows a snowy slope and distant ski-area elements softened by realistic depth and atmospheric haze. Lighting blends cool winter tones with warm sunlight reflections, producing natural shadows, lifelike highlights, and subtle imperfections. The final image must feel HD, realistic, candid, and cinematic, with both subjects facial features preserved exactly and remaining 1000% identical to the uploaded images.</p>
+        <div data-nosnippet><p>Create a hyper-realistic winter scene in a vertical 3:4 aspect ratio with cinematic realism and natural detail. The foreground features compacted snow with subtle ice sparkle, cool blue shadows, and cold ambient light. A smartphone is placed perfectly horizontally across black ski boots, stable and centered, with visible smudges, micro-reflections, edge highlights, and slight screen glare. The iPhone camera Ul is clearly visible, including icons and the shutter button, reinforcing an authentic, unedited iPhone capture. On the phone screen, Subject 1 and Subject 2 are seated closely together on the snow, framed from a low angle so only their upper bodies are visible, creating an intimate mirror-selfie-style composition. Subject 2 sits slightly forward, holding the phone at arm&#39;s length with the phone back visible, wearing a glossy pink puffer jacket with realistic quilting, natural folds, helmet, and goggles; her face is fully clear and visible with a relaxed, confident expression. Subject 1 sits directly beside her, shoulders nearly touching, wearing a neutral ski jacket with light snow dusting, a helmet, and dark sunglasses reflecting the snowy environment: his face is also fully clear and visible, with a calm, relaxed posture. The background within the screen shows a snowy slope and distant ski-area elements softened by realistic depth and atmospheric haze. Lighting blends cool winter tones with warm sunlight reflections, producing natural shadows, lifelike highlights, and subtle imperfections. The final image must feel HD, realistic, candid, and cinematic, with both subjects facial features preserved exactly and remaining 1000% identical to the uploaded images.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2008361785322336674-1.jpg" alt="Create a hyper realistic winter scene in a vertical 3:4 aspec..." loading="lazy"><img src="/images/tweet-2008361785322336674-2.jpg" alt="Create a hyper realistic winter scene in a vertical 3:4 aspec..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 702,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

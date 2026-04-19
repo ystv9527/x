@@ -7,11 +7,13 @@
     <title>A clean 3×3 storyboard grid with nine equal sized panels and... #1673 | Gem Nana AI 提示词库</title>
     <meta name="description" content="A clean 3×3 storyboard grid with nine equal sized panels and an overall 4:5 aspect ratio. Use the reference image as...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1673.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1673.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1673.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840666">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022401">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一个干净的3×3分镜网格，包含九个大小相同的画格，总体为4:5长宽比。\n使用参考图片作为产品基础参考。在所有九个画格中严格保持相同的产品、包装设计、品牌识别、材质、颜色、比例和整体身份。产品在每一帧中必须保持清晰可识别。标签、标志和比例必须完全相同。\n这是为品牌作品集准备的高端设计师模型展示。重点在于形态、构图、材质感和视觉节奏，而非写实或生活化叙事。整体视觉应呈现策展感、编辑感和以设计为主导的风格。\n\n帧1（标志）：中心构图的主角镜头，红色茶叶罐置于古董深色胡桃木桌上，沐浴在温暖金色的午后阳光中。\n帧2（触感）：对光滑红色金属表面进行极近距离特写，展示压花金色花纹捕捉光线的细节。\n帧3（环境）：罐子置于木质书架上，背景为虚化的传统中式书房，毛笔在背景中若隐若现。\n帧4（互动）：一只优雅的手在罐子底部附近倒入干茶叶，强调仪式感。\n帧5（矩阵）：多个红色罐子在木质表面上以等距等角排列，形成红与金的图案。\n帧6（重力）：红色罐子轻轻悬浮在木质托盘上方，周围环绕着飘落的干茶叶。\n帧7（签名）：微距细节，严格聚焦在金色背景上的黑色中文书法“Wu Yu Tai”。\n帧8（宣言）：艺术性高对比镜头，窗格的阴影（几何图案）投射在红色罐子表面。\n帧9（地平线）：宽幅电影感镜头，罐子置于低桌上，场景为傍晚时分宏大且昏暗的传统庭院。\n\n相机与风格：\n超高质量影棚影像，具有真实相机质感。各帧使用不同的镜头角度与构图。受控景深、精准的灯光、准确的材质与反射。光照逻辑、色彩调色板、氛围与视觉语言在九个画格中须保持一致，作为一个连贯的系列。\n\n输出：\n一个干净的3×3网格，无边框、无文字、无说明、无水印。", this)'>📋 复制</button>
         </div>
-        <p>一个干净的3×3分镜网格，包含九个大小相同的画格，总体为4:5长宽比。<br>使用参考图片作为产品基础参考。在所有九个画格中严格保持相同的产品、包装设计、品牌识别、材质、颜色、比例和整体身份。产品在每一帧中必须保持清晰可识别。标签、标志和比例必须完全相同。<br>这是为品牌作品集准备的高端设计师模型展示。重点在于形态、构图、材质感和视觉节奏，而非写实或生活化叙事。整体视觉应呈现策展感、编辑感和以设计为主导的风格。</p><p>帧1（标志）：中心构图的主角镜头，红色茶叶罐置于古董深色胡桃木桌上，沐浴在温暖金色的午后阳光中。<br>帧2（触感）：对光滑红色金属表面进行极近距离特写，展示压花金色花纹捕捉光线的细节。<br>帧3（环境）：罐子置于木质书架上，背景为虚化的传统中式书房，毛笔在背景中若隐若现。<br>帧4（互动）：一只优雅的手在罐子底部附近倒入干茶叶，强调仪式感。<br>帧5（矩阵）：多个红色罐子在木质表面上以等距等角排列，形成红与金的图案。<br>帧6（重力）：红色罐子轻轻悬浮在木质托盘上方，周围环绕着飘落的干茶叶。<br>帧7（签名）：微距细节，严格聚焦在金色背景上的黑色中文书法“Wu Yu Tai”。<br>帧8（宣言）：艺术性高对比镜头，窗格的阴影（几何图案）投射在红色罐子表面。<br>帧9（地平线）：宽幅电影感镜头，罐子置于低桌上，场景为傍晚时分宏大且昏暗的传统庭院。</p><p>相机与风格：<br>超高质量影棚影像，具有真实相机质感。各帧使用不同的镜头角度与构图。受控景深、精准的灯光、准确的材质与反射。光照逻辑、色彩调色板、氛围与视觉语言在九个画格中须保持一致，作为一个连贯的系列。</p><p>输出：<br>一个干净的3×3网格，无边框、无文字、无说明、无水印。</p>
+        <div data-nosnippet><p>一个干净的3×3分镜网格，包含九个大小相同的画格，总体为4:5长宽比。<br>使用参考图片作为产品基础参考。在所有九个画格中严格保持相同的产品、包装设计、品牌识别、材质、颜色、比例和整体身份。产品在每一帧中必须保持清晰可识别。标签、标志和比例必须完全相同。<br>这是为品牌作品集准备的高端设计师模型展示。重点在于形态、构图、材质感和视觉节奏，而非写实或生活化叙事。整体视觉应呈现策展感、编辑感和以设计为主导的风格。</p><p>帧1（标志）：中心构图的主角镜头，红色茶叶罐置于古董深色胡桃木桌上，沐浴在温暖金色的午后阳光中。<br>帧2（触感）：对光滑红色金属表面进行极近距离特写，展示压花金色花纹捕捉光线的细节。<br>帧3（环境）：罐子置于木质书架上，背景为虚化的传统中式书房，毛笔在背景中若隐若现。<br>帧4（互动）：一只优雅的手在罐子底部附近倒入干茶叶，强调仪式感。<br>帧5（矩阵）：多个红色罐子在木质表面上以等距等角排列，形成红与金的图案。<br>帧6（重力）：红色罐子轻轻悬浮在木质托盘上方，周围环绕着飘落的干茶叶。<br>帧7（签名）：微距细节，严格聚焦在金色背景上的黑色中文书法“Wu Yu Tai”。<br>帧8（宣言）：艺术性高对比镜头，窗格的阴影（几何图案）投射在红色罐子表面。<br>帧9（地平线）：宽幅电影感镜头，罐子置于低桌上，场景为傍晚时分宏大且昏暗的传统庭院。</p><p>相机与风格：<br>超高质量影棚影像，具有真实相机质感。各帧使用不同的镜头角度与构图。受控景深、精准的灯光、准确的材质与反射。光照逻辑、色彩调色板、氛围与视觉语言在九个画格中须保持一致，作为一个连贯的系列。</p><p>输出：<br>一个干净的3×3网格，无边框、无文字、无说明、无水印。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A clean 3×3 storyboard grid with nine equal-sized panels and an overall 4:5 aspect ratio.\nUse the reference image as the base product reference. Keep the same product, packaging design, branding, materials, colors, proportions and overall identity across all nine panels exactly as the reference. The product must remain clearly recognizable in every frame. The label, logo and proportions must stay exactly the same.\nThis storyboard is a high-end designer mockup presentation for a branding portfolio. The focus is on form, composition, materiality and visual rhythm rather than realism or lifestyle narrative. The overall look should feel curated, editorial and design-driven.\nFRAME 1 (The Icon): Center-composed hero shot of the red tea tin on an antique dark walnut table, bathed in warm, golden afternoon sun.\nFRAME 2 (The Tactile): Extreme close-up on the glossy red metal surface showing the embossed gold floral texture catching the light.\nFRAME 3 (The Environment): The canister placed on a wooden shelf in a blurred traditional Chinese study with calligraphy brushes in the background.\nFRAME 4 (The Interaction): An elegant hand pouring dry tea leaves near the base of the tin, emphasizing the ritual.\nFRAME 5 (The Matrix): An isometric grid of multiple red tins arranged on a wooden surface, creating a pattern of red and gold.\nFRAME 6 (The Gravity): The red canister floating gently above a wooden tray, surrounded by drifting dried tea leaves.\nFRAME 7 (The Signature): Macro detail focusing strictly on the black Chinese calligraphy \"Wu Yu Tai\" against the gold background.\nFRAME 8 (The Statement): Artistic high-contrast shot using shadows of window lattice (geometric patterns) cast across the red tin.\nFRAME 9 (The Horizon): Wide cinematic shot of the tin placed on a low table in a grand, dimly lit traditional courtyard at dusk.\nCAMERA & STYLE:\nUltra high-quality studio imagery with a real camera look. Different camera angles and framings across frames. Controlled depth of field, precise lighting, accurate materials and reflections. Lighting logic, color palette, mood and visual language must remain consistent across all nine panels as one cohesive series.\nOUTPUT:\nA clean 3×3 grid with no borders, no text, no captions and no watermarks.", this)'>📋 复制</button>
         </div>
-        <p>A clean 3×3 storyboard grid with nine equal-sized panels and an overall 4:5 aspect ratio.<br>Use the reference image as the base product reference. Keep the same product, packaging design, branding, materials, colors, proportions and overall identity across all nine panels exactly as the reference. The product must remain clearly recognizable in every frame. The label, logo and proportions must stay exactly the same.<br>This storyboard is a high-end designer mockup presentation for a branding portfolio. The focus is on form, composition, materiality and visual rhythm rather than realism or lifestyle narrative. The overall look should feel curated, editorial and design-driven.<br>FRAME 1 (The Icon): Center-composed hero shot of the red tea tin on an antique dark walnut table, bathed in warm, golden afternoon sun.<br>FRAME 2 (The Tactile): Extreme close-up on the glossy red metal surface showing the embossed gold floral texture catching the light.<br>FRAME 3 (The Environment): The canister placed on a wooden shelf in a blurred traditional Chinese study with calligraphy brushes in the background.<br>FRAME 4 (The Interaction): An elegant hand pouring dry tea leaves near the base of the tin, emphasizing the ritual.<br>FRAME 5 (The Matrix): An isometric grid of multiple red tins arranged on a wooden surface, creating a pattern of red and gold.<br>FRAME 6 (The Gravity): The red canister floating gently above a wooden tray, surrounded by drifting dried tea leaves.<br>FRAME 7 (The Signature): Macro detail focusing strictly on the black Chinese calligraphy &quot;Wu Yu Tai&quot; against the gold background.<br>FRAME 8 (The Statement): Artistic high-contrast shot using shadows of window lattice (geometric patterns) cast across the red tin.<br>FRAME 9 (The Horizon): Wide cinematic shot of the tin placed on a low table in a grand, dimly lit traditional courtyard at dusk.<br>CAMERA &amp; STYLE:<br>Ultra high-quality studio imagery with a real camera look. Different camera angles and framings across frames. Controlled depth of field, precise lighting, accurate materials and reflections. Lighting logic, color palette, mood and visual language must remain consistent across all nine panels as one cohesive series.<br>OUTPUT:<br>A clean 3×3 grid with no borders, no text, no captions and no watermarks.</p>
+        <div data-nosnippet><p>A clean 3×3 storyboard grid with nine equal-sized panels and an overall 4:5 aspect ratio.<br>Use the reference image as the base product reference. Keep the same product, packaging design, branding, materials, colors, proportions and overall identity across all nine panels exactly as the reference. The product must remain clearly recognizable in every frame. The label, logo and proportions must stay exactly the same.<br>This storyboard is a high-end designer mockup presentation for a branding portfolio. The focus is on form, composition, materiality and visual rhythm rather than realism or lifestyle narrative. The overall look should feel curated, editorial and design-driven.<br>FRAME 1 (The Icon): Center-composed hero shot of the red tea tin on an antique dark walnut table, bathed in warm, golden afternoon sun.<br>FRAME 2 (The Tactile): Extreme close-up on the glossy red metal surface showing the embossed gold floral texture catching the light.<br>FRAME 3 (The Environment): The canister placed on a wooden shelf in a blurred traditional Chinese study with calligraphy brushes in the background.<br>FRAME 4 (The Interaction): An elegant hand pouring dry tea leaves near the base of the tin, emphasizing the ritual.<br>FRAME 5 (The Matrix): An isometric grid of multiple red tins arranged on a wooden surface, creating a pattern of red and gold.<br>FRAME 6 (The Gravity): The red canister floating gently above a wooden tray, surrounded by drifting dried tea leaves.<br>FRAME 7 (The Signature): Macro detail focusing strictly on the black Chinese calligraphy &quot;Wu Yu Tai&quot; against the gold background.<br>FRAME 8 (The Statement): Artistic high-contrast shot using shadows of window lattice (geometric patterns) cast across the red tin.<br>FRAME 9 (The Horizon): Wide cinematic shot of the tin placed on a low table in a grand, dimly lit traditional courtyard at dusk.<br>CAMERA &amp; STYLE:<br>Ultra high-quality studio imagery with a real camera look. Different camera angles and framings across frames. Controlled depth of field, precise lighting, accurate materials and reflections. Lighting logic, color palette, mood and visual language must remain consistent across all nine panels as one cohesive series.<br>OUTPUT:<br>A clean 3×3 grid with no borders, no text, no captions and no watermarks.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015257114529419733-1.jpg" alt="A clean 3×3 storyboard grid with nine equal sized panels and..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1673,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

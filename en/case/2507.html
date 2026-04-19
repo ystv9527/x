@@ -7,11 +7,13 @@
     <title>Create an exaggerated stylized 3D caricature character portra... #2507 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create an exaggerated stylized 3D caricature character portrait with strong intentional deformation and a clean, cont...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2507.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2507.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2507.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844001">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023422">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一幅夸张风格化的3D夸张人物肖像，具有强烈的刻意变形和干净、可控的表面处理。使用所附参考照片中的人物。保留主体的身份、面部相似度、肤色和标志性特征，但将其重新诠释为大胆的漫画化3D形态，包含拉长的颈部、头颈比例夸大的大头、下垂的眼睑、厚重的嘴唇以及略带不对称的面部结构。呈现为类人的3D角色，皮肤光滑、工作室级干净质感，细节为刻意设计，避免随机纹理或噪点。搭配大胆配饰，例如圆形或椭圆形眼镜、圈式耳环、金链、头巾或方巾（bandana）以及街头奢华风格服饰。\n\n使用中性工作室灯光，柔和阴影与均匀照明，无戏剧性对比，背景为纯净的中性灰或乳白色。整体美感应偏怪诞、前卫、具收藏感和角色性，而非可爱或写实。\n\n超高清、电影级优质3D渲染质量，超写实，材质干净，无雀斑、无污渍、无颗粒、无噪点、无斑点、无文字、无标志、无水印。\n\n纵横比 4:5。", this)'>📋 Copy</button>
         </div>
-        <p>创建一幅夸张风格化的3D夸张人物肖像，具有强烈的刻意变形和干净、可控的表面处理。使用所附参考照片中的人物。保留主体的身份、面部相似度、肤色和标志性特征，但将其重新诠释为大胆的漫画化3D形态，包含拉长的颈部、头颈比例夸大的大头、下垂的眼睑、厚重的嘴唇以及略带不对称的面部结构。呈现为类人的3D角色，皮肤光滑、工作室级干净质感，细节为刻意设计，避免随机纹理或噪点。搭配大胆配饰，例如圆形或椭圆形眼镜、圈式耳环、金链、头巾或方巾（bandana）以及街头奢华风格服饰。</p><p>使用中性工作室灯光，柔和阴影与均匀照明，无戏剧性对比，背景为纯净的中性灰或乳白色。整体美感应偏怪诞、前卫、具收藏感和角色性，而非可爱或写实。</p><p>超高清、电影级优质3D渲染质量，超写实，材质干净，无雀斑、无污渍、无颗粒、无噪点、无斑点、无文字、无标志、无水印。</p><p>纵横比 4:5。</p>
+        <div data-nosnippet><p>创建一幅夸张风格化的3D夸张人物肖像，具有强烈的刻意变形和干净、可控的表面处理。使用所附参考照片中的人物。保留主体的身份、面部相似度、肤色和标志性特征，但将其重新诠释为大胆的漫画化3D形态，包含拉长的颈部、头颈比例夸大的大头、下垂的眼睑、厚重的嘴唇以及略带不对称的面部结构。呈现为类人的3D角色，皮肤光滑、工作室级干净质感，细节为刻意设计，避免随机纹理或噪点。搭配大胆配饰，例如圆形或椭圆形眼镜、圈式耳环、金链、头巾或方巾（bandana）以及街头奢华风格服饰。</p><p>使用中性工作室灯光，柔和阴影与均匀照明，无戏剧性对比，背景为纯净的中性灰或乳白色。整体美感应偏怪诞、前卫、具收藏感和角色性，而非可爱或写实。</p><p>超高清、电影级优质3D渲染质量，超写实，材质干净，无雀斑、无污渍、无颗粒、无噪点、无斑点、无文字、无标志、无水印。</p><p>纵横比 4:5。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an exaggerated stylized 3D caricature character portrait with strong intentional deformation and a clean, controlled surface finish. Use the person from the ATTACHED REFERENCE PHOTO. Preserve the subject’s identity, facial likeness, skin tone, and defining features, but reinterpret them into a bold caricatured 3D form with an elongated neck, oversized head-to-neck ratio, droopy eyelids, heavy lips, and slightly asymmetrical facial structure.Render as a human-like 3D character with smooth, studio-clean skin and intentionally designed detail, avoiding random texture or noise. Style with bold accessories such as round or oval glasses, hoop earrings, gold chains, headscarves or bandanas, and street-luxury clothing.\n\nUse neutral studio lighting with soft shadows and even illumination, no dramatic contrast, against a plain neutral grey or off-white background. The overall aesthetic should feel weird, fashion-forward, collectible, and character-driven rather than cute or realistic.\n\nUltra high definition, premium cinematic 3D render quality, hyper-realistic hyper realism, clean materials, no freckles, no dirt, no grain, no noise, no speckling, no text, no logos, no watermarks.\n\nAspect ratio 4:5.", this)'>📋 Copy</button>
         </div>
-        <p>Create an exaggerated stylized 3D caricature character portrait with strong intentional deformation and a clean, controlled surface finish. Use the person from the ATTACHED REFERENCE PHOTO. Preserve the subject’s identity, facial likeness, skin tone, and defining features, but reinterpret them into a bold caricatured 3D form with an elongated neck, oversized head-to-neck ratio, droopy eyelids, heavy lips, and slightly asymmetrical facial structure.Render as a human-like 3D character with smooth, studio-clean skin and intentionally designed detail, avoiding random texture or noise. Style with bold accessories such as round or oval glasses, hoop earrings, gold chains, headscarves or bandanas, and street-luxury clothing.</p><p>Use neutral studio lighting with soft shadows and even illumination, no dramatic contrast, against a plain neutral grey or off-white background. The overall aesthetic should feel weird, fashion-forward, collectible, and character-driven rather than cute or realistic.</p><p>Ultra high definition, premium cinematic 3D render quality, hyper-realistic hyper realism, clean materials, no freckles, no dirt, no grain, no noise, no speckling, no text, no logos, no watermarks.</p><p>Aspect ratio 4:5.</p>
+        <div data-nosnippet><p>Create an exaggerated stylized 3D caricature character portrait with strong intentional deformation and a clean, controlled surface finish. Use the person from the ATTACHED REFERENCE PHOTO. Preserve the subject’s identity, facial likeness, skin tone, and defining features, but reinterpret them into a bold caricatured 3D form with an elongated neck, oversized head-to-neck ratio, droopy eyelids, heavy lips, and slightly asymmetrical facial structure.Render as a human-like 3D character with smooth, studio-clean skin and intentionally designed detail, avoiding random texture or noise. Style with bold accessories such as round or oval glasses, hoop earrings, gold chains, headscarves or bandanas, and street-luxury clothing.</p><p>Use neutral studio lighting with soft shadows and even illumination, no dramatic contrast, against a plain neutral grey or off-white background. The overall aesthetic should feel weird, fashion-forward, collectible, and character-driven rather than cute or realistic.</p><p>Ultra high definition, premium cinematic 3D render quality, hyper-realistic hyper realism, clean materials, no freckles, no dirt, no grain, no noise, no speckling, no text, no logos, no watermarks.</p><p>Aspect ratio 4:5.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2032256273782358153-1.jpg" alt="Create an exaggerated stylized 3D caricature character portra..." loading="lazy"><img src="/images/tweet-2032256273782358153-2.jpg" alt="Create an exaggerated stylized 3D caricature character portra..." loading="lazy"><img src="/images/tweet-2032256273782358153-3.jpg" alt="Create an exaggerated stylized 3D caricature character portra..." loading="lazy"><img src="/images/tweet-2032256273782358153-4.jpg" alt="Create an exaggerated stylized 3D caricature character portra..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2507,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;action&quot;: &quot;image generation&quot;, #1951 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;action&quot;: &quot;image generation&quot;, &quot;action input&quot;: { &quot;prompt&quot;: &quot;A high detail, 8K close up portrait of the same woman fr...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1951.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1951.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1951.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840432">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022336">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"action\": \"image_generation\",\n  \"action_input\": {\n    \"prompt\": \"高细节、8K 特写肖像，与之前图像中相同的女性，具有相同的面部特征和长金色波浪发。她被捕捉到一个真诚而愉悦的笑声瞬间，头微微向后仰，双眼紧闭。她穿着一件干净利落的白色有扣衬衫，别着一个小黑色领夹式麦克风。背景为极简、平滑的浅灰色影棚墙面。照明柔和且专业，突出面料质地和她表情的自然细节。电影质感，逼真的皮肤纹理，2:3 纵横比。\",\n    \"aspect_ratio\": \"2:3\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;action&quot;: &quot;image_generation&quot;,<br>  &quot;action_input&quot;: {<br>    &quot;prompt&quot;: &quot;高细节、8K 特写肖像，与之前图像中相同的女性，具有相同的面部特征和长金色波浪发。她被捕捉到一个真诚而愉悦的笑声瞬间，头微微向后仰，双眼紧闭。她穿着一件干净利落的白色有扣衬衫，别着一个小黑色领夹式麦克风。背景为极简、平滑的浅灰色影棚墙面。照明柔和且专业，突出面料质地和她表情的自然细节。电影质感，逼真的皮肤纹理，2:3 纵横比。&quot;,<br>    &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;action&quot;: &quot;image_generation&quot;,<br>  &quot;action_input&quot;: {<br>    &quot;prompt&quot;: &quot;高细节、8K 特写肖像，与之前图像中相同的女性，具有相同的面部特征和长金色波浪发。她被捕捉到一个真诚而愉悦的笑声瞬间，头微微向后仰，双眼紧闭。她穿着一件干净利落的白色有扣衬衫，别着一个小黑色领夹式麦克风。背景为极简、平滑的浅灰色影棚墙面。照明柔和且专业，突出面料质地和她表情的自然细节。电影质感，逼真的皮肤纹理，2:3 纵横比。&quot;,<br>    &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"action\": \"image_generation\",\n  \"action_input\": {\n    \"prompt\": \"A high-detail, 8K close-up portrait of the same woman from the previous images with the same facial features and long blonde wavy hair. She is captured in a moment of genuine, joyful laughter with her head slightly tilted back and eyes closed. She is wearing a crisp white button-down social shirt with a small black lapel microphone attached. The background is a minimalist, smooth light gray studio wall. The lighting is soft and professional, highlighting the texture of the fabric and the natural details of her expression. Cinematic quality, realistic skin textures, 2:3 aspect ratio.\",\n    \"aspect_ratio\": \"2:3\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;action&quot;: &quot;image_generation&quot;,<br>  &quot;action_input&quot;: {<br>    &quot;prompt&quot;: &quot;A high-detail, 8K close-up portrait of the same woman from the previous images with the same facial features and long blonde wavy hair. She is captured in a moment of genuine, joyful laughter with her head slightly tilted back and eyes closed. She is wearing a crisp white button-down social shirt with a small black lapel microphone attached. The background is a minimalist, smooth light gray studio wall. The lighting is soft and professional, highlighting the texture of the fabric and the natural details of her expression. Cinematic quality, realistic skin textures, 2:3 aspect ratio.&quot;,<br>    &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;action&quot;: &quot;image_generation&quot;,<br>  &quot;action_input&quot;: {<br>    &quot;prompt&quot;: &quot;A high-detail, 8K close-up portrait of the same woman from the previous images with the same facial features and long blonde wavy hair. She is captured in a moment of genuine, joyful laughter with her head slightly tilted back and eyes closed. She is wearing a crisp white button-down social shirt with a small black lapel microphone attached. The background is a minimalist, smooth light gray studio wall. The lighting is soft and professional, highlighting the texture of the fabric and the natural details of her expression. Cinematic quality, realistic skin textures, 2:3 aspect ratio.&quot;,<br>    &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2018704062582297014-1.jpg" alt="&quot;action&quot;: &quot;image generation&quot;," loading="lazy"><img src="/images/tweet-2018704062582297014-2.jpg" alt="&quot;action&quot;: &quot;image generation&quot;," loading="lazy"><img src="/images/tweet-2018704062582297014-3.jpg" alt="&quot;action&quot;: &quot;image generation&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1951,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

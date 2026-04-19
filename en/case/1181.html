@@ -7,11 +7,13 @@
     <title>&quot;prompt type&quot;: &quot;descriptive portrait&quot;, #1181 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt type&quot;: &quot;descriptive portrait&quot;, &quot;subject details&quot;: { &quot;demographics&quot;: &quot;Young female, sun kissed skin, fit and...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1181.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1181.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1181.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845387">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023710">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"提示类型\": \"描述性肖像\",\n  \"人物细节\": {\n    \"人口信息\": \"年轻女性，阳光色肌肤，体态健美且结实，严格匹配参考照片。\",\n    \"面部特征\": {\n      \"表情\": \"张嘴大笑，鼻子和脸颊上有一处白色面粉污渍，调皮而凌乱但具有吸引力，面部表情与参考照片匹配。\",\n      \"眼睛\": \"明亮的绿眼睛，与参考照片的角度一致。\",\n      \"头发\": \"微微凌乱的短至中长度头发，随意造型，完全按照参考照片的发型。\"\n    },\n    \"服装\": {\n      \"上衣\": \"与参考照片姿势完全一致的纯黑色紧身T恤，搭配极短的睡裤。\",\n      \"配饰\": \"无。\",\n      \"鞋履\": \"赤脚。\"\n    }\n  },\n  \"姿势与动作\": {\n    \"身体位置\": \"俯身靠在厨房岛台上，肘部支在台面，身体位置严格遵循参考照片。\",\n    \"手部\": \"手上轻微沾有面粉。一只手拿着手机，另一只手靠近她的脸，手的位置完全与参考照片相符。\",\n    \"相机角度\": \"与参考照片精确匹配的眼平镜面自拍，拍摄于有反光的厨房橱柜或窗户。\"\n  },\n  \"背景环境\": {\n    \"位置\": \"凌乱的厨房。\",\n    \"光源\": \"明亮的厨房顶灯。\",\n    \"物品\": {\n      \"细节\": \"面团碗、台面上散落的面粉、破裂的蛋壳。\"\n    }\n  },\n  \"技术规格\": {\n    \"风格\": \"调皮、家庭氛围、超写实，强调自然皮肤质感和面粉粉尘的高细节，严格遵守参考照片以确保真实感。\",\n    \"纵横比\": \"4:5\"\n  },\n  \"约束条件\": [\n    \"完全保持参考图像中的面部身份\",\n    \"不得重塑或美化面部\",\n    \"不得使用人工滤镜或风格化处理\",\n    \"保持自然的比例和光照\"\n  ],\n  \"输出目标\": \"创建一张调皮的、超写实的镜面自拍肖像，呈现一位在凌乱厨房中自然大笑、脸上有面粉的年轻女性，姿势、表情和身份与参考照片完美匹配。\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;提示类型&quot;: &quot;描述性肖像&quot;,<br>  &quot;人物细节&quot;: {<br>    &quot;人口信息&quot;: &quot;年轻女性，阳光色肌肤，体态健美且结实，严格匹配参考照片。&quot;,<br>    &quot;面部特征&quot;: {<br>      &quot;表情&quot;: &quot;张嘴大笑，鼻子和脸颊上有一处白色面粉污渍，调皮而凌乱但具有吸引力，面部表情与参考照片匹配。&quot;,<br>      &quot;眼睛&quot;: &quot;明亮的绿眼睛，与参考照片的角度一致。&quot;,<br>      &quot;头发&quot;: &quot;微微凌乱的短至中长度头发，随意造型，完全按照参考照片的发型。&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;上衣&quot;: &quot;与参考照片姿势完全一致的纯黑色紧身T恤，搭配极短的睡裤。&quot;,<br>      &quot;配饰&quot;: &quot;无。&quot;,<br>      &quot;鞋履&quot;: &quot;赤脚。&quot;<br>    }<br>  },<br>  &quot;姿势与动作&quot;: {<br>    &quot;身体位置&quot;: &quot;俯身靠在厨房岛台上，肘部支在台面，身体位置严格遵循参考照片。&quot;,<br>    &quot;手部&quot;: &quot;手上轻微沾有面粉。一只手拿着手机，另一只手靠近她的脸，手的位置完全与参考照片相符。&quot;,<br>    &quot;相机角度&quot;: &quot;与参考照片精确匹配的眼平镜面自拍，拍摄于有反光的厨房橱柜或窗户。&quot;<br>  },<br>  &quot;背景环境&quot;: {<br>    &quot;位置&quot;: &quot;凌乱的厨房。&quot;,<br>    &quot;光源&quot;: &quot;明亮的厨房顶灯。&quot;,<br>    &quot;物品&quot;: {<br>      &quot;细节&quot;: &quot;面团碗、台面上散落的面粉、破裂的蛋壳。&quot;<br>    }<br>  },<br>  &quot;技术规格&quot;: {<br>    &quot;风格&quot;: &quot;调皮、家庭氛围、超写实，强调自然皮肤质感和面粉粉尘的高细节，严格遵守参考照片以确保真实感。&quot;,<br>    &quot;纵横比&quot;: &quot;4:5&quot;<br>  },<br>  &quot;约束条件&quot;: [<br>    &quot;完全保持参考图像中的面部身份&quot;,<br>    &quot;不得重塑或美化面部&quot;,<br>    &quot;不得使用人工滤镜或风格化处理&quot;,<br>    &quot;保持自然的比例和光照&quot;<br>  ],<br>  &quot;输出目标&quot;: &quot;创建一张调皮的、超写实的镜面自拍肖像，呈现一位在凌乱厨房中自然大笑、脸上有面粉的年轻女性，姿势、表情和身份与参考照片完美匹配。&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;提示类型&quot;: &quot;描述性肖像&quot;,<br>  &quot;人物细节&quot;: {<br>    &quot;人口信息&quot;: &quot;年轻女性，阳光色肌肤，体态健美且结实，严格匹配参考照片。&quot;,<br>    &quot;面部特征&quot;: {<br>      &quot;表情&quot;: &quot;张嘴大笑，鼻子和脸颊上有一处白色面粉污渍，调皮而凌乱但具有吸引力，面部表情与参考照片匹配。&quot;,<br>      &quot;眼睛&quot;: &quot;明亮的绿眼睛，与参考照片的角度一致。&quot;,<br>      &quot;头发&quot;: &quot;微微凌乱的短至中长度头发，随意造型，完全按照参考照片的发型。&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;上衣&quot;: &quot;与参考照片姿势完全一致的纯黑色紧身T恤，搭配极短的睡裤。&quot;,<br>      &quot;配饰&quot;: &quot;无。&quot;,<br>      &quot;鞋履&quot;: &quot;赤脚。&quot;<br>    }<br>  },<br>  &quot;姿势与动作&quot;: {<br>    &quot;身体位置&quot;: &quot;俯身靠在厨房岛台上，肘部支在台面，身体位置严格遵循参考照片。&quot;,<br>    &quot;手部&quot;: &quot;手上轻微沾有面粉。一只手拿着手机，另一只手靠近她的脸，手的位置完全与参考照片相符。&quot;,<br>    &quot;相机角度&quot;: &quot;与参考照片精确匹配的眼平镜面自拍，拍摄于有反光的厨房橱柜或窗户。&quot;<br>  },<br>  &quot;背景环境&quot;: {<br>    &quot;位置&quot;: &quot;凌乱的厨房。&quot;,<br>    &quot;光源&quot;: &quot;明亮的厨房顶灯。&quot;,<br>    &quot;物品&quot;: {<br>      &quot;细节&quot;: &quot;面团碗、台面上散落的面粉、破裂的蛋壳。&quot;<br>    }<br>  },<br>  &quot;技术规格&quot;: {<br>    &quot;风格&quot;: &quot;调皮、家庭氛围、超写实，强调自然皮肤质感和面粉粉尘的高细节，严格遵守参考照片以确保真实感。&quot;,<br>    &quot;纵横比&quot;: &quot;4:5&quot;<br>  },<br>  &quot;约束条件&quot;: [<br>    &quot;完全保持参考图像中的面部身份&quot;,<br>    &quot;不得重塑或美化面部&quot;,<br>    &quot;不得使用人工滤镜或风格化处理&quot;,<br>    &quot;保持自然的比例和光照&quot;<br>  ],<br>  &quot;输出目标&quot;: &quot;创建一张调皮的、超写实的镜面自拍肖像，呈现一位在凌乱厨房中自然大笑、脸上有面粉的年轻女性，姿势、表情和身份与参考照片完美匹配。&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_type\": \"descriptive_portrait\",\n  \"subject_details\": {\n    \"demographics\": \"Young female, sun-kissed skin, fit and athletic build, strictly matching the reference photo.\",\n    \"facial_features\": {\n      \"expression\": \"Laughing with mouth open, a smudge of white flour on her nose and cheek, playful and messy yet attractive, facial expression matching the reference photo.\",\n      \"eyes\": \"Bright green eyes, aligned with the reference photo angle.\",\n      \"hair\": \"Slightly messy short-to-medium hair, casually styled, exactly following the reference photo hairstyle.\"\n    },\n    \"apparel\": {\n      \"dress\": \"Plain black t-shirt fitting exactly like the reference photo pose, paired with tiny pajama shorts.\",\n      \"accessories\": \"None.\",\n      \"footwear\": \"Barefoot.\"\n    }\n  },\n  \"pose_and_action\": {\n    \"body_position\": \"Leaning over the kitchen island counter, elbows resting on the surface, body position strictly following the reference photo.\",\n    \"hands\": \"Hands lightly dusted with flour. One hand holds the phone, the other is near her face, matching the reference photo hand positions exactly.\",\n    \"camera_angle\": \"Eye-level mirror selfie captured in a reflective kitchen cabinet or window, camera angle matching the reference photo precisely.\"\n  },\n  \"background_environment\": {\n    \"location\": \"Messy kitchen.\",\n    \"lighting_source\": \"Bright overhead kitchen lights.\",\n    \"objects\": {\n      \"details\": \"Bowl of dough, scattered flour on the counter, cracked eggshells.\"\n    }\n  },\n  \"technical_specs\": {\n    \"style\": \"Playful, domestic, ultra-realistic, high detail on natural skin texture and flour dust, strict adherence to the reference photo for realism.\",\n    \"aspect_ratio\": \"4:5\"\n  },\n  \"constraints\": [\n    \"Preserve facial identity exactly as in the reference image\",\n    \"No facial reshaping or beautification\",\n    \"No artificial filters or stylization\",\n    \"Maintain natural proportions and lighting\"\n  ],\n  \"output_goal\": \"Create a playful, ultra-realistic mirror selfie portrait of a young woman in a messy kitchen, laughing naturally with flour on her face, perfectly matching the reference photo in pose, expression, and identity.\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_type&quot;: &quot;descriptive_portrait&quot;,<br>  &quot;subject_details&quot;: {<br>    &quot;demographics&quot;: &quot;Young female, sun-kissed skin, fit and athletic build, strictly matching the reference photo.&quot;,<br>    &quot;facial_features&quot;: {<br>      &quot;expression&quot;: &quot;Laughing with mouth open, a smudge of white flour on her nose and cheek, playful and messy yet attractive, facial expression matching the reference photo.&quot;,<br>      &quot;eyes&quot;: &quot;Bright green eyes, aligned with the reference photo angle.&quot;,<br>      &quot;hair&quot;: &quot;Slightly messy short-to-medium hair, casually styled, exactly following the reference photo hairstyle.&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;dress&quot;: &quot;Plain black t-shirt fitting exactly like the reference photo pose, paired with tiny pajama shorts.&quot;,<br>      &quot;accessories&quot;: &quot;None.&quot;,<br>      &quot;footwear&quot;: &quot;Barefoot.&quot;<br>    }<br>  },<br>  &quot;pose_and_action&quot;: {<br>    &quot;body_position&quot;: &quot;Leaning over the kitchen island counter, elbows resting on the surface, body position strictly following the reference photo.&quot;,<br>    &quot;hands&quot;: &quot;Hands lightly dusted with flour. One hand holds the phone, the other is near her face, matching the reference photo hand positions exactly.&quot;,<br>    &quot;camera_angle&quot;: &quot;Eye-level mirror selfie captured in a reflective kitchen cabinet or window, camera angle matching the reference photo precisely.&quot;<br>  },<br>  &quot;background_environment&quot;: {<br>    &quot;location&quot;: &quot;Messy kitchen.&quot;,<br>    &quot;lighting_source&quot;: &quot;Bright overhead kitchen lights.&quot;,<br>    &quot;objects&quot;: {<br>      &quot;details&quot;: &quot;Bowl of dough, scattered flour on the counter, cracked eggshells.&quot;<br>    }<br>  },<br>  &quot;technical_specs&quot;: {<br>    &quot;style&quot;: &quot;Playful, domestic, ultra-realistic, high detail on natural skin texture and flour dust, strict adherence to the reference photo for realism.&quot;,<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  },<br>  &quot;constraints&quot;: [<br>    &quot;Preserve facial identity exactly as in the reference image&quot;,<br>    &quot;No facial reshaping or beautification&quot;,<br>    &quot;No artificial filters or stylization&quot;,<br>    &quot;Maintain natural proportions and lighting&quot;<br>  ],<br>  &quot;output_goal&quot;: &quot;Create a playful, ultra-realistic mirror selfie portrait of a young woman in a messy kitchen, laughing naturally with flour on her face, perfectly matching the reference photo in pose, expression, and identity.&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_type&quot;: &quot;descriptive_portrait&quot;,<br>  &quot;subject_details&quot;: {<br>    &quot;demographics&quot;: &quot;Young female, sun-kissed skin, fit and athletic build, strictly matching the reference photo.&quot;,<br>    &quot;facial_features&quot;: {<br>      &quot;expression&quot;: &quot;Laughing with mouth open, a smudge of white flour on her nose and cheek, playful and messy yet attractive, facial expression matching the reference photo.&quot;,<br>      &quot;eyes&quot;: &quot;Bright green eyes, aligned with the reference photo angle.&quot;,<br>      &quot;hair&quot;: &quot;Slightly messy short-to-medium hair, casually styled, exactly following the reference photo hairstyle.&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;dress&quot;: &quot;Plain black t-shirt fitting exactly like the reference photo pose, paired with tiny pajama shorts.&quot;,<br>      &quot;accessories&quot;: &quot;None.&quot;,<br>      &quot;footwear&quot;: &quot;Barefoot.&quot;<br>    }<br>  },<br>  &quot;pose_and_action&quot;: {<br>    &quot;body_position&quot;: &quot;Leaning over the kitchen island counter, elbows resting on the surface, body position strictly following the reference photo.&quot;,<br>    &quot;hands&quot;: &quot;Hands lightly dusted with flour. One hand holds the phone, the other is near her face, matching the reference photo hand positions exactly.&quot;,<br>    &quot;camera_angle&quot;: &quot;Eye-level mirror selfie captured in a reflective kitchen cabinet or window, camera angle matching the reference photo precisely.&quot;<br>  },<br>  &quot;background_environment&quot;: {<br>    &quot;location&quot;: &quot;Messy kitchen.&quot;,<br>    &quot;lighting_source&quot;: &quot;Bright overhead kitchen lights.&quot;,<br>    &quot;objects&quot;: {<br>      &quot;details&quot;: &quot;Bowl of dough, scattered flour on the counter, cracked eggshells.&quot;<br>    }<br>  },<br>  &quot;technical_specs&quot;: {<br>    &quot;style&quot;: &quot;Playful, domestic, ultra-realistic, high detail on natural skin texture and flour dust, strict adherence to the reference photo for realism.&quot;,<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  },<br>  &quot;constraints&quot;: [<br>    &quot;Preserve facial identity exactly as in the reference image&quot;,<br>    &quot;No facial reshaping or beautification&quot;,<br>    &quot;No artificial filters or stylization&quot;,<br>    &quot;Maintain natural proportions and lighting&quot;<br>  ],<br>  &quot;output_goal&quot;: &quot;Create a playful, ultra-realistic mirror selfie portrait of a young woman in a messy kitchen, laughing naturally with flour on her face, perfectly matching the reference photo in pose, expression, and identity.&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011257477275468178-1.jpg" alt="&quot;prompt type&quot;: &quot;descriptive portrait&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1181,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

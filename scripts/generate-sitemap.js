@@ -123,15 +123,8 @@ function generateSitemap() {
     entries.push(urlEntry(`${SITE_URL}/${lang}/video/`, today, 'weekly', '0.85'));
     entries.push(urlEntry(`${SITE_URL}/${lang}/text/`, today, 'weekly', '0.85'));
 
-    const pagedHome = scanPaginatedIndexes(path.join(ROOT_DIR, lang), `/${lang}`);
-    const pagedImage = scanPaginatedIndexes(path.join(ROOT_DIR, lang, 'image'), `/${lang}/image`);
-    const pagedImageTag = scanTagPaginatedIndexes(path.join(ROOT_DIR, lang, 'image'), `/${lang}/image`);
-    const pagedVideo = scanPaginatedIndexes(path.join(ROOT_DIR, lang, 'video'), `/${lang}/video`);
-    const pagedText = scanPaginatedIndexes(path.join(ROOT_DIR, lang, 'text'), `/${lang}/text`);
-    const pagedUrls = Array.from(new Set([...pagedHome, ...pagedImage, ...pagedImageTag, ...pagedVideo, ...pagedText]));
-    for (const pageUrl of pagedUrls) {
-      entries.push(urlEntry(`${SITE_URL}${pageUrl}`, today, 'weekly', '0.72'));
-    }
+    // Keep paginated archive URLs out of sitemap to avoid low-intent index bloat.
+    const pagedUrls = [];
 
     // Tag pages under /{lang}/image/*.html
     const tagPages = scanHtmlFiles(path.join(ROOT_DIR, lang, 'image'), `/${lang}/image`);
@@ -144,7 +137,7 @@ function generateSitemap() {
       entries.push(urlEntry(`${SITE_URL}/${lang}/case/${id}.html`, today, 'weekly', '0.75'));
     }
 
-    console.log(`📄 ${lang.toUpperCase()} paged: ${pagedUrls.length}, tag pages: ${tagPages.length}, details: ${caseIds.length}`);
+    console.log(`[sitemap] ${lang.toUpperCase()} paged: ${pagedUrls.length} (excluded), tag pages: ${tagPages.length}, details: ${caseIds.length}`);
   }
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -157,13 +150,14 @@ ${entries.join('\n')}
 
   fs.writeFileSync(OUTPUT_FILE, xml, 'utf8');
 
-  console.log('✅ sitemap.xml generated:', OUTPUT_FILE);
-  console.log(`📍 URL count: ${entries.length}`);
+  console.log('[ok] sitemap.xml generated:', OUTPUT_FILE);
+  console.log(`[info] URL count: ${entries.length}`);
 }
 
 try {
   generateSitemap();
 } catch (error) {
-  console.error('❌ Failed to generate sitemap:', error.message || error);
+  console.error('[error] Failed to generate sitemap:', error.message || error);
   process.exit(1);
 }
+

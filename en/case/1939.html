@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;A premium minimalist skincare product photography... #1939 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;A premium minimalist skincare product photography scene featuring an open white cosmetic jar labeled &#39;Se...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1939.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1939.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1939.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844628">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023552">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"一个高端极简护肤品摄影场景，主体为一个打开的白色化妆罐，罐身标注 'Sealine Serum'。罐子置于一块光滑、浅色的石头上，石头部分浸没在清澈的浅水中。罐中膏霜呈柔和有光泽的漩涡状，质地洁净、丝滑。石头周围泛起轻柔的水波，形成自然的光折射和水下炫光图案。细小水珠与微微飞溅的水花增添新鲜感与动感。整体氛围宁静、干净、自然，唤起纯净、补水与沉静奢华的感觉。色彩以冷调清透为主，主打柔和白色、浅蓝色与石材中性色。光线为明亮的漫射日光，带有柔和高光和最小阴影，强调质感、湿润感与真实性。构图居中且平衡，景深浅，背景柔和虚化，呈现高端化妆品广告风格。超真实、摄影级、编辑质量的产品拍摄。\",\n  \"negative_prompt\": \"强烈阴影、污浊水、杂乱背景、塑料质感、低分辨率、过度锐化、不真实反射、强烈色偏、文字伪影、水印、标志失真、凌乱的膏霜表面\",\n  \"style\": \"奢华护肤品广告\",\n  \"camera\": {\n    \"type\": \"单反相机（DSLR）\",\n    \"lens\": \"90mm 微距镜头\",\n    \"aperture\": \"f/5.6\",\n    \"iso\": 100,\n    \"shutter_speed\": \"1/250\"\n  },\n  \"lighting\": {\n    \"type\": \"自然漫射日光\",\n    \"direction\": \"顶部和侧面\",\n    \"contrast\": \"低到中等\",\n    \"temperature\": \"冷中性\"\n  },\n  \"composition\": {\n    \"framing\": \"以产品为中心的构图\",\n    \"angle\": \"略微抬高（轻微俯视）\",\n    \"orientation\": \"纵向\",\n    \"depth_of_field\": \"景深浅，背景柔和虚化\"\n  },\n  \"quality\": {\n    \"resolution\": \"8K\",\n    \"detail\": \"超细纹理细节\",\n    \"sharpness\": \"高\",\n    \"realism\": \"摄影级逼真\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;一个高端极简护肤品摄影场景，主体为一个打开的白色化妆罐，罐身标注 &#39;Sealine Serum&#39;。罐子置于一块光滑、浅色的石头上，石头部分浸没在清澈的浅水中。罐中膏霜呈柔和有光泽的漩涡状，质地洁净、丝滑。石头周围泛起轻柔的水波，形成自然的光折射和水下炫光图案。细小水珠与微微飞溅的水花增添新鲜感与动感。整体氛围宁静、干净、自然，唤起纯净、补水与沉静奢华的感觉。色彩以冷调清透为主，主打柔和白色、浅蓝色与石材中性色。光线为明亮的漫射日光，带有柔和高光和最小阴影，强调质感、湿润感与真实性。构图居中且平衡，景深浅，背景柔和虚化，呈现高端化妆品广告风格。超真实、摄影级、编辑质量的产品拍摄。&quot;,<br>  &quot;negative_prompt&quot;: &quot;强烈阴影、污浊水、杂乱背景、塑料质感、低分辨率、过度锐化、不真实反射、强烈色偏、文字伪影、水印、标志失真、凌乱的膏霜表面&quot;,<br>  &quot;style&quot;: &quot;奢华护肤品广告&quot;,<br>  &quot;camera&quot;: {<br>    &quot;type&quot;: &quot;单反相机（DSLR）&quot;,<br>    &quot;lens&quot;: &quot;90mm 微距镜头&quot;,<br>    &quot;aperture&quot;: &quot;f/5.6&quot;,<br>    &quot;iso&quot;: 100,<br>    &quot;shutter_speed&quot;: &quot;1/250&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;自然漫射日光&quot;,<br>    &quot;direction&quot;: &quot;顶部和侧面&quot;,<br>    &quot;contrast&quot;: &quot;低到中等&quot;,<br>    &quot;temperature&quot;: &quot;冷中性&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;以产品为中心的构图&quot;,<br>    &quot;angle&quot;: &quot;略微抬高（轻微俯视）&quot;,<br>    &quot;orientation&quot;: &quot;纵向&quot;,<br>    &quot;depth_of_field&quot;: &quot;景深浅，背景柔和虚化&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;detail&quot;: &quot;超细纹理细节&quot;,<br>    &quot;sharpness&quot;: &quot;高&quot;,<br>    &quot;realism&quot;: &quot;摄影级逼真&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;一个高端极简护肤品摄影场景，主体为一个打开的白色化妆罐，罐身标注 &#39;Sealine Serum&#39;。罐子置于一块光滑、浅色的石头上，石头部分浸没在清澈的浅水中。罐中膏霜呈柔和有光泽的漩涡状，质地洁净、丝滑。石头周围泛起轻柔的水波，形成自然的光折射和水下炫光图案。细小水珠与微微飞溅的水花增添新鲜感与动感。整体氛围宁静、干净、自然，唤起纯净、补水与沉静奢华的感觉。色彩以冷调清透为主，主打柔和白色、浅蓝色与石材中性色。光线为明亮的漫射日光，带有柔和高光和最小阴影，强调质感、湿润感与真实性。构图居中且平衡，景深浅，背景柔和虚化，呈现高端化妆品广告风格。超真实、摄影级、编辑质量的产品拍摄。&quot;,<br>  &quot;negative_prompt&quot;: &quot;强烈阴影、污浊水、杂乱背景、塑料质感、低分辨率、过度锐化、不真实反射、强烈色偏、文字伪影、水印、标志失真、凌乱的膏霜表面&quot;,<br>  &quot;style&quot;: &quot;奢华护肤品广告&quot;,<br>  &quot;camera&quot;: {<br>    &quot;type&quot;: &quot;单反相机（DSLR）&quot;,<br>    &quot;lens&quot;: &quot;90mm 微距镜头&quot;,<br>    &quot;aperture&quot;: &quot;f/5.6&quot;,<br>    &quot;iso&quot;: 100,<br>    &quot;shutter_speed&quot;: &quot;1/250&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;自然漫射日光&quot;,<br>    &quot;direction&quot;: &quot;顶部和侧面&quot;,<br>    &quot;contrast&quot;: &quot;低到中等&quot;,<br>    &quot;temperature&quot;: &quot;冷中性&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;以产品为中心的构图&quot;,<br>    &quot;angle&quot;: &quot;略微抬高（轻微俯视）&quot;,<br>    &quot;orientation&quot;: &quot;纵向&quot;,<br>    &quot;depth_of_field&quot;: &quot;景深浅，背景柔和虚化&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;detail&quot;: &quot;超细纹理细节&quot;,<br>    &quot;sharpness&quot;: &quot;高&quot;,<br>    &quot;realism&quot;: &quot;摄影级逼真&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"A premium minimalist skincare product photography scene featuring an open white cosmetic jar labeled 'Sealine Serum'. The jar is placed on a smooth, pale stone partially submerged in crystal-clear shallow water. The cream inside the jar has a soft, glossy swirl with a pristine, silky texture. Gentle water ripples surround the stone, creating natural light refractions and caustic patterns on the surface below. Small water droplets and subtle splashes add freshness and motion. The environment feels serene, clean, and natural, evoking purity, hydration, and calm luxury. The color palette is cool and airy, dominated by soft whites, light blues, and stone neutrals. Lighting is bright, diffused daylight with soft highlights and minimal shadows, emphasizing texture, moisture, and realism. The composition is centered and balanced, with shallow depth of field and a softly blurred background for a high-end cosmetic advertising look. Ultra-realistic, photoreal, editorial-quality product shot.\",\n  \"negative_prompt\": \"harsh shadows, dirty water, cluttered background, plastic texture, low resolution, oversharpening, unrealistic reflections, strong color cast, text artifacts, watermark, logo distortion, messy cream surface\",\n  \"style\": \"luxury skincare advertising\",\n  \"camera\": {\n    \"type\": \"DSLR\",\n    \"lens\": \"90mm macro\",\n    \"aperture\": \"f/5.6\",\n    \"iso\": 100,\n    \"shutter_speed\": \"1/250\"\n  },\n  \"lighting\": {\n    \"type\": \"natural diffused daylight\",\n    \"direction\": \"top and side\",\n    \"contrast\": \"low to medium\",\n    \"temperature\": \"cool-neutral\"\n  },\n  \"composition\": {\n    \"framing\": \"centered product focus\",\n    \"angle\": \"slightly elevated\",\n    \"orientation\": \"portrait\",\n    \"depth_of_field\": \"shallow with soft background blur\"\n  },\n  \"quality\": {\n    \"resolution\": \"8K\",\n    \"detail\": \"ultra-fine texture detail\",\n    \"sharpness\": \"high\",\n    \"realism\": \"photorealistic\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;A premium minimalist skincare product photography scene featuring an open white cosmetic jar labeled &#39;Sealine Serum&#39;. The jar is placed on a smooth, pale stone partially submerged in crystal-clear shallow water. The cream inside the jar has a soft, glossy swirl with a pristine, silky texture. Gentle water ripples surround the stone, creating natural light refractions and caustic patterns on the surface below. Small water droplets and subtle splashes add freshness and motion. The environment feels serene, clean, and natural, evoking purity, hydration, and calm luxury. The color palette is cool and airy, dominated by soft whites, light blues, and stone neutrals. Lighting is bright, diffused daylight with soft highlights and minimal shadows, emphasizing texture, moisture, and realism. The composition is centered and balanced, with shallow depth of field and a softly blurred background for a high-end cosmetic advertising look. Ultra-realistic, photoreal, editorial-quality product shot.&quot;,<br>  &quot;negative_prompt&quot;: &quot;harsh shadows, dirty water, cluttered background, plastic texture, low resolution, oversharpening, unrealistic reflections, strong color cast, text artifacts, watermark, logo distortion, messy cream surface&quot;,<br>  &quot;style&quot;: &quot;luxury skincare advertising&quot;,<br>  &quot;camera&quot;: {<br>    &quot;type&quot;: &quot;DSLR&quot;,<br>    &quot;lens&quot;: &quot;90mm macro&quot;,<br>    &quot;aperture&quot;: &quot;f/5.6&quot;,<br>    &quot;iso&quot;: 100,<br>    &quot;shutter_speed&quot;: &quot;1/250&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;natural diffused daylight&quot;,<br>    &quot;direction&quot;: &quot;top and side&quot;,<br>    &quot;contrast&quot;: &quot;low to medium&quot;,<br>    &quot;temperature&quot;: &quot;cool-neutral&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;centered product focus&quot;,<br>    &quot;angle&quot;: &quot;slightly elevated&quot;,<br>    &quot;orientation&quot;: &quot;portrait&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow with soft background blur&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;detail&quot;: &quot;ultra-fine texture detail&quot;,<br>    &quot;sharpness&quot;: &quot;high&quot;,<br>    &quot;realism&quot;: &quot;photorealistic&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;A premium minimalist skincare product photography scene featuring an open white cosmetic jar labeled &#39;Sealine Serum&#39;. The jar is placed on a smooth, pale stone partially submerged in crystal-clear shallow water. The cream inside the jar has a soft, glossy swirl with a pristine, silky texture. Gentle water ripples surround the stone, creating natural light refractions and caustic patterns on the surface below. Small water droplets and subtle splashes add freshness and motion. The environment feels serene, clean, and natural, evoking purity, hydration, and calm luxury. The color palette is cool and airy, dominated by soft whites, light blues, and stone neutrals. Lighting is bright, diffused daylight with soft highlights and minimal shadows, emphasizing texture, moisture, and realism. The composition is centered and balanced, with shallow depth of field and a softly blurred background for a high-end cosmetic advertising look. Ultra-realistic, photoreal, editorial-quality product shot.&quot;,<br>  &quot;negative_prompt&quot;: &quot;harsh shadows, dirty water, cluttered background, plastic texture, low resolution, oversharpening, unrealistic reflections, strong color cast, text artifacts, watermark, logo distortion, messy cream surface&quot;,<br>  &quot;style&quot;: &quot;luxury skincare advertising&quot;,<br>  &quot;camera&quot;: {<br>    &quot;type&quot;: &quot;DSLR&quot;,<br>    &quot;lens&quot;: &quot;90mm macro&quot;,<br>    &quot;aperture&quot;: &quot;f/5.6&quot;,<br>    &quot;iso&quot;: 100,<br>    &quot;shutter_speed&quot;: &quot;1/250&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;natural diffused daylight&quot;,<br>    &quot;direction&quot;: &quot;top and side&quot;,<br>    &quot;contrast&quot;: &quot;low to medium&quot;,<br>    &quot;temperature&quot;: &quot;cool-neutral&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;centered product focus&quot;,<br>    &quot;angle&quot;: &quot;slightly elevated&quot;,<br>    &quot;orientation&quot;: &quot;portrait&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow with soft background blur&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;detail&quot;: &quot;ultra-fine texture detail&quot;,<br>    &quot;sharpness&quot;: &quot;high&quot;,<br>    &quot;realism&quot;: &quot;photorealistic&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2018556431100993733-1.jpg" alt="&quot;prompt&quot;: &quot;A premium minimalist skincare product photography..." loading="lazy"><img src="/images/tweet-2018556431100993733-2.jpg" alt="&quot;prompt&quot;: &quot;A premium minimalist skincare product photography..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1939,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

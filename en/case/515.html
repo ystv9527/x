@@ -7,11 +7,13 @@
     <title>An innovative experience of creating a personalized self-portrait using Gemini Nano Banana. #515 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="This tweet explains how to use the Gemini Nano Banana tool to create a distinctive self-portrait for yourself. Guided by prompts, it sparks creativity and enables personalized expression in digital art, making it suitable for art enthusiasts and creative designers to try.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/515.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/515.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/515.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846068">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023854">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一张专业的、电影感的照片（非数字艺术或绘画）捕捉了一位面容与上传参考图相同的美女，艺术家正在画架上绘制自己的写实自画像。她将一支细画笔靠近脸颊，站在画布前，画布上有一个充满活力的水彩泼溅背景。她拥有一头长卷曲的棕色头发，上面点缀着微妙的鲜花装饰。她穿着一件紧身、低领、褶边白色农家女上衣，略微露出胸部。拍摄于一个暖光、木质的摄影棚环境中。构图聚焦，景深深远，自然皮肤纹理，胶片颗粒感，超精细，8k，照片级真实感，哈苏，杰作。", this)'>📋 Copy</button>
         </div>
-        <p>一张专业的、电影感的照片（非数字艺术或绘画）捕捉了一位面容与上传参考图相同的美女，艺术家正在画架上绘制自己的写实自画像。她将一支细画笔靠近脸颊，站在画布前，画布上有一个充满活力的水彩泼溅背景。她拥有一头长卷曲的棕色头发，上面点缀着微妙的鲜花装饰。她穿着一件紧身、低领、褶边白色农家女上衣，略微露出胸部。拍摄于一个暖光、木质的摄影棚环境中。构图聚焦，景深深远，自然皮肤纹理，胶片颗粒感，超精细，8k，照片级真实感，哈苏，杰作。</p>
+        <div data-nosnippet><p>一张专业的、电影感的照片（非数字艺术或绘画）捕捉了一位面容与上传参考图相同的美女，艺术家正在画架上绘制自己的写实自画像。她将一支细画笔靠近脸颊，站在画布前，画布上有一个充满活力的水彩泼溅背景。她拥有一头长卷曲的棕色头发，上面点缀着微妙的鲜花装饰。她穿着一件紧身、低领、褶边白色农家女上衣，略微露出胸部。拍摄于一个暖光、木质的摄影棚环境中。构图聚焦，景深深远，自然皮肤纹理，胶片颗粒感，超精细，8k，照片级真实感，哈苏，杰作。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A professional, cinematic photograph (not digital art or painting) captures a beautiful young woman with the same facial features as the uploaded reference,artist painting her own realistic self-portrait onto an easel. She holds a fine brush near her cheek, standing before the canvas which features a vibrant watercolor splash background. She has long, wavy brown hair with subtle floral accents. She wears a tight, low-cut, ruffled white peasant blouse emphasizing a slightly exposed chest. Shot in a warm-lit, wooden studio setting. Focused composition, deep depth of field, natural skin texture, film grain, ultra-detailed, 8k, photorealistic, Hasselblad, masterpiece.", this)'>📋 Copy</button>
         </div>
-        <p>A professional, cinematic photograph (not digital art or painting) captures a beautiful young woman with the same facial features as the uploaded reference,artist painting her own realistic self-portrait onto an easel. She holds a fine brush near her cheek, standing before the canvas which features a vibrant watercolor splash background. She has long, wavy brown hair with subtle floral accents. She wears a tight, low-cut, ruffled white peasant blouse emphasizing a slightly exposed chest. Shot in a warm-lit, wooden studio setting. Focused composition, deep depth of field, natural skin texture, film grain, ultra-detailed, 8k, photorealistic, Hasselblad, masterpiece.</p>
+        <div data-nosnippet><p>A professional, cinematic photograph (not digital art or painting) captures a beautiful young woman with the same facial features as the uploaded reference,artist painting her own realistic self-portrait onto an easel. She holds a fine brush near her cheek, standing before the canvas which features a vibrant watercolor splash background. She has long, wavy brown hair with subtle floral accents. She wears a tight, low-cut, ruffled white peasant blouse emphasizing a slightly exposed chest. Shot in a warm-lit, wooden studio setting. Focused composition, deep depth of field, natural skin texture, film grain, ultra-detailed, 8k, photorealistic, Hasselblad, masterpiece.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-1988547753270550992-1.jpg" alt="使用 Gemini Nano Banana 创作个性自画像的创新体验" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 515,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

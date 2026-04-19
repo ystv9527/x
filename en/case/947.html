@@ -7,11 +7,13 @@
     <title>&quot;scene&quot;: { #947 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;scene&quot;: { &quot;type&quot;: &quot;bedroom interior&quot;, &quot;lighting&quot;: &quot;natural daylight&quot;, &quot;atmosphere&quot;: &quot;casual, cozy, domestic&quot; }, &quot;s...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/947.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/947.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/947.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845628">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023756">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene\": {\n    \"type\": \"卧室内部\",\n    \"lighting\": \"自然日光\",\n    \"atmosphere\": \"随意、舒适、家庭氛围\"\n  },\n  \"subject\": {\n    \"pose\": {\n      \"position\": \"俯卧在床上\",\n      \"orientation\": \"面向相机\",\n      \"legs\": \"膝盖向上弯曲，脚踝交叉\",\n      \"arms\": \"左臂伸出自拍\",\n      \"head\": \"靠在枕头上\"\n    },\n    \"appearance\": {\n      \"hair\": \"长且直，深棕色\",\n      \"expression\": \"温柔微笑，与镜头直视\",\n      \"complexion\": \"肤色白皙，双颊微红\"\n    },\n    \"attire\": {\n      \"top\": {\n        \"item\": \"背心\",\n        \"color\": \"浅粉色\",\n        \"texture\": \"罗纹\",\n        \"style\": \"细肩带\"\n      },\n      \"bottom\": {\n        \"item\": \"家居短裤\",\n        \"color\": \"浅粉色\",\n        \"details\": \"荷叶边下摆，褶皱质感\"\n      },\n      \"accessories\": {\n        \"feet\": \"白色中筒袜\"\n      }\n    }\n  },\n  \"environment\": {\n    \"bedding\": {\n      \"sheets\": \"白色，皱褶\",\n      \"pillows\": \"白色，带花卉图案\",\n      \"duvet\": \"白色，蓬松\"\n    },\n    \"background_elements\": {\n      \"windows\": {\n        \"quantity\": 2,\n        \"features\": \"白色窗框，水平百叶窗\"\n      },\n      \"furniture\": {\n        \"side_table\": {\n          \"location\": \"左侧\",\n          \"visible_items\": [\n            \"护肤品\",\n            \"粉色杯子\",\n            \"小盆栽\",\n            \"纸巾\"\n          ]\n        }\n      }\n    }\n  },\n  \"composition\": {\n    \"angle\": \"高角度自拍\",\n    \"framing\": \"中景\",\n    \"focus\": \"主体清晰，背景柔和\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;scene&quot;: {<br>    &quot;type&quot;: &quot;卧室内部&quot;,<br>    &quot;lighting&quot;: &quot;自然日光&quot;,<br>    &quot;atmosphere&quot;: &quot;随意、舒适、家庭氛围&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;pose&quot;: {<br>      &quot;position&quot;: &quot;俯卧在床上&quot;,<br>      &quot;orientation&quot;: &quot;面向相机&quot;,<br>      &quot;legs&quot;: &quot;膝盖向上弯曲，脚踝交叉&quot;,<br>      &quot;arms&quot;: &quot;左臂伸出自拍&quot;,<br>      &quot;head&quot;: &quot;靠在枕头上&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;长且直，深棕色&quot;,<br>      &quot;expression&quot;: &quot;温柔微笑，与镜头直视&quot;,<br>      &quot;complexion&quot;: &quot;肤色白皙，双颊微红&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: {<br>        &quot;item&quot;: &quot;背心&quot;,<br>        &quot;color&quot;: &quot;浅粉色&quot;,<br>        &quot;texture&quot;: &quot;罗纹&quot;,<br>        &quot;style&quot;: &quot;细肩带&quot;<br>      },<br>      &quot;bottom&quot;: {<br>        &quot;item&quot;: &quot;家居短裤&quot;,<br>        &quot;color&quot;: &quot;浅粉色&quot;,<br>        &quot;details&quot;: &quot;荷叶边下摆，褶皱质感&quot;<br>      },<br>      &quot;accessories&quot;: {<br>        &quot;feet&quot;: &quot;白色中筒袜&quot;<br>      }<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;bedding&quot;: {<br>      &quot;sheets&quot;: &quot;白色，皱褶&quot;,<br>      &quot;pillows&quot;: &quot;白色，带花卉图案&quot;,<br>      &quot;duvet&quot;: &quot;白色，蓬松&quot;<br>    },<br>    &quot;background_elements&quot;: {<br>      &quot;windows&quot;: {<br>        &quot;quantity&quot;: 2,<br>        &quot;features&quot;: &quot;白色窗框，水平百叶窗&quot;<br>      },<br>      &quot;furniture&quot;: {<br>        &quot;side_table&quot;: {<br>          &quot;location&quot;: &quot;左侧&quot;,<br>          &quot;visible_items&quot;: [<br>            &quot;护肤品&quot;,<br>            &quot;粉色杯子&quot;,<br>            &quot;小盆栽&quot;,<br>            &quot;纸巾&quot;<br>          ]<br>        }<br>      }<br>    }<br>  },<br>  &quot;composition&quot;: {<br>    &quot;angle&quot;: &quot;高角度自拍&quot;,<br>    &quot;framing&quot;: &quot;中景&quot;,<br>    &quot;focus&quot;: &quot;主体清晰，背景柔和&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene&quot;: {<br>    &quot;type&quot;: &quot;卧室内部&quot;,<br>    &quot;lighting&quot;: &quot;自然日光&quot;,<br>    &quot;atmosphere&quot;: &quot;随意、舒适、家庭氛围&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;pose&quot;: {<br>      &quot;position&quot;: &quot;俯卧在床上&quot;,<br>      &quot;orientation&quot;: &quot;面向相机&quot;,<br>      &quot;legs&quot;: &quot;膝盖向上弯曲，脚踝交叉&quot;,<br>      &quot;arms&quot;: &quot;左臂伸出自拍&quot;,<br>      &quot;head&quot;: &quot;靠在枕头上&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;长且直，深棕色&quot;,<br>      &quot;expression&quot;: &quot;温柔微笑，与镜头直视&quot;,<br>      &quot;complexion&quot;: &quot;肤色白皙，双颊微红&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: {<br>        &quot;item&quot;: &quot;背心&quot;,<br>        &quot;color&quot;: &quot;浅粉色&quot;,<br>        &quot;texture&quot;: &quot;罗纹&quot;,<br>        &quot;style&quot;: &quot;细肩带&quot;<br>      },<br>      &quot;bottom&quot;: {<br>        &quot;item&quot;: &quot;家居短裤&quot;,<br>        &quot;color&quot;: &quot;浅粉色&quot;,<br>        &quot;details&quot;: &quot;荷叶边下摆，褶皱质感&quot;<br>      },<br>      &quot;accessories&quot;: {<br>        &quot;feet&quot;: &quot;白色中筒袜&quot;<br>      }<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;bedding&quot;: {<br>      &quot;sheets&quot;: &quot;白色，皱褶&quot;,<br>      &quot;pillows&quot;: &quot;白色，带花卉图案&quot;,<br>      &quot;duvet&quot;: &quot;白色，蓬松&quot;<br>    },<br>    &quot;background_elements&quot;: {<br>      &quot;windows&quot;: {<br>        &quot;quantity&quot;: 2,<br>        &quot;features&quot;: &quot;白色窗框，水平百叶窗&quot;<br>      },<br>      &quot;furniture&quot;: {<br>        &quot;side_table&quot;: {<br>          &quot;location&quot;: &quot;左侧&quot;,<br>          &quot;visible_items&quot;: [<br>            &quot;护肤品&quot;,<br>            &quot;粉色杯子&quot;,<br>            &quot;小盆栽&quot;,<br>            &quot;纸巾&quot;<br>          ]<br>        }<br>      }<br>    }<br>  },<br>  &quot;composition&quot;: {<br>    &quot;angle&quot;: &quot;高角度自拍&quot;,<br>    &quot;framing&quot;: &quot;中景&quot;,<br>    &quot;focus&quot;: &quot;主体清晰，背景柔和&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene\": {\n    \"type\": \"bedroom_interior\",\n    \"lighting\": \"natural_daylight\",\n    \"atmosphere\": \"casual, cozy, domestic\"\n  },\n  \"subject\": {\n    \"pose\": {\n      \"position\": \"lying_prone_on_bed\",\n      \"orientation\": \"facing_camera\",\n      \"legs\": \"knees_bent_upwards, ankles_crossed\",\n      \"arms\": \"left_arm_extended_for_selfie\",\n      \"head\": \"resting_on_pillow\"\n    },\n    \"appearance\": {\n      \"hair\": \"long, straight, dark_brown\",\n      \"expression\": \"gentle_smile, direct_eye_contact\",\n      \"complexion\": \"fair, rosy_cheeks\"\n    },\n    \"attire\": {\n      \"top\": {\n        \"item\": \"tank_top\",\n        \"color\": \"light_pink\",\n        \"texture\": \"ribbed\",\n        \"style\": \"spaghetti_straps\"\n      },\n      \"bottom\": {\n        \"item\": \"lounge_shorts\",\n        \"color\": \"light_pink\",\n        \"details\": \"ruffled_hem, scrunched_texture\"\n      },\n      \"accessories\": {\n        \"feet\": \"white_crew_socks\"\n      }\n    }\n  },\n  \"environment\": {\n    \"bedding\": {\n      \"sheets\": \"white, rumpled\",\n      \"pillows\": \"white_with_floral_pattern\",\n      \"duvet\": \"white, puffy\"\n    },\n    \"background_elements\": {\n      \"windows\": {\n        \"quantity\": 2,\n        \"features\": \"white_frames, horizontal_blinds\"\n      },\n      \"furniture\": {\n        \"side_table\": {\n          \"location\": \"left_side\",\n          \"visible_items\": [\n            \"skincare_products\",\n            \"pink_mug\",\n            \"small_potted_plant\",\n            \"tissues\"\n          ]\n        }\n      }\n    }\n  },\n  \"composition\": {\n    \"angle\": \"high_angle_selfie\",\n    \"framing\": \"medium_shot\",\n    \"focus\": \"sharp_subject, soft_background\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;scene&quot;: {<br>    &quot;type&quot;: &quot;bedroom_interior&quot;,<br>    &quot;lighting&quot;: &quot;natural_daylight&quot;,<br>    &quot;atmosphere&quot;: &quot;casual, cozy, domestic&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;pose&quot;: {<br>      &quot;position&quot;: &quot;lying_prone_on_bed&quot;,<br>      &quot;orientation&quot;: &quot;facing_camera&quot;,<br>      &quot;legs&quot;: &quot;knees_bent_upwards, ankles_crossed&quot;,<br>      &quot;arms&quot;: &quot;left_arm_extended_for_selfie&quot;,<br>      &quot;head&quot;: &quot;resting_on_pillow&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;long, straight, dark_brown&quot;,<br>      &quot;expression&quot;: &quot;gentle_smile, direct_eye_contact&quot;,<br>      &quot;complexion&quot;: &quot;fair, rosy_cheeks&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: {<br>        &quot;item&quot;: &quot;tank_top&quot;,<br>        &quot;color&quot;: &quot;light_pink&quot;,<br>        &quot;texture&quot;: &quot;ribbed&quot;,<br>        &quot;style&quot;: &quot;spaghetti_straps&quot;<br>      },<br>      &quot;bottom&quot;: {<br>        &quot;item&quot;: &quot;lounge_shorts&quot;,<br>        &quot;color&quot;: &quot;light_pink&quot;,<br>        &quot;details&quot;: &quot;ruffled_hem, scrunched_texture&quot;<br>      },<br>      &quot;accessories&quot;: {<br>        &quot;feet&quot;: &quot;white_crew_socks&quot;<br>      }<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;bedding&quot;: {<br>      &quot;sheets&quot;: &quot;white, rumpled&quot;,<br>      &quot;pillows&quot;: &quot;white_with_floral_pattern&quot;,<br>      &quot;duvet&quot;: &quot;white, puffy&quot;<br>    },<br>    &quot;background_elements&quot;: {<br>      &quot;windows&quot;: {<br>        &quot;quantity&quot;: 2,<br>        &quot;features&quot;: &quot;white_frames, horizontal_blinds&quot;<br>      },<br>      &quot;furniture&quot;: {<br>        &quot;side_table&quot;: {<br>          &quot;location&quot;: &quot;left_side&quot;,<br>          &quot;visible_items&quot;: [<br>            &quot;skincare_products&quot;,<br>            &quot;pink_mug&quot;,<br>            &quot;small_potted_plant&quot;,<br>            &quot;tissues&quot;<br>          ]<br>        }<br>      }<br>    }<br>  },<br>  &quot;composition&quot;: {<br>    &quot;angle&quot;: &quot;high_angle_selfie&quot;,<br>    &quot;framing&quot;: &quot;medium_shot&quot;,<br>    &quot;focus&quot;: &quot;sharp_subject, soft_background&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene&quot;: {<br>    &quot;type&quot;: &quot;bedroom_interior&quot;,<br>    &quot;lighting&quot;: &quot;natural_daylight&quot;,<br>    &quot;atmosphere&quot;: &quot;casual, cozy, domestic&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;pose&quot;: {<br>      &quot;position&quot;: &quot;lying_prone_on_bed&quot;,<br>      &quot;orientation&quot;: &quot;facing_camera&quot;,<br>      &quot;legs&quot;: &quot;knees_bent_upwards, ankles_crossed&quot;,<br>      &quot;arms&quot;: &quot;left_arm_extended_for_selfie&quot;,<br>      &quot;head&quot;: &quot;resting_on_pillow&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;long, straight, dark_brown&quot;,<br>      &quot;expression&quot;: &quot;gentle_smile, direct_eye_contact&quot;,<br>      &quot;complexion&quot;: &quot;fair, rosy_cheeks&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: {<br>        &quot;item&quot;: &quot;tank_top&quot;,<br>        &quot;color&quot;: &quot;light_pink&quot;,<br>        &quot;texture&quot;: &quot;ribbed&quot;,<br>        &quot;style&quot;: &quot;spaghetti_straps&quot;<br>      },<br>      &quot;bottom&quot;: {<br>        &quot;item&quot;: &quot;lounge_shorts&quot;,<br>        &quot;color&quot;: &quot;light_pink&quot;,<br>        &quot;details&quot;: &quot;ruffled_hem, scrunched_texture&quot;<br>      },<br>      &quot;accessories&quot;: {<br>        &quot;feet&quot;: &quot;white_crew_socks&quot;<br>      }<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;bedding&quot;: {<br>      &quot;sheets&quot;: &quot;white, rumpled&quot;,<br>      &quot;pillows&quot;: &quot;white_with_floral_pattern&quot;,<br>      &quot;duvet&quot;: &quot;white, puffy&quot;<br>    },<br>    &quot;background_elements&quot;: {<br>      &quot;windows&quot;: {<br>        &quot;quantity&quot;: 2,<br>        &quot;features&quot;: &quot;white_frames, horizontal_blinds&quot;<br>      },<br>      &quot;furniture&quot;: {<br>        &quot;side_table&quot;: {<br>          &quot;location&quot;: &quot;left_side&quot;,<br>          &quot;visible_items&quot;: [<br>            &quot;skincare_products&quot;,<br>            &quot;pink_mug&quot;,<br>            &quot;small_potted_plant&quot;,<br>            &quot;tissues&quot;<br>          ]<br>        }<br>      }<br>    }<br>  },<br>  &quot;composition&quot;: {<br>    &quot;angle&quot;: &quot;high_angle_selfie&quot;,<br>    &quot;framing&quot;: &quot;medium_shot&quot;,<br>    &quot;focus&quot;: &quot;sharp_subject, soft_background&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2009919869614006518-1.jpg" alt="&quot;scene&quot;: {" loading="lazy"><img src="/images/tweet-2009919869614006518-2.jpg" alt="&quot;scene&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 947,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

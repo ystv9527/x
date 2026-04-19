@@ -7,11 +7,13 @@
     <title>Three useful words in Nano Banana Pro: #1162 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Three useful words in Nano Banana Pro: “MATCH THE LIGHTING” I have been using this constantly since it launched. If I...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1162.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1162.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1162.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841188">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022518">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Nano Banana Pro 中的三个有用词：\n\n“匹配光线”\n\n自从它发布以来我一直在不断使用它。如果我想重新照明一个镜头并将角色融入不同的环境，我只需提供另一张图片作为参考，并要求 Nano Banana Pro 去匹配那第二个镜头的光线。\n\n它强大的地方在于它不仅仅是重新照明。它经常会从参考图中带回细微的环境提示。例如，在有雪的参考图中，雪的痕迹可以自然而然地在场景中重新出现。\n\n如果需要，你也可以提示它不要改变角度或构图。有时需要稍微再提示一下，但总体成功率非常高。", this)'>📋 复制</button>
         </div>
-        <p>Nano Banana Pro 中的三个有用词：</p><p>“匹配光线”</p><p>自从它发布以来我一直在不断使用它。如果我想重新照明一个镜头并将角色融入不同的环境，我只需提供另一张图片作为参考，并要求 Nano Banana Pro 去匹配那第二个镜头的光线。</p><p>它强大的地方在于它不仅仅是重新照明。它经常会从参考图中带回细微的环境提示。例如，在有雪的参考图中，雪的痕迹可以自然而然地在场景中重新出现。</p><p>如果需要，你也可以提示它不要改变角度或构图。有时需要稍微再提示一下，但总体成功率非常高。</p>
+        <div data-nosnippet><p>Nano Banana Pro 中的三个有用词：</p><p>“匹配光线”</p><p>自从它发布以来我一直在不断使用它。如果我想重新照明一个镜头并将角色融入不同的环境，我只需提供另一张图片作为参考，并要求 Nano Banana Pro 去匹配那第二个镜头的光线。</p><p>它强大的地方在于它不仅仅是重新照明。它经常会从参考图中带回细微的环境提示。例如，在有雪的参考图中，雪的痕迹可以自然而然地在场景中重新出现。</p><p>如果需要，你也可以提示它不要改变角度或构图。有时需要稍微再提示一下，但总体成功率非常高。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Three useful words in Nano Banana Pro: \n\n“MATCH THE LIGHTING”\n\nI have been using this constantly since it launched. If I want to relight a shot and integrate the character in a different environment, I simply provide another image as reference and ask Nano Banana Pro to match the lighting of that second shot.\n\nWhat makes it powerful is that it does more than just relight. It often brings back subtle environmental cues from the reference. For example, in a snowy reference, traces of snow can reappear naturally in the scene.\n\nYou can always prompt it not to change angles or composition if needed. Sometimes it takes a small nudge, but overall the hit rate is very high.", this)'>📋 复制</button>
         </div>
-        <p>Three useful words in Nano Banana Pro:</p><p>“MATCH THE LIGHTING”</p><p>I have been using this constantly since it launched. If I want to relight a shot and integrate the character in a different environment, I simply provide another image as reference and ask Nano Banana Pro to match the lighting of that second shot.</p><p>What makes it powerful is that it does more than just relight. It often brings back subtle environmental cues from the reference. For example, in a snowy reference, traces of snow can reappear naturally in the scene.</p><p>You can always prompt it not to change angles or composition if needed. Sometimes it takes a small nudge, but overall the hit rate is very high.</p>
+        <div data-nosnippet><p>Three useful words in Nano Banana Pro:</p><p>“MATCH THE LIGHTING”</p><p>I have been using this constantly since it launched. If I want to relight a shot and integrate the character in a different environment, I simply provide another image as reference and ask Nano Banana Pro to match the lighting of that second shot.</p><p>What makes it powerful is that it does more than just relight. It often brings back subtle environmental cues from the reference. For example, in a snowy reference, traces of snow can reappear naturally in the scene.</p><p>You can always prompt it not to change angles or composition if needed. Sometimes it takes a small nudge, but overall the hit rate is very high.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011120431877800041-1.jpg" alt="Three useful words in Nano Banana Pro:" loading="lazy"><img src="/images/tweet-2011120431877800041-2.jpg" alt="Three useful words in Nano Banana Pro:" loading="lazy"><img src="/images/tweet-2011120431877800041-3.jpg" alt="Three useful words in Nano Banana Pro:" loading="lazy"><img src="/images/tweet-2011120431877800041-4.jpg" alt="Three useful words in Nano Banana Pro:" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1162,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

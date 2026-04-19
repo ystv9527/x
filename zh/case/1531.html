@@ -7,11 +7,13 @@
     <title>🍌Nanobanana Prompt 分享 #1531 | Gem Nana AI 提示词库</title>
     <meta name="description" content="🍌Nanobanana Prompt 分享 看到田朴珺的这张性感写真，尝试用这组提示词复刻了下， ➡️ 左图：Nanobanana AI 复刻版 ➡️ 右图：田朴珺原片 不得不说，AI 对光影的重塑能力太惊人了， 相比原片的柔和，N...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1531.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1531.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1531.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840793">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022435">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("🍌Nanobanana Prompt 分享\n看到田朴珺的这张性感写真，尝试用这组提示词复刻了下，\n➡️ 左图：Nanobanana AI 复刻版\n➡️ 右图：田朴珺原片\n不得不说，AI 对光影的重塑能力太惊人了，\n相比原片的柔和，Nanobanana 生成的这版在对比度和戏剧张力上拉得更满，\n面部的雕塑感和眼神的故事感都得到了极大的强化，\n更有味道和氛围感\n分享下这组让 AI注入灵魂的提示词，感兴趣的朋友也可以去 Nanobanana 或者@grok 上试试，看看能跑出什么惊喜(っ＾▿＾)💨\n\n{ \"prompt\": \"一张女性的特写肖像，黑色顺滑直发，涂着红色口红，穿着黑色露肩连衣裙，心形领口。她佩戴着精致的钻石水滴项链和配套耳环。表情自信且目光直接，直视镜头。光线戏剧性且温暖，投射出阴影并突出她的面部和乳沟，背景为深色且有质感的墙面。画面具有电影感。\", \"subject\": \"女性肖像\", \"details\": { \"hair\": \"深色、顺滑、直发\", \"makeup\": \"红色口红\", \"clothing\": \"黑色露肩连衣裙，心形领口\", \"jewelry\": \"钻石水滴项链，配套耳环\", \"pose\": \"特写，目光直接，自信表情\", \"lighting\": \"戏剧性、温暖、定向光\", \"background\": \"深色、有质感的墙面\" }, \"style\": \"电影感，摄影风格\" }", this)'>📋 复制</button>
         </div>
-        <p>🍌Nanobanana Prompt 分享<br>看到田朴珺的这张性感写真，尝试用这组提示词复刻了下，<br>➡️ 左图：Nanobanana AI 复刻版<br>➡️ 右图：田朴珺原片<br>不得不说，AI 对光影的重塑能力太惊人了，<br>相比原片的柔和，Nanobanana 生成的这版在对比度和戏剧张力上拉得更满，<br>面部的雕塑感和眼神的故事感都得到了极大的强化，<br>更有味道和氛围感<br>分享下这组让 AI注入灵魂的提示词，感兴趣的朋友也可以去 Nanobanana 或者@grok 上试试，看看能跑出什么惊喜(っ＾▿＾)💨</p><p>{ &quot;prompt&quot;: &quot;一张女性的特写肖像，黑色顺滑直发，涂着红色口红，穿着黑色露肩连衣裙，心形领口。她佩戴着精致的钻石水滴项链和配套耳环。表情自信且目光直接，直视镜头。光线戏剧性且温暖，投射出阴影并突出她的面部和乳沟，背景为深色且有质感的墙面。画面具有电影感。&quot;, &quot;subject&quot;: &quot;女性肖像&quot;, &quot;details&quot;: { &quot;hair&quot;: &quot;深色、顺滑、直发&quot;, &quot;makeup&quot;: &quot;红色口红&quot;, &quot;clothing&quot;: &quot;黑色露肩连衣裙，心形领口&quot;, &quot;jewelry&quot;: &quot;钻石水滴项链，配套耳环&quot;, &quot;pose&quot;: &quot;特写，目光直接，自信表情&quot;, &quot;lighting&quot;: &quot;戏剧性、温暖、定向光&quot;, &quot;background&quot;: &quot;深色、有质感的墙面&quot; }, &quot;style&quot;: &quot;电影感，摄影风格&quot; }</p>
+        <div data-nosnippet><p>🍌Nanobanana Prompt 分享<br>看到田朴珺的这张性感写真，尝试用这组提示词复刻了下，<br>➡️ 左图：Nanobanana AI 复刻版<br>➡️ 右图：田朴珺原片<br>不得不说，AI 对光影的重塑能力太惊人了，<br>相比原片的柔和，Nanobanana 生成的这版在对比度和戏剧张力上拉得更满，<br>面部的雕塑感和眼神的故事感都得到了极大的强化，<br>更有味道和氛围感<br>分享下这组让 AI注入灵魂的提示词，感兴趣的朋友也可以去 Nanobanana 或者@grok 上试试，看看能跑出什么惊喜(っ＾▿＾)💨</p><p>{ &quot;prompt&quot;: &quot;一张女性的特写肖像，黑色顺滑直发，涂着红色口红，穿着黑色露肩连衣裙，心形领口。她佩戴着精致的钻石水滴项链和配套耳环。表情自信且目光直接，直视镜头。光线戏剧性且温暖，投射出阴影并突出她的面部和乳沟，背景为深色且有质感的墙面。画面具有电影感。&quot;, &quot;subject&quot;: &quot;女性肖像&quot;, &quot;details&quot;: { &quot;hair&quot;: &quot;深色、顺滑、直发&quot;, &quot;makeup&quot;: &quot;红色口红&quot;, &quot;clothing&quot;: &quot;黑色露肩连衣裙，心形领口&quot;, &quot;jewelry&quot;: &quot;钻石水滴项链，配套耳环&quot;, &quot;pose&quot;: &quot;特写，目光直接，自信表情&quot;, &quot;lighting&quot;: &quot;戏剧性、温暖、定向光&quot;, &quot;background&quot;: &quot;深色、有质感的墙面&quot; }, &quot;style&quot;: &quot;电影感，摄影风格&quot; }</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("🍌Nanobanana Prompt 分享\n看到田朴珺的这张性感写真，尝试用这组提示词复刻了下，\n➡️ 左图：Nanobanana AI 复刻版\n➡️ 右图：田朴珺原片\n不得不说，AI 对光影的重塑能力太惊人了，\n相比原片的柔和，Nanobanana 生成的这版在对比度和戏剧张力上拉得更满，\n面部的雕塑感和眼神的故事感都得到了极大的强化，\n更有味道和氛围感\n分享下这组让 AI注入灵魂的提示词，感兴趣的朋友也可以去 Nanobanana 或者@grok 上试试，看看能跑出什么惊喜(っ＾▿＾)💨\n\n{ \"prompt\": \"A close-up portrait of a woman with dark, sleek hair and red lipstick, wearing a black off-the-shoulder dress with a sweetheart neckline. She adorns a delicate diamond drop necklace and matching earrings. Her expression is confident and direct, looking at the camera. The lighting is dramatic and warm, casting shadows and highlighting her face and cleavage, with a dark, textured background. The image has a cinematic feel.\", \"subject\": \"Portrait of a woman\", \"details\": { \"hair\": \"dark, sleek, straight\", \"makeup\": \"red lipstick\", \"clothing\": \"black off-the-shoulder dress, sweetheart neckline\", \"jewelry\": \"diamond drop necklace, matching earrings\", \"pose\": \"close-up, direct gaze, confident expression\", \"lighting\": \"dramatic, warm, directional\", \"background\": \"dark, textured wall\" }, \"style\": \"Cinematic, photographic", this)'>📋 复制</button>
         </div>
-        <p>🍌Nanobanana Prompt 分享<br>看到田朴珺的这张性感写真，尝试用这组提示词复刻了下，<br>➡️ 左图：Nanobanana AI 复刻版<br>➡️ 右图：田朴珺原片<br>不得不说，AI 对光影的重塑能力太惊人了，<br>相比原片的柔和，Nanobanana 生成的这版在对比度和戏剧张力上拉得更满，<br>面部的雕塑感和眼神的故事感都得到了极大的强化，<br>更有味道和氛围感<br>分享下这组让 AI注入灵魂的提示词，感兴趣的朋友也可以去 Nanobanana 或者@grok 上试试，看看能跑出什么惊喜(っ＾▿＾)💨</p><p>{ &quot;prompt&quot;: &quot;A close-up portrait of a woman with dark, sleek hair and red lipstick, wearing a black off-the-shoulder dress with a sweetheart neckline. She adorns a delicate diamond drop necklace and matching earrings. Her expression is confident and direct, looking at the camera. The lighting is dramatic and warm, casting shadows and highlighting her face and cleavage, with a dark, textured background. The image has a cinematic feel.&quot;, &quot;subject&quot;: &quot;Portrait of a woman&quot;, &quot;details&quot;: { &quot;hair&quot;: &quot;dark, sleek, straight&quot;, &quot;makeup&quot;: &quot;red lipstick&quot;, &quot;clothing&quot;: &quot;black off-the-shoulder dress, sweetheart neckline&quot;, &quot;jewelry&quot;: &quot;diamond drop necklace, matching earrings&quot;, &quot;pose&quot;: &quot;close-up, direct gaze, confident expression&quot;, &quot;lighting&quot;: &quot;dramatic, warm, directional&quot;, &quot;background&quot;: &quot;dark, textured wall&quot; }, &quot;style&quot;: &quot;Cinematic, photographic</p>
+        <div data-nosnippet><p>🍌Nanobanana Prompt 分享<br>看到田朴珺的这张性感写真，尝试用这组提示词复刻了下，<br>➡️ 左图：Nanobanana AI 复刻版<br>➡️ 右图：田朴珺原片<br>不得不说，AI 对光影的重塑能力太惊人了，<br>相比原片的柔和，Nanobanana 生成的这版在对比度和戏剧张力上拉得更满，<br>面部的雕塑感和眼神的故事感都得到了极大的强化，<br>更有味道和氛围感<br>分享下这组让 AI注入灵魂的提示词，感兴趣的朋友也可以去 Nanobanana 或者@grok 上试试，看看能跑出什么惊喜(っ＾▿＾)💨</p><p>{ &quot;prompt&quot;: &quot;A close-up portrait of a woman with dark, sleek hair and red lipstick, wearing a black off-the-shoulder dress with a sweetheart neckline. She adorns a delicate diamond drop necklace and matching earrings. Her expression is confident and direct, looking at the camera. The lighting is dramatic and warm, casting shadows and highlighting her face and cleavage, with a dark, textured background. The image has a cinematic feel.&quot;, &quot;subject&quot;: &quot;Portrait of a woman&quot;, &quot;details&quot;: { &quot;hair&quot;: &quot;dark, sleek, straight&quot;, &quot;makeup&quot;: &quot;red lipstick&quot;, &quot;clothing&quot;: &quot;black off-the-shoulder dress, sweetheart neckline&quot;, &quot;jewelry&quot;: &quot;diamond drop necklace, matching earrings&quot;, &quot;pose&quot;: &quot;close-up, direct gaze, confident expression&quot;, &quot;lighting&quot;: &quot;dramatic, warm, directional&quot;, &quot;background&quot;: &quot;dark, textured wall&quot; }, &quot;style&quot;: &quot;Cinematic, photographic</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012886042559557827-1.jpg" alt="🍌Nanobanana Prompt 分享" loading="lazy"><img src="/images/tweet-2012886042559557827-2.jpg" alt="🍌Nanobanana Prompt 分享" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1531,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

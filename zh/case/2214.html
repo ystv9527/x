@@ -7,11 +7,13 @@
     <title>Create an image in 4:5 ratio, with hyper realistic aesthetics... #2214 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create an image in 4:5 ratio, with hyper realistic aesthetics applied to a premium cartoon/cinematographic manga styl...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2214.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2214.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2214.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840130">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022278">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一幅 4:5 比例的图像，采用超写实美学并应用于高端卡通/电影化漫画风格，结合极致写实与强烈冲击力的插画视觉语言。\n\n面部必须与所发送照片完全一致 103%，保持对原始战术身份的绝对忠实：骨骼结构、颅骨形状、比例、强烈表情、眉毛、眼睛、鼻子、嘴巴、下颌、胡须、头发及毛发体积。\n\n不得进行任何审美更改、身份更改、人工平滑或任何使面部特征失真的风格化处理。\n\n男性角色参考姿势。笔触风格受高级写实卡通启发，具有明确的体积感、深邃的阴影和干净的收边。\n\n服装：参考图像，具有真实的面料质地、自然褶皱和精确光照。\n\n背景由黑白漫画格构成，按多个叙事分镜组织，营造深度、视觉语境和扩展宇宙的感觉。分镜应呈现动作场景与图像叙事，具有多样化的视角和动态构图。\n\n专业电影感灯光，主光为柔和的正面主光并伴随戏剧性对比，精确的面部增强、受控阴影、细微景深、极致锐度、可见微细节、高端渲染质感。\n\n最高画质、高预算编辑插画外观、完全聚焦面部、强烈视觉冲击、现实感 333%，无可辨认文字、无水印、无畸变、无伪影。", this)'>📋 复制</button>
         </div>
-        <p>创建一幅 4:5 比例的图像，采用超写实美学并应用于高端卡通/电影化漫画风格，结合极致写实与强烈冲击力的插画视觉语言。</p><p>面部必须与所发送照片完全一致 103%，保持对原始战术身份的绝对忠实：骨骼结构、颅骨形状、比例、强烈表情、眉毛、眼睛、鼻子、嘴巴、下颌、胡须、头发及毛发体积。</p><p>不得进行任何审美更改、身份更改、人工平滑或任何使面部特征失真的风格化处理。</p><p>男性角色参考姿势。笔触风格受高级写实卡通启发，具有明确的体积感、深邃的阴影和干净的收边。</p><p>服装：参考图像，具有真实的面料质地、自然褶皱和精确光照。</p><p>背景由黑白漫画格构成，按多个叙事分镜组织，营造深度、视觉语境和扩展宇宙的感觉。分镜应呈现动作场景与图像叙事，具有多样化的视角和动态构图。</p><p>专业电影感灯光，主光为柔和的正面主光并伴随戏剧性对比，精确的面部增强、受控阴影、细微景深、极致锐度、可见微细节、高端渲染质感。</p><p>最高画质、高预算编辑插画外观、完全聚焦面部、强烈视觉冲击、现实感 333%，无可辨认文字、无水印、无畸变、无伪影。</p>
+        <div data-nosnippet><p>创建一幅 4:5 比例的图像，采用超写实美学并应用于高端卡通/电影化漫画风格，结合极致写实与强烈冲击力的插画视觉语言。</p><p>面部必须与所发送照片完全一致 103%，保持对原始战术身份的绝对忠实：骨骼结构、颅骨形状、比例、强烈表情、眉毛、眼睛、鼻子、嘴巴、下颌、胡须、头发及毛发体积。</p><p>不得进行任何审美更改、身份更改、人工平滑或任何使面部特征失真的风格化处理。</p><p>男性角色参考姿势。笔触风格受高级写实卡通启发，具有明确的体积感、深邃的阴影和干净的收边。</p><p>服装：参考图像，具有真实的面料质地、自然褶皱和精确光照。</p><p>背景由黑白漫画格构成，按多个叙事分镜组织，营造深度、视觉语境和扩展宇宙的感觉。分镜应呈现动作场景与图像叙事，具有多样化的视角和动态构图。</p><p>专业电影感灯光，主光为柔和的正面主光并伴随戏剧性对比，精确的面部增强、受控阴影、细微景深、极致锐度、可见微细节、高端渲染质感。</p><p>最高画质、高预算编辑插画外观、完全聚焦面部、强烈视觉冲击、现实感 333%，无可辨认文字、无水印、无畸变、无伪影。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an image in 4:5 ratio, with hyper-realistic aesthetics applied to a premium cartoon/cinematographic manga style, combining extreme realism with high-impact illustrated visual language.\n\nThe face must be identical to that of the photo sent in 103%, maintaining absolute tidelity the original tactical identity: bone structure, skull shape, proportions, intense expression, eyebrows, eyes, nose, mouth, jaw, mustache, hair and capillary volume.\n\nNo aesthetic change, identity change, artificial smoothing or stylization that mischaracterizes the face.\n\nMale character reference pose. Stroke style inspired by high-level realistic cartoon, with well-defined volumes, deep shadows and clean finish.\n\ncostume: referenced image, with realistic fabric texture, natural folds and precise lighting.\n\nBackground composed of black and white comic panels, organized in multiple narrative frames, creating depth, visual context and sensation of an expanded universe. The panels should look like action scenes and graphic narrative, with varied perspective and dynamic composition.\n\nProfessional cinematic lighting, with soft front main light and dramatic contrast, precise face enhancements, controlled shadows, subtle depth of field, extreme sharpness, visible microdetails, premium rendering finish.\n\nMaximum quality, high-budget editorial illustration appearance, full focus on the face, strong visual impact, Realism 333%, no readable texts, no watermarks, no distortions, no artifacts.", this)'>📋 复制</button>
         </div>
-        <p>Create an image in 4:5 ratio, with hyper-realistic aesthetics applied to a premium cartoon/cinematographic manga style, combining extreme realism with high-impact illustrated visual language.</p><p>The face must be identical to that of the photo sent in 103%, maintaining absolute tidelity the original tactical identity: bone structure, skull shape, proportions, intense expression, eyebrows, eyes, nose, mouth, jaw, mustache, hair and capillary volume.</p><p>No aesthetic change, identity change, artificial smoothing or stylization that mischaracterizes the face.</p><p>Male character reference pose. Stroke style inspired by high-level realistic cartoon, with well-defined volumes, deep shadows and clean finish.</p><p>costume: referenced image, with realistic fabric texture, natural folds and precise lighting.</p><p>Background composed of black and white comic panels, organized in multiple narrative frames, creating depth, visual context and sensation of an expanded universe. The panels should look like action scenes and graphic narrative, with varied perspective and dynamic composition.</p><p>Professional cinematic lighting, with soft front main light and dramatic contrast, precise face enhancements, controlled shadows, subtle depth of field, extreme sharpness, visible microdetails, premium rendering finish.</p><p>Maximum quality, high-budget editorial illustration appearance, full focus on the face, strong visual impact, Realism 333%, no readable texts, no watermarks, no distortions, no artifacts.</p>
+        <div data-nosnippet><p>Create an image in 4:5 ratio, with hyper-realistic aesthetics applied to a premium cartoon/cinematographic manga style, combining extreme realism with high-impact illustrated visual language.</p><p>The face must be identical to that of the photo sent in 103%, maintaining absolute tidelity the original tactical identity: bone structure, skull shape, proportions, intense expression, eyebrows, eyes, nose, mouth, jaw, mustache, hair and capillary volume.</p><p>No aesthetic change, identity change, artificial smoothing or stylization that mischaracterizes the face.</p><p>Male character reference pose. Stroke style inspired by high-level realistic cartoon, with well-defined volumes, deep shadows and clean finish.</p><p>costume: referenced image, with realistic fabric texture, natural folds and precise lighting.</p><p>Background composed of black and white comic panels, organized in multiple narrative frames, creating depth, visual context and sensation of an expanded universe. The panels should look like action scenes and graphic narrative, with varied perspective and dynamic composition.</p><p>Professional cinematic lighting, with soft front main light and dramatic contrast, precise face enhancements, controlled shadows, subtle depth of field, extreme sharpness, visible microdetails, premium rendering finish.</p><p>Maximum quality, high-budget editorial illustration appearance, full focus on the face, strong visual impact, Realism 333%, no readable texts, no watermarks, no distortions, no artifacts.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2025580480175710454-1.jpg" alt="Create an image in 4:5 ratio, with hyper realistic aesthetics..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2214,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

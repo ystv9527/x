@@ -7,11 +7,13 @@
     <title>[BRAND NAME]. Act as a Senior Creative Director &amp; 3D Artist. #2435 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[BRAND NAME]. Act as a Senior Creative Director &amp; 3D Artist. Goal: Generate a professional 3D product showcase for &quot;[...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2435.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2435.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2435.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839928">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022229">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]。作为高级创意总监兼3D艺术家。\n目标：为“[BRAND NAME]”生成专业的3D产品展示，采用动态全覆盖印花。\n阶段 1：品牌识别逻辑（自适应）\n1. 如果“[BRAND NAME]”是时尚/户外品牌：创建沉浸式自然主题全覆盖印花（例如雾气缭绕的群山、深海或松林）。\n2. 如果“[BRAND NAME]”是食品/科技/其他品牌：创建以标志性品牌元素为特色的风格化全覆盖印花（例如若为 McDonald's，则使用艺术化的汉堡和薯条；若为科技品牌，则使用电路图案或数字节点）。\n3. 风格：在两种情况下，印花必须富有艺术性和绘画质感，能够无缝包裹整个服装。\n阶段 2：构图结构\n- 环境：无限白色摄影棚（环形背景），带有柔和、逼真的地面阴影。\n- 布局：画面中垂直排列两个“隐形人”3D服装模型。\n    - 上方物品：正面直视图。完美居中且平衡。\n    - 下方物品：背面视图，略微旋转为三/四视角（3/4），以展示体积感和侧面设计。\n阶段 3：品牌标识与3D材质\n- 标志整合：\n    - 前：胸部区域有一个细腻、清晰的[BRAND NAME]标志。\n    - 后：在后侧的全覆盖印花中艺术性地融入一个大型标志性[BRAND NAME]标志。\n- 材质：重毛绒3D Sherpa 羊羔绒或有纹理的羊毛仿真。面料应显得柔软、具有触感且高端。\n阶段 4：摄影与照明\n- 照明：电影级影棚布光，使用柔和的主光和细微的轮廓光，在白色背景下勾勒轮廓。\n- 相机：85mm 镜头，焦点清晰，高调数字3D渲染美学。\n阶段 5：排版\n- 页脚：底部中央以极简黑色无衬线字体显示：“[BRAND NAME] // 特别版系列 // 3D 虚拟渲染”。", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]。作为高级创意总监兼3D艺术家。<br>目标：为“[BRAND NAME]”生成专业的3D产品展示，采用动态全覆盖印花。<br>阶段 1：品牌识别逻辑（自适应）<br>1. 如果“[BRAND NAME]”是时尚/户外品牌：创建沉浸式自然主题全覆盖印花（例如雾气缭绕的群山、深海或松林）。<br>2. 如果“[BRAND NAME]”是食品/科技/其他品牌：创建以标志性品牌元素为特色的风格化全覆盖印花（例如若为 McDonald&#39;s，则使用艺术化的汉堡和薯条；若为科技品牌，则使用电路图案或数字节点）。<br>3. 风格：在两种情况下，印花必须富有艺术性和绘画质感，能够无缝包裹整个服装。<br>阶段 2：构图结构<br>- 环境：无限白色摄影棚（环形背景），带有柔和、逼真的地面阴影。<br>- 布局：画面中垂直排列两个“隐形人”3D服装模型。<br>    - 上方物品：正面直视图。完美居中且平衡。<br>    - 下方物品：背面视图，略微旋转为三/四视角（3/4），以展示体积感和侧面设计。<br>阶段 3：品牌标识与3D材质<br>- 标志整合：<br>    - 前：胸部区域有一个细腻、清晰的[BRAND NAME]标志。<br>    - 后：在后侧的全覆盖印花中艺术性地融入一个大型标志性[BRAND NAME]标志。<br>- 材质：重毛绒3D Sherpa 羊羔绒或有纹理的羊毛仿真。面料应显得柔软、具有触感且高端。<br>阶段 4：摄影与照明<br>- 照明：电影级影棚布光，使用柔和的主光和细微的轮廓光，在白色背景下勾勒轮廓。<br>- 相机：85mm 镜头，焦点清晰，高调数字3D渲染美学。<br>阶段 5：排版<br>- 页脚：底部中央以极简黑色无衬线字体显示：“[BRAND NAME] // 特别版系列 // 3D 虚拟渲染”。</p>
+        <div data-nosnippet><p>[BRAND NAME]。作为高级创意总监兼3D艺术家。<br>目标：为“[BRAND NAME]”生成专业的3D产品展示，采用动态全覆盖印花。<br>阶段 1：品牌识别逻辑（自适应）<br>1. 如果“[BRAND NAME]”是时尚/户外品牌：创建沉浸式自然主题全覆盖印花（例如雾气缭绕的群山、深海或松林）。<br>2. 如果“[BRAND NAME]”是食品/科技/其他品牌：创建以标志性品牌元素为特色的风格化全覆盖印花（例如若为 McDonald&#39;s，则使用艺术化的汉堡和薯条；若为科技品牌，则使用电路图案或数字节点）。<br>3. 风格：在两种情况下，印花必须富有艺术性和绘画质感，能够无缝包裹整个服装。<br>阶段 2：构图结构<br>- 环境：无限白色摄影棚（环形背景），带有柔和、逼真的地面阴影。<br>- 布局：画面中垂直排列两个“隐形人”3D服装模型。<br>    - 上方物品：正面直视图。完美居中且平衡。<br>    - 下方物品：背面视图，略微旋转为三/四视角（3/4），以展示体积感和侧面设计。<br>阶段 3：品牌标识与3D材质<br>- 标志整合：<br>    - 前：胸部区域有一个细腻、清晰的[BRAND NAME]标志。<br>    - 后：在后侧的全覆盖印花中艺术性地融入一个大型标志性[BRAND NAME]标志。<br>- 材质：重毛绒3D Sherpa 羊羔绒或有纹理的羊毛仿真。面料应显得柔软、具有触感且高端。<br>阶段 4：摄影与照明<br>- 照明：电影级影棚布光，使用柔和的主光和细微的轮廓光，在白色背景下勾勒轮廓。<br>- 相机：85mm 镜头，焦点清晰，高调数字3D渲染美学。<br>阶段 5：排版<br>- 页脚：底部中央以极简黑色无衬线字体显示：“[BRAND NAME] // 特别版系列 // 3D 虚拟渲染”。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]. Act as a Senior Creative Director & 3D Artist.\nGoal: Generate a professional 3D product showcase for \"[BRAND NAME]\" with a dynamic all-over print.\nPHASE 1: BRAND IDENTITY LOGIC (ADAPTIVE)\n1. IF \"[BRAND NAME]\" is a Fashion/Outdoor Brand: Create an immersive nature-themed all-over print (e.g., misty mountains, deep oceans, or pine forests).\n2. IF \"[BRAND NAME]\" is a Food/Tech/Other Brand: Create a stylized all-over print featuring iconic brand elements (e.g., if McDonald's, use artistic burgers and fries; if Tech, use circuit patterns or digital nodes).\n3. STYLE: In both cases, the print must be artistic and painterly, seamlessly wrapping around the entire garment.\nPHASE 2: COMPOSITIONAL STRUCTURE\n- **Environment**: Infinite white studio cyclorama with soft, realistic floor shadows.\n- **Layout**: Two \"invisible man\" 3D garments stacked vertically in the frame.\n    - TOP ITEM: Direct Front View. Perfectly centered and balanced.\n    - BOTTOM ITEM: Back View, slightly rotated to a Three-Quarter (3/4) perspective to show volume and side-profile design.\nPHASE 3: BRANDING & 3D TEXTURES\n- **Logo Integration**: \n    - FRONT: A subtle, sharp [BRAND NAME] logo on the chest area.\n    - BACK: A large, iconic [BRAND NAME] logo artistically integrated into the all-over print on the rear.\n- **Material**: Heavy-pile 3D sherpa fleece or textured wool simulation. The fabric should look soft, tactile, and high-end.\nPHASE 4: CAMERA & LIGHTING\n- **Lighting**: Cinematic studio setup with soft key light and subtle rim lights to define the silhouette against the white background.\n- **Camera**: 85mm lens, sharp focus, high-key digital 3D render aesthetic.\nPHASE 5: TYPOGRAPHY\n- **Footer**: Minimalist black sans-serif text at the bottom center: \"[BRAND NAME] // SPECIAL EDITION SERIES // 3D VIRTUAL RENDER\".", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]. Act as a Senior Creative Director &amp; 3D Artist.<br>Goal: Generate a professional 3D product showcase for &quot;[BRAND NAME]&quot; with a dynamic all-over print.<br>PHASE 1: BRAND IDENTITY LOGIC (ADAPTIVE)<br>1. IF &quot;[BRAND NAME]&quot; is a Fashion/Outdoor Brand: Create an immersive nature-themed all-over print (e.g., misty mountains, deep oceans, or pine forests).<br>2. IF &quot;[BRAND NAME]&quot; is a Food/Tech/Other Brand: Create a stylized all-over print featuring iconic brand elements (e.g., if McDonald&#39;s, use artistic burgers and fries; if Tech, use circuit patterns or digital nodes).<br>3. STYLE: In both cases, the print must be artistic and painterly, seamlessly wrapping around the entire garment.<br>PHASE 2: COMPOSITIONAL STRUCTURE<br>- **Environment**: Infinite white studio cyclorama with soft, realistic floor shadows.<br>- **Layout**: Two &quot;invisible man&quot; 3D garments stacked vertically in the frame.<br>    - TOP ITEM: Direct Front View. Perfectly centered and balanced.<br>    - BOTTOM ITEM: Back View, slightly rotated to a Three-Quarter (3/4) perspective to show volume and side-profile design.<br>PHASE 3: BRANDING &amp; 3D TEXTURES<br>- **Logo Integration**: <br>    - FRONT: A subtle, sharp [BRAND NAME] logo on the chest area.<br>    - BACK: A large, iconic [BRAND NAME] logo artistically integrated into the all-over print on the rear.<br>- **Material**: Heavy-pile 3D sherpa fleece or textured wool simulation. The fabric should look soft, tactile, and high-end.<br>PHASE 4: CAMERA &amp; LIGHTING<br>- **Lighting**: Cinematic studio setup with soft key light and subtle rim lights to define the silhouette against the white background.<br>- **Camera**: 85mm lens, sharp focus, high-key digital 3D render aesthetic.<br>PHASE 5: TYPOGRAPHY<br>- **Footer**: Minimalist black sans-serif text at the bottom center: &quot;[BRAND NAME] // SPECIAL EDITION SERIES // 3D VIRTUAL RENDER&quot;.</p>
+        <div data-nosnippet><p>[BRAND NAME]. Act as a Senior Creative Director &amp; 3D Artist.<br>Goal: Generate a professional 3D product showcase for &quot;[BRAND NAME]&quot; with a dynamic all-over print.<br>PHASE 1: BRAND IDENTITY LOGIC (ADAPTIVE)<br>1. IF &quot;[BRAND NAME]&quot; is a Fashion/Outdoor Brand: Create an immersive nature-themed all-over print (e.g., misty mountains, deep oceans, or pine forests).<br>2. IF &quot;[BRAND NAME]&quot; is a Food/Tech/Other Brand: Create a stylized all-over print featuring iconic brand elements (e.g., if McDonald&#39;s, use artistic burgers and fries; if Tech, use circuit patterns or digital nodes).<br>3. STYLE: In both cases, the print must be artistic and painterly, seamlessly wrapping around the entire garment.<br>PHASE 2: COMPOSITIONAL STRUCTURE<br>- **Environment**: Infinite white studio cyclorama with soft, realistic floor shadows.<br>- **Layout**: Two &quot;invisible man&quot; 3D garments stacked vertically in the frame.<br>    - TOP ITEM: Direct Front View. Perfectly centered and balanced.<br>    - BOTTOM ITEM: Back View, slightly rotated to a Three-Quarter (3/4) perspective to show volume and side-profile design.<br>PHASE 3: BRANDING &amp; 3D TEXTURES<br>- **Logo Integration**: <br>    - FRONT: A subtle, sharp [BRAND NAME] logo on the chest area.<br>    - BACK: A large, iconic [BRAND NAME] logo artistically integrated into the all-over print on the rear.<br>- **Material**: Heavy-pile 3D sherpa fleece or textured wool simulation. The fabric should look soft, tactile, and high-end.<br>PHASE 4: CAMERA &amp; LIGHTING<br>- **Lighting**: Cinematic studio setup with soft key light and subtle rim lights to define the silhouette against the white background.<br>- **Camera**: 85mm lens, sharp focus, high-key digital 3D render aesthetic.<br>PHASE 5: TYPOGRAPHY<br>- **Footer**: Minimalist black sans-serif text at the bottom center: &quot;[BRAND NAME] // SPECIAL EDITION SERIES // 3D VIRTUAL RENDER&quot;.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2030305025759601053-1.jpg" alt="[BRAND NAME]. Act as a Senior Creative Director &amp; 3D Artist." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2435,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

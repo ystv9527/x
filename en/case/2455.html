@@ -7,11 +7,13 @@
     <title>Using the uploaded image as the only reference. create an ult... #2455 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Using the uploaded image as the only reference. create an ultra photorealistic cinematic close up portrait of a young...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2455.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2455.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2455.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844049">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023434">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("仅以上传的图像为唯一参考。创作一幅超逼真、具有电影感的特写肖像，描绘一位拥有鲜艳红发和穿透力十足的蓝绿色眼睛的年轻女性。她的头发略显湿润，被吹到脸上，发丝中穿插着精致的辫子。细小的水珠和自然的皮肤纹理在她的雀斑和面颊上闪烁，在暗色背景下被温暖而戏剧性的光线照亮。她微微向上看，表情平静而深邃，捕捉到一刻宁静的力量。强调超真实的皮肤细节、雀斑、湿发丝、反光的水滴和明亮的眼睛。浅景深、戏剧性对比、阴郁的电影式光效、亲密的肖像构图、超细节纹理、8K 真实摄影效果。", this)'>📋 Copy</button>
         </div>
-        <p>仅以上传的图像为唯一参考。创作一幅超逼真、具有电影感的特写肖像，描绘一位拥有鲜艳红发和穿透力十足的蓝绿色眼睛的年轻女性。她的头发略显湿润，被吹到脸上，发丝中穿插着精致的辫子。细小的水珠和自然的皮肤纹理在她的雀斑和面颊上闪烁，在暗色背景下被温暖而戏剧性的光线照亮。她微微向上看，表情平静而深邃，捕捉到一刻宁静的力量。强调超真实的皮肤细节、雀斑、湿发丝、反光的水滴和明亮的眼睛。浅景深、戏剧性对比、阴郁的电影式光效、亲密的肖像构图、超细节纹理、8K 真实摄影效果。</p>
+        <div data-nosnippet><p>仅以上传的图像为唯一参考。创作一幅超逼真、具有电影感的特写肖像，描绘一位拥有鲜艳红发和穿透力十足的蓝绿色眼睛的年轻女性。她的头发略显湿润，被吹到脸上，发丝中穿插着精致的辫子。细小的水珠和自然的皮肤纹理在她的雀斑和面颊上闪烁，在暗色背景下被温暖而戏剧性的光线照亮。她微微向上看，表情平静而深邃，捕捉到一刻宁静的力量。强调超真实的皮肤细节、雀斑、湿发丝、反光的水滴和明亮的眼睛。浅景深、戏剧性对比、阴郁的电影式光效、亲密的肖像构图、超细节纹理、8K 真实摄影效果。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Using the uploaded image as the only reference. create an ultra-photorealistic cinematic close-up portrait of a young woman with vivid red hair and piercing blue-green eyes. Her hair is slightly wet and blown across her face, with delicate braids woven through the strands. Tiny water droplets and natural skin texture glisten across her freckles and cheeks, illuminated by warm dramatic lighting against a dark background.She looks slightly upward with a calm, intense expression, capturing a moment of quiet strength. Emphasize hyper-real skin detail, freckles, wet hair strands, reflective water droplets, and luminous eyes. Shallow depth of field, dramatic contrast, moody cinematic lighting, intimate portrait composition, ultra-detailed textures, 8k photorealism.", this)'>📋 Copy</button>
         </div>
-        <p>Using the uploaded image as the only reference. create an ultra-photorealistic cinematic close-up portrait of a young woman with vivid red hair and piercing blue-green eyes. Her hair is slightly wet and blown across her face, with delicate braids woven through the strands. Tiny water droplets and natural skin texture glisten across her freckles and cheeks, illuminated by warm dramatic lighting against a dark background.She looks slightly upward with a calm, intense expression, capturing a moment of quiet strength. Emphasize hyper-real skin detail, freckles, wet hair strands, reflective water droplets, and luminous eyes. Shallow depth of field, dramatic contrast, moody cinematic lighting, intimate portrait composition, ultra-detailed textures, 8k photorealism.</p>
+        <div data-nosnippet><p>Using the uploaded image as the only reference. create an ultra-photorealistic cinematic close-up portrait of a young woman with vivid red hair and piercing blue-green eyes. Her hair is slightly wet and blown across her face, with delicate braids woven through the strands. Tiny water droplets and natural skin texture glisten across her freckles and cheeks, illuminated by warm dramatic lighting against a dark background.She looks slightly upward with a calm, intense expression, capturing a moment of quiet strength. Emphasize hyper-real skin detail, freckles, wet hair strands, reflective water droplets, and luminous eyes. Shallow depth of field, dramatic contrast, moody cinematic lighting, intimate portrait composition, ultra-detailed textures, 8k photorealism.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2030925927040037301-1.jpg" alt="Using the uploaded image as the only reference. create an ult..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2455,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

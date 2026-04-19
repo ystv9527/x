@@ -7,11 +7,13 @@
     <title>Transform this image [Upload Your Image] into a 64K DSLR shot... #881 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Transform this image [Upload Your Image] into a 64K DSLR shot resolution of A creative urban street portrait featurin...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/881.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/881.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/881.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845694">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023770">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("将这张图片 [上传你的图片] 转换为64K DSLR拍摄分辨率的创意城市街头肖像，主角是一位青年男子（与上传图片中的面孔相同），坐在安静城市街道的路缘上，旁边配有一张与他本人形象相同的风格化卡通插图。现实中的主体（与上传图片相同的面孔）随意坐在混凝土人行道边缘，一手托着头，呈现出无聊、沉思的姿态。他略微抬头，表情中性、内省，传达出一种安静的思考与城市孤独感。他穿着一件低调的赭红色带绳织纹理的针织毛衣，宽松合身；深色宽松的牛仔裤，裤脚处有细致的缝线细节；以及朴素的棕色皮靴。配饰包括一条层叠的银色链条狗牌，牌上写有姓名 “[Add Text]”；手指上的戒指；黑框眼镜；以及正前方有粗体刺绣字样的浅色棒球帽。头发短而深色，胡须纹理清晰。旁边的人行道上坐着一个同样面孔的卡通版小自我，与他在穿着和姿势上完全一致——同样的毛衣、牛仔裤、靴子、帽子、眼镜，以及面部表情。卡通人物线条干净，使用暖色调的柔和哑光，并以手绘动画风格呈现，现实感与插画感之间形成一种俏皮的对比。卡通形象的比例相对较小，强调一种陪伴感或内在自我的概念。背景包括纹理化的鹅卵石路面、路缘，以及窗边的建筑外立面，墙体为低调的黄色，近窗处有绿色瓷砖铺砌的砖墙。色调以大地色为主，克制且自然的日光提供柔和、均匀的光线与真实的阴影。整体构图将街头摄影、时尚人像与混合媒介数字艺术融合，唤起身份认同、自我反思与创造力的主题。\n风格与情绪关键词：都市街头摄影、休闲时尚人像、混合媒介艺术、真人与卡通角色二重奏、内省情绪、低饱和度的大地色调、柔和自然光、真实质感、创意叙事、高分辨率细节、电影现实主义。Octane渲染与虚幻引擎", this)'>📋 Copy</button>
         </div>
-        <p>将这张图片 [上传你的图片] 转换为64K DSLR拍摄分辨率的创意城市街头肖像，主角是一位青年男子（与上传图片中的面孔相同），坐在安静城市街道的路缘上，旁边配有一张与他本人形象相同的风格化卡通插图。现实中的主体（与上传图片相同的面孔）随意坐在混凝土人行道边缘，一手托着头，呈现出无聊、沉思的姿态。他略微抬头，表情中性、内省，传达出一种安静的思考与城市孤独感。他穿着一件低调的赭红色带绳织纹理的针织毛衣，宽松合身；深色宽松的牛仔裤，裤脚处有细致的缝线细节；以及朴素的棕色皮靴。配饰包括一条层叠的银色链条狗牌，牌上写有姓名 “[Add Text]”；手指上的戒指；黑框眼镜；以及正前方有粗体刺绣字样的浅色棒球帽。头发短而深色，胡须纹理清晰。旁边的人行道上坐着一个同样面孔的卡通版小自我，与他在穿着和姿势上完全一致——同样的毛衣、牛仔裤、靴子、帽子、眼镜，以及面部表情。卡通人物线条干净，使用暖色调的柔和哑光，并以手绘动画风格呈现，现实感与插画感之间形成一种俏皮的对比。卡通形象的比例相对较小，强调一种陪伴感或内在自我的概念。背景包括纹理化的鹅卵石路面、路缘，以及窗边的建筑外立面，墙体为低调的黄色，近窗处有绿色瓷砖铺砌的砖墙。色调以大地色为主，克制且自然的日光提供柔和、均匀的光线与真实的阴影。整体构图将街头摄影、时尚人像与混合媒介数字艺术融合，唤起身份认同、自我反思与创造力的主题。<br>风格与情绪关键词：都市街头摄影、休闲时尚人像、混合媒介艺术、真人与卡通角色二重奏、内省情绪、低饱和度的大地色调、柔和自然光、真实质感、创意叙事、高分辨率细节、电影现实主义。Octane渲染与虚幻引擎</p>
+        <div data-nosnippet><p>将这张图片 [上传你的图片] 转换为64K DSLR拍摄分辨率的创意城市街头肖像，主角是一位青年男子（与上传图片中的面孔相同），坐在安静城市街道的路缘上，旁边配有一张与他本人形象相同的风格化卡通插图。现实中的主体（与上传图片相同的面孔）随意坐在混凝土人行道边缘，一手托着头，呈现出无聊、沉思的姿态。他略微抬头，表情中性、内省，传达出一种安静的思考与城市孤独感。他穿着一件低调的赭红色带绳织纹理的针织毛衣，宽松合身；深色宽松的牛仔裤，裤脚处有细致的缝线细节；以及朴素的棕色皮靴。配饰包括一条层叠的银色链条狗牌，牌上写有姓名 “[Add Text]”；手指上的戒指；黑框眼镜；以及正前方有粗体刺绣字样的浅色棒球帽。头发短而深色，胡须纹理清晰。旁边的人行道上坐着一个同样面孔的卡通版小自我，与他在穿着和姿势上完全一致——同样的毛衣、牛仔裤、靴子、帽子、眼镜，以及面部表情。卡通人物线条干净，使用暖色调的柔和哑光，并以手绘动画风格呈现，现实感与插画感之间形成一种俏皮的对比。卡通形象的比例相对较小，强调一种陪伴感或内在自我的概念。背景包括纹理化的鹅卵石路面、路缘，以及窗边的建筑外立面，墙体为低调的黄色，近窗处有绿色瓷砖铺砌的砖墙。色调以大地色为主，克制且自然的日光提供柔和、均匀的光线与真实的阴影。整体构图将街头摄影、时尚人像与混合媒介数字艺术融合，唤起身份认同、自我反思与创造力的主题。<br>风格与情绪关键词：都市街头摄影、休闲时尚人像、混合媒介艺术、真人与卡通角色二重奏、内省情绪、低饱和度的大地色调、柔和自然光、真实质感、创意叙事、高分辨率细节、电影现实主义。Octane渲染与虚幻引擎</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Transform this image [Upload Your Image] into a 64K DSLR shot resolution of A creative urban street portrait featuring a young man (same face as the uploaded image) sitting on a curb in a quiet city street, paired with a stylized cartoon illustration of himself placed beside him. The real-life subject (same face as the uploaded image) is seated casually on a concrete sidewalk edge, resting his head on one hand in a bored, contemplative pose. He looks slightly￼ upward with a neutral, introspective expression, conveying a sense of quiet thoughtfulness and urban solitude. He wears a muted maroon cable-knit sweater with a relaxed fit, dark loose-fitting denim jeans with subtle stitched details near the cuffs, and worn brown leather boots. Accessories include layered silver chain dog tag with the name \"[Add Text]\" written on it, rings on his fingers, black-framed glasses, and a light-coloured baseball cap with bold embroidered lettering on￼ the front. His hair is short, dark hair, a well-groomed beard texture and character. Next to him on the sidewalk sits a small cartoon version (same face as the uploaded image) of himself, matching his outfit and pose exactly—same sweater, jeans, boots, cap, glasses, and facial expression. The illustrated character has clean outlines, warm muted colors, and a soft shaded, hand-drawn animation style, creating a playful contrast between realism and illustration. The cartoon figure is￼ proportionally smaller, emphasizing a companion-like or inner-self concept. The background features textured cobblestone pavement, a curb edge, and a building facade with muted yellow walls and green-tiled brickwork near a window. The color palette is earthy and subdued, with natural daylight providing soft, even lighting and realistic shadows. The overall composition blends street photography, fashion portraiture, and mixed-media digital art, evoking themes of identity,￼ self-reflection, and creativity.\nStyle & Mood Keywords: Urban street photography, casual fashion portrait, mixed media art, real and cartoon character duo, introspective mood, muted earthy tones, soft natural light, realistic textures, creative storytelling, high-resolution detail, cinematic realism. Octane render & Unreal Engine", this)'>📋 Copy</button>
         </div>
-        <p>Transform this image [Upload Your Image] into a 64K DSLR shot resolution of A creative urban street portrait featuring a young man (same face as the uploaded image) sitting on a curb in a quiet city street, paired with a stylized cartoon illustration of himself placed beside him. The real-life subject (same face as the uploaded image) is seated casually on a concrete sidewalk edge, resting his head on one hand in a bored, contemplative pose. He looks slightly￼ upward with a neutral, introspective expression, conveying a sense of quiet thoughtfulness and urban solitude. He wears a muted maroon cable-knit sweater with a relaxed fit, dark loose-fitting denim jeans with subtle stitched details near the cuffs, and worn brown leather boots. Accessories include layered silver chain dog tag with the name &quot;[Add Text]&quot; written on it, rings on his fingers, black-framed glasses, and a light-coloured baseball cap with bold embroidered lettering on￼ the front. His hair is short, dark hair, a well-groomed beard texture and character. Next to him on the sidewalk sits a small cartoon version (same face as the uploaded image) of himself, matching his outfit and pose exactly—same sweater, jeans, boots, cap, glasses, and facial expression. The illustrated character has clean outlines, warm muted colors, and a soft shaded, hand-drawn animation style, creating a playful contrast between realism and illustration. The cartoon figure is￼ proportionally smaller, emphasizing a companion-like or inner-self concept. The background features textured cobblestone pavement, a curb edge, and a building facade with muted yellow walls and green-tiled brickwork near a window. The color palette is earthy and subdued, with natural daylight providing soft, even lighting and realistic shadows. The overall composition blends street photography, fashion portraiture, and mixed-media digital art, evoking themes of identity,￼ self-reflection, and creativity.<br>Style &amp; Mood Keywords: Urban street photography, casual fashion portrait, mixed media art, real and cartoon character duo, introspective mood, muted earthy tones, soft natural light, realistic textures, creative storytelling, high-resolution detail, cinematic realism. Octane render &amp; Unreal Engine</p>
+        <div data-nosnippet><p>Transform this image [Upload Your Image] into a 64K DSLR shot resolution of A creative urban street portrait featuring a young man (same face as the uploaded image) sitting on a curb in a quiet city street, paired with a stylized cartoon illustration of himself placed beside him. The real-life subject (same face as the uploaded image) is seated casually on a concrete sidewalk edge, resting his head on one hand in a bored, contemplative pose. He looks slightly￼ upward with a neutral, introspective expression, conveying a sense of quiet thoughtfulness and urban solitude. He wears a muted maroon cable-knit sweater with a relaxed fit, dark loose-fitting denim jeans with subtle stitched details near the cuffs, and worn brown leather boots. Accessories include layered silver chain dog tag with the name &quot;[Add Text]&quot; written on it, rings on his fingers, black-framed glasses, and a light-coloured baseball cap with bold embroidered lettering on￼ the front. His hair is short, dark hair, a well-groomed beard texture and character. Next to him on the sidewalk sits a small cartoon version (same face as the uploaded image) of himself, matching his outfit and pose exactly—same sweater, jeans, boots, cap, glasses, and facial expression. The illustrated character has clean outlines, warm muted colors, and a soft shaded, hand-drawn animation style, creating a playful contrast between realism and illustration. The cartoon figure is￼ proportionally smaller, emphasizing a companion-like or inner-self concept. The background features textured cobblestone pavement, a curb edge, and a building facade with muted yellow walls and green-tiled brickwork near a window. The color palette is earthy and subdued, with natural daylight providing soft, even lighting and realistic shadows. The overall composition blends street photography, fashion portraiture, and mixed-media digital art, evoking themes of identity,￼ self-reflection, and creativity.<br>Style &amp; Mood Keywords: Urban street photography, casual fashion portrait, mixed media art, real and cartoon character duo, introspective mood, muted earthy tones, soft natural light, realistic textures, creative storytelling, high-resolution detail, cinematic realism. Octane render &amp; Unreal Engine</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2009458579305267681-1.jpg" alt="Transform this image [Upload Your Image] into a 64K DSLR shot..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 881,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

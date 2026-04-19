@@ -7,11 +7,13 @@
     <title>Use my facial features, keeping the face, eyes, nose, lips, e... #1675 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Use my facial features, keeping the face, eyes, nose, lips, ears, and hairstyle 100% the same as the reference photo....">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1675.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1675.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1675.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840664">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022401">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用我的面部特征，保持面部、眼睛、鼻子、嘴唇、耳朵和发型与参考照片完全相同（100%一致）。创作一个9:16电影感竖幅人像，画面为同一女性在户外下雪时站立，构图从大腿中部到头部。她微微向镜头一侧倾斜（侧身），头向上倾斜约50°朝向天空，一只手握着透明伞，另一只手伸出，手掌向上，仿佛雪花在落下。雪花停留在她的睫毛、面颊和外套上，在她泛红的皮肤上略微融化。她的表情平静且充满惊奇，电影感十足，像一场冬季爱情电影的场景。\n\n服装：黑色羊毛冬季大衣，厚重白色针织围巾在她的脖子上绕一圈（不遮住下巴），头发塞入围巾内，不戴帽子。\n\n光线：柔和漫散的日光，电影感的HDR色调与自然冷冽的氛围。\n\n相机：Canon EOS R5，85mm f/1.2 镜头，浅景深，超写实光学效果，细致的雪粒子，天然散景。\n\n情绪：感性、沉思且美丽而带有悲伤。", this)'>📋 复制</button>
         </div>
-        <p>使用我的面部特征，保持面部、眼睛、鼻子、嘴唇、耳朵和发型与参考照片完全相同（100%一致）。创作一个9:16电影感竖幅人像，画面为同一女性在户外下雪时站立，构图从大腿中部到头部。她微微向镜头一侧倾斜（侧身），头向上倾斜约50°朝向天空，一只手握着透明伞，另一只手伸出，手掌向上，仿佛雪花在落下。雪花停留在她的睫毛、面颊和外套上，在她泛红的皮肤上略微融化。她的表情平静且充满惊奇，电影感十足，像一场冬季爱情电影的场景。</p><p>服装：黑色羊毛冬季大衣，厚重白色针织围巾在她的脖子上绕一圈（不遮住下巴），头发塞入围巾内，不戴帽子。</p><p>光线：柔和漫散的日光，电影感的HDR色调与自然冷冽的氛围。</p><p>相机：Canon EOS R5，85mm f/1.2 镜头，浅景深，超写实光学效果，细致的雪粒子，天然散景。</p><p>情绪：感性、沉思且美丽而带有悲伤。</p>
+        <div data-nosnippet><p>使用我的面部特征，保持面部、眼睛、鼻子、嘴唇、耳朵和发型与参考照片完全相同（100%一致）。创作一个9:16电影感竖幅人像，画面为同一女性在户外下雪时站立，构图从大腿中部到头部。她微微向镜头一侧倾斜（侧身），头向上倾斜约50°朝向天空，一只手握着透明伞，另一只手伸出，手掌向上，仿佛雪花在落下。雪花停留在她的睫毛、面颊和外套上，在她泛红的皮肤上略微融化。她的表情平静且充满惊奇，电影感十足，像一场冬季爱情电影的场景。</p><p>服装：黑色羊毛冬季大衣，厚重白色针织围巾在她的脖子上绕一圈（不遮住下巴），头发塞入围巾内，不戴帽子。</p><p>光线：柔和漫散的日光，电影感的HDR色调与自然冷冽的氛围。</p><p>相机：Canon EOS R5，85mm f/1.2 镜头，浅景深，超写实光学效果，细致的雪粒子，天然散景。</p><p>情绪：感性、沉思且美丽而带有悲伤。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use my facial features, keeping the face, eyes, nose, lips, ears, and hairstyle 100% the same as the reference photo. Create a 9:16 cinematic vertical portrait of the same woman standing outside in the snow, capturing the photo from mid-thigh to head. She is leaning slightly to the side toward the camera ( profile), head tilted up about 50° toward the sky, holding a clear umbrella in one hand and the other extended outward, palm facing up as if snow is falling. Snowflakes linger on her eyelashes, cheeks, and coat, slightly melting on her red skin. Her expression is calm and full of wonder calm and cinematic, like a scene from a winter romance movie.\n\nOutfit: Black wool winter coat, with thick knitted white scarf wrapped once around his neck (not covering jaw), hair tucked Inside scarf, no hat.\n\nLighting: Soft diffused daylight with cinematic HDR tones and natural cold atmosphere.\n\nCamera: Canon EOS R5, 85mm f/1.2 lens, shallow depth of field, ultra-realistic optics, detailed snow particles, natural bokeh.\n\nMood: Emotional, reflective and beautifully sad", this)'>📋 复制</button>
         </div>
-        <p>Use my facial features, keeping the face, eyes, nose, lips, ears, and hairstyle 100% the same as the reference photo. Create a 9:16 cinematic vertical portrait of the same woman standing outside in the snow, capturing the photo from mid-thigh to head. She is leaning slightly to the side toward the camera ( profile), head tilted up about 50° toward the sky, holding a clear umbrella in one hand and the other extended outward, palm facing up as if snow is falling. Snowflakes linger on her eyelashes, cheeks, and coat, slightly melting on her red skin. Her expression is calm and full of wonder calm and cinematic, like a scene from a winter romance movie.</p><p>Outfit: Black wool winter coat, with thick knitted white scarf wrapped once around his neck (not covering jaw), hair tucked Inside scarf, no hat.</p><p>Lighting: Soft diffused daylight with cinematic HDR tones and natural cold atmosphere.</p><p>Camera: Canon EOS R5, 85mm f/1.2 lens, shallow depth of field, ultra-realistic optics, detailed snow particles, natural bokeh.</p><p>Mood: Emotional, reflective and beautifully sad</p>
+        <div data-nosnippet><p>Use my facial features, keeping the face, eyes, nose, lips, ears, and hairstyle 100% the same as the reference photo. Create a 9:16 cinematic vertical portrait of the same woman standing outside in the snow, capturing the photo from mid-thigh to head. She is leaning slightly to the side toward the camera ( profile), head tilted up about 50° toward the sky, holding a clear umbrella in one hand and the other extended outward, palm facing up as if snow is falling. Snowflakes linger on her eyelashes, cheeks, and coat, slightly melting on her red skin. Her expression is calm and full of wonder calm and cinematic, like a scene from a winter romance movie.</p><p>Outfit: Black wool winter coat, with thick knitted white scarf wrapped once around his neck (not covering jaw), hair tucked Inside scarf, no hat.</p><p>Lighting: Soft diffused daylight with cinematic HDR tones and natural cold atmosphere.</p><p>Camera: Canon EOS R5, 85mm f/1.2 lens, shallow depth of field, ultra-realistic optics, detailed snow particles, natural bokeh.</p><p>Mood: Emotional, reflective and beautifully sad</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015259087718748577-1.jpg" alt="Use my facial features, keeping the face, eyes, nose, lips, e..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1675,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

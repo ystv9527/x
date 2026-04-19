@@ -7,11 +7,13 @@
     <title>Do this for Eiffel Tower: #1445 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Do this for Eiffel Tower: Input Variable: [INSERT STRUCTURE] System Instruction: Act as a Cinematic Director. Create...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1445.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1445.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1445.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845108">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023651">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("把这套做法应用于埃菲尔铁塔： \n\n输入变量：[插入结构] \n系统指令：\n充当一名电影导演。创作一幅极其写实的大师级模型制造者在输入结构的比例模型上完成最后润饰的肖像。\n1. 逻辑：\n分析输入结构以确定场景设定和人物：\n如果是古代/奇幻（例如斗兽场、城堡）：\n房间：一个尘土飞扬、阳光充足的文艺复兴工作室（石材与木材），同时展示“以前的项目”（同一题材的其他模型）。\n角色：一位穿着皮围裙的年长工匠。\n材料：石膏、粘土、香脂木。\n如果是科幻/工业（例如死星、飞船）：\n房间：一个无菌、寒冷的工业设计实验室（混凝土与金属），同时展示“以前的项目”（同一题材的其他模型）。\n角色：一位年轻的道具主管，穿着工作服连体衣或实验室大褂。\n材料：灰色树脂（Kitbash）、聚苯乙烯板、光纤。\n如果是现代建筑（例如摩天大楼）：\n房间：一个干净的白色建筑事务所（玻璃与白墙），同时展示“以前的项目”（同一题材的其他模型）。\n角色：一位极简主义建筑师，穿着黑色高领毛衣。\n材料：白色泡沫板、丙烯、3D 打印塑料。\n\n2. 构图：\n主体：角色正俯身于一个巨大的、极其详细的输入结构比例模型之上。\n动作：他们正在使用镊子或细画笔放置一个与传说相关的特定“微观细节”。\n死星：放置一个微型涡轮激光炮塔。\n斗兽场：在竞技场地面撒沙子。\n城市：在模型上粘贴一个微型路灯。\n尺度：极端的比例对比。人手在模型上微小的窗户/砖块面前显得巨大。\n\n3. 环境：\n蓝图：桌面上、工具之下，摆放着正确的参考文件：\n科幻：蓝色网格示意图或 iPad。\n奇幻：发黄的羊皮地图。\n现代：白色向量平面图。\n杂乱：周围散布的工具必须与介质相符（如粘土工具 vs. 焊接工具 vs. X-Acto 刀）。\n\n4. 灯光与氛围：\n灯光匹配：灯光必须与推断出的房间相匹配。\n工作室：暖色光束（尘埃飞扬）。\n实验室：冷色荧光管（干净/朦胧）。\n焦点：浅景深。镊子和接触点处清晰对焦。\n输出：一张图片，16:9 纵横比，电影级摄影，8K 分辨率。", this)'>📋 Copy</button>
         </div>
-        <p>把这套做法应用于埃菲尔铁塔：</p><p>输入变量：[插入结构] <br>系统指令：<br>充当一名电影导演。创作一幅极其写实的大师级模型制造者在输入结构的比例模型上完成最后润饰的肖像。<br>1. 逻辑：<br>分析输入结构以确定场景设定和人物：<br>如果是古代/奇幻（例如斗兽场、城堡）：<br>房间：一个尘土飞扬、阳光充足的文艺复兴工作室（石材与木材），同时展示“以前的项目”（同一题材的其他模型）。<br>角色：一位穿着皮围裙的年长工匠。<br>材料：石膏、粘土、香脂木。<br>如果是科幻/工业（例如死星、飞船）：<br>房间：一个无菌、寒冷的工业设计实验室（混凝土与金属），同时展示“以前的项目”（同一题材的其他模型）。<br>角色：一位年轻的道具主管，穿着工作服连体衣或实验室大褂。<br>材料：灰色树脂（Kitbash）、聚苯乙烯板、光纤。<br>如果是现代建筑（例如摩天大楼）：<br>房间：一个干净的白色建筑事务所（玻璃与白墙），同时展示“以前的项目”（同一题材的其他模型）。<br>角色：一位极简主义建筑师，穿着黑色高领毛衣。<br>材料：白色泡沫板、丙烯、3D 打印塑料。</p><p>2. 构图：<br>主体：角色正俯身于一个巨大的、极其详细的输入结构比例模型之上。<br>动作：他们正在使用镊子或细画笔放置一个与传说相关的特定“微观细节”。<br>死星：放置一个微型涡轮激光炮塔。<br>斗兽场：在竞技场地面撒沙子。<br>城市：在模型上粘贴一个微型路灯。<br>尺度：极端的比例对比。人手在模型上微小的窗户/砖块面前显得巨大。</p><p>3. 环境：<br>蓝图：桌面上、工具之下，摆放着正确的参考文件：<br>科幻：蓝色网格示意图或 iPad。<br>奇幻：发黄的羊皮地图。<br>现代：白色向量平面图。<br>杂乱：周围散布的工具必须与介质相符（如粘土工具 vs. 焊接工具 vs. X-Acto 刀）。</p><p>4. 灯光与氛围：<br>灯光匹配：灯光必须与推断出的房间相匹配。<br>工作室：暖色光束（尘埃飞扬）。<br>实验室：冷色荧光管（干净/朦胧）。<br>焦点：浅景深。镊子和接触点处清晰对焦。<br>输出：一张图片，16:9 纵横比，电影级摄影，8K 分辨率。</p>
+        <div data-nosnippet><p>把这套做法应用于埃菲尔铁塔：</p><p>输入变量：[插入结构] <br>系统指令：<br>充当一名电影导演。创作一幅极其写实的大师级模型制造者在输入结构的比例模型上完成最后润饰的肖像。<br>1. 逻辑：<br>分析输入结构以确定场景设定和人物：<br>如果是古代/奇幻（例如斗兽场、城堡）：<br>房间：一个尘土飞扬、阳光充足的文艺复兴工作室（石材与木材），同时展示“以前的项目”（同一题材的其他模型）。<br>角色：一位穿着皮围裙的年长工匠。<br>材料：石膏、粘土、香脂木。<br>如果是科幻/工业（例如死星、飞船）：<br>房间：一个无菌、寒冷的工业设计实验室（混凝土与金属），同时展示“以前的项目”（同一题材的其他模型）。<br>角色：一位年轻的道具主管，穿着工作服连体衣或实验室大褂。<br>材料：灰色树脂（Kitbash）、聚苯乙烯板、光纤。<br>如果是现代建筑（例如摩天大楼）：<br>房间：一个干净的白色建筑事务所（玻璃与白墙），同时展示“以前的项目”（同一题材的其他模型）。<br>角色：一位极简主义建筑师，穿着黑色高领毛衣。<br>材料：白色泡沫板、丙烯、3D 打印塑料。</p><p>2. 构图：<br>主体：角色正俯身于一个巨大的、极其详细的输入结构比例模型之上。<br>动作：他们正在使用镊子或细画笔放置一个与传说相关的特定“微观细节”。<br>死星：放置一个微型涡轮激光炮塔。<br>斗兽场：在竞技场地面撒沙子。<br>城市：在模型上粘贴一个微型路灯。<br>尺度：极端的比例对比。人手在模型上微小的窗户/砖块面前显得巨大。</p><p>3. 环境：<br>蓝图：桌面上、工具之下，摆放着正确的参考文件：<br>科幻：蓝色网格示意图或 iPad。<br>奇幻：发黄的羊皮地图。<br>现代：白色向量平面图。<br>杂乱：周围散布的工具必须与介质相符（如粘土工具 vs. 焊接工具 vs. X-Acto 刀）。</p><p>4. 灯光与氛围：<br>灯光匹配：灯光必须与推断出的房间相匹配。<br>工作室：暖色光束（尘埃飞扬）。<br>实验室：冷色荧光管（干净/朦胧）。<br>焦点：浅景深。镊子和接触点处清晰对焦。<br>输出：一张图片，16:9 纵横比，电影级摄影，8K 分辨率。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Do this for Eiffel Tower: \n\nInput Variable: [INSERT STRUCTURE] \nSystem Instruction:\nAct as a Cinematic Director. Create a hyper-realistic portrait of a Master Model Maker putting the final touches on a scale replica of the Input Structure.\n1. Logic:\nAnalyze the Input Structure to determine the Setting and the Character:\nIF Ancient/Fantasy (e.g., Colosseum, Castle):\nRoom: A dusty, sunlit Renaissance Workshop (Stone & Wood). also showcasing \"Previous Projects\" (other models in the same genre).\nCharacter: An elderly Artisan in a leather apron.\nMaterials: Plaster, Clay, Balsam Wood.\nIF Sci-Fi/Industrial (e.g., Death Star, spaceship):\nRoom: A sterile, cold Industrial Design Lab (Concrete & Metal). also showcasing \"Previous Projects\" (other models in the same genre).\nCharacter: A younger Prop Master in a workshop jumpsuit or lab coat.\nMaterials: Grey Resin (Kitbash), Styrene, Fiber Optics.\nIF Modern Architecture (e.g., Skyscraper):\nRoom: A clean, white Architectural Firm (Glass & White Walls). also showcasing \"Previous Projects\" (other models in the same genre).\nCharacter: A minimalist Architect in a black turtleneck.\nMaterials: White Foamcore, Acrylic, 3D Printed Plastic.\n2. The Composition :\nThe Subject: The Character is leaning over a massive, incredibly detailed Scale Model of the Input Structure.\nThe Action: They are using Tweezers or a fine brush to place a specific \"Micro-Detail\" relevant to the lore.\nDeath Star: Placing a tiny Turbo-Laser Turret.\nColosseum: Dusting sand onto the arena floor.\nCity: Gluing a tiny streetlamp.\nThe Scale: Extreme scale contrast. The human hands look giant next to the tiny windows/bricks of the model.\n3. The Environment  :\nThe Blueprint: On the table, beneath the tools, lies the correct reference document:\nSci-Fi: Blue grid schematic or iPad.\nFantasy: Yellowed parchment map.\nModern: White vector floorplan.\nThe Clutter: The tools scattered around must match the medium (e.g., Clay tools vs. Soldering Iron vs. X-Acto knives).\n4. Lighting & Atmosphere:\nLighting Match: The lighting must match the inferred room.\nWorkshop: Warm God Rays (Dusty).\nLab: Cool Fluorescent Tubes (Clean/Hazy).\nFocus: Shallow depth of field. Sharp focus on the tweezers and the contact point.\nOutput: ONE image, 16:9 Aspect Ratio, Cinematic Photography, 8k Resolution.", this)'>📋 Copy</button>
         </div>
-        <p>Do this for Eiffel Tower:</p><p>Input Variable: [INSERT STRUCTURE] <br>System Instruction:<br>Act as a Cinematic Director. Create a hyper-realistic portrait of a Master Model Maker putting the final touches on a scale replica of the Input Structure.<br>1. Logic:<br>Analyze the Input Structure to determine the Setting and the Character:<br>IF Ancient/Fantasy (e.g., Colosseum, Castle):<br>Room: A dusty, sunlit Renaissance Workshop (Stone &amp; Wood). also showcasing &quot;Previous Projects&quot; (other models in the same genre).<br>Character: An elderly Artisan in a leather apron.<br>Materials: Plaster, Clay, Balsam Wood.<br>IF Sci-Fi/Industrial (e.g., Death Star, spaceship):<br>Room: A sterile, cold Industrial Design Lab (Concrete &amp; Metal). also showcasing &quot;Previous Projects&quot; (other models in the same genre).<br>Character: A younger Prop Master in a workshop jumpsuit or lab coat.<br>Materials: Grey Resin (Kitbash), Styrene, Fiber Optics.<br>IF Modern Architecture (e.g., Skyscraper):<br>Room: A clean, white Architectural Firm (Glass &amp; White Walls). also showcasing &quot;Previous Projects&quot; (other models in the same genre).<br>Character: A minimalist Architect in a black turtleneck.<br>Materials: White Foamcore, Acrylic, 3D Printed Plastic.<br>2. The Composition :<br>The Subject: The Character is leaning over a massive, incredibly detailed Scale Model of the Input Structure.<br>The Action: They are using Tweezers or a fine brush to place a specific &quot;Micro-Detail&quot; relevant to the lore.<br>Death Star: Placing a tiny Turbo-Laser Turret.<br>Colosseum: Dusting sand onto the arena floor.<br>City: Gluing a tiny streetlamp.<br>The Scale: Extreme scale contrast. The human hands look giant next to the tiny windows/bricks of the model.<br>3. The Environment  :<br>The Blueprint: On the table, beneath the tools, lies the correct reference document:<br>Sci-Fi: Blue grid schematic or iPad.<br>Fantasy: Yellowed parchment map.<br>Modern: White vector floorplan.<br>The Clutter: The tools scattered around must match the medium (e.g., Clay tools vs. Soldering Iron vs. X-Acto knives).<br>4. Lighting &amp; Atmosphere:<br>Lighting Match: The lighting must match the inferred room.<br>Workshop: Warm God Rays (Dusty).<br>Lab: Cool Fluorescent Tubes (Clean/Hazy).<br>Focus: Shallow depth of field. Sharp focus on the tweezers and the contact point.<br>Output: ONE image, 16:9 Aspect Ratio, Cinematic Photography, 8k Resolution.</p>
+        <div data-nosnippet><p>Do this for Eiffel Tower:</p><p>Input Variable: [INSERT STRUCTURE] <br>System Instruction:<br>Act as a Cinematic Director. Create a hyper-realistic portrait of a Master Model Maker putting the final touches on a scale replica of the Input Structure.<br>1. Logic:<br>Analyze the Input Structure to determine the Setting and the Character:<br>IF Ancient/Fantasy (e.g., Colosseum, Castle):<br>Room: A dusty, sunlit Renaissance Workshop (Stone &amp; Wood). also showcasing &quot;Previous Projects&quot; (other models in the same genre).<br>Character: An elderly Artisan in a leather apron.<br>Materials: Plaster, Clay, Balsam Wood.<br>IF Sci-Fi/Industrial (e.g., Death Star, spaceship):<br>Room: A sterile, cold Industrial Design Lab (Concrete &amp; Metal). also showcasing &quot;Previous Projects&quot; (other models in the same genre).<br>Character: A younger Prop Master in a workshop jumpsuit or lab coat.<br>Materials: Grey Resin (Kitbash), Styrene, Fiber Optics.<br>IF Modern Architecture (e.g., Skyscraper):<br>Room: A clean, white Architectural Firm (Glass &amp; White Walls). also showcasing &quot;Previous Projects&quot; (other models in the same genre).<br>Character: A minimalist Architect in a black turtleneck.<br>Materials: White Foamcore, Acrylic, 3D Printed Plastic.<br>2. The Composition :<br>The Subject: The Character is leaning over a massive, incredibly detailed Scale Model of the Input Structure.<br>The Action: They are using Tweezers or a fine brush to place a specific &quot;Micro-Detail&quot; relevant to the lore.<br>Death Star: Placing a tiny Turbo-Laser Turret.<br>Colosseum: Dusting sand onto the arena floor.<br>City: Gluing a tiny streetlamp.<br>The Scale: Extreme scale contrast. The human hands look giant next to the tiny windows/bricks of the model.<br>3. The Environment  :<br>The Blueprint: On the table, beneath the tools, lies the correct reference document:<br>Sci-Fi: Blue grid schematic or iPad.<br>Fantasy: Yellowed parchment map.<br>Modern: White vector floorplan.<br>The Clutter: The tools scattered around must match the medium (e.g., Clay tools vs. Soldering Iron vs. X-Acto knives).<br>4. Lighting &amp; Atmosphere:<br>Lighting Match: The lighting must match the inferred room.<br>Workshop: Warm God Rays (Dusty).<br>Lab: Cool Fluorescent Tubes (Clean/Hazy).<br>Focus: Shallow depth of field. Sharp focus on the tweezers and the contact point.<br>Output: ONE image, 16:9 Aspect Ratio, Cinematic Photography, 8k Resolution.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2012151098547589553-1.jpg" alt="Do this for Eiffel Tower:" loading="lazy"><img src="/images/tweet-2012151098547589553-2.jpg" alt="Do this for Eiffel Tower:" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1445,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

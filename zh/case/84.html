@@ -7,11 +7,13 @@
     <title>渐变挤出Google I/O 2025大会视觉效果 #84 | Gem Nana AI 提示词库</title>
     <meta name="description" content="渐变挤出Google I/O 2025大会视觉效果 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/84.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/84.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/84.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842157">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022767">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("请以以下JSON风格美学重新纹理化此图像：\n{\n  \"styleAesthetic\": {\n    \"title\": \"Isometric Multicolor Extrusion with Grid Control\",\n    \"overallVibe\": \"Playful modern 3D iconography with directional extrusion and dynamic isometric grids\",\n    \"viewAngle\": {\n      \"type\": \"Isometric\",\n      \"facingDirection\": \"right\",  // options: left, right, front\n      \"rotationDegrees\": {\n        \"x\": 30,\n        \"y\": 30\n      }\n    },\n    \"renderingStyle\": \"Clean 3D extruded vector with soft lighting and high contrast between faces\",\n    \"objectSurface\": {\n      \"frontFace\": {\n        \"color\": \"#ffffff\",\n        \"material\": \"Matte white plastic\",\n        \"lighting\": \"Soft diffuse\"\n      },\n      \"extrudedSide\": {\n        \"type\": \"Multicolor gradient\",\n        \"gradientStyle\": \"Diagonal sweep\",\n        \"colorStops\": [\n          \"#ff0040\", \"#ff8000\", \"#ffff00\", \"#00ff90\", \"#00cfff\", \"#8000ff\"\n        ],\n        \"material\": \"Glossy plastic\",\n        \"lighting\": \"Ambient with light falloff\"\n      }\n    },\n    \"extrusion\": {\n      \"direction\": \"right\",  // determines which side is extruded: left, right, front\n      \"depth\": \"moderate\"\n    },\n    \"shadows\": {\n      \"type\": \"Drop shadow\",\n      \"direction\": \"bottom-right\",\n      \"opacity\": 0.15,\n      \"blurRadius\": \"6px\"\n    },\n    \"background\": {\n      \"type\": \"Isometric grid\",\n      \"color\": \"#ffffff\",\n      \"gridStyle\": {\n        \"lineColor\": \"#e0e0e0\",\n        \"lineWeight\": \"1px\",\n        \"orientation\": \"opposite-extrusion\"  // automatically flips grid lines to oppose the extrusion direction\n      }\n    },\n    \"moodKeywords\": [\n      \"Dimensional\",\n      \"Clean\",\n      \"Geometric\",\n      \"Colorful\",\n      \"Tactile\",\n      \"Structured\"\n    ]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>请以以下JSON风格美学重新纹理化此图像：<br>{<br>  &quot;styleAesthetic&quot;: {<br>    &quot;title&quot;: &quot;Isometric Multicolor Extrusion with Grid Control&quot;,<br>    &quot;overallVibe&quot;: &quot;Playful modern 3D iconography with directional extrusion and dynamic isometric grids&quot;,<br>    &quot;viewAngle&quot;: {<br>      &quot;type&quot;: &quot;Isometric&quot;,<br>      &quot;facingDirection&quot;: &quot;right&quot;,  // options: left, right, front<br>      &quot;rotationDegrees&quot;: {<br>        &quot;x&quot;: 30,<br>        &quot;y&quot;: 30<br>      }<br>    },<br>    &quot;renderingStyle&quot;: &quot;Clean 3D extruded vector with soft lighting and high contrast between faces&quot;,<br>    &quot;objectSurface&quot;: {<br>      &quot;frontFace&quot;: {<br>        &quot;color&quot;: &quot;#ffffff&quot;,<br>        &quot;material&quot;: &quot;Matte white plastic&quot;,<br>        &quot;lighting&quot;: &quot;Soft diffuse&quot;<br>      },<br>      &quot;extrudedSide&quot;: {<br>        &quot;type&quot;: &quot;Multicolor gradient&quot;,<br>        &quot;gradientStyle&quot;: &quot;Diagonal sweep&quot;,<br>        &quot;colorStops&quot;: [<br>          &quot;#ff0040&quot;, &quot;#ff8000&quot;, &quot;#ffff00&quot;, &quot;#00ff90&quot;, &quot;#00cfff&quot;, &quot;#8000ff&quot;<br>        ],<br>        &quot;material&quot;: &quot;Glossy plastic&quot;,<br>        &quot;lighting&quot;: &quot;Ambient with light falloff&quot;<br>      }<br>    },<br>    &quot;extrusion&quot;: {<br>      &quot;direction&quot;: &quot;right&quot;,  // determines which side is extruded: left, right, front<br>      &quot;depth&quot;: &quot;moderate&quot;<br>    },<br>    &quot;shadows&quot;: {<br>      &quot;type&quot;: &quot;Drop shadow&quot;,<br>      &quot;direction&quot;: &quot;bottom-right&quot;,<br>      &quot;opacity&quot;: 0.15,<br>      &quot;blurRadius&quot;: &quot;6px&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;type&quot;: &quot;Isometric grid&quot;,<br>      &quot;color&quot;: &quot;#ffffff&quot;,<br>      &quot;gridStyle&quot;: {<br>        &quot;lineColor&quot;: &quot;#e0e0e0&quot;,<br>        &quot;lineWeight&quot;: &quot;1px&quot;,<br>        &quot;orientation&quot;: &quot;opposite-extrusion&quot;  // automatically flips grid lines to oppose the extrusion direction<br>      }<br>    },<br>    &quot;moodKeywords&quot;: [<br>      &quot;Dimensional&quot;,<br>      &quot;Clean&quot;,<br>      &quot;Geometric&quot;,<br>      &quot;Colorful&quot;,<br>      &quot;Tactile&quot;,<br>      &quot;Structured&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>请以以下JSON风格美学重新纹理化此图像：<br>{<br>  &quot;styleAesthetic&quot;: {<br>    &quot;title&quot;: &quot;Isometric Multicolor Extrusion with Grid Control&quot;,<br>    &quot;overallVibe&quot;: &quot;Playful modern 3D iconography with directional extrusion and dynamic isometric grids&quot;,<br>    &quot;viewAngle&quot;: {<br>      &quot;type&quot;: &quot;Isometric&quot;,<br>      &quot;facingDirection&quot;: &quot;right&quot;,  // options: left, right, front<br>      &quot;rotationDegrees&quot;: {<br>        &quot;x&quot;: 30,<br>        &quot;y&quot;: 30<br>      }<br>    },<br>    &quot;renderingStyle&quot;: &quot;Clean 3D extruded vector with soft lighting and high contrast between faces&quot;,<br>    &quot;objectSurface&quot;: {<br>      &quot;frontFace&quot;: {<br>        &quot;color&quot;: &quot;#ffffff&quot;,<br>        &quot;material&quot;: &quot;Matte white plastic&quot;,<br>        &quot;lighting&quot;: &quot;Soft diffuse&quot;<br>      },<br>      &quot;extrudedSide&quot;: {<br>        &quot;type&quot;: &quot;Multicolor gradient&quot;,<br>        &quot;gradientStyle&quot;: &quot;Diagonal sweep&quot;,<br>        &quot;colorStops&quot;: [<br>          &quot;#ff0040&quot;, &quot;#ff8000&quot;, &quot;#ffff00&quot;, &quot;#00ff90&quot;, &quot;#00cfff&quot;, &quot;#8000ff&quot;<br>        ],<br>        &quot;material&quot;: &quot;Glossy plastic&quot;,<br>        &quot;lighting&quot;: &quot;Ambient with light falloff&quot;<br>      }<br>    },<br>    &quot;extrusion&quot;: {<br>      &quot;direction&quot;: &quot;right&quot;,  // determines which side is extruded: left, right, front<br>      &quot;depth&quot;: &quot;moderate&quot;<br>    },<br>    &quot;shadows&quot;: {<br>      &quot;type&quot;: &quot;Drop shadow&quot;,<br>      &quot;direction&quot;: &quot;bottom-right&quot;,<br>      &quot;opacity&quot;: 0.15,<br>      &quot;blurRadius&quot;: &quot;6px&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;type&quot;: &quot;Isometric grid&quot;,<br>      &quot;color&quot;: &quot;#ffffff&quot;,<br>      &quot;gridStyle&quot;: {<br>        &quot;lineColor&quot;: &quot;#e0e0e0&quot;,<br>        &quot;lineWeight&quot;: &quot;1px&quot;,<br>        &quot;orientation&quot;: &quot;opposite-extrusion&quot;  // automatically flips grid lines to oppose the extrusion direction<br>      }<br>    },<br>    &quot;moodKeywords&quot;: [<br>      &quot;Dimensional&quot;,<br>      &quot;Clean&quot;,<br>      &quot;Geometric&quot;,<br>      &quot;Colorful&quot;,<br>      &quot;Tactile&quot;,<br>      &quot;Structured&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Retexture this image in the following JSON style aesthetic:\n{\n  \"styleAesthetic\": {\n    \"title\": \"Isometric Multicolor Extrusion with Grid Control\",\n    \"overallVibe\": \"Playful modern 3D iconography with directional extrusion and dynamic isometric grids\",\n    \"viewAngle\": {\n      \"type\": \"Isometric\",\n      \"facingDirection\": \"right\",  // options: left, right, front\n      \"rotationDegrees\": {\n        \"x\": 30,\n        \"y\": 30\n      }\n    },\n    \"renderingStyle\": \"Clean 3D extruded vector with soft lighting and high contrast between faces\",\n    \"objectSurface\": {\n      \"frontFace\": {\n        \"color\": \"#ffffff\",\n        \"material\": \"Matte white plastic\",\n        \"lighting\": \"Soft diffuse\"\n      },\n      \"extrudedSide\": {\n        \"type\": \"Multicolor gradient\",\n        \"gradientStyle\": \"Diagonal sweep\",\n        \"colorStops\": [\n          \"#ff0040\", \"#ff8000\", \"#ffff00\", \"#00ff90\", \"#00cfff\", \"#8000ff\"\n        ],\n        \"material\": \"Glossy plastic\",\n        \"lighting\": \"Ambient with light falloff\"\n      }\n    },\n    \"extrusion\": {\n      \"direction\": \"right\",  // determines which side is extruded: left, right, front\n      \"depth\": \"moderate\"\n    },\n    \"shadows\": {\n      \"type\": \"Drop shadow\",\n      \"direction\": \"bottom-right\",\n      \"opacity\": 0.15,\n      \"blurRadius\": \"6px\"\n    },\n    \"background\": {\n      \"type\": \"Isometric grid\",\n      \"color\": \"#ffffff\",\n      \"gridStyle\": {\n        \"lineColor\": \"#e0e0e0\",\n        \"lineWeight\": \"1px\",\n        \"orientation\": \"opposite-extrusion\"  // automatically flips grid lines to oppose the extrusion direction\n      }\n    },\n    \"moodKeywords\": [\n      \"Dimensional\",\n      \"Clean\",\n      \"Geometric\",\n      \"Colorful\",\n      \"Tactile\",\n      \"Structured\"\n    ]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>Retexture this image in the following JSON style aesthetic:<br>{<br>  &quot;styleAesthetic&quot;: {<br>    &quot;title&quot;: &quot;Isometric Multicolor Extrusion with Grid Control&quot;,<br>    &quot;overallVibe&quot;: &quot;Playful modern 3D iconography with directional extrusion and dynamic isometric grids&quot;,<br>    &quot;viewAngle&quot;: {<br>      &quot;type&quot;: &quot;Isometric&quot;,<br>      &quot;facingDirection&quot;: &quot;right&quot;,  // options: left, right, front<br>      &quot;rotationDegrees&quot;: {<br>        &quot;x&quot;: 30,<br>        &quot;y&quot;: 30<br>      }<br>    },<br>    &quot;renderingStyle&quot;: &quot;Clean 3D extruded vector with soft lighting and high contrast between faces&quot;,<br>    &quot;objectSurface&quot;: {<br>      &quot;frontFace&quot;: {<br>        &quot;color&quot;: &quot;#ffffff&quot;,<br>        &quot;material&quot;: &quot;Matte white plastic&quot;,<br>        &quot;lighting&quot;: &quot;Soft diffuse&quot;<br>      },<br>      &quot;extrudedSide&quot;: {<br>        &quot;type&quot;: &quot;Multicolor gradient&quot;,<br>        &quot;gradientStyle&quot;: &quot;Diagonal sweep&quot;,<br>        &quot;colorStops&quot;: [<br>          &quot;#ff0040&quot;, &quot;#ff8000&quot;, &quot;#ffff00&quot;, &quot;#00ff90&quot;, &quot;#00cfff&quot;, &quot;#8000ff&quot;<br>        ],<br>        &quot;material&quot;: &quot;Glossy plastic&quot;,<br>        &quot;lighting&quot;: &quot;Ambient with light falloff&quot;<br>      }<br>    },<br>    &quot;extrusion&quot;: {<br>      &quot;direction&quot;: &quot;right&quot;,  // determines which side is extruded: left, right, front<br>      &quot;depth&quot;: &quot;moderate&quot;<br>    },<br>    &quot;shadows&quot;: {<br>      &quot;type&quot;: &quot;Drop shadow&quot;,<br>      &quot;direction&quot;: &quot;bottom-right&quot;,<br>      &quot;opacity&quot;: 0.15,<br>      &quot;blurRadius&quot;: &quot;6px&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;type&quot;: &quot;Isometric grid&quot;,<br>      &quot;color&quot;: &quot;#ffffff&quot;,<br>      &quot;gridStyle&quot;: {<br>        &quot;lineColor&quot;: &quot;#e0e0e0&quot;,<br>        &quot;lineWeight&quot;: &quot;1px&quot;,<br>        &quot;orientation&quot;: &quot;opposite-extrusion&quot;  // automatically flips grid lines to oppose the extrusion direction<br>      }<br>    },<br>    &quot;moodKeywords&quot;: [<br>      &quot;Dimensional&quot;,<br>      &quot;Clean&quot;,<br>      &quot;Geometric&quot;,<br>      &quot;Colorful&quot;,<br>      &quot;Tactile&quot;,<br>      &quot;Structured&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>Retexture this image in the following JSON style aesthetic:<br>{<br>  &quot;styleAesthetic&quot;: {<br>    &quot;title&quot;: &quot;Isometric Multicolor Extrusion with Grid Control&quot;,<br>    &quot;overallVibe&quot;: &quot;Playful modern 3D iconography with directional extrusion and dynamic isometric grids&quot;,<br>    &quot;viewAngle&quot;: {<br>      &quot;type&quot;: &quot;Isometric&quot;,<br>      &quot;facingDirection&quot;: &quot;right&quot;,  // options: left, right, front<br>      &quot;rotationDegrees&quot;: {<br>        &quot;x&quot;: 30,<br>        &quot;y&quot;: 30<br>      }<br>    },<br>    &quot;renderingStyle&quot;: &quot;Clean 3D extruded vector with soft lighting and high contrast between faces&quot;,<br>    &quot;objectSurface&quot;: {<br>      &quot;frontFace&quot;: {<br>        &quot;color&quot;: &quot;#ffffff&quot;,<br>        &quot;material&quot;: &quot;Matte white plastic&quot;,<br>        &quot;lighting&quot;: &quot;Soft diffuse&quot;<br>      },<br>      &quot;extrudedSide&quot;: {<br>        &quot;type&quot;: &quot;Multicolor gradient&quot;,<br>        &quot;gradientStyle&quot;: &quot;Diagonal sweep&quot;,<br>        &quot;colorStops&quot;: [<br>          &quot;#ff0040&quot;, &quot;#ff8000&quot;, &quot;#ffff00&quot;, &quot;#00ff90&quot;, &quot;#00cfff&quot;, &quot;#8000ff&quot;<br>        ],<br>        &quot;material&quot;: &quot;Glossy plastic&quot;,<br>        &quot;lighting&quot;: &quot;Ambient with light falloff&quot;<br>      }<br>    },<br>    &quot;extrusion&quot;: {<br>      &quot;direction&quot;: &quot;right&quot;,  // determines which side is extruded: left, right, front<br>      &quot;depth&quot;: &quot;moderate&quot;<br>    },<br>    &quot;shadows&quot;: {<br>      &quot;type&quot;: &quot;Drop shadow&quot;,<br>      &quot;direction&quot;: &quot;bottom-right&quot;,<br>      &quot;opacity&quot;: 0.15,<br>      &quot;blurRadius&quot;: &quot;6px&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;type&quot;: &quot;Isometric grid&quot;,<br>      &quot;color&quot;: &quot;#ffffff&quot;,<br>      &quot;gridStyle&quot;: {<br>        &quot;lineColor&quot;: &quot;#e0e0e0&quot;,<br>        &quot;lineWeight&quot;: &quot;1px&quot;,<br>        &quot;orientation&quot;: &quot;opposite-extrusion&quot;  // automatically flips grid lines to oppose the extrusion direction<br>      }<br>    },<br>    &quot;moodKeywords&quot;: [<br>      &quot;Dimensional&quot;,<br>      &quot;Clean&quot;,<br>      &quot;Geometric&quot;,<br>      &quot;Colorful&quot;,<br>      &quot;Tactile&quot;,<br>      &quot;Structured&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/84.jpeg" alt="渐变挤出Google I/O 2025大会视觉效果" loading="lazy"><img src="/images/84-2.jpeg" alt="渐变挤出Google I/O 2025大会视觉效果" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 84,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

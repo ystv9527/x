@@ -7,11 +7,13 @@
     <title>&quot;image prompt&quot;: { #1993 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image prompt&quot;: { &quot;type&quot;: &quot;Hyper realistic editorial food infographic&quot;, &quot;subject&quot;: { &quot;cuisine&quot;: &quot;Authentic Indian V...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1993.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1993.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1993.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840374">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022327">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt\": {\n    \"type\": \"超写实社论风格美食信息图\",\n    \"subject\": {\n      \"cuisine\": \"地道印度素食\",\n      \"base_element\": \"传统质朴的碗放在底部，盛着冒着蒸气的现煮咖喱，浓郁而芳香\",\n      \"levitating_ingredients\": [\n        \"金黄酥脆的奶酪方块（paneer）\",\n        \"软煮马铃薯块\",\n        \"带光泽的番茄咖喱酱飞溅悬于空中\",\n        \"鲜亮的香菜叶\",\n        \"切片青辣椒\",\n        \"青柠角\",\n        \"薄片大蒜和姜\",\n        \"香脆炸洋葱\",\n        \"色彩丰富的蔬菜：红甜椒、青豌豆、橙色胡萝卜\",\n        \"撒入芳香香料：姜黄、孜然籽、红辣椒粉、印度混合香料（garam masala）\"\n      ]\n    },\n    \"composition\": {\n      \"layout\": \"简洁的纵向信息图构图\",\n      \"arrangement\": \"真实的违抗重力悬浮食材，分层排列以形成视觉层次\",\n      \"background\": \"温暖质朴的木质桌面或传统印度黄铜盘\",\n      \"visual_hierarchy\": \"碗位于底部锚定，食材垂直上升并保持自然间距，营造深度并突出主菜\"\n    },\n    \"graphic_design_elements\": {\n      \"labels\": \"清晰的英文文字注释，用于标注每种食材\",\n      \"lines\": \"纤细的白色指示线将悬浮食材与标签连接\",\n      \"style\": \"专业社论式美食杂志信息图，视觉上具有教育性，鲜明诱人\"\n    },\n    \"lighting_and_mood\": {\n      \"lighting\": \"电影感工作室灯光，暖色高光与柔和阴影，增强质感\",\n      \"color_palette\": \"浓郁鲜亮的暖色调，突出香料、蔬菜和咖喱\",\n      \"effects\": \"可见升腾的蒸汽、被静止定格的空中食材、轻微反光与闪亮的酱汁，营造垂涎欲滴的效果\"\n    },\n    \"technical_specs\": {\n      \"camera_settings\": \"浅景深，对前景元素超清锐对焦，单反电影镜头效果\",\n      \"details\": \"奶酪、蔬菜、香料和酱汁的超细节纹理；逼真的蒸汽与光泽高光\",\n      \"resolution\": \"8K 超写实分辨率，适用于高端数字显示、印刷或杂志封面\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;type&quot;: &quot;超写实社论风格美食信息图&quot;,<br>    &quot;subject&quot;: {<br>      &quot;cuisine&quot;: &quot;地道印度素食&quot;,<br>      &quot;base_element&quot;: &quot;传统质朴的碗放在底部，盛着冒着蒸气的现煮咖喱，浓郁而芳香&quot;,<br>      &quot;levitating_ingredients&quot;: [<br>        &quot;金黄酥脆的奶酪方块（paneer）&quot;,<br>        &quot;软煮马铃薯块&quot;,<br>        &quot;带光泽的番茄咖喱酱飞溅悬于空中&quot;,<br>        &quot;鲜亮的香菜叶&quot;,<br>        &quot;切片青辣椒&quot;,<br>        &quot;青柠角&quot;,<br>        &quot;薄片大蒜和姜&quot;,<br>        &quot;香脆炸洋葱&quot;,<br>        &quot;色彩丰富的蔬菜：红甜椒、青豌豆、橙色胡萝卜&quot;,<br>        &quot;撒入芳香香料：姜黄、孜然籽、红辣椒粉、印度混合香料（garam masala）&quot;<br>      ]<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;简洁的纵向信息图构图&quot;,<br>      &quot;arrangement&quot;: &quot;真实的违抗重力悬浮食材，分层排列以形成视觉层次&quot;,<br>      &quot;background&quot;: &quot;温暖质朴的木质桌面或传统印度黄铜盘&quot;,<br>      &quot;visual_hierarchy&quot;: &quot;碗位于底部锚定，食材垂直上升并保持自然间距，营造深度并突出主菜&quot;<br>    },<br>    &quot;graphic_design_elements&quot;: {<br>      &quot;labels&quot;: &quot;清晰的英文文字注释，用于标注每种食材&quot;,<br>      &quot;lines&quot;: &quot;纤细的白色指示线将悬浮食材与标签连接&quot;,<br>      &quot;style&quot;: &quot;专业社论式美食杂志信息图，视觉上具有教育性，鲜明诱人&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;电影感工作室灯光，暖色高光与柔和阴影，增强质感&quot;,<br>      &quot;color_palette&quot;: &quot;浓郁鲜亮的暖色调，突出香料、蔬菜和咖喱&quot;,<br>      &quot;effects&quot;: &quot;可见升腾的蒸汽、被静止定格的空中食材、轻微反光与闪亮的酱汁，营造垂涎欲滴的效果&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_settings&quot;: &quot;浅景深，对前景元素超清锐对焦，单反电影镜头效果&quot;,<br>      &quot;details&quot;: &quot;奶酪、蔬菜、香料和酱汁的超细节纹理；逼真的蒸汽与光泽高光&quot;,<br>      &quot;resolution&quot;: &quot;8K 超写实分辨率，适用于高端数字显示、印刷或杂志封面&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;type&quot;: &quot;超写实社论风格美食信息图&quot;,<br>    &quot;subject&quot;: {<br>      &quot;cuisine&quot;: &quot;地道印度素食&quot;,<br>      &quot;base_element&quot;: &quot;传统质朴的碗放在底部，盛着冒着蒸气的现煮咖喱，浓郁而芳香&quot;,<br>      &quot;levitating_ingredients&quot;: [<br>        &quot;金黄酥脆的奶酪方块（paneer）&quot;,<br>        &quot;软煮马铃薯块&quot;,<br>        &quot;带光泽的番茄咖喱酱飞溅悬于空中&quot;,<br>        &quot;鲜亮的香菜叶&quot;,<br>        &quot;切片青辣椒&quot;,<br>        &quot;青柠角&quot;,<br>        &quot;薄片大蒜和姜&quot;,<br>        &quot;香脆炸洋葱&quot;,<br>        &quot;色彩丰富的蔬菜：红甜椒、青豌豆、橙色胡萝卜&quot;,<br>        &quot;撒入芳香香料：姜黄、孜然籽、红辣椒粉、印度混合香料（garam masala）&quot;<br>      ]<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;简洁的纵向信息图构图&quot;,<br>      &quot;arrangement&quot;: &quot;真实的违抗重力悬浮食材，分层排列以形成视觉层次&quot;,<br>      &quot;background&quot;: &quot;温暖质朴的木质桌面或传统印度黄铜盘&quot;,<br>      &quot;visual_hierarchy&quot;: &quot;碗位于底部锚定，食材垂直上升并保持自然间距，营造深度并突出主菜&quot;<br>    },<br>    &quot;graphic_design_elements&quot;: {<br>      &quot;labels&quot;: &quot;清晰的英文文字注释，用于标注每种食材&quot;,<br>      &quot;lines&quot;: &quot;纤细的白色指示线将悬浮食材与标签连接&quot;,<br>      &quot;style&quot;: &quot;专业社论式美食杂志信息图，视觉上具有教育性，鲜明诱人&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;电影感工作室灯光，暖色高光与柔和阴影，增强质感&quot;,<br>      &quot;color_palette&quot;: &quot;浓郁鲜亮的暖色调，突出香料、蔬菜和咖喱&quot;,<br>      &quot;effects&quot;: &quot;可见升腾的蒸汽、被静止定格的空中食材、轻微反光与闪亮的酱汁，营造垂涎欲滴的效果&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_settings&quot;: &quot;浅景深，对前景元素超清锐对焦，单反电影镜头效果&quot;,<br>      &quot;details&quot;: &quot;奶酪、蔬菜、香料和酱汁的超细节纹理；逼真的蒸汽与光泽高光&quot;,<br>      &quot;resolution&quot;: &quot;8K 超写实分辨率，适用于高端数字显示、印刷或杂志封面&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt\": {\n    \"type\": \"Hyper-realistic editorial food infographic\",\n    \"subject\": {\n      \"cuisine\": \"Authentic Indian Vegetarian\",\n      \"base_element\": \"Traditional rustic bowl filled with steaming, freshly cooked curry at the bottom, rich and aromatic\",\n      \"levitating_ingredients\": [\n        \"Golden, crispy paneer cubes\",\n        \"Soft boiled potato chunks\",\n        \"Glazed tomato-curry sauce splashes suspended mid-air\",\n        \"Vibrant fresh coriander leaves\",\n        \"Sliced green chilies\",\n        \"Lime wedges\",\n        \"Thin slices of garlic and ginger\",\n        \"Crunchy fried onions\",\n        \"Colorful vegetables: red bell peppers, green peas, orange carrots\",\n        \"Sprinkle of aromatic spices: turmeric, cumin seeds, red chili powder, garam masala\"\n      ]\n    },\n    \"composition\": {\n      \"layout\": \"Clean vertical infographic composition\",\n      \"arrangement\": \"Realistic gravity-defying floating ingredients, layered for visual hierarchy\",\n      \"background\": \"Warm rustic wooden tabletop or traditional Indian brass plate\",\n      \"visual_hierarchy\": \"Bowl anchored at the bottom, ingredients rising vertically with natural spacing, creating depth and focus on main dish\"\n    },\n    \"graphic_design_elements\": {\n      \"labels\": \"Sharp, clear English text annotations for each ingredient\",\n      \"lines\": \"Delicate thin white pointer lines connecting floating ingredients to labels\",\n      \"style\": \"Professional editorial food magazine infographic, visually educational, vibrant and appetizing\"\n    },\n    \"lighting_and_mood\": {\n      \"lighting\": \"Cinematic studio lighting with warm highlights and soft shadows, enhancing textures\",\n      \"color_palette\": \"Rich, vibrant warm tones to highlight spices, vegetables, and curry\",\n      \"effects\": \"Visible rising steam, motion-frozen mid-air ingredients, slight reflections and glistening sauce for mouth-watering effect\"\n    },\n    \"technical_specs\": {\n      \"camera_settings\": \"Shallow depth of field, ultra-sharp focus on foreground elements, DSLR cinematic lens effect\",\n      \"details\": \"Ultra-detailed textures on paneer, vegetables, spices, and sauce; realistic steam and glossy highlights\",\n      \"resolution\": \"8K ultra-realistic, suitable for high-end digital display, print, or magazine cover\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;type&quot;: &quot;Hyper-realistic editorial food infographic&quot;,<br>    &quot;subject&quot;: {<br>      &quot;cuisine&quot;: &quot;Authentic Indian Vegetarian&quot;,<br>      &quot;base_element&quot;: &quot;Traditional rustic bowl filled with steaming, freshly cooked curry at the bottom, rich and aromatic&quot;,<br>      &quot;levitating_ingredients&quot;: [<br>        &quot;Golden, crispy paneer cubes&quot;,<br>        &quot;Soft boiled potato chunks&quot;,<br>        &quot;Glazed tomato-curry sauce splashes suspended mid-air&quot;,<br>        &quot;Vibrant fresh coriander leaves&quot;,<br>        &quot;Sliced green chilies&quot;,<br>        &quot;Lime wedges&quot;,<br>        &quot;Thin slices of garlic and ginger&quot;,<br>        &quot;Crunchy fried onions&quot;,<br>        &quot;Colorful vegetables: red bell peppers, green peas, orange carrots&quot;,<br>        &quot;Sprinkle of aromatic spices: turmeric, cumin seeds, red chili powder, garam masala&quot;<br>      ]<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;Clean vertical infographic composition&quot;,<br>      &quot;arrangement&quot;: &quot;Realistic gravity-defying floating ingredients, layered for visual hierarchy&quot;,<br>      &quot;background&quot;: &quot;Warm rustic wooden tabletop or traditional Indian brass plate&quot;,<br>      &quot;visual_hierarchy&quot;: &quot;Bowl anchored at the bottom, ingredients rising vertically with natural spacing, creating depth and focus on main dish&quot;<br>    },<br>    &quot;graphic_design_elements&quot;: {<br>      &quot;labels&quot;: &quot;Sharp, clear English text annotations for each ingredient&quot;,<br>      &quot;lines&quot;: &quot;Delicate thin white pointer lines connecting floating ingredients to labels&quot;,<br>      &quot;style&quot;: &quot;Professional editorial food magazine infographic, visually educational, vibrant and appetizing&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;Cinematic studio lighting with warm highlights and soft shadows, enhancing textures&quot;,<br>      &quot;color_palette&quot;: &quot;Rich, vibrant warm tones to highlight spices, vegetables, and curry&quot;,<br>      &quot;effects&quot;: &quot;Visible rising steam, motion-frozen mid-air ingredients, slight reflections and glistening sauce for mouth-watering effect&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_settings&quot;: &quot;Shallow depth of field, ultra-sharp focus on foreground elements, DSLR cinematic lens effect&quot;,<br>      &quot;details&quot;: &quot;Ultra-detailed textures on paneer, vegetables, spices, and sauce; realistic steam and glossy highlights&quot;,<br>      &quot;resolution&quot;: &quot;8K ultra-realistic, suitable for high-end digital display, print, or magazine cover&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;type&quot;: &quot;Hyper-realistic editorial food infographic&quot;,<br>    &quot;subject&quot;: {<br>      &quot;cuisine&quot;: &quot;Authentic Indian Vegetarian&quot;,<br>      &quot;base_element&quot;: &quot;Traditional rustic bowl filled with steaming, freshly cooked curry at the bottom, rich and aromatic&quot;,<br>      &quot;levitating_ingredients&quot;: [<br>        &quot;Golden, crispy paneer cubes&quot;,<br>        &quot;Soft boiled potato chunks&quot;,<br>        &quot;Glazed tomato-curry sauce splashes suspended mid-air&quot;,<br>        &quot;Vibrant fresh coriander leaves&quot;,<br>        &quot;Sliced green chilies&quot;,<br>        &quot;Lime wedges&quot;,<br>        &quot;Thin slices of garlic and ginger&quot;,<br>        &quot;Crunchy fried onions&quot;,<br>        &quot;Colorful vegetables: red bell peppers, green peas, orange carrots&quot;,<br>        &quot;Sprinkle of aromatic spices: turmeric, cumin seeds, red chili powder, garam masala&quot;<br>      ]<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;Clean vertical infographic composition&quot;,<br>      &quot;arrangement&quot;: &quot;Realistic gravity-defying floating ingredients, layered for visual hierarchy&quot;,<br>      &quot;background&quot;: &quot;Warm rustic wooden tabletop or traditional Indian brass plate&quot;,<br>      &quot;visual_hierarchy&quot;: &quot;Bowl anchored at the bottom, ingredients rising vertically with natural spacing, creating depth and focus on main dish&quot;<br>    },<br>    &quot;graphic_design_elements&quot;: {<br>      &quot;labels&quot;: &quot;Sharp, clear English text annotations for each ingredient&quot;,<br>      &quot;lines&quot;: &quot;Delicate thin white pointer lines connecting floating ingredients to labels&quot;,<br>      &quot;style&quot;: &quot;Professional editorial food magazine infographic, visually educational, vibrant and appetizing&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;Cinematic studio lighting with warm highlights and soft shadows, enhancing textures&quot;,<br>      &quot;color_palette&quot;: &quot;Rich, vibrant warm tones to highlight spices, vegetables, and curry&quot;,<br>      &quot;effects&quot;: &quot;Visible rising steam, motion-frozen mid-air ingredients, slight reflections and glistening sauce for mouth-watering effect&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_settings&quot;: &quot;Shallow depth of field, ultra-sharp focus on foreground elements, DSLR cinematic lens effect&quot;,<br>      &quot;details&quot;: &quot;Ultra-detailed textures on paneer, vegetables, spices, and sauce; realistic steam and glossy highlights&quot;,<br>      &quot;resolution&quot;: &quot;8K ultra-realistic, suitable for high-end digital display, print, or magazine cover&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2019418461869650379-1.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2019418461869650379-2.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1993,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

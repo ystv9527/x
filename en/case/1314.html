@@ -7,11 +7,13 @@
     <title>&quot;task&quot;: &quot;image generation&quot;, #1314 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;task&quot;: &quot;image generation&quot;, &quot;style&quot;: { &quot;resolution&quot;: &quot;8K&quot;, &quot;look&quot;: &quot;hyper realistic, cinematic&quot;, &quot;photorealism&quot;: tr...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1314.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1314.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1314.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845255">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023683">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"任务\": \"图像生成\",\n  \"风格\": {\n    \"分辨率\": \"8K\",\n    \"外观\": \"超现实，电影感\",\n    \"照片真实感\": true\n  },\n  \"主体\": {\n    \"身份\": \"虚构健身模特\",\n    \"灵感来源\": \"受名人启发（非相同，不匹配面部）\",\n    \"性别\": \"女性\",\n    \"肤色\": \"白皙\",\n    \"姿势\": {\n      \"视角\": \"3/4 背面\",\n      \"体态\": \"背部弯曲\",\n      \"头部方向\": \"回头看\"\n    },\n    \"表情\": \"严肃\",\n    \"化妆\": {\n      \"眼线\": \"翼状眼线\",\n      \"妆感\": \"自然电影感\"\n    },\n    \"发型\": {\n      \"颜色\": \"蜜棕色\",\n      \"样式\": \"丸子头\",\n      \"配饰\": \"发夹\"\n    }\n  },\n  \"服装\": {\n    \"上衣\": {\n      \"类型\": \"运动文胸\",\n      \"颜色\": \"灰色\",\n      \"设计\": \"多带\"\n    },\n    \"下装\": {\n      \"类型\": \"短裤\",\n      \"版型\": \"紧身，高腰\",\n      \"质地\": \"罗纹\",\n      \"颜色\": \"棕色\"\n    },\n    \"袜子\": {\n      \"类型\": \"大腿袜\",\n      \"颜色\": \"黑色\",\n      \"细节\": \"红色条纹\"\n    }\n  },\n  \"环境\": {\n    \"位置\": \"健身房\",\n    \"背景元素\": [\n      \"红色金属架\"\n    ],\n    \"氛围\": \"电影感，阴郁\"\n  },\n  \"相机\": {\n    \"镜头\": \"85mm\",\n    \"景深\": \"浅景深\",\n    \"对焦\": \"主体清晰\"\n  },\n  \"灯光\": {\n    \"类型\": \"电影感\",\n    \"主光\": \"柔和定向\",\n    \"对比度\": \"高\",\n    \"高光\": \"受控\"\n  },\n  \"细节\": {\n    \"皮肤\": \"超细致，真实质感\",\n    \"面料\": \"高微观细节\"\n  },\n  \"构图\": {\n    \"长宽比\": \"3:4\",\n    \"构图方式\": \"人像\"\n  },\n  \"约束\": {\n    \"不得为真实人物身份\": true,\n    \"不得面部匹配\": true\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;任务&quot;: &quot;图像生成&quot;,<br>  &quot;风格&quot;: {<br>    &quot;分辨率&quot;: &quot;8K&quot;,<br>    &quot;外观&quot;: &quot;超现实，电影感&quot;,<br>    &quot;照片真实感&quot;: true<br>  },<br>  &quot;主体&quot;: {<br>    &quot;身份&quot;: &quot;虚构健身模特&quot;,<br>    &quot;灵感来源&quot;: &quot;受名人启发（非相同，不匹配面部）&quot;,<br>    &quot;性别&quot;: &quot;女性&quot;,<br>    &quot;肤色&quot;: &quot;白皙&quot;,<br>    &quot;姿势&quot;: {<br>      &quot;视角&quot;: &quot;3/4 背面&quot;,<br>      &quot;体态&quot;: &quot;背部弯曲&quot;,<br>      &quot;头部方向&quot;: &quot;回头看&quot;<br>    },<br>    &quot;表情&quot;: &quot;严肃&quot;,<br>    &quot;化妆&quot;: {<br>      &quot;眼线&quot;: &quot;翼状眼线&quot;,<br>      &quot;妆感&quot;: &quot;自然电影感&quot;<br>    },<br>    &quot;发型&quot;: {<br>      &quot;颜色&quot;: &quot;蜜棕色&quot;,<br>      &quot;样式&quot;: &quot;丸子头&quot;,<br>      &quot;配饰&quot;: &quot;发夹&quot;<br>    }<br>  },<br>  &quot;服装&quot;: {<br>    &quot;上衣&quot;: {<br>      &quot;类型&quot;: &quot;运动文胸&quot;,<br>      &quot;颜色&quot;: &quot;灰色&quot;,<br>      &quot;设计&quot;: &quot;多带&quot;<br>    },<br>    &quot;下装&quot;: {<br>      &quot;类型&quot;: &quot;短裤&quot;,<br>      &quot;版型&quot;: &quot;紧身，高腰&quot;,<br>      &quot;质地&quot;: &quot;罗纹&quot;,<br>      &quot;颜色&quot;: &quot;棕色&quot;<br>    },<br>    &quot;袜子&quot;: {<br>      &quot;类型&quot;: &quot;大腿袜&quot;,<br>      &quot;颜色&quot;: &quot;黑色&quot;,<br>      &quot;细节&quot;: &quot;红色条纹&quot;<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;位置&quot;: &quot;健身房&quot;,<br>    &quot;背景元素&quot;: [<br>      &quot;红色金属架&quot;<br>    ],<br>    &quot;氛围&quot;: &quot;电影感，阴郁&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;镜头&quot;: &quot;85mm&quot;,<br>    &quot;景深&quot;: &quot;浅景深&quot;,<br>    &quot;对焦&quot;: &quot;主体清晰&quot;<br>  },<br>  &quot;灯光&quot;: {<br>    &quot;类型&quot;: &quot;电影感&quot;,<br>    &quot;主光&quot;: &quot;柔和定向&quot;,<br>    &quot;对比度&quot;: &quot;高&quot;,<br>    &quot;高光&quot;: &quot;受控&quot;<br>  },<br>  &quot;细节&quot;: {<br>    &quot;皮肤&quot;: &quot;超细致，真实质感&quot;,<br>    &quot;面料&quot;: &quot;高微观细节&quot;<br>  },<br>  &quot;构图&quot;: {<br>    &quot;长宽比&quot;: &quot;3:4&quot;,<br>    &quot;构图方式&quot;: &quot;人像&quot;<br>  },<br>  &quot;约束&quot;: {<br>    &quot;不得为真实人物身份&quot;: true,<br>    &quot;不得面部匹配&quot;: true<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;任务&quot;: &quot;图像生成&quot;,<br>  &quot;风格&quot;: {<br>    &quot;分辨率&quot;: &quot;8K&quot;,<br>    &quot;外观&quot;: &quot;超现实，电影感&quot;,<br>    &quot;照片真实感&quot;: true<br>  },<br>  &quot;主体&quot;: {<br>    &quot;身份&quot;: &quot;虚构健身模特&quot;,<br>    &quot;灵感来源&quot;: &quot;受名人启发（非相同，不匹配面部）&quot;,<br>    &quot;性别&quot;: &quot;女性&quot;,<br>    &quot;肤色&quot;: &quot;白皙&quot;,<br>    &quot;姿势&quot;: {<br>      &quot;视角&quot;: &quot;3/4 背面&quot;,<br>      &quot;体态&quot;: &quot;背部弯曲&quot;,<br>      &quot;头部方向&quot;: &quot;回头看&quot;<br>    },<br>    &quot;表情&quot;: &quot;严肃&quot;,<br>    &quot;化妆&quot;: {<br>      &quot;眼线&quot;: &quot;翼状眼线&quot;,<br>      &quot;妆感&quot;: &quot;自然电影感&quot;<br>    },<br>    &quot;发型&quot;: {<br>      &quot;颜色&quot;: &quot;蜜棕色&quot;,<br>      &quot;样式&quot;: &quot;丸子头&quot;,<br>      &quot;配饰&quot;: &quot;发夹&quot;<br>    }<br>  },<br>  &quot;服装&quot;: {<br>    &quot;上衣&quot;: {<br>      &quot;类型&quot;: &quot;运动文胸&quot;,<br>      &quot;颜色&quot;: &quot;灰色&quot;,<br>      &quot;设计&quot;: &quot;多带&quot;<br>    },<br>    &quot;下装&quot;: {<br>      &quot;类型&quot;: &quot;短裤&quot;,<br>      &quot;版型&quot;: &quot;紧身，高腰&quot;,<br>      &quot;质地&quot;: &quot;罗纹&quot;,<br>      &quot;颜色&quot;: &quot;棕色&quot;<br>    },<br>    &quot;袜子&quot;: {<br>      &quot;类型&quot;: &quot;大腿袜&quot;,<br>      &quot;颜色&quot;: &quot;黑色&quot;,<br>      &quot;细节&quot;: &quot;红色条纹&quot;<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;位置&quot;: &quot;健身房&quot;,<br>    &quot;背景元素&quot;: [<br>      &quot;红色金属架&quot;<br>    ],<br>    &quot;氛围&quot;: &quot;电影感，阴郁&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;镜头&quot;: &quot;85mm&quot;,<br>    &quot;景深&quot;: &quot;浅景深&quot;,<br>    &quot;对焦&quot;: &quot;主体清晰&quot;<br>  },<br>  &quot;灯光&quot;: {<br>    &quot;类型&quot;: &quot;电影感&quot;,<br>    &quot;主光&quot;: &quot;柔和定向&quot;,<br>    &quot;对比度&quot;: &quot;高&quot;,<br>    &quot;高光&quot;: &quot;受控&quot;<br>  },<br>  &quot;细节&quot;: {<br>    &quot;皮肤&quot;: &quot;超细致，真实质感&quot;,<br>    &quot;面料&quot;: &quot;高微观细节&quot;<br>  },<br>  &quot;构图&quot;: {<br>    &quot;长宽比&quot;: &quot;3:4&quot;,<br>    &quot;构图方式&quot;: &quot;人像&quot;<br>  },<br>  &quot;约束&quot;: {<br>    &quot;不得为真实人物身份&quot;: true,<br>    &quot;不得面部匹配&quot;: true<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"task\": \"image_generation\",\n  \"style\": {\n    \"resolution\": \"8K\",\n    \"look\": \"hyper-realistic, cinematic\",\n    \"photorealism\": true\n  },\n  \"subject\": {\n    \"identity\": \"fictional fitness model\",\n    \"inspiration\": \"celebrity-inspired (non-identical, no face matching)\",\n    \"gender\": \"female\",\n    \"skin_tone\": \"fair\",\n    \"pose\": {\n      \"view\": \"3/4 rear\",\n      \"posture\": \"arched back\",\n      \"head_direction\": \"looking over shoulder\"\n    },\n    \"expression\": \"serious\",\n    \"makeup\": {\n      \"eyeliner\": \"winged\",\n      \"finish\": \"natural cinematic\"\n    },\n    \"hair\": {\n      \"color\": \"honey-brown\",\n      \"style\": \"bun\",\n      \"accessory\": \"hair clip\"\n    }\n  },\n  \"wardrobe\": {\n    \"top\": {\n      \"type\": \"sports bra\",\n      \"color\": \"grey\",\n      \"design\": \"multi-strap\"\n    },\n    \"bottom\": {\n      \"type\": \"shorts\",\n      \"fit\": \"tight, high-waist\",\n      \"texture\": \"ribbed\",\n      \"color\": \"brown\"\n    },\n    \"socks\": {\n      \"type\": \"thigh-high\",\n      \"color\": \"black\",\n      \"details\": \"red stripes\"\n    }\n  },\n  \"environment\": {\n    \"location\": \"gym\",\n    \"background_elements\": [\n      \"red metal rack\"\n    ],\n    \"atmosphere\": \"cinematic, moody\"\n  },\n  \"camera\": {\n    \"lens\": \"85mm\",\n    \"depth_of_field\": \"shallow\",\n    \"focus\": \"sharp on subject\"\n  },\n  \"lighting\": {\n    \"type\": \"cinematic\",\n    \"key\": \"soft directional\",\n    \"contrast\": \"high\",\n    \"highlights\": \"controlled\"\n  },\n  \"detail\": {\n    \"skin\": \"ultra-detailed, realistic texture\",\n    \"fabric\": \"high micro-detail\"\n  },\n  \"composition\": {\n    \"aspect_ratio\": \"3:4\",\n    \"framing\": \"portrait\"\n  },\n  \"constraints\": {\n    \"no_real_person_identity\": true,\n    \"no_face_matching\": true\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;task&quot;: &quot;image_generation&quot;,<br>  &quot;style&quot;: {<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;look&quot;: &quot;hyper-realistic, cinematic&quot;,<br>    &quot;photorealism&quot;: true<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;fictional fitness model&quot;,<br>    &quot;inspiration&quot;: &quot;celebrity-inspired (non-identical, no face matching)&quot;,<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;skin_tone&quot;: &quot;fair&quot;,<br>    &quot;pose&quot;: {<br>      &quot;view&quot;: &quot;3/4 rear&quot;,<br>      &quot;posture&quot;: &quot;arched back&quot;,<br>      &quot;head_direction&quot;: &quot;looking over shoulder&quot;<br>    },<br>    &quot;expression&quot;: &quot;serious&quot;,<br>    &quot;makeup&quot;: {<br>      &quot;eyeliner&quot;: &quot;winged&quot;,<br>      &quot;finish&quot;: &quot;natural cinematic&quot;<br>    },<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;honey-brown&quot;,<br>      &quot;style&quot;: &quot;bun&quot;,<br>      &quot;accessory&quot;: &quot;hair clip&quot;<br>    }<br>  },<br>  &quot;wardrobe&quot;: {<br>    &quot;top&quot;: {<br>      &quot;type&quot;: &quot;sports bra&quot;,<br>      &quot;color&quot;: &quot;grey&quot;,<br>      &quot;design&quot;: &quot;multi-strap&quot;<br>    },<br>    &quot;bottom&quot;: {<br>      &quot;type&quot;: &quot;shorts&quot;,<br>      &quot;fit&quot;: &quot;tight, high-waist&quot;,<br>      &quot;texture&quot;: &quot;ribbed&quot;,<br>      &quot;color&quot;: &quot;brown&quot;<br>    },<br>    &quot;socks&quot;: {<br>      &quot;type&quot;: &quot;thigh-high&quot;,<br>      &quot;color&quot;: &quot;black&quot;,<br>      &quot;details&quot;: &quot;red stripes&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;gym&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;red metal rack&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;cinematic, moody&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;lens&quot;: &quot;85mm&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;sharp on subject&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;cinematic&quot;,<br>    &quot;key&quot;: &quot;soft directional&quot;,<br>    &quot;contrast&quot;: &quot;high&quot;,<br>    &quot;highlights&quot;: &quot;controlled&quot;<br>  },<br>  &quot;detail&quot;: {<br>    &quot;skin&quot;: &quot;ultra-detailed, realistic texture&quot;,<br>    &quot;fabric&quot;: &quot;high micro-detail&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;framing&quot;: &quot;portrait&quot;<br>  },<br>  &quot;constraints&quot;: {<br>    &quot;no_real_person_identity&quot;: true,<br>    &quot;no_face_matching&quot;: true<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;task&quot;: &quot;image_generation&quot;,<br>  &quot;style&quot;: {<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;look&quot;: &quot;hyper-realistic, cinematic&quot;,<br>    &quot;photorealism&quot;: true<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;fictional fitness model&quot;,<br>    &quot;inspiration&quot;: &quot;celebrity-inspired (non-identical, no face matching)&quot;,<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;skin_tone&quot;: &quot;fair&quot;,<br>    &quot;pose&quot;: {<br>      &quot;view&quot;: &quot;3/4 rear&quot;,<br>      &quot;posture&quot;: &quot;arched back&quot;,<br>      &quot;head_direction&quot;: &quot;looking over shoulder&quot;<br>    },<br>    &quot;expression&quot;: &quot;serious&quot;,<br>    &quot;makeup&quot;: {<br>      &quot;eyeliner&quot;: &quot;winged&quot;,<br>      &quot;finish&quot;: &quot;natural cinematic&quot;<br>    },<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;honey-brown&quot;,<br>      &quot;style&quot;: &quot;bun&quot;,<br>      &quot;accessory&quot;: &quot;hair clip&quot;<br>    }<br>  },<br>  &quot;wardrobe&quot;: {<br>    &quot;top&quot;: {<br>      &quot;type&quot;: &quot;sports bra&quot;,<br>      &quot;color&quot;: &quot;grey&quot;,<br>      &quot;design&quot;: &quot;multi-strap&quot;<br>    },<br>    &quot;bottom&quot;: {<br>      &quot;type&quot;: &quot;shorts&quot;,<br>      &quot;fit&quot;: &quot;tight, high-waist&quot;,<br>      &quot;texture&quot;: &quot;ribbed&quot;,<br>      &quot;color&quot;: &quot;brown&quot;<br>    },<br>    &quot;socks&quot;: {<br>      &quot;type&quot;: &quot;thigh-high&quot;,<br>      &quot;color&quot;: &quot;black&quot;,<br>      &quot;details&quot;: &quot;red stripes&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;gym&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;red metal rack&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;cinematic, moody&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;lens&quot;: &quot;85mm&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;sharp on subject&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;cinematic&quot;,<br>    &quot;key&quot;: &quot;soft directional&quot;,<br>    &quot;contrast&quot;: &quot;high&quot;,<br>    &quot;highlights&quot;: &quot;controlled&quot;<br>  },<br>  &quot;detail&quot;: {<br>    &quot;skin&quot;: &quot;ultra-detailed, realistic texture&quot;,<br>    &quot;fabric&quot;: &quot;high micro-detail&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;framing&quot;: &quot;portrait&quot;<br>  },<br>  &quot;constraints&quot;: {<br>    &quot;no_real_person_identity&quot;: true,<br>    &quot;no_face_matching&quot;: true<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011714932211908616-1.jpg" alt="&quot;task&quot;: &quot;image generation&quot;," loading="lazy"><img src="/images/tweet-2011714932211908616-2.jpg" alt="&quot;task&quot;: &quot;image generation&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1314,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

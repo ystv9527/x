@@ -7,11 +7,13 @@
     <title>&quot;type&quot;: &quot;image generation&quot;, #640 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;type&quot;: &quot;image generation&quot;, &quot;style&quot;: &quot;ultra realistic cinematic&quot;, &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;resolution&quot;: &quot;8K&quot;, &quot;camer...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/640.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/640.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/640.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841654">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022645">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"图像生成\",\n  \"style\": \"极致真实的电影感\",\n  \"aspect_ratio\": \"3:4\",\n  \"resolution\": \"8K\",\n  \"camera\": {\n    \"model\": \"单反相机\",\n    \"lens\": \"50毫米\",\n    \"angle\": \"动态轻微倾斜，场边视角\",\n    \"depth_of_field\": \"浅景深\",\n    \"focus\": \"手机与球员清晰，背景柔和模糊\"\n  },\n  \"scene\": {\n    \"subject\": \"放在木桌上的智能手机\",\n    \"concept\": \"手机屏幕化身为专业网球场\",\n    \"court_surface\": \"崭新的蓝色硬地球场，带有细小划痕和粉笔痕迹\",\n    \"players\": \"微型网球选手在发球、截击、抢救球\",\n    \"scale\": \"写实的微型比例\"\n  },\n  \"lighting\": {\n    \"type\": \"戏剧性定向照明\",\n    \"source\": \"来自场馆式侧方灯光\",\n    \"effect\": \"强烈高光与长阴影\",\n    \"reflection\": \"灯光在手机玻璃上的柔和反射\"\n  },\n  \"details\": {\n    \"phone_surface\": [\n      \"可见指纹\",\n      \"微微污迹\",\n      \"边缘微划痕\"\n    ],\n    \"atmosphere\": [\n      \"飘浮的尘埃颗粒\",\n      \"用于层次感的淡雾\"\n    ],\n    \"textures\": \"超高细节的球场表面，真实材质\"\n  },\n  \"environment\": {\n    \"table\": \"带纹理的天然木材桌面\",\n    \"background\": \"柔和模糊的观影级室内环境\"\n  },\n  \"color_grading\": {\n    \"palette\": \"生动自然的调色板\",\n    \"contrast\": \"对比度高但均衡\",\n    \"tone\": \"电影现实感\"\n  },\n  \"aesthetic\": {\n    \"mood\": \"充满动感、活力、高端体育视觉\",\n    \"style\": \"高端体育广告风格\"\n  },\n  \"render_quality\": {\n    \"sharpness\": \"极致清晰\",\n    \"detail_level\": \"极致细节\",\n    \"photorealism\": \"DSLR级真实感\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;图像生成&quot;,<br>  &quot;style&quot;: &quot;极致真实的电影感&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;camera&quot;: {<br>    &quot;model&quot;: &quot;单反相机&quot;,<br>    &quot;lens&quot;: &quot;50毫米&quot;,<br>    &quot;angle&quot;: &quot;动态轻微倾斜，场边视角&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;focus&quot;: &quot;手机与球员清晰，背景柔和模糊&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;subject&quot;: &quot;放在木桌上的智能手机&quot;,<br>    &quot;concept&quot;: &quot;手机屏幕化身为专业网球场&quot;,<br>    &quot;court_surface&quot;: &quot;崭新的蓝色硬地球场，带有细小划痕和粉笔痕迹&quot;,<br>    &quot;players&quot;: &quot;微型网球选手在发球、截击、抢救球&quot;,<br>    &quot;scale&quot;: &quot;写实的微型比例&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;戏剧性定向照明&quot;,<br>    &quot;source&quot;: &quot;来自场馆式侧方灯光&quot;,<br>    &quot;effect&quot;: &quot;强烈高光与长阴影&quot;,<br>    &quot;reflection&quot;: &quot;灯光在手机玻璃上的柔和反射&quot;<br>  },<br>  &quot;details&quot;: {<br>    &quot;phone_surface&quot;: [<br>      &quot;可见指纹&quot;,<br>      &quot;微微污迹&quot;,<br>      &quot;边缘微划痕&quot;<br>    ],<br>    &quot;atmosphere&quot;: [<br>      &quot;飘浮的尘埃颗粒&quot;,<br>      &quot;用于层次感的淡雾&quot;<br>    ],<br>    &quot;textures&quot;: &quot;超高细节的球场表面，真实材质&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;table&quot;: &quot;带纹理的天然木材桌面&quot;,<br>    &quot;background&quot;: &quot;柔和模糊的观影级室内环境&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;生动自然的调色板&quot;,<br>    &quot;contrast&quot;: &quot;对比度高但均衡&quot;,<br>    &quot;tone&quot;: &quot;电影现实感&quot;<br>  },<br>  &quot;aesthetic&quot;: {<br>    &quot;mood&quot;: &quot;充满动感、活力、高端体育视觉&quot;,<br>    &quot;style&quot;: &quot;高端体育广告风格&quot;<br>  },<br>  &quot;render_quality&quot;: {<br>    &quot;sharpness&quot;: &quot;极致清晰&quot;,<br>    &quot;detail_level&quot;: &quot;极致细节&quot;,<br>    &quot;photorealism&quot;: &quot;DSLR级真实感&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;图像生成&quot;,<br>  &quot;style&quot;: &quot;极致真实的电影感&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;camera&quot;: {<br>    &quot;model&quot;: &quot;单反相机&quot;,<br>    &quot;lens&quot;: &quot;50毫米&quot;,<br>    &quot;angle&quot;: &quot;动态轻微倾斜，场边视角&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;focus&quot;: &quot;手机与球员清晰，背景柔和模糊&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;subject&quot;: &quot;放在木桌上的智能手机&quot;,<br>    &quot;concept&quot;: &quot;手机屏幕化身为专业网球场&quot;,<br>    &quot;court_surface&quot;: &quot;崭新的蓝色硬地球场，带有细小划痕和粉笔痕迹&quot;,<br>    &quot;players&quot;: &quot;微型网球选手在发球、截击、抢救球&quot;,<br>    &quot;scale&quot;: &quot;写实的微型比例&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;戏剧性定向照明&quot;,<br>    &quot;source&quot;: &quot;来自场馆式侧方灯光&quot;,<br>    &quot;effect&quot;: &quot;强烈高光与长阴影&quot;,<br>    &quot;reflection&quot;: &quot;灯光在手机玻璃上的柔和反射&quot;<br>  },<br>  &quot;details&quot;: {<br>    &quot;phone_surface&quot;: [<br>      &quot;可见指纹&quot;,<br>      &quot;微微污迹&quot;,<br>      &quot;边缘微划痕&quot;<br>    ],<br>    &quot;atmosphere&quot;: [<br>      &quot;飘浮的尘埃颗粒&quot;,<br>      &quot;用于层次感的淡雾&quot;<br>    ],<br>    &quot;textures&quot;: &quot;超高细节的球场表面，真实材质&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;table&quot;: &quot;带纹理的天然木材桌面&quot;,<br>    &quot;background&quot;: &quot;柔和模糊的观影级室内环境&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;生动自然的调色板&quot;,<br>    &quot;contrast&quot;: &quot;对比度高但均衡&quot;,<br>    &quot;tone&quot;: &quot;电影现实感&quot;<br>  },<br>  &quot;aesthetic&quot;: {<br>    &quot;mood&quot;: &quot;充满动感、活力、高端体育视觉&quot;,<br>    &quot;style&quot;: &quot;高端体育广告风格&quot;<br>  },<br>  &quot;render_quality&quot;: {<br>    &quot;sharpness&quot;: &quot;极致清晰&quot;,<br>    &quot;detail_level&quot;: &quot;极致细节&quot;,<br>    &quot;photorealism&quot;: &quot;DSLR级真实感&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"image_generation\",\n  \"style\": \"ultra_realistic_cinematic\",\n  \"aspect_ratio\": \"3:4\",\n  \"resolution\": \"8K\",\n  \"camera\": {\n    \"model\": \"DSLR\",\n    \"lens\": \"50mm\",\n    \"angle\": \"dynamic slight tilt, courtside perspective\",\n    \"depth_of_field\": \"shallow\",\n    \"focus\": \"sharp on phone and players, soft background blur\"\n  },\n  \"scene\": {\n    \"subject\": \"smartphone lying on a wooden table\",\n    \"concept\": \"phone screen transformed into a professional tennis court\",\n    \"court_surface\": \"pristine blue hardcourt with fine scratches and chalk marks\",\n    \"players\": \"miniature tennis players serving, volleying, diving for shots\",\n    \"scale\": \"realistic miniature proportions\"\n  },\n  \"lighting\": {\n    \"type\": \"dramatic directional lighting\",\n    \"source\": \"stadium-style lights from the side\",\n    \"effect\": \"strong highlights and long shadows\",\n    \"reflection\": \"soft reflection of floodlights on phone glass\"\n  },\n  \"details\": {\n    \"phone_surface\": [\n      \"visible fingerprints\",\n      \"subtle smudges\",\n      \"micro scratches on edges\"\n    ],\n    \"atmosphere\": [\n      \"floating dust particles\",\n      \"light haze for depth\"\n    ],\n    \"textures\": \"hyper-detailed court surface, realistic materials\"\n  },\n  \"environment\": {\n    \"table\": \"natural wood with grain texture\",\n    \"background\": \"softly blurred, cinematic indoor setting\"\n  },\n  \"color_grading\": {\n    \"palette\": \"vibrant yet natural\",\n    \"contrast\": \"high but balanced\",\n    \"tone\": \"cinematic realism\"\n  },\n  \"aesthetic\": {\n    \"mood\": \"dynamic, energetic, premium sports visual\",\n    \"style\": \"high-end sports advertisement\"\n  },\n  \"render_quality\": {\n    \"sharpness\": \"ultra-crisp\",\n    \"detail_level\": \"extreme\",\n    \"photorealism\": \"DSLR-grade realism\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;image_generation&quot;,<br>  &quot;style&quot;: &quot;ultra_realistic_cinematic&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;camera&quot;: {<br>    &quot;model&quot;: &quot;DSLR&quot;,<br>    &quot;lens&quot;: &quot;50mm&quot;,<br>    &quot;angle&quot;: &quot;dynamic slight tilt, courtside perspective&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;sharp on phone and players, soft background blur&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;subject&quot;: &quot;smartphone lying on a wooden table&quot;,<br>    &quot;concept&quot;: &quot;phone screen transformed into a professional tennis court&quot;,<br>    &quot;court_surface&quot;: &quot;pristine blue hardcourt with fine scratches and chalk marks&quot;,<br>    &quot;players&quot;: &quot;miniature tennis players serving, volleying, diving for shots&quot;,<br>    &quot;scale&quot;: &quot;realistic miniature proportions&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;dramatic directional lighting&quot;,<br>    &quot;source&quot;: &quot;stadium-style lights from the side&quot;,<br>    &quot;effect&quot;: &quot;strong highlights and long shadows&quot;,<br>    &quot;reflection&quot;: &quot;soft reflection of floodlights on phone glass&quot;<br>  },<br>  &quot;details&quot;: {<br>    &quot;phone_surface&quot;: [<br>      &quot;visible fingerprints&quot;,<br>      &quot;subtle smudges&quot;,<br>      &quot;micro scratches on edges&quot;<br>    ],<br>    &quot;atmosphere&quot;: [<br>      &quot;floating dust particles&quot;,<br>      &quot;light haze for depth&quot;<br>    ],<br>    &quot;textures&quot;: &quot;hyper-detailed court surface, realistic materials&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;table&quot;: &quot;natural wood with grain texture&quot;,<br>    &quot;background&quot;: &quot;softly blurred, cinematic indoor setting&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;vibrant yet natural&quot;,<br>    &quot;contrast&quot;: &quot;high but balanced&quot;,<br>    &quot;tone&quot;: &quot;cinematic realism&quot;<br>  },<br>  &quot;aesthetic&quot;: {<br>    &quot;mood&quot;: &quot;dynamic, energetic, premium sports visual&quot;,<br>    &quot;style&quot;: &quot;high-end sports advertisement&quot;<br>  },<br>  &quot;render_quality&quot;: {<br>    &quot;sharpness&quot;: &quot;ultra-crisp&quot;,<br>    &quot;detail_level&quot;: &quot;extreme&quot;,<br>    &quot;photorealism&quot;: &quot;DSLR-grade realism&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;image_generation&quot;,<br>  &quot;style&quot;: &quot;ultra_realistic_cinematic&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;camera&quot;: {<br>    &quot;model&quot;: &quot;DSLR&quot;,<br>    &quot;lens&quot;: &quot;50mm&quot;,<br>    &quot;angle&quot;: &quot;dynamic slight tilt, courtside perspective&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;sharp on phone and players, soft background blur&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;subject&quot;: &quot;smartphone lying on a wooden table&quot;,<br>    &quot;concept&quot;: &quot;phone screen transformed into a professional tennis court&quot;,<br>    &quot;court_surface&quot;: &quot;pristine blue hardcourt with fine scratches and chalk marks&quot;,<br>    &quot;players&quot;: &quot;miniature tennis players serving, volleying, diving for shots&quot;,<br>    &quot;scale&quot;: &quot;realistic miniature proportions&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;dramatic directional lighting&quot;,<br>    &quot;source&quot;: &quot;stadium-style lights from the side&quot;,<br>    &quot;effect&quot;: &quot;strong highlights and long shadows&quot;,<br>    &quot;reflection&quot;: &quot;soft reflection of floodlights on phone glass&quot;<br>  },<br>  &quot;details&quot;: {<br>    &quot;phone_surface&quot;: [<br>      &quot;visible fingerprints&quot;,<br>      &quot;subtle smudges&quot;,<br>      &quot;micro scratches on edges&quot;<br>    ],<br>    &quot;atmosphere&quot;: [<br>      &quot;floating dust particles&quot;,<br>      &quot;light haze for depth&quot;<br>    ],<br>    &quot;textures&quot;: &quot;hyper-detailed court surface, realistic materials&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;table&quot;: &quot;natural wood with grain texture&quot;,<br>    &quot;background&quot;: &quot;softly blurred, cinematic indoor setting&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;vibrant yet natural&quot;,<br>    &quot;contrast&quot;: &quot;high but balanced&quot;,<br>    &quot;tone&quot;: &quot;cinematic realism&quot;<br>  },<br>  &quot;aesthetic&quot;: {<br>    &quot;mood&quot;: &quot;dynamic, energetic, premium sports visual&quot;,<br>    &quot;style&quot;: &quot;high-end sports advertisement&quot;<br>  },<br>  &quot;render_quality&quot;: {<br>    &quot;sharpness&quot;: &quot;ultra-crisp&quot;,<br>    &quot;detail_level&quot;: &quot;extreme&quot;,<br>    &quot;photorealism&quot;: &quot;DSLR-grade realism&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2006986719590248769-1.jpg" alt="&quot;type&quot;: &quot;image generation&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 640,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

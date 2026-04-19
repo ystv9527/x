@@ -7,11 +7,13 @@
     <title>ノスタルジーに刺さるのは、どっちのエモさやと思う？ #629 | Gem Nana AI 提示词库</title>
     <meta name="description" content="ノスタルジーに刺さるのは、どっちのエモさやと思う？ 👈GPT Image 1.5 👉Nano Banana Pro どっちも同じプロンプトなんやけど…… GPTは画質が粗めで、学生のたわむれ感あって青春っぽいんよね。 Nanoはノ...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/629.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/629.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/629.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841665">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022648">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("让人感到怀旧的是哪种情感，你觉得是哪一种？\n\n👈GPT Image 1.5\n👉Nano Banana Pro\n\n两者其实用的都是同一个提示词呢……\n\nGPT的画质比较粗糙，带着学生玩闹的感觉，挺有青春气息的。\n\nNano则更显怀旧，像老相册那样有一种味道，也很棒。\n\n我更喜欢Nono这一方。\n\n我会把提示贴在回复里。", this)'>📋 复制</button>
         </div>
-        <p>让人感到怀旧的是哪种情感，你觉得是哪一种？</p><p>👈GPT Image 1.5<br>👉Nano Banana Pro</p><p>两者其实用的都是同一个提示词呢……</p><p>GPT的画质比较粗糙，带着学生玩闹的感觉，挺有青春气息的。</p><p>Nano则更显怀旧，像老相册那样有一种味道，也很棒。</p><p>我更喜欢Nono这一方。</p><p>我会把提示贴在回复里。</p>
+        <div data-nosnippet><p>让人感到怀旧的是哪种情感，你觉得是哪一种？</p><p>👈GPT Image 1.5<br>👉Nano Banana Pro</p><p>两者其实用的都是同一个提示词呢……</p><p>GPT的画质比较粗糙，带着学生玩闹的感觉，挺有青春气息的。</p><p>Nano则更显怀旧，像老相册那样有一种味道，也很棒。</p><p>我更喜欢Nono这一方。</p><p>我会把提示贴在回复里。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("ノスタルジーに刺さるのは、どっちのエモさやと思う？\n\n👈GPT Image 1.5\n👉Nano Banana Pro\n\nどっちも同じプロンプトなんやけど……\n\nGPTは画質が粗めで、学生のたわむれ感あって青春っぽいんよね。\n\nNanoはノスタルジックにまとまってて、昔のアルバムみたいな味があっていいよね。\n\n僕はNonoの方が好みやね。\n\nプロンプトはリプに貼っとくね。", this)'>📋 复制</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Which one of the “emotional” feelings hits harder for nostalgia?\n\n👈 GPT Image 1.5\n👉 Nano Banana Pro\n\nThey’re both the same prompt, though…\n\nWith GPT, the image quality is a bit rough, and it feels like a student’s playful moment—very like youth.\n\nWith Nano, it’s more neatly composed for nostalgia, and it has that kind of old-album flavor that feels good.\n\nI personally prefer Nono.\n\nI’ll paste the prompt in the reply.", this)'>📋 复制</button>
         </div>
-        <p>ノスタルジーに刺さるのは、どっちのエモさやと思う？</p><p>👈GPT Image 1.5<br>👉Nano Banana Pro</p><p>どっちも同じプロンプトなんやけど……</p><p>GPTは画質が粗めで、学生のたわむれ感あって青春っぽいんよね。</p><p>Nanoはノスタルジックにまとまってて、昔のアルバムみたいな味があっていいよね。</p><p>僕はNonoの方が好みやね。</p><p>プロンプトはリプに貼っとくね。</p>
+        <div data-nosnippet><p>Which one of the “emotional” feelings hits harder for nostalgia?</p><p>👈 GPT Image 1.5<br>👉 Nano Banana Pro</p><p>They’re both the same prompt, though…</p><p>With GPT, the image quality is a bit rough, and it feels like a student’s playful moment—very like youth.</p><p>With Nano, it’s more neatly composed for nostalgia, and it has that kind of old-album flavor that feels good.</p><p>I personally prefer Nono.</p><p>I’ll paste the prompt in the reply.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2005517839608770841-1.jpg" alt="ノスタルジーに刺さるのは、どっちのエモさやと思う？" loading="lazy"><img src="/images/tweet-2005517839608770841-2.jpg" alt="ノスタルジーに刺さるのは、どっちのエモさやと思う？" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 629,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

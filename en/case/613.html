@@ -7,11 +7,13 @@
     <title>Do this for Pineapple Pizza: &lt;instruction #613 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Do this for Pineapple Pizza: &lt;instruction Input A: user uploads an image or shares name of dish Logic Identify the hi...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/613.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/613.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/613.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845959">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023832">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("为菠萝披萨做这个：<instruction>\n输入 A：用户上传图片或分享菜名\n\n逻辑 识别历史发明者（例如 Raffaele Esposito 或 Henri Charpentier）及确切的起源年份。\n\n任务：一张极其写实的4:5 宏观照片，展示一个超大尺寸、打开的古董烹饪法典，安放在深色天鹅绒博物馆底座上。\n\n左页（活体微景观）：\n书的左侧被挖空，像一个秘密暗格。内部是一个令人叹为观止的3D 微型场景。该道菜发明者的高度细致的人偶模型，在符合当时时代的厨房中呈现出运动中的姿态。其周围是10-15种关键原料的微观版本，每种都放在自己的小型吹制玻璃瓶或微型木箱中。包含当时代专用的微型铜制烹饪工具。场景通过“页面”内部发出的温暖、神秘的琥珀色光照亮。\n\n右页（技术配方）：\n右页是平整、陈旧的羊皮纸，具有优雅、褪色的斯宾塞里安体书法和手绘水彩插图。\n1. 上部：以英语及其母语同时标注的菜名，粗体标注“Origin Date（起源日期）”。\n2. 中部：一个纵向的“配料蓝图”，对每种原料进行超详细的草图描绘。\n3. 下部：一个小而详细的“Origin Map（起源地图）”，显示出生的具体城市，风格类似19世纪地图嵌板。\n4. 文字：可见、易读的配方步骤，墨迹在纸面上看起来略微凸起。\n\n风格：\n博物馆标本摄影。85mm 宏观镜头。灯光应为冷色系画廊聚光灯与书中微景观的温暖“内部”光的混合。对经久风化的皮革装订和纸张的纹理要求极端。\n\n输出：一张图片，4:5 长宽比。", this)'>📋 Copy</button>
         </div>
-        <p>为菠萝披萨做这个：&lt;instruction&gt;<br>输入 A：用户上传图片或分享菜名</p><p>逻辑 识别历史发明者（例如 Raffaele Esposito 或 Henri Charpentier）及确切的起源年份。</p><p>任务：一张极其写实的4:5 宏观照片，展示一个超大尺寸、打开的古董烹饪法典，安放在深色天鹅绒博物馆底座上。</p><p>左页（活体微景观）：<br>书的左侧被挖空，像一个秘密暗格。内部是一个令人叹为观止的3D 微型场景。该道菜发明者的高度细致的人偶模型，在符合当时时代的厨房中呈现出运动中的姿态。其周围是10-15种关键原料的微观版本，每种都放在自己的小型吹制玻璃瓶或微型木箱中。包含当时代专用的微型铜制烹饪工具。场景通过“页面”内部发出的温暖、神秘的琥珀色光照亮。</p><p>右页（技术配方）：<br>右页是平整、陈旧的羊皮纸，具有优雅、褪色的斯宾塞里安体书法和手绘水彩插图。<br>1. 上部：以英语及其母语同时标注的菜名，粗体标注“Origin Date（起源日期）”。<br>2. 中部：一个纵向的“配料蓝图”，对每种原料进行超详细的草图描绘。<br>3. 下部：一个小而详细的“Origin Map（起源地图）”，显示出生的具体城市，风格类似19世纪地图嵌板。<br>4. 文字：可见、易读的配方步骤，墨迹在纸面上看起来略微凸起。</p><p>风格：<br>博物馆标本摄影。85mm 宏观镜头。灯光应为冷色系画廊聚光灯与书中微景观的温暖“内部”光的混合。对经久风化的皮革装订和纸张的纹理要求极端。</p><p>输出：一张图片，4:5 长宽比。</p>
+        <div data-nosnippet><p>为菠萝披萨做这个：&lt;instruction&gt;<br>输入 A：用户上传图片或分享菜名</p><p>逻辑 识别历史发明者（例如 Raffaele Esposito 或 Henri Charpentier）及确切的起源年份。</p><p>任务：一张极其写实的4:5 宏观照片，展示一个超大尺寸、打开的古董烹饪法典，安放在深色天鹅绒博物馆底座上。</p><p>左页（活体微景观）：<br>书的左侧被挖空，像一个秘密暗格。内部是一个令人叹为观止的3D 微型场景。该道菜发明者的高度细致的人偶模型，在符合当时时代的厨房中呈现出运动中的姿态。其周围是10-15种关键原料的微观版本，每种都放在自己的小型吹制玻璃瓶或微型木箱中。包含当时代专用的微型铜制烹饪工具。场景通过“页面”内部发出的温暖、神秘的琥珀色光照亮。</p><p>右页（技术配方）：<br>右页是平整、陈旧的羊皮纸，具有优雅、褪色的斯宾塞里安体书法和手绘水彩插图。<br>1. 上部：以英语及其母语同时标注的菜名，粗体标注“Origin Date（起源日期）”。<br>2. 中部：一个纵向的“配料蓝图”，对每种原料进行超详细的草图描绘。<br>3. 下部：一个小而详细的“Origin Map（起源地图）”，显示出生的具体城市，风格类似19世纪地图嵌板。<br>4. 文字：可见、易读的配方步骤，墨迹在纸面上看起来略微凸起。</p><p>风格：<br>博物馆标本摄影。85mm 宏观镜头。灯光应为冷色系画廊聚光灯与书中微景观的温暖“内部”光的混合。对经久风化的皮革装订和纸张的纹理要求极端。</p><p>输出：一张图片，4:5 长宽比。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Do this for Pineapple Pizza: <instruction>\nInput A: user uploads an image or shares name of dish\n\nLogic  Identify the historical inventor (e.g., Raffaele Esposito or Henri Charpentier) and the exact year of origin.\n\nTask: A hyper-realistic 4:5 macro photograph of an oversized, open antique culinary codex resting on a dark velvet museum plinth.\n\nLeft Page (The Living Diorama):\nThe left side of the book is hollowed out like a secret compartment. Inside is a breathtaking 3D miniature scene. A highly detailed figurine of the dish’s inventor is captured mid-motion in a period-accurate kitchen. Around them are microscopic versions of the 10-15 key ingredients, each in its own tiny hand-blown glass vial or micro-wooden crate. Include miniature brass cooking tools specific to the era. The scene is lit from within the \"pages\" by a warm, magical amber glow.\n\nRight Page (The Technical Recipe):\nThe right page is flat, aged parchment featuring elegant, faded Spencerian calligraphy and hand-painted watercolor illustrations.\n1. Top: The dish name in both English and its native language, with the bold \"Origin Date.\"\n2. Middle: A vertical \"Ingredient Blueprint\" with hyper-detailed sketches of each raw component.\n3. Bottom: A small, detailed \"Origin Map\" showing the specific city of birth, styled like a 19th-century cartographic inset.\n4. Text: Visible, legible recipe steps written in ink that looks slightly raised on the paper.\n\nStyle:\nMuseum specimen photography. 85mm macro lens. The lighting should be a mix of cool gallery spotlights and the warm \"internal\" glow of the book's diorama. Extreme texture on the weathered leather binding and the tooth of the paper.\nOutput: ONE image, 4:5 aspect ratio.\n</instruction>", this)'>📋 Copy</button>
         </div>
-        <p>Do this for Pineapple Pizza: &lt;instruction&gt;<br>Input A: user uploads an image or shares name of dish</p><p>Logic  Identify the historical inventor (e.g., Raffaele Esposito or Henri Charpentier) and the exact year of origin.</p><p>Task: A hyper-realistic 4:5 macro photograph of an oversized, open antique culinary codex resting on a dark velvet museum plinth.</p><p>Left Page (The Living Diorama):<br>The left side of the book is hollowed out like a secret compartment. Inside is a breathtaking 3D miniature scene. A highly detailed figurine of the dish’s inventor is captured mid-motion in a period-accurate kitchen. Around them are microscopic versions of the 10-15 key ingredients, each in its own tiny hand-blown glass vial or micro-wooden crate. Include miniature brass cooking tools specific to the era. The scene is lit from within the &quot;pages&quot; by a warm, magical amber glow.</p><p>Right Page (The Technical Recipe):<br>The right page is flat, aged parchment featuring elegant, faded Spencerian calligraphy and hand-painted watercolor illustrations.<br>1. Top: The dish name in both English and its native language, with the bold &quot;Origin Date.&quot;<br>2. Middle: A vertical &quot;Ingredient Blueprint&quot; with hyper-detailed sketches of each raw component.<br>3. Bottom: A small, detailed &quot;Origin Map&quot; showing the specific city of birth, styled like a 19th-century cartographic inset.<br>4. Text: Visible, legible recipe steps written in ink that looks slightly raised on the paper.</p><p>Style:<br>Museum specimen photography. 85mm macro lens. The lighting should be a mix of cool gallery spotlights and the warm &quot;internal&quot; glow of the book&#39;s diorama. Extreme texture on the weathered leather binding and the tooth of the paper.<br>Output: ONE image, 4:5 aspect ratio.<br>&lt;/instruction&gt;</p>
+        <div data-nosnippet><p>Do this for Pineapple Pizza: &lt;instruction&gt;<br>Input A: user uploads an image or shares name of dish</p><p>Logic  Identify the historical inventor (e.g., Raffaele Esposito or Henri Charpentier) and the exact year of origin.</p><p>Task: A hyper-realistic 4:5 macro photograph of an oversized, open antique culinary codex resting on a dark velvet museum plinth.</p><p>Left Page (The Living Diorama):<br>The left side of the book is hollowed out like a secret compartment. Inside is a breathtaking 3D miniature scene. A highly detailed figurine of the dish’s inventor is captured mid-motion in a period-accurate kitchen. Around them are microscopic versions of the 10-15 key ingredients, each in its own tiny hand-blown glass vial or micro-wooden crate. Include miniature brass cooking tools specific to the era. The scene is lit from within the &quot;pages&quot; by a warm, magical amber glow.</p><p>Right Page (The Technical Recipe):<br>The right page is flat, aged parchment featuring elegant, faded Spencerian calligraphy and hand-painted watercolor illustrations.<br>1. Top: The dish name in both English and its native language, with the bold &quot;Origin Date.&quot;<br>2. Middle: A vertical &quot;Ingredient Blueprint&quot; with hyper-detailed sketches of each raw component.<br>3. Bottom: A small, detailed &quot;Origin Map&quot; showing the specific city of birth, styled like a 19th-century cartographic inset.<br>4. Text: Visible, legible recipe steps written in ink that looks slightly raised on the paper.</p><p>Style:<br>Museum specimen photography. 85mm macro lens. The lighting should be a mix of cool gallery spotlights and the warm &quot;internal&quot; glow of the book&#39;s diorama. Extreme texture on the weathered leather binding and the tooth of the paper.<br>Output: ONE image, 4:5 aspect ratio.<br>&lt;/instruction&gt;</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2003860469132718409-1.jpg" alt="Do this for Pineapple Pizza: &lt;instruction" loading="lazy"><img src="/images/tweet-2003860469132718409-2.jpg" alt="Do this for Pineapple Pizza: &lt;instruction" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 613,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

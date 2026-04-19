@@ -7,11 +7,13 @@
     <title>A [person type] standing full body near the edge of the frame... #599 | Gem Nana AI 提示词库</title>
     <meta name="description" content="A [person type] standing full body near the edge of the frame, slightly to the left, in [real world incomplete / empt...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/599.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/599.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/599.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841703">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022656">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一名 [person type] 站在画面边缘的全身像，略偏左，置于 [real-world incomplete / empty / damaged environment] 的环境中。摄像机位于人物背后并略偏右，以三分之二背向角度拍摄。该人安静而沉思地站立，凝视着前方的空间。\n\n环境是 [描述当前现实空间的现状：空荡、未完成、腐朽、僵硬、毫无生气]。氛围给人一种 [情感基调：安静、干燥、历史感、极简、原始/raw] 的感觉。自然光照亮场景，产生真实的阴影与层次。场景上方和场景内部出现漂浮的手绘草图线条，与真实空间的透视对齐。这些草图代表 [缺失的/曾经存在的/未来可能存在的]。\n\n草图线条为黑色、干净、手绘风格，类似用铅笔或墨水绘制的 [建筑/室内/修复/城市规划] 概念草图，笔触富有表现力，略显不完美且富有机感——不是刚性或机械性。草绘元素位于前景与中景，看起来比预期更靠近人物。某些草绘线条微妙地覆盖在人物轮廓与真实表面之上，视觉上将想象与现实融合。草绘在场景中自然漂浮，与环境无缝融合，传达出 [愿景/恢复/转变/潜力] 即将成真的理念。", this)'>📋 复制</button>
         </div>
-        <p>一名 [person type] 站在画面边缘的全身像，略偏左，置于 [real-world incomplete / empty / damaged environment] 的环境中。摄像机位于人物背后并略偏右，以三分之二背向角度拍摄。该人安静而沉思地站立，凝视着前方的空间。</p><p>环境是 [描述当前现实空间的现状：空荡、未完成、腐朽、僵硬、毫无生气]。氛围给人一种 [情感基调：安静、干燥、历史感、极简、原始/raw] 的感觉。自然光照亮场景，产生真实的阴影与层次。场景上方和场景内部出现漂浮的手绘草图线条，与真实空间的透视对齐。这些草图代表 [缺失的/曾经存在的/未来可能存在的]。</p><p>草图线条为黑色、干净、手绘风格，类似用铅笔或墨水绘制的 [建筑/室内/修复/城市规划] 概念草图，笔触富有表现力，略显不完美且富有机感——不是刚性或机械性。草绘元素位于前景与中景，看起来比预期更靠近人物。某些草绘线条微妙地覆盖在人物轮廓与真实表面之上，视觉上将想象与现实融合。草绘在场景中自然漂浮，与环境无缝融合，传达出 [愿景/恢复/转变/潜力] 即将成真的理念。</p>
+        <div data-nosnippet><p>一名 [person type] 站在画面边缘的全身像，略偏左，置于 [real-world incomplete / empty / damaged environment] 的环境中。摄像机位于人物背后并略偏右，以三分之二背向角度拍摄。该人安静而沉思地站立，凝视着前方的空间。</p><p>环境是 [描述当前现实空间的现状：空荡、未完成、腐朽、僵硬、毫无生气]。氛围给人一种 [情感基调：安静、干燥、历史感、极简、原始/raw] 的感觉。自然光照亮场景，产生真实的阴影与层次。场景上方和场景内部出现漂浮的手绘草图线条，与真实空间的透视对齐。这些草图代表 [缺失的/曾经存在的/未来可能存在的]。</p><p>草图线条为黑色、干净、手绘风格，类似用铅笔或墨水绘制的 [建筑/室内/修复/城市规划] 概念草图，笔触富有表现力，略显不完美且富有机感——不是刚性或机械性。草绘元素位于前景与中景，看起来比预期更靠近人物。某些草绘线条微妙地覆盖在人物轮廓与真实表面之上，视觉上将想象与现实融合。草绘在场景中自然漂浮，与环境无缝融合，传达出 [愿景/恢复/转变/潜力] 即将成真的理念。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A [person type] standing full-body near the edge of the frame, slightly to the left, in [real-world incomplete / empty / damaged environment]. The camera is positioned behind and slightly to the right of the person, capturing them from a three-quarter rear angle. The person stands calmly and thoughtfully, looking toward the space ahead.\n\nThe environment is [describe the real space as it exists now: empty, unfinished, decayed, rigid, lifeless]. The atmosphere feels [emotional tone: quiet, dry, historical, minimal, raw]. Natural light illuminates the scene, creating realistic shadows and depth. Floating hand-drawn sketch lines appear over and within the environment, aligned precisely in perspective with the real space. These sketches represent [what is missing / what once existed / what could exist in the future].\n\nThe sketch lines are black, clean, and hand-drawn, resembling [architectural / interior / restoration / urban planning] concept sketches made with pencil or ink. The strokes are expressive, slightly imperfect, and organic — not rigid or mechanical. The sketched elements occupy the foreground and midground, appearing closer to the person than expected. Some sketch lines subtly overlap the person’s silhouette and the real surfaces, visually merging imagination with reality. The sketches float naturally within the scene, seamlessly blending with the environment and conveying the idea of [vision / restoration / transformation / potential] coming to life.", this)'>📋 复制</button>
         </div>
-        <p>A [person type] standing full-body near the edge of the frame, slightly to the left, in [real-world incomplete / empty / damaged environment]. The camera is positioned behind and slightly to the right of the person, capturing them from a three-quarter rear angle. The person stands calmly and thoughtfully, looking toward the space ahead.</p><p>The environment is [describe the real space as it exists now: empty, unfinished, decayed, rigid, lifeless]. The atmosphere feels [emotional tone: quiet, dry, historical, minimal, raw]. Natural light illuminates the scene, creating realistic shadows and depth. Floating hand-drawn sketch lines appear over and within the environment, aligned precisely in perspective with the real space. These sketches represent [what is missing / what once existed / what could exist in the future].</p><p>The sketch lines are black, clean, and hand-drawn, resembling [architectural / interior / restoration / urban planning] concept sketches made with pencil or ink. The strokes are expressive, slightly imperfect, and organic — not rigid or mechanical. The sketched elements occupy the foreground and midground, appearing closer to the person than expected. Some sketch lines subtly overlap the person’s silhouette and the real surfaces, visually merging imagination with reality. The sketches float naturally within the scene, seamlessly blending with the environment and conveying the idea of [vision / restoration / transformation / potential] coming to life.</p>
+        <div data-nosnippet><p>A [person type] standing full-body near the edge of the frame, slightly to the left, in [real-world incomplete / empty / damaged environment]. The camera is positioned behind and slightly to the right of the person, capturing them from a three-quarter rear angle. The person stands calmly and thoughtfully, looking toward the space ahead.</p><p>The environment is [describe the real space as it exists now: empty, unfinished, decayed, rigid, lifeless]. The atmosphere feels [emotional tone: quiet, dry, historical, minimal, raw]. Natural light illuminates the scene, creating realistic shadows and depth. Floating hand-drawn sketch lines appear over and within the environment, aligned precisely in perspective with the real space. These sketches represent [what is missing / what once existed / what could exist in the future].</p><p>The sketch lines are black, clean, and hand-drawn, resembling [architectural / interior / restoration / urban planning] concept sketches made with pencil or ink. The strokes are expressive, slightly imperfect, and organic — not rigid or mechanical. The sketched elements occupy the foreground and midground, appearing closer to the person than expected. Some sketch lines subtly overlap the person’s silhouette and the real surfaces, visually merging imagination with reality. The sketches float naturally within the scene, seamlessly blending with the environment and conveying the idea of [vision / restoration / transformation / potential] coming to life.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2002826415939682584-1.jpg" alt="A [person type] standing full body near the edge of the frame..." loading="lazy"><img src="/images/tweet-2002826415939682584-2.jpg" alt="A [person type] standing full body near the edge of the frame..." loading="lazy"><img src="/images/tweet-2002826415939682584-3.jpg" alt="A [person type] standing full body near the edge of the frame..." loading="lazy"><img src="/images/tweet-2002826415939682584-4.jpg" alt="A [person type] standing full body near the edge of the frame..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 599,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

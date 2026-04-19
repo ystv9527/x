@@ -20,10 +20,41 @@ const OUTPUT_FILE = path.join(__dirname, '../data/contents.json');
 /**
  * 解析Markdown文件
  */
+function splitEntrySections(markdown) {
+  const lines = String(markdown || '').split(/\r?\n/);
+  const sections = [];
+  let current = [];
+
+  const isEntryStart = (index) => {
+    const line = lines[index] || '';
+    if (!line.startsWith('## ')) return false;
+    for (let i = index + 1; i < Math.min(lines.length, index + 14); i += 1) {
+      const probe = (lines[i] || '').trim();
+      if (/^- \*\*[^*]+\*\*:/i.test(probe)) return true;
+      if (probe.startsWith('## ')) break;
+    }
+    return false;
+  };
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = lines[i];
+    if (isEntryStart(i)) {
+      if (current.length) sections.push(current.join('\n').trim());
+      current = [line];
+    } else if (current.length) {
+      current.push(line);
+    }
+  }
+  if (current.length) sections.push(current.join('\n').trim());
+
+  if (sections.length > 0) return sections;
+  return String(markdown || '').split(/\n## /).map((s) => s.trim()).filter((s) => s);
+}
+
 function parseMarkdown(markdown) {
   const items = [];
   // 按 "## " 分割各个条目（忽略第一个标题）
-  const sections = markdown.split(/\n## /).map(s => s.trim()).filter(s => s);
+  const sections = splitEntrySections(markdown);
 
   sections.forEach((section, index) => {
     if (!section.trim()) {
@@ -86,13 +117,14 @@ function parseMarkdown(markdown) {
     });
 
     // 提取摘要
-    const summaryMatch = section.match(/###\s*内容摘要\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    const subSectionBoundary = '(?=\\n###\\s*(?:\\u5185\\u5bb9\\u6458\\u8981|\\u5173\\u952e\\u8981\\u70b9|\\u4e2d\\u6587\\u5185\\u5bb9|\\u82f1\\u6587\\u5185\\u5bb9|\\u5b8c\\u6574\\u5185\\u5bb9|\\u76f8\\u5173\\u56fe\\u7247|\\u76f8\\u5173\\u89c6\\u9891|\\u56fe\\u7247URL)\\s*\\n|\\n---|\\n##|$)';
+
+    const summaryMatch = section.match(new RegExp(`###\\s*\\u5185\\u5bb9\\u6458\\u8981\\s*\\n([\\s\\S]*?)${subSectionBoundary}`));
     if (summaryMatch) {
       item.summary = summaryMatch[1].trim();
     }
 
-    // 提取关键要点
-    const keyPointsMatch = section.match(/###\s*关键要点\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    const keyPointsMatch = section.match(new RegExp(`###\\s*\\u5173\\u952e\\u8981\\u70b9\\s*\\n([\\s\\S]*?)${subSectionBoundary}`));
     if (keyPointsMatch) {
       const points = keyPointsMatch[1].match(/^[-*]\s+(.+)$/gm);
       if (points) {
@@ -100,27 +132,23 @@ function parseMarkdown(markdown) {
       }
     }
 
-    // 提取中文内容
-    const chineseMatch = section.match(/###\s*\u4e2d\u6587\u5185\u5bb9\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    const chineseMatch = section.match(new RegExp(`###\\s*\\u4e2d\\u6587\\u5185\\u5bb9\\s*\\n([\\s\\S]*?)${subSectionBoundary}`));
     if (chineseMatch) {
       item.contentChinese = chineseMatch[1].trim();
     }
 
-    // 提取英文内容
-    const englishMatch = section.match(/###\s*\u82f1\u6587\u5185\u5bb9\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+    const englishMatch = section.match(new RegExp(`###\\s*\\u82f1\\u6587\\u5185\\u5bb9\\s*\\n([\\s\\S]*?)${subSectionBoundary}`));
     if (englishMatch) {
       item.contentEnglish = englishMatch[1].trim();
     }
 
-    // 兼容旧版本：提取完整内容（如果没有分离的中英文内容）
     if (!item.contentChinese && !item.contentEnglish) {
-      const contentMatch = section.match(/###\s*\u5b8c\u6574\u5185\u5bb9\s*\n([\s\S]*?)(?=\n###|\n---|\n##|$)/);
+      const contentMatch = section.match(new RegExp(`###\\s*\\u5b8c\\u6574\\u5185\\u5bb9\\s*\\n([\\s\\S]*?)${subSectionBoundary}`));
       if (contentMatch) {
         item.content = contentMatch[1].trim();
       }
     }
 
-    // 提取图片
     const imageMatches = section.match(/!\[.*?\]\((.*?)\)/g);
     if (imageMatches) {
       item.images = imageMatches.map(img => {

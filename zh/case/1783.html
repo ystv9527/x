@@ -7,11 +7,13 @@
     <title>&quot;prompt structure&quot;: { #1783 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt structure&quot;: { &quot;technical specifications&quot;: { &quot;quality&quot;: &quot;Ultra Realistic, HDR, UHD, 8k Resolution, Masterpie...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1783.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1783.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1783.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840587">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022375">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"提示结构\": {\n    \"技术规格\": {\n      \"质量\": \"超真实，HDR，UHD，8k 分辨率，杰作，原始照片\",\n      \"纵横比\": \"9:16（竖构/长）\",\n      \"相机设置\": \"高速快门，f/2.8 光圈以获得景深，50mm 镜头，清晰对焦\"\n    },\n    \"主体细节\": {\n      \"主要角色\": \"年轻女性，古铜色皮肤，深棕色长发，蓬松波浪形并带挑染，五官轮廓分明，目光向旁边看\",\n      \"姿势\": \"随意站在门口，微微倚靠，一手放松，另一手拿着帽子，自信的时尚姿势\",\n      \"表情\": \"中性，诱人，专注的凝视\"\n    },\n    \"服装\": {\n      \"上衣\": \"米色无肩带束腹上衣，前部有系带细节和金属扣眼\",\n      \"下装\": \"橄榄绿色短裤，前部有系带细节\",\n      \"鞋履\": \"绒面膝长西部风格靴\",\n      \"配饰\": \"金色圈形耳环，手持编织稻草牛仔帽\"\n    },\n    \"环境\": {\n      \"场景\": \"质朴的木质马厩外部，风化的木质纹理\",\n      \"元素\": [\n        \"马厩门口\",\n        \"一匹棕白相间的花斑马从左边的厩门探出头\",\n        \"右侧木墙上贴有白色“禁止吸烟”标志\"\n      ]\n    },\n    \"灯光与氛围\": {\n      \"灯光\": \"自然日光，阳光充足，柔和阴影，暖色调\",\n      \"氛围\": \"西部时尚，乡村风格，质朴，夏日下午，马术生活方式\"\n    },\n    \"负面提示\": \"卡通，插画，3D 渲染，模糊，低质量，面部畸变，解剖结构错误，文字水印（特定标志除外），过度饱和\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;提示结构&quot;: {<br>    &quot;技术规格&quot;: {<br>      &quot;质量&quot;: &quot;超真实，HDR，UHD，8k 分辨率，杰作，原始照片&quot;,<br>      &quot;纵横比&quot;: &quot;9:16（竖构/长）&quot;,<br>      &quot;相机设置&quot;: &quot;高速快门，f/2.8 光圈以获得景深，50mm 镜头，清晰对焦&quot;<br>    },<br>    &quot;主体细节&quot;: {<br>      &quot;主要角色&quot;: &quot;年轻女性，古铜色皮肤，深棕色长发，蓬松波浪形并带挑染，五官轮廓分明，目光向旁边看&quot;,<br>      &quot;姿势&quot;: &quot;随意站在门口，微微倚靠，一手放松，另一手拿着帽子，自信的时尚姿势&quot;,<br>      &quot;表情&quot;: &quot;中性，诱人，专注的凝视&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;上衣&quot;: &quot;米色无肩带束腹上衣，前部有系带细节和金属扣眼&quot;,<br>      &quot;下装&quot;: &quot;橄榄绿色短裤，前部有系带细节&quot;,<br>      &quot;鞋履&quot;: &quot;绒面膝长西部风格靴&quot;,<br>      &quot;配饰&quot;: &quot;金色圈形耳环，手持编织稻草牛仔帽&quot;<br>    },<br>    &quot;环境&quot;: {<br>      &quot;场景&quot;: &quot;质朴的木质马厩外部，风化的木质纹理&quot;,<br>      &quot;元素&quot;: [<br>        &quot;马厩门口&quot;,<br>        &quot;一匹棕白相间的花斑马从左边的厩门探出头&quot;,<br>        &quot;右侧木墙上贴有白色“禁止吸烟”标志&quot;<br>      ]<br>    },<br>    &quot;灯光与氛围&quot;: {<br>      &quot;灯光&quot;: &quot;自然日光，阳光充足，柔和阴影，暖色调&quot;,<br>      &quot;氛围&quot;: &quot;西部时尚，乡村风格，质朴，夏日下午，马术生活方式&quot;<br>    },<br>    &quot;负面提示&quot;: &quot;卡通，插画，3D 渲染，模糊，低质量，面部畸变，解剖结构错误，文字水印（特定标志除外），过度饱和&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;提示结构&quot;: {<br>    &quot;技术规格&quot;: {<br>      &quot;质量&quot;: &quot;超真实，HDR，UHD，8k 分辨率，杰作，原始照片&quot;,<br>      &quot;纵横比&quot;: &quot;9:16（竖构/长）&quot;,<br>      &quot;相机设置&quot;: &quot;高速快门，f/2.8 光圈以获得景深，50mm 镜头，清晰对焦&quot;<br>    },<br>    &quot;主体细节&quot;: {<br>      &quot;主要角色&quot;: &quot;年轻女性，古铜色皮肤，深棕色长发，蓬松波浪形并带挑染，五官轮廓分明，目光向旁边看&quot;,<br>      &quot;姿势&quot;: &quot;随意站在门口，微微倚靠，一手放松，另一手拿着帽子，自信的时尚姿势&quot;,<br>      &quot;表情&quot;: &quot;中性，诱人，专注的凝视&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;上衣&quot;: &quot;米色无肩带束腹上衣，前部有系带细节和金属扣眼&quot;,<br>      &quot;下装&quot;: &quot;橄榄绿色短裤，前部有系带细节&quot;,<br>      &quot;鞋履&quot;: &quot;绒面膝长西部风格靴&quot;,<br>      &quot;配饰&quot;: &quot;金色圈形耳环，手持编织稻草牛仔帽&quot;<br>    },<br>    &quot;环境&quot;: {<br>      &quot;场景&quot;: &quot;质朴的木质马厩外部，风化的木质纹理&quot;,<br>      &quot;元素&quot;: [<br>        &quot;马厩门口&quot;,<br>        &quot;一匹棕白相间的花斑马从左边的厩门探出头&quot;,<br>        &quot;右侧木墙上贴有白色“禁止吸烟”标志&quot;<br>      ]<br>    },<br>    &quot;灯光与氛围&quot;: {<br>      &quot;灯光&quot;: &quot;自然日光，阳光充足，柔和阴影，暖色调&quot;,<br>      &quot;氛围&quot;: &quot;西部时尚，乡村风格，质朴，夏日下午，马术生活方式&quot;<br>    },<br>    &quot;负面提示&quot;: &quot;卡通，插画，3D 渲染，模糊，低质量，面部畸变，解剖结构错误，文字水印（特定标志除外），过度饱和&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_structure\": {\n    \"technical_specifications\": {\n      \"quality\": \"Ultra Realistic, HDR, UHD, 8k Resolution, Masterpiece, Raw Photo\",\n      \"aspect_ratio\": \"9:16 (Vertical/Long)\",\n      \"camera_settings\": \"High shutter speed, f/2.8 aperture for depth of field, 50mm lens, sharp focus\"\n    },\n    \"subject_details\": {\n      \"main_character\": \"Young woman with tanned skin, long voluminous wavy brunette hair with highlights, sharp facial features, looking away to the side\",\n      \"pose\": \"Standing casually in a doorway, leaning slightly, one hand relaxed, other hand holding a hat, confident fashion pose\",\n      \"expression\": \"Neutral, alluring, focused gaze\"\n    },\n    \"apparel\": {\n      \"top\": \"Beige strapless corset top with lace-up front detail and metal grommets\",\n      \"bottom\": \"Olive green mini shorts with lace-up front detail\",\n      \"footwear\": \"Knee-high suede western-style boots\",\n      \"accessories\": \"Gold hoop earrings, holding a woven straw cowboy hat\"\n    },\n    \"environment\": {\n      \"setting\": \"Rustic wooden horse stable exterior, weathered wood texture\",\n      \"elements\": [\n        \"Horse stall doorway\",\n        \"Brown and white paint horse poking head out of the stable door on the left\",\n        \"White 'NO SMOKING' sign attached to the wooden wall on the right\"\n      ]\n    },\n    \"lighting_and_atmosphere\": {\n      \"lighting\": \"Natural daylight, sun-drenched, soft shadows, warm tones\",\n      \"vibe\": \"Western chic, country fashion, rustic, summer afternoon, equestrian lifestyle\"\n    },\n    \"negative_prompt\": \"cartoon, illustration, 3d render, blurred, low quality, distorted features, bad anatomy, text watermarks (except specific sign), oversaturated\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_structure&quot;: {<br>    &quot;technical_specifications&quot;: {<br>      &quot;quality&quot;: &quot;Ultra Realistic, HDR, UHD, 8k Resolution, Masterpiece, Raw Photo&quot;,<br>      &quot;aspect_ratio&quot;: &quot;9:16 (Vertical/Long)&quot;,<br>      &quot;camera_settings&quot;: &quot;High shutter speed, f/2.8 aperture for depth of field, 50mm lens, sharp focus&quot;<br>    },<br>    &quot;subject_details&quot;: {<br>      &quot;main_character&quot;: &quot;Young woman with tanned skin, long voluminous wavy brunette hair with highlights, sharp facial features, looking away to the side&quot;,<br>      &quot;pose&quot;: &quot;Standing casually in a doorway, leaning slightly, one hand relaxed, other hand holding a hat, confident fashion pose&quot;,<br>      &quot;expression&quot;: &quot;Neutral, alluring, focused gaze&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;top&quot;: &quot;Beige strapless corset top with lace-up front detail and metal grommets&quot;,<br>      &quot;bottom&quot;: &quot;Olive green mini shorts with lace-up front detail&quot;,<br>      &quot;footwear&quot;: &quot;Knee-high suede western-style boots&quot;,<br>      &quot;accessories&quot;: &quot;Gold hoop earrings, holding a woven straw cowboy hat&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Rustic wooden horse stable exterior, weathered wood texture&quot;,<br>      &quot;elements&quot;: [<br>        &quot;Horse stall doorway&quot;,<br>        &quot;Brown and white paint horse poking head out of the stable door on the left&quot;,<br>        &quot;White &#39;NO SMOKING&#39; sign attached to the wooden wall on the right&quot;<br>      ]<br>    },<br>    &quot;lighting_and_atmosphere&quot;: {<br>      &quot;lighting&quot;: &quot;Natural daylight, sun-drenched, soft shadows, warm tones&quot;,<br>      &quot;vibe&quot;: &quot;Western chic, country fashion, rustic, summer afternoon, equestrian lifestyle&quot;<br>    },<br>    &quot;negative_prompt&quot;: &quot;cartoon, illustration, 3d render, blurred, low quality, distorted features, bad anatomy, text watermarks (except specific sign), oversaturated&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_structure&quot;: {<br>    &quot;technical_specifications&quot;: {<br>      &quot;quality&quot;: &quot;Ultra Realistic, HDR, UHD, 8k Resolution, Masterpiece, Raw Photo&quot;,<br>      &quot;aspect_ratio&quot;: &quot;9:16 (Vertical/Long)&quot;,<br>      &quot;camera_settings&quot;: &quot;High shutter speed, f/2.8 aperture for depth of field, 50mm lens, sharp focus&quot;<br>    },<br>    &quot;subject_details&quot;: {<br>      &quot;main_character&quot;: &quot;Young woman with tanned skin, long voluminous wavy brunette hair with highlights, sharp facial features, looking away to the side&quot;,<br>      &quot;pose&quot;: &quot;Standing casually in a doorway, leaning slightly, one hand relaxed, other hand holding a hat, confident fashion pose&quot;,<br>      &quot;expression&quot;: &quot;Neutral, alluring, focused gaze&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;top&quot;: &quot;Beige strapless corset top with lace-up front detail and metal grommets&quot;,<br>      &quot;bottom&quot;: &quot;Olive green mini shorts with lace-up front detail&quot;,<br>      &quot;footwear&quot;: &quot;Knee-high suede western-style boots&quot;,<br>      &quot;accessories&quot;: &quot;Gold hoop earrings, holding a woven straw cowboy hat&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Rustic wooden horse stable exterior, weathered wood texture&quot;,<br>      &quot;elements&quot;: [<br>        &quot;Horse stall doorway&quot;,<br>        &quot;Brown and white paint horse poking head out of the stable door on the left&quot;,<br>        &quot;White &#39;NO SMOKING&#39; sign attached to the wooden wall on the right&quot;<br>      ]<br>    },<br>    &quot;lighting_and_atmosphere&quot;: {<br>      &quot;lighting&quot;: &quot;Natural daylight, sun-drenched, soft shadows, warm tones&quot;,<br>      &quot;vibe&quot;: &quot;Western chic, country fashion, rustic, summer afternoon, equestrian lifestyle&quot;<br>    },<br>    &quot;negative_prompt&quot;: &quot;cartoon, illustration, 3d render, blurred, low quality, distorted features, bad anatomy, text watermarks (except specific sign), oversaturated&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2016357635709096013-1.jpg" alt="&quot;prompt structure&quot;: {" loading="lazy"><img src="/images/tweet-2016357635709096013-2.jpg" alt="&quot;prompt structure&quot;: {" loading="lazy"><img src="/images/tweet-2016357635709096013-3.jpg" alt="&quot;prompt structure&quot;: {" loading="lazy"><img src="/images/tweet-2016357635709096013-4.jpg" alt="&quot;prompt structure&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1783,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

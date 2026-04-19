@@ -7,11 +7,13 @@
     <title>Transforma tu foto en 4 escenas de acción con Gemini 3 #1347 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Transforma tu foto en 4 escenas de acción con Gemini 3 1. Entra en Gemini y activa la generación de imágenes (Nano Ba...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1347.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1347.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1347.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841022">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022474">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("将你的照片用 Gemini 3 转换成 4 个动作场景\n\n1. 进入 Gemini 并激活图像生成功能（Nano Banana）。\n2. 上传一张你的照片。\n3. 使用以下提示词。\n\n\"Crea una cuadrícula cinematográfica 2×2 en live-action compuesta por cuatro tomas realistas de una película.\nUsa mi imagen subida como referencia estricta para el personaje principal, con el mismo rostro, proporciones y realismo.\n\nLa escena representa una pelea realista cuerpo a cuerpo entre dos hombres adultos, creíble, física y terrenal. Sin fantasía, sin superhéroes, sin poderes exagerados.\n\nTono general\n– Película live-action hiperrealista\n– Aspecto de fotograma real de cine, no animación\n– Crudo, físico, humano\n– Inspirado en el cine de acción moderno, con coreografía de pelea en cámara lenta\n\nPanel 1 – Plano general de establecimiento\nPlano cinematográfico amplio en un entorno urbano o industrial.\nAmbos hombres se enfrentan en medio del combate.\nMovimientos corporales naturales y posturas realistas.\nIluminación cinematográfica pero verosímil.\nEl momento se captura en una sutil cámara lenta, con tensión en el aire.\n\nPanel 2 – Plano medio de acción\nPlano medio de un puñetazo o patada en cámara lenta.\nEl movimiento es realista y pesado.\nUn rastro de movimiento muy sutil sigue al puño o al brazo, como en cinematografía real de alta velocidad, no efectos de energía.\nTensión muscular, movimiento de la ropa, sudor y realismo del impacto.\n\nPanel 3 – Primer plano de impacto\nPrimer plano de mi rostro, con semejanza perfecta.\nExpresión de concentración, intensidad y agresividad controlada.\nLigero desenfoque de movimiento del oponente en el fondo.\nLa iluminación enfatiza la textura de la piel, el sudor y el realismo.\n\nPanel 4 – Colisión culminante\nMomento congelado del impacto.\nEscombros realistas, polvo o partículas de aliento en el aire.\nSin explosiones ni poderes.\nSolo fuerza física pura capturada en cámara lenta cinematográfica.\n\nEstilo visual y técnico\n– Solo realismo live-action\n– Sin animación ni estilo cómic\n– Sin estilización más allá del cine real\n– Profundidad de campo reducida\n– Desenfoque de movimiento natural\n– Rastros sutiles de cámara lenta causados por la velocidad, no por efectos\n– Grano cinematográfico, sensación de lente anamórfica\n– Calidad cinematográfica ultra realista en 8K\n\nRestricciones estrictas\n– Dos hombres humanos normales\n– Sin superpoderes\n– Sin efectos brillantes\n– Sin apariencia de caricatura\n– Debe parecer un fotograma real de una película\"", this)'>📋 复制</button>
         </div>
-        <p>将你的照片用 Gemini 3 转换成 4 个动作场景</p><p>1. 进入 Gemini 并激活图像生成功能（Nano Banana）。<br>2. 上传一张你的照片。<br>3. 使用以下提示词。</p><p>&quot;Crea una cuadrícula cinematográfica 2×2 en live-action compuesta por cuatro tomas realistas de una película.<br>Usa mi imagen subida como referencia estricta para el personaje principal, con el mismo rostro, proporciones y realismo.</p><p>La escena representa una pelea realista cuerpo a cuerpo entre dos hombres adultos, creíble, física y terrenal. Sin fantasía, sin superhéroes, sin poderes exagerados.</p><p>Tono general<br>– Película live-action hiperrealista<br>– Aspecto de fotograma real de cine, no animación<br>– Crudo, físico, humano<br>– Inspirado en el cine de acción moderno, con coreografía de pelea en cámara lenta</p><p>Panel 1 – Plano general de establecimiento<br>Plano cinematográfico amplio en un entorno urbano o industrial.<br>Ambos hombres se enfrentan en medio del combate.<br>Movimientos corporales naturales y posturas realistas.<br>Iluminación cinematográfica pero verosímil.<br>El momento se captura en una sutil cámara lenta, con tensión en el aire.</p><p>Panel 2 – Plano medio de acción<br>Plano medio de un puñetazo o patada en cámara lenta.<br>El movimiento es realista y pesado.<br>Un rastro de movimiento muy sutil sigue al puño o al brazo, como en cinematografía real de alta velocidad, no efectos de energía.<br>Tensión muscular, movimiento de la ropa, sudor y realismo del impacto.</p><p>Panel 3 – Primer plano de impacto<br>Primer plano de mi rostro, con semejanza perfecta.<br>Expresión de concentración, intensidad y agresividad controlada.<br>Ligero desenfoque de movimiento del oponente en el fondo.<br>La iluminación enfatiza la textura de la piel, el sudor y el realismo.</p><p>Panel 4 – Colisión culminante<br>Momento congelado del impacto.<br>Escombros realistas, polvo o partículas de aliento en el aire.<br>Sin explosiones ni poderes.<br>Solo fuerza física pura capturada en cámara lenta cinematográfica.</p><p>Estilo visual y técnico<br>– Solo realismo live-action<br>– Sin animación ni estilo cómic<br>– Sin estilización más allá del cine real<br>– Profundidad de campo reducida<br>– Desenfoque de movimiento natural<br>– Rastros sutiles de cámara lenta causados por la velocidad, no por efectos<br>– Grano cinematográfico, sensación de lente anamórfica<br>– Calidad cinematográfica ultra realista en 8K</p><p>Restricciones estrictas<br>– Dos hombres humanos normales<br>– Sin superpoderes<br>– Sin efectos brillantes<br>– Sin apariencia de caricatura<br>– Debe parecer un fotograma real de una película&quot;</p>
+        <div data-nosnippet><p>将你的照片用 Gemini 3 转换成 4 个动作场景</p><p>1. 进入 Gemini 并激活图像生成功能（Nano Banana）。<br>2. 上传一张你的照片。<br>3. 使用以下提示词。</p><p>&quot;Crea una cuadrícula cinematográfica 2×2 en live-action compuesta por cuatro tomas realistas de una película.<br>Usa mi imagen subida como referencia estricta para el personaje principal, con el mismo rostro, proporciones y realismo.</p><p>La escena representa una pelea realista cuerpo a cuerpo entre dos hombres adultos, creíble, física y terrenal. Sin fantasía, sin superhéroes, sin poderes exagerados.</p><p>Tono general<br>– Película live-action hiperrealista<br>– Aspecto de fotograma real de cine, no animación<br>– Crudo, físico, humano<br>– Inspirado en el cine de acción moderno, con coreografía de pelea en cámara lenta</p><p>Panel 1 – Plano general de establecimiento<br>Plano cinematográfico amplio en un entorno urbano o industrial.<br>Ambos hombres se enfrentan en medio del combate.<br>Movimientos corporales naturales y posturas realistas.<br>Iluminación cinematográfica pero verosímil.<br>El momento se captura en una sutil cámara lenta, con tensión en el aire.</p><p>Panel 2 – Plano medio de acción<br>Plano medio de un puñetazo o patada en cámara lenta.<br>El movimiento es realista y pesado.<br>Un rastro de movimiento muy sutil sigue al puño o al brazo, como en cinematografía real de alta velocidad, no efectos de energía.<br>Tensión muscular, movimiento de la ropa, sudor y realismo del impacto.</p><p>Panel 3 – Primer plano de impacto<br>Primer plano de mi rostro, con semejanza perfecta.<br>Expresión de concentración, intensidad y agresividad controlada.<br>Ligero desenfoque de movimiento del oponente en el fondo.<br>La iluminación enfatiza la textura de la piel, el sudor y el realismo.</p><p>Panel 4 – Colisión culminante<br>Momento congelado del impacto.<br>Escombros realistas, polvo o partículas de aliento en el aire.<br>Sin explosiones ni poderes.<br>Solo fuerza física pura capturada en cámara lenta cinematográfica.</p><p>Estilo visual y técnico<br>– Solo realismo live-action<br>– Sin animación ni estilo cómic<br>– Sin estilización más allá del cine real<br>– Profundidad de campo reducida<br>– Desenfoque de movimiento natural<br>– Rastros sutiles de cámara lenta causados por la velocidad, no por efectos<br>– Grano cinematográfico, sensación de lente anamórfica<br>– Calidad cinematográfica ultra realista en 8K</p><p>Restricciones estrictas<br>– Dos hombres humanos normales<br>– Sin superpoderes<br>– Sin efectos brillantes<br>– Sin apariencia de caricatura<br>– Debe parecer un fotograma real de una película&quot;</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Transforma tu foto en 4 escenas de acción con Gemini 3\n\n1. Entra en Gemini y activa la generación de imágenes (Nano Banana).\n2. Sube una foto tuya.\n3. Usa el siguiente prompt.\n\n\"Crea una cuadrícula cinematográfica 2×2 en live-action compuesta por cuatro tomas realistas de una película.\nUsa mi imagen subida como referencia estricta para el personaje principal, con el mismo rostro, proporciones y realismo.\n\nLa escena representa una pelea realista cuerpo a cuerpo entre dos hombres adultos, creíble, física y terrenal. Sin fantasía, sin superhéroes, sin poderes exagerados.\n\nTono general\n– Película live-action hiperrealista\n– Aspecto de fotograma real de cine, no animación\n– Crudo, físico, humano\n– Inspirado en el cine de acción moderno, con coreografía de pelea en cámara lenta\n\nPanel 1 – Plano general de establecimiento\nPlano cinematográfico amplio en un entorno urbano o industrial.\nAmbos hombres se enfrentan en medio del combate.\nMovimientos corporales naturales y posturas realistas.\nIluminación cinematográfica pero verosímil.\nEl momento se captura en una sutil cámara lenta, con tensión en el aire.\n\nPanel 2 – Plano medio de acción\nPlano medio de un puñetazo o patada en cámara lenta.\nEl movimiento es realista y pesado.\nUn rastro de movimiento muy sutil sigue al puño o al brazo, como en cinematografía real de alta velocidad, no efectos de energía.\nTensión muscular, movimiento de la ropa, sudor y realismo del impacto.\n\nPanel 3 – Primer plano de impacto\nPrimer plano de mi rostro, con semejanza perfecta.\nExpresión de concentración, intensidad y agresividad controlada.\nLigero desenfoque de movimiento del oponente en el fondo.\nLa iluminación enfatiza la textura de la piel, el sudor y el realismo.\n\nPanel 4 – Colisión culminante\nMomento congelado del impacto.\nEscombros realistas, polvo o partículas de aliento en el aire.\nSin explosiones ni poderes.\nSolo fuerza física pura capturada en cámara lenta cinematográfica.\n\nEstilo visual y técnico\n– Solo realismo live-action\n– Sin animación ni estilo cómic\n– Sin estilización más allá del cine real\n– Profundidad de campo reducida\n– Desenfoque de movimiento natural\n– Rastros sutiles de cámara lenta causados por la velocidad, no por efectos\n– Grano cinematográfico, sensación de lente anamórfica\n– Calidad cinematográfica ultra realista en 8K\n\nRestricciones estrictas\n– Dos hombres humanos normales\n– Sin superpoderes\n– Sin efectos brillantes\n– Sin apariencia de caricatura\n– Debe parecer un fotograma real de una película\"", this)'>📋 复制</button>
         </div>
-        <p>Transforma tu foto en 4 escenas de acción con Gemini 3</p><p>1. Entra en Gemini y activa la generación de imágenes (Nano Banana).<br>2. Sube una foto tuya.<br>3. Usa el siguiente prompt.</p><p>&quot;Crea una cuadrícula cinematográfica 2×2 en live-action compuesta por cuatro tomas realistas de una película.<br>Usa mi imagen subida como referencia estricta para el personaje principal, con el mismo rostro, proporciones y realismo.</p><p>La escena representa una pelea realista cuerpo a cuerpo entre dos hombres adultos, creíble, física y terrenal. Sin fantasía, sin superhéroes, sin poderes exagerados.</p><p>Tono general<br>– Película live-action hiperrealista<br>– Aspecto de fotograma real de cine, no animación<br>– Crudo, físico, humano<br>– Inspirado en el cine de acción moderno, con coreografía de pelea en cámara lenta</p><p>Panel 1 – Plano general de establecimiento<br>Plano cinematográfico amplio en un entorno urbano o industrial.<br>Ambos hombres se enfrentan en medio del combate.<br>Movimientos corporales naturales y posturas realistas.<br>Iluminación cinematográfica pero verosímil.<br>El momento se captura en una sutil cámara lenta, con tensión en el aire.</p><p>Panel 2 – Plano medio de acción<br>Plano medio de un puñetazo o patada en cámara lenta.<br>El movimiento es realista y pesado.<br>Un rastro de movimiento muy sutil sigue al puño o al brazo, como en cinematografía real de alta velocidad, no efectos de energía.<br>Tensión muscular, movimiento de la ropa, sudor y realismo del impacto.</p><p>Panel 3 – Primer plano de impacto<br>Primer plano de mi rostro, con semejanza perfecta.<br>Expresión de concentración, intensidad y agresividad controlada.<br>Ligero desenfoque de movimiento del oponente en el fondo.<br>La iluminación enfatiza la textura de la piel, el sudor y el realismo.</p><p>Panel 4 – Colisión culminante<br>Momento congelado del impacto.<br>Escombros realistas, polvo o partículas de aliento en el aire.<br>Sin explosiones ni poderes.<br>Solo fuerza física pura capturada en cámara lenta cinematográfica.</p><p>Estilo visual y técnico<br>– Solo realismo live-action<br>– Sin animación ni estilo cómic<br>– Sin estilización más allá del cine real<br>– Profundidad de campo reducida<br>– Desenfoque de movimiento natural<br>– Rastros sutiles de cámara lenta causados por la velocidad, no por efectos<br>– Grano cinematográfico, sensación de lente anamórfica<br>– Calidad cinematográfica ultra realista en 8K</p><p>Restricciones estrictas<br>– Dos hombres humanos normales<br>– Sin superpoderes<br>– Sin efectos brillantes<br>– Sin apariencia de caricatura<br>– Debe parecer un fotograma real de una película&quot;</p>
+        <div data-nosnippet><p>Transforma tu foto en 4 escenas de acción con Gemini 3</p><p>1. Entra en Gemini y activa la generación de imágenes (Nano Banana).<br>2. Sube una foto tuya.<br>3. Usa el siguiente prompt.</p><p>&quot;Crea una cuadrícula cinematográfica 2×2 en live-action compuesta por cuatro tomas realistas de una película.<br>Usa mi imagen subida como referencia estricta para el personaje principal, con el mismo rostro, proporciones y realismo.</p><p>La escena representa una pelea realista cuerpo a cuerpo entre dos hombres adultos, creíble, física y terrenal. Sin fantasía, sin superhéroes, sin poderes exagerados.</p><p>Tono general<br>– Película live-action hiperrealista<br>– Aspecto de fotograma real de cine, no animación<br>– Crudo, físico, humano<br>– Inspirado en el cine de acción moderno, con coreografía de pelea en cámara lenta</p><p>Panel 1 – Plano general de establecimiento<br>Plano cinematográfico amplio en un entorno urbano o industrial.<br>Ambos hombres se enfrentan en medio del combate.<br>Movimientos corporales naturales y posturas realistas.<br>Iluminación cinematográfica pero verosímil.<br>El momento se captura en una sutil cámara lenta, con tensión en el aire.</p><p>Panel 2 – Plano medio de acción<br>Plano medio de un puñetazo o patada en cámara lenta.<br>El movimiento es realista y pesado.<br>Un rastro de movimiento muy sutil sigue al puño o al brazo, como en cinematografía real de alta velocidad, no efectos de energía.<br>Tensión muscular, movimiento de la ropa, sudor y realismo del impacto.</p><p>Panel 3 – Primer plano de impacto<br>Primer plano de mi rostro, con semejanza perfecta.<br>Expresión de concentración, intensidad y agresividad controlada.<br>Ligero desenfoque de movimiento del oponente en el fondo.<br>La iluminación enfatiza la textura de la piel, el sudor y el realismo.</p><p>Panel 4 – Colisión culminante<br>Momento congelado del impacto.<br>Escombros realistas, polvo o partículas de aliento en el aire.<br>Sin explosiones ni poderes.<br>Solo fuerza física pura capturada en cámara lenta cinematográfica.</p><p>Estilo visual y técnico<br>– Solo realismo live-action<br>– Sin animación ni estilo cómic<br>– Sin estilización más allá del cine real<br>– Profundidad de campo reducida<br>– Desenfoque de movimiento natural<br>– Rastros sutiles de cámara lenta causados por la velocidad, no por efectos<br>– Grano cinematográfico, sensación de lente anamórfica<br>– Calidad cinematográfica ultra realista en 8K</p><p>Restricciones estrictas<br>– Dos hombres humanos normales<br>– Sin superpoderes<br>– Sin efectos brillantes<br>– Sin apariencia de caricatura<br>– Debe parecer un fotograma real de una película&quot;</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011791915843477845-1.jpg" alt="Transforma tu foto en 4 escenas de acción con Gemini 3" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1347,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

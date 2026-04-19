@@ -7,11 +7,13 @@
     <title>[INPUT IMAGE: USER PHOTO] Use the person in the input image a... #1857 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[INPUT IMAGE: USER PHOTO] Use the person in the input image as the ONLY subject. Preserve their identity and facial f...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1857.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1857.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1857.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840518">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022360">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[输入图片：USER_PHOTO] 将输入图片中的人物作为唯一主体。清晰保留他们的身份和面部特征。\n\n在一个超现实的三维几何“颜色盒子”房间（空心立方体/倾斜方盒布景）内创建一张高度写实的高定时尚编辑写真。每次渲染必须随机选择：\n1) 一种大胆的单色盒子（单色环境，鲜明且饱和），\n2) 一个动态的“酷”时尚姿势（重力无效的姿势或极端拉伸/跃起/侧向贴墙支撑），\n3) 一个戏剧性的摄影角度（广角等效24–35mm、地平线倾斜、强烈透视）。\n\n主体呈现全身且清晰，穿着前卫时尚的造型，感觉现代且具有编辑性（干净轮廓、层次分明的搭配、高级面料质感）。保持服装品味和时尚前卫。主体的姿势应具有运动感、时尚且独特——如同杂志广告大片。\n\n灯光：工作室级、清晰且电影感；强主光，控制良好的柔和阴影，微妙的轮廓光；来自彩色墙面的真实反射与漫反射光。超细腻的肌肤质感、自然毛孔、真实的面料纹理、干净的边缘、以及高动态范围。\n构图：主体居中，留有充足的负空间与强烈的几何线条；盒子透视将主体框起来。\n色彩：盒子颜色为单一大胆颜色，且每次必须不同（随机鲜艳色调）。主体的着装与盒子颜色形成良好对比。\n\n输出：超真实、照片级真实感、8K细节、编辑型广告级别、主体清晰对焦、无运动模糊、面部不失真、比例自然。", this)'>📋 复制</button>
         </div>
-        <p>[输入图片：USER_PHOTO] 将输入图片中的人物作为唯一主体。清晰保留他们的身份和面部特征。</p><p>在一个超现实的三维几何“颜色盒子”房间（空心立方体/倾斜方盒布景）内创建一张高度写实的高定时尚编辑写真。每次渲染必须随机选择：<br>1) 一种大胆的单色盒子（单色环境，鲜明且饱和），<br>2) 一个动态的“酷”时尚姿势（重力无效的姿势或极端拉伸/跃起/侧向贴墙支撑），<br>3) 一个戏剧性的摄影角度（广角等效24–35mm、地平线倾斜、强烈透视）。</p><p>主体呈现全身且清晰，穿着前卫时尚的造型，感觉现代且具有编辑性（干净轮廓、层次分明的搭配、高级面料质感）。保持服装品味和时尚前卫。主体的姿势应具有运动感、时尚且独特——如同杂志广告大片。</p><p>灯光：工作室级、清晰且电影感；强主光，控制良好的柔和阴影，微妙的轮廓光；来自彩色墙面的真实反射与漫反射光。超细腻的肌肤质感、自然毛孔、真实的面料纹理、干净的边缘、以及高动态范围。<br>构图：主体居中，留有充足的负空间与强烈的几何线条；盒子透视将主体框起来。<br>色彩：盒子颜色为单一大胆颜色，且每次必须不同（随机鲜艳色调）。主体的着装与盒子颜色形成良好对比。</p><p>输出：超真实、照片级真实感、8K细节、编辑型广告级别、主体清晰对焦、无运动模糊、面部不失真、比例自然。</p>
+        <div data-nosnippet><p>[输入图片：USER_PHOTO] 将输入图片中的人物作为唯一主体。清晰保留他们的身份和面部特征。</p><p>在一个超现实的三维几何“颜色盒子”房间（空心立方体/倾斜方盒布景）内创建一张高度写实的高定时尚编辑写真。每次渲染必须随机选择：<br>1) 一种大胆的单色盒子（单色环境，鲜明且饱和），<br>2) 一个动态的“酷”时尚姿势（重力无效的姿势或极端拉伸/跃起/侧向贴墙支撑），<br>3) 一个戏剧性的摄影角度（广角等效24–35mm、地平线倾斜、强烈透视）。</p><p>主体呈现全身且清晰，穿着前卫时尚的造型，感觉现代且具有编辑性（干净轮廓、层次分明的搭配、高级面料质感）。保持服装品味和时尚前卫。主体的姿势应具有运动感、时尚且独特——如同杂志广告大片。</p><p>灯光：工作室级、清晰且电影感；强主光，控制良好的柔和阴影，微妙的轮廓光；来自彩色墙面的真实反射与漫反射光。超细腻的肌肤质感、自然毛孔、真实的面料纹理、干净的边缘、以及高动态范围。<br>构图：主体居中，留有充足的负空间与强烈的几何线条；盒子透视将主体框起来。<br>色彩：盒子颜色为单一大胆颜色，且每次必须不同（随机鲜艳色调）。主体的着装与盒子颜色形成良好对比。</p><p>输出：超真实、照片级真实感、8K细节、编辑型广告级别、主体清晰对焦、无运动模糊、面部不失真、比例自然。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[INPUT IMAGE: USER_PHOTO] Use the person in the input image as the ONLY subject. Preserve their identity and facial features clearly.\n\nCreate a hyper-realistic high-fashion editorial photo inside a surreal 3D geometric “color box” room (a hollow cube / tilted cube set). Each render MUST randomly choose:\n1) a bold single-color box (monochrome environment, vivid and saturated),\n2) a dynamic “cool” fashion pose (gravity-defying or extreme stretch / leap / sideways bracing against the walls),\n3) a dramatic camera angle (wide-angle 24–35mm equivalent, tilted horizon, strong perspective).\n\nThe subject appears full-body and sharp, wearing an avant-garde fashion styling that feels modern and editorial (clean silhouette, stylish layering, premium fabric texture). Keep clothing tasteful and fashion-forward. The subject’s pose should feel athletic, stylish, and unusual—like a magazine campaign shot.\n\nLighting: studio quality, crisp and cinematic; strong key light with controlled soft shadows, subtle rim light; realistic reflections and bounce light from the colored walls. Ultra-detailed skin texture, natural pores, realistic fabric weave, clean edges, high dynamic range. \nComposition: subject centered with plenty of negative space and strong geometric lines; the box perspective frames the subject. \nColor: the box color is a SINGLE bold color and MUST be different each run (random vivid hue). The subject’s outfit contrasts well with the box color.\n\nOutput: hyper-real, photorealistic, 8k detail, editorial campaign quality, sharp focus on subject, no motion blur, no distortion of face, natural proportions.", this)'>📋 复制</button>
         </div>
-        <p>[INPUT IMAGE: USER_PHOTO] Use the person in the input image as the ONLY subject. Preserve their identity and facial features clearly.</p><p>Create a hyper-realistic high-fashion editorial photo inside a surreal 3D geometric “color box” room (a hollow cube / tilted cube set). Each render MUST randomly choose:<br>1) a bold single-color box (monochrome environment, vivid and saturated),<br>2) a dynamic “cool” fashion pose (gravity-defying or extreme stretch / leap / sideways bracing against the walls),<br>3) a dramatic camera angle (wide-angle 24–35mm equivalent, tilted horizon, strong perspective).</p><p>The subject appears full-body and sharp, wearing an avant-garde fashion styling that feels modern and editorial (clean silhouette, stylish layering, premium fabric texture). Keep clothing tasteful and fashion-forward. The subject’s pose should feel athletic, stylish, and unusual—like a magazine campaign shot.</p><p>Lighting: studio quality, crisp and cinematic; strong key light with controlled soft shadows, subtle rim light; realistic reflections and bounce light from the colored walls. Ultra-detailed skin texture, natural pores, realistic fabric weave, clean edges, high dynamic range. <br>Composition: subject centered with plenty of negative space and strong geometric lines; the box perspective frames the subject. <br>Color: the box color is a SINGLE bold color and MUST be different each run (random vivid hue). The subject’s outfit contrasts well with the box color.</p><p>Output: hyper-real, photorealistic, 8k detail, editorial campaign quality, sharp focus on subject, no motion blur, no distortion of face, natural proportions.</p>
+        <div data-nosnippet><p>[INPUT IMAGE: USER_PHOTO] Use the person in the input image as the ONLY subject. Preserve their identity and facial features clearly.</p><p>Create a hyper-realistic high-fashion editorial photo inside a surreal 3D geometric “color box” room (a hollow cube / tilted cube set). Each render MUST randomly choose:<br>1) a bold single-color box (monochrome environment, vivid and saturated),<br>2) a dynamic “cool” fashion pose (gravity-defying or extreme stretch / leap / sideways bracing against the walls),<br>3) a dramatic camera angle (wide-angle 24–35mm equivalent, tilted horizon, strong perspective).</p><p>The subject appears full-body and sharp, wearing an avant-garde fashion styling that feels modern and editorial (clean silhouette, stylish layering, premium fabric texture). Keep clothing tasteful and fashion-forward. The subject’s pose should feel athletic, stylish, and unusual—like a magazine campaign shot.</p><p>Lighting: studio quality, crisp and cinematic; strong key light with controlled soft shadows, subtle rim light; realistic reflections and bounce light from the colored walls. Ultra-detailed skin texture, natural pores, realistic fabric weave, clean edges, high dynamic range. <br>Composition: subject centered with plenty of negative space and strong geometric lines; the box perspective frames the subject. <br>Color: the box color is a SINGLE bold color and MUST be different each run (random vivid hue). The subject’s outfit contrasts well with the box color.</p><p>Output: hyper-real, photorealistic, 8k detail, editorial campaign quality, sharp focus on subject, no motion blur, no distortion of face, natural proportions.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2017598696678895882-1.jpg" alt="[INPUT IMAGE: USER PHOTO] Use the person in the input image a..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1857,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

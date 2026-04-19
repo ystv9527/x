@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #2592 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;quality&quot;: &quot;photorealistic&quot;, &quot;resolution&quot;: &quot;4k&quot;, &quot;camera&quot;: &quot;Smartphone camera&quot;, &quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2592.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2592.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2592.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839734">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022194">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"aspect_ratio\": \"9:16\",\n    \"quality\": \"逼真摄影\",\n    \"resolution\": \"4k\",\n    \"camera\": \"手机相机\",\n    \"lens\": \"标准镜头\",\n    \"style\": \"车库抓拍摄影，天然光与顶部荧光灯混合\",\n    \"composition\": \"全身照：宫脇咲良坐在车库中一辆红色跑车的车门门槛上，回头看向相机。\"\n  },\n  \"scene\": {\n    \"location\": \"汽车车库/修理车间内部\",\n    \"environment\": [\"红色法拉利的车内和敞开的车门\", \"混凝土地面\", \"金属车库门和深色墙壁\", \"背景中的工作台设备和货架\"],\n    \"time\": \"白天（室内）\",\n    \"atmosphere\": \"随意、工业感、抓拍\"\n  },\n  \"lighting\": {\n    \"type\": \"人造光与环境日光混合\",\n    \"source\": \"顶部荧光车间灯光以及敞开车库门透入的光线\",\n    \"effect\": \"功能性、均匀照明，车和主体上有一些阴影和高光。\"\n  },\n  \"subject\": {\n    \"identity\": \"宫脇咲良，日本的K-pop偶像，具有她标志性的大而深邃的双眼皮、挺直的高鼻梁和精致尖细的下巴。头发长而波浪状的深棕色，近乎黑色，搭配柔和的帘式刘海。\",\n    \"body\": {\n      \"pose\": \"坐在红色车门门槛上，身体朝向车内。\",\n      \"physique\": \"纤细、健美的沙漏型身材，比例优雅\"\n    },\n    \"outfit\": {\n      \"clothing\": \"光泽黑色乳胶连体衣，黑色细高跟鞋。\"\n    }\n  },\n  \"realism_focus\": {\n    \"textures\": \"波浪发丝、连体衣的光滑黑色乳胶质感、皮革车内饰、金属门槛、橡胶轮胎、混凝土地面\",\n    \"imperfections\": \"衣物的自然褶皱、车漆和内饰上的真实反光\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality&quot;: &quot;逼真摄影&quot;,<br>    &quot;resolution&quot;: &quot;4k&quot;,<br>    &quot;camera&quot;: &quot;手机相机&quot;,<br>    &quot;lens&quot;: &quot;标准镜头&quot;,<br>    &quot;style&quot;: &quot;车库抓拍摄影，天然光与顶部荧光灯混合&quot;,<br>    &quot;composition&quot;: &quot;全身照：宫脇咲良坐在车库中一辆红色跑车的车门门槛上，回头看向相机。&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;汽车车库/修理车间内部&quot;,<br>    &quot;environment&quot;: [&quot;红色法拉利的车内和敞开的车门&quot;, &quot;混凝土地面&quot;, &quot;金属车库门和深色墙壁&quot;, &quot;背景中的工作台设备和货架&quot;],<br>    &quot;time&quot;: &quot;白天（室内）&quot;,<br>    &quot;atmosphere&quot;: &quot;随意、工业感、抓拍&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;人造光与环境日光混合&quot;,<br>    &quot;source&quot;: &quot;顶部荧光车间灯光以及敞开车库门透入的光线&quot;,<br>    &quot;effect&quot;: &quot;功能性、均匀照明，车和主体上有一些阴影和高光。&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;宫脇咲良，日本的K-pop偶像，具有她标志性的大而深邃的双眼皮、挺直的高鼻梁和精致尖细的下巴。头发长而波浪状的深棕色，近乎黑色，搭配柔和的帘式刘海。&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;坐在红色车门门槛上，身体朝向车内。&quot;,<br>      &quot;physique&quot;: &quot;纤细、健美的沙漏型身材，比例优雅&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;光泽黑色乳胶连体衣，黑色细高跟鞋。&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;波浪发丝、连体衣的光滑黑色乳胶质感、皮革车内饰、金属门槛、橡胶轮胎、混凝土地面&quot;,<br>    &quot;imperfections&quot;: &quot;衣物的自然褶皱、车漆和内饰上的真实反光&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality&quot;: &quot;逼真摄影&quot;,<br>    &quot;resolution&quot;: &quot;4k&quot;,<br>    &quot;camera&quot;: &quot;手机相机&quot;,<br>    &quot;lens&quot;: &quot;标准镜头&quot;,<br>    &quot;style&quot;: &quot;车库抓拍摄影，天然光与顶部荧光灯混合&quot;,<br>    &quot;composition&quot;: &quot;全身照：宫脇咲良坐在车库中一辆红色跑车的车门门槛上，回头看向相机。&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;汽车车库/修理车间内部&quot;,<br>    &quot;environment&quot;: [&quot;红色法拉利的车内和敞开的车门&quot;, &quot;混凝土地面&quot;, &quot;金属车库门和深色墙壁&quot;, &quot;背景中的工作台设备和货架&quot;],<br>    &quot;time&quot;: &quot;白天（室内）&quot;,<br>    &quot;atmosphere&quot;: &quot;随意、工业感、抓拍&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;人造光与环境日光混合&quot;,<br>    &quot;source&quot;: &quot;顶部荧光车间灯光以及敞开车库门透入的光线&quot;,<br>    &quot;effect&quot;: &quot;功能性、均匀照明，车和主体上有一些阴影和高光。&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;宫脇咲良，日本的K-pop偶像，具有她标志性的大而深邃的双眼皮、挺直的高鼻梁和精致尖细的下巴。头发长而波浪状的深棕色，近乎黑色，搭配柔和的帘式刘海。&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;坐在红色车门门槛上，身体朝向车内。&quot;,<br>      &quot;physique&quot;: &quot;纤细、健美的沙漏型身材，比例优雅&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;光泽黑色乳胶连体衣，黑色细高跟鞋。&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;波浪发丝、连体衣的光滑黑色乳胶质感、皮革车内饰、金属门槛、橡胶轮胎、混凝土地面&quot;,<br>    &quot;imperfections&quot;: &quot;衣物的自然褶皱、车漆和内饰上的真实反光&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"aspect_ratio\": \"9:16\",\n    \"quality\": \"photorealistic\",\n    \"resolution\": \"4k\",\n    \"camera\": \"Smartphone camera\",\n    \"lens\": \"Standard lens\",\n    \"style\": \"Candid garage photography, natural light mixed with overhead fluorescent\",\n    \"composition\": \"Full-body shot of Sakura Miyawaki sitting on the door sill of a red sports car in a garage, looking back at the camera.\"\n  },\n  \"scene\": {\n    \"location\": \"Car garage/workshop interior\",\n    \"environment\": [\"Interior and open door of a red Ferrari\", \"Concrete floor\", \"Metal garage door and dark walls\", \"Workshop equipment and shelving in the background\"],\n    \"time\": \"Daytime (indoors)\",\n    \"atmosphere\": \"Casual, industrial, candid\"\n  },\n  \"lighting\": {\n    \"type\": \"Mixed artificial and ambient daylight\",\n    \"source\": \"Overhead fluorescent shop lights and light from an open garage door\",\n    \"effect\": \"Functional, even lighting with some shadows and highlights on the car and subject.\"\n  },\n  \"subject\": {\n    \"identity\": \"Sakura Miyawaki, the Japanese K-pop idol with her signature large, deep-set double eyelid eyes, a high straight nasal bridge, and a delicate pointed chin. Her hair is long, wavy dark brown, almost black, styled with soft curtain bangs.\",\n    \"body\": {\n      \"pose\": \"Sitting on the red door sill of the car, body turned towards the interior.\",\n      \"physique\": \"Slender, athletic hourglass figure with elegant proportions\"\n    },\n    \"outfit\": {\n      \"clothing\": \"Glossy black latex bodysuit, black stiletto pumps.\"\n    }\n  },\n  \"realism_focus\": {\n    \"textures\": \"Wavy hair strands, glossy black latex of bodysuit, leather car interior, metal door sill, rubber tires, concrete floor\",\n    \"imperfections\": \"Natural creases in clothing, realistic reflections on car paint and interior\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality&quot;: &quot;photorealistic&quot;,<br>    &quot;resolution&quot;: &quot;4k&quot;,<br>    &quot;camera&quot;: &quot;Smartphone camera&quot;,<br>    &quot;lens&quot;: &quot;Standard lens&quot;,<br>    &quot;style&quot;: &quot;Candid garage photography, natural light mixed with overhead fluorescent&quot;,<br>    &quot;composition&quot;: &quot;Full-body shot of Sakura Miyawaki sitting on the door sill of a red sports car in a garage, looking back at the camera.&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;Car garage/workshop interior&quot;,<br>    &quot;environment&quot;: [&quot;Interior and open door of a red Ferrari&quot;, &quot;Concrete floor&quot;, &quot;Metal garage door and dark walls&quot;, &quot;Workshop equipment and shelving in the background&quot;],<br>    &quot;time&quot;: &quot;Daytime (indoors)&quot;,<br>    &quot;atmosphere&quot;: &quot;Casual, industrial, candid&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Mixed artificial and ambient daylight&quot;,<br>    &quot;source&quot;: &quot;Overhead fluorescent shop lights and light from an open garage door&quot;,<br>    &quot;effect&quot;: &quot;Functional, even lighting with some shadows and highlights on the car and subject.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;Sakura Miyawaki, the Japanese K-pop idol with her signature large, deep-set double eyelid eyes, a high straight nasal bridge, and a delicate pointed chin. Her hair is long, wavy dark brown, almost black, styled with soft curtain bangs.&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;Sitting on the red door sill of the car, body turned towards the interior.&quot;,<br>      &quot;physique&quot;: &quot;Slender, athletic hourglass figure with elegant proportions&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;Glossy black latex bodysuit, black stiletto pumps.&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;Wavy hair strands, glossy black latex of bodysuit, leather car interior, metal door sill, rubber tires, concrete floor&quot;,<br>    &quot;imperfections&quot;: &quot;Natural creases in clothing, realistic reflections on car paint and interior&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality&quot;: &quot;photorealistic&quot;,<br>    &quot;resolution&quot;: &quot;4k&quot;,<br>    &quot;camera&quot;: &quot;Smartphone camera&quot;,<br>    &quot;lens&quot;: &quot;Standard lens&quot;,<br>    &quot;style&quot;: &quot;Candid garage photography, natural light mixed with overhead fluorescent&quot;,<br>    &quot;composition&quot;: &quot;Full-body shot of Sakura Miyawaki sitting on the door sill of a red sports car in a garage, looking back at the camera.&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;Car garage/workshop interior&quot;,<br>    &quot;environment&quot;: [&quot;Interior and open door of a red Ferrari&quot;, &quot;Concrete floor&quot;, &quot;Metal garage door and dark walls&quot;, &quot;Workshop equipment and shelving in the background&quot;],<br>    &quot;time&quot;: &quot;Daytime (indoors)&quot;,<br>    &quot;atmosphere&quot;: &quot;Casual, industrial, candid&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Mixed artificial and ambient daylight&quot;,<br>    &quot;source&quot;: &quot;Overhead fluorescent shop lights and light from an open garage door&quot;,<br>    &quot;effect&quot;: &quot;Functional, even lighting with some shadows and highlights on the car and subject.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;Sakura Miyawaki, the Japanese K-pop idol with her signature large, deep-set double eyelid eyes, a high straight nasal bridge, and a delicate pointed chin. Her hair is long, wavy dark brown, almost black, styled with soft curtain bangs.&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;Sitting on the red door sill of the car, body turned towards the interior.&quot;,<br>      &quot;physique&quot;: &quot;Slender, athletic hourglass figure with elegant proportions&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;Glossy black latex bodysuit, black stiletto pumps.&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;Wavy hair strands, glossy black latex of bodysuit, leather car interior, metal door sill, rubber tires, concrete floor&quot;,<br>    &quot;imperfections&quot;: &quot;Natural creases in clothing, realistic reflections on car paint and interior&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2034168425866514592-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"><img src="/images/tweet-2034168425866514592-2.jpg" alt="&quot;meta&quot;: {" loading="lazy"><img src="/images/tweet-2034168425866514592-3.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2592,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;type&quot;: &quot;image generation&quot;, #638 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;type&quot;: &quot;image generation&quot;, &quot;style&quot;: &quot;hyper realistic&quot;, &quot;quality&quot;: &quot;8K DSLR&quot;, &quot;aspect ratio&quot;: &quot;4:5&quot;, &quot;camera&quot;: { &quot;a...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/638.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/638.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/638.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841657">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022646">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"image_generation\",\n  \"style\": \"超真实风格\",\n  \"quality\": \"8K 数码单反\",\n  \"aspect_ratio\": \"4:5\",\n  \"camera\": {\n    \"angle\": \"略微倾斜的电影感透视\",\n    \"lens\": \"50mm 数码单反镜头\",\n    \"depth_of_field\": \"浅景深\",\n    \"focus\": \"对焦：智能手机与足球动作\"\n  },\n  \"scene\": {\n    \"setting\": \"将智能手机放在木质桌面上\",\n    \"concept\": \"屏幕变成一个缩小版的足球场\",\n    \"environment\": \"室内，来自侧面的柔和日光\",\n    \"atmosphere\": \"电影感、沉浸感、真实感\"\n  },\n  \"details\": {\n    \"screen\": \"屏幕：风化的绿色足球场，能看到磨损、污渍和草纹理\",\n    \"players\": \"微型足球运动员在比赛中积极摆出动态姿势\",\n    \"lighting\": \"柔和的漫射日光，带有轻微的镜头耀斑和真实反射\",\n    \"realism_effects\": [\n      \"屏幕上的指纹\",\n      \"手机机身上的轻微划痕\",\n      \"自然污迹\",\n      \"微小尘粒\"\n    ]\n  },\n  \"materials\": {\n    \"phone\": \"带有真实反射的金属框架\",\n    \"table\": \"纹理感强的木质表面，暖色调\"\n  },\n  \"mood\": \"高端电影感、戏剧性、优质广告质感\",\n  \"rendering\": {\n    \"sharpness\": \"极致锐利\",\n    \"texture_detail\": \"极致\",\n    \"lighting_quality\": \"工作室级\",\n    \"photorealism\": true\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;image_generation&quot;,<br>  &quot;style&quot;: &quot;超真实风格&quot;,<br>  &quot;quality&quot;: &quot;8K 数码单反&quot;,<br>  &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;略微倾斜的电影感透视&quot;,<br>    &quot;lens&quot;: &quot;50mm 数码单反镜头&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;focus&quot;: &quot;对焦：智能手机与足球动作&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;setting&quot;: &quot;将智能手机放在木质桌面上&quot;,<br>    &quot;concept&quot;: &quot;屏幕变成一个缩小版的足球场&quot;,<br>    &quot;environment&quot;: &quot;室内，来自侧面的柔和日光&quot;,<br>    &quot;atmosphere&quot;: &quot;电影感、沉浸感、真实感&quot;<br>  },<br>  &quot;details&quot;: {<br>    &quot;screen&quot;: &quot;屏幕：风化的绿色足球场，能看到磨损、污渍和草纹理&quot;,<br>    &quot;players&quot;: &quot;微型足球运动员在比赛中积极摆出动态姿势&quot;,<br>    &quot;lighting&quot;: &quot;柔和的漫射日光，带有轻微的镜头耀斑和真实反射&quot;,<br>    &quot;realism_effects&quot;: [<br>      &quot;屏幕上的指纹&quot;,<br>      &quot;手机机身上的轻微划痕&quot;,<br>      &quot;自然污迹&quot;,<br>      &quot;微小尘粒&quot;<br>    ]<br>  },<br>  &quot;materials&quot;: {<br>    &quot;phone&quot;: &quot;带有真实反射的金属框架&quot;,<br>    &quot;table&quot;: &quot;纹理感强的木质表面，暖色调&quot;<br>  },<br>  &quot;mood&quot;: &quot;高端电影感、戏剧性、优质广告质感&quot;,<br>  &quot;rendering&quot;: {<br>    &quot;sharpness&quot;: &quot;极致锐利&quot;,<br>    &quot;texture_detail&quot;: &quot;极致&quot;,<br>    &quot;lighting_quality&quot;: &quot;工作室级&quot;,<br>    &quot;photorealism&quot;: true<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;image_generation&quot;,<br>  &quot;style&quot;: &quot;超真实风格&quot;,<br>  &quot;quality&quot;: &quot;8K 数码单反&quot;,<br>  &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;略微倾斜的电影感透视&quot;,<br>    &quot;lens&quot;: &quot;50mm 数码单反镜头&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;focus&quot;: &quot;对焦：智能手机与足球动作&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;setting&quot;: &quot;将智能手机放在木质桌面上&quot;,<br>    &quot;concept&quot;: &quot;屏幕变成一个缩小版的足球场&quot;,<br>    &quot;environment&quot;: &quot;室内，来自侧面的柔和日光&quot;,<br>    &quot;atmosphere&quot;: &quot;电影感、沉浸感、真实感&quot;<br>  },<br>  &quot;details&quot;: {<br>    &quot;screen&quot;: &quot;屏幕：风化的绿色足球场，能看到磨损、污渍和草纹理&quot;,<br>    &quot;players&quot;: &quot;微型足球运动员在比赛中积极摆出动态姿势&quot;,<br>    &quot;lighting&quot;: &quot;柔和的漫射日光，带有轻微的镜头耀斑和真实反射&quot;,<br>    &quot;realism_effects&quot;: [<br>      &quot;屏幕上的指纹&quot;,<br>      &quot;手机机身上的轻微划痕&quot;,<br>      &quot;自然污迹&quot;,<br>      &quot;微小尘粒&quot;<br>    ]<br>  },<br>  &quot;materials&quot;: {<br>    &quot;phone&quot;: &quot;带有真实反射的金属框架&quot;,<br>    &quot;table&quot;: &quot;纹理感强的木质表面，暖色调&quot;<br>  },<br>  &quot;mood&quot;: &quot;高端电影感、戏剧性、优质广告质感&quot;,<br>  &quot;rendering&quot;: {<br>    &quot;sharpness&quot;: &quot;极致锐利&quot;,<br>    &quot;texture_detail&quot;: &quot;极致&quot;,<br>    &quot;lighting_quality&quot;: &quot;工作室级&quot;,<br>    &quot;photorealism&quot;: true<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"image_generation\",\n  \"style\": \"hyper_realistic\",\n  \"quality\": \"8K DSLR\",\n  \"aspect_ratio\": \"4:5\",\n  \"camera\": {\n    \"angle\": \"slightly tilted cinematic perspective\",\n    \"lens\": \"50mm DSLR\",\n    \"depth_of_field\": \"shallow\",\n    \"focus\": \"smartphone and football action\"\n  },\n  \"scene\": {\n    \"setting\": \"smartphone placed on a wooden table\",\n    \"concept\": \"phone screen transformed into a miniature football stadium\",\n    \"environment\": \"indoor, soft daylight coming from the side\",\n    \"atmosphere\": \"cinematic, immersive, realistic\"\n  },\n  \"details\": {\n    \"screen\": \"weathered green football pitch with visible wear, dirt patches, and grass texture\",\n    \"players\": \"miniature football players actively playing a match with dynamic poses\",\n    \"lighting\": \"soft diffused daylight with subtle lens flares and realistic reflections\",\n    \"realism_effects\": [\n      \"fingerprints on screen\",\n      \"light scratches on phone body\",\n      \"natural smudges\",\n      \"micro dust particles\"\n    ]\n  },\n  \"materials\": {\n    \"phone\": \"metallic frame with realistic reflections\",\n    \"table\": \"textured wooden surface with warm tones\"\n  },\n  \"mood\": \"high-end cinematic, dramatic, premium advertising look\",\n  \"rendering\": {\n    \"sharpness\": \"ultra sharp\",\n    \"texture_detail\": \"extreme\",\n    \"lighting_quality\": \"studio grade\",\n    \"photorealism\": true\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;image_generation&quot;,<br>  &quot;style&quot;: &quot;hyper_realistic&quot;,<br>  &quot;quality&quot;: &quot;8K DSLR&quot;,<br>  &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;slightly tilted cinematic perspective&quot;,<br>    &quot;lens&quot;: &quot;50mm DSLR&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;smartphone and football action&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;setting&quot;: &quot;smartphone placed on a wooden table&quot;,<br>    &quot;concept&quot;: &quot;phone screen transformed into a miniature football stadium&quot;,<br>    &quot;environment&quot;: &quot;indoor, soft daylight coming from the side&quot;,<br>    &quot;atmosphere&quot;: &quot;cinematic, immersive, realistic&quot;<br>  },<br>  &quot;details&quot;: {<br>    &quot;screen&quot;: &quot;weathered green football pitch with visible wear, dirt patches, and grass texture&quot;,<br>    &quot;players&quot;: &quot;miniature football players actively playing a match with dynamic poses&quot;,<br>    &quot;lighting&quot;: &quot;soft diffused daylight with subtle lens flares and realistic reflections&quot;,<br>    &quot;realism_effects&quot;: [<br>      &quot;fingerprints on screen&quot;,<br>      &quot;light scratches on phone body&quot;,<br>      &quot;natural smudges&quot;,<br>      &quot;micro dust particles&quot;<br>    ]<br>  },<br>  &quot;materials&quot;: {<br>    &quot;phone&quot;: &quot;metallic frame with realistic reflections&quot;,<br>    &quot;table&quot;: &quot;textured wooden surface with warm tones&quot;<br>  },<br>  &quot;mood&quot;: &quot;high-end cinematic, dramatic, premium advertising look&quot;,<br>  &quot;rendering&quot;: {<br>    &quot;sharpness&quot;: &quot;ultra sharp&quot;,<br>    &quot;texture_detail&quot;: &quot;extreme&quot;,<br>    &quot;lighting_quality&quot;: &quot;studio grade&quot;,<br>    &quot;photorealism&quot;: true<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;image_generation&quot;,<br>  &quot;style&quot;: &quot;hyper_realistic&quot;,<br>  &quot;quality&quot;: &quot;8K DSLR&quot;,<br>  &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;slightly tilted cinematic perspective&quot;,<br>    &quot;lens&quot;: &quot;50mm DSLR&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;smartphone and football action&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;setting&quot;: &quot;smartphone placed on a wooden table&quot;,<br>    &quot;concept&quot;: &quot;phone screen transformed into a miniature football stadium&quot;,<br>    &quot;environment&quot;: &quot;indoor, soft daylight coming from the side&quot;,<br>    &quot;atmosphere&quot;: &quot;cinematic, immersive, realistic&quot;<br>  },<br>  &quot;details&quot;: {<br>    &quot;screen&quot;: &quot;weathered green football pitch with visible wear, dirt patches, and grass texture&quot;,<br>    &quot;players&quot;: &quot;miniature football players actively playing a match with dynamic poses&quot;,<br>    &quot;lighting&quot;: &quot;soft diffused daylight with subtle lens flares and realistic reflections&quot;,<br>    &quot;realism_effects&quot;: [<br>      &quot;fingerprints on screen&quot;,<br>      &quot;light scratches on phone body&quot;,<br>      &quot;natural smudges&quot;,<br>      &quot;micro dust particles&quot;<br>    ]<br>  },<br>  &quot;materials&quot;: {<br>    &quot;phone&quot;: &quot;metallic frame with realistic reflections&quot;,<br>    &quot;table&quot;: &quot;textured wooden surface with warm tones&quot;<br>  },<br>  &quot;mood&quot;: &quot;high-end cinematic, dramatic, premium advertising look&quot;,<br>  &quot;rendering&quot;: {<br>    &quot;sharpness&quot;: &quot;ultra sharp&quot;,<br>    &quot;texture_detail&quot;: &quot;extreme&quot;,<br>    &quot;lighting_quality&quot;: &quot;studio grade&quot;,<br>    &quot;photorealism&quot;: true<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2006679801256656925-1.jpg" alt="&quot;type&quot;: &quot;image generation&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 638,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

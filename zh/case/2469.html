@@ -7,11 +7,13 @@
     <title>captured in a dark studio environment with a strong minimalis... #2469 | Gem Nana AI 提示词库</title>
     <meta name="description" content="captured in a dark studio environment with a strong minimalist and futuristic aesthetic. The subject is posed in thre...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2469.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2469.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2469.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839881">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022221">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("在一个暗色的工作室环境中拍摄，具有强烈的极简和未来主义美学。主体以三分之四侧面摆姿势，身穿深色衣物，如黑色高领毛衣和金属配饰，戴着能捕捉环境光的反光太阳镜。置于主体正后方的圆形霓虹灯创造出发光的光环效果，在头部和肩部产生精确的轮廓高光。光线偏冷且单色，主要为冰蓝色调（-6500K），在哑光纹理上投射出细微的反光和柔和的渐变。背景为深黑色（约 HEX #020509），使霓虹环的青色光芒（约", this)'>📋 复制</button>
         </div>
-        <p>在一个暗色的工作室环境中拍摄，具有强烈的极简和未来主义美学。主体以三分之四侧面摆姿势，身穿深色衣物，如黑色高领毛衣和金属配饰，戴着能捕捉环境光的反光太阳镜。置于主体正后方的圆形霓虹灯创造出发光的光环效果，在头部和肩部产生精确的轮廓高光。光线偏冷且单色，主要为冰蓝色调（-6500K），在哑光纹理上投射出细微的反光和柔和的渐变。背景为深黑色（约 HEX #020509），使霓虹环的青色光芒（约</p>
+        <div data-nosnippet><p>在一个暗色的工作室环境中拍摄，具有强烈的极简和未来主义美学。主体以三分之四侧面摆姿势，身穿深色衣物，如黑色高领毛衣和金属配饰，戴着能捕捉环境光的反光太阳镜。置于主体正后方的圆形霓虹灯创造出发光的光环效果，在头部和肩部产生精确的轮廓高光。光线偏冷且单色，主要为冰蓝色调（-6500K），在哑光纹理上投射出细微的反光和柔和的渐变。背景为深黑色（约 HEX #020509），使霓虹环的青色光芒（约</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("captured in a dark studio environment with a strong minimalist and futuristic aesthetic. The subject is posed in three-quarter profile, wearing dark clothing such as a black turtleneck and metallic accessories, with reflective sunglasses that catch the ambient light. A circular neon light positioned directly behind the subject creates a luminous halo effect, producing precise rim highlights along the head and shoulders. The lighting is cool and monochromatic, primarily in icy blue tones (-6500K), casting subtle reflections and soft gradients across the matte tex-tures. The background is a deep black (approx. HEX #020509), allowing the neon ring's cyan glow (approx.", this)'>📋 复制</button>
         </div>
-        <p>captured in a dark studio environment with a strong minimalist and futuristic aesthetic. The subject is posed in three-quarter profile, wearing dark clothing such as a black turtleneck and metallic accessories, with reflective sunglasses that catch the ambient light. A circular neon light positioned directly behind the subject creates a luminous halo effect, producing precise rim highlights along the head and shoulders. The lighting is cool and monochromatic, primarily in icy blue tones (-6500K), casting subtle reflections and soft gradients across the matte tex-tures. The background is a deep black (approx. HEX #020509), allowing the neon ring&#39;s cyan glow (approx.</p>
+        <div data-nosnippet><p>captured in a dark studio environment with a strong minimalist and futuristic aesthetic. The subject is posed in three-quarter profile, wearing dark clothing such as a black turtleneck and metallic accessories, with reflective sunglasses that catch the ambient light. A circular neon light positioned directly behind the subject creates a luminous halo effect, producing precise rim highlights along the head and shoulders. The lighting is cool and monochromatic, primarily in icy blue tones (-6500K), casting subtle reflections and soft gradients across the matte tex-tures. The background is a deep black (approx. HEX #020509), allowing the neon ring&#39;s cyan glow (approx.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2031256944900714553-1.jpg" alt="captured in a dark studio environment with a strong minimalis..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2469,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

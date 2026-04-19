@@ -7,11 +7,13 @@
     <title>&quot;type&quot;: &quot;image generation prompt&quot;, #1085 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;type&quot;: &quot;image generation prompt&quot;, &quot;style&quot;: &quot;photorealistic, lifestyle photography&quot;, &quot;sexualization&quot;: &quot;none&quot;, &quot;desc...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1085.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1085.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1085.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845491">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023729">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"类型\": \"图像生成提示\",\n  \"风格\": \"真实感摄影，生活方式摄影\",\n  \"性化\": \"无\",\n  \"描述\": {\n    \"主题\": \"一位年轻女性随意站在家用厨房中，侧面入镜\",\n    \"姿势\": \"放松的姿势，一只手搭在髋部，另一只手拿着带吸管的小饮料盒\",\n    \"表情\": \"中性、若有所思、略显遥远的目光向前凝视\",\n    \"外貌\": {\n      \"头发\": \"深色头发松散地扎成低发髻，自然发丝垂落在脸庞两侧\",\n      \"服装\": \"宽大的白色T恤随意穿着，由于版型宽松，简单的内衣部分可见\",\n      \"纹身\": \"前臂上有小巧、简约的黑色纹身，低调且不显眼\"\n    }\n  },\n  \"环境\": {\n    \"位置\": \"朴素、有人居住气息的家用厨房\",\n    \"细节\": \"木质橱柜、台面电器，冰箱上贴满彩色磁贴和纪念品\",\n    \"照明\": \"柔和的自然日光从窗户照入，色调温暖且略显柔和\",\n    \"氛围\": \"安静、日常的家庭瞬间\"\n  },\n  \"相机\": {\n    \"角度\": \"侧面视角\",\n    \"构图\": \"中景，从大腿中部到头部的构图\",\n    \"镜头\": \"35mm 生活方式镜头\",\n    \"景深\": \"适中景深，背景轻微成像以保留环境信息\"\n  },\n  \"图片质量\": {\n    \"写实度\": \"高\",\n    \"纹理细节\": \"自然的织物褶皱、皮肤质感以及厨房表面细节可见\",\n    \"颗粒\": \"轻微自然的胶片颗粒感以呈现真实质感\"\n  },\n  \"情绪\": \"平静、亲密、纪实风格\",\n  \"约束\": [\n    \"非性化、日常写实\",\n    \"注重自然的生活方式和氛围\",\n    \"不做夸张的姿势或表情\",\n    \"抓拍式、生活片段美学\"\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;类型&quot;: &quot;图像生成提示&quot;,<br>  &quot;风格&quot;: &quot;真实感摄影，生活方式摄影&quot;,<br>  &quot;性化&quot;: &quot;无&quot;,<br>  &quot;描述&quot;: {<br>    &quot;主题&quot;: &quot;一位年轻女性随意站在家用厨房中，侧面入镜&quot;,<br>    &quot;姿势&quot;: &quot;放松的姿势，一只手搭在髋部，另一只手拿着带吸管的小饮料盒&quot;,<br>    &quot;表情&quot;: &quot;中性、若有所思、略显遥远的目光向前凝视&quot;,<br>    &quot;外貌&quot;: {<br>      &quot;头发&quot;: &quot;深色头发松散地扎成低发髻，自然发丝垂落在脸庞两侧&quot;,<br>      &quot;服装&quot;: &quot;宽大的白色T恤随意穿着，由于版型宽松，简单的内衣部分可见&quot;,<br>      &quot;纹身&quot;: &quot;前臂上有小巧、简约的黑色纹身，低调且不显眼&quot;<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;位置&quot;: &quot;朴素、有人居住气息的家用厨房&quot;,<br>    &quot;细节&quot;: &quot;木质橱柜、台面电器，冰箱上贴满彩色磁贴和纪念品&quot;,<br>    &quot;照明&quot;: &quot;柔和的自然日光从窗户照入，色调温暖且略显柔和&quot;,<br>    &quot;氛围&quot;: &quot;安静、日常的家庭瞬间&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;角度&quot;: &quot;侧面视角&quot;,<br>    &quot;构图&quot;: &quot;中景，从大腿中部到头部的构图&quot;,<br>    &quot;镜头&quot;: &quot;35mm 生活方式镜头&quot;,<br>    &quot;景深&quot;: &quot;适中景深，背景轻微成像以保留环境信息&quot;<br>  },<br>  &quot;图片质量&quot;: {<br>    &quot;写实度&quot;: &quot;高&quot;,<br>    &quot;纹理细节&quot;: &quot;自然的织物褶皱、皮肤质感以及厨房表面细节可见&quot;,<br>    &quot;颗粒&quot;: &quot;轻微自然的胶片颗粒感以呈现真实质感&quot;<br>  },<br>  &quot;情绪&quot;: &quot;平静、亲密、纪实风格&quot;,<br>  &quot;约束&quot;: [<br>    &quot;非性化、日常写实&quot;,<br>    &quot;注重自然的生活方式和氛围&quot;,<br>    &quot;不做夸张的姿势或表情&quot;,<br>    &quot;抓拍式、生活片段美学&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;类型&quot;: &quot;图像生成提示&quot;,<br>  &quot;风格&quot;: &quot;真实感摄影，生活方式摄影&quot;,<br>  &quot;性化&quot;: &quot;无&quot;,<br>  &quot;描述&quot;: {<br>    &quot;主题&quot;: &quot;一位年轻女性随意站在家用厨房中，侧面入镜&quot;,<br>    &quot;姿势&quot;: &quot;放松的姿势，一只手搭在髋部，另一只手拿着带吸管的小饮料盒&quot;,<br>    &quot;表情&quot;: &quot;中性、若有所思、略显遥远的目光向前凝视&quot;,<br>    &quot;外貌&quot;: {<br>      &quot;头发&quot;: &quot;深色头发松散地扎成低发髻，自然发丝垂落在脸庞两侧&quot;,<br>      &quot;服装&quot;: &quot;宽大的白色T恤随意穿着，由于版型宽松，简单的内衣部分可见&quot;,<br>      &quot;纹身&quot;: &quot;前臂上有小巧、简约的黑色纹身，低调且不显眼&quot;<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;位置&quot;: &quot;朴素、有人居住气息的家用厨房&quot;,<br>    &quot;细节&quot;: &quot;木质橱柜、台面电器，冰箱上贴满彩色磁贴和纪念品&quot;,<br>    &quot;照明&quot;: &quot;柔和的自然日光从窗户照入，色调温暖且略显柔和&quot;,<br>    &quot;氛围&quot;: &quot;安静、日常的家庭瞬间&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;角度&quot;: &quot;侧面视角&quot;,<br>    &quot;构图&quot;: &quot;中景，从大腿中部到头部的构图&quot;,<br>    &quot;镜头&quot;: &quot;35mm 生活方式镜头&quot;,<br>    &quot;景深&quot;: &quot;适中景深，背景轻微成像以保留环境信息&quot;<br>  },<br>  &quot;图片质量&quot;: {<br>    &quot;写实度&quot;: &quot;高&quot;,<br>    &quot;纹理细节&quot;: &quot;自然的织物褶皱、皮肤质感以及厨房表面细节可见&quot;,<br>    &quot;颗粒&quot;: &quot;轻微自然的胶片颗粒感以呈现真实质感&quot;<br>  },<br>  &quot;情绪&quot;: &quot;平静、亲密、纪实风格&quot;,<br>  &quot;约束&quot;: [<br>    &quot;非性化、日常写实&quot;,<br>    &quot;注重自然的生活方式和氛围&quot;,<br>    &quot;不做夸张的姿势或表情&quot;,<br>    &quot;抓拍式、生活片段美学&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"image_generation_prompt\",\n  \"style\": \"photorealistic, lifestyle photography\",\n  \"sexualization\": \"none\",\n  \"description\": {\n    \"subject\": \"A young woman standing casually in a home kitchen, seen in side profile\",\n    \"pose\": \"Relaxed posture, one hand resting on her hip while the other holds a small drink carton with a straw\",\n    \"expression\": \"Neutral, thoughtful, slightly distant gaze looking forward\",\n    \"appearance\": {\n      \"hair\": \"Dark hair tied in a loose low bun with natural strands framing the face\",\n      \"clothing\": \"Oversized white t-shirt worn casually, simple underwear partially visible due to the relaxed fit of the shirt\",\n      \"tattoos\": \"Small, minimal black-ink tattoos on the forearm, subtle and understated\"\n    }\n  },\n  \"environment\": {\n    \"location\": \"A modest, lived-in home kitchen\",\n    \"details\": \"Wooden cabinets, countertop appliances, a refrigerator covered with colorful magnets and souvenirs\",\n    \"lighting\": \"Soft natural daylight coming from a window, warm and slightly muted\",\n    \"atmosphere\": \"Quiet, everyday domestic moment\"\n  },\n  \"camera\": {\n    \"angle\": \"Side profile view\",\n    \"framing\": \"Medium shot capturing the subject from mid-thigh to head\",\n    \"lens\": \"35mm lifestyle lens\",\n    \"depth_of_field\": \"Moderate, background softly in focus to preserve environmental context\"\n  },\n  \"image_quality\": {\n    \"realism\": \"High\",\n    \"texture_detail\": \"Natural fabric folds, skin texture, and kitchen surface details visible\",\n    \"grain\": \"Light natural film grain for an authentic look\"\n  },\n  \"mood\": \"Calm, intimate, documentary-style\",\n  \"constraints\": [\n    \"Non-sexualized, everyday realism\",\n    \"Focus on natural lifestyle and atmosphere\",\n    \"No exaggerated poses or expressions\",\n    \"Candid, slice-of-life aesthetic\"\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;image_generation_prompt&quot;,<br>  &quot;style&quot;: &quot;photorealistic, lifestyle photography&quot;,<br>  &quot;sexualization&quot;: &quot;none&quot;,<br>  &quot;description&quot;: {<br>    &quot;subject&quot;: &quot;A young woman standing casually in a home kitchen, seen in side profile&quot;,<br>    &quot;pose&quot;: &quot;Relaxed posture, one hand resting on her hip while the other holds a small drink carton with a straw&quot;,<br>    &quot;expression&quot;: &quot;Neutral, thoughtful, slightly distant gaze looking forward&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;Dark hair tied in a loose low bun with natural strands framing the face&quot;,<br>      &quot;clothing&quot;: &quot;Oversized white t-shirt worn casually, simple underwear partially visible due to the relaxed fit of the shirt&quot;,<br>      &quot;tattoos&quot;: &quot;Small, minimal black-ink tattoos on the forearm, subtle and understated&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;A modest, lived-in home kitchen&quot;,<br>    &quot;details&quot;: &quot;Wooden cabinets, countertop appliances, a refrigerator covered with colorful magnets and souvenirs&quot;,<br>    &quot;lighting&quot;: &quot;Soft natural daylight coming from a window, warm and slightly muted&quot;,<br>    &quot;atmosphere&quot;: &quot;Quiet, everyday domestic moment&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;Side profile view&quot;,<br>    &quot;framing&quot;: &quot;Medium shot capturing the subject from mid-thigh to head&quot;,<br>    &quot;lens&quot;: &quot;35mm lifestyle lens&quot;,<br>    &quot;depth_of_field&quot;: &quot;Moderate, background softly in focus to preserve environmental context&quot;<br>  },<br>  &quot;image_quality&quot;: {<br>    &quot;realism&quot;: &quot;High&quot;,<br>    &quot;texture_detail&quot;: &quot;Natural fabric folds, skin texture, and kitchen surface details visible&quot;,<br>    &quot;grain&quot;: &quot;Light natural film grain for an authentic look&quot;<br>  },<br>  &quot;mood&quot;: &quot;Calm, intimate, documentary-style&quot;,<br>  &quot;constraints&quot;: [<br>    &quot;Non-sexualized, everyday realism&quot;,<br>    &quot;Focus on natural lifestyle and atmosphere&quot;,<br>    &quot;No exaggerated poses or expressions&quot;,<br>    &quot;Candid, slice-of-life aesthetic&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;image_generation_prompt&quot;,<br>  &quot;style&quot;: &quot;photorealistic, lifestyle photography&quot;,<br>  &quot;sexualization&quot;: &quot;none&quot;,<br>  &quot;description&quot;: {<br>    &quot;subject&quot;: &quot;A young woman standing casually in a home kitchen, seen in side profile&quot;,<br>    &quot;pose&quot;: &quot;Relaxed posture, one hand resting on her hip while the other holds a small drink carton with a straw&quot;,<br>    &quot;expression&quot;: &quot;Neutral, thoughtful, slightly distant gaze looking forward&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;Dark hair tied in a loose low bun with natural strands framing the face&quot;,<br>      &quot;clothing&quot;: &quot;Oversized white t-shirt worn casually, simple underwear partially visible due to the relaxed fit of the shirt&quot;,<br>      &quot;tattoos&quot;: &quot;Small, minimal black-ink tattoos on the forearm, subtle and understated&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;A modest, lived-in home kitchen&quot;,<br>    &quot;details&quot;: &quot;Wooden cabinets, countertop appliances, a refrigerator covered with colorful magnets and souvenirs&quot;,<br>    &quot;lighting&quot;: &quot;Soft natural daylight coming from a window, warm and slightly muted&quot;,<br>    &quot;atmosphere&quot;: &quot;Quiet, everyday domestic moment&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;Side profile view&quot;,<br>    &quot;framing&quot;: &quot;Medium shot capturing the subject from mid-thigh to head&quot;,<br>    &quot;lens&quot;: &quot;35mm lifestyle lens&quot;,<br>    &quot;depth_of_field&quot;: &quot;Moderate, background softly in focus to preserve environmental context&quot;<br>  },<br>  &quot;image_quality&quot;: {<br>    &quot;realism&quot;: &quot;High&quot;,<br>    &quot;texture_detail&quot;: &quot;Natural fabric folds, skin texture, and kitchen surface details visible&quot;,<br>    &quot;grain&quot;: &quot;Light natural film grain for an authentic look&quot;<br>  },<br>  &quot;mood&quot;: &quot;Calm, intimate, documentary-style&quot;,<br>  &quot;constraints&quot;: [<br>    &quot;Non-sexualized, everyday realism&quot;,<br>    &quot;Focus on natural lifestyle and atmosphere&quot;,<br>    &quot;No exaggerated poses or expressions&quot;,<br>    &quot;Candid, slice-of-life aesthetic&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2010784341975318837-1.jpg" alt="&quot;type&quot;: &quot;image generation prompt&quot;," loading="lazy"><img src="/images/tweet-2010784341975318837-2.jpg" alt="&quot;type&quot;: &quot;image generation prompt&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1085,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

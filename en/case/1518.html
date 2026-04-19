@@ -7,11 +7,13 @@
     <title>Lovart (Love Art) now supports Niji7! #1518 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Lovart (Love Art) now supports Niji7! I also always use Midjourney for character design! You can generate up to 10 images for free, and unlimited with the Basic Plan or higher, so please give it a try— PR / Lovart (Love...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1518.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1518.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1518.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845041">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023635">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Lovart（ラブアート）已支持 Niji7！\n我做角色设计也总是使用 Midjourney！\n前10张免费，Basic 方案以上无限制，欢迎试用～\n宣传 / Lovart（ラブアート） @lovart_jp #Niji7 #设计 https://t.co/oDgcBZ7Cma", this)'>📋 Copy</button>
         </div>
-        <p>Lovart（ラブアート）已支持 Niji7！<br>我做角色设计也总是使用 Midjourney！<br>前10张免费，Basic 方案以上无限制，欢迎试用～<br>宣传 / Lovart（ラブアート） @lovart_jp #Niji7 #设计 https://t.co/oDgcBZ7Cma</p>
+        <div data-nosnippet><p>Lovart（ラブアート）已支持 Niji7！<br>我做角色设计也总是使用 Midjourney！<br>前10张免费，Basic 方案以上无限制，欢迎试用～<br>宣传 / Lovart（ラブアート） @lovart_jp #Niji7 #设计 https://t.co/oDgcBZ7Cma</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Lovart(ラブアート)  がNiji7に対応しました！\n\n僕もキャラクターデザインはいつもMidjourneyを使っています！\n10枚までは無料でBasicプラン以上は無制限なのでぜひ試してみてください～\nPR / Lovart(ラブアート)  @lovart_jp #Niji7 #デザイン https://t.co/oDgcBZ7Cma", this)'>📋 Copy</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Lovart (Love Art) has become compatible with Niji7!\n\nI also always use Midjourney for character design!\nUp to 10 images are free, and on the Basic plan and above it’s unlimited, so please give it a try~\nPR / Lovart (Love Art) @lovart_jp #Niji7 #design https://t.co/oDgcBZ7Cma", this)'>📋 Copy</button>
         </div>
-        <p>Lovart(ラブアート)  がNiji7に対応しました！</p><p>僕もキャラクターデザインはいつもMidjourneyを使っています！<br>10枚までは無料でBasicプラン以上は無制限なのでぜひ試してみてください～<br>PR / Lovart(ラブアート)  @lovart_jp #Niji7 #デザイン https://t.co/oDgcBZ7Cma</p>
+        <div data-nosnippet><p>Lovart (Love Art) has become compatible with Niji7!</p><p>I also always use Midjourney for character design!<br>Up to 10 images are free, and on the Basic plan and above it’s unlimited, so please give it a try~<br>PR / Lovart (Love Art) @lovart_jp #Niji7 #design https://t.co/oDgcBZ7Cma</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2012767756723306789-1.jpg" alt="Lovart(ラブアート) がNiji7に対応しました！" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1518,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

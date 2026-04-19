@@ -7,11 +7,13 @@
     <title>&quot;render goal&quot;: &quot;Narrative cinematic fashion portrait&quot;, #1018 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;render goal&quot;: &quot;Narrative cinematic fashion portrait&quot;, &quot;subject&quot;: { &quot;pose&quot;: &quot;female walking, holding umbrella, rela...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1018.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1018.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1018.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845556">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023742">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"render_goal\": \"叙事性电影感时尚肖像\",\n  \"subject\": {\n    \"pose\": \"女性行走，手持雨伞，放松的步态\",\n    \"expression\": \"俏皮自信的冷笑\"\n  },\n  \"wardrobe\": \"时髦海军蓝风衣搭配皮靴\",\n  \"environment\": {\n    \"location\": \"光泽湿润的城市街道\",\n    \"props\": \"路面上的倒影、霓虹灯、雨滴\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;render_goal&quot;: &quot;叙事性电影感时尚肖像&quot;,<br>  &quot;subject&quot;: {<br>    &quot;pose&quot;: &quot;女性行走，手持雨伞，放松的步态&quot;,<br>    &quot;expression&quot;: &quot;俏皮自信的冷笑&quot;<br>  },<br>  &quot;wardrobe&quot;: &quot;时髦海军蓝风衣搭配皮靴&quot;,<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;光泽湿润的城市街道&quot;,<br>    &quot;props&quot;: &quot;路面上的倒影、霓虹灯、雨滴&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;render_goal&quot;: &quot;叙事性电影感时尚肖像&quot;,<br>  &quot;subject&quot;: {<br>    &quot;pose&quot;: &quot;女性行走，手持雨伞，放松的步态&quot;,<br>    &quot;expression&quot;: &quot;俏皮自信的冷笑&quot;<br>  },<br>  &quot;wardrobe&quot;: &quot;时髦海军蓝风衣搭配皮靴&quot;,<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;光泽湿润的城市街道&quot;,<br>    &quot;props&quot;: &quot;路面上的倒影、霓虹灯、雨滴&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"render_goal\": \"Narrative cinematic fashion portrait\",\n  \"subject\": {\n    \"pose\": \"female walking, holding umbrella, relaxed stride\",\n    \"expression\": \"playful confident smirk\"\n  },\n  \"wardrobe\": \"sleek navy trench coat with leather boots\",\n  \"environment\": {\n    \"location\": \"glossy wet city street\",\n    \"props\": \"reflections on pavement, neon lights, raindrops\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;render_goal&quot;: &quot;Narrative cinematic fashion portrait&quot;,<br>  &quot;subject&quot;: {<br>    &quot;pose&quot;: &quot;female walking, holding umbrella, relaxed stride&quot;,<br>    &quot;expression&quot;: &quot;playful confident smirk&quot;<br>  },<br>  &quot;wardrobe&quot;: &quot;sleek navy trench coat with leather boots&quot;,<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;glossy wet city street&quot;,<br>    &quot;props&quot;: &quot;reflections on pavement, neon lights, raindrops&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;render_goal&quot;: &quot;Narrative cinematic fashion portrait&quot;,<br>  &quot;subject&quot;: {<br>    &quot;pose&quot;: &quot;female walking, holding umbrella, relaxed stride&quot;,<br>    &quot;expression&quot;: &quot;playful confident smirk&quot;<br>  },<br>  &quot;wardrobe&quot;: &quot;sleek navy trench coat with leather boots&quot;,<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;glossy wet city street&quot;,<br>    &quot;props&quot;: &quot;reflections on pavement, neon lights, raindrops&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2010371975164944841-1.jpg" alt="&quot;render goal&quot;: &quot;Narrative cinematic fashion portrait&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1018,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

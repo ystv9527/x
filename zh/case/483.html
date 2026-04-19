@@ -7,11 +7,13 @@
     <title>自定义主题公园 #483 | Gem Nana AI 提示词库</title>
     <meta name="description" content="自定义主题公园 - Nano Banana AI图片生成案例  📥 输入：需上传一张参考图像">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/483.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/483.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/483.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841814">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022684">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -204,14 +208,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("生成一张基于原图的逼真主题公园图像。\n主题公园及其游玩的人物需以极其逼真的风格呈现。白天，阳光明媚。\n色彩方案和设计从原图中提取，并应用于各种设施的色彩和设计上。\n图像中摆放的元素包括：根据原图设计的车辆和建筑、以原图为基础适度夸张的吉祥物服装、印有原图的标牌。\n吉祥物服装设计应以原图为元素，但适度变形以呈现逼真效果。\n人物和吉祥物服装的尺寸必须合理，不得不符合实际比例。\n即使原图是动漫风格，最终生成的图像也必须是逼真的主题公园。务必遵循以上规则。", this)'>📋 复制</button>
         </div>
-        <p>生成一张基于原图的逼真主题公园图像。<br>主题公园及其游玩的人物需以极其逼真的风格呈现。白天，阳光明媚。<br>色彩方案和设计从原图中提取，并应用于各种设施的色彩和设计上。<br>图像中摆放的元素包括：根据原图设计的车辆和建筑、以原图为基础适度夸张的吉祥物服装、印有原图的标牌。<br>吉祥物服装设计应以原图为元素，但适度变形以呈现逼真效果。<br>人物和吉祥物服装的尺寸必须合理，不得不符合实际比例。<br>即使原图是动漫风格，最终生成的图像也必须是逼真的主题公园。务必遵循以上规则。</p>
+        <div data-nosnippet><p>生成一张基于原图的逼真主题公园图像。<br>主题公园及其游玩的人物需以极其逼真的风格呈现。白天，阳光明媚。<br>色彩方案和设计从原图中提取，并应用于各种设施的色彩和设计上。<br>图像中摆放的元素包括：根据原图设计的车辆和建筑、以原图为基础适度夸张的吉祥物服装、印有原图的标牌。<br>吉祥物服装设计应以原图为元素，但适度变形以呈现逼真效果。<br>人物和吉祥物服装的尺寸必须合理，不得不符合实际比例。<br>即使原图是动漫风格，最终生成的图像也必须是逼真的主题公园。务必遵循以上规则。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a realistic image of a theme park based on the original picture.  \nThe theme park and its characters should be rendered in an extremely realistic style. The scene is set during daytime with bright sunshine.  \nExtract the color scheme and design elements from the original image and apply them to various park facilities and structures.  \nElements included in the image should be: vehicles and buildings designed based on the original image; mascot costumes that are moderately exaggerated but inspired by the original image; and signs featuring the original image.  \nThe mascot costumes should incorporate elements from the original image but be slightly stylized to enhance realism.  \nThe sizes of characters and mascot costumes must be proportionate and realistic.  \nEven if the original image has an anime style, the final generated image must depict a realistic theme park.  \nPlease strictly follow these guidelines.", this)'>📋 复制</button>
         </div>
-        <p>Create a realistic image of a theme park based on the original picture.  <br>The theme park and its characters should be rendered in an extremely realistic style. The scene is set during daytime with bright sunshine.  <br>Extract the color scheme and design elements from the original image and apply them to various park facilities and structures.  <br>Elements included in the image should be: vehicles and buildings designed based on the original image; mascot costumes that are moderately exaggerated but inspired by the original image; and signs featuring the original image.  <br>The mascot costumes should incorporate elements from the original image but be slightly stylized to enhance realism.  <br>The sizes of characters and mascot costumes must be proportionate and realistic.  <br>Even if the original image has an anime style, the final generated image must depict a realistic theme park.  <br>Please strictly follow these guidelines.</p>
+        <div data-nosnippet><p>Create a realistic image of a theme park based on the original picture.  <br>The theme park and its characters should be rendered in an extremely realistic style. The scene is set during daytime with bright sunshine.  <br>Extract the color scheme and design elements from the original image and apply them to various park facilities and structures.  <br>Elements included in the image should be: vehicles and buildings designed based on the original image; mascot costumes that are moderately exaggerated but inspired by the original image; and signs featuring the original image.  <br>The mascot costumes should incorporate elements from the original image but be slightly stylized to enhance realism.  <br>The sizes of characters and mascot costumes must be proportionate and realistic.  <br>Even if the original image has an anime style, the final generated image must depict a realistic theme park.  <br>Please strictly follow these guidelines.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/nano-case95-input.jpg" alt="自定义主题公园" loading="lazy"><img src="/images/nano-case95-output.jpg" alt="自定义主题公园" loading="lazy"></div></div>
       
@@ -277,6 +281,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 483,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

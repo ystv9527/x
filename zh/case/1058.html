@@ -7,11 +7,13 @@
     <title>Use the attached image of the model as facial reference and p... #1058 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Use the attached image of the model as facial reference and physical features. Black and white high fashion editorial...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1058.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1058.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1058.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841271">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022541">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用所附模特图像作为面部参考和体貌特征。黑白高端时尚编辑人像，所拍摄者穿着宽松的白色衬衫。她以一只手臂抬起的姿势，部分遮挡面部，同时用手把头发束起，营造出戏剧性且富有艺术感的构图。她的目光强烈且迷人，直视镜头，散发出强烈而神秘的气场。背景：极简的平面墙面，强烈的自然日光投射出清晰的阴影，增加深度与对比。光线：强烈的自然阳光，高对比度的光线布置突显面部轮廓、分明的颧骨以及头发和布料的质感。姿势：大胆且富于表现力，抬臂构成面部框架，强调强烈、原始的情感与编辑风格。相机：眼平角度，特写构图，聚焦面部表情、质感以及戏剧性的光影效果。拍摄器材：佳能 EOS R5 全画幅数码单反相机，85mm f/1.8 镜头，以获得清晰细节、丰富的色调层次和细腻颗粒感。风格：黑白高端时尚编辑风格。", this)'>📋 复制</button>
         </div>
-        <p>使用所附模特图像作为面部参考和体貌特征。黑白高端时尚编辑人像，所拍摄者穿着宽松的白色衬衫。她以一只手臂抬起的姿势，部分遮挡面部，同时用手把头发束起，营造出戏剧性且富有艺术感的构图。她的目光强烈且迷人，直视镜头，散发出强烈而神秘的气场。背景：极简的平面墙面，强烈的自然日光投射出清晰的阴影，增加深度与对比。光线：强烈的自然阳光，高对比度的光线布置突显面部轮廓、分明的颧骨以及头发和布料的质感。姿势：大胆且富于表现力，抬臂构成面部框架，强调强烈、原始的情感与编辑风格。相机：眼平角度，特写构图，聚焦面部表情、质感以及戏剧性的光影效果。拍摄器材：佳能 EOS R5 全画幅数码单反相机，85mm f/1.8 镜头，以获得清晰细节、丰富的色调层次和细腻颗粒感。风格：黑白高端时尚编辑风格。</p>
+        <div data-nosnippet><p>使用所附模特图像作为面部参考和体貌特征。黑白高端时尚编辑人像，所拍摄者穿着宽松的白色衬衫。她以一只手臂抬起的姿势，部分遮挡面部，同时用手把头发束起，营造出戏剧性且富有艺术感的构图。她的目光强烈且迷人，直视镜头，散发出强烈而神秘的气场。背景：极简的平面墙面，强烈的自然日光投射出清晰的阴影，增加深度与对比。光线：强烈的自然阳光，高对比度的光线布置突显面部轮廓、分明的颧骨以及头发和布料的质感。姿势：大胆且富于表现力，抬臂构成面部框架，强调强烈、原始的情感与编辑风格。相机：眼平角度，特写构图，聚焦面部表情、质感以及戏剧性的光影效果。拍摄器材：佳能 EOS R5 全画幅数码单反相机，85mm f/1.8 镜头，以获得清晰细节、丰富的色调层次和细腻颗粒感。风格：黑白高端时尚编辑风格。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use the attached image of the model as facial reference and physical features. Black and white high-fashion editorial portrait of uploaded person, wearing a loose white blouse. She poses with one arm raised, partially covering her face while holding her hair up, creating a dramatic and artistic composition. Her gaze is intense and captivating, directed toward the camera, exuding a strong, enigmatic aura. Background: minimalist plain wall with sharp natural daylight casting defined shadows, adding depth and contrast. Lighting: harsh natural sunlight, high-contrast setup highlighting facial contours, sharp cheekbones, and texture of the hair and fabric. Pose: bold and expressive, arm lifted framing the face, emphasizing raw emotion and editorial style. Camera: eye-level angle, close-up framing focusing on facial expression, texture, and dramatic shadow play. Captured with a Canon EOS R5 full-frame DSLR, 85mm f/1.8 lens for crisp detail, tonal depth, and fine grain. Style: high-fashion editorial in monochrome.", this)'>📋 复制</button>
         </div>
-        <p>Use the attached image of the model as facial reference and physical features. Black and white high-fashion editorial portrait of uploaded person, wearing a loose white blouse. She poses with one arm raised, partially covering her face while holding her hair up, creating a dramatic and artistic composition. Her gaze is intense and captivating, directed toward the camera, exuding a strong, enigmatic aura. Background: minimalist plain wall with sharp natural daylight casting defined shadows, adding depth and contrast. Lighting: harsh natural sunlight, high-contrast setup highlighting facial contours, sharp cheekbones, and texture of the hair and fabric. Pose: bold and expressive, arm lifted framing the face, emphasizing raw emotion and editorial style. Camera: eye-level angle, close-up framing focusing on facial expression, texture, and dramatic shadow play. Captured with a Canon EOS R5 full-frame DSLR, 85mm f/1.8 lens for crisp detail, tonal depth, and fine grain. Style: high-fashion editorial in monochrome.</p>
+        <div data-nosnippet><p>Use the attached image of the model as facial reference and physical features. Black and white high-fashion editorial portrait of uploaded person, wearing a loose white blouse. She poses with one arm raised, partially covering her face while holding her hair up, creating a dramatic and artistic composition. Her gaze is intense and captivating, directed toward the camera, exuding a strong, enigmatic aura. Background: minimalist plain wall with sharp natural daylight casting defined shadows, adding depth and contrast. Lighting: harsh natural sunlight, high-contrast setup highlighting facial contours, sharp cheekbones, and texture of the hair and fabric. Pose: bold and expressive, arm lifted framing the face, emphasizing raw emotion and editorial style. Camera: eye-level angle, close-up framing focusing on facial expression, texture, and dramatic shadow play. Captured with a Canon EOS R5 full-frame DSLR, 85mm f/1.8 lens for crisp detail, tonal depth, and fine grain. Style: high-fashion editorial in monochrome.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010663134743368058-1.jpg" alt="Use the attached image of the model as facial reference and p..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1058,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

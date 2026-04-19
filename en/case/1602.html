@@ -7,11 +7,13 @@
     <title>In Midjourney you can always find styles as unique and surpri... #1602 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="In Midjourney you can always find styles as unique and surprising as this one: sref 2773156114 It’s a modern storyboo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1602.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1602.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1602.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844962">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023619">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("在 Midjourney 中，你总能找到像这样独特而令人惊喜的风格：\n\n--sref 2773156114\n\n这是一种现代故事书插画风格，具有电影感和柔和的哥特气息。\n\n它非常适合用于独立动画电影或插画书。", this)'>📋 Copy</button>
         </div>
-        <p>在 Midjourney 中，你总能找到像这样独特而令人惊喜的风格：</p><p>--sref 2773156114</p><p>这是一种现代故事书插画风格，具有电影感和柔和的哥特气息。</p><p>它非常适合用于独立动画电影或插画书。</p>
+        <div data-nosnippet><p>在 Midjourney 中，你总能找到像这样独特而令人惊喜的风格：</p><p>--sref 2773156114</p><p>这是一种现代故事书插画风格，具有电影感和柔和的哥特气息。</p><p>它非常适合用于独立动画电影或插画书。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("In Midjourney you can always find styles as unique and surprising as this one:\n\n--sref 2773156114\n\nIt’s a modern storybook illustration style with a cinematic feel and a soft gothic touch.\n\nIt would fit perfectly in an indie animated film or an illustrated book.", this)'>📋 Copy</button>
         </div>
-        <p>In Midjourney you can always find styles as unique and surprising as this one:</p><p>--sref 2773156114</p><p>It’s a modern storybook illustration style with a cinematic feel and a soft gothic touch.</p><p>It would fit perfectly in an indie animated film or an illustrated book.</p>
+        <div data-nosnippet><p>In Midjourney you can always find styles as unique and surprising as this one:</p><p>--sref 2773156114</p><p>It’s a modern storybook illustration style with a cinematic feel and a soft gothic touch.</p><p>It would fit perfectly in an indie animated film or an illustrated book.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2013343867639144455-1.jpg" alt="In Midjourney you can always find styles as unique and surpri..." loading="lazy"><img src="/images/tweet-2013343867639144455-2.jpg" alt="In Midjourney you can always find styles as unique and surpri..." loading="lazy"><img src="/images/tweet-2013343867639144455-3.jpg" alt="In Midjourney you can always find styles as unique and surpri..." loading="lazy"><img src="/images/tweet-2013343867639144455-4.jpg" alt="In Midjourney you can always find styles as unique and surpri..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1602,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

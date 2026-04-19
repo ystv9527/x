@@ -7,11 +7,13 @@
     <title>&quot;aspect ratio&quot;: &quot;1:1&quot;, #990 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;aspect ratio&quot;: &quot;1:1&quot;, &quot;scene type&quot;: &quot;cinematic studio portrait&quot;, &quot;environment&quot;: { &quot;background color&quot;: &quot;warm muted...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/990.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/990.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/990.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841328">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022561">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"aspect_ratio\": \"1:1\",\n  \"scene_type\": \"电影风格摄影棚人像\",\n  \"environment\": {\n    \"background_color\": \"温暖柔和的灰色\",\n    \"surface\": \"天然纹理石质桌面\",\n    \"mood\": \"亲密的夜晚咖啡馆氛围\",\n    \"atmosphere\": \"温馨且富有情绪感\"\n  },\n  \"primary_subject\": {\n    \"identity\": \"Ana de Armas\",\n    \"pose\": \"坐姿放松\",\n    \"expression\": \"柔和、平静且自信\",\n    \"appearance\": {\n      \"hair\": \"黑色齐肩柔顺层次发型\",\n      \"makeup\": \"低调的夜间妆容\",\n      \"outfit\": \"深棕色缎面上衣\"\n    },\n    \"focus\": \"清晰的主体隔离\"\n  },\n  \"props\": {\n    \"main_drink\": {\n      \"type\": \"冷萃咖啡\",\n      \"glass\": \"透明玻璃杯，带冰块\",\n      \"straw\": \"金属吸管\"\n    },\n    \"stylized_figure\": {\n      \"style\": \"高质量3D Q版收藏品\",\n      \"design\": {\n        \"head\": \"夸张且圆润的头部\",\n        \"eyes\": \"大而富有表现力的眼睛\",\n        \"cheeks\": \"淡淡腮红的脸颊\",\n        \"features\": \"简化且可爱的特征\"\n      },\n      \"likeness\": \"与主体相似\",\n      \"pose\": \"手持迷你冷萃咖啡杯\",\n      \"material\": \"光面材质，带柔和反光\"\n    }\n  },\n  \"lighting\": {\n    \"type\": \"柔和的电影感光线\",\n    \"direction\": \"主光斜照并有柔和衰减\",\n    \"highlights\": \"玻璃和Q版模型上的细微反光\",\n    \"shadows\": \"平滑且富有氛围感的阴影\"\n  },\n  \"camera\": {\n    \"depth_of_field\": \"浅景深\",\n    \"focus_priority\": \"先对真实主体对焦，然后是Q版模型\",\n    \"look\": \"电影摄影风格\"\n  },\n  \"style_notes\": [\n    \"真实人物与风格化3D角色结合\",\n    \"高端收藏玩具美学\",\n    \"暖色调调色\",\n    \"温馨的夜晚基调\",\n    \"超高细节\",\n    \"写实的人像主体\"\n  ]\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;aspect_ratio&quot;: &quot;1:1&quot;,<br>  &quot;scene_type&quot;: &quot;电影风格摄影棚人像&quot;,<br>  &quot;environment&quot;: {<br>    &quot;background_color&quot;: &quot;温暖柔和的灰色&quot;,<br>    &quot;surface&quot;: &quot;天然纹理石质桌面&quot;,<br>    &quot;mood&quot;: &quot;亲密的夜晚咖啡馆氛围&quot;,<br>    &quot;atmosphere&quot;: &quot;温馨且富有情绪感&quot;<br>  },<br>  &quot;primary_subject&quot;: {<br>    &quot;identity&quot;: &quot;Ana de Armas&quot;,<br>    &quot;pose&quot;: &quot;坐姿放松&quot;,<br>    &quot;expression&quot;: &quot;柔和、平静且自信&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;黑色齐肩柔顺层次发型&quot;,<br>      &quot;makeup&quot;: &quot;低调的夜间妆容&quot;,<br>      &quot;outfit&quot;: &quot;深棕色缎面上衣&quot;<br>    },<br>    &quot;focus&quot;: &quot;清晰的主体隔离&quot;<br>  },<br>  &quot;props&quot;: {<br>    &quot;main_drink&quot;: {<br>      &quot;type&quot;: &quot;冷萃咖啡&quot;,<br>      &quot;glass&quot;: &quot;透明玻璃杯，带冰块&quot;,<br>      &quot;straw&quot;: &quot;金属吸管&quot;<br>    },<br>    &quot;stylized_figure&quot;: {<br>      &quot;style&quot;: &quot;高质量3D Q版收藏品&quot;,<br>      &quot;design&quot;: {<br>        &quot;head&quot;: &quot;夸张且圆润的头部&quot;,<br>        &quot;eyes&quot;: &quot;大而富有表现力的眼睛&quot;,<br>        &quot;cheeks&quot;: &quot;淡淡腮红的脸颊&quot;,<br>        &quot;features&quot;: &quot;简化且可爱的特征&quot;<br>      },<br>      &quot;likeness&quot;: &quot;与主体相似&quot;,<br>      &quot;pose&quot;: &quot;手持迷你冷萃咖啡杯&quot;,<br>      &quot;material&quot;: &quot;光面材质，带柔和反光&quot;<br>    }<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和的电影感光线&quot;,<br>    &quot;direction&quot;: &quot;主光斜照并有柔和衰减&quot;,<br>    &quot;highlights&quot;: &quot;玻璃和Q版模型上的细微反光&quot;,<br>    &quot;shadows&quot;: &quot;平滑且富有氛围感的阴影&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;focus_priority&quot;: &quot;先对真实主体对焦，然后是Q版模型&quot;,<br>    &quot;look&quot;: &quot;电影摄影风格&quot;<br>  },<br>  &quot;style_notes&quot;: [<br>    &quot;真实人物与风格化3D角色结合&quot;,<br>    &quot;高端收藏玩具美学&quot;,<br>    &quot;暖色调调色&quot;,<br>    &quot;温馨的夜晚基调&quot;,<br>    &quot;超高细节&quot;,<br>    &quot;写实的人像主体&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;aspect_ratio&quot;: &quot;1:1&quot;,<br>  &quot;scene_type&quot;: &quot;电影风格摄影棚人像&quot;,<br>  &quot;environment&quot;: {<br>    &quot;background_color&quot;: &quot;温暖柔和的灰色&quot;,<br>    &quot;surface&quot;: &quot;天然纹理石质桌面&quot;,<br>    &quot;mood&quot;: &quot;亲密的夜晚咖啡馆氛围&quot;,<br>    &quot;atmosphere&quot;: &quot;温馨且富有情绪感&quot;<br>  },<br>  &quot;primary_subject&quot;: {<br>    &quot;identity&quot;: &quot;Ana de Armas&quot;,<br>    &quot;pose&quot;: &quot;坐姿放松&quot;,<br>    &quot;expression&quot;: &quot;柔和、平静且自信&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;黑色齐肩柔顺层次发型&quot;,<br>      &quot;makeup&quot;: &quot;低调的夜间妆容&quot;,<br>      &quot;outfit&quot;: &quot;深棕色缎面上衣&quot;<br>    },<br>    &quot;focus&quot;: &quot;清晰的主体隔离&quot;<br>  },<br>  &quot;props&quot;: {<br>    &quot;main_drink&quot;: {<br>      &quot;type&quot;: &quot;冷萃咖啡&quot;,<br>      &quot;glass&quot;: &quot;透明玻璃杯，带冰块&quot;,<br>      &quot;straw&quot;: &quot;金属吸管&quot;<br>    },<br>    &quot;stylized_figure&quot;: {<br>      &quot;style&quot;: &quot;高质量3D Q版收藏品&quot;,<br>      &quot;design&quot;: {<br>        &quot;head&quot;: &quot;夸张且圆润的头部&quot;,<br>        &quot;eyes&quot;: &quot;大而富有表现力的眼睛&quot;,<br>        &quot;cheeks&quot;: &quot;淡淡腮红的脸颊&quot;,<br>        &quot;features&quot;: &quot;简化且可爱的特征&quot;<br>      },<br>      &quot;likeness&quot;: &quot;与主体相似&quot;,<br>      &quot;pose&quot;: &quot;手持迷你冷萃咖啡杯&quot;,<br>      &quot;material&quot;: &quot;光面材质，带柔和反光&quot;<br>    }<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和的电影感光线&quot;,<br>    &quot;direction&quot;: &quot;主光斜照并有柔和衰减&quot;,<br>    &quot;highlights&quot;: &quot;玻璃和Q版模型上的细微反光&quot;,<br>    &quot;shadows&quot;: &quot;平滑且富有氛围感的阴影&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;focus_priority&quot;: &quot;先对真实主体对焦，然后是Q版模型&quot;,<br>    &quot;look&quot;: &quot;电影摄影风格&quot;<br>  },<br>  &quot;style_notes&quot;: [<br>    &quot;真实人物与风格化3D角色结合&quot;,<br>    &quot;高端收藏玩具美学&quot;,<br>    &quot;暖色调调色&quot;,<br>    &quot;温馨的夜晚基调&quot;,<br>    &quot;超高细节&quot;,<br>    &quot;写实的人像主体&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"aspect_ratio\": \"1:1\",\n  \"scene_type\": \"cinematic_studio_portrait\",\n  \"environment\": {\n    \"background_color\": \"warm_muted_gray\",\n    \"surface\": \"natural_textured_stone_table\",\n    \"mood\": \"intimate_evening_cafe\",\n    \"atmosphere\": \"cozy_moody\"\n  },\n  \"primary_subject\": {\n    \"identity\": \"Ana de Armas\",\n    \"pose\": \"seated_relaxed\",\n    \"expression\": \"soft_calm_confident\",\n    \"appearance\": {\n      \"hair\": \"black_shoulder_length_soft_layers\",\n      \"makeup\": \"subtle_evening_makeup\",\n      \"outfit\": \"dark_brown_satin_blouse\"\n    },\n    \"focus\": \"sharp_subject_isolation\"\n  },\n  \"props\": {\n    \"main_drink\": {\n      \"type\": \"cold_brew_coffee\",\n      \"glass\": \"clear_glass_with_ice\",\n      \"straw\": \"metal_straw\"\n    },\n    \"stylized_figure\": {\n      \"style\": \"high_quality_3d_chibi_collectible\",\n      \"design\": {\n        \"head\": \"oversized_rounded\",\n        \"eyes\": \"large_expressive\",\n        \"cheeks\": \"soft_blush\",\n        \"features\": \"simplified_cute\"\n      },\n      \"likeness\": \"same_as_primary_subject\",\n      \"pose\": \"holding_miniature_cold_brew_glass\",\n      \"material\": \"glossy_with_soft_reflections\"\n    }\n  },\n  \"lighting\": {\n    \"type\": \"soft_cinematic\",\n    \"direction\": \"angled_key_with_gentle_falloff\",\n    \"highlights\": \"subtle_reflections_on_glass_and_chibi\",\n    \"shadows\": \"smooth_and_moody\"\n  },\n  \"camera\": {\n    \"depth_of_field\": \"shallow\",\n    \"focus_priority\": \"real_subject_then_chibi\",\n    \"look\": \"cinematic_photography\"\n  },\n  \"style_notes\": [\n    \"realistic_human_combined_with_stylized_3d_character\",\n    \"premium_collectible_toy_aesthetic\",\n    \"warm_color_grading\",\n    \"cozy_evening_tone\",\n    \"ultra_detailed\",\n    \"photoreal_subject\"\n  ]\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;aspect_ratio&quot;: &quot;1:1&quot;,<br>  &quot;scene_type&quot;: &quot;cinematic_studio_portrait&quot;,<br>  &quot;environment&quot;: {<br>    &quot;background_color&quot;: &quot;warm_muted_gray&quot;,<br>    &quot;surface&quot;: &quot;natural_textured_stone_table&quot;,<br>    &quot;mood&quot;: &quot;intimate_evening_cafe&quot;,<br>    &quot;atmosphere&quot;: &quot;cozy_moody&quot;<br>  },<br>  &quot;primary_subject&quot;: {<br>    &quot;identity&quot;: &quot;Ana de Armas&quot;,<br>    &quot;pose&quot;: &quot;seated_relaxed&quot;,<br>    &quot;expression&quot;: &quot;soft_calm_confident&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;black_shoulder_length_soft_layers&quot;,<br>      &quot;makeup&quot;: &quot;subtle_evening_makeup&quot;,<br>      &quot;outfit&quot;: &quot;dark_brown_satin_blouse&quot;<br>    },<br>    &quot;focus&quot;: &quot;sharp_subject_isolation&quot;<br>  },<br>  &quot;props&quot;: {<br>    &quot;main_drink&quot;: {<br>      &quot;type&quot;: &quot;cold_brew_coffee&quot;,<br>      &quot;glass&quot;: &quot;clear_glass_with_ice&quot;,<br>      &quot;straw&quot;: &quot;metal_straw&quot;<br>    },<br>    &quot;stylized_figure&quot;: {<br>      &quot;style&quot;: &quot;high_quality_3d_chibi_collectible&quot;,<br>      &quot;design&quot;: {<br>        &quot;head&quot;: &quot;oversized_rounded&quot;,<br>        &quot;eyes&quot;: &quot;large_expressive&quot;,<br>        &quot;cheeks&quot;: &quot;soft_blush&quot;,<br>        &quot;features&quot;: &quot;simplified_cute&quot;<br>      },<br>      &quot;likeness&quot;: &quot;same_as_primary_subject&quot;,<br>      &quot;pose&quot;: &quot;holding_miniature_cold_brew_glass&quot;,<br>      &quot;material&quot;: &quot;glossy_with_soft_reflections&quot;<br>    }<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft_cinematic&quot;,<br>    &quot;direction&quot;: &quot;angled_key_with_gentle_falloff&quot;,<br>    &quot;highlights&quot;: &quot;subtle_reflections_on_glass_and_chibi&quot;,<br>    &quot;shadows&quot;: &quot;smooth_and_moody&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus_priority&quot;: &quot;real_subject_then_chibi&quot;,<br>    &quot;look&quot;: &quot;cinematic_photography&quot;<br>  },<br>  &quot;style_notes&quot;: [<br>    &quot;realistic_human_combined_with_stylized_3d_character&quot;,<br>    &quot;premium_collectible_toy_aesthetic&quot;,<br>    &quot;warm_color_grading&quot;,<br>    &quot;cozy_evening_tone&quot;,<br>    &quot;ultra_detailed&quot;,<br>    &quot;photoreal_subject&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;aspect_ratio&quot;: &quot;1:1&quot;,<br>  &quot;scene_type&quot;: &quot;cinematic_studio_portrait&quot;,<br>  &quot;environment&quot;: {<br>    &quot;background_color&quot;: &quot;warm_muted_gray&quot;,<br>    &quot;surface&quot;: &quot;natural_textured_stone_table&quot;,<br>    &quot;mood&quot;: &quot;intimate_evening_cafe&quot;,<br>    &quot;atmosphere&quot;: &quot;cozy_moody&quot;<br>  },<br>  &quot;primary_subject&quot;: {<br>    &quot;identity&quot;: &quot;Ana de Armas&quot;,<br>    &quot;pose&quot;: &quot;seated_relaxed&quot;,<br>    &quot;expression&quot;: &quot;soft_calm_confident&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: &quot;black_shoulder_length_soft_layers&quot;,<br>      &quot;makeup&quot;: &quot;subtle_evening_makeup&quot;,<br>      &quot;outfit&quot;: &quot;dark_brown_satin_blouse&quot;<br>    },<br>    &quot;focus&quot;: &quot;sharp_subject_isolation&quot;<br>  },<br>  &quot;props&quot;: {<br>    &quot;main_drink&quot;: {<br>      &quot;type&quot;: &quot;cold_brew_coffee&quot;,<br>      &quot;glass&quot;: &quot;clear_glass_with_ice&quot;,<br>      &quot;straw&quot;: &quot;metal_straw&quot;<br>    },<br>    &quot;stylized_figure&quot;: {<br>      &quot;style&quot;: &quot;high_quality_3d_chibi_collectible&quot;,<br>      &quot;design&quot;: {<br>        &quot;head&quot;: &quot;oversized_rounded&quot;,<br>        &quot;eyes&quot;: &quot;large_expressive&quot;,<br>        &quot;cheeks&quot;: &quot;soft_blush&quot;,<br>        &quot;features&quot;: &quot;simplified_cute&quot;<br>      },<br>      &quot;likeness&quot;: &quot;same_as_primary_subject&quot;,<br>      &quot;pose&quot;: &quot;holding_miniature_cold_brew_glass&quot;,<br>      &quot;material&quot;: &quot;glossy_with_soft_reflections&quot;<br>    }<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft_cinematic&quot;,<br>    &quot;direction&quot;: &quot;angled_key_with_gentle_falloff&quot;,<br>    &quot;highlights&quot;: &quot;subtle_reflections_on_glass_and_chibi&quot;,<br>    &quot;shadows&quot;: &quot;smooth_and_moody&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus_priority&quot;: &quot;real_subject_then_chibi&quot;,<br>    &quot;look&quot;: &quot;cinematic_photography&quot;<br>  },<br>  &quot;style_notes&quot;: [<br>    &quot;realistic_human_combined_with_stylized_3d_character&quot;,<br>    &quot;premium_collectible_toy_aesthetic&quot;,<br>    &quot;warm_color_grading&quot;,<br>    &quot;cozy_evening_tone&quot;,<br>    &quot;ultra_detailed&quot;,<br>    &quot;photoreal_subject&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010264538562867271-1.jpg" alt="&quot;aspect ratio&quot;: &quot;1:1&quot;," loading="lazy"><img src="/images/tweet-2010264538562867271-2.jpg" alt="&quot;aspect ratio&quot;: &quot;1:1&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 990,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

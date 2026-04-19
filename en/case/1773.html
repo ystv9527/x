@@ -7,11 +7,13 @@
     <title>A cinematic, nostalgic portrait of a young hijab woman (use t... #1773 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="A cinematic, nostalgic portrait of a young hijab woman (use the reference photo) sitting cross legged on the floor of...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1773.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1773.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1773.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844797">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023586">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一幅电影感、怀旧风格的年轻戴头巾女性的肖像（使用参考照片），她盘腿坐在复古学校走廊的地板上，沐浴在温暖的金色时刻阳光中。她表情柔和、沉思，目光梦幻地望向画面右侧的镜外。她戴着粉色雪纺头巾，左侧点缀着彩色星形发夹。她的装扮受Y2K风格启发：白色长衬衫叠穿在白色细肩带印有精致复古花卉图案的背心外，颈间叠戴珍珠项链，高腰浅色水洗牛仔裤裤脚卷起，鲜艳的亮粉色罗纹袜和厚底白色运动鞋。她双手握着一台复古银色磁带随身听，戴着大号复古橙色泡沫耳机。旁边放着一只编织的佩斯利图案背包。背景是一排鲜艳的艳粉色金属储物柜，上面贴满了复古杂志剪贴和乐队海报。来自附近窗户的强烈斜射阴影在储物柜和她的脸上投下戏剧性的温暖光影。梦幻的成长电影美学，高分辨率质感，柔和景深，35mm 胶片颗粒风格 --ar 9:16 --style raw", this)'>📋 Copy</button>
         </div>
-        <p>一幅电影感、怀旧风格的年轻戴头巾女性的肖像（使用参考照片），她盘腿坐在复古学校走廊的地板上，沐浴在温暖的金色时刻阳光中。她表情柔和、沉思，目光梦幻地望向画面右侧的镜外。她戴着粉色雪纺头巾，左侧点缀着彩色星形发夹。她的装扮受Y2K风格启发：白色长衬衫叠穿在白色细肩带印有精致复古花卉图案的背心外，颈间叠戴珍珠项链，高腰浅色水洗牛仔裤裤脚卷起，鲜艳的亮粉色罗纹袜和厚底白色运动鞋。她双手握着一台复古银色磁带随身听，戴着大号复古橙色泡沫耳机。旁边放着一只编织的佩斯利图案背包。背景是一排鲜艳的艳粉色金属储物柜，上面贴满了复古杂志剪贴和乐队海报。来自附近窗户的强烈斜射阴影在储物柜和她的脸上投下戏剧性的温暖光影。梦幻的成长电影美学，高分辨率质感，柔和景深，35mm 胶片颗粒风格 --ar 9:16 --style raw</p>
+        <div data-nosnippet><p>一幅电影感、怀旧风格的年轻戴头巾女性的肖像（使用参考照片），她盘腿坐在复古学校走廊的地板上，沐浴在温暖的金色时刻阳光中。她表情柔和、沉思，目光梦幻地望向画面右侧的镜外。她戴着粉色雪纺头巾，左侧点缀着彩色星形发夹。她的装扮受Y2K风格启发：白色长衬衫叠穿在白色细肩带印有精致复古花卉图案的背心外，颈间叠戴珍珠项链，高腰浅色水洗牛仔裤裤脚卷起，鲜艳的亮粉色罗纹袜和厚底白色运动鞋。她双手握着一台复古银色磁带随身听，戴着大号复古橙色泡沫耳机。旁边放着一只编织的佩斯利图案背包。背景是一排鲜艳的艳粉色金属储物柜，上面贴满了复古杂志剪贴和乐队海报。来自附近窗户的强烈斜射阴影在储物柜和她的脸上投下戏剧性的温暖光影。梦幻的成长电影美学，高分辨率质感，柔和景深，35mm 胶片颗粒风格 --ar 9:16 --style raw</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A cinematic, nostalgic portrait of a young hijab woman (use the reference photo) sitting cross-legged on the floor of a retro school hallway, bathed in warm, golden-hour sunlight. She has a soft, contemplative expression, gazing dreamily off-camera to the right. She wears a pink chiffon hijab adorned with colorful star-shaped hair clips on the left side.Her outfit is Y2K-inspired: a white long shirt layered under a white spaghetti-strap camisole with a delicate vintagefloral print, layered pearl necklaces, high-waisted light-wash denim jeans cuffed at the ankles, vibrant hot-pink ribbed socks, and chunky white sneakers. She holds a vintage silver cassette player in both hands and wears large, retro orange foam headphones. A woven paisley-patterned backpack sits next to her.The background features a row of vibrant hot-pink metal lockers covered in retro magazine cutouts and band posters. Strong, diagonal shadows from a nearby window cast a dramatic, warm glow across the lockers and her face. Dreamy coming-of-age movie aesthetic, high-resolution textures, soft depth of field, 35mm film grain style --ar 9:16 --style raw", this)'>📋 Copy</button>
         </div>
-        <p>A cinematic, nostalgic portrait of a young hijab woman (use the reference photo) sitting cross-legged on the floor of a retro school hallway, bathed in warm, golden-hour sunlight. She has a soft, contemplative expression, gazing dreamily off-camera to the right. She wears a pink chiffon hijab adorned with colorful star-shaped hair clips on the left side.Her outfit is Y2K-inspired: a white long shirt layered under a white spaghetti-strap camisole with a delicate vintagefloral print, layered pearl necklaces, high-waisted light-wash denim jeans cuffed at the ankles, vibrant hot-pink ribbed socks, and chunky white sneakers. She holds a vintage silver cassette player in both hands and wears large, retro orange foam headphones. A woven paisley-patterned backpack sits next to her.The background features a row of vibrant hot-pink metal lockers covered in retro magazine cutouts and band posters. Strong, diagonal shadows from a nearby window cast a dramatic, warm glow across the lockers and her face. Dreamy coming-of-age movie aesthetic, high-resolution textures, soft depth of field, 35mm film grain style --ar 9:16 --style raw</p>
+        <div data-nosnippet><p>A cinematic, nostalgic portrait of a young hijab woman (use the reference photo) sitting cross-legged on the floor of a retro school hallway, bathed in warm, golden-hour sunlight. She has a soft, contemplative expression, gazing dreamily off-camera to the right. She wears a pink chiffon hijab adorned with colorful star-shaped hair clips on the left side.Her outfit is Y2K-inspired: a white long shirt layered under a white spaghetti-strap camisole with a delicate vintagefloral print, layered pearl necklaces, high-waisted light-wash denim jeans cuffed at the ankles, vibrant hot-pink ribbed socks, and chunky white sneakers. She holds a vintage silver cassette player in both hands and wears large, retro orange foam headphones. A woven paisley-patterned backpack sits next to her.The background features a row of vibrant hot-pink metal lockers covered in retro magazine cutouts and band posters. Strong, diagonal shadows from a nearby window cast a dramatic, warm glow across the lockers and her face. Dreamy coming-of-age movie aesthetic, high-resolution textures, soft depth of field, 35mm film grain style --ar 9:16 --style raw</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2016161656712396957-1.jpg" alt="A cinematic, nostalgic portrait of a young hijab woman (use t..." loading="lazy"><img src="/images/tweet-2016161656712396957-2.jpg" alt="A cinematic, nostalgic portrait of a young hijab woman (use t..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1773,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

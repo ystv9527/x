@@ -7,11 +7,13 @@
     <title>Masterpiece, best quality, high resolution, 8k, (Photorealist... #2206 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Masterpiece, best quality, high resolution, 8k, (Photorealistic:1.4), (Vibrant natural colors:1.2), (Full body shot:1...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2206.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2206.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2206.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840139">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022280">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("杰作，最佳品质，高分辨率，8k，(照片写实:1.4)，(生动自然的色彩:1.2)，(全身镜头:1.6)，极简时尚剪贴簿页面。\n主体：一张人物全身时尚照片，描绘[Character Description]以[Pose]站立。主体穿着[Detailed Outfit]。主体为锐利、高细节的摄影剪切贴图，带有贴纸边框。该贴纸具有模切的白色纸边，切线处可见纸纤维质感。此白色边缘具有微妙的3D厚度（倒角边缘），可捕捉光线，形成逼真的微小投影。\n\n构图：专业的自上而下平铺视角。将一叠薄薄的3-4张切割整齐的高级白纸（平滑边缘）置于无缝的柔和[Color]背景上。中等镜头距离以获得清晰的全身视图。左上角有一个单一的、(显眼的超大号银色金属长号形回形针:1.5)，呈现逼真的金属反光和微细划痕。5根精致的手绘黑色墨线箭头指向特定的时尚细节：\n\n\"[Feature 1]\"（指向[Detail]）。\n\"[Feature 2]\"（指向[Detail]）。\n\"[Feature 3]\"（指向[Detail]）。\n\"[Feature 4]\"（指向[Detail]）。\n所有注释均为精致、优雅的手写草体。贴纸白边周围使用光线追踪环境遮挡以强调物理抬升感和深度。纸张层之间有光线追踪的柔和阴影。高端编辑级影棚灯光。人物边缘处可见触感纸张微纹理，整体干净、现代的高级时尚美学。禁止灰度，要求全彩摄影，非插画。", this)'>📋 复制</button>
         </div>
-        <p>杰作，最佳品质，高分辨率，8k，(照片写实:1.4)，(生动自然的色彩:1.2)，(全身镜头:1.6)，极简时尚剪贴簿页面。<br>主体：一张人物全身时尚照片，描绘[Character Description]以[Pose]站立。主体穿着[Detailed Outfit]。主体为锐利、高细节的摄影剪切贴图，带有贴纸边框。该贴纸具有模切的白色纸边，切线处可见纸纤维质感。此白色边缘具有微妙的3D厚度（倒角边缘），可捕捉光线，形成逼真的微小投影。</p><p>构图：专业的自上而下平铺视角。将一叠薄薄的3-4张切割整齐的高级白纸（平滑边缘）置于无缝的柔和[Color]背景上。中等镜头距离以获得清晰的全身视图。左上角有一个单一的、(显眼的超大号银色金属长号形回形针:1.5)，呈现逼真的金属反光和微细划痕。5根精致的手绘黑色墨线箭头指向特定的时尚细节：</p><p>&quot;[Feature 1]&quot;（指向[Detail]）。<br>&quot;[Feature 2]&quot;（指向[Detail]）。<br>&quot;[Feature 3]&quot;（指向[Detail]）。<br>&quot;[Feature 4]&quot;（指向[Detail]）。<br>所有注释均为精致、优雅的手写草体。贴纸白边周围使用光线追踪环境遮挡以强调物理抬升感和深度。纸张层之间有光线追踪的柔和阴影。高端编辑级影棚灯光。人物边缘处可见触感纸张微纹理，整体干净、现代的高级时尚美学。禁止灰度，要求全彩摄影，非插画。</p>
+        <div data-nosnippet><p>杰作，最佳品质，高分辨率，8k，(照片写实:1.4)，(生动自然的色彩:1.2)，(全身镜头:1.6)，极简时尚剪贴簿页面。<br>主体：一张人物全身时尚照片，描绘[Character Description]以[Pose]站立。主体穿着[Detailed Outfit]。主体为锐利、高细节的摄影剪切贴图，带有贴纸边框。该贴纸具有模切的白色纸边，切线处可见纸纤维质感。此白色边缘具有微妙的3D厚度（倒角边缘），可捕捉光线，形成逼真的微小投影。</p><p>构图：专业的自上而下平铺视角。将一叠薄薄的3-4张切割整齐的高级白纸（平滑边缘）置于无缝的柔和[Color]背景上。中等镜头距离以获得清晰的全身视图。左上角有一个单一的、(显眼的超大号银色金属长号形回形针:1.5)，呈现逼真的金属反光和微细划痕。5根精致的手绘黑色墨线箭头指向特定的时尚细节：</p><p>&quot;[Feature 1]&quot;（指向[Detail]）。<br>&quot;[Feature 2]&quot;（指向[Detail]）。<br>&quot;[Feature 3]&quot;（指向[Detail]）。<br>&quot;[Feature 4]&quot;（指向[Detail]）。<br>所有注释均为精致、优雅的手写草体。贴纸白边周围使用光线追踪环境遮挡以强调物理抬升感和深度。纸张层之间有光线追踪的柔和阴影。高端编辑级影棚灯光。人物边缘处可见触感纸张微纹理，整体干净、现代的高级时尚美学。禁止灰度，要求全彩摄影，非插画。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Masterpiece, best quality, high resolution, 8k, (Photorealistic:1.4), (Vibrant natural colors:1.2), (Full body shot:1.6), minimalist fashion scrapbook page.\nSubject: A full body fashion photo of [Character Description] standing in a [Pose]. The subject is wearing [Detailed Outfit]. The subject is a sharp, high-detail photographic cutout with sticker borders. The sticker has a die-cut white paper edge with visible paper-fiber texture on the cut-line. This white border has a subtle 3D thickness (beveled edge) that catches the light, creating a realistic micro-shadow.\n\nComposition: Professional top-down flat-lay view. A thin stack of 3-4 clean-cut premium white paper sheets (smooth edges) placed on a seamless Soft [Color] background. Medium camera distance for a clear full-body view. A single, (prominent oversized silver metal trombone paperclip:1.5) at the top left corner, showing realistic metallic reflections and micro-scratches. 5 delicate hand-drawn black ink arrows pointing to specific fashion details:\n\n\"[Feature 1]\" (pointing to [Detail]).\n\"[Feature 2]\" (pointing to [Detail]).\n\"[Feature 3]\" (pointing to [Detail]).\n\"[Feature 4]\" (pointing to [Detail]).\nAll annotations are in refined, elegant handwritten cursive. Ray-traced ambient occlusion around the sticker's white border to emphasize physical elevation and depth. Ray-traced soft shadows between the paper layers. High-end editorial studio lighting. Visible tactile paper micro-texture throughout the character's edges, clean and modern high-fashion aesthetic. No grayscale, full color photography, no illustration.", this)'>📋 复制</button>
         </div>
-        <p>Masterpiece, best quality, high resolution, 8k, (Photorealistic:1.4), (Vibrant natural colors:1.2), (Full body shot:1.6), minimalist fashion scrapbook page.<br>Subject: A full body fashion photo of [Character Description] standing in a [Pose]. The subject is wearing [Detailed Outfit]. The subject is a sharp, high-detail photographic cutout with sticker borders. The sticker has a die-cut white paper edge with visible paper-fiber texture on the cut-line. This white border has a subtle 3D thickness (beveled edge) that catches the light, creating a realistic micro-shadow.</p><p>Composition: Professional top-down flat-lay view. A thin stack of 3-4 clean-cut premium white paper sheets (smooth edges) placed on a seamless Soft [Color] background. Medium camera distance for a clear full-body view. A single, (prominent oversized silver metal trombone paperclip:1.5) at the top left corner, showing realistic metallic reflections and micro-scratches. 5 delicate hand-drawn black ink arrows pointing to specific fashion details:</p><p>&quot;[Feature 1]&quot; (pointing to [Detail]).<br>&quot;[Feature 2]&quot; (pointing to [Detail]).<br>&quot;[Feature 3]&quot; (pointing to [Detail]).<br>&quot;[Feature 4]&quot; (pointing to [Detail]).<br>All annotations are in refined, elegant handwritten cursive. Ray-traced ambient occlusion around the sticker&#39;s white border to emphasize physical elevation and depth. Ray-traced soft shadows between the paper layers. High-end editorial studio lighting. Visible tactile paper micro-texture throughout the character&#39;s edges, clean and modern high-fashion aesthetic. No grayscale, full color photography, no illustration.</p>
+        <div data-nosnippet><p>Masterpiece, best quality, high resolution, 8k, (Photorealistic:1.4), (Vibrant natural colors:1.2), (Full body shot:1.6), minimalist fashion scrapbook page.<br>Subject: A full body fashion photo of [Character Description] standing in a [Pose]. The subject is wearing [Detailed Outfit]. The subject is a sharp, high-detail photographic cutout with sticker borders. The sticker has a die-cut white paper edge with visible paper-fiber texture on the cut-line. This white border has a subtle 3D thickness (beveled edge) that catches the light, creating a realistic micro-shadow.</p><p>Composition: Professional top-down flat-lay view. A thin stack of 3-4 clean-cut premium white paper sheets (smooth edges) placed on a seamless Soft [Color] background. Medium camera distance for a clear full-body view. A single, (prominent oversized silver metal trombone paperclip:1.5) at the top left corner, showing realistic metallic reflections and micro-scratches. 5 delicate hand-drawn black ink arrows pointing to specific fashion details:</p><p>&quot;[Feature 1]&quot; (pointing to [Detail]).<br>&quot;[Feature 2]&quot; (pointing to [Detail]).<br>&quot;[Feature 3]&quot; (pointing to [Detail]).<br>&quot;[Feature 4]&quot; (pointing to [Detail]).<br>All annotations are in refined, elegant handwritten cursive. Ray-traced ambient occlusion around the sticker&#39;s white border to emphasize physical elevation and depth. Ray-traced soft shadows between the paper layers. High-end editorial studio lighting. Visible tactile paper micro-texture throughout the character&#39;s edges, clean and modern high-fashion aesthetic. No grayscale, full color photography, no illustration.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2025283986860253292-1.jpg" alt="Masterpiece, best quality, high resolution, 8k, (Photorealist..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2206,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

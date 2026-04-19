@@ -7,11 +7,13 @@
     <title>Drawings on a graphics tablet #493 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Drawing on a graphics tablet - Nano Banana AI Image Generation Case  📥 Input: A reference image must be uploaded.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/493.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/493.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/493.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846092">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023858">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -204,14 +208,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("超逼真的手绘板屏幕图像，真实的第一人称视角，一只手握着手绘板和手绘笔。\n手绘板屏幕上显示原始图像的未完成状态。\n已从原始图像中提取线稿，并对部分线稿进行了上色，颜色与原图保持一致，仍为未完成上色状态。\n不得为单色，约 70% 的区域已上色。\n特写镜头，笔尖接触屏幕。", this)'>📋 Copy</button>
         </div>
-        <p>超逼真的手绘板屏幕图像，真实的第一人称视角，一只手握着手绘板和手绘笔。<br>手绘板屏幕上显示原始图像的未完成状态。<br>已从原始图像中提取线稿，并对部分线稿进行了上色，颜色与原图保持一致，仍为未完成上色状态。<br>不得为单色，约 70% 的区域已上色。<br>特写镜头，笔尖接触屏幕。</p>
+        <div data-nosnippet><p>超逼真的手绘板屏幕图像，真实的第一人称视角，一只手握着手绘板和手绘笔。<br>手绘板屏幕上显示原始图像的未完成状态。<br>已从原始图像中提取线稿，并对部分线稿进行了上色，颜色与原图保持一致，仍为未完成上色状态。<br>不得为单色，约 70% 的区域已上色。<br>特写镜头，笔尖接触屏幕。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A hyper-realistic hand-drawn tablet screen image, featuring a true first-person perspective, with one hand holding a drawing tablet and stylus.  \nThe tablet screen displays an unfinished version of the original image.  \nLine art has been extracted from the original image, with some areas partially colored. The colors match the original image, and the coloring remains incomplete.  \nNot monochrome; approximately 70% of the area is colored.  \nClose-up shot, with the stylus tip touching the screen.", this)'>📋 Copy</button>
         </div>
-        <p>A hyper-realistic hand-drawn tablet screen image, featuring a true first-person perspective, with one hand holding a drawing tablet and stylus.  <br>The tablet screen displays an unfinished version of the original image.  <br>Line art has been extracted from the original image, with some areas partially colored. The colors match the original image, and the coloring remains incomplete.  <br>Not monochrome; approximately 70% of the area is colored.  <br>Close-up shot, with the stylus tip touching the screen.</p>
+        <div data-nosnippet><p>A hyper-realistic hand-drawn tablet screen image, featuring a true first-person perspective, with one hand holding a drawing tablet and stylus.  <br>The tablet screen displays an unfinished version of the original image.  <br>Line art has been extracted from the original image, with some areas partially colored. The colors match the original image, and the coloring remains incomplete.  <br>Not monochrome; approximately 70% of the area is colored.  <br>Close-up shot, with the stylus tip touching the screen.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/nano-case107-input.jpg" alt="数位板上的绘画" loading="lazy"><img src="/images/nano-case107-output.jpg" alt="数位板上的绘画" loading="lazy"></div></div>
       
@@ -277,6 +281,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 493,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

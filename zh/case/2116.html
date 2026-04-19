@@ -7,11 +7,13 @@
     <title>Create a portrait without changing the facial features. A bla... #2116 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create a portrait without changing the facial features. A black and white artistic photograph of a man in a noir styl...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2116.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2116.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2116.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840226">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022299">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创作一幅肖像，不改变面部特征。一张黑白艺术摄影的男性 noir 风格照片。该男子坐在金属楼梯或阳台上，背景是城市景观。他穿着深色开领衬衫、深色长裤、厚底运动鞋，并戴着太阳镜。手上能看到配饰，包括手链。姿势放松，目光向下。光线对比强烈，阴影浓重。氛围呈现90年代大都市风貌，伴有强烈的胶片颗粒感、街头时尚美学和颓废格调。\n高对比光线、胶片颗粒、90年代街头风格美学、粗粝的 noir 氛围、颗粒质感、35mm 胶片外观。", this)'>📋 复制</button>
         </div>
-        <p>创作一幅肖像，不改变面部特征。一张黑白艺术摄影的男性 noir 风格照片。该男子坐在金属楼梯或阳台上，背景是城市景观。他穿着深色开领衬衫、深色长裤、厚底运动鞋，并戴着太阳镜。手上能看到配饰，包括手链。姿势放松，目光向下。光线对比强烈，阴影浓重。氛围呈现90年代大都市风貌，伴有强烈的胶片颗粒感、街头时尚美学和颓废格调。<br>高对比光线、胶片颗粒、90年代街头风格美学、粗粝的 noir 氛围、颗粒质感、35mm 胶片外观。</p>
+        <div data-nosnippet><p>创作一幅肖像，不改变面部特征。一张黑白艺术摄影的男性 noir 风格照片。该男子坐在金属楼梯或阳台上，背景是城市景观。他穿着深色开领衬衫、深色长裤、厚底运动鞋，并戴着太阳镜。手上能看到配饰，包括手链。姿势放松，目光向下。光线对比强烈，阴影浓重。氛围呈现90年代大都市风貌，伴有强烈的胶片颗粒感、街头时尚美学和颓废格调。<br>高对比光线、胶片颗粒、90年代街头风格美学、粗粝的 noir 氛围、颗粒质感、35mm 胶片外观。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a portrait without changing the facial features. A black and white artistic photograph of a man in a noir style. The man is sitting on a metal staircase or balcony with a cityscape in the background. He is wearing a dark shirt with an open collar, dark trousers, chunky sneakers, and sunglasses. Accessories are visible on his hands, including a bracelet. His pose is relaxed, with his gaze directed downward. The lighting is high contrast with deep shadows. The atmosphere reflects a 90s megacity, with strong film grain, street fashion aesthetics, and a grunge mood.\nHigh contrast lighting, film grain, 90s street style aesthetic, gritty noir atmosphere, grainy texture, 35mm film look.", this)'>📋 复制</button>
         </div>
-        <p>Create a portrait without changing the facial features. A black and white artistic photograph of a man in a noir style. The man is sitting on a metal staircase or balcony with a cityscape in the background. He is wearing a dark shirt with an open collar, dark trousers, chunky sneakers, and sunglasses. Accessories are visible on his hands, including a bracelet. His pose is relaxed, with his gaze directed downward. The lighting is high contrast with deep shadows. The atmosphere reflects a 90s megacity, with strong film grain, street fashion aesthetics, and a grunge mood.<br>High contrast lighting, film grain, 90s street style aesthetic, gritty noir atmosphere, grainy texture, 35mm film look.</p>
+        <div data-nosnippet><p>Create a portrait without changing the facial features. A black and white artistic photograph of a man in a noir style. The man is sitting on a metal staircase or balcony with a cityscape in the background. He is wearing a dark shirt with an open collar, dark trousers, chunky sneakers, and sunglasses. Accessories are visible on his hands, including a bracelet. His pose is relaxed, with his gaze directed downward. The lighting is high contrast with deep shadows. The atmosphere reflects a 90s megacity, with strong film grain, street fashion aesthetics, and a grunge mood.<br>High contrast lighting, film grain, 90s street style aesthetic, gritty noir atmosphere, grainy texture, 35mm film look.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2022616495097024777-1.jpg" alt="Create a portrait without changing the facial features. A bla..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2116,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

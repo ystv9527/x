@@ -7,11 +7,13 @@
     <title>[BRAND NAME]. #2463 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[BRAND NAME]. Goal: Generate a professional mixed media oil painting on textured canvas where the color palette and g...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2463.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2463.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2463.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839890">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022223">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME].\n目标：生成一幅专业的混合媒介油画于有纹理的画布上，颜色调色板和图形根据品牌识别动态适配。\n\n1. 品牌颜色适配\n- 分析[BRAND NAME]的视觉识别。\n- 将品牌主色用于两条主要的水平厚涂（impasto）笔触。\n- 将对比性的品牌次色用于厚重、凸起的中央颜料团。\n- 用这种新的自适应配色替换原先的红色和黄色。\n\n2. 绘画主体与动感\n- 物体：一个与[BRAND NAME]相关的中央垂直摆放的产品，作为一幅完整的油画直接绘制在画布上。\n- 技法：运用“运动模糊”油画效果，配以可见的水平笔触，以营造动态运动感。\n- 融合：该物体必须成为绘画层的一部分，与背景共享相同的粗纹画布质感，而非覆盖层。\n- 品牌标识：在物体轮廓内用做旧、半透明的油画颜料层绘制“[BRAND NAME]”标志。\n\n3. 自适应厚涂与质感\n- 主要笔触：两条厚实的、实体感的水平厚涂（impasto）油画笔触，以品牌主色涂抹在绘制的物体之上。\n- 细节：在中间笔触上精确放置一团质感厚重、凸起的品牌次色油彩。\n- 表面：背景为未经处理的粗纹灰色质感画布，可见织纹、木炭擦痕和底胶（gesso）点涂。\n\n4. 以品牌为中心的图形\n- 手写：使用木炭和石墨在画布上潦草涂写与[BRAND NAME]相关的关键词、口号和价值观。\n- 符号：将原本的$符号和涂鸦替换为代表[BRAND NAME]的手绘、凌乱的抽象图标。\n- 执行：所有文字和符号必须看起来像是在干燥的油画层上用石墨刮刻或绘制的。\n\n5. 风格\n- 当代混合媒介波普艺术。8K微距摄影，聚焦油画颜料的物理厚度和原始画布纹理。", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME].<br>目标：生成一幅专业的混合媒介油画于有纹理的画布上，颜色调色板和图形根据品牌识别动态适配。</p><p>1. 品牌颜色适配<br>- 分析[BRAND NAME]的视觉识别。<br>- 将品牌主色用于两条主要的水平厚涂（impasto）笔触。<br>- 将对比性的品牌次色用于厚重、凸起的中央颜料团。<br>- 用这种新的自适应配色替换原先的红色和黄色。</p><p>2. 绘画主体与动感<br>- 物体：一个与[BRAND NAME]相关的中央垂直摆放的产品，作为一幅完整的油画直接绘制在画布上。<br>- 技法：运用“运动模糊”油画效果，配以可见的水平笔触，以营造动态运动感。<br>- 融合：该物体必须成为绘画层的一部分，与背景共享相同的粗纹画布质感，而非覆盖层。<br>- 品牌标识：在物体轮廓内用做旧、半透明的油画颜料层绘制“[BRAND NAME]”标志。</p><p>3. 自适应厚涂与质感<br>- 主要笔触：两条厚实的、实体感的水平厚涂（impasto）油画笔触，以品牌主色涂抹在绘制的物体之上。<br>- 细节：在中间笔触上精确放置一团质感厚重、凸起的品牌次色油彩。<br>- 表面：背景为未经处理的粗纹灰色质感画布，可见织纹、木炭擦痕和底胶（gesso）点涂。</p><p>4. 以品牌为中心的图形<br>- 手写：使用木炭和石墨在画布上潦草涂写与[BRAND NAME]相关的关键词、口号和价值观。<br>- 符号：将原本的$符号和涂鸦替换为代表[BRAND NAME]的手绘、凌乱的抽象图标。<br>- 执行：所有文字和符号必须看起来像是在干燥的油画层上用石墨刮刻或绘制的。</p><p>5. 风格<br>- 当代混合媒介波普艺术。8K微距摄影，聚焦油画颜料的物理厚度和原始画布纹理。</p>
+        <div data-nosnippet><p>[BRAND NAME].<br>目标：生成一幅专业的混合媒介油画于有纹理的画布上，颜色调色板和图形根据品牌识别动态适配。</p><p>1. 品牌颜色适配<br>- 分析[BRAND NAME]的视觉识别。<br>- 将品牌主色用于两条主要的水平厚涂（impasto）笔触。<br>- 将对比性的品牌次色用于厚重、凸起的中央颜料团。<br>- 用这种新的自适应配色替换原先的红色和黄色。</p><p>2. 绘画主体与动感<br>- 物体：一个与[BRAND NAME]相关的中央垂直摆放的产品，作为一幅完整的油画直接绘制在画布上。<br>- 技法：运用“运动模糊”油画效果，配以可见的水平笔触，以营造动态运动感。<br>- 融合：该物体必须成为绘画层的一部分，与背景共享相同的粗纹画布质感，而非覆盖层。<br>- 品牌标识：在物体轮廓内用做旧、半透明的油画颜料层绘制“[BRAND NAME]”标志。</p><p>3. 自适应厚涂与质感<br>- 主要笔触：两条厚实的、实体感的水平厚涂（impasto）油画笔触，以品牌主色涂抹在绘制的物体之上。<br>- 细节：在中间笔触上精确放置一团质感厚重、凸起的品牌次色油彩。<br>- 表面：背景为未经处理的粗纹灰色质感画布，可见织纹、木炭擦痕和底胶（gesso）点涂。</p><p>4. 以品牌为中心的图形<br>- 手写：使用木炭和石墨在画布上潦草涂写与[BRAND NAME]相关的关键词、口号和价值观。<br>- 符号：将原本的$符号和涂鸦替换为代表[BRAND NAME]的手绘、凌乱的抽象图标。<br>- 执行：所有文字和符号必须看起来像是在干燥的油画层上用石墨刮刻或绘制的。</p><p>5. 风格<br>- 当代混合媒介波普艺术。8K微距摄影，聚焦油画颜料的物理厚度和原始画布纹理。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME].\nGoal: Generate a professional mixed-media oil painting on textured canvas where the color palette and graphics are dynamically adapted to the brand identity.\n\n1. BRAND COLOR ADAPTATION\n- Analyze the visual identity of [BRAND NAME].\n- Use the primary brand color for the two main horizontal impasto strokes.\n- Use a contrasting secondary brand color for the thick, raised central dollop of paint.\n- Replace the original red and yellow with this new adaptive color scheme.\n\n2. PAINTED SUBJECT & MOTION\n- Object: A central, vertically oriented product related to [BRAND NAME], rendered as a cohesive OIL PAINTING directly on the canvas.\n- Technique: Apply a \"motion blur\" oil painting effect with visible horizontal brushstrokes to create a sense of dynamic movement.\n- Integration: The object must be part of the painted layer, sharing the same heavy-grain canvas texture as the background, not an overlay.\n- Branding: Paint the \"[BRAND NAME]\" logo using distressed, semi-transparent oil paint layers within the object's silhouette.\n\n3. ADAPTIVE IMPASTO & TEXTURE\n- Primary Strokes: Two thick, physical, horizontal impasto oil paint strokes applied over the painted object in the brand's primary color.\n- Detail: One heavily textured, raised dollop of the brand's secondary color oil paint placed precisely on the center stroke.\n- Surface: Background is a raw, heavy-grain grey textured canvas with visible weave, charcoal smudges, and gesso dabs.\n\n4. BRAND-CENTRIC GRAPHICS\n- Handwriting: Use charcoal and graphite to scribble keywords, slogans, and values associated with [BRAND NAME] across the canvas.\n- Symbols: Replace the original $ and doodles with hand-drawn, messy abstract icons representing [BRAND NAME].\n- Execution: All text and symbols must look like they were scratched or drawn with graphite over the dried oil paint layers.\n\n5. STYLE\n- Contemporary mixed-media pop-art. 8K macro photography focusing on the physical thickness of oil paint and the raw canvas grain.", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME].<br>Goal: Generate a professional mixed-media oil painting on textured canvas where the color palette and graphics are dynamically adapted to the brand identity.</p><p>1. BRAND COLOR ADAPTATION<br>- Analyze the visual identity of [BRAND NAME].<br>- Use the primary brand color for the two main horizontal impasto strokes.<br>- Use a contrasting secondary brand color for the thick, raised central dollop of paint.<br>- Replace the original red and yellow with this new adaptive color scheme.</p><p>2. PAINTED SUBJECT &amp; MOTION<br>- Object: A central, vertically oriented product related to [BRAND NAME], rendered as a cohesive OIL PAINTING directly on the canvas.<br>- Technique: Apply a &quot;motion blur&quot; oil painting effect with visible horizontal brushstrokes to create a sense of dynamic movement.<br>- Integration: The object must be part of the painted layer, sharing the same heavy-grain canvas texture as the background, not an overlay.<br>- Branding: Paint the &quot;[BRAND NAME]&quot; logo using distressed, semi-transparent oil paint layers within the object&#39;s silhouette.</p><p>3. ADAPTIVE IMPASTO &amp; TEXTURE<br>- Primary Strokes: Two thick, physical, horizontal impasto oil paint strokes applied over the painted object in the brand&#39;s primary color.<br>- Detail: One heavily textured, raised dollop of the brand&#39;s secondary color oil paint placed precisely on the center stroke.<br>- Surface: Background is a raw, heavy-grain grey textured canvas with visible weave, charcoal smudges, and gesso dabs.</p><p>4. BRAND-CENTRIC GRAPHICS<br>- Handwriting: Use charcoal and graphite to scribble keywords, slogans, and values associated with [BRAND NAME] across the canvas.<br>- Symbols: Replace the original $ and doodles with hand-drawn, messy abstract icons representing [BRAND NAME].<br>- Execution: All text and symbols must look like they were scratched or drawn with graphite over the dried oil paint layers.</p><p>5. STYLE<br>- Contemporary mixed-media pop-art. 8K macro photography focusing on the physical thickness of oil paint and the raw canvas grain.</p>
+        <div data-nosnippet><p>[BRAND NAME].<br>Goal: Generate a professional mixed-media oil painting on textured canvas where the color palette and graphics are dynamically adapted to the brand identity.</p><p>1. BRAND COLOR ADAPTATION<br>- Analyze the visual identity of [BRAND NAME].<br>- Use the primary brand color for the two main horizontal impasto strokes.<br>- Use a contrasting secondary brand color for the thick, raised central dollop of paint.<br>- Replace the original red and yellow with this new adaptive color scheme.</p><p>2. PAINTED SUBJECT &amp; MOTION<br>- Object: A central, vertically oriented product related to [BRAND NAME], rendered as a cohesive OIL PAINTING directly on the canvas.<br>- Technique: Apply a &quot;motion blur&quot; oil painting effect with visible horizontal brushstrokes to create a sense of dynamic movement.<br>- Integration: The object must be part of the painted layer, sharing the same heavy-grain canvas texture as the background, not an overlay.<br>- Branding: Paint the &quot;[BRAND NAME]&quot; logo using distressed, semi-transparent oil paint layers within the object&#39;s silhouette.</p><p>3. ADAPTIVE IMPASTO &amp; TEXTURE<br>- Primary Strokes: Two thick, physical, horizontal impasto oil paint strokes applied over the painted object in the brand&#39;s primary color.<br>- Detail: One heavily textured, raised dollop of the brand&#39;s secondary color oil paint placed precisely on the center stroke.<br>- Surface: Background is a raw, heavy-grain grey textured canvas with visible weave, charcoal smudges, and gesso dabs.</p><p>4. BRAND-CENTRIC GRAPHICS<br>- Handwriting: Use charcoal and graphite to scribble keywords, slogans, and values associated with [BRAND NAME] across the canvas.<br>- Symbols: Replace the original $ and doodles with hand-drawn, messy abstract icons representing [BRAND NAME].<br>- Execution: All text and symbols must look like they were scratched or drawn with graphite over the dried oil paint layers.</p><p>5. STYLE<br>- Contemporary mixed-media pop-art. 8K macro photography focusing on the physical thickness of oil paint and the raw canvas grain.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2031083098364858524-1.jpg" alt="[BRAND NAME]." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2463,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

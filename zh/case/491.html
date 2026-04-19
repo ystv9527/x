@@ -7,11 +7,13 @@
     <title>游戏角色状态界面 #491 | Gem Nana AI 提示词库</title>
     <meta name="description" content="游戏角色状态界面 - Nano Banana AI图片生成案例  📥 输入：需上传一张参考图像">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/491.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/491.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/491.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841807">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022683">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -204,14 +208,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用原图中的角色创建一个 RPG 游戏角色状态界面：\n保留原图角色的设计和风格，但将服装更换为幻想 RPG 风格，并调整姿势以符合情境。\n在画面中同时展示原图角色与状态界面并排显示。\n状态界面需包含角色参数、技能、图标等信息，呈现丰富而直观的布局。\n背景使用与原图风格匹配的幻想风格场景。\n整体界面设计应丰富、时尚，风格类似 2025 年的高质量游戏界面。", this)'>📋 复制</button>
         </div>
-        <p>使用原图中的角色创建一个 RPG 游戏角色状态界面：<br>保留原图角色的设计和风格，但将服装更换为幻想 RPG 风格，并调整姿势以符合情境。<br>在画面中同时展示原图角色与状态界面并排显示。<br>状态界面需包含角色参数、技能、图标等信息，呈现丰富而直观的布局。<br>背景使用与原图风格匹配的幻想风格场景。<br>整体界面设计应丰富、时尚，风格类似 2025 年的高质量游戏界面。</p>
+        <div data-nosnippet><p>使用原图中的角色创建一个 RPG 游戏角色状态界面：<br>保留原图角色的设计和风格，但将服装更换为幻想 RPG 风格，并调整姿势以符合情境。<br>在画面中同时展示原图角色与状态界面并排显示。<br>状态界面需包含角色参数、技能、图标等信息，呈现丰富而直观的布局。<br>背景使用与原图风格匹配的幻想风格场景。<br>整体界面设计应丰富、时尚，风格类似 2025 年的高质量游戏界面。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an RPG game character status interface using the character from the original image:  \nMaintain the original character's design and style, but change the outfit to a fantasy RPG style, and adjust the pose to suit the scene.  \nDisplay both the original character and the status interface side by side in the image.  \nThe status interface should include character stats, skills, icons, and other information, presented in a rich and intuitive layout.  \nUse a fantasy-style background scene that matches the style of the original image.  \nThe overall interface design should be detailed and fashionable, similar to high-quality game interfaces from 2025.", this)'>📋 复制</button>
         </div>
-        <p>Create an RPG game character status interface using the character from the original image:  <br>Maintain the original character&#39;s design and style, but change the outfit to a fantasy RPG style, and adjust the pose to suit the scene.  <br>Display both the original character and the status interface side by side in the image.  <br>The status interface should include character stats, skills, icons, and other information, presented in a rich and intuitive layout.  <br>Use a fantasy-style background scene that matches the style of the original image.  <br>The overall interface design should be detailed and fashionable, similar to high-quality game interfaces from 2025.</p>
+        <div data-nosnippet><p>Create an RPG game character status interface using the character from the original image:  <br>Maintain the original character&#39;s design and style, but change the outfit to a fantasy RPG style, and adjust the pose to suit the scene.  <br>Display both the original character and the status interface side by side in the image.  <br>The status interface should include character stats, skills, icons, and other information, presented in a rich and intuitive layout.  <br>Use a fantasy-style background scene that matches the style of the original image.  <br>The overall interface design should be detailed and fashionable, similar to high-quality game interfaces from 2025.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/nano-case105-input.jpg" alt="游戏角色状态界面" loading="lazy"><img src="/images/nano-case105-output.jpg" alt="游戏角色状态界面" loading="lazy"></div></div>
       
@@ -277,6 +281,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 491,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

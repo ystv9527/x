@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Use the uploaded reference image STRICTLY to prese... #1280 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Use the uploaded reference image STRICTLY to preserve the same woman’s face, identity, facial structure,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1280.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1280.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1280.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845290">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023690">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"使用上传的参考图像，严格保留同一位女性的面部、身份、面部结构、比例和自然表情，精确度为100%。不得改变面部、不得美化或改变身份。\\n\\n创建一幅超写实的黑白柔和社论时尚人像，描绘一位优雅女性置于极简背景。构图应显得亲密、宁静且永恒，灵感来源于经典 Vogue 与 Harper’s Bazaar 的单色社论作品。\\n\\n姿势与表情（Pose & Expression）：\\n她站立或轻靠在中性的有纹理墙面上，身体略微倾斜。姿态放松却端庄。表情宁静、内省且自信——眼神柔和，嘴唇放松，不夸张的情绪。她可以略微偏离镜头凝视，或直视镜头但神情平静。\\n\\n服装与造型（Outfit & Styling）：\\n她穿着精致、极简的服装——柔和剪裁的白色或象牙色衬衫/女式衬衣，线条干净，搭配优雅的中性色长裤或飘逸裙装。面料质感保持可见且自然，强调真实感。无标识、无张扬的时尚宣言——纯粹的低调奢华。\\n\\n发型与化妆（Hair & Makeup）：\\n发型自然造型——松散的柔和波浪、低髻或简单的束发，质地真实。妆容为极简社论风：自然肤质、细微高光、轻微修容、柔和睫毛与自然唇色。无华丽感、无浓重造型。\\n\\n光线与氛围（Lighting & Mood）：\\n柔和的定向光在脸部和服装上产生温和的高光与平滑的阴影。对比控制得体且优雅，保留精细的皮肤纹理与面料细节。光线感觉自然、具社论风格且情绪平静。\\n\\n黑白处理（Black & White Treatment）：\\n经典的单色调色处理，纯黑饱和、柔和高光、平滑中间调。受胶片启发的色阶范围，带有细微颗粒感以增真实感。无强烈对比、无压暗细节。\\n\\n视觉风格（Visual Style）：\\n高端时尚社论摄影，永恒的黑白美学，含蓄的奢华，情感柔和与艺术克制。\\n\\n相机与画质（Camera & Quality）：\\n专业社论摄影，浅景深，电影感构图，超写实 8K 分辨率，主体清晰对焦、背景柔和分离。\\n\\n整体感觉（Overall Feel）：\\n静谧自信、女性的力量、永恒优雅——一幅精致的黑白社论人像。\",\n  \n  \"style\": \"黑白柔和社论，电影写实\",\n  \"lighting\": \"柔和定向光，温和阴影\",\n  \"color_grade\": \"经典单色，胶片风格色阶\",\n  \"background\": \"极简中性有纹理墙面\",\n  \"quality\": \"超写实，8K，社论细节\",\n  \"camera\": \"专业时尚摄影，浅景深\",\n  \"mood\": \"平静、永恒、优雅、内省\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;使用上传的参考图像，严格保留同一位女性的面部、身份、面部结构、比例和自然表情，精确度为100%。不得改变面部、不得美化或改变身份。\n\n创建一幅超写实的黑白柔和社论时尚人像，描绘一位优雅女性置于极简背景。构图应显得亲密、宁静且永恒，灵感来源于经典 Vogue 与 Harper’s Bazaar 的单色社论作品。\n\n姿势与表情（Pose &amp; Expression）：\n她站立或轻靠在中性的有纹理墙面上，身体略微倾斜。姿态放松却端庄。表情宁静、内省且自信——眼神柔和，嘴唇放松，不夸张的情绪。她可以略微偏离镜头凝视，或直视镜头但神情平静。\n\n服装与造型（Outfit &amp; Styling）：\n她穿着精致、极简的服装——柔和剪裁的白色或象牙色衬衫/女式衬衣，线条干净，搭配优雅的中性色长裤或飘逸裙装。面料质感保持可见且自然，强调真实感。无标识、无张扬的时尚宣言——纯粹的低调奢华。\n\n发型与化妆（Hair &amp; Makeup）：\n发型自然造型——松散的柔和波浪、低髻或简单的束发，质地真实。妆容为极简社论风：自然肤质、细微高光、轻微修容、柔和睫毛与自然唇色。无华丽感、无浓重造型。\n\n光线与氛围（Lighting &amp; Mood）：\n柔和的定向光在脸部和服装上产生温和的高光与平滑的阴影。对比控制得体且优雅，保留精细的皮肤纹理与面料细节。光线感觉自然、具社论风格且情绪平静。\n\n黑白处理（Black &amp; White Treatment）：\n经典的单色调色处理，纯黑饱和、柔和高光、平滑中间调。受胶片启发的色阶范围，带有细微颗粒感以增真实感。无强烈对比、无压暗细节。\n\n视觉风格（Visual Style）：\n高端时尚社论摄影，永恒的黑白美学，含蓄的奢华，情感柔和与艺术克制。\n\n相机与画质（Camera &amp; Quality）：\n专业社论摄影，浅景深，电影感构图，超写实 8K 分辨率，主体清晰对焦、背景柔和分离。\n\n整体感觉（Overall Feel）：\n静谧自信、女性的力量、永恒优雅——一幅精致的黑白社论人像。&quot;,<br>  <br>  &quot;style&quot;: &quot;黑白柔和社论，电影写实&quot;,<br>  &quot;lighting&quot;: &quot;柔和定向光，温和阴影&quot;,<br>  &quot;color_grade&quot;: &quot;经典单色，胶片风格色阶&quot;,<br>  &quot;background&quot;: &quot;极简中性有纹理墙面&quot;,<br>  &quot;quality&quot;: &quot;超写实，8K，社论细节&quot;,<br>  &quot;camera&quot;: &quot;专业时尚摄影，浅景深&quot;,<br>  &quot;mood&quot;: &quot;平静、永恒、优雅、内省&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;使用上传的参考图像，严格保留同一位女性的面部、身份、面部结构、比例和自然表情，精确度为100%。不得改变面部、不得美化或改变身份。\n\n创建一幅超写实的黑白柔和社论时尚人像，描绘一位优雅女性置于极简背景。构图应显得亲密、宁静且永恒，灵感来源于经典 Vogue 与 Harper’s Bazaar 的单色社论作品。\n\n姿势与表情（Pose &amp; Expression）：\n她站立或轻靠在中性的有纹理墙面上，身体略微倾斜。姿态放松却端庄。表情宁静、内省且自信——眼神柔和，嘴唇放松，不夸张的情绪。她可以略微偏离镜头凝视，或直视镜头但神情平静。\n\n服装与造型（Outfit &amp; Styling）：\n她穿着精致、极简的服装——柔和剪裁的白色或象牙色衬衫/女式衬衣，线条干净，搭配优雅的中性色长裤或飘逸裙装。面料质感保持可见且自然，强调真实感。无标识、无张扬的时尚宣言——纯粹的低调奢华。\n\n发型与化妆（Hair &amp; Makeup）：\n发型自然造型——松散的柔和波浪、低髻或简单的束发，质地真实。妆容为极简社论风：自然肤质、细微高光、轻微修容、柔和睫毛与自然唇色。无华丽感、无浓重造型。\n\n光线与氛围（Lighting &amp; Mood）：\n柔和的定向光在脸部和服装上产生温和的高光与平滑的阴影。对比控制得体且优雅，保留精细的皮肤纹理与面料细节。光线感觉自然、具社论风格且情绪平静。\n\n黑白处理（Black &amp; White Treatment）：\n经典的单色调色处理，纯黑饱和、柔和高光、平滑中间调。受胶片启发的色阶范围，带有细微颗粒感以增真实感。无强烈对比、无压暗细节。\n\n视觉风格（Visual Style）：\n高端时尚社论摄影，永恒的黑白美学，含蓄的奢华，情感柔和与艺术克制。\n\n相机与画质（Camera &amp; Quality）：\n专业社论摄影，浅景深，电影感构图，超写实 8K 分辨率，主体清晰对焦、背景柔和分离。\n\n整体感觉（Overall Feel）：\n静谧自信、女性的力量、永恒优雅——一幅精致的黑白社论人像。&quot;,<br>  <br>  &quot;style&quot;: &quot;黑白柔和社论，电影写实&quot;,<br>  &quot;lighting&quot;: &quot;柔和定向光，温和阴影&quot;,<br>  &quot;color_grade&quot;: &quot;经典单色，胶片风格色阶&quot;,<br>  &quot;background&quot;: &quot;极简中性有纹理墙面&quot;,<br>  &quot;quality&quot;: &quot;超写实，8K，社论细节&quot;,<br>  &quot;camera&quot;: &quot;专业时尚摄影，浅景深&quot;,<br>  &quot;mood&quot;: &quot;平静、永恒、优雅、内省&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"Use the uploaded reference image STRICTLY to preserve the same woman’s face, identity, facial structure, proportions, and natural expression with 100% accuracy. No facial alteration, beautification, or identity change.\\n\\nCreate an ultra-realistic black-and-white soft editorial fashion portrait of an elegant woman in a minimalist setting. The composition feels intimate, calm, and timeless, inspired by classic Vogue and Harper’s Bazaar monochrome editorials.\\n\\nPose & Expression:\\nShe stands or leans gently against a neutral textured wall, body slightly angled. Posture is relaxed yet poised. Her expression is serene, introspective, and confident — soft eyes, relaxed lips, no exaggerated emotion. She may gaze slightly away from the camera or directly into the lens with quiet intensity.\\n\\nOutfit & Styling:\\nShe wears a refined, minimal outfit — a softly tailored white or ivory shirt/blouse with clean lines, paired with elegant neutral trousers or a flowing skirt. Fabric textures remain visible and natural, emphasizing realism. No logos, no loud fashion statements — pure quiet luxury.\\n\\nHair & Makeup:\\nHair is styled naturally — loose soft waves, a low bun, or a simple pulled-back look with realistic texture. Makeup is minimal editorial: natural skin, subtle highlights, light contour, soft lashes, and neutral lips. No glamour, no heavy styling.\\n\\nLighting & Mood:\\nSoft directional lighting creates gentle highlights and smooth shadows across the face and clothing. Contrast is controlled and elegant, preserving fine skin texture and fabric detail. Lighting feels organic, editorial, and emotionally calm.\\n\\nBlack & White Treatment:\\nClassic monochrome grading with rich blacks, soft whites, and smooth mid-tones. Film-inspired tonal range with subtle grain for authenticity. No harsh contrast, no crushed shadows.\\n\\nVisual Style:\\nHigh-end fashion editorial photography, timeless black-and-white aesthetic, understated luxury, emotional softness, and artistic restraint.\\n\\nCamera & Quality:\\nProfessional editorial photography, shallow depth of field, cinematic framing, ultra-realistic 8K resolution, sharp subject focus with soft background separation.\\n\\nOverall Feel:\\nQuiet confidence, feminine strength, timeless elegance — a refined black-and-white editorial portrait.\",\n  \n  \"style\": \"black-and-white soft editorial, cinematic realism\",\n  \"lighting\": \"soft directional light, gentle shadows\",\n  \"color_grade\": \"classic monochrome, film-inspired tones\",\n  \"background\": \"minimal neutral textured wall\",\n  \"quality\": \"ultra-realistic, 8K, editorial detail\",\n  \"camera\": \"professional fashion photography, shallow depth of field\",\n  \"mood\": \"calm, timeless, elegant, introspective\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;Use the uploaded reference image STRICTLY to preserve the same woman’s face, identity, facial structure, proportions, and natural expression with 100% accuracy. No facial alteration, beautification, or identity change.\n\nCreate an ultra-realistic black-and-white soft editorial fashion portrait of an elegant woman in a minimalist setting. The composition feels intimate, calm, and timeless, inspired by classic Vogue and Harper’s Bazaar monochrome editorials.\n\nPose &amp; Expression:\nShe stands or leans gently against a neutral textured wall, body slightly angled. Posture is relaxed yet poised. Her expression is serene, introspective, and confident — soft eyes, relaxed lips, no exaggerated emotion. She may gaze slightly away from the camera or directly into the lens with quiet intensity.\n\nOutfit &amp; Styling:\nShe wears a refined, minimal outfit — a softly tailored white or ivory shirt/blouse with clean lines, paired with elegant neutral trousers or a flowing skirt. Fabric textures remain visible and natural, emphasizing realism. No logos, no loud fashion statements — pure quiet luxury.\n\nHair &amp; Makeup:\nHair is styled naturally — loose soft waves, a low bun, or a simple pulled-back look with realistic texture. Makeup is minimal editorial: natural skin, subtle highlights, light contour, soft lashes, and neutral lips. No glamour, no heavy styling.\n\nLighting &amp; Mood:\nSoft directional lighting creates gentle highlights and smooth shadows across the face and clothing. Contrast is controlled and elegant, preserving fine skin texture and fabric detail. Lighting feels organic, editorial, and emotionally calm.\n\nBlack &amp; White Treatment:\nClassic monochrome grading with rich blacks, soft whites, and smooth mid-tones. Film-inspired tonal range with subtle grain for authenticity. No harsh contrast, no crushed shadows.\n\nVisual Style:\nHigh-end fashion editorial photography, timeless black-and-white aesthetic, understated luxury, emotional softness, and artistic restraint.\n\nCamera &amp; Quality:\nProfessional editorial photography, shallow depth of field, cinematic framing, ultra-realistic 8K resolution, sharp subject focus with soft background separation.\n\nOverall Feel:\nQuiet confidence, feminine strength, timeless elegance — a refined black-and-white editorial portrait.&quot;,<br>  <br>  &quot;style&quot;: &quot;black-and-white soft editorial, cinematic realism&quot;,<br>  &quot;lighting&quot;: &quot;soft directional light, gentle shadows&quot;,<br>  &quot;color_grade&quot;: &quot;classic monochrome, film-inspired tones&quot;,<br>  &quot;background&quot;: &quot;minimal neutral textured wall&quot;,<br>  &quot;quality&quot;: &quot;ultra-realistic, 8K, editorial detail&quot;,<br>  &quot;camera&quot;: &quot;professional fashion photography, shallow depth of field&quot;,<br>  &quot;mood&quot;: &quot;calm, timeless, elegant, introspective&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;Use the uploaded reference image STRICTLY to preserve the same woman’s face, identity, facial structure, proportions, and natural expression with 100% accuracy. No facial alteration, beautification, or identity change.\n\nCreate an ultra-realistic black-and-white soft editorial fashion portrait of an elegant woman in a minimalist setting. The composition feels intimate, calm, and timeless, inspired by classic Vogue and Harper’s Bazaar monochrome editorials.\n\nPose &amp; Expression:\nShe stands or leans gently against a neutral textured wall, body slightly angled. Posture is relaxed yet poised. Her expression is serene, introspective, and confident — soft eyes, relaxed lips, no exaggerated emotion. She may gaze slightly away from the camera or directly into the lens with quiet intensity.\n\nOutfit &amp; Styling:\nShe wears a refined, minimal outfit — a softly tailored white or ivory shirt/blouse with clean lines, paired with elegant neutral trousers or a flowing skirt. Fabric textures remain visible and natural, emphasizing realism. No logos, no loud fashion statements — pure quiet luxury.\n\nHair &amp; Makeup:\nHair is styled naturally — loose soft waves, a low bun, or a simple pulled-back look with realistic texture. Makeup is minimal editorial: natural skin, subtle highlights, light contour, soft lashes, and neutral lips. No glamour, no heavy styling.\n\nLighting &amp; Mood:\nSoft directional lighting creates gentle highlights and smooth shadows across the face and clothing. Contrast is controlled and elegant, preserving fine skin texture and fabric detail. Lighting feels organic, editorial, and emotionally calm.\n\nBlack &amp; White Treatment:\nClassic monochrome grading with rich blacks, soft whites, and smooth mid-tones. Film-inspired tonal range with subtle grain for authenticity. No harsh contrast, no crushed shadows.\n\nVisual Style:\nHigh-end fashion editorial photography, timeless black-and-white aesthetic, understated luxury, emotional softness, and artistic restraint.\n\nCamera &amp; Quality:\nProfessional editorial photography, shallow depth of field, cinematic framing, ultra-realistic 8K resolution, sharp subject focus with soft background separation.\n\nOverall Feel:\nQuiet confidence, feminine strength, timeless elegance — a refined black-and-white editorial portrait.&quot;,<br>  <br>  &quot;style&quot;: &quot;black-and-white soft editorial, cinematic realism&quot;,<br>  &quot;lighting&quot;: &quot;soft directional light, gentle shadows&quot;,<br>  &quot;color_grade&quot;: &quot;classic monochrome, film-inspired tones&quot;,<br>  &quot;background&quot;: &quot;minimal neutral textured wall&quot;,<br>  &quot;quality&quot;: &quot;ultra-realistic, 8K, editorial detail&quot;,<br>  &quot;camera&quot;: &quot;professional fashion photography, shallow depth of field&quot;,<br>  &quot;mood&quot;: &quot;calm, timeless, elegant, introspective&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011598044152938767-1.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded reference image STRICTLY to prese..." loading="lazy"><img src="/images/tweet-2011598044152938767-2.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded reference image STRICTLY to prese..." loading="lazy"><img src="/images/tweet-2011598044152938767-3.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded reference image STRICTLY to prese..." loading="lazy"><img src="/images/tweet-2011598044152938767-4.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded reference image STRICTLY to prese..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1280,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

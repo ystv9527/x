@@ -7,11 +7,13 @@
     <title>Convert the original photo into four images in dramatic, high-contrast styles. #559 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Convert the original photo into four dramatic styles, using extreme wide-angle and dynamic angles to render cinematic lighting, high-definition contrast, and delicate textures in ultra-realistic imagery.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/559.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/559.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/559.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846020">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023845">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Gemini 3.0 Nano Banana Pro\r\n\r\n将原始照片转化为戏剧化、照片级真实感、超精细的 4 种不同风格，人物包含在内，每个都是中近景、广角拍摄，带有极端、动态的相机角度（包括更多从正下方或正上方直接拍摄的网格视图），其中一到多个身体部位紧贴镜头显得巨大，其余身体部分强烈地退入透视中，同一个人在原始环境的扩展版本中摆出时尚、复杂、有力的姿势，具有电影级灯光、高对比度、清晰的纹理和精确的色彩分级。3:4", this)'>📋 Copy</button>
         </div>
-        <p>Gemini 3.0 Nano Banana Pro<br><br>将原始照片转化为戏剧化、照片级真实感、超精细的 4 种不同风格，人物包含在内，每个都是中近景、广角拍摄，带有极端、动态的相机角度（包括更多从正下方或正上方直接拍摄的网格视图），其中一到多个身体部位紧贴镜头显得巨大，其余身体部分强烈地退入透视中，同一个人在原始环境的扩展版本中摆出时尚、复杂、有力的姿势，具有电影级灯光、高对比度、清晰的纹理和精确的色彩分级。3:4</p>
+        <div data-nosnippet><p>Gemini 3.0 Nano Banana Pro<br><br>将原始照片转化为戏剧化、照片级真实感、超精细的 4 种不同风格，人物包含在内，每个都是中近景、广角拍摄，带有极端、动态的相机角度（包括更多从正下方或正上方直接拍摄的网格视图），其中一到多个身体部位紧贴镜头显得巨大，其余身体部分强烈地退入透视中，同一个人在原始环境的扩展版本中摆出时尚、复杂、有力的姿势，具有电影级灯光、高对比度、清晰的纹理和精确的色彩分级。3:4</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("SUPER GIRL\r\n\r\nGemini 3.0 Nano Banana Pro\r\n\r\nTransform the original photo into a dramatic, photorealistic, ultra-detailed set of 4 different styles  characters are included , each a mid close up wide-angle shot with an extreme, dynamic camera angle (including more grid views from directly below or above), where one or more body parts are positioned right next to the lens and appear huge, the rest of the body recedes strongly in perspective, and the same person strikes a stylish, complex, powerful pose in a consistent, expanded version of the original environment, with cinematic lighting, high contrast, crisp textures, and precise color grading. 3:4超级女侠", this)'>📋 Copy</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("SUPER GIRL\n\nGemini 3.0 Nano Banana Pro\n\nTransform the original photo into a dramatic, photorealistic, ultra-detailed set of 4 different styles. Characters are included, each a mid close-up wide-angle shot with an extreme, dynamic camera angle (including more grid views from directly below or above), where one or more body parts are positioned right next to the lens and appear huge, the rest of the body recedes strongly in perspective, and the same person strikes a stylish, complex, powerful pose in a consistent, expanded version of the original environment, with cinematic lighting, high contrast, crisp textures, and precise color grading. 3:4 Super Heroine", this)'>📋 Copy</button>
         </div>
-        <p>SUPER GIRL<br><br>Gemini 3.0 Nano Banana Pro<br><br>Transform the original photo into a dramatic, photorealistic, ultra-detailed set of 4 different styles  characters are included , each a mid close up wide-angle shot with an extreme, dynamic camera angle (including more grid views from directly below or above), where one or more body parts are positioned right next to the lens and appear huge, the rest of the body recedes strongly in perspective, and the same person strikes a stylish, complex, powerful pose in a consistent, expanded version of the original environment, with cinematic lighting, high contrast, crisp textures, and precise color grading. 3:4超级女侠</p>
+        <div data-nosnippet><p>SUPER GIRL</p><p>Gemini 3.0 Nano Banana Pro</p><p>Transform the original photo into a dramatic, photorealistic, ultra-detailed set of 4 different styles. Characters are included, each a mid close-up wide-angle shot with an extreme, dynamic camera angle (including more grid views from directly below or above), where one or more body parts are positioned right next to the lens and appear huge, the rest of the body recedes strongly in perspective, and the same person strikes a stylish, complex, powerful pose in a consistent, expanded version of the original environment, with cinematic lighting, high contrast, crisp textures, and precise color grading. 3:4 Super Heroine</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2009269788602978736-1.jpg" alt="将原始照片转换为四种戏剧化高对比风格的图像" loading="lazy"><img src="/images/tweet-2009269788602978736-2.jpg" alt="将原始照片转换为四种戏剧化高对比风格的图像" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 559,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

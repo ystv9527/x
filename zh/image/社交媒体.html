@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社交媒体 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="10 条 社交媒体 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/社交媒体.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/社交媒体.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/社交媒体.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022137">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"社交媒体 · 图片生成提示词","description":"10 条 社交媒体 相关案例","url":"https://gemnana.com/zh/image/社交媒体.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2843</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2815</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">25</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/社交媒体.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>社交媒体 · 图片生成提示词</h1>
+      <p>10 条 社交媒体 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="图片">图片 (10)</button><button type="button" class="tag-filter" data-tag="社交媒体">社交媒体 (10)</button><button type="button" class="tag-filter" data-tag="GPT Image 2">GPT Image 2 (7)</button><button type="button" class="tag-filter" data-tag="UI">UI (7)</button><button type="button" class="tag-filter" data-tag="截图">截图 (7)</button><button type="button" class="tag-filter" data-tag="创意">创意 (2)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (2)</button><button type="button" class="tag-filter" data-tag="旅行">旅行 (1)</button><button type="button" class="tag-filter" data-tag="AI">AI (1)</button><button type="button" class="tag-filter" data-tag="3D">3D (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 10 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2839" data-search="案例2839 太祖李成桂的 x 页面 gpt-image-2 ui/社交截图提示词案例，展示「太祖李成桂的 x 页面」的界面版式、截图感和信息呈现方式。 x / @ska_neotype https://x.com/ska_neotype/status/2044637900978217334 gpt image 2 图片 ui 社交媒体 截图 👍프롬프트 : 태조 이성계의 x 페이지(위화도 회군을 벌이기 직전- 최영 장군과 서로 디스하는 내용이 담긴 게시글들)을 만들어 주세요. gpt-image-2" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2839.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case8/output.jpg" alt="太祖李成桂的 X 页面" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2839</span></span><span class="case-title-text">太祖李成桂的 X 页面</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「太祖李成桂的 X 页面」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/SKA_Neotype/status/2044637900978217334">X / @SKA_Neotype</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>👍프롬프트 :
+태조 이성계의 X  페이지(위화도 회군을 벌이기 직전- 최영 장군과 서로 디스하는 내용이 담긴 게시글들)을 만들어 주세요.
+gpt-image-2</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2839.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2838" data-search="案例2838 刘亦菲抖音直播截图 gpt-image-2 ui/社交截图提示词案例，展示「刘亦菲抖音直播截图」的界面版式、截图感和信息呈现方式。 x / @alanblogsooo https://x.com/alanblogsooo/status/2044784762594918516 gpt image 2 图片 ui 社交媒体 截图 9:16 的图片比例，生成一张抖音直播的截图，里面是 刘亦菲 在直播，刘亦菲 手里拿着牌子，牌子里写着 今晚直播，欢迎来参亦菲畅聊！" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2838.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case7/output.jpg" alt="刘亦菲抖音直播截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2838</span></span><span class="case-title-text">刘亦菲抖音直播截图</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「刘亦菲抖音直播截图」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/alanblogsooo/status/2044784762594918516">X / @alanblogsooo</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>9:16 的图片比例，生成一张抖音直播的截图，里面是 刘亦菲 在直播，刘亦菲 手里拿着牌子，牌子里写着 今晚直播，欢迎来参亦菲畅聊！</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2838.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2837" data-search="案例2837 四提示词创意截图组 gpt-image-2 ui/社交截图提示词案例，展示「四提示词创意截图组」的界面版式、截图感和信息呈现方式。 x / @rionaifantasy https://x.com/rionaifantasy/status/2045356799751303194 gpt image 2 图片 ui 社交媒体 截图 1、生成特朗普和金正恩在抖音直播间打pk的截图 2、生成不知火舞的小红书主页截图 3、生成图片: 手写在教室黑板上的出师表全文，真实感的粉笔字迹，晴朗白天用iphone手机实拍 4、生成图片: t-800机器人的淘宝商品详情页，展示: 机器人的正面侧面背面三视图， 产品价格， 产品细节， 功能和使用场景等 直接在chatgpt网页版或客户端，选择&quot;创建图片&quot;功能体验即可" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2837.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case6/output.jpg" alt="四提示词创意截图组" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2837</span></span><span class="case-title-text">四提示词创意截图组</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「四提示词创意截图组」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/rionaifantasy/status/2045356799751303194">X / @rionaifantasy</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>1、生成特朗普和金正恩在抖音直播间打PK的截图
+
+2、生成不知火舞的小红书主页截图
+
+3、生成图片:
+手写在教室黑板上的出师表全文，真实感的粉笔字迹，晴朗白天用iPhone手机实拍
+
+4、生成图片:
+T-800机器人的淘宝商品详情页，展示:
+机器人的正面侧面背面三视图，
+产品价格，
+产品细节，
+功能和使用场景等
+
+直接在ChatGPT网页版或客户端，选择&quot;创建图片&quot;功能体验即可</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2837.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2836" data-search="案例2836 多平台内容截图 gpt-image-2 ui/社交截图提示词案例，展示「多平台内容截图」的界面版式、截图感和信息呈现方式。 x / @mrlarus https://x.com/mrlarus/status/2045373105041007013 gpt image 2 图片 ui 社交媒体 截图 1、生成视频号内容截图，主题：中老年不要盲目催婚，iphone尺寸 2、生成抖音内容截图，主题：跟上ai浪潮9.9包教会，iphone尺寸 3、生成小红书内容截图，主题：精致女孩背后都有网贷，iphone尺寸 4、生成快手内容截图：主题：直播离婚预告，iphone尺寸" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2836.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case5/output.jpg" alt="多平台内容截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2836</span></span><span class="case-title-text">多平台内容截图</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「多平台内容截图」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2045373105041007013">X / @MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>1、生成视频号内容截图，主题：中老年不要盲目催婚，iPhone尺寸
+2、生成抖音内容截图，主题：跟上AI浪潮9.9包教会，iPhone尺寸
+3、生成小红书内容截图，主题：精致女孩背后都有网贷，iPhone尺寸
+4、生成快手内容截图：主题：直播离婚预告，iPhone尺寸</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2836.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2835" data-search="案例2835 宋朝社交媒体动态页 gpt-image-2 ui/社交截图提示词案例，展示「宋朝社交媒体动态页」的界面版式、截图感和信息呈现方式。 x / @panda20230902 https://x.com/panda20230902/status/2045385588065313057 gpt image 2 图片 ui 社交媒体 截图 &quot;宋朝人的朋友圈&quot;/&quot;song dynasty social media feed&quot;，古今穿越幽默融合界面设计风格，画面模拟手机社交媒体界面，但内容全部是宋朝场景头像是宋代文人画像，用户名&quot;苏东坡sushi_official&quot;，发布内容&quot;刚到黄州，被贬了但心情还行。今天自己做了东坡肉，味道绝了，附菜谱：&quot;，配图为工笔画风格的东坡肉特写，点赞列表&quot;黄庭坚、秦观、佛印等126人&quot;，评论区&quot;王安石：呵呵&quot;&quot;司马光：还是那个味道&quot;，界面元素如点赞图标用宋代花纹替代，状态栏显示&quot;大宋移动 5g&quot;和&quot;元丰三年&quot;，配色为手机深色模式搭配宋代雅致色调，历史与社交媒体的趣味碰撞杰作" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2835.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case4/output.jpg" alt="宋朝社交媒体动态页" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2835</span></span><span class="case-title-text">宋朝社交媒体动态页</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「宋朝社交媒体动态页」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Panda20230902/status/2045385588065313057">X / @Panda20230902</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>&quot;宋朝人的朋友圈&quot;/&quot;SONG DYNASTY SOCIAL MEDIA FEED&quot;，古今穿越幽默融合界面设计风格，画面模拟手机社交媒体界面，但内容全部是宋朝场景头像是宋代文人画像，用户名&quot;苏东坡SuShi_Official&quot;，发布内容&quot;刚到黄州，被贬了但心情还行。今天自己做了东坡肉，味道绝了，附菜谱：&quot;，配图为工笔画风格的东坡肉特写，点赞列表&quot;黄庭坚、秦观、佛印等126人&quot;，评论区&quot;王安石：呵呵...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2835.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2834" data-search="案例2834 手写笔记本照片 gpt-image-2 ui/社交截图提示词案例，展示「手写笔记本照片」的界面版式、截图感和信息呈现方式。 x / @patrickassale https://x.com/patrickassale/status/2044569086013718958 gpt image 2 图片 ui 社交媒体 截图 amateur photo of an open notebook lying flat, filled with handwritten notes in black ballpoint pen. the handwriting is casual and slightly messy, like personnal notes, natural imperfections, crossed out words, underlined headings. shot from slightly above, natural daylight from a window, no flash. c" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2834.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case3/output.jpg" alt="手写笔记本照片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2834</span></span><span class="case-title-text">手写笔记本照片</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「手写笔记本照片」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/patrickassale/status/2044569086013718958">X / @patrickassale</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Amateur photo of an open notebook lying flat, filled with handwritten notes in black ballpoint pen. The handwriting is casual and slightly messy, like personnal notes, natural imperfections, crossed o...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2834.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2833" data-search="案例2833 业余感 iphone 发布会快照 gpt-image-2 ui/社交截图提示词案例，展示「业余感 iphone 发布会快照」的界面版式、截图感和信息呈现方式。 x / @patrickassale https://x.com/patrickassale/status/2044687244368441742 gpt image 2 图片 ui 社交媒体 截图 amateur iphone photo at apple park during the iphone 20 keynote, tim cook presenting on stage. shot from the crowd at a distance" data-tags="GPT Image 2|图片|UI|社交媒体|截图">
+      <a class="case-card-link" href="/zh/case/2833.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/ui_case2/output.jpg" alt="业余感 iPhone 发布会快照" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2833</span></span><span class="case-title-text">业余感 iPhone 发布会快照</span></h3>
+          <p class="case-summary">GPT-Image-2 UI/社交截图提示词案例，展示「业余感 iPhone 发布会快照」的界面版式、截图感和信息呈现方式。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/patrickassale/status/2044687244368441742">X / @patrickassale</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">UI</span><span class="tag">社交媒体</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Amateur iPhone photo at Apple Park during the iPhone 20 keynote, Tim Cook presenting on stage. Shot from the crowd at a distance</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2833.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="573" data-search="案例573 哆啦a梦主题广州三日两晚不绕路攻略图含行程时间表与景点安排 结合哆啦a梦主题，提供广州三日两晚不绕路的图文攻略，含具体日程、时间点与景点推荐，便于在小红书等平台分享，也适合快速制作图文内容。 x / berryxia.ai https://x.com/berryxia/status/2003105126438019556 旅行 社交媒体 创意 ai 图片 使用哆啦a梦的角色和相关主题元素，生成一张图文并茂、带行程路线和时间安排的广州的三天2晚旅游不绕路攻略图。" data-tags="旅行|社交媒体|创意|AI|图片">
+      <a class="case-card-link" href="/zh/case/573.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2003105126438019556-1.jpg" alt="哆啦A梦主题广州三日两晚不绕路攻略图含行程时间表与景点安排" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#573</span></span><span class="case-title-text">哆啦A梦主题广州三日两晚不绕路攻略图含行程时间表与景点安排</span></h3>
+          <p class="case-summary">结合哆啦A梦主题，提供广州三日两晚不绕路的图文攻略，含具体日程、时间点与景点推荐，便于在小红书等平台分享，也适合快速制作图文内容。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-14</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/berryxia/status/2003105126438019556">X / Berryxia.AI</span>
+          </div>
+          <div class="case-tags"><span class="tag">旅行</span><span class="tag">社交媒体</span><span class="tag">创意</span><span class="tag">AI</span><span class="tag">图片</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>使用哆啦A梦的角色和相关主题元素，生成一张图文并茂、带行程路线和时间安排的广州的三天2晚旅游不绕路攻略图。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/573.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="545" data-search="案例545 雾镜中的温馨夜感自拍：暖光、羞怯微笑与圣诞氛围 9:16竖屏自拍，浴室雾镜与暖光营造温馨夜感。主角湿润高马尾、露肩圣诞袍，指尖抹雾，镜前绘有圣诞月亮，整体氛围亲密柔和。 x / mira https://x.com/xmiiru_/status/2007510143915716928 图片 摄影 创意 社交媒体 { &quot;image_type&quot;: &quot;照片&quot;, “质量”: “普通” &quot;aspect_ratio&quot;: &quot;9:16&quot;, “方向”: “垂直”， &quot;camera_style&quot;: &quot;手机自拍&quot;, “场景”： { “环境”：“浴室镜子”， &quot;mirror_state&quot;: &quot;雾蒙蒙的&quot;, “蒸汽”：“可见的”， “灯光”： { 类型：暖顶灯， “强度”： “柔和”， “心情”：“温馨的夜晚” } }, “主题”： { &quot;性别&quot;: &quot;女性&quot;, “位置”：“站在雾蒙蒙的镜子后面”， “焦点”: “柔和模糊”， “表达”： { 脸部表情：害羞的微笑， “嘴”" data-tags="图片|摄影|创意|社交媒体">
+      <a class="case-card-link" href="/zh/case/545.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2007510143915716928-1.jpg" alt="雾镜中的温馨夜感自拍：暖光、羞怯微笑与圣诞氛围" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#545</span></span><span class="case-title-text">雾镜中的温馨夜感自拍：暖光、羞怯微笑与圣诞氛围</span></h3>
+          <p class="case-summary">9:16竖屏自拍，浴室雾镜与暖光营造温馨夜感。主角湿润高马尾、露肩圣诞袍，指尖抹雾，镜前绘有圣诞月亮，整体氛围亲密柔和。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-04</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xmiiru_/status/2007510143915716928">X / Mira</span>
+          </div>
+          <div class="case-tags"><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">社交媒体</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+&quot;image_type&quot;: &quot;照片&quot;,
+“质量”: “普通”
+&quot;aspect_ratio&quot;: &quot;9:16&quot;,
+“方向”: “垂直”，
+&quot;camera_style&quot;: &quot;手机自拍&quot;,
+“场景”： {
+“环境”：“浴室镜子”，
+&quot;mirror_state&quot;: &quot;雾蒙蒙的&quot;,
+“蒸汽”：“可见的”，
+“灯光”： {
+类型：暖顶灯，
+“强度”： “柔和”，
+“心情”：“温馨的...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/545.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="530" data-search="案例530 自拍分享：与迪士尼警兔朱迪·霍普斯的温馨合影 一位韩国年轻女子miyeon在昏暗的电影院中，与迪士尼角色朱迪·霍普斯并肩自拍，展现出趣味与温暖的互动，画面细节丰富，8k高品质呈现。 x / mira https://x.com/xmiiru_/status/1994360357100368334 图片 摄影 3d 社交媒体 和我的最爱的警兔自拍~ { “迅速的”： { “人物”： [ { &quot;name&quot;: &quot;miyeon&quot;, 描述：一位美丽的年轻韩国女子，面带微笑，留着黑色长发，身穿白色无肩带上衣，上面点缀着黑色星星，佩戴银色项链。 }, { 姓名：朱迪·霍普斯 描述：迪士尼动画电影《疯狂动物城》中的角色，身穿警服，面带微笑。 } ], “场景”： { “地点”：“略显昏暗、拥挤的电影院/影厅”， “背景”：“大电影屏幕上显示多个男性角色摆出动作姿势的场景”， “照明”: “电影照明” }, “互动”：“美延和朱迪·" data-tags="图片|摄影|3D|社交媒体">
+      <a class="case-card-link" href="/zh/case/530.html">
+        <div class="case-thumbnail"><img src="/images/tweet-1994360357100368334-1.jpg" alt="自拍分享：与迪士尼警兔朱迪·霍普斯的温馨合影" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#530</span></span><span class="case-title-text">自拍分享：与迪士尼警兔朱迪·霍普斯的温馨合影</span></h3>
+          <p class="case-summary">一位韩国年轻女子Miyeon在昏暗的电影院中，与迪士尼角色朱迪·霍普斯并肩自拍，展现出趣味与温暖的互动，画面细节丰富，8K高品质呈现。</p>
+          <div class="case-meta">
+            <span class="case-date">2025-11-28</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xmiiru_/status/1994360357100368334">X / Mira</span>
+          </div>
+          <div class="case-tags"><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">3D</span><span class="tag">社交媒体</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>和我的最爱的警兔自拍~  
+
+{
+“迅速的”： {
+“人物”： [
+      {
+&quot;name&quot;: &quot;Miyeon&quot;,
+描述：一位美丽的年轻韩国女子，面带微笑，留着黑色长发，身穿白色无肩带上衣，上面点缀着黑色星星，佩戴银色项链。
+      },
+      {
+姓名：朱迪·霍普斯
+描述：迪士尼动画电影《疯狂动物城》中的角色，身穿警服，面带微笑。
+      }
+],
+...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/530.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

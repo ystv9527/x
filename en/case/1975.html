@@ -7,11 +7,13 @@
     <title>&quot;version&quot;: &quot;2.0&quot;, #1975 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;version&quot;: &quot;2.0&quot;, &quot;model&quot;: &quot;Google Gemini Nano Banana Pro&quot;, &quot;subjects&quot;: [ { &quot;name&quot;: &quot;Ana de Armas&quot;, &quot;position&quot;: &quot;le...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1975.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1975.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1975.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844587">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023546">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"version\": \"2.0\",\n  \"model\": \"Google Gemini Nano Banana Pro\",\n  \"subjects\": [\n    {\n      \"name\": \"Ana de Armas\",\n      \"position\": \"左侧\",\n      \"pose\": \"游动中，放松的姿态，上半身露出水面\",\n      \"expression\": \"酷，充满自信\",\n      \"outfit\": \"象牙色极简连体泳衣\",\n      \"accessories\": \"简约深色太阳镜，手持冰镇饮料\",\n      \"hair_makeup\": \"湿润的松散波浪发，自然光泽妆容\"\n    },\n    {\n      \"name\": \"Sydney Sweeney\",\n      \"position\": \"右侧\",\n      \"pose\": \"游动中，略微朝向 Ana de Armas 的角度\",\n      \"expression\": \"充满电影感且沉着\",\n      \"outfit\": \"柔和腮红粉色现代连体泳衣\",\n      \"accessories\": \"淡色太阳镜，带冰块的冰镇饮料\",\n      \"hair_makeup\": \"湿润的金色波浪发，清新自然的魅力妆容\"\n    }\n  ],\n  \"environment\": {\n    \"setting\": \"奢华游泳池\",\n    \"background\": \"清澈的蓝色水面，浅色石边，干净现代的设计\"\n  },\n  \"lighting\": {\n    \"type\": \"自然的电影感阳光\",\n    \"effect\": \"水面反光，柔和高光，真实的肤色\"\n  },\n  \"image_properties\": {\n    \"resolution\": \"4K\",\n    \"aspect_ratio\": \"9:16\",\n    \"style\": \"奢华池畔时尚编辑风，照片写实，电影质感现实主义\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;version&quot;: &quot;2.0&quot;,<br>  &quot;model&quot;: &quot;Google Gemini Nano Banana Pro&quot;,<br>  &quot;subjects&quot;: [<br>    {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;position&quot;: &quot;左侧&quot;,<br>      &quot;pose&quot;: &quot;游动中，放松的姿态，上半身露出水面&quot;,<br>      &quot;expression&quot;: &quot;酷，充满自信&quot;,<br>      &quot;outfit&quot;: &quot;象牙色极简连体泳衣&quot;,<br>      &quot;accessories&quot;: &quot;简约深色太阳镜，手持冰镇饮料&quot;,<br>      &quot;hair_makeup&quot;: &quot;湿润的松散波浪发，自然光泽妆容&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Sydney Sweeney&quot;,<br>      &quot;position&quot;: &quot;右侧&quot;,<br>      &quot;pose&quot;: &quot;游动中，略微朝向 Ana de Armas 的角度&quot;,<br>      &quot;expression&quot;: &quot;充满电影感且沉着&quot;,<br>      &quot;outfit&quot;: &quot;柔和腮红粉色现代连体泳衣&quot;,<br>      &quot;accessories&quot;: &quot;淡色太阳镜，带冰块的冰镇饮料&quot;,<br>      &quot;hair_makeup&quot;: &quot;湿润的金色波浪发，清新自然的魅力妆容&quot;<br>    }<br>  ],<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;奢华游泳池&quot;,<br>    &quot;background&quot;: &quot;清澈的蓝色水面，浅色石边，干净现代的设计&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;自然的电影感阳光&quot;,<br>    &quot;effect&quot;: &quot;水面反光，柔和高光，真实的肤色&quot;<br>  },<br>  &quot;image_properties&quot;: {<br>    &quot;resolution&quot;: &quot;4K&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style&quot;: &quot;奢华池畔时尚编辑风，照片写实，电影质感现实主义&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;version&quot;: &quot;2.0&quot;,<br>  &quot;model&quot;: &quot;Google Gemini Nano Banana Pro&quot;,<br>  &quot;subjects&quot;: [<br>    {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;position&quot;: &quot;左侧&quot;,<br>      &quot;pose&quot;: &quot;游动中，放松的姿态，上半身露出水面&quot;,<br>      &quot;expression&quot;: &quot;酷，充满自信&quot;,<br>      &quot;outfit&quot;: &quot;象牙色极简连体泳衣&quot;,<br>      &quot;accessories&quot;: &quot;简约深色太阳镜，手持冰镇饮料&quot;,<br>      &quot;hair_makeup&quot;: &quot;湿润的松散波浪发，自然光泽妆容&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Sydney Sweeney&quot;,<br>      &quot;position&quot;: &quot;右侧&quot;,<br>      &quot;pose&quot;: &quot;游动中，略微朝向 Ana de Armas 的角度&quot;,<br>      &quot;expression&quot;: &quot;充满电影感且沉着&quot;,<br>      &quot;outfit&quot;: &quot;柔和腮红粉色现代连体泳衣&quot;,<br>      &quot;accessories&quot;: &quot;淡色太阳镜，带冰块的冰镇饮料&quot;,<br>      &quot;hair_makeup&quot;: &quot;湿润的金色波浪发，清新自然的魅力妆容&quot;<br>    }<br>  ],<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;奢华游泳池&quot;,<br>    &quot;background&quot;: &quot;清澈的蓝色水面，浅色石边，干净现代的设计&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;自然的电影感阳光&quot;,<br>    &quot;effect&quot;: &quot;水面反光，柔和高光，真实的肤色&quot;<br>  },<br>  &quot;image_properties&quot;: {<br>    &quot;resolution&quot;: &quot;4K&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style&quot;: &quot;奢华池畔时尚编辑风，照片写实，电影质感现实主义&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"version\": \"2.0\",\n  \"model\": \"Google Gemini Nano Banana Pro\",\n  \"subjects\": [\n    {\n      \"name\": \"Ana de Armas\",\n      \"position\": \"left\",\n      \"pose\": \"mid-swim, relaxed posture, upper body above water\",\n      \"expression\": \"cool, confident\",\n      \"outfit\": \"ivory minimalist one-piece swimsuit\",\n      \"accessories\": \"sleek dark sunglasses, cold drink in hand\",\n      \"hair_makeup\": \"wet loose waves, natural glow makeup\"\n    },\n    {\n      \"name\": \"Sydney Sweeney\",\n      \"position\": \"right\",\n      \"pose\": \"mid-swim, angled slightly toward Ana\",\n      \"expression\": \"cinematic and composed\",\n      \"outfit\": \"soft blush pink modern one-piece swimsuit\",\n      \"accessories\": \"light-tinted sunglasses, cold drink with ice\",\n      \"hair_makeup\": \"wet blonde waves, fresh natural glam\"\n    }\n  ],\n  \"environment\": {\n    \"setting\": \"luxury swimming pool\",\n    \"background\": \"clear blue water, light stone edges, clean modern design\"\n  },\n  \"lighting\": {\n    \"type\": \"natural cinematic sunlight\",\n    \"effect\": \"water reflections, soft highlights, realistic skin tones\"\n  },\n  \"image_properties\": {\n    \"resolution\": \"4K\",\n    \"aspect_ratio\": \"9:16\",\n    \"style\": \"luxury poolside editorial, photorealistic, cinematic realism\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;version&quot;: &quot;2.0&quot;,<br>  &quot;model&quot;: &quot;Google Gemini Nano Banana Pro&quot;,<br>  &quot;subjects&quot;: [<br>    {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;position&quot;: &quot;left&quot;,<br>      &quot;pose&quot;: &quot;mid-swim, relaxed posture, upper body above water&quot;,<br>      &quot;expression&quot;: &quot;cool, confident&quot;,<br>      &quot;outfit&quot;: &quot;ivory minimalist one-piece swimsuit&quot;,<br>      &quot;accessories&quot;: &quot;sleek dark sunglasses, cold drink in hand&quot;,<br>      &quot;hair_makeup&quot;: &quot;wet loose waves, natural glow makeup&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Sydney Sweeney&quot;,<br>      &quot;position&quot;: &quot;right&quot;,<br>      &quot;pose&quot;: &quot;mid-swim, angled slightly toward Ana&quot;,<br>      &quot;expression&quot;: &quot;cinematic and composed&quot;,<br>      &quot;outfit&quot;: &quot;soft blush pink modern one-piece swimsuit&quot;,<br>      &quot;accessories&quot;: &quot;light-tinted sunglasses, cold drink with ice&quot;,<br>      &quot;hair_makeup&quot;: &quot;wet blonde waves, fresh natural glam&quot;<br>    }<br>  ],<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;luxury swimming pool&quot;,<br>    &quot;background&quot;: &quot;clear blue water, light stone edges, clean modern design&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;natural cinematic sunlight&quot;,<br>    &quot;effect&quot;: &quot;water reflections, soft highlights, realistic skin tones&quot;<br>  },<br>  &quot;image_properties&quot;: {<br>    &quot;resolution&quot;: &quot;4K&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style&quot;: &quot;luxury poolside editorial, photorealistic, cinematic realism&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;version&quot;: &quot;2.0&quot;,<br>  &quot;model&quot;: &quot;Google Gemini Nano Banana Pro&quot;,<br>  &quot;subjects&quot;: [<br>    {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;position&quot;: &quot;left&quot;,<br>      &quot;pose&quot;: &quot;mid-swim, relaxed posture, upper body above water&quot;,<br>      &quot;expression&quot;: &quot;cool, confident&quot;,<br>      &quot;outfit&quot;: &quot;ivory minimalist one-piece swimsuit&quot;,<br>      &quot;accessories&quot;: &quot;sleek dark sunglasses, cold drink in hand&quot;,<br>      &quot;hair_makeup&quot;: &quot;wet loose waves, natural glow makeup&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Sydney Sweeney&quot;,<br>      &quot;position&quot;: &quot;right&quot;,<br>      &quot;pose&quot;: &quot;mid-swim, angled slightly toward Ana&quot;,<br>      &quot;expression&quot;: &quot;cinematic and composed&quot;,<br>      &quot;outfit&quot;: &quot;soft blush pink modern one-piece swimsuit&quot;,<br>      &quot;accessories&quot;: &quot;light-tinted sunglasses, cold drink with ice&quot;,<br>      &quot;hair_makeup&quot;: &quot;wet blonde waves, fresh natural glam&quot;<br>    }<br>  ],<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;luxury swimming pool&quot;,<br>    &quot;background&quot;: &quot;clear blue water, light stone edges, clean modern design&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;natural cinematic sunlight&quot;,<br>    &quot;effect&quot;: &quot;water reflections, soft highlights, realistic skin tones&quot;<br>  },<br>  &quot;image_properties&quot;: {<br>    &quot;resolution&quot;: &quot;4K&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style&quot;: &quot;luxury poolside editorial, photorealistic, cinematic realism&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2019091212892794925-1.jpg" alt="&quot;version&quot;: &quot;2.0&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1975,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

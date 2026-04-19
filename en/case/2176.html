@@ -7,11 +7,13 @@
     <title>In my other post, I noticed, as I suspected, that a lot of pe... #2176 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="In my other post, I noticed, as I suspected, that a lot of people are disappointed with Midjourney. But it still fasc...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2176.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2176.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2176.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844338">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023499">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("在我的另一篇帖子里，我注意到，正如我所料，很多人对 Midjourney 感到失望。但它仍然让我着迷，因为有像这样的东西：\n\n--sref 299991256\n\n这是一种二十世纪中期的时尚社论插画风格，线条松散而富有表现力，配以极简的水粉色彩。\n\n它在优雅与流畅的笔触上带有 René Gruau 的余韵，呼应二十世纪中期的巴黎时尚插画与速写本式时装绘图，并隐约透出当代 Instagram 社论式的时尚别致。但它并不是对任何特定艺术家的直接复制。它是对二十世纪中期图形语言的现代再诠释。\n\n这正是我仍然钟爱它的原因。", this)'>📋 Copy</button>
         </div>
-        <p>在我的另一篇帖子里，我注意到，正如我所料，很多人对 Midjourney 感到失望。但它仍然让我着迷，因为有像这样的东西：</p><p>--sref 299991256</p><p>这是一种二十世纪中期的时尚社论插画风格，线条松散而富有表现力，配以极简的水粉色彩。</p><p>它在优雅与流畅的笔触上带有 René Gruau 的余韵，呼应二十世纪中期的巴黎时尚插画与速写本式时装绘图，并隐约透出当代 Instagram 社论式的时尚别致。但它并不是对任何特定艺术家的直接复制。它是对二十世纪中期图形语言的现代再诠释。</p><p>这正是我仍然钟爱它的原因。</p>
+        <div data-nosnippet><p>在我的另一篇帖子里，我注意到，正如我所料，很多人对 Midjourney 感到失望。但它仍然让我着迷，因为有像这样的东西：</p><p>--sref 299991256</p><p>这是一种二十世纪中期的时尚社论插画风格，线条松散而富有表现力，配以极简的水粉色彩。</p><p>它在优雅与流畅的笔触上带有 René Gruau 的余韵，呼应二十世纪中期的巴黎时尚插画与速写本式时装绘图，并隐约透出当代 Instagram 社论式的时尚别致。但它并不是对任何特定艺术家的直接复制。它是对二十世纪中期图形语言的现代再诠释。</p><p>这正是我仍然钟爱它的原因。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("In my other post, I noticed, as I suspected, that a lot of people are disappointed with Midjourney. But it still fascinates me because of things like this:\n\n--sref 299991256\n\nIt’s a mid-century fashion editorial illustration style with loose, expressive linework and minimalist gouache color.\n\nIt carries echoes of René Gruau in its elegance and fluid stroke, mid-century Parisian fashion illustration, sketchbook fashion drawing, and a subtle contemporary Instagram editorial chic touch. But it’s not a direct copy of any specific artist. It’s a modern reinterpretation of mid-century graphic language.\n\nThat’s exactly why I still love it.", this)'>📋 Copy</button>
         </div>
-        <p>In my other post, I noticed, as I suspected, that a lot of people are disappointed with Midjourney. But it still fascinates me because of things like this:</p><p>--sref 299991256</p><p>It’s a mid-century fashion editorial illustration style with loose, expressive linework and minimalist gouache color.</p><p>It carries echoes of René Gruau in its elegance and fluid stroke, mid-century Parisian fashion illustration, sketchbook fashion drawing, and a subtle contemporary Instagram editorial chic touch. But it’s not a direct copy of any specific artist. It’s a modern reinterpretation of mid-century graphic language.</p><p>That’s exactly why I still love it.</p>
+        <div data-nosnippet><p>In my other post, I noticed, as I suspected, that a lot of people are disappointed with Midjourney. But it still fascinates me because of things like this:</p><p>--sref 299991256</p><p>It’s a mid-century fashion editorial illustration style with loose, expressive linework and minimalist gouache color.</p><p>It carries echoes of René Gruau in its elegance and fluid stroke, mid-century Parisian fashion illustration, sketchbook fashion drawing, and a subtle contemporary Instagram editorial chic touch. But it’s not a direct copy of any specific artist. It’s a modern reinterpretation of mid-century graphic language.</p><p>That’s exactly why I still love it.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2024541332253864234-1.jpg" alt="In my other post, I noticed, as I suspected, that a lot of pe..." loading="lazy"><img src="/images/tweet-2024541332253864234-2.jpg" alt="In my other post, I noticed, as I suspected, that a lot of pe..." loading="lazy"><img src="/images/tweet-2024541332253864234-3.jpg" alt="In my other post, I noticed, as I suspected, that a lot of pe..." loading="lazy"><img src="/images/tweet-2024541332253864234-4.jpg" alt="In my other post, I noticed, as I suspected, that a lot of pe..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2176,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

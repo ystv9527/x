@@ -7,11 +7,13 @@
     <title>An expedition leader&#39;s planning board for [JOURNEY / MISSION]... #1147 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="An expedition leader&#39;s planning board for [JOURNEY / MISSION] — [DESTINATION / ERA]. Left section: route map with top...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1147.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1147.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1147.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845425">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023716">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一位探险队领队的筹划板，适用于 [行程 / 任务] — [目的地 / 时代]。左侧部分：带有地形细节的路线图，标记了关键点、危险区域并在边缘标注时间线。中部部分：完整的装备布局，所有装备从俯视角拍照整齐排列，标注重量和功能，突出冗余，杜绝任何多余物品。右侧部分：正在进行的探险或已抵达的目的地，人物与风景并置，比例尺确立，强调人与广袤环境之间的关系。视觉风格从地图学的精确性逐步过渡到实用清单，最终呈现史诗般的环境摄影。标题区块写着 \"[探险名称] — [路线], [日期], [目标]\"。", this)'>📋 Copy</button>
         </div>
-        <p>一位探险队领队的筹划板，适用于 [行程 / 任务] — [目的地 / 时代]。左侧部分：带有地形细节的路线图，标记了关键点、危险区域并在边缘标注时间线。中部部分：完整的装备布局，所有装备从俯视角拍照整齐排列，标注重量和功能，突出冗余，杜绝任何多余物品。右侧部分：正在进行的探险或已抵达的目的地，人物与风景并置，比例尺确立，强调人与广袤环境之间的关系。视觉风格从地图学的精确性逐步过渡到实用清单，最终呈现史诗般的环境摄影。标题区块写着 &quot;[探险名称] — [路线], [日期], [目标]&quot;。</p>
+        <div data-nosnippet><p>一位探险队领队的筹划板，适用于 [行程 / 任务] — [目的地 / 时代]。左侧部分：带有地形细节的路线图，标记了关键点、危险区域并在边缘标注时间线。中部部分：完整的装备布局，所有装备从俯视角拍照整齐排列，标注重量和功能，突出冗余，杜绝任何多余物品。右侧部分：正在进行的探险或已抵达的目的地，人物与风景并置，比例尺确立，强调人与广袤环境之间的关系。视觉风格从地图学的精确性逐步过渡到实用清单，最终呈现史诗般的环境摄影。标题区块写着 &quot;[探险名称] — [路线], [日期], [目标]&quot;。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("An expedition leader's planning board for [JOURNEY / MISSION] — [DESTINATION / ERA]. Left section: route map with topographical detail, waypoints marked, danger zones annotated, and timeline running along the margin. Center section: complete kit layout, every piece of equipment photographed from above in organized rows, weight and function noted, redundancies highlighted, nothing extraneous. Right section: the expedition in progress or the destination achieved, figures in landscape, scale established, the human element against the immense. Visual style transitions from cartographic precision through utilitarian inventory to epic environmental photography. Title block reading \"[EXPEDITION NAME] — [ROUTE], [DATE], [OBJECTIVE]\".", this)'>📋 Copy</button>
         </div>
-        <p>An expedition leader&#39;s planning board for [JOURNEY / MISSION] — [DESTINATION / ERA]. Left section: route map with topographical detail, waypoints marked, danger zones annotated, and timeline running along the margin. Center section: complete kit layout, every piece of equipment photographed from above in organized rows, weight and function noted, redundancies highlighted, nothing extraneous. Right section: the expedition in progress or the destination achieved, figures in landscape, scale established, the human element against the immense. Visual style transitions from cartographic precision through utilitarian inventory to epic environmental photography. Title block reading &quot;[EXPEDITION NAME] — [ROUTE], [DATE], [OBJECTIVE]&quot;.</p>
+        <div data-nosnippet><p>An expedition leader&#39;s planning board for [JOURNEY / MISSION] — [DESTINATION / ERA]. Left section: route map with topographical detail, waypoints marked, danger zones annotated, and timeline running along the margin. Center section: complete kit layout, every piece of equipment photographed from above in organized rows, weight and function noted, redundancies highlighted, nothing extraneous. Right section: the expedition in progress or the destination achieved, figures in landscape, scale established, the human element against the immense. Visual style transitions from cartographic precision through utilitarian inventory to epic environmental photography. Title block reading &quot;[EXPEDITION NAME] — [ROUTE], [DATE], [OBJECTIVE]&quot;.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011097657385619460-1.jpg" alt="An expedition leader&#39;s planning board for [JOURNEY / MISSION]..." loading="lazy"><img src="/images/tweet-2011097657385619460-2.jpg" alt="An expedition leader&#39;s planning board for [JOURNEY / MISSION]..." loading="lazy"><img src="/images/tweet-2011097657385619460-3.jpg" alt="An expedition leader&#39;s planning board for [JOURNEY / MISSION]..." loading="lazy"><img src="/images/tweet-2011097657385619460-4.jpg" alt="An expedition leader&#39;s planning board for [JOURNEY / MISSION]..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1147,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

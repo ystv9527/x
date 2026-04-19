@@ -7,11 +7,13 @@
     <title>Create a realistic torn paper collage portrait of the subject... #1367 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create a realistic torn paper collage portrait of the subject, constructed entirely from layered pieces of colored pa...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1367.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1367.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1367.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840959">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022470">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创作一幅逼真的撕纸拼贴肖像，完全由多层彩色纸片构成。\n面部特征、头发、服装和阴影均由不规则手撕的纸片构成，粗糙且纤维状的纸边清晰可见。\n每一层纸片自然重叠，产生微妙的层次感和纸片之间柔和的阴影分隔。\n使用柔和的土色系与去饱和色调，并能看见纸张纹理和厚度。\n不使用颜料，不留笔触——仅保留纸张质感。\n背景由较大块的撕纸有机排列构成，采用柔和的中性色调。\n柔和漫射的影室灯光增强纸层和边缘阴影效果，但不产生光泽或反光。\n手工制作的编辑插画风格。\n超细致、富有质感、具备博物馆级混合媒介外观。\n方形构图，高分辨率。", this)'>📋 复制</button>
         </div>
-        <p>创作一幅逼真的撕纸拼贴肖像，完全由多层彩色纸片构成。<br>面部特征、头发、服装和阴影均由不规则手撕的纸片构成，粗糙且纤维状的纸边清晰可见。<br>每一层纸片自然重叠，产生微妙的层次感和纸片之间柔和的阴影分隔。<br>使用柔和的土色系与去饱和色调，并能看见纸张纹理和厚度。<br>不使用颜料，不留笔触——仅保留纸张质感。<br>背景由较大块的撕纸有机排列构成，采用柔和的中性色调。<br>柔和漫射的影室灯光增强纸层和边缘阴影效果，但不产生光泽或反光。<br>手工制作的编辑插画风格。<br>超细致、富有质感、具备博物馆级混合媒介外观。<br>方形构图，高分辨率。</p>
+        <div data-nosnippet><p>创作一幅逼真的撕纸拼贴肖像，完全由多层彩色纸片构成。<br>面部特征、头发、服装和阴影均由不规则手撕的纸片构成，粗糙且纤维状的纸边清晰可见。<br>每一层纸片自然重叠，产生微妙的层次感和纸片之间柔和的阴影分隔。<br>使用柔和的土色系与去饱和色调，并能看见纸张纹理和厚度。<br>不使用颜料，不留笔触——仅保留纸张质感。<br>背景由较大块的撕纸有机排列构成，采用柔和的中性色调。<br>柔和漫射的影室灯光增强纸层和边缘阴影效果，但不产生光泽或反光。<br>手工制作的编辑插画风格。<br>超细致、富有质感、具备博物馆级混合媒介外观。<br>方形构图，高分辨率。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a realistic torn paper collage portrait of the subject, constructed entirely from layered pieces of colored paper. Facial features, hair, clothing, and shadows are formed using irregular hand-torn paper fragments with rough, fibrous edges clearly visible.\nEach paper layer overlaps naturally, creating subtle depth and soft shadow separation between pieces.\nUse muted, earthy tones and desaturated colors, with visible paper grain and thickness.\nNo paint, no brush strokes — only paper textures.\nBackground made of larger torn paper sheets arranged organically, with soft neutral tones.\nSoft diffused studio lighting enhances the paper layers and edge shadows without gloss or shine.\nHandcrafted, editorial illustration style.\nUltra-detailed, tactile, museum-quality mixed-media look.\nSquare format, high resolution.", this)'>📋 复制</button>
         </div>
-        <p>Create a realistic torn paper collage portrait of the subject, constructed entirely from layered pieces of colored paper. Facial features, hair, clothing, and shadows are formed using irregular hand-torn paper fragments with rough, fibrous edges clearly visible.<br>Each paper layer overlaps naturally, creating subtle depth and soft shadow separation between pieces.<br>Use muted, earthy tones and desaturated colors, with visible paper grain and thickness.<br>No paint, no brush strokes — only paper textures.<br>Background made of larger torn paper sheets arranged organically, with soft neutral tones.<br>Soft diffused studio lighting enhances the paper layers and edge shadows without gloss or shine.<br>Handcrafted, editorial illustration style.<br>Ultra-detailed, tactile, museum-quality mixed-media look.<br>Square format, high resolution.</p>
+        <div data-nosnippet><p>Create a realistic torn paper collage portrait of the subject, constructed entirely from layered pieces of colored paper. Facial features, hair, clothing, and shadows are formed using irregular hand-torn paper fragments with rough, fibrous edges clearly visible.<br>Each paper layer overlaps naturally, creating subtle depth and soft shadow separation between pieces.<br>Use muted, earthy tones and desaturated colors, with visible paper grain and thickness.<br>No paint, no brush strokes — only paper textures.<br>Background made of larger torn paper sheets arranged organically, with soft neutral tones.<br>Soft diffused studio lighting enhances the paper layers and edge shadows without gloss or shine.<br>Handcrafted, editorial illustration style.<br>Ultra-detailed, tactile, museum-quality mixed-media look.<br>Square format, high resolution.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011833963560800308-1.jpg" alt="Create a realistic torn paper collage portrait of the subject..." loading="lazy"><img src="/images/tweet-2011833963560800308-2.jpg" alt="Create a realistic torn paper collage portrait of the subject..." loading="lazy"><img src="/images/tweet-2011833963560800308-3.jpg" alt="Create a realistic torn paper collage portrait of the subject..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1367,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

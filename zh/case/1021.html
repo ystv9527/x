@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Cinematic film still, extreme top down MEDIUM shot... #1021 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Cinematic film still, extreme top down MEDIUM shot . The woman is positioned at the center of the frame,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1021.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1021.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1021.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841299">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022551">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"电影感剧照，**极端俯视中景镜头**。女人位于画面中心，**向上直视镜头，与镜头有强烈的眼神交流**。她的身影显眼，占据画面很大比例。**忠实还原参考图中的发型、服装和配饰。**她正坐在最高摩天大楼的边缘。屋顶环境有粗糙的混凝土纹理和混乱的钢结构。远处模糊的城市建筑营造出令人眩晕的城市眩晕氛围。**戏剧性的温暖自然日光，高对比度，阳光在她的眼中反射。**柔和的工业色调，明显的胶片颗粒，Kodak Portra 800 美学。超精细，对她的脸和眼睛进行清晰的对焦，8K 真实感。 --ar 3:4\",\n  \"negative_prompt\": \"看向别处，闭眼，低头，广角镜头，人物很小，人物太小，改变发型，不同的服装，低质量，面部扭曲\",\n  \"style\": \"高级时尚画报风格，电影剧照感，胶片模拟美学\",\n  \"camera\": \"俯视中景镜头，向上直视镜头\",\n  \"aspect_ratio\": \"3:4\",\n  \"lighting\": \"自然日光，高对比，眼中高光\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;电影感剧照，**极端俯视中景镜头**。女人位于画面中心，**向上直视镜头，与镜头有强烈的眼神交流**。她的身影显眼，占据画面很大比例。**忠实还原参考图中的发型、服装和配饰。**她正坐在最高摩天大楼的边缘。屋顶环境有粗糙的混凝土纹理和混乱的钢结构。远处模糊的城市建筑营造出令人眩晕的城市眩晕氛围。**戏剧性的温暖自然日光，高对比度，阳光在她的眼中反射。**柔和的工业色调，明显的胶片颗粒，Kodak Portra 800 美学。超精细，对她的脸和眼睛进行清晰的对焦，8K 真实感。 --ar 3:4&quot;,<br>  &quot;negative_prompt&quot;: &quot;看向别处，闭眼，低头，广角镜头，人物很小，人物太小，改变发型，不同的服装，低质量，面部扭曲&quot;,<br>  &quot;style&quot;: &quot;高级时尚画报风格，电影剧照感，胶片模拟美学&quot;,<br>  &quot;camera&quot;: &quot;俯视中景镜头，向上直视镜头&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;lighting&quot;: &quot;自然日光，高对比，眼中高光&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;电影感剧照，**极端俯视中景镜头**。女人位于画面中心，**向上直视镜头，与镜头有强烈的眼神交流**。她的身影显眼，占据画面很大比例。**忠实还原参考图中的发型、服装和配饰。**她正坐在最高摩天大楼的边缘。屋顶环境有粗糙的混凝土纹理和混乱的钢结构。远处模糊的城市建筑营造出令人眩晕的城市眩晕氛围。**戏剧性的温暖自然日光，高对比度，阳光在她的眼中反射。**柔和的工业色调，明显的胶片颗粒，Kodak Portra 800 美学。超精细，对她的脸和眼睛进行清晰的对焦，8K 真实感。 --ar 3:4&quot;,<br>  &quot;negative_prompt&quot;: &quot;看向别处，闭眼，低头，广角镜头，人物很小，人物太小，改变发型，不同的服装，低质量，面部扭曲&quot;,<br>  &quot;style&quot;: &quot;高级时尚画报风格，电影剧照感，胶片模拟美学&quot;,<br>  &quot;camera&quot;: &quot;俯视中景镜头，向上直视镜头&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;lighting&quot;: &quot;自然日光，高对比，眼中高光&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"Cinematic film still, **extreme top-down MEDIUM shot**. The woman is positioned at the center of the frame, **looking directly up into the camera lens with intense eye contact**. Her figure is prominent and fills a significant portion of the frame. **Replicate the exact hairstyle, clothing, and accessories from the reference image faithfully.** She is sitting on the edge of the tallest skyscraper. The rooftop environment features rough concrete textures and chaotic steel structures. Far below, the blurred city buildings create a dizzying urban vertigo mood. **Dramatic warm natural daylight, high contrast, with sunlight reflecting in her eyes.** Muted industrial tones with visible film grain, Kodak Portra 800 aesthetic. Ultra-detailed, sharp focus on her face and eyes, 8K realism. --ar 3:4\",\n  \"negative_prompt\": \"looking away, eyes closed, looking down, wide shot, tiny subject, person too small, changing hairstyle, different clothing, low quality, distorted face\",\n  \"style\": \"high-fashion editorial, cinematic film still, analog film aesthetic\",\n  \"camera\": \"Top-down medium shot, looking directly up at camera\",\n  \"aspect_ratio\": \"3:4\",\n  \"lighting\": \"natural daylight, high contrast, catchlights in eyes\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;Cinematic film still, **extreme top-down MEDIUM shot**. The woman is positioned at the center of the frame, **looking directly up into the camera lens with intense eye contact**. Her figure is prominent and fills a significant portion of the frame. **Replicate the exact hairstyle, clothing, and accessories from the reference image faithfully.** She is sitting on the edge of the tallest skyscraper. The rooftop environment features rough concrete textures and chaotic steel structures. Far below, the blurred city buildings create a dizzying urban vertigo mood. **Dramatic warm natural daylight, high contrast, with sunlight reflecting in her eyes.** Muted industrial tones with visible film grain, Kodak Portra 800 aesthetic. Ultra-detailed, sharp focus on her face and eyes, 8K realism. --ar 3:4&quot;,<br>  &quot;negative_prompt&quot;: &quot;looking away, eyes closed, looking down, wide shot, tiny subject, person too small, changing hairstyle, different clothing, low quality, distorted face&quot;,<br>  &quot;style&quot;: &quot;high-fashion editorial, cinematic film still, analog film aesthetic&quot;,<br>  &quot;camera&quot;: &quot;Top-down medium shot, looking directly up at camera&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;lighting&quot;: &quot;natural daylight, high contrast, catchlights in eyes&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;Cinematic film still, **extreme top-down MEDIUM shot**. The woman is positioned at the center of the frame, **looking directly up into the camera lens with intense eye contact**. Her figure is prominent and fills a significant portion of the frame. **Replicate the exact hairstyle, clothing, and accessories from the reference image faithfully.** She is sitting on the edge of the tallest skyscraper. The rooftop environment features rough concrete textures and chaotic steel structures. Far below, the blurred city buildings create a dizzying urban vertigo mood. **Dramatic warm natural daylight, high contrast, with sunlight reflecting in her eyes.** Muted industrial tones with visible film grain, Kodak Portra 800 aesthetic. Ultra-detailed, sharp focus on her face and eyes, 8K realism. --ar 3:4&quot;,<br>  &quot;negative_prompt&quot;: &quot;looking away, eyes closed, looking down, wide shot, tiny subject, person too small, changing hairstyle, different clothing, low quality, distorted face&quot;,<br>  &quot;style&quot;: &quot;high-fashion editorial, cinematic film still, analog film aesthetic&quot;,<br>  &quot;camera&quot;: &quot;Top-down medium shot, looking directly up at camera&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;lighting&quot;: &quot;natural daylight, high contrast, catchlights in eyes&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010378808176873774-1.jpg" alt="&quot;prompt&quot;: &quot;Cinematic film still, extreme top down MEDIUM shot..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1021,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

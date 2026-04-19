@@ -7,11 +7,13 @@
     <title>[BRAND NAME]. Act as a Creative Director and Still Life Photo... #1740 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="[BRAND NAME]. Act as a Creative Director and Still Life Photographer for a hypebeast fashion publication. THE TASK: C...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1740.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1740.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1740.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844831">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023593">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]。担任潮流时尚刊物的创意总监兼静物摄影师。\n任务：\n为 [BRAND NAME] 创作一张高端“陈列室静物”摄影，宣布限量商品发售。\n阶段 1：自主策展（策略）\n分析 [BRAND NAME]：识别所属行业及核心实物产品（例如，“Spalding” -> 篮球；“McDonald's” -> 汉堡盒；“Visa” -> 金属卡）。\n确定配色：\n背景色：从品牌的次级色板中选取深沉、丰富、有质感的色调（例如：青色、海军蓝、酒红、板岩灰）。\n商品色：选择与背景形成对比的暖色或中性色（骆驼色、橙色、奶油色），使其凸显。\n选择“商品件”：挑选一件与品牌氛围相符的高品质服饰单品（例如学院夹克、加厚连帽衫、帆布手提袋或羊毛围巾）。\n阶段 2：场景设计（展架）\n道具：一个简约现代的白色烤漆金属展架或货架。它在画面中呈现干净利落。\n摆放方式：\n悬挂物：所选的“商品件”（例如夹克）随意搭在展架上或挂在衣架上，展示材质纹理（羊毛/毡布）。\n堆叠物：在展架的层板上堆放多件品牌核心产品（例如一堆篮球、罐头金字塔、一排盒子）。\n背景：使用手绘画布背景，采用所选的深色背景色。可见的纹理/笔触对于营造“工作室”感至关重要。\n阶段 3：实体品牌标识（质感）\n在商品上：悬挂的服饰必须具有高品质的实体品牌标识。使用绒面贴片（chenille patches）、刺绣标志或沿袖子下垂或位于背部的丝网印刷，看起来像真实且昂贵的成衣。\n在产品上：确保堆叠的核心产品清晰可见正确的 [BRAND NAME] 标志。\n阶段 4：摄影与灯光\n灯光：来自侧面的柔和定向窗光。在展架上产生真实柔和的阴影，并在材质上形成丰富的高光。\n镜头：50mm 或 85mm。对商品保持清晰对焦，背景轻微虚化。\n阶段 5：界面叠加（“发售”排版）\n左侧对齐：\n在左侧留白处放置大型、干净的白色 [BRAND NAME] 标志。\n标志下方为小号白色文字，写品牌的官方口号。", this)'>📋 Copy</button>
         </div>
-        <p>[BRAND NAME]。担任潮流时尚刊物的创意总监兼静物摄影师。<br>任务：<br>为 [BRAND NAME] 创作一张高端“陈列室静物”摄影，宣布限量商品发售。<br>阶段 1：自主策展（策略）<br>分析 [BRAND NAME]：识别所属行业及核心实物产品（例如，“Spalding” -&gt; 篮球；“McDonald&#39;s” -&gt; 汉堡盒；“Visa” -&gt; 金属卡）。<br>确定配色：<br>背景色：从品牌的次级色板中选取深沉、丰富、有质感的色调（例如：青色、海军蓝、酒红、板岩灰）。<br>商品色：选择与背景形成对比的暖色或中性色（骆驼色、橙色、奶油色），使其凸显。<br>选择“商品件”：挑选一件与品牌氛围相符的高品质服饰单品（例如学院夹克、加厚连帽衫、帆布手提袋或羊毛围巾）。<br>阶段 2：场景设计（展架）<br>道具：一个简约现代的白色烤漆金属展架或货架。它在画面中呈现干净利落。<br>摆放方式：<br>悬挂物：所选的“商品件”（例如夹克）随意搭在展架上或挂在衣架上，展示材质纹理（羊毛/毡布）。<br>堆叠物：在展架的层板上堆放多件品牌核心产品（例如一堆篮球、罐头金字塔、一排盒子）。<br>背景：使用手绘画布背景，采用所选的深色背景色。可见的纹理/笔触对于营造“工作室”感至关重要。<br>阶段 3：实体品牌标识（质感）<br>在商品上：悬挂的服饰必须具有高品质的实体品牌标识。使用绒面贴片（chenille patches）、刺绣标志或沿袖子下垂或位于背部的丝网印刷，看起来像真实且昂贵的成衣。<br>在产品上：确保堆叠的核心产品清晰可见正确的 [BRAND NAME] 标志。<br>阶段 4：摄影与灯光<br>灯光：来自侧面的柔和定向窗光。在展架上产生真实柔和的阴影，并在材质上形成丰富的高光。<br>镜头：50mm 或 85mm。对商品保持清晰对焦，背景轻微虚化。<br>阶段 5：界面叠加（“发售”排版）<br>左侧对齐：<br>在左侧留白处放置大型、干净的白色 [BRAND NAME] 标志。<br>标志下方为小号白色文字，写品牌的官方口号。</p>
+        <div data-nosnippet><p>[BRAND NAME]。担任潮流时尚刊物的创意总监兼静物摄影师。<br>任务：<br>为 [BRAND NAME] 创作一张高端“陈列室静物”摄影，宣布限量商品发售。<br>阶段 1：自主策展（策略）<br>分析 [BRAND NAME]：识别所属行业及核心实物产品（例如，“Spalding” -&gt; 篮球；“McDonald&#39;s” -&gt; 汉堡盒；“Visa” -&gt; 金属卡）。<br>确定配色：<br>背景色：从品牌的次级色板中选取深沉、丰富、有质感的色调（例如：青色、海军蓝、酒红、板岩灰）。<br>商品色：选择与背景形成对比的暖色或中性色（骆驼色、橙色、奶油色），使其凸显。<br>选择“商品件”：挑选一件与品牌氛围相符的高品质服饰单品（例如学院夹克、加厚连帽衫、帆布手提袋或羊毛围巾）。<br>阶段 2：场景设计（展架）<br>道具：一个简约现代的白色烤漆金属展架或货架。它在画面中呈现干净利落。<br>摆放方式：<br>悬挂物：所选的“商品件”（例如夹克）随意搭在展架上或挂在衣架上，展示材质纹理（羊毛/毡布）。<br>堆叠物：在展架的层板上堆放多件品牌核心产品（例如一堆篮球、罐头金字塔、一排盒子）。<br>背景：使用手绘画布背景，采用所选的深色背景色。可见的纹理/笔触对于营造“工作室”感至关重要。<br>阶段 3：实体品牌标识（质感）<br>在商品上：悬挂的服饰必须具有高品质的实体品牌标识。使用绒面贴片（chenille patches）、刺绣标志或沿袖子下垂或位于背部的丝网印刷，看起来像真实且昂贵的成衣。<br>在产品上：确保堆叠的核心产品清晰可见正确的 [BRAND NAME] 标志。<br>阶段 4：摄影与灯光<br>灯光：来自侧面的柔和定向窗光。在展架上产生真实柔和的阴影，并在材质上形成丰富的高光。<br>镜头：50mm 或 85mm。对商品保持清晰对焦，背景轻微虚化。<br>阶段 5：界面叠加（“发售”排版）<br>左侧对齐：<br>在左侧留白处放置大型、干净的白色 [BRAND NAME] 标志。<br>标志下方为小号白色文字，写品牌的官方口号。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]. Act as a Creative Director and Still Life Photographer for a hypebeast fashion publication.\nTHE TASK:\nCreate a high-end \"Showroom Still Life\" photograph announcing a limited merchandise drop for [BRAND NAME].\nPHASE 1: AUTONOMOUS CURATION (STRATEGY)\nAnalyze [BRAND NAME]: Identify the industry and the core physical product (e.g., if \"Spalding\" -> Basketballs; if \"McDonald's\" -> Burger Boxes; if \"Visa\" -> Metal Cards).\nDetermine the Palette:\nBackground Color: A deep, rich, textured tone derived from the brand's secondary palette (e.g., Teal, Navy, Burgundy, Slate Grey).\nMerch Color: A contrasting warm or neutral tone (Camel, Orange, Cream) to pop against the background.\nSelect the \"Merch Item\": Choose a high-quality apparel piece relevant to the brand's vibe (e.g., a Varsity Letterman Jacket, a Heavyweight Hoodie, a Canvas Tote, or a Wool Scarf).\nPHASE 2: SET DESIGN (THE RACK)\nThe Prop: A simple, modern White Powder-Coated Metal Rack or Shelf unit. It stands cleanly in the frame.\nThe Arrangement:\nHanging Item: The chosen \"Merch Item\" (e.g., the Jacket) is draped casually over the rack or hanging on a hanger, showing off the texture (wool/felt).\nStacked Items: On the shelves of the rack, stack multiple units of the brand's Core Product (e.g., a stack of basketballs, a pyramid of cans, a row of boxes).\nThe Background: A Hand-Painted Canvas Backdrop in the chosen Deep Background Color. Visible texture/brushstrokes are essential for that \"studio\" look.\nPHASE 3: PHYSICAL BRANDING (TEXTURE)\nOn the Merch: The hanging apparel must feature High-Quality Physical Branding. Use \"Chenille Patches\", \"Embroidered Logos\", or \"Screen Print\" running down the sleeve or on the back. It must look like a real, expensive garment.\nOn the Products: Ensure the stacked core products have the correct [BRAND NAME] logo visible.\nPHASE 4: PHOTOGRAPHY & LIGHTING\nLighting: Soft, directional window light from the side. Creates realistic, soft shadows on the rack and rich highlights on the textures.\nLens: 50mm or 85mm. Sharp focus on the merch, slight fall-off in the background.\nPHASE 5: UI OVERLAY (THE \"DROP\" LAYOUT)\nLeft Side Alignment:\nLarge, clean White Logo of [BRAND NAME] floating in the negative space on the left.\nUnder the logo, small white text with the brand's official slogan.", this)'>📋 Copy</button>
         </div>
-        <p>[BRAND NAME]. Act as a Creative Director and Still Life Photographer for a hypebeast fashion publication.<br>THE TASK:<br>Create a high-end &quot;Showroom Still Life&quot; photograph announcing a limited merchandise drop for [BRAND NAME].<br>PHASE 1: AUTONOMOUS CURATION (STRATEGY)<br>Analyze [BRAND NAME]: Identify the industry and the core physical product (e.g., if &quot;Spalding&quot; -&gt; Basketballs; if &quot;McDonald&#39;s&quot; -&gt; Burger Boxes; if &quot;Visa&quot; -&gt; Metal Cards).<br>Determine the Palette:<br>Background Color: A deep, rich, textured tone derived from the brand&#39;s secondary palette (e.g., Teal, Navy, Burgundy, Slate Grey).<br>Merch Color: A contrasting warm or neutral tone (Camel, Orange, Cream) to pop against the background.<br>Select the &quot;Merch Item&quot;: Choose a high-quality apparel piece relevant to the brand&#39;s vibe (e.g., a Varsity Letterman Jacket, a Heavyweight Hoodie, a Canvas Tote, or a Wool Scarf).<br>PHASE 2: SET DESIGN (THE RACK)<br>The Prop: A simple, modern White Powder-Coated Metal Rack or Shelf unit. It stands cleanly in the frame.<br>The Arrangement:<br>Hanging Item: The chosen &quot;Merch Item&quot; (e.g., the Jacket) is draped casually over the rack or hanging on a hanger, showing off the texture (wool/felt).<br>Stacked Items: On the shelves of the rack, stack multiple units of the brand&#39;s Core Product (e.g., a stack of basketballs, a pyramid of cans, a row of boxes).<br>The Background: A Hand-Painted Canvas Backdrop in the chosen Deep Background Color. Visible texture/brushstrokes are essential for that &quot;studio&quot; look.<br>PHASE 3: PHYSICAL BRANDING (TEXTURE)<br>On the Merch: The hanging apparel must feature High-Quality Physical Branding. Use &quot;Chenille Patches&quot;, &quot;Embroidered Logos&quot;, or &quot;Screen Print&quot; running down the sleeve or on the back. It must look like a real, expensive garment.<br>On the Products: Ensure the stacked core products have the correct [BRAND NAME] logo visible.<br>PHASE 4: PHOTOGRAPHY &amp; LIGHTING<br>Lighting: Soft, directional window light from the side. Creates realistic, soft shadows on the rack and rich highlights on the textures.<br>Lens: 50mm or 85mm. Sharp focus on the merch, slight fall-off in the background.<br>PHASE 5: UI OVERLAY (THE &quot;DROP&quot; LAYOUT)<br>Left Side Alignment:<br>Large, clean White Logo of [BRAND NAME] floating in the negative space on the left.<br>Under the logo, small white text with the brand&#39;s official slogan.</p>
+        <div data-nosnippet><p>[BRAND NAME]. Act as a Creative Director and Still Life Photographer for a hypebeast fashion publication.<br>THE TASK:<br>Create a high-end &quot;Showroom Still Life&quot; photograph announcing a limited merchandise drop for [BRAND NAME].<br>PHASE 1: AUTONOMOUS CURATION (STRATEGY)<br>Analyze [BRAND NAME]: Identify the industry and the core physical product (e.g., if &quot;Spalding&quot; -&gt; Basketballs; if &quot;McDonald&#39;s&quot; -&gt; Burger Boxes; if &quot;Visa&quot; -&gt; Metal Cards).<br>Determine the Palette:<br>Background Color: A deep, rich, textured tone derived from the brand&#39;s secondary palette (e.g., Teal, Navy, Burgundy, Slate Grey).<br>Merch Color: A contrasting warm or neutral tone (Camel, Orange, Cream) to pop against the background.<br>Select the &quot;Merch Item&quot;: Choose a high-quality apparel piece relevant to the brand&#39;s vibe (e.g., a Varsity Letterman Jacket, a Heavyweight Hoodie, a Canvas Tote, or a Wool Scarf).<br>PHASE 2: SET DESIGN (THE RACK)<br>The Prop: A simple, modern White Powder-Coated Metal Rack or Shelf unit. It stands cleanly in the frame.<br>The Arrangement:<br>Hanging Item: The chosen &quot;Merch Item&quot; (e.g., the Jacket) is draped casually over the rack or hanging on a hanger, showing off the texture (wool/felt).<br>Stacked Items: On the shelves of the rack, stack multiple units of the brand&#39;s Core Product (e.g., a stack of basketballs, a pyramid of cans, a row of boxes).<br>The Background: A Hand-Painted Canvas Backdrop in the chosen Deep Background Color. Visible texture/brushstrokes are essential for that &quot;studio&quot; look.<br>PHASE 3: PHYSICAL BRANDING (TEXTURE)<br>On the Merch: The hanging apparel must feature High-Quality Physical Branding. Use &quot;Chenille Patches&quot;, &quot;Embroidered Logos&quot;, or &quot;Screen Print&quot; running down the sleeve or on the back. It must look like a real, expensive garment.<br>On the Products: Ensure the stacked core products have the correct [BRAND NAME] logo visible.<br>PHASE 4: PHOTOGRAPHY &amp; LIGHTING<br>Lighting: Soft, directional window light from the side. Creates realistic, soft shadows on the rack and rich highlights on the textures.<br>Lens: 50mm or 85mm. Sharp focus on the merch, slight fall-off in the background.<br>PHASE 5: UI OVERLAY (THE &quot;DROP&quot; LAYOUT)<br>Left Side Alignment:<br>Large, clean White Logo of [BRAND NAME] floating in the negative space on the left.<br>Under the logo, small white text with the brand&#39;s official slogan.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2015869121058030001-1.jpg" alt="[BRAND NAME]. Act as a Creative Director and Still Life Photo..." loading="lazy"><img src="/images/tweet-2015869121058030001-2.jpg" alt="[BRAND NAME]. Act as a Creative Director and Still Life Photo..." loading="lazy"><img src="/images/tweet-2015869121058030001-3.jpg" alt="[BRAND NAME]. Act as a Creative Director and Still Life Photo..." loading="lazy"><img src="/images/tweet-2015869121058030001-4.jpg" alt="[BRAND NAME]. Act as a Creative Director and Still Life Photo..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1740,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

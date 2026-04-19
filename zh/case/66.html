@@ -7,11 +7,13 @@
     <title>霓虹灯风格工具 #66 | Gem Nana AI 提示词库</title>
     <meta name="description" content="霓虹灯风格工具 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/66.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/66.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/66.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842171">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022783">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("根据下方 JSON 审美风格对附图进行纹理重现。", this)'>📋 复制</button>
         </div>
-        <p>根据下方 JSON 审美风格对附图进行纹理重现。</p>
+        <div data-nosnippet><p>根据下方 JSON 审美风格对附图进行纹理重现。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("retexture the image attached based on the JSON aesthetic below\n{\n  \"style\": \"hyperrealistic 3D render\",\n  \"material\": \"high-gloss translucent rubber with iridescent coating\",\n  \"surface_texture\": \"fine-grain pebbling with micro-specular highlights\",\n  \"lighting\": {\n    \"type\": \"studio HDRI\",\n    \"intensity\": \"high\",\n    \"direction\": \"multi-point with rim and backlight\",\n    \"colors\": [\"electric blue\", \"magenta\", \"neon purple\", \"sunset orange\"],\n    \"glow_effect\": true,\n    \"chromatic_aberration\": true,\n    \"bloom\": true\n  },\n  \"color_scheme\": {\n    \"primary\": \"iridescent gradient\",\n    \"highlights\": \"white light core reflections\",\n    \"accent_edges\": \"black outlines with subtle glow\"\n  },\n  \"background\": {\n    \"color\": \"solid black\",\n    \"texture\": \"none\",\n    \"contrast\": \"extreme to enhance subject glow\"\n  },\n  \"camera\": {\n    \"angle\": \"straight-on center view\",\n    \"focus\": \"sharp foreground, no depth blur\",\n    \"lens\": \"macro with light distortion\"\n  },\n  \"post_processing\": {\n    \"glow\": true,\n    \"contrast_boost\": true,\n    \"color_grading\": \"vibrant spectrum\",\n    \"noise\": \"minimal\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>retexture the image attached based on the JSON aesthetic below<br>{<br>  &quot;style&quot;: &quot;hyperrealistic 3D render&quot;,<br>  &quot;material&quot;: &quot;high-gloss translucent rubber with iridescent coating&quot;,<br>  &quot;surface_texture&quot;: &quot;fine-grain pebbling with micro-specular highlights&quot;,<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;studio HDRI&quot;,<br>    &quot;intensity&quot;: &quot;high&quot;,<br>    &quot;direction&quot;: &quot;multi-point with rim and backlight&quot;,<br>    &quot;colors&quot;: [&quot;electric blue&quot;, &quot;magenta&quot;, &quot;neon purple&quot;, &quot;sunset orange&quot;],<br>    &quot;glow_effect&quot;: true,<br>    &quot;chromatic_aberration&quot;: true,<br>    &quot;bloom&quot;: true<br>  },<br>  &quot;color_scheme&quot;: {<br>    &quot;primary&quot;: &quot;iridescent gradient&quot;,<br>    &quot;highlights&quot;: &quot;white light core reflections&quot;,<br>    &quot;accent_edges&quot;: &quot;black outlines with subtle glow&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;solid black&quot;,<br>    &quot;texture&quot;: &quot;none&quot;,<br>    &quot;contrast&quot;: &quot;extreme to enhance subject glow&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;straight-on center view&quot;,<br>    &quot;focus&quot;: &quot;sharp foreground, no depth blur&quot;,<br>    &quot;lens&quot;: &quot;macro with light distortion&quot;<br>  },<br>  &quot;post_processing&quot;: {<br>    &quot;glow&quot;: true,<br>    &quot;contrast_boost&quot;: true,<br>    &quot;color_grading&quot;: &quot;vibrant spectrum&quot;,<br>    &quot;noise&quot;: &quot;minimal&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>retexture the image attached based on the JSON aesthetic below<br>{<br>  &quot;style&quot;: &quot;hyperrealistic 3D render&quot;,<br>  &quot;material&quot;: &quot;high-gloss translucent rubber with iridescent coating&quot;,<br>  &quot;surface_texture&quot;: &quot;fine-grain pebbling with micro-specular highlights&quot;,<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;studio HDRI&quot;,<br>    &quot;intensity&quot;: &quot;high&quot;,<br>    &quot;direction&quot;: &quot;multi-point with rim and backlight&quot;,<br>    &quot;colors&quot;: [&quot;electric blue&quot;, &quot;magenta&quot;, &quot;neon purple&quot;, &quot;sunset orange&quot;],<br>    &quot;glow_effect&quot;: true,<br>    &quot;chromatic_aberration&quot;: true,<br>    &quot;bloom&quot;: true<br>  },<br>  &quot;color_scheme&quot;: {<br>    &quot;primary&quot;: &quot;iridescent gradient&quot;,<br>    &quot;highlights&quot;: &quot;white light core reflections&quot;,<br>    &quot;accent_edges&quot;: &quot;black outlines with subtle glow&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;solid black&quot;,<br>    &quot;texture&quot;: &quot;none&quot;,<br>    &quot;contrast&quot;: &quot;extreme to enhance subject glow&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;straight-on center view&quot;,<br>    &quot;focus&quot;: &quot;sharp foreground, no depth blur&quot;,<br>    &quot;lens&quot;: &quot;macro with light distortion&quot;<br>  },<br>  &quot;post_processing&quot;: {<br>    &quot;glow&quot;: true,<br>    &quot;contrast_boost&quot;: true,<br>    &quot;color_grading&quot;: &quot;vibrant spectrum&quot;,<br>    &quot;noise&quot;: &quot;minimal&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/66.png" alt="霓虹灯风格工具" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 66,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

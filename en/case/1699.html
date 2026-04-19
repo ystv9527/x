@@ -7,11 +7,13 @@
     <title>A gritty, handheld iPhone photo taken at night on an airport... #1699 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="A gritty, handheld iPhone photo taken at night on an airport tarmac with harsh direct on camera flash. Imperfect, sli...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1699.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1699.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1699.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844869">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023601">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一张粗粝的、手持 iPhone 在夜间的机场停机坪拍摄的照片，使用强烈的机身直射闪光。\n不完美、略微歪斜的构图，像一次即兴的抓拍。\n前景中，这名女子站在平板拖车上的一辆粉色保时捷 911 旁，正做出略带羞怯的手势，身体以四分之三角度侧转，一只手靠近脸庞。\n她穿着宽松的 Carhartt 风格牛仔裤和一件合身上衣，平直的刘海勾勒着她的脸庞，俏皮、随性、毫无预谋。\n背景里，一架巨大的阿联酋航空空客 A380 潜伏在黑暗中，超出闪光衰减范围的部分几乎难以看见，货舱门敞开。\n她身上的高光过曝，混凝土上硬朗的阴影，飞机大多被夜色吞没。", this)'>📋 Copy</button>
         </div>
-        <p>一张粗粝的、手持 iPhone 在夜间的机场停机坪拍摄的照片，使用强烈的机身直射闪光。<br>不完美、略微歪斜的构图，像一次即兴的抓拍。<br>前景中，这名女子站在平板拖车上的一辆粉色保时捷 911 旁，正做出略带羞怯的手势，身体以四分之三角度侧转，一只手靠近脸庞。<br>她穿着宽松的 Carhartt 风格牛仔裤和一件合身上衣，平直的刘海勾勒着她的脸庞，俏皮、随性、毫无预谋。<br>背景里，一架巨大的阿联酋航空空客 A380 潜伏在黑暗中，超出闪光衰减范围的部分几乎难以看见，货舱门敞开。<br>她身上的高光过曝，混凝土上硬朗的阴影，飞机大多被夜色吞没。</p>
+        <div data-nosnippet><p>一张粗粝的、手持 iPhone 在夜间的机场停机坪拍摄的照片，使用强烈的机身直射闪光。<br>不完美、略微歪斜的构图，像一次即兴的抓拍。<br>前景中，这名女子站在平板拖车上的一辆粉色保时捷 911 旁，正做出略带羞怯的手势，身体以四分之三角度侧转，一只手靠近脸庞。<br>她穿着宽松的 Carhartt 风格牛仔裤和一件合身上衣，平直的刘海勾勒着她的脸庞，俏皮、随性、毫无预谋。<br>背景里，一架巨大的阿联酋航空空客 A380 潜伏在黑暗中，超出闪光衰减范围的部分几乎难以看见，货舱门敞开。<br>她身上的高光过曝，混凝土上硬朗的阴影，飞机大多被夜色吞没。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A gritty, handheld iPhone photo taken at night on an airport tarmac with harsh direct on-camera flash. Imperfect, slightly crooked framing, like a spon-taneous snap. In the foreground, the woman stands beside a pink Porsche 911 on a flatbed trailer, mid-coy gesture, body angled three-quarters, one hand near her face. She wears wide Carhartt-style jeans and a fitted top, straight bangs framing her face flirty, casual, unplanned. In the background, a huge Emirates Airbus A380 looms in darkness, barely visible beyond flash falloff, cargo door open. Blown highlights on her, hard shadows on concrete, the plane mostly swallowed by night.", this)'>📋 Copy</button>
         </div>
-        <p>A gritty, handheld iPhone photo taken at night on an airport tarmac with harsh direct on-camera flash. Imperfect, slightly crooked framing, like a spon-taneous snap. In the foreground, the woman stands beside a pink Porsche 911 on a flatbed trailer, mid-coy gesture, body angled three-quarters, one hand near her face. She wears wide Carhartt-style jeans and a fitted top, straight bangs framing her face flirty, casual, unplanned. In the background, a huge Emirates Airbus A380 looms in darkness, barely visible beyond flash falloff, cargo door open. Blown highlights on her, hard shadows on concrete, the plane mostly swallowed by night.</p>
+        <div data-nosnippet><p>A gritty, handheld iPhone photo taken at night on an airport tarmac with harsh direct on-camera flash. Imperfect, slightly crooked framing, like a spon-taneous snap. In the foreground, the woman stands beside a pink Porsche 911 on a flatbed trailer, mid-coy gesture, body angled three-quarters, one hand near her face. She wears wide Carhartt-style jeans and a fitted top, straight bangs framing her face flirty, casual, unplanned. In the background, a huge Emirates Airbus A380 looms in darkness, barely visible beyond flash falloff, cargo door open. Blown highlights on her, hard shadows on concrete, the plane mostly swallowed by night.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2015428737005912073-1.jpg" alt="A gritty, handheld iPhone photo taken at night on an airport..." loading="lazy"><img src="/images/tweet-2015428737005912073-2.jpg" alt="A gritty, handheld iPhone photo taken at night on an airport..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1699,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

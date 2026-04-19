@@ -7,11 +7,13 @@
     <title>&quot;campaign metadata&quot;: { #1870 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;campaign metadata&quot;: { &quot;brand identity&quot;: &quot;Quantum Horizon Tech&quot;, &quot;product focus&quot;: &quot;Titanium Luxury Smartwatch&quot;, &quot;as...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1870.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1870.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1870.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844705">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023565">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"campaign_metadata\": {\n    \"brand_identity\": \"Quantum Horizon Tech\",\n    \"product_focus\": \"钛合金豪华智能手表\",\n    \"aspect_ratio\": \"3:4\",\n    \"aesthetic\": \"赛博奢华 | 技术极简主义\"\n  },\n  \"visual_dna\": {\n    \"materials\": [\"拉丝航天钛合金\", \"蓝宝石玻璃\", \"氟碳表带\"],\n    \"color_scheme\": [\"太空灰\", \"电光青\", \"磨砂黑\"],\n    \"lighting\": \"俯视包边光 | 霓虹点缀 | 冷色调影棚灯光\"\n  },\n  \"grid_layout_execution\": {\n    \"row_1_precision\": {\n      \"cell_1_1\": \"主图：手表垂直悬浮，被一束光线照亮。\",\n      \"cell_1_2\": \"特写：数字表冠的滚花纹理和红色功能按键的细节。\",\n      \"cell_1_3\": \"动态：液态金属涟漪拍打钛金表壳。\"\n    },\n    \"row_2_lifestyle\": {\n      \"cell_2_1\": \"极简：手表置于一块粗糙参差的黑曜岩上。\",\n      \"cell_2_2\": \"创新：全息界面元素从表盘投射到空中。\",\n      \"cell_2_3\": \"感官：表带精确卡入磁性表耳的特写。\"\n    },\n    \"row_3_surreal\": {\n      \"cell_3_1\": \"色彩：深蓝到紫色的渐变，配以光轨长曝光。\",\n      \"cell_3_2\": \"抽象：解构的内部齿轮与芯片如星云般漂浮。\",\n      \"cell_3_3\": \"融合：手表沉浸在带有发光洋流的数字“数据”海洋中。\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;campaign_metadata&quot;: {<br>    &quot;brand_identity&quot;: &quot;Quantum Horizon Tech&quot;,<br>    &quot;product_focus&quot;: &quot;钛合金豪华智能手表&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;aesthetic&quot;: &quot;赛博奢华 | 技术极简主义&quot;<br>  },<br>  &quot;visual_dna&quot;: {<br>    &quot;materials&quot;: [&quot;拉丝航天钛合金&quot;, &quot;蓝宝石玻璃&quot;, &quot;氟碳表带&quot;],<br>    &quot;color_scheme&quot;: [&quot;太空灰&quot;, &quot;电光青&quot;, &quot;磨砂黑&quot;],<br>    &quot;lighting&quot;: &quot;俯视包边光 | 霓虹点缀 | 冷色调影棚灯光&quot;<br>  },<br>  &quot;grid_layout_execution&quot;: {<br>    &quot;row_1_precision&quot;: {<br>      &quot;cell_1_1&quot;: &quot;主图：手表垂直悬浮，被一束光线照亮。&quot;,<br>      &quot;cell_1_2&quot;: &quot;特写：数字表冠的滚花纹理和红色功能按键的细节。&quot;,<br>      &quot;cell_1_3&quot;: &quot;动态：液态金属涟漪拍打钛金表壳。&quot;<br>    },<br>    &quot;row_2_lifestyle&quot;: {<br>      &quot;cell_2_1&quot;: &quot;极简：手表置于一块粗糙参差的黑曜岩上。&quot;,<br>      &quot;cell_2_2&quot;: &quot;创新：全息界面元素从表盘投射到空中。&quot;,<br>      &quot;cell_2_3&quot;: &quot;感官：表带精确卡入磁性表耳的特写。&quot;<br>    },<br>    &quot;row_3_surreal&quot;: {<br>      &quot;cell_3_1&quot;: &quot;色彩：深蓝到紫色的渐变，配以光轨长曝光。&quot;,<br>      &quot;cell_3_2&quot;: &quot;抽象：解构的内部齿轮与芯片如星云般漂浮。&quot;,<br>      &quot;cell_3_3&quot;: &quot;融合：手表沉浸在带有发光洋流的数字“数据”海洋中。&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;campaign_metadata&quot;: {<br>    &quot;brand_identity&quot;: &quot;Quantum Horizon Tech&quot;,<br>    &quot;product_focus&quot;: &quot;钛合金豪华智能手表&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;aesthetic&quot;: &quot;赛博奢华 | 技术极简主义&quot;<br>  },<br>  &quot;visual_dna&quot;: {<br>    &quot;materials&quot;: [&quot;拉丝航天钛合金&quot;, &quot;蓝宝石玻璃&quot;, &quot;氟碳表带&quot;],<br>    &quot;color_scheme&quot;: [&quot;太空灰&quot;, &quot;电光青&quot;, &quot;磨砂黑&quot;],<br>    &quot;lighting&quot;: &quot;俯视包边光 | 霓虹点缀 | 冷色调影棚灯光&quot;<br>  },<br>  &quot;grid_layout_execution&quot;: {<br>    &quot;row_1_precision&quot;: {<br>      &quot;cell_1_1&quot;: &quot;主图：手表垂直悬浮，被一束光线照亮。&quot;,<br>      &quot;cell_1_2&quot;: &quot;特写：数字表冠的滚花纹理和红色功能按键的细节。&quot;,<br>      &quot;cell_1_3&quot;: &quot;动态：液态金属涟漪拍打钛金表壳。&quot;<br>    },<br>    &quot;row_2_lifestyle&quot;: {<br>      &quot;cell_2_1&quot;: &quot;极简：手表置于一块粗糙参差的黑曜岩上。&quot;,<br>      &quot;cell_2_2&quot;: &quot;创新：全息界面元素从表盘投射到空中。&quot;,<br>      &quot;cell_2_3&quot;: &quot;感官：表带精确卡入磁性表耳的特写。&quot;<br>    },<br>    &quot;row_3_surreal&quot;: {<br>      &quot;cell_3_1&quot;: &quot;色彩：深蓝到紫色的渐变，配以光轨长曝光。&quot;,<br>      &quot;cell_3_2&quot;: &quot;抽象：解构的内部齿轮与芯片如星云般漂浮。&quot;,<br>      &quot;cell_3_3&quot;: &quot;融合：手表沉浸在带有发光洋流的数字“数据”海洋中。&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"campaign_metadata\": {\n    \"brand_identity\": \"Quantum Horizon Tech\",\n    \"product_focus\": \"Titanium Luxury Smartwatch\",\n    \"aspect_ratio\": \"3:4\",\n    \"aesthetic\": \"Cyber-Luxury | Technical Minimalism\"\n  },\n  \"visual_dna\": {\n    \"materials\": [\"Brushed Aerospace Titanium\", \"Sapphire Crystal\", \"Fluorocarbon Strap\"],\n    \"color_scheme\": [\"Space Grey\", \"Electric Cyan\", \"Matte Black\"],\n    \"lighting\": \"Top-down Rim Lighting | Neon Accents | Cold Studio Tones\"\n  },\n  \"grid_layout_execution\": {\n    \"row_1_precision\": {\n      \"cell_1_1\": \"Hero: Watch floating vertically, illuminated by a single beam of light.\",\n      \"cell_1_2\": \"Macro: The digital crown's knurled texture and the red action button detail.\",\n      \"cell_1_3\": \"Dynamic: Liquid metal ripples splashing against the titanium casing.\"\n    },\n    \"row_2_lifestyle\": {\n      \"cell_2_1\": \"Minimal: Watch resting on a raw piece of jagged obsidian rock.\",\n      \"cell_2_2\": \"Innovation: Holographic UI elements projecting from the watch face into the air.\",\n      \"cell_2_3\": \"Sensory: Close-up of the strap clicking into the magnetic lug with precision.\"\n    },\n    \"row_3_surreal\": {\n      \"cell_3_1\": \"Color: A gradient of deep blues and purples with light-trail long exposure.\",\n      \"cell_3_2\": \"Abstraction: Deconstructed internal gears and chips floating like a nebula.\",\n      \"cell_3_3\": \"Fusion: The watch submerged in a digital 'data' ocean with glowing currents.\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;campaign_metadata&quot;: {<br>    &quot;brand_identity&quot;: &quot;Quantum Horizon Tech&quot;,<br>    &quot;product_focus&quot;: &quot;Titanium Luxury Smartwatch&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;aesthetic&quot;: &quot;Cyber-Luxury | Technical Minimalism&quot;<br>  },<br>  &quot;visual_dna&quot;: {<br>    &quot;materials&quot;: [&quot;Brushed Aerospace Titanium&quot;, &quot;Sapphire Crystal&quot;, &quot;Fluorocarbon Strap&quot;],<br>    &quot;color_scheme&quot;: [&quot;Space Grey&quot;, &quot;Electric Cyan&quot;, &quot;Matte Black&quot;],<br>    &quot;lighting&quot;: &quot;Top-down Rim Lighting | Neon Accents | Cold Studio Tones&quot;<br>  },<br>  &quot;grid_layout_execution&quot;: {<br>    &quot;row_1_precision&quot;: {<br>      &quot;cell_1_1&quot;: &quot;Hero: Watch floating vertically, illuminated by a single beam of light.&quot;,<br>      &quot;cell_1_2&quot;: &quot;Macro: The digital crown&#39;s knurled texture and the red action button detail.&quot;,<br>      &quot;cell_1_3&quot;: &quot;Dynamic: Liquid metal ripples splashing against the titanium casing.&quot;<br>    },<br>    &quot;row_2_lifestyle&quot;: {<br>      &quot;cell_2_1&quot;: &quot;Minimal: Watch resting on a raw piece of jagged obsidian rock.&quot;,<br>      &quot;cell_2_2&quot;: &quot;Innovation: Holographic UI elements projecting from the watch face into the air.&quot;,<br>      &quot;cell_2_3&quot;: &quot;Sensory: Close-up of the strap clicking into the magnetic lug with precision.&quot;<br>    },<br>    &quot;row_3_surreal&quot;: {<br>      &quot;cell_3_1&quot;: &quot;Color: A gradient of deep blues and purples with light-trail long exposure.&quot;,<br>      &quot;cell_3_2&quot;: &quot;Abstraction: Deconstructed internal gears and chips floating like a nebula.&quot;,<br>      &quot;cell_3_3&quot;: &quot;Fusion: The watch submerged in a digital &#39;data&#39; ocean with glowing currents.&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;campaign_metadata&quot;: {<br>    &quot;brand_identity&quot;: &quot;Quantum Horizon Tech&quot;,<br>    &quot;product_focus&quot;: &quot;Titanium Luxury Smartwatch&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;aesthetic&quot;: &quot;Cyber-Luxury | Technical Minimalism&quot;<br>  },<br>  &quot;visual_dna&quot;: {<br>    &quot;materials&quot;: [&quot;Brushed Aerospace Titanium&quot;, &quot;Sapphire Crystal&quot;, &quot;Fluorocarbon Strap&quot;],<br>    &quot;color_scheme&quot;: [&quot;Space Grey&quot;, &quot;Electric Cyan&quot;, &quot;Matte Black&quot;],<br>    &quot;lighting&quot;: &quot;Top-down Rim Lighting | Neon Accents | Cold Studio Tones&quot;<br>  },<br>  &quot;grid_layout_execution&quot;: {<br>    &quot;row_1_precision&quot;: {<br>      &quot;cell_1_1&quot;: &quot;Hero: Watch floating vertically, illuminated by a single beam of light.&quot;,<br>      &quot;cell_1_2&quot;: &quot;Macro: The digital crown&#39;s knurled texture and the red action button detail.&quot;,<br>      &quot;cell_1_3&quot;: &quot;Dynamic: Liquid metal ripples splashing against the titanium casing.&quot;<br>    },<br>    &quot;row_2_lifestyle&quot;: {<br>      &quot;cell_2_1&quot;: &quot;Minimal: Watch resting on a raw piece of jagged obsidian rock.&quot;,<br>      &quot;cell_2_2&quot;: &quot;Innovation: Holographic UI elements projecting from the watch face into the air.&quot;,<br>      &quot;cell_2_3&quot;: &quot;Sensory: Close-up of the strap clicking into the magnetic lug with precision.&quot;<br>    },<br>    &quot;row_3_surreal&quot;: {<br>      &quot;cell_3_1&quot;: &quot;Color: A gradient of deep blues and purples with light-trail long exposure.&quot;,<br>      &quot;cell_3_2&quot;: &quot;Abstraction: Deconstructed internal gears and chips floating like a nebula.&quot;,<br>      &quot;cell_3_3&quot;: &quot;Fusion: The watch submerged in a digital &#39;data&#39; ocean with glowing currents.&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2017793115147444527-1.jpg" alt="&quot;campaign metadata&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1870,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

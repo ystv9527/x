@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #1554 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;quality&quot;: &quot;photorealistic, raw photograph, natural daylight, sharp focus&quot;, &quot;resol...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1554.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1554.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1554.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840777">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022428">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"aspect_ratio\": \"3:4\",\n    \"quality\": \"写实逼真，原始照片，自然日光，清晰对焦\",\n    \"resolution\": \"8k\",\n    \"camera\": \"无反相机（例如 Canon EOS R5）\",\n    \"lens\": \"50mm f/1.2 定焦镜头\",\n    \"style\": \"户外鲜活人像，热带氛围，自然光美学\",\n    \"composition\": \"中长镜头：一名女性在郁郁葱葱的绿色环境中站在水边，目光望向画面一侧。\"\n  },\n  \"scene\": {\n    \"location\": \"热带户外场景，水域旁（红树林或泻湖）\",\n    \"environment\": [\n      \"背景有浓密的绿色热带植物和树木\",\n      \"平静、略带浑浊的青绿色水面\",\n      \"靠近水边的苔藓覆盖的地面/岸坡\"\n    ],\n    \"time\": \"白天\",\n    \"atmosphere\": \"郁郁葱葱、潮湿、自然、宁静\"\n  },\n  \"lighting\": {\n    \"type\": \"自然明亮的日光\",\n    \"source\": \"阳光被树冠稍微滤过\",\n    \"effect\": \"对主体柔和均匀的照明，湿发和皮肤上有明亮高光，树间形成自然阴影。\"\n  },\n  \"subject\": {\n    \"identity\": \"一位惊艳的年轻女性，仿湿发效果的铂金金色头发和完美无瑕的面容。\",\n    \"body\": {\n      \"pose\": \"优雅地站在水边，身体略微倾斜，头转向画面右侧。双手放松地垂于臀部附近。\",\n      \"physique\": \"健美、小麦色肤色的身材。\"\n    },\n    \"outfit\": {\n      \"clothing\": \"白色罗纹吊带露脐短上衣，白色百褶迷你网球裙。\",\n      \"accessories\": \"大型金色圆环耳环、叠戴的带有坠饰的金色项链、双手手腕上戴有多只金色手链。\"\n    }\n  },\n  \"realism_focus\": {\n    \"textures\": \"金色湿发分明的发束、白色上衣的罗纹质感、裙子清晰的褶皱、受潮湿影响皮肤上的水光、复杂的植物叶纹理。\",\n    \"imperfections\": \"日光下自然的皮肤质地，皮肤轻微的潮湿感。\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;quality&quot;: &quot;写实逼真，原始照片，自然日光，清晰对焦&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;无反相机（例如 Canon EOS R5）&quot;,<br>    &quot;lens&quot;: &quot;50mm f/1.2 定焦镜头&quot;,<br>    &quot;style&quot;: &quot;户外鲜活人像，热带氛围，自然光美学&quot;,<br>    &quot;composition&quot;: &quot;中长镜头：一名女性在郁郁葱葱的绿色环境中站在水边，目光望向画面一侧。&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;热带户外场景，水域旁（红树林或泻湖）&quot;,<br>    &quot;environment&quot;: [<br>      &quot;背景有浓密的绿色热带植物和树木&quot;,<br>      &quot;平静、略带浑浊的青绿色水面&quot;,<br>      &quot;靠近水边的苔藓覆盖的地面/岸坡&quot;<br>    ],<br>    &quot;time&quot;: &quot;白天&quot;,<br>    &quot;atmosphere&quot;: &quot;郁郁葱葱、潮湿、自然、宁静&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;自然明亮的日光&quot;,<br>    &quot;source&quot;: &quot;阳光被树冠稍微滤过&quot;,<br>    &quot;effect&quot;: &quot;对主体柔和均匀的照明，湿发和皮肤上有明亮高光，树间形成自然阴影。&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;一位惊艳的年轻女性，仿湿发效果的铂金金色头发和完美无瑕的面容。&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;优雅地站在水边，身体略微倾斜，头转向画面右侧。双手放松地垂于臀部附近。&quot;,<br>      &quot;physique&quot;: &quot;健美、小麦色肤色的身材。&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;白色罗纹吊带露脐短上衣，白色百褶迷你网球裙。&quot;,<br>      &quot;accessories&quot;: &quot;大型金色圆环耳环、叠戴的带有坠饰的金色项链、双手手腕上戴有多只金色手链。&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;金色湿发分明的发束、白色上衣的罗纹质感、裙子清晰的褶皱、受潮湿影响皮肤上的水光、复杂的植物叶纹理。&quot;,<br>    &quot;imperfections&quot;: &quot;日光下自然的皮肤质地，皮肤轻微的潮湿感。&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;quality&quot;: &quot;写实逼真，原始照片，自然日光，清晰对焦&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;无反相机（例如 Canon EOS R5）&quot;,<br>    &quot;lens&quot;: &quot;50mm f/1.2 定焦镜头&quot;,<br>    &quot;style&quot;: &quot;户外鲜活人像，热带氛围，自然光美学&quot;,<br>    &quot;composition&quot;: &quot;中长镜头：一名女性在郁郁葱葱的绿色环境中站在水边，目光望向画面一侧。&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;热带户外场景，水域旁（红树林或泻湖）&quot;,<br>    &quot;environment&quot;: [<br>      &quot;背景有浓密的绿色热带植物和树木&quot;,<br>      &quot;平静、略带浑浊的青绿色水面&quot;,<br>      &quot;靠近水边的苔藓覆盖的地面/岸坡&quot;<br>    ],<br>    &quot;time&quot;: &quot;白天&quot;,<br>    &quot;atmosphere&quot;: &quot;郁郁葱葱、潮湿、自然、宁静&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;自然明亮的日光&quot;,<br>    &quot;source&quot;: &quot;阳光被树冠稍微滤过&quot;,<br>    &quot;effect&quot;: &quot;对主体柔和均匀的照明，湿发和皮肤上有明亮高光，树间形成自然阴影。&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;一位惊艳的年轻女性，仿湿发效果的铂金金色头发和完美无瑕的面容。&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;优雅地站在水边，身体略微倾斜，头转向画面右侧。双手放松地垂于臀部附近。&quot;,<br>      &quot;physique&quot;: &quot;健美、小麦色肤色的身材。&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;白色罗纹吊带露脐短上衣，白色百褶迷你网球裙。&quot;,<br>      &quot;accessories&quot;: &quot;大型金色圆环耳环、叠戴的带有坠饰的金色项链、双手手腕上戴有多只金色手链。&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;金色湿发分明的发束、白色上衣的罗纹质感、裙子清晰的褶皱、受潮湿影响皮肤上的水光、复杂的植物叶纹理。&quot;,<br>    &quot;imperfections&quot;: &quot;日光下自然的皮肤质地，皮肤轻微的潮湿感。&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"aspect_ratio\": \"3:4\",\n    \"quality\": \"photorealistic, raw photograph, natural daylight, sharp focus\",\n    \"resolution\": \"8k\",\n    \"camera\": \"Mirrorless camera (e.g., Canon EOS R5)\",\n    \"lens\": \"50mm f/1.2 prime lens\",\n    \"style\": \"Outdoor vibrant portrait, tropical atmosphere, natural light aesthetic\",\n    \"composition\": \"Medium-long shot of a woman standing by water in a lush green environment, looking off to the side.\"\n  },\n  \"scene\": {\n    \"location\": \"Tropical outdoor setting next to water (mangroves or lagoon)\",\n    \"environment\": [\n      \"Dense green tropical foliage and trees in the background\",\n      \"Calm, slightly murky turquoise water\",\n      \"Mossy ground/bank near the water's edge\"\n    ],\n    \"time\": \"Daytime\",\n    \"atmosphere\": \"Lush, humid, natural, serene\"\n  },\n  \"lighting\": {\n    \"type\": \"Natural bright daylight\",\n    \"source\": \"Sunlight filtered slightly through tree canopy\",\n    \"effect\": \"Soft, even illumination on the subject, bright highlights on wet hair and skin, natural shadows among the trees.\"\n  },\n  \"subject\": {\n    \"identity\": \"A stunning young woman with wet-look platinum blonde hair and a flawless face.\",\n    \"body\": {\n      \"pose\": \"Standing gracefully by the water, body angled slightly, head turned looking to the right side of the frame. Hands relaxed near hips.\",\n      \"physique\": \"Fit, tan physique.\"\n    },\n    \"outfit\": {\n      \"clothing\": \"White ribbed spaghetti strap crop top, white pleated mini-tennis skirt.\",\n      \"accessories\": \"Large gold hoop earrings, layered gold necklaces with pendants, multiple gold bracelets on both wrists.\"\n    }\n  },\n  \"realism_focus\": {\n    \"textures\": \"Wet strands of blonde hair defining clumps, ribbed texture of the white top, crisp pleats of the skirt, sheen of water on skin due to humidity, complex foliage textures.\",\n    \"imperfections\": \"Natural skin texture under daylight, slight dampness on skin.\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;quality&quot;: &quot;photorealistic, raw photograph, natural daylight, sharp focus&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;Mirrorless camera (e.g., Canon EOS R5)&quot;,<br>    &quot;lens&quot;: &quot;50mm f/1.2 prime lens&quot;,<br>    &quot;style&quot;: &quot;Outdoor vibrant portrait, tropical atmosphere, natural light aesthetic&quot;,<br>    &quot;composition&quot;: &quot;Medium-long shot of a woman standing by water in a lush green environment, looking off to the side.&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;Tropical outdoor setting next to water (mangroves or lagoon)&quot;,<br>    &quot;environment&quot;: [<br>      &quot;Dense green tropical foliage and trees in the background&quot;,<br>      &quot;Calm, slightly murky turquoise water&quot;,<br>      &quot;Mossy ground/bank near the water&#39;s edge&quot;<br>    ],<br>    &quot;time&quot;: &quot;Daytime&quot;,<br>    &quot;atmosphere&quot;: &quot;Lush, humid, natural, serene&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Natural bright daylight&quot;,<br>    &quot;source&quot;: &quot;Sunlight filtered slightly through tree canopy&quot;,<br>    &quot;effect&quot;: &quot;Soft, even illumination on the subject, bright highlights on wet hair and skin, natural shadows among the trees.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;A stunning young woman with wet-look platinum blonde hair and a flawless face.&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;Standing gracefully by the water, body angled slightly, head turned looking to the right side of the frame. Hands relaxed near hips.&quot;,<br>      &quot;physique&quot;: &quot;Fit, tan physique.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;White ribbed spaghetti strap crop top, white pleated mini-tennis skirt.&quot;,<br>      &quot;accessories&quot;: &quot;Large gold hoop earrings, layered gold necklaces with pendants, multiple gold bracelets on both wrists.&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;Wet strands of blonde hair defining clumps, ribbed texture of the white top, crisp pleats of the skirt, sheen of water on skin due to humidity, complex foliage textures.&quot;,<br>    &quot;imperfections&quot;: &quot;Natural skin texture under daylight, slight dampness on skin.&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;quality&quot;: &quot;photorealistic, raw photograph, natural daylight, sharp focus&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;Mirrorless camera (e.g., Canon EOS R5)&quot;,<br>    &quot;lens&quot;: &quot;50mm f/1.2 prime lens&quot;,<br>    &quot;style&quot;: &quot;Outdoor vibrant portrait, tropical atmosphere, natural light aesthetic&quot;,<br>    &quot;composition&quot;: &quot;Medium-long shot of a woman standing by water in a lush green environment, looking off to the side.&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;Tropical outdoor setting next to water (mangroves or lagoon)&quot;,<br>    &quot;environment&quot;: [<br>      &quot;Dense green tropical foliage and trees in the background&quot;,<br>      &quot;Calm, slightly murky turquoise water&quot;,<br>      &quot;Mossy ground/bank near the water&#39;s edge&quot;<br>    ],<br>    &quot;time&quot;: &quot;Daytime&quot;,<br>    &quot;atmosphere&quot;: &quot;Lush, humid, natural, serene&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Natural bright daylight&quot;,<br>    &quot;source&quot;: &quot;Sunlight filtered slightly through tree canopy&quot;,<br>    &quot;effect&quot;: &quot;Soft, even illumination on the subject, bright highlights on wet hair and skin, natural shadows among the trees.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;A stunning young woman with wet-look platinum blonde hair and a flawless face.&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;Standing gracefully by the water, body angled slightly, head turned looking to the right side of the frame. Hands relaxed near hips.&quot;,<br>      &quot;physique&quot;: &quot;Fit, tan physique.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;White ribbed spaghetti strap crop top, white pleated mini-tennis skirt.&quot;,<br>      &quot;accessories&quot;: &quot;Large gold hoop earrings, layered gold necklaces with pendants, multiple gold bracelets on both wrists.&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;Wet strands of blonde hair defining clumps, ribbed texture of the white top, crisp pleats of the skirt, sheen of water on skin due to humidity, complex foliage textures.&quot;,<br>    &quot;imperfections&quot;: &quot;Natural skin texture under daylight, slight dampness on skin.&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012966597367849308-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1554,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

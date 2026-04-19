@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #1632 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;primary&quot;: &quot;Vibrant orange slices&quot;, &quot;action&quot;: &quot;Falling through the air toward rising milk&quot;, &quot;secondary...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1632.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1632.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1632.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844933">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023613">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"primary\": \"鲜艳的橙子片\",\n    \"action\": \"穿过空中，朝着上升的牛奶下落\",\n    \"secondary\": \"浓稠光亮的白色牛奶飞溅，形成弧线和冠状曲线\",\n    \"details\": \"牛奶液滴在空中凝固，呈奶油质感\"\n  },\n  \"environment\": {\n    \"background\": \"干净的蓝色影棚背景\",\n    \"lighting\": \"电影感柔和影棚照明，带有戏剧性的高光与阴影\"\n  },\n  \"visual_style\": {\n    \"genre\": \"超写实商业飞溅摄影\",\n    \"textures\": \"高细节的奶油质感牛奶与新鲜柑橘果肉\",\n    \"motion\": \"静止动作，高速捕捉\",\n    \"depth_of_field\": \"浅景深\"\n  },\n  \"camera\": {\n    \"lens\": \"85mm 微距\",\n    \"framing\": \"宽幅构图\",\n    \"focus\": \"对飞溅和果实的清晰对焦\"\n  },\n  \"composition\": {\n    \"aspect_ratio\": \"3:4\",\n    \"color_palette\": [\"鲜艳橙色\", \"纯白\", \"干净蓝色\"]\n  },\n  \"quality\": {\n    \"detail_level\": \"超高细节\",\n    \"rendering\": \"写真级逼真\"\n  },\n  \"profile\": \"9ewnbdc\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;primary&quot;: &quot;鲜艳的橙子片&quot;,<br>    &quot;action&quot;: &quot;穿过空中，朝着上升的牛奶下落&quot;,<br>    &quot;secondary&quot;: &quot;浓稠光亮的白色牛奶飞溅，形成弧线和冠状曲线&quot;,<br>    &quot;details&quot;: &quot;牛奶液滴在空中凝固，呈奶油质感&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;background&quot;: &quot;干净的蓝色影棚背景&quot;,<br>    &quot;lighting&quot;: &quot;电影感柔和影棚照明，带有戏剧性的高光与阴影&quot;<br>  },<br>  &quot;visual_style&quot;: {<br>    &quot;genre&quot;: &quot;超写实商业飞溅摄影&quot;,<br>    &quot;textures&quot;: &quot;高细节的奶油质感牛奶与新鲜柑橘果肉&quot;,<br>    &quot;motion&quot;: &quot;静止动作，高速捕捉&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;lens&quot;: &quot;85mm 微距&quot;,<br>    &quot;framing&quot;: &quot;宽幅构图&quot;,<br>    &quot;focus&quot;: &quot;对飞溅和果实的清晰对焦&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;color_palette&quot;: [&quot;鲜艳橙色&quot;, &quot;纯白&quot;, &quot;干净蓝色&quot;]<br>  },<br>  &quot;quality&quot;: {<br>    &quot;detail_level&quot;: &quot;超高细节&quot;,<br>    &quot;rendering&quot;: &quot;写真级逼真&quot;<br>  },<br>  &quot;profile&quot;: &quot;9ewnbdc&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;primary&quot;: &quot;鲜艳的橙子片&quot;,<br>    &quot;action&quot;: &quot;穿过空中，朝着上升的牛奶下落&quot;,<br>    &quot;secondary&quot;: &quot;浓稠光亮的白色牛奶飞溅，形成弧线和冠状曲线&quot;,<br>    &quot;details&quot;: &quot;牛奶液滴在空中凝固，呈奶油质感&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;background&quot;: &quot;干净的蓝色影棚背景&quot;,<br>    &quot;lighting&quot;: &quot;电影感柔和影棚照明，带有戏剧性的高光与阴影&quot;<br>  },<br>  &quot;visual_style&quot;: {<br>    &quot;genre&quot;: &quot;超写实商业飞溅摄影&quot;,<br>    &quot;textures&quot;: &quot;高细节的奶油质感牛奶与新鲜柑橘果肉&quot;,<br>    &quot;motion&quot;: &quot;静止动作，高速捕捉&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;lens&quot;: &quot;85mm 微距&quot;,<br>    &quot;framing&quot;: &quot;宽幅构图&quot;,<br>    &quot;focus&quot;: &quot;对飞溅和果实的清晰对焦&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;color_palette&quot;: [&quot;鲜艳橙色&quot;, &quot;纯白&quot;, &quot;干净蓝色&quot;]<br>  },<br>  &quot;quality&quot;: {<br>    &quot;detail_level&quot;: &quot;超高细节&quot;,<br>    &quot;rendering&quot;: &quot;写真级逼真&quot;<br>  },<br>  &quot;profile&quot;: &quot;9ewnbdc&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"subject\": {\n    \"primary\": \"Vibrant orange slices\",\n    \"action\": \"Falling through the air toward rising milk\",\n    \"secondary\": \"Thick, glossy white milk splash forming arcs and crown-like curves\",\n    \"details\": \"Milk droplets frozen mid-air with creamy texture\"\n  },\n  \"environment\": {\n    \"background\": \"Clean blue studio backdrop\",\n    \"lighting\": \"Cinematic soft studio lighting with dramatic highlights and shadows\"\n  },\n  \"visual_style\": {\n    \"genre\": \"Ultra-realistic commercial splash photography\",\n    \"textures\": \"High-detail creamy milk and fresh citrus pulp\",\n    \"motion\": \"Frozen action, high-speed capture\",\n    \"depth_of_field\": \"Shallow depth of field\"\n  },\n  \"camera\": {\n    \"lens\": \"85mm macro\",\n    \"framing\": \"Wide composition\",\n    \"focus\": \"Sharp focus on splash and fruit\"\n  },\n  \"composition\": {\n    \"aspect_ratio\": \"3:4\",\n    \"color_palette\": [\"Vibrant Orange\", \"Pure White\", \"Clean Blue\"]\n  },\n  \"quality\": {\n    \"detail_level\": \"Ultra-high detail\",\n    \"rendering\": \"Photorealistic\"\n  },\n  \"profile\": \"9ewnbdc\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>&quot;subject&quot;: {<br>    &quot;primary&quot;: &quot;Vibrant orange slices&quot;,<br>    &quot;action&quot;: &quot;Falling through the air toward rising milk&quot;,<br>    &quot;secondary&quot;: &quot;Thick, glossy white milk splash forming arcs and crown-like curves&quot;,<br>    &quot;details&quot;: &quot;Milk droplets frozen mid-air with creamy texture&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;background&quot;: &quot;Clean blue studio backdrop&quot;,<br>    &quot;lighting&quot;: &quot;Cinematic soft studio lighting with dramatic highlights and shadows&quot;<br>  },<br>  &quot;visual_style&quot;: {<br>    &quot;genre&quot;: &quot;Ultra-realistic commercial splash photography&quot;,<br>    &quot;textures&quot;: &quot;High-detail creamy milk and fresh citrus pulp&quot;,<br>    &quot;motion&quot;: &quot;Frozen action, high-speed capture&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow depth of field&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;lens&quot;: &quot;85mm macro&quot;,<br>    &quot;framing&quot;: &quot;Wide composition&quot;,<br>    &quot;focus&quot;: &quot;Sharp focus on splash and fruit&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;color_palette&quot;: [&quot;Vibrant Orange&quot;, &quot;Pure White&quot;, &quot;Clean Blue&quot;]<br>  },<br>  &quot;quality&quot;: {<br>    &quot;detail_level&quot;: &quot;Ultra-high detail&quot;,<br>    &quot;rendering&quot;: &quot;Photorealistic&quot;<br>  },<br>  &quot;profile&quot;: &quot;9ewnbdc&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;subject&quot;: {<br>    &quot;primary&quot;: &quot;Vibrant orange slices&quot;,<br>    &quot;action&quot;: &quot;Falling through the air toward rising milk&quot;,<br>    &quot;secondary&quot;: &quot;Thick, glossy white milk splash forming arcs and crown-like curves&quot;,<br>    &quot;details&quot;: &quot;Milk droplets frozen mid-air with creamy texture&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;background&quot;: &quot;Clean blue studio backdrop&quot;,<br>    &quot;lighting&quot;: &quot;Cinematic soft studio lighting with dramatic highlights and shadows&quot;<br>  },<br>  &quot;visual_style&quot;: {<br>    &quot;genre&quot;: &quot;Ultra-realistic commercial splash photography&quot;,<br>    &quot;textures&quot;: &quot;High-detail creamy milk and fresh citrus pulp&quot;,<br>    &quot;motion&quot;: &quot;Frozen action, high-speed capture&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow depth of field&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;lens&quot;: &quot;85mm macro&quot;,<br>    &quot;framing&quot;: &quot;Wide composition&quot;,<br>    &quot;focus&quot;: &quot;Sharp focus on splash and fruit&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;color_palette&quot;: [&quot;Vibrant Orange&quot;, &quot;Pure White&quot;, &quot;Clean Blue&quot;]<br>  },<br>  &quot;quality&quot;: {<br>    &quot;detail_level&quot;: &quot;Ultra-high detail&quot;,<br>    &quot;rendering&quot;: &quot;Photorealistic&quot;<br>  },<br>  &quot;profile&quot;: &quot;9ewnbdc&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2013660094664446322-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2013660094664446322-2.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2013660094664446322-3.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2013660094664446322-4.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1632,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

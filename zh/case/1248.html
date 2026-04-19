@@ -7,11 +7,13 @@
     <title>Using the uploaded reference image STRICTLY, preserve the sam... #1248 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Using the uploaded reference image STRICTLY, preserve the same woman’s face, identity, age, facial structure, skin to...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1248.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1248.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1248.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841108">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022498">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("严格使用已上传的参考图像，100% 精确保留同一女性的面部、身份、年龄、面部结构、肤色和自然表情。不得对面部进行任何改动、美化或改变身份。\n\n生成一组高度逼真的电影质感时尚编辑照片，主体为一位时尚成熟女性随意倚靠在温暖的米色纹理墙上。她的身体略微倾斜，一侧肩膀轻靠墙面，传达出轻松自信、优雅与内敛的力量感。\n\n服装：\n她穿着一件宽松的粉蓝色纽扣衬衫，袖口微微卷起，造型随性自然。下身搭配剪裁合体的白色宽松长裤，自然垂坠。鞋款为简洁极简风的白色或浅蓝白色运动鞋，保持现代、低调奢华的感觉。\n\n姿势与表情：\n她以自然的站姿——一只手随意插在裤兜中，另一只手轻轻握着一朵小白雏菊。面部表情平静、自信且安宁，带有柔和的编辑式凝视，目光略微偏离镜头。情感呈现自信而温和。\n\n发型与妆容：\n发型整洁，呈自然现代风格（软波纹、低马尾或松散的发髻）。妆容简约精致——肌肤干净、淡淡腮红、中性唇色，不做浓重修容或过度光泽处理。\n\n灯光与氛围：\n温暖的自然阳光从侧面照入，在她的面部和服装上形成柔和的高光，轻柔的阴影为纹理墙增加层次感。整体氛围通透、阳光充足且富有电影感。\n\n视觉风格：\n高端时尚编辑美学，保留真实皮肤纹理、清晰的面料细节、精致的中性配色以及优雅的构图。\n\n相机与质量：\n专业时尚摄影风格，浅景深，电影式构图，超真实 8K 画质，主体对焦锐利，背景平滑虚化。\n\n整体感受：\n现代、极简、阳光浸润的生活方式时尚宣传片——自信、优雅且永恒。\n\n\"风格\": \"电影感，高端女性时尚编辑\",\n\"灯光\": \"温暖的自然阳光，伴随柔和阴影\",\n\"背景\": \"简约米色纹理墙，阳光照射\",\n\"质量\": \"超真实，8K，超清锐利\",\n\"相机\": \"专业时尚摄影，浅景深\",\n\"情绪\": \"干净、现代、优雅、自信、放松\"", this)'>📋 复制</button>
         </div>
-        <p>严格使用已上传的参考图像，100% 精确保留同一女性的面部、身份、年龄、面部结构、肤色和自然表情。不得对面部进行任何改动、美化或改变身份。</p><p>生成一组高度逼真的电影质感时尚编辑照片，主体为一位时尚成熟女性随意倚靠在温暖的米色纹理墙上。她的身体略微倾斜，一侧肩膀轻靠墙面，传达出轻松自信、优雅与内敛的力量感。</p><p>服装：<br>她穿着一件宽松的粉蓝色纽扣衬衫，袖口微微卷起，造型随性自然。下身搭配剪裁合体的白色宽松长裤，自然垂坠。鞋款为简洁极简风的白色或浅蓝白色运动鞋，保持现代、低调奢华的感觉。</p><p>姿势与表情：<br>她以自然的站姿——一只手随意插在裤兜中，另一只手轻轻握着一朵小白雏菊。面部表情平静、自信且安宁，带有柔和的编辑式凝视，目光略微偏离镜头。情感呈现自信而温和。</p><p>发型与妆容：<br>发型整洁，呈自然现代风格（软波纹、低马尾或松散的发髻）。妆容简约精致——肌肤干净、淡淡腮红、中性唇色，不做浓重修容或过度光泽处理。</p><p>灯光与氛围：<br>温暖的自然阳光从侧面照入，在她的面部和服装上形成柔和的高光，轻柔的阴影为纹理墙增加层次感。整体氛围通透、阳光充足且富有电影感。</p><p>视觉风格：<br>高端时尚编辑美学，保留真实皮肤纹理、清晰的面料细节、精致的中性配色以及优雅的构图。</p><p>相机与质量：<br>专业时尚摄影风格，浅景深，电影式构图，超真实 8K 画质，主体对焦锐利，背景平滑虚化。</p><p>整体感受：<br>现代、极简、阳光浸润的生活方式时尚宣传片——自信、优雅且永恒。</p><p>&quot;风格&quot;: &quot;电影感，高端女性时尚编辑&quot;,<br>&quot;灯光&quot;: &quot;温暖的自然阳光，伴随柔和阴影&quot;,<br>&quot;背景&quot;: &quot;简约米色纹理墙，阳光照射&quot;,<br>&quot;质量&quot;: &quot;超真实，8K，超清锐利&quot;,<br>&quot;相机&quot;: &quot;专业时尚摄影，浅景深&quot;,<br>&quot;情绪&quot;: &quot;干净、现代、优雅、自信、放松&quot;</p>
+        <div data-nosnippet><p>严格使用已上传的参考图像，100% 精确保留同一女性的面部、身份、年龄、面部结构、肤色和自然表情。不得对面部进行任何改动、美化或改变身份。</p><p>生成一组高度逼真的电影质感时尚编辑照片，主体为一位时尚成熟女性随意倚靠在温暖的米色纹理墙上。她的身体略微倾斜，一侧肩膀轻靠墙面，传达出轻松自信、优雅与内敛的力量感。</p><p>服装：<br>她穿着一件宽松的粉蓝色纽扣衬衫，袖口微微卷起，造型随性自然。下身搭配剪裁合体的白色宽松长裤，自然垂坠。鞋款为简洁极简风的白色或浅蓝白色运动鞋，保持现代、低调奢华的感觉。</p><p>姿势与表情：<br>她以自然的站姿——一只手随意插在裤兜中，另一只手轻轻握着一朵小白雏菊。面部表情平静、自信且安宁，带有柔和的编辑式凝视，目光略微偏离镜头。情感呈现自信而温和。</p><p>发型与妆容：<br>发型整洁，呈自然现代风格（软波纹、低马尾或松散的发髻）。妆容简约精致——肌肤干净、淡淡腮红、中性唇色，不做浓重修容或过度光泽处理。</p><p>灯光与氛围：<br>温暖的自然阳光从侧面照入，在她的面部和服装上形成柔和的高光，轻柔的阴影为纹理墙增加层次感。整体氛围通透、阳光充足且富有电影感。</p><p>视觉风格：<br>高端时尚编辑美学，保留真实皮肤纹理、清晰的面料细节、精致的中性配色以及优雅的构图。</p><p>相机与质量：<br>专业时尚摄影风格，浅景深，电影式构图，超真实 8K 画质，主体对焦锐利，背景平滑虚化。</p><p>整体感受：<br>现代、极简、阳光浸润的生活方式时尚宣传片——自信、优雅且永恒。</p><p>&quot;风格&quot;: &quot;电影感，高端女性时尚编辑&quot;,<br>&quot;灯光&quot;: &quot;温暖的自然阳光，伴随柔和阴影&quot;,<br>&quot;背景&quot;: &quot;简约米色纹理墙，阳光照射&quot;,<br>&quot;质量&quot;: &quot;超真实，8K，超清锐利&quot;,<br>&quot;相机&quot;: &quot;专业时尚摄影，浅景深&quot;,<br>&quot;情绪&quot;: &quot;干净、现代、优雅、自信、放松&quot;</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Using the uploaded reference image STRICTLY, preserve the same woman’s face, identity, age, facial structure, skin tone, and natural expression with 100% accuracy. No facial alteration, beautification, or identity change.\\n\\nGenerate a highly realistic cinematic fashion editorial photoshoot featuring a stylish adult woman leaning casually against a warm beige textured wall. Her body is slightly angled, one shoulder gently resting on the wall, conveying relaxed confidence, elegance, and quiet strength.\\n\\nOutfit:\\nShe wears a loose pastel blue button-down shirt with softly rolled-up sleeves, styled effortlessly. Paired with tailored white relaxed-fit trousers that drape naturally. Footwear consists of clean minimalist white or soft blue-white sneakers, maintaining a modern, understated luxury feel.\\n\\nPose & Expression:\\nShe stands with natural posture — one hand casually placed in her trouser pocket, the other delicately holding a small white daisy flower. Her facial expression is calm, self-assured, and serene, with a soft editorial gaze slightly away from the camera. Emotion feels confident yet gentle.\\n\\nHair & Makeup:\\nHair is neatly styled in a natural, modern look (soft waves, low ponytail, or loose bun). Makeup is minimal and refined — clean skin, subtle blush, neutral lips, no heavy contouring or glow.\\n\\nLighting & Atmosphere:\\nWarm natural sunlight streams from the side, creating soft highlights along her face and clothing, with gentle shadows adding depth to the textured wall. The mood is airy, sunlit, and cinematic.\\n\\nVisual Style:\\nHigh-end fashion editorial aesthetic with realistic skin texture, crisp fabric details, refined neutral color palette, and elegant composition.\\n\\nCamera & Quality:\\nProfessional fashion photography style, shallow depth of field, cinematic framing, ultra-realistic 8K quality, sharp focus on subject with smooth background falloff.\\n\\nOverall Feel:\\nModern, minimal, sun-drenched lifestyle fashion campaign — confident, graceful, and timeless.\",\n  \n  \"style\": \"cinematic, high-end female fashion editorial\",\n  \"lighting\": \"warm natural sunlight with soft shadows\",\n  \"background\": \"minimal beige textured wall, sunlit\",\n  \"quality\": \"ultra-realistic, 8K, ultra-sharp\",\n  \"camera\": \"professional fashion photography, shallow depth of field\",\n  \"mood\": \"clean, modern, elegant, confident, relaxed\"", this)'>📋 复制</button>
         </div>
-        <p>Using the uploaded reference image STRICTLY, preserve the same woman’s face, identity, age, facial structure, skin tone, and natural expression with 100% accuracy. No facial alteration, beautification, or identity change.\n\nGenerate a highly realistic cinematic fashion editorial photoshoot featuring a stylish adult woman leaning casually against a warm beige textured wall. Her body is slightly angled, one shoulder gently resting on the wall, conveying relaxed confidence, elegance, and quiet strength.\n\nOutfit:\nShe wears a loose pastel blue button-down shirt with softly rolled-up sleeves, styled effortlessly. Paired with tailored white relaxed-fit trousers that drape naturally. Footwear consists of clean minimalist white or soft blue-white sneakers, maintaining a modern, understated luxury feel.\n\nPose &amp; Expression:\nShe stands with natural posture — one hand casually placed in her trouser pocket, the other delicately holding a small white daisy flower. Her facial expression is calm, self-assured, and serene, with a soft editorial gaze slightly away from the camera. Emotion feels confident yet gentle.\n\nHair &amp; Makeup:\nHair is neatly styled in a natural, modern look (soft waves, low ponytail, or loose bun). Makeup is minimal and refined — clean skin, subtle blush, neutral lips, no heavy contouring or glow.\n\nLighting &amp; Atmosphere:\nWarm natural sunlight streams from the side, creating soft highlights along her face and clothing, with gentle shadows adding depth to the textured wall. The mood is airy, sunlit, and cinematic.\n\nVisual Style:\nHigh-end fashion editorial aesthetic with realistic skin texture, crisp fabric details, refined neutral color palette, and elegant composition.\n\nCamera &amp; Quality:\nProfessional fashion photography style, shallow depth of field, cinematic framing, ultra-realistic 8K quality, sharp focus on subject with smooth background falloff.\n\nOverall Feel:\nModern, minimal, sun-drenched lifestyle fashion campaign — confident, graceful, and timeless.&quot;,<br>  <br>  &quot;style&quot;: &quot;cinematic, high-end female fashion editorial&quot;,<br>  &quot;lighting&quot;: &quot;warm natural sunlight with soft shadows&quot;,<br>  &quot;background&quot;: &quot;minimal beige textured wall, sunlit&quot;,<br>  &quot;quality&quot;: &quot;ultra-realistic, 8K, ultra-sharp&quot;,<br>  &quot;camera&quot;: &quot;professional fashion photography, shallow depth of field&quot;,<br>  &quot;mood&quot;: &quot;clean, modern, elegant, confident, relaxed&quot;</p>
+        <div data-nosnippet><p>Using the uploaded reference image STRICTLY, preserve the same woman’s face, identity, age, facial structure, skin tone, and natural expression with 100% accuracy. No facial alteration, beautification, or identity change.\n\nGenerate a highly realistic cinematic fashion editorial photoshoot featuring a stylish adult woman leaning casually against a warm beige textured wall. Her body is slightly angled, one shoulder gently resting on the wall, conveying relaxed confidence, elegance, and quiet strength.\n\nOutfit:\nShe wears a loose pastel blue button-down shirt with softly rolled-up sleeves, styled effortlessly. Paired with tailored white relaxed-fit trousers that drape naturally. Footwear consists of clean minimalist white or soft blue-white sneakers, maintaining a modern, understated luxury feel.\n\nPose &amp; Expression:\nShe stands with natural posture — one hand casually placed in her trouser pocket, the other delicately holding a small white daisy flower. Her facial expression is calm, self-assured, and serene, with a soft editorial gaze slightly away from the camera. Emotion feels confident yet gentle.\n\nHair &amp; Makeup:\nHair is neatly styled in a natural, modern look (soft waves, low ponytail, or loose bun). Makeup is minimal and refined — clean skin, subtle blush, neutral lips, no heavy contouring or glow.\n\nLighting &amp; Atmosphere:\nWarm natural sunlight streams from the side, creating soft highlights along her face and clothing, with gentle shadows adding depth to the textured wall. The mood is airy, sunlit, and cinematic.\n\nVisual Style:\nHigh-end fashion editorial aesthetic with realistic skin texture, crisp fabric details, refined neutral color palette, and elegant composition.\n\nCamera &amp; Quality:\nProfessional fashion photography style, shallow depth of field, cinematic framing, ultra-realistic 8K quality, sharp focus on subject with smooth background falloff.\n\nOverall Feel:\nModern, minimal, sun-drenched lifestyle fashion campaign — confident, graceful, and timeless.&quot;,<br>  <br>  &quot;style&quot;: &quot;cinematic, high-end female fashion editorial&quot;,<br>  &quot;lighting&quot;: &quot;warm natural sunlight with soft shadows&quot;,<br>  &quot;background&quot;: &quot;minimal beige textured wall, sunlit&quot;,<br>  &quot;quality&quot;: &quot;ultra-realistic, 8K, ultra-sharp&quot;,<br>  &quot;camera&quot;: &quot;professional fashion photography, shallow depth of field&quot;,<br>  &quot;mood&quot;: &quot;clean, modern, elegant, confident, relaxed&quot;</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011444759605510287-1.jpg" alt="Using the uploaded reference image STRICTLY, preserve the sam..." loading="lazy"><img src="/images/tweet-2011444759605510287-2.jpg" alt="Using the uploaded reference image STRICTLY, preserve the sam..." loading="lazy"><img src="/images/tweet-2011444759605510287-3.jpg" alt="Using the uploaded reference image STRICTLY, preserve the sam..." loading="lazy"><img src="/images/tweet-2011444759605510287-4.jpg" alt="Using the uploaded reference image STRICTLY, preserve the sam..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1248,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

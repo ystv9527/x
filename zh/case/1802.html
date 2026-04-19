@@ -7,11 +7,13 @@
     <title>&quot;A girl sitting in the black open trunk of a Gelik in an unde... #1802 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;A girl sitting in the black open trunk of a Gelik in an underground parking lot, surrounded by many flowers; the e...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1802.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1802.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1802.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840575">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022371">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n \"一个女孩坐在地下停车场一辆黑色Gelik敞开的后备箱里，周围被许多花环绕；整个后备箱里都装满了白玫瑰。她穿着黑色运动服。她的头发很长，梳成老钱风格。她的嘴唇涂着柔和的哑光粉色，睫毛浓密。她正看着后备箱里的花，摆出时尚拍摄般的姿势。\",\n      \"pose\": \"坐在后备箱内，双腿微微弯曲，双手轻触花朵，带着温柔、沉思的表情看着玫瑰。\"\n    },\n    \"environment\": {\n      \"location\": \"地下停车场\",\n      \"lighting\": \"闪光摄影，高对比以突出女孩和白玫瑰，车身表面有细微反光\",\n      \"background\": \"停车场的混凝土墙壁和地面，环境光昏暗\"\n    },\n    \"objects\": [\n      {\n        \"type\": \"汽车\",\n        \"model\": \"Gelik\",\n        \"color\": \"黑色\",\n        \"position\": \"敞开后备箱面向镜头\"\n      },\n      {\n        \"type\": \"花朵\",\n        \"species\": \"玫瑰\",\n        \"color\": \"白色\",\n        \"placement\": \"整个后备箱被填满，部分花朵略微洒落在女孩周围\"\n      }\n    ],\n    \"style\": {\n      \"photography\": \"时尚社论、闪光摄影、电影感\",\n      \"format\": \"3:4\",\n      \"mood\": \"优雅、宁静、高端时尚氛围\"\n    },\n    \"reference_image_ids\": [\"<your_uploaded_photo_id>\"]}", this)'>📋 复制</button>
         </div>
-        <p>{<br> &quot;一个女孩坐在地下停车场一辆黑色Gelik敞开的后备箱里，周围被许多花环绕；整个后备箱里都装满了白玫瑰。她穿着黑色运动服。她的头发很长，梳成老钱风格。她的嘴唇涂着柔和的哑光粉色，睫毛浓密。她正看着后备箱里的花，摆出时尚拍摄般的姿势。&quot;,<br>      &quot;pose&quot;: &quot;坐在后备箱内，双腿微微弯曲，双手轻触花朵，带着温柔、沉思的表情看着玫瑰。&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;地下停车场&quot;,<br>      &quot;lighting&quot;: &quot;闪光摄影，高对比以突出女孩和白玫瑰，车身表面有细微反光&quot;,<br>      &quot;background&quot;: &quot;停车场的混凝土墙壁和地面，环境光昏暗&quot;<br>    },<br>    &quot;objects&quot;: [<br>      {<br>        &quot;type&quot;: &quot;汽车&quot;,<br>        &quot;model&quot;: &quot;Gelik&quot;,<br>        &quot;color&quot;: &quot;黑色&quot;,<br>        &quot;position&quot;: &quot;敞开后备箱面向镜头&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;花朵&quot;,<br>        &quot;species&quot;: &quot;玫瑰&quot;,<br>        &quot;color&quot;: &quot;白色&quot;,<br>        &quot;placement&quot;: &quot;整个后备箱被填满，部分花朵略微洒落在女孩周围&quot;<br>      }<br>    ],<br>    &quot;style&quot;: {<br>      &quot;photography&quot;: &quot;时尚社论、闪光摄影、电影感&quot;,<br>      &quot;format&quot;: &quot;3:4&quot;,<br>      &quot;mood&quot;: &quot;优雅、宁静、高端时尚氛围&quot;<br>    },<br>    &quot;reference_image_ids&quot;: [&quot;&lt;your_uploaded_photo_id&gt;&quot;]}</p>
+        <div data-nosnippet><p>{<br> &quot;一个女孩坐在地下停车场一辆黑色Gelik敞开的后备箱里，周围被许多花环绕；整个后备箱里都装满了白玫瑰。她穿着黑色运动服。她的头发很长，梳成老钱风格。她的嘴唇涂着柔和的哑光粉色，睫毛浓密。她正看着后备箱里的花，摆出时尚拍摄般的姿势。&quot;,<br>      &quot;pose&quot;: &quot;坐在后备箱内，双腿微微弯曲，双手轻触花朵，带着温柔、沉思的表情看着玫瑰。&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;地下停车场&quot;,<br>      &quot;lighting&quot;: &quot;闪光摄影，高对比以突出女孩和白玫瑰，车身表面有细微反光&quot;,<br>      &quot;background&quot;: &quot;停车场的混凝土墙壁和地面，环境光昏暗&quot;<br>    },<br>    &quot;objects&quot;: [<br>      {<br>        &quot;type&quot;: &quot;汽车&quot;,<br>        &quot;model&quot;: &quot;Gelik&quot;,<br>        &quot;color&quot;: &quot;黑色&quot;,<br>        &quot;position&quot;: &quot;敞开后备箱面向镜头&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;花朵&quot;,<br>        &quot;species&quot;: &quot;玫瑰&quot;,<br>        &quot;color&quot;: &quot;白色&quot;,<br>        &quot;placement&quot;: &quot;整个后备箱被填满，部分花朵略微洒落在女孩周围&quot;<br>      }<br>    ],<br>    &quot;style&quot;: {<br>      &quot;photography&quot;: &quot;时尚社论、闪光摄影、电影感&quot;,<br>      &quot;format&quot;: &quot;3:4&quot;,<br>      &quot;mood&quot;: &quot;优雅、宁静、高端时尚氛围&quot;<br>    },<br>    &quot;reference_image_ids&quot;: [&quot;&lt;your_uploaded_photo_id&gt;&quot;]}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n \"A girl sitting in the black open trunk of a Gelik in an underground parking lot, surrounded by many flowers; the entire trunk is filled with white roses. She is wearing a black tracksuit. Her hair is long, styled in the Old Money style. Her lips are painted soft matte pink, and her eyelashes are lush. She is looking at the flowers in the trunk, posing like a fashion shoot.\",\n      \"pose\": \"Seated inside the trunk with legs bent slightly, hands lightly touching the flowers, looking at the roses with a gentle, contemplative expression.\"\n    },\n    \"environment\": {\n      \"location\": \"Underground parking lot\",\n      \"lighting\": \"Flash photography, high contrast to highlight the girl and white roses, subtle reflections on the car's surface\",\n      \"background\": \"Concrete walls and floor of parking lot, dim ambient light\"\n    },\n    \"objects\": [\n      {\n        \"type\": \"Car\",\n        \"model\": \"Gelik\",\n        \"color\": \"Black\",\n        \"position\": \"Open trunk facing camera\"\n      },\n      {\n        \"type\": \"Flowers\",\n        \"species\": \"Roses\",\n        \"color\": \"White\",\n        \"placement\": \"Entire trunk filled, some spilling slightly around the girl\"\n      }\n    ],\n    \"style\": {\n      \"photography\": \"Fashion editorial, flash photography, cinematic\",\n      \"format\": \"3:4\",\n      \"mood\": \"Elegant, serene, high-end fashion vibe\"\n    },\n    \"reference_image_ids\": [\"<your_uploaded_photo_id>\"]", this)'>📋 复制</button>
         </div>
-        <p>{<br> &quot;A girl sitting in the black open trunk of a Gelik in an underground parking lot, surrounded by many flowers; the entire trunk is filled with white roses. She is wearing a black tracksuit. Her hair is long, styled in the Old Money style. Her lips are painted soft matte pink, and her eyelashes are lush. She is looking at the flowers in the trunk, posing like a fashion shoot.&quot;,<br>      &quot;pose&quot;: &quot;Seated inside the trunk with legs bent slightly, hands lightly touching the flowers, looking at the roses with a gentle, contemplative expression.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Underground parking lot&quot;,<br>      &quot;lighting&quot;: &quot;Flash photography, high contrast to highlight the girl and white roses, subtle reflections on the car&#39;s surface&quot;,<br>      &quot;background&quot;: &quot;Concrete walls and floor of parking lot, dim ambient light&quot;<br>    },<br>    &quot;objects&quot;: [<br>      {<br>        &quot;type&quot;: &quot;Car&quot;,<br>        &quot;model&quot;: &quot;Gelik&quot;,<br>        &quot;color&quot;: &quot;Black&quot;,<br>        &quot;position&quot;: &quot;Open trunk facing camera&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;Flowers&quot;,<br>        &quot;species&quot;: &quot;Roses&quot;,<br>        &quot;color&quot;: &quot;White&quot;,<br>        &quot;placement&quot;: &quot;Entire trunk filled, some spilling slightly around the girl&quot;<br>      }<br>    ],<br>    &quot;style&quot;: {<br>      &quot;photography&quot;: &quot;Fashion editorial, flash photography, cinematic&quot;,<br>      &quot;format&quot;: &quot;3:4&quot;,<br>      &quot;mood&quot;: &quot;Elegant, serene, high-end fashion vibe&quot;<br>    },<br>    &quot;reference_image_ids&quot;: [&quot;&lt;your_uploaded_photo_id&gt;&quot;]</p>
+        <div data-nosnippet><p>{<br> &quot;A girl sitting in the black open trunk of a Gelik in an underground parking lot, surrounded by many flowers; the entire trunk is filled with white roses. She is wearing a black tracksuit. Her hair is long, styled in the Old Money style. Her lips are painted soft matte pink, and her eyelashes are lush. She is looking at the flowers in the trunk, posing like a fashion shoot.&quot;,<br>      &quot;pose&quot;: &quot;Seated inside the trunk with legs bent slightly, hands lightly touching the flowers, looking at the roses with a gentle, contemplative expression.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Underground parking lot&quot;,<br>      &quot;lighting&quot;: &quot;Flash photography, high contrast to highlight the girl and white roses, subtle reflections on the car&#39;s surface&quot;,<br>      &quot;background&quot;: &quot;Concrete walls and floor of parking lot, dim ambient light&quot;<br>    },<br>    &quot;objects&quot;: [<br>      {<br>        &quot;type&quot;: &quot;Car&quot;,<br>        &quot;model&quot;: &quot;Gelik&quot;,<br>        &quot;color&quot;: &quot;Black&quot;,<br>        &quot;position&quot;: &quot;Open trunk facing camera&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;Flowers&quot;,<br>        &quot;species&quot;: &quot;Roses&quot;,<br>        &quot;color&quot;: &quot;White&quot;,<br>        &quot;placement&quot;: &quot;Entire trunk filled, some spilling slightly around the girl&quot;<br>      }<br>    ],<br>    &quot;style&quot;: {<br>      &quot;photography&quot;: &quot;Fashion editorial, flash photography, cinematic&quot;,<br>      &quot;format&quot;: &quot;3:4&quot;,<br>      &quot;mood&quot;: &quot;Elegant, serene, high-end fashion vibe&quot;<br>    },<br>    &quot;reference_image_ids&quot;: [&quot;&lt;your_uploaded_photo_id&gt;&quot;]</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2016511350563070357-1.jpg" alt="&quot;A girl sitting in the black open trunk of a Gelik in an unde..." loading="lazy"><img src="/images/tweet-2016511350563070357-2.jpg" alt="&quot;A girl sitting in the black open trunk of a Gelik in an unde..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1802,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

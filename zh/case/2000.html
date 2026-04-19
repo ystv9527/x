@@ -7,11 +7,13 @@
     <title>&quot;master prompt&quot;: { #2000 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;master prompt&quot;: { &quot;global settings&quot;: { &quot;style&quot;: &quot;Hyper realistic commercial product photography&quot;, &quot;layout&quot;: &quot;Verti...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2000.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2000.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2000.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840362">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022325">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"master_prompt\": {\n    \"global_settings\": {\n      \"style\": \"超写实商业产品摄影\",\n      \"layout\": \"垂直分屏，两个独立模块\",\n      \"resolution\": \"8K UHD，电影级照明\",\n      \"details\": \"极致清晰、凝固的动态飞溅、微小冷凝水\"\n    },\n    \"module_1_left\": {\n      \"subject\": {\n        \"type\": \"高而透明的厚重巧克力奶昔玻璃杯\",\n        \"details\": \"起泡的质地，玻璃上可见冷凝水\",\n        \"text_on_glass\": [\"巧克力奶昔\", \"样机\", \"蛋白质\"]\n      },\n      \"action\": \"从底部和顶部喷涌而出的动感巧克力液体飞溅\",\n      \"floating_elements\": [\n        \"带水滴的整颗蓝莓\",\n        \"新鲜绿色薄荷叶\",\n        \"悬浮在空气中的细小巧克力颗粒\"\n      ],\n      \"background\": {\n        \"color\": \"深暗蓝色，带有柔和的金色散景粒子\",\n        \"lighting\": \"冷色调月光式轮廓光\"\n      }\n    },\n    \"module_2_right\": {\n      \"subject\": {\n        \"type\": \"修长金色金属 NESCAFÉ 易拉罐\",\n        \"details\": \"大量冷凝水，哑光金色表面\",\n        \"text_on_can\": [\"NESCAFÉ\", \"巧克力奶昔\", \"全新外观\", \"蛋白增强\"]\n      },\n      \"action\": \"底部爆发的巧克力液体王冠飞溅\",\n      \"floating_elements\": [\n        \"烘焙咖啡豆\",\n        \"从顶部上升的旋转浓白蒸汽/烟雾\",\n        \"发光的琥珀色余烬与火花\"\n      ],\n      \"background\": {\n        \"color\": \"暖巧克力棕到深琥珀色渐变\",\n        \"atmosphere\": \"情绪化、强烈且烟雾缭绕\"\n      }\n    },\n    \"surface_details\": {\n      \"base\": \"反光的深色湿润表面，液体汇集\",\n      \"shadows\": \"柔和分离的真实阴影\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;global_settings&quot;: {<br>      &quot;style&quot;: &quot;超写实商业产品摄影&quot;,<br>      &quot;layout&quot;: &quot;垂直分屏，两个独立模块&quot;,<br>      &quot;resolution&quot;: &quot;8K UHD，电影级照明&quot;,<br>      &quot;details&quot;: &quot;极致清晰、凝固的动态飞溅、微小冷凝水&quot;<br>    },<br>    &quot;module_1_left&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;高而透明的厚重巧克力奶昔玻璃杯&quot;,<br>        &quot;details&quot;: &quot;起泡的质地，玻璃上可见冷凝水&quot;,<br>        &quot;text_on_glass&quot;: [&quot;巧克力奶昔&quot;, &quot;样机&quot;, &quot;蛋白质&quot;]<br>      },<br>      &quot;action&quot;: &quot;从底部和顶部喷涌而出的动感巧克力液体飞溅&quot;,<br>      &quot;floating_elements&quot;: [<br>        &quot;带水滴的整颗蓝莓&quot;,<br>        &quot;新鲜绿色薄荷叶&quot;,<br>        &quot;悬浮在空气中的细小巧克力颗粒&quot;<br>      ],<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;深暗蓝色，带有柔和的金色散景粒子&quot;,<br>        &quot;lighting&quot;: &quot;冷色调月光式轮廓光&quot;<br>      }<br>    },<br>    &quot;module_2_right&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;修长金色金属 NESCAFÉ 易拉罐&quot;,<br>        &quot;details&quot;: &quot;大量冷凝水，哑光金色表面&quot;,<br>        &quot;text_on_can&quot;: [&quot;NESCAFÉ&quot;, &quot;巧克力奶昔&quot;, &quot;全新外观&quot;, &quot;蛋白增强&quot;]<br>      },<br>      &quot;action&quot;: &quot;底部爆发的巧克力液体王冠飞溅&quot;,<br>      &quot;floating_elements&quot;: [<br>        &quot;烘焙咖啡豆&quot;,<br>        &quot;从顶部上升的旋转浓白蒸汽/烟雾&quot;,<br>        &quot;发光的琥珀色余烬与火花&quot;<br>      ],<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;暖巧克力棕到深琥珀色渐变&quot;,<br>        &quot;atmosphere&quot;: &quot;情绪化、强烈且烟雾缭绕&quot;<br>      }<br>    },<br>    &quot;surface_details&quot;: {<br>      &quot;base&quot;: &quot;反光的深色湿润表面，液体汇集&quot;,<br>      &quot;shadows&quot;: &quot;柔和分离的真实阴影&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;global_settings&quot;: {<br>      &quot;style&quot;: &quot;超写实商业产品摄影&quot;,<br>      &quot;layout&quot;: &quot;垂直分屏，两个独立模块&quot;,<br>      &quot;resolution&quot;: &quot;8K UHD，电影级照明&quot;,<br>      &quot;details&quot;: &quot;极致清晰、凝固的动态飞溅、微小冷凝水&quot;<br>    },<br>    &quot;module_1_left&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;高而透明的厚重巧克力奶昔玻璃杯&quot;,<br>        &quot;details&quot;: &quot;起泡的质地，玻璃上可见冷凝水&quot;,<br>        &quot;text_on_glass&quot;: [&quot;巧克力奶昔&quot;, &quot;样机&quot;, &quot;蛋白质&quot;]<br>      },<br>      &quot;action&quot;: &quot;从底部和顶部喷涌而出的动感巧克力液体飞溅&quot;,<br>      &quot;floating_elements&quot;: [<br>        &quot;带水滴的整颗蓝莓&quot;,<br>        &quot;新鲜绿色薄荷叶&quot;,<br>        &quot;悬浮在空气中的细小巧克力颗粒&quot;<br>      ],<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;深暗蓝色，带有柔和的金色散景粒子&quot;,<br>        &quot;lighting&quot;: &quot;冷色调月光式轮廓光&quot;<br>      }<br>    },<br>    &quot;module_2_right&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;修长金色金属 NESCAFÉ 易拉罐&quot;,<br>        &quot;details&quot;: &quot;大量冷凝水，哑光金色表面&quot;,<br>        &quot;text_on_can&quot;: [&quot;NESCAFÉ&quot;, &quot;巧克力奶昔&quot;, &quot;全新外观&quot;, &quot;蛋白增强&quot;]<br>      },<br>      &quot;action&quot;: &quot;底部爆发的巧克力液体王冠飞溅&quot;,<br>      &quot;floating_elements&quot;: [<br>        &quot;烘焙咖啡豆&quot;,<br>        &quot;从顶部上升的旋转浓白蒸汽/烟雾&quot;,<br>        &quot;发光的琥珀色余烬与火花&quot;<br>      ],<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;暖巧克力棕到深琥珀色渐变&quot;,<br>        &quot;atmosphere&quot;: &quot;情绪化、强烈且烟雾缭绕&quot;<br>      }<br>    },<br>    &quot;surface_details&quot;: {<br>      &quot;base&quot;: &quot;反光的深色湿润表面，液体汇集&quot;,<br>      &quot;shadows&quot;: &quot;柔和分离的真实阴影&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"master_prompt\": {\n    \"global_settings\": {\n      \"style\": \"Hyper-realistic commercial product photography\", \n      \"layout\": \"Vertical split-screen, two distinct modules\",\n      \"resolution\": \"8K UHD, cinematic lighting\",\n      \"details\": \"Extreme clarity, frozen motion splashes, micro-condensation\"\n    },\n    \"module_1_left\": {\n      \"subject\": {\n        \"type\": \"Clear tall glass of thick chocolate milkshake\",\n        \"details\": \"Frothy texture, visible condensation on glass\",\n        \"text_on_glass\": [\"CHOCOLATE MILK SHAKE\", \"mock up\", \"protein\"]\n      },\n      \"action\": \"Dynamic chocolate liquid splash erupting from the base and top\",\n      \"floating_elements\": [\n        \"Whole blueberries with water droplets\",\n        \"Fresh green mint leaves\",\n        \"Tiny chocolate particles suspended in air\"\n      ],\n      \"background\": {\n        \"color\": \"Deep dark blue with soft golden bokeh particles\",\n        \"lighting\": \"Cool moonlight-style rim lighting\"\n      }\n    },\n    \"module_2_right\": {\n      \"subject\": {\n        \"type\": \"Slim gold metallic Nescafé can\",\n        \"details\": \"Heavy condensation, matte gold finish\",\n        \"text_on_can\": [\"NESCAFÉ\", \"CHOCOLATE SHAKE\", \"NEW LOOK\", \"PROTEIN BOOST\"]\n      },\n      \"action\": \"Explosive chocolate liquid crown splash at the base\",\n      \"floating_elements\": [\n        \"Roasted coffee beans\",\n        \"Swirling thick white steam/smoke rising from the top\",\n        \"Glowing amber embers and sparks\"\n      ],\n      \"background\": {\n        \"color\": \"Warm chocolate brown to dark amber gradient\",\n        \"atmosphere\": \"Moody, intense, and smoky\"\n      }\n    },\n    \"surface_details\": {\n      \"base\": \"Reflective dark wet surface with liquid pooling\",\n      \"shadows\": \"Soft separated realistic shadows\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;global_settings&quot;: {<br>      &quot;style&quot;: &quot;Hyper-realistic commercial product photography&quot;, <br>      &quot;layout&quot;: &quot;Vertical split-screen, two distinct modules&quot;,<br>      &quot;resolution&quot;: &quot;8K UHD, cinematic lighting&quot;,<br>      &quot;details&quot;: &quot;Extreme clarity, frozen motion splashes, micro-condensation&quot;<br>    },<br>    &quot;module_1_left&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;Clear tall glass of thick chocolate milkshake&quot;,<br>        &quot;details&quot;: &quot;Frothy texture, visible condensation on glass&quot;,<br>        &quot;text_on_glass&quot;: [&quot;CHOCOLATE MILK SHAKE&quot;, &quot;mock up&quot;, &quot;protein&quot;]<br>      },<br>      &quot;action&quot;: &quot;Dynamic chocolate liquid splash erupting from the base and top&quot;,<br>      &quot;floating_elements&quot;: [<br>        &quot;Whole blueberries with water droplets&quot;,<br>        &quot;Fresh green mint leaves&quot;,<br>        &quot;Tiny chocolate particles suspended in air&quot;<br>      ],<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;Deep dark blue with soft golden bokeh particles&quot;,<br>        &quot;lighting&quot;: &quot;Cool moonlight-style rim lighting&quot;<br>      }<br>    },<br>    &quot;module_2_right&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;Slim gold metallic Nescafé can&quot;,<br>        &quot;details&quot;: &quot;Heavy condensation, matte gold finish&quot;,<br>        &quot;text_on_can&quot;: [&quot;NESCAFÉ&quot;, &quot;CHOCOLATE SHAKE&quot;, &quot;NEW LOOK&quot;, &quot;PROTEIN BOOST&quot;]<br>      },<br>      &quot;action&quot;: &quot;Explosive chocolate liquid crown splash at the base&quot;,<br>      &quot;floating_elements&quot;: [<br>        &quot;Roasted coffee beans&quot;,<br>        &quot;Swirling thick white steam/smoke rising from the top&quot;,<br>        &quot;Glowing amber embers and sparks&quot;<br>      ],<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;Warm chocolate brown to dark amber gradient&quot;,<br>        &quot;atmosphere&quot;: &quot;Moody, intense, and smoky&quot;<br>      }<br>    },<br>    &quot;surface_details&quot;: {<br>      &quot;base&quot;: &quot;Reflective dark wet surface with liquid pooling&quot;,<br>      &quot;shadows&quot;: &quot;Soft separated realistic shadows&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;global_settings&quot;: {<br>      &quot;style&quot;: &quot;Hyper-realistic commercial product photography&quot;, <br>      &quot;layout&quot;: &quot;Vertical split-screen, two distinct modules&quot;,<br>      &quot;resolution&quot;: &quot;8K UHD, cinematic lighting&quot;,<br>      &quot;details&quot;: &quot;Extreme clarity, frozen motion splashes, micro-condensation&quot;<br>    },<br>    &quot;module_1_left&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;Clear tall glass of thick chocolate milkshake&quot;,<br>        &quot;details&quot;: &quot;Frothy texture, visible condensation on glass&quot;,<br>        &quot;text_on_glass&quot;: [&quot;CHOCOLATE MILK SHAKE&quot;, &quot;mock up&quot;, &quot;protein&quot;]<br>      },<br>      &quot;action&quot;: &quot;Dynamic chocolate liquid splash erupting from the base and top&quot;,<br>      &quot;floating_elements&quot;: [<br>        &quot;Whole blueberries with water droplets&quot;,<br>        &quot;Fresh green mint leaves&quot;,<br>        &quot;Tiny chocolate particles suspended in air&quot;<br>      ],<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;Deep dark blue with soft golden bokeh particles&quot;,<br>        &quot;lighting&quot;: &quot;Cool moonlight-style rim lighting&quot;<br>      }<br>    },<br>    &quot;module_2_right&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;Slim gold metallic Nescafé can&quot;,<br>        &quot;details&quot;: &quot;Heavy condensation, matte gold finish&quot;,<br>        &quot;text_on_can&quot;: [&quot;NESCAFÉ&quot;, &quot;CHOCOLATE SHAKE&quot;, &quot;NEW LOOK&quot;, &quot;PROTEIN BOOST&quot;]<br>      },<br>      &quot;action&quot;: &quot;Explosive chocolate liquid crown splash at the base&quot;,<br>      &quot;floating_elements&quot;: [<br>        &quot;Roasted coffee beans&quot;,<br>        &quot;Swirling thick white steam/smoke rising from the top&quot;,<br>        &quot;Glowing amber embers and sparks&quot;<br>      ],<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;Warm chocolate brown to dark amber gradient&quot;,<br>        &quot;atmosphere&quot;: &quot;Moody, intense, and smoky&quot;<br>      }<br>    },<br>    &quot;surface_details&quot;: {<br>      &quot;base&quot;: &quot;Reflective dark wet surface with liquid pooling&quot;,<br>      &quot;shadows&quot;: &quot;Soft separated realistic shadows&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2019630789474861400-1.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2000,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

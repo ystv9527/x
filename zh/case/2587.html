@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Photorealistic studio portrait of Rosé (Park Chae... #2587 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Photorealistic studio portrait of Rosé (Park Chae young), a beautiful young Korean Australian woman with...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2587.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2587.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2587.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839738">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022195">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"prompt\": \"写实工作室肖像，Rosé（Park Chae-young），一位美丽的年轻韩澳女性，拥有一头飘逸的金色长发，纤细的椭圆脸庞和精致的五官。她顽皮地蹲下，从一把粉白色网球拍的拍弦中抬头看向相机。她穿着淡粉色露脐上衣、露肩白色长袖衬衫、带白色条纹的淡粉色短裤，以及白色及膝袜。高调光照、冷色调、极简白色背景。 --ar 9:16\",\n\"outfit\": {\n\"top\": \"淡粉色露脐上衣，带白色图案，氨纶混纺。\",\n\"outerwear\": \"白色轻薄长袖上衣，垂感露肩。\",\n\"bottoms\": \"淡粉色运动短裤，白色腰带，双白色侧条纹。\",\n\"footwear\": \"白色及膝袜或软面料靴子。\"\n},\n\"pose\": \"低低蹲在地上，姿态俏皮，横向将网球拍举在脸前，从拍弦后探出头看。\",\n\"items\": [\n\"网球拍（淡粉色拍框，白色拍弦和握把）。\"\n],\n\"background\": \"无缝白色摄影棚背景。\",\n\"color_grading\": {\n\"style\": \"高调光照，冷色调，柔和散射阴影。\",\n\"atmosphere\": \"清爽、通透、极简美学。\"\n},\n\"exact_colors\": {\n\"background_white\": \"#F4F5F7\",\n\"pastel_pink\": \"#FFD1DC\",\n\"racket_pink\": \"#FFB6C1\",\n\"skin_tone\": \"#FDF1ED\",\n\"hair_blonde\": \"#F5E6C4\"\n}\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;prompt&quot;: &quot;写实工作室肖像，Rosé（Park Chae-young），一位美丽的年轻韩澳女性，拥有一头飘逸的金色长发，纤细的椭圆脸庞和精致的五官。她顽皮地蹲下，从一把粉白色网球拍的拍弦中抬头看向相机。她穿着淡粉色露脐上衣、露肩白色长袖衬衫、带白色条纹的淡粉色短裤，以及白色及膝袜。高调光照、冷色调、极简白色背景。 --ar 9:16&quot;,<br>&quot;outfit&quot;: {<br>&quot;top&quot;: &quot;淡粉色露脐上衣，带白色图案，氨纶混纺。&quot;,<br>&quot;outerwear&quot;: &quot;白色轻薄长袖上衣，垂感露肩。&quot;,<br>&quot;bottoms&quot;: &quot;淡粉色运动短裤，白色腰带，双白色侧条纹。&quot;,<br>&quot;footwear&quot;: &quot;白色及膝袜或软面料靴子。&quot;<br>},<br>&quot;pose&quot;: &quot;低低蹲在地上，姿态俏皮，横向将网球拍举在脸前，从拍弦后探出头看。&quot;,<br>&quot;items&quot;: [<br>&quot;网球拍（淡粉色拍框，白色拍弦和握把）。&quot;<br>],<br>&quot;background&quot;: &quot;无缝白色摄影棚背景。&quot;,<br>&quot;color_grading&quot;: {<br>&quot;style&quot;: &quot;高调光照，冷色调，柔和散射阴影。&quot;,<br>&quot;atmosphere&quot;: &quot;清爽、通透、极简美学。&quot;<br>},<br>&quot;exact_colors&quot;: {<br>&quot;background_white&quot;: &quot;#F4F5F7&quot;,<br>&quot;pastel_pink&quot;: &quot;#FFD1DC&quot;,<br>&quot;racket_pink&quot;: &quot;#FFB6C1&quot;,<br>&quot;skin_tone&quot;: &quot;#FDF1ED&quot;,<br>&quot;hair_blonde&quot;: &quot;#F5E6C4&quot;<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;prompt&quot;: &quot;写实工作室肖像，Rosé（Park Chae-young），一位美丽的年轻韩澳女性，拥有一头飘逸的金色长发，纤细的椭圆脸庞和精致的五官。她顽皮地蹲下，从一把粉白色网球拍的拍弦中抬头看向相机。她穿着淡粉色露脐上衣、露肩白色长袖衬衫、带白色条纹的淡粉色短裤，以及白色及膝袜。高调光照、冷色调、极简白色背景。 --ar 9:16&quot;,<br>&quot;outfit&quot;: {<br>&quot;top&quot;: &quot;淡粉色露脐上衣，带白色图案，氨纶混纺。&quot;,<br>&quot;outerwear&quot;: &quot;白色轻薄长袖上衣，垂感露肩。&quot;,<br>&quot;bottoms&quot;: &quot;淡粉色运动短裤，白色腰带，双白色侧条纹。&quot;,<br>&quot;footwear&quot;: &quot;白色及膝袜或软面料靴子。&quot;<br>},<br>&quot;pose&quot;: &quot;低低蹲在地上，姿态俏皮，横向将网球拍举在脸前，从拍弦后探出头看。&quot;,<br>&quot;items&quot;: [<br>&quot;网球拍（淡粉色拍框，白色拍弦和握把）。&quot;<br>],<br>&quot;background&quot;: &quot;无缝白色摄影棚背景。&quot;,<br>&quot;color_grading&quot;: {<br>&quot;style&quot;: &quot;高调光照，冷色调，柔和散射阴影。&quot;,<br>&quot;atmosphere&quot;: &quot;清爽、通透、极简美学。&quot;<br>},<br>&quot;exact_colors&quot;: {<br>&quot;background_white&quot;: &quot;#F4F5F7&quot;,<br>&quot;pastel_pink&quot;: &quot;#FFD1DC&quot;,<br>&quot;racket_pink&quot;: &quot;#FFB6C1&quot;,<br>&quot;skin_tone&quot;: &quot;#FDF1ED&quot;,<br>&quot;hair_blonde&quot;: &quot;#F5E6C4&quot;<br>}<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"prompt\": \"Photorealistic studio portrait of Rosé (Park Chae-young), a beautiful young Korean-Australian woman with long flowing blonde hair, a slender oval face, and delicate features. She is crouching down playfully, looking up at the camera through the strings of a pastel pink and white tennis racket. She wears a pastel pink crop top, off-shoulder white long-sleeve shirt, pastel pink shorts with white stripes, and white knee-high socks. High-key lighting, cool tones, minimalist white background. --ar 9:16\",\n\"outfit\": {\n\"top\": \"Pastel pink crop top with white graphic, spandex blend.\",\n\"outerwear\": \"White lightweight long-sleeve top, draped off shoulders.\",\n\"bottoms\": \"Pastel pink athletic shorts, white waistband, double white side stripes.\",\n\"footwear\": \"White knee-high socks or soft fabric boots.\"\n},\n\"pose\": \"Crouching low to the ground in a playful stance, holding the tennis racket horizontally in front of her face, peering out from behind the strings.\",\n\"items\": [\n\"Tennis racket (pastel pink frame, white strings and grip).\"\n],\n\"background\": \"Seamless white studio backdrop.\",\n\"color_grading\": {\n\"style\": \"High-key lighting, cool undertones, soft diffuse shadows.\",\n\"atmosphere\": \"Clean, airy, minimalist aesthetic.\"\n},\n\"exact_colors\": {\n\"background_white\": \"#F4F5F7\",\n\"pastel_pink\": \"#FFD1DC\",\n\"racket_pink\": \"#FFB6C1\",\n\"skin_tone\": \"#FDF1ED\",\n\"hair_blonde\": \"#F5E6C4\"\n}\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;prompt&quot;: &quot;Photorealistic studio portrait of Rosé (Park Chae-young), a beautiful young Korean-Australian woman with long flowing blonde hair, a slender oval face, and delicate features. She is crouching down playfully, looking up at the camera through the strings of a pastel pink and white tennis racket. She wears a pastel pink crop top, off-shoulder white long-sleeve shirt, pastel pink shorts with white stripes, and white knee-high socks. High-key lighting, cool tones, minimalist white background. --ar 9:16&quot;,<br>&quot;outfit&quot;: {<br>&quot;top&quot;: &quot;Pastel pink crop top with white graphic, spandex blend.&quot;,<br>&quot;outerwear&quot;: &quot;White lightweight long-sleeve top, draped off shoulders.&quot;,<br>&quot;bottoms&quot;: &quot;Pastel pink athletic shorts, white waistband, double white side stripes.&quot;,<br>&quot;footwear&quot;: &quot;White knee-high socks or soft fabric boots.&quot;<br>},<br>&quot;pose&quot;: &quot;Crouching low to the ground in a playful stance, holding the tennis racket horizontally in front of her face, peering out from behind the strings.&quot;,<br>&quot;items&quot;: [<br>&quot;Tennis racket (pastel pink frame, white strings and grip).&quot;<br>],<br>&quot;background&quot;: &quot;Seamless white studio backdrop.&quot;,<br>&quot;color_grading&quot;: {<br>&quot;style&quot;: &quot;High-key lighting, cool undertones, soft diffuse shadows.&quot;,<br>&quot;atmosphere&quot;: &quot;Clean, airy, minimalist aesthetic.&quot;<br>},<br>&quot;exact_colors&quot;: {<br>&quot;background_white&quot;: &quot;#F4F5F7&quot;,<br>&quot;pastel_pink&quot;: &quot;#FFD1DC&quot;,<br>&quot;racket_pink&quot;: &quot;#FFB6C1&quot;,<br>&quot;skin_tone&quot;: &quot;#FDF1ED&quot;,<br>&quot;hair_blonde&quot;: &quot;#F5E6C4&quot;<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;prompt&quot;: &quot;Photorealistic studio portrait of Rosé (Park Chae-young), a beautiful young Korean-Australian woman with long flowing blonde hair, a slender oval face, and delicate features. She is crouching down playfully, looking up at the camera through the strings of a pastel pink and white tennis racket. She wears a pastel pink crop top, off-shoulder white long-sleeve shirt, pastel pink shorts with white stripes, and white knee-high socks. High-key lighting, cool tones, minimalist white background. --ar 9:16&quot;,<br>&quot;outfit&quot;: {<br>&quot;top&quot;: &quot;Pastel pink crop top with white graphic, spandex blend.&quot;,<br>&quot;outerwear&quot;: &quot;White lightweight long-sleeve top, draped off shoulders.&quot;,<br>&quot;bottoms&quot;: &quot;Pastel pink athletic shorts, white waistband, double white side stripes.&quot;,<br>&quot;footwear&quot;: &quot;White knee-high socks or soft fabric boots.&quot;<br>},<br>&quot;pose&quot;: &quot;Crouching low to the ground in a playful stance, holding the tennis racket horizontally in front of her face, peering out from behind the strings.&quot;,<br>&quot;items&quot;: [<br>&quot;Tennis racket (pastel pink frame, white strings and grip).&quot;<br>],<br>&quot;background&quot;: &quot;Seamless white studio backdrop.&quot;,<br>&quot;color_grading&quot;: {<br>&quot;style&quot;: &quot;High-key lighting, cool undertones, soft diffuse shadows.&quot;,<br>&quot;atmosphere&quot;: &quot;Clean, airy, minimalist aesthetic.&quot;<br>},<br>&quot;exact_colors&quot;: {<br>&quot;background_white&quot;: &quot;#F4F5F7&quot;,<br>&quot;pastel_pink&quot;: &quot;#FFD1DC&quot;,<br>&quot;racket_pink&quot;: &quot;#FFB6C1&quot;,<br>&quot;skin_tone&quot;: &quot;#FDF1ED&quot;,<br>&quot;hair_blonde&quot;: &quot;#F5E6C4&quot;<br>}<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2034035802142052381-1.jpg" alt="&quot;prompt&quot;: &quot;Photorealistic studio portrait of Rosé (Park Chae..." loading="lazy"><img src="/images/tweet-2034035802142052381-2.jpg" alt="&quot;prompt&quot;: &quot;Photorealistic studio portrait of Rosé (Park Chae..." loading="lazy"><img src="/images/tweet-2034035802142052381-3.jpg" alt="&quot;prompt&quot;: &quot;Photorealistic studio portrait of Rosé (Park Chae..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2587,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

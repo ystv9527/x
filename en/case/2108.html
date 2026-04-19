@@ -7,11 +7,13 @@
     <title>Shot on a Hasselblad 907X 50C with an XCD 90mm f/2.5 lens, ap... #2108 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Shot on a Hasselblad 907X 50C with an XCD 90mm f/2.5 lens, aperture f/2.8 shallow depth of field emphasizes the preci...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2108.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2108.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2108.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844423">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023516">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用 Hasselblad 907X 50C 搭配 XCD 90mm f/2.5 镜头拍摄，光圈 f/2.8 浅景深强调西装的精确贴合，而背景溶解为画意般的色块；以 16-bit RAW 拍摄，具有高动态范围和柔和的胶片颗粒感，以保留羊毛质感和彩色光的光晕，同时避免“刺眼”的数字锐化。构图为紧密人像，裁至胸中部，视角与眼平，稍微三分之四转体；模特偏离中心，使彩绘玻璃的图案在负空间中可读。姿势沉稳端庄：肩部放开，姿态自信但不紧张；一只手整齐地调整领带结或领口线，另一只手插在裤兜中，略微掀开西装外套，露出层次感穿搭。表情克制而沉思；目光越过镜头略为远视，仿佛远处有音乐在响起。服装：带有复古味道的男士西装——结构分明的双排扣羊毛西装外套配以利落的翻领，高腰褶皱长裤，白衬衫与窄领带，擦亮的牛津鞋，以及简约的方巾。场景：复古的装饰艺术（Art Deco）大厅，深色木质、黄铜元素，以及一扇高大的彩绘玻璃窗，将宝石般的几何光影投射到西装与背景上。光线：一侧暖调实用补光，另一侧为彩绘玻璃的彩色光，电影感的对比，带有“彩绘玻璃”阴影。结果 — 复古社论风格：具有图形感、精致、奢华且永恒。", this)'>📋 Copy</button>
         </div>
-        <p>使用 Hasselblad 907X 50C 搭配 XCD 90mm f/2.5 镜头拍摄，光圈 f/2.8 浅景深强调西装的精确贴合，而背景溶解为画意般的色块；以 16-bit RAW 拍摄，具有高动态范围和柔和的胶片颗粒感，以保留羊毛质感和彩色光的光晕，同时避免“刺眼”的数字锐化。构图为紧密人像，裁至胸中部，视角与眼平，稍微三分之四转体；模特偏离中心，使彩绘玻璃的图案在负空间中可读。姿势沉稳端庄：肩部放开，姿态自信但不紧张；一只手整齐地调整领带结或领口线，另一只手插在裤兜中，略微掀开西装外套，露出层次感穿搭。表情克制而沉思；目光越过镜头略为远视，仿佛远处有音乐在响起。服装：带有复古味道的男士西装——结构分明的双排扣羊毛西装外套配以利落的翻领，高腰褶皱长裤，白衬衫与窄领带，擦亮的牛津鞋，以及简约的方巾。场景：复古的装饰艺术（Art Deco）大厅，深色木质、黄铜元素，以及一扇高大的彩绘玻璃窗，将宝石般的几何光影投射到西装与背景上。光线：一侧暖调实用补光，另一侧为彩绘玻璃的彩色光，电影感的对比，带有“彩绘玻璃”阴影。结果 — 复古社论风格：具有图形感、精致、奢华且永恒。</p>
+        <div data-nosnippet><p>使用 Hasselblad 907X 50C 搭配 XCD 90mm f/2.5 镜头拍摄，光圈 f/2.8 浅景深强调西装的精确贴合，而背景溶解为画意般的色块；以 16-bit RAW 拍摄，具有高动态范围和柔和的胶片颗粒感，以保留羊毛质感和彩色光的光晕，同时避免“刺眼”的数字锐化。构图为紧密人像，裁至胸中部，视角与眼平，稍微三分之四转体；模特偏离中心，使彩绘玻璃的图案在负空间中可读。姿势沉稳端庄：肩部放开，姿态自信但不紧张；一只手整齐地调整领带结或领口线，另一只手插在裤兜中，略微掀开西装外套，露出层次感穿搭。表情克制而沉思；目光越过镜头略为远视，仿佛远处有音乐在响起。服装：带有复古味道的男士西装——结构分明的双排扣羊毛西装外套配以利落的翻领，高腰褶皱长裤，白衬衫与窄领带，擦亮的牛津鞋，以及简约的方巾。场景：复古的装饰艺术（Art Deco）大厅，深色木质、黄铜元素，以及一扇高大的彩绘玻璃窗，将宝石般的几何光影投射到西装与背景上。光线：一侧暖调实用补光，另一侧为彩绘玻璃的彩色光，电影感的对比，带有“彩绘玻璃”阴影。结果 — 复古社论风格：具有图形感、精致、奢华且永恒。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Shot on a Hasselblad 907X 50C with an XCD 90mm f/2.5 lens, aperture f/2.8 shallow depth of field emphasizes the precision fit of the suit while the background dissolves into painterly color patches; captured in 16-bit RAW with high dynamic range and soft film grain to preserve wool texture and the glow of colored light without \"harsh\" digital sharpness. Frame a tight portrait cropped to mid-chest, at eye level, with a slight three-quarter turn; the model is offset from center so the stained-glass pattern reads in the negative space. The pose is calm and composed: shoulders open, posture confident but without tension; one hand neatly adjusts the tie knot or collar line, the other is in the trouser pocket, slightly opening the jacket and revealing the layered styling. Expression restrained and thoughtful; the gaze passes just past the lens, as if distant music is playing. Outfit a man in a suit with a retro accent: a structured double-breasted wool blazer with sharp lapels, high-waisted pleated trousers, a white shirt and narrow tie, polished Oxfords, and a minimal pocket square. Location a retro Art Deco hall with dark wood, brass, and a tall stained-glass window projecting jewel-like geometry onto the suit and background. Light warm practical fill from one side and colored stained-glass light from the other, cinematic contrast, \"stained-glass\" shadows. Result -retro editorial: graphic, refined, expensive, and timeless", this)'>📋 Copy</button>
         </div>
-        <p>Shot on a Hasselblad 907X 50C with an XCD 90mm f/2.5 lens, aperture f/2.8 shallow depth of field emphasizes the precision fit of the suit while the background dissolves into painterly color patches; captured in 16-bit RAW with high dynamic range and soft film grain to preserve wool texture and the glow of colored light without &quot;harsh&quot; digital sharpness. Frame a tight portrait cropped to mid-chest, at eye level, with a slight three-quarter turn; the model is offset from center so the stained-glass pattern reads in the negative space. The pose is calm and composed: shoulders open, posture confident but without tension; one hand neatly adjusts the tie knot or collar line, the other is in the trouser pocket, slightly opening the jacket and revealing the layered styling. Expression restrained and thoughtful; the gaze passes just past the lens, as if distant music is playing. Outfit a man in a suit with a retro accent: a structured double-breasted wool blazer with sharp lapels, high-waisted pleated trousers, a white shirt and narrow tie, polished Oxfords, and a minimal pocket square. Location a retro Art Deco hall with dark wood, brass, and a tall stained-glass window projecting jewel-like geometry onto the suit and background. Light warm practical fill from one side and colored stained-glass light from the other, cinematic contrast, &quot;stained-glass&quot; shadows. Result -retro editorial: graphic, refined, expensive, and timeless</p>
+        <div data-nosnippet><p>Shot on a Hasselblad 907X 50C with an XCD 90mm f/2.5 lens, aperture f/2.8 shallow depth of field emphasizes the precision fit of the suit while the background dissolves into painterly color patches; captured in 16-bit RAW with high dynamic range and soft film grain to preserve wool texture and the glow of colored light without &quot;harsh&quot; digital sharpness. Frame a tight portrait cropped to mid-chest, at eye level, with a slight three-quarter turn; the model is offset from center so the stained-glass pattern reads in the negative space. The pose is calm and composed: shoulders open, posture confident but without tension; one hand neatly adjusts the tie knot or collar line, the other is in the trouser pocket, slightly opening the jacket and revealing the layered styling. Expression restrained and thoughtful; the gaze passes just past the lens, as if distant music is playing. Outfit a man in a suit with a retro accent: a structured double-breasted wool blazer with sharp lapels, high-waisted pleated trousers, a white shirt and narrow tie, polished Oxfords, and a minimal pocket square. Location a retro Art Deco hall with dark wood, brass, and a tall stained-glass window projecting jewel-like geometry onto the suit and background. Light warm practical fill from one side and colored stained-glass light from the other, cinematic contrast, &quot;stained-glass&quot; shadows. Result -retro editorial: graphic, refined, expensive, and timeless</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2022288144545259558-1.jpg" alt="Shot on a Hasselblad 907X 50C with an XCD 90mm f/2.5 lens, ap..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2108,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

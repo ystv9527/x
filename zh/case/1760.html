@@ -7,11 +7,13 @@
     <title>A hyper realistic 8K close up portrait of a person&#39;s head and... #1760 | Gem Nana AI 提示词库</title>
     <meta name="description" content="A hyper realistic 8K close up portrait of a person&#39;s head and upper neck, shot from a slightly low angle perspective...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1760.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1760.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1760.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840603">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022381">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一个超写实的8K特写肖像，拍摄对象为头部和上颈部，采用略微低角度视角向上拍摄。\n使用上传的图像作为面部参考——面部必须100%完全一致（相同的身份、面部结构、比例、皮肤细节和表情）。不要以任何方式更改面部。\n主体佩戴明亮的黄色太阳镜，反光镜片中映出以粉色、蓝色和黄色为主的多彩抽象数字场景。\n面部以细致的灰阶呈现，显示逼真的皮肤纹理、毛孔和下颌线上的浅胡茬，与头部其余部分形成强烈对比。\n头发以及大部分头部和颈部由发光的数字电路图案、抽象形状、线条和数据流构成，使用鲜艳的颜色如洋红、青绿、蓝色、绿色、黄色和橙色。这些元素呈现分层且复杂的结构，具有柔和的内部光晕。\n数字化头部的部分正在裂解并向外溶解成像素、线条和故障碎片，这些碎片渐渐消散到纯白背景中，呈现故障艺术（glitch-art）般的未来感。\n电影感灯光突出面部一侧，下巴下有阴影，数字元素周围有微妙的边缘光。\n整体风格为未来主义、赛博风、高细节、照片级真实感。", this)'>📋 复制</button>
         </div>
-        <p>一个超写实的8K特写肖像，拍摄对象为头部和上颈部，采用略微低角度视角向上拍摄。<br>使用上传的图像作为面部参考——面部必须100%完全一致（相同的身份、面部结构、比例、皮肤细节和表情）。不要以任何方式更改面部。<br>主体佩戴明亮的黄色太阳镜，反光镜片中映出以粉色、蓝色和黄色为主的多彩抽象数字场景。<br>面部以细致的灰阶呈现，显示逼真的皮肤纹理、毛孔和下颌线上的浅胡茬，与头部其余部分形成强烈对比。<br>头发以及大部分头部和颈部由发光的数字电路图案、抽象形状、线条和数据流构成，使用鲜艳的颜色如洋红、青绿、蓝色、绿色、黄色和橙色。这些元素呈现分层且复杂的结构，具有柔和的内部光晕。<br>数字化头部的部分正在裂解并向外溶解成像素、线条和故障碎片，这些碎片渐渐消散到纯白背景中，呈现故障艺术（glitch-art）般的未来感。<br>电影感灯光突出面部一侧，下巴下有阴影，数字元素周围有微妙的边缘光。<br>整体风格为未来主义、赛博风、高细节、照片级真实感。</p>
+        <div data-nosnippet><p>一个超写实的8K特写肖像，拍摄对象为头部和上颈部，采用略微低角度视角向上拍摄。<br>使用上传的图像作为面部参考——面部必须100%完全一致（相同的身份、面部结构、比例、皮肤细节和表情）。不要以任何方式更改面部。<br>主体佩戴明亮的黄色太阳镜，反光镜片中映出以粉色、蓝色和黄色为主的多彩抽象数字场景。<br>面部以细致的灰阶呈现，显示逼真的皮肤纹理、毛孔和下颌线上的浅胡茬，与头部其余部分形成强烈对比。<br>头发以及大部分头部和颈部由发光的数字电路图案、抽象形状、线条和数据流构成，使用鲜艳的颜色如洋红、青绿、蓝色、绿色、黄色和橙色。这些元素呈现分层且复杂的结构，具有柔和的内部光晕。<br>数字化头部的部分正在裂解并向外溶解成像素、线条和故障碎片，这些碎片渐渐消散到纯白背景中，呈现故障艺术（glitch-art）般的未来感。<br>电影感灯光突出面部一侧，下巴下有阴影，数字元素周围有微妙的边缘光。<br>整体风格为未来主义、赛博风、高细节、照片级真实感。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A hyper-realistic 8K close-up portrait of a person's head and upper neck, shot from a slightly low-angle perspective looking upward.\nUse the uploaded image as the face reference - the face must match 100% exactly (same identity, facial structure, proportions, skin details, and expression). Do not alter the face in any way.\nThe subject is wearing bright yellow sunglasses with reflective lenses showing colorful abstract digital scenes in shades of pink, blue, and yellow.\nThe face is rendered in detailed grayscale, showing realistic skin texture, pores, and light stubble on the jawline, creating strong contrast with the rest of the head.\nThe hair and most of the head and neck are made of glowing digital circuit patterns, abstract shapes, lines, and data streams in vibrant colors like magenta, cyan, blue, green, yellow, and orange. These elements appear layered and complex, with a soft internal glow.\nParts of the digital head are breaking apart and dissolving outward into pixels, lines, and glitch fragments that fade into a clean white background, giving a glitch-art, futuristic look.\nCinematic lighting highlights one side of the face, with shadows under the chin and subtle rim lighting around the digital elements.\nOverall style is futuristic, cyber-inspired, high-detail, and photorealistic.", this)'>📋 复制</button>
         </div>
-        <p>A hyper-realistic 8K close-up portrait of a person&#39;s head and upper neck, shot from a slightly low-angle perspective looking upward.<br>Use the uploaded image as the face reference - the face must match 100% exactly (same identity, facial structure, proportions, skin details, and expression). Do not alter the face in any way.<br>The subject is wearing bright yellow sunglasses with reflective lenses showing colorful abstract digital scenes in shades of pink, blue, and yellow.<br>The face is rendered in detailed grayscale, showing realistic skin texture, pores, and light stubble on the jawline, creating strong contrast with the rest of the head.<br>The hair and most of the head and neck are made of glowing digital circuit patterns, abstract shapes, lines, and data streams in vibrant colors like magenta, cyan, blue, green, yellow, and orange. These elements appear layered and complex, with a soft internal glow.<br>Parts of the digital head are breaking apart and dissolving outward into pixels, lines, and glitch fragments that fade into a clean white background, giving a glitch-art, futuristic look.<br>Cinematic lighting highlights one side of the face, with shadows under the chin and subtle rim lighting around the digital elements.<br>Overall style is futuristic, cyber-inspired, high-detail, and photorealistic.</p>
+        <div data-nosnippet><p>A hyper-realistic 8K close-up portrait of a person&#39;s head and upper neck, shot from a slightly low-angle perspective looking upward.<br>Use the uploaded image as the face reference - the face must match 100% exactly (same identity, facial structure, proportions, skin details, and expression). Do not alter the face in any way.<br>The subject is wearing bright yellow sunglasses with reflective lenses showing colorful abstract digital scenes in shades of pink, blue, and yellow.<br>The face is rendered in detailed grayscale, showing realistic skin texture, pores, and light stubble on the jawline, creating strong contrast with the rest of the head.<br>The hair and most of the head and neck are made of glowing digital circuit patterns, abstract shapes, lines, and data streams in vibrant colors like magenta, cyan, blue, green, yellow, and orange. These elements appear layered and complex, with a soft internal glow.<br>Parts of the digital head are breaking apart and dissolving outward into pixels, lines, and glitch fragments that fade into a clean white background, giving a glitch-art, futuristic look.<br>Cinematic lighting highlights one side of the face, with shadows under the chin and subtle rim lighting around the digital elements.<br>Overall style is futuristic, cyber-inspired, high-detail, and photorealistic.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2016088197714084320-1.jpg" alt="A hyper realistic 8K close up portrait of a person&#39;s head and..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1760,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

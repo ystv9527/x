@@ -7,11 +7,13 @@
     <title>Exact uploaded [BOTTLE NAME] bottle (label unchanged). Vertic... #1075 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Exact uploaded [BOTTLE NAME] bottle (label unchanged). Vertical poster. Center bottle w/ condensation. Add [JUICE COL...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1075.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1075.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1075.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841261">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022538">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("精确使用上传的 [BOTTLE_NAME] 瓶（标签不变）。竖版海报。瓶子居中，带冷凝水珠。加入 [JUICE_COLOR] 的液体飞溅环绕 + 冰块 + 受控漂浮的 [INGREDIENTS]。背景：[BG_COLOR] 渐变 + 暗角 + 颗粒。\n左上：“新鲜果汁” + “[FLAVOR_TAGLINE]”。右侧：圆形“30% 折扣”环。右下：价格圆圈 “[PRICE]”。右下底部 CTA “[CTA]”。白色手绘箭头。棚拍主光+轮廓光，85mm，文字清晰，无水印。", this)'>📋 复制</button>
         </div>
-        <p>精确使用上传的 [BOTTLE_NAME] 瓶（标签不变）。竖版海报。瓶子居中，带冷凝水珠。加入 [JUICE_COLOR] 的液体飞溅环绕 + 冰块 + 受控漂浮的 [INGREDIENTS]。背景：[BG_COLOR] 渐变 + 暗角 + 颗粒。<br>左上：“新鲜果汁” + “[FLAVOR_TAGLINE]”。右侧：圆形“30% 折扣”环。右下：价格圆圈 “[PRICE]”。右下底部 CTA “[CTA]”。白色手绘箭头。棚拍主光+轮廓光，85mm，文字清晰，无水印。</p>
+        <div data-nosnippet><p>精确使用上传的 [BOTTLE_NAME] 瓶（标签不变）。竖版海报。瓶子居中，带冷凝水珠。加入 [JUICE_COLOR] 的液体飞溅环绕 + 冰块 + 受控漂浮的 [INGREDIENTS]。背景：[BG_COLOR] 渐变 + 暗角 + 颗粒。<br>左上：“新鲜果汁” + “[FLAVOR_TAGLINE]”。右侧：圆形“30% 折扣”环。右下：价格圆圈 “[PRICE]”。右下底部 CTA “[CTA]”。白色手绘箭头。棚拍主光+轮廓光，85mm，文字清晰，无水印。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Exact uploaded [BOTTLE_NAME] bottle (label unchanged). Vertical poster. Center bottle w/ condensation. Add [JUICE_COLOR] liquid splash wrap + ice cubes + [INGREDIENTS] floating (controlled). Background: [BG_COLOR] gradient + vignette + grain.\nTop-left: “FRESH JUICE” + “[FLAVOR_TAGLINE]”. Right: circular “30% OFF” ring. Lower-right: price circle “[PRICE]”. Bottom-right CTA “[CTA]”. White doodle arrows. Studio key+rim, 85mm, sharp text, no watermark.", this)'>📋 复制</button>
         </div>
-        <p>Exact uploaded [BOTTLE_NAME] bottle (label unchanged). Vertical poster. Center bottle w/ condensation. Add [JUICE_COLOR] liquid splash wrap + ice cubes + [INGREDIENTS] floating (controlled). Background: [BG_COLOR] gradient + vignette + grain.<br>Top-left: “FRESH JUICE” + “[FLAVOR_TAGLINE]”. Right: circular “30% OFF” ring. Lower-right: price circle “[PRICE]”. Bottom-right CTA “[CTA]”. White doodle arrows. Studio key+rim, 85mm, sharp text, no watermark.</p>
+        <div data-nosnippet><p>Exact uploaded [BOTTLE_NAME] bottle (label unchanged). Vertical poster. Center bottle w/ condensation. Add [JUICE_COLOR] liquid splash wrap + ice cubes + [INGREDIENTS] floating (controlled). Background: [BG_COLOR] gradient + vignette + grain.<br>Top-left: “FRESH JUICE” + “[FLAVOR_TAGLINE]”. Right: circular “30% OFF” ring. Lower-right: price circle “[PRICE]”. Bottom-right CTA “[CTA]”. White doodle arrows. Studio key+rim, 85mm, sharp text, no watermark.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010731794820444198-1.jpg" alt="Exact uploaded [BOTTLE NAME] bottle (label unchanged). Vertic..." loading="lazy"><img src="/images/tweet-2010731794820444198-2.jpg" alt="Exact uploaded [BOTTLE NAME] bottle (label unchanged). Vertic..." loading="lazy"><img src="/images/tweet-2010731794820444198-3.jpg" alt="Exact uploaded [BOTTLE NAME] bottle (label unchanged). Vertic..." loading="lazy"><img src="/images/tweet-2010731794820444198-4.jpg" alt="Exact uploaded [BOTTLE NAME] bottle (label unchanged). Vertic..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1075,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

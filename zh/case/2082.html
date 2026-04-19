@@ -7,11 +7,13 @@
     <title>&quot;type&quot;: &quot;image prompt&quot;, #2082 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;type&quot;: &quot;image prompt&quot;, &quot;description&quot;: { &quot;subject&quot;: &quot;A young woman with long, wavy blonde hair sits on a beach towe...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2082.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2082.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2082.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840267">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022306">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"图像提示\",\n  \"description\": {\n    \"subject\": \"一位年轻女性，留着长而波浪状的金发，坐在海滩毛巾上，平静地望向镜头，表情放松且自信。\",\n    \"clothing\": \"她穿着浅薰衣草色的罗纹比基尼，细肩带，侧边系带泳裤。\",\n    \"pose\": \"一条腿弯曲，另一条伸直，身体靠后一只手支撑着。\",\n    \"setting\": \"沙滩，背后是覆盖着绿色海岸植物的低矮岩石悬崖。\",\n    \"props\": [\n      \"带粉色装饰的编织草质海滩手提包\",\n      \"放在毛巾上的一本打开的书\",\n      \"粉色系美妆物品，包括一只粉饼、刷子和小收纳包\"\n    ],\n    \"lighting\": \"自然日光，温暖柔和的阳光营造出轻柔的阴影。\",\n    \"mood\": \"平静、夏日、轻松、以生活方式为中心。\",\n    \"color_palette\": [\n      \"薰衣草色\",\n      \"沙色米色\",\n      \"柔和粉色\",\n      \"绿色\",\n      \"自然肤色\"\n    ],\n    \"style\": \"高分辨率的生活方式与泳装摄影，干净的编辑感\",\n    \"camera\": {\n      \"framing\": \"中距离全身镜头\",\n      \"angle\": \"眼平视角\",\n      \"focus\": \"主体清晰对焦，背景细节柔和\"\n    },\n    \"details\": \"海滩野餐布置，强调轻松且具有美感的夏日氛围\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;图像提示&quot;,<br>  &quot;description&quot;: {<br>    &quot;subject&quot;: &quot;一位年轻女性，留着长而波浪状的金发，坐在海滩毛巾上，平静地望向镜头，表情放松且自信。&quot;,<br>    &quot;clothing&quot;: &quot;她穿着浅薰衣草色的罗纹比基尼，细肩带，侧边系带泳裤。&quot;,<br>    &quot;pose&quot;: &quot;一条腿弯曲，另一条伸直，身体靠后一只手支撑着。&quot;,<br>    &quot;setting&quot;: &quot;沙滩，背后是覆盖着绿色海岸植物的低矮岩石悬崖。&quot;,<br>    &quot;props&quot;: [<br>      &quot;带粉色装饰的编织草质海滩手提包&quot;,<br>      &quot;放在毛巾上的一本打开的书&quot;,<br>      &quot;粉色系美妆物品，包括一只粉饼、刷子和小收纳包&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;自然日光，温暖柔和的阳光营造出轻柔的阴影。&quot;,<br>    &quot;mood&quot;: &quot;平静、夏日、轻松、以生活方式为中心。&quot;,<br>    &quot;color_palette&quot;: [<br>      &quot;薰衣草色&quot;,<br>      &quot;沙色米色&quot;,<br>      &quot;柔和粉色&quot;,<br>      &quot;绿色&quot;,<br>      &quot;自然肤色&quot;<br>    ],<br>    &quot;style&quot;: &quot;高分辨率的生活方式与泳装摄影，干净的编辑感&quot;,<br>    &quot;camera&quot;: {<br>      &quot;framing&quot;: &quot;中距离全身镜头&quot;,<br>      &quot;angle&quot;: &quot;眼平视角&quot;,<br>      &quot;focus&quot;: &quot;主体清晰对焦，背景细节柔和&quot;<br>    },<br>    &quot;details&quot;: &quot;海滩野餐布置，强调轻松且具有美感的夏日氛围&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;图像提示&quot;,<br>  &quot;description&quot;: {<br>    &quot;subject&quot;: &quot;一位年轻女性，留着长而波浪状的金发，坐在海滩毛巾上，平静地望向镜头，表情放松且自信。&quot;,<br>    &quot;clothing&quot;: &quot;她穿着浅薰衣草色的罗纹比基尼，细肩带，侧边系带泳裤。&quot;,<br>    &quot;pose&quot;: &quot;一条腿弯曲，另一条伸直，身体靠后一只手支撑着。&quot;,<br>    &quot;setting&quot;: &quot;沙滩，背后是覆盖着绿色海岸植物的低矮岩石悬崖。&quot;,<br>    &quot;props&quot;: [<br>      &quot;带粉色装饰的编织草质海滩手提包&quot;,<br>      &quot;放在毛巾上的一本打开的书&quot;,<br>      &quot;粉色系美妆物品，包括一只粉饼、刷子和小收纳包&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;自然日光，温暖柔和的阳光营造出轻柔的阴影。&quot;,<br>    &quot;mood&quot;: &quot;平静、夏日、轻松、以生活方式为中心。&quot;,<br>    &quot;color_palette&quot;: [<br>      &quot;薰衣草色&quot;,<br>      &quot;沙色米色&quot;,<br>      &quot;柔和粉色&quot;,<br>      &quot;绿色&quot;,<br>      &quot;自然肤色&quot;<br>    ],<br>    &quot;style&quot;: &quot;高分辨率的生活方式与泳装摄影，干净的编辑感&quot;,<br>    &quot;camera&quot;: {<br>      &quot;framing&quot;: &quot;中距离全身镜头&quot;,<br>      &quot;angle&quot;: &quot;眼平视角&quot;,<br>      &quot;focus&quot;: &quot;主体清晰对焦，背景细节柔和&quot;<br>    },<br>    &quot;details&quot;: &quot;海滩野餐布置，强调轻松且具有美感的夏日氛围&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"image_prompt\",\n  \"description\": {\n    \"subject\": \"A young woman with long, wavy blonde hair sits on a beach towel, looking calmly toward the camera with a relaxed, confident expression.\",\n    \"clothing\": \"She wears a light lavender ribbed bikini with thin straps and tie-side bottoms.\",\n    \"pose\": \"Seated with one leg bent and the other extended, supporting herself with one arm placed behind her.\",\n    \"setting\": \"A sandy beach backed by low rocky cliffs covered with green coastal plants.\",\n    \"props\": [\n      \"A woven straw beach tote with pink accents\",\n      \"An open book placed on the towel\",\n      \"Pink-toned beauty items including a compact, brush, and pouch\"\n    ],\n    \"lighting\": \"Natural daylight with soft, warm sunlight creating gentle shadows.\",\n    \"mood\": \"Calm, summery, effortless, lifestyle-focused.\",\n    \"color_palette\": [\n      \"lavender\",\n      \"sand beige\",\n      \"soft pink\",\n      \"green\",\n      \"natural skin tones\"\n    ],\n    \"style\": \"High-resolution lifestyle and swimwear photography with a clean, editorial feel\",\n    \"camera\": {\n      \"framing\": \"medium full-body shot\",\n      \"angle\": \"eye-level\",\n      \"focus\": \"sharp subject focus with softly detailed background\"\n    },\n    \"details\": \"Beach picnic arrangement emphasizing a relaxed, aesthetic summer atmosphere\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;image_prompt&quot;,<br>  &quot;description&quot;: {<br>    &quot;subject&quot;: &quot;A young woman with long, wavy blonde hair sits on a beach towel, looking calmly toward the camera with a relaxed, confident expression.&quot;,<br>    &quot;clothing&quot;: &quot;She wears a light lavender ribbed bikini with thin straps and tie-side bottoms.&quot;,<br>    &quot;pose&quot;: &quot;Seated with one leg bent and the other extended, supporting herself with one arm placed behind her.&quot;,<br>    &quot;setting&quot;: &quot;A sandy beach backed by low rocky cliffs covered with green coastal plants.&quot;,<br>    &quot;props&quot;: [<br>      &quot;A woven straw beach tote with pink accents&quot;,<br>      &quot;An open book placed on the towel&quot;,<br>      &quot;Pink-toned beauty items including a compact, brush, and pouch&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;Natural daylight with soft, warm sunlight creating gentle shadows.&quot;,<br>    &quot;mood&quot;: &quot;Calm, summery, effortless, lifestyle-focused.&quot;,<br>    &quot;color_palette&quot;: [<br>      &quot;lavender&quot;,<br>      &quot;sand beige&quot;,<br>      &quot;soft pink&quot;,<br>      &quot;green&quot;,<br>      &quot;natural skin tones&quot;<br>    ],<br>    &quot;style&quot;: &quot;High-resolution lifestyle and swimwear photography with a clean, editorial feel&quot;,<br>    &quot;camera&quot;: {<br>      &quot;framing&quot;: &quot;medium full-body shot&quot;,<br>      &quot;angle&quot;: &quot;eye-level&quot;,<br>      &quot;focus&quot;: &quot;sharp subject focus with softly detailed background&quot;<br>    },<br>    &quot;details&quot;: &quot;Beach picnic arrangement emphasizing a relaxed, aesthetic summer atmosphere&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;image_prompt&quot;,<br>  &quot;description&quot;: {<br>    &quot;subject&quot;: &quot;A young woman with long, wavy blonde hair sits on a beach towel, looking calmly toward the camera with a relaxed, confident expression.&quot;,<br>    &quot;clothing&quot;: &quot;She wears a light lavender ribbed bikini with thin straps and tie-side bottoms.&quot;,<br>    &quot;pose&quot;: &quot;Seated with one leg bent and the other extended, supporting herself with one arm placed behind her.&quot;,<br>    &quot;setting&quot;: &quot;A sandy beach backed by low rocky cliffs covered with green coastal plants.&quot;,<br>    &quot;props&quot;: [<br>      &quot;A woven straw beach tote with pink accents&quot;,<br>      &quot;An open book placed on the towel&quot;,<br>      &quot;Pink-toned beauty items including a compact, brush, and pouch&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;Natural daylight with soft, warm sunlight creating gentle shadows.&quot;,<br>    &quot;mood&quot;: &quot;Calm, summery, effortless, lifestyle-focused.&quot;,<br>    &quot;color_palette&quot;: [<br>      &quot;lavender&quot;,<br>      &quot;sand beige&quot;,<br>      &quot;soft pink&quot;,<br>      &quot;green&quot;,<br>      &quot;natural skin tones&quot;<br>    ],<br>    &quot;style&quot;: &quot;High-resolution lifestyle and swimwear photography with a clean, editorial feel&quot;,<br>    &quot;camera&quot;: {<br>      &quot;framing&quot;: &quot;medium full-body shot&quot;,<br>      &quot;angle&quot;: &quot;eye-level&quot;,<br>      &quot;focus&quot;: &quot;sharp subject focus with softly detailed background&quot;<br>    },<br>    &quot;details&quot;: &quot;Beach picnic arrangement emphasizing a relaxed, aesthetic summer atmosphere&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2021588417503731905-1.jpg" alt="&quot;type&quot;: &quot;image prompt&quot;," loading="lazy"><img src="/images/tweet-2021588417503731905-2.jpg" alt="&quot;type&quot;: &quot;image prompt&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2082,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

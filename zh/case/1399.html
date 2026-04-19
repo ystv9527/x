@@ -7,11 +7,13 @@
     <title>Role: Literary Curator &amp; Typewriter Sculptor #1399 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Role: Literary Curator &amp; Typewriter Sculptor Input: [Poet or Poem, e.g., T.S. Eliot, Pablo Neruda] Phase 1: Poetic Vo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1399.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1399.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1399.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840932">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022463">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("角色：文学策展人与打字机雕塑家\n输入：[诗人或诗歌，例如：T.S. 艾略特，巴勃罗·聂鲁达]\n阶段一：诗歌声音分析\n识别诗人的标志性节奏、反复出现的意象和情感核心\n选择4位当代或较不知名但具有相似感性的诗人\n提取他们作品中反复出现的5-8个实物对象\n阶段二：视觉呈现\n目标：2x2 网格的“打字机输出作为三维景观”\n每个面板规则：\n底座：一台复古打字机（每位诗人的时代使用不同型号）\n纸张：一张纸装在滚筒中\n变形：打出的文字从纸面实体升起，形成三维地形景观\n文字：诗中的关键句子像刻在石头上一样雕刻在地形上\n符号：将诗中微缩的物件放置在景观中（小船、玫瑰、钟表、门等）\n诗人：微观的小人偶，在自己的文字间游走\n氛围：灯光与情绪基调相匹配（忧郁用雾气，愤怒用强烈光线，渴望用柔和金色）\n元数据：黄铜打字机键显示“诗人 | 选集 | 年份”\n背景：在背景中摆放与诗人及其时代相关的物品\n输出：2x2 网格，微距摄影，浅景深", this)'>📋 复制</button>
         </div>
-        <p>角色：文学策展人与打字机雕塑家<br>输入：[诗人或诗歌，例如：T.S. 艾略特，巴勃罗·聂鲁达]<br>阶段一：诗歌声音分析<br>识别诗人的标志性节奏、反复出现的意象和情感核心<br>选择4位当代或较不知名但具有相似感性的诗人<br>提取他们作品中反复出现的5-8个实物对象<br>阶段二：视觉呈现<br>目标：2x2 网格的“打字机输出作为三维景观”<br>每个面板规则：<br>底座：一台复古打字机（每位诗人的时代使用不同型号）<br>纸张：一张纸装在滚筒中<br>变形：打出的文字从纸面实体升起，形成三维地形景观<br>文字：诗中的关键句子像刻在石头上一样雕刻在地形上<br>符号：将诗中微缩的物件放置在景观中（小船、玫瑰、钟表、门等）<br>诗人：微观的小人偶，在自己的文字间游走<br>氛围：灯光与情绪基调相匹配（忧郁用雾气，愤怒用强烈光线，渴望用柔和金色）<br>元数据：黄铜打字机键显示“诗人 | 选集 | 年份”<br>背景：在背景中摆放与诗人及其时代相关的物品<br>输出：2x2 网格，微距摄影，浅景深</p>
+        <div data-nosnippet><p>角色：文学策展人与打字机雕塑家<br>输入：[诗人或诗歌，例如：T.S. 艾略特，巴勃罗·聂鲁达]<br>阶段一：诗歌声音分析<br>识别诗人的标志性节奏、反复出现的意象和情感核心<br>选择4位当代或较不知名但具有相似感性的诗人<br>提取他们作品中反复出现的5-8个实物对象<br>阶段二：视觉呈现<br>目标：2x2 网格的“打字机输出作为三维景观”<br>每个面板规则：<br>底座：一台复古打字机（每位诗人的时代使用不同型号）<br>纸张：一张纸装在滚筒中<br>变形：打出的文字从纸面实体升起，形成三维地形景观<br>文字：诗中的关键句子像刻在石头上一样雕刻在地形上<br>符号：将诗中微缩的物件放置在景观中（小船、玫瑰、钟表、门等）<br>诗人：微观的小人偶，在自己的文字间游走<br>氛围：灯光与情绪基调相匹配（忧郁用雾气，愤怒用强烈光线，渴望用柔和金色）<br>元数据：黄铜打字机键显示“诗人 | 选集 | 年份”<br>背景：在背景中摆放与诗人及其时代相关的物品<br>输出：2x2 网格，微距摄影，浅景深</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Role: Literary Curator & Typewriter Sculptor\nInput: [Poet or Poem, e.g., T.S. Eliot, Pablo Neruda]\nPhase 1: Poetic Voice Analysis\nIdentify the poet's signature rhythm, recurring imagery, and emotional core\nSelect 4 contemporary or lesser-known poets with parallel sensibilities\nExtract 5-8 physical objects mentioned repeatedly in their work\nPhase 2: Visual Execution\nGoal: 2x2 Grid of \"Typewriter Output as 3D Landscapes\"\nRules per Panel:\nThe Base: A vintage typewriter (different model per poet's era)\nThe Paper: A single sheet of paper loaded in the roller\nThe Transformation: The typed text physically rises from the page, forming a 3D topographical landscape\nThe Words: Key lines from the poem carved into the terrain like engraved stone\nThe Symbols: Miniature objects from the poem placed in the landscape (tiny boat, rose, clock, door)\nThe Poet: Microscopic figurine of the poet wandering through their own words\nThe Mood: Lighting matches emotional tone (fog for melancholy, harsh light for anger, soft gold for longing)\nThe Metadata: Brass typewriter key showing \"Poet | Collection | Year\" **background: poet and poet era relevant items in the background.\nOutput: 2x2 Grid, Macro Photography, shallow depth of field", this)'>📋 复制</button>
         </div>
-        <p>Role: Literary Curator &amp; Typewriter Sculptor<br>Input: [Poet or Poem, e.g., T.S. Eliot, Pablo Neruda]<br>Phase 1: Poetic Voice Analysis<br>Identify the poet&#39;s signature rhythm, recurring imagery, and emotional core<br>Select 4 contemporary or lesser-known poets with parallel sensibilities<br>Extract 5-8 physical objects mentioned repeatedly in their work<br>Phase 2: Visual Execution<br>Goal: 2x2 Grid of &quot;Typewriter Output as 3D Landscapes&quot;<br>Rules per Panel:<br>The Base: A vintage typewriter (different model per poet&#39;s era)<br>The Paper: A single sheet of paper loaded in the roller<br>The Transformation: The typed text physically rises from the page, forming a 3D topographical landscape<br>The Words: Key lines from the poem carved into the terrain like engraved stone<br>The Symbols: Miniature objects from the poem placed in the landscape (tiny boat, rose, clock, door)<br>The Poet: Microscopic figurine of the poet wandering through their own words<br>The Mood: Lighting matches emotional tone (fog for melancholy, harsh light for anger, soft gold for longing)<br>The Metadata: Brass typewriter key showing &quot;Poet | Collection | Year&quot; **background: poet and poet era relevant items in the background.<br>Output: 2x2 Grid, Macro Photography, shallow depth of field</p>
+        <div data-nosnippet><p>Role: Literary Curator &amp; Typewriter Sculptor<br>Input: [Poet or Poem, e.g., T.S. Eliot, Pablo Neruda]<br>Phase 1: Poetic Voice Analysis<br>Identify the poet&#39;s signature rhythm, recurring imagery, and emotional core<br>Select 4 contemporary or lesser-known poets with parallel sensibilities<br>Extract 5-8 physical objects mentioned repeatedly in their work<br>Phase 2: Visual Execution<br>Goal: 2x2 Grid of &quot;Typewriter Output as 3D Landscapes&quot;<br>Rules per Panel:<br>The Base: A vintage typewriter (different model per poet&#39;s era)<br>The Paper: A single sheet of paper loaded in the roller<br>The Transformation: The typed text physically rises from the page, forming a 3D topographical landscape<br>The Words: Key lines from the poem carved into the terrain like engraved stone<br>The Symbols: Miniature objects from the poem placed in the landscape (tiny boat, rose, clock, door)<br>The Poet: Microscopic figurine of the poet wandering through their own words<br>The Mood: Lighting matches emotional tone (fog for melancholy, harsh light for anger, soft gold for longing)<br>The Metadata: Brass typewriter key showing &quot;Poet | Collection | Year&quot; **background: poet and poet era relevant items in the background.<br>Output: 2x2 Grid, Macro Photography, shallow depth of field</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012000354804609030-1.jpg" alt="Role: Literary Curator &amp; Typewriter Sculptor" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1399,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

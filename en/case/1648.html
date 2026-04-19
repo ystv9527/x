@@ -7,11 +7,13 @@
     <title>A winter landscape painted with paints and brushes. #1648 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="A winter landscape painted with paints and brushes. Hmm... I’m out of time. I just wanted to tweak the little people a bit more... Midjourney https://t.co/6eYR8iv2U5">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1648.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1648.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1648.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844920">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023610">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("#用颜料和画笔绘制的冬景\n\n唔……时间到　\n只是想再稍微把小矮人弄好一点而已……\n\nMidjourney https://t.co/6eYR8iv2U5", this)'>📋 Copy</button>
         </div>
-        <p>#用颜料和画笔绘制的冬景</p><p>唔……时间到　<br>只是想再稍微把小矮人弄好一点而已……</p><p>Midjourney https://t.co/6eYR8iv2U5</p>
+        <div data-nosnippet><p>#用颜料和画笔绘制的冬景</p><p>唔……时间到　<br>只是想再稍微把小矮人弄好一点而已……</p><p>Midjourney https://t.co/6eYR8iv2U5</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("#絵の具と絵筆で描く冬景色 \n\nむぅ…時間切れ　\nもうすこし小人さんを何とかしたかっただけです…\n\nMidjourney https://t.co/6eYR8iv2U5", this)'>📋 Copy</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("#Painted winter scenery with paints and brushes\n\nMmm… time’s up.\nI just wanted to do a little more to help the little people…\n\nMidjourney https://t.co/6eYR8iv2U5", this)'>📋 Copy</button>
         </div>
-        <p>#絵の具と絵筆で描く冬景色</p><p>むぅ…時間切れ　<br>もうすこし小人さんを何とかしたかっただけです…</p><p>Midjourney https://t.co/6eYR8iv2U5</p>
+        <div data-nosnippet><p>#Painted winter scenery with paints and brushes</p><p>Mmm… time’s up.<br>I just wanted to do a little more to help the little people…</p><p>Midjourney https://t.co/6eYR8iv2U5</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2014117558627275057-1.jpg" alt="絵の具と絵筆で描く冬景色" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1648,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

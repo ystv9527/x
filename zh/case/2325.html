@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #2325 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;identity&quot;: &quot;Sydney Sweeney&quot;, &quot;hair&quot;: &quot;Wavy blonde, styled casually&quot;, &quot;makeup&quot;: &quot;Natural, with even to...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2325.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2325.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2325.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840024">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022253">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"主题\": {\n    \"身份\": \"悉尼·斯威尼\",\n    \"发型\": \"波浪状金发，随意造型\",\n    \"妆容\": \"妆感自然，肤色均匀\",\n    \"目光\": \"目光直接且沉着，注视镜头\"\n  },\n  \"服装\": {\n    \"款式\": \"精致定制的华丽晚礼服\",\n    \"颜色\": \"灰玫瑰粉\",\n    \"胸衣\": \"露肩设计，缎面束身胸衣结构，配七分蕾丝袖\",\n    \"腰部短摆\": \"腰部一体化缎面短裙摆\",\n    \"裙摆\": \"裙摆饱满蓬松，缎面上覆盖复杂的花卉蕾丝图案，在台阶上铺展开形成显著的长拖尾\",\n    \"鞋履\": \"配套灰玫瑰粉尖头鞋，带系带和精致脚链细节\"\n  },\n  \"场景\": {\n    \"建筑\": \"地中海别墅露台上的宏伟古老石阶\",\n    \"栏杆\": \"精美经典的石质栏杆和扶手\",\n    \"植被\": \"左侧有大型精致石质花盆，种植紫色九重葛；下方宽阔花园中有柏树和棕榈树\",\n    \"背景视野\": \"延绵的梯田花园和远处群山，置于温暖的金色夕阳天空下\"\n  },\n  \"构图\": {\n    \"类型\": \"中等全身肖像\",\n    \"取景\": \"略微抬高的角度，捕捉她的姿态、整件礼服及周围环境\",\n    \"光线\": \"自然的黄金时刻阳光，营造温暖柔和的光晕\"\n  },\n  \"姿势\": \"坐在石阶上，右腿搭在左腿上，双手轻放于膝上，面向镜头\",\n  \"氛围\": \"优雅、宁静且自信\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;主题&quot;: {<br>    &quot;身份&quot;: &quot;悉尼·斯威尼&quot;,<br>    &quot;发型&quot;: &quot;波浪状金发，随意造型&quot;,<br>    &quot;妆容&quot;: &quot;妆感自然，肤色均匀&quot;,<br>    &quot;目光&quot;: &quot;目光直接且沉着，注视镜头&quot;<br>  },<br>  &quot;服装&quot;: {<br>    &quot;款式&quot;: &quot;精致定制的华丽晚礼服&quot;,<br>    &quot;颜色&quot;: &quot;灰玫瑰粉&quot;,<br>    &quot;胸衣&quot;: &quot;露肩设计，缎面束身胸衣结构，配七分蕾丝袖&quot;,<br>    &quot;腰部短摆&quot;: &quot;腰部一体化缎面短裙摆&quot;,<br>    &quot;裙摆&quot;: &quot;裙摆饱满蓬松，缎面上覆盖复杂的花卉蕾丝图案，在台阶上铺展开形成显著的长拖尾&quot;,<br>    &quot;鞋履&quot;: &quot;配套灰玫瑰粉尖头鞋，带系带和精致脚链细节&quot;<br>  },<br>  &quot;场景&quot;: {<br>    &quot;建筑&quot;: &quot;地中海别墅露台上的宏伟古老石阶&quot;,<br>    &quot;栏杆&quot;: &quot;精美经典的石质栏杆和扶手&quot;,<br>    &quot;植被&quot;: &quot;左侧有大型精致石质花盆，种植紫色九重葛；下方宽阔花园中有柏树和棕榈树&quot;,<br>    &quot;背景视野&quot;: &quot;延绵的梯田花园和远处群山，置于温暖的金色夕阳天空下&quot;<br>  },<br>  &quot;构图&quot;: {<br>    &quot;类型&quot;: &quot;中等全身肖像&quot;,<br>    &quot;取景&quot;: &quot;略微抬高的角度，捕捉她的姿态、整件礼服及周围环境&quot;,<br>    &quot;光线&quot;: &quot;自然的黄金时刻阳光，营造温暖柔和的光晕&quot;<br>  },<br>  &quot;姿势&quot;: &quot;坐在石阶上，右腿搭在左腿上，双手轻放于膝上，面向镜头&quot;,<br>  &quot;氛围&quot;: &quot;优雅、宁静且自信&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;主题&quot;: {<br>    &quot;身份&quot;: &quot;悉尼·斯威尼&quot;,<br>    &quot;发型&quot;: &quot;波浪状金发，随意造型&quot;,<br>    &quot;妆容&quot;: &quot;妆感自然，肤色均匀&quot;,<br>    &quot;目光&quot;: &quot;目光直接且沉着，注视镜头&quot;<br>  },<br>  &quot;服装&quot;: {<br>    &quot;款式&quot;: &quot;精致定制的华丽晚礼服&quot;,<br>    &quot;颜色&quot;: &quot;灰玫瑰粉&quot;,<br>    &quot;胸衣&quot;: &quot;露肩设计，缎面束身胸衣结构，配七分蕾丝袖&quot;,<br>    &quot;腰部短摆&quot;: &quot;腰部一体化缎面短裙摆&quot;,<br>    &quot;裙摆&quot;: &quot;裙摆饱满蓬松，缎面上覆盖复杂的花卉蕾丝图案，在台阶上铺展开形成显著的长拖尾&quot;,<br>    &quot;鞋履&quot;: &quot;配套灰玫瑰粉尖头鞋，带系带和精致脚链细节&quot;<br>  },<br>  &quot;场景&quot;: {<br>    &quot;建筑&quot;: &quot;地中海别墅露台上的宏伟古老石阶&quot;,<br>    &quot;栏杆&quot;: &quot;精美经典的石质栏杆和扶手&quot;,<br>    &quot;植被&quot;: &quot;左侧有大型精致石质花盆，种植紫色九重葛；下方宽阔花园中有柏树和棕榈树&quot;,<br>    &quot;背景视野&quot;: &quot;延绵的梯田花园和远处群山，置于温暖的金色夕阳天空下&quot;<br>  },<br>  &quot;构图&quot;: {<br>    &quot;类型&quot;: &quot;中等全身肖像&quot;,<br>    &quot;取景&quot;: &quot;略微抬高的角度，捕捉她的姿态、整件礼服及周围环境&quot;,<br>    &quot;光线&quot;: &quot;自然的黄金时刻阳光，营造温暖柔和的光晕&quot;<br>  },<br>  &quot;姿势&quot;: &quot;坐在石阶上，右腿搭在左腿上，双手轻放于膝上，面向镜头&quot;,<br>  &quot;氛围&quot;: &quot;优雅、宁静且自信&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"identity\": \"Sydney Sweeney\",\n    \"hair\": \"Wavy blonde, styled casually\",\n    \"makeup\": \"Natural, with even-toned skin\",\n    \"gaze\": \"Direct and composed, looking at the camera\"\n  },\n  \"attire\": {\n    \"item\": \"Elaborate custom-designed ball gown\",\n    \"color\": \"Dusty mauve-pink\",\n    \"bodice\": \"Off-the-shoulder with a corseted satin structure and three-quarter length lace-sleeves\",\n    \"peplum\": \"Integrated satin peplum at the waist\",\n    \"skirt\": \"Full, voluminous skirt with an intricate floral lace pattern over satin, spreading out to form a substantial train on the steps\",\n    \"footwear\": \"Matching mauve-pink pointed-toe shoes with lacing and a delicate anklet detail\"\n  },\n  \"setting\": {\n    \"architecture\": \"A grand, ancient stone staircase on the terrace of a Mediterranean villa\",\n    \"balustrade\": \"Ornate, classic stone balustrade and railings\",\n    \"flora\": \"Large ornate stone planter with purple bougainvillea on the left; cypress and palm trees in the sprawling garden below\",\n    \"background_view\": \"Sprawling terraced gardens and distant hills under a warm, golden hour sunset sky\"\n  },\n  \"composition\": {\n    \"type\": \"Medium full-length portrait\",\n    \"framing\": \"Slightly elevated angle, capturing her pose, the full dress, and the surrounding environment\",\n    \"lighting\": \"Natural golden hour sunlight, creating a warm, soft glow\"\n  },\n  \"pose\": \"Seated on stone steps, right leg crossed over left, hands resting gently in her lap, directly facing the camera\",\n  \"mood\": \"Elegant, serene, and self-assured\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;Sydney Sweeney&quot;,<br>    &quot;hair&quot;: &quot;Wavy blonde, styled casually&quot;,<br>    &quot;makeup&quot;: &quot;Natural, with even-toned skin&quot;,<br>    &quot;gaze&quot;: &quot;Direct and composed, looking at the camera&quot;<br>  },<br>  &quot;attire&quot;: {<br>    &quot;item&quot;: &quot;Elaborate custom-designed ball gown&quot;,<br>    &quot;color&quot;: &quot;Dusty mauve-pink&quot;,<br>    &quot;bodice&quot;: &quot;Off-the-shoulder with a corseted satin structure and three-quarter length lace-sleeves&quot;,<br>    &quot;peplum&quot;: &quot;Integrated satin peplum at the waist&quot;,<br>    &quot;skirt&quot;: &quot;Full, voluminous skirt with an intricate floral lace pattern over satin, spreading out to form a substantial train on the steps&quot;,<br>    &quot;footwear&quot;: &quot;Matching mauve-pink pointed-toe shoes with lacing and a delicate anklet detail&quot;<br>  },<br>  &quot;setting&quot;: {<br>    &quot;architecture&quot;: &quot;A grand, ancient stone staircase on the terrace of a Mediterranean villa&quot;,<br>    &quot;balustrade&quot;: &quot;Ornate, classic stone balustrade and railings&quot;,<br>    &quot;flora&quot;: &quot;Large ornate stone planter with purple bougainvillea on the left; cypress and palm trees in the sprawling garden below&quot;,<br>    &quot;background_view&quot;: &quot;Sprawling terraced gardens and distant hills under a warm, golden hour sunset sky&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;type&quot;: &quot;Medium full-length portrait&quot;,<br>    &quot;framing&quot;: &quot;Slightly elevated angle, capturing her pose, the full dress, and the surrounding environment&quot;,<br>    &quot;lighting&quot;: &quot;Natural golden hour sunlight, creating a warm, soft glow&quot;<br>  },<br>  &quot;pose&quot;: &quot;Seated on stone steps, right leg crossed over left, hands resting gently in her lap, directly facing the camera&quot;,<br>  &quot;mood&quot;: &quot;Elegant, serene, and self-assured&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;Sydney Sweeney&quot;,<br>    &quot;hair&quot;: &quot;Wavy blonde, styled casually&quot;,<br>    &quot;makeup&quot;: &quot;Natural, with even-toned skin&quot;,<br>    &quot;gaze&quot;: &quot;Direct and composed, looking at the camera&quot;<br>  },<br>  &quot;attire&quot;: {<br>    &quot;item&quot;: &quot;Elaborate custom-designed ball gown&quot;,<br>    &quot;color&quot;: &quot;Dusty mauve-pink&quot;,<br>    &quot;bodice&quot;: &quot;Off-the-shoulder with a corseted satin structure and three-quarter length lace-sleeves&quot;,<br>    &quot;peplum&quot;: &quot;Integrated satin peplum at the waist&quot;,<br>    &quot;skirt&quot;: &quot;Full, voluminous skirt with an intricate floral lace pattern over satin, spreading out to form a substantial train on the steps&quot;,<br>    &quot;footwear&quot;: &quot;Matching mauve-pink pointed-toe shoes with lacing and a delicate anklet detail&quot;<br>  },<br>  &quot;setting&quot;: {<br>    &quot;architecture&quot;: &quot;A grand, ancient stone staircase on the terrace of a Mediterranean villa&quot;,<br>    &quot;balustrade&quot;: &quot;Ornate, classic stone balustrade and railings&quot;,<br>    &quot;flora&quot;: &quot;Large ornate stone planter with purple bougainvillea on the left; cypress and palm trees in the sprawling garden below&quot;,<br>    &quot;background_view&quot;: &quot;Sprawling terraced gardens and distant hills under a warm, golden hour sunset sky&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;type&quot;: &quot;Medium full-length portrait&quot;,<br>    &quot;framing&quot;: &quot;Slightly elevated angle, capturing her pose, the full dress, and the surrounding environment&quot;,<br>    &quot;lighting&quot;: &quot;Natural golden hour sunlight, creating a warm, soft glow&quot;<br>  },<br>  &quot;pose&quot;: &quot;Seated on stone steps, right leg crossed over left, hands resting gently in her lap, directly facing the camera&quot;,<br>  &quot;mood&quot;: &quot;Elegant, serene, and self-assured&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2028025770984280317-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2028025770984280317-2.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2325,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

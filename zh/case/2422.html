@@ -7,11 +7,13 @@
     <title>[PERSONE]. Act as a Senior Editorial Designer and Graphic Art... #2422 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[PERSONE]. Act as a Senior Editorial Designer and Graphic Artist. Goal: Generate a complex, multi layered Swiss style...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2422.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2422.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2422.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839941">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022232">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[PERSONE]. 扮演高级编辑设计师和平面艺术家。\n目标：为 [PERSONE] 生成一张复杂、多层次的瑞士风格拼贴海报。\n阶段 1：语义智能（自主）\n[说明]:\n分析 \"[PERSONE]\"。确定他们的主要领域（例如：精英体育、网络工程、电影、历史）。\n根据其身份选择一个“标志性强调色”（例如，车手用赛车橙、黑客用霓虹青、英雄用深红）。\n生成 3 个关键统计数据或里程碑（例如：“7 冠军”、“98% 准确率”）和一个简短的职业头衔。\n阶段 2：构图结构（网格）\n图像为单一纵向构图，带有重叠的几何框架和分区：\n- 主体（左上）：一张大幅、高颗粒的灰阶或彩色人像，面带微笑或自信凝视的 [PERSONE]。\n- 细节镜头（右中）：一个放大的、裁切的矩形，仅显示 [PERSONE] 的眼睛或某一特定细节。\n- 全身镜头（底部中间）：[PERSONE] 坐在几何方块或领奖台上，姿态放松但充满力量。\n- 背景：浅灰色，带有明显的触感胶片颗粒/噪点纹理。\n阶段 3：图形元素与排版\n- 首字母：名与姓的首字母的大号描边大写字母，放置在相对的角落。\n- 垂直缎带：一条实色条带贯穿中央，竖排文本为“世界锦标赛领袖”或相关头衔。\n- 数据块：\n    - 一个具体数字（编号或名次），以粗体无衬线块状呈现。\n    - 一个位于左下角的“统计”模块，包含 3 行文本（例如：“两杆位 / 四胜 / 五领奖台”）。\n- 点缀：在网格中散落橙色和黑色方块、点状圆圈和小星号以增加视觉复杂性。\n阶段 4：光线与纹理\n- 纹理：高对比、粗糙颗粒感。整体图像应呈现如高端杂志印刷或复古海报的质感。\n- 光效：主体使用专业影棚照明，但处理上带有 risograph 或网点印刷的感觉。\n阶段 5：技术规格\n8K 分辨率。瑞士现代主义美学。平面矢量形状与超写实摄影结合。", this)'>📋 复制</button>
         </div>
-        <p>[PERSONE]. 扮演高级编辑设计师和平面艺术家。<br>目标：为 [PERSONE] 生成一张复杂、多层次的瑞士风格拼贴海报。<br>阶段 1：语义智能（自主）<br>[说明]:<br>分析 &quot;[PERSONE]&quot;。确定他们的主要领域（例如：精英体育、网络工程、电影、历史）。<br>根据其身份选择一个“标志性强调色”（例如，车手用赛车橙、黑客用霓虹青、英雄用深红）。<br>生成 3 个关键统计数据或里程碑（例如：“7 冠军”、“98% 准确率”）和一个简短的职业头衔。<br>阶段 2：构图结构（网格）<br>图像为单一纵向构图，带有重叠的几何框架和分区：<br>- 主体（左上）：一张大幅、高颗粒的灰阶或彩色人像，面带微笑或自信凝视的 [PERSONE]。<br>- 细节镜头（右中）：一个放大的、裁切的矩形，仅显示 [PERSONE] 的眼睛或某一特定细节。<br>- 全身镜头（底部中间）：[PERSONE] 坐在几何方块或领奖台上，姿态放松但充满力量。<br>- 背景：浅灰色，带有明显的触感胶片颗粒/噪点纹理。<br>阶段 3：图形元素与排版<br>- 首字母：名与姓的首字母的大号描边大写字母，放置在相对的角落。<br>- 垂直缎带：一条实色条带贯穿中央，竖排文本为“世界锦标赛领袖”或相关头衔。<br>- 数据块：<br>    - 一个具体数字（编号或名次），以粗体无衬线块状呈现。<br>    - 一个位于左下角的“统计”模块，包含 3 行文本（例如：“两杆位 / 四胜 / 五领奖台”）。<br>- 点缀：在网格中散落橙色和黑色方块、点状圆圈和小星号以增加视觉复杂性。<br>阶段 4：光线与纹理<br>- 纹理：高对比、粗糙颗粒感。整体图像应呈现如高端杂志印刷或复古海报的质感。<br>- 光效：主体使用专业影棚照明，但处理上带有 risograph 或网点印刷的感觉。<br>阶段 5：技术规格<br>8K 分辨率。瑞士现代主义美学。平面矢量形状与超写实摄影结合。</p>
+        <div data-nosnippet><p>[PERSONE]. 扮演高级编辑设计师和平面艺术家。<br>目标：为 [PERSONE] 生成一张复杂、多层次的瑞士风格拼贴海报。<br>阶段 1：语义智能（自主）<br>[说明]:<br>分析 &quot;[PERSONE]&quot;。确定他们的主要领域（例如：精英体育、网络工程、电影、历史）。<br>根据其身份选择一个“标志性强调色”（例如，车手用赛车橙、黑客用霓虹青、英雄用深红）。<br>生成 3 个关键统计数据或里程碑（例如：“7 冠军”、“98% 准确率”）和一个简短的职业头衔。<br>阶段 2：构图结构（网格）<br>图像为单一纵向构图，带有重叠的几何框架和分区：<br>- 主体（左上）：一张大幅、高颗粒的灰阶或彩色人像，面带微笑或自信凝视的 [PERSONE]。<br>- 细节镜头（右中）：一个放大的、裁切的矩形，仅显示 [PERSONE] 的眼睛或某一特定细节。<br>- 全身镜头（底部中间）：[PERSONE] 坐在几何方块或领奖台上，姿态放松但充满力量。<br>- 背景：浅灰色，带有明显的触感胶片颗粒/噪点纹理。<br>阶段 3：图形元素与排版<br>- 首字母：名与姓的首字母的大号描边大写字母，放置在相对的角落。<br>- 垂直缎带：一条实色条带贯穿中央，竖排文本为“世界锦标赛领袖”或相关头衔。<br>- 数据块：<br>    - 一个具体数字（编号或名次），以粗体无衬线块状呈现。<br>    - 一个位于左下角的“统计”模块，包含 3 行文本（例如：“两杆位 / 四胜 / 五领奖台”）。<br>- 点缀：在网格中散落橙色和黑色方块、点状圆圈和小星号以增加视觉复杂性。<br>阶段 4：光线与纹理<br>- 纹理：高对比、粗糙颗粒感。整体图像应呈现如高端杂志印刷或复古海报的质感。<br>- 光效：主体使用专业影棚照明，但处理上带有 risograph 或网点印刷的感觉。<br>阶段 5：技术规格<br>8K 分辨率。瑞士现代主义美学。平面矢量形状与超写实摄影结合。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[PERSONE]. Act as a Senior Editorial Designer and Graphic Artist.\nGoal: Generate a complex, multi-layered Swiss-style collage poster for [PERSONE].\nPHASE 1: SEMANTIC INTELLIGENCE (AUTONOMOUS)\n[INSTRUCTIONS]:\nAnalyze \"[PERSONE]\". Determine their primary field (e.g., Elite Sports, Cyber-Engineering, Cinema, History).\nSelect an \"Iconic Accent Color\" based on their identity (e.g., Racing Orange for a driver, Neon Cyan for a hacker, Crimson for a hero).\nGenerate 3 key statistics or milestones (e.g., \"7 TITLES\", \"98% ACCURACY\") and a short professional title.\nPHASE 2: COMPOSITIONAL STRUCTURE (THE GRID)\nThe image is a single vertical composition with overlapping geometric frames and segments:\n- MAIN SUBJECT (Top Left): A large, high-grain grayscale or color portrait of [PERSONE], smiling or looking confident.\n- DETAIL SHOT (Center Right): A zoomed-in, cropped rectangle showing only the eyes or a specific detail of [PERSONE].\n- FULL BODY SHOT (Bottom Center): [PERSONE] sitting on a geometric box or podium in a relaxed but powerful pose.\n- BACKGROUND: Light gray with a heavy, tactile film grain/noise texture.\nPHASE 3: GRAPHIC ELEMENTS & TYPOGRAPHY\n- Initials: Large, outlined capital letters of the first and last name placed in opposite corners.\n- Vertical Ribbon: A solid color strip with the text \"WORLD CHAMPIONSHIP LEADER\" or a relevant title running vertically through the center.\n- Data Blocks:\n    - A specific number (ID or rank) in a bold sans-serif block.\n    - A \"Statistics\" block in the bottom-left corner with 3 lines of text (e.g., \"TWO POLES / FOUR WINS / FIVE PODIUMS\").\n- Accents: Scatter orange and black squares, dotted circles, and small asterisks throughout the grid for visual complexity.\nPHASE 4: LIGHTING & TEXTURE\n- Texture: High-contrast, gritty, and grainy. The overall image should look like a printed high-end magazine or a vintage poster.\n- Lighting: Professional studio lighting on the subjects, but processed with a \"risograph\" or \"halftone\" feel.\nPHASE 5: TECH SPECS\n8K Resolution. Swiss Modernism aesthetic. Flat vector shapes combined with hyper-realistic photography.", this)'>📋 复制</button>
         </div>
-        <p>[PERSONE]. Act as a Senior Editorial Designer and Graphic Artist.<br>Goal: Generate a complex, multi-layered Swiss-style collage poster for [PERSONE].<br>PHASE 1: SEMANTIC INTELLIGENCE (AUTONOMOUS)<br>[INSTRUCTIONS]:<br>Analyze &quot;[PERSONE]&quot;. Determine their primary field (e.g., Elite Sports, Cyber-Engineering, Cinema, History).<br>Select an &quot;Iconic Accent Color&quot; based on their identity (e.g., Racing Orange for a driver, Neon Cyan for a hacker, Crimson for a hero).<br>Generate 3 key statistics or milestones (e.g., &quot;7 TITLES&quot;, &quot;98% ACCURACY&quot;) and a short professional title.<br>PHASE 2: COMPOSITIONAL STRUCTURE (THE GRID)<br>The image is a single vertical composition with overlapping geometric frames and segments:<br>- MAIN SUBJECT (Top Left): A large, high-grain grayscale or color portrait of [PERSONE], smiling or looking confident.<br>- DETAIL SHOT (Center Right): A zoomed-in, cropped rectangle showing only the eyes or a specific detail of [PERSONE].<br>- FULL BODY SHOT (Bottom Center): [PERSONE] sitting on a geometric box or podium in a relaxed but powerful pose.<br>- BACKGROUND: Light gray with a heavy, tactile film grain/noise texture.<br>PHASE 3: GRAPHIC ELEMENTS &amp; TYPOGRAPHY<br>- Initials: Large, outlined capital letters of the first and last name placed in opposite corners.<br>- Vertical Ribbon: A solid color strip with the text &quot;WORLD CHAMPIONSHIP LEADER&quot; or a relevant title running vertically through the center.<br>- Data Blocks:<br>    - A specific number (ID or rank) in a bold sans-serif block.<br>    - A &quot;Statistics&quot; block in the bottom-left corner with 3 lines of text (e.g., &quot;TWO POLES / FOUR WINS / FIVE PODIUMS&quot;).<br>- Accents: Scatter orange and black squares, dotted circles, and small asterisks throughout the grid for visual complexity.<br>PHASE 4: LIGHTING &amp; TEXTURE<br>- Texture: High-contrast, gritty, and grainy. The overall image should look like a printed high-end magazine or a vintage poster.<br>- Lighting: Professional studio lighting on the subjects, but processed with a &quot;risograph&quot; or &quot;halftone&quot; feel.<br>PHASE 5: TECH SPECS<br>8K Resolution. Swiss Modernism aesthetic. Flat vector shapes combined with hyper-realistic photography.</p>
+        <div data-nosnippet><p>[PERSONE]. Act as a Senior Editorial Designer and Graphic Artist.<br>Goal: Generate a complex, multi-layered Swiss-style collage poster for [PERSONE].<br>PHASE 1: SEMANTIC INTELLIGENCE (AUTONOMOUS)<br>[INSTRUCTIONS]:<br>Analyze &quot;[PERSONE]&quot;. Determine their primary field (e.g., Elite Sports, Cyber-Engineering, Cinema, History).<br>Select an &quot;Iconic Accent Color&quot; based on their identity (e.g., Racing Orange for a driver, Neon Cyan for a hacker, Crimson for a hero).<br>Generate 3 key statistics or milestones (e.g., &quot;7 TITLES&quot;, &quot;98% ACCURACY&quot;) and a short professional title.<br>PHASE 2: COMPOSITIONAL STRUCTURE (THE GRID)<br>The image is a single vertical composition with overlapping geometric frames and segments:<br>- MAIN SUBJECT (Top Left): A large, high-grain grayscale or color portrait of [PERSONE], smiling or looking confident.<br>- DETAIL SHOT (Center Right): A zoomed-in, cropped rectangle showing only the eyes or a specific detail of [PERSONE].<br>- FULL BODY SHOT (Bottom Center): [PERSONE] sitting on a geometric box or podium in a relaxed but powerful pose.<br>- BACKGROUND: Light gray with a heavy, tactile film grain/noise texture.<br>PHASE 3: GRAPHIC ELEMENTS &amp; TYPOGRAPHY<br>- Initials: Large, outlined capital letters of the first and last name placed in opposite corners.<br>- Vertical Ribbon: A solid color strip with the text &quot;WORLD CHAMPIONSHIP LEADER&quot; or a relevant title running vertically through the center.<br>- Data Blocks:<br>    - A specific number (ID or rank) in a bold sans-serif block.<br>    - A &quot;Statistics&quot; block in the bottom-left corner with 3 lines of text (e.g., &quot;TWO POLES / FOUR WINS / FIVE PODIUMS&quot;).<br>- Accents: Scatter orange and black squares, dotted circles, and small asterisks throughout the grid for visual complexity.<br>PHASE 4: LIGHTING &amp; TEXTURE<br>- Texture: High-contrast, gritty, and grainy. The overall image should look like a printed high-end magazine or a vintage poster.<br>- Lighting: Professional studio lighting on the subjects, but processed with a &quot;risograph&quot; or &quot;halftone&quot; feel.<br>PHASE 5: TECH SPECS<br>8K Resolution. Swiss Modernism aesthetic. Flat vector shapes combined with hyper-realistic photography.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2029935139044671622-1.jpg" alt="[PERSONE]. Act as a Senior Editorial Designer and Graphic Art..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2422,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

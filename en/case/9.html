@@ -7,11 +7,13 @@
     <title>Blue-and-white porcelain style. #9 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Blue-and-white porcelain style — AI image generation prompts.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/9.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/9.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/9.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846543">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023957">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("以上传的图像作为精确可视基础，将其转换为保留原始形状与比例的超真实三维对象。应用传统的奥斯曼 Iznik 瓷纹理——以暖白釉底，配以细腻的龟裂纹路，上覆鲜明的钴蓝、绿松石色和大胆的红花纹，如郁金香、康乃馨和阿拉伯花纹藤蔓。整个标志应被视为独立的瓷雕，带有凸起、手绘的细节，没有背景板或瓷砖结构。确保装饰图案优雅地沿着 Bugatti 标志轮廓，且不改变其形状。以纯黑背景渲染对象，采用 Cinema 4D 风格的产品照明——突出真实的陶瓷光泽、材质深度和微妙反射。最终效果应如同奢华手工打造的瓷器再诠释，兼具传统饰纹与工业品牌的平衡。", this)'>📋 Copy</button>
         </div>
-        <p>以上传的图像作为精确可视基础，将其转换为保留原始形状与比例的超真实三维对象。应用传统的奥斯曼 Iznik 瓷纹理——以暖白釉底，配以细腻的龟裂纹路，上覆鲜明的钴蓝、绿松石色和大胆的红花纹，如郁金香、康乃馨和阿拉伯花纹藤蔓。整个标志应被视为独立的瓷雕，带有凸起、手绘的细节，没有背景板或瓷砖结构。确保装饰图案优雅地沿着 Bugatti 标志轮廓，且不改变其形状。以纯黑背景渲染对象，采用 Cinema 4D 风格的产品照明——突出真实的陶瓷光泽、材质深度和微妙反射。最终效果应如同奢华手工打造的瓷器再诠释，兼具传统饰纹与工业品牌的平衡。</p>
+        <div data-nosnippet><p>以上传的图像作为精确可视基础，将其转换为保留原始形状与比例的超真实三维对象。应用传统的奥斯曼 Iznik 瓷纹理——以暖白釉底，配以细腻的龟裂纹路，上覆鲜明的钴蓝、绿松石色和大胆的红花纹，如郁金香、康乃馨和阿拉伯花纹藤蔓。整个标志应被视为独立的瓷雕，带有凸起、手绘的细节，没有背景板或瓷砖结构。确保装饰图案优雅地沿着 Bugatti 标志轮廓，且不改变其形状。以纯黑背景渲染对象，采用 Cinema 4D 风格的产品照明——突出真实的陶瓷光泽、材质深度和微妙反射。最终效果应如同奢华手工打造的瓷器再诠释，兼具传统饰纹与工业品牌的平衡。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Using the uploaded image as the exact visual base, transform it into a hyper-realistic 3D object that retains the original shape and proportions of the logo only. Apply traditional Ottoman Iznik ceramic textures—featuring a warm white glazed base with delicate crackle lines, overlaid with vivid cobalt blue, turquoise, and bold red floral motifs such as tulips, carnations, and arabesque vines. The entire logo should be treated as a standalone porcelain sculpture with raised, hand-painted detailing and no background plate or tile structure. Ensure the decorative patterns elegantly follow the contours of the Bugatti logo, without altering its form. Render the object in a pure black background with Cinema 4D-style product lighting—highlighting realistic ceramic gloss, material depth, and subtle reflections. The final result should feel like a luxurious handcrafted ceramic reinterpretation, balancing heritage ornamentation with industrial branding.", this)'>📋 Copy</button>
         </div>
-        <p>Using the uploaded image as the exact visual base, transform it into a hyper-realistic 3D object that retains the original shape and proportions of the logo only. Apply traditional Ottoman Iznik ceramic textures—featuring a warm white glazed base with delicate crackle lines, overlaid with vivid cobalt blue, turquoise, and bold red floral motifs such as tulips, carnations, and arabesque vines. The entire logo should be treated as a standalone porcelain sculpture with raised, hand-painted detailing and no background plate or tile structure. Ensure the decorative patterns elegantly follow the contours of the Bugatti logo, without altering its form. Render the object in a pure black background with Cinema 4D-style product lighting—highlighting realistic ceramic gloss, material depth, and subtle reflections. The final result should feel like a luxurious handcrafted ceramic reinterpretation, balancing heritage ornamentation with industrial branding.</p>
+        <div data-nosnippet><p>Using the uploaded image as the exact visual base, transform it into a hyper-realistic 3D object that retains the original shape and proportions of the logo only. Apply traditional Ottoman Iznik ceramic textures—featuring a warm white glazed base with delicate crackle lines, overlaid with vivid cobalt blue, turquoise, and bold red floral motifs such as tulips, carnations, and arabesque vines. The entire logo should be treated as a standalone porcelain sculpture with raised, hand-painted detailing and no background plate or tile structure. Ensure the decorative patterns elegantly follow the contours of the Bugatti logo, without altering its form. Render the object in a pure black background with Cinema 4D-style product lighting—highlighting realistic ceramic gloss, material depth, and subtle reflections. The final result should feel like a luxurious handcrafted ceramic reinterpretation, balancing heritage ornamentation with industrial branding.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/9.png" alt="青花瓷风格" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 9,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

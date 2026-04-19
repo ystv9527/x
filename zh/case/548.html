@@ -7,11 +7,13 @@
     <title>change a little 稍微改动一下{  &quot;subject&quot;: {    &quot;person&quot;: &quot;Young woman with light greyish-brown hair, ath #548 | Gem Nana AI 提示词库</title>
     <meta name="description" content="change a little 稍微改动一下{  &quot;subject&quot;: {    &quot;person&quot;: &quot;Young woman with light greyish-brown hair, ath">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/548.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/548.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/548.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841751">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022669">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n“主题”： {\r\n“人”：“年轻女子，浅灰棕色头发，身材健壮”，\r\n“表情”：“俏皮，吐着舌头，随意放松”\r\n“姿势”：“低角度视角，向后靠在浅色沙发上，直视镜头”，\r\n“纹身”：[]，\r\n“珠宝”：“精致的银色四叶草手链，小巧的耳钉”，\r\n“头发”： {\r\n风格：略显凌乱、自然、休闲，\r\n“质感”：“柔和的波浪，几缕散落的发丝垂在脸颊两侧”，\r\n“外貌”：“非常放松，就像刚起床或在家里闲逛一样”\r\n    }\r\n  },\r\n\"服装\": {\r\n上衣：Lululemon 修身背心或运动文胸，\r\n下装：搭配 Lululemon 高腰紧身裤或瑜伽裤\r\n质地：光滑柔和的哑光效果\r\n  },\r\n“作品”： {\r\n\"camera_angle\": \"极低角度，POV 风格，从腿部向上看\",\r\n“构图”：“智能手机自拍典型的近景广角镜头畸变”，\r\n景深：浅景深，前景服装清晰对焦，背景略微柔化。\r\n  },\r\n“环境”： {\r\n“场景”: “现代明亮的客厅内部”，\r\n“家具”：“米色布艺沙发”，\r\n“背景元素”：[\r\n“大窗户，自然光线充足”\r\n“浅蓝色保温水瓶（水杯）放在人旁边”，\r\n“背景中有一面圆形墙镜”，\r\n“极简主义白墙”\r\n    ]\r\n  },\r\n\"lighting_and_color\": {\r\n“照明”：“高调、明亮的自然日光，背景略微过曝”，\r\n\"color_palette\": \"中性色调、白色、黑色，以及一点浅蓝色\",\r\n氛围：坦率、随意、社交媒体美学\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>“主题”： {<br>“人”：“年轻女子，浅灰棕色头发，身材健壮”，<br>“表情”：“俏皮，吐着舌头，随意放松”<br>“姿势”：“低角度视角，向后靠在浅色沙发上，直视镜头”，<br>“纹身”：[]，<br>“珠宝”：“精致的银色四叶草手链，小巧的耳钉”，<br>“头发”： {<br>风格：略显凌乱、自然、休闲，<br>“质感”：“柔和的波浪，几缕散落的发丝垂在脸颊两侧”，<br>“外貌”：“非常放松，就像刚起床或在家里闲逛一样”<br>    }<br>  },<br>&quot;服装&quot;: {<br>上衣：Lululemon 修身背心或运动文胸，<br>下装：搭配 Lululemon 高腰紧身裤或瑜伽裤<br>质地：光滑柔和的哑光效果<br>  },<br>“作品”： {<br>&quot;camera_angle&quot;: &quot;极低角度，POV 风格，从腿部向上看&quot;,<br>“构图”：“智能手机自拍典型的近景广角镜头畸变”，<br>景深：浅景深，前景服装清晰对焦，背景略微柔化。<br>  },<br>“环境”： {<br>“场景”: “现代明亮的客厅内部”，<br>“家具”：“米色布艺沙发”，<br>“背景元素”：[<br>“大窗户，自然光线充足”<br>“浅蓝色保温水瓶（水杯）放在人旁边”，<br>“背景中有一面圆形墙镜”，<br>“极简主义白墙”<br>    ]<br>  },<br>&quot;lighting_and_color&quot;: {<br>“照明”：“高调、明亮的自然日光，背景略微过曝”，<br>&quot;color_palette&quot;: &quot;中性色调、白色、黑色，以及一点浅蓝色&quot;,<br>氛围：坦率、随意、社交媒体美学<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>“主题”： {<br>“人”：“年轻女子，浅灰棕色头发，身材健壮”，<br>“表情”：“俏皮，吐着舌头，随意放松”<br>“姿势”：“低角度视角，向后靠在浅色沙发上，直视镜头”，<br>“纹身”：[]，<br>“珠宝”：“精致的银色四叶草手链，小巧的耳钉”，<br>“头发”： {<br>风格：略显凌乱、自然、休闲，<br>“质感”：“柔和的波浪，几缕散落的发丝垂在脸颊两侧”，<br>“外貌”：“非常放松，就像刚起床或在家里闲逛一样”<br>    }<br>  },<br>&quot;服装&quot;: {<br>上衣：Lululemon 修身背心或运动文胸，<br>下装：搭配 Lululemon 高腰紧身裤或瑜伽裤<br>质地：光滑柔和的哑光效果<br>  },<br>“作品”： {<br>&quot;camera_angle&quot;: &quot;极低角度，POV 风格，从腿部向上看&quot;,<br>“构图”：“智能手机自拍典型的近景广角镜头畸变”，<br>景深：浅景深，前景服装清晰对焦，背景略微柔化。<br>  },<br>“环境”： {<br>“场景”: “现代明亮的客厅内部”，<br>“家具”：“米色布艺沙发”，<br>“背景元素”：[<br>“大窗户，自然光线充足”<br>“浅蓝色保温水瓶（水杯）放在人旁边”，<br>“背景中有一面圆形墙镜”，<br>“极简主义白墙”<br>    ]<br>  },<br>&quot;lighting_and_color&quot;: {<br>“照明”：“高调、明亮的自然日光，背景略微过曝”，<br>&quot;color_palette&quot;: &quot;中性色调、白色、黑色，以及一点浅蓝色&quot;,<br>氛围：坦率、随意、社交媒体美学<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("change a little 稍微改动一下{\r\n  \"subject\": {\r\n    \"person\": \"Young woman with light greyish-brown hair, athletic build\",\r\n    \"expression\": \"Playful, tongue poking out, casual and relaxed\",\r\n    \"pose\": \"Low-angle perspective, reclining back against a light-colored couch, looking directly at camera\",\r\n    \"tattoos\": [],\r\n    \"jewelry\": \"Delicate silver clover-style bracelet, small stud earrings\",\r\n    \"hair\": {\r\n      \"style\": \"Slightly messy, natural, casual\",\r\n      \"texture\": \"Soft waves with some loose strands framing the face\",\r\n      \"appearance\": \"Very relaxed, as if just out of bed or lounging around the house\"\r\n    }\r\n  },\r\n  \"apparel\": {\r\n    \"top\": \"Lululemon form-fitting tank top or sports bra\",\r\n    \"bottom\": \"Matching Lululemon high-waisted leggings or yoga pants\",\r\n    \"texture\": \"Smooth, soft matte finish\"\r\n  },\r\n  \"composition\": {\r\n    \"camera_angle\": \"Extreme low angle, POV style, looking up from the lap area\",\r\n    \"framing\": \"Close-up, wide-angle lens distortion typical of a smartphone selfie\",\r\n    \"depth_of_field\": \"Shallow, with the foreground garment in sharp focus and the background slightly softened\"\r\n  },\r\n  \"environment\": {\r\n    \"setting\": \"Modern bright living room interior\",\r\n    \"furniture\": \"Cream-colored fabric sofa\",\r\n    \"background_elements\": [\r\n      \"Large windows with bright natural light\",\r\n      \"Light blue insulated water bottle (tumbler) tucked beside the person\",\r\n      \"Circular wall mirror in the background\",\r\n      \"Minimalist white walls\"\r\n    ]\r\n  },\r\n  \"lighting_and_color\": {\r\n    \"lighting\": \"High-key, bright natural daylight, slightly overexposed background\",\r\n    \"color_palette\": \"Neutral tones, whites, blacks, and a pop of light blue\",\r\n    \"vibe\": \"Candid, casual, social media aesthetic\"\r\n  }\r\n}", this)'>📋 复制</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("change a little (make slight modifications) {\n  \"subject\": {\n    \"person\": \"Young woman with light greyish-brown hair, athletic build\",\n    \"expression\": \"Playful, tongue poking out, casual and relaxed\",\n    \"pose\": \"Low-angle perspective, reclining back against a light-colored couch, looking directly at camera\",\n    \"tattoos\": [],\n    \"jewelry\": \"Delicate silver clover-style bracelet, small stud earrings\",\n    \"hair\": {\n      \"style\": \"Slightly messy, natural, casual\",\n      \"texture\": \"Soft waves with some loose strands framing the face\",\n      \"appearance\": \"Very relaxed, as if just out of bed or lounging around the house\"\n    }\n  },\n  \"apparel\": {\n    \"top\": \"Lululemon form-fitting tank top or sports bra\",\n    \"bottom\": \"Matching Lululemon high-waisted leggings or yoga pants\",\n    \"texture\": \"Smooth, soft matte finish\"\n  },\n  \"composition\": {\n    \"camera_angle\": \"Extreme low angle, POV style, looking up from the lap area\",\n    \"framing\": \"Close-up, wide-angle lens distortion typical of a smartphone selfie\",\n    \"depth_of_field\": \"Shallow, with the foreground garment in sharp focus and the background slightly softened\"\n  },\n  \"environment\": {\n    \"setting\": \"Modern bright living room interior\",\n    \"furniture\": \"Cream-colored fabric sofa\",\n    \"background_elements\": [\n      \"Large windows with bright natural light\",\n      \"Light blue insulated water bottle (tumbler) tucked beside the person\",\n      \"Circular wall mirror in the background\",\n      \"Minimalist white walls\"\n    ]\n  },\n  \"lighting_and_color\": {\n    \"lighting\": \"High-key, bright natural daylight, slightly overexposed background\",\n    \"color_palette\": \"Neutral tones, whites, blacks, and a pop of light blue\",\n    \"vibe\": \"Candid, casual, social media aesthetic\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>change a little 稍微改动一下{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;Young woman with light greyish-brown hair, athletic build&quot;,<br>    &quot;expression&quot;: &quot;Playful, tongue poking out, casual and relaxed&quot;,<br>    &quot;pose&quot;: &quot;Low-angle perspective, reclining back against a light-colored couch, looking directly at camera&quot;,<br>    &quot;tattoos&quot;: [],<br>    &quot;jewelry&quot;: &quot;Delicate silver clover-style bracelet, small stud earrings&quot;,<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;Slightly messy, natural, casual&quot;,<br>      &quot;texture&quot;: &quot;Soft waves with some loose strands framing the face&quot;,<br>      &quot;appearance&quot;: &quot;Very relaxed, as if just out of bed or lounging around the house&quot;<br>    }<br>  },<br>  &quot;apparel&quot;: {<br>    &quot;top&quot;: &quot;Lululemon form-fitting tank top or sports bra&quot;,<br>    &quot;bottom&quot;: &quot;Matching Lululemon high-waisted leggings or yoga pants&quot;,<br>    &quot;texture&quot;: &quot;Smooth, soft matte finish&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;camera_angle&quot;: &quot;Extreme low angle, POV style, looking up from the lap area&quot;,<br>    &quot;framing&quot;: &quot;Close-up, wide-angle lens distortion typical of a smartphone selfie&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow, with the foreground garment in sharp focus and the background slightly softened&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;Modern bright living room interior&quot;,<br>    &quot;furniture&quot;: &quot;Cream-colored fabric sofa&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;Large windows with bright natural light&quot;,<br>      &quot;Light blue insulated water bottle (tumbler) tucked beside the person&quot;,<br>      &quot;Circular wall mirror in the background&quot;,<br>      &quot;Minimalist white walls&quot;<br>    ]<br>  },<br>  &quot;lighting_and_color&quot;: {<br>    &quot;lighting&quot;: &quot;High-key, bright natural daylight, slightly overexposed background&quot;,<br>    &quot;color_palette&quot;: &quot;Neutral tones, whites, blacks, and a pop of light blue&quot;,<br>    &quot;vibe&quot;: &quot;Candid, casual, social media aesthetic&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>change a little (make slight modifications) {<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;Young woman with light greyish-brown hair, athletic build&quot;,<br>    &quot;expression&quot;: &quot;Playful, tongue poking out, casual and relaxed&quot;,<br>    &quot;pose&quot;: &quot;Low-angle perspective, reclining back against a light-colored couch, looking directly at camera&quot;,<br>    &quot;tattoos&quot;: [],<br>    &quot;jewelry&quot;: &quot;Delicate silver clover-style bracelet, small stud earrings&quot;,<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;Slightly messy, natural, casual&quot;,<br>      &quot;texture&quot;: &quot;Soft waves with some loose strands framing the face&quot;,<br>      &quot;appearance&quot;: &quot;Very relaxed, as if just out of bed or lounging around the house&quot;<br>    }<br>  },<br>  &quot;apparel&quot;: {<br>    &quot;top&quot;: &quot;Lululemon form-fitting tank top or sports bra&quot;,<br>    &quot;bottom&quot;: &quot;Matching Lululemon high-waisted leggings or yoga pants&quot;,<br>    &quot;texture&quot;: &quot;Smooth, soft matte finish&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;camera_angle&quot;: &quot;Extreme low angle, POV style, looking up from the lap area&quot;,<br>    &quot;framing&quot;: &quot;Close-up, wide-angle lens distortion typical of a smartphone selfie&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow, with the foreground garment in sharp focus and the background slightly softened&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;Modern bright living room interior&quot;,<br>    &quot;furniture&quot;: &quot;Cream-colored fabric sofa&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;Large windows with bright natural light&quot;,<br>      &quot;Light blue insulated water bottle (tumbler) tucked beside the person&quot;,<br>      &quot;Circular wall mirror in the background&quot;,<br>      &quot;Minimalist white walls&quot;<br>    ]<br>  },<br>  &quot;lighting_and_color&quot;: {<br>    &quot;lighting&quot;: &quot;High-key, bright natural daylight, slightly overexposed background&quot;,<br>    &quot;color_palette&quot;: &quot;Neutral tones, whites, blacks, and a pop of light blue&quot;,<br>    &quot;vibe&quot;: &quot;Candid, casual, social media aesthetic&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2007637648655958349-1.jpg" alt="change a little 稍微改动一下{  &quot;subject&quot;: {    &quot;person&quot;: &quot;Young woman with light greyish-brown hair, ath" loading="lazy"><img src="/images/tweet-2007637648655958349-2.jpg" alt="change a little 稍微改动一下{  &quot;subject&quot;: {    &quot;person&quot;: &quot;Young woman with light greyish-brown hair, ath" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 548,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

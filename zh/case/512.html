@@ -7,11 +7,13 @@
     <title>雨夜中的超写实蜘蛛侠与女性亲密瞬间 #512 | Gem Nana AI 提示词库</title>
     <meta name="description" content="这组超写实风格的图像展现了在雨夜城市中，蜘蛛侠倒挂与一位湿润的女性亲密互动的场景，细节丰富，光影戏剧化，呈现出极致的摄影质感。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/512.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/512.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/512.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841784">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022677">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"类型\": \"图像生成\",\r\n    \"风格\": \"超写实照片\",\r\n    \"艺术风格\": [\r\n\"照片级真实感\",\r\n      \"HDR 色调平衡\",\r\n      \"奢华写实\"\r\n    ],\r\n\"主题\": [\r\n      {\r\n\"description\": \"女人\",\r\n\"参考图像\": \"用户提供的照片\",\r\n\"面部特征\": \"不要修改\",\r\n        \"外貌\": {\r\n          \"头发\": \"湿的，粘在她的脸和肩膀上\",\r\n          \"妆容\": \"深红色唇色\",\r\n\"服装\": \"紧身黑色背心突出她的身材\"\r\n        },\r\n        \"姿势\": {\r\n          \"表情\": \"轻微微笑，闭着眼睛\"\r\n\"位置\": \"脸靠近蜘蛛侠的\"\r\n        }\r\n      },\r\n      {\r\n\"描述\": \"蜘蛛侠\",\r\n        \"服装\": {\r\n          \"战衣\": \"经典红蓝战衣，带有黑色蛛网装饰\",\r\n          \"质感\": \"可见织物细节，湿润质感，水光\"\r\n        },\r\n\"pose\": {\r\n          \"position\": \"倒挂，以标志性姿势悬挂\",\r\n          \"gaze\": \"面具面转向那位女士\"\r\n        }\r\n      }\r\n],\r\n    \"场景\": {\r\n\"互动\": \"亲密接触\",\r\n      \"环境\": \"在倾盆大雨中\",\r\n      \"细节\": [\r\n        \"水滴从女人的头发上滴落\",\r\n\"水滴从蜘蛛侠的战衣上滴落\"\r\n      ]\r\n    },\r\n\"设置\": {\r\n\"位置\": \"城市环境\",\r\n      \"时间\": \"夜晚\",\r\n      \"氛围\": \"雾蒙蒙、下雨的城市\",\r\n      \"背景\": \"散光灯，略微模糊以突出人物\"\r\n    },\r\n\"lighting\": {\r\n      \"style\": \"戏剧化、电影感、柔和且精准\",\r\n      \"tone\": \"冷色调\",\r\n\"效果\": \"突出雨滴和面部及衣物的反光\",\r\n      \"对比度\": \"高对比度\",\r\n      \"阴影细节\": \"阴影中高细节\",\r\n      \"高光细节\": \"高光中高细节\"\r\n    },\r\n\"摄影技巧\": {\r\n\"镜头\": \"85mm f/1.8\",\r\n\"对焦\": \"脸部和水面细节极致清晰\"\r\n\"景深\": \"逼真，浅景深（f/1.8），背景略微模糊\",\r\n      \"质量\": \"高清晰度，完美的照片效果\",\r\n      \"纹理\": \"高级纹理\",\r\n      \"保真度\": \"细节高度保真\"\r\n\"饱和度\": \"高饱和度\"\r\n    }\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>&quot;类型&quot;: &quot;图像生成&quot;,<br>    &quot;风格&quot;: &quot;超写实照片&quot;,<br>    &quot;艺术风格&quot;: [<br>&quot;照片级真实感&quot;,<br>      &quot;HDR 色调平衡&quot;,<br>      &quot;奢华写实&quot;<br>    ],<br>&quot;主题&quot;: [<br>      {<br>&quot;description&quot;: &quot;女人&quot;,<br>&quot;参考图像&quot;: &quot;用户提供的照片&quot;,<br>&quot;面部特征&quot;: &quot;不要修改&quot;,<br>        &quot;外貌&quot;: {<br>          &quot;头发&quot;: &quot;湿的，粘在她的脸和肩膀上&quot;,<br>          &quot;妆容&quot;: &quot;深红色唇色&quot;,<br>&quot;服装&quot;: &quot;紧身黑色背心突出她的身材&quot;<br>        },<br>        &quot;姿势&quot;: {<br>          &quot;表情&quot;: &quot;轻微微笑，闭着眼睛&quot;<br>&quot;位置&quot;: &quot;脸靠近蜘蛛侠的&quot;<br>        }<br>      },<br>      {<br>&quot;描述&quot;: &quot;蜘蛛侠&quot;,<br>        &quot;服装&quot;: {<br>          &quot;战衣&quot;: &quot;经典红蓝战衣，带有黑色蛛网装饰&quot;,<br>          &quot;质感&quot;: &quot;可见织物细节，湿润质感，水光&quot;<br>        },<br>&quot;pose&quot;: {<br>          &quot;position&quot;: &quot;倒挂，以标志性姿势悬挂&quot;,<br>          &quot;gaze&quot;: &quot;面具面转向那位女士&quot;<br>        }<br>      }<br>],<br>    &quot;场景&quot;: {<br>&quot;互动&quot;: &quot;亲密接触&quot;,<br>      &quot;环境&quot;: &quot;在倾盆大雨中&quot;,<br>      &quot;细节&quot;: [<br>        &quot;水滴从女人的头发上滴落&quot;,<br>&quot;水滴从蜘蛛侠的战衣上滴落&quot;<br>      ]<br>    },<br>&quot;设置&quot;: {<br>&quot;位置&quot;: &quot;城市环境&quot;,<br>      &quot;时间&quot;: &quot;夜晚&quot;,<br>      &quot;氛围&quot;: &quot;雾蒙蒙、下雨的城市&quot;,<br>      &quot;背景&quot;: &quot;散光灯，略微模糊以突出人物&quot;<br>    },<br>&quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;戏剧化、电影感、柔和且精准&quot;,<br>      &quot;tone&quot;: &quot;冷色调&quot;,<br>&quot;效果&quot;: &quot;突出雨滴和面部及衣物的反光&quot;,<br>      &quot;对比度&quot;: &quot;高对比度&quot;,<br>      &quot;阴影细节&quot;: &quot;阴影中高细节&quot;,<br>      &quot;高光细节&quot;: &quot;高光中高细节&quot;<br>    },<br>&quot;摄影技巧&quot;: {<br>&quot;镜头&quot;: &quot;85mm f/1.8&quot;,<br>&quot;对焦&quot;: &quot;脸部和水面细节极致清晰&quot;<br>&quot;景深&quot;: &quot;逼真，浅景深（f/1.8），背景略微模糊&quot;,<br>      &quot;质量&quot;: &quot;高清晰度，完美的照片效果&quot;,<br>      &quot;纹理&quot;: &quot;高级纹理&quot;,<br>      &quot;保真度&quot;: &quot;细节高度保真&quot;<br>&quot;饱和度&quot;: &quot;高饱和度&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>&quot;类型&quot;: &quot;图像生成&quot;,<br>    &quot;风格&quot;: &quot;超写实照片&quot;,<br>    &quot;艺术风格&quot;: [<br>&quot;照片级真实感&quot;,<br>      &quot;HDR 色调平衡&quot;,<br>      &quot;奢华写实&quot;<br>    ],<br>&quot;主题&quot;: [<br>      {<br>&quot;description&quot;: &quot;女人&quot;,<br>&quot;参考图像&quot;: &quot;用户提供的照片&quot;,<br>&quot;面部特征&quot;: &quot;不要修改&quot;,<br>        &quot;外貌&quot;: {<br>          &quot;头发&quot;: &quot;湿的，粘在她的脸和肩膀上&quot;,<br>          &quot;妆容&quot;: &quot;深红色唇色&quot;,<br>&quot;服装&quot;: &quot;紧身黑色背心突出她的身材&quot;<br>        },<br>        &quot;姿势&quot;: {<br>          &quot;表情&quot;: &quot;轻微微笑，闭着眼睛&quot;<br>&quot;位置&quot;: &quot;脸靠近蜘蛛侠的&quot;<br>        }<br>      },<br>      {<br>&quot;描述&quot;: &quot;蜘蛛侠&quot;,<br>        &quot;服装&quot;: {<br>          &quot;战衣&quot;: &quot;经典红蓝战衣，带有黑色蛛网装饰&quot;,<br>          &quot;质感&quot;: &quot;可见织物细节，湿润质感，水光&quot;<br>        },<br>&quot;pose&quot;: {<br>          &quot;position&quot;: &quot;倒挂，以标志性姿势悬挂&quot;,<br>          &quot;gaze&quot;: &quot;面具面转向那位女士&quot;<br>        }<br>      }<br>],<br>    &quot;场景&quot;: {<br>&quot;互动&quot;: &quot;亲密接触&quot;,<br>      &quot;环境&quot;: &quot;在倾盆大雨中&quot;,<br>      &quot;细节&quot;: [<br>        &quot;水滴从女人的头发上滴落&quot;,<br>&quot;水滴从蜘蛛侠的战衣上滴落&quot;<br>      ]<br>    },<br>&quot;设置&quot;: {<br>&quot;位置&quot;: &quot;城市环境&quot;,<br>      &quot;时间&quot;: &quot;夜晚&quot;,<br>      &quot;氛围&quot;: &quot;雾蒙蒙、下雨的城市&quot;,<br>      &quot;背景&quot;: &quot;散光灯，略微模糊以突出人物&quot;<br>    },<br>&quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;戏剧化、电影感、柔和且精准&quot;,<br>      &quot;tone&quot;: &quot;冷色调&quot;,<br>&quot;效果&quot;: &quot;突出雨滴和面部及衣物的反光&quot;,<br>      &quot;对比度&quot;: &quot;高对比度&quot;,<br>      &quot;阴影细节&quot;: &quot;阴影中高细节&quot;,<br>      &quot;高光细节&quot;: &quot;高光中高细节&quot;<br>    },<br>&quot;摄影技巧&quot;: {<br>&quot;镜头&quot;: &quot;85mm f/1.8&quot;,<br>&quot;对焦&quot;: &quot;脸部和水面细节极致清晰&quot;<br>&quot;景深&quot;: &quot;逼真，浅景深（f/1.8），背景略微模糊&quot;,<br>      &quot;质量&quot;: &quot;高清晰度，完美的照片效果&quot;,<br>      &quot;纹理&quot;: &quot;高级纹理&quot;,<br>      &quot;保真度&quot;: &quot;细节高度保真&quot;<br>&quot;饱和度&quot;: &quot;高饱和度&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"type\": \"image_generation\",\r\n    \"style\": \"hyper-realistic photograph\",\r\n    \"artistic_style\": [\r\n      \"photorealism\",\r\n      \"HDR tone balance\",\r\n      \"luxury realism\"\r\n    ],\r\n    \"subjects\": [\r\n      {\r\n        \"description\": \"Woman\",\r\n        \"reference_image\": \"user_provided_photo\",\r\n        \"facial_features\": \"do_not_alter\",\r\n        \"appearance\": {\r\n          \"hair\": \"wet, stuck to her face and shoulders\",\r\n          \"makeup\": \"deep red lip color\",\r\n          \"attire\": \"tight black tank top accentuating her figure\"\r\n        },\r\n        \"pose\": {\r\n          \"expression\": \"slight smile, eyes closed\",\r\n          \"position\": \"face close to Spider-Man's\"\r\n        }\r\n      },\r\n      {\r\n        \"description\": \"Spider-Man\",\r\n        \"attire\": {\r\n          \"suit\": \"classic red and blue suit with black webbing\",\r\n          \"texture\": \"visible fabric details, wet texture, sheen of water\"\r\n        },\r\n        \"pose\": {\r\n          \"position\": \"upside down, hanging in an iconic pose\",\r\n          \"gaze\": \"masked face turned towards the woman\"\r\n        }\r\n      }\r\n    ],\r\n    \"scene\": {\r\n      \"interaction\": \"intimate encounter\",\r\n      \"environment\": \"under a torrential downpour\",\r\n      \"details\": [\r\n        \"water droplets dripping from the woman's hair\",\r\n        \"water droplets dripping from Spider-Man's suit\"\r\n      ]\r\n    },\r\n    \"setting\": {\r\n      \"location\": \"urban environment\",\r\n      \"time\": \"nighttime\",\r\n      \"atmosphere\": \"hazy, rainy city\",\r\n      \"background\": \"diffused lights, slightly blurred to emphasize characters\"\r\n    },\r\n    \"lighting\": {\r\n      \"style\": \"dramatic, cinematic, soft and precise\",\r\n      \"tone\": \"cool tones\",\r\n      \"effect\": \"highlights raindrops and reflections on faces and clothing\",\r\n      \"contrast\": \"high contrast\",\r\n      \"shadow_detail\": \"high detail in shadows\",\r\n      \"highlight_detail\": \"high detail in highlights\"\r\n    },\r\n    \"photography_technique\": {\r\n      \"lens\": \"85mm f/1.8\",\r\n      \"focus\": \"extreme sharpness in faces and water details\",\r\n      \"depth_of_field\": \"realistic, shallow (f/1.8) resulting in a slightly blurred background\",\r\n      \"quality\": \"high definition, impeccable photographic finish\",\r\n      \"texture\": \"premium texture\",\r\n      \"fidelity\": \"high fidelity to detail\",\r\n      \"saturation\": \"high saturation\"\r\n    }\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>&quot;type&quot;: &quot;image_generation&quot;,<br>    &quot;style&quot;: &quot;hyper-realistic photograph&quot;,<br>    &quot;artistic_style&quot;: [<br>      &quot;photorealism&quot;,<br>      &quot;HDR tone balance&quot;,<br>      &quot;luxury realism&quot;<br>    ],<br>    &quot;subjects&quot;: [<br>      {<br>        &quot;description&quot;: &quot;Woman&quot;,<br>        &quot;reference_image&quot;: &quot;user_provided_photo&quot;,<br>        &quot;facial_features&quot;: &quot;do_not_alter&quot;,<br>        &quot;appearance&quot;: {<br>          &quot;hair&quot;: &quot;wet, stuck to her face and shoulders&quot;,<br>          &quot;makeup&quot;: &quot;deep red lip color&quot;,<br>          &quot;attire&quot;: &quot;tight black tank top accentuating her figure&quot;<br>        },<br>        &quot;pose&quot;: {<br>          &quot;expression&quot;: &quot;slight smile, eyes closed&quot;,<br>          &quot;position&quot;: &quot;face close to Spider-Man&#39;s&quot;<br>        }<br>      },<br>      {<br>        &quot;description&quot;: &quot;Spider-Man&quot;,<br>        &quot;attire&quot;: {<br>          &quot;suit&quot;: &quot;classic red and blue suit with black webbing&quot;,<br>          &quot;texture&quot;: &quot;visible fabric details, wet texture, sheen of water&quot;<br>        },<br>        &quot;pose&quot;: {<br>          &quot;position&quot;: &quot;upside down, hanging in an iconic pose&quot;,<br>          &quot;gaze&quot;: &quot;masked face turned towards the woman&quot;<br>        }<br>      }<br>    ],<br>    &quot;scene&quot;: {<br>      &quot;interaction&quot;: &quot;intimate encounter&quot;,<br>      &quot;environment&quot;: &quot;under a torrential downpour&quot;,<br>      &quot;details&quot;: [<br>        &quot;water droplets dripping from the woman&#39;s hair&quot;,<br>        &quot;water droplets dripping from Spider-Man&#39;s suit&quot;<br>      ]<br>    },<br>    &quot;setting&quot;: {<br>      &quot;location&quot;: &quot;urban environment&quot;,<br>      &quot;time&quot;: &quot;nighttime&quot;,<br>      &quot;atmosphere&quot;: &quot;hazy, rainy city&quot;,<br>      &quot;background&quot;: &quot;diffused lights, slightly blurred to emphasize characters&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;dramatic, cinematic, soft and precise&quot;,<br>      &quot;tone&quot;: &quot;cool tones&quot;,<br>      &quot;effect&quot;: &quot;highlights raindrops and reflections on faces and clothing&quot;,<br>      &quot;contrast&quot;: &quot;high contrast&quot;,<br>      &quot;shadow_detail&quot;: &quot;high detail in shadows&quot;,<br>      &quot;highlight_detail&quot;: &quot;high detail in highlights&quot;<br>    },<br>    &quot;photography_technique&quot;: {<br>      &quot;lens&quot;: &quot;85mm f/1.8&quot;,<br>      &quot;focus&quot;: &quot;extreme sharpness in faces and water details&quot;,<br>      &quot;depth_of_field&quot;: &quot;realistic, shallow (f/1.8) resulting in a slightly blurred background&quot;,<br>      &quot;quality&quot;: &quot;high definition, impeccable photographic finish&quot;,<br>      &quot;texture&quot;: &quot;premium texture&quot;,<br>      &quot;fidelity&quot;: &quot;high fidelity to detail&quot;,<br>      &quot;saturation&quot;: &quot;high saturation&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>&quot;type&quot;: &quot;image_generation&quot;,<br>    &quot;style&quot;: &quot;hyper-realistic photograph&quot;,<br>    &quot;artistic_style&quot;: [<br>      &quot;photorealism&quot;,<br>      &quot;HDR tone balance&quot;,<br>      &quot;luxury realism&quot;<br>    ],<br>    &quot;subjects&quot;: [<br>      {<br>        &quot;description&quot;: &quot;Woman&quot;,<br>        &quot;reference_image&quot;: &quot;user_provided_photo&quot;,<br>        &quot;facial_features&quot;: &quot;do_not_alter&quot;,<br>        &quot;appearance&quot;: {<br>          &quot;hair&quot;: &quot;wet, stuck to her face and shoulders&quot;,<br>          &quot;makeup&quot;: &quot;deep red lip color&quot;,<br>          &quot;attire&quot;: &quot;tight black tank top accentuating her figure&quot;<br>        },<br>        &quot;pose&quot;: {<br>          &quot;expression&quot;: &quot;slight smile, eyes closed&quot;,<br>          &quot;position&quot;: &quot;face close to Spider-Man&#39;s&quot;<br>        }<br>      },<br>      {<br>        &quot;description&quot;: &quot;Spider-Man&quot;,<br>        &quot;attire&quot;: {<br>          &quot;suit&quot;: &quot;classic red and blue suit with black webbing&quot;,<br>          &quot;texture&quot;: &quot;visible fabric details, wet texture, sheen of water&quot;<br>        },<br>        &quot;pose&quot;: {<br>          &quot;position&quot;: &quot;upside down, hanging in an iconic pose&quot;,<br>          &quot;gaze&quot;: &quot;masked face turned towards the woman&quot;<br>        }<br>      }<br>    ],<br>    &quot;scene&quot;: {<br>      &quot;interaction&quot;: &quot;intimate encounter&quot;,<br>      &quot;environment&quot;: &quot;under a torrential downpour&quot;,<br>      &quot;details&quot;: [<br>        &quot;water droplets dripping from the woman&#39;s hair&quot;,<br>        &quot;water droplets dripping from Spider-Man&#39;s suit&quot;<br>      ]<br>    },<br>    &quot;setting&quot;: {<br>      &quot;location&quot;: &quot;urban environment&quot;,<br>      &quot;time&quot;: &quot;nighttime&quot;,<br>      &quot;atmosphere&quot;: &quot;hazy, rainy city&quot;,<br>      &quot;background&quot;: &quot;diffused lights, slightly blurred to emphasize characters&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;dramatic, cinematic, soft and precise&quot;,<br>      &quot;tone&quot;: &quot;cool tones&quot;,<br>      &quot;effect&quot;: &quot;highlights raindrops and reflections on faces and clothing&quot;,<br>      &quot;contrast&quot;: &quot;high contrast&quot;,<br>      &quot;shadow_detail&quot;: &quot;high detail in shadows&quot;,<br>      &quot;highlight_detail&quot;: &quot;high detail in highlights&quot;<br>    },<br>    &quot;photography_technique&quot;: {<br>      &quot;lens&quot;: &quot;85mm f/1.8&quot;,<br>      &quot;focus&quot;: &quot;extreme sharpness in faces and water details&quot;,<br>      &quot;depth_of_field&quot;: &quot;realistic, shallow (f/1.8) resulting in a slightly blurred background&quot;,<br>      &quot;quality&quot;: &quot;high definition, impeccable photographic finish&quot;,<br>      &quot;texture&quot;: &quot;premium texture&quot;,<br>      &quot;fidelity&quot;: &quot;high fidelity to detail&quot;,<br>      &quot;saturation&quot;: &quot;high saturation&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-1987873107156078650-1.jpg" alt="雨夜中的超写实蜘蛛侠与女性亲密瞬间" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 512,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>[PERSON NAME]. #815 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[PERSON NAME]. Act as a high end sports graphic designer creating a conceptual tribute poster. The style is a complex...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/815.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/815.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/815.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841483">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022605">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[PERSON NAME]。\n作为一名高端体育平面设计师，创作一张概念性致敬海报。风格为复杂的“双重曝光照片网格合成”，并辅以混合媒介纹理。\n中央结构（THE VESSEL）：\n中央焦点为一幅大尺度、高对比的黑白肖像剪影，呈现[PERSON NAME]。该主肖像作为容器。\n网格填充与纹理（MIXED MEDIA）：\n剪影内部由密集的“照片马赛克网格”填充，包含该人物职业生涯的动作镜头。\n关键纹理说明：不要只是简单粘贴平面照片。对不同的网格单元应用艺术纹理，营造可触感的拼贴质感。使用如下效果：\n半色调点：在部分单元上使用漫画风格的栅格点阵。\n织物/刺绣：微妙的线迹或画布纹理，暗示球衣或徽章。\n胶片颗粒：在特定高对比的动作镜头上加入重噪点。\n色彩策略：\n基调为单色黑白。仅在特定网格单元上使用选择性色彩叠加（与队伍/国旗相关），以营造节奏感。\n排版与品牌（严格微尺度）：\n左上（姓名）：用 Inter Semibold 字体严格书写 “[PERSON NAME]”。\n字距：紧密负字距（-4%）。\n尺寸：小且低调。最多占画布宽度的 20%。不要做得大或夸张。\n右上（标识）：放置主要标志（队徽/品牌/国旗）。\n尺寸：非常小。最多占画布宽度的 10%。\n构图与背景：\n背景：近白色或浅灰，带有可见的高质量纸张或混凝土纹理。不要是纯平的数字白。\n对齐：将人物完美置中。保持对象周围的宽阔留白。", this)'>📋 复制</button>
         </div>
-        <p>[PERSON NAME]。<br>作为一名高端体育平面设计师，创作一张概念性致敬海报。风格为复杂的“双重曝光照片网格合成”，并辅以混合媒介纹理。<br>中央结构（THE VESSEL）：<br>中央焦点为一幅大尺度、高对比的黑白肖像剪影，呈现[PERSON NAME]。该主肖像作为容器。<br>网格填充与纹理（MIXED MEDIA）：<br>剪影内部由密集的“照片马赛克网格”填充，包含该人物职业生涯的动作镜头。<br>关键纹理说明：不要只是简单粘贴平面照片。对不同的网格单元应用艺术纹理，营造可触感的拼贴质感。使用如下效果：<br>半色调点：在部分单元上使用漫画风格的栅格点阵。<br>织物/刺绣：微妙的线迹或画布纹理，暗示球衣或徽章。<br>胶片颗粒：在特定高对比的动作镜头上加入重噪点。<br>色彩策略：<br>基调为单色黑白。仅在特定网格单元上使用选择性色彩叠加（与队伍/国旗相关），以营造节奏感。<br>排版与品牌（严格微尺度）：<br>左上（姓名）：用 Inter Semibold 字体严格书写 “[PERSON NAME]”。<br>字距：紧密负字距（-4%）。<br>尺寸：小且低调。最多占画布宽度的 20%。不要做得大或夸张。<br>右上（标识）：放置主要标志（队徽/品牌/国旗）。<br>尺寸：非常小。最多占画布宽度的 10%。<br>构图与背景：<br>背景：近白色或浅灰，带有可见的高质量纸张或混凝土纹理。不要是纯平的数字白。<br>对齐：将人物完美置中。保持对象周围的宽阔留白。</p>
+        <div data-nosnippet><p>[PERSON NAME]。<br>作为一名高端体育平面设计师，创作一张概念性致敬海报。风格为复杂的“双重曝光照片网格合成”，并辅以混合媒介纹理。<br>中央结构（THE VESSEL）：<br>中央焦点为一幅大尺度、高对比的黑白肖像剪影，呈现[PERSON NAME]。该主肖像作为容器。<br>网格填充与纹理（MIXED MEDIA）：<br>剪影内部由密集的“照片马赛克网格”填充，包含该人物职业生涯的动作镜头。<br>关键纹理说明：不要只是简单粘贴平面照片。对不同的网格单元应用艺术纹理，营造可触感的拼贴质感。使用如下效果：<br>半色调点：在部分单元上使用漫画风格的栅格点阵。<br>织物/刺绣：微妙的线迹或画布纹理，暗示球衣或徽章。<br>胶片颗粒：在特定高对比的动作镜头上加入重噪点。<br>色彩策略：<br>基调为单色黑白。仅在特定网格单元上使用选择性色彩叠加（与队伍/国旗相关），以营造节奏感。<br>排版与品牌（严格微尺度）：<br>左上（姓名）：用 Inter Semibold 字体严格书写 “[PERSON NAME]”。<br>字距：紧密负字距（-4%）。<br>尺寸：小且低调。最多占画布宽度的 20%。不要做得大或夸张。<br>右上（标识）：放置主要标志（队徽/品牌/国旗）。<br>尺寸：非常小。最多占画布宽度的 10%。<br>构图与背景：<br>背景：近白色或浅灰，带有可见的高质量纸张或混凝土纹理。不要是纯平的数字白。<br>对齐：将人物完美置中。保持对象周围的宽阔留白。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[PERSON NAME]. \nAct as a high-end sports graphic designer creating a conceptual tribute poster. The style is a complex \"dual exposure photo-grid composite\" with mixed-media textures.\nCENTRAL STRUCTURE (THE VESSEL):\nThe central focus is a large-scale, high-contrast black and white portrait silhouette of [PERSON NAME]. This main portrait acts as the container.\nTHE GRID FILL & TEXTURES (MIXED MEDIA):\nThe interior of the silhouette is populated by a dense \"photo mosaic grid\" of action shots from the person's career.\nCRITICAL TEXTURE INSTRUCTION: Do not just paste flat photos. Apply artistic textures to various grid cells to create a tactile, collage feel. Use effects like:\nHalftone Dots: Comic-book style raster patterns on some cells.\nFabric/Embroidery: Subtle thread or canvas textures suggesting a jersey or patch.\nFilm Grain: Heavy noise on specific high-contrast action shots.\nCOLOR STRATEGY:\nThe base is Monochrome B&W. Use selective color overlays (relevant to the team/flag) ONLY on specific grid cells to create a rhythm.\nTYPOGRAPHY & BRANDING (STRICT MICRO-SCALING):\nTop Left (The Name): Write \"[PERSON NAME]\" strictly using the font Inter Semibold.\nKerning: Tight negative kerning (-4%).\nSize: SMALL and discreet. It must occupy MAXIMUM 20% of the canvas width. Do NOT make it large or loud.\nTop Right (The Symbol): Place the primary logo (Team/Brand/Flag).\nSize: VERY SMALL. It must occupy MAXIMUM 10% of the canvas width.\nCOMPOSITION & BACKGROUND:\nBackground: Off-white or light grey with a visible high-quality paper or concrete texture. It should not be flat digital white.\nAlignment: Center the figure perfectly. Maintain wide negative space around the object.", this)'>📋 复制</button>
         </div>
-        <p>[PERSON NAME]. <br>Act as a high-end sports graphic designer creating a conceptual tribute poster. The style is a complex &quot;dual exposure photo-grid composite&quot; with mixed-media textures.<br>CENTRAL STRUCTURE (THE VESSEL):<br>The central focus is a large-scale, high-contrast black and white portrait silhouette of [PERSON NAME]. This main portrait acts as the container.<br>THE GRID FILL &amp; TEXTURES (MIXED MEDIA):<br>The interior of the silhouette is populated by a dense &quot;photo mosaic grid&quot; of action shots from the person&#39;s career.<br>CRITICAL TEXTURE INSTRUCTION: Do not just paste flat photos. Apply artistic textures to various grid cells to create a tactile, collage feel. Use effects like:<br>Halftone Dots: Comic-book style raster patterns on some cells.<br>Fabric/Embroidery: Subtle thread or canvas textures suggesting a jersey or patch.<br>Film Grain: Heavy noise on specific high-contrast action shots.<br>COLOR STRATEGY:<br>The base is Monochrome B&amp;W. Use selective color overlays (relevant to the team/flag) ONLY on specific grid cells to create a rhythm.<br>TYPOGRAPHY &amp; BRANDING (STRICT MICRO-SCALING):<br>Top Left (The Name): Write &quot;[PERSON NAME]&quot; strictly using the font Inter Semibold.<br>Kerning: Tight negative kerning (-4%).<br>Size: SMALL and discreet. It must occupy MAXIMUM 20% of the canvas width. Do NOT make it large or loud.<br>Top Right (The Symbol): Place the primary logo (Team/Brand/Flag).<br>Size: VERY SMALL. It must occupy MAXIMUM 10% of the canvas width.<br>COMPOSITION &amp; BACKGROUND:<br>Background: Off-white or light grey with a visible high-quality paper or concrete texture. It should not be flat digital white.<br>Alignment: Center the figure perfectly. Maintain wide negative space around the object.</p>
+        <div data-nosnippet><p>[PERSON NAME]. <br>Act as a high-end sports graphic designer creating a conceptual tribute poster. The style is a complex &quot;dual exposure photo-grid composite&quot; with mixed-media textures.<br>CENTRAL STRUCTURE (THE VESSEL):<br>The central focus is a large-scale, high-contrast black and white portrait silhouette of [PERSON NAME]. This main portrait acts as the container.<br>THE GRID FILL &amp; TEXTURES (MIXED MEDIA):<br>The interior of the silhouette is populated by a dense &quot;photo mosaic grid&quot; of action shots from the person&#39;s career.<br>CRITICAL TEXTURE INSTRUCTION: Do not just paste flat photos. Apply artistic textures to various grid cells to create a tactile, collage feel. Use effects like:<br>Halftone Dots: Comic-book style raster patterns on some cells.<br>Fabric/Embroidery: Subtle thread or canvas textures suggesting a jersey or patch.<br>Film Grain: Heavy noise on specific high-contrast action shots.<br>COLOR STRATEGY:<br>The base is Monochrome B&amp;W. Use selective color overlays (relevant to the team/flag) ONLY on specific grid cells to create a rhythm.<br>TYPOGRAPHY &amp; BRANDING (STRICT MICRO-SCALING):<br>Top Left (The Name): Write &quot;[PERSON NAME]&quot; strictly using the font Inter Semibold.<br>Kerning: Tight negative kerning (-4%).<br>Size: SMALL and discreet. It must occupy MAXIMUM 20% of the canvas width. Do NOT make it large or loud.<br>Top Right (The Symbol): Place the primary logo (Team/Brand/Flag).<br>Size: VERY SMALL. It must occupy MAXIMUM 10% of the canvas width.<br>COMPOSITION &amp; BACKGROUND:<br>Background: Off-white or light grey with a visible high-quality paper or concrete texture. It should not be flat digital white.<br>Alignment: Center the figure perfectly. Maintain wide negative space around the object.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008976966255337666-1.jpg" alt="[PERSON NAME]." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 815,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

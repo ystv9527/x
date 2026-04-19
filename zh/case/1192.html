@@ -7,11 +7,13 @@
     <title>Create an image using the exact same face as the reference im... #1192 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create an image using the exact same face as the reference image (100% identical, no facial changes at all). A close...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1192.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1192.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1192.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841155">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022512">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用参考图片中完全相同的面孔来创建一张图像（100% 一模一样，面部绝对不做任何更改）。\n近距离侧面特写，一位美丽可爱的年轻女性，略微侧身，轻轻将脸转向镜头，带着柔和、微妙的微笑。\n妆容：\n自然妆容，呈现水润光泽的肌肤效果，强调健康、透亮的肌肤质感。脸颊及鼻尖轻扫柔和的淡粉色腮红。光泽渐变粉唇，呈现丰盈、滋润的感觉。整体清新、自然、亮采（水光感）。\n皮肤：\n非常白皙、明亮、光滑且无瑕的肤质。\n发型：\n深棕色长发在后方松松束成低马尾。强烈的海边风使头发自由且略显凌乱地飘动。若干散落的发丝吹到她的脸庞和眼前，营造自然的动感和不费力的电影感。\n服装：\n穿着柔软、蓬松的奶油米色针织毛衣，宽领口微微露出锁骨和上胸部位。面料看起来温暖、舒适且有质感。\n场景与氛围：\n设置在海边的日落时分（黄金时刻）。背景中延展着浩瀚的海洋。地平线与充满柔和橙色与粉色并渐变为浅紫色的天空相接。\n太阳呈现为一个小而发光的圆圈，位于左侧，正要沉入地平线以下。远处有一艘小船在远方漂浮。\n光线：\n温暖的金色阳光在她的发丝周围形成细腻的金色轮廓光，突显每缕发丝。柔和的自然光伴有轻微阴影。\n情绪与风格：\n浪漫、安静、略带孤独与忧郁但仍美丽。梦幻、电影感、感性且富有诗意的氛围。浅景深、柔和的背景虚化，高度写实、超精细、自然摄影风格。", this)'>📋 复制</button>
         </div>
-        <p>使用参考图片中完全相同的面孔来创建一张图像（100% 一模一样，面部绝对不做任何更改）。<br>近距离侧面特写，一位美丽可爱的年轻女性，略微侧身，轻轻将脸转向镜头，带着柔和、微妙的微笑。<br>妆容：<br>自然妆容，呈现水润光泽的肌肤效果，强调健康、透亮的肌肤质感。脸颊及鼻尖轻扫柔和的淡粉色腮红。光泽渐变粉唇，呈现丰盈、滋润的感觉。整体清新、自然、亮采（水光感）。<br>皮肤：<br>非常白皙、明亮、光滑且无瑕的肤质。<br>发型：<br>深棕色长发在后方松松束成低马尾。强烈的海边风使头发自由且略显凌乱地飘动。若干散落的发丝吹到她的脸庞和眼前，营造自然的动感和不费力的电影感。<br>服装：<br>穿着柔软、蓬松的奶油米色针织毛衣，宽领口微微露出锁骨和上胸部位。面料看起来温暖、舒适且有质感。<br>场景与氛围：<br>设置在海边的日落时分（黄金时刻）。背景中延展着浩瀚的海洋。地平线与充满柔和橙色与粉色并渐变为浅紫色的天空相接。<br>太阳呈现为一个小而发光的圆圈，位于左侧，正要沉入地平线以下。远处有一艘小船在远方漂浮。<br>光线：<br>温暖的金色阳光在她的发丝周围形成细腻的金色轮廓光，突显每缕发丝。柔和的自然光伴有轻微阴影。<br>情绪与风格：<br>浪漫、安静、略带孤独与忧郁但仍美丽。梦幻、电影感、感性且富有诗意的氛围。浅景深、柔和的背景虚化，高度写实、超精细、自然摄影风格。</p>
+        <div data-nosnippet><p>使用参考图片中完全相同的面孔来创建一张图像（100% 一模一样，面部绝对不做任何更改）。<br>近距离侧面特写，一位美丽可爱的年轻女性，略微侧身，轻轻将脸转向镜头，带着柔和、微妙的微笑。<br>妆容：<br>自然妆容，呈现水润光泽的肌肤效果，强调健康、透亮的肌肤质感。脸颊及鼻尖轻扫柔和的淡粉色腮红。光泽渐变粉唇，呈现丰盈、滋润的感觉。整体清新、自然、亮采（水光感）。<br>皮肤：<br>非常白皙、明亮、光滑且无瑕的肤质。<br>发型：<br>深棕色长发在后方松松束成低马尾。强烈的海边风使头发自由且略显凌乱地飘动。若干散落的发丝吹到她的脸庞和眼前，营造自然的动感和不费力的电影感。<br>服装：<br>穿着柔软、蓬松的奶油米色针织毛衣，宽领口微微露出锁骨和上胸部位。面料看起来温暖、舒适且有质感。<br>场景与氛围：<br>设置在海边的日落时分（黄金时刻）。背景中延展着浩瀚的海洋。地平线与充满柔和橙色与粉色并渐变为浅紫色的天空相接。<br>太阳呈现为一个小而发光的圆圈，位于左侧，正要沉入地平线以下。远处有一艘小船在远方漂浮。<br>光线：<br>温暖的金色阳光在她的发丝周围形成细腻的金色轮廓光，突显每缕发丝。柔和的自然光伴有轻微阴影。<br>情绪与风格：<br>浪漫、安静、略带孤独与忧郁但仍美丽。梦幻、电影感、感性且富有诗意的氛围。浅景深、柔和的背景虚化，高度写实、超精细、自然摄影风格。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an image using the exact same face as the reference image (100% identical, no facial changes at all).\nA close-up profile shot of a beautiful, cute young woman, standing slightly sideways and gently turning her face toward the camera with a soft, subtle smile.\nMakeup:\nNatural makeup with a dewy, glowing skin finish. Emphasis on healthy, luminous skin texture. Soft light pink blush applied on the cheeks and lightly across the tip of the nose. Glossy gradient pink lips, giving a juicy, hydrated look. Overall fresh, natural, and radiant (Dewy look).\nSkin:\nVery fair, bright, smooth, and flawless skin.\nHair:\nLong brown hair loosely tied in a low ponytail at the back. Strong seaside wind causes the hair to flow freely and messily. Several loose strands blow across her face and eyes, creating natural movement and an effortless, cinematic feel.\nClothing:\nWearing a soft, fluffy cream-beige knit sweater with a wide neckline that subtly reveals the collarbones and upper chest area. Fabric looks warm, cozy, and textured.\nScene & Atmosphere:\nSet by the seaside during sunset (Golden Hour). A vast ocean stretches into the background. The horizon meets a sky filled with soft orange and pink tones fading into light purple hues.\nThe sun appears as a small glowing circle, about to dip below the horizon on the left side. A small boat floats far away in the distance.\nLighting:\nWarm golden sunlight creates a delicate golden rim light around her hair, highlighting individual strands. Soft, natural light with gentle shadows.\nMood & Style:\nRomantic, quiet, slightly lonely, melancholic yet beautiful. Dreamy, cinematic, emotional, and poetic atmosphere. Shallow depth of field, soft background blur, high realism, ultra-detailed, natural photography style.", this)'>📋 复制</button>
         </div>
-        <p>Create an image using the exact same face as the reference image (100% identical, no facial changes at all).<br>A close-up profile shot of a beautiful, cute young woman, standing slightly sideways and gently turning her face toward the camera with a soft, subtle smile.<br>Makeup:<br>Natural makeup with a dewy, glowing skin finish. Emphasis on healthy, luminous skin texture. Soft light pink blush applied on the cheeks and lightly across the tip of the nose. Glossy gradient pink lips, giving a juicy, hydrated look. Overall fresh, natural, and radiant (Dewy look).<br>Skin:<br>Very fair, bright, smooth, and flawless skin.<br>Hair:<br>Long brown hair loosely tied in a low ponytail at the back. Strong seaside wind causes the hair to flow freely and messily. Several loose strands blow across her face and eyes, creating natural movement and an effortless, cinematic feel.<br>Clothing:<br>Wearing a soft, fluffy cream-beige knit sweater with a wide neckline that subtly reveals the collarbones and upper chest area. Fabric looks warm, cozy, and textured.<br>Scene &amp; Atmosphere:<br>Set by the seaside during sunset (Golden Hour). A vast ocean stretches into the background. The horizon meets a sky filled with soft orange and pink tones fading into light purple hues.<br>The sun appears as a small glowing circle, about to dip below the horizon on the left side. A small boat floats far away in the distance.<br>Lighting:<br>Warm golden sunlight creates a delicate golden rim light around her hair, highlighting individual strands. Soft, natural light with gentle shadows.<br>Mood &amp; Style:<br>Romantic, quiet, slightly lonely, melancholic yet beautiful. Dreamy, cinematic, emotional, and poetic atmosphere. Shallow depth of field, soft background blur, high realism, ultra-detailed, natural photography style.</p>
+        <div data-nosnippet><p>Create an image using the exact same face as the reference image (100% identical, no facial changes at all).<br>A close-up profile shot of a beautiful, cute young woman, standing slightly sideways and gently turning her face toward the camera with a soft, subtle smile.<br>Makeup:<br>Natural makeup with a dewy, glowing skin finish. Emphasis on healthy, luminous skin texture. Soft light pink blush applied on the cheeks and lightly across the tip of the nose. Glossy gradient pink lips, giving a juicy, hydrated look. Overall fresh, natural, and radiant (Dewy look).<br>Skin:<br>Very fair, bright, smooth, and flawless skin.<br>Hair:<br>Long brown hair loosely tied in a low ponytail at the back. Strong seaside wind causes the hair to flow freely and messily. Several loose strands blow across her face and eyes, creating natural movement and an effortless, cinematic feel.<br>Clothing:<br>Wearing a soft, fluffy cream-beige knit sweater with a wide neckline that subtly reveals the collarbones and upper chest area. Fabric looks warm, cozy, and textured.<br>Scene &amp; Atmosphere:<br>Set by the seaside during sunset (Golden Hour). A vast ocean stretches into the background. The horizon meets a sky filled with soft orange and pink tones fading into light purple hues.<br>The sun appears as a small glowing circle, about to dip below the horizon on the left side. A small boat floats far away in the distance.<br>Lighting:<br>Warm golden sunlight creates a delicate golden rim light around her hair, highlighting individual strands. Soft, natural light with gentle shadows.<br>Mood &amp; Style:<br>Romantic, quiet, slightly lonely, melancholic yet beautiful. Dreamy, cinematic, emotional, and poetic atmosphere. Shallow depth of field, soft background blur, high realism, ultra-detailed, natural photography style.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011292261246718268-1.jpg" alt="Create an image using the exact same face as the reference im..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1192,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

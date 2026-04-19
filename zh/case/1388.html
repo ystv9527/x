@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Using image 0 as the exact facial and body referen... #1388 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Using image 0 as the exact facial and body reference, create a cinematic rear view portrait of the same...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1388.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1388.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1388.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840942">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022466">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"以 image_0 作为精确面部和身体参考，创建一幅电影感的背影肖像，描绘同一名女性自信地站着，轻柔地回眸望向镜头。精确保留她原有的面容、身份特征、身体比例、姿势、发型和整体相似度——绝对不做任何修改。\\n\\n主体站在一面深紫罗兰色纹理墙上，墙上装有一个发光的粉色霓虹王冠大标志。她的轮廓优雅而有力量，传达出现代自信和低调的态度。\\n\\n服装：一件过大的亮粉色连帽衫，背面有淡雅的极简图案印花，浅蓝色直筒牛仔裤裁剪利落，和干净的白色运动鞋。连帽衫自然垂坠，增添休闲街头风感。\\n\\n视觉风格：未来感的蒸汽波（vaporwave）美学，浓郁的粉紫色霓虹氛围，柔和的轮廓背光勾勒出她的身形，电影级对比度增强了深度与质感。\\n\\n光线与氛围：霓虹光柔和地反射在衣料与发丝上，营造出梦幻而大胆的氛围。女性化、自信、现代且富有表现力。\\n\\n超细节质感、清晰对焦、浅景深、拟真效果、HDR 清晰度、8K 分辨率。\",\n  \"reference_image\": \"image_0\",\n  \"camera\": \"背面构图，过肩回眸，平视角度\",\n  \"lighting\": \"粉色与紫色霓虹环境光，柔和的轮廓背光，电影级对比度\",\n  \"quality\": \"超高细节，拟真，8K，HDR\",\n  \"mood\": \"自信、现代、未来感、女性力量\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;以 image_0 作为精确面部和身体参考，创建一幅电影感的背影肖像，描绘同一名女性自信地站着，轻柔地回眸望向镜头。精确保留她原有的面容、身份特征、身体比例、姿势、发型和整体相似度——绝对不做任何修改。\n\n主体站在一面深紫罗兰色纹理墙上，墙上装有一个发光的粉色霓虹王冠大标志。她的轮廓优雅而有力量，传达出现代自信和低调的态度。\n\n服装：一件过大的亮粉色连帽衫，背面有淡雅的极简图案印花，浅蓝色直筒牛仔裤裁剪利落，和干净的白色运动鞋。连帽衫自然垂坠，增添休闲街头风感。\n\n视觉风格：未来感的蒸汽波（vaporwave）美学，浓郁的粉紫色霓虹氛围，柔和的轮廓背光勾勒出她的身形，电影级对比度增强了深度与质感。\n\n光线与氛围：霓虹光柔和地反射在衣料与发丝上，营造出梦幻而大胆的氛围。女性化、自信、现代且富有表现力。\n\n超细节质感、清晰对焦、浅景深、拟真效果、HDR 清晰度、8K 分辨率。&quot;,<br>  &quot;reference_image&quot;: &quot;image_0&quot;,<br>  &quot;camera&quot;: &quot;背面构图，过肩回眸，平视角度&quot;,<br>  &quot;lighting&quot;: &quot;粉色与紫色霓虹环境光，柔和的轮廓背光，电影级对比度&quot;,<br>  &quot;quality&quot;: &quot;超高细节，拟真，8K，HDR&quot;,<br>  &quot;mood&quot;: &quot;自信、现代、未来感、女性力量&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;以 image_0 作为精确面部和身体参考，创建一幅电影感的背影肖像，描绘同一名女性自信地站着，轻柔地回眸望向镜头。精确保留她原有的面容、身份特征、身体比例、姿势、发型和整体相似度——绝对不做任何修改。\n\n主体站在一面深紫罗兰色纹理墙上，墙上装有一个发光的粉色霓虹王冠大标志。她的轮廓优雅而有力量，传达出现代自信和低调的态度。\n\n服装：一件过大的亮粉色连帽衫，背面有淡雅的极简图案印花，浅蓝色直筒牛仔裤裁剪利落，和干净的白色运动鞋。连帽衫自然垂坠，增添休闲街头风感。\n\n视觉风格：未来感的蒸汽波（vaporwave）美学，浓郁的粉紫色霓虹氛围，柔和的轮廓背光勾勒出她的身形，电影级对比度增强了深度与质感。\n\n光线与氛围：霓虹光柔和地反射在衣料与发丝上，营造出梦幻而大胆的氛围。女性化、自信、现代且富有表现力。\n\n超细节质感、清晰对焦、浅景深、拟真效果、HDR 清晰度、8K 分辨率。&quot;,<br>  &quot;reference_image&quot;: &quot;image_0&quot;,<br>  &quot;camera&quot;: &quot;背面构图，过肩回眸，平视角度&quot;,<br>  &quot;lighting&quot;: &quot;粉色与紫色霓虹环境光，柔和的轮廓背光，电影级对比度&quot;,<br>  &quot;quality&quot;: &quot;超高细节，拟真，8K，HDR&quot;,<br>  &quot;mood&quot;: &quot;自信、现代、未来感、女性力量&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"Using image_0 as the exact facial and body reference, create a cinematic rear-view portrait of the same woman, standing confidently and glancing back softly over her shoulder toward the camera. Preserve her original face, identity, body proportions, posture, hairstyle, and overall likeness with absolute accuracy — no alterations.\\n\\nThe subject stands in front of a large glowing pink neon crown sign mounted on a deep violet-purple textured wall. Her silhouette is elegant yet powerful, conveying modern confidence and quiet attitude.\\n\\nOutfit: an oversized bright pink hoodie with a subtle minimalist graphic print on the back, light blue straight-fit denim jeans with clean tailoring, and crisp white sneakers. The hoodie drapes naturally, adding a relaxed streetwear feel.\\n\\nVisual style: futuristic vaporwave aesthetic with rich pink and purple neon ambience, soft rim lighting outlining her figure, and cinematic contrast that enhances depth and texture.\\n\\nLighting & mood: neon glow softly reflects on the fabric and hair, creating a dreamy yet bold atmosphere. Feminine, confident, modern, and expressive.\\n\\nUltra-detailed textures, sharp focus, shallow depth of field, photorealistic finish, HDR clarity, 8K resolution.\",\n  \"reference_image\": \"image_0\",\n  \"camera\": \"rear-view composition, over-the-shoulder glance, eye-level angle\",\n  \"lighting\": \"pink and purple neon ambient glow, soft rim light, cinematic contrast\",\n  \"quality\": \"ultra-high detail, photorealistic, 8K, HDR\",\n  \"mood\": \"confident, modern, futuristic, feminine power\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;Using image_0 as the exact facial and body reference, create a cinematic rear-view portrait of the same woman, standing confidently and glancing back softly over her shoulder toward the camera. Preserve her original face, identity, body proportions, posture, hairstyle, and overall likeness with absolute accuracy — no alterations.\n\nThe subject stands in front of a large glowing pink neon crown sign mounted on a deep violet-purple textured wall. Her silhouette is elegant yet powerful, conveying modern confidence and quiet attitude.\n\nOutfit: an oversized bright pink hoodie with a subtle minimalist graphic print on the back, light blue straight-fit denim jeans with clean tailoring, and crisp white sneakers. The hoodie drapes naturally, adding a relaxed streetwear feel.\n\nVisual style: futuristic vaporwave aesthetic with rich pink and purple neon ambience, soft rim lighting outlining her figure, and cinematic contrast that enhances depth and texture.\n\nLighting &amp; mood: neon glow softly reflects on the fabric and hair, creating a dreamy yet bold atmosphere. Feminine, confident, modern, and expressive.\n\nUltra-detailed textures, sharp focus, shallow depth of field, photorealistic finish, HDR clarity, 8K resolution.&quot;,<br>  &quot;reference_image&quot;: &quot;image_0&quot;,<br>  &quot;camera&quot;: &quot;rear-view composition, over-the-shoulder glance, eye-level angle&quot;,<br>  &quot;lighting&quot;: &quot;pink and purple neon ambient glow, soft rim light, cinematic contrast&quot;,<br>  &quot;quality&quot;: &quot;ultra-high detail, photorealistic, 8K, HDR&quot;,<br>  &quot;mood&quot;: &quot;confident, modern, futuristic, feminine power&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;Using image_0 as the exact facial and body reference, create a cinematic rear-view portrait of the same woman, standing confidently and glancing back softly over her shoulder toward the camera. Preserve her original face, identity, body proportions, posture, hairstyle, and overall likeness with absolute accuracy — no alterations.\n\nThe subject stands in front of a large glowing pink neon crown sign mounted on a deep violet-purple textured wall. Her silhouette is elegant yet powerful, conveying modern confidence and quiet attitude.\n\nOutfit: an oversized bright pink hoodie with a subtle minimalist graphic print on the back, light blue straight-fit denim jeans with clean tailoring, and crisp white sneakers. The hoodie drapes naturally, adding a relaxed streetwear feel.\n\nVisual style: futuristic vaporwave aesthetic with rich pink and purple neon ambience, soft rim lighting outlining her figure, and cinematic contrast that enhances depth and texture.\n\nLighting &amp; mood: neon glow softly reflects on the fabric and hair, creating a dreamy yet bold atmosphere. Feminine, confident, modern, and expressive.\n\nUltra-detailed textures, sharp focus, shallow depth of field, photorealistic finish, HDR clarity, 8K resolution.&quot;,<br>  &quot;reference_image&quot;: &quot;image_0&quot;,<br>  &quot;camera&quot;: &quot;rear-view composition, over-the-shoulder glance, eye-level angle&quot;,<br>  &quot;lighting&quot;: &quot;pink and purple neon ambient glow, soft rim light, cinematic contrast&quot;,<br>  &quot;quality&quot;: &quot;ultra-high detail, photorealistic, 8K, HDR&quot;,<br>  &quot;mood&quot;: &quot;confident, modern, futuristic, feminine power&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011960299168104771-1.jpg" alt="&quot;prompt&quot;: &quot;Using image 0 as the exact facial and body referen..." loading="lazy"><img src="/images/tweet-2011960299168104771-2.jpg" alt="&quot;prompt&quot;: &quot;Using image 0 as the exact facial and body referen..." loading="lazy"><img src="/images/tweet-2011960299168104771-3.jpg" alt="&quot;prompt&quot;: &quot;Using image 0 as the exact facial and body referen..." loading="lazy"><img src="/images/tweet-2011960299168104771-4.jpg" alt="&quot;prompt&quot;: &quot;Using image 0 as the exact facial and body referen..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1388,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

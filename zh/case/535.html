@@ -7,11 +7,13 @@
     <title>用Gemini Nano Banana Pro打造极致写实圣诞女郎造型 #535 | Gem Nana AI 提示词库</title>
     <meta name="description" content="本次作品利用Gemini Nano Banana Pro工具，生成一位穿着圣诞老人主题服装的女性形象，细节极为写实，呈现温暖梦幻的节日氛围。整体风格融合专业影棚摄影质感与柔和电影灯光，打造出浓郁且富有诱惑力的圣诞节视觉效果。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/535.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/535.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/535.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841762">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022672">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n\"任务\": \"图像生成\",\r\n\"reference_image\": \"use_uploaded_reference_image\",\r\n\"identity_constraints\": {\r\n\"face_identity\": \"与参考图像 100%完全匹配\",\r\n\"no_facial_changes\": true,\r\n\"no_body_proportion_changes\": true\r\n},\r\n“主题”： {\r\n\"性别\": \"女性\",\r\n“头发”： {\r\n“颜色”：“深金色”，\r\n\"length\": \"长\",\r\n风格：宽松、飘逸\r\n},\r\n“表情”：“严肃而又充满诱惑力”，\r\n\"gaze_direction\": \"看向左侧\",\r\n“化妆品”： {\r\n“唇膏”: “浓红色”，\r\n“眼睛”：“浓重、轮廓分明的眼线”，\r\n风格：戏剧性\r\n}\r\n},\r\n\"姿势\": {\r\n“双手”：“抬起，轻轻抚摸两侧的头发”，\r\n“姿态”：“自然、优雅、自信”\r\n},\r\n“全套服装”： {\r\n“主题”：“圣诞老人主题”，\r\n“顶部”： {\r\n类型：无肩带胸衣，\r\n\"primary_color\": \"白色\",\r\n“细节”：“上缘饰有柔软的白色毛皮，胸部下方饰有红色布带”\r\n},\r\n“底部”： {\r\n类型：迷你裙，\r\n“材质”： “红色天鹅绒”，\r\n细节：裙摆处饰有白色毛皮滚边\r\n},\r\n“腰带”： {\r\n“颜色：黑色”，\r\n\"宽度\": \"宽\",\r\n皮带扣：金或黄铜\r\n}\r\n},\r\n“配件”： {\r\n“头饰”：“经典的红白相间圣诞帽”\r\n},\r\n“背景”： {\r\n“环境”：“喜庆的圣诞节氛围”，\r\n“细节”：“装饰着暖色灯光和金色/红色饰品的圣诞树”，\r\n景深：背景柔和模糊\r\n},\r\n\"atmosphere_effects\": {\r\n“粒子”： “微小的发光粒子或雪花状闪光”，\r\n“氛围”： “喜庆、梦幻、如梦似幻的假日氛围”\r\n},\r\n“灯光”： {\r\n“风格”：“柔和的电影灯光”，\r\n色调：温暖的节日氛围\r\n},\r\n\"camera_style\": {\r\n\"photography_type\": \"专业影棚风格摄影\",\r\n\"景深\": \"浅\",\r\n“对焦”： “主体超清晰”\r\n},\r\n“质量”： {\r\n“写实主义”: “超写实主义”\r\n“分辨率”: “高分辨率”\r\n\"detail_level\": \"极其细致，照片级真实感\"\r\n}\r\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;任务&quot;: &quot;图像生成&quot;,<br>&quot;reference_image&quot;: &quot;use_uploaded_reference_image&quot;,<br>&quot;identity_constraints&quot;: {<br>&quot;face_identity&quot;: &quot;与参考图像 100%完全匹配&quot;,<br>&quot;no_facial_changes&quot;: true,<br>&quot;no_body_proportion_changes&quot;: true<br>},<br>“主题”： {<br>&quot;性别&quot;: &quot;女性&quot;,<br>“头发”： {<br>“颜色”：“深金色”，<br>&quot;length&quot;: &quot;长&quot;,<br>风格：宽松、飘逸<br>},<br>“表情”：“严肃而又充满诱惑力”，<br>&quot;gaze_direction&quot;: &quot;看向左侧&quot;,<br>“化妆品”： {<br>“唇膏”: “浓红色”，<br>“眼睛”：“浓重、轮廓分明的眼线”，<br>风格：戏剧性<br>}<br>},<br>&quot;姿势&quot;: {<br>“双手”：“抬起，轻轻抚摸两侧的头发”，<br>“姿态”：“自然、优雅、自信”<br>},<br>“全套服装”： {<br>“主题”：“圣诞老人主题”，<br>“顶部”： {<br>类型：无肩带胸衣，<br>&quot;primary_color&quot;: &quot;白色&quot;,<br>“细节”：“上缘饰有柔软的白色毛皮，胸部下方饰有红色布带”<br>},<br>“底部”： {<br>类型：迷你裙，<br>“材质”： “红色天鹅绒”，<br>细节：裙摆处饰有白色毛皮滚边<br>},<br>“腰带”： {<br>“颜色：黑色”，<br>&quot;宽度&quot;: &quot;宽&quot;,<br>皮带扣：金或黄铜<br>}<br>},<br>“配件”： {<br>“头饰”：“经典的红白相间圣诞帽”<br>},<br>“背景”： {<br>“环境”：“喜庆的圣诞节氛围”，<br>“细节”：“装饰着暖色灯光和金色/红色饰品的圣诞树”，<br>景深：背景柔和模糊<br>},<br>&quot;atmosphere_effects&quot;: {<br>“粒子”： “微小的发光粒子或雪花状闪光”，<br>“氛围”： “喜庆、梦幻、如梦似幻的假日氛围”<br>},<br>“灯光”： {<br>“风格”：“柔和的电影灯光”，<br>色调：温暖的节日氛围<br>},<br>&quot;camera_style&quot;: {<br>&quot;photography_type&quot;: &quot;专业影棚风格摄影&quot;,<br>&quot;景深&quot;: &quot;浅&quot;,<br>“对焦”： “主体超清晰”<br>},<br>“质量”： {<br>“写实主义”: “超写实主义”<br>“分辨率”: “高分辨率”<br>&quot;detail_level&quot;: &quot;极其细致，照片级真实感&quot;<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;任务&quot;: &quot;图像生成&quot;,<br>&quot;reference_image&quot;: &quot;use_uploaded_reference_image&quot;,<br>&quot;identity_constraints&quot;: {<br>&quot;face_identity&quot;: &quot;与参考图像 100%完全匹配&quot;,<br>&quot;no_facial_changes&quot;: true,<br>&quot;no_body_proportion_changes&quot;: true<br>},<br>“主题”： {<br>&quot;性别&quot;: &quot;女性&quot;,<br>“头发”： {<br>“颜色”：“深金色”，<br>&quot;length&quot;: &quot;长&quot;,<br>风格：宽松、飘逸<br>},<br>“表情”：“严肃而又充满诱惑力”，<br>&quot;gaze_direction&quot;: &quot;看向左侧&quot;,<br>“化妆品”： {<br>“唇膏”: “浓红色”，<br>“眼睛”：“浓重、轮廓分明的眼线”，<br>风格：戏剧性<br>}<br>},<br>&quot;姿势&quot;: {<br>“双手”：“抬起，轻轻抚摸两侧的头发”，<br>“姿态”：“自然、优雅、自信”<br>},<br>“全套服装”： {<br>“主题”：“圣诞老人主题”，<br>“顶部”： {<br>类型：无肩带胸衣，<br>&quot;primary_color&quot;: &quot;白色&quot;,<br>“细节”：“上缘饰有柔软的白色毛皮，胸部下方饰有红色布带”<br>},<br>“底部”： {<br>类型：迷你裙，<br>“材质”： “红色天鹅绒”，<br>细节：裙摆处饰有白色毛皮滚边<br>},<br>“腰带”： {<br>“颜色：黑色”，<br>&quot;宽度&quot;: &quot;宽&quot;,<br>皮带扣：金或黄铜<br>}<br>},<br>“配件”： {<br>“头饰”：“经典的红白相间圣诞帽”<br>},<br>“背景”： {<br>“环境”：“喜庆的圣诞节氛围”，<br>“细节”：“装饰着暖色灯光和金色/红色饰品的圣诞树”，<br>景深：背景柔和模糊<br>},<br>&quot;atmosphere_effects&quot;: {<br>“粒子”： “微小的发光粒子或雪花状闪光”，<br>“氛围”： “喜庆、梦幻、如梦似幻的假日氛围”<br>},<br>“灯光”： {<br>“风格”：“柔和的电影灯光”，<br>色调：温暖的节日氛围<br>},<br>&quot;camera_style&quot;: {<br>&quot;photography_type&quot;: &quot;专业影棚风格摄影&quot;,<br>&quot;景深&quot;: &quot;浅&quot;,<br>“对焦”： “主体超清晰”<br>},<br>“质量”： {<br>“写实主义”: “超写实主义”<br>“分辨率”: “高分辨率”<br>&quot;detail_level&quot;: &quot;极其细致，照片级真实感&quot;<br>}<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Try this Christmas  Look using Gemini Nano Banana Pro 试试用 Gemini Nano Banana Pro 打造这款圣诞造型  {\r\n  \"task\": \"image_generation\",\r\n  \"reference_image\": \"use_uploaded_reference_image\",\r\n  \"identity_constraints\": {\r\n    \"face_identity\": \"100% exact match to reference image\",\r\n    \"no_facial_changes\": true,\r\n    \"no_body_proportion_changes\": true\r\n  },\r\n  \"subject\": {\r\n    \"gender\": \"female\",\r\n    \"hair\": {\r\n      \"color\": \"dark blonde\",\r\n      \"length\": \"long\",\r\n      \"style\": \"loose, flowing\"\r\n    },\r\n    \"expression\": \"serious yet seductive\",\r\n    \"gaze_direction\": \"looking to the left\",\r\n    \"makeup\": {\r\n      \"lipstick\": \"intense red\",\r\n      \"eyes\": \"bold, well-defined eyeliner\",\r\n      \"style\": \"dramatic\"\r\n    }\r\n  },\r\n  \"pose\": {\r\n    \"hands\": \"raised, gently touching hair on both sides\",\r\n    \"posture\": \"natural, elegant, confident\"\r\n  },\r\n  \"outfit\": {\r\n    \"theme\": \"Santa Claus inspired\",\r\n    \"top\": {\r\n      \"type\": \"strapless bustier\",\r\n      \"primary_color\": \"white\",\r\n      \"details\": \"soft white fur trim along upper edge, red fabric band just below the bust\"\r\n    },\r\n    \"bottom\": {\r\n      \"type\": \"mini skirt\",\r\n      \"material\": \"red velvet\",\r\n      \"details\": \"white fur trim along the hem\"\r\n    },\r\n    \"belt\": {\r\n      \"color\": \"black\",\r\n      \"width\": \"wide\",\r\n      \"buckle\": \"gold or brass\"\r\n    }\r\n  },\r\n  \"accessories\": {\r\n    \"headwear\": \"classic red-and-white Santa hat\"\r\n  },\r\n  \"background\": {\r\n    \"environment\": \"festive Christmas setting\",\r\n    \"details\": \"decorated Christmas tree with warm lights and gold/red ornaments\",\r\n    \"depth_of_field\": \"softly blurred background\"\r\n  },\r\n  \"atmosphere_effects\": {\r\n    \"particles\": \"small glowing light particles or snow-like sparkles\",\r\n    \"mood\": \"festive, magical, dreamy holiday ambiance\"\r\n  },\r\n  \"lighting\": {\r\n    \"style\": \"soft cinematic lighting\",\r\n    \"tone\": \"warm holiday glow\"\r\n  },\r\n  \"camera_style\": {\r\n    \"photography_type\": \"professional studio-style photography\",\r\n    \"depth_of_field\": \"shallow\",\r\n    \"focus\": \"ultra-sharp on subject\"\r\n  },\r\n  \"quality\": {\r\n    \"realism\": \"ultra-realistic\",\r\n    \"resolution\": \"high resolution\",\r\n    \"detail_level\": \"extremely detailed, photorealistic\"\r\n  }\r\n}", this)'>📋 复制</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Try this Christmas Look using Gemini Nano Banana Pro. Try using Gemini Nano Banana Pro to create this Christmas look.\n\n{\n  \"task\": \"image_generation\",\n  \"reference_image\": \"use_uploaded_reference_image\",\n  \"identity_constraints\": {\n    \"face_identity\": \"100% exact match to reference image\",\n    \"no_facial_changes\": true,\n    \"no_body_proportion_changes\": true\n  },\n  \"subject\": {\n    \"gender\": \"female\",\n    \"hair\": {\n      \"color\": \"dark blonde\",\n      \"length\": \"long\",\n      \"style\": \"loose, flowing\"\n    },\n    \"expression\": \"serious yet seductive\",\n    \"gaze_direction\": \"looking to the left\",\n    \"makeup\": {\n      \"lipstick\": \"intense red\",\n      \"eyes\": \"bold, well-defined eyeliner\",\n      \"style\": \"dramatic\"\n    }\n  },\n  \"pose\": {\n    \"hands\": \"raised, gently touching hair on both sides\",\n    \"posture\": \"natural, elegant, confident\"\n  },\n  \"outfit\": {\n    \"theme\": \"Santa Claus inspired\",\n    \"top\": {\n      \"type\": \"strapless bustier\",\n      \"primary_color\": \"white\",\n      \"details\": \"soft white fur trim along upper edge, red fabric band just below the bust\"\n    },\n    \"bottom\": {\n      \"type\": \"mini skirt\",\n      \"material\": \"red velvet\",\n      \"details\": \"white fur trim along the hem\"\n    },\n    \"belt\": {\n      \"color\": \"black\",\n      \"width\": \"wide\",\n      \"buckle\": \"gold or brass\"\n    }\n  },\n  \"accessories\": {\n    \"headwear\": \"classic red-and-white Santa hat\"\n  },\n  \"background\": {\n    \"environment\": \"festive Christmas setting\",\n    \"details\": \"decorated Christmas tree with warm lights and gold/red ornaments\",\n    \"depth_of_field\": \"softly blurred background\"\n  },\n  \"atmosphere_effects\": {\n    \"particles\": \"small glowing light particles or snow-like sparkles\",\n    \"mood\": \"festive, magical, dreamy holiday ambiance\"\n  },\n  \"lighting\": {\n    \"style\": \"soft cinematic lighting\",\n    \"tone\": \"warm holiday glow\"\n  },\n  \"camera_style\": {\n    \"photography_type\": \"professional studio-style photography\",\n    \"depth_of_field\": \"shallow\",\n    \"focus\": \"ultra-sharp on subject\"\n  },\n  \"quality\": {\n    \"realism\": \"ultra-realistic\",\n    \"resolution\": \"high resolution\",\n    \"detail_level\": \"extremely detailed, photorealistic\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>Try this Christmas  Look using Gemini Nano Banana Pro 试试用 Gemini Nano Banana Pro 打造这款圣诞造型  {<br>  &quot;task&quot;: &quot;image_generation&quot;,<br>  &quot;reference_image&quot;: &quot;use_uploaded_reference_image&quot;,<br>  &quot;identity_constraints&quot;: {<br>    &quot;face_identity&quot;: &quot;100% exact match to reference image&quot;,<br>    &quot;no_facial_changes&quot;: true,<br>    &quot;no_body_proportion_changes&quot;: true<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;dark blonde&quot;,<br>      &quot;length&quot;: &quot;long&quot;,<br>      &quot;style&quot;: &quot;loose, flowing&quot;<br>    },<br>    &quot;expression&quot;: &quot;serious yet seductive&quot;,<br>    &quot;gaze_direction&quot;: &quot;looking to the left&quot;,<br>    &quot;makeup&quot;: {<br>      &quot;lipstick&quot;: &quot;intense red&quot;,<br>      &quot;eyes&quot;: &quot;bold, well-defined eyeliner&quot;,<br>      &quot;style&quot;: &quot;dramatic&quot;<br>    }<br>  },<br>  &quot;pose&quot;: {<br>    &quot;hands&quot;: &quot;raised, gently touching hair on both sides&quot;,<br>    &quot;posture&quot;: &quot;natural, elegant, confident&quot;<br>  },<br>  &quot;outfit&quot;: {<br>    &quot;theme&quot;: &quot;Santa Claus inspired&quot;,<br>    &quot;top&quot;: {<br>      &quot;type&quot;: &quot;strapless bustier&quot;,<br>      &quot;primary_color&quot;: &quot;white&quot;,<br>      &quot;details&quot;: &quot;soft white fur trim along upper edge, red fabric band just below the bust&quot;<br>    },<br>    &quot;bottom&quot;: {<br>      &quot;type&quot;: &quot;mini skirt&quot;,<br>      &quot;material&quot;: &quot;red velvet&quot;,<br>      &quot;details&quot;: &quot;white fur trim along the hem&quot;<br>    },<br>    &quot;belt&quot;: {<br>      &quot;color&quot;: &quot;black&quot;,<br>      &quot;width&quot;: &quot;wide&quot;,<br>      &quot;buckle&quot;: &quot;gold or brass&quot;<br>    }<br>  },<br>  &quot;accessories&quot;: {<br>    &quot;headwear&quot;: &quot;classic red-and-white Santa hat&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;environment&quot;: &quot;festive Christmas setting&quot;,<br>    &quot;details&quot;: &quot;decorated Christmas tree with warm lights and gold/red ornaments&quot;,<br>    &quot;depth_of_field&quot;: &quot;softly blurred background&quot;<br>  },<br>  &quot;atmosphere_effects&quot;: {<br>    &quot;particles&quot;: &quot;small glowing light particles or snow-like sparkles&quot;,<br>    &quot;mood&quot;: &quot;festive, magical, dreamy holiday ambiance&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;style&quot;: &quot;soft cinematic lighting&quot;,<br>    &quot;tone&quot;: &quot;warm holiday glow&quot;<br>  },<br>  &quot;camera_style&quot;: {<br>    &quot;photography_type&quot;: &quot;professional studio-style photography&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;ultra-sharp on subject&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;realism&quot;: &quot;ultra-realistic&quot;,<br>    &quot;resolution&quot;: &quot;high resolution&quot;,<br>    &quot;detail_level&quot;: &quot;extremely detailed, photorealistic&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>Try this Christmas Look using Gemini Nano Banana Pro. Try using Gemini Nano Banana Pro to create this Christmas look.</p><p>{<br>  &quot;task&quot;: &quot;image_generation&quot;,<br>  &quot;reference_image&quot;: &quot;use_uploaded_reference_image&quot;,<br>  &quot;identity_constraints&quot;: {<br>    &quot;face_identity&quot;: &quot;100% exact match to reference image&quot;,<br>    &quot;no_facial_changes&quot;: true,<br>    &quot;no_body_proportion_changes&quot;: true<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;dark blonde&quot;,<br>      &quot;length&quot;: &quot;long&quot;,<br>      &quot;style&quot;: &quot;loose, flowing&quot;<br>    },<br>    &quot;expression&quot;: &quot;serious yet seductive&quot;,<br>    &quot;gaze_direction&quot;: &quot;looking to the left&quot;,<br>    &quot;makeup&quot;: {<br>      &quot;lipstick&quot;: &quot;intense red&quot;,<br>      &quot;eyes&quot;: &quot;bold, well-defined eyeliner&quot;,<br>      &quot;style&quot;: &quot;dramatic&quot;<br>    }<br>  },<br>  &quot;pose&quot;: {<br>    &quot;hands&quot;: &quot;raised, gently touching hair on both sides&quot;,<br>    &quot;posture&quot;: &quot;natural, elegant, confident&quot;<br>  },<br>  &quot;outfit&quot;: {<br>    &quot;theme&quot;: &quot;Santa Claus inspired&quot;,<br>    &quot;top&quot;: {<br>      &quot;type&quot;: &quot;strapless bustier&quot;,<br>      &quot;primary_color&quot;: &quot;white&quot;,<br>      &quot;details&quot;: &quot;soft white fur trim along upper edge, red fabric band just below the bust&quot;<br>    },<br>    &quot;bottom&quot;: {<br>      &quot;type&quot;: &quot;mini skirt&quot;,<br>      &quot;material&quot;: &quot;red velvet&quot;,<br>      &quot;details&quot;: &quot;white fur trim along the hem&quot;<br>    },<br>    &quot;belt&quot;: {<br>      &quot;color&quot;: &quot;black&quot;,<br>      &quot;width&quot;: &quot;wide&quot;,<br>      &quot;buckle&quot;: &quot;gold or brass&quot;<br>    }<br>  },<br>  &quot;accessories&quot;: {<br>    &quot;headwear&quot;: &quot;classic red-and-white Santa hat&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;environment&quot;: &quot;festive Christmas setting&quot;,<br>    &quot;details&quot;: &quot;decorated Christmas tree with warm lights and gold/red ornaments&quot;,<br>    &quot;depth_of_field&quot;: &quot;softly blurred background&quot;<br>  },<br>  &quot;atmosphere_effects&quot;: {<br>    &quot;particles&quot;: &quot;small glowing light particles or snow-like sparkles&quot;,<br>    &quot;mood&quot;: &quot;festive, magical, dreamy holiday ambiance&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;style&quot;: &quot;soft cinematic lighting&quot;,<br>    &quot;tone&quot;: &quot;warm holiday glow&quot;<br>  },<br>  &quot;camera_style&quot;: {<br>    &quot;photography_type&quot;: &quot;professional studio-style photography&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;ultra-sharp on subject&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;realism&quot;: &quot;ultra-realistic&quot;,<br>    &quot;resolution&quot;: &quot;high resolution&quot;,<br>    &quot;detail_level&quot;: &quot;extremely detailed, photorealistic&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2000027682533421139-1.jpg" alt="用Gemini Nano Banana Pro打造极致写实圣诞女郎造型" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 535,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>Honeybee Science City #3 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Bee Science City — AI Image Generation Prompts">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/3.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/3.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/3.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846548">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023958">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建图像 3D Q版迷你风格，一座蜂巢结构的甜蜜科研基地，建筑由六边形透明蜂蜡舱堆叠而成，顶部悬浮滴落蜂蜜的太阳花洒水器，外墙爬满发光花粉藤蔓。侧面延伸出蜂蜡滑梯与蒲公英降落伞，入口是旋转的向日葵转门。透过蜂巢窗可见内部试管操作台、蜜糖吊灯和穿白大褂的蜜蜂博士。花园里有驾驶花粉摩托的甲虫快递员、举着放大镜的蝴蝶研究员，搭配蜂蜜长椅、雏菊花洒喷泉和动态萤火虫光标，整体笼罩琥珀色光晕，打造超现实昆虫科学城的萌趣生态。", this)'>📋 Copy</button>
         </div>
-        <p>创建图像 3D Q版迷你风格，一座蜂巢结构的甜蜜科研基地，建筑由六边形透明蜂蜡舱堆叠而成，顶部悬浮滴落蜂蜜的太阳花洒水器，外墙爬满发光花粉藤蔓。侧面延伸出蜂蜡滑梯与蒲公英降落伞，入口是旋转的向日葵转门。透过蜂巢窗可见内部试管操作台、蜜糖吊灯和穿白大褂的蜜蜂博士。花园里有驾驶花粉摩托的甲虫快递员、举着放大镜的蝴蝶研究员，搭配蜂蜜长椅、雏菊花洒喷泉和动态萤火虫光标，整体笼罩琥珀色光晕，打造超现实昆虫科学城的萌趣生态。</p>
+        <div data-nosnippet><p>创建图像 3D Q版迷你风格，一座蜂巢结构的甜蜜科研基地，建筑由六边形透明蜂蜡舱堆叠而成，顶部悬浮滴落蜂蜜的太阳花洒水器，外墙爬满发光花粉藤蔓。侧面延伸出蜂蜡滑梯与蒲公英降落伞，入口是旋转的向日葵转门。透过蜂巢窗可见内部试管操作台、蜜糖吊灯和穿白大褂的蜜蜂博士。花园里有驾驶花粉摩托的甲虫快递员、举着放大镜的蝴蝶研究员，搭配蜂蜜长椅、雏菊花洒喷泉和动态萤火虫光标，整体笼罩琥珀色光晕，打造超现实昆虫科学城的萌趣生态。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an image in 3D chibi style of a cute scientific research base with a honeycomb structure. The building is made of stacked hexagonal transparent beeswax pods, topped with a sunflower sprinkler that floats and drips honey. The exterior walls are covered in glowing pollen vines. Extending from the side are a beeswax slide and a dandelion parachute, with a rotating sunflower door at the entrance. Through the honeycomb windows, you can see an interior with test tube workstations, a honey chandelier, and a bee scientist in a white lab coat. In the garden, there’s a beetle courier riding a pollen motorcycle, a butterfly researcher holding a magnifying glass, along with honey benches, daisy fountains, and animated firefly cursors. The scene is bathed in an amber glow, creating a whimsical, surreal insect science city with a charming ecological vibe.", this)'>📋 Copy</button>
         </div>
-        <p>Create an image in 3D chibi style of a cute scientific research base with a honeycomb structure. The building is made of stacked hexagonal transparent beeswax pods, topped with a sunflower sprinkler that floats and drips honey. The exterior walls are covered in glowing pollen vines. Extending from the side are a beeswax slide and a dandelion parachute, with a rotating sunflower door at the entrance. Through the honeycomb windows, you can see an interior with test tube workstations, a honey chandelier, and a bee scientist in a white lab coat. In the garden, there’s a beetle courier riding a pollen motorcycle, a butterfly researcher holding a magnifying glass, along with honey benches, daisy fountains, and animated firefly cursors. The scene is bathed in an amber glow, creating a whimsical, surreal insect science city with a charming ecological vibe.</p>
+        <div data-nosnippet><p>Create an image in 3D chibi style of a cute scientific research base with a honeycomb structure. The building is made of stacked hexagonal transparent beeswax pods, topped with a sunflower sprinkler that floats and drips honey. The exterior walls are covered in glowing pollen vines. Extending from the side are a beeswax slide and a dandelion parachute, with a rotating sunflower door at the entrance. Through the honeycomb windows, you can see an interior with test tube workstations, a honey chandelier, and a bee scientist in a white lab coat. In the garden, there’s a beetle courier riding a pollen motorcycle, a butterfly researcher holding a magnifying glass, along with honey benches, daisy fountains, and animated firefly cursors. The scene is bathed in an amber glow, creating a whimsical, surreal insect science city with a charming ecological vibe.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/bee-science-city.png" alt="蜜蜂科学城" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 3,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

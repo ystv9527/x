@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #1986 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;name&quot;: &quot;Zhao Lusi&quot;, &quot;also known as&quot;: &quot;Rosy Zhao&quot;, &quot;description&quot;: &quot;Popular Chinese actress known for &#39;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1986.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1986.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1986.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840391">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022329">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"name\": \"赵露思\",\n    \"also_known_as\": \"Rosy Zhao\",\n    \"description\": \"以《Hidden Love》、《The Long Ballad》和《Who Rules The World》闻名的中国人气女演员\",\n    \"aesthetic\": \"舒适时髦、温柔女孩风格，受 mori kei 启发\",\n    \"skin\": {\n      \"tone\": \"光泽白皙\",\n      \"texture\": \"保留自然皮肤纹理，可见毛孔和微小细节\",\n      \"effects\": [\n        \"逼真的汗光\",\n        \"锁骨处微妙的湿润高光\",\n        \"肩部微妙的湿润高光\",\n        \"颧骨微妙的湿润高光\",\n        \"皮肤随电影灯光动态反应\"\n      ]\n    }\n  },\n  \"fashion_and_styling\": {\n    \"cardigan\": {\n      \"type\": \"宽松厚针织麻花开衫\",\n      \"color\": \"暖桃色 / 杏色\",\n      \"details\": [\n        \"前口袋上方有两个大型白色装饰蝴蝶结\",\n        \"俏皮的媚态美学\",\n        \"V 领突显锁骨\"\n      ]\n    }\n  },\n  \"hair_and_makeup\": {\n    \"hair\": {\n      \"style\": \"长发自然波浪\",\n      \"color\": \"红褐色\"\n    },\n    \"makeup\": {\n      \"style\": \"光泽感自然妆\",\n      \"lip_color\": \"鲜艳珊瑚橘\",\n      \"finish\": \"柔和光泽\"\n    }\n  },\n  \"composition_and_mood\": {\n    \"pose\": \"双手抬向胸前的柔和含蓄姿势\",\n    \"vibe\": [\n      \"青春感\",\n      \"亲切可近\",\n      \"温柔\",\n      \"梦幻\"\n    ],\n    \"color_palette\": [\n      \"暖米色背景\",\n      \"桃色调\",\n      \"柔和暖色光\"\n    ],\n    \"lighting\": \"电影感柔光，带有柔和高光和平滑阴影\"\n  },\n  \"background\": {\n    \"color\": \"米色\",\n    \"style\": \"简约、暖色调、梦幻氛围\"\n  },\n  \"markings\": {\n    \"left_side\": \"左侧小水印，带中文字符（粉丝站或抖音/TikTok）\",\n    \"bottom_right\": \"右下角微博水印\"\n  },\n  \"image_settings\": {\n    \"orientation\": \"纵向\",\n    \"width\": 502,\n    \"height\": 1002,\n    \"realism_level\": \"高\",\n    \"render_style\": \"写实照片风格\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;name&quot;: &quot;赵露思&quot;,<br>    &quot;also_known_as&quot;: &quot;Rosy Zhao&quot;,<br>    &quot;description&quot;: &quot;以《Hidden Love》、《The Long Ballad》和《Who Rules The World》闻名的中国人气女演员&quot;,<br>    &quot;aesthetic&quot;: &quot;舒适时髦、温柔女孩风格，受 mori kei 启发&quot;,<br>    &quot;skin&quot;: {<br>      &quot;tone&quot;: &quot;光泽白皙&quot;,<br>      &quot;texture&quot;: &quot;保留自然皮肤纹理，可见毛孔和微小细节&quot;,<br>      &quot;effects&quot;: [<br>        &quot;逼真的汗光&quot;,<br>        &quot;锁骨处微妙的湿润高光&quot;,<br>        &quot;肩部微妙的湿润高光&quot;,<br>        &quot;颧骨微妙的湿润高光&quot;,<br>        &quot;皮肤随电影灯光动态反应&quot;<br>      ]<br>    }<br>  },<br>  &quot;fashion_and_styling&quot;: {<br>    &quot;cardigan&quot;: {<br>      &quot;type&quot;: &quot;宽松厚针织麻花开衫&quot;,<br>      &quot;color&quot;: &quot;暖桃色 / 杏色&quot;,<br>      &quot;details&quot;: [<br>        &quot;前口袋上方有两个大型白色装饰蝴蝶结&quot;,<br>        &quot;俏皮的媚态美学&quot;,<br>        &quot;V 领突显锁骨&quot;<br>      ]<br>    }<br>  },<br>  &quot;hair_and_makeup&quot;: {<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;长发自然波浪&quot;,<br>      &quot;color&quot;: &quot;红褐色&quot;<br>    },<br>    &quot;makeup&quot;: {<br>      &quot;style&quot;: &quot;光泽感自然妆&quot;,<br>      &quot;lip_color&quot;: &quot;鲜艳珊瑚橘&quot;,<br>      &quot;finish&quot;: &quot;柔和光泽&quot;<br>    }<br>  },<br>  &quot;composition_and_mood&quot;: {<br>    &quot;pose&quot;: &quot;双手抬向胸前的柔和含蓄姿势&quot;,<br>    &quot;vibe&quot;: [<br>      &quot;青春感&quot;,<br>      &quot;亲切可近&quot;,<br>      &quot;温柔&quot;,<br>      &quot;梦幻&quot;<br>    ],<br>    &quot;color_palette&quot;: [<br>      &quot;暖米色背景&quot;,<br>      &quot;桃色调&quot;,<br>      &quot;柔和暖色光&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;电影感柔光，带有柔和高光和平滑阴影&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;米色&quot;,<br>    &quot;style&quot;: &quot;简约、暖色调、梦幻氛围&quot;<br>  },<br>  &quot;markings&quot;: {<br>    &quot;left_side&quot;: &quot;左侧小水印，带中文字符（粉丝站或抖音/TikTok）&quot;,<br>    &quot;bottom_right&quot;: &quot;右下角微博水印&quot;<br>  },<br>  &quot;image_settings&quot;: {<br>    &quot;orientation&quot;: &quot;纵向&quot;,<br>    &quot;width&quot;: 502,<br>    &quot;height&quot;: 1002,<br>    &quot;realism_level&quot;: &quot;高&quot;,<br>    &quot;render_style&quot;: &quot;写实照片风格&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;name&quot;: &quot;赵露思&quot;,<br>    &quot;also_known_as&quot;: &quot;Rosy Zhao&quot;,<br>    &quot;description&quot;: &quot;以《Hidden Love》、《The Long Ballad》和《Who Rules The World》闻名的中国人气女演员&quot;,<br>    &quot;aesthetic&quot;: &quot;舒适时髦、温柔女孩风格，受 mori kei 启发&quot;,<br>    &quot;skin&quot;: {<br>      &quot;tone&quot;: &quot;光泽白皙&quot;,<br>      &quot;texture&quot;: &quot;保留自然皮肤纹理，可见毛孔和微小细节&quot;,<br>      &quot;effects&quot;: [<br>        &quot;逼真的汗光&quot;,<br>        &quot;锁骨处微妙的湿润高光&quot;,<br>        &quot;肩部微妙的湿润高光&quot;,<br>        &quot;颧骨微妙的湿润高光&quot;,<br>        &quot;皮肤随电影灯光动态反应&quot;<br>      ]<br>    }<br>  },<br>  &quot;fashion_and_styling&quot;: {<br>    &quot;cardigan&quot;: {<br>      &quot;type&quot;: &quot;宽松厚针织麻花开衫&quot;,<br>      &quot;color&quot;: &quot;暖桃色 / 杏色&quot;,<br>      &quot;details&quot;: [<br>        &quot;前口袋上方有两个大型白色装饰蝴蝶结&quot;,<br>        &quot;俏皮的媚态美学&quot;,<br>        &quot;V 领突显锁骨&quot;<br>      ]<br>    }<br>  },<br>  &quot;hair_and_makeup&quot;: {<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;长发自然波浪&quot;,<br>      &quot;color&quot;: &quot;红褐色&quot;<br>    },<br>    &quot;makeup&quot;: {<br>      &quot;style&quot;: &quot;光泽感自然妆&quot;,<br>      &quot;lip_color&quot;: &quot;鲜艳珊瑚橘&quot;,<br>      &quot;finish&quot;: &quot;柔和光泽&quot;<br>    }<br>  },<br>  &quot;composition_and_mood&quot;: {<br>    &quot;pose&quot;: &quot;双手抬向胸前的柔和含蓄姿势&quot;,<br>    &quot;vibe&quot;: [<br>      &quot;青春感&quot;,<br>      &quot;亲切可近&quot;,<br>      &quot;温柔&quot;,<br>      &quot;梦幻&quot;<br>    ],<br>    &quot;color_palette&quot;: [<br>      &quot;暖米色背景&quot;,<br>      &quot;桃色调&quot;,<br>      &quot;柔和暖色光&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;电影感柔光，带有柔和高光和平滑阴影&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;米色&quot;,<br>    &quot;style&quot;: &quot;简约、暖色调、梦幻氛围&quot;<br>  },<br>  &quot;markings&quot;: {<br>    &quot;left_side&quot;: &quot;左侧小水印，带中文字符（粉丝站或抖音/TikTok）&quot;,<br>    &quot;bottom_right&quot;: &quot;右下角微博水印&quot;<br>  },<br>  &quot;image_settings&quot;: {<br>    &quot;orientation&quot;: &quot;纵向&quot;,<br>    &quot;width&quot;: 502,<br>    &quot;height&quot;: 1002,<br>    &quot;realism_level&quot;: &quot;高&quot;,<br>    &quot;render_style&quot;: &quot;写实照片风格&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"name\": \"Zhao Lusi\",\n    \"also_known_as\": \"Rosy Zhao\",\n    \"description\": \"Popular Chinese actress known for 'Hidden Love', 'The Long Ballad', and 'Who Rules The World'\",\n    \"aesthetic\": \"cozy-chic, soft girl, mori kei inspired\",\n    \"skin\": {\n      \"tone\": \"luminous white\",\n      \"texture\": \"natural skin texture visible with pores and micro-detail intact\",\n      \"effects\": [\n        \"realistic sweat sheen\",\n        \"subtle moisture highlights on collarbones\",\n        \"subtle moisture highlights on shoulders\",\n        \"subtle moisture highlights on cheekbones\",\n        \"skin reacts dynamically to cinematic lighting\"\n      ]\n    }\n  },\n  \"fashion_and_styling\": {\n    \"cardigan\": {\n      \"type\": \"oversized chunky knit cable-stitch cardigan\",\n      \"color\": \"warm peach / apricot\",\n      \"details\": [\n        \"two large white decorative bows over front pockets\",\n        \"playful coquette aesthetic\",\n        \"v-neckline highlighting collarbones\"\n      ]\n    }\n  },\n  \"hair_and_makeup\": {\n    \"hair\": {\n      \"style\": \"long loose waves\",\n      \"color\": \"mahogany\"\n    },\n    \"makeup\": {\n      \"style\": \"luminous natural makeup\",\n      \"lip_color\": \"bold coral-orange\",\n      \"finish\": \"soft glow\"\n    }\n  },\n  \"composition_and_mood\": {\n    \"pose\": \"soft and modest pose with hands raised toward chest\",\n    \"vibe\": [\n      \"youthful\",\n      \"approachable\",\n      \"gentle\",\n      \"dreamy\"\n    ],\n    \"color_palette\": [\n      \"warm beige background\",\n      \"peach tones\",\n      \"soft warm lighting\"\n    ],\n    \"lighting\": \"cinematic soft lighting with gentle highlights and smooth shadows\"\n  },\n  \"background\": {\n    \"color\": \"beige\",\n    \"style\": \"minimal, warm-toned, dreamy atmosphere\"\n  },\n  \"markings\": {\n    \"left_side\": \"small watermark with Chinese characters (fan site or Douyin/TikTok)\",\n    \"bottom_right\": \"Weibo watermark\"\n  },\n  \"image_settings\": {\n    \"orientation\": \"vertical\",\n    \"width\": 502,\n    \"height\": 1002,\n    \"realism_level\": \"high\",\n    \"render_style\": \"photorealistic\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;name&quot;: &quot;Zhao Lusi&quot;,<br>    &quot;also_known_as&quot;: &quot;Rosy Zhao&quot;,<br>    &quot;description&quot;: &quot;Popular Chinese actress known for &#39;Hidden Love&#39;, &#39;The Long Ballad&#39;, and &#39;Who Rules The World&#39;&quot;,<br>    &quot;aesthetic&quot;: &quot;cozy-chic, soft girl, mori kei inspired&quot;,<br>    &quot;skin&quot;: {<br>      &quot;tone&quot;: &quot;luminous white&quot;,<br>      &quot;texture&quot;: &quot;natural skin texture visible with pores and micro-detail intact&quot;,<br>      &quot;effects&quot;: [<br>        &quot;realistic sweat sheen&quot;,<br>        &quot;subtle moisture highlights on collarbones&quot;,<br>        &quot;subtle moisture highlights on shoulders&quot;,<br>        &quot;subtle moisture highlights on cheekbones&quot;,<br>        &quot;skin reacts dynamically to cinematic lighting&quot;<br>      ]<br>    }<br>  },<br>  &quot;fashion_and_styling&quot;: {<br>    &quot;cardigan&quot;: {<br>      &quot;type&quot;: &quot;oversized chunky knit cable-stitch cardigan&quot;,<br>      &quot;color&quot;: &quot;warm peach / apricot&quot;,<br>      &quot;details&quot;: [<br>        &quot;two large white decorative bows over front pockets&quot;,<br>        &quot;playful coquette aesthetic&quot;,<br>        &quot;v-neckline highlighting collarbones&quot;<br>      ]<br>    }<br>  },<br>  &quot;hair_and_makeup&quot;: {<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;long loose waves&quot;,<br>      &quot;color&quot;: &quot;mahogany&quot;<br>    },<br>    &quot;makeup&quot;: {<br>      &quot;style&quot;: &quot;luminous natural makeup&quot;,<br>      &quot;lip_color&quot;: &quot;bold coral-orange&quot;,<br>      &quot;finish&quot;: &quot;soft glow&quot;<br>    }<br>  },<br>  &quot;composition_and_mood&quot;: {<br>    &quot;pose&quot;: &quot;soft and modest pose with hands raised toward chest&quot;,<br>    &quot;vibe&quot;: [<br>      &quot;youthful&quot;,<br>      &quot;approachable&quot;,<br>      &quot;gentle&quot;,<br>      &quot;dreamy&quot;<br>    ],<br>    &quot;color_palette&quot;: [<br>      &quot;warm beige background&quot;,<br>      &quot;peach tones&quot;,<br>      &quot;soft warm lighting&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;cinematic soft lighting with gentle highlights and smooth shadows&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;beige&quot;,<br>    &quot;style&quot;: &quot;minimal, warm-toned, dreamy atmosphere&quot;<br>  },<br>  &quot;markings&quot;: {<br>    &quot;left_side&quot;: &quot;small watermark with Chinese characters (fan site or Douyin/TikTok)&quot;,<br>    &quot;bottom_right&quot;: &quot;Weibo watermark&quot;<br>  },<br>  &quot;image_settings&quot;: {<br>    &quot;orientation&quot;: &quot;vertical&quot;,<br>    &quot;width&quot;: 502,<br>    &quot;height&quot;: 1002,<br>    &quot;realism_level&quot;: &quot;high&quot;,<br>    &quot;render_style&quot;: &quot;photorealistic&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;name&quot;: &quot;Zhao Lusi&quot;,<br>    &quot;also_known_as&quot;: &quot;Rosy Zhao&quot;,<br>    &quot;description&quot;: &quot;Popular Chinese actress known for &#39;Hidden Love&#39;, &#39;The Long Ballad&#39;, and &#39;Who Rules The World&#39;&quot;,<br>    &quot;aesthetic&quot;: &quot;cozy-chic, soft girl, mori kei inspired&quot;,<br>    &quot;skin&quot;: {<br>      &quot;tone&quot;: &quot;luminous white&quot;,<br>      &quot;texture&quot;: &quot;natural skin texture visible with pores and micro-detail intact&quot;,<br>      &quot;effects&quot;: [<br>        &quot;realistic sweat sheen&quot;,<br>        &quot;subtle moisture highlights on collarbones&quot;,<br>        &quot;subtle moisture highlights on shoulders&quot;,<br>        &quot;subtle moisture highlights on cheekbones&quot;,<br>        &quot;skin reacts dynamically to cinematic lighting&quot;<br>      ]<br>    }<br>  },<br>  &quot;fashion_and_styling&quot;: {<br>    &quot;cardigan&quot;: {<br>      &quot;type&quot;: &quot;oversized chunky knit cable-stitch cardigan&quot;,<br>      &quot;color&quot;: &quot;warm peach / apricot&quot;,<br>      &quot;details&quot;: [<br>        &quot;two large white decorative bows over front pockets&quot;,<br>        &quot;playful coquette aesthetic&quot;,<br>        &quot;v-neckline highlighting collarbones&quot;<br>      ]<br>    }<br>  },<br>  &quot;hair_and_makeup&quot;: {<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;long loose waves&quot;,<br>      &quot;color&quot;: &quot;mahogany&quot;<br>    },<br>    &quot;makeup&quot;: {<br>      &quot;style&quot;: &quot;luminous natural makeup&quot;,<br>      &quot;lip_color&quot;: &quot;bold coral-orange&quot;,<br>      &quot;finish&quot;: &quot;soft glow&quot;<br>    }<br>  },<br>  &quot;composition_and_mood&quot;: {<br>    &quot;pose&quot;: &quot;soft and modest pose with hands raised toward chest&quot;,<br>    &quot;vibe&quot;: [<br>      &quot;youthful&quot;,<br>      &quot;approachable&quot;,<br>      &quot;gentle&quot;,<br>      &quot;dreamy&quot;<br>    ],<br>    &quot;color_palette&quot;: [<br>      &quot;warm beige background&quot;,<br>      &quot;peach tones&quot;,<br>      &quot;soft warm lighting&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;cinematic soft lighting with gentle highlights and smooth shadows&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;beige&quot;,<br>    &quot;style&quot;: &quot;minimal, warm-toned, dreamy atmosphere&quot;<br>  },<br>  &quot;markings&quot;: {<br>    &quot;left_side&quot;: &quot;small watermark with Chinese characters (fan site or Douyin/TikTok)&quot;,<br>    &quot;bottom_right&quot;: &quot;Weibo watermark&quot;<br>  },<br>  &quot;image_settings&quot;: {<br>    &quot;orientation&quot;: &quot;vertical&quot;,<br>    &quot;width&quot;: 502,<br>    &quot;height&quot;: 1002,<br>    &quot;realism_level&quot;: &quot;high&quot;,<br>    &quot;render_style&quot;: &quot;photorealistic&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2019283467469746328-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2019283467469746328-2.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2019283467469746328-3.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1986,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

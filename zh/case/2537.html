@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #2537 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;quality&quot;: &quot;ultra photorealistic, raw style, 8k, highly detailed&quot;, &quot;camera&quot;: &quot;iPhone 15 Pro Max, 35mm len...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2537.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2537.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2537.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839802">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022207">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"quality\": \"超写实、原始风格、8K、高度细节化\",\n    \"camera\": \"iPhone 15 Pro Max，35mm 镜头\",\n    \"lighting\": \"自然日光，真实的玻璃反光，柔和的户外阴影\",\n    \"style\": \"高端时尚街拍社论风格，狗仔风格\",\n    \"aspect_ratio\": \"9:16\"\n  },\n  \"scene\": {\n    \"location\": \"一个阳光明媚的高端购物街上的奢侈精品店橱窗。橱窗内陈列精致的玻璃钟形罩，里面有微型时装展示，包括一个 Dior 人台和 Chanel 标志。棕榈树与蓝天映在大玻璃窗上。\",\n    \"atmosphere\": \"精致、现代、魅力四射，贝弗利山庄的氛围。\"\n  },\n  \"subject\": {\n    \"gender\": \"女性\",\n    \"name\": \"Rosé（BLACKPINK）\",\n    \"body\": {\n      \"type\": \"真实、非常苗条、优雅且自然比例的身材。\"\n    },\n    \"face\": {\n      \"features\": \"具有 Rosé（朴彩英）标志性的面部特征，标志性的长金发造型为光滑且蓬松的大波浪。她将头从橱窗转开，直接望向相机镜头。\",\n      \"expression\": \"自信、俏皮且迷人的凝视，直视观者。\"\n    },\n    \"outfit\": {\n      \"description\": \"贴身的金色乳胶迷你连衣裙，具有高光反射质感。她穿着金色尖头穆勒高跟鞋。斜挎一只米色绗缝皮革手袋，配有金色链条肩带。\",\n      \"fit\": \"紧身、流线且高端时尚。\",\n      \"accessory\": \"她左手拿着一个透明塑料杯，杯中装有绿冰抹茶饮料并插有吸管。\"\n    },\n    \"pose\": \"站在人行道上，身体朝向店铺橱窗，但头完全回转过肩面向相机。一条腿微微向前跨出，保持原始照片中的优雅轮廓。\"\n  },\n  \"composition\": \"全身镜头，略微低角度拍摄。对 Rosé 及其服装保持清晰对焦。精品店橱窗及其复杂的反射和微型陈列构成丰富且细致的背景。\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;超写实、原始风格、8K、高度细节化&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro Max，35mm 镜头&quot;,<br>    &quot;lighting&quot;: &quot;自然日光，真实的玻璃反光，柔和的户外阴影&quot;,<br>    &quot;style&quot;: &quot;高端时尚街拍社论风格，狗仔风格&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;一个阳光明媚的高端购物街上的奢侈精品店橱窗。橱窗内陈列精致的玻璃钟形罩，里面有微型时装展示，包括一个 Dior 人台和 Chanel 标志。棕榈树与蓝天映在大玻璃窗上。&quot;,<br>    &quot;atmosphere&quot;: &quot;精致、现代、魅力四射，贝弗利山庄的氛围。&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;女性&quot;,<br>    &quot;name&quot;: &quot;Rosé（BLACKPINK）&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;真实、非常苗条、优雅且自然比例的身材。&quot;<br>    },<br>    &quot;face&quot;: {<br>      &quot;features&quot;: &quot;具有 Rosé（朴彩英）标志性的面部特征，标志性的长金发造型为光滑且蓬松的大波浪。她将头从橱窗转开，直接望向相机镜头。&quot;,<br>      &quot;expression&quot;: &quot;自信、俏皮且迷人的凝视，直视观者。&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;description&quot;: &quot;贴身的金色乳胶迷你连衣裙，具有高光反射质感。她穿着金色尖头穆勒高跟鞋。斜挎一只米色绗缝皮革手袋，配有金色链条肩带。&quot;,<br>      &quot;fit&quot;: &quot;紧身、流线且高端时尚。&quot;,<br>      &quot;accessory&quot;: &quot;她左手拿着一个透明塑料杯，杯中装有绿冰抹茶饮料并插有吸管。&quot;<br>    },<br>    &quot;pose&quot;: &quot;站在人行道上，身体朝向店铺橱窗，但头完全回转过肩面向相机。一条腿微微向前跨出，保持原始照片中的优雅轮廓。&quot;<br>  },<br>  &quot;composition&quot;: &quot;全身镜头，略微低角度拍摄。对 Rosé 及其服装保持清晰对焦。精品店橱窗及其复杂的反射和微型陈列构成丰富且细致的背景。&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;超写实、原始风格、8K、高度细节化&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro Max，35mm 镜头&quot;,<br>    &quot;lighting&quot;: &quot;自然日光，真实的玻璃反光，柔和的户外阴影&quot;,<br>    &quot;style&quot;: &quot;高端时尚街拍社论风格，狗仔风格&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;一个阳光明媚的高端购物街上的奢侈精品店橱窗。橱窗内陈列精致的玻璃钟形罩，里面有微型时装展示，包括一个 Dior 人台和 Chanel 标志。棕榈树与蓝天映在大玻璃窗上。&quot;,<br>    &quot;atmosphere&quot;: &quot;精致、现代、魅力四射，贝弗利山庄的氛围。&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;女性&quot;,<br>    &quot;name&quot;: &quot;Rosé（BLACKPINK）&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;真实、非常苗条、优雅且自然比例的身材。&quot;<br>    },<br>    &quot;face&quot;: {<br>      &quot;features&quot;: &quot;具有 Rosé（朴彩英）标志性的面部特征，标志性的长金发造型为光滑且蓬松的大波浪。她将头从橱窗转开，直接望向相机镜头。&quot;,<br>      &quot;expression&quot;: &quot;自信、俏皮且迷人的凝视，直视观者。&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;description&quot;: &quot;贴身的金色乳胶迷你连衣裙，具有高光反射质感。她穿着金色尖头穆勒高跟鞋。斜挎一只米色绗缝皮革手袋，配有金色链条肩带。&quot;,<br>      &quot;fit&quot;: &quot;紧身、流线且高端时尚。&quot;,<br>      &quot;accessory&quot;: &quot;她左手拿着一个透明塑料杯，杯中装有绿冰抹茶饮料并插有吸管。&quot;<br>    },<br>    &quot;pose&quot;: &quot;站在人行道上，身体朝向店铺橱窗，但头完全回转过肩面向相机。一条腿微微向前跨出，保持原始照片中的优雅轮廓。&quot;<br>  },<br>  &quot;composition&quot;: &quot;全身镜头，略微低角度拍摄。对 Rosé 及其服装保持清晰对焦。精品店橱窗及其复杂的反射和微型陈列构成丰富且细致的背景。&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"quality\": \"ultra_photorealistic, raw style, 8k, highly detailed\",\n    \"camera\": \"iPhone 15 Pro Max, 35mm lens\",\n    \"lighting\": \"natural daylight with realistic glass reflections, soft outdoor shadows\",\n    \"style\": \"high-fashion street editorial, paparazzi style\",\n    \"aspect_ratio\": \"9:16\"\n  },\n  \"scene\": {\n    \"location\": \"A luxury boutique window on a sunny high-end shopping street. The vitrine features intricate glass bell jars with miniature fashion displays, including a Dior mannequin and a Chanel logo. Palm trees and blue sky are reflected in the large glass panes.\",\n    \"atmosphere\": \"Sophisticated, modern, glamorous, Beverly Hills vibe.\"\n  },\n  \"subject\": {\n    \"gender\": \"female\",\n    \"name\": \"Rosé (Blackpink)\",\n    \"body\": {\n      \"type\": \"Realistic, very slim, elegant and naturally proportioned figure.\"\n    },\n    \"face\": {\n      \"features\": \"Distinctive Rosé (Park Chaeyoung) facial features, signature long blonde hair styled in sleek, voluminous waves. She has turned her head away from the window to look directly into the camera lens.\",\n      \"expression\": \"Confident, playful, and alluring gaze, looking straight at the viewer.\"\n    },\n    \"outfit\": {\n      \"description\": \"Form-fitting gold latex mini dress with a high-shine reflective finish. She is wearing gold pointed-toe mule heels. A beige quilted leather handbag with a gold chain strap is worn crossbody.\",\n      \"fit\": \"Skin-tight, sleek, and high-fashion.\",\n      \"accessory\": \"She is holding a clear plastic cup with a green iced matcha drink and a straw in her left hand.\"\n    },\n    \"pose\": \"Standing on the sidewalk, body angled towards the shop window but her head is completely turned over her shoulder to face the camera. One leg is slightly stepped forward, maintaining the elegant silhouette from the original photo.\"\n  },\n  \"composition\": \"Full-body shot from a slightly low angle. Sharp focus on Rosé and her outfit. The boutique window with its complex reflections and miniature displays serves as a rich, detailed background.\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;ultra_photorealistic, raw style, 8k, highly detailed&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro Max, 35mm lens&quot;,<br>    &quot;lighting&quot;: &quot;natural daylight with realistic glass reflections, soft outdoor shadows&quot;,<br>    &quot;style&quot;: &quot;high-fashion street editorial, paparazzi style&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;A luxury boutique window on a sunny high-end shopping street. The vitrine features intricate glass bell jars with miniature fashion displays, including a Dior mannequin and a Chanel logo. Palm trees and blue sky are reflected in the large glass panes.&quot;,<br>    &quot;atmosphere&quot;: &quot;Sophisticated, modern, glamorous, Beverly Hills vibe.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;name&quot;: &quot;Rosé (Blackpink)&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;Realistic, very slim, elegant and naturally proportioned figure.&quot;<br>    },<br>    &quot;face&quot;: {<br>      &quot;features&quot;: &quot;Distinctive Rosé (Park Chaeyoung) facial features, signature long blonde hair styled in sleek, voluminous waves. She has turned her head away from the window to look directly into the camera lens.&quot;,<br>      &quot;expression&quot;: &quot;Confident, playful, and alluring gaze, looking straight at the viewer.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;description&quot;: &quot;Form-fitting gold latex mini dress with a high-shine reflective finish. She is wearing gold pointed-toe mule heels. A beige quilted leather handbag with a gold chain strap is worn crossbody.&quot;,<br>      &quot;fit&quot;: &quot;Skin-tight, sleek, and high-fashion.&quot;,<br>      &quot;accessory&quot;: &quot;She is holding a clear plastic cup with a green iced matcha drink and a straw in her left hand.&quot;<br>    },<br>    &quot;pose&quot;: &quot;Standing on the sidewalk, body angled towards the shop window but her head is completely turned over her shoulder to face the camera. One leg is slightly stepped forward, maintaining the elegant silhouette from the original photo.&quot;<br>  },<br>  &quot;composition&quot;: &quot;Full-body shot from a slightly low angle. Sharp focus on Rosé and her outfit. The boutique window with its complex reflections and miniature displays serves as a rich, detailed background.&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;ultra_photorealistic, raw style, 8k, highly detailed&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro Max, 35mm lens&quot;,<br>    &quot;lighting&quot;: &quot;natural daylight with realistic glass reflections, soft outdoor shadows&quot;,<br>    &quot;style&quot;: &quot;high-fashion street editorial, paparazzi style&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;A luxury boutique window on a sunny high-end shopping street. The vitrine features intricate glass bell jars with miniature fashion displays, including a Dior mannequin and a Chanel logo. Palm trees and blue sky are reflected in the large glass panes.&quot;,<br>    &quot;atmosphere&quot;: &quot;Sophisticated, modern, glamorous, Beverly Hills vibe.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;name&quot;: &quot;Rosé (Blackpink)&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;Realistic, very slim, elegant and naturally proportioned figure.&quot;<br>    },<br>    &quot;face&quot;: {<br>      &quot;features&quot;: &quot;Distinctive Rosé (Park Chaeyoung) facial features, signature long blonde hair styled in sleek, voluminous waves. She has turned her head away from the window to look directly into the camera lens.&quot;,<br>      &quot;expression&quot;: &quot;Confident, playful, and alluring gaze, looking straight at the viewer.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;description&quot;: &quot;Form-fitting gold latex mini dress with a high-shine reflective finish. She is wearing gold pointed-toe mule heels. A beige quilted leather handbag with a gold chain strap is worn crossbody.&quot;,<br>      &quot;fit&quot;: &quot;Skin-tight, sleek, and high-fashion.&quot;,<br>      &quot;accessory&quot;: &quot;She is holding a clear plastic cup with a green iced matcha drink and a straw in her left hand.&quot;<br>    },<br>    &quot;pose&quot;: &quot;Standing on the sidewalk, body angled towards the shop window but her head is completely turned over her shoulder to face the camera. One leg is slightly stepped forward, maintaining the elegant silhouette from the original photo.&quot;<br>  },<br>  &quot;composition&quot;: &quot;Full-body shot from a slightly low angle. Sharp focus on Rosé and her outfit. The boutique window with its complex reflections and miniature displays serves as a rich, detailed background.&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2033121032027197590-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2537,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

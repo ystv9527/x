@@ -7,11 +7,13 @@
     <title>&quot;master prompt&quot;: { #2260 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;master prompt&quot;: { &quot;scene type&quot;: &quot;ultra realistic luxury perfume commercial photography&quot;, &quot;product&quot;: { &quot;type&quot;: &quot;lux...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2260.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2260.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2260.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844242">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023481">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"master_prompt\": {\n    \"scene_type\": \"超写实奢华香水商业摄影\",\n\n    \"product\": {\n      \"type\": \"奢华香水瓶\",\n      \"brand_name\": \"VÉRÉLLE NOIR\",\n      \"product_name\": \"Nocturne Élixir — Parfum Intense\",\n      \"container_shape\": \"多面切割的建筑型轮廓，带有尖锐倒角几何形态\",\n      \"material\": \"黑曜石般的黑色水晶玻璃\",\n      \"finish\": \"深邃光滑的半透明质感，呈镜面般反光\",\n      \"cap_design\": \"磁性瓶盖，拉丝黑色钛金属，边缘精密切割\",\n\n      \"label_design\": {\n        \"style\": \"极简高级定制排版\",\n        \"primary_text\": \"Nocturne Élixir\",\n        \"secondary_text\": \"Parfum Intense\",\n        \"finish\": \"黑色铬箔压纹，带微雕细节\"\n      },\n\n      \"liquid_color\": \"午夜琥珀色，带细微烟熏基调\"\n    },\n\n    \"composition\": {\n      \"placement\": \"中心主视觉摆放\",\n      \"pedestal\": \"黑色大理石底座，带细微银色纹理\",\n      \"base_surface\": \"高光反射的玛瑙表面\",\n\n      \"surrounding_elements\": [\n        \"黑色天鹅绒布褶皱\",\n        \"深色玫瑰花瓣\",\n        \"抛光黑曜石石块\",\n        \"淡淡的香氛烟雾缕缕\"\n      ],\n\n      \"atmospheric_effect\": \"柔和漂浮的香雾营造神秘氛围\"\n    },\n\n    \"lighting\": {\n      \"style\": \"暗调奢华电影式灯光\",\n      \"key_light\": \"柔焦光晕，突显反光轮廓\",\n      \"rim_light\": \"冷银色边缘高光勾勒轮廓\",\n      \"fill_light\": \"低强度环境补光，保留深邃阴影\",\n      \"reflections\": \"可控镜面高光，呈现高级质感\"\n    },\n\n    \"background\": {\n      \"color\": \"深炭灰至黑色渐变\",\n      \"style\": \"社论式黑色奢华背景\",\n      \"depth\": \"电影感浅景深，阴影柔和渐隐\"\n    },\n\n    \"camera\": {\n      \"angle\": \"低位戏剧性主视觉角度\",\n      \"focus\": \"玻璃质感与金属细节\",\n      \"depth_of_field\": \"电影感浅景深\",\n      \"resolution\": \"8K 超高清细节清晰度\"\n    },\n\n    \"mood_keywords\": [\n      \"暗黑优雅\",\n      \"黑色奢华\",\n      \"感性精致\",\n      \"神秘魅力\",\n      \"现代奢华\",\n      \"永恒夜间魅力\"\n    ]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;scene_type&quot;: &quot;超写实奢华香水商业摄影&quot;,</p><p>&quot;product&quot;: {<br>      &quot;type&quot;: &quot;奢华香水瓶&quot;,<br>      &quot;brand_name&quot;: &quot;VÉRÉLLE NOIR&quot;,<br>      &quot;product_name&quot;: &quot;Nocturne Élixir — Parfum Intense&quot;,<br>      &quot;container_shape&quot;: &quot;多面切割的建筑型轮廓，带有尖锐倒角几何形态&quot;,<br>      &quot;material&quot;: &quot;黑曜石般的黑色水晶玻璃&quot;,<br>      &quot;finish&quot;: &quot;深邃光滑的半透明质感，呈镜面般反光&quot;,<br>      &quot;cap_design&quot;: &quot;磁性瓶盖，拉丝黑色钛金属，边缘精密切割&quot;,</p><p>&quot;label_design&quot;: {<br>        &quot;style&quot;: &quot;极简高级定制排版&quot;,<br>        &quot;primary_text&quot;: &quot;Nocturne Élixir&quot;,<br>        &quot;secondary_text&quot;: &quot;Parfum Intense&quot;,<br>        &quot;finish&quot;: &quot;黑色铬箔压纹，带微雕细节&quot;<br>      },</p><p>&quot;liquid_color&quot;: &quot;午夜琥珀色，带细微烟熏基调&quot;<br>    },</p><p>&quot;composition&quot;: {<br>      &quot;placement&quot;: &quot;中心主视觉摆放&quot;,<br>      &quot;pedestal&quot;: &quot;黑色大理石底座，带细微银色纹理&quot;,<br>      &quot;base_surface&quot;: &quot;高光反射的玛瑙表面&quot;,</p><p>&quot;surrounding_elements&quot;: [<br>        &quot;黑色天鹅绒布褶皱&quot;,<br>        &quot;深色玫瑰花瓣&quot;,<br>        &quot;抛光黑曜石石块&quot;,<br>        &quot;淡淡的香氛烟雾缕缕&quot;<br>      ],</p><p>&quot;atmospheric_effect&quot;: &quot;柔和漂浮的香雾营造神秘氛围&quot;<br>    },</p><p>&quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;暗调奢华电影式灯光&quot;,<br>      &quot;key_light&quot;: &quot;柔焦光晕，突显反光轮廓&quot;,<br>      &quot;rim_light&quot;: &quot;冷银色边缘高光勾勒轮廓&quot;,<br>      &quot;fill_light&quot;: &quot;低强度环境补光，保留深邃阴影&quot;,<br>      &quot;reflections&quot;: &quot;可控镜面高光，呈现高级质感&quot;<br>    },</p><p>&quot;background&quot;: {<br>      &quot;color&quot;: &quot;深炭灰至黑色渐变&quot;,<br>      &quot;style&quot;: &quot;社论式黑色奢华背景&quot;,<br>      &quot;depth&quot;: &quot;电影感浅景深，阴影柔和渐隐&quot;<br>    },</p><p>&quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;低位戏剧性主视觉角度&quot;,<br>      &quot;focus&quot;: &quot;玻璃质感与金属细节&quot;,<br>      &quot;depth_of_field&quot;: &quot;电影感浅景深&quot;,<br>      &quot;resolution&quot;: &quot;8K 超高清细节清晰度&quot;<br>    },</p><p>&quot;mood_keywords&quot;: [<br>      &quot;暗黑优雅&quot;,<br>      &quot;黑色奢华&quot;,<br>      &quot;感性精致&quot;,<br>      &quot;神秘魅力&quot;,<br>      &quot;现代奢华&quot;,<br>      &quot;永恒夜间魅力&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;scene_type&quot;: &quot;超写实奢华香水商业摄影&quot;,</p><p>&quot;product&quot;: {<br>      &quot;type&quot;: &quot;奢华香水瓶&quot;,<br>      &quot;brand_name&quot;: &quot;VÉRÉLLE NOIR&quot;,<br>      &quot;product_name&quot;: &quot;Nocturne Élixir — Parfum Intense&quot;,<br>      &quot;container_shape&quot;: &quot;多面切割的建筑型轮廓，带有尖锐倒角几何形态&quot;,<br>      &quot;material&quot;: &quot;黑曜石般的黑色水晶玻璃&quot;,<br>      &quot;finish&quot;: &quot;深邃光滑的半透明质感，呈镜面般反光&quot;,<br>      &quot;cap_design&quot;: &quot;磁性瓶盖，拉丝黑色钛金属，边缘精密切割&quot;,</p><p>&quot;label_design&quot;: {<br>        &quot;style&quot;: &quot;极简高级定制排版&quot;,<br>        &quot;primary_text&quot;: &quot;Nocturne Élixir&quot;,<br>        &quot;secondary_text&quot;: &quot;Parfum Intense&quot;,<br>        &quot;finish&quot;: &quot;黑色铬箔压纹，带微雕细节&quot;<br>      },</p><p>&quot;liquid_color&quot;: &quot;午夜琥珀色，带细微烟熏基调&quot;<br>    },</p><p>&quot;composition&quot;: {<br>      &quot;placement&quot;: &quot;中心主视觉摆放&quot;,<br>      &quot;pedestal&quot;: &quot;黑色大理石底座，带细微银色纹理&quot;,<br>      &quot;base_surface&quot;: &quot;高光反射的玛瑙表面&quot;,</p><p>&quot;surrounding_elements&quot;: [<br>        &quot;黑色天鹅绒布褶皱&quot;,<br>        &quot;深色玫瑰花瓣&quot;,<br>        &quot;抛光黑曜石石块&quot;,<br>        &quot;淡淡的香氛烟雾缕缕&quot;<br>      ],</p><p>&quot;atmospheric_effect&quot;: &quot;柔和漂浮的香雾营造神秘氛围&quot;<br>    },</p><p>&quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;暗调奢华电影式灯光&quot;,<br>      &quot;key_light&quot;: &quot;柔焦光晕，突显反光轮廓&quot;,<br>      &quot;rim_light&quot;: &quot;冷银色边缘高光勾勒轮廓&quot;,<br>      &quot;fill_light&quot;: &quot;低强度环境补光，保留深邃阴影&quot;,<br>      &quot;reflections&quot;: &quot;可控镜面高光，呈现高级质感&quot;<br>    },</p><p>&quot;background&quot;: {<br>      &quot;color&quot;: &quot;深炭灰至黑色渐变&quot;,<br>      &quot;style&quot;: &quot;社论式黑色奢华背景&quot;,<br>      &quot;depth&quot;: &quot;电影感浅景深，阴影柔和渐隐&quot;<br>    },</p><p>&quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;低位戏剧性主视觉角度&quot;,<br>      &quot;focus&quot;: &quot;玻璃质感与金属细节&quot;,<br>      &quot;depth_of_field&quot;: &quot;电影感浅景深&quot;,<br>      &quot;resolution&quot;: &quot;8K 超高清细节清晰度&quot;<br>    },</p><p>&quot;mood_keywords&quot;: [<br>      &quot;暗黑优雅&quot;,<br>      &quot;黑色奢华&quot;,<br>      &quot;感性精致&quot;,<br>      &quot;神秘魅力&quot;,<br>      &quot;现代奢华&quot;,<br>      &quot;永恒夜间魅力&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"master_prompt\": {\n    \"scene_type\": \"ultra-realistic luxury perfume commercial photography\",\n\n    \"product\": {\n      \"type\": \"luxury perfume bottle\",\n      \"brand_name\": \"VÉRÉLLE NOIR\",\n      \"product_name\": \"Nocturne Élixir — Parfum Intense\",\n      \"container_shape\": \"faceted architectural silhouette with sharp beveled geometry\",\n      \"material\": \"obsidian-black crystal glass\",\n      \"finish\": \"deep glossy translucence with mirror-like reflections\",\n      \"cap_design\": \"magnetic cap in brushed black titanium with precision-cut edges\",\n\n      \"label_design\": {\n        \"style\": \"minimal haute couture typography\",\n        \"primary_text\": \"Nocturne Élixir\",\n        \"secondary_text\": \"Parfum Intense\",\n        \"finish\": \"black chrome foil emboss with micro-engraved detailing\"\n      },\n\n      \"liquid_color\": \"midnight amber with subtle smoky undertones\"\n    },\n\n    \"composition\": {\n      \"placement\": \"center hero placement\",\n      \"pedestal\": \"black marble pedestal with subtle silver veining\",\n      \"base_surface\": \"high-gloss reflective onyx surface\",\n\n      \"surrounding_elements\": [\n        \"black velvet fabric folds\",\n        \"dark rose petals\",\n        \"polished obsidian stones\",\n        \"faint aromatic smoke wisps\"\n      ],\n\n      \"atmospheric_effect\": \"soft drifting fragrance vapor creating a mysterious aura\"\n    },\n\n    \"lighting\": {\n      \"style\": \"dark luxury cinematic lighting\",\n      \"key_light\": \"soft focused glow revealing reflective contours\",\n      \"rim_light\": \"cool silver edge highlights defining silhouette\",\n      \"fill_light\": \"low ambient fill preserving deep shadows\",\n      \"reflections\": \"controlled specular highlights for high-end finish\"\n    },\n\n    \"background\": {\n      \"color\": \"deep charcoal to black gradient\",\n      \"style\": \"editorial noir luxury backdrop\",\n      \"depth\": \"cinematic shallow depth with soft shadow falloff\"\n    },\n\n    \"camera\": {\n      \"angle\": \"low dramatic hero angle\",\n      \"focus\": \"glass texture and metallic detailing\",\n      \"depth_of_field\": \"cinematic shallow depth\",\n      \"resolution\": \"8K ultra-detailed clarity\"\n    },\n\n    \"mood_keywords\": [\n      \"dark elegance\",\n      \"noir luxury\",\n      \"sensual sophistication\",\n      \"mysterious allure\",\n      \"modern opulence\",\n      \"timeless night glamour\"\n    ]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;scene_type&quot;: &quot;ultra-realistic luxury perfume commercial photography&quot;,</p><p>&quot;product&quot;: {<br>      &quot;type&quot;: &quot;luxury perfume bottle&quot;,<br>      &quot;brand_name&quot;: &quot;VÉRÉLLE NOIR&quot;,<br>      &quot;product_name&quot;: &quot;Nocturne Élixir — Parfum Intense&quot;,<br>      &quot;container_shape&quot;: &quot;faceted architectural silhouette with sharp beveled geometry&quot;,<br>      &quot;material&quot;: &quot;obsidian-black crystal glass&quot;,<br>      &quot;finish&quot;: &quot;deep glossy translucence with mirror-like reflections&quot;,<br>      &quot;cap_design&quot;: &quot;magnetic cap in brushed black titanium with precision-cut edges&quot;,</p><p>&quot;label_design&quot;: {<br>        &quot;style&quot;: &quot;minimal haute couture typography&quot;,<br>        &quot;primary_text&quot;: &quot;Nocturne Élixir&quot;,<br>        &quot;secondary_text&quot;: &quot;Parfum Intense&quot;,<br>        &quot;finish&quot;: &quot;black chrome foil emboss with micro-engraved detailing&quot;<br>      },</p><p>&quot;liquid_color&quot;: &quot;midnight amber with subtle smoky undertones&quot;<br>    },</p><p>&quot;composition&quot;: {<br>      &quot;placement&quot;: &quot;center hero placement&quot;,<br>      &quot;pedestal&quot;: &quot;black marble pedestal with subtle silver veining&quot;,<br>      &quot;base_surface&quot;: &quot;high-gloss reflective onyx surface&quot;,</p><p>&quot;surrounding_elements&quot;: [<br>        &quot;black velvet fabric folds&quot;,<br>        &quot;dark rose petals&quot;,<br>        &quot;polished obsidian stones&quot;,<br>        &quot;faint aromatic smoke wisps&quot;<br>      ],</p><p>&quot;atmospheric_effect&quot;: &quot;soft drifting fragrance vapor creating a mysterious aura&quot;<br>    },</p><p>&quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;dark luxury cinematic lighting&quot;,<br>      &quot;key_light&quot;: &quot;soft focused glow revealing reflective contours&quot;,<br>      &quot;rim_light&quot;: &quot;cool silver edge highlights defining silhouette&quot;,<br>      &quot;fill_light&quot;: &quot;low ambient fill preserving deep shadows&quot;,<br>      &quot;reflections&quot;: &quot;controlled specular highlights for high-end finish&quot;<br>    },</p><p>&quot;background&quot;: {<br>      &quot;color&quot;: &quot;deep charcoal to black gradient&quot;,<br>      &quot;style&quot;: &quot;editorial noir luxury backdrop&quot;,<br>      &quot;depth&quot;: &quot;cinematic shallow depth with soft shadow falloff&quot;<br>    },</p><p>&quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;low dramatic hero angle&quot;,<br>      &quot;focus&quot;: &quot;glass texture and metallic detailing&quot;,<br>      &quot;depth_of_field&quot;: &quot;cinematic shallow depth&quot;,<br>      &quot;resolution&quot;: &quot;8K ultra-detailed clarity&quot;<br>    },</p><p>&quot;mood_keywords&quot;: [<br>      &quot;dark elegance&quot;,<br>      &quot;noir luxury&quot;,<br>      &quot;sensual sophistication&quot;,<br>      &quot;mysterious allure&quot;,<br>      &quot;modern opulence&quot;,<br>      &quot;timeless night glamour&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;scene_type&quot;: &quot;ultra-realistic luxury perfume commercial photography&quot;,</p><p>&quot;product&quot;: {<br>      &quot;type&quot;: &quot;luxury perfume bottle&quot;,<br>      &quot;brand_name&quot;: &quot;VÉRÉLLE NOIR&quot;,<br>      &quot;product_name&quot;: &quot;Nocturne Élixir — Parfum Intense&quot;,<br>      &quot;container_shape&quot;: &quot;faceted architectural silhouette with sharp beveled geometry&quot;,<br>      &quot;material&quot;: &quot;obsidian-black crystal glass&quot;,<br>      &quot;finish&quot;: &quot;deep glossy translucence with mirror-like reflections&quot;,<br>      &quot;cap_design&quot;: &quot;magnetic cap in brushed black titanium with precision-cut edges&quot;,</p><p>&quot;label_design&quot;: {<br>        &quot;style&quot;: &quot;minimal haute couture typography&quot;,<br>        &quot;primary_text&quot;: &quot;Nocturne Élixir&quot;,<br>        &quot;secondary_text&quot;: &quot;Parfum Intense&quot;,<br>        &quot;finish&quot;: &quot;black chrome foil emboss with micro-engraved detailing&quot;<br>      },</p><p>&quot;liquid_color&quot;: &quot;midnight amber with subtle smoky undertones&quot;<br>    },</p><p>&quot;composition&quot;: {<br>      &quot;placement&quot;: &quot;center hero placement&quot;,<br>      &quot;pedestal&quot;: &quot;black marble pedestal with subtle silver veining&quot;,<br>      &quot;base_surface&quot;: &quot;high-gloss reflective onyx surface&quot;,</p><p>&quot;surrounding_elements&quot;: [<br>        &quot;black velvet fabric folds&quot;,<br>        &quot;dark rose petals&quot;,<br>        &quot;polished obsidian stones&quot;,<br>        &quot;faint aromatic smoke wisps&quot;<br>      ],</p><p>&quot;atmospheric_effect&quot;: &quot;soft drifting fragrance vapor creating a mysterious aura&quot;<br>    },</p><p>&quot;lighting&quot;: {<br>      &quot;style&quot;: &quot;dark luxury cinematic lighting&quot;,<br>      &quot;key_light&quot;: &quot;soft focused glow revealing reflective contours&quot;,<br>      &quot;rim_light&quot;: &quot;cool silver edge highlights defining silhouette&quot;,<br>      &quot;fill_light&quot;: &quot;low ambient fill preserving deep shadows&quot;,<br>      &quot;reflections&quot;: &quot;controlled specular highlights for high-end finish&quot;<br>    },</p><p>&quot;background&quot;: {<br>      &quot;color&quot;: &quot;deep charcoal to black gradient&quot;,<br>      &quot;style&quot;: &quot;editorial noir luxury backdrop&quot;,<br>      &quot;depth&quot;: &quot;cinematic shallow depth with soft shadow falloff&quot;<br>    },</p><p>&quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;low dramatic hero angle&quot;,<br>      &quot;focus&quot;: &quot;glass texture and metallic detailing&quot;,<br>      &quot;depth_of_field&quot;: &quot;cinematic shallow depth&quot;,<br>      &quot;resolution&quot;: &quot;8K ultra-detailed clarity&quot;<br>    },</p><p>&quot;mood_keywords&quot;: [<br>      &quot;dark elegance&quot;,<br>      &quot;noir luxury&quot;,<br>      &quot;sensual sophistication&quot;,<br>      &quot;mysterious allure&quot;,<br>      &quot;modern opulence&quot;,<br>      &quot;timeless night glamour&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2026649286772179445-1.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"><img src="/images/tweet-2026649286772179445-2.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2260,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;image prompt&quot;: { #1793 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image prompt&quot;: { &quot;viewpoint&quot;: &quot;Realistic first person view (FPV)&quot;, &quot;action&quot;: &quot;Person holding fresh fruit in their...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1793.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1793.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1793.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844782">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023581">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt\": {\n    \"viewpoint\": \"逼真的第一人称视角（FPV）\",\n    \"action\": \"人物双手捧着新鲜水果\",\n    \"subject_variations\": [\n      \"香蕉\",\n      \"草莓\",\n      \"苹果\"\n    ],\n    \"environment\": {\n      \"location\": \"现代超市过道\",\n      \"background\": \"模糊的货架背景\",\n      \"lighting\": \"明亮的商业照明\"\n    },\n    \"augmented_reality_hud\": {\n      \"overlay_style\": \"简洁的科幻界面，柔和光晕，玻璃质感的界面元素\",\n      \"data_display\": [\n        \"营养数据（卡路里、维生素、膳食纤维、糖分、钾）\",\n        \"新鲜度百分比\",\n        \"健康指标\"\n      ],\n      \"ui_panels\": [\n        \"清单项目（牛奶、面包、鸡蛋、意面）\",\n        \"食谱建议\",\n        \"果昔选项\",\n        \"维生素图标\"\n      ],\n      \"visual_effects\": \"细微的光粒子，基于深度的AR摆放\"\n    },\n    \"technical_specs\": {\n      \"style\": \"超写实摄影与未来主义AR技术融合\",\n      \"aesthetic\": \"现代健康科技风格\",\n      \"focus\": \"双手与水果为锐利对焦，浅景深\",\n      \"resolution\": \"8K\",\n      \"realism\": \"电影级真实感\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;viewpoint&quot;: &quot;逼真的第一人称视角（FPV）&quot;,<br>    &quot;action&quot;: &quot;人物双手捧着新鲜水果&quot;,<br>    &quot;subject_variations&quot;: [<br>      &quot;香蕉&quot;,<br>      &quot;草莓&quot;,<br>      &quot;苹果&quot;<br>    ],<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;现代超市过道&quot;,<br>      &quot;background&quot;: &quot;模糊的货架背景&quot;,<br>      &quot;lighting&quot;: &quot;明亮的商业照明&quot;<br>    },<br>    &quot;augmented_reality_hud&quot;: {<br>      &quot;overlay_style&quot;: &quot;简洁的科幻界面，柔和光晕，玻璃质感的界面元素&quot;,<br>      &quot;data_display&quot;: [<br>        &quot;营养数据（卡路里、维生素、膳食纤维、糖分、钾）&quot;,<br>        &quot;新鲜度百分比&quot;,<br>        &quot;健康指标&quot;<br>      ],<br>      &quot;ui_panels&quot;: [<br>        &quot;清单项目（牛奶、面包、鸡蛋、意面）&quot;,<br>        &quot;食谱建议&quot;,<br>        &quot;果昔选项&quot;,<br>        &quot;维生素图标&quot;<br>      ],<br>      &quot;visual_effects&quot;: &quot;细微的光粒子，基于深度的AR摆放&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;超写实摄影与未来主义AR技术融合&quot;,<br>      &quot;aesthetic&quot;: &quot;现代健康科技风格&quot;,<br>      &quot;focus&quot;: &quot;双手与水果为锐利对焦，浅景深&quot;,<br>      &quot;resolution&quot;: &quot;8K&quot;,<br>      &quot;realism&quot;: &quot;电影级真实感&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;viewpoint&quot;: &quot;逼真的第一人称视角（FPV）&quot;,<br>    &quot;action&quot;: &quot;人物双手捧着新鲜水果&quot;,<br>    &quot;subject_variations&quot;: [<br>      &quot;香蕉&quot;,<br>      &quot;草莓&quot;,<br>      &quot;苹果&quot;<br>    ],<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;现代超市过道&quot;,<br>      &quot;background&quot;: &quot;模糊的货架背景&quot;,<br>      &quot;lighting&quot;: &quot;明亮的商业照明&quot;<br>    },<br>    &quot;augmented_reality_hud&quot;: {<br>      &quot;overlay_style&quot;: &quot;简洁的科幻界面，柔和光晕，玻璃质感的界面元素&quot;,<br>      &quot;data_display&quot;: [<br>        &quot;营养数据（卡路里、维生素、膳食纤维、糖分、钾）&quot;,<br>        &quot;新鲜度百分比&quot;,<br>        &quot;健康指标&quot;<br>      ],<br>      &quot;ui_panels&quot;: [<br>        &quot;清单项目（牛奶、面包、鸡蛋、意面）&quot;,<br>        &quot;食谱建议&quot;,<br>        &quot;果昔选项&quot;,<br>        &quot;维生素图标&quot;<br>      ],<br>      &quot;visual_effects&quot;: &quot;细微的光粒子，基于深度的AR摆放&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;超写实摄影与未来主义AR技术融合&quot;,<br>      &quot;aesthetic&quot;: &quot;现代健康科技风格&quot;,<br>      &quot;focus&quot;: &quot;双手与水果为锐利对焦，浅景深&quot;,<br>      &quot;resolution&quot;: &quot;8K&quot;,<br>      &quot;realism&quot;: &quot;电影级真实感&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt\": {\n    \"viewpoint\": \"Realistic first-person view (FPV)\",\n    \"action\": \"Person holding fresh fruit in their hands\",\n    \"subject_variations\": [\n      \"Banana\",\n      \"Strawberries\",\n      \"Apple\"\n    ],\n    \"environment\": {\n      \"location\": \"Modern supermarket aisle\",\n      \"background\": \"Blurred grocery shelves\",\n      \"lighting\": \"Bright commercial lighting\"\n    },\n    \"augmented_reality_hud\": {\n      \"overlay_style\": \"Clean sci-fi interface, soft glow, glass-like UI elements\",\n      \"data_display\": [\n        \"Nutritional data (calories, vitamins, fiber, sugars, potassium)\",\n        \"Freshness percentage\",\n        \"Health indicators\"\n      ],\n      \"ui_panels\": [\n        \"Checklist items (milk, bread, eggs, pasta)\",\n        \"Recipe suggestions\",\n        \"Smoothie options\",\n        \"Vitamin icons\"\n      ],\n      \"visual_effects\": \"Subtle light particles, depth-aware AR placement\"\n    },\n    \"technical_specs\": {\n      \"style\": \"Ultra-realistic photography blended with futuristic AR technology\",\n      \"aesthetic\": \"Modern health-tech\",\n      \"focus\": \"Sharp focus on hands and fruit, shallow depth of field\",\n      \"resolution\": \"8K\",\n      \"realism\": \"Cinematic realism\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;viewpoint&quot;: &quot;Realistic first-person view (FPV)&quot;,<br>    &quot;action&quot;: &quot;Person holding fresh fruit in their hands&quot;,<br>    &quot;subject_variations&quot;: [<br>      &quot;Banana&quot;,<br>      &quot;Strawberries&quot;,<br>      &quot;Apple&quot;<br>    ],<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Modern supermarket aisle&quot;,<br>      &quot;background&quot;: &quot;Blurred grocery shelves&quot;,<br>      &quot;lighting&quot;: &quot;Bright commercial lighting&quot;<br>    },<br>    &quot;augmented_reality_hud&quot;: {<br>      &quot;overlay_style&quot;: &quot;Clean sci-fi interface, soft glow, glass-like UI elements&quot;,<br>      &quot;data_display&quot;: [<br>        &quot;Nutritional data (calories, vitamins, fiber, sugars, potassium)&quot;,<br>        &quot;Freshness percentage&quot;,<br>        &quot;Health indicators&quot;<br>      ],<br>      &quot;ui_panels&quot;: [<br>        &quot;Checklist items (milk, bread, eggs, pasta)&quot;,<br>        &quot;Recipe suggestions&quot;,<br>        &quot;Smoothie options&quot;,<br>        &quot;Vitamin icons&quot;<br>      ],<br>      &quot;visual_effects&quot;: &quot;Subtle light particles, depth-aware AR placement&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;Ultra-realistic photography blended with futuristic AR technology&quot;,<br>      &quot;aesthetic&quot;: &quot;Modern health-tech&quot;,<br>      &quot;focus&quot;: &quot;Sharp focus on hands and fruit, shallow depth of field&quot;,<br>      &quot;resolution&quot;: &quot;8K&quot;,<br>      &quot;realism&quot;: &quot;Cinematic realism&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;viewpoint&quot;: &quot;Realistic first-person view (FPV)&quot;,<br>    &quot;action&quot;: &quot;Person holding fresh fruit in their hands&quot;,<br>    &quot;subject_variations&quot;: [<br>      &quot;Banana&quot;,<br>      &quot;Strawberries&quot;,<br>      &quot;Apple&quot;<br>    ],<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Modern supermarket aisle&quot;,<br>      &quot;background&quot;: &quot;Blurred grocery shelves&quot;,<br>      &quot;lighting&quot;: &quot;Bright commercial lighting&quot;<br>    },<br>    &quot;augmented_reality_hud&quot;: {<br>      &quot;overlay_style&quot;: &quot;Clean sci-fi interface, soft glow, glass-like UI elements&quot;,<br>      &quot;data_display&quot;: [<br>        &quot;Nutritional data (calories, vitamins, fiber, sugars, potassium)&quot;,<br>        &quot;Freshness percentage&quot;,<br>        &quot;Health indicators&quot;<br>      ],<br>      &quot;ui_panels&quot;: [<br>        &quot;Checklist items (milk, bread, eggs, pasta)&quot;,<br>        &quot;Recipe suggestions&quot;,<br>        &quot;Smoothie options&quot;,<br>        &quot;Vitamin icons&quot;<br>      ],<br>      &quot;visual_effects&quot;: &quot;Subtle light particles, depth-aware AR placement&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;Ultra-realistic photography blended with futuristic AR technology&quot;,<br>      &quot;aesthetic&quot;: &quot;Modern health-tech&quot;,<br>      &quot;focus&quot;: &quot;Sharp focus on hands and fruit, shallow depth of field&quot;,<br>      &quot;resolution&quot;: &quot;8K&quot;,<br>      &quot;realism&quot;: &quot;Cinematic realism&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2016421696299991337-1.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2016421696299991337-2.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2016421696299991337-3.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1793,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

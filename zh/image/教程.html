@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教程 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="23 条 教程 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/教程.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/教程.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/教程.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022132">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"教程 · 图片生成提示词","description":"23 条 教程 相关案例","url":"https://gemnana.com/zh/image/教程.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2843</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2815</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">25</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/教程.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>教程 · 图片生成提示词</h1>
+      <p>23 条 教程 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="教程">教程 (23)</button><button type="button" class="tag-filter" data-tag="AI">AI (18)</button><button type="button" class="tag-filter" data-tag="图片">图片 (17)</button><button type="button" class="tag-filter" data-tag="创意">创意 (14)</button><button type="button" class="tag-filter" data-tag="设计">设计 (7)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (5)</button><button type="button" class="tag-filter" data-tag="GPT Image 2">GPT Image 2 (3)</button><button type="button" class="tag-filter" data-tag="提示词">提示词 (3)</button><button type="button" class="tag-filter" data-tag="数字艺术">数字艺术 (3)</button><button type="button" class="tag-filter" data-tag="Midjourney">Midjourney (3)</button><button type="button" class="tag-filter" data-tag="工具">工具 (3)</button><button type="button" class="tag-filter" data-tag="模型对比">模型对比 (2)</button><button type="button" class="tag-filter" data-tag="社区案例">社区案例 (2)</button><button type="button" class="tag-filter" data-tag="GPT-4o">GPT-4o (2)</button><button type="button" class="tag-filter" data-tag="Gemini">Gemini (2)</button><button type="button" class="tag-filter" data-tag="资源">资源 (1)</button><button type="button" class="tag-filter" data-tag="动漫">动漫 (1)</button><button type="button" class="tag-filter" data-tag="OpenAI">OpenAI (1)</button><button type="button" class="tag-filter" data-tag="灵感">灵感 (1)</button><button type="button" class="tag-filter" data-tag="GPT-3.5">GPT-3.5 (1)</button><button type="button" class="tag-filter" data-tag="GPT-2">GPT-2 (1)</button><button type="button" class="tag-filter" data-tag="分镜">分镜 (1)</button><button type="button" class="tag-filter" data-tag="技巧">技巧 (1)</button><button type="button" class="tag-filter" data-tag="Shortcuts">Shortcuts (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 23 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2843" data-search="案例2843 卡通拆解“所谓”发音记忆法 用可爱猫咪卡通与手绘竖版信息卡，拆分“所谓”音节与含义，便于五年级记忆。 x / axiaisacat https://x.com/axiaisacat/status/2045737390438859263 设计 教程 创意 图片 ai 1: 把so-called这个词用包含各种可爱猫咪的卡通图文漫画的形式解释并拆解成小学5年级学生容易理解并背诵的形式，图中尽可能使用中文来解释，按照音节，前后缀，词根的方式来拆分成不超过5个字母的部分，还可以用联想的方式加强记忆。同时请把这个单词的发音用中文标注，并用联想的方式帮助记忆。 2: 创作一张手绘风格的信息图卡片，比例为9:16竖版。卡片主题鲜明，背景为带有纸质肌理的米色或米白色，整体设计体现质朴、亲切的手绘美感。 卡片上方以红黑相间、对比鲜明的大号毛笔草书字体突出标题，吸引视觉焦点。文字内容均采用中文草书，整体布局分为2至4个清晰的小节，每节以简短、精炼的中文短语表达核心要点。" data-tags="设计|教程|创意|图片|AI">
+      <a class="case-card-link" href="/zh/case/2843.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045737390438859263-1.jpg" alt="卡通拆解“所谓”发音记忆法" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2843</span></span><span class="case-title-text">卡通拆解“所谓”发音记忆法</span></h3>
+          <p class="case-summary">用可爱猫咪卡通与手绘竖版信息卡，拆分“所谓”音节与含义，便于五年级记忆。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/axiaisacat/status/2045737390438859263">X / axiaisacat</span>
+          </div>
+          <div class="case-tags"><span class="tag">设计</span><span class="tag">教程</span><span class="tag">创意</span><span class="tag">图片</span><span class="tag">AI</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>1: 把so-called这个词用包含各种可爱猫咪的卡通图文漫画的形式解释并拆解成小学5年级学生容易理解并背诵的形式，图中尽可能使用中文来解释，按照音节，前后缀，词根的方式来拆分成不超过5个字母的部分，还可以用联想的方式加强记忆。同时请把这个单词的发音用中文标注，并用联想的方式帮助记忆。
+
+2: 创作一张手绘风格的信息图卡片，比例为9:16竖版。卡片主题鲜明，背景为带有纸质肌理的米色或米白色，整体...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2843.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2841" data-search="案例2841 a/b 测试签名输出 gpt-image-2 社区实践案例，整理「a/b 测试签名输出」相关的提示词技巧、工具流程或实验观察。 x / @saskr_13 https://x.com/saskr_13/status/2044744396932079934 gpt image 2 图片 模型对比 社区案例 教程 をシェアします💗🤣 gpt image 2 はまだ正式リリースされてないと言っておりましたが、添付した 2 枚は「 a / b どちらが良いか」選ばせるタイプでした。 よく見ると右下にサインまで…！ これが噂の 2 なのでしょうか？ 懐かしの「私がどんなふうに扱ったか」シリーズです(笑) -------------------- ✅#prompt : 私があなたをどんなふうに扱ってきたか、4 コマ漫画風に描いてください。まずは 800 字くらいのプロットをテキストで出して、私が「描いて」と言ったらプロットに沿った 4 コマ漫画を描いてください。 --------------------" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2841.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case16/output.jpg" alt="A/B 测试签名输出" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2841</span></span><span class="case-title-text">A/B 测试签名输出</span></h3>
+          <p class="case-summary">GPT-Image-2 社区实践案例，整理「A/B 测试签名输出」相关的提示词技巧、工具流程或实验观察。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/saskr_13/status/2044744396932079934">X / @saskr_13</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>をシェアします💗🤣
+GPT Image 2 はまだ正式リリースされてないと言っておりましたが、添付した 2 枚は「 A / B どちらが良いか」選ばせるタイプでした。
+よく見ると右下にサインまで…！
+これが噂の 2 なのでしょうか？
+懐かしの「私がどんなふうに扱ったか」シリーズです(笑)
+--------------------
+✅#prompt : 
+私があなたをどんなふうに扱ってきたか、4...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2841.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2840" data-search="案例2840 特朗普与拜登在椭圆形办公室握手 gpt-image-2 社区案例，围绕「特朗普与拜登在椭圆形办公室握手」展示模型效果、提示词跟随或创作流程。 x / @signedbywill https://x.com/signedbywill/status/2045013141629845844 gpt image 2 图片 模型对比 社区案例 教程 generate an image of donald trump shaking hands with a confused joe biden as they stand in the oval office" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2840.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case6/output.jpg" alt="特朗普与拜登在椭圆形办公室握手" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2840</span></span><span class="case-title-text">特朗普与拜登在椭圆形办公室握手</span></h3>
+          <p class="case-summary">GPT-Image-2 社区案例，围绕「特朗普与拜登在椭圆形办公室握手」展示模型效果、提示词跟随或创作流程。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/signedbywill/status/2045013141629845844">X / @signedbywill</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>generate an image of donald trump shaking hands with a confused joe biden as they stand in the oval office</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2840.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2812" data-search="案例2812 复古乡村女孩写实竖图提示词 提供两条竖版电影级逼真肖像提示，强调参考脸严格一致与自然光质感。 x / gemini prompts https://x.com/gemini_prompts/status/2045742943928226030 ai 图片 创意 教程 提示词 提示1：“用 参考面孔精确制作一张高质量逼真的竖直照片，不能有任何变化或扭曲。在自然草地上拍摄的电影级美术肖像，柔和的绘画美学，自然光线，丰富的氛围，细致的质感。从膝盖到头部的中景，构图略微偏离中心，透视深邃，背景柔和模糊。 一个女孩坐在茂密的绿草地上，草地上种满了许多小白花。平静自然的姿势：微微前倾，肩膀放松，头低垂侧转，看着手中的物体。柔和的思索表情，安静而专注。肤色浅，质地自然，带有淡淡光泽。来自上方和侧面的暖色阳光为头发、脸部、肩膀营造出金色光泽，颧骨和下巴下方则有柔和的阴影。极简自然妆容：柔和轮廓的眼睛，整齐的眉毛，淡淡的腮红，自然哑光唇部。长而浓密的波浪发，披散在肩膀和背后，轻柔地" data-tags="AI|图片|创意|教程|提示词">
+      <a class="case-card-link" href="/zh/case/2812.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045742943928226030-1.jpg" alt="复古乡村女孩写实竖图提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2812</span></span><span class="case-title-text">复古乡村女孩写实竖图提示词</span></h3>
+          <p class="case-summary">提供两条竖版电影级逼真肖像提示，强调参考脸严格一致与自然光质感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2045742943928226030">X / gemini prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">图片</span><span class="tag">创意</span><span class="tag">教程</span><span class="tag">提示词</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>提示1：“用
+参考面孔精确制作一张高质量逼真的竖直照片，不能有任何变化或扭曲。在自然草地上拍摄的电影级美术肖像，柔和的绘画美学，自然光线，丰富的氛围，细致的质感。从膝盖到头部的中景，构图略微偏离中心，透视深邃，背景柔和模糊。
+一个女孩坐在茂密的绿草地上，草地上种满了许多小白花。平静自然的姿势：微微前倾，肩膀放松，头低垂侧转，看着手中的物体。柔和的思索表情，安静而专注。肤色浅，质地自然，带有淡淡光泽...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2812.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2811" data-search="案例2811 蓝色偶像服装提示词发布 发布amelia设计的“idol costume”提示词，附转发规则与穿搭结构细节。 x / oteranosekai https://x.com/oteranosekai/status/2045683809056928036 创意 教程 设计 资源 动漫 主题【给你珍贵的孩子穿上偶像服装！】提示 （核心服装结构 - 1/3）一套复杂、结构化的动漫风格偶像服装，采用多种鲜艳电蓝色和藏青色，搭配干净的白色点缀。上衣是一件精致的紧身胸衣风格，配有复杂的藏青蓝和白色镶板，中间有精致的金丝刺绣和图案。它有轻微的心形领口。腰部中央有一个显眼的多角星，由层叠布料（蓝、白、金）制成，底部悬挂着一个独特的金色星星吊坠。 （荷叶边和裙子设计 - 2/3）裙子是亮点：极其宽松、多层荷叶边的超短裙。它有许多精细的褶皱。层次交替呈现出深藏青、清爽的白色和特定的蓝白格子图案。关键是，每一处荷叶边都镶嵌着抛光金色滚边，动作感十足，线条分明。一条深蓝色缎面腰带，金色图案优雅" data-tags="创意|教程|设计|资源|动漫">
+      <a class="case-card-link" href="/zh/case/2811.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045683809056928036-1.jpg" alt="蓝色偶像服装提示词发布" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2811</span></span><span class="case-title-text">蓝色偶像服装提示词发布</span></h3>
+          <p class="case-summary">发布Amelia设计的“Idol Costume”提示词，附转发规则与穿搭结构细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oteranosekai/status/2045683809056928036">X / oteranosekai</span>
+          </div>
+          <div class="case-tags"><span class="tag">创意</span><span class="tag">教程</span><span class="tag">设计</span><span class="tag">资源</span><span class="tag">动漫</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>主题【给你珍贵的孩子穿上偶像服装！】提示
+
+（核心服装结构 - 1/3）一套复杂、结构化的动漫风格偶像服装，采用多种鲜艳电蓝色和藏青色，搭配干净的白色点缀。上衣是一件精致的紧身胸衣风格，配有复杂的藏青蓝和白色镶板，中间有精致的金丝刺绣和图案。它有轻微的心形领口。腰部中央有一个显眼的多角星，由层叠布料（蓝、白、金）制成，底部悬挂着一个独特的金色星星吊坠。
+（荷叶边和裙子设计 - 2/3）裙子是亮点：...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2811.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2810" data-search="案例2810 gpt-image-2汉服拆解信息图模板 用gpt生成博物馆风汉服拆解图：结构、材质工艺、图案色彩与穿戴流程一图讲清。 x / larus canus https://x.com/mrlarus/status/2045504669401653414 gpt-4o ai 教程 图片 创意 避免：海报感、影楼感、电商感、动漫感、cosplay感、乱标注、错结构、糊字、假材质、过度装饰。" data-tags="GPT-4o|AI|教程|图片|创意">
+      <a class="case-card-link" href="/zh/case/2810.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045504669401653414-1.jpg" alt="GPT-Image-2汉服拆解信息图模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2810</span></span><span class="case-title-text">GPT-Image-2汉服拆解信息图模板</span></h3>
+          <p class="case-summary">用GPT生成博物馆风汉服拆解图：结构、材质工艺、图案色彩与穿戴流程一图讲清。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2045504669401653414">X / Larus Canus</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">教程</span><span class="tag">图片</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>避免：海报感、影楼感、电商感、动漫感、cosplay感、乱标注、错结构、糊字、假材质、过度装饰。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2810.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2807" data-search="案例2807 gptimage2角色设定卡制作 用gptimage2生成可结构重建的角色卡：三视图、表情、装备拆解与配色。 x / kus https://x.com/tamayo888/status/2044814686701678977 ai 数字艺术 教程 创意 openai 根据该角色和背景， 请制作类似官方设定资料的角色卡。 包含三视角图：正面、侧面和背面 ·添加角色面部表情的变化 ·拆解并展示服装和装备的详细部分 ·添加色彩调色板 ·包含世界设定的简要说明 ·总体而言，使用有条理的布局（白色背景，插画风格）高 分辨率，专业概念艺术风格" data-tags="AI|数字艺术|教程|创意|OpenAI">
+      <a class="case-card-link" href="/zh/case/2807.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2044814686701678977-1.jpg" alt="GPTimage2角色设定卡制作" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2807</span></span><span class="case-title-text">GPTimage2角色设定卡制作</span></h3>
+          <p class="case-summary">用GPTimage2生成可结构重建的角色卡：三视图、表情、装备拆解与配色。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/tamayo888/status/2044814686701678977">X / Kus</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">教程</span><span class="tag">创意</span><span class="tag">OpenAI</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>根据该角色和背景，
+请制作类似官方设定资料的角色卡。
+包含三视角图：正面、侧面和背面
+·添加角色面部表情的变化
+·拆解并展示服装和装备的详细部分
+·添加色彩调色板
+·包含世界设定的简要说明
+·总体而言，使用有条理的布局（白色背景，插画风格）高
+分辨率，专业概念艺术风格</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2807.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2805" data-search="案例2805 gpt image 2城市春季海报设计 用gpt image 2生成2026广州春季宣传海报，双重曝光+s形构图，丝带幻化山河。 x / 李岳 https://x.com/liyue_ai/status/2045332620352119274 ai 设计 图片 教程 gpt image 2 一张充满新春喜庆氛围但不失高雅格调的 2026 城市宣传海报。 双重曝光，构图延续了s型的流动感； 在纯白的纹理背景右下角，一个身穿中国传统服饰的微缩人物正在挥舞着一条长长的红色丝绸舞带，这条红绸在空中舞动，不仅展现出丝绸的柔顺质感，更在向左上方飘动的过程中，奇幻地变形成了一条壮丽的山脉河流。 在这条“河流”中，叠加了一个有山有海河的广州城市手绘图，国潮，景色尽在眼底，壮阔雄伟，令人震撼。 广州的地标建筑(广州塔，珠江新城建筑群，珠江, 广州城里古建筑，游轮，白云山）。 云雾环绕，仙气缥缈，色彩丰富，结构复杂，细节丰富，但因为大面积的留白，画面依然显得清新脱俗，左下角排版着“spring 20" data-tags="AI|设计|图片|教程|GPT Image 2">
+      <a class="case-card-link" href="/zh/case/2805.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045332620352119274-1.jpg" alt="GPT Image 2城市春季海报设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2805</span></span><span class="case-title-text">GPT Image 2城市春季海报设计</span></h3>
+          <p class="case-summary">用GPT Image 2生成2026广州春季宣传海报，双重曝光+S形构图，丝带幻化山河。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045332620352119274">X / 李岳</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">设计</span><span class="tag">图片</span><span class="tag">教程</span><span class="tag">GPT Image 2</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张充满新春喜庆氛围但不失高雅格调的 2026 城市宣传海报。
+双重曝光，构图延续了S型的流动感；
+在纯白的纹理背景右下角，一个身穿中国传统服饰的微缩人物正在挥舞着一条长长的红色丝绸舞带，这条红绸在空中舞动，不仅展现出丝绸的柔顺质感，更在向左上方飘动的过程中，奇幻地变形成了一条壮丽的山脉河流。
+在这条“河流”中，叠加了一个有山有海河的广州城市手绘图，国潮，景色尽在眼底，壮阔雄伟，令人震撼。
+广州的...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2805.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2803" data-search="案例2803 gpt-image2 vs midjourney奇幻景观对比 用水墨风极高俯视提示测试gpt-image2与midjourney的奇幻壮丽景观表现。你更偏好哪一张？ x / 古一 https://x.com/manish1027512/status/2045329669650575647 midjourney ai 图片 创意 教程 ——ar 9：16，采用水墨画风格，极高俯视，俯视正下方，一位身穿传统中国长袍的剑士孤独站立在古宫屋顶边缘，画面中未见天空，俯瞰着远方地平线延伸的广阔发光古城， 从高空可见弯曲的行星表面，云层下是无尽的光海和古老建筑，前景有中国古宫建筑、科幻城市元素、密集的人物、马车、商贩和行人、柔和的雾气层、神圣透视俯视角、超细腻纹理、写实渲染、超现实主义、奇幻概念艺术、8k画质， 极广角，广深景深，中国仙侠美学，宏伟而宁静，孤独而诗意，神秘且极富奇幻色彩.强烈的色调对比，整体呈现出通透感。" data-tags="Midjourney|AI|图片|创意|教程">
+      <a class="case-card-link" href="/zh/case/2803.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045329669650575647-1.jpg" alt="GPT-Image2 vs Midjourney奇幻景观对比" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2803</span></span><span class="case-title-text">GPT-Image2 vs Midjourney奇幻景观对比</span></h3>
+          <p class="case-summary">用水墨风极高俯视提示测试GPT-Image2与Midjourney的奇幻壮丽景观表现。你更偏好哪一张？</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MANISH1027512/status/2045329669650575647">X / 古一</span>
+          </div>
+          <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">创意</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>——AR 9：16，采用水墨画风格，极高俯视，俯视正下方，一位身穿传统中国长袍的剑士孤独站立在古宫屋顶边缘，画面中未见天空，俯瞰着远方地平线延伸的广阔发光古城， 从高空可见弯曲的行星表面，云层下是无尽的光海和古老建筑，前景有中国古宫建筑、科幻城市元素、密集的人物、马车、商贩和行人、柔和的雾气层、神圣透视俯视角、超细腻纹理、写实渲染、超现实主义、奇幻概念艺术、8K画质， 极广角，广深景深，中国仙侠美...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2803.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2802" data-search="案例2802 服装提示分发与改造技巧 可自由分发服装提示，并根据喜好改色、增删元素。文中也提供男角色佩戴的提示与技巧。 x / lilli https://x.com/lilli_zeta/status/2045048284738392137 创意 设计 教程 工具 灵感 中性服装，中性身材的中性可爱服装，宽大的蓬松奶油色马海毛毛衣，胸前系着大号棕色丝带蝴蝶结，圆领，柔软蓬松袖子，弧形下摆，宽松奶油色短裤，带有棕色点缀和小丝带细节，宽松的浅棕色开衫叠加糖果纽扣，背部有细腻的花卉刺绣， 小巧的奶油色贝雷帽配棕色丝带，白色及膝袜，棕色乐福鞋带蝴蝶结，柔软蓬松的质感，宽松舒适的轮廓，适合任何体型，柔和梦幻的柔和，奶油黄牛奶棕色腮红粉白色，复杂的面料细节，既可爱又时尚，全身造型，动漫插画，柔和的体积光——stylize 650" data-tags="创意|设计|教程|工具|灵感">
+      <a class="case-card-link" href="/zh/case/2802.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045048284738392137-1.jpg" alt="服装提示分发与改造技巧" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2802</span></span><span class="case-title-text">服装提示分发与改造技巧</span></h3>
+          <p class="case-summary">可自由分发服装提示，并根据喜好改色、增删元素。文中也提供男角色佩戴的提示与技巧。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Lilli_zeta/status/2045048284738392137">X / Lilli</span>
+          </div>
+          <div class="case-tags"><span class="tag">创意</span><span class="tag">设计</span><span class="tag">教程</span><span class="tag">工具</span><span class="tag">灵感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>中性服装，中性身材的中性可爱服装，宽大的蓬松奶油色马海毛毛衣，胸前系着大号棕色丝带蝴蝶结，圆领，柔软蓬松袖子，弧形下摆，宽松奶油色短裤，带有棕色点缀和小丝带细节，宽松的浅棕色开衫叠加糖果纽扣，背部有细腻的花卉刺绣， 小巧的奶油色贝雷帽配棕色丝带，白色及膝袜，棕色乐福鞋带蝴蝶结，柔软蓬松的质感，宽松舒适的轮廓，适合任何体型，柔和梦幻的柔和，奶油黄牛奶棕色腮红粉白色，复杂的面料细节，既可爱又时尚，全身...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2802.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2801" data-search="案例2801 双重曝光剪影电影海报提示 用剪影轮廓+世界构建打造收藏版叙事海报，并加入边缘羽化与纸纹质感。 x / voxcat https://x.com/voxcatai/status/2045122552482431089 ai 设计 工具 图片 教程 自动生成基于[主题]的收藏版史诗叙事海报：一个巨大的、优雅的角色侧面轮廓作为外轮廓，剪影内部自动成长为该主题最合适的完整世界观——标志性场景、角色关系、象征性图案、关键建筑、生物、道具和氛围。整体构图并非普通拼贴，而是融合了复杂的剪影轮廓叙事综合，带有双重曝光风格的联想，更倾向于电影海报与梦幻水彩插画风格的融合;柔和的航拍透视、轻雾过渡、纸质纹理、边缘的羽毛和笔触、大片的负空间、克制而精致的布局、安静、宏伟、神圣、怀旧、诗意，充满强烈的传奇感。风格、色彩、场景和材料都会自动适应主题;每个元素都必须紧密结合主题，一眼就能认出来——没有杂乱，没有强行拼贴，没有模板背景，没有廉价的奇幻素材。图像自然" data-tags="AI|设计|工具|图片|教程">
+      <a class="case-card-link" href="/zh/case/2801.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045122552482431089-1.jpg" alt="双重曝光剪影电影海报提示" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2801</span></span><span class="case-title-text">双重曝光剪影电影海报提示</span></h3>
+          <p class="case-summary">用剪影轮廓+世界构建打造收藏版叙事海报，并加入边缘羽化与纸纹质感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VoxcatAI/status/2045122552482431089">X / VoxCat</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">设计</span><span class="tag">工具</span><span class="tag">图片</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>自动生成基于[主题]的收藏版史诗叙事海报：一个巨大的、优雅的角色侧面轮廓作为外轮廓，剪影内部自动成长为该主题最合适的完整世界观——标志性场景、角色关系、象征性图案、关键建筑、生物、道具和氛围。整体构图并非普通拼贴，而是融合了复杂的剪影轮廓叙事综合，带有双重曝光风格的联想，更倾向于电影海报与梦幻水彩插画风格的融合;柔和的航拍透视、轻雾过渡、纸质纹理、边缘的羽毛和笔触、大片的负空间、克制而精致的布局、...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2801.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2800" data-search="案例2800 用gpt做角色设定资料卡 gpt幕后解析性格并生成世界观设定，提供正/侧/背三视图与服装细节。包含表情变化与配色方案。 x / 古一 https://x.com/manish1027512/status/2045013913901867334 gpt-4o ai 数字艺术 创意 教程 基于该角色和背景，请制作一张类似官方设定材料的角色资料卡。 包含三种视角：正面、侧面和背面 ·增加角色面部表情的变化 ·拆解并展示服装和装备的细节 部分·添加色彩调色板 包含世界观设定的简要说明 全面使用有条理的布局（白色背景，插画风格）" data-tags="GPT-4o|AI|数字艺术|创意|教程">
+      <a class="case-card-link" href="/zh/case/2800.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045013913901867334-1.jpg" alt="用GPT做角色设定资料卡" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2800</span></span><span class="case-title-text">用GPT做角色设定资料卡</span></h3>
+          <p class="case-summary">GPT幕后解析性格并生成世界观设定，提供正/侧/背三视图与服装细节。包含表情变化与配色方案。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MANISH1027512/status/2045013913901867334">X / 古一</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">创意</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>基于该角色和背景，请制作一张类似官方设定材料的角色资料卡。
+包含三种视角：正面、侧面和背面
+·增加角色面部表情的变化 ·拆解并展示服装和装备的细节
+部分·添加色彩调色板 包含世界观设定的简要说明
+全面使用有条理的布局（白色背景，插画风格）</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2800.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2799" data-search="案例2799 日本vtuber标志提示词解析 将“六个原创日本vtuber标志排成一排”作为提示词，便于生成成组logo风格效果。 x / みどりmidori tatsuta https://x.com/midori_tatsuta/status/2044671229639245955 创意 ai 设计 教程 图片 由专业设计师创作的六个不同的原创日本vtuber标志，排成一排。”" data-tags="创意|AI|设计|教程|图片">
+      <a class="case-card-link" href="/zh/case/2799.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2044671229639245955-1.jpg" alt="日本VTuber标志提示词解析" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2799</span></span><span class="case-title-text">日本VTuber标志提示词解析</span></h3>
+          <p class="case-summary">将“六个原创日本VTuber标志排成一排”作为提示词，便于生成成组Logo风格效果。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/midori_tatsuta/status/2044671229639245955">X / みどりMidori Tatsuta</span>
+          </div>
+          <div class="case-tags"><span class="tag">创意</span><span class="tag">AI</span><span class="tag">设计</span><span class="tag">教程</span><span class="tag">图片</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>由专业设计师创作的六个不同的原创日本VTuber标志，排成一排。”</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2799.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2798" data-search="案例2798 gpt-2图片变灰与电视剧照测试 用gpt-2图片生成古装奇幻剧照，发现画面偏灰问题并进行提示词测试。 x / 不等 ai 离子 https://x.com/alupbn121/status/2045040830227050885 gpt-3.5 ai 图片 教程 gpt-2 提示”：官方电视剧静态，古装奇幻主题《顾月赵鬼任》，妙江古灵女，人物1，与主角相符的面部特征和性格，正宗东方少女，肤色白皙柔和透明，黑发如瀑布，头饰白色山花和银流苏饰，耳边垂挂精致的妙江银耳环， 浅青白纱布，古风长裙，纱袖纱袖绣有精致刺绣，站在妙江禁林深处回头望去，眼神平静却带着命运的感悟，神情克制，带着淡淡的怜悯与冷漠的优雅，深蓝夜色，潮湿的山林，薄雾飘散， 古树扭曲的根系，远处隐约的古火和模糊的祭坛残迹，微小发光的古虫和银蓝色的蝴蝶影漂浮在空中，山风轻轻掀起的发丝和裙摆，电影般的灯光，冷蓝色月光与柔和火光交织，面部轮廓被淡淡的侧光突显，景深鲜明， 真实电视剧拍摄极致、超写实、皮肤质感自然、" data-tags="GPT-3.5|AI|图片|教程|GPT-2">
+      <a class="case-card-link" href="/zh/case/2798.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045040830227050885-1.jpg" alt="GPT-2图片变灰与电视剧照测试" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2798</span></span><span class="case-title-text">GPT-2图片变灰与电视剧照测试</span></h3>
+          <p class="case-summary">用GPT-2图片生成古装奇幻剧照，发现画面偏灰问题并进行提示词测试。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/alupbn121/status/2045040830227050885">X / 不等 AI 离子</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-3.5</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">教程</span><span class="tag">GPT-2</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>提示”：官方电视剧静态，古装奇幻主题《顾月赵鬼任》，妙江古灵女，人物1，与主角相符的面部特征和性格，正宗东方少女，肤色白皙柔和透明，黑发如瀑布，头饰白色山花和银流苏饰，耳边垂挂精致的妙江银耳环， 浅青白纱布，古风长裙，纱袖纱袖绣有精致刺绣，站在妙江禁林深处回头望去，眼神平静却带着命运的感悟，神情克制，带着淡淡的怜悯与冷漠的优雅，深蓝夜色，潮湿的山林，薄雾飘散， 古树扭曲的根系，远处隐约的古火和模糊...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2798.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2791" data-search="案例2791 温暖雪景木屋人像穿搭提示 用同脸参考打造乡村木屋内柔光人像，棕色针织与雪景冷暖对比。 x / jarvis ai https://x.com/jarvis_og_ai/status/2044394305734013113 ai 图片 摄影 创意 教程 一位美丽的女子，与参考照片中的面孔一模一样，在舒适的乡村木屋内摆姿势。她随意地靠在一个大木窗框上，直视镜头，表情柔和。 室内采用温暖的金色木质镶板和墙壁上的装饰挂毯，营造出温馨宜人的氛围。透过大窗户，可以看到一片宁静的雪景，厚厚的积雪覆盖着地面和松树，强调了强烈的冷暖对比。 她穿着一件简单的棕色针织低u领短上衣，搭配配套的长袖开襟羊毛衫。她还穿了一条带图案的及地裹身裙，裙子长至肚脐以下，上面有复杂的花卉和佩斯利图案，采用柔和的泥土色调。整体风格是轻松舒适的客舱核心时尚。 柔和的自然光从窗户射入，温柔地照亮了针织品的纹理、小屋的木纹和她的容貌。高度细致的电影构图，温暖舒适的气氛。" data-tags="AI|图片|摄影|创意|教程">
+      <a class="case-card-link" href="/zh/case/2791.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2044394305734013113-1.jpg" alt="温暖雪景木屋人像穿搭提示" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2791</span></span><span class="case-title-text">温暖雪景木屋人像穿搭提示</span></h3>
+          <p class="case-summary">用同脸参考打造乡村木屋内柔光人像，棕色针织与雪景冷暖对比。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-16</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/jarvis_og_AI/status/2044394305734013113">X / Jarvis AI</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一位美丽的女子，与参考照片中的面孔一模一样，在舒适的乡村木屋内摆姿势。她随意地靠在一个大木窗框上，直视镜头，表情柔和。
+室内采用温暖的金色木质镶板和墙壁上的装饰挂毯，营造出温馨宜人的氛围。透过大窗户，可以看到一片宁静的雪景，厚厚的积雪覆盖着地面和松树，强调了强烈的冷暖对比。
+她穿着一件简单的棕色针织低U领短上衣，搭配配套的长袖开襟羊毛衫。她还穿了一条带图案的及地裹身裙，裙子长至肚脐以下，上面有...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2791.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2785" data-search="案例2785 雨夜真人+q版同框拍法 提供雨夜8k电影质感提示词：一次只用一个姿势，让真人与q版双身在霓虹湿路上同步互动。 x / gemini prompts https://x.com/gemini_prompts/status/2035938043824427028 ai 图片 摄影 教程 创意 一个超写实的8k电影镜头，拍摄一位年轻女子和她的迷你q版替身，在雨水湿滑的城市斑马线上。环境设有湿滑的沥青斑马线，映照着鲜艳的霓虹城市灯光，细雨细作，形成细微涟漪和氛围深度。灯光氛围浓郁且具电影感，红、蓝、黄的招牌在地面上闪烁。 这名女子留着长发，略带湿气，穿着一件棕褐色风衣，外面是黑色上衣和黑色裤子，脚踩白色运动鞋。她手里拿着一把透明伞。她身旁站着一个小巧可爱的q版版，完美匹配她的服装、发型和配饰，手里还拿着一把迷你透明伞。q版角色反映了主角的情绪和互动。 姿势： 1。她站在斑马线中央，直视镜头，表情镇定，伞举过头顶。q版站在她身旁，模仿着姿势，但姿势略显夸张可爱。 2.她半步走过斑" data-tags="AI|图片|摄影|教程|创意">
+      <a class="case-card-link" href="/zh/case/2785.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2035938043824427028-1.jpg" alt="雨夜真人+Q版同框拍法" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2785</span></span><span class="case-title-text">雨夜真人+Q版同框拍法</span></h3>
+          <p class="case-summary">提供雨夜8K电影质感提示词：一次只用一个姿势，让真人与Q版双身在霓虹湿路上同步互动。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-15</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2035938043824427028">X / gemini prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">教程</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一个超写实的8K电影镜头，拍摄一位年轻女子和她的迷你Q版替身，在雨水湿滑的城市斑马线上。环境设有湿滑的沥青斑马线，映照着鲜艳的霓虹城市灯光，细雨细作，形成细微涟漪和氛围深度。灯光氛围浓郁且具电影感，红、蓝、黄的招牌在地面上闪烁。
+这名女子留着长发，略带湿气，穿着一件棕褐色风衣，外面是黑色上衣和黑色裤子，脚踩白色运动鞋。她手里拿着一把透明伞。她身旁站着一个小巧可爱的Q版版，完美匹配她的服装、发型和...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2785.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2784" data-search="案例2784 超写实8k时尚海报双人构图 提供两段提示词，生成竖版8k电影风时尚海报的双人肖像与烟雾光效。 x / gemini prompts https://x.com/gemini_prompts/status/2041387298840096895 ai 图片 摄影 教程 提示词 超写实的8k电影风格时尚海报，竖版。我的，和参考图完全一样（没有变形，也没有修改）。双人肖像构图。背景：大型单色肖像，自信的姿势，长发，戴着墨镜，穿着休闲敞开衬衫搭配深色t恤，视线背对镜头，温暖的阳光从一侧照射。橙色烟雾效果在后面。前景：同一批女性的全身彩色照片，走路时尚，戴着时尚墨镜，步伐自信。中央，面向观众。” 提示：“ 超写实8k电影风格的直立时尚海报。我的，和参考图完全一样（没有变形，也没有修改）。双人肖像构图。背景：大型单色肖像，自信的姿势，黑发，戴着墨镜，穿着休闲敞开的衬衫搭配深色t恤，视线避开镜头，温暖的阳光从一侧照射。橙色烟雾效果在后面。前景：同一个人优雅地走着，戴着时尚墨" data-tags="AI|图片|摄影|教程|提示词">
+      <a class="case-card-link" href="/zh/case/2784.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2041387298840096895-1.jpg" alt="超写实8K时尚海报双人构图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2784</span></span><span class="case-title-text">超写实8K时尚海报双人构图</span></h3>
+          <p class="case-summary">提供两段提示词，生成竖版8K电影风时尚海报的双人肖像与烟雾光效。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-15</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2041387298840096895">X / gemini prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">教程</span><span class="tag">提示词</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>超写实的8K电影风格时尚海报，竖版。我的，和参考图完全一样（没有变形，也没有修改）。双人肖像构图。背景：大型单色肖像，自信的姿势，长发，戴着墨镜，穿着休闲敞开衬衫搭配深色T恤，视线背对镜头，温暖的阳光从一侧照射。橙色烟雾效果在后面。前景：同一批女性的全身彩色照片，走路时尚，戴着时尚墨镜，步伐自信。中央，面向观众。”
+提示：“
+超写实8K电影风格的直立时尚海报。我的，和参考图完全一样（没有变形，...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2784.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2783" data-search="案例2783 gemini混乱拼贴创作提示词 用gemini生成密集混乱照片拼贴，仿剪贴簿风格并匹配参考人物。整体怀旧温暖、过曝高调光。 x / gemini prompts https://x.com/gemini_prompts/status/2043200310387376319 gemini ai 图片 创意 教程 创作一幅混乱且密集的照片拼贴，风格如原始的个人剪贴簿页，完全展现参考图片中的主题和匹配的面部。每一张照片的构图都不完美：倾斜、歪斜，且极度不标准。这幅拼贴画是一团不同大小的视觉混乱，彼此交织重叠，营造出动态能量的感觉。整体美学浓厚怀旧且温暖，采用过曝的高调光线。”" data-tags="Gemini|AI|图片|创意|教程">
+      <a class="case-card-link" href="/zh/case/2783.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2043200310387376319-1.jpg" alt="Gemini混乱拼贴创作提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2783</span></span><span class="case-title-text">Gemini混乱拼贴创作提示词</span></h3>
+          <p class="case-summary">用Gemini生成密集混乱照片拼贴，仿剪贴簿风格并匹配参考人物。整体怀旧温暖、过曝高调光。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-15</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2043200310387376319">X / gemini prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">创意</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创作一幅混乱且密集的照片拼贴，风格如原始的个人剪贴簿页，完全展现参考图片中的主题和匹配的面部。每一张照片的构图都不完美：倾斜、歪斜，且极度不标准。这幅拼贴画是一团不同大小的视觉混乱，彼此交织重叠，营造出动态能量的感觉。整体美学浓厚怀旧且温暖，采用过曝的高调光线。”</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2783.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2782" data-search="案例2782 双人写实+动漫自拍穿搭生成 用 gemini 上传自拍与裙装参考，生成9:16写实女性+2d动漫同款对比图。 x / gemini prompts https://x.com/gemini_prompts/status/2043548876867801111 gemini ai 创意 图片 教程 与你的 #anime 版本合照 打开双子座 上传你的清晰自拍 上传你想穿的裙子 粘 贴下面的提示 词 提示：“创作一个高质量的全身9：16竖直构图，两个人物站在极简的深黑色纹理墙上，配以柔和均匀的摄影棚灯光，保持场景干净、现代且无干扰，使焦点始终聚焦在主体上;严格使用提供的面部参考图片作为女性面部的唯一来源，第二张图片严格作为服装（裙装/服装）的唯一来源;右侧那位写实的女性必须拥有百分之百相同的面部匹配，绝不能有任何修改，完全保留参考中的每个面部细节，包括骨骼结构、眼形和颜色、鼻子、嘴唇、眉毛、下颌线、皮肤质地、自然光泽和表情，同时使用相同的妆容、光影细节和柔和自信的微笑;她穿着第" data-tags="Gemini|AI|创意|图片|教程">
+      <a class="case-card-link" href="/zh/case/2782.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2043548876867801111-1.jpg" alt="双人写实+动漫自拍穿搭生成" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2782</span></span><span class="case-title-text">双人写实+动漫自拍穿搭生成</span></h3>
+          <p class="case-summary">用 Gemini 上传自拍与裙装参考，生成9:16写实女性+2D动漫同款对比图。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-15</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2043548876867801111">X / gemini prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">创意</span><span class="tag">图片</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>与你的 #anime 版本合照 打开双子座
+ 上传你的清晰自拍
+ 上传你想穿的裙子 粘
+贴下面的提示
+词 提示：“创作一个高质量的全身9：16竖直构图，两个人物站在极简的深黑色纹理墙上，配以柔和均匀的摄影棚灯光，保持场景干净、现代且无干扰，使焦点始终聚焦在主体上;严格使用提供的面部参考图片作为女性面部的唯一来源，第二张图片严格作为服装（裙装/服装）的唯一来源;右侧那位写实的女性必须拥有百分...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2782.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2781" data-search="案例2781 黄金时段情侣海滩分镜提示 超写实电影横向分镜，讲述情侣与白马的黄金时段浪漫海滩故事，并强调面部一致性。 x / gemini prompts https://x.com/gemini_prompts/status/2044280291020394963 midjourney ai 摄影 教程 分镜 超写实电影横向分镜，包含黄金时段浪漫海滩拍摄的多帧连续画面。 场景结构：每段展示同一对情侣和白马的不同瞬间。 主题：年轻的印度夫妇（与参考图片中的面孔相符）和一匹白马。女子穿着飘逸的淡蓝色连衣裙，男子穿着浅色衬衫和中性色裤子。 框架动作包括： - 与马一起沿海岸线行走 - 牵马牵引 - 亲密情侣拥抱 - 柔和微笑的近距离时刻 - 一起走近海浪 环境：海滩海岸，波浪温和，天空开阔，地平线洁净。 光线：强烈的黄金时段逆光（阳光映在主体后），头发和边缘柔和的光晕，温暖的高光，没有强烈阴影。 面部色调：干净、柔和、略暖的肤色，自然光泽，无过度曝光。 构图：全身镜头采用电影宽景+" data-tags="Midjourney|AI|摄影|教程|分镜">
+      <a class="case-card-link" href="/zh/case/2781.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2044280291020394963-1.jpg" alt="黄金时段情侣海滩分镜提示" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2781</span></span><span class="case-title-text">黄金时段情侣海滩分镜提示</span></h3>
+          <p class="case-summary">超写实电影横向分镜，讲述情侣与白马的黄金时段浪漫海滩故事，并强调面部一致性。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-15</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2044280291020394963">X / gemini prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">教程</span><span class="tag">分镜</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>超写实电影横向分镜，包含黄金时段浪漫海滩拍摄的多帧连续画面。
+场景结构：每段展示同一对情侣和白马的不同瞬间。
+主题：年轻的印度夫妇（与参考图片中的面孔相符）和一匹白马。女子穿着飘逸的淡蓝色连衣裙，男子穿着浅色衬衫和中性色裤子。
+框架动作包括：
+- 与马一起沿海岸线行走
+- 牵马牵引
+- 亲密情侣拥抱
+- 柔和微笑的近距离时刻
+- 一起走近海浪
+环境：海滩海岸，波浪温和，天空开阔，...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2781.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2773" data-search="案例2773 x光植物肖像提示词分享 提供“一幅x光植物肖像”的中文提示词模板，含发光静脉与梦幻科幻风格。适合生成高细节植物艺术作品并分享。 x / amira zairi https://x.com/azed_ai/status/2042558481706946848 创意 教程 图片 ai 提示词 一幅[受试者]的x光植物肖像，展现半透明的内部结构、发光的静脉、层叠有机细节、暗色背景上的明亮[color1]和[color2]光辉，科学而梦幻，清晰且细节丰富。 试试看，分享你的艺术作品" data-tags="创意|教程|图片|AI|提示词">
+      <a class="case-card-link" href="/zh/case/2773.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2042558481706946848-1.jpg" alt="X光植物肖像提示词分享" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2773</span></span><span class="case-title-text">X光植物肖像提示词分享</span></h3>
+          <p class="case-summary">提供“一幅X光植物肖像”的中文提示词模板，含发光静脉与梦幻科幻风格。适合生成高细节植物艺术作品并分享。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-11</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/azed_ai/status/2042558481706946848">X / Amira Zairi</span>
+          </div>
+          <div class="case-tags"><span class="tag">创意</span><span class="tag">教程</span><span class="tag">图片</span><span class="tag">AI</span><span class="tag">提示词</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一幅[受试者]的X光植物肖像，展现半透明的内部结构、发光的静脉、层叠有机细节、暗色背景上的明亮[color1]和[color2]光辉，科学而梦幻，清晰且细节丰富。
+试试看，分享你的艺术作品</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2773.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2771" data-search="案例2771 midjourney v7人像拍摄提示：动态动物微距与电影光影 使用midjourney v7生成写实人像风格的动物/昆虫动态照片提示，涵盖运动模糊、微距、f/2.8与索尼alpha a7 iii质感。 x / pierrick chevallier | ia https://x.com/charaspowerai/status/2042641270846144806 midjourney 摄影 ai 教程 技巧 使用 midjourney v7 人像拍摄提示 词[动物或昆虫与粒子/运动进行动态动作]，运动 模糊，写实，电影般的光影，戏剧性，清晰对焦，微距镜头，f/2.8，动态姿态，鲜艳色彩，清晰细节，风格 类似索尼 alpha a7 iii" data-tags="Midjourney|摄影|AI|教程|技巧">
+      <a class="case-card-link" href="/zh/case/2771.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2042641270846144806-1.jpg" alt="Midjourney V7人像拍摄提示：动态动物微距与电影光影" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2771</span></span><span class="case-title-text">Midjourney V7人像拍摄提示：动态动物微距与电影光影</span></h3>
+          <p class="case-summary">使用Midjourney V7生成写实人像风格的动物/昆虫动态照片提示，涵盖运动模糊、微距、f/2.8与索尼Alpha A7 III质感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-11</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/CharaspowerAI/status/2042641270846144806">X / Pierrick Chevallier | IA</span>
+          </div>
+          <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">摄影</span><span class="tag">AI</span><span class="tag">教程</span><span class="tag">技巧</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>使用 Midjourney V7 人像拍摄提示
+词[动物或昆虫与粒子/运动进行动态动作]，运动
+模糊，写实，电影般的光影，戏剧性，清晰对焦，微距镜头，f/2.8，动态姿态，鲜艳色彩，清晰细节，风格
+类似索尼 Alpha A7 III</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2771.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="552" data-search="案例552 竖版中式复古教育信息图海报设计：一键封装开箱即用 该推文描述一张竖版、传统中国复古风格的教育信息图海报的设计规范，包含核心主题、经典语录、核心观点六项内容、关系图谱、时间线与人物卡等模块，强调统一字体、留白比例、高分辨率输出与竖横双向适配，适合大幅面展示与展览使用。 x / berryxia.ai https://x.com/berryxia/status/2007371413628272679 图片 设计 数字艺术 教程 工具 shortcuts 一张高质量的竖版教育信息图海报，采用传统的中国复古风格，由[作者/创作者]为[主题/书籍标题]设计。 【版本 5.0 - 最终稳定版，中文文本清晰度已得到验证】 背景： - 径向渐变背景营造出微妙的暗角效果，中心较亮，边缘逐渐变暗。 - 纹理纸表面，可见天然纤维图案，营造出真实的复古感 画布上散布着细微的岁月痕迹。 - [可选：主题的具体纹理说明] 头部区域（顶部区域）： - 顶部中央醒目的粗体书法标题，采用[书法风格]：[中文主标题] 风格：【颜真卿/欧阳询/行书】 颜色：深黑色，以实现最大对比度和清晰度 - [如有需要] 精简版辅助脚本字幕：[字幕] 明显更小，中灰" data-tags="图片|设计|数字艺术|教程|工具|Shortcuts">
+      <a class="case-card-link" href="/zh/case/552.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2007371413628272679-1.jpg" alt="竖版中式复古教育信息图海报设计：一键封装开箱即用" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#552</span></span><span class="case-title-text">竖版中式复古教育信息图海报设计：一键封装开箱即用</span></h3>
+          <p class="case-summary">该推文描述一张竖版、传统中国复古风格的教育信息图海报的设计规范，包含核心主题、经典语录、核心观点六项内容、关系图谱、时间线与人物卡等模块，强调统一字体、留白比例、高分辨率输出与竖横双向适配，适合大幅面展示与展览使用。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-04</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/berryxia/status/2007371413628272679">X / Berryxia.AI</span>
+          </div>
+          <div class="case-tags"><span class="tag">图片</span><span class="tag">设计</span><span class="tag">数字艺术</span><span class="tag">教程</span><span class="tag">工具</span><span class="tag">Shortcuts</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张高质量的竖版教育信息图海报，采用传统的中国复古风格，由[作者/创作者]为[主题/书籍标题]设计。
+【版本 5.0 - 最终稳定版，中文文本清晰度已得到验证】
+背景：
+- 径向渐变背景营造出微妙的暗角效果，中心较亮，边缘逐渐变暗。
+- 纹理纸表面，可见天然纤维图案，营造出真实的复古感
+画布上散布着细微的岁月痕迹。
+- [可选：主题的具体纹理说明]
+头部区域（顶部区域）：
+- 顶部...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/552.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

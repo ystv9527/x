@@ -7,11 +7,13 @@
     <title>Create an ultra photorealistic cinematic portrait of a man vi... #2660 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create an ultra photorealistic cinematic portrait of a man viewed from a slightly low angle looking upward with a con...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2660.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2660.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2660.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843864">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023389">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一幅超写实的电影感人像：以略低的视角向上拍摄一名男性，表情自信、充满力量。  \n使用上传的人像照片生成他的面部。  \n构图为紧凑的上半身人像，头部略微上仰，强调下颌线和胡须结构。  \n背景为平滑且充满活力的工作室渐变，从深橙色过渡到暖红色调，营造戏剧性现代美感。  \n使用强烈的电影式双色照明：一侧为暖红/橙色光，另一侧为冷青/蓝色轮廓光，在面部和胡须上形成醒目的对比。  \n该男子身着未来感的白色宽大羽绒服，带有大型绗缝区块和高护领。  \n羽绒服应呈现高端现代感，具有真实的面料褶皱、填充保暖的体积感，以及类似高端功能性冬季时装的细微光泽。  \n加入极其细致的纹理：可见的皮肤毛孔、胡须发丝、细微的面部瑕疵、逼真的唇部纹理、微小的皮肤反光以及详细的毛囊细节。  \n太阳镜应为细金属框，具有逼真的反射，并带有微微着色的镜片，能反映彩色光线。  \n白色羽绒服必须展示详细的缝线、面料纹理、填充分段以及材料与光线的真实交互。  \n灯光应在面部、胡须、眼镜和羽绒服上制造柔和的阴影、强烈的色彩对比和戏剧性的高光。  \n保持主体清晰对焦，达到工作室级的景深与清晰度。  \n超写实人像摄影、电影级工作室灯光、超细节纹理、8K 细节、高端编辑时尚人像、极其逼真的皮肤与面料材质。  \n在右下角添加一行细微的手写文字，内容为 \"Created by Naik\"，优雅的时尚编辑签名字体，细白色墨水，略透明，像豪华杂志拍摄中的摄影师签名。", this)'>📋 Copy</button>
         </div>
-        <p>创建一幅超写实的电影感人像：以略低的视角向上拍摄一名男性，表情自信、充满力量。  <br>使用上传的人像照片生成他的面部。  <br>构图为紧凑的上半身人像，头部略微上仰，强调下颌线和胡须结构。  <br>背景为平滑且充满活力的工作室渐变，从深橙色过渡到暖红色调，营造戏剧性现代美感。  <br>使用强烈的电影式双色照明：一侧为暖红/橙色光，另一侧为冷青/蓝色轮廓光，在面部和胡须上形成醒目的对比。  <br>该男子身着未来感的白色宽大羽绒服，带有大型绗缝区块和高护领。  <br>羽绒服应呈现高端现代感，具有真实的面料褶皱、填充保暖的体积感，以及类似高端功能性冬季时装的细微光泽。  <br>加入极其细致的纹理：可见的皮肤毛孔、胡须发丝、细微的面部瑕疵、逼真的唇部纹理、微小的皮肤反光以及详细的毛囊细节。  <br>太阳镜应为细金属框，具有逼真的反射，并带有微微着色的镜片，能反映彩色光线。  <br>白色羽绒服必须展示详细的缝线、面料纹理、填充分段以及材料与光线的真实交互。  <br>灯光应在面部、胡须、眼镜和羽绒服上制造柔和的阴影、强烈的色彩对比和戏剧性的高光。  <br>保持主体清晰对焦，达到工作室级的景深与清晰度。  <br>超写实人像摄影、电影级工作室灯光、超细节纹理、8K 细节、高端编辑时尚人像、极其逼真的皮肤与面料材质。  <br>在右下角添加一行细微的手写文字，内容为 &quot;Created by Naik&quot;，优雅的时尚编辑签名字体，细白色墨水，略透明，像豪华杂志拍摄中的摄影师签名。</p>
+        <div data-nosnippet><p>创建一幅超写实的电影感人像：以略低的视角向上拍摄一名男性，表情自信、充满力量。  <br>使用上传的人像照片生成他的面部。  <br>构图为紧凑的上半身人像，头部略微上仰，强调下颌线和胡须结构。  <br>背景为平滑且充满活力的工作室渐变，从深橙色过渡到暖红色调，营造戏剧性现代美感。  <br>使用强烈的电影式双色照明：一侧为暖红/橙色光，另一侧为冷青/蓝色轮廓光，在面部和胡须上形成醒目的对比。  <br>该男子身着未来感的白色宽大羽绒服，带有大型绗缝区块和高护领。  <br>羽绒服应呈现高端现代感，具有真实的面料褶皱、填充保暖的体积感，以及类似高端功能性冬季时装的细微光泽。  <br>加入极其细致的纹理：可见的皮肤毛孔、胡须发丝、细微的面部瑕疵、逼真的唇部纹理、微小的皮肤反光以及详细的毛囊细节。  <br>太阳镜应为细金属框，具有逼真的反射，并带有微微着色的镜片，能反映彩色光线。  <br>白色羽绒服必须展示详细的缝线、面料纹理、填充分段以及材料与光线的真实交互。  <br>灯光应在面部、胡须、眼镜和羽绒服上制造柔和的阴影、强烈的色彩对比和戏剧性的高光。  <br>保持主体清晰对焦，达到工作室级的景深与清晰度。  <br>超写实人像摄影、电影级工作室灯光、超细节纹理、8K 细节、高端编辑时尚人像、极其逼真的皮肤与面料材质。  <br>在右下角添加一行细微的手写文字，内容为 &quot;Created by Naik&quot;，优雅的时尚编辑签名字体，细白色墨水，略透明，像豪华杂志拍摄中的摄影师签名。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an ultra-photorealistic cinematic portrait of a man viewed from a slightly low angle looking upward with a confident, powerful expression. Generate his face using the uploaded portrait photo. The composition is a tight upper-body portrait with the head tilted slightly upward, emphasizing the jawline and beard structure.\nThe background is a smooth vibrant studio\ngradient transitioning between deep orange and warm red tones, creating a\ndramatic modern aesthetic. Use strong cinematic dual-color lighting: warm\nred/orange light from one side and cool teal/blue rim lighting from the\nopposite side to create striking contrast across the face and beard. The man\nis wearing a futuristic white oversized puffer jacket with large quilted sections\nand a high protective collar. The jacket should look premium and modern with\nrealistic fabric folds, padded insulation volume, and subtle material sheen\nsimilar to high-end technical winter fashion. Add extremely detailed textures:\nvisible skin pores, beard hair strands, subtle facial imperfections, realistic lip\ntexture, micro skin reflections, and detailed hair follicles. The sunglasses\nshould have thin metal frames with realistic reflections and slightly tinted\nlenses reflecting the colored lighting. The white puffer jacket must show\ndetailed stitching, fabric grain, padded segments, and realistic light interaction\nacross the material. Lighting should create soft shadows, strong color\ncontrast, and dramatic highlights across the face, beard, glasses, and jacket.\nMaintain sharp focus on the subject with studio-quality depth and clarity.\nUltra photorealistic portrait photography, cinematic studio lighting, hyper-\ndetailed textures, 8K detail, premium editorial fashion portrait, extremely\nrealistic skin and fabric materials.\nAdd a subtle handwritten text in the bottom-right corner that reads \"Created by Naik\", elegant fashion-editorial signature style, thin white ink, slightly transparent, like a photographer's signature on a luxury magazine shoot.", this)'>📋 Copy</button>
         </div>
-        <p>Create an ultra-photorealistic cinematic portrait of a man viewed from a slightly low angle looking upward with a confident, powerful expression. Generate his face using the uploaded portrait photo. The composition is a tight upper-body portrait with the head tilted slightly upward, emphasizing the jawline and beard structure.<br>The background is a smooth vibrant studio<br>gradient transitioning between deep orange and warm red tones, creating a<br>dramatic modern aesthetic. Use strong cinematic dual-color lighting: warm<br>red/orange light from one side and cool teal/blue rim lighting from the<br>opposite side to create striking contrast across the face and beard. The man<br>is wearing a futuristic white oversized puffer jacket with large quilted sections<br>and a high protective collar. The jacket should look premium and modern with<br>realistic fabric folds, padded insulation volume, and subtle material sheen<br>similar to high-end technical winter fashion. Add extremely detailed textures:<br>visible skin pores, beard hair strands, subtle facial imperfections, realistic lip<br>texture, micro skin reflections, and detailed hair follicles. The sunglasses<br>should have thin metal frames with realistic reflections and slightly tinted<br>lenses reflecting the colored lighting. The white puffer jacket must show<br>detailed stitching, fabric grain, padded segments, and realistic light interaction<br>across the material. Lighting should create soft shadows, strong color<br>contrast, and dramatic highlights across the face, beard, glasses, and jacket.<br>Maintain sharp focus on the subject with studio-quality depth and clarity.<br>Ultra photorealistic portrait photography, cinematic studio lighting, hyper-<br>detailed textures, 8K detail, premium editorial fashion portrait, extremely<br>realistic skin and fabric materials.<br>Add a subtle handwritten text in the bottom-right corner that reads &quot;Created by Naik&quot;, elegant fashion-editorial signature style, thin white ink, slightly transparent, like a photographer&#39;s signature on a luxury magazine shoot.</p>
+        <div data-nosnippet><p>Create an ultra-photorealistic cinematic portrait of a man viewed from a slightly low angle looking upward with a confident, powerful expression. Generate his face using the uploaded portrait photo. The composition is a tight upper-body portrait with the head tilted slightly upward, emphasizing the jawline and beard structure.<br>The background is a smooth vibrant studio<br>gradient transitioning between deep orange and warm red tones, creating a<br>dramatic modern aesthetic. Use strong cinematic dual-color lighting: warm<br>red/orange light from one side and cool teal/blue rim lighting from the<br>opposite side to create striking contrast across the face and beard. The man<br>is wearing a futuristic white oversized puffer jacket with large quilted sections<br>and a high protective collar. The jacket should look premium and modern with<br>realistic fabric folds, padded insulation volume, and subtle material sheen<br>similar to high-end technical winter fashion. Add extremely detailed textures:<br>visible skin pores, beard hair strands, subtle facial imperfections, realistic lip<br>texture, micro skin reflections, and detailed hair follicles. The sunglasses<br>should have thin metal frames with realistic reflections and slightly tinted<br>lenses reflecting the colored lighting. The white puffer jacket must show<br>detailed stitching, fabric grain, padded segments, and realistic light interaction<br>across the material. Lighting should create soft shadows, strong color<br>contrast, and dramatic highlights across the face, beard, glasses, and jacket.<br>Maintain sharp focus on the subject with studio-quality depth and clarity.<br>Ultra photorealistic portrait photography, cinematic studio lighting, hyper-<br>detailed textures, 8K detail, premium editorial fashion portrait, extremely<br>realistic skin and fabric materials.<br>Add a subtle handwritten text in the bottom-right corner that reads &quot;Created by Naik&quot;, elegant fashion-editorial signature style, thin white ink, slightly transparent, like a photographer&#39;s signature on a luxury magazine shoot.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2036271660765159675-1.jpg" alt="Create an ultra photorealistic cinematic portrait of a man vi..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2660,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

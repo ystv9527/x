@@ -7,11 +7,13 @@
     <title>人和汽车的三视图 #380 | Gem Nana AI 提示词库</title>
     <meta name="description" content="人和汽车的三视图 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/380.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/380.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/380.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841911">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022705">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("对我进行一组电影感的汽车摄影，保持我的真实面孔不变。场景由三个视角组成，如下：\n\n1. 顶 Panel：内部近景：我坐在车内，穿着合身的黑色 polo 衫，镜中的侧脸反射。我的脸部表情严肃、专注，目光直视前方，侧脸轮廓在镜中清晰框定，强调强度与精准。\n\n2. 中 Panel：我站在一辆时尚的黑色 Ford Mustang 旁，姿态放松但强硬：双臂交叉在胸前，左腿直立，右腿微弯，脚随意倚在车身上。我的视线略微偏离镜头，表情冷静且自信。身穿合身的黑色 polo 衫，细节处有微妙的点缀，修身的灰色牛仔裤与棕色皮靴。穿着简约但时尚，强调现代男性气质。摆出专业姿态，与上传的照片同一张脸。\n\n3. 底 Panel：后方拍摄：镜头拍到野马的背部，展示“YOUR NAME”牌照和车辆的肌肉线条。照片强调车身的亮光质感及其具有攻击力、电影感的气场。场景为城市环境，现代建筑与混凝土墙，营造粗粝、电影感的氛围。光线自然但略带扩散，突出我与车的表面光泽。\n\n视角变化如下：\n\n- 镜像反射特写以近景拍摄，焦距约 85mm。\n\n- 外部全身照使用略广角镜头，眼平视角，确保我和车都在画面内。\n\n- 后车角度使用低视角，以强调力量与存在感。\n\n风格：电影感汽车编辑，城市环境，情绪阴郁而时尚，专业时尚与汽车摄影的融合，同一张脸。", this)'>📋 复制</button>
         </div>
-        <p>对我进行一组电影感的汽车摄影，保持我的真实面孔不变。场景由三个视角组成，如下：</p><p>1. 顶 Panel：内部近景：我坐在车内，穿着合身的黑色 polo 衫，镜中的侧脸反射。我的脸部表情严肃、专注，目光直视前方，侧脸轮廓在镜中清晰框定，强调强度与精准。</p><p>2. 中 Panel：我站在一辆时尚的黑色 Ford Mustang 旁，姿态放松但强硬：双臂交叉在胸前，左腿直立，右腿微弯，脚随意倚在车身上。我的视线略微偏离镜头，表情冷静且自信。身穿合身的黑色 polo 衫，细节处有微妙的点缀，修身的灰色牛仔裤与棕色皮靴。穿着简约但时尚，强调现代男性气质。摆出专业姿态，与上传的照片同一张脸。</p><p>3. 底 Panel：后方拍摄：镜头拍到野马的背部，展示“YOUR NAME”牌照和车辆的肌肉线条。照片强调车身的亮光质感及其具有攻击力、电影感的气场。场景为城市环境，现代建筑与混凝土墙，营造粗粝、电影感的氛围。光线自然但略带扩散，突出我与车的表面光泽。</p><p>视角变化如下：</p><p>- 镜像反射特写以近景拍摄，焦距约 85mm。</p><p>- 外部全身照使用略广角镜头，眼平视角，确保我和车都在画面内。</p><p>- 后车角度使用低视角，以强调力量与存在感。</p><p>风格：电影感汽车编辑，城市环境，情绪阴郁而时尚，专业时尚与汽车摄影的融合，同一张脸。</p>
+        <div data-nosnippet><p>对我进行一组电影感的汽车摄影，保持我的真实面孔不变。场景由三个视角组成，如下：</p><p>1. 顶 Panel：内部近景：我坐在车内，穿着合身的黑色 polo 衫，镜中的侧脸反射。我的脸部表情严肃、专注，目光直视前方，侧脸轮廓在镜中清晰框定，强调强度与精准。</p><p>2. 中 Panel：我站在一辆时尚的黑色 Ford Mustang 旁，姿态放松但强硬：双臂交叉在胸前，左腿直立，右腿微弯，脚随意倚在车身上。我的视线略微偏离镜头，表情冷静且自信。身穿合身的黑色 polo 衫，细节处有微妙的点缀，修身的灰色牛仔裤与棕色皮靴。穿着简约但时尚，强调现代男性气质。摆出专业姿态，与上传的照片同一张脸。</p><p>3. 底 Panel：后方拍摄：镜头拍到野马的背部，展示“YOUR NAME”牌照和车辆的肌肉线条。照片强调车身的亮光质感及其具有攻击力、电影感的气场。场景为城市环境，现代建筑与混凝土墙，营造粗粝、电影感的氛围。光线自然但略带扩散，突出我与车的表面光泽。</p><p>视角变化如下：</p><p>- 镜像反射特写以近景拍摄，焦距约 85mm。</p><p>- 外部全身照使用略广角镜头，眼平视角，确保我和车都在画面内。</p><p>- 后车角度使用低视角，以强调力量与存在感。</p><p>风格：电影感汽车编辑，城市环境，情绪阴郁而时尚，专业时尚与汽车摄影的融合，同一张脸。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A cinematic automotive photoshoot of me, keeping my real face unchanged. The scene is composed of three perspectives as a :\n\n1. Top Panel: Interior close-up: I am seated inside the car, wearing a fitted black polo shirt, shown in the side mirror reflection. My face is serious and focused, my gaze directed forward with determination. The angle captures only side view part of my profile, framed cleanly within the mirror, emphasizing intensity and precision.\n\n2.Middle Panel: I am standing confidently next to a sleek black Ford Mustang. My posture is relaxed but strong: both arms are crossed over my chest in a confident manner, while my left leg is straight and my right leg bent slightly at the knee, with the foot leaning casually against the car. My gaze is directed slightly off-camera, with a calm and assertive expression. I am wearing a fitted black polo shirt with subtle detailing, slim grey jeans with a clean cut, and brown leather boots. My outfit is minimal yet stylish, emphasizing a modern masculine vibe. Pose like a pro, same face as the uploaded photo.\n\n3. Bottom Panel: Rear car shot: The camera captures the back of the Mustang, showcasing the \"YOUR NAME\" license plate and muscular lines of the car. The photo emphasizes the glossy texture of the vehicle and its aggressive, cinematic presence. The setting is an urban environment with modern architecture and concrete walls, giving a gritty, cinematic atmosphere. The lighting is natural but slightly diffused, highlighting both me and the polished surface of the car.\n\nThe perspectives vary:\n\n- The mirror reflection close-up is shot tight with a portrait focal length (~85mm).\n\n- The exterior full-body shot is taken at eye-level with a slightly wide lens to capture both me and the car in full view.\n\n- The rear car angle uses a low perspective to emphasize power and presence.\n\nStyle: Cinematic automotive editorial, urban setting, moody and stylish, professional fashion-meets- car photography, same face.", this)'>📋 复制</button>
         </div>
-        <p>A cinematic automotive photoshoot of me, keeping my real face unchanged. The scene is composed of three perspectives as a :</p><p>1. Top Panel: Interior close-up: I am seated inside the car, wearing a fitted black polo shirt, shown in the side mirror reflection. My face is serious and focused, my gaze directed forward with determination. The angle captures only side view part of my profile, framed cleanly within the mirror, emphasizing intensity and precision.</p><p>2.Middle Panel: I am standing confidently next to a sleek black Ford Mustang. My posture is relaxed but strong: both arms are crossed over my chest in a confident manner, while my left leg is straight and my right leg bent slightly at the knee, with the foot leaning casually against the car. My gaze is directed slightly off-camera, with a calm and assertive expression. I am wearing a fitted black polo shirt with subtle detailing, slim grey jeans with a clean cut, and brown leather boots. My outfit is minimal yet stylish, emphasizing a modern masculine vibe. Pose like a pro, same face as the uploaded photo.</p><p>3. Bottom Panel: Rear car shot: The camera captures the back of the Mustang, showcasing the &quot;YOUR NAME&quot; license plate and muscular lines of the car. The photo emphasizes the glossy texture of the vehicle and its aggressive, cinematic presence. The setting is an urban environment with modern architecture and concrete walls, giving a gritty, cinematic atmosphere. The lighting is natural but slightly diffused, highlighting both me and the polished surface of the car.</p><p>The perspectives vary:</p><p>- The mirror reflection close-up is shot tight with a portrait focal length (~85mm).</p><p>- The exterior full-body shot is taken at eye-level with a slightly wide lens to capture both me and the car in full view.</p><p>- The rear car angle uses a low perspective to emphasize power and presence.</p><p>Style: Cinematic automotive editorial, urban setting, moody and stylish, professional fashion-meets- car photography, same face.</p>
+        <div data-nosnippet><p>A cinematic automotive photoshoot of me, keeping my real face unchanged. The scene is composed of three perspectives as a :</p><p>1. Top Panel: Interior close-up: I am seated inside the car, wearing a fitted black polo shirt, shown in the side mirror reflection. My face is serious and focused, my gaze directed forward with determination. The angle captures only side view part of my profile, framed cleanly within the mirror, emphasizing intensity and precision.</p><p>2.Middle Panel: I am standing confidently next to a sleek black Ford Mustang. My posture is relaxed but strong: both arms are crossed over my chest in a confident manner, while my left leg is straight and my right leg bent slightly at the knee, with the foot leaning casually against the car. My gaze is directed slightly off-camera, with a calm and assertive expression. I am wearing a fitted black polo shirt with subtle detailing, slim grey jeans with a clean cut, and brown leather boots. My outfit is minimal yet stylish, emphasizing a modern masculine vibe. Pose like a pro, same face as the uploaded photo.</p><p>3. Bottom Panel: Rear car shot: The camera captures the back of the Mustang, showcasing the &quot;YOUR NAME&quot; license plate and muscular lines of the car. The photo emphasizes the glossy texture of the vehicle and its aggressive, cinematic presence. The setting is an urban environment with modern architecture and concrete walls, giving a gritty, cinematic atmosphere. The lighting is natural but slightly diffused, highlighting both me and the polished surface of the car.</p><p>The perspectives vary:</p><p>- The mirror reflection close-up is shot tight with a portrait focal length (~85mm).</p><p>- The exterior full-body shot is taken at eye-level with a slightly wide lens to capture both me and the car in full view.</p><p>- The rear car angle uses a low perspective to emphasize power and presence.</p><p>Style: Cinematic automotive editorial, urban setting, moody and stylish, professional fashion-meets- car photography, same face.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/384.jpeg" alt="人和汽车的三视图" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 380,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

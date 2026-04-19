@@ -7,11 +7,13 @@
     <title>Transform the uploaded image into an ultra high resolution mi... #1220 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Transform the uploaded image into an ultra high resolution mixed reality street portrait. A young woman (same face as...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1220.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1220.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1220.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845346">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023702">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("将上传的图像转换为一幅超高分辨率的混合现实街头肖像。一位年轻女性（与上传图像中的面容相同）坐在城市台阶上，旁边是她的卡通插画化双胞胎。场景为室外，背景是一面有纹理的混凝土墙，墙上有一扇高窗，窗中反射着树木和柔和的室内光。剥落油漆的磨损台阶增添真实感。\n\n真实的女性穿着宽松的Y2K风格街头服饰：超大号短款连帽衫、宽松深色牛仔裤、厚底运动鞋和一顶针织帽。她随意地坐着，一条腿屈膝抬起，目光微偏，表情平静自信。\n\n她的插画化对应人物完全镜像她的姿势、服装和比例，采用大胆的平面图形风格绘制，粗黑轮廓线和鲜艳色彩。卡通的手臂与真实的手臂对齐，形成一种俏皮的互动。自然日光均匀照亮两个人物，将真实的纹理与清晰的卡通阴影相融合，营造出一种酷感、怀旧且富有创意的混合媒介风格。", this)'>📋 Copy</button>
         </div>
-        <p>将上传的图像转换为一幅超高分辨率的混合现实街头肖像。一位年轻女性（与上传图像中的面容相同）坐在城市台阶上，旁边是她的卡通插画化双胞胎。场景为室外，背景是一面有纹理的混凝土墙，墙上有一扇高窗，窗中反射着树木和柔和的室内光。剥落油漆的磨损台阶增添真实感。</p><p>真实的女性穿着宽松的Y2K风格街头服饰：超大号短款连帽衫、宽松深色牛仔裤、厚底运动鞋和一顶针织帽。她随意地坐着，一条腿屈膝抬起，目光微偏，表情平静自信。</p><p>她的插画化对应人物完全镜像她的姿势、服装和比例，采用大胆的平面图形风格绘制，粗黑轮廓线和鲜艳色彩。卡通的手臂与真实的手臂对齐，形成一种俏皮的互动。自然日光均匀照亮两个人物，将真实的纹理与清晰的卡通阴影相融合，营造出一种酷感、怀旧且富有创意的混合媒介风格。</p>
+        <div data-nosnippet><p>将上传的图像转换为一幅超高分辨率的混合现实街头肖像。一位年轻女性（与上传图像中的面容相同）坐在城市台阶上，旁边是她的卡通插画化双胞胎。场景为室外，背景是一面有纹理的混凝土墙，墙上有一扇高窗，窗中反射着树木和柔和的室内光。剥落油漆的磨损台阶增添真实感。</p><p>真实的女性穿着宽松的Y2K风格街头服饰：超大号短款连帽衫、宽松深色牛仔裤、厚底运动鞋和一顶针织帽。她随意地坐着，一条腿屈膝抬起，目光微偏，表情平静自信。</p><p>她的插画化对应人物完全镜像她的姿势、服装和比例，采用大胆的平面图形风格绘制，粗黑轮廓线和鲜艳色彩。卡通的手臂与真实的手臂对齐，形成一种俏皮的互动。自然日光均匀照亮两个人物，将真实的纹理与清晰的卡通阴影相融合，营造出一种酷感、怀旧且富有创意的混合媒介风格。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Transform the uploaded image into an ultra-high-resolution mixed-reality street portrait. A young woman (same face as the uploaded image) sits on urban steps beside her cartoon illustrated twin. The setting is outdoors against a textured concrete wall with a tall window reflecting trees and soft indoor light. Worn steps with chipped paint add realism.\nThe real woman wears relaxed Y2K-inspired streetwear: an oversized cropped hoodie, baggy dark jeans, chunky sneakers, and a beanie. She sits casually with one knee raised, looking slightly away with a calm, confident expression.\nHer illustrated counterpart mirrors her pose, outfit, and proportions exactly, drawn in a bold flat graphic style with thick black outlines and vibrant colors. The cartoon arm aligns with the real arm, creating a playful interaction. Natural daylight lights both figures evenly, blending realistic textures with clean cartoon shading for a cool, nostalgic, creative mixed-media look.", this)'>📋 Copy</button>
         </div>
-        <p>Transform the uploaded image into an ultra-high-resolution mixed-reality street portrait. A young woman (same face as the uploaded image) sits on urban steps beside her cartoon illustrated twin. The setting is outdoors against a textured concrete wall with a tall window reflecting trees and soft indoor light. Worn steps with chipped paint add realism.<br>The real woman wears relaxed Y2K-inspired streetwear: an oversized cropped hoodie, baggy dark jeans, chunky sneakers, and a beanie. She sits casually with one knee raised, looking slightly away with a calm, confident expression.<br>Her illustrated counterpart mirrors her pose, outfit, and proportions exactly, drawn in a bold flat graphic style with thick black outlines and vibrant colors. The cartoon arm aligns with the real arm, creating a playful interaction. Natural daylight lights both figures evenly, blending realistic textures with clean cartoon shading for a cool, nostalgic, creative mixed-media look.</p>
+        <div data-nosnippet><p>Transform the uploaded image into an ultra-high-resolution mixed-reality street portrait. A young woman (same face as the uploaded image) sits on urban steps beside her cartoon illustrated twin. The setting is outdoors against a textured concrete wall with a tall window reflecting trees and soft indoor light. Worn steps with chipped paint add realism.<br>The real woman wears relaxed Y2K-inspired streetwear: an oversized cropped hoodie, baggy dark jeans, chunky sneakers, and a beanie. She sits casually with one knee raised, looking slightly away with a calm, confident expression.<br>Her illustrated counterpart mirrors her pose, outfit, and proportions exactly, drawn in a bold flat graphic style with thick black outlines and vibrant colors. The cartoon arm aligns with the real arm, creating a playful interaction. Natural daylight lights both figures evenly, blending realistic textures with clean cartoon shading for a cool, nostalgic, creative mixed-media look.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011391737525362912-1.jpg" alt="Transform the uploaded image into an ultra high resolution mi..." loading="lazy"><img src="/images/tweet-2011391737525362912-2.jpg" alt="Transform the uploaded image into an ultra high resolution mi..." loading="lazy"><img src="/images/tweet-2011391737525362912-3.jpg" alt="Transform the uploaded image into an ultra high resolution mi..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1220,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

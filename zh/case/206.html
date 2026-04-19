@@ -7,11 +7,13 @@
     <title>工业内部品牌广告 #206 | Gem Nana AI 提示词库</title>
     <meta name="description" content="工业内部品牌广告 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/206.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/206.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/206.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842054">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022740">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一个超现实、1:1 比例的品牌广告。\n将产品内部转化为微型工厂或实验室。\n展示详细的内部系统：管道、工人、发光的液体、蒸汽和机器——所有这些都运作起来，反映产品的核心功能（能量、美丽、风味等）。\n保持外层产品的品牌标识真实锐利。\n将背景设置得简约且电影感十足。\n在顶部添加品牌标志，底部添加一句简短有力的口号。\n风格：影棚级灯光，高对比度，照片级真实纹理。", this)'>📋 复制</button>
         </div>
-        <p>创建一个超现实、1:1 比例的品牌广告。<br>将产品内部转化为微型工厂或实验室。<br>展示详细的内部系统：管道、工人、发光的液体、蒸汽和机器——所有这些都运作起来，反映产品的核心功能（能量、美丽、风味等）。<br>保持外层产品的品牌标识真实锐利。<br>将背景设置得简约且电影感十足。<br>在顶部添加品牌标志，底部添加一句简短有力的口号。<br>风格：影棚级灯光，高对比度，照片级真实纹理。</p>
+        <div data-nosnippet><p>创建一个超现实、1:1 比例的品牌广告。<br>将产品内部转化为微型工厂或实验室。<br>展示详细的内部系统：管道、工人、发光的液体、蒸汽和机器——所有这些都运作起来，反映产品的核心功能（能量、美丽、风味等）。<br>保持外层产品的品牌标识真实锐利。<br>将背景设置得简约且电影感十足。<br>在顶部添加品牌标志，底部添加一句简短有力的口号。<br>风格：影棚级灯光，高对比度，照片级真实纹理。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a hyperrealistic, surreal 1:1 advertisement for [Brand Name].\nTransform the product into a miniature industrial factory or laboratory from the inside.\nReveal detailed internal systems: pipes, workers, glowing fluids, steam, and machines — all functioning to reflect the product’s core purpose (energy, beauty, flavor, etc).\nKeep the outer product branding realistic and sharp.\nSet the background minimal and cinematic.\nAdd the brand logo at the top, and a short, powerful slogan at the bottom.\nStyle: studio-grade lighting, high contrast, photorealistic textures.", this)'>📋 复制</button>
         </div>
-        <p>Create a hyperrealistic, surreal 1:1 advertisement for [Brand Name].<br>Transform the product into a miniature industrial factory or laboratory from the inside.<br>Reveal detailed internal systems: pipes, workers, glowing fluids, steam, and machines — all functioning to reflect the product’s core purpose (energy, beauty, flavor, etc).<br>Keep the outer product branding realistic and sharp.<br>Set the background minimal and cinematic.<br>Add the brand logo at the top, and a short, powerful slogan at the bottom.<br>Style: studio-grade lighting, high contrast, photorealistic textures.</p>
+        <div data-nosnippet><p>Create a hyperrealistic, surreal 1:1 advertisement for [Brand Name].<br>Transform the product into a miniature industrial factory or laboratory from the inside.<br>Reveal detailed internal systems: pipes, workers, glowing fluids, steam, and machines — all functioning to reflect the product’s core purpose (energy, beauty, flavor, etc).<br>Keep the outer product branding realistic and sharp.<br>Set the background minimal and cinematic.<br>Add the brand logo at the top, and a short, powerful slogan at the bottom.<br>Style: studio-grade lighting, high contrast, photorealistic textures.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/206.jpeg" alt="工业内部品牌广告" loading="lazy"><img src="/images/206-2.jpeg" alt="工业内部品牌广告" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 206,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

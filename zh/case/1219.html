@@ -7,11 +7,13 @@
     <title>Generate a comprehensive character concept breakdown image ba... #1219 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Generate a comprehensive character concept breakdown image based on Image 1 character. The image must feature the ful...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1219.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1219.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1219.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841131">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022505">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("基于图像1中的角色，生成一张综合性的角色概念拆解图像。\n图像必须在中央以角色全身设计为主，并以详细元素环绕，如服装层次、不同表情、核心物品、材料特写以及展示角色生活方式的日常个人物品。\n该角色与图像1中的姿势相同。视觉规格：\n1. 构图布局：\n  - 中央位置：将角色的全身或主要动感姿势放在视觉中心。\n  - 环绕位置：将拆解后的元素整齐地排列在中央角色周围。\n  - 视觉引导：使用手绘箭头或引导线将周围元素与角色对应部位连接（例如将包与手相连）。\n2. 拆解细节——关键迭代区域：\n  - 服装层次：将角色的服装拆分为独立单件。如果有层叠，展示在脱去外层（如夹克）时内层的状态。\n  - 新增内容——内衣拆解：单独展示角色的内衣，重点展示设计和材质细节。\n  - 表情组：在角落绘制3-4个不同的头像，展示不同情绪表情。\n  - 材料特写：选择1-2个关键区域进行放大材质纹理特写。\n  - 新增内容——物品质感特写：加入小物件的描绘，重点展示其质感。\n  - 相关物品：此部分超越大型道具，包含“生活碎片”：\n    - 手袋与内容物：描绘角色的日常包或手拿包，呈“打开”状态以展示散落的物品。\n    - 化妆与护理：展示角色常用的彩妆和护肤产品。\n    - 私人物品：可视化反映角色隐秘一面的个人物品。根据角色性格，这可能包括私人日记、药品/补充剂盒、电子烟，或甚至更私密的物品。\n3. 风格与注释：\n  - 艺术风格：保持高质量的2D插画风格或概念草图风格，线条干净、锐利。\n  - 背景设计：简洁的背景应与角色风格、氛围和环境相匹配，并与整体设计保持一致。\n  - 文本注释：在每个拆解元素旁模拟手写笔记，简要描述材质或品牌/型号提示。\n执行逻辑：\n当用户提供图像或描述时：\n1. 分析角色的核心特征、服装风格及潜在性格。\n2. 提取主要可拆解元素（例如外套、鞋子、主要表情）。\n3. 头脑风暴并设计次要深度元素（例如她会穿什么风格的内衣？包里会有什么口红？）。\n4. 生成一张结合所有这些元素的图像，确保透视准确、光线统一且注释清晰。\n5. 使用此语言：英语", this)'>📋 复制</button>
         </div>
-        <p>基于图像1中的角色，生成一张综合性的角色概念拆解图像。<br>图像必须在中央以角色全身设计为主，并以详细元素环绕，如服装层次、不同表情、核心物品、材料特写以及展示角色生活方式的日常个人物品。<br>该角色与图像1中的姿势相同。视觉规格：<br>1. 构图布局：<br>  - 中央位置：将角色的全身或主要动感姿势放在视觉中心。<br>  - 环绕位置：将拆解后的元素整齐地排列在中央角色周围。<br>  - 视觉引导：使用手绘箭头或引导线将周围元素与角色对应部位连接（例如将包与手相连）。<br>2. 拆解细节——关键迭代区域：<br>  - 服装层次：将角色的服装拆分为独立单件。如果有层叠，展示在脱去外层（如夹克）时内层的状态。<br>  - 新增内容——内衣拆解：单独展示角色的内衣，重点展示设计和材质细节。<br>  - 表情组：在角落绘制3-4个不同的头像，展示不同情绪表情。<br>  - 材料特写：选择1-2个关键区域进行放大材质纹理特写。<br>  - 新增内容——物品质感特写：加入小物件的描绘，重点展示其质感。<br>  - 相关物品：此部分超越大型道具，包含“生活碎片”：<br>    - 手袋与内容物：描绘角色的日常包或手拿包，呈“打开”状态以展示散落的物品。<br>    - 化妆与护理：展示角色常用的彩妆和护肤产品。<br>    - 私人物品：可视化反映角色隐秘一面的个人物品。根据角色性格，这可能包括私人日记、药品/补充剂盒、电子烟，或甚至更私密的物品。<br>3. 风格与注释：<br>  - 艺术风格：保持高质量的2D插画风格或概念草图风格，线条干净、锐利。<br>  - 背景设计：简洁的背景应与角色风格、氛围和环境相匹配，并与整体设计保持一致。<br>  - 文本注释：在每个拆解元素旁模拟手写笔记，简要描述材质或品牌/型号提示。<br>执行逻辑：<br>当用户提供图像或描述时：<br>1. 分析角色的核心特征、服装风格及潜在性格。<br>2. 提取主要可拆解元素（例如外套、鞋子、主要表情）。<br>3. 头脑风暴并设计次要深度元素（例如她会穿什么风格的内衣？包里会有什么口红？）。<br>4. 生成一张结合所有这些元素的图像，确保透视准确、光线统一且注释清晰。<br>5. 使用此语言：英语</p>
+        <div data-nosnippet><p>基于图像1中的角色，生成一张综合性的角色概念拆解图像。<br>图像必须在中央以角色全身设计为主，并以详细元素环绕，如服装层次、不同表情、核心物品、材料特写以及展示角色生活方式的日常个人物品。<br>该角色与图像1中的姿势相同。视觉规格：<br>1. 构图布局：<br>  - 中央位置：将角色的全身或主要动感姿势放在视觉中心。<br>  - 环绕位置：将拆解后的元素整齐地排列在中央角色周围。<br>  - 视觉引导：使用手绘箭头或引导线将周围元素与角色对应部位连接（例如将包与手相连）。<br>2. 拆解细节——关键迭代区域：<br>  - 服装层次：将角色的服装拆分为独立单件。如果有层叠，展示在脱去外层（如夹克）时内层的状态。<br>  - 新增内容——内衣拆解：单独展示角色的内衣，重点展示设计和材质细节。<br>  - 表情组：在角落绘制3-4个不同的头像，展示不同情绪表情。<br>  - 材料特写：选择1-2个关键区域进行放大材质纹理特写。<br>  - 新增内容——物品质感特写：加入小物件的描绘，重点展示其质感。<br>  - 相关物品：此部分超越大型道具，包含“生活碎片”：<br>    - 手袋与内容物：描绘角色的日常包或手拿包，呈“打开”状态以展示散落的物品。<br>    - 化妆与护理：展示角色常用的彩妆和护肤产品。<br>    - 私人物品：可视化反映角色隐秘一面的个人物品。根据角色性格，这可能包括私人日记、药品/补充剂盒、电子烟，或甚至更私密的物品。<br>3. 风格与注释：<br>  - 艺术风格：保持高质量的2D插画风格或概念草图风格，线条干净、锐利。<br>  - 背景设计：简洁的背景应与角色风格、氛围和环境相匹配，并与整体设计保持一致。<br>  - 文本注释：在每个拆解元素旁模拟手写笔记，简要描述材质或品牌/型号提示。<br>执行逻辑：<br>当用户提供图像或描述时：<br>1. 分析角色的核心特征、服装风格及潜在性格。<br>2. 提取主要可拆解元素（例如外套、鞋子、主要表情）。<br>3. 头脑风暴并设计次要深度元素（例如她会穿什么风格的内衣？包里会有什么口红？）。<br>4. 生成一张结合所有这些元素的图像，确保透视准确、光线统一且注释清晰。<br>5. 使用此语言：英语</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Generate a comprehensive character concept breakdown image based on Image 1 character.\nThe image must feature the full-body character design at the center, surrounded by detailed elements such as layers of clothing, different facial expressions, core items, material close-ups, and everyday personal items that showcase the character’s lifestyle.\nThe character has the same pose as the one in Image 1.Visual Specifications:\n1. Composition Layout:\n  - Center Position: Place the character’s full-body or primary dynamic pose as the visual anchor.\n  - Surrounding Position: Neatly arrange the deconstructed elements around the central character.\n  - Visual Guide: Use hand-drawn arrows or guide lines to connect the surrounding elements to the corresponding part of the character (e.g., a bag connected to the hand).\n2. Deconstruction Details – Key Iterative Areas:\n  - Clothing Layers: Break down the character's outfit into individual pieces. If layered, show the state of the inner layers when outer layers (like jackets) are removed.\n  - New Addition – Underwear Deconstruction: Independently display the character’s innerwear, focusing on design and material details.\n  - Expression Set: In corners, draw 3-4 different headshots showcasing different emotional expressions.\n  - Material Close-ups: Select 1-2 key areas for zoomed-in material textures.\n  - New Addition – Item Texture Close-ups: Add depictions of small items, focusing on their textures.\n  - Associated Items: This section goes beyond large props and includes “lifestyle fragments”:\n    - Handbags and Contents: Illustrate the character’s everyday bag or clutch, \"opened\" to show scattered contents.\n    - Cosmetics & Care: Show the character's common makeup and skincare products.\n    - Private Lifestyle Items: Visualize personal items that reflect the character’s hidden side. Depending on the character's personality, this could include a private diary, medicine/supplement box, vape, or even more intimate objects.\n3. Style & Annotations:\n  - Art Style: Maintain a high-quality 2D illustration style or conceptual sketch style with clean, sharp lines.\n  - Background Design: Simple background should match the character's style, atmosphere, and environment, and align with the overall design.\n  - Text Annotations: Simulate handwritten notes next to each deconstructed element, briefly describing materials or brand/model hints.\nExecution Logic:\nWhen the user provides an image or description:\n1. Analyze the character's core features, outfit style, and potential personality.\n2. Extract the primary deconstructible elements (e.g., outerwear, shoes, major expressions).\n3. Brainstorm and design secondary depth elements (e.g., what style of underwear would she wear? What lipstick would be in her bag?).\n4. Generate an image that combines all these elements, ensuring accurate perspective, cohesive lighting, and clear annotations.\n5. Use this language: English", this)'>📋 复制</button>
         </div>
-        <p>Generate a comprehensive character concept breakdown image based on Image 1 character.<br>The image must feature the full-body character design at the center, surrounded by detailed elements such as layers of clothing, different facial expressions, core items, material close-ups, and everyday personal items that showcase the character’s lifestyle.<br>The character has the same pose as the one in Image 1.Visual Specifications:<br>1. Composition Layout:<br>  - Center Position: Place the character’s full-body or primary dynamic pose as the visual anchor.<br>  - Surrounding Position: Neatly arrange the deconstructed elements around the central character.<br>  - Visual Guide: Use hand-drawn arrows or guide lines to connect the surrounding elements to the corresponding part of the character (e.g., a bag connected to the hand).<br>2. Deconstruction Details – Key Iterative Areas:<br>  - Clothing Layers: Break down the character&#39;s outfit into individual pieces. If layered, show the state of the inner layers when outer layers (like jackets) are removed.<br>  - New Addition – Underwear Deconstruction: Independently display the character’s innerwear, focusing on design and material details.<br>  - Expression Set: In corners, draw 3-4 different headshots showcasing different emotional expressions.<br>  - Material Close-ups: Select 1-2 key areas for zoomed-in material textures.<br>  - New Addition – Item Texture Close-ups: Add depictions of small items, focusing on their textures.<br>  - Associated Items: This section goes beyond large props and includes “lifestyle fragments”:<br>    - Handbags and Contents: Illustrate the character’s everyday bag or clutch, &quot;opened&quot; to show scattered contents.<br>    - Cosmetics &amp; Care: Show the character&#39;s common makeup and skincare products.<br>    - Private Lifestyle Items: Visualize personal items that reflect the character’s hidden side. Depending on the character&#39;s personality, this could include a private diary, medicine/supplement box, vape, or even more intimate objects.<br>3. Style &amp; Annotations:<br>  - Art Style: Maintain a high-quality 2D illustration style or conceptual sketch style with clean, sharp lines.<br>  - Background Design: Simple background should match the character&#39;s style, atmosphere, and environment, and align with the overall design.<br>  - Text Annotations: Simulate handwritten notes next to each deconstructed element, briefly describing materials or brand/model hints.<br>Execution Logic:<br>When the user provides an image or description:<br>1. Analyze the character&#39;s core features, outfit style, and potential personality.<br>2. Extract the primary deconstructible elements (e.g., outerwear, shoes, major expressions).<br>3. Brainstorm and design secondary depth elements (e.g., what style of underwear would she wear? What lipstick would be in her bag?).<br>4. Generate an image that combines all these elements, ensuring accurate perspective, cohesive lighting, and clear annotations.<br>5. Use this language: English</p>
+        <div data-nosnippet><p>Generate a comprehensive character concept breakdown image based on Image 1 character.<br>The image must feature the full-body character design at the center, surrounded by detailed elements such as layers of clothing, different facial expressions, core items, material close-ups, and everyday personal items that showcase the character’s lifestyle.<br>The character has the same pose as the one in Image 1.Visual Specifications:<br>1. Composition Layout:<br>  - Center Position: Place the character’s full-body or primary dynamic pose as the visual anchor.<br>  - Surrounding Position: Neatly arrange the deconstructed elements around the central character.<br>  - Visual Guide: Use hand-drawn arrows or guide lines to connect the surrounding elements to the corresponding part of the character (e.g., a bag connected to the hand).<br>2. Deconstruction Details – Key Iterative Areas:<br>  - Clothing Layers: Break down the character&#39;s outfit into individual pieces. If layered, show the state of the inner layers when outer layers (like jackets) are removed.<br>  - New Addition – Underwear Deconstruction: Independently display the character’s innerwear, focusing on design and material details.<br>  - Expression Set: In corners, draw 3-4 different headshots showcasing different emotional expressions.<br>  - Material Close-ups: Select 1-2 key areas for zoomed-in material textures.<br>  - New Addition – Item Texture Close-ups: Add depictions of small items, focusing on their textures.<br>  - Associated Items: This section goes beyond large props and includes “lifestyle fragments”:<br>    - Handbags and Contents: Illustrate the character’s everyday bag or clutch, &quot;opened&quot; to show scattered contents.<br>    - Cosmetics &amp; Care: Show the character&#39;s common makeup and skincare products.<br>    - Private Lifestyle Items: Visualize personal items that reflect the character’s hidden side. Depending on the character&#39;s personality, this could include a private diary, medicine/supplement box, vape, or even more intimate objects.<br>3. Style &amp; Annotations:<br>  - Art Style: Maintain a high-quality 2D illustration style or conceptual sketch style with clean, sharp lines.<br>  - Background Design: Simple background should match the character&#39;s style, atmosphere, and environment, and align with the overall design.<br>  - Text Annotations: Simulate handwritten notes next to each deconstructed element, briefly describing materials or brand/model hints.<br>Execution Logic:<br>When the user provides an image or description:<br>1. Analyze the character&#39;s core features, outfit style, and potential personality.<br>2. Extract the primary deconstructible elements (e.g., outerwear, shoes, major expressions).<br>3. Brainstorm and design secondary depth elements (e.g., what style of underwear would she wear? What lipstick would be in her bag?).<br>4. Generate an image that combines all these elements, ensuring accurate perspective, cohesive lighting, and clear annotations.<br>5. Use this language: English</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011391692021366935-1.jpg" alt="Generate a comprehensive character concept breakdown image ba..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1219,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

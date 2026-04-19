@@ -7,11 +7,13 @@
     <title>&quot;image prompt&quot;: { #1935 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image prompt&quot;: { &quot;type&quot;: &quot;Ultra realistic culinary infographic&quot;, &quot;subject&quot;: { &quot;cuisine&quot;: &quot;Indonesian&quot;, &quot;base eleme...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1935.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1935.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1935.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840450">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022340">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt\": {\n    \"type\": \"极致真实的烹饪信息图\",\n    \"subject\": {\n      \"cuisine\": \"印尼风味\",\n      \"base_element\": \"一个传统盛碗，盛着一碗热气腾腾的菜肴\",\n      \"levitating_ingredients\": [\n        \"嫩滑的肉块\",\n        \"金黄酥脆的豆腐\",\n        \"空中悬浮的浓稠酱汁滴\",\n        \"新鲜绿色香草\",\n        \"红辣椒\",\n        \"切片的青柠\",\n        \"捣碎的大蒜\",\n        \"脆炸葱头\"\n      ]\n    },\n    \"composition\": {\n      \"layout\": \"极简、纵向堆叠布局\",\n      \"arrangement\": \"食材自然悬浮，仿佛被运动悬挂\",\n      \"background\": \"质感纹理的乡村木质桌面\",\n      \"visual_hierarchy\": \"碗在底部稳固，食材向上逐层升起\"\n    },\n    \"graphic_design_elements\": {\n      \"labels\": \"清晰的印尼语标注\",\n      \"lines\": \"细白色连接线\",\n      \"style\": \"高端编辑风格的美食信息图，杂志级设计\"\n    },\n    \"lighting_and_mood\": {\n      \"lighting\": \"受控的电影感工作室照明\",\n      \"color_palette\": \"温暖、诱人的色调\",\n      \"effects\": \"可见的蒸汽与定格动作的食材元素\"\n    },\n    \"technical_specs\": {\n      \"camera_settings\": \"浅景深，焦点清晰的细节，DSLR风格拍摄\",\n      \"details\": \"极其细致的表面纹理\",\n      \"resolution\": \"8K，照片级真实质感\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;type&quot;: &quot;极致真实的烹饪信息图&quot;,<br>    &quot;subject&quot;: {<br>      &quot;cuisine&quot;: &quot;印尼风味&quot;,<br>      &quot;base_element&quot;: &quot;一个传统盛碗，盛着一碗热气腾腾的菜肴&quot;,<br>      &quot;levitating_ingredients&quot;: [<br>        &quot;嫩滑的肉块&quot;,<br>        &quot;金黄酥脆的豆腐&quot;,<br>        &quot;空中悬浮的浓稠酱汁滴&quot;,<br>        &quot;新鲜绿色香草&quot;,<br>        &quot;红辣椒&quot;,<br>        &quot;切片的青柠&quot;,<br>        &quot;捣碎的大蒜&quot;,<br>        &quot;脆炸葱头&quot;<br>      ]<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;极简、纵向堆叠布局&quot;,<br>      &quot;arrangement&quot;: &quot;食材自然悬浮，仿佛被运动悬挂&quot;,<br>      &quot;background&quot;: &quot;质感纹理的乡村木质桌面&quot;,<br>      &quot;visual_hierarchy&quot;: &quot;碗在底部稳固，食材向上逐层升起&quot;<br>    },<br>    &quot;graphic_design_elements&quot;: {<br>      &quot;labels&quot;: &quot;清晰的印尼语标注&quot;,<br>      &quot;lines&quot;: &quot;细白色连接线&quot;,<br>      &quot;style&quot;: &quot;高端编辑风格的美食信息图，杂志级设计&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;受控的电影感工作室照明&quot;,<br>      &quot;color_palette&quot;: &quot;温暖、诱人的色调&quot;,<br>      &quot;effects&quot;: &quot;可见的蒸汽与定格动作的食材元素&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_settings&quot;: &quot;浅景深，焦点清晰的细节，DSLR风格拍摄&quot;,<br>      &quot;details&quot;: &quot;极其细致的表面纹理&quot;,<br>      &quot;resolution&quot;: &quot;8K，照片级真实质感&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;type&quot;: &quot;极致真实的烹饪信息图&quot;,<br>    &quot;subject&quot;: {<br>      &quot;cuisine&quot;: &quot;印尼风味&quot;,<br>      &quot;base_element&quot;: &quot;一个传统盛碗，盛着一碗热气腾腾的菜肴&quot;,<br>      &quot;levitating_ingredients&quot;: [<br>        &quot;嫩滑的肉块&quot;,<br>        &quot;金黄酥脆的豆腐&quot;,<br>        &quot;空中悬浮的浓稠酱汁滴&quot;,<br>        &quot;新鲜绿色香草&quot;,<br>        &quot;红辣椒&quot;,<br>        &quot;切片的青柠&quot;,<br>        &quot;捣碎的大蒜&quot;,<br>        &quot;脆炸葱头&quot;<br>      ]<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;极简、纵向堆叠布局&quot;,<br>      &quot;arrangement&quot;: &quot;食材自然悬浮，仿佛被运动悬挂&quot;,<br>      &quot;background&quot;: &quot;质感纹理的乡村木质桌面&quot;,<br>      &quot;visual_hierarchy&quot;: &quot;碗在底部稳固，食材向上逐层升起&quot;<br>    },<br>    &quot;graphic_design_elements&quot;: {<br>      &quot;labels&quot;: &quot;清晰的印尼语标注&quot;,<br>      &quot;lines&quot;: &quot;细白色连接线&quot;,<br>      &quot;style&quot;: &quot;高端编辑风格的美食信息图，杂志级设计&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;受控的电影感工作室照明&quot;,<br>      &quot;color_palette&quot;: &quot;温暖、诱人的色调&quot;,<br>      &quot;effects&quot;: &quot;可见的蒸汽与定格动作的食材元素&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_settings&quot;: &quot;浅景深，焦点清晰的细节，DSLR风格拍摄&quot;,<br>      &quot;details&quot;: &quot;极其细致的表面纹理&quot;,<br>      &quot;resolution&quot;: &quot;8K，照片级真实质感&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt\": {\n    \"type\": \"Ultra-realistic culinary infographic\",\n    \"subject\": {\n      \"cuisine\": \"Indonesian\",\n      \"base_element\": \"A traditional serving bowl holding a steaming hot dish\",\n      \"levitating_ingredients\": [\n        \"Tender meat pieces\",\n        \"Golden crispy tofu\",\n        \"Rich sauce droplets in mid-air\",\n        \"Fresh green herbs\",\n        \"Red chilies\",\n        \"Sliced lime\",\n        \"Crushed garlic\",\n        \"Crispy fried shallots\"\n      ]\n    },\n    \"composition\": {\n      \"layout\": \"Minimal, vertically stacked layout\",\n      \"arrangement\": \"Ingredients floating naturally as if suspended in motion\",\n      \"background\": \"Textured rustic wooden tabletop\",\n      \"visual_hierarchy\": \"The bowl remains grounded at the base, with ingredients ascending above it\"\n    },\n    \"graphic_design_elements\": {\n      \"labels\": \"Clean Indonesian-language annotations\",\n      \"lines\": \"Fine white connector lines\",\n      \"style\": \"High-end editorial food infographic, magazine-quality design\"\n    },\n    \"lighting_and_mood\": {\n      \"lighting\": \"Controlled cinematic studio lighting\",\n      \"color_palette\": \"Warm, appetizing color tones\",\n      \"effects\": \"Visible steam and frozen-action food elements\"\n    },\n    \"technical_specs\": {\n      \"camera_settings\": \"Shallow depth of field with crisp focal detail, DSLR-style capture\",\n      \"details\": \"Extremely detailed surface textures\",\n      \"resolution\": \"8K, photorealistic finish\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;type&quot;: &quot;Ultra-realistic culinary infographic&quot;,<br>    &quot;subject&quot;: {<br>      &quot;cuisine&quot;: &quot;Indonesian&quot;,<br>      &quot;base_element&quot;: &quot;A traditional serving bowl holding a steaming hot dish&quot;,<br>      &quot;levitating_ingredients&quot;: [<br>        &quot;Tender meat pieces&quot;,<br>        &quot;Golden crispy tofu&quot;,<br>        &quot;Rich sauce droplets in mid-air&quot;,<br>        &quot;Fresh green herbs&quot;,<br>        &quot;Red chilies&quot;,<br>        &quot;Sliced lime&quot;,<br>        &quot;Crushed garlic&quot;,<br>        &quot;Crispy fried shallots&quot;<br>      ]<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;Minimal, vertically stacked layout&quot;,<br>      &quot;arrangement&quot;: &quot;Ingredients floating naturally as if suspended in motion&quot;,<br>      &quot;background&quot;: &quot;Textured rustic wooden tabletop&quot;,<br>      &quot;visual_hierarchy&quot;: &quot;The bowl remains grounded at the base, with ingredients ascending above it&quot;<br>    },<br>    &quot;graphic_design_elements&quot;: {<br>      &quot;labels&quot;: &quot;Clean Indonesian-language annotations&quot;,<br>      &quot;lines&quot;: &quot;Fine white connector lines&quot;,<br>      &quot;style&quot;: &quot;High-end editorial food infographic, magazine-quality design&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;Controlled cinematic studio lighting&quot;,<br>      &quot;color_palette&quot;: &quot;Warm, appetizing color tones&quot;,<br>      &quot;effects&quot;: &quot;Visible steam and frozen-action food elements&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_settings&quot;: &quot;Shallow depth of field with crisp focal detail, DSLR-style capture&quot;,<br>      &quot;details&quot;: &quot;Extremely detailed surface textures&quot;,<br>      &quot;resolution&quot;: &quot;8K, photorealistic finish&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;type&quot;: &quot;Ultra-realistic culinary infographic&quot;,<br>    &quot;subject&quot;: {<br>      &quot;cuisine&quot;: &quot;Indonesian&quot;,<br>      &quot;base_element&quot;: &quot;A traditional serving bowl holding a steaming hot dish&quot;,<br>      &quot;levitating_ingredients&quot;: [<br>        &quot;Tender meat pieces&quot;,<br>        &quot;Golden crispy tofu&quot;,<br>        &quot;Rich sauce droplets in mid-air&quot;,<br>        &quot;Fresh green herbs&quot;,<br>        &quot;Red chilies&quot;,<br>        &quot;Sliced lime&quot;,<br>        &quot;Crushed garlic&quot;,<br>        &quot;Crispy fried shallots&quot;<br>      ]<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;Minimal, vertically stacked layout&quot;,<br>      &quot;arrangement&quot;: &quot;Ingredients floating naturally as if suspended in motion&quot;,<br>      &quot;background&quot;: &quot;Textured rustic wooden tabletop&quot;,<br>      &quot;visual_hierarchy&quot;: &quot;The bowl remains grounded at the base, with ingredients ascending above it&quot;<br>    },<br>    &quot;graphic_design_elements&quot;: {<br>      &quot;labels&quot;: &quot;Clean Indonesian-language annotations&quot;,<br>      &quot;lines&quot;: &quot;Fine white connector lines&quot;,<br>      &quot;style&quot;: &quot;High-end editorial food infographic, magazine-quality design&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;Controlled cinematic studio lighting&quot;,<br>      &quot;color_palette&quot;: &quot;Warm, appetizing color tones&quot;,<br>      &quot;effects&quot;: &quot;Visible steam and frozen-action food elements&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;camera_settings&quot;: &quot;Shallow depth of field with crisp focal detail, DSLR-style capture&quot;,<br>      &quot;details&quot;: &quot;Extremely detailed surface textures&quot;,<br>      &quot;resolution&quot;: &quot;8K, photorealistic finish&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2018524475306938771-1.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2018524475306938771-2.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2018524475306938771-3.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2018524475306938771-4.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1935,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

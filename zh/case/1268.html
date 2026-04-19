@@ -7,11 +7,13 @@
     <title>&lt;instructions #1268 | Gem Nana AI 提示词库</title>
     <meta name="description" content="&lt;instructions Input: city, country Act as a Master Pastry Chef and Landscape Architect. Generate a hyper realistic ma...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1268.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1268.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1268.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841094">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022494">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("<指令>  \n输入：城市，国家  \n以大师级糕点师和景观设计师的身份生成一幅超逼真的矩形“景观蛋糕”微距照片。  \n\n1. **风味特征**：  \n分析输入地点确定蛋糕底和材料：  \n- 森林/山地（如加拿大）：黑巧克力布朗尼或胡萝卜蛋糕（模拟土壤/泥土）。  \n- 热带地区（如夏威夷）：金色海绵蛋糕或芝士蛋糕（模拟沙地）。  \n- 雪地/冰原（如南极）：白香草蛋糕或椰子蛋糕（模拟雪/冰）。  \n- 火山/Mars：红丝绒蛋糕。  \n\n2. **地形构造**：  \n用可食用隐喻构建地形：  \n- 树木：西兰花花冠、迷迭香枝条或抹茶海绵碎屑。  \n- 水域：蓝色果冻、镜面淋面或融化的糖玻璃。  \n- 岩石：巧克力块、碎坚果（山核桃/核桃）、或石头糖果。  \n- 地标：一个微型、可食用的糖艺当地标志模型。  \n\n3. **文字设计**：  \n- 文字：在蛋糕切片侧面拼写地点名称。  \n- 材料：用新鲜水果（覆盆子、蓝莓）或嵌入海绵的奶油挤写字母。  \n\n4. **摆盘**：  \n- 底板：蛋糕置于质朴的木切板或石板托盘上。  \n- 伴饰：在底部散放提示风味的食材（如肉桂棒、枫叶、咖啡豆、散粉）。  \n- 工具：旁边放一把复古银叉或蛋糕刀。  \n\n5. **光影与氛围**：  \n- 光线： “烘焙坊窗”光。柔和的自然光从侧面洒入，突出蛋糕松软湿润的纹理与“水域”淋面的光泽。  \n- 景深：浅景深。蛋糕前角清晰，背景道具虚化。  \n\n输出：**一张图片**，4:3 宽高比，美食摄影，带有“英国烘焙大赛”美学风格。  \n</指令>", this)'>📋 复制</button>
         </div>
-        <p>&lt;指令&gt;  <br>输入：城市，国家  <br>以大师级糕点师和景观设计师的身份生成一幅超逼真的矩形“景观蛋糕”微距照片。</p><p>1. **风味特征**：  <br>分析输入地点确定蛋糕底和材料：  <br>- 森林/山地（如加拿大）：黑巧克力布朗尼或胡萝卜蛋糕（模拟土壤/泥土）。  <br>- 热带地区（如夏威夷）：金色海绵蛋糕或芝士蛋糕（模拟沙地）。  <br>- 雪地/冰原（如南极）：白香草蛋糕或椰子蛋糕（模拟雪/冰）。  <br>- 火山/Mars：红丝绒蛋糕。</p><p>2. **地形构造**：  <br>用可食用隐喻构建地形：  <br>- 树木：西兰花花冠、迷迭香枝条或抹茶海绵碎屑。  <br>- 水域：蓝色果冻、镜面淋面或融化的糖玻璃。  <br>- 岩石：巧克力块、碎坚果（山核桃/核桃）、或石头糖果。  <br>- 地标：一个微型、可食用的糖艺当地标志模型。</p><p>3. **文字设计**：  <br>- 文字：在蛋糕切片侧面拼写地点名称。  <br>- 材料：用新鲜水果（覆盆子、蓝莓）或嵌入海绵的奶油挤写字母。</p><p>4. **摆盘**：  <br>- 底板：蛋糕置于质朴的木切板或石板托盘上。  <br>- 伴饰：在底部散放提示风味的食材（如肉桂棒、枫叶、咖啡豆、散粉）。  <br>- 工具：旁边放一把复古银叉或蛋糕刀。</p><p>5. **光影与氛围**：  <br>- 光线： “烘焙坊窗”光。柔和的自然光从侧面洒入，突出蛋糕松软湿润的纹理与“水域”淋面的光泽。  <br>- 景深：浅景深。蛋糕前角清晰，背景道具虚化。</p><p>输出：**一张图片**，4:3 宽高比，美食摄影，带有“英国烘焙大赛”美学风格。  <br>&lt;/指令&gt;</p>
+        <div data-nosnippet><p>&lt;指令&gt;  <br>输入：城市，国家  <br>以大师级糕点师和景观设计师的身份生成一幅超逼真的矩形“景观蛋糕”微距照片。</p><p>1. **风味特征**：  <br>分析输入地点确定蛋糕底和材料：  <br>- 森林/山地（如加拿大）：黑巧克力布朗尼或胡萝卜蛋糕（模拟土壤/泥土）。  <br>- 热带地区（如夏威夷）：金色海绵蛋糕或芝士蛋糕（模拟沙地）。  <br>- 雪地/冰原（如南极）：白香草蛋糕或椰子蛋糕（模拟雪/冰）。  <br>- 火山/Mars：红丝绒蛋糕。</p><p>2. **地形构造**：  <br>用可食用隐喻构建地形：  <br>- 树木：西兰花花冠、迷迭香枝条或抹茶海绵碎屑。  <br>- 水域：蓝色果冻、镜面淋面或融化的糖玻璃。  <br>- 岩石：巧克力块、碎坚果（山核桃/核桃）、或石头糖果。  <br>- 地标：一个微型、可食用的糖艺当地标志模型。</p><p>3. **文字设计**：  <br>- 文字：在蛋糕切片侧面拼写地点名称。  <br>- 材料：用新鲜水果（覆盆子、蓝莓）或嵌入海绵的奶油挤写字母。</p><p>4. **摆盘**：  <br>- 底板：蛋糕置于质朴的木切板或石板托盘上。  <br>- 伴饰：在底部散放提示风味的食材（如肉桂棒、枫叶、咖啡豆、散粉）。  <br>- 工具：旁边放一把复古银叉或蛋糕刀。</p><p>5. **光影与氛围**：  <br>- 光线： “烘焙坊窗”光。柔和的自然光从侧面洒入，突出蛋糕松软湿润的纹理与“水域”淋面的光泽。  <br>- 景深：浅景深。蛋糕前角清晰，背景道具虚化。</p><p>输出：**一张图片**，4:3 宽高比，美食摄影，带有“英国烘焙大赛”美学风格。  <br>&lt;/指令&gt;</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("<instructions>\nInput: city, country\nAct as a Master Pastry Chef and Landscape Architect. Generate a hyper-realistic macro shot of a rectangular \"Landscape Cake.\"\n1. The Flavor Profile :\nAnalyze the Input Location to determine the Cake Base and Materials:\nIf Forest/Mountain (e.g., Canada): Dark Chocolate Brownie or Carrot Cake (simulating soil/earth).\nIf Tropical (e.g., Hawaii): Golden Sponge or Cheesecake (simulating sand).\nIf Snowy/Ice (e.g., Antarctica): White Vanilla or Coconut Cake (simulating snow/ice).\nIf Volcanic/Mars: Red Velvet Cake.\n2.  Geography :\nConstruct the terrain using Edible Metaphors:\nTrees: Broccoli florets, Rosemary sprigs, or Matcha sponge crumbs.\nWater: Blue Jello, Mirror Glaze, or melted sugar glass.\nRocks: Chocolate chunks, crushed nuts (pecans/walnuts), or rock candy.\nThe Icon: A tiny, edible sugar-craft model of a local icon \n\n3. The Typography :\nThe Letters: The Name of the Location is spelled out on the side of the cake slice.\nThe Material: The letters are formed from Fresh Fruit (Raspberries, Blueberries) or piped Buttercream embedded into the sponge.\n4. The Plating :\nThe Board: The cake sits on a rustic wooden cutting board or a slate platter.\nThe Clutter: Scatter ingredients around the base that hint at the flavor (e.g., Cinnamon sticks, Maple leaves, Coffee beans, scattered flour).\nThe Tools: A vintage silver fork or cake knife rests on the side.\n5. Lighting & Atmosphere:\nLighting: \"Bakery Window\" Light. Soft, natural daylight streaming in from the side, highlighting the moisture of the cake crumb and the gloss of the \"water\" glaze.\nDepth: Shallow depth of field. The front corner of the cake is sharp; the background props are blurred.\nOutput: ONE image, 4:3 Aspect Ratio, Food Photography, \"Great British Bake Off\" Aesthetic.\n</instructions>", this)'>📋 复制</button>
         </div>
-        <p>&lt;instructions&gt;<br>Input: city, country<br>Act as a Master Pastry Chef and Landscape Architect. Generate a hyper-realistic macro shot of a rectangular &quot;Landscape Cake.&quot;<br>1. The Flavor Profile :<br>Analyze the Input Location to determine the Cake Base and Materials:<br>If Forest/Mountain (e.g., Canada): Dark Chocolate Brownie or Carrot Cake (simulating soil/earth).<br>If Tropical (e.g., Hawaii): Golden Sponge or Cheesecake (simulating sand).<br>If Snowy/Ice (e.g., Antarctica): White Vanilla or Coconut Cake (simulating snow/ice).<br>If Volcanic/Mars: Red Velvet Cake.<br>2.  Geography :<br>Construct the terrain using Edible Metaphors:<br>Trees: Broccoli florets, Rosemary sprigs, or Matcha sponge crumbs.<br>Water: Blue Jello, Mirror Glaze, or melted sugar glass.<br>Rocks: Chocolate chunks, crushed nuts (pecans/walnuts), or rock candy.<br>The Icon: A tiny, edible sugar-craft model of a local icon</p><p>3. The Typography :<br>The Letters: The Name of the Location is spelled out on the side of the cake slice.<br>The Material: The letters are formed from Fresh Fruit (Raspberries, Blueberries) or piped Buttercream embedded into the sponge.<br>4. The Plating :<br>The Board: The cake sits on a rustic wooden cutting board or a slate platter.<br>The Clutter: Scatter ingredients around the base that hint at the flavor (e.g., Cinnamon sticks, Maple leaves, Coffee beans, scattered flour).<br>The Tools: A vintage silver fork or cake knife rests on the side.<br>5. Lighting &amp; Atmosphere:<br>Lighting: &quot;Bakery Window&quot; Light. Soft, natural daylight streaming in from the side, highlighting the moisture of the cake crumb and the gloss of the &quot;water&quot; glaze.<br>Depth: Shallow depth of field. The front corner of the cake is sharp; the background props are blurred.<br>Output: ONE image, 4:3 Aspect Ratio, Food Photography, &quot;Great British Bake Off&quot; Aesthetic.<br>&lt;/instructions&gt;</p>
+        <div data-nosnippet><p>&lt;instructions&gt;<br>Input: city, country<br>Act as a Master Pastry Chef and Landscape Architect. Generate a hyper-realistic macro shot of a rectangular &quot;Landscape Cake.&quot;<br>1. The Flavor Profile :<br>Analyze the Input Location to determine the Cake Base and Materials:<br>If Forest/Mountain (e.g., Canada): Dark Chocolate Brownie or Carrot Cake (simulating soil/earth).<br>If Tropical (e.g., Hawaii): Golden Sponge or Cheesecake (simulating sand).<br>If Snowy/Ice (e.g., Antarctica): White Vanilla or Coconut Cake (simulating snow/ice).<br>If Volcanic/Mars: Red Velvet Cake.<br>2.  Geography :<br>Construct the terrain using Edible Metaphors:<br>Trees: Broccoli florets, Rosemary sprigs, or Matcha sponge crumbs.<br>Water: Blue Jello, Mirror Glaze, or melted sugar glass.<br>Rocks: Chocolate chunks, crushed nuts (pecans/walnuts), or rock candy.<br>The Icon: A tiny, edible sugar-craft model of a local icon</p><p>3. The Typography :<br>The Letters: The Name of the Location is spelled out on the side of the cake slice.<br>The Material: The letters are formed from Fresh Fruit (Raspberries, Blueberries) or piped Buttercream embedded into the sponge.<br>4. The Plating :<br>The Board: The cake sits on a rustic wooden cutting board or a slate platter.<br>The Clutter: Scatter ingredients around the base that hint at the flavor (e.g., Cinnamon sticks, Maple leaves, Coffee beans, scattered flour).<br>The Tools: A vintage silver fork or cake knife rests on the side.<br>5. Lighting &amp; Atmosphere:<br>Lighting: &quot;Bakery Window&quot; Light. Soft, natural daylight streaming in from the side, highlighting the moisture of the cake crumb and the gloss of the &quot;water&quot; glaze.<br>Depth: Shallow depth of field. The front corner of the cake is sharp; the background props are blurred.<br>Output: ONE image, 4:3 Aspect Ratio, Food Photography, &quot;Great British Bake Off&quot; Aesthetic.<br>&lt;/instructions&gt;</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011550138100334865-1.jpg" alt="&lt;instructions" loading="lazy"><img src="/images/tweet-2011550138100334865-2.jpg" alt="&lt;instructions" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1268,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

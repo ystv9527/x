@@ -7,11 +7,13 @@
     <title>&quot;image generation prompt&quot;: { #1677 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image generation prompt&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;Stylish woman&quot;, &quot;expression&quot;: &quot;calm and confident&quot;, &quot;pose...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1677.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1677.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1677.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840663">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022400">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"description\": \"时尚的女性\",\n      \"expression\": \"冷静且自信\",\n      \"pose\": \"静立，双手插兜\",\n      \"attire\": {\n        \"top\": \"宽松的鼠尾草绿色扣式衬衫，扎入裤腰\",\n        \"bottom\": \"高腰深色长裤\"\n      }\n    },\n    \"scene_dynamics\": {\n      \"action\": \"复古汽车高速掠过\",\n      \"effect\": \"夸张的运动模糊轨迹，长曝光摄影效果，动态运动对比\"\n    },\n    \"environment\": {\n      \"setting\": \"街头肖像\",\n      \"atmosphere\": \"怀旧、繁忙但专注\"\n    },\n    \"lighting_and_color\": {\n      \"lighting\": \"温暖的金色时刻光线\",\n      \"color_palette\": \"柔和复古色调\",\n      \"accents\": \"红色、青绿色和黄色的色带横扫画面\"\n    },\n    \"technical_specifications\": {\n      \"focus\": \"强烈的主体隔离，对女性清晰聚焦，浅景深\",\n      \"style\": \"电影感写实，编辑级时尚氛围，怀旧的1970年代胶片风格\",\n      \"texture\": \"柔和颗粒感，超细节\",\n      \"resolution\": \"高分辨率\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;时尚的女性&quot;,<br>      &quot;expression&quot;: &quot;冷静且自信&quot;,<br>      &quot;pose&quot;: &quot;静立，双手插兜&quot;,<br>      &quot;attire&quot;: {<br>        &quot;top&quot;: &quot;宽松的鼠尾草绿色扣式衬衫，扎入裤腰&quot;,<br>        &quot;bottom&quot;: &quot;高腰深色长裤&quot;<br>      }<br>    },<br>    &quot;scene_dynamics&quot;: {<br>      &quot;action&quot;: &quot;复古汽车高速掠过&quot;,<br>      &quot;effect&quot;: &quot;夸张的运动模糊轨迹，长曝光摄影效果，动态运动对比&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;街头肖像&quot;,<br>      &quot;atmosphere&quot;: &quot;怀旧、繁忙但专注&quot;<br>    },<br>    &quot;lighting_and_color&quot;: {<br>      &quot;lighting&quot;: &quot;温暖的金色时刻光线&quot;,<br>      &quot;color_palette&quot;: &quot;柔和复古色调&quot;,<br>      &quot;accents&quot;: &quot;红色、青绿色和黄色的色带横扫画面&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;focus&quot;: &quot;强烈的主体隔离，对女性清晰聚焦，浅景深&quot;,<br>      &quot;style&quot;: &quot;电影感写实，编辑级时尚氛围，怀旧的1970年代胶片风格&quot;,<br>      &quot;texture&quot;: &quot;柔和颗粒感，超细节&quot;,<br>      &quot;resolution&quot;: &quot;高分辨率&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;时尚的女性&quot;,<br>      &quot;expression&quot;: &quot;冷静且自信&quot;,<br>      &quot;pose&quot;: &quot;静立，双手插兜&quot;,<br>      &quot;attire&quot;: {<br>        &quot;top&quot;: &quot;宽松的鼠尾草绿色扣式衬衫，扎入裤腰&quot;,<br>        &quot;bottom&quot;: &quot;高腰深色长裤&quot;<br>      }<br>    },<br>    &quot;scene_dynamics&quot;: {<br>      &quot;action&quot;: &quot;复古汽车高速掠过&quot;,<br>      &quot;effect&quot;: &quot;夸张的运动模糊轨迹，长曝光摄影效果，动态运动对比&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;街头肖像&quot;,<br>      &quot;atmosphere&quot;: &quot;怀旧、繁忙但专注&quot;<br>    },<br>    &quot;lighting_and_color&quot;: {<br>      &quot;lighting&quot;: &quot;温暖的金色时刻光线&quot;,<br>      &quot;color_palette&quot;: &quot;柔和复古色调&quot;,<br>      &quot;accents&quot;: &quot;红色、青绿色和黄色的色带横扫画面&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;focus&quot;: &quot;强烈的主体隔离，对女性清晰聚焦，浅景深&quot;,<br>      &quot;style&quot;: &quot;电影感写实，编辑级时尚氛围，怀旧的1970年代胶片风格&quot;,<br>      &quot;texture&quot;: &quot;柔和颗粒感，超细节&quot;,<br>      &quot;resolution&quot;: &quot;高分辨率&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"description\": \"Stylish woman\",\n      \"expression\": \"calm and confident\",\n      \"pose\": \"standing still, hands in pockets\",\n      \"attire\": {\n        \"top\": \"loose sage-green button-up shirt, tucked in\",\n        \"bottom\": \"high-waisted dark trousers\"\n      }\n    },\n    \"scene_dynamics\": {\n      \"action\": \"vintage cars rushing past at high speed\",\n      \"effect\": \"dramatic motion blur trails, long-exposure photography effect, dynamic motion contrast\"\n    },\n    \"environment\": {\n      \"setting\": \"Street portrait\",\n      \"atmosphere\": \"nostalgic, busy but focused\"\n    },\n    \"lighting_and_color\": {\n      \"lighting\": \"warm golden-hour lighting\",\n      \"color_palette\": \"muted retro palette\",\n      \"accents\": \"reds, teals, and yellows streaking across the frame\"\n    },\n    \"technical_specifications\": {\n      \"focus\": \"strong subject isolation, sharp focus on the woman, shallow depth of field\",\n      \"style\": \"cinematic realism, editorial fashion mood, nostalgic 1970s film look\",\n      \"texture\": \"soft grain, ultra-detailed\",\n      \"resolution\": \"high resolution\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Stylish woman&quot;,<br>      &quot;expression&quot;: &quot;calm and confident&quot;,<br>      &quot;pose&quot;: &quot;standing still, hands in pockets&quot;,<br>      &quot;attire&quot;: {<br>        &quot;top&quot;: &quot;loose sage-green button-up shirt, tucked in&quot;,<br>        &quot;bottom&quot;: &quot;high-waisted dark trousers&quot;<br>      }<br>    },<br>    &quot;scene_dynamics&quot;: {<br>      &quot;action&quot;: &quot;vintage cars rushing past at high speed&quot;,<br>      &quot;effect&quot;: &quot;dramatic motion blur trails, long-exposure photography effect, dynamic motion contrast&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Street portrait&quot;,<br>      &quot;atmosphere&quot;: &quot;nostalgic, busy but focused&quot;<br>    },<br>    &quot;lighting_and_color&quot;: {<br>      &quot;lighting&quot;: &quot;warm golden-hour lighting&quot;,<br>      &quot;color_palette&quot;: &quot;muted retro palette&quot;,<br>      &quot;accents&quot;: &quot;reds, teals, and yellows streaking across the frame&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;focus&quot;: &quot;strong subject isolation, sharp focus on the woman, shallow depth of field&quot;,<br>      &quot;style&quot;: &quot;cinematic realism, editorial fashion mood, nostalgic 1970s film look&quot;,<br>      &quot;texture&quot;: &quot;soft grain, ultra-detailed&quot;,<br>      &quot;resolution&quot;: &quot;high resolution&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Stylish woman&quot;,<br>      &quot;expression&quot;: &quot;calm and confident&quot;,<br>      &quot;pose&quot;: &quot;standing still, hands in pockets&quot;,<br>      &quot;attire&quot;: {<br>        &quot;top&quot;: &quot;loose sage-green button-up shirt, tucked in&quot;,<br>        &quot;bottom&quot;: &quot;high-waisted dark trousers&quot;<br>      }<br>    },<br>    &quot;scene_dynamics&quot;: {<br>      &quot;action&quot;: &quot;vintage cars rushing past at high speed&quot;,<br>      &quot;effect&quot;: &quot;dramatic motion blur trails, long-exposure photography effect, dynamic motion contrast&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Street portrait&quot;,<br>      &quot;atmosphere&quot;: &quot;nostalgic, busy but focused&quot;<br>    },<br>    &quot;lighting_and_color&quot;: {<br>      &quot;lighting&quot;: &quot;warm golden-hour lighting&quot;,<br>      &quot;color_palette&quot;: &quot;muted retro palette&quot;,<br>      &quot;accents&quot;: &quot;reds, teals, and yellows streaking across the frame&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;focus&quot;: &quot;strong subject isolation, sharp focus on the woman, shallow depth of field&quot;,<br>      &quot;style&quot;: &quot;cinematic realism, editorial fashion mood, nostalgic 1970s film look&quot;,<br>      &quot;texture&quot;: &quot;soft grain, ultra-detailed&quot;,<br>      &quot;resolution&quot;: &quot;high resolution&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015263403393355980-1.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1677,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

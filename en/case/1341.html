@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #1341 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;project name&quot;: &quot;Winter Minimalist Portrait&quot;, &quot;model type&quot;: &quot;ultra realistic photography&quot;, &quot;aspect ratio&quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1341.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1341.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1341.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845221">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023677">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"project_name\": \"冬季极简人像\",\n    \"model_type\": \"超写实摄影\",\n    \"aspect_ratio\": \"2:3\"\n  },\n  \"prompt_structure\": {\n    \"subject_details\": {\n      \"demographics\": \"年轻女性\",\n      \"hair\": \"白金色长直发\",\n      \"skin\": \"白皙瓷感皮肤，柔和自然的雀斑，高细节皮肤纹理\",\n      \"eyes\": \"富有表情的浅色眼睛，直视镜头\",\n      \"makeup\": \"淡粉色腮红，光泽唇\",\n      \"pose\": \"站立，微微前倾\"\n    },\n    \"apparel\": {\n      \"style_genre\": \"极简冬季时尚\",\n      \"body\": \"修身黑色长袖连体紧身衣\",\n      \"accessories\": \"白色毛绒腿套\",\n      \"footwear\": \"白色靴子\"\n    },\n    \"environment\": {\n      \"location\": \"户外，积雪森林\",\n      \"background\": \"松树\",\n      \"ground\": \"积雪覆盖的地面\",\n      \"atmosphere\": \"清冽的冬季氛围\"\n    },\n    \"technical_settings\": {\n      \"lighting\": \"明亮的自然日光，柔和的阴影\",\n      \"camera_gear\": \"35mm 镜头\",\n      \"aperture\": \"f/2.2\",\n      \"focus\": \"浅景深，眼睛清晰对焦\",\n      \"style_tags\": [\n        \"照片写实\",\n        \"生活方式时尚摄影\",\n        \"超高细节\",\n        \"8K 分辨率\"\n      ]\n    }\n  },\n  \"negative_prompt\": [\n    \"低质量\",\n    \"模糊\",\n    \"卡通\",\n    \"动漫\",\n    \"CGI\",\n    \"塑料感皮肤\",\n    \"过度平滑的脸\",\n    \"畸形的身体\",\n    \"多余的四肢\",\n    \"手部畸形\",\n    \"水印\",\n    \"文字\",\n    \"标志\"\n  ],\n  \"assembled_prompt\": \"极致写实的冬季肖像，一位年轻女性，白金色长直发，白皙瓷感皮肤，柔和自然的雀斑，高细节皮肤纹理，淡粉色腮红，光泽嘴唇，富有表情的浅色眼睛直视镜头，站立，微微前倾，修身黑色长袖连体紧身衣，白色毛绒腿套，白色靴子，极简冬季时尚，户外，积雪森林，松树，积雪覆盖的地面，明亮的自然日光，柔和的阴影，清冽的冬季氛围，35mm 镜头，f/2.2，浅景深，照片写实，生活方式时尚摄影，超高细节，锐利对焦，8K 分辨率\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;project_name&quot;: &quot;冬季极简人像&quot;,<br>    &quot;model_type&quot;: &quot;超写实摄影&quot;,<br>    &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>  },<br>  &quot;prompt_structure&quot;: {<br>    &quot;subject_details&quot;: {<br>      &quot;demographics&quot;: &quot;年轻女性&quot;,<br>      &quot;hair&quot;: &quot;白金色长直发&quot;,<br>      &quot;skin&quot;: &quot;白皙瓷感皮肤，柔和自然的雀斑，高细节皮肤纹理&quot;,<br>      &quot;eyes&quot;: &quot;富有表情的浅色眼睛，直视镜头&quot;,<br>      &quot;makeup&quot;: &quot;淡粉色腮红，光泽唇&quot;,<br>      &quot;pose&quot;: &quot;站立，微微前倾&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;style_genre&quot;: &quot;极简冬季时尚&quot;,<br>      &quot;body&quot;: &quot;修身黑色长袖连体紧身衣&quot;,<br>      &quot;accessories&quot;: &quot;白色毛绒腿套&quot;,<br>      &quot;footwear&quot;: &quot;白色靴子&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;户外，积雪森林&quot;,<br>      &quot;background&quot;: &quot;松树&quot;,<br>      &quot;ground&quot;: &quot;积雪覆盖的地面&quot;,<br>      &quot;atmosphere&quot;: &quot;清冽的冬季氛围&quot;<br>    },<br>    &quot;technical_settings&quot;: {<br>      &quot;lighting&quot;: &quot;明亮的自然日光，柔和的阴影&quot;,<br>      &quot;camera_gear&quot;: &quot;35mm 镜头&quot;,<br>      &quot;aperture&quot;: &quot;f/2.2&quot;,<br>      &quot;focus&quot;: &quot;浅景深，眼睛清晰对焦&quot;,<br>      &quot;style_tags&quot;: [<br>        &quot;照片写实&quot;,<br>        &quot;生活方式时尚摄影&quot;,<br>        &quot;超高细节&quot;,<br>        &quot;8K 分辨率&quot;<br>      ]<br>    }<br>  },<br>  &quot;negative_prompt&quot;: [<br>    &quot;低质量&quot;,<br>    &quot;模糊&quot;,<br>    &quot;卡通&quot;,<br>    &quot;动漫&quot;,<br>    &quot;CGI&quot;,<br>    &quot;塑料感皮肤&quot;,<br>    &quot;过度平滑的脸&quot;,<br>    &quot;畸形的身体&quot;,<br>    &quot;多余的四肢&quot;,<br>    &quot;手部畸形&quot;,<br>    &quot;水印&quot;,<br>    &quot;文字&quot;,<br>    &quot;标志&quot;<br>  ],<br>  &quot;assembled_prompt&quot;: &quot;极致写实的冬季肖像，一位年轻女性，白金色长直发，白皙瓷感皮肤，柔和自然的雀斑，高细节皮肤纹理，淡粉色腮红，光泽嘴唇，富有表情的浅色眼睛直视镜头，站立，微微前倾，修身黑色长袖连体紧身衣，白色毛绒腿套，白色靴子，极简冬季时尚，户外，积雪森林，松树，积雪覆盖的地面，明亮的自然日光，柔和的阴影，清冽的冬季氛围，35mm 镜头，f/2.2，浅景深，照片写实，生活方式时尚摄影，超高细节，锐利对焦，8K 分辨率&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;project_name&quot;: &quot;冬季极简人像&quot;,<br>    &quot;model_type&quot;: &quot;超写实摄影&quot;,<br>    &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>  },<br>  &quot;prompt_structure&quot;: {<br>    &quot;subject_details&quot;: {<br>      &quot;demographics&quot;: &quot;年轻女性&quot;,<br>      &quot;hair&quot;: &quot;白金色长直发&quot;,<br>      &quot;skin&quot;: &quot;白皙瓷感皮肤，柔和自然的雀斑，高细节皮肤纹理&quot;,<br>      &quot;eyes&quot;: &quot;富有表情的浅色眼睛，直视镜头&quot;,<br>      &quot;makeup&quot;: &quot;淡粉色腮红，光泽唇&quot;,<br>      &quot;pose&quot;: &quot;站立，微微前倾&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;style_genre&quot;: &quot;极简冬季时尚&quot;,<br>      &quot;body&quot;: &quot;修身黑色长袖连体紧身衣&quot;,<br>      &quot;accessories&quot;: &quot;白色毛绒腿套&quot;,<br>      &quot;footwear&quot;: &quot;白色靴子&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;户外，积雪森林&quot;,<br>      &quot;background&quot;: &quot;松树&quot;,<br>      &quot;ground&quot;: &quot;积雪覆盖的地面&quot;,<br>      &quot;atmosphere&quot;: &quot;清冽的冬季氛围&quot;<br>    },<br>    &quot;technical_settings&quot;: {<br>      &quot;lighting&quot;: &quot;明亮的自然日光，柔和的阴影&quot;,<br>      &quot;camera_gear&quot;: &quot;35mm 镜头&quot;,<br>      &quot;aperture&quot;: &quot;f/2.2&quot;,<br>      &quot;focus&quot;: &quot;浅景深，眼睛清晰对焦&quot;,<br>      &quot;style_tags&quot;: [<br>        &quot;照片写实&quot;,<br>        &quot;生活方式时尚摄影&quot;,<br>        &quot;超高细节&quot;,<br>        &quot;8K 分辨率&quot;<br>      ]<br>    }<br>  },<br>  &quot;negative_prompt&quot;: [<br>    &quot;低质量&quot;,<br>    &quot;模糊&quot;,<br>    &quot;卡通&quot;,<br>    &quot;动漫&quot;,<br>    &quot;CGI&quot;,<br>    &quot;塑料感皮肤&quot;,<br>    &quot;过度平滑的脸&quot;,<br>    &quot;畸形的身体&quot;,<br>    &quot;多余的四肢&quot;,<br>    &quot;手部畸形&quot;,<br>    &quot;水印&quot;,<br>    &quot;文字&quot;,<br>    &quot;标志&quot;<br>  ],<br>  &quot;assembled_prompt&quot;: &quot;极致写实的冬季肖像，一位年轻女性，白金色长直发，白皙瓷感皮肤，柔和自然的雀斑，高细节皮肤纹理，淡粉色腮红，光泽嘴唇，富有表情的浅色眼睛直视镜头，站立，微微前倾，修身黑色长袖连体紧身衣，白色毛绒腿套，白色靴子，极简冬季时尚，户外，积雪森林，松树，积雪覆盖的地面，明亮的自然日光，柔和的阴影，清冽的冬季氛围，35mm 镜头，f/2.2，浅景深，照片写实，生活方式时尚摄影，超高细节，锐利对焦，8K 分辨率&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"project_name\": \"Winter Minimalist Portrait\",\n    \"model_type\": \"ultra-realistic-photography\",\n    \"aspect_ratio\": \"2:3\"\n  },\n  \"prompt_structure\": {\n    \"subject_details\": {\n      \"demographics\": \"young woman\",\n      \"hair\": \"platinum blonde, long, straight\",\n      \"skin\": \"fair porcelain skin, soft natural freckles, high detail skin texture\",\n      \"eyes\": \"expressive light-colored eyes, looking directly into the camera\",\n      \"makeup\": \"light pink blush, glossy lips\",\n      \"pose\": \"standing, slightly leaning forward\"\n    },\n    \"apparel\": {\n      \"style_genre\": \"minimalist winter fashion\",\n      \"body\": \"fitted black long-sleeve bodysuit\",\n      \"accessories\": \"white furry leg warmers\",\n      \"footwear\": \"white boots\"\n    },\n    \"environment\": {\n      \"location\": \"outdoors, snowy forest\",\n      \"background\": \"pine trees\",\n      \"ground\": \"snow-covered\",\n      \"atmosphere\": \"crisp winter atmosphere\"\n    },\n    \"technical_settings\": {\n      \"lighting\": \"bright natural daylight, soft shadows\",\n      \"camera_gear\": \"35mm lens\",\n      \"aperture\": \"f/2.2\",\n      \"focus\": \"shallow depth of field, sharp focus on eyes\",\n      \"style_tags\": [\n        \"photorealistic\",\n        \"lifestyle fashion photography\",\n        \"ultra-detailed\",\n        \"8k resolution\"\n      ]\n    }\n  },\n  \"negative_prompt\": [\n    \"low quality\",\n    \"blur\",\n    \"cartoon\",\n    \"anime\",\n    \"CGI\",\n    \"plastic skin\",\n    \"over-smooth face\",\n    \"distorted body\",\n    \"extra limbs\",\n    \"bad hands\",\n    \"watermark\",\n    \"text\",\n    \"logo\"\n  ],\n  \"assembled_prompt\": \"Ultra-realistic winter portrait of a young woman, platinum blonde long straight hair, fair porcelain skin, soft natural freckles, high detail skin texture, light pink blush, glossy lips, expressive light-colored eyes looking directly into the camera, standing, slightly leaning forward, fitted black long-sleeve bodysuit, white furry leg warmers, white boots, minimalist winter fashion, outdoors, snowy forest, pine trees, snow-covered ground, bright natural daylight, soft shadows, crisp winter atmosphere, 35mm lens, f/2.2, shallow depth of field, photorealistic, lifestyle fashion photography, ultra-detailed, sharp focus, 8k resolution\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;project_name&quot;: &quot;Winter Minimalist Portrait&quot;,<br>    &quot;model_type&quot;: &quot;ultra-realistic-photography&quot;,<br>    &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>  },<br>  &quot;prompt_structure&quot;: {<br>    &quot;subject_details&quot;: {<br>      &quot;demographics&quot;: &quot;young woman&quot;,<br>      &quot;hair&quot;: &quot;platinum blonde, long, straight&quot;,<br>      &quot;skin&quot;: &quot;fair porcelain skin, soft natural freckles, high detail skin texture&quot;,<br>      &quot;eyes&quot;: &quot;expressive light-colored eyes, looking directly into the camera&quot;,<br>      &quot;makeup&quot;: &quot;light pink blush, glossy lips&quot;,<br>      &quot;pose&quot;: &quot;standing, slightly leaning forward&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;style_genre&quot;: &quot;minimalist winter fashion&quot;,<br>      &quot;body&quot;: &quot;fitted black long-sleeve bodysuit&quot;,<br>      &quot;accessories&quot;: &quot;white furry leg warmers&quot;,<br>      &quot;footwear&quot;: &quot;white boots&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;outdoors, snowy forest&quot;,<br>      &quot;background&quot;: &quot;pine trees&quot;,<br>      &quot;ground&quot;: &quot;snow-covered&quot;,<br>      &quot;atmosphere&quot;: &quot;crisp winter atmosphere&quot;<br>    },<br>    &quot;technical_settings&quot;: {<br>      &quot;lighting&quot;: &quot;bright natural daylight, soft shadows&quot;,<br>      &quot;camera_gear&quot;: &quot;35mm lens&quot;,<br>      &quot;aperture&quot;: &quot;f/2.2&quot;,<br>      &quot;focus&quot;: &quot;shallow depth of field, sharp focus on eyes&quot;,<br>      &quot;style_tags&quot;: [<br>        &quot;photorealistic&quot;,<br>        &quot;lifestyle fashion photography&quot;,<br>        &quot;ultra-detailed&quot;,<br>        &quot;8k resolution&quot;<br>      ]<br>    }<br>  },<br>  &quot;negative_prompt&quot;: [<br>    &quot;low quality&quot;,<br>    &quot;blur&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;,<br>    &quot;CGI&quot;,<br>    &quot;plastic skin&quot;,<br>    &quot;over-smooth face&quot;,<br>    &quot;distorted body&quot;,<br>    &quot;extra limbs&quot;,<br>    &quot;bad hands&quot;,<br>    &quot;watermark&quot;,<br>    &quot;text&quot;,<br>    &quot;logo&quot;<br>  ],<br>  &quot;assembled_prompt&quot;: &quot;Ultra-realistic winter portrait of a young woman, platinum blonde long straight hair, fair porcelain skin, soft natural freckles, high detail skin texture, light pink blush, glossy lips, expressive light-colored eyes looking directly into the camera, standing, slightly leaning forward, fitted black long-sleeve bodysuit, white furry leg warmers, white boots, minimalist winter fashion, outdoors, snowy forest, pine trees, snow-covered ground, bright natural daylight, soft shadows, crisp winter atmosphere, 35mm lens, f/2.2, shallow depth of field, photorealistic, lifestyle fashion photography, ultra-detailed, sharp focus, 8k resolution&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;project_name&quot;: &quot;Winter Minimalist Portrait&quot;,<br>    &quot;model_type&quot;: &quot;ultra-realistic-photography&quot;,<br>    &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>  },<br>  &quot;prompt_structure&quot;: {<br>    &quot;subject_details&quot;: {<br>      &quot;demographics&quot;: &quot;young woman&quot;,<br>      &quot;hair&quot;: &quot;platinum blonde, long, straight&quot;,<br>      &quot;skin&quot;: &quot;fair porcelain skin, soft natural freckles, high detail skin texture&quot;,<br>      &quot;eyes&quot;: &quot;expressive light-colored eyes, looking directly into the camera&quot;,<br>      &quot;makeup&quot;: &quot;light pink blush, glossy lips&quot;,<br>      &quot;pose&quot;: &quot;standing, slightly leaning forward&quot;<br>    },<br>    &quot;apparel&quot;: {<br>      &quot;style_genre&quot;: &quot;minimalist winter fashion&quot;,<br>      &quot;body&quot;: &quot;fitted black long-sleeve bodysuit&quot;,<br>      &quot;accessories&quot;: &quot;white furry leg warmers&quot;,<br>      &quot;footwear&quot;: &quot;white boots&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;outdoors, snowy forest&quot;,<br>      &quot;background&quot;: &quot;pine trees&quot;,<br>      &quot;ground&quot;: &quot;snow-covered&quot;,<br>      &quot;atmosphere&quot;: &quot;crisp winter atmosphere&quot;<br>    },<br>    &quot;technical_settings&quot;: {<br>      &quot;lighting&quot;: &quot;bright natural daylight, soft shadows&quot;,<br>      &quot;camera_gear&quot;: &quot;35mm lens&quot;,<br>      &quot;aperture&quot;: &quot;f/2.2&quot;,<br>      &quot;focus&quot;: &quot;shallow depth of field, sharp focus on eyes&quot;,<br>      &quot;style_tags&quot;: [<br>        &quot;photorealistic&quot;,<br>        &quot;lifestyle fashion photography&quot;,<br>        &quot;ultra-detailed&quot;,<br>        &quot;8k resolution&quot;<br>      ]<br>    }<br>  },<br>  &quot;negative_prompt&quot;: [<br>    &quot;low quality&quot;,<br>    &quot;blur&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;,<br>    &quot;CGI&quot;,<br>    &quot;plastic skin&quot;,<br>    &quot;over-smooth face&quot;,<br>    &quot;distorted body&quot;,<br>    &quot;extra limbs&quot;,<br>    &quot;bad hands&quot;,<br>    &quot;watermark&quot;,<br>    &quot;text&quot;,<br>    &quot;logo&quot;<br>  ],<br>  &quot;assembled_prompt&quot;: &quot;Ultra-realistic winter portrait of a young woman, platinum blonde long straight hair, fair porcelain skin, soft natural freckles, high detail skin texture, light pink blush, glossy lips, expressive light-colored eyes looking directly into the camera, standing, slightly leaning forward, fitted black long-sleeve bodysuit, white furry leg warmers, white boots, minimalist winter fashion, outdoors, snowy forest, pine trees, snow-covered ground, bright natural daylight, soft shadows, crisp winter atmosphere, 35mm lens, f/2.2, shallow depth of field, photorealistic, lifestyle fashion photography, ultra-detailed, sharp focus, 8k resolution&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011784865146982702-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"><img src="/images/tweet-2011784865146982702-2.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1341,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

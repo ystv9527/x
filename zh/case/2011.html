@@ -7,11 +7,13 @@
     <title>Composition &amp; Subject: A professional front facing studio sho... #2011 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Composition &amp; Subject: A professional front facing studio shot of a hyper realistic [INSERT OBJECT] standing vertical...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2011.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2011.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2011.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840350">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022322">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Composition & Subject: 正面工作室拍摄，一张专业的超写实[INSERT OBJECT]垂直竖立的照片。该物体具有强烈的纹理细节，例如[DESCRIBE OBJECT TEXTURES]。\n\nPouch Structure (Dual Material): 包装袋结构（双材质）：真空密封小袋由两层不同材料组成。后层为坚实、不透明的工业哑光白材料（提供高对比背景）。前层为晶莹剔透、高光泽的透明塑料，能使物体以完美清晰和锐利的细节被看到。\n\nVacuum Physics & Compression: 真空物理与压缩：包装展示出极端的真空贴合压缩效果。塑料像第二层皮肤一样被吸入内侧，紧密包裹在物体的[DESCRIBE KEY PROTRUDING PARTS]上。由此产生强烈、尖锐的张力微褶和从物体轮廓向外辐射的深刻雕塑式皱褶。小袋边缘带有干脆利落的工业微点热封图案。\n\nPackaging Detail: 包装细节：顶部设有用于悬挂陈列的圆形冲孔，位于逼真的拉链式密封轨道之上。真空效果强烈，透明前层塑料紧贴轮廓，产生锐利的光线追踪式反射和深刻的张力褶皱。\n\nGraphics & Strategic Placement: 图形与策略性布局：\nUpper Label: 上部标签：在左上方、精确位于拉链密封线下方贴有一张清晰的白色热敏矩形贴纸，带有条形码和标价 \"$[INSERT PRICE]\"。\nLower QR: 下方二维码：底部左下角放置一枚高级方形全息二维码，具有棱镜般的彩虹反光。\n\nTypography & Extended Pattern: 字体与延伸图案：\"[INSERT OBJECT NAME IN CAPS]\" 一词以粗体黑色瑞士字体竖直印在右侧，叠加在一个黑色网点半色调矩阵图案上，该图案延伸至小袋中点，然后从中点向中心逐渐淡化/溶解，创造出优雅的过渡效果。\n\nLighting & Background: 光线与背景：置于漆黑的极简背景。电影感的琥珀色与电光蓝轮廓灯勾勒出物体轮廓，突显白色后层与透明前层塑料之间的对比，确保无平面感、立体弹出效果。技术规格：商业产品摄影，8k，Unreal Engine 5.4 渲染风格，微距细节、无平面感、超高对比，重点表现前层的极致透明度。", this)'>📋 复制</button>
         </div>
-        <p>Composition &amp; Subject: 正面工作室拍摄，一张专业的超写实[INSERT OBJECT]垂直竖立的照片。该物体具有强烈的纹理细节，例如[DESCRIBE OBJECT TEXTURES]。</p><p>Pouch Structure (Dual Material): 包装袋结构（双材质）：真空密封小袋由两层不同材料组成。后层为坚实、不透明的工业哑光白材料（提供高对比背景）。前层为晶莹剔透、高光泽的透明塑料，能使物体以完美清晰和锐利的细节被看到。</p><p>Vacuum Physics &amp; Compression: 真空物理与压缩：包装展示出极端的真空贴合压缩效果。塑料像第二层皮肤一样被吸入内侧，紧密包裹在物体的[DESCRIBE KEY PROTRUDING PARTS]上。由此产生强烈、尖锐的张力微褶和从物体轮廓向外辐射的深刻雕塑式皱褶。小袋边缘带有干脆利落的工业微点热封图案。</p><p>Packaging Detail: 包装细节：顶部设有用于悬挂陈列的圆形冲孔，位于逼真的拉链式密封轨道之上。真空效果强烈，透明前层塑料紧贴轮廓，产生锐利的光线追踪式反射和深刻的张力褶皱。</p><p>Graphics &amp; Strategic Placement: 图形与策略性布局：<br>Upper Label: 上部标签：在左上方、精确位于拉链密封线下方贴有一张清晰的白色热敏矩形贴纸，带有条形码和标价 &quot;$[INSERT PRICE]&quot;。<br>Lower QR: 下方二维码：底部左下角放置一枚高级方形全息二维码，具有棱镜般的彩虹反光。</p><p>Typography &amp; Extended Pattern: 字体与延伸图案：&quot;[INSERT OBJECT NAME IN CAPS]&quot; 一词以粗体黑色瑞士字体竖直印在右侧，叠加在一个黑色网点半色调矩阵图案上，该图案延伸至小袋中点，然后从中点向中心逐渐淡化/溶解，创造出优雅的过渡效果。</p><p>Lighting &amp; Background: 光线与背景：置于漆黑的极简背景。电影感的琥珀色与电光蓝轮廓灯勾勒出物体轮廓，突显白色后层与透明前层塑料之间的对比，确保无平面感、立体弹出效果。技术规格：商业产品摄影，8k，Unreal Engine 5.4 渲染风格，微距细节、无平面感、超高对比，重点表现前层的极致透明度。</p>
+        <div data-nosnippet><p>Composition &amp; Subject: 正面工作室拍摄，一张专业的超写实[INSERT OBJECT]垂直竖立的照片。该物体具有强烈的纹理细节，例如[DESCRIBE OBJECT TEXTURES]。</p><p>Pouch Structure (Dual Material): 包装袋结构（双材质）：真空密封小袋由两层不同材料组成。后层为坚实、不透明的工业哑光白材料（提供高对比背景）。前层为晶莹剔透、高光泽的透明塑料，能使物体以完美清晰和锐利的细节被看到。</p><p>Vacuum Physics &amp; Compression: 真空物理与压缩：包装展示出极端的真空贴合压缩效果。塑料像第二层皮肤一样被吸入内侧，紧密包裹在物体的[DESCRIBE KEY PROTRUDING PARTS]上。由此产生强烈、尖锐的张力微褶和从物体轮廓向外辐射的深刻雕塑式皱褶。小袋边缘带有干脆利落的工业微点热封图案。</p><p>Packaging Detail: 包装细节：顶部设有用于悬挂陈列的圆形冲孔，位于逼真的拉链式密封轨道之上。真空效果强烈，透明前层塑料紧贴轮廓，产生锐利的光线追踪式反射和深刻的张力褶皱。</p><p>Graphics &amp; Strategic Placement: 图形与策略性布局：<br>Upper Label: 上部标签：在左上方、精确位于拉链密封线下方贴有一张清晰的白色热敏矩形贴纸，带有条形码和标价 &quot;$[INSERT PRICE]&quot;。<br>Lower QR: 下方二维码：底部左下角放置一枚高级方形全息二维码，具有棱镜般的彩虹反光。</p><p>Typography &amp; Extended Pattern: 字体与延伸图案：&quot;[INSERT OBJECT NAME IN CAPS]&quot; 一词以粗体黑色瑞士字体竖直印在右侧，叠加在一个黑色网点半色调矩阵图案上，该图案延伸至小袋中点，然后从中点向中心逐渐淡化/溶解，创造出优雅的过渡效果。</p><p>Lighting &amp; Background: 光线与背景：置于漆黑的极简背景。电影感的琥珀色与电光蓝轮廓灯勾勒出物体轮廓，突显白色后层与透明前层塑料之间的对比，确保无平面感、立体弹出效果。技术规格：商业产品摄影，8k，Unreal Engine 5.4 渲染风格，微距细节、无平面感、超高对比，重点表现前层的极致透明度。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Composition & Subject: A professional front-facing studio shot of a hyper-realistic [INSERT OBJECT] standing vertical. The object features intense textural details like [DESCRIBE OBJECT TEXTURES].\nPouch Structure (Dual Material): The vacuum-sealed pouch is composed of two distinct layers. The back layer is a solid, opaque, industrial matte-white material (providing a high-contrast backdrop). The front layer is crystal-clear, high-gloss transparent plastic, allowing the object to be seen with perfect clarity and sharp detail.\n\nVacuum Physics & Compression: The packaging demonstrates extreme vacuum-contoured compression. The plastic is sucked inward like a second skin, clinging tightly to the [DESCRIBE KEY PROTRUDING PARTS] of the object. This creates aggressive, sharp tension micro-folds and deep sculptural wrinkles that radiate from the object's silhouette. The pouch edges feature a crisp, industrial micro-dotted heat-seal pattern.\n\nPackaging Detail: The top features a circular punch-hole for hanging display, located above a realistic zip-lock seal track. The vacuum effect is powerful, with the clear front plastic sucked tightly against the contours, creating sharp, ray-traced reflections and deep tension folds.\n\nGraphics & Strategic Placement:\nUpper Label: A crisp white thermal rectangular sticker with a barcode and price tag of \"$[INSERT PRICE]\" is placed at the top-left, positioned precisely below the zip-lock seal line.\nLower QR: A premium square holographic QR-code with prismatic iridescent reflections is located at the bottom-left corner.\n\nTypography & Extended Pattern: The word \"[INSERT OBJECT NAME IN CAPS]\" is printed vertically in a bold black Swiss font along the right side, layered over a black halftone dot-matrix pattern that extends fully to the mid-point of the pouch and then gradually fades/dissolves from there towards the center, creating a sophisticated transition.\n\nLighting & Background: Set against a pitch-black minimalist background. Cinematic Amber and Electric Blue rim lighting outlines the silhouette, highlighting the contrast between the white back and the clear front plastic, ensuring a zero-flatness, 3D pop. Technical Specs: Commercial product photography, 8k, Unreal Engine 5.4 render style, macro-detail, zero-flatness, ultra-high contrast, focus on extreme transparency of the front layer.", this)'>📋 复制</button>
         </div>
-        <p>Composition &amp; Subject: A professional front-facing studio shot of a hyper-realistic [INSERT OBJECT] standing vertical. The object features intense textural details like [DESCRIBE OBJECT TEXTURES].<br>Pouch Structure (Dual Material): The vacuum-sealed pouch is composed of two distinct layers. The back layer is a solid, opaque, industrial matte-white material (providing a high-contrast backdrop). The front layer is crystal-clear, high-gloss transparent plastic, allowing the object to be seen with perfect clarity and sharp detail.</p><p>Vacuum Physics &amp; Compression: The packaging demonstrates extreme vacuum-contoured compression. The plastic is sucked inward like a second skin, clinging tightly to the [DESCRIBE KEY PROTRUDING PARTS] of the object. This creates aggressive, sharp tension micro-folds and deep sculptural wrinkles that radiate from the object&#39;s silhouette. The pouch edges feature a crisp, industrial micro-dotted heat-seal pattern.</p><p>Packaging Detail: The top features a circular punch-hole for hanging display, located above a realistic zip-lock seal track. The vacuum effect is powerful, with the clear front plastic sucked tightly against the contours, creating sharp, ray-traced reflections and deep tension folds.</p><p>Graphics &amp; Strategic Placement:<br>Upper Label: A crisp white thermal rectangular sticker with a barcode and price tag of &quot;$[INSERT PRICE]&quot; is placed at the top-left, positioned precisely below the zip-lock seal line.<br>Lower QR: A premium square holographic QR-code with prismatic iridescent reflections is located at the bottom-left corner.</p><p>Typography &amp; Extended Pattern: The word &quot;[INSERT OBJECT NAME IN CAPS]&quot; is printed vertically in a bold black Swiss font along the right side, layered over a black halftone dot-matrix pattern that extends fully to the mid-point of the pouch and then gradually fades/dissolves from there towards the center, creating a sophisticated transition.</p><p>Lighting &amp; Background: Set against a pitch-black minimalist background. Cinematic Amber and Electric Blue rim lighting outlines the silhouette, highlighting the contrast between the white back and the clear front plastic, ensuring a zero-flatness, 3D pop. Technical Specs: Commercial product photography, 8k, Unreal Engine 5.4 render style, macro-detail, zero-flatness, ultra-high contrast, focus on extreme transparency of the front layer.</p>
+        <div data-nosnippet><p>Composition &amp; Subject: A professional front-facing studio shot of a hyper-realistic [INSERT OBJECT] standing vertical. The object features intense textural details like [DESCRIBE OBJECT TEXTURES].<br>Pouch Structure (Dual Material): The vacuum-sealed pouch is composed of two distinct layers. The back layer is a solid, opaque, industrial matte-white material (providing a high-contrast backdrop). The front layer is crystal-clear, high-gloss transparent plastic, allowing the object to be seen with perfect clarity and sharp detail.</p><p>Vacuum Physics &amp; Compression: The packaging demonstrates extreme vacuum-contoured compression. The plastic is sucked inward like a second skin, clinging tightly to the [DESCRIBE KEY PROTRUDING PARTS] of the object. This creates aggressive, sharp tension micro-folds and deep sculptural wrinkles that radiate from the object&#39;s silhouette. The pouch edges feature a crisp, industrial micro-dotted heat-seal pattern.</p><p>Packaging Detail: The top features a circular punch-hole for hanging display, located above a realistic zip-lock seal track. The vacuum effect is powerful, with the clear front plastic sucked tightly against the contours, creating sharp, ray-traced reflections and deep tension folds.</p><p>Graphics &amp; Strategic Placement:<br>Upper Label: A crisp white thermal rectangular sticker with a barcode and price tag of &quot;$[INSERT PRICE]&quot; is placed at the top-left, positioned precisely below the zip-lock seal line.<br>Lower QR: A premium square holographic QR-code with prismatic iridescent reflections is located at the bottom-left corner.</p><p>Typography &amp; Extended Pattern: The word &quot;[INSERT OBJECT NAME IN CAPS]&quot; is printed vertically in a bold black Swiss font along the right side, layered over a black halftone dot-matrix pattern that extends fully to the mid-point of the pouch and then gradually fades/dissolves from there towards the center, creating a sophisticated transition.</p><p>Lighting &amp; Background: Set against a pitch-black minimalist background. Cinematic Amber and Electric Blue rim lighting outlines the silhouette, highlighting the contrast between the white back and the clear front plastic, ensuring a zero-flatness, 3D pop. Technical Specs: Commercial product photography, 8k, Unreal Engine 5.4 render style, macro-detail, zero-flatness, ultra-high contrast, focus on extreme transparency of the front layer.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2019847469165896077-1.jpg" alt="Composition &amp; Subject: A professional front facing studio sho..." loading="lazy"><img src="/images/tweet-2019847469165896077-2.jpg" alt="Composition &amp; Subject: A professional front facing studio sho..." loading="lazy"><img src="/images/tweet-2019847469165896077-3.jpg" alt="Composition &amp; Subject: A professional front facing studio sho..." loading="lazy"><img src="/images/tweet-2019847469165896077-4.jpg" alt="Composition &amp; Subject: A professional front facing studio sho..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2011,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

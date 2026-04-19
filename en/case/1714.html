@@ -7,11 +7,13 @@
     <title>Create a 3×3 grid in #1714 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create a 3×3 grid in 3:4 aspect ratio for a high end commercial marketing campaign using the uploaded product as the...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1714.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1714.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1714.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844854">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023598">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("为高端商业营销活动创建一个 3×3 网格，\n长宽比为 3:4，使用已上传的产品作为中心主体。\n\n每一帧必须呈现独特的视觉概念，同时在九张图中保持产品的一致性（完全一致）。\n\n网格概念（每格一项）：\n1. 标志性英雄静物，构图大胆\n2. 极致微距细节，突出材质、表面或纹理\n3. 动态液体或粒子与产品互动环绕\n4. 极简雕塑式布置，结合抽象形态\n5. 漂浮元素构图，暗示轻盈与创新\n6. 感官特写，强调触感与真实感\n7. 以产品色盘为灵感的色彩驱动概念场景\n8. 成分或组件抽象（非字面、象征性）\n9. 超现实但优雅的融合场景，结合真实与想象\n\n视觉规则：\n- 产品在形状、比例、标签、字体、颜色和品牌识别上必须保持100%准确\n- 不得扭曲、变形或重新设计产品\n- 产品与背景之间需有清晰分离\n\n光线与风格：\n- 柔和、可控的影棚灯光\n- 细腻高光，真实阴影\n- 高动态范围，超清晰对焦\n- 编辑级奢华广告美学\n- 高端感官营销风格\n\n整体感觉：\n- 现代、精致、视觉上统一\n- 高端商业推广活动\n- 为品牌网站、社交媒体网格和数字广告牌设计\n- 超写实、电影感、精致、令人向往", this)'>📋 Copy</button>
         </div>
-        <p>为高端商业营销活动创建一个 3×3 网格，<br>长宽比为 3:4，使用已上传的产品作为中心主体。</p><p>每一帧必须呈现独特的视觉概念，同时在九张图中保持产品的一致性（完全一致）。</p><p>网格概念（每格一项）：<br>1. 标志性英雄静物，构图大胆<br>2. 极致微距细节，突出材质、表面或纹理<br>3. 动态液体或粒子与产品互动环绕<br>4. 极简雕塑式布置，结合抽象形态<br>5. 漂浮元素构图，暗示轻盈与创新<br>6. 感官特写，强调触感与真实感<br>7. 以产品色盘为灵感的色彩驱动概念场景<br>8. 成分或组件抽象（非字面、象征性）<br>9. 超现实但优雅的融合场景，结合真实与想象</p><p>视觉规则：<br>- 产品在形状、比例、标签、字体、颜色和品牌识别上必须保持100%准确<br>- 不得扭曲、变形或重新设计产品<br>- 产品与背景之间需有清晰分离</p><p>光线与风格：<br>- 柔和、可控的影棚灯光<br>- 细腻高光，真实阴影<br>- 高动态范围，超清晰对焦<br>- 编辑级奢华广告美学<br>- 高端感官营销风格</p><p>整体感觉：<br>- 现代、精致、视觉上统一<br>- 高端商业推广活动<br>- 为品牌网站、社交媒体网格和数字广告牌设计<br>- 超写实、电影感、精致、令人向往</p>
+        <div data-nosnippet><p>为高端商业营销活动创建一个 3×3 网格，<br>长宽比为 3:4，使用已上传的产品作为中心主体。</p><p>每一帧必须呈现独特的视觉概念，同时在九张图中保持产品的一致性（完全一致）。</p><p>网格概念（每格一项）：<br>1. 标志性英雄静物，构图大胆<br>2. 极致微距细节，突出材质、表面或纹理<br>3. 动态液体或粒子与产品互动环绕<br>4. 极简雕塑式布置，结合抽象形态<br>5. 漂浮元素构图，暗示轻盈与创新<br>6. 感官特写，强调触感与真实感<br>7. 以产品色盘为灵感的色彩驱动概念场景<br>8. 成分或组件抽象（非字面、象征性）<br>9. 超现实但优雅的融合场景，结合真实与想象</p><p>视觉规则：<br>- 产品在形状、比例、标签、字体、颜色和品牌识别上必须保持100%准确<br>- 不得扭曲、变形或重新设计产品<br>- 产品与背景之间需有清晰分离</p><p>光线与风格：<br>- 柔和、可控的影棚灯光<br>- 细腻高光，真实阴影<br>- 高动态范围，超清晰对焦<br>- 编辑级奢华广告美学<br>- 高端感官营销风格</p><p>整体感觉：<br>- 现代、精致、视觉上统一<br>- 高端商业推广活动<br>- 为品牌网站、社交媒体网格和数字广告牌设计<br>- 超写实、电影感、精致、令人向往</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a 3×3 grid in\n3:4 aspect ratio for a high-end commercial marketing campaign using the uploaded product as the central subject.\n\nEach frame must present a distinct visual concept while maintaining perfect product consistency across all nine images.\n\nGrid Concepts (one per cell):\n\n1. Iconic hero still life with bold composition\n\n2. Extreme macro detail highlighting material, surface, or texture\n\n3. Dynamic liquid or particle interaction surrounding the product\n\n4. Minimal sculptural arrangement with abstract forms\n\n5. Floating elements composition suggesting lightness and innovation\n\n6. Sensory close-up emphasizing tactility and realism\n\n7. Color-driven conceptual scene inspired by the product palette\n\n8. Ingredient or component abstraction (non-literal, symbolic)\n\n9. Surreal yet elegant fusion scene combining realism and imagination\n\nVisual Rules:\nProduct must remain 100% accurate in shape, proportions, label, typography, color, and branding\nNo distortion, deformation, or redesign of the product\nClean separation between product and background\n\nLighting & Style:\nSoft, controlled studio lighting\nSubtle highlights, realistic shadows\nHigh dynamic range, ultra-sharp focus\nEditorial luxury advertising aesthetic\nPremium sensory marketing look\n\nOverall Feel:\nModern, refined, visually cohesive\nHigh-end commercial campaign\nDesigned for brand websites, social grids, and digital billboards\nHyperreal, cinematic, polished, and aspirational", this)'>📋 Copy</button>
         </div>
-        <p>Create a 3×3 grid in<br>3:4 aspect ratio for a high-end commercial marketing campaign using the uploaded product as the central subject.</p><p>Each frame must present a distinct visual concept while maintaining perfect product consistency across all nine images.</p><p>Grid Concepts (one per cell):</p><p>1. Iconic hero still life with bold composition</p><p>2. Extreme macro detail highlighting material, surface, or texture</p><p>3. Dynamic liquid or particle interaction surrounding the product</p><p>4. Minimal sculptural arrangement with abstract forms</p><p>5. Floating elements composition suggesting lightness and innovation</p><p>6. Sensory close-up emphasizing tactility and realism</p><p>7. Color-driven conceptual scene inspired by the product palette</p><p>8. Ingredient or component abstraction (non-literal, symbolic)</p><p>9. Surreal yet elegant fusion scene combining realism and imagination</p><p>Visual Rules:<br>Product must remain 100% accurate in shape, proportions, label, typography, color, and branding<br>No distortion, deformation, or redesign of the product<br>Clean separation between product and background</p><p>Lighting &amp; Style:<br>Soft, controlled studio lighting<br>Subtle highlights, realistic shadows<br>High dynamic range, ultra-sharp focus<br>Editorial luxury advertising aesthetic<br>Premium sensory marketing look</p><p>Overall Feel:<br>Modern, refined, visually cohesive<br>High-end commercial campaign<br>Designed for brand websites, social grids, and digital billboards<br>Hyperreal, cinematic, polished, and aspirational</p>
+        <div data-nosnippet><p>Create a 3×3 grid in<br>3:4 aspect ratio for a high-end commercial marketing campaign using the uploaded product as the central subject.</p><p>Each frame must present a distinct visual concept while maintaining perfect product consistency across all nine images.</p><p>Grid Concepts (one per cell):</p><p>1. Iconic hero still life with bold composition</p><p>2. Extreme macro detail highlighting material, surface, or texture</p><p>3. Dynamic liquid or particle interaction surrounding the product</p><p>4. Minimal sculptural arrangement with abstract forms</p><p>5. Floating elements composition suggesting lightness and innovation</p><p>6. Sensory close-up emphasizing tactility and realism</p><p>7. Color-driven conceptual scene inspired by the product palette</p><p>8. Ingredient or component abstraction (non-literal, symbolic)</p><p>9. Surreal yet elegant fusion scene combining realism and imagination</p><p>Visual Rules:<br>Product must remain 100% accurate in shape, proportions, label, typography, color, and branding<br>No distortion, deformation, or redesign of the product<br>Clean separation between product and background</p><p>Lighting &amp; Style:<br>Soft, controlled studio lighting<br>Subtle highlights, realistic shadows<br>High dynamic range, ultra-sharp focus<br>Editorial luxury advertising aesthetic<br>Premium sensory marketing look</p><p>Overall Feel:<br>Modern, refined, visually cohesive<br>High-end commercial campaign<br>Designed for brand websites, social grids, and digital billboards<br>Hyperreal, cinematic, polished, and aspirational</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2015634929066070042-1.jpg" alt="Create a 3×3 grid in" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1714,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

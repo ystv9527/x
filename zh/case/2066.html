@@ -7,11 +7,13 @@
     <title>&quot;style&quot;: &quot;cinematic realism, high end editorial photography&quot;, #2066 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;style&quot;: &quot;cinematic realism, high end editorial photography&quot;, &quot;subject&quot;: { &quot;type&quot;: &quot;woman&quot;, &quot;age range&quot;: &quot;mid 20s&quot;,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2066.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2066.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2066.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840282">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022311">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"style\": \"电影写实，高端编辑摄影\",\n  \"subject\": {\n    \"type\": \"女性\",\n    \"age_range\": \"二十多岁中期\",\n    \"pose\": \"侧身坐在长凳上，手持一本打开的书，头微微转向镜头外\",\n    \"expression\": \"平静、沉思、目光有些疏远\",\n    \"wardrobe\": \"深黑色天鹅绒裹身连衣裙，质地柔软，自然造型\",\n    \"hair\": \"长发，深色，自然的蓬松大波浪\",\n    \"makeup\": \"极简妆容，真实的皮肤纹理，无塑料感磨皮\"\n  },\n  \"environment\": {\n    \"location\": \"阳光照入的图书馆阁楼\",\n    \"details\": \"高大的玻璃窗，木质书架上摆满书籍，室内暖色调，空气中可见尘埃颗粒\",\n    \"time_of_day\": \"黄金时刻\",\n    \"atmosphere\": \"安静、亲密、充满知识气息\"\n  },\n  \"lighting\": {\n    \"type\": \"强烈的黄金时刻逆光\",\n    \"direction\": \"来自侧后方窗户的光线\",\n    \"effects\": \"自然镜头炫光，穿过画面的光带，高光处柔和泛光，可见体积光束\",\n    \"contrast\": \"中高对比度，暖色高光与柔和的阴影衰减\"\n  },\n  \"camera\": {\n    \"shot_type\": \"中景肖像\",\n    \"angle\": \"略低于眼平的角度\",\n    \"lens\": \"85mm 全画幅镜头\",\n    \"aperture\": \"f1.8\",\n    \"depth_of_field\": \"浅景深，主体清晰，背景奶油般虚化\",\n    \"focus\": \"聚焦于眼睛和面部平面\"\n  },\n  \"color_grading\": {\n    \"palette\": \"暖琥珀与蜂蜜色调，搭配柔和的中性阴影\",\n    \"look\": \"胶片质感，细腻颗粒，电影级动态范围\"\n  },\n  \"composition\": {\n    \"framing\": \"三分法构图，主体偏右\",\n    \"foreground\": \"前景为柔和虚化的光斑和书页边缘\",\n    \"background\": \"窗格线条与书架作为引导线\",\n    \"motion\": \"主体静止，漂浮的光粒\"\n  },\n  \"quality\": {\n    \"resolution\": \"8K\",\n    \"texture\": \"自然的皮肤细节，真实的织物质感\",\n    \"rendering\": \"照片写实，无过度锐化，无CG光泽感\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;style&quot;: &quot;电影写实，高端编辑摄影&quot;,<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;女性&quot;,<br>    &quot;age_range&quot;: &quot;二十多岁中期&quot;,<br>    &quot;pose&quot;: &quot;侧身坐在长凳上，手持一本打开的书，头微微转向镜头外&quot;,<br>    &quot;expression&quot;: &quot;平静、沉思、目光有些疏远&quot;,<br>    &quot;wardrobe&quot;: &quot;深黑色天鹅绒裹身连衣裙，质地柔软，自然造型&quot;,<br>    &quot;hair&quot;: &quot;长发，深色，自然的蓬松大波浪&quot;,<br>    &quot;makeup&quot;: &quot;极简妆容，真实的皮肤纹理，无塑料感磨皮&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;阳光照入的图书馆阁楼&quot;,<br>    &quot;details&quot;: &quot;高大的玻璃窗，木质书架上摆满书籍，室内暖色调，空气中可见尘埃颗粒&quot;,<br>    &quot;time_of_day&quot;: &quot;黄金时刻&quot;,<br>    &quot;atmosphere&quot;: &quot;安静、亲密、充满知识气息&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;强烈的黄金时刻逆光&quot;,<br>    &quot;direction&quot;: &quot;来自侧后方窗户的光线&quot;,<br>    &quot;effects&quot;: &quot;自然镜头炫光，穿过画面的光带，高光处柔和泛光，可见体积光束&quot;,<br>    &quot;contrast&quot;: &quot;中高对比度，暖色高光与柔和的阴影衰减&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;shot_type&quot;: &quot;中景肖像&quot;,<br>    &quot;angle&quot;: &quot;略低于眼平的角度&quot;,<br>    &quot;lens&quot;: &quot;85mm 全画幅镜头&quot;,<br>    &quot;aperture&quot;: &quot;f1.8&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深，主体清晰，背景奶油般虚化&quot;,<br>    &quot;focus&quot;: &quot;聚焦于眼睛和面部平面&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;暖琥珀与蜂蜜色调，搭配柔和的中性阴影&quot;,<br>    &quot;look&quot;: &quot;胶片质感，细腻颗粒，电影级动态范围&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;三分法构图，主体偏右&quot;,<br>    &quot;foreground&quot;: &quot;前景为柔和虚化的光斑和书页边缘&quot;,<br>    &quot;background&quot;: &quot;窗格线条与书架作为引导线&quot;,<br>    &quot;motion&quot;: &quot;主体静止，漂浮的光粒&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;texture&quot;: &quot;自然的皮肤细节，真实的织物质感&quot;,<br>    &quot;rendering&quot;: &quot;照片写实，无过度锐化，无CG光泽感&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;style&quot;: &quot;电影写实，高端编辑摄影&quot;,<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;女性&quot;,<br>    &quot;age_range&quot;: &quot;二十多岁中期&quot;,<br>    &quot;pose&quot;: &quot;侧身坐在长凳上，手持一本打开的书，头微微转向镜头外&quot;,<br>    &quot;expression&quot;: &quot;平静、沉思、目光有些疏远&quot;,<br>    &quot;wardrobe&quot;: &quot;深黑色天鹅绒裹身连衣裙，质地柔软，自然造型&quot;,<br>    &quot;hair&quot;: &quot;长发，深色，自然的蓬松大波浪&quot;,<br>    &quot;makeup&quot;: &quot;极简妆容，真实的皮肤纹理，无塑料感磨皮&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;阳光照入的图书馆阁楼&quot;,<br>    &quot;details&quot;: &quot;高大的玻璃窗，木质书架上摆满书籍，室内暖色调，空气中可见尘埃颗粒&quot;,<br>    &quot;time_of_day&quot;: &quot;黄金时刻&quot;,<br>    &quot;atmosphere&quot;: &quot;安静、亲密、充满知识气息&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;强烈的黄金时刻逆光&quot;,<br>    &quot;direction&quot;: &quot;来自侧后方窗户的光线&quot;,<br>    &quot;effects&quot;: &quot;自然镜头炫光，穿过画面的光带，高光处柔和泛光，可见体积光束&quot;,<br>    &quot;contrast&quot;: &quot;中高对比度，暖色高光与柔和的阴影衰减&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;shot_type&quot;: &quot;中景肖像&quot;,<br>    &quot;angle&quot;: &quot;略低于眼平的角度&quot;,<br>    &quot;lens&quot;: &quot;85mm 全画幅镜头&quot;,<br>    &quot;aperture&quot;: &quot;f1.8&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深，主体清晰，背景奶油般虚化&quot;,<br>    &quot;focus&quot;: &quot;聚焦于眼睛和面部平面&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;暖琥珀与蜂蜜色调，搭配柔和的中性阴影&quot;,<br>    &quot;look&quot;: &quot;胶片质感，细腻颗粒，电影级动态范围&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;三分法构图，主体偏右&quot;,<br>    &quot;foreground&quot;: &quot;前景为柔和虚化的光斑和书页边缘&quot;,<br>    &quot;background&quot;: &quot;窗格线条与书架作为引导线&quot;,<br>    &quot;motion&quot;: &quot;主体静止，漂浮的光粒&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;texture&quot;: &quot;自然的皮肤细节，真实的织物质感&quot;,<br>    &quot;rendering&quot;: &quot;照片写实，无过度锐化，无CG光泽感&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"style\": \"cinematic realism, high-end editorial photography\",\n  \"subject\": {\n    \"type\": \"woman\",\n    \"age_range\": \"mid-20s\",\n    \"pose\": \"seated sideways on a bench, holding an open book, head turned slightly off-camera\",\n    \"expression\": \"calm, reflective, distant gaze\",\n    \"wardrobe\": \"deep black velvet wrap dress, soft texture, natural styling\",\n    \"hair\": \"long, dark, loose waves, natural volume\",\n    \"makeup\": \"minimal, realistic skin texture, no plastic smoothing\"\n  },\n  \"environment\": {\n    \"location\": \"sunlit library loft\",\n    \"details\": \"tall glass windows, wooden shelves filled with books, warm interior tones, dust particles visible in air\",\n    \"time_of_day\": \"golden hour\",\n    \"atmosphere\": \"quiet, intimate, intellectual\"\n  },\n  \"lighting\": {\n    \"type\": \"strong golden hour backlight\",\n    \"direction\": \"side-back window light\",\n    \"effects\": \"natural lens flare, light streaks across frame, soft bloom on highlights, volumetric rays\",\n    \"contrast\": \"medium-high with warm highlights and soft shadow falloff\"\n  },\n  \"camera\": {\n    \"shot_type\": \"medium portrait\",\n    \"angle\": \"slightly low eye-level\",\n    \"lens\": \"85mm full-frame\",\n    \"aperture\": \"f1.8\",\n    \"depth_of_field\": \"shallow, subject sharp, background creamy blur\",\n    \"focus\": \"eyes and face plane\"\n  },\n  \"color_grading\": {\n    \"palette\": \"warm amber and honey tones with soft neutral shadows\",\n    \"look\": \"film-like, subtle grain, cinematic dynamic range\"\n  },\n  \"composition\": {\n    \"framing\": \"rule of thirds, subject right-weighted\",\n    \"foreground\": \"soft blurred flare and book edge\",\n    \"background\": \"window grid lines and shelves as leading lines\",\n    \"motion\": \"still subject, drifting light particles\"\n  },\n  \"quality\": {\n    \"resolution\": \"8k\",\n    \"texture\": \"natural skin detail, realistic fabric texture\",\n    \"rendering\": \"photorealistic, no over-sharpening, no CGI gloss\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;style&quot;: &quot;cinematic realism, high-end editorial photography&quot;,<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;woman&quot;,<br>    &quot;age_range&quot;: &quot;mid-20s&quot;,<br>    &quot;pose&quot;: &quot;seated sideways on a bench, holding an open book, head turned slightly off-camera&quot;,<br>    &quot;expression&quot;: &quot;calm, reflective, distant gaze&quot;,<br>    &quot;wardrobe&quot;: &quot;deep black velvet wrap dress, soft texture, natural styling&quot;,<br>    &quot;hair&quot;: &quot;long, dark, loose waves, natural volume&quot;,<br>    &quot;makeup&quot;: &quot;minimal, realistic skin texture, no plastic smoothing&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;sunlit library loft&quot;,<br>    &quot;details&quot;: &quot;tall glass windows, wooden shelves filled with books, warm interior tones, dust particles visible in air&quot;,<br>    &quot;time_of_day&quot;: &quot;golden hour&quot;,<br>    &quot;atmosphere&quot;: &quot;quiet, intimate, intellectual&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;strong golden hour backlight&quot;,<br>    &quot;direction&quot;: &quot;side-back window light&quot;,<br>    &quot;effects&quot;: &quot;natural lens flare, light streaks across frame, soft bloom on highlights, volumetric rays&quot;,<br>    &quot;contrast&quot;: &quot;medium-high with warm highlights and soft shadow falloff&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;shot_type&quot;: &quot;medium portrait&quot;,<br>    &quot;angle&quot;: &quot;slightly low eye-level&quot;,<br>    &quot;lens&quot;: &quot;85mm full-frame&quot;,<br>    &quot;aperture&quot;: &quot;f1.8&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow, subject sharp, background creamy blur&quot;,<br>    &quot;focus&quot;: &quot;eyes and face plane&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;warm amber and honey tones with soft neutral shadows&quot;,<br>    &quot;look&quot;: &quot;film-like, subtle grain, cinematic dynamic range&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;rule of thirds, subject right-weighted&quot;,<br>    &quot;foreground&quot;: &quot;soft blurred flare and book edge&quot;,<br>    &quot;background&quot;: &quot;window grid lines and shelves as leading lines&quot;,<br>    &quot;motion&quot;: &quot;still subject, drifting light particles&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;texture&quot;: &quot;natural skin detail, realistic fabric texture&quot;,<br>    &quot;rendering&quot;: &quot;photorealistic, no over-sharpening, no CGI gloss&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;style&quot;: &quot;cinematic realism, high-end editorial photography&quot;,<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;woman&quot;,<br>    &quot;age_range&quot;: &quot;mid-20s&quot;,<br>    &quot;pose&quot;: &quot;seated sideways on a bench, holding an open book, head turned slightly off-camera&quot;,<br>    &quot;expression&quot;: &quot;calm, reflective, distant gaze&quot;,<br>    &quot;wardrobe&quot;: &quot;deep black velvet wrap dress, soft texture, natural styling&quot;,<br>    &quot;hair&quot;: &quot;long, dark, loose waves, natural volume&quot;,<br>    &quot;makeup&quot;: &quot;minimal, realistic skin texture, no plastic smoothing&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;sunlit library loft&quot;,<br>    &quot;details&quot;: &quot;tall glass windows, wooden shelves filled with books, warm interior tones, dust particles visible in air&quot;,<br>    &quot;time_of_day&quot;: &quot;golden hour&quot;,<br>    &quot;atmosphere&quot;: &quot;quiet, intimate, intellectual&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;strong golden hour backlight&quot;,<br>    &quot;direction&quot;: &quot;side-back window light&quot;,<br>    &quot;effects&quot;: &quot;natural lens flare, light streaks across frame, soft bloom on highlights, volumetric rays&quot;,<br>    &quot;contrast&quot;: &quot;medium-high with warm highlights and soft shadow falloff&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;shot_type&quot;: &quot;medium portrait&quot;,<br>    &quot;angle&quot;: &quot;slightly low eye-level&quot;,<br>    &quot;lens&quot;: &quot;85mm full-frame&quot;,<br>    &quot;aperture&quot;: &quot;f1.8&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow, subject sharp, background creamy blur&quot;,<br>    &quot;focus&quot;: &quot;eyes and face plane&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;warm amber and honey tones with soft neutral shadows&quot;,<br>    &quot;look&quot;: &quot;film-like, subtle grain, cinematic dynamic range&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;framing&quot;: &quot;rule of thirds, subject right-weighted&quot;,<br>    &quot;foreground&quot;: &quot;soft blurred flare and book edge&quot;,<br>    &quot;background&quot;: &quot;window grid lines and shelves as leading lines&quot;,<br>    &quot;motion&quot;: &quot;still subject, drifting light particles&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;texture&quot;: &quot;natural skin detail, realistic fabric texture&quot;,<br>    &quot;rendering&quot;: &quot;photorealistic, no over-sharpening, no CGI gloss&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2021190087657353591-1.jpg" alt="&quot;style&quot;: &quot;cinematic realism, high end editorial photography&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2066,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

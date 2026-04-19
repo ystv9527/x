@@ -7,11 +7,13 @@
     <title>自定义纹理的复古玩具 #199 | Gem Nana AI 提示词库</title>
     <meta name="description" content="自定义纹理的复古玩具 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/199.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/199.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/199.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842059">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022741">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("根据 JSON 对上传的图片进行重新纹理处理\n\n{\n“材料”： {\n“exterior”： “哑光注塑成型塑料”，\n“interior”：[\n“块状彩色塑料件”，\n“超大齿轮”，\n“简单杆”，\n“基本弹簧”，\n“玩具贴花”\n    ]\n  },\n“照明”： {\n“type”： “工作室柔光”，\n“direction”： “顶部和前部填充”，\n“color”： “暖日光”，\n“mood”： “怀旧的、欢快的”\n  },\n“背景”： {\n“type”： “solid”， //类型\n“color”： “柔和的黄色”\n  },\n“相机”： {\n“angle”： “与眼睛齐平的一侧”，\n“focus”： “中等锐化”，\n“depth_of_field”： “deep”\n  },\n“color_palette”： {\n“主导”： [“红”， “蓝”， “黄”]，\n“accents”： [“薄荷绿”， “白色”， “桃子”]\n  },\n“vibe”： “1980 年代复古玩具，怀旧，俏皮”\n}", this)'>📋 复制</button>
         </div>
-        <p>根据 JSON 对上传的图片进行重新纹理处理</p><p>{<br>“材料”： {<br>“exterior”： “哑光注塑成型塑料”，<br>“interior”：[<br>“块状彩色塑料件”，<br>“超大齿轮”，<br>“简单杆”，<br>“基本弹簧”，<br>“玩具贴花”<br>    ]<br>  },<br>“照明”： {<br>“type”： “工作室柔光”，<br>“direction”： “顶部和前部填充”，<br>“color”： “暖日光”，<br>“mood”： “怀旧的、欢快的”<br>  },<br>“背景”： {<br>“type”： “solid”， //类型<br>“color”： “柔和的黄色”<br>  },<br>“相机”： {<br>“angle”： “与眼睛齐平的一侧”，<br>“focus”： “中等锐化”，<br>“depth_of_field”： “deep”<br>  },<br>“color_palette”： {<br>“主导”： [“红”， “蓝”， “黄”]，<br>“accents”： [“薄荷绿”， “白色”， “桃子”]<br>  },<br>“vibe”： “1980 年代复古玩具，怀旧，俏皮”<br>}</p>
+        <div data-nosnippet><p>根据 JSON 对上传的图片进行重新纹理处理</p><p>{<br>“材料”： {<br>“exterior”： “哑光注塑成型塑料”，<br>“interior”：[<br>“块状彩色塑料件”，<br>“超大齿轮”，<br>“简单杆”，<br>“基本弹簧”，<br>“玩具贴花”<br>    ]<br>  },<br>“照明”： {<br>“type”： “工作室柔光”，<br>“direction”： “顶部和前部填充”，<br>“color”： “暖日光”，<br>“mood”： “怀旧的、欢快的”<br>  },<br>“背景”： {<br>“type”： “solid”， //类型<br>“color”： “柔和的黄色”<br>  },<br>“相机”： {<br>“angle”： “与眼睛齐平的一侧”，<br>“focus”： “中等锐化”，<br>“depth_of_field”： “deep”<br>  },<br>“color_palette”： {<br>“主导”： [“红”， “蓝”， “黄”]，<br>“accents”： [“薄荷绿”， “白色”， “桃子”]<br>  },<br>“vibe”： “1980 年代复古玩具，怀旧，俏皮”<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Retexture the uploaded image based on the JSON\n\n{\n  \"materials\": {\n    \"exterior\": \"matte injection-molded plastic\",\n    \"interior\": [\n      \"blocky colored plastic parts\",\n      \"oversized gears\",\n      \"simple rods\",\n      \"basic springs\",\n      \"toy decals\"\n    ]\n  },\n  \"lighting\": {\n    \"type\": \"studio soft light\",\n    \"direction\": \"top and front fill\",\n    \"color\": \"warm daylight\",\n    \"mood\": \"nostalgic, cheerful\"\n  },\n  \"background\": {\n    \"type\": \"solid\",\n    \"color\": \"pastel yellow\"\n  },\n  \"camera\": {\n    \"angle\": \"eye-level side\",\n    \"focus\": \"medium sharp\",\n    \"depth_of_field\": \"deep\"\n  },\n  \"color_palette\": {\n    \"dominant\": [\"red\", \"blue\", \"yellow\"],\n    \"accents\": [\"mint green\", \"white\", \"peach\"]\n  },\n  \"vibe\": \"1980s retro toy, nostalgic, playful\"\n}", this)'>📋 复制</button>
         </div>
-        <p>Retexture the uploaded image based on the JSON</p><p>{<br>  &quot;materials&quot;: {<br>    &quot;exterior&quot;: &quot;matte injection-molded plastic&quot;,<br>    &quot;interior&quot;: [<br>      &quot;blocky colored plastic parts&quot;,<br>      &quot;oversized gears&quot;,<br>      &quot;simple rods&quot;,<br>      &quot;basic springs&quot;,<br>      &quot;toy decals&quot;<br>    ]<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;studio soft light&quot;,<br>    &quot;direction&quot;: &quot;top and front fill&quot;,<br>    &quot;color&quot;: &quot;warm daylight&quot;,<br>    &quot;mood&quot;: &quot;nostalgic, cheerful&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;type&quot;: &quot;solid&quot;,<br>    &quot;color&quot;: &quot;pastel yellow&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;eye-level side&quot;,<br>    &quot;focus&quot;: &quot;medium sharp&quot;,<br>    &quot;depth_of_field&quot;: &quot;deep&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;dominant&quot;: [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;],<br>    &quot;accents&quot;: [&quot;mint green&quot;, &quot;white&quot;, &quot;peach&quot;]<br>  },<br>  &quot;vibe&quot;: &quot;1980s retro toy, nostalgic, playful&quot;<br>}</p>
+        <div data-nosnippet><p>Retexture the uploaded image based on the JSON</p><p>{<br>  &quot;materials&quot;: {<br>    &quot;exterior&quot;: &quot;matte injection-molded plastic&quot;,<br>    &quot;interior&quot;: [<br>      &quot;blocky colored plastic parts&quot;,<br>      &quot;oversized gears&quot;,<br>      &quot;simple rods&quot;,<br>      &quot;basic springs&quot;,<br>      &quot;toy decals&quot;<br>    ]<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;studio soft light&quot;,<br>    &quot;direction&quot;: &quot;top and front fill&quot;,<br>    &quot;color&quot;: &quot;warm daylight&quot;,<br>    &quot;mood&quot;: &quot;nostalgic, cheerful&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;type&quot;: &quot;solid&quot;,<br>    &quot;color&quot;: &quot;pastel yellow&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;eye-level side&quot;,<br>    &quot;focus&quot;: &quot;medium sharp&quot;,<br>    &quot;depth_of_field&quot;: &quot;deep&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;dominant&quot;: [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;],<br>    &quot;accents&quot;: [&quot;mint green&quot;, &quot;white&quot;, &quot;peach&quot;]<br>  },<br>  &quot;vibe&quot;: &quot;1980s retro toy, nostalgic, playful&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/199.png" alt="自定义纹理的复古玩具" loading="lazy"><img src="/images/199-2.jpeg" alt="自定义纹理的复古玩具" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 199,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

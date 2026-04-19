@@ -7,11 +7,13 @@
     <title>&quot;generation parameters&quot;: { #1464 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;generation parameters&quot;: { &quot;topic&quot;: &quot;Portrait Photography&quot;, &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;style preset&quot;: &quot;Flash Photograp...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1464.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1464.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1464.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845090">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023645">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"generation_parameters\": {\n    \"topic\": \"人像摄影\",\n    \"aspect_ratio\": \"3:4\",\n    \"style_preset\": \"闪光灯摄影\"\n  },\n  \"subject_details\": {\n    \"identity\": {\n      \"name\": \"匿名（非公众人物）\",\n      \"type\": \"女性\"\n    },\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"深色\",\n        \"length\": \"长\",\n        \"texture\": \"直发\"\n      },\n      \"face\": {\n        \"expression\": \"柔和\"\n      },\n      \"body\": {\n        \"build_notes\": \"丰满\"\n      }\n    },\n    \"pose_and_action\": {\n      \"orientation\": \"回头看\",\n      \"framing\": \"全身\",\n      \"stance\": \"站立\"\n    }\n  },\n  \"fashion_and_attire\": {\n    \"clothing\": {\n      \"item\": \"包身迷你连衣裙\",\n      \"color\": \"米色\",\n      \"fit\": \"紧身\",\n      \"design_elements\": [\n        \"露背\"\n      ]\n    },\n    \"accessories\": {\n      \"jewelry\": {\n        \"item\": \"后坠项链\",\n        \"material\": \"黄金\",\n        \"style\": \"精致\"\n      },\n      \"carry_items\": {\n        \"item\": \"斜挎包\",\n        \"material\": \"皮革\",\n        \"color\": \"黑色\",\n        \"size\": \"小号\"\n      }\n    }\n  },\n  \"scene_composition\": {\n    \"environment\": {\n      \"location_type\": \"城市/摄影棚\",\n      \"background_elements\": {\n        \"object\": \"墙壁\",\n        \"material\": \"混凝土块\",\n        \"color\": \"灰色\"\n      }\n    },\n    \"lighting_setup\": {\n      \"technique\": \"闪光灯摄影\",\n      \"qualities\": [\n        \"高质量\",\n        \"直射\"\n      ],\n      \"effects\": {\n        \"skin_interaction\": \"柔和光泽\",\n        \"shadows\": \"在背景上投射轻微阴影\"\n      }\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;generation_parameters&quot;: {<br>    &quot;topic&quot;: &quot;人像摄影&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;style_preset&quot;: &quot;闪光灯摄影&quot;<br>  },<br>  &quot;subject_details&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name&quot;: &quot;匿名（非公众人物）&quot;,<br>      &quot;type&quot;: &quot;女性&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;深色&quot;,<br>        &quot;length&quot;: &quot;长&quot;,<br>        &quot;texture&quot;: &quot;直发&quot;<br>      },<br>      &quot;face&quot;: {<br>        &quot;expression&quot;: &quot;柔和&quot;<br>      },<br>      &quot;body&quot;: {<br>        &quot;build_notes&quot;: &quot;丰满&quot;<br>      }<br>    },<br>    &quot;pose_and_action&quot;: {<br>      &quot;orientation&quot;: &quot;回头看&quot;,<br>      &quot;framing&quot;: &quot;全身&quot;,<br>      &quot;stance&quot;: &quot;站立&quot;<br>    }<br>  },<br>  &quot;fashion_and_attire&quot;: {<br>    &quot;clothing&quot;: {<br>      &quot;item&quot;: &quot;包身迷你连衣裙&quot;,<br>      &quot;color&quot;: &quot;米色&quot;,<br>      &quot;fit&quot;: &quot;紧身&quot;,<br>      &quot;design_elements&quot;: [<br>        &quot;露背&quot;<br>      ]<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;jewelry&quot;: {<br>        &quot;item&quot;: &quot;后坠项链&quot;,<br>        &quot;material&quot;: &quot;黄金&quot;,<br>        &quot;style&quot;: &quot;精致&quot;<br>      },<br>      &quot;carry_items&quot;: {<br>        &quot;item&quot;: &quot;斜挎包&quot;,<br>        &quot;material&quot;: &quot;皮革&quot;,<br>        &quot;color&quot;: &quot;黑色&quot;,<br>        &quot;size&quot;: &quot;小号&quot;<br>      }<br>    }<br>  },<br>  &quot;scene_composition&quot;: {<br>    &quot;environment&quot;: {<br>      &quot;location_type&quot;: &quot;城市/摄影棚&quot;,<br>      &quot;background_elements&quot;: {<br>        &quot;object&quot;: &quot;墙壁&quot;,<br>        &quot;material&quot;: &quot;混凝土块&quot;,<br>        &quot;color&quot;: &quot;灰色&quot;<br>      }<br>    },<br>    &quot;lighting_setup&quot;: {<br>      &quot;technique&quot;: &quot;闪光灯摄影&quot;,<br>      &quot;qualities&quot;: [<br>        &quot;高质量&quot;,<br>        &quot;直射&quot;<br>      ],<br>      &quot;effects&quot;: {<br>        &quot;skin_interaction&quot;: &quot;柔和光泽&quot;,<br>        &quot;shadows&quot;: &quot;在背景上投射轻微阴影&quot;<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;generation_parameters&quot;: {<br>    &quot;topic&quot;: &quot;人像摄影&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;style_preset&quot;: &quot;闪光灯摄影&quot;<br>  },<br>  &quot;subject_details&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name&quot;: &quot;匿名（非公众人物）&quot;,<br>      &quot;type&quot;: &quot;女性&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;深色&quot;,<br>        &quot;length&quot;: &quot;长&quot;,<br>        &quot;texture&quot;: &quot;直发&quot;<br>      },<br>      &quot;face&quot;: {<br>        &quot;expression&quot;: &quot;柔和&quot;<br>      },<br>      &quot;body&quot;: {<br>        &quot;build_notes&quot;: &quot;丰满&quot;<br>      }<br>    },<br>    &quot;pose_and_action&quot;: {<br>      &quot;orientation&quot;: &quot;回头看&quot;,<br>      &quot;framing&quot;: &quot;全身&quot;,<br>      &quot;stance&quot;: &quot;站立&quot;<br>    }<br>  },<br>  &quot;fashion_and_attire&quot;: {<br>    &quot;clothing&quot;: {<br>      &quot;item&quot;: &quot;包身迷你连衣裙&quot;,<br>      &quot;color&quot;: &quot;米色&quot;,<br>      &quot;fit&quot;: &quot;紧身&quot;,<br>      &quot;design_elements&quot;: [<br>        &quot;露背&quot;<br>      ]<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;jewelry&quot;: {<br>        &quot;item&quot;: &quot;后坠项链&quot;,<br>        &quot;material&quot;: &quot;黄金&quot;,<br>        &quot;style&quot;: &quot;精致&quot;<br>      },<br>      &quot;carry_items&quot;: {<br>        &quot;item&quot;: &quot;斜挎包&quot;,<br>        &quot;material&quot;: &quot;皮革&quot;,<br>        &quot;color&quot;: &quot;黑色&quot;,<br>        &quot;size&quot;: &quot;小号&quot;<br>      }<br>    }<br>  },<br>  &quot;scene_composition&quot;: {<br>    &quot;environment&quot;: {<br>      &quot;location_type&quot;: &quot;城市/摄影棚&quot;,<br>      &quot;background_elements&quot;: {<br>        &quot;object&quot;: &quot;墙壁&quot;,<br>        &quot;material&quot;: &quot;混凝土块&quot;,<br>        &quot;color&quot;: &quot;灰色&quot;<br>      }<br>    },<br>    &quot;lighting_setup&quot;: {<br>      &quot;technique&quot;: &quot;闪光灯摄影&quot;,<br>      &quot;qualities&quot;: [<br>        &quot;高质量&quot;,<br>        &quot;直射&quot;<br>      ],<br>      &quot;effects&quot;: {<br>        &quot;skin_interaction&quot;: &quot;柔和光泽&quot;,<br>        &quot;shadows&quot;: &quot;在背景上投射轻微阴影&quot;<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"generation_parameters\": {\n    \"topic\": \"Portrait Photography\",\n    \"aspect_ratio\": \"3:4\",\n    \"style_preset\": \"Flash Photography\"\n  },\n  \"subject_details\": {\n    \"identity\": {\n      \"name\": \"Ana de Armas\",\n      \"type\": \"Woman\"\n    },\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"Dark\",\n        \"length\": \"Long\",\n        \"texture\": \"Straight\"\n      },\n      \"face\": {\n        \"expression\": \"Soft\"\n      },\n      \"body\": {\n        \"build_notes\": \"Large breasts\"\n      }\n    },\n    \"pose_and_action\": {\n      \"orientation\": \"Looking over shoulder\",\n      \"framing\": \"Full-body\",\n      \"stance\": \"Standing\"\n    }\n  },\n  \"fashion_and_attire\": {\n    \"clothing\": {\n      \"item\": \"Bodycon mini-dress\",\n      \"color\": \"Beige\",\n      \"fit\": \"Tight\",\n      \"design_elements\": [\n        \"Backless\"\n      ]\n    },\n    \"accessories\": {\n      \"jewelry\": {\n        \"item\": \"Back-drop necklace\",\n        \"material\": \"Gold\",\n        \"style\": \"Delicate\"\n      },\n      \"carry_items\": {\n        \"item\": \"Shoulder bag\",\n        \"material\": \"Leather\",\n        \"color\": \"Black\",\n        \"size\": \"Small\"\n      }\n    }\n  },\n  \"scene_composition\": {\n    \"environment\": {\n      \"location_type\": \"Urban/Studio\",\n      \"background_elements\": {\n        \"object\": \"Wall\",\n        \"material\": \"Concrete block\",\n        \"color\": \"Grey\"\n      }\n    },\n    \"lighting_setup\": {\n      \"technique\": \"Flash photography\",\n      \"qualities\": [\n        \"High-quality\",\n        \"Direct\"\n      ],\n      \"effects\": {\n        \"skin_interaction\": \"Soft glow\",\n        \"shadows\": \"Slight shadow cast against background\"\n      }\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;generation_parameters&quot;: {<br>    &quot;topic&quot;: &quot;Portrait Photography&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;style_preset&quot;: &quot;Flash Photography&quot;<br>  },<br>  &quot;subject_details&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;type&quot;: &quot;Woman&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Dark&quot;,<br>        &quot;length&quot;: &quot;Long&quot;,<br>        &quot;texture&quot;: &quot;Straight&quot;<br>      },<br>      &quot;face&quot;: {<br>        &quot;expression&quot;: &quot;Soft&quot;<br>      },<br>      &quot;body&quot;: {<br>        &quot;build_notes&quot;: &quot;Large breasts&quot;<br>      }<br>    },<br>    &quot;pose_and_action&quot;: {<br>      &quot;orientation&quot;: &quot;Looking over shoulder&quot;,<br>      &quot;framing&quot;: &quot;Full-body&quot;,<br>      &quot;stance&quot;: &quot;Standing&quot;<br>    }<br>  },<br>  &quot;fashion_and_attire&quot;: {<br>    &quot;clothing&quot;: {<br>      &quot;item&quot;: &quot;Bodycon mini-dress&quot;,<br>      &quot;color&quot;: &quot;Beige&quot;,<br>      &quot;fit&quot;: &quot;Tight&quot;,<br>      &quot;design_elements&quot;: [<br>        &quot;Backless&quot;<br>      ]<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;jewelry&quot;: {<br>        &quot;item&quot;: &quot;Back-drop necklace&quot;,<br>        &quot;material&quot;: &quot;Gold&quot;,<br>        &quot;style&quot;: &quot;Delicate&quot;<br>      },<br>      &quot;carry_items&quot;: {<br>        &quot;item&quot;: &quot;Shoulder bag&quot;,<br>        &quot;material&quot;: &quot;Leather&quot;,<br>        &quot;color&quot;: &quot;Black&quot;,<br>        &quot;size&quot;: &quot;Small&quot;<br>      }<br>    }<br>  },<br>  &quot;scene_composition&quot;: {<br>    &quot;environment&quot;: {<br>      &quot;location_type&quot;: &quot;Urban/Studio&quot;,<br>      &quot;background_elements&quot;: {<br>        &quot;object&quot;: &quot;Wall&quot;,<br>        &quot;material&quot;: &quot;Concrete block&quot;,<br>        &quot;color&quot;: &quot;Grey&quot;<br>      }<br>    },<br>    &quot;lighting_setup&quot;: {<br>      &quot;technique&quot;: &quot;Flash photography&quot;,<br>      &quot;qualities&quot;: [<br>        &quot;High-quality&quot;,<br>        &quot;Direct&quot;<br>      ],<br>      &quot;effects&quot;: {<br>        &quot;skin_interaction&quot;: &quot;Soft glow&quot;,<br>        &quot;shadows&quot;: &quot;Slight shadow cast against background&quot;<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;generation_parameters&quot;: {<br>    &quot;topic&quot;: &quot;Portrait Photography&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;style_preset&quot;: &quot;Flash Photography&quot;<br>  },<br>  &quot;subject_details&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name&quot;: &quot;Ana de Armas&quot;,<br>      &quot;type&quot;: &quot;Woman&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Dark&quot;,<br>        &quot;length&quot;: &quot;Long&quot;,<br>        &quot;texture&quot;: &quot;Straight&quot;<br>      },<br>      &quot;face&quot;: {<br>        &quot;expression&quot;: &quot;Soft&quot;<br>      },<br>      &quot;body&quot;: {<br>        &quot;build_notes&quot;: &quot;Large breasts&quot;<br>      }<br>    },<br>    &quot;pose_and_action&quot;: {<br>      &quot;orientation&quot;: &quot;Looking over shoulder&quot;,<br>      &quot;framing&quot;: &quot;Full-body&quot;,<br>      &quot;stance&quot;: &quot;Standing&quot;<br>    }<br>  },<br>  &quot;fashion_and_attire&quot;: {<br>    &quot;clothing&quot;: {<br>      &quot;item&quot;: &quot;Bodycon mini-dress&quot;,<br>      &quot;color&quot;: &quot;Beige&quot;,<br>      &quot;fit&quot;: &quot;Tight&quot;,<br>      &quot;design_elements&quot;: [<br>        &quot;Backless&quot;<br>      ]<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;jewelry&quot;: {<br>        &quot;item&quot;: &quot;Back-drop necklace&quot;,<br>        &quot;material&quot;: &quot;Gold&quot;,<br>        &quot;style&quot;: &quot;Delicate&quot;<br>      },<br>      &quot;carry_items&quot;: {<br>        &quot;item&quot;: &quot;Shoulder bag&quot;,<br>        &quot;material&quot;: &quot;Leather&quot;,<br>        &quot;color&quot;: &quot;Black&quot;,<br>        &quot;size&quot;: &quot;Small&quot;<br>      }<br>    }<br>  },<br>  &quot;scene_composition&quot;: {<br>    &quot;environment&quot;: {<br>      &quot;location_type&quot;: &quot;Urban/Studio&quot;,<br>      &quot;background_elements&quot;: {<br>        &quot;object&quot;: &quot;Wall&quot;,<br>        &quot;material&quot;: &quot;Concrete block&quot;,<br>        &quot;color&quot;: &quot;Grey&quot;<br>      }<br>    },<br>    &quot;lighting_setup&quot;: {<br>      &quot;technique&quot;: &quot;Flash photography&quot;,<br>      &quot;qualities&quot;: [<br>        &quot;High-quality&quot;,<br>        &quot;Direct&quot;<br>      ],<br>      &quot;effects&quot;: {<br>        &quot;skin_interaction&quot;: &quot;Soft glow&quot;,<br>        &quot;shadows&quot;: &quot;Slight shadow cast against background&quot;<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2012257231170150744-1.jpg" alt="&quot;generation parameters&quot;: {" loading="lazy"><img src="/images/tweet-2012257231170150744-2.jpg" alt="&quot;generation parameters&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1464,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

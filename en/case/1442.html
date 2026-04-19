@@ -7,11 +7,13 @@
     <title>&quot;prompt details&quot;: { #1442 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt details&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;Young woman with a faired complexion and voluminous, layered brune...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1442.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1442.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1442.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845111">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023651">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_details\": {\n    \"subject\": {\n      \"description\": \"年轻女性，白皙肤色，浓密分层的褐色头发，带有蜂蜜金色挑染，造型为宽松华丽的波浪。\",\n      \"features\": \"柔和的面部特征，丰满的嘴唇，中性表情，目光望向画面右侧镜外。\",\n      \"skin_texture\": \"光滑、略带日晒色的肌肤，具有逼真的质感和细微光泽。\"\n    },\n    \"outfit\": {\n      \"garment\": \"白色半透明蕾丝迷你裙，带精致花卉图案。\",\n      \"details\": \"细肩带在肩部系成蝴蝶结，心形领，合身的胸衣式上身，飘逸裙摆，带有扇贝状原始边缘下摆。\",\n      \"style\": \"娇俏美学，夏季度假装扮，浪漫且女性化。\"\n    },\n    \"accessories\": {\n      \"item\": \"编织草制市场篮或手提袋，置于主体身后的墙檐上。\",\n      \"texture\": \"天然干棕榈叶质地。\"\n    },\n    \"pose\": {\n      \"action\": \"优雅地坐在有纹理的石制花园墙上。\",\n      \"body_language\": \"一条腿屈膝，双手轻放在石面上，坐姿挺拔但放松。\"\n    },\n    \"environment\": {\n      \"setting\": \"豪华地中海风格庄园或别墅花园。\",\n      \"foreground\": \"粗糙切割的米色石墙/台阶。\",\n      \"background\": \"修剪整齐的绿色草坪、雕塑般的树篱、大型庄园建筑，西班牙殖民地建筑风格（灰泥墙、瓦屋顶、塔楼），蔚蓝天空与蓬松的白色积云。\",\n      \"atmosphere\": \"高端度假氛围，宁静，富裕的夏日。\"\n    },\n    \"lighting\": {\n      \"type\": \"明亮的自然日光。\",\n      \"quality\": \"阳光充沛的照明，柔和但分明的阴影，表明太阳位于上方，逼真的全局光照。\"\n    },\n    \"mood\": {\n      \"vibe\": \"优雅、梦幻、宁静、成熟精致，“旧钱”美学。\",\n      \"tone\": \"温暖、明亮且通透。\"\n    },\n    \"camera_settings\": {\n      \"lens\": \"50mm 人像镜头。\",\n      \"aperture\": \"f/2.8，以实现轻微的背景分离同时保持主体清晰。\",\n      \"shutter_speed\": \"1/250s。\",\n      \"iso\": \"100。\",\n      \"perspective\": \"平视拍摄，呈现主体及庄园背景。\"\n    },\n    \"technical_specs\": {\n      \"quality\": \"超写实，8K 分辨率，原始照片风格，高度细致的纹理（蕾丝、石材、头发），杰作级，电影化构图。\",\n      \"engine\": \"Unreal Engine 5 渲染风格或高端单反摄影。\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;年轻女性，白皙肤色，浓密分层的褐色头发，带有蜂蜜金色挑染，造型为宽松华丽的波浪。&quot;,<br>      &quot;features&quot;: &quot;柔和的面部特征，丰满的嘴唇，中性表情，目光望向画面右侧镜外。&quot;,<br>      &quot;skin_texture&quot;: &quot;光滑、略带日晒色的肌肤，具有逼真的质感和细微光泽。&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;garment&quot;: &quot;白色半透明蕾丝迷你裙，带精致花卉图案。&quot;,<br>      &quot;details&quot;: &quot;细肩带在肩部系成蝴蝶结，心形领，合身的胸衣式上身，飘逸裙摆，带有扇贝状原始边缘下摆。&quot;,<br>      &quot;style&quot;: &quot;娇俏美学，夏季度假装扮，浪漫且女性化。&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;item&quot;: &quot;编织草制市场篮或手提袋，置于主体身后的墙檐上。&quot;,<br>      &quot;texture&quot;: &quot;天然干棕榈叶质地。&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;action&quot;: &quot;优雅地坐在有纹理的石制花园墙上。&quot;,<br>      &quot;body_language&quot;: &quot;一条腿屈膝，双手轻放在石面上，坐姿挺拔但放松。&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;豪华地中海风格庄园或别墅花园。&quot;,<br>      &quot;foreground&quot;: &quot;粗糙切割的米色石墙/台阶。&quot;,<br>      &quot;background&quot;: &quot;修剪整齐的绿色草坪、雕塑般的树篱、大型庄园建筑，西班牙殖民地建筑风格（灰泥墙、瓦屋顶、塔楼），蔚蓝天空与蓬松的白色积云。&quot;,<br>      &quot;atmosphere&quot;: &quot;高端度假氛围，宁静，富裕的夏日。&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;明亮的自然日光。&quot;,<br>      &quot;quality&quot;: &quot;阳光充沛的照明，柔和但分明的阴影，表明太阳位于上方，逼真的全局光照。&quot;<br>    },<br>    &quot;mood&quot;: {<br>      &quot;vibe&quot;: &quot;优雅、梦幻、宁静、成熟精致，“旧钱”美学。&quot;,<br>      &quot;tone&quot;: &quot;温暖、明亮且通透。&quot;<br>    },<br>    &quot;camera_settings&quot;: {<br>      &quot;lens&quot;: &quot;50mm 人像镜头。&quot;,<br>      &quot;aperture&quot;: &quot;f/2.8，以实现轻微的背景分离同时保持主体清晰。&quot;,<br>      &quot;shutter_speed&quot;: &quot;1/250s。&quot;,<br>      &quot;iso&quot;: &quot;100。&quot;,<br>      &quot;perspective&quot;: &quot;平视拍摄，呈现主体及庄园背景。&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;quality&quot;: &quot;超写实，8K 分辨率，原始照片风格，高度细致的纹理（蕾丝、石材、头发），杰作级，电影化构图。&quot;,<br>      &quot;engine&quot;: &quot;Unreal Engine 5 渲染风格或高端单反摄影。&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;年轻女性，白皙肤色，浓密分层的褐色头发，带有蜂蜜金色挑染，造型为宽松华丽的波浪。&quot;,<br>      &quot;features&quot;: &quot;柔和的面部特征，丰满的嘴唇，中性表情，目光望向画面右侧镜外。&quot;,<br>      &quot;skin_texture&quot;: &quot;光滑、略带日晒色的肌肤，具有逼真的质感和细微光泽。&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;garment&quot;: &quot;白色半透明蕾丝迷你裙，带精致花卉图案。&quot;,<br>      &quot;details&quot;: &quot;细肩带在肩部系成蝴蝶结，心形领，合身的胸衣式上身，飘逸裙摆，带有扇贝状原始边缘下摆。&quot;,<br>      &quot;style&quot;: &quot;娇俏美学，夏季度假装扮，浪漫且女性化。&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;item&quot;: &quot;编织草制市场篮或手提袋，置于主体身后的墙檐上。&quot;,<br>      &quot;texture&quot;: &quot;天然干棕榈叶质地。&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;action&quot;: &quot;优雅地坐在有纹理的石制花园墙上。&quot;,<br>      &quot;body_language&quot;: &quot;一条腿屈膝，双手轻放在石面上，坐姿挺拔但放松。&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;豪华地中海风格庄园或别墅花园。&quot;,<br>      &quot;foreground&quot;: &quot;粗糙切割的米色石墙/台阶。&quot;,<br>      &quot;background&quot;: &quot;修剪整齐的绿色草坪、雕塑般的树篱、大型庄园建筑，西班牙殖民地建筑风格（灰泥墙、瓦屋顶、塔楼），蔚蓝天空与蓬松的白色积云。&quot;,<br>      &quot;atmosphere&quot;: &quot;高端度假氛围，宁静，富裕的夏日。&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;明亮的自然日光。&quot;,<br>      &quot;quality&quot;: &quot;阳光充沛的照明，柔和但分明的阴影，表明太阳位于上方，逼真的全局光照。&quot;<br>    },<br>    &quot;mood&quot;: {<br>      &quot;vibe&quot;: &quot;优雅、梦幻、宁静、成熟精致，“旧钱”美学。&quot;,<br>      &quot;tone&quot;: &quot;温暖、明亮且通透。&quot;<br>    },<br>    &quot;camera_settings&quot;: {<br>      &quot;lens&quot;: &quot;50mm 人像镜头。&quot;,<br>      &quot;aperture&quot;: &quot;f/2.8，以实现轻微的背景分离同时保持主体清晰。&quot;,<br>      &quot;shutter_speed&quot;: &quot;1/250s。&quot;,<br>      &quot;iso&quot;: &quot;100。&quot;,<br>      &quot;perspective&quot;: &quot;平视拍摄，呈现主体及庄园背景。&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;quality&quot;: &quot;超写实，8K 分辨率，原始照片风格，高度细致的纹理（蕾丝、石材、头发），杰作级，电影化构图。&quot;,<br>      &quot;engine&quot;: &quot;Unreal Engine 5 渲染风格或高端单反摄影。&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_details\": {\n    \"subject\": {\n      \"description\": \"Young woman with a faired complexion and voluminous, layered brunette hair featuring honey-blonde highlights styled in loose, glamorous waves.\",\n      \"features\": \"Soft facial features, full lips, neutral expression, gazing off-camera to the right.\",\n      \"skin_texture\": \"Smooth, sun-kissed skin with realistic texture and subtle sheen.\"\n    },\n    \"outfit\": {\n      \"garment\": \"White semi-sheer lace mini dress with a delicate floral pattern.\",\n      \"details\": \"Spaghetti straps tied in bows at the shoulders, sweetheart neckline, fitted bodice, flowy skirt with a scalloped raw-edge hem.\",\n      \"style\": \"Coquette aesthetic, summer resort wear, romantic and feminine.\"\n    },\n    \"accessories\": {\n      \"item\": \"Woven straw market basket or tote bag placed on the ledge behind the subject.\",\n      \"texture\": \"Natural dried palm leaf texture.\"\n    },\n    \"pose\": {\n      \"action\": \"Sitting gracefully on a textured stone garden wall.\",\n      \"body_language\": \"One leg bent at the knee, hands resting gently on the stone surface, posture upright but relaxed.\"\n    },\n    \"environment\": {\n      \"setting\": \"Luxurious Mediterranean-style estate or villa garden.\",\n      \"foreground\": \"Rough-hewn beige stone wall/ledge.\",\n      \"background\": \"Manicured green lawn, sculpted hedges, large estate building with Spanish colonial architecture (stucco walls, tiled roof, tower), bright blue sky with fluffy white cumulus clouds.\",\n      \"atmosphere\": \"High-end vacation, tranquil, affluent summer day.\"\n    },\n    \"lighting\": {\n      \"type\": \"Bright natural daylight.\",\n      \"quality\": \"Sun-drenched illumination, soft but distinct shadows indicating overhead sun, realistic global illumination.\"\n    },\n    \"mood\": {\n      \"vibe\": \"Elegant, dreamy, serene, sophisticated, 'old money' aesthetic.\",\n      \"tone\": \"Warm, bright, and airy.\"\n    },\n    \"camera_settings\": {\n      \"lens\": \"50mm portrait lens.\",\n      \"aperture\": \"f/2.8 for slight background separation while keeping the subject sharp.\",\n      \"shutter_speed\": \"1/250s.\",\n      \"iso\": \"100.\",\n      \"perspective\": \"Eye-level shot capturing the subject and the estate background.\"\n    },\n    \"technical_specs\": {\n      \"quality\": \"Ultra-photorealistic, 8k resolution, raw photo style, highly detailed textures (lace, stone, hair), masterpiece, cinematic composition.\",\n      \"engine\": \"Unreal Engine 5 render style or high-end DSLR photography.\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Young woman with a faired complexion and voluminous, layered brunette hair featuring honey-blonde highlights styled in loose, glamorous waves.&quot;,<br>      &quot;features&quot;: &quot;Soft facial features, full lips, neutral expression, gazing off-camera to the right.&quot;,<br>      &quot;skin_texture&quot;: &quot;Smooth, sun-kissed skin with realistic texture and subtle sheen.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;garment&quot;: &quot;White semi-sheer lace mini dress with a delicate floral pattern.&quot;,<br>      &quot;details&quot;: &quot;Spaghetti straps tied in bows at the shoulders, sweetheart neckline, fitted bodice, flowy skirt with a scalloped raw-edge hem.&quot;,<br>      &quot;style&quot;: &quot;Coquette aesthetic, summer resort wear, romantic and feminine.&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;item&quot;: &quot;Woven straw market basket or tote bag placed on the ledge behind the subject.&quot;,<br>      &quot;texture&quot;: &quot;Natural dried palm leaf texture.&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;action&quot;: &quot;Sitting gracefully on a textured stone garden wall.&quot;,<br>      &quot;body_language&quot;: &quot;One leg bent at the knee, hands resting gently on the stone surface, posture upright but relaxed.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Luxurious Mediterranean-style estate or villa garden.&quot;,<br>      &quot;foreground&quot;: &quot;Rough-hewn beige stone wall/ledge.&quot;,<br>      &quot;background&quot;: &quot;Manicured green lawn, sculpted hedges, large estate building with Spanish colonial architecture (stucco walls, tiled roof, tower), bright blue sky with fluffy white cumulus clouds.&quot;,<br>      &quot;atmosphere&quot;: &quot;High-end vacation, tranquil, affluent summer day.&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Bright natural daylight.&quot;,<br>      &quot;quality&quot;: &quot;Sun-drenched illumination, soft but distinct shadows indicating overhead sun, realistic global illumination.&quot;<br>    },<br>    &quot;mood&quot;: {<br>      &quot;vibe&quot;: &quot;Elegant, dreamy, serene, sophisticated, &#39;old money&#39; aesthetic.&quot;,<br>      &quot;tone&quot;: &quot;Warm, bright, and airy.&quot;<br>    },<br>    &quot;camera_settings&quot;: {<br>      &quot;lens&quot;: &quot;50mm portrait lens.&quot;,<br>      &quot;aperture&quot;: &quot;f/2.8 for slight background separation while keeping the subject sharp.&quot;,<br>      &quot;shutter_speed&quot;: &quot;1/250s.&quot;,<br>      &quot;iso&quot;: &quot;100.&quot;,<br>      &quot;perspective&quot;: &quot;Eye-level shot capturing the subject and the estate background.&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;quality&quot;: &quot;Ultra-photorealistic, 8k resolution, raw photo style, highly detailed textures (lace, stone, hair), masterpiece, cinematic composition.&quot;,<br>      &quot;engine&quot;: &quot;Unreal Engine 5 render style or high-end DSLR photography.&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Young woman with a faired complexion and voluminous, layered brunette hair featuring honey-blonde highlights styled in loose, glamorous waves.&quot;,<br>      &quot;features&quot;: &quot;Soft facial features, full lips, neutral expression, gazing off-camera to the right.&quot;,<br>      &quot;skin_texture&quot;: &quot;Smooth, sun-kissed skin with realistic texture and subtle sheen.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;garment&quot;: &quot;White semi-sheer lace mini dress with a delicate floral pattern.&quot;,<br>      &quot;details&quot;: &quot;Spaghetti straps tied in bows at the shoulders, sweetheart neckline, fitted bodice, flowy skirt with a scalloped raw-edge hem.&quot;,<br>      &quot;style&quot;: &quot;Coquette aesthetic, summer resort wear, romantic and feminine.&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;item&quot;: &quot;Woven straw market basket or tote bag placed on the ledge behind the subject.&quot;,<br>      &quot;texture&quot;: &quot;Natural dried palm leaf texture.&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;action&quot;: &quot;Sitting gracefully on a textured stone garden wall.&quot;,<br>      &quot;body_language&quot;: &quot;One leg bent at the knee, hands resting gently on the stone surface, posture upright but relaxed.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Luxurious Mediterranean-style estate or villa garden.&quot;,<br>      &quot;foreground&quot;: &quot;Rough-hewn beige stone wall/ledge.&quot;,<br>      &quot;background&quot;: &quot;Manicured green lawn, sculpted hedges, large estate building with Spanish colonial architecture (stucco walls, tiled roof, tower), bright blue sky with fluffy white cumulus clouds.&quot;,<br>      &quot;atmosphere&quot;: &quot;High-end vacation, tranquil, affluent summer day.&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Bright natural daylight.&quot;,<br>      &quot;quality&quot;: &quot;Sun-drenched illumination, soft but distinct shadows indicating overhead sun, realistic global illumination.&quot;<br>    },<br>    &quot;mood&quot;: {<br>      &quot;vibe&quot;: &quot;Elegant, dreamy, serene, sophisticated, &#39;old money&#39; aesthetic.&quot;,<br>      &quot;tone&quot;: &quot;Warm, bright, and airy.&quot;<br>    },<br>    &quot;camera_settings&quot;: {<br>      &quot;lens&quot;: &quot;50mm portrait lens.&quot;,<br>      &quot;aperture&quot;: &quot;f/2.8 for slight background separation while keeping the subject sharp.&quot;,<br>      &quot;shutter_speed&quot;: &quot;1/250s.&quot;,<br>      &quot;iso&quot;: &quot;100.&quot;,<br>      &quot;perspective&quot;: &quot;Eye-level shot capturing the subject and the estate background.&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;quality&quot;: &quot;Ultra-photorealistic, 8k resolution, raw photo style, highly detailed textures (lace, stone, hair), masterpiece, cinematic composition.&quot;,<br>      &quot;engine&quot;: &quot;Unreal Engine 5 render style or high-end DSLR photography.&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2012147176810651809-1.jpg" alt="&quot;prompt details&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1442,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

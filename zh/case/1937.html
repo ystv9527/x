@@ -7,11 +7,13 @@
     <title>&quot;master prompt&quot;: { #1937 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;master prompt&quot;: { &quot;global settings&quot;: { &quot;resolution&quot;: &quot;8K ultra high definition&quot;, &quot;aspect ratio&quot;: &quot;3:4 vertical&quot;, &quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1937.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1937.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1937.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840448">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022340">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"master_prompt\": {\n    \"global_settings\": {\n      \"resolution\": \"8K 超高清\",\n      \"aspect_ratio\": \"3:4 纵向\",\n      \"style\": \"极其逼真的 AI 编辑商业产品摄影\",\n      \"sharpness\": \"极致清晰度，微观细节可见\",\n      \"lighting_quality\": \"带受控高光与阴影的电影感工作室照明\",\n      \"motion_freeze\": \"高速捕捉，水花和粒子冻结\",\n      \"noise\": \"无\",\n      \"artifacts\": \"无\"\n    },\n\n\"module_1_image_1_style\": {\n      \"subject\": {\n        \"type\": \"橙味汽水罐\",\n        \"color\": \"鲜橙色\",\n        \"surface_details\": \"罐身覆盖的冷凝水珠\",\n        \"branding_text_visible\": [\n          \"Sesla\",\n          \"cola\"\n        ]\n      },\n      \"pose_and_orientation\": {\n        \"position\": \"直立，稍微嵌入在飞溅中\",\n        \"angle\": \"正面居中视角\"\n      },\n      \"liquid_and_motion\": {\n        \"liquid_color\": \"透明带橙色的液体\",\n        \"motion\": \"高能量飞溅向上与向外爆裂\",\n        \"splash_detail\": \"清晰液体弧线与悬浮水珠\"\n      },\n      \"floating_elements\": {\n        \"oranges\": [\n          \"整只橙子\",\n          \"带果肉的橙子半切片\"\n        ],\n        \"ice_cubes\": \"悬浮在半空中的清晰锐边立方体\",\n        \"droplets\": \"大量的球形液滴\"\n      },\n      \"background\": {\n        \"color\": \"纯正鲜橙色\",\n        \"lighting\": \"高调，均匀照明\"\n      },\n      \"surface_and_reflection\": {\n        \"base\": \"浅水池\",\n        \"reflection_quality\": \"强烈的镜面反射，伴随涟漪\"\n      }\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;global_settings&quot;: {<br>      &quot;resolution&quot;: &quot;8K 超高清&quot;,<br>      &quot;aspect_ratio&quot;: &quot;3:4 纵向&quot;,<br>      &quot;style&quot;: &quot;极其逼真的 AI 编辑商业产品摄影&quot;,<br>      &quot;sharpness&quot;: &quot;极致清晰度，微观细节可见&quot;,<br>      &quot;lighting_quality&quot;: &quot;带受控高光与阴影的电影感工作室照明&quot;,<br>      &quot;motion_freeze&quot;: &quot;高速捕捉，水花和粒子冻结&quot;,<br>      &quot;noise&quot;: &quot;无&quot;,<br>      &quot;artifacts&quot;: &quot;无&quot;<br>    },</p><p>&quot;module_1_image_1_style&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;橙味汽水罐&quot;,<br>        &quot;color&quot;: &quot;鲜橙色&quot;,<br>        &quot;surface_details&quot;: &quot;罐身覆盖的冷凝水珠&quot;,<br>        &quot;branding_text_visible&quot;: [<br>          &quot;Sesla&quot;,<br>          &quot;cola&quot;<br>        ]<br>      },<br>      &quot;pose_and_orientation&quot;: {<br>        &quot;position&quot;: &quot;直立，稍微嵌入在飞溅中&quot;,<br>        &quot;angle&quot;: &quot;正面居中视角&quot;<br>      },<br>      &quot;liquid_and_motion&quot;: {<br>        &quot;liquid_color&quot;: &quot;透明带橙色的液体&quot;,<br>        &quot;motion&quot;: &quot;高能量飞溅向上与向外爆裂&quot;,<br>        &quot;splash_detail&quot;: &quot;清晰液体弧线与悬浮水珠&quot;<br>      },<br>      &quot;floating_elements&quot;: {<br>        &quot;oranges&quot;: [<br>          &quot;整只橙子&quot;,<br>          &quot;带果肉的橙子半切片&quot;<br>        ],<br>        &quot;ice_cubes&quot;: &quot;悬浮在半空中的清晰锐边立方体&quot;,<br>        &quot;droplets&quot;: &quot;大量的球形液滴&quot;<br>      },<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;纯正鲜橙色&quot;,<br>        &quot;lighting&quot;: &quot;高调，均匀照明&quot;<br>      },<br>      &quot;surface_and_reflection&quot;: {<br>        &quot;base&quot;: &quot;浅水池&quot;,<br>        &quot;reflection_quality&quot;: &quot;强烈的镜面反射，伴随涟漪&quot;<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;global_settings&quot;: {<br>      &quot;resolution&quot;: &quot;8K 超高清&quot;,<br>      &quot;aspect_ratio&quot;: &quot;3:4 纵向&quot;,<br>      &quot;style&quot;: &quot;极其逼真的 AI 编辑商业产品摄影&quot;,<br>      &quot;sharpness&quot;: &quot;极致清晰度，微观细节可见&quot;,<br>      &quot;lighting_quality&quot;: &quot;带受控高光与阴影的电影感工作室照明&quot;,<br>      &quot;motion_freeze&quot;: &quot;高速捕捉，水花和粒子冻结&quot;,<br>      &quot;noise&quot;: &quot;无&quot;,<br>      &quot;artifacts&quot;: &quot;无&quot;<br>    },</p><p>&quot;module_1_image_1_style&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;橙味汽水罐&quot;,<br>        &quot;color&quot;: &quot;鲜橙色&quot;,<br>        &quot;surface_details&quot;: &quot;罐身覆盖的冷凝水珠&quot;,<br>        &quot;branding_text_visible&quot;: [<br>          &quot;Sesla&quot;,<br>          &quot;cola&quot;<br>        ]<br>      },<br>      &quot;pose_and_orientation&quot;: {<br>        &quot;position&quot;: &quot;直立，稍微嵌入在飞溅中&quot;,<br>        &quot;angle&quot;: &quot;正面居中视角&quot;<br>      },<br>      &quot;liquid_and_motion&quot;: {<br>        &quot;liquid_color&quot;: &quot;透明带橙色的液体&quot;,<br>        &quot;motion&quot;: &quot;高能量飞溅向上与向外爆裂&quot;,<br>        &quot;splash_detail&quot;: &quot;清晰液体弧线与悬浮水珠&quot;<br>      },<br>      &quot;floating_elements&quot;: {<br>        &quot;oranges&quot;: [<br>          &quot;整只橙子&quot;,<br>          &quot;带果肉的橙子半切片&quot;<br>        ],<br>        &quot;ice_cubes&quot;: &quot;悬浮在半空中的清晰锐边立方体&quot;,<br>        &quot;droplets&quot;: &quot;大量的球形液滴&quot;<br>      },<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;纯正鲜橙色&quot;,<br>        &quot;lighting&quot;: &quot;高调，均匀照明&quot;<br>      },<br>      &quot;surface_and_reflection&quot;: {<br>        &quot;base&quot;: &quot;浅水池&quot;,<br>        &quot;reflection_quality&quot;: &quot;强烈的镜面反射，伴随涟漪&quot;<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"master_prompt\": {\n    \"global_settings\": {\n      \"resolution\": \"8K ultra-high-definition\",\n      \"aspect_ratio\": \"3:4 vertical\",\n      \"style\": \"hyper-realistic AI-edited commercial product photography\",\n      \"sharpness\": \"extreme clarity, micro-detail visibility\",\n      \"lighting_quality\": \"cinematic studio lighting with controlled highlights and shadows\",\n      \"motion_freeze\": \"high-speed capture, frozen splashes and particles\",\n      \"noise\": \"none\",\n      \"artifacts\": \"none\"\n    },\n\n\"module_1_image_1_style\": {\n      \"subject\": {\n        \"type\": \"orange-flavored soda can\",\n        \"color\": \"bright orange\",\n        \"surface_details\": \"condensation droplets across can\",\n        \"branding_text_visible\": [\n          \"Sesla\",\n          \"cola\"\n        ]\n      },\n      \"pose_and_orientation\": {\n        \"position\": \"upright, slightly embedded in splash\",\n        \"angle\": \"centered frontal view\"\n      },\n      \"liquid_and_motion\": {\n        \"liquid_color\": \"transparent orange-tinted liquid\",\n        \"motion\": \"high-energy splash bursting upward and outward\",\n        \"splash_detail\": \"clear liquid arcs with suspended droplets\"\n      },\n      \"floating_elements\": {\n        \"oranges\": [\n          \"whole oranges\",\n          \"halved oranges with visible pulp\"\n        ],\n        \"ice_cubes\": \"clear sharp-edged cubes floating mid-air\",\n        \"droplets\": \"numerous spherical liquid droplets\"\n      },\n      \"background\": {\n        \"color\": \"solid bright orange\",\n        \"lighting\": \"high-key, evenly lit\"\n      },\n      \"surface_and_reflection\": {\n        \"base\": \"shallow liquid pool\",\n        \"reflection_quality\": \"strong mirror-like reflection with ripples\"\n      }\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;global_settings&quot;: {<br>      &quot;resolution&quot;: &quot;8K ultra-high-definition&quot;,<br>      &quot;aspect_ratio&quot;: &quot;3:4 vertical&quot;,<br>      &quot;style&quot;: &quot;hyper-realistic AI-edited commercial product photography&quot;,<br>      &quot;sharpness&quot;: &quot;extreme clarity, micro-detail visibility&quot;,<br>      &quot;lighting_quality&quot;: &quot;cinematic studio lighting with controlled highlights and shadows&quot;,<br>      &quot;motion_freeze&quot;: &quot;high-speed capture, frozen splashes and particles&quot;,<br>      &quot;noise&quot;: &quot;none&quot;,<br>      &quot;artifacts&quot;: &quot;none&quot;<br>    },</p><p>&quot;module_1_image_1_style&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;orange-flavored soda can&quot;,<br>        &quot;color&quot;: &quot;bright orange&quot;,<br>        &quot;surface_details&quot;: &quot;condensation droplets across can&quot;,<br>        &quot;branding_text_visible&quot;: [<br>          &quot;Sesla&quot;,<br>          &quot;cola&quot;<br>        ]<br>      },<br>      &quot;pose_and_orientation&quot;: {<br>        &quot;position&quot;: &quot;upright, slightly embedded in splash&quot;,<br>        &quot;angle&quot;: &quot;centered frontal view&quot;<br>      },<br>      &quot;liquid_and_motion&quot;: {<br>        &quot;liquid_color&quot;: &quot;transparent orange-tinted liquid&quot;,<br>        &quot;motion&quot;: &quot;high-energy splash bursting upward and outward&quot;,<br>        &quot;splash_detail&quot;: &quot;clear liquid arcs with suspended droplets&quot;<br>      },<br>      &quot;floating_elements&quot;: {<br>        &quot;oranges&quot;: [<br>          &quot;whole oranges&quot;,<br>          &quot;halved oranges with visible pulp&quot;<br>        ],<br>        &quot;ice_cubes&quot;: &quot;clear sharp-edged cubes floating mid-air&quot;,<br>        &quot;droplets&quot;: &quot;numerous spherical liquid droplets&quot;<br>      },<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;solid bright orange&quot;,<br>        &quot;lighting&quot;: &quot;high-key, evenly lit&quot;<br>      },<br>      &quot;surface_and_reflection&quot;: {<br>        &quot;base&quot;: &quot;shallow liquid pool&quot;,<br>        &quot;reflection_quality&quot;: &quot;strong mirror-like reflection with ripples&quot;<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;master_prompt&quot;: {<br>    &quot;global_settings&quot;: {<br>      &quot;resolution&quot;: &quot;8K ultra-high-definition&quot;,<br>      &quot;aspect_ratio&quot;: &quot;3:4 vertical&quot;,<br>      &quot;style&quot;: &quot;hyper-realistic AI-edited commercial product photography&quot;,<br>      &quot;sharpness&quot;: &quot;extreme clarity, micro-detail visibility&quot;,<br>      &quot;lighting_quality&quot;: &quot;cinematic studio lighting with controlled highlights and shadows&quot;,<br>      &quot;motion_freeze&quot;: &quot;high-speed capture, frozen splashes and particles&quot;,<br>      &quot;noise&quot;: &quot;none&quot;,<br>      &quot;artifacts&quot;: &quot;none&quot;<br>    },</p><p>&quot;module_1_image_1_style&quot;: {<br>      &quot;subject&quot;: {<br>        &quot;type&quot;: &quot;orange-flavored soda can&quot;,<br>        &quot;color&quot;: &quot;bright orange&quot;,<br>        &quot;surface_details&quot;: &quot;condensation droplets across can&quot;,<br>        &quot;branding_text_visible&quot;: [<br>          &quot;Sesla&quot;,<br>          &quot;cola&quot;<br>        ]<br>      },<br>      &quot;pose_and_orientation&quot;: {<br>        &quot;position&quot;: &quot;upright, slightly embedded in splash&quot;,<br>        &quot;angle&quot;: &quot;centered frontal view&quot;<br>      },<br>      &quot;liquid_and_motion&quot;: {<br>        &quot;liquid_color&quot;: &quot;transparent orange-tinted liquid&quot;,<br>        &quot;motion&quot;: &quot;high-energy splash bursting upward and outward&quot;,<br>        &quot;splash_detail&quot;: &quot;clear liquid arcs with suspended droplets&quot;<br>      },<br>      &quot;floating_elements&quot;: {<br>        &quot;oranges&quot;: [<br>          &quot;whole oranges&quot;,<br>          &quot;halved oranges with visible pulp&quot;<br>        ],<br>        &quot;ice_cubes&quot;: &quot;clear sharp-edged cubes floating mid-air&quot;,<br>        &quot;droplets&quot;: &quot;numerous spherical liquid droplets&quot;<br>      },<br>      &quot;background&quot;: {<br>        &quot;color&quot;: &quot;solid bright orange&quot;,<br>        &quot;lighting&quot;: &quot;high-key, evenly lit&quot;<br>      },<br>      &quot;surface_and_reflection&quot;: {<br>        &quot;base&quot;: &quot;shallow liquid pool&quot;,<br>        &quot;reflection_quality&quot;: &quot;strong mirror-like reflection with ripples&quot;<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2018525109041135790-1.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"><img src="/images/tweet-2018525109041135790-2.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1937,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

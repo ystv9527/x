@@ -7,11 +7,13 @@
     <title>Use this photo attached to create a nano banana safe hyper re... #769 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Use this photo attached to create a nano banana safe hyper realistic, cinematic portrait that precisely matches the r...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/769.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/769.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/769.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841521">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022615">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用这张附带的照片，创建一个纳米香蕉安全的超真实、电影感肖像，能够精准匹配参考图像：一个年轻女性以柔和的三分之四侧脸姿态入镜，坐着，头部向上轻轻转向摄像机，目光略高于眼平线。\n\n她的表情平静、梦幻且带有微妙的忧郁，面部肌肉放松，眼睛微微张开，嘴唇自然分开。\n\n她的妆容极自然且极简，强调真实的皮肤质感。水润、发光的肌肤，带暖色底调；淡桃色腮红；几乎看不出来的暖色眼影；自然眉形；长而自然的睫毛；以及柔和的玫瑰色光泽唇彩。\n\n她的头发又长又浓密，呈松散的波浪状，具有故意不完美、略显凌乱的质感。暖栗色发，带有金色高光，闪光灯下可见的飞散发丝被定格。\n\n她穿着一件黄色无袖连衣裙，细带、轻盈、飘逸，略显透薄，自然地搭在肩上。\n\n背景密集地布满黄色花朵和柔和的绿意植物，紧贴着主体周围，以浅景深的方式柔化，呈现奶油般的散景。\n\n镜头视角：近景到中近景，位置略在主体的肩部后方和下方，突出她的侧脸、颈部与肩线。\n\n照明（严格要求）：始终开启强烈的机上直接闪光灯，叠加强烈的环境日光。肌肤出现硬质高光、对比强烈、纹理清晰、闪光衰减明显、发丝细节被冻结、高光略有过曝。禁止柔光、禁止扩散。\n\n色彩分级/滤镜：保留暖金色调，清晰度高，微妙的胶片颗粒感，呈现原始编辑质感。\n\n氛围与气质：既梦幻又真实，亲密、怀旧、被阳光浸润，具电影现实主义的质感。", this)'>📋 复制</button>
         </div>
-        <p>使用这张附带的照片，创建一个纳米香蕉安全的超真实、电影感肖像，能够精准匹配参考图像：一个年轻女性以柔和的三分之四侧脸姿态入镜，坐着，头部向上轻轻转向摄像机，目光略高于眼平线。</p><p>她的表情平静、梦幻且带有微妙的忧郁，面部肌肉放松，眼睛微微张开，嘴唇自然分开。</p><p>她的妆容极自然且极简，强调真实的皮肤质感。水润、发光的肌肤，带暖色底调；淡桃色腮红；几乎看不出来的暖色眼影；自然眉形；长而自然的睫毛；以及柔和的玫瑰色光泽唇彩。</p><p>她的头发又长又浓密，呈松散的波浪状，具有故意不完美、略显凌乱的质感。暖栗色发，带有金色高光，闪光灯下可见的飞散发丝被定格。</p><p>她穿着一件黄色无袖连衣裙，细带、轻盈、飘逸，略显透薄，自然地搭在肩上。</p><p>背景密集地布满黄色花朵和柔和的绿意植物，紧贴着主体周围，以浅景深的方式柔化，呈现奶油般的散景。</p><p>镜头视角：近景到中近景，位置略在主体的肩部后方和下方，突出她的侧脸、颈部与肩线。</p><p>照明（严格要求）：始终开启强烈的机上直接闪光灯，叠加强烈的环境日光。肌肤出现硬质高光、对比强烈、纹理清晰、闪光衰减明显、发丝细节被冻结、高光略有过曝。禁止柔光、禁止扩散。</p><p>色彩分级/滤镜：保留暖金色调，清晰度高，微妙的胶片颗粒感，呈现原始编辑质感。</p><p>氛围与气质：既梦幻又真实，亲密、怀旧、被阳光浸润，具电影现实主义的质感。</p>
+        <div data-nosnippet><p>使用这张附带的照片，创建一个纳米香蕉安全的超真实、电影感肖像，能够精准匹配参考图像：一个年轻女性以柔和的三分之四侧脸姿态入镜，坐着，头部向上轻轻转向摄像机，目光略高于眼平线。</p><p>她的表情平静、梦幻且带有微妙的忧郁，面部肌肉放松，眼睛微微张开，嘴唇自然分开。</p><p>她的妆容极自然且极简，强调真实的皮肤质感。水润、发光的肌肤，带暖色底调；淡桃色腮红；几乎看不出来的暖色眼影；自然眉形；长而自然的睫毛；以及柔和的玫瑰色光泽唇彩。</p><p>她的头发又长又浓密，呈松散的波浪状，具有故意不完美、略显凌乱的质感。暖栗色发，带有金色高光，闪光灯下可见的飞散发丝被定格。</p><p>她穿着一件黄色无袖连衣裙，细带、轻盈、飘逸，略显透薄，自然地搭在肩上。</p><p>背景密集地布满黄色花朵和柔和的绿意植物，紧贴着主体周围，以浅景深的方式柔化，呈现奶油般的散景。</p><p>镜头视角：近景到中近景，位置略在主体的肩部后方和下方，突出她的侧脸、颈部与肩线。</p><p>照明（严格要求）：始终开启强烈的机上直接闪光灯，叠加强烈的环境日光。肌肤出现硬质高光、对比强烈、纹理清晰、闪光衰减明显、发丝细节被冻结、高光略有过曝。禁止柔光、禁止扩散。</p><p>色彩分级/滤镜：保留暖金色调，清晰度高，微妙的胶片颗粒感，呈现原始编辑质感。</p><p>氛围与气质：既梦幻又真实，亲密、怀旧、被阳光浸润，具电影现实主义的质感。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use this photo attached to create a nano banana safe hyper-realistic, cinematic portrait that precisely matches the reference image: a young woman captured in a soft three-quarter side profile, seated and turning her head gently upward and backward toward the camera, her gaze angled slightly above eye level. Her expression is calm, dreamy, and subtly wistful, with relaxed facial muscles, softly opened eyes, and naturally parted lips.\nHer makeup is extremely natural and minimal, emphasizing real skin texture. Dewy, luminous skin with a warm undertone; light peach blush; barely-there warm eyeshadow; natural brows; long natural lashes; and soft rosy glossy lips.\nHer hair is long, thick, and loosely wavy with an intentionally imperfect, slightly messy texture. Warm chestnut-brown hair with golden highlights, visible flyaway strands frozen by flash.\nShe wears a yellow sleeveless dress with thin spaghetti straps, lightweight and flowing, slightly sheer, resting naturally on her shoulder.\nThe background is densely filled with yellow flowers and soft greenery, closely surrounding the subject, softly blurred with shallow depth of field and creamy bokeh.\nCamera perspective: close-up to medium close-up shot, positioned slightly behind and below the subject’s shoulder, emphasizing her profile, neck, and shoulder line.\nLighting (strict): harsh direct on-camera flash always on, combined with strong ambient sunlight. Hard specular highlights on skin, sharp contrast, crisp texture, visible flash falloff, frozen hair detail, slight overexposure in highlights. No soft lighting, no diffusion.\nColor grading / filter: warm golden tones preserved, high clarity, subtle film grain, raw editorial finish.\nMood & atmosphere: dreamy yet raw, intimate, nostalgic, sun-soaked, cinematic realism.", this)'>📋 复制</button>
         </div>
-        <p>Use this photo attached to create a nano banana safe hyper-realistic, cinematic portrait that precisely matches the reference image: a young woman captured in a soft three-quarter side profile, seated and turning her head gently upward and backward toward the camera, her gaze angled slightly above eye level. Her expression is calm, dreamy, and subtly wistful, with relaxed facial muscles, softly opened eyes, and naturally parted lips.<br>Her makeup is extremely natural and minimal, emphasizing real skin texture. Dewy, luminous skin with a warm undertone; light peach blush; barely-there warm eyeshadow; natural brows; long natural lashes; and soft rosy glossy lips.<br>Her hair is long, thick, and loosely wavy with an intentionally imperfect, slightly messy texture. Warm chestnut-brown hair with golden highlights, visible flyaway strands frozen by flash.<br>She wears a yellow sleeveless dress with thin spaghetti straps, lightweight and flowing, slightly sheer, resting naturally on her shoulder.<br>The background is densely filled with yellow flowers and soft greenery, closely surrounding the subject, softly blurred with shallow depth of field and creamy bokeh.<br>Camera perspective: close-up to medium close-up shot, positioned slightly behind and below the subject’s shoulder, emphasizing her profile, neck, and shoulder line.<br>Lighting (strict): harsh direct on-camera flash always on, combined with strong ambient sunlight. Hard specular highlights on skin, sharp contrast, crisp texture, visible flash falloff, frozen hair detail, slight overexposure in highlights. No soft lighting, no diffusion.<br>Color grading / filter: warm golden tones preserved, high clarity, subtle film grain, raw editorial finish.<br>Mood &amp; atmosphere: dreamy yet raw, intimate, nostalgic, sun-soaked, cinematic realism.</p>
+        <div data-nosnippet><p>Use this photo attached to create a nano banana safe hyper-realistic, cinematic portrait that precisely matches the reference image: a young woman captured in a soft three-quarter side profile, seated and turning her head gently upward and backward toward the camera, her gaze angled slightly above eye level. Her expression is calm, dreamy, and subtly wistful, with relaxed facial muscles, softly opened eyes, and naturally parted lips.<br>Her makeup is extremely natural and minimal, emphasizing real skin texture. Dewy, luminous skin with a warm undertone; light peach blush; barely-there warm eyeshadow; natural brows; long natural lashes; and soft rosy glossy lips.<br>Her hair is long, thick, and loosely wavy with an intentionally imperfect, slightly messy texture. Warm chestnut-brown hair with golden highlights, visible flyaway strands frozen by flash.<br>She wears a yellow sleeveless dress with thin spaghetti straps, lightweight and flowing, slightly sheer, resting naturally on her shoulder.<br>The background is densely filled with yellow flowers and soft greenery, closely surrounding the subject, softly blurred with shallow depth of field and creamy bokeh.<br>Camera perspective: close-up to medium close-up shot, positioned slightly behind and below the subject’s shoulder, emphasizing her profile, neck, and shoulder line.<br>Lighting (strict): harsh direct on-camera flash always on, combined with strong ambient sunlight. Hard specular highlights on skin, sharp contrast, crisp texture, visible flash falloff, frozen hair detail, slight overexposure in highlights. No soft lighting, no diffusion.<br>Color grading / filter: warm golden tones preserved, high clarity, subtle film grain, raw editorial finish.<br>Mood &amp; atmosphere: dreamy yet raw, intimate, nostalgic, sun-soaked, cinematic realism.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008713028091736148-1.jpg" alt="Use this photo attached to create a nano banana safe hyper re..." loading="lazy"><img src="/images/tweet-2008713028091736148-2.jpg" alt="Use this photo attached to create a nano banana safe hyper re..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 769,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

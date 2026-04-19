@@ -7,11 +7,13 @@
     <title>生成角色设定 #415 | Gem Nana AI 提示词库</title>
     <meta name="description" content="生成角色设定 - Nano Banana AI图片生成案例  📥 输入：需上传一张角色参考图像">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/415.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/415.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/415.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841878">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022698">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -204,14 +208,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("为我生成人物的角色设定（Character Design）\n比例设定（不同身高对比、头身比等）\n三视图（正面、侧面、背面）\n表情设定（Expression Sheet） → 就是你发的那种图\n动作设定（Pose Sheet） → 各种常见姿势\n服装设定（Costume Design）", this)'>📋 复制</button>
         </div>
-        <p>为我生成人物的角色设定（Character Design）<br>比例设定（不同身高对比、头身比等）<br>三视图（正面、侧面、背面）<br>表情设定（Expression Sheet） → 就是你发的那种图<br>动作设定（Pose Sheet） → 各种常见姿势<br>服装设定（Costume Design）</p>
+        <div data-nosnippet><p>为我生成人物的角色设定（Character Design）<br>比例设定（不同身高对比、头身比等）<br>三视图（正面、侧面、背面）<br>表情设定（Expression Sheet） → 就是你发的那种图<br>动作设定（Pose Sheet） → 各种常见姿势<br>服装设定（Costume Design）</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Generate character design details for me:\n- Proportions (various height comparisons, head-to-body ratio, etc.)\n- Three-view sketches (front, side, back)\n- Expression sheet (facial expressions) → the kind of images you shared\n- Pose sheet (various common poses)\n- Costume design", this)'>📋 复制</button>
         </div>
-        <p>Generate character design details for me:<br>- Proportions (various height comparisons, head-to-body ratio, etc.)<br>- Three-view sketches (front, side, back)<br>- Expression sheet (facial expressions) → the kind of images you shared<br>- Pose sheet (various common poses)<br>- Costume design</p>
+        <div data-nosnippet><p>Generate character design details for me:<br>- Proportions (various height comparisons, head-to-body ratio, etc.)<br>- Three-view sketches (front, side, back)<br>- Expression sheet (facial expressions) → the kind of images you shared<br>- Pose sheet (various common poses)<br>- Costume design</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/nano-case12-input.jpg" alt="生成角色设定" loading="lazy"><img src="/images/nano-case12-output.jpg" alt="生成角色设定" loading="lazy"></div></div>
       
@@ -277,6 +281,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 415,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

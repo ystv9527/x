@@ -7,11 +7,13 @@
     <title>&quot;prompt data&quot;: { #1587 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt data&quot;: { &quot;subject&quot;: { &quot;appearance&quot;: &quot;Stunning young woman with long, straight platinum blonde hair, pale po...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1587.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1587.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1587.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840755">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022420">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_data\": {\n    \"subject\": {\n      \"appearance\": \"惊艳的年轻女性，长而笔直的铂金金发，瓷白肌肤，化着华丽妆容，涂着粉色口红。\",\n      \"apparel\": \"紧身黑色长袖包臀迷你裙，深V领口。\",\n      \"pose\": \"坐在汽车副驾驶座上，双腿交叉，一只手放在胸前，另一只手抬起握住车顶扶手，直视镜头，目光柔和。\",\n      \"details\": \"修剪整齐的指甲，黑白图案。\"\n    },\n    \"environment\": {\n      \"location\": \"高端豪华车辆的内部（梅赛德斯-奔驰）。\",\n      \"elements\": \"白色菱格绗缝皮革桶型座椅、黑色仪表板，方向盘上的梅赛德斯标志位于左侧可见，车门内饰细节。\"\n    },\n    \"technical_specs\": {\n      \"style\": \"写实摄影、网红生活方式摄影、Instagram美学。\",\n      \"lighting\": \"柔和的直接闪光摄影，明亮的车内照明，高对比度。\",\n      \"quality\": \"8K 分辨率，高度细节，清晰对焦，真实的皮肤质感。\"\n    },\n    \"full_prompt_string\": \"一张写实的竖构图照片，拍摄一位美丽的铂金金发女性坐在豪华梅赛德斯车内。她穿着紧身黑色长袖深V迷你裙。她坐在白色菱格缝线皮革座椅上，一只手抬起握住把手。闪光灯摄影风格，魅力灯光，高细节，8K，真实质感，网红美学。\",\n    \"negative_prompt\": \"卡通、绘画、插画、3D 渲染、动漫、低质量、JPEG 压缩痕迹、模糊、糟糕的解剖、畸形的手、多余的手指、缺失的肢体、问题眼睛、水印、文字、签名、丑陋、变形。\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_data&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;惊艳的年轻女性，长而笔直的铂金金发，瓷白肌肤，化着华丽妆容，涂着粉色口红。&quot;,<br>      &quot;apparel&quot;: &quot;紧身黑色长袖包臀迷你裙，深V领口。&quot;,<br>      &quot;pose&quot;: &quot;坐在汽车副驾驶座上，双腿交叉，一只手放在胸前，另一只手抬起握住车顶扶手，直视镜头，目光柔和。&quot;,<br>      &quot;details&quot;: &quot;修剪整齐的指甲，黑白图案。&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;高端豪华车辆的内部（梅赛德斯-奔驰）。&quot;,<br>      &quot;elements&quot;: &quot;白色菱格绗缝皮革桶型座椅、黑色仪表板，方向盘上的梅赛德斯标志位于左侧可见，车门内饰细节。&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;写实摄影、网红生活方式摄影、Instagram美学。&quot;,<br>      &quot;lighting&quot;: &quot;柔和的直接闪光摄影，明亮的车内照明，高对比度。&quot;,<br>      &quot;quality&quot;: &quot;8K 分辨率，高度细节，清晰对焦，真实的皮肤质感。&quot;<br>    },<br>    &quot;full_prompt_string&quot;: &quot;一张写实的竖构图照片，拍摄一位美丽的铂金金发女性坐在豪华梅赛德斯车内。她穿着紧身黑色长袖深V迷你裙。她坐在白色菱格缝线皮革座椅上，一只手抬起握住把手。闪光灯摄影风格，魅力灯光，高细节，8K，真实质感，网红美学。&quot;,<br>    &quot;negative_prompt&quot;: &quot;卡通、绘画、插画、3D 渲染、动漫、低质量、JPEG 压缩痕迹、模糊、糟糕的解剖、畸形的手、多余的手指、缺失的肢体、问题眼睛、水印、文字、签名、丑陋、变形。&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_data&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;惊艳的年轻女性，长而笔直的铂金金发，瓷白肌肤，化着华丽妆容，涂着粉色口红。&quot;,<br>      &quot;apparel&quot;: &quot;紧身黑色长袖包臀迷你裙，深V领口。&quot;,<br>      &quot;pose&quot;: &quot;坐在汽车副驾驶座上，双腿交叉，一只手放在胸前，另一只手抬起握住车顶扶手，直视镜头，目光柔和。&quot;,<br>      &quot;details&quot;: &quot;修剪整齐的指甲，黑白图案。&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;高端豪华车辆的内部（梅赛德斯-奔驰）。&quot;,<br>      &quot;elements&quot;: &quot;白色菱格绗缝皮革桶型座椅、黑色仪表板，方向盘上的梅赛德斯标志位于左侧可见，车门内饰细节。&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;写实摄影、网红生活方式摄影、Instagram美学。&quot;,<br>      &quot;lighting&quot;: &quot;柔和的直接闪光摄影，明亮的车内照明，高对比度。&quot;,<br>      &quot;quality&quot;: &quot;8K 分辨率，高度细节，清晰对焦，真实的皮肤质感。&quot;<br>    },<br>    &quot;full_prompt_string&quot;: &quot;一张写实的竖构图照片，拍摄一位美丽的铂金金发女性坐在豪华梅赛德斯车内。她穿着紧身黑色长袖深V迷你裙。她坐在白色菱格缝线皮革座椅上，一只手抬起握住把手。闪光灯摄影风格，魅力灯光，高细节，8K，真实质感，网红美学。&quot;,<br>    &quot;negative_prompt&quot;: &quot;卡通、绘画、插画、3D 渲染、动漫、低质量、JPEG 压缩痕迹、模糊、糟糕的解剖、畸形的手、多余的手指、缺失的肢体、问题眼睛、水印、文字、签名、丑陋、变形。&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_data\": {\n    \"subject\": {\n      \"appearance\": \"Stunning young woman with long, straight platinum blonde hair, pale porcelain skin, and glamorous makeup with pink lipstick.\",\n      \"apparel\": \"Tight-fitting black long-sleeve bodycon mini dress with a deep plunging V-neckline.\",\n      \"pose\": \"Sitting in the passenger seat of a car, legs crossed, one hand resting on her chest, the other arm raised holding the ceiling handle, looking directly at the camera with a soft gaze.\",\n      \"details\": \"Manicured nails with black and white design.\"\n    },\n    \"environment\": {\n      \"location\": \"Interior of a high-end luxury vehicle (Mercedes-Benz).\",\n      \"elements\": \"White diamond-quilted leather bucket seats, black dashboard, Mercedes steering wheel logo visible on the left, car door interior details.\"\n    },\n    \"technical_specs\": {\n      \"style\": \"Photorealistic, influencer lifestyle photography, Instagram aesthetic.\",\n      \"lighting\": \"Soft direct flash photography, bright interior lighting, high contrast.\",\n      \"quality\": \"8k resolution, highly detailed, sharp focus, realistic skin texture.\"\n    },\n    \"full_prompt_string\": \"A photorealistic vertical shot of a beautiful platinum blonde woman sitting inside a luxury Mercedes. She is wearing a tight black long-sleeve deep-v mini dress. She is posed on white diamond-stitched leather seats, one hand raised holding the handle. Flash photography style, glamour lighting, high detail, 8k, realistic texture, influencer aesthetic.\",\n    \"negative_prompt\": \"cartoon, painting, illustration, 3d render, anime, low quality, jpeg artifacts, blurry, bad anatomy, distorted hands, extra fingers, missing limbs, bad eyes, watermark, text, signature, ugly, deformed.\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_data&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;Stunning young woman with long, straight platinum blonde hair, pale porcelain skin, and glamorous makeup with pink lipstick.&quot;,<br>      &quot;apparel&quot;: &quot;Tight-fitting black long-sleeve bodycon mini dress with a deep plunging V-neckline.&quot;,<br>      &quot;pose&quot;: &quot;Sitting in the passenger seat of a car, legs crossed, one hand resting on her chest, the other arm raised holding the ceiling handle, looking directly at the camera with a soft gaze.&quot;,<br>      &quot;details&quot;: &quot;Manicured nails with black and white design.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Interior of a high-end luxury vehicle (Mercedes-Benz).&quot;,<br>      &quot;elements&quot;: &quot;White diamond-quilted leather bucket seats, black dashboard, Mercedes steering wheel logo visible on the left, car door interior details.&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;Photorealistic, influencer lifestyle photography, Instagram aesthetic.&quot;,<br>      &quot;lighting&quot;: &quot;Soft direct flash photography, bright interior lighting, high contrast.&quot;,<br>      &quot;quality&quot;: &quot;8k resolution, highly detailed, sharp focus, realistic skin texture.&quot;<br>    },<br>    &quot;full_prompt_string&quot;: &quot;A photorealistic vertical shot of a beautiful platinum blonde woman sitting inside a luxury Mercedes. She is wearing a tight black long-sleeve deep-v mini dress. She is posed on white diamond-stitched leather seats, one hand raised holding the handle. Flash photography style, glamour lighting, high detail, 8k, realistic texture, influencer aesthetic.&quot;,<br>    &quot;negative_prompt&quot;: &quot;cartoon, painting, illustration, 3d render, anime, low quality, jpeg artifacts, blurry, bad anatomy, distorted hands, extra fingers, missing limbs, bad eyes, watermark, text, signature, ugly, deformed.&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_data&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;Stunning young woman with long, straight platinum blonde hair, pale porcelain skin, and glamorous makeup with pink lipstick.&quot;,<br>      &quot;apparel&quot;: &quot;Tight-fitting black long-sleeve bodycon mini dress with a deep plunging V-neckline.&quot;,<br>      &quot;pose&quot;: &quot;Sitting in the passenger seat of a car, legs crossed, one hand resting on her chest, the other arm raised holding the ceiling handle, looking directly at the camera with a soft gaze.&quot;,<br>      &quot;details&quot;: &quot;Manicured nails with black and white design.&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Interior of a high-end luxury vehicle (Mercedes-Benz).&quot;,<br>      &quot;elements&quot;: &quot;White diamond-quilted leather bucket seats, black dashboard, Mercedes steering wheel logo visible on the left, car door interior details.&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;Photorealistic, influencer lifestyle photography, Instagram aesthetic.&quot;,<br>      &quot;lighting&quot;: &quot;Soft direct flash photography, bright interior lighting, high contrast.&quot;,<br>      &quot;quality&quot;: &quot;8k resolution, highly detailed, sharp focus, realistic skin texture.&quot;<br>    },<br>    &quot;full_prompt_string&quot;: &quot;A photorealistic vertical shot of a beautiful platinum blonde woman sitting inside a luxury Mercedes. She is wearing a tight black long-sleeve deep-v mini dress. She is posed on white diamond-stitched leather seats, one hand raised holding the handle. Flash photography style, glamour lighting, high detail, 8k, realistic texture, influencer aesthetic.&quot;,<br>    &quot;negative_prompt&quot;: &quot;cartoon, painting, illustration, 3d render, anime, low quality, jpeg artifacts, blurry, bad anatomy, distorted hands, extra fingers, missing limbs, bad eyes, watermark, text, signature, ugly, deformed.&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2013259843688346087-1.jpg" alt="&quot;prompt data&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1587,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

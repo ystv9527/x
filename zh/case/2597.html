@@ -7,11 +7,13 @@
     <title>&quot;subject and pose&quot;: &quot;Mina from TWICE, a beautiful Japanese wo... #2597 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject and pose&quot;: &quot;Mina from TWICE, a beautiful Japanese woman with a refined, &#39;Black Swan&#39; elegance, a small bea...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2597.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2597.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2597.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839732">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022193">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject_and_pose\": \"来自TWICE的Mina，一位优雅的日本美人，具有精致的“黑天鹅”气质，鼻子上带着一小颗美人痣，深邃有神的眼睛，优雅而饱满的沙漏型身材。她留着又长又波浪的铂金金发，坐在一个抬高的台沿上。双腿垂下，赤脚脚尖向下指，双手轻放在腿上。她面向前方，目光平静而直视。\",\n  \"outfit\": \"一件光滑炭黑色、镜面光泽的无袖乳胶夏季连衣裙，深V领口和细肩带。裙摆在她的双腿周围张开，与多彩的背景形成对比。\",\n  \"environment\": \"大型抽象艺术壁画作为背景，包含几何图形、涂鸦线条和块状色彩，色调为青绿色、柔和的红色、橙色和灰色。质感类似油画画布或粗糙的墙面。细长的绿色植物茎从底部边缘垂直向上生长。\",\n  \"lighting_and_shot\": \"柔和的漫射自然光，均匀照亮Mina的面部。正面镜头角度，从头到脚的全身拍摄。高分辨率摄影风格，模特和背景纹理对焦清晰。 --ar 9:16\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject_and_pose&quot;: &quot;来自TWICE的Mina，一位优雅的日本美人，具有精致的“黑天鹅”气质，鼻子上带着一小颗美人痣，深邃有神的眼睛，优雅而饱满的沙漏型身材。她留着又长又波浪的铂金金发，坐在一个抬高的台沿上。双腿垂下，赤脚脚尖向下指，双手轻放在腿上。她面向前方，目光平静而直视。&quot;,<br>  &quot;outfit&quot;: &quot;一件光滑炭黑色、镜面光泽的无袖乳胶夏季连衣裙，深V领口和细肩带。裙摆在她的双腿周围张开，与多彩的背景形成对比。&quot;,<br>  &quot;environment&quot;: &quot;大型抽象艺术壁画作为背景，包含几何图形、涂鸦线条和块状色彩，色调为青绿色、柔和的红色、橙色和灰色。质感类似油画画布或粗糙的墙面。细长的绿色植物茎从底部边缘垂直向上生长。&quot;,<br>  &quot;lighting_and_shot&quot;: &quot;柔和的漫射自然光，均匀照亮Mina的面部。正面镜头角度，从头到脚的全身拍摄。高分辨率摄影风格，模特和背景纹理对焦清晰。 --ar 9:16&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject_and_pose&quot;: &quot;来自TWICE的Mina，一位优雅的日本美人，具有精致的“黑天鹅”气质，鼻子上带着一小颗美人痣，深邃有神的眼睛，优雅而饱满的沙漏型身材。她留着又长又波浪的铂金金发，坐在一个抬高的台沿上。双腿垂下，赤脚脚尖向下指，双手轻放在腿上。她面向前方，目光平静而直视。&quot;,<br>  &quot;outfit&quot;: &quot;一件光滑炭黑色、镜面光泽的无袖乳胶夏季连衣裙，深V领口和细肩带。裙摆在她的双腿周围张开，与多彩的背景形成对比。&quot;,<br>  &quot;environment&quot;: &quot;大型抽象艺术壁画作为背景，包含几何图形、涂鸦线条和块状色彩，色调为青绿色、柔和的红色、橙色和灰色。质感类似油画画布或粗糙的墙面。细长的绿色植物茎从底部边缘垂直向上生长。&quot;,<br>  &quot;lighting_and_shot&quot;: &quot;柔和的漫射自然光，均匀照亮Mina的面部。正面镜头角度，从头到脚的全身拍摄。高分辨率摄影风格，模特和背景纹理对焦清晰。 --ar 9:16&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject_and_pose\": \"Mina from TWICE, a beautiful Japanese woman with a refined, 'Black Swan' elegance, a small beauty mark on her nose, dark soulful eyes, and a graceful full hourglass figure. She has long, wavy platinum blonde hair and is sitting on a raised ledge. Legs are dangling down with bare feet pointing downwards. Hands rest gently in her lap. She faces forward with a calm, direct gaze.\",\n  \"outfit\": \"Sleeveless latex summer dress in a sleek charcoal black with a mirror-like polish, featuring a deep V-neck and thin straps. The skirt flares out around her legs, contrasting with the colorful background.\",\n  \"environment\": \"A large-scale abstract art mural background featuring geometric shapes, scribbled lines, and blocked colors in teal, muted red, orange, and gray. The texture resembles painted canvas or a rough wall. Thin green plant stalks rise vertically from the bottom edge.\",\n  \"lighting_and_shot\": \"Soft, diffuse natural lighting providing even illumination on Mina's face. Frontal camera angle, capturing a full-body shot from head to toes. High-resolution photography style with sharp focus on the model and detailed background texture. --ar 9:16\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject_and_pose&quot;: &quot;Mina from TWICE, a beautiful Japanese woman with a refined, &#39;Black Swan&#39; elegance, a small beauty mark on her nose, dark soulful eyes, and a graceful full hourglass figure. She has long, wavy platinum blonde hair and is sitting on a raised ledge. Legs are dangling down with bare feet pointing downwards. Hands rest gently in her lap. She faces forward with a calm, direct gaze.&quot;,<br>  &quot;outfit&quot;: &quot;Sleeveless latex summer dress in a sleek charcoal black with a mirror-like polish, featuring a deep V-neck and thin straps. The skirt flares out around her legs, contrasting with the colorful background.&quot;,<br>  &quot;environment&quot;: &quot;A large-scale abstract art mural background featuring geometric shapes, scribbled lines, and blocked colors in teal, muted red, orange, and gray. The texture resembles painted canvas or a rough wall. Thin green plant stalks rise vertically from the bottom edge.&quot;,<br>  &quot;lighting_and_shot&quot;: &quot;Soft, diffuse natural lighting providing even illumination on Mina&#39;s face. Frontal camera angle, capturing a full-body shot from head to toes. High-resolution photography style with sharp focus on the model and detailed background texture. --ar 9:16&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject_and_pose&quot;: &quot;Mina from TWICE, a beautiful Japanese woman with a refined, &#39;Black Swan&#39; elegance, a small beauty mark on her nose, dark soulful eyes, and a graceful full hourglass figure. She has long, wavy platinum blonde hair and is sitting on a raised ledge. Legs are dangling down with bare feet pointing downwards. Hands rest gently in her lap. She faces forward with a calm, direct gaze.&quot;,<br>  &quot;outfit&quot;: &quot;Sleeveless latex summer dress in a sleek charcoal black with a mirror-like polish, featuring a deep V-neck and thin straps. The skirt flares out around her legs, contrasting with the colorful background.&quot;,<br>  &quot;environment&quot;: &quot;A large-scale abstract art mural background featuring geometric shapes, scribbled lines, and blocked colors in teal, muted red, orange, and gray. The texture resembles painted canvas or a rough wall. Thin green plant stalks rise vertically from the bottom edge.&quot;,<br>  &quot;lighting_and_shot&quot;: &quot;Soft, diffuse natural lighting providing even illumination on Mina&#39;s face. Frontal camera angle, capturing a full-body shot from head to toes. High-resolution photography style with sharp focus on the model and detailed background texture. --ar 9:16&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2034263300872249674-1.jpg" alt="&quot;subject and pose&quot;: &quot;Mina from TWICE, a beautiful Japanese wo..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2597,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

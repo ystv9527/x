@@ -7,11 +7,13 @@
     <title>[BRAND NAME]. Act as a Senior AI Visual Strategist &amp; Creative... #2394 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[BRAND NAME]. Act as a Senior AI Visual Strategist &amp; Creative Director. Goal: Analyze the provided [BRAND NAME] and g...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2394.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2394.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2394.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839964">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022238">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]。担任高级 AI 视觉策略师与创意总监。\n目标：分析所提供的 [BRAND NAME] 并生成一套高端的三联垂直宣言堆栈。每个元素（颜色、标语、技术文本）都必须是品牌身份的逻辑延伸。\n\n阶段1：自主品牌分析（内部模拟）\n- 识别 “[BRAND NAME]” 的核心行业。\n- 为背景选择一种高对比度的主色（例如：电蓝、竞速红或钛白）。\n- 生成一个有力的三词标语和一段两行的品牌理念描述。\n- 生成一个包含5条与品牌高端产品相关的技术规格/关键词区块。\n\n阶段2：构图结构（垂直堆栈）\n布局由三个宽横向面板垂直堆叠组成：\n顶面板（行动与身份）：一张动态的广角镜头，展示专业模特使用品牌产品。\n   - 排版（中偏左）：将 [BRAND NAME] 徽标和三词标语以白色加粗全大写无衬线字体置于此处。\n   - 微型排版（左上角）：将两行品牌理念以极小的极简字体置于左上角。\n中间面板（主打产品与密度）：对产品高保真细节的宏观特写。\n   - 排版（中偏右）：在此放置 [BRAND NAME] 徽标和标语，以在视觉上与顶面板形成对角流动。\n   - 技术密度（左下角）：以尖锐、显微级别的全大写字体添加5条技术规格，营造“技术蓝图”美学并填充负空间。\n底部面板（力量姿态）：低角度的“英雄镜头”模特拍摄。\n   - 巨型排版：两个巨大的、高对比的白色加粗无衬线标语覆盖在画面中央。\n   - 角落点缀：右下角放置小型品牌图标；左下角放置次要微文本。\n\n阶段3：光线与材质标准\n- 光线：硬质、直射的“正午”阳光，产生清晰、锋利边缘的阴影和耀眼高光（明暗对照）。\n- 材质：在皮肤毛孔、织物组织（科技网眼、皮革、碳纤维）以及精密工程材料上实现极高保真度。绝不出现“AI 塑料”视觉。\n\n阶段4：技术规格\n8K 分辨率。渲染器：Octane/Redshift。全局光照。光线追踪反射。电影级胶片颗粒。", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]。担任高级 AI 视觉策略师与创意总监。<br>目标：分析所提供的 [BRAND NAME] 并生成一套高端的三联垂直宣言堆栈。每个元素（颜色、标语、技术文本）都必须是品牌身份的逻辑延伸。</p><p>阶段1：自主品牌分析（内部模拟）<br>- 识别 “[BRAND NAME]” 的核心行业。<br>- 为背景选择一种高对比度的主色（例如：电蓝、竞速红或钛白）。<br>- 生成一个有力的三词标语和一段两行的品牌理念描述。<br>- 生成一个包含5条与品牌高端产品相关的技术规格/关键词区块。</p><p>阶段2：构图结构（垂直堆栈）<br>布局由三个宽横向面板垂直堆叠组成：<br>顶面板（行动与身份）：一张动态的广角镜头，展示专业模特使用品牌产品。<br>   - 排版（中偏左）：将 [BRAND NAME] 徽标和三词标语以白色加粗全大写无衬线字体置于此处。<br>   - 微型排版（左上角）：将两行品牌理念以极小的极简字体置于左上角。<br>中间面板（主打产品与密度）：对产品高保真细节的宏观特写。<br>   - 排版（中偏右）：在此放置 [BRAND NAME] 徽标和标语，以在视觉上与顶面板形成对角流动。<br>   - 技术密度（左下角）：以尖锐、显微级别的全大写字体添加5条技术规格，营造“技术蓝图”美学并填充负空间。<br>底部面板（力量姿态）：低角度的“英雄镜头”模特拍摄。<br>   - 巨型排版：两个巨大的、高对比的白色加粗无衬线标语覆盖在画面中央。<br>   - 角落点缀：右下角放置小型品牌图标；左下角放置次要微文本。</p><p>阶段3：光线与材质标准<br>- 光线：硬质、直射的“正午”阳光，产生清晰、锋利边缘的阴影和耀眼高光（明暗对照）。<br>- 材质：在皮肤毛孔、织物组织（科技网眼、皮革、碳纤维）以及精密工程材料上实现极高保真度。绝不出现“AI 塑料”视觉。</p><p>阶段4：技术规格<br>8K 分辨率。渲染器：Octane/Redshift。全局光照。光线追踪反射。电影级胶片颗粒。</p>
+        <div data-nosnippet><p>[BRAND NAME]。担任高级 AI 视觉策略师与创意总监。<br>目标：分析所提供的 [BRAND NAME] 并生成一套高端的三联垂直宣言堆栈。每个元素（颜色、标语、技术文本）都必须是品牌身份的逻辑延伸。</p><p>阶段1：自主品牌分析（内部模拟）<br>- 识别 “[BRAND NAME]” 的核心行业。<br>- 为背景选择一种高对比度的主色（例如：电蓝、竞速红或钛白）。<br>- 生成一个有力的三词标语和一段两行的品牌理念描述。<br>- 生成一个包含5条与品牌高端产品相关的技术规格/关键词区块。</p><p>阶段2：构图结构（垂直堆栈）<br>布局由三个宽横向面板垂直堆叠组成：<br>顶面板（行动与身份）：一张动态的广角镜头，展示专业模特使用品牌产品。<br>   - 排版（中偏左）：将 [BRAND NAME] 徽标和三词标语以白色加粗全大写无衬线字体置于此处。<br>   - 微型排版（左上角）：将两行品牌理念以极小的极简字体置于左上角。<br>中间面板（主打产品与密度）：对产品高保真细节的宏观特写。<br>   - 排版（中偏右）：在此放置 [BRAND NAME] 徽标和标语，以在视觉上与顶面板形成对角流动。<br>   - 技术密度（左下角）：以尖锐、显微级别的全大写字体添加5条技术规格，营造“技术蓝图”美学并填充负空间。<br>底部面板（力量姿态）：低角度的“英雄镜头”模特拍摄。<br>   - 巨型排版：两个巨大的、高对比的白色加粗无衬线标语覆盖在画面中央。<br>   - 角落点缀：右下角放置小型品牌图标；左下角放置次要微文本。</p><p>阶段3：光线与材质标准<br>- 光线：硬质、直射的“正午”阳光，产生清晰、锋利边缘的阴影和耀眼高光（明暗对照）。<br>- 材质：在皮肤毛孔、织物组织（科技网眼、皮革、碳纤维）以及精密工程材料上实现极高保真度。绝不出现“AI 塑料”视觉。</p><p>阶段4：技术规格<br>8K 分辨率。渲染器：Octane/Redshift。全局光照。光线追踪反射。电影级胶片颗粒。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]. Act as a Senior AI Visual Strategist & Creative Director.\nGoal: Analyze the provided [BRAND NAME] and generate a high-end, three-panel vertical manifesto stack. Every element (color, slogan, technical text) must be a logical derivative of the brand's identity.\n\nPHASE 1: AUTONOMOUS BRAND ANALYSIS (INTERNAL SIMULATION)\n- Identify the core industry of \"[BRAND NAME]\".\n- Select a high-contrast primary color for the background (e.g., Electric Blue, Racing Red, or Titanium White).\n- Generate a powerful 3-word slogan and a 2-line brand philosophy description.\n- Generate a block of 5 technical specifications/keywords relevant to the brand's premium products.\n\nPHASE 2: COMPOSITIONAL STRUCTURE (THE VERTICAL STACK)\nLayout consists of three wide horizontal panels stacked vertically:\nTOP PANEL (Action & Identity): A dynamic wide-angle shot of a professional model using the brand's product.\n   - Typography (Mid-Left): Place [BRAND NAME] logo and the 3-word slogan in bold white uppercase sans-serif.\n   - Micro-Typography (Top-Left corner): Place the 2-line brand philosophy in a tiny, minimalist font.\nMIDDLE PANEL (The Hero Product & Density): A macro close-up focus on the product's high-fidelity details.\n   - Typography (Mid-Right): Place [BRAND NAME] logo and the slogan here to create a diagonal visual flow from the top panel.\n   - Technical Density (Bottom-Left corner): Add the 5 technical specifications in sharp, microscopic uppercase font to create a \"technical blueprint\" aesthetic and fill the negative space.\nBOTTOM PANEL (The Power Pose): A low-angle \"hero shot\" of the model.\n   - Mega-Typography: Two massive, high-contrast slogans in white bold sans-serif overlaid across the center of the frame.\n   - Corner Accents: A small brand icon in the bottom-right; a secondary micro-text in the bottom-left corner.\n\nPHASE 3: LIGHTING & TEXTURE STANDARDS\n- Lighting: Hard, direct \"High-Noon\" sunlight creating crisp, sharp-edged shadows and brilliant highlights (Chiaroscuro).\n- Textures: Extreme fidelity in skin pores, fabric weaves (tech-mesh, leather, carbon fiber), and precision-engineered materials. Zero \"AI-plastic\" look.\n\nPHASE 4: TECH SPECS\n8K Resolution. Render: Octane/Redshift. Global Illumination. Ray Traced reflections. Cinematic photo grain.", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]. Act as a Senior AI Visual Strategist &amp; Creative Director.<br>Goal: Analyze the provided [BRAND NAME] and generate a high-end, three-panel vertical manifesto stack. Every element (color, slogan, technical text) must be a logical derivative of the brand&#39;s identity.</p><p>PHASE 1: AUTONOMOUS BRAND ANALYSIS (INTERNAL SIMULATION)<br>- Identify the core industry of &quot;[BRAND NAME]&quot;.<br>- Select a high-contrast primary color for the background (e.g., Electric Blue, Racing Red, or Titanium White).<br>- Generate a powerful 3-word slogan and a 2-line brand philosophy description.<br>- Generate a block of 5 technical specifications/keywords relevant to the brand&#39;s premium products.</p><p>PHASE 2: COMPOSITIONAL STRUCTURE (THE VERTICAL STACK)<br>Layout consists of three wide horizontal panels stacked vertically:<br>TOP PANEL (Action &amp; Identity): A dynamic wide-angle shot of a professional model using the brand&#39;s product.<br>   - Typography (Mid-Left): Place [BRAND NAME] logo and the 3-word slogan in bold white uppercase sans-serif.<br>   - Micro-Typography (Top-Left corner): Place the 2-line brand philosophy in a tiny, minimalist font.<br>MIDDLE PANEL (The Hero Product &amp; Density): A macro close-up focus on the product&#39;s high-fidelity details.<br>   - Typography (Mid-Right): Place [BRAND NAME] logo and the slogan here to create a diagonal visual flow from the top panel.<br>   - Technical Density (Bottom-Left corner): Add the 5 technical specifications in sharp, microscopic uppercase font to create a &quot;technical blueprint&quot; aesthetic and fill the negative space.<br>BOTTOM PANEL (The Power Pose): A low-angle &quot;hero shot&quot; of the model.<br>   - Mega-Typography: Two massive, high-contrast slogans in white bold sans-serif overlaid across the center of the frame.<br>   - Corner Accents: A small brand icon in the bottom-right; a secondary micro-text in the bottom-left corner.</p><p>PHASE 3: LIGHTING &amp; TEXTURE STANDARDS<br>- Lighting: Hard, direct &quot;High-Noon&quot; sunlight creating crisp, sharp-edged shadows and brilliant highlights (Chiaroscuro).<br>- Textures: Extreme fidelity in skin pores, fabric weaves (tech-mesh, leather, carbon fiber), and precision-engineered materials. Zero &quot;AI-plastic&quot; look.</p><p>PHASE 4: TECH SPECS<br>8K Resolution. Render: Octane/Redshift. Global Illumination. Ray Traced reflections. Cinematic photo grain.</p>
+        <div data-nosnippet><p>[BRAND NAME]. Act as a Senior AI Visual Strategist &amp; Creative Director.<br>Goal: Analyze the provided [BRAND NAME] and generate a high-end, three-panel vertical manifesto stack. Every element (color, slogan, technical text) must be a logical derivative of the brand&#39;s identity.</p><p>PHASE 1: AUTONOMOUS BRAND ANALYSIS (INTERNAL SIMULATION)<br>- Identify the core industry of &quot;[BRAND NAME]&quot;.<br>- Select a high-contrast primary color for the background (e.g., Electric Blue, Racing Red, or Titanium White).<br>- Generate a powerful 3-word slogan and a 2-line brand philosophy description.<br>- Generate a block of 5 technical specifications/keywords relevant to the brand&#39;s premium products.</p><p>PHASE 2: COMPOSITIONAL STRUCTURE (THE VERTICAL STACK)<br>Layout consists of three wide horizontal panels stacked vertically:<br>TOP PANEL (Action &amp; Identity): A dynamic wide-angle shot of a professional model using the brand&#39;s product.<br>   - Typography (Mid-Left): Place [BRAND NAME] logo and the 3-word slogan in bold white uppercase sans-serif.<br>   - Micro-Typography (Top-Left corner): Place the 2-line brand philosophy in a tiny, minimalist font.<br>MIDDLE PANEL (The Hero Product &amp; Density): A macro close-up focus on the product&#39;s high-fidelity details.<br>   - Typography (Mid-Right): Place [BRAND NAME] logo and the slogan here to create a diagonal visual flow from the top panel.<br>   - Technical Density (Bottom-Left corner): Add the 5 technical specifications in sharp, microscopic uppercase font to create a &quot;technical blueprint&quot; aesthetic and fill the negative space.<br>BOTTOM PANEL (The Power Pose): A low-angle &quot;hero shot&quot; of the model.<br>   - Mega-Typography: Two massive, high-contrast slogans in white bold sans-serif overlaid across the center of the frame.<br>   - Corner Accents: A small brand icon in the bottom-right; a secondary micro-text in the bottom-left corner.</p><p>PHASE 3: LIGHTING &amp; TEXTURE STANDARDS<br>- Lighting: Hard, direct &quot;High-Noon&quot; sunlight creating crisp, sharp-edged shadows and brilliant highlights (Chiaroscuro).<br>- Textures: Extreme fidelity in skin pores, fabric weaves (tech-mesh, leather, carbon fiber), and precision-engineered materials. Zero &quot;AI-plastic&quot; look.</p><p>PHASE 4: TECH SPECS<br>8K Resolution. Render: Octane/Redshift. Global Illumination. Ray Traced reflections. Cinematic photo grain.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2029294395384574292-1.jpg" alt="[BRAND NAME]. Act as a Senior AI Visual Strategist &amp; Creative..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2394,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

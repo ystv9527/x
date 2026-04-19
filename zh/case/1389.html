@@ -7,11 +7,13 @@
     <title>&quot;scene&quot;: { #1389 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;scene&quot;: { &quot;description&quot;: &quot;Artistic miniature diorama of youthful figurines collaboratively painting a vibrant envi...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1389.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1389.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1389.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840940">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022465">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene\": {\n    \"description\": \"艺术性微缩场景：年轻人偶在万隆 Gedung Sate 附近的一堵小户外墙面上合作绘制一幅充满生机的环保壁画。\",\n    \"location\": \"印度尼西亚万隆 Gedung Sate 附近\",\n    \"environment\": \"以温馨手工微缩比例呈现的城市文化地标环境\"\n  },\n  \"subjects\": {\n    \"characters\": \"微缩青年人偶\",\n    \"actions\": [\n      \"在绘制一幅大型多彩壁画\",\n      \"攀爬小梯子\",\n      \"手持画笔和油漆桶\",\n      \"顽皮地溅洒油漆\"\n    ],\n    \"expressions\": \"充满活力、快乐、有创造力\"\n  },\n  \"mural_details\": {\n    \"theme\": \"环保意识与积极正能量\",\n    \"elements\": [\n      \"青翠的山峦\",\n      \"茂密的树木\",\n      \"象征环保出行的自行车\",\n      \"清澈流淌的河流\"\n    ],\n    \"text\": \"你是最棒的，Sharon\"\n  },\n  \"props\": {\n    \"items\": [\n      \"小油漆桶\",\n      \"小梯子\",\n      \"小画笔\",\n      \"地面和墙上的油漆飞溅痕迹\"\n    ]\n  },\n  \"style\": {\n    \"art_form\": \"微缩场景模型\",\n    \"photography\": \"电影感微距摄影\",\n    \"detail_level\": \"高度细致的纹理和人物\"\n  },\n  \"lighting\": {\n    \"type\": \"温暖、柔和的光线\",\n    \"mood\": \"明亮、愉快、振奋人心\"\n  },\n  \"camera\": {\n    \"depth_of_field\": \"浅景深\",\n    \"focus\": \"对小雕像和壁画的清晰对焦\"\n  },\n  \"color_palette\": {\n    \"tones\": [\n      \"明亮\",\n      \"愉快\",\n      \"鲜艳\"\n    ]\n  },\n  \"render_settings\": {\n    \"aspect_ratio\": \"4:5\",\n    \"quality\": 2,\n    \"stylization\": \"2/5\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;scene&quot;: {<br>    &quot;description&quot;: &quot;艺术性微缩场景：年轻人偶在万隆 Gedung Sate 附近的一堵小户外墙面上合作绘制一幅充满生机的环保壁画。&quot;,<br>    &quot;location&quot;: &quot;印度尼西亚万隆 Gedung Sate 附近&quot;,<br>    &quot;environment&quot;: &quot;以温馨手工微缩比例呈现的城市文化地标环境&quot;<br>  },<br>  &quot;subjects&quot;: {<br>    &quot;characters&quot;: &quot;微缩青年人偶&quot;,<br>    &quot;actions&quot;: [<br>      &quot;在绘制一幅大型多彩壁画&quot;,<br>      &quot;攀爬小梯子&quot;,<br>      &quot;手持画笔和油漆桶&quot;,<br>      &quot;顽皮地溅洒油漆&quot;<br>    ],<br>    &quot;expressions&quot;: &quot;充满活力、快乐、有创造力&quot;<br>  },<br>  &quot;mural_details&quot;: {<br>    &quot;theme&quot;: &quot;环保意识与积极正能量&quot;,<br>    &quot;elements&quot;: [<br>      &quot;青翠的山峦&quot;,<br>      &quot;茂密的树木&quot;,<br>      &quot;象征环保出行的自行车&quot;,<br>      &quot;清澈流淌的河流&quot;<br>    ],<br>    &quot;text&quot;: &quot;你是最棒的，Sharon&quot;<br>  },<br>  &quot;props&quot;: {<br>    &quot;items&quot;: [<br>      &quot;小油漆桶&quot;,<br>      &quot;小梯子&quot;,<br>      &quot;小画笔&quot;,<br>      &quot;地面和墙上的油漆飞溅痕迹&quot;<br>    ]<br>  },<br>  &quot;style&quot;: {<br>    &quot;art_form&quot;: &quot;微缩场景模型&quot;,<br>    &quot;photography&quot;: &quot;电影感微距摄影&quot;,<br>    &quot;detail_level&quot;: &quot;高度细致的纹理和人物&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;温暖、柔和的光线&quot;,<br>    &quot;mood&quot;: &quot;明亮、愉快、振奋人心&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;focus&quot;: &quot;对小雕像和壁画的清晰对焦&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;tones&quot;: [<br>      &quot;明亮&quot;,<br>      &quot;愉快&quot;,<br>      &quot;鲜艳&quot;<br>    ]<br>  },<br>  &quot;render_settings&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;stylization&quot;: &quot;2/5&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene&quot;: {<br>    &quot;description&quot;: &quot;艺术性微缩场景：年轻人偶在万隆 Gedung Sate 附近的一堵小户外墙面上合作绘制一幅充满生机的环保壁画。&quot;,<br>    &quot;location&quot;: &quot;印度尼西亚万隆 Gedung Sate 附近&quot;,<br>    &quot;environment&quot;: &quot;以温馨手工微缩比例呈现的城市文化地标环境&quot;<br>  },<br>  &quot;subjects&quot;: {<br>    &quot;characters&quot;: &quot;微缩青年人偶&quot;,<br>    &quot;actions&quot;: [<br>      &quot;在绘制一幅大型多彩壁画&quot;,<br>      &quot;攀爬小梯子&quot;,<br>      &quot;手持画笔和油漆桶&quot;,<br>      &quot;顽皮地溅洒油漆&quot;<br>    ],<br>    &quot;expressions&quot;: &quot;充满活力、快乐、有创造力&quot;<br>  },<br>  &quot;mural_details&quot;: {<br>    &quot;theme&quot;: &quot;环保意识与积极正能量&quot;,<br>    &quot;elements&quot;: [<br>      &quot;青翠的山峦&quot;,<br>      &quot;茂密的树木&quot;,<br>      &quot;象征环保出行的自行车&quot;,<br>      &quot;清澈流淌的河流&quot;<br>    ],<br>    &quot;text&quot;: &quot;你是最棒的，Sharon&quot;<br>  },<br>  &quot;props&quot;: {<br>    &quot;items&quot;: [<br>      &quot;小油漆桶&quot;,<br>      &quot;小梯子&quot;,<br>      &quot;小画笔&quot;,<br>      &quot;地面和墙上的油漆飞溅痕迹&quot;<br>    ]<br>  },<br>  &quot;style&quot;: {<br>    &quot;art_form&quot;: &quot;微缩场景模型&quot;,<br>    &quot;photography&quot;: &quot;电影感微距摄影&quot;,<br>    &quot;detail_level&quot;: &quot;高度细致的纹理和人物&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;温暖、柔和的光线&quot;,<br>    &quot;mood&quot;: &quot;明亮、愉快、振奋人心&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;focus&quot;: &quot;对小雕像和壁画的清晰对焦&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;tones&quot;: [<br>      &quot;明亮&quot;,<br>      &quot;愉快&quot;,<br>      &quot;鲜艳&quot;<br>    ]<br>  },<br>  &quot;render_settings&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;stylization&quot;: &quot;2/5&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene\": {\n    \"description\": \"Artistic miniature diorama of youthful figurines collaboratively painting a vibrant environmental mural on a small outdoor wall near Gedung Sate, Bandung.\",\n    \"location\": \"Near Gedung Sate, Bandung, Indonesia\",\n    \"environment\": \"Urban cultural landmark setting with a cozy, handcrafted miniature scale\"\n  },\n  \"subjects\": {\n    \"characters\": \"Miniature youth figurines\",\n    \"actions\": [\n      \"painting a large colorful mural\",\n      \"climbing tiny ladders\",\n      \"holding paint brushes and buckets\",\n      \"splashing paint playfully\"\n    ],\n    \"expressions\": \"Energetic, joyful, creative\"\n  },\n  \"mural_details\": {\n    \"theme\": \"Environmental awareness and positivity\",\n    \"elements\": [\n      \"green mountains\",\n      \"lush trees\",\n      \"bicycles symbolizing eco-friendly transport\",\n      \"clean flowing rivers\"\n    ],\n    \"text\": \"You're the best, Sharon\"\n  },\n  \"props\": {\n    \"items\": [\n      \"tiny paint buckets\",\n      \"mini ladders\",\n      \"small paint brushes\",\n      \"paint splashes on ground and wall\"\n    ]\n  },\n  \"style\": {\n    \"art_form\": \"Miniature diorama\",\n    \"photography\": \"Cinematic macro photography\",\n    \"detail_level\": \"Highly detailed textures and figures\"\n  },\n  \"lighting\": {\n    \"type\": \"Warm, soft lighting\",\n    \"mood\": \"Bright, cheerful, uplifting\"\n  },\n  \"camera\": {\n    \"depth_of_field\": \"Shallow depth of field\",\n    \"focus\": \"Sharp focus on figurines and mural\"\n  },\n  \"color_palette\": {\n    \"tones\": [\n      \"Bright\",\n      \"Cheerful\",\n      \"Vivid\"\n    ]\n  },\n  \"render_settings\": {\n    \"aspect_ratio\": \"4:5\",\n    \"quality\": 2,\n    \"stylization\": \"2/5\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;scene&quot;: {<br>    &quot;description&quot;: &quot;Artistic miniature diorama of youthful figurines collaboratively painting a vibrant environmental mural on a small outdoor wall near Gedung Sate, Bandung.&quot;,<br>    &quot;location&quot;: &quot;Near Gedung Sate, Bandung, Indonesia&quot;,<br>    &quot;environment&quot;: &quot;Urban cultural landmark setting with a cozy, handcrafted miniature scale&quot;<br>  },<br>  &quot;subjects&quot;: {<br>    &quot;characters&quot;: &quot;Miniature youth figurines&quot;,<br>    &quot;actions&quot;: [<br>      &quot;painting a large colorful mural&quot;,<br>      &quot;climbing tiny ladders&quot;,<br>      &quot;holding paint brushes and buckets&quot;,<br>      &quot;splashing paint playfully&quot;<br>    ],<br>    &quot;expressions&quot;: &quot;Energetic, joyful, creative&quot;<br>  },<br>  &quot;mural_details&quot;: {<br>    &quot;theme&quot;: &quot;Environmental awareness and positivity&quot;,<br>    &quot;elements&quot;: [<br>      &quot;green mountains&quot;,<br>      &quot;lush trees&quot;,<br>      &quot;bicycles symbolizing eco-friendly transport&quot;,<br>      &quot;clean flowing rivers&quot;<br>    ],<br>    &quot;text&quot;: &quot;You&#39;re the best, Sharon&quot;<br>  },<br>  &quot;props&quot;: {<br>    &quot;items&quot;: [<br>      &quot;tiny paint buckets&quot;,<br>      &quot;mini ladders&quot;,<br>      &quot;small paint brushes&quot;,<br>      &quot;paint splashes on ground and wall&quot;<br>    ]<br>  },<br>  &quot;style&quot;: {<br>    &quot;art_form&quot;: &quot;Miniature diorama&quot;,<br>    &quot;photography&quot;: &quot;Cinematic macro photography&quot;,<br>    &quot;detail_level&quot;: &quot;Highly detailed textures and figures&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Warm, soft lighting&quot;,<br>    &quot;mood&quot;: &quot;Bright, cheerful, uplifting&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;depth_of_field&quot;: &quot;Shallow depth of field&quot;,<br>    &quot;focus&quot;: &quot;Sharp focus on figurines and mural&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;tones&quot;: [<br>      &quot;Bright&quot;,<br>      &quot;Cheerful&quot;,<br>      &quot;Vivid&quot;<br>    ]<br>  },<br>  &quot;render_settings&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;stylization&quot;: &quot;2/5&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene&quot;: {<br>    &quot;description&quot;: &quot;Artistic miniature diorama of youthful figurines collaboratively painting a vibrant environmental mural on a small outdoor wall near Gedung Sate, Bandung.&quot;,<br>    &quot;location&quot;: &quot;Near Gedung Sate, Bandung, Indonesia&quot;,<br>    &quot;environment&quot;: &quot;Urban cultural landmark setting with a cozy, handcrafted miniature scale&quot;<br>  },<br>  &quot;subjects&quot;: {<br>    &quot;characters&quot;: &quot;Miniature youth figurines&quot;,<br>    &quot;actions&quot;: [<br>      &quot;painting a large colorful mural&quot;,<br>      &quot;climbing tiny ladders&quot;,<br>      &quot;holding paint brushes and buckets&quot;,<br>      &quot;splashing paint playfully&quot;<br>    ],<br>    &quot;expressions&quot;: &quot;Energetic, joyful, creative&quot;<br>  },<br>  &quot;mural_details&quot;: {<br>    &quot;theme&quot;: &quot;Environmental awareness and positivity&quot;,<br>    &quot;elements&quot;: [<br>      &quot;green mountains&quot;,<br>      &quot;lush trees&quot;,<br>      &quot;bicycles symbolizing eco-friendly transport&quot;,<br>      &quot;clean flowing rivers&quot;<br>    ],<br>    &quot;text&quot;: &quot;You&#39;re the best, Sharon&quot;<br>  },<br>  &quot;props&quot;: {<br>    &quot;items&quot;: [<br>      &quot;tiny paint buckets&quot;,<br>      &quot;mini ladders&quot;,<br>      &quot;small paint brushes&quot;,<br>      &quot;paint splashes on ground and wall&quot;<br>    ]<br>  },<br>  &quot;style&quot;: {<br>    &quot;art_form&quot;: &quot;Miniature diorama&quot;,<br>    &quot;photography&quot;: &quot;Cinematic macro photography&quot;,<br>    &quot;detail_level&quot;: &quot;Highly detailed textures and figures&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Warm, soft lighting&quot;,<br>    &quot;mood&quot;: &quot;Bright, cheerful, uplifting&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;depth_of_field&quot;: &quot;Shallow depth of field&quot;,<br>    &quot;focus&quot;: &quot;Sharp focus on figurines and mural&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;tones&quot;: [<br>      &quot;Bright&quot;,<br>      &quot;Cheerful&quot;,<br>      &quot;Vivid&quot;<br>    ]<br>  },<br>  &quot;render_settings&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;stylization&quot;: &quot;2/5&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011978683230347749-1.jpg" alt="&quot;scene&quot;: {" loading="lazy"><img src="/images/tweet-2011978683230347749-2.jpg" alt="&quot;scene&quot;: {" loading="lazy"><img src="/images/tweet-2011978683230347749-3.jpg" alt="&quot;scene&quot;: {" loading="lazy"><img src="/images/tweet-2011978683230347749-4.jpg" alt="&quot;scene&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1389,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

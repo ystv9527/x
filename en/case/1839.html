@@ -7,11 +7,13 @@
     <title>[BRAND NAME]: #1839 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="[BRAND NAME]: A high end, glossy concept art magazine editorial photograph of a unique, unexpected functional object...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1839.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1839.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1839.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844738">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023572">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]：一张高端、光泽感十足的概念艺术杂志社论式摄影，呈现由该品牌构思与设计的独特且意想不到的功能性物件。\n\n**1. 概念与物件（AI 发明）：**\n基于指定品牌的设计哲学、传承与材料语汇，AI 必须发明一种新颖的实用产品（非标准服装、鞋类或包袋）。示例可为家居用品、科技配件、工具或运动器材，通过品牌视角重新诠释。该物件应兼具雕塑感与功能性。\n\n**2. 材料与细节（超高端）：**\n该物件由品牌特征性的超高级、极具触感的材料构成（例如：带天然氧化感的稀有皮革、拉丝航空级钛合金、雕刻哑光陶瓷、模压碳纤维或技术性高级服饰面料）。每一个细节都需超现实写实：可见缝线、微观材料纹理、精密雕刻与复杂质感对比。\n\n**3. 摄影与光线（电影级影棚）：**\n使用中画幅 Phase One 相机与 100mm 微距镜头拍摄。极浅景深，聚焦在物件的关键细节上，背景呈奶油般顺滑的散景。灯光为精致影棚柔光箱：柔和包覆的补光，并有精准的边缘光以突出轮廓与材质纹理。\n\n**4. 环境：**\n无缝、无瑕的影棚环幕背景，颜色为纯净、极浅的柔和粉彩色调（例如：去饱和薄荷、淡裸粉或象牙白），无任何阴影。\n\n**5. 布局与界面元素（严格放置）：**\n- **右下角：** 品牌的小型、低调、单色灰色标志。  \n- **左下角：** 一段小型、极简的单色灰色文字，用以描述所发明的产品。字体风格看起来像 Manrope Regular，字距非常紧凑，行距均衡。示例格式：“CONCEPT STUDY: [AI 插入发明产品名称]. MATERIAL: [AI 插入主要材料]. SS25.”", this)'>📋 Copy</button>
         </div>
-        <p>[BRAND NAME]：一张高端、光泽感十足的概念艺术杂志社论式摄影，呈现由该品牌构思与设计的独特且意想不到的功能性物件。</p><p>**1. 概念与物件（AI 发明）：**<br>基于指定品牌的设计哲学、传承与材料语汇，AI 必须发明一种新颖的实用产品（非标准服装、鞋类或包袋）。示例可为家居用品、科技配件、工具或运动器材，通过品牌视角重新诠释。该物件应兼具雕塑感与功能性。</p><p>**2. 材料与细节（超高端）：**<br>该物件由品牌特征性的超高级、极具触感的材料构成（例如：带天然氧化感的稀有皮革、拉丝航空级钛合金、雕刻哑光陶瓷、模压碳纤维或技术性高级服饰面料）。每一个细节都需超现实写实：可见缝线、微观材料纹理、精密雕刻与复杂质感对比。</p><p>**3. 摄影与光线（电影级影棚）：**<br>使用中画幅 Phase One 相机与 100mm 微距镜头拍摄。极浅景深，聚焦在物件的关键细节上，背景呈奶油般顺滑的散景。灯光为精致影棚柔光箱：柔和包覆的补光，并有精准的边缘光以突出轮廓与材质纹理。</p><p>**4. 环境：**<br>无缝、无瑕的影棚环幕背景，颜色为纯净、极浅的柔和粉彩色调（例如：去饱和薄荷、淡裸粉或象牙白），无任何阴影。</p><p>**5. 布局与界面元素（严格放置）：**<br>- **右下角：** 品牌的小型、低调、单色灰色标志。  <br>- **左下角：** 一段小型、极简的单色灰色文字，用以描述所发明的产品。字体风格看起来像 Manrope Regular，字距非常紧凑，行距均衡。示例格式：“CONCEPT STUDY: [AI 插入发明产品名称]. MATERIAL: [AI 插入主要材料]. SS25.”</p>
+        <div data-nosnippet><p>[BRAND NAME]：一张高端、光泽感十足的概念艺术杂志社论式摄影，呈现由该品牌构思与设计的独特且意想不到的功能性物件。</p><p>**1. 概念与物件（AI 发明）：**<br>基于指定品牌的设计哲学、传承与材料语汇，AI 必须发明一种新颖的实用产品（非标准服装、鞋类或包袋）。示例可为家居用品、科技配件、工具或运动器材，通过品牌视角重新诠释。该物件应兼具雕塑感与功能性。</p><p>**2. 材料与细节（超高端）：**<br>该物件由品牌特征性的超高级、极具触感的材料构成（例如：带天然氧化感的稀有皮革、拉丝航空级钛合金、雕刻哑光陶瓷、模压碳纤维或技术性高级服饰面料）。每一个细节都需超现实写实：可见缝线、微观材料纹理、精密雕刻与复杂质感对比。</p><p>**3. 摄影与光线（电影级影棚）：**<br>使用中画幅 Phase One 相机与 100mm 微距镜头拍摄。极浅景深，聚焦在物件的关键细节上，背景呈奶油般顺滑的散景。灯光为精致影棚柔光箱：柔和包覆的补光，并有精准的边缘光以突出轮廓与材质纹理。</p><p>**4. 环境：**<br>无缝、无瑕的影棚环幕背景，颜色为纯净、极浅的柔和粉彩色调（例如：去饱和薄荷、淡裸粉或象牙白），无任何阴影。</p><p>**5. 布局与界面元素（严格放置）：**<br>- **右下角：** 品牌的小型、低调、单色灰色标志。  <br>- **左下角：** 一段小型、极简的单色灰色文字，用以描述所发明的产品。字体风格看起来像 Manrope Regular，字距非常紧凑，行距均衡。示例格式：“CONCEPT STUDY: [AI 插入发明产品名称]. MATERIAL: [AI 插入主要材料]. SS25.”</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]: \nA high-end, glossy concept art magazine editorial photograph of a unique, unexpected functional object conceptualized and designed by the brand.\n\n**1. The Concept & Object (AI Invention):**\nBased on the design philosophy, heritage, and material vocabulary of the specified brand, the AI must invent a novel utility product (NOT standard clothing, shoes, or bags). Examples could be home goods, tech accessories, tools, or sporting equipment, reinterpretated through the brand's lens. The object should feel sculptural yet functional.\n\n**2. Materials & Details (Hyper-Premium):**\nThe object is constructed from ultra-premium, highly tactile materials characteristic of the brand (e.g., patinated exotic leathers, brushed aerospace-grade titanium, sculpted matte ceramics, molded carbon fiber, or technical high-fashion textiles). Every detail is hyper-realistic: visible stitching, microscopic material grain, precision engravings, and complex texture contrasts.\n\n**3. Photography & Lighting (Cinematic Studio):**\nShot on a medium format Phase One camera with a 100mm macro lens. Extremely shallow depth of field, with sharp focus on the hero details of the object and a creamy, smooth bokeh background. The lighting is sophisticated studio softbox lighting: gentle, enveloping fill light with precise rim lighting to accentuate contours and material textures.\n\n**4. Environment:**\nA seamless, impeccably clean studio cyclorama background in a pure, ultra-light pastel tone (e.g., desaturated mint, pale blush, or off-white), free of shadows.\n\n**5. Layout & UI Elements (Strict Placement):**\n- **Bottom Right Corner:** A small, understated, monochrome gray logo of the brand.\n- **Bottom Left Corner:** Small, minimalist monochrome gray text describing the invented product. The font style looks like Manrope Regular with very tight tracking (kerning) and balanced line spacing. Example format: \"CONCEPT STUDY: [AI inserts invented product name]. MATERIAL: [AI inserts main materials]. SS25.", this)'>📋 Copy</button>
         </div>
-        <p>[BRAND NAME]: <br>A high-end, glossy concept art magazine editorial photograph of a unique, unexpected functional object conceptualized and designed by the brand.</p><p>**1. The Concept &amp; Object (AI Invention):**<br>Based on the design philosophy, heritage, and material vocabulary of the specified brand, the AI must invent a novel utility product (NOT standard clothing, shoes, or bags). Examples could be home goods, tech accessories, tools, or sporting equipment, reinterpretated through the brand&#39;s lens. The object should feel sculptural yet functional.</p><p>**2. Materials &amp; Details (Hyper-Premium):**<br>The object is constructed from ultra-premium, highly tactile materials characteristic of the brand (e.g., patinated exotic leathers, brushed aerospace-grade titanium, sculpted matte ceramics, molded carbon fiber, or technical high-fashion textiles). Every detail is hyper-realistic: visible stitching, microscopic material grain, precision engravings, and complex texture contrasts.</p><p>**3. Photography &amp; Lighting (Cinematic Studio):**<br>Shot on a medium format Phase One camera with a 100mm macro lens. Extremely shallow depth of field, with sharp focus on the hero details of the object and a creamy, smooth bokeh background. The lighting is sophisticated studio softbox lighting: gentle, enveloping fill light with precise rim lighting to accentuate contours and material textures.</p><p>**4. Environment:**<br>A seamless, impeccably clean studio cyclorama background in a pure, ultra-light pastel tone (e.g., desaturated mint, pale blush, or off-white), free of shadows.</p><p>**5. Layout &amp; UI Elements (Strict Placement):**<br>- **Bottom Right Corner:** A small, understated, monochrome gray logo of the brand.<br>- **Bottom Left Corner:** Small, minimalist monochrome gray text describing the invented product. The font style looks like Manrope Regular with very tight tracking (kerning) and balanced line spacing. Example format: &quot;CONCEPT STUDY: [AI inserts invented product name]. MATERIAL: [AI inserts main materials]. SS25.</p>
+        <div data-nosnippet><p>[BRAND NAME]: <br>A high-end, glossy concept art magazine editorial photograph of a unique, unexpected functional object conceptualized and designed by the brand.</p><p>**1. The Concept &amp; Object (AI Invention):**<br>Based on the design philosophy, heritage, and material vocabulary of the specified brand, the AI must invent a novel utility product (NOT standard clothing, shoes, or bags). Examples could be home goods, tech accessories, tools, or sporting equipment, reinterpretated through the brand&#39;s lens. The object should feel sculptural yet functional.</p><p>**2. Materials &amp; Details (Hyper-Premium):**<br>The object is constructed from ultra-premium, highly tactile materials characteristic of the brand (e.g., patinated exotic leathers, brushed aerospace-grade titanium, sculpted matte ceramics, molded carbon fiber, or technical high-fashion textiles). Every detail is hyper-realistic: visible stitching, microscopic material grain, precision engravings, and complex texture contrasts.</p><p>**3. Photography &amp; Lighting (Cinematic Studio):**<br>Shot on a medium format Phase One camera with a 100mm macro lens. Extremely shallow depth of field, with sharp focus on the hero details of the object and a creamy, smooth bokeh background. The lighting is sophisticated studio softbox lighting: gentle, enveloping fill light with precise rim lighting to accentuate contours and material textures.</p><p>**4. Environment:**<br>A seamless, impeccably clean studio cyclorama background in a pure, ultra-light pastel tone (e.g., desaturated mint, pale blush, or off-white), free of shadows.</p><p>**5. Layout &amp; UI Elements (Strict Placement):**<br>- **Bottom Right Corner:** A small, understated, monochrome gray logo of the brand.<br>- **Bottom Left Corner:** Small, minimalist monochrome gray text describing the invented product. The font style looks like Manrope Regular with very tight tracking (kerning) and balanced line spacing. Example format: &quot;CONCEPT STUDY: [AI inserts invented product name]. MATERIAL: [AI inserts main materials]. SS25.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2017345945025822871-1.jpg" alt="[BRAND NAME]:" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1839,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

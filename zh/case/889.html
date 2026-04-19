@@ -7,11 +7,13 @@
     <title>&quot;resolution&quot;: &quot;8K&quot;, #889 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;resolution&quot;: &quot;8K&quot;, &quot;style&quot;: &quot;hyper realistic commercial product photography&quot;, &quot;composition&quot;: { &quot;subject&quot;: &quot;carbona...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/889.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/889.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/889.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841419">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022587">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"resolution\": \"8K\",\n  \"style\": \"超写实商业产品摄影\",\n  \"composition\": {\n    \"subject\": \"碳酸饮料罐\",\n    \"position\": \"画面中心，悬浮于空中\",\n    \"orientation\": \"略微倾斜的竖向\",\n    \"framing\": \"紧凑的主角特写\"\n  },\n  \"can_details\": {\n    \"material\": \"金属铝制\",\n    \"top_bottom\": \"银色，带可见拉环\",\n    \"surface\": \"光滑有光泽，带凝结水滴\",\n    \"label\": {\n      \"text\": \"{{BRAND_NAME}}\",\n      \"font\": \"加粗大写无衬线体\",\n      \"color\": \"白色\",\n      \"background_band\": \"深蓝背景带\",\n      \"placement\": \"环绕罐身中部\"\n    }\n  },\n  \"liquid_effects\": {\n    \"color\": \"亮绿色\",\n    \"type\": \"碳酸液体飞溅\",\n    \"motion\": \"定格在爆发瞬间\",\n    \"details\": [\n      \"半透明液体\",\n      \"细小液滴悬浮于空气中\",\n      \"动态弯曲的飞溅弧线\",\n      \"可见的气泡\"\n    ]\n  },\n  \"fruit_elements\": {\n    \"type\": \"切片水果\",\n    \"motion\": \"围绕罐子漂浮\",\n    \"texture\": \"新鲜，多汁，有光泽\"\n  },\n  \"lighting\": {\n    \"type\": \"影棚灯光\",\n    \"highlights\": \"强烈反光\",\n    \"shadows\": \"柔和\"\n  },\n  \"background\": {\n    \"color\": \"与液体色调相匹配的平滑渐变\",\n    \"environment\": \"干净的影棚背景\"\n  },\n  \"render_quality\": {\n    \"sharpness\": \"超清晰\",\n    \"contrast\": \"高对比度\",\n    \"realism\": \"照片级逼真\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;style&quot;: &quot;超写实商业产品摄影&quot;,<br>  &quot;composition&quot;: {<br>    &quot;subject&quot;: &quot;碳酸饮料罐&quot;,<br>    &quot;position&quot;: &quot;画面中心，悬浮于空中&quot;,<br>    &quot;orientation&quot;: &quot;略微倾斜的竖向&quot;,<br>    &quot;framing&quot;: &quot;紧凑的主角特写&quot;<br>  },<br>  &quot;can_details&quot;: {<br>    &quot;material&quot;: &quot;金属铝制&quot;,<br>    &quot;top_bottom&quot;: &quot;银色，带可见拉环&quot;,<br>    &quot;surface&quot;: &quot;光滑有光泽，带凝结水滴&quot;,<br>    &quot;label&quot;: {<br>      &quot;text&quot;: &quot;{{BRAND_NAME}}&quot;,<br>      &quot;font&quot;: &quot;加粗大写无衬线体&quot;,<br>      &quot;color&quot;: &quot;白色&quot;,<br>      &quot;background_band&quot;: &quot;深蓝背景带&quot;,<br>      &quot;placement&quot;: &quot;环绕罐身中部&quot;<br>    }<br>  },<br>  &quot;liquid_effects&quot;: {<br>    &quot;color&quot;: &quot;亮绿色&quot;,<br>    &quot;type&quot;: &quot;碳酸液体飞溅&quot;,<br>    &quot;motion&quot;: &quot;定格在爆发瞬间&quot;,<br>    &quot;details&quot;: [<br>      &quot;半透明液体&quot;,<br>      &quot;细小液滴悬浮于空气中&quot;,<br>      &quot;动态弯曲的飞溅弧线&quot;,<br>      &quot;可见的气泡&quot;<br>    ]<br>  },<br>  &quot;fruit_elements&quot;: {<br>    &quot;type&quot;: &quot;切片水果&quot;,<br>    &quot;motion&quot;: &quot;围绕罐子漂浮&quot;,<br>    &quot;texture&quot;: &quot;新鲜，多汁，有光泽&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;影棚灯光&quot;,<br>    &quot;highlights&quot;: &quot;强烈反光&quot;,<br>    &quot;shadows&quot;: &quot;柔和&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;与液体色调相匹配的平滑渐变&quot;,<br>    &quot;environment&quot;: &quot;干净的影棚背景&quot;<br>  },<br>  &quot;render_quality&quot;: {<br>    &quot;sharpness&quot;: &quot;超清晰&quot;,<br>    &quot;contrast&quot;: &quot;高对比度&quot;,<br>    &quot;realism&quot;: &quot;照片级逼真&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;style&quot;: &quot;超写实商业产品摄影&quot;,<br>  &quot;composition&quot;: {<br>    &quot;subject&quot;: &quot;碳酸饮料罐&quot;,<br>    &quot;position&quot;: &quot;画面中心，悬浮于空中&quot;,<br>    &quot;orientation&quot;: &quot;略微倾斜的竖向&quot;,<br>    &quot;framing&quot;: &quot;紧凑的主角特写&quot;<br>  },<br>  &quot;can_details&quot;: {<br>    &quot;material&quot;: &quot;金属铝制&quot;,<br>    &quot;top_bottom&quot;: &quot;银色，带可见拉环&quot;,<br>    &quot;surface&quot;: &quot;光滑有光泽，带凝结水滴&quot;,<br>    &quot;label&quot;: {<br>      &quot;text&quot;: &quot;{{BRAND_NAME}}&quot;,<br>      &quot;font&quot;: &quot;加粗大写无衬线体&quot;,<br>      &quot;color&quot;: &quot;白色&quot;,<br>      &quot;background_band&quot;: &quot;深蓝背景带&quot;,<br>      &quot;placement&quot;: &quot;环绕罐身中部&quot;<br>    }<br>  },<br>  &quot;liquid_effects&quot;: {<br>    &quot;color&quot;: &quot;亮绿色&quot;,<br>    &quot;type&quot;: &quot;碳酸液体飞溅&quot;,<br>    &quot;motion&quot;: &quot;定格在爆发瞬间&quot;,<br>    &quot;details&quot;: [<br>      &quot;半透明液体&quot;,<br>      &quot;细小液滴悬浮于空气中&quot;,<br>      &quot;动态弯曲的飞溅弧线&quot;,<br>      &quot;可见的气泡&quot;<br>    ]<br>  },<br>  &quot;fruit_elements&quot;: {<br>    &quot;type&quot;: &quot;切片水果&quot;,<br>    &quot;motion&quot;: &quot;围绕罐子漂浮&quot;,<br>    &quot;texture&quot;: &quot;新鲜，多汁，有光泽&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;影棚灯光&quot;,<br>    &quot;highlights&quot;: &quot;强烈反光&quot;,<br>    &quot;shadows&quot;: &quot;柔和&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;与液体色调相匹配的平滑渐变&quot;,<br>    &quot;environment&quot;: &quot;干净的影棚背景&quot;<br>  },<br>  &quot;render_quality&quot;: {<br>    &quot;sharpness&quot;: &quot;超清晰&quot;,<br>    &quot;contrast&quot;: &quot;高对比度&quot;,<br>    &quot;realism&quot;: &quot;照片级逼真&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"resolution\": \"8K\",\n  \"style\": \"hyper-realistic commercial product photography\",\n  \"composition\": {\n    \"subject\": \"carbonated beverage can\",\n    \"position\": \"center frame, floating mid-air\",\n    \"orientation\": \"slightly tilted vertical\",\n    \"framing\": \"tight hero shot\"\n  },\n  \"can_details\": {\n    \"material\": \"metallic aluminum\",\n    \"top_bottom\": \"silver with visible pull tab\",\n    \"surface\": \"glossy with condensation droplets\",\n    \"label\": {\n      \"text\": \"{{BRAND_NAME}}\",\n      \"font\": \"bold uppercase sans-serif\",\n      \"color\": \"white\",\n      \"background_band\": \"deep blue\",\n      \"placement\": \"wrapped around center of can\"\n    }\n  },\n  \"liquid_effects\": {\n    \"color\": \"bright green\",\n    \"type\": \"carbonated liquid splash\",\n    \"motion\": \"frozen mid-explosion\",\n    \"details\": [\n      \"semi-transparent fluid\",\n      \"fine droplets suspended in air\",\n      \"dynamic curved splash arcs\",\n      \"visible carbonation bubbles\"\n    ]\n  },\n  \"fruit_elements\": {\n    \"type\": \"sliced fruit\",\n    \"motion\": \"floating around the can\",\n    \"texture\": \"fresh, juicy, glossy\"\n  },\n  \"lighting\": {\n    \"type\": \"studio lighting\",\n    \"highlights\": \"strong reflections\",\n    \"shadows\": \"soft\"\n  },\n  \"background\": {\n    \"color\": \"smooth gradient matching liquid tone\",\n    \"environment\": \"clean studio backdrop\"\n  },\n  \"render_quality\": {\n    \"sharpness\": \"ultra-sharp\",\n    \"contrast\": \"high\",\n    \"realism\": \"photorealistic\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;style&quot;: &quot;hyper-realistic commercial product photography&quot;,<br>  &quot;composition&quot;: {<br>    &quot;subject&quot;: &quot;carbonated beverage can&quot;,<br>    &quot;position&quot;: &quot;center frame, floating mid-air&quot;,<br>    &quot;orientation&quot;: &quot;slightly tilted vertical&quot;,<br>    &quot;framing&quot;: &quot;tight hero shot&quot;<br>  },<br>  &quot;can_details&quot;: {<br>    &quot;material&quot;: &quot;metallic aluminum&quot;,<br>    &quot;top_bottom&quot;: &quot;silver with visible pull tab&quot;,<br>    &quot;surface&quot;: &quot;glossy with condensation droplets&quot;,<br>    &quot;label&quot;: {<br>      &quot;text&quot;: &quot;{{BRAND_NAME}}&quot;,<br>      &quot;font&quot;: &quot;bold uppercase sans-serif&quot;,<br>      &quot;color&quot;: &quot;white&quot;,<br>      &quot;background_band&quot;: &quot;deep blue&quot;,<br>      &quot;placement&quot;: &quot;wrapped around center of can&quot;<br>    }<br>  },<br>  &quot;liquid_effects&quot;: {<br>    &quot;color&quot;: &quot;bright green&quot;,<br>    &quot;type&quot;: &quot;carbonated liquid splash&quot;,<br>    &quot;motion&quot;: &quot;frozen mid-explosion&quot;,<br>    &quot;details&quot;: [<br>      &quot;semi-transparent fluid&quot;,<br>      &quot;fine droplets suspended in air&quot;,<br>      &quot;dynamic curved splash arcs&quot;,<br>      &quot;visible carbonation bubbles&quot;<br>    ]<br>  },<br>  &quot;fruit_elements&quot;: {<br>    &quot;type&quot;: &quot;sliced fruit&quot;,<br>    &quot;motion&quot;: &quot;floating around the can&quot;,<br>    &quot;texture&quot;: &quot;fresh, juicy, glossy&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;studio lighting&quot;,<br>    &quot;highlights&quot;: &quot;strong reflections&quot;,<br>    &quot;shadows&quot;: &quot;soft&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;smooth gradient matching liquid tone&quot;,<br>    &quot;environment&quot;: &quot;clean studio backdrop&quot;<br>  },<br>  &quot;render_quality&quot;: {<br>    &quot;sharpness&quot;: &quot;ultra-sharp&quot;,<br>    &quot;contrast&quot;: &quot;high&quot;,<br>    &quot;realism&quot;: &quot;photorealistic&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;style&quot;: &quot;hyper-realistic commercial product photography&quot;,<br>  &quot;composition&quot;: {<br>    &quot;subject&quot;: &quot;carbonated beverage can&quot;,<br>    &quot;position&quot;: &quot;center frame, floating mid-air&quot;,<br>    &quot;orientation&quot;: &quot;slightly tilted vertical&quot;,<br>    &quot;framing&quot;: &quot;tight hero shot&quot;<br>  },<br>  &quot;can_details&quot;: {<br>    &quot;material&quot;: &quot;metallic aluminum&quot;,<br>    &quot;top_bottom&quot;: &quot;silver with visible pull tab&quot;,<br>    &quot;surface&quot;: &quot;glossy with condensation droplets&quot;,<br>    &quot;label&quot;: {<br>      &quot;text&quot;: &quot;{{BRAND_NAME}}&quot;,<br>      &quot;font&quot;: &quot;bold uppercase sans-serif&quot;,<br>      &quot;color&quot;: &quot;white&quot;,<br>      &quot;background_band&quot;: &quot;deep blue&quot;,<br>      &quot;placement&quot;: &quot;wrapped around center of can&quot;<br>    }<br>  },<br>  &quot;liquid_effects&quot;: {<br>    &quot;color&quot;: &quot;bright green&quot;,<br>    &quot;type&quot;: &quot;carbonated liquid splash&quot;,<br>    &quot;motion&quot;: &quot;frozen mid-explosion&quot;,<br>    &quot;details&quot;: [<br>      &quot;semi-transparent fluid&quot;,<br>      &quot;fine droplets suspended in air&quot;,<br>      &quot;dynamic curved splash arcs&quot;,<br>      &quot;visible carbonation bubbles&quot;<br>    ]<br>  },<br>  &quot;fruit_elements&quot;: {<br>    &quot;type&quot;: &quot;sliced fruit&quot;,<br>    &quot;motion&quot;: &quot;floating around the can&quot;,<br>    &quot;texture&quot;: &quot;fresh, juicy, glossy&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;studio lighting&quot;,<br>    &quot;highlights&quot;: &quot;strong reflections&quot;,<br>    &quot;shadows&quot;: &quot;soft&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;smooth gradient matching liquid tone&quot;,<br>    &quot;environment&quot;: &quot;clean studio backdrop&quot;<br>  },<br>  &quot;render_quality&quot;: {<br>    &quot;sharpness&quot;: &quot;ultra-sharp&quot;,<br>    &quot;contrast&quot;: &quot;high&quot;,<br>    &quot;realism&quot;: &quot;photorealistic&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009519057717088345-1.jpg" alt="&quot;resolution&quot;: &quot;8K&quot;," loading="lazy"><img src="/images/tweet-2009519057717088345-2.jpg" alt="&quot;resolution&quot;: &quot;8K&quot;," loading="lazy"><img src="/images/tweet-2009519057717088345-3.jpg" alt="&quot;resolution&quot;: &quot;8K&quot;," loading="lazy"><img src="/images/tweet-2009519057717088345-4.jpg" alt="&quot;resolution&quot;: &quot;8K&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 889,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

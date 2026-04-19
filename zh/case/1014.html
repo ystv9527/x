@@ -7,11 +7,13 @@
     <title>Create an ultra realistic, high end lifestyle portrait of one... #1014 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create an ultra realistic, high end lifestyle portrait of one adult subject, captured in a calm, elegant, modern café...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1014.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1014.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1014.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841306">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022552">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一幅超写实、高端生活方式肖像，主体为一位成年被摄者，拍摄于宁静、优雅、现代的咖啡馆环境。被摄者随意坐在嵌有暖色 LED 轮廓灯的圆形木质框内，四周环绕茂密绿植和柔和的花卉装饰。姿势放松自然：一腿交叠于另一腿之上，身体略呈角度，肩部放松，双手自然放置，手中持一小束新鲜花卉。整体氛围温暖、干净、优雅、年轻且亲切——纯粹的现实主义。禁止风格化、幻想或电影化夸张。\n\n保持 100% 面部准确性：精确的骨骼结构、眼形、眼睑褶、眉形、鼻梁与鼻尖、唇形、下颌线、下巴、脸颊体积、发际线及面部比例。\n\n身份从所有角度必须完全一致（正面、3/4、侧面、坐姿、轻微头部倾斜）。\n\n禁止面部融合、禁止美颜、禁止对称性修正。\n\n禁止 AI 面部漂移。\n\n保留真实皮肤质地：毛孔、细纹、自然瑕疵。\n\n表情：柔和、自然的微笑，放松且真实。\n\n柔和粉彩长袖针织上衣（尘粉/柔和玫瑰色调）。\n\n高腰直筒米色或奶油色长裤。\n\n干净的白色厚底运动鞋。\n\n仅限极简配饰（简单耳环、智能手表或简约手腕配饰）。\n\n发型整理整齐、自然，向后梳或轻柔束起。\n\n自然妆容：真实肤色，无重度修图。\n\n现代咖啡馆或生活方式摄影棚室内。\n\n带嵌入暖色 LED 光环的圆形木质结构。\n\n绿植与花卉布置与框架融合。\n\n柔和散景背景，暖色环境光。\n\n干净、简洁的场景，具有景深与真实感。\n\n全身或 3/4 身竖幅肖像。\n\n眼平视角拍摄。\n\n50mm–85mm 焦段效果。\n\n自然透视，无畸变。\n\n主体置中于圆形框内。\n\n浅景深，背景柔和虚化。\n\n柔和、温暖、漫射光照。\n\nLED 轮廓灯轻柔勾勒圆形框架。\n\n面部光线均匀，阴影自然衰减。\n\n无强烈高光，无过曝白色区域。\n\n真实的皮肤反光与层次感。\n\n负面提示：\n无风格化\n无电影色彩分级\n无美颜滤镜\n无光滑或塑料感皮肤\n无夸张比例\n无绘画或插画感\n无人工光晕\n无面部变形或身份变化\n超写实\n编辑级生活方式摄影品质\n自然色彩，真实肤色\n身份从每个角度保持不变且准确", this)'>📋 复制</button>
         </div>
-        <p>创建一幅超写实、高端生活方式肖像，主体为一位成年被摄者，拍摄于宁静、优雅、现代的咖啡馆环境。被摄者随意坐在嵌有暖色 LED 轮廓灯的圆形木质框内，四周环绕茂密绿植和柔和的花卉装饰。姿势放松自然：一腿交叠于另一腿之上，身体略呈角度，肩部放松，双手自然放置，手中持一小束新鲜花卉。整体氛围温暖、干净、优雅、年轻且亲切——纯粹的现实主义。禁止风格化、幻想或电影化夸张。</p><p>保持 100% 面部准确性：精确的骨骼结构、眼形、眼睑褶、眉形、鼻梁与鼻尖、唇形、下颌线、下巴、脸颊体积、发际线及面部比例。</p><p>身份从所有角度必须完全一致（正面、3/4、侧面、坐姿、轻微头部倾斜）。</p><p>禁止面部融合、禁止美颜、禁止对称性修正。</p><p>禁止 AI 面部漂移。</p><p>保留真实皮肤质地：毛孔、细纹、自然瑕疵。</p><p>表情：柔和、自然的微笑，放松且真实。</p><p>柔和粉彩长袖针织上衣（尘粉/柔和玫瑰色调）。</p><p>高腰直筒米色或奶油色长裤。</p><p>干净的白色厚底运动鞋。</p><p>仅限极简配饰（简单耳环、智能手表或简约手腕配饰）。</p><p>发型整理整齐、自然，向后梳或轻柔束起。</p><p>自然妆容：真实肤色，无重度修图。</p><p>现代咖啡馆或生活方式摄影棚室内。</p><p>带嵌入暖色 LED 光环的圆形木质结构。</p><p>绿植与花卉布置与框架融合。</p><p>柔和散景背景，暖色环境光。</p><p>干净、简洁的场景，具有景深与真实感。</p><p>全身或 3/4 身竖幅肖像。</p><p>眼平视角拍摄。</p><p>50mm–85mm 焦段效果。</p><p>自然透视，无畸变。</p><p>主体置中于圆形框内。</p><p>浅景深，背景柔和虚化。</p><p>柔和、温暖、漫射光照。</p><p>LED 轮廓灯轻柔勾勒圆形框架。</p><p>面部光线均匀，阴影自然衰减。</p><p>无强烈高光，无过曝白色区域。</p><p>真实的皮肤反光与层次感。</p><p>负面提示：<br>无风格化<br>无电影色彩分级<br>无美颜滤镜<br>无光滑或塑料感皮肤<br>无夸张比例<br>无绘画或插画感<br>无人工光晕<br>无面部变形或身份变化<br>超写实<br>编辑级生活方式摄影品质<br>自然色彩，真实肤色<br>身份从每个角度保持不变且准确</p>
+        <div data-nosnippet><p>创建一幅超写实、高端生活方式肖像，主体为一位成年被摄者，拍摄于宁静、优雅、现代的咖啡馆环境。被摄者随意坐在嵌有暖色 LED 轮廓灯的圆形木质框内，四周环绕茂密绿植和柔和的花卉装饰。姿势放松自然：一腿交叠于另一腿之上，身体略呈角度，肩部放松，双手自然放置，手中持一小束新鲜花卉。整体氛围温暖、干净、优雅、年轻且亲切——纯粹的现实主义。禁止风格化、幻想或电影化夸张。</p><p>保持 100% 面部准确性：精确的骨骼结构、眼形、眼睑褶、眉形、鼻梁与鼻尖、唇形、下颌线、下巴、脸颊体积、发际线及面部比例。</p><p>身份从所有角度必须完全一致（正面、3/4、侧面、坐姿、轻微头部倾斜）。</p><p>禁止面部融合、禁止美颜、禁止对称性修正。</p><p>禁止 AI 面部漂移。</p><p>保留真实皮肤质地：毛孔、细纹、自然瑕疵。</p><p>表情：柔和、自然的微笑，放松且真实。</p><p>柔和粉彩长袖针织上衣（尘粉/柔和玫瑰色调）。</p><p>高腰直筒米色或奶油色长裤。</p><p>干净的白色厚底运动鞋。</p><p>仅限极简配饰（简单耳环、智能手表或简约手腕配饰）。</p><p>发型整理整齐、自然，向后梳或轻柔束起。</p><p>自然妆容：真实肤色，无重度修图。</p><p>现代咖啡馆或生活方式摄影棚室内。</p><p>带嵌入暖色 LED 光环的圆形木质结构。</p><p>绿植与花卉布置与框架融合。</p><p>柔和散景背景，暖色环境光。</p><p>干净、简洁的场景，具有景深与真实感。</p><p>全身或 3/4 身竖幅肖像。</p><p>眼平视角拍摄。</p><p>50mm–85mm 焦段效果。</p><p>自然透视，无畸变。</p><p>主体置中于圆形框内。</p><p>浅景深，背景柔和虚化。</p><p>柔和、温暖、漫射光照。</p><p>LED 轮廓灯轻柔勾勒圆形框架。</p><p>面部光线均匀，阴影自然衰减。</p><p>无强烈高光，无过曝白色区域。</p><p>真实的皮肤反光与层次感。</p><p>负面提示：<br>无风格化<br>无电影色彩分级<br>无美颜滤镜<br>无光滑或塑料感皮肤<br>无夸张比例<br>无绘画或插画感<br>无人工光晕<br>无面部变形或身份变化<br>超写实<br>编辑级生活方式摄影品质<br>自然色彩，真实肤色<br>身份从每个角度保持不变且准确</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an ultra-realistic, high-end lifestyle portrait of one adult subject, captured in a calm, elegant, modern café environment. The subject is seated casually inside a circular wooden frame embedded with warm LED rim lighting, surrounded by lush green foliage and soft floral decor. The pose is relaxed and natural: one leg crossed over the other, body slightly angled, shoulders relaxed, hands resting naturally while holding a small bouquet of fresh flowers. Overall mood is warm, clean, elegant, youthful, and approachable — pure realism only. No stylization, no fantasy, no cinematic exaggeration.\n\nMaintain 100% facial accuracy: exact bone structure, eye shape, eyelid fold, eyebrow shape, nose bridge and tip, lip shape, jawline, chin, cheek volume, hairline, and facial proportions\n\nIdentity must remain perfectly consistent from all angles (front, 3/4, side, seated pose, slight head tilt)\n\nNo face blending, no beautification, no symmetry correction\n\nNo AI face drift\n\nPreserve real skin texture: pores, fine lines, natural imperfections\n\nExpression: soft, natural smile, relaxed and genuine\n\nSoft pastel long-sleeve knit top (dusty pink / muted rose tone)\n\nHigh-waisted, straight-fit beige or cream trousers\n\nClean white chunky sneakers\n\nMinimal accessories only (simple earrings, smartwatch or minimal wrist accessory)\n\nHair neatly styled, natural, pulled back or softly tied\n\nNatural makeup: realistic skin tones, no heavy retouching\n\nModern café or lifestyle studio interior\n\nCircular wooden structure with embedded warm LED light ring\n\nGreen plants and floral arrangements integrated into the frame\n\nSoft bokeh background with warm ambient lighting\n\nClean, uncluttered setting with depth and realism\n\nFull-body or 3/4 body vertical portrait\n\nEye-level camera angle\n\n50mm–85mm lens look\n\nNatural perspective, no distortion\n\nSubject centered within the circular frame\n\nShallow depth of field, background softly blurred\n\nSoft, warm, diffused lighting\n\nLED rim light gently outlining the circular frame\n\nEven facial illumination with natural shadow falloff\n\nNo harsh highlights, no blown whites\n\nRealistic skin reflections and depth\n\nNegative prompt:\n\nNo stylization\n\nNo cinematic color grading\n\nNo beauty filters\n\nNo smooth or plastic skin\n\nNo exaggerated proportions\n\nNo painterly or illustrated look\n\nNo artificial glow\n\nNo face morphing or identity shift\n\nUltra-photorealistic\n\nEditorial lifestyle photography quality\n\nNatural colors, true-to-life skin tones\n\nIdentity remains unchanged and accurate from every angle", this)'>📋 复制</button>
         </div>
-        <p>Create an ultra-realistic, high-end lifestyle portrait of one adult subject, captured in a calm, elegant, modern café environment. The subject is seated casually inside a circular wooden frame embedded with warm LED rim lighting, surrounded by lush green foliage and soft floral decor. The pose is relaxed and natural: one leg crossed over the other, body slightly angled, shoulders relaxed, hands resting naturally while holding a small bouquet of fresh flowers. Overall mood is warm, clean, elegant, youthful, and approachable — pure realism only. No stylization, no fantasy, no cinematic exaggeration.</p><p>Maintain 100% facial accuracy: exact bone structure, eye shape, eyelid fold, eyebrow shape, nose bridge and tip, lip shape, jawline, chin, cheek volume, hairline, and facial proportions</p><p>Identity must remain perfectly consistent from all angles (front, 3/4, side, seated pose, slight head tilt)</p><p>No face blending, no beautification, no symmetry correction</p><p>No AI face drift</p><p>Preserve real skin texture: pores, fine lines, natural imperfections</p><p>Expression: soft, natural smile, relaxed and genuine</p><p>Soft pastel long-sleeve knit top (dusty pink / muted rose tone)</p><p>High-waisted, straight-fit beige or cream trousers</p><p>Clean white chunky sneakers</p><p>Minimal accessories only (simple earrings, smartwatch or minimal wrist accessory)</p><p>Hair neatly styled, natural, pulled back or softly tied</p><p>Natural makeup: realistic skin tones, no heavy retouching</p><p>Modern café or lifestyle studio interior</p><p>Circular wooden structure with embedded warm LED light ring</p><p>Green plants and floral arrangements integrated into the frame</p><p>Soft bokeh background with warm ambient lighting</p><p>Clean, uncluttered setting with depth and realism</p><p>Full-body or 3/4 body vertical portrait</p><p>Eye-level camera angle</p><p>50mm–85mm lens look</p><p>Natural perspective, no distortion</p><p>Subject centered within the circular frame</p><p>Shallow depth of field, background softly blurred</p><p>Soft, warm, diffused lighting</p><p>LED rim light gently outlining the circular frame</p><p>Even facial illumination with natural shadow falloff</p><p>No harsh highlights, no blown whites</p><p>Realistic skin reflections and depth</p><p>Negative prompt:</p><p>No stylization</p><p>No cinematic color grading</p><p>No beauty filters</p><p>No smooth or plastic skin</p><p>No exaggerated proportions</p><p>No painterly or illustrated look</p><p>No artificial glow</p><p>No face morphing or identity shift</p><p>Ultra-photorealistic</p><p>Editorial lifestyle photography quality</p><p>Natural colors, true-to-life skin tones</p><p>Identity remains unchanged and accurate from every angle</p>
+        <div data-nosnippet><p>Create an ultra-realistic, high-end lifestyle portrait of one adult subject, captured in a calm, elegant, modern café environment. The subject is seated casually inside a circular wooden frame embedded with warm LED rim lighting, surrounded by lush green foliage and soft floral decor. The pose is relaxed and natural: one leg crossed over the other, body slightly angled, shoulders relaxed, hands resting naturally while holding a small bouquet of fresh flowers. Overall mood is warm, clean, elegant, youthful, and approachable — pure realism only. No stylization, no fantasy, no cinematic exaggeration.</p><p>Maintain 100% facial accuracy: exact bone structure, eye shape, eyelid fold, eyebrow shape, nose bridge and tip, lip shape, jawline, chin, cheek volume, hairline, and facial proportions</p><p>Identity must remain perfectly consistent from all angles (front, 3/4, side, seated pose, slight head tilt)</p><p>No face blending, no beautification, no symmetry correction</p><p>No AI face drift</p><p>Preserve real skin texture: pores, fine lines, natural imperfections</p><p>Expression: soft, natural smile, relaxed and genuine</p><p>Soft pastel long-sleeve knit top (dusty pink / muted rose tone)</p><p>High-waisted, straight-fit beige or cream trousers</p><p>Clean white chunky sneakers</p><p>Minimal accessories only (simple earrings, smartwatch or minimal wrist accessory)</p><p>Hair neatly styled, natural, pulled back or softly tied</p><p>Natural makeup: realistic skin tones, no heavy retouching</p><p>Modern café or lifestyle studio interior</p><p>Circular wooden structure with embedded warm LED light ring</p><p>Green plants and floral arrangements integrated into the frame</p><p>Soft bokeh background with warm ambient lighting</p><p>Clean, uncluttered setting with depth and realism</p><p>Full-body or 3/4 body vertical portrait</p><p>Eye-level camera angle</p><p>50mm–85mm lens look</p><p>Natural perspective, no distortion</p><p>Subject centered within the circular frame</p><p>Shallow depth of field, background softly blurred</p><p>Soft, warm, diffused lighting</p><p>LED rim light gently outlining the circular frame</p><p>Even facial illumination with natural shadow falloff</p><p>No harsh highlights, no blown whites</p><p>Realistic skin reflections and depth</p><p>Negative prompt:</p><p>No stylization</p><p>No cinematic color grading</p><p>No beauty filters</p><p>No smooth or plastic skin</p><p>No exaggerated proportions</p><p>No painterly or illustrated look</p><p>No artificial glow</p><p>No face morphing or identity shift</p><p>Ultra-photorealistic</p><p>Editorial lifestyle photography quality</p><p>Natural colors, true-to-life skin tones</p><p>Identity remains unchanged and accurate from every angle</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010352197289345443-1.jpg" alt="Create an ultra realistic, high end lifestyle portrait of one..." loading="lazy"><img src="/images/tweet-2010352197289345443-2.jpg" alt="Create an ultra realistic, high end lifestyle portrait of one..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1014,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

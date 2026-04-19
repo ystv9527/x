@@ -7,11 +7,13 @@
     <title>A 3×3 grid collage featuring the same female model, each squa... #1244 | Gem Nana AI 提示词库</title>
     <meta name="description" content="A 3×3 grid collage featuring the same female model, each square showing a different hairstyle. Hairstyles include: st...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1244.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1244.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1244.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841111">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022499">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一个3×3的网格拼贴，展示同一位女性模特，每个方格展示不同的发型。\n发型包括：直长发、短鲍勃头、高马尾、低髻、编发、凌乱丸子头、沙滩波浪、精灵短发、侧扫刘海、卷曲爆炸头、半扎半放、中分顺滑、顶结、鱼骨辫、蓬松吹风造型以及波浪齐肩长发（lob）。\n面部和肤色在所有画面中保持一致，中性背景、柔和的影棚灯光、高分辨率、时尚编辑风格、真实细节、整洁的网格布局且间距均等。", this)'>📋 复制</button>
         </div>
-        <p>一个3×3的网格拼贴，展示同一位女性模特，每个方格展示不同的发型。<br>发型包括：直长发、短鲍勃头、高马尾、低髻、编发、凌乱丸子头、沙滩波浪、精灵短发、侧扫刘海、卷曲爆炸头、半扎半放、中分顺滑、顶结、鱼骨辫、蓬松吹风造型以及波浪齐肩长发（lob）。<br>面部和肤色在所有画面中保持一致，中性背景、柔和的影棚灯光、高分辨率、时尚编辑风格、真实细节、整洁的网格布局且间距均等。</p>
+        <div data-nosnippet><p>一个3×3的网格拼贴，展示同一位女性模特，每个方格展示不同的发型。<br>发型包括：直长发、短鲍勃头、高马尾、低髻、编发、凌乱丸子头、沙滩波浪、精灵短发、侧扫刘海、卷曲爆炸头、半扎半放、中分顺滑、顶结、鱼骨辫、蓬松吹风造型以及波浪齐肩长发（lob）。<br>面部和肤色在所有画面中保持一致，中性背景、柔和的影棚灯光、高分辨率、时尚编辑风格、真实细节、整洁的网格布局且间距均等。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A 3×3 grid collage featuring the same female model, each square showing a different hairstyle.\nHairstyles include: straight long hair, short bob cut, high ponytail, low bun, braided hair, messy bun, beach waves, pixie cut, side-swept bangs, curly afro, half-up half-down, sleek middle-part, top knot, fishtail braid, voluminous blowout, and wavy lob.\nConsistent face and skin tone across all frames, neutral background, soft studio lighting, high-resolution, fashion editorial style, realistic details, clean grid layout with equal spacing.", this)'>📋 复制</button>
         </div>
-        <p>A 3×3 grid collage featuring the same female model, each square showing a different hairstyle.<br>Hairstyles include: straight long hair, short bob cut, high ponytail, low bun, braided hair, messy bun, beach waves, pixie cut, side-swept bangs, curly afro, half-up half-down, sleek middle-part, top knot, fishtail braid, voluminous blowout, and wavy lob.<br>Consistent face and skin tone across all frames, neutral background, soft studio lighting, high-resolution, fashion editorial style, realistic details, clean grid layout with equal spacing.</p>
+        <div data-nosnippet><p>A 3×3 grid collage featuring the same female model, each square showing a different hairstyle.<br>Hairstyles include: straight long hair, short bob cut, high ponytail, low bun, braided hair, messy bun, beach waves, pixie cut, side-swept bangs, curly afro, half-up half-down, sleek middle-part, top knot, fishtail braid, voluminous blowout, and wavy lob.<br>Consistent face and skin tone across all frames, neutral background, soft studio lighting, high-resolution, fashion editorial style, realistic details, clean grid layout with equal spacing.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011439822049776102-1.jpg" alt="A 3×3 grid collage featuring the same female model, each squa..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1244,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

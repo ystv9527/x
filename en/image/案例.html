@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study · Image Prompt Cases | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="11  Case Study related cases">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/en/image/案例.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/案例.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/案例.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023346">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"Case Study · Image Prompt Cases","description":"11  Case Study related cases","url":"https://gemnana.com/en/image/案例.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI Prompt Collection</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/en/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+          <span class="nav-count">2843</span>
+        </a>
+        <a href="/en/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">Image</span>
+          <span class="nav-count">2815</span>
+        </a>
+        <a href="/en/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">Video</span>
+          <span class="nav-count">25</span>
+        </a>
+        <a href="/en/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Text</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/zh/image/案例.html" class="lang-switch-link">中文</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ Settings</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>Case Study · Image Prompt Cases</h1>
+      <p>11  Case Study related cases</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search title, summary, tags…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ Tag Filters</span>
+          <button id="clearFilters" class="btn-clear" type="button">Clear Filters</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="案例">Case Study (11)</button><button type="button" class="tag-filter" data-tag="GPT Image 2">GPT Image 2 (10)</button><button type="button" class="tag-filter" data-tag="图片">Image (10)</button><button type="button" class="tag-filter" data-tag="摄影">Photography (9)</button><button type="button" class="tag-filter" data-tag="人像">人像 (8)</button><button type="button" class="tag-filter" data-tag="创意">Creative (3)</button><button type="button" class="tag-filter" data-tag="角色设计">角色设计 (2)</button><button type="button" class="tag-filter" data-tag="设计">Design (1)</button><button type="button" class="tag-filter" data-tag="技巧">Tips (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">11 items</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 No matched content</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2832" data-search="案例2832 galgame character introduction page a gpt-image-2 character design prompt case showing the setup, styling notes, and reference-image direction behind &quot;galgame character introduction page.&quot; x / @09lyco https://x.com/09lyco/status/2045281845391323175 gpt image 2 图片 角色设计 创意 案例 please have your partner or you fill in the parts that aren’t filled. #observationtowermorningprompts #observationtowergoodmorningprompts using the latest image generation tool, create a high-quality illustration that looks like a real website character introduction page using these chibi charact" data-tags="GPT Image 2|图片|角色设计|创意|案例">
+      <a class="case-card-link" href="/en/case/2832.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/character_case3/output.jpg" alt="Galgame 角色介绍页" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2832</span></span><span class="case-title-text">Galgame character introduction page</span></h3>
+          <p class="case-summary">A GPT-Image-2 character design prompt case showing the setup, styling notes, and reference-image direction behind &quot;Galgame character introduction page.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/09lyco/status/2045281845391323175">X / @09lyco</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">角色设计</span><span class="tag">Creative</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Please have your partner or you fill in the parts that aren’t filled.
+
+#ObservationTowerMorningPrompts  #ObservationTowerGoodMorningPrompts
+
+Using the latest image generation tool,
+create a high-quali...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2832.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2831" data-search="案例2831 persona 5 character setting card a gpt-image-2 character design prompt case showing the setup, styling notes, and reference-image direction behind &quot;persona 5 character setting card.&quot; x / @iamrednights https://x.com/iamrednights/status/2045075682837836265 gpt image 2 图片 角色设计 创意 案例 基于此角色和背景，请制作一份类似官方设定资料的角色资料卡。 ・包含三视图：正面、侧面和背面 ・添加角色面部表情的变化・分解并展示服装和装备的详细部分 ・添加色板・包含世界观设定的简要说明 ・总体上，使用有组织的布局（白色背景，插画风格）高分辨率、专业概念艺术风格 #persona5 ------ @grok 你要不要也试试用第一张图片加prompt生成一张？" data-tags="GPT Image 2|图片|角色设计|创意|案例">
+      <a class="case-card-link" href="/en/case/2831.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/character_case2/output.jpg" alt="Persona5 角色设定卡" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2831</span></span><span class="case-title-text">Persona 5 character setting card</span></h3>
+          <p class="case-summary">A GPT-Image-2 character design prompt case showing the setup, styling notes, and reference-image direction behind &quot;Persona 5 character setting card.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamrednightS/status/2045075682837836265">X / @iamrednightS</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">角色设计</span><span class="tag">Creative</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>基于此角色和背景，请制作一份类似官方设定资料的角色资料卡。
+・包含三视图：正面、侧面和背面
+・添加角色面部表情的变化・分解并展示服装和装备的详细部分
+・添加色板・包含世界观设定的简要说明
+・总体上，使用有组织的布局（白色背景，插画风格）高分辨率、专业概念艺术风格
+#Persona5
+------
+@grok 你要不要也试试用第一张图片加prompt生成一张？</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2831.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2823" data-search="案例2823 9:16 cosplayer portrait screenshot a gpt-image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;9:16 cosplayer portrait screenshot.&quot; x / @zoulinshen https://x.com/zoulinshen/status/2045082518089810073 gpt image 2 图片 摄影 人像 案例 create a vertically oriented image in a smartphone screenshot style, with overall proportions close to 9:16. slightly above the center of the frame, place a real-life cosplayer portraying a fictional character (character name), as a 2d anime character. the person should have a realistic style, but w" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/en/case/2823.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case8/output.jpg" alt="9:16 Cosplayer 人像截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2823</span></span><span class="case-title-text">9:16 cosplayer portrait screenshot</span></h3>
+          <p class="case-summary">A GPT-Image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;9:16 cosplayer portrait screenshot.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Zoulinshen/status/2045082518089810073">X / @Zoulinshen</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">Photography</span><span class="tag">人像</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Create a vertically oriented image in a smartphone screenshot style, with overall proportions close to 9:16. Slightly above the center of the frame, place a real-life cosplayer portraying a fictional ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2823.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2822" data-search="案例2822 luxury glam beauty portrait a gpt-image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;luxury glam beauty portrait.&quot; x / @patrickassale https://x.com/patrickassale/status/2044581766309060765 gpt image 2 图片 摄影 人像 案例 luxury glam beauty portrait:, beautiful black woman, youthful spirit, creamy vanilla, silk press, mahogany red, subtle confidence, textured fabric, sapphire blue, minimal jewelry, beachside breeze, lens flare effect, nostalgic, cinematic lens, symmetrical composition, soft focus, high fashion photog" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/en/case/2822.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case7/output.jpg" alt="奢华魅力美妆人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2822</span></span><span class="case-title-text">Luxury Glam Beauty Portrait</span></h3>
+          <p class="case-summary">A GPT-Image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;Luxury Glam Beauty Portrait.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/patrickassale/status/2044581766309060765">X / @patrickassale</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">Photography</span><span class="tag">人像</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Luxury Glam Beauty Portrait:, Beautiful Black woman, youthful spirit, creamy vanilla, silk press, mahogany red, subtle confidence, textured fabric, sapphire blue, minimal jewelry, beachside breeze, le...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2822.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2821" data-search="案例2821 fashion editorial shot from a low-angle pov a gpt-image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;fashion editorial shot from a low-angle pov.&quot; x / @bubblebrain https://x.com/bubblebrain/status/2044705257004093537 gpt image 2 图片 摄影 人像 案例 analog 35mm film photography, high-fashion editorial portrait with intense on-camera direct flash (ccd hard flash style), intimate low-angle pov shot from slightly below (high-angle upward shot, around +15° upward angle), emphasizing long legs and elegant hourglass body proportions, 4:3 vertical for" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/en/case/2821.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case6/output.jpg" alt="低角度 POV 时尚大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2821</span></span><span class="case-title-text">Fashion editorial shot from a low-angle POV</span></h3>
+          <p class="case-summary">A GPT-Image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;Fashion editorial shot from a low-angle POV.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2044705257004093537">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">Photography</span><span class="tag">人像</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Analog 35mm film photography, high-fashion editorial portrait with intense on-camera direct flash (CCD hard flash style), intimate low-angle POV shot from slightly below (high-angle upward shot, aroun...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2821.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2820" data-search="案例2820 bedroom mirror selfie portrait a gpt-image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;bedroom mirror selfie portrait.&quot; x / @shinning1010 https://x.com/shinning1010/status/2045002808903020962 gpt image 2 图片 摄影 人像 案例 a stunning 18-year-old chinese girl with a youthful, pure face and realistic skin texture, sitting on a cozy, slightly messy bed in her bedroom. she is taking a mirror selfie with a smartphone, capturing a natural and intimate moment. wearing casual gray loungewear and neat white crew socks. soft na" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/en/case/2820.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case5/output.jpg" alt="卧室镜自拍人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2820</span></span><span class="case-title-text">Bedroom mirror selfie portrait</span></h3>
+          <p class="case-summary">A GPT-Image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;Bedroom mirror selfie portrait.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Shinning1010/status/2045002808903020962">X / @Shinning1010</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">Photography</span><span class="tag">人像</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>A stunning 18-year-old Chinese girl with a youthful, pure face and realistic skin texture, sitting on a cozy, slightly messy bed in her bedroom. She is taking a mirror selfie with a smartphone, captur...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2820.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2819" data-search="案例2819 35mm flash fashion portrait a gpt-image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;35mm flash fashion portrait.&quot; x / @bubblebrain https://x.com/bubblebrain/status/2045052982728016131 gpt image 2 图片 摄影 人像 案例 35mm color film photography with harsh direct on-camera flash, specular highlights on skin and clothing, strong catchlights in eyes, high contrast flash illumination, authentic film grain and color shift, high fashion fresh innocent basketball court editorial style, intimate first-person low-angle p" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/en/case/2819.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case4/output.jpg" alt="35mm 闪光灯时尚人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2819</span></span><span class="case-title-text">35mm flash fashion portrait</span></h3>
+          <p class="case-summary">A GPT-Image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;35mm flash fashion portrait.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2045052982728016131">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">Photography</span><span class="tag">人像</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>35mm color film photography with harsh direct on-camera flash, specular highlights on skin and clothing, strong catchlights in eyes, high contrast flash illumination, authentic film grain and color sh...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2819.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2818" data-search="案例2818 japanese onsen ryokan portrait a gpt-image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;japanese onsen ryokan portrait.&quot; x / @bubblebrain https://x.com/bubblebrain/status/2045092449803284923 gpt image 2 图片 摄影 人像 案例 35mm film photography, warm vintage japanese onsen ryokan aesthetic, soft ambient wooden lantern lighting mixed with gentle natural window light, subtle film grain, gentle color shift, high atmosphere editorial style, intimate medium shot, early 20s beautiful chinese female idol with ultra-realistic" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/en/case/2818.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case3/output.jpg" alt="日式温泉旅馆人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2818</span></span><span class="case-title-text">Japanese onsen ryokan portrait</span></h3>
+          <p class="case-summary">A GPT-Image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;Japanese onsen ryokan portrait.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2045092449803284923">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">Photography</span><span class="tag">人像</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>35mm film photography, warm vintage Japanese onsen ryokan aesthetic, soft ambient wooden lantern lighting mixed with gentle natural window light, subtle film grain, gentle color shift, high atmosphere...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2818.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2817" data-search="案例2817 cinematic minimalist portrait a gpt-image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;cinematic minimalist portrait.&quot; x / @iam_miharbi https://x.com/iam_miharbi/status/2045151354679665101 gpt image 2 图片 摄影 人像 案例 generate a cinematic minimal portrait of a solitary man standing in an intense orange to red gradient environment, strong silhouette lighting, deep shadow contrast, reflective glossy floor, symmetrical composition, minimal" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/en/case/2817.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case2/output.jpg" alt="电影感极简人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2817</span></span><span class="case-title-text">Cinematic minimalist portrait</span></h3>
+          <p class="case-summary">A GPT-Image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;Cinematic minimalist portrait.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iam_miharbi/status/2045151354679665101">X / @iam_miharbi</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">Photography</span><span class="tag">人像</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Generate a cinematic minimal portrait of a solitary man standing in an intense orange to red gradient environment, strong silhouette lighting, deep shadow contrast, reflective glossy floor, symmetrica...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2817.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2816" data-search="案例2816 convenience store neon portrait a gpt-image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;convenience store neon portrait.&quot; x / @bubblebrain https://x.com/bubblebrain/status/2045167461147042202 gpt image 2 图片 摄影 人像 案例 35mm film photography with harsh convenience store fluorescent lighting mixed with colorful neon signs from outside, authentic film grain, high contrast, slight color cast, cinematic street editorial style, intimate medium shot, early 20s sexy chinese female idol with ultra-realistic delicate refine" data-tags="GPT Image 2|图片|摄影|人像|案例">
+      <a class="case-card-link" href="/en/case/2816.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/portrait_case1/output.jpg" alt="便利店霓虹人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2816</span></span><span class="case-title-text">Convenience store neon portrait</span></h3>
+          <p class="case-summary">A GPT-Image-2 portrait prompt case focused on the scene mood, lighting texture, and character styling of &quot;Convenience store neon portrait.&quot;</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2045167461147042202">X / @BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">Image</span><span class="tag">Photography</span><span class="tag">人像</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>35mm film photography with harsh convenience store fluorescent lighting mixed with colorful neon signs from outside, authentic film grain, high contrast, slight color cast, cinematic street editorial ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2816.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="577" data-search="案例577 brand full-process infographic design: a complete journey narrative and craft presentation. this prompt is designed to create a 16:9 brand infographic that showcases the complete process journey, close-ups of artisanal craftsmanship, and dynamic numbered connectors for eight steps, emphasizing texture and heritage. x / berryxia.ai https://x.com/berryxia/status/2038992872498950257 设计 摄影 创意 技巧 案例 16:9 [industry_style] brand infographic for [brand_name] showing the complete [process_type] journey with [brand_tone] storytelling. header (top of frame): - title centered: &quot;[english_title]&quot; in [font_style] font, color: [brand_color] - subtitle (optional): &quot;[chinese_title]&quot; - [brand_name] logo pos" data-tags="设计|摄影|创意|技巧|案例">
+      <a class="case-card-link" href="/en/case/577.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2038992872498950257-1.jpg" alt="品牌全流程信息图设计：完整旅程叙事与工艺呈现" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#577</span></span><span class="case-title-text">Brand full-process infographic design: a complete journey narrative and craft presentation.</span></h3>
+          <p class="case-summary">This prompt is designed to create a 16:9 brand infographic that showcases the complete process journey, close-ups of artisanal craftsmanship, and dynamic numbered connectors for eight steps, emphasizing texture and heritage.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-02</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/berryxia/status/2038992872498950257">X / Berryxia.AI</span>
+          </div>
+          <div class="case-tags"><span class="tag">Design</span><span class="tag">Photography</span><span class="tag">Creative</span><span class="tag">Tips</span><span class="tag">Case Study</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>16:9 [INDUSTRY_STYLE] brand infographic for [BRAND_NAME] showing the complete [PROCESS_TYPE] journey with [BRAND_TONE] storytelling.
+
+HEADER (top of frame):
+- Title centered: &quot;[ENGLISH_TITLE]&quot; in [FON...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/577.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >Load more</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"{count} items","noResults":"😕 No matched content","loadMore":"Load more","loadingMore":"Loading..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/en/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

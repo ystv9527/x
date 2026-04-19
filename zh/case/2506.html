@@ -7,11 +7,13 @@
     <title>&quot;image generation prompt&quot;: { #2506 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image generation prompt&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;Young woman with a strong resemblance to Sydney Sweeney.&quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2506.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2506.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2506.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839838">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022214">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图像生成提示\": {\n    \"主体\": {\n      \"描述\": \"与 Sydney Sweeney 有极强相似度的年轻女性。\",\n      \"头发\": \"长而波浪状的金发，带有自然的海滩波纹质感，披落于肩上。\",\n      \"面部\": \"表情愉快，微眯；自然肤质，可见日晒的光泽和淡淡的雀斑。\",\n      \"身体\": \"结实而纤细的体格，皮肤质感光滑，带有自然高光。\"\n    },\n    \"服装\": {\n      \"服饰\": \"带有几何大地色调图案的比基尼上衣；牛仔短裤饰有美国国旗的星条图案，裤边磨损毛边。\",\n      \"风格\": \"美式后院烧烤（Americana）。\"\n    },\n    \"造型与配饰\": {\n      \"配饰\": [\n        \"焦橙色棒球帽反戴\",\n        \"手持红色调味瓶\",\n        \"棕褐色厚底凉鞋\"\n      ]\n    },\n    \"环境\": {\n      \"场景\": \"阳光普照的后院露台，旁边放着一台黑色木炭圆形烤炉。\",\n      \"背景\": \"白色栅栏、茂密的绿色灌木和一把蓝色编织草坪椅。\",\n      \"水\": \"无\"\n    },\n    \"姿势\": {\n      \"体态\": \"向前靠近烤炉，腰部微微前屈。\",\n      \"手臂\": \"一只手伸向烤架，另一只手握着调味瓶。\",\n      \"角度\": \"与眼平视的中等全身镜头。\"\n    },\n    \"灯光与氛围\": {\n      \"灯光\": \"明亮的直接自然日光，产生清晰的阴影和高对比度。\",\n      \"氛围\": \"抓拍式、怀旧且充满活力的夏日氛围。\",\n      \"色彩\": \"高饱和度，突出蓝色、红色和叶绿。\"\n    },\n    \"相机与技术\": {\n      \"风格\": \"超写实，RAW 照片。\",\n      \"镜头\": \"35mm 广角镜头。\",\n      \"光圈\": \"f/4，提供中等景深。\",\n      \"质量标签\": [\n        \"8K 分辨率\",\n        \"细节丰富\",\n        \"胶片颗粒质感\",\n        \"超逼真质感\",\n        \"哈苏（Hasselblad）摄影\",\n        \"无水印\"\n      ]\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;图像生成提示&quot;: {<br>    &quot;主体&quot;: {<br>      &quot;描述&quot;: &quot;与 Sydney Sweeney 有极强相似度的年轻女性。&quot;,<br>      &quot;头发&quot;: &quot;长而波浪状的金发，带有自然的海滩波纹质感，披落于肩上。&quot;,<br>      &quot;面部&quot;: &quot;表情愉快，微眯；自然肤质，可见日晒的光泽和淡淡的雀斑。&quot;,<br>      &quot;身体&quot;: &quot;结实而纤细的体格，皮肤质感光滑，带有自然高光。&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;服饰&quot;: &quot;带有几何大地色调图案的比基尼上衣；牛仔短裤饰有美国国旗的星条图案，裤边磨损毛边。&quot;,<br>      &quot;风格&quot;: &quot;美式后院烧烤（Americana）。&quot;<br>    },<br>    &quot;造型与配饰&quot;: {<br>      &quot;配饰&quot;: [<br>        &quot;焦橙色棒球帽反戴&quot;,<br>        &quot;手持红色调味瓶&quot;,<br>        &quot;棕褐色厚底凉鞋&quot;<br>      ]<br>    },<br>    &quot;环境&quot;: {<br>      &quot;场景&quot;: &quot;阳光普照的后院露台，旁边放着一台黑色木炭圆形烤炉。&quot;,<br>      &quot;背景&quot;: &quot;白色栅栏、茂密的绿色灌木和一把蓝色编织草坪椅。&quot;,<br>      &quot;水&quot;: &quot;无&quot;<br>    },<br>    &quot;姿势&quot;: {<br>      &quot;体态&quot;: &quot;向前靠近烤炉，腰部微微前屈。&quot;,<br>      &quot;手臂&quot;: &quot;一只手伸向烤架，另一只手握着调味瓶。&quot;,<br>      &quot;角度&quot;: &quot;与眼平视的中等全身镜头。&quot;<br>    },<br>    &quot;灯光与氛围&quot;: {<br>      &quot;灯光&quot;: &quot;明亮的直接自然日光，产生清晰的阴影和高对比度。&quot;,<br>      &quot;氛围&quot;: &quot;抓拍式、怀旧且充满活力的夏日氛围。&quot;,<br>      &quot;色彩&quot;: &quot;高饱和度，突出蓝色、红色和叶绿。&quot;<br>    },<br>    &quot;相机与技术&quot;: {<br>      &quot;风格&quot;: &quot;超写实，RAW 照片。&quot;,<br>      &quot;镜头&quot;: &quot;35mm 广角镜头。&quot;,<br>      &quot;光圈&quot;: &quot;f/4，提供中等景深。&quot;,<br>      &quot;质量标签&quot;: [<br>        &quot;8K 分辨率&quot;,<br>        &quot;细节丰富&quot;,<br>        &quot;胶片颗粒质感&quot;,<br>        &quot;超逼真质感&quot;,<br>        &quot;哈苏（Hasselblad）摄影&quot;,<br>        &quot;无水印&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图像生成提示&quot;: {<br>    &quot;主体&quot;: {<br>      &quot;描述&quot;: &quot;与 Sydney Sweeney 有极强相似度的年轻女性。&quot;,<br>      &quot;头发&quot;: &quot;长而波浪状的金发，带有自然的海滩波纹质感，披落于肩上。&quot;,<br>      &quot;面部&quot;: &quot;表情愉快，微眯；自然肤质，可见日晒的光泽和淡淡的雀斑。&quot;,<br>      &quot;身体&quot;: &quot;结实而纤细的体格，皮肤质感光滑，带有自然高光。&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;服饰&quot;: &quot;带有几何大地色调图案的比基尼上衣；牛仔短裤饰有美国国旗的星条图案，裤边磨损毛边。&quot;,<br>      &quot;风格&quot;: &quot;美式后院烧烤（Americana）。&quot;<br>    },<br>    &quot;造型与配饰&quot;: {<br>      &quot;配饰&quot;: [<br>        &quot;焦橙色棒球帽反戴&quot;,<br>        &quot;手持红色调味瓶&quot;,<br>        &quot;棕褐色厚底凉鞋&quot;<br>      ]<br>    },<br>    &quot;环境&quot;: {<br>      &quot;场景&quot;: &quot;阳光普照的后院露台，旁边放着一台黑色木炭圆形烤炉。&quot;,<br>      &quot;背景&quot;: &quot;白色栅栏、茂密的绿色灌木和一把蓝色编织草坪椅。&quot;,<br>      &quot;水&quot;: &quot;无&quot;<br>    },<br>    &quot;姿势&quot;: {<br>      &quot;体态&quot;: &quot;向前靠近烤炉，腰部微微前屈。&quot;,<br>      &quot;手臂&quot;: &quot;一只手伸向烤架，另一只手握着调味瓶。&quot;,<br>      &quot;角度&quot;: &quot;与眼平视的中等全身镜头。&quot;<br>    },<br>    &quot;灯光与氛围&quot;: {<br>      &quot;灯光&quot;: &quot;明亮的直接自然日光，产生清晰的阴影和高对比度。&quot;,<br>      &quot;氛围&quot;: &quot;抓拍式、怀旧且充满活力的夏日氛围。&quot;,<br>      &quot;色彩&quot;: &quot;高饱和度，突出蓝色、红色和叶绿。&quot;<br>    },<br>    &quot;相机与技术&quot;: {<br>      &quot;风格&quot;: &quot;超写实，RAW 照片。&quot;,<br>      &quot;镜头&quot;: &quot;35mm 广角镜头。&quot;,<br>      &quot;光圈&quot;: &quot;f/4，提供中等景深。&quot;,<br>      &quot;质量标签&quot;: [<br>        &quot;8K 分辨率&quot;,<br>        &quot;细节丰富&quot;,<br>        &quot;胶片颗粒质感&quot;,<br>        &quot;超逼真质感&quot;,<br>        &quot;哈苏（Hasselblad）摄影&quot;,<br>        &quot;无水印&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"description\": \"Young woman with a strong resemblance to Sydney Sweeney.\",\n      \"hair\": \"Long, wavy blonde locks with natural beach-wave texture, flowing over shoulders.\",\n      \"face\": \"Cheerful, squinting expression; natural skin with visible sun-kissed texture and light freckles.\",\n      \"body\": \"Athletic, slender physique with smooth skin texture and natural highlights.\"\n    },\n    \"attire\": {\n      \"clothing\": \"Patterned bikini top with geometric earth tones; denim shorts featuring American flag stars and stripes with frayed hems.\",\n      \"style\": \"Americana Backyard BBQ.\"\n    },\n    \"styling_and_accessories\": {\n      \"jewelry\": [\n        \"Burnt orange baseball cap worn backward\",\n        \"Red spice shaker held in hand\",\n        \"Tan platform sandals\"\n      ]\n    },\n    \"environment\": {\n      \"setting\": \"Sunny backyard patio next to a black charcoal kettle grill.\",\n      \"background\": \"White picket fence, lush green bushes, and a blue woven lawn chair.\",\n      \"water\": \"None\"\n    },\n    \"pose\": {\n      \"posture\": \"Leaning forward over the grill, slightly bent at the waist.\",\n      \"arms\": \"One arm reaching down toward the grill grates, the other holding a spice bottle.\",\n      \"angle\": \"Eye-level, medium full-shot.\"\n    },\n    \"lighting_and_mood\": {\n      \"lighting\": \"Bright, direct natural daylight creating sharp shadows and high contrast.\",\n      \"mood\": \"Candid, nostalgic, and vibrant summertime vibe.\",\n      \"colors\": \"High saturation with prominent blues, reds, and leafy greens.\"\n    },\n    \"camera_and_technical\": {\n      \"style\": \"Ultra Photorealistic, RAW photo.\",\n      \"lens\": \"35mm wide-angle lens.\",\n      \"aperture\": \"f/4 for moderate depth of field.\",\n      \"quality_tags\": [\n        \"8k resolution\",\n        \"highly detailed\",\n        \"film grain texture\",\n        \"hyper-realistic texture\",\n        \"Hasselblad photography\",\n        \"no watermarks\"\n      ]\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Young woman with a strong resemblance to Sydney Sweeney.&quot;,<br>      &quot;hair&quot;: &quot;Long, wavy blonde locks with natural beach-wave texture, flowing over shoulders.&quot;,<br>      &quot;face&quot;: &quot;Cheerful, squinting expression; natural skin with visible sun-kissed texture and light freckles.&quot;,<br>      &quot;body&quot;: &quot;Athletic, slender physique with smooth skin texture and natural highlights.&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;clothing&quot;: &quot;Patterned bikini top with geometric earth tones; denim shorts featuring American flag stars and stripes with frayed hems.&quot;,<br>      &quot;style&quot;: &quot;Americana Backyard BBQ.&quot;<br>    },<br>    &quot;styling_and_accessories&quot;: {<br>      &quot;jewelry&quot;: [<br>        &quot;Burnt orange baseball cap worn backward&quot;,<br>        &quot;Red spice shaker held in hand&quot;,<br>        &quot;Tan platform sandals&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Sunny backyard patio next to a black charcoal kettle grill.&quot;,<br>      &quot;background&quot;: &quot;White picket fence, lush green bushes, and a blue woven lawn chair.&quot;,<br>      &quot;water&quot;: &quot;None&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;posture&quot;: &quot;Leaning forward over the grill, slightly bent at the waist.&quot;,<br>      &quot;arms&quot;: &quot;One arm reaching down toward the grill grates, the other holding a spice bottle.&quot;,<br>      &quot;angle&quot;: &quot;Eye-level, medium full-shot.&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;Bright, direct natural daylight creating sharp shadows and high contrast.&quot;,<br>      &quot;mood&quot;: &quot;Candid, nostalgic, and vibrant summertime vibe.&quot;,<br>      &quot;colors&quot;: &quot;High saturation with prominent blues, reds, and leafy greens.&quot;<br>    },<br>    &quot;camera_and_technical&quot;: {<br>      &quot;style&quot;: &quot;Ultra Photorealistic, RAW photo.&quot;,<br>      &quot;lens&quot;: &quot;35mm wide-angle lens.&quot;,<br>      &quot;aperture&quot;: &quot;f/4 for moderate depth of field.&quot;,<br>      &quot;quality_tags&quot;: [<br>        &quot;8k resolution&quot;,<br>        &quot;highly detailed&quot;,<br>        &quot;film grain texture&quot;,<br>        &quot;hyper-realistic texture&quot;,<br>        &quot;Hasselblad photography&quot;,<br>        &quot;no watermarks&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Young woman with a strong resemblance to Sydney Sweeney.&quot;,<br>      &quot;hair&quot;: &quot;Long, wavy blonde locks with natural beach-wave texture, flowing over shoulders.&quot;,<br>      &quot;face&quot;: &quot;Cheerful, squinting expression; natural skin with visible sun-kissed texture and light freckles.&quot;,<br>      &quot;body&quot;: &quot;Athletic, slender physique with smooth skin texture and natural highlights.&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;clothing&quot;: &quot;Patterned bikini top with geometric earth tones; denim shorts featuring American flag stars and stripes with frayed hems.&quot;,<br>      &quot;style&quot;: &quot;Americana Backyard BBQ.&quot;<br>    },<br>    &quot;styling_and_accessories&quot;: {<br>      &quot;jewelry&quot;: [<br>        &quot;Burnt orange baseball cap worn backward&quot;,<br>        &quot;Red spice shaker held in hand&quot;,<br>        &quot;Tan platform sandals&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Sunny backyard patio next to a black charcoal kettle grill.&quot;,<br>      &quot;background&quot;: &quot;White picket fence, lush green bushes, and a blue woven lawn chair.&quot;,<br>      &quot;water&quot;: &quot;None&quot;<br>    },<br>    &quot;pose&quot;: {<br>      &quot;posture&quot;: &quot;Leaning forward over the grill, slightly bent at the waist.&quot;,<br>      &quot;arms&quot;: &quot;One arm reaching down toward the grill grates, the other holding a spice bottle.&quot;,<br>      &quot;angle&quot;: &quot;Eye-level, medium full-shot.&quot;<br>    },<br>    &quot;lighting_and_mood&quot;: {<br>      &quot;lighting&quot;: &quot;Bright, direct natural daylight creating sharp shadows and high contrast.&quot;,<br>      &quot;mood&quot;: &quot;Candid, nostalgic, and vibrant summertime vibe.&quot;,<br>      &quot;colors&quot;: &quot;High saturation with prominent blues, reds, and leafy greens.&quot;<br>    },<br>    &quot;camera_and_technical&quot;: {<br>      &quot;style&quot;: &quot;Ultra Photorealistic, RAW photo.&quot;,<br>      &quot;lens&quot;: &quot;35mm wide-angle lens.&quot;,<br>      &quot;aperture&quot;: &quot;f/4 for moderate depth of field.&quot;,<br>      &quot;quality_tags&quot;: [<br>        &quot;8k resolution&quot;,<br>        &quot;highly detailed&quot;,<br>        &quot;film grain texture&quot;,<br>        &quot;hyper-realistic texture&quot;,<br>        &quot;Hasselblad photography&quot;,<br>        &quot;no watermarks&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2032249362676359389-1.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"><img src="/images/tweet-2032249362676359389-2.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"><img src="/images/tweet-2032249362676359389-3.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2506,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

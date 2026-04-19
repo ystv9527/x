@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;A woman relaxing poolside at a tropical resort at... #2576 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;A woman relaxing poolside at a tropical resort at night, lying on a cushioned lounge chair beside a rust...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2576.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2576.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2576.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843935">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023407">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"夜晚热带度假村泳池边，一位女性在池畔放松，躺在有垫子的躺椅上，旁边是一个质朴的木桌。她穿着色彩鲜艳的花卉比基尼和配套的裹裙，头靠在手上，平静地望向镜头。木桌上放着一杯高脚红色鸡尾酒，旁边有一盏发光的灯笼蜡烛。背景有一池被灯光照亮的游泳池，水面上有倒影，棕榈树、串灯，以及带柔软垂帘的茅草屋顶凉亭。温暖的环境光，热带度假氛围，电影感的夜间摄影，浅景深，高细节，真实的肤色。\",\n  \"style\": \"照片写实\",\n  \"lighting\": \"温暖的夜间环境光，带柔和的高光\",\n  \"camera\": \"85mm 镜头，浅景深\",\n  \"resolution\": \"1024x1536\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;夜晚热带度假村泳池边，一位女性在池畔放松，躺在有垫子的躺椅上，旁边是一个质朴的木桌。她穿着色彩鲜艳的花卉比基尼和配套的裹裙，头靠在手上，平静地望向镜头。木桌上放着一杯高脚红色鸡尾酒，旁边有一盏发光的灯笼蜡烛。背景有一池被灯光照亮的游泳池，水面上有倒影，棕榈树、串灯，以及带柔软垂帘的茅草屋顶凉亭。温暖的环境光，热带度假氛围，电影感的夜间摄影，浅景深，高细节，真实的肤色。&quot;,<br>  &quot;style&quot;: &quot;照片写实&quot;,<br>  &quot;lighting&quot;: &quot;温暖的夜间环境光，带柔和的高光&quot;,<br>  &quot;camera&quot;: &quot;85mm 镜头，浅景深&quot;,<br>  &quot;resolution&quot;: &quot;1024x1536&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;夜晚热带度假村泳池边，一位女性在池畔放松，躺在有垫子的躺椅上，旁边是一个质朴的木桌。她穿着色彩鲜艳的花卉比基尼和配套的裹裙，头靠在手上，平静地望向镜头。木桌上放着一杯高脚红色鸡尾酒，旁边有一盏发光的灯笼蜡烛。背景有一池被灯光照亮的游泳池，水面上有倒影，棕榈树、串灯，以及带柔软垂帘的茅草屋顶凉亭。温暖的环境光，热带度假氛围，电影感的夜间摄影，浅景深，高细节，真实的肤色。&quot;,<br>  &quot;style&quot;: &quot;照片写实&quot;,<br>  &quot;lighting&quot;: &quot;温暖的夜间环境光，带柔和的高光&quot;,<br>  &quot;camera&quot;: &quot;85mm 镜头，浅景深&quot;,<br>  &quot;resolution&quot;: &quot;1024x1536&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"A woman relaxing poolside at a tropical resort at night, lying on a cushioned lounge chair beside a rustic wooden table. She is wearing a colorful floral bikini and matching wrap skirt, resting her head on her hand while looking calmly toward the camera. A tall red cocktail in a glass sits on the table next to a glowing lantern candle. The background features a lit swimming pool with reflections on the water, palm trees, string lights, and a thatched-roof cabana with soft draped curtains. Warm ambient lighting, tropical vacation atmosphere, cinematic night photography, shallow depth of field, high detail, realistic skin tones.\",\n  \"style\": \"photorealistic\",\n  \"lighting\": \"warm ambient night lighting with soft highlights\",\n  \"camera\": \"85mm lens, shallow depth of field\",\n  \"resolution\": \"1024x1536\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;A woman relaxing poolside at a tropical resort at night, lying on a cushioned lounge chair beside a rustic wooden table. She is wearing a colorful floral bikini and matching wrap skirt, resting her head on her hand while looking calmly toward the camera. A tall red cocktail in a glass sits on the table next to a glowing lantern candle. The background features a lit swimming pool with reflections on the water, palm trees, string lights, and a thatched-roof cabana with soft draped curtains. Warm ambient lighting, tropical vacation atmosphere, cinematic night photography, shallow depth of field, high detail, realistic skin tones.&quot;,<br>  &quot;style&quot;: &quot;photorealistic&quot;,<br>  &quot;lighting&quot;: &quot;warm ambient night lighting with soft highlights&quot;,<br>  &quot;camera&quot;: &quot;85mm lens, shallow depth of field&quot;,<br>  &quot;resolution&quot;: &quot;1024x1536&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;A woman relaxing poolside at a tropical resort at night, lying on a cushioned lounge chair beside a rustic wooden table. She is wearing a colorful floral bikini and matching wrap skirt, resting her head on her hand while looking calmly toward the camera. A tall red cocktail in a glass sits on the table next to a glowing lantern candle. The background features a lit swimming pool with reflections on the water, palm trees, string lights, and a thatched-roof cabana with soft draped curtains. Warm ambient lighting, tropical vacation atmosphere, cinematic night photography, shallow depth of field, high detail, realistic skin tones.&quot;,<br>  &quot;style&quot;: &quot;photorealistic&quot;,<br>  &quot;lighting&quot;: &quot;warm ambient night lighting with soft highlights&quot;,<br>  &quot;camera&quot;: &quot;85mm lens, shallow depth of field&quot;,<br>  &quot;resolution&quot;: &quot;1024x1536&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2033892204645912843-1.jpg" alt="&quot;prompt&quot;: &quot;A woman relaxing poolside at a tropical resort at..." loading="lazy"><img src="/images/tweet-2033892204645912843-2.jpg" alt="&quot;prompt&quot;: &quot;A woman relaxing poolside at a tropical resort at..." loading="lazy"><img src="/images/tweet-2033892204645912843-3.jpg" alt="&quot;prompt&quot;: &quot;A woman relaxing poolside at a tropical resort at..." loading="lazy"><img src="/images/tweet-2033892204645912843-4.jpg" alt="&quot;prompt&quot;: &quot;A woman relaxing poolside at a tropical resort at..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2576,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

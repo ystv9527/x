@@ -7,11 +7,13 @@
     <title>&quot;Objective&quot;: &quot;Create a dramatic black and white cinematic por... #1073 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;Objective&quot;: &quot;Create a dramatic black and white cinematic portrait with a classic film noir mood and selective colo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1073.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1073.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1073.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845502">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023731">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"目标\": \"创造一幅戏剧性的黑白电影风格人像，具有经典黑色电影氛围并对颜色进行选择性强调\",\n  \"人物详情\": {\n    \"主体\": {\n      \"类型\": \"年轻男性\",\n      \"发型\": \"中长，自然造型\",\n      \"面部毛发\": \"修整良好的胡须\",\n      \"姿势\": \"沉思姿势，一只手放在下巴附近\",\n      \"表情\": \"内省、自信、沉着\",\n      \"服装\": \"深色夹克\",\n      \"配饰\": {\n        \"太阳镜\": {\n          \"款式\": \"时尚飞行员款太阳镜\",\n          \"镜片颜色\": \"暖色琥珀/黄色镜片\",\n          \"特殊处理\": \"在整体单色图像中唯一有颜色的元素\"\n        }\n      }\n    }\n  },\n  \"构图\": {\n    \"取景\": \"特写到中近距离人像\",\n    \"角度\": \"视平线角度，略带电影感的构图\",\n    \"景深\": \"浅景深\",\n    \"对焦\": \"面部特征和太阳镜的清晰对焦\"\n  },\n  \"灯光与氛围\": {\n    \"灯光风格\": \"强烈的电影式逆光\",\n    \"效果\": [\n      \"背景中的发光散景灯光\",\n      \"类似工作室或舞台灯光的效果\"\n    ],\n    \"对比度\": \"高对比，深黑与明亮高光\",\n    \"氛围\": \"情绪化、戏剧性、沉思\"\n  },\n  \"艺术指导\": {\n    \"风格\": \"经典黑色电影摄影风格\",\n    \"色彩处理\": {\n      \"基础\": \"黑白\",\n      \"强调\": \"在琥珀/黄色镜片上的选择性色彩\"\n    },\n    \"质感细节\": \"超细致的皮肤、头发和面料质感\",\n    \"美感\": \"优雅、永恒、电影感\"\n  },\n  \"摄影风格\": {\n    \"类型\": \"专业电影级人像摄影\",\n    \"图像质量\": \"超高分辨率，细节清晰\",\n    \"风格定稿\": \"精致、编辑风格、适合画廊展示\"\n  },\n  \"氛围\": {\n    \"基调\": \"严肃、沉思、时尚\",\n    \"情感感觉\": \"内敛的强烈感与经典男性气质\"\n  },\n  \"负面提示\": [\n    \"全彩图像\",\n    \"平坦的光线\",\n    \"低对比度\",\n    \"现代随意快照\",\n    \"过度锐化\",\n    \"塑料感皮肤\",\n    \"卡通\",\n    \"动漫\"\n  ],\n  \"响应格式\": {\n    \"类型\": \"单张图像\",\n    \"方向\": \"纵向\",\n    \"长宽比\": \"2:3\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;目标&quot;: &quot;创造一幅戏剧性的黑白电影风格人像，具有经典黑色电影氛围并对颜色进行选择性强调&quot;,<br>  &quot;人物详情&quot;: {<br>    &quot;主体&quot;: {<br>      &quot;类型&quot;: &quot;年轻男性&quot;,<br>      &quot;发型&quot;: &quot;中长，自然造型&quot;,<br>      &quot;面部毛发&quot;: &quot;修整良好的胡须&quot;,<br>      &quot;姿势&quot;: &quot;沉思姿势，一只手放在下巴附近&quot;,<br>      &quot;表情&quot;: &quot;内省、自信、沉着&quot;,<br>      &quot;服装&quot;: &quot;深色夹克&quot;,<br>      &quot;配饰&quot;: {<br>        &quot;太阳镜&quot;: {<br>          &quot;款式&quot;: &quot;时尚飞行员款太阳镜&quot;,<br>          &quot;镜片颜色&quot;: &quot;暖色琥珀/黄色镜片&quot;,<br>          &quot;特殊处理&quot;: &quot;在整体单色图像中唯一有颜色的元素&quot;<br>        }<br>      }<br>    }<br>  },<br>  &quot;构图&quot;: {<br>    &quot;取景&quot;: &quot;特写到中近距离人像&quot;,<br>    &quot;角度&quot;: &quot;视平线角度，略带电影感的构图&quot;,<br>    &quot;景深&quot;: &quot;浅景深&quot;,<br>    &quot;对焦&quot;: &quot;面部特征和太阳镜的清晰对焦&quot;<br>  },<br>  &quot;灯光与氛围&quot;: {<br>    &quot;灯光风格&quot;: &quot;强烈的电影式逆光&quot;,<br>    &quot;效果&quot;: [<br>      &quot;背景中的发光散景灯光&quot;,<br>      &quot;类似工作室或舞台灯光的效果&quot;<br>    ],<br>    &quot;对比度&quot;: &quot;高对比，深黑与明亮高光&quot;,<br>    &quot;氛围&quot;: &quot;情绪化、戏剧性、沉思&quot;<br>  },<br>  &quot;艺术指导&quot;: {<br>    &quot;风格&quot;: &quot;经典黑色电影摄影风格&quot;,<br>    &quot;色彩处理&quot;: {<br>      &quot;基础&quot;: &quot;黑白&quot;,<br>      &quot;强调&quot;: &quot;在琥珀/黄色镜片上的选择性色彩&quot;<br>    },<br>    &quot;质感细节&quot;: &quot;超细致的皮肤、头发和面料质感&quot;,<br>    &quot;美感&quot;: &quot;优雅、永恒、电影感&quot;<br>  },<br>  &quot;摄影风格&quot;: {<br>    &quot;类型&quot;: &quot;专业电影级人像摄影&quot;,<br>    &quot;图像质量&quot;: &quot;超高分辨率，细节清晰&quot;,<br>    &quot;风格定稿&quot;: &quot;精致、编辑风格、适合画廊展示&quot;<br>  },<br>  &quot;氛围&quot;: {<br>    &quot;基调&quot;: &quot;严肃、沉思、时尚&quot;,<br>    &quot;情感感觉&quot;: &quot;内敛的强烈感与经典男性气质&quot;<br>  },<br>  &quot;负面提示&quot;: [<br>    &quot;全彩图像&quot;,<br>    &quot;平坦的光线&quot;,<br>    &quot;低对比度&quot;,<br>    &quot;现代随意快照&quot;,<br>    &quot;过度锐化&quot;,<br>    &quot;塑料感皮肤&quot;,<br>    &quot;卡通&quot;,<br>    &quot;动漫&quot;<br>  ],<br>  &quot;响应格式&quot;: {<br>    &quot;类型&quot;: &quot;单张图像&quot;,<br>    &quot;方向&quot;: &quot;纵向&quot;,<br>    &quot;长宽比&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;目标&quot;: &quot;创造一幅戏剧性的黑白电影风格人像，具有经典黑色电影氛围并对颜色进行选择性强调&quot;,<br>  &quot;人物详情&quot;: {<br>    &quot;主体&quot;: {<br>      &quot;类型&quot;: &quot;年轻男性&quot;,<br>      &quot;发型&quot;: &quot;中长，自然造型&quot;,<br>      &quot;面部毛发&quot;: &quot;修整良好的胡须&quot;,<br>      &quot;姿势&quot;: &quot;沉思姿势，一只手放在下巴附近&quot;,<br>      &quot;表情&quot;: &quot;内省、自信、沉着&quot;,<br>      &quot;服装&quot;: &quot;深色夹克&quot;,<br>      &quot;配饰&quot;: {<br>        &quot;太阳镜&quot;: {<br>          &quot;款式&quot;: &quot;时尚飞行员款太阳镜&quot;,<br>          &quot;镜片颜色&quot;: &quot;暖色琥珀/黄色镜片&quot;,<br>          &quot;特殊处理&quot;: &quot;在整体单色图像中唯一有颜色的元素&quot;<br>        }<br>      }<br>    }<br>  },<br>  &quot;构图&quot;: {<br>    &quot;取景&quot;: &quot;特写到中近距离人像&quot;,<br>    &quot;角度&quot;: &quot;视平线角度，略带电影感的构图&quot;,<br>    &quot;景深&quot;: &quot;浅景深&quot;,<br>    &quot;对焦&quot;: &quot;面部特征和太阳镜的清晰对焦&quot;<br>  },<br>  &quot;灯光与氛围&quot;: {<br>    &quot;灯光风格&quot;: &quot;强烈的电影式逆光&quot;,<br>    &quot;效果&quot;: [<br>      &quot;背景中的发光散景灯光&quot;,<br>      &quot;类似工作室或舞台灯光的效果&quot;<br>    ],<br>    &quot;对比度&quot;: &quot;高对比，深黑与明亮高光&quot;,<br>    &quot;氛围&quot;: &quot;情绪化、戏剧性、沉思&quot;<br>  },<br>  &quot;艺术指导&quot;: {<br>    &quot;风格&quot;: &quot;经典黑色电影摄影风格&quot;,<br>    &quot;色彩处理&quot;: {<br>      &quot;基础&quot;: &quot;黑白&quot;,<br>      &quot;强调&quot;: &quot;在琥珀/黄色镜片上的选择性色彩&quot;<br>    },<br>    &quot;质感细节&quot;: &quot;超细致的皮肤、头发和面料质感&quot;,<br>    &quot;美感&quot;: &quot;优雅、永恒、电影感&quot;<br>  },<br>  &quot;摄影风格&quot;: {<br>    &quot;类型&quot;: &quot;专业电影级人像摄影&quot;,<br>    &quot;图像质量&quot;: &quot;超高分辨率，细节清晰&quot;,<br>    &quot;风格定稿&quot;: &quot;精致、编辑风格、适合画廊展示&quot;<br>  },<br>  &quot;氛围&quot;: {<br>    &quot;基调&quot;: &quot;严肃、沉思、时尚&quot;,<br>    &quot;情感感觉&quot;: &quot;内敛的强烈感与经典男性气质&quot;<br>  },<br>  &quot;负面提示&quot;: [<br>    &quot;全彩图像&quot;,<br>    &quot;平坦的光线&quot;,<br>    &quot;低对比度&quot;,<br>    &quot;现代随意快照&quot;,<br>    &quot;过度锐化&quot;,<br>    &quot;塑料感皮肤&quot;,<br>    &quot;卡通&quot;,<br>    &quot;动漫&quot;<br>  ],<br>  &quot;响应格式&quot;: {<br>    &quot;类型&quot;: &quot;单张图像&quot;,<br>    &quot;方向&quot;: &quot;纵向&quot;,<br>    &quot;长宽比&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"Objective\": \"Create a dramatic black-and-white cinematic portrait with a classic film-noir mood and selective color emphasis\",\n  \"PersonaDetails\": {\n    \"Subject\": {\n      \"Type\": \"Young man\",\n      \"Hair\": \"Medium-length, naturally styled\",\n      \"FacialHair\": \"Well-groomed beard\",\n      \"Pose\": \"Thoughtful pose with one hand resting near the chin\",\n      \"Expression\": \"Introspective, confident, composed\",\n      \"Wardrobe\": \"Dark jacket\",\n      \"Accessories\": {\n        \"Sunglasses\": {\n          \"Type\": \"Stylish aviator sunglasses\",\n          \"LensColor\": \"Warm amber/yellow-tinted lenses\",\n          \"SpecialTreatment\": \"Only colored element in an otherwise monochrome image\"\n        }\n      }\n    }\n  },\n  \"Composition\": {\n    \"Framing\": \"Close-up to mid-close portrait\",\n    \"Angle\": \"Eye-level, slightly cinematic framing\",\n    \"DepthOfField\": \"Shallow depth of field\",\n    \"Focus\": \"Sharp focus on facial features and sunglasses\"\n  },\n  \"LightingAndAtmosphere\": {\n    \"LightingStyle\": \"Strong cinematic backlighting\",\n    \"Effects\": [\n      \"Glowing bokeh lights in the background\",\n      \"Studio or stage-light appearance\"\n    ],\n    \"Contrast\": \"High contrast with deep blacks and bright highlights\",\n    \"Mood\": \"Moody, dramatic, contemplative\"\n  },\n  \"ArtDirection\": {\n    \"Style\": \"Classic film-noir photography\",\n    \"ColorTreatment\": {\n      \"Base\": \"Black-and-white\",\n      \"Accent\": \"Selective color on amber/yellow lenses\"\n    },\n    \"TextureDetail\": \"Ultra-detailed skin, hair, and fabric textures\",\n    \"Aesthetic\": \"Elegant, timeless, cinematic\"\n  },\n  \"PhotographyStyle\": {\n    \"Genre\": \"Professional cinematic portrait photography\",\n    \"ImageQuality\": \"Ultra-high resolution, crisp detail\",\n    \"Finish\": \"Refined, editorial, gallery-worthy\"\n  },\n  \"Mood\": {\n    \"Tone\": \"Serious, reflective, stylish\",\n    \"EmotionalFeel\": \"Quiet intensity and classic masculinity\"\n  },\n  \"NegativePrompt\": [\n    \"full color image\",\n    \"flat lighting\",\n    \"low contrast\",\n    \"modern casual snapshot\",\n    \"oversharpening\",\n    \"plastic skin\",\n    \"cartoon\",\n    \"anime\"\n  ],\n  \"ResponseFormat\": {\n    \"Type\": \"Single image\",\n    \"Orientation\": \"Portrait\",\n    \"AspectRatio\": \"2:3\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;Objective&quot;: &quot;Create a dramatic black-and-white cinematic portrait with a classic film-noir mood and selective color emphasis&quot;,<br>  &quot;PersonaDetails&quot;: {<br>    &quot;Subject&quot;: {<br>      &quot;Type&quot;: &quot;Young man&quot;,<br>      &quot;Hair&quot;: &quot;Medium-length, naturally styled&quot;,<br>      &quot;FacialHair&quot;: &quot;Well-groomed beard&quot;,<br>      &quot;Pose&quot;: &quot;Thoughtful pose with one hand resting near the chin&quot;,<br>      &quot;Expression&quot;: &quot;Introspective, confident, composed&quot;,<br>      &quot;Wardrobe&quot;: &quot;Dark jacket&quot;,<br>      &quot;Accessories&quot;: {<br>        &quot;Sunglasses&quot;: {<br>          &quot;Type&quot;: &quot;Stylish aviator sunglasses&quot;,<br>          &quot;LensColor&quot;: &quot;Warm amber/yellow-tinted lenses&quot;,<br>          &quot;SpecialTreatment&quot;: &quot;Only colored element in an otherwise monochrome image&quot;<br>        }<br>      }<br>    }<br>  },<br>  &quot;Composition&quot;: {<br>    &quot;Framing&quot;: &quot;Close-up to mid-close portrait&quot;,<br>    &quot;Angle&quot;: &quot;Eye-level, slightly cinematic framing&quot;,<br>    &quot;DepthOfField&quot;: &quot;Shallow depth of field&quot;,<br>    &quot;Focus&quot;: &quot;Sharp focus on facial features and sunglasses&quot;<br>  },<br>  &quot;LightingAndAtmosphere&quot;: {<br>    &quot;LightingStyle&quot;: &quot;Strong cinematic backlighting&quot;,<br>    &quot;Effects&quot;: [<br>      &quot;Glowing bokeh lights in the background&quot;,<br>      &quot;Studio or stage-light appearance&quot;<br>    ],<br>    &quot;Contrast&quot;: &quot;High contrast with deep blacks and bright highlights&quot;,<br>    &quot;Mood&quot;: &quot;Moody, dramatic, contemplative&quot;<br>  },<br>  &quot;ArtDirection&quot;: {<br>    &quot;Style&quot;: &quot;Classic film-noir photography&quot;,<br>    &quot;ColorTreatment&quot;: {<br>      &quot;Base&quot;: &quot;Black-and-white&quot;,<br>      &quot;Accent&quot;: &quot;Selective color on amber/yellow lenses&quot;<br>    },<br>    &quot;TextureDetail&quot;: &quot;Ultra-detailed skin, hair, and fabric textures&quot;,<br>    &quot;Aesthetic&quot;: &quot;Elegant, timeless, cinematic&quot;<br>  },<br>  &quot;PhotographyStyle&quot;: {<br>    &quot;Genre&quot;: &quot;Professional cinematic portrait photography&quot;,<br>    &quot;ImageQuality&quot;: &quot;Ultra-high resolution, crisp detail&quot;,<br>    &quot;Finish&quot;: &quot;Refined, editorial, gallery-worthy&quot;<br>  },<br>  &quot;Mood&quot;: {<br>    &quot;Tone&quot;: &quot;Serious, reflective, stylish&quot;,<br>    &quot;EmotionalFeel&quot;: &quot;Quiet intensity and classic masculinity&quot;<br>  },<br>  &quot;NegativePrompt&quot;: [<br>    &quot;full color image&quot;,<br>    &quot;flat lighting&quot;,<br>    &quot;low contrast&quot;,<br>    &quot;modern casual snapshot&quot;,<br>    &quot;oversharpening&quot;,<br>    &quot;plastic skin&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;<br>  ],<br>  &quot;ResponseFormat&quot;: {<br>    &quot;Type&quot;: &quot;Single image&quot;,<br>    &quot;Orientation&quot;: &quot;Portrait&quot;,<br>    &quot;AspectRatio&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;Objective&quot;: &quot;Create a dramatic black-and-white cinematic portrait with a classic film-noir mood and selective color emphasis&quot;,<br>  &quot;PersonaDetails&quot;: {<br>    &quot;Subject&quot;: {<br>      &quot;Type&quot;: &quot;Young man&quot;,<br>      &quot;Hair&quot;: &quot;Medium-length, naturally styled&quot;,<br>      &quot;FacialHair&quot;: &quot;Well-groomed beard&quot;,<br>      &quot;Pose&quot;: &quot;Thoughtful pose with one hand resting near the chin&quot;,<br>      &quot;Expression&quot;: &quot;Introspective, confident, composed&quot;,<br>      &quot;Wardrobe&quot;: &quot;Dark jacket&quot;,<br>      &quot;Accessories&quot;: {<br>        &quot;Sunglasses&quot;: {<br>          &quot;Type&quot;: &quot;Stylish aviator sunglasses&quot;,<br>          &quot;LensColor&quot;: &quot;Warm amber/yellow-tinted lenses&quot;,<br>          &quot;SpecialTreatment&quot;: &quot;Only colored element in an otherwise monochrome image&quot;<br>        }<br>      }<br>    }<br>  },<br>  &quot;Composition&quot;: {<br>    &quot;Framing&quot;: &quot;Close-up to mid-close portrait&quot;,<br>    &quot;Angle&quot;: &quot;Eye-level, slightly cinematic framing&quot;,<br>    &quot;DepthOfField&quot;: &quot;Shallow depth of field&quot;,<br>    &quot;Focus&quot;: &quot;Sharp focus on facial features and sunglasses&quot;<br>  },<br>  &quot;LightingAndAtmosphere&quot;: {<br>    &quot;LightingStyle&quot;: &quot;Strong cinematic backlighting&quot;,<br>    &quot;Effects&quot;: [<br>      &quot;Glowing bokeh lights in the background&quot;,<br>      &quot;Studio or stage-light appearance&quot;<br>    ],<br>    &quot;Contrast&quot;: &quot;High contrast with deep blacks and bright highlights&quot;,<br>    &quot;Mood&quot;: &quot;Moody, dramatic, contemplative&quot;<br>  },<br>  &quot;ArtDirection&quot;: {<br>    &quot;Style&quot;: &quot;Classic film-noir photography&quot;,<br>    &quot;ColorTreatment&quot;: {<br>      &quot;Base&quot;: &quot;Black-and-white&quot;,<br>      &quot;Accent&quot;: &quot;Selective color on amber/yellow lenses&quot;<br>    },<br>    &quot;TextureDetail&quot;: &quot;Ultra-detailed skin, hair, and fabric textures&quot;,<br>    &quot;Aesthetic&quot;: &quot;Elegant, timeless, cinematic&quot;<br>  },<br>  &quot;PhotographyStyle&quot;: {<br>    &quot;Genre&quot;: &quot;Professional cinematic portrait photography&quot;,<br>    &quot;ImageQuality&quot;: &quot;Ultra-high resolution, crisp detail&quot;,<br>    &quot;Finish&quot;: &quot;Refined, editorial, gallery-worthy&quot;<br>  },<br>  &quot;Mood&quot;: {<br>    &quot;Tone&quot;: &quot;Serious, reflective, stylish&quot;,<br>    &quot;EmotionalFeel&quot;: &quot;Quiet intensity and classic masculinity&quot;<br>  },<br>  &quot;NegativePrompt&quot;: [<br>    &quot;full color image&quot;,<br>    &quot;flat lighting&quot;,<br>    &quot;low contrast&quot;,<br>    &quot;modern casual snapshot&quot;,<br>    &quot;oversharpening&quot;,<br>    &quot;plastic skin&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;<br>  ],<br>  &quot;ResponseFormat&quot;: {<br>    &quot;Type&quot;: &quot;Single image&quot;,<br>    &quot;Orientation&quot;: &quot;Portrait&quot;,<br>    &quot;AspectRatio&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2010724643737686242-1.jpg" alt="&quot;Objective&quot;: &quot;Create a dramatic black and white cinematic por..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1073,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

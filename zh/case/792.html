@@ -7,11 +7,13 @@
     <title>&quot;Objective&quot;: &quot;Create a hyper realistic studio portrait blendi... #792 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;Objective&quot;: &quot;Create a hyper realistic studio portrait blending photorealism with a whimsical 3D cartoon miniature...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/792.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/792.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/792.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841500">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022610">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"目标\": \"创建一个超现实的工作室肖像，将照片级真实感与充满趣味的3D卡通迷你角色相结合\",\n  \"人物设定\": {\n    \"主要对象\": {\n      \"类型\": \"年轻男子\",\n      \"外观\": {\n        \"发型\": \"浅棕色头发，整理整齐\",\n        \"胡须/面部毛发\": \"整齐修剪的胡须\",\n        \"肌肤\": \"照片写实，自然质感\"\n      },\n      \"表情\": \"柔和、温暖的微笑\",\n      \"凝视\": \"凝视着指尖上的迷你角色\",\n      \"着装\": \"蓝色T恤\"\n    },\n    \"次要对象\": {\n      \"类型\": \"男性的微型3D卡通版本\",\n      \"比例\": \"微型，安放在指尖上\",\n      \"风格\": \"皮克斯风格的3D角色设计\",\n      \"比例特征\": \"夸张可爱的比例\",\n      \"特征\": {\n        \"眼睛\": \"大而生动\",\n        \"表情\": \"友好、俏皮的姿势\"\n      },\n      \"一致性\": \"与主主体相同的发型和服装\"\n    }\n  },\n  \"构图\": {\n    \"框架\": \"近景工作室肖像\",\n    \"焦点\": \"两张脸部实现超清聚焦\",\n    \"景深\": \"浅景深，背景柔和模糊\",\n    \"平衡\": \"干净、居中构图，突出互动\"\n  },\n  \"灯光与氛围\": {\n    \"灯光风格\": \"电影感的柔和工作室照明\",\n    \"高光\": \"皮肤和迷你角色上的柔和高光\",\n    \"背景\": \"深色中性背景\",\n    \"情绪\": \"现代、富有奇趣、温暖\"\n  },\n  \"美术指导\": {\n    \"风格融合\": [\n      \"写实的人物肖像\",\n      \"皮克斯风格的3D角色渲染\"\n    ],\n    \"细节水平\": \"高细节，纹理干净\",\n    \"现实主义平衡\": \"写实的人类与风格化的迷你版本相结合\"\n  },\n  \"摄影风格\": {\n    \"类型\": \"专业工作室肖像摄影\",\n    \"镜头视角\": \"85mm镜头视角\",\n    \"图像质量\": \"高分辨率，超清晰度\"\n  },\n  \"色彩与色调\": {\n    \"色彩调色板\": \"自然肤色，搭配柔和、现代的色彩\",\n    \"对比度\": \"对比度平衡，色调过渡平滑\"\n  },\n  \"负面提示\": [\n    \"卡通人像\",\n    \"恐怖谷效应\",\n    \"刺眼照明\",\n    \"颜色过饱和\",\n    \"脸部模糊\",\n    \"细节不足\",\n    \"构图混乱\"\n  ],\n  \"响应格式\": {\n    \"类型\": \"单幅图像\",\n    \"方向\": \"纵向\",\n    \"纵横比\": \"2:3\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;目标&quot;: &quot;创建一个超现实的工作室肖像，将照片级真实感与充满趣味的3D卡通迷你角色相结合&quot;,<br>  &quot;人物设定&quot;: {<br>    &quot;主要对象&quot;: {<br>      &quot;类型&quot;: &quot;年轻男子&quot;,<br>      &quot;外观&quot;: {<br>        &quot;发型&quot;: &quot;浅棕色头发，整理整齐&quot;,<br>        &quot;胡须/面部毛发&quot;: &quot;整齐修剪的胡须&quot;,<br>        &quot;肌肤&quot;: &quot;照片写实，自然质感&quot;<br>      },<br>      &quot;表情&quot;: &quot;柔和、温暖的微笑&quot;,<br>      &quot;凝视&quot;: &quot;凝视着指尖上的迷你角色&quot;,<br>      &quot;着装&quot;: &quot;蓝色T恤&quot;<br>    },<br>    &quot;次要对象&quot;: {<br>      &quot;类型&quot;: &quot;男性的微型3D卡通版本&quot;,<br>      &quot;比例&quot;: &quot;微型，安放在指尖上&quot;,<br>      &quot;风格&quot;: &quot;皮克斯风格的3D角色设计&quot;,<br>      &quot;比例特征&quot;: &quot;夸张可爱的比例&quot;,<br>      &quot;特征&quot;: {<br>        &quot;眼睛&quot;: &quot;大而生动&quot;,<br>        &quot;表情&quot;: &quot;友好、俏皮的姿势&quot;<br>      },<br>      &quot;一致性&quot;: &quot;与主主体相同的发型和服装&quot;<br>    }<br>  },<br>  &quot;构图&quot;: {<br>    &quot;框架&quot;: &quot;近景工作室肖像&quot;,<br>    &quot;焦点&quot;: &quot;两张脸部实现超清聚焦&quot;,<br>    &quot;景深&quot;: &quot;浅景深，背景柔和模糊&quot;,<br>    &quot;平衡&quot;: &quot;干净、居中构图，突出互动&quot;<br>  },<br>  &quot;灯光与氛围&quot;: {<br>    &quot;灯光风格&quot;: &quot;电影感的柔和工作室照明&quot;,<br>    &quot;高光&quot;: &quot;皮肤和迷你角色上的柔和高光&quot;,<br>    &quot;背景&quot;: &quot;深色中性背景&quot;,<br>    &quot;情绪&quot;: &quot;现代、富有奇趣、温暖&quot;<br>  },<br>  &quot;美术指导&quot;: {<br>    &quot;风格融合&quot;: [<br>      &quot;写实的人物肖像&quot;,<br>      &quot;皮克斯风格的3D角色渲染&quot;<br>    ],<br>    &quot;细节水平&quot;: &quot;高细节，纹理干净&quot;,<br>    &quot;现实主义平衡&quot;: &quot;写实的人类与风格化的迷你版本相结合&quot;<br>  },<br>  &quot;摄影风格&quot;: {<br>    &quot;类型&quot;: &quot;专业工作室肖像摄影&quot;,<br>    &quot;镜头视角&quot;: &quot;85mm镜头视角&quot;,<br>    &quot;图像质量&quot;: &quot;高分辨率，超清晰度&quot;<br>  },<br>  &quot;色彩与色调&quot;: {<br>    &quot;色彩调色板&quot;: &quot;自然肤色，搭配柔和、现代的色彩&quot;,<br>    &quot;对比度&quot;: &quot;对比度平衡，色调过渡平滑&quot;<br>  },<br>  &quot;负面提示&quot;: [<br>    &quot;卡通人像&quot;,<br>    &quot;恐怖谷效应&quot;,<br>    &quot;刺眼照明&quot;,<br>    &quot;颜色过饱和&quot;,<br>    &quot;脸部模糊&quot;,<br>    &quot;细节不足&quot;,<br>    &quot;构图混乱&quot;<br>  ],<br>  &quot;响应格式&quot;: {<br>    &quot;类型&quot;: &quot;单幅图像&quot;,<br>    &quot;方向&quot;: &quot;纵向&quot;,<br>    &quot;纵横比&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;目标&quot;: &quot;创建一个超现实的工作室肖像，将照片级真实感与充满趣味的3D卡通迷你角色相结合&quot;,<br>  &quot;人物设定&quot;: {<br>    &quot;主要对象&quot;: {<br>      &quot;类型&quot;: &quot;年轻男子&quot;,<br>      &quot;外观&quot;: {<br>        &quot;发型&quot;: &quot;浅棕色头发，整理整齐&quot;,<br>        &quot;胡须/面部毛发&quot;: &quot;整齐修剪的胡须&quot;,<br>        &quot;肌肤&quot;: &quot;照片写实，自然质感&quot;<br>      },<br>      &quot;表情&quot;: &quot;柔和、温暖的微笑&quot;,<br>      &quot;凝视&quot;: &quot;凝视着指尖上的迷你角色&quot;,<br>      &quot;着装&quot;: &quot;蓝色T恤&quot;<br>    },<br>    &quot;次要对象&quot;: {<br>      &quot;类型&quot;: &quot;男性的微型3D卡通版本&quot;,<br>      &quot;比例&quot;: &quot;微型，安放在指尖上&quot;,<br>      &quot;风格&quot;: &quot;皮克斯风格的3D角色设计&quot;,<br>      &quot;比例特征&quot;: &quot;夸张可爱的比例&quot;,<br>      &quot;特征&quot;: {<br>        &quot;眼睛&quot;: &quot;大而生动&quot;,<br>        &quot;表情&quot;: &quot;友好、俏皮的姿势&quot;<br>      },<br>      &quot;一致性&quot;: &quot;与主主体相同的发型和服装&quot;<br>    }<br>  },<br>  &quot;构图&quot;: {<br>    &quot;框架&quot;: &quot;近景工作室肖像&quot;,<br>    &quot;焦点&quot;: &quot;两张脸部实现超清聚焦&quot;,<br>    &quot;景深&quot;: &quot;浅景深，背景柔和模糊&quot;,<br>    &quot;平衡&quot;: &quot;干净、居中构图，突出互动&quot;<br>  },<br>  &quot;灯光与氛围&quot;: {<br>    &quot;灯光风格&quot;: &quot;电影感的柔和工作室照明&quot;,<br>    &quot;高光&quot;: &quot;皮肤和迷你角色上的柔和高光&quot;,<br>    &quot;背景&quot;: &quot;深色中性背景&quot;,<br>    &quot;情绪&quot;: &quot;现代、富有奇趣、温暖&quot;<br>  },<br>  &quot;美术指导&quot;: {<br>    &quot;风格融合&quot;: [<br>      &quot;写实的人物肖像&quot;,<br>      &quot;皮克斯风格的3D角色渲染&quot;<br>    ],<br>    &quot;细节水平&quot;: &quot;高细节，纹理干净&quot;,<br>    &quot;现实主义平衡&quot;: &quot;写实的人类与风格化的迷你版本相结合&quot;<br>  },<br>  &quot;摄影风格&quot;: {<br>    &quot;类型&quot;: &quot;专业工作室肖像摄影&quot;,<br>    &quot;镜头视角&quot;: &quot;85mm镜头视角&quot;,<br>    &quot;图像质量&quot;: &quot;高分辨率，超清晰度&quot;<br>  },<br>  &quot;色彩与色调&quot;: {<br>    &quot;色彩调色板&quot;: &quot;自然肤色，搭配柔和、现代的色彩&quot;,<br>    &quot;对比度&quot;: &quot;对比度平衡，色调过渡平滑&quot;<br>  },<br>  &quot;负面提示&quot;: [<br>    &quot;卡通人像&quot;,<br>    &quot;恐怖谷效应&quot;,<br>    &quot;刺眼照明&quot;,<br>    &quot;颜色过饱和&quot;,<br>    &quot;脸部模糊&quot;,<br>    &quot;细节不足&quot;,<br>    &quot;构图混乱&quot;<br>  ],<br>  &quot;响应格式&quot;: {<br>    &quot;类型&quot;: &quot;单幅图像&quot;,<br>    &quot;方向&quot;: &quot;纵向&quot;,<br>    &quot;纵横比&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"Objective\": \"Create a hyper-realistic studio portrait blending photorealism with a whimsical 3D cartoon miniature character\",\n  \"PersonaDetails\": {\n    \"PrimarySubject\": {\n      \"Type\": \"Young man\",\n      \"Appearance\": {\n        \"Hair\": \"Light brown hair, neatly styled\",\n        \"FacialHair\": \"Neatly trimmed beard\",\n        \"Skin\": \"Photorealistic, natural texture\"\n      },\n      \"Expression\": \"Soft, warm smile\",\n      \"Gaze\": \"Looking at the miniature character on his fingertips\",\n      \"Wardrobe\": \"Blue t-shirt\"\n    },\n    \"SecondarySubject\": {\n      \"Type\": \"Tiny 3D cartoon version of the man\",\n      \"Scale\": \"Miniature, resting on fingertips\",\n      \"Style\": \"Pixar-style 3D character design\",\n      \"Proportions\": \"Exaggerated cute proportions\",\n      \"Features\": {\n        \"Eyes\": \"Large, expressive\",\n        \"Expression\": \"Friendly, playful pose\"\n      },\n      \"Consistency\": \"Matching hairstyle and outfit of the main subject\"\n    }\n  },\n  \"Composition\": {\n    \"Framing\": \"Close-up studio portrait\",\n    \"Focus\": \"Ultra-sharp focus on both faces\",\n    \"DepthOfField\": \"Shallow depth of field with soft background blur\",\n    \"Balance\": \"Clean, centered composition emphasizing interaction\"\n  },\n  \"LightingAndMood\": {\n    \"LightingStyle\": \"Cinematic soft studio lighting\",\n    \"Highlights\": \"Gentle highlights on skin and miniature character\",\n    \"Background\": \"Dark neutral backdrop\",\n    \"Mood\": \"Modern, whimsical, warm\"\n  },\n  \"ArtDirection\": {\n    \"StyleFusion\": [\n      \"Photorealistic human portrait\",\n      \"Pixar-style 3D character rendering\"\n    ],\n    \"DetailLevel\": \"High detail with clean textures\",\n    \"RealismBalance\": \"Realistic human combined with stylized miniature\"\n  },\n  \"PhotographyStyle\": {\n    \"Genre\": \"Professional studio portrait photography\",\n    \"LensLook\": \"85mm lens perspective\",\n    \"ImageQuality\": \"High resolution, ultra-sharp clarity\"\n  },\n  \"ColorAndTone\": {\n    \"ColorPalette\": \"Natural skin tones with soft, modern colors\",\n    \"Contrast\": \"Balanced contrast, smooth tonal transitions\"\n  },\n  \"NegativePrompt\": [\n    \"cartoon human\",\n    \"uncanny valley\",\n    \"harsh lighting\",\n    \"oversaturated colors\",\n    \"blurry faces\",\n    \"low detail\",\n    \"messy composition\"\n  ],\n  \"ResponseFormat\": {\n    \"Type\": \"Single image\",\n    \"Orientation\": \"Portrait\",\n    \"AspectRatio\": \"2:3\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;Objective&quot;: &quot;Create a hyper-realistic studio portrait blending photorealism with a whimsical 3D cartoon miniature character&quot;,<br>  &quot;PersonaDetails&quot;: {<br>    &quot;PrimarySubject&quot;: {<br>      &quot;Type&quot;: &quot;Young man&quot;,<br>      &quot;Appearance&quot;: {<br>        &quot;Hair&quot;: &quot;Light brown hair, neatly styled&quot;,<br>        &quot;FacialHair&quot;: &quot;Neatly trimmed beard&quot;,<br>        &quot;Skin&quot;: &quot;Photorealistic, natural texture&quot;<br>      },<br>      &quot;Expression&quot;: &quot;Soft, warm smile&quot;,<br>      &quot;Gaze&quot;: &quot;Looking at the miniature character on his fingertips&quot;,<br>      &quot;Wardrobe&quot;: &quot;Blue t-shirt&quot;<br>    },<br>    &quot;SecondarySubject&quot;: {<br>      &quot;Type&quot;: &quot;Tiny 3D cartoon version of the man&quot;,<br>      &quot;Scale&quot;: &quot;Miniature, resting on fingertips&quot;,<br>      &quot;Style&quot;: &quot;Pixar-style 3D character design&quot;,<br>      &quot;Proportions&quot;: &quot;Exaggerated cute proportions&quot;,<br>      &quot;Features&quot;: {<br>        &quot;Eyes&quot;: &quot;Large, expressive&quot;,<br>        &quot;Expression&quot;: &quot;Friendly, playful pose&quot;<br>      },<br>      &quot;Consistency&quot;: &quot;Matching hairstyle and outfit of the main subject&quot;<br>    }<br>  },<br>  &quot;Composition&quot;: {<br>    &quot;Framing&quot;: &quot;Close-up studio portrait&quot;,<br>    &quot;Focus&quot;: &quot;Ultra-sharp focus on both faces&quot;,<br>    &quot;DepthOfField&quot;: &quot;Shallow depth of field with soft background blur&quot;,<br>    &quot;Balance&quot;: &quot;Clean, centered composition emphasizing interaction&quot;<br>  },<br>  &quot;LightingAndMood&quot;: {<br>    &quot;LightingStyle&quot;: &quot;Cinematic soft studio lighting&quot;,<br>    &quot;Highlights&quot;: &quot;Gentle highlights on skin and miniature character&quot;,<br>    &quot;Background&quot;: &quot;Dark neutral backdrop&quot;,<br>    &quot;Mood&quot;: &quot;Modern, whimsical, warm&quot;<br>  },<br>  &quot;ArtDirection&quot;: {<br>    &quot;StyleFusion&quot;: [<br>      &quot;Photorealistic human portrait&quot;,<br>      &quot;Pixar-style 3D character rendering&quot;<br>    ],<br>    &quot;DetailLevel&quot;: &quot;High detail with clean textures&quot;,<br>    &quot;RealismBalance&quot;: &quot;Realistic human combined with stylized miniature&quot;<br>  },<br>  &quot;PhotographyStyle&quot;: {<br>    &quot;Genre&quot;: &quot;Professional studio portrait photography&quot;,<br>    &quot;LensLook&quot;: &quot;85mm lens perspective&quot;,<br>    &quot;ImageQuality&quot;: &quot;High resolution, ultra-sharp clarity&quot;<br>  },<br>  &quot;ColorAndTone&quot;: {<br>    &quot;ColorPalette&quot;: &quot;Natural skin tones with soft, modern colors&quot;,<br>    &quot;Contrast&quot;: &quot;Balanced contrast, smooth tonal transitions&quot;<br>  },<br>  &quot;NegativePrompt&quot;: [<br>    &quot;cartoon human&quot;,<br>    &quot;uncanny valley&quot;,<br>    &quot;harsh lighting&quot;,<br>    &quot;oversaturated colors&quot;,<br>    &quot;blurry faces&quot;,<br>    &quot;low detail&quot;,<br>    &quot;messy composition&quot;<br>  ],<br>  &quot;ResponseFormat&quot;: {<br>    &quot;Type&quot;: &quot;Single image&quot;,<br>    &quot;Orientation&quot;: &quot;Portrait&quot;,<br>    &quot;AspectRatio&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;Objective&quot;: &quot;Create a hyper-realistic studio portrait blending photorealism with a whimsical 3D cartoon miniature character&quot;,<br>  &quot;PersonaDetails&quot;: {<br>    &quot;PrimarySubject&quot;: {<br>      &quot;Type&quot;: &quot;Young man&quot;,<br>      &quot;Appearance&quot;: {<br>        &quot;Hair&quot;: &quot;Light brown hair, neatly styled&quot;,<br>        &quot;FacialHair&quot;: &quot;Neatly trimmed beard&quot;,<br>        &quot;Skin&quot;: &quot;Photorealistic, natural texture&quot;<br>      },<br>      &quot;Expression&quot;: &quot;Soft, warm smile&quot;,<br>      &quot;Gaze&quot;: &quot;Looking at the miniature character on his fingertips&quot;,<br>      &quot;Wardrobe&quot;: &quot;Blue t-shirt&quot;<br>    },<br>    &quot;SecondarySubject&quot;: {<br>      &quot;Type&quot;: &quot;Tiny 3D cartoon version of the man&quot;,<br>      &quot;Scale&quot;: &quot;Miniature, resting on fingertips&quot;,<br>      &quot;Style&quot;: &quot;Pixar-style 3D character design&quot;,<br>      &quot;Proportions&quot;: &quot;Exaggerated cute proportions&quot;,<br>      &quot;Features&quot;: {<br>        &quot;Eyes&quot;: &quot;Large, expressive&quot;,<br>        &quot;Expression&quot;: &quot;Friendly, playful pose&quot;<br>      },<br>      &quot;Consistency&quot;: &quot;Matching hairstyle and outfit of the main subject&quot;<br>    }<br>  },<br>  &quot;Composition&quot;: {<br>    &quot;Framing&quot;: &quot;Close-up studio portrait&quot;,<br>    &quot;Focus&quot;: &quot;Ultra-sharp focus on both faces&quot;,<br>    &quot;DepthOfField&quot;: &quot;Shallow depth of field with soft background blur&quot;,<br>    &quot;Balance&quot;: &quot;Clean, centered composition emphasizing interaction&quot;<br>  },<br>  &quot;LightingAndMood&quot;: {<br>    &quot;LightingStyle&quot;: &quot;Cinematic soft studio lighting&quot;,<br>    &quot;Highlights&quot;: &quot;Gentle highlights on skin and miniature character&quot;,<br>    &quot;Background&quot;: &quot;Dark neutral backdrop&quot;,<br>    &quot;Mood&quot;: &quot;Modern, whimsical, warm&quot;<br>  },<br>  &quot;ArtDirection&quot;: {<br>    &quot;StyleFusion&quot;: [<br>      &quot;Photorealistic human portrait&quot;,<br>      &quot;Pixar-style 3D character rendering&quot;<br>    ],<br>    &quot;DetailLevel&quot;: &quot;High detail with clean textures&quot;,<br>    &quot;RealismBalance&quot;: &quot;Realistic human combined with stylized miniature&quot;<br>  },<br>  &quot;PhotographyStyle&quot;: {<br>    &quot;Genre&quot;: &quot;Professional studio portrait photography&quot;,<br>    &quot;LensLook&quot;: &quot;85mm lens perspective&quot;,<br>    &quot;ImageQuality&quot;: &quot;High resolution, ultra-sharp clarity&quot;<br>  },<br>  &quot;ColorAndTone&quot;: {<br>    &quot;ColorPalette&quot;: &quot;Natural skin tones with soft, modern colors&quot;,<br>    &quot;Contrast&quot;: &quot;Balanced contrast, smooth tonal transitions&quot;<br>  },<br>  &quot;NegativePrompt&quot;: [<br>    &quot;cartoon human&quot;,<br>    &quot;uncanny valley&quot;,<br>    &quot;harsh lighting&quot;,<br>    &quot;oversaturated colors&quot;,<br>    &quot;blurry faces&quot;,<br>    &quot;low detail&quot;,<br>    &quot;messy composition&quot;<br>  ],<br>  &quot;ResponseFormat&quot;: {<br>    &quot;Type&quot;: &quot;Single image&quot;,<br>    &quot;Orientation&quot;: &quot;Portrait&quot;,<br>    &quot;AspectRatio&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008818683234361811-1.jpg" alt="&quot;Objective&quot;: &quot;Create a hyper realistic studio portrait blendi..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 792,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

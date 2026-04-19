@@ -7,11 +7,13 @@
     <title>&quot;master prompt&quot;: { #2247 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;master prompt&quot;: { &quot;scene type&quot;: &quot;ultra realistic luxury skincare commercial photography&quot;, &quot;product&quot;: { &quot;type&quot;: &quot;pr...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2247.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2247.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2247.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844256">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023484">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"master_prompt\": {\n\"scene_type\": \"超写实奢华护肤商业摄影\",\n\n\"product\": {  \n  \"type\": \"高端美容精华小瓶\",  \n  \"brand_name\": \"VÉRÉLLE\",  \n  \"product_name\": \"光华琼露 — 青春注入\",  \n  \"container_shape\": \"高身刻面水晶小瓶，优雅的垂直几何造型\",  \n  \"material\": \"光学水晶玻璃\",  \n  \"finish\": \"棱镜般的通透感，伴随柔和的光线散射\",  \n  \"cap_design\": \"拉丝香槟金瓶盖，带有斜面边缘\",  \n\n  \"label_design\": {  \n    \"style\": \"巴黎风格奢华衬线字体\",  \n    \"primary_text\": \"光华琼露\",  \n    \"secondary_text\": \"青春注入\",  \n    \"finish\": \"香槟色烫金压纹，带微雕刻细节\"  \n  },  \n\n  \"liquid_color\": \"柔和的金色琼液，带有发光的微珠光闪烁\"  \n},  \n\n\"composition\": {  \n  \"placement\": \"居中主角摆放\",  \n  \"pedestal\": \"象牙白大理石基座，带细微金色纹理\",  \n  \"base_surface\": \"抛光反光石材表面\",  \n\n  \"surrounding_elements\": [  \n    \"白色兰花花瓣\",  \n    \"金色蜂蜜滴\",  \n    \"洋甘菊花朵\",  \n    \"玻璃露珠球\"  \n  ],  \n\n  \"liquid_effect\": \"小瓶后方的柔和金色薄雾旋涡\"  \n},  \n\n\"lighting\": {  \n  \"style\": \"高端美容工作室灯光\",  \n  \"key_light\": \"柔和的正面光以突显玻璃清晰感\",  \n  \"rim_light\": \"温暖的边缘高光，强化水晶棱角\",  \n  \"fill_light\": \"奢华的柔光填充\",  \n  \"reflections\": \"可控高光以呈现高级质感\"  \n},  \n\n\"background\": {  \n  \"color\": \"由温暖象牙白到香槟色的渐变\",  \n  \"style\": \"简洁的编辑风奢华背景\",  \n  \"depth\": \"电影感的浅景深与优雅的衰减\"  \n},  \n\n\"camera\": {  \n  \"angle\": \"略低的主角视角\",  \n  \"focus\": \"聚焦水晶棱角与字体\",  \n  \"depth_of_field\": \"电影感浅景深\",  \n  \"resolution\": \"8K 超高细节清晰度\"  \n},  \n\n\"mood_keywords\": [  \n  \"巴黎式奢华\",  \n  \"永恒之美\",  \n  \"焕采肌肤\",  \n  \"优雅纯净\",  \n  \"高端护肤宣传\",  \n  \"精致的高级感\"  \n]\n\n}\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>&quot;master_prompt&quot;: {<br>&quot;scene_type&quot;: &quot;超写实奢华护肤商业摄影&quot;,</p><p>&quot;product&quot;: {  <br>  &quot;type&quot;: &quot;高端美容精华小瓶&quot;,  <br>  &quot;brand_name&quot;: &quot;VÉRÉLLE&quot;,  <br>  &quot;product_name&quot;: &quot;光华琼露 — 青春注入&quot;,  <br>  &quot;container_shape&quot;: &quot;高身刻面水晶小瓶，优雅的垂直几何造型&quot;,  <br>  &quot;material&quot;: &quot;光学水晶玻璃&quot;,  <br>  &quot;finish&quot;: &quot;棱镜般的通透感，伴随柔和的光线散射&quot;,  <br>  &quot;cap_design&quot;: &quot;拉丝香槟金瓶盖，带有斜面边缘&quot;,</p><p>&quot;label_design&quot;: {  <br>    &quot;style&quot;: &quot;巴黎风格奢华衬线字体&quot;,  <br>    &quot;primary_text&quot;: &quot;光华琼露&quot;,  <br>    &quot;secondary_text&quot;: &quot;青春注入&quot;,  <br>    &quot;finish&quot;: &quot;香槟色烫金压纹，带微雕刻细节&quot;  <br>  },</p><p>&quot;liquid_color&quot;: &quot;柔和的金色琼液，带有发光的微珠光闪烁&quot;  <br>},</p><p>&quot;composition&quot;: {  <br>  &quot;placement&quot;: &quot;居中主角摆放&quot;,  <br>  &quot;pedestal&quot;: &quot;象牙白大理石基座，带细微金色纹理&quot;,  <br>  &quot;base_surface&quot;: &quot;抛光反光石材表面&quot;,</p><p>&quot;surrounding_elements&quot;: [  <br>    &quot;白色兰花花瓣&quot;,  <br>    &quot;金色蜂蜜滴&quot;,  <br>    &quot;洋甘菊花朵&quot;,  <br>    &quot;玻璃露珠球&quot;  <br>  ],</p><p>&quot;liquid_effect&quot;: &quot;小瓶后方的柔和金色薄雾旋涡&quot;  <br>},</p><p>&quot;lighting&quot;: {  <br>  &quot;style&quot;: &quot;高端美容工作室灯光&quot;,  <br>  &quot;key_light&quot;: &quot;柔和的正面光以突显玻璃清晰感&quot;,  <br>  &quot;rim_light&quot;: &quot;温暖的边缘高光，强化水晶棱角&quot;,  <br>  &quot;fill_light&quot;: &quot;奢华的柔光填充&quot;,  <br>  &quot;reflections&quot;: &quot;可控高光以呈现高级质感&quot;  <br>},</p><p>&quot;background&quot;: {  <br>  &quot;color&quot;: &quot;由温暖象牙白到香槟色的渐变&quot;,  <br>  &quot;style&quot;: &quot;简洁的编辑风奢华背景&quot;,  <br>  &quot;depth&quot;: &quot;电影感的浅景深与优雅的衰减&quot;  <br>},</p><p>&quot;camera&quot;: {  <br>  &quot;angle&quot;: &quot;略低的主角视角&quot;,  <br>  &quot;focus&quot;: &quot;聚焦水晶棱角与字体&quot;,  <br>  &quot;depth_of_field&quot;: &quot;电影感浅景深&quot;,  <br>  &quot;resolution&quot;: &quot;8K 超高细节清晰度&quot;  <br>},</p><p>&quot;mood_keywords&quot;: [  <br>  &quot;巴黎式奢华&quot;,  <br>  &quot;永恒之美&quot;,  <br>  &quot;焕采肌肤&quot;,  <br>  &quot;优雅纯净&quot;,  <br>  &quot;高端护肤宣传&quot;,  <br>  &quot;精致的高级感&quot;  <br>]</p><p>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;master_prompt&quot;: {<br>&quot;scene_type&quot;: &quot;超写实奢华护肤商业摄影&quot;,</p><p>&quot;product&quot;: {  <br>  &quot;type&quot;: &quot;高端美容精华小瓶&quot;,  <br>  &quot;brand_name&quot;: &quot;VÉRÉLLE&quot;,  <br>  &quot;product_name&quot;: &quot;光华琼露 — 青春注入&quot;,  <br>  &quot;container_shape&quot;: &quot;高身刻面水晶小瓶，优雅的垂直几何造型&quot;,  <br>  &quot;material&quot;: &quot;光学水晶玻璃&quot;,  <br>  &quot;finish&quot;: &quot;棱镜般的通透感，伴随柔和的光线散射&quot;,  <br>  &quot;cap_design&quot;: &quot;拉丝香槟金瓶盖，带有斜面边缘&quot;,</p><p>&quot;label_design&quot;: {  <br>    &quot;style&quot;: &quot;巴黎风格奢华衬线字体&quot;,  <br>    &quot;primary_text&quot;: &quot;光华琼露&quot;,  <br>    &quot;secondary_text&quot;: &quot;青春注入&quot;,  <br>    &quot;finish&quot;: &quot;香槟色烫金压纹，带微雕刻细节&quot;  <br>  },</p><p>&quot;liquid_color&quot;: &quot;柔和的金色琼液，带有发光的微珠光闪烁&quot;  <br>},</p><p>&quot;composition&quot;: {  <br>  &quot;placement&quot;: &quot;居中主角摆放&quot;,  <br>  &quot;pedestal&quot;: &quot;象牙白大理石基座，带细微金色纹理&quot;,  <br>  &quot;base_surface&quot;: &quot;抛光反光石材表面&quot;,</p><p>&quot;surrounding_elements&quot;: [  <br>    &quot;白色兰花花瓣&quot;,  <br>    &quot;金色蜂蜜滴&quot;,  <br>    &quot;洋甘菊花朵&quot;,  <br>    &quot;玻璃露珠球&quot;  <br>  ],</p><p>&quot;liquid_effect&quot;: &quot;小瓶后方的柔和金色薄雾旋涡&quot;  <br>},</p><p>&quot;lighting&quot;: {  <br>  &quot;style&quot;: &quot;高端美容工作室灯光&quot;,  <br>  &quot;key_light&quot;: &quot;柔和的正面光以突显玻璃清晰感&quot;,  <br>  &quot;rim_light&quot;: &quot;温暖的边缘高光，强化水晶棱角&quot;,  <br>  &quot;fill_light&quot;: &quot;奢华的柔光填充&quot;,  <br>  &quot;reflections&quot;: &quot;可控高光以呈现高级质感&quot;  <br>},</p><p>&quot;background&quot;: {  <br>  &quot;color&quot;: &quot;由温暖象牙白到香槟色的渐变&quot;,  <br>  &quot;style&quot;: &quot;简洁的编辑风奢华背景&quot;,  <br>  &quot;depth&quot;: &quot;电影感的浅景深与优雅的衰减&quot;  <br>},</p><p>&quot;camera&quot;: {  <br>  &quot;angle&quot;: &quot;略低的主角视角&quot;,  <br>  &quot;focus&quot;: &quot;聚焦水晶棱角与字体&quot;,  <br>  &quot;depth_of_field&quot;: &quot;电影感浅景深&quot;,  <br>  &quot;resolution&quot;: &quot;8K 超高细节清晰度&quot;  <br>},</p><p>&quot;mood_keywords&quot;: [  <br>  &quot;巴黎式奢华&quot;,  <br>  &quot;永恒之美&quot;,  <br>  &quot;焕采肌肤&quot;,  <br>  &quot;优雅纯净&quot;,  <br>  &quot;高端护肤宣传&quot;,  <br>  &quot;精致的高级感&quot;  <br>]</p><p>}<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"master_prompt\": {\n\"scene_type\": \"ultra-realistic luxury skincare commercial photography\",\n\n\"product\": {  \n  \"type\": \"premium beauty elixir vial\",  \n  \"brand_name\": \"VÉRÉLLE\",  \n  \"product_name\": \"Lumière Nectar — Youth Infusions\",  \n  \"container_shape\": \"tall faceted crystal vial with elegant vertical geometry\",  \n  \"material\": \"optical crystal glass\",  \n  \"finish\": \"prismatic clarity with soft light dispersion\",  \n  \"cap_design\": \"brushed champagne-gold cap with beveled edge\",  \n\n  \"label_design\": {  \n    \"style\": \"Parisian luxury serif typography\",  \n    \"primary_text\": \"Lumière Nectar\",  \n    \"secondary_text\": \"Youth Infusions\",  \n    \"finish\": \"champagne foil emboss with micro-engraved detailing\"  \n  },  \n\n  \"liquid_color\": \"soft golden nectar with luminous micro-pearl shimmer\"  \n},  \n\n\"composition\": {  \n  \"placement\": \"center hero placement\",  \n  \"pedestal\": \"ivory marble pedestal with subtle gold veining\",  \n  \"base_surface\": \"polished reflective stone surface\",  \n\n  \"surrounding_elements\": [  \n    \"white orchid petals\",  \n    \"golden honey droplets\",  \n    \"chamomile blossoms\",  \n    \"glass dew spheres\"  \n  ],  \n\n  \"liquid_effect\": \"soft golden mist swirl behind the vial\"  \n},  \n\n\"lighting\": {  \n  \"style\": \"high-end beauty studio lighting\",  \n  \"key_light\": \"soft frontal glow for glass clarity\",  \n  \"rim_light\": \"warm rim highlights enhancing crystal edges\",  \n  \"fill_light\": \"luxury soft diffusion\",  \n  \"reflections\": \"controlled highlights for premium finish\"  \n},  \n\n\"background\": {  \n  \"color\": \"warm ivory to champagne gradient\",  \n  \"style\": \"clean editorial luxury backdrop\",  \n  \"depth\": \"cinematic shallow depth with elegant falloff\"  \n},  \n\n\"camera\": {  \n  \"angle\": \"slightly low hero angle\",  \n  \"focus\": \"crystal edges and typography\",  \n  \"depth_of_field\": \"cinematic shallow depth\",  \n  \"resolution\": \"8K ultra-detailed clarity\"  \n},  \n\n\"mood_keywords\": [  \n  \"Parisian luxury\",  \n  \"timeless beauty\",  \n  \"radiant skin\",  \n  \"elegant purity\",  \n  \"premium skincare campaign\",  \n  \"refined sophistication\"  \n]\n\n}\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>&quot;master_prompt&quot;: {<br>&quot;scene_type&quot;: &quot;ultra-realistic luxury skincare commercial photography&quot;,</p><p>&quot;product&quot;: {  <br>  &quot;type&quot;: &quot;premium beauty elixir vial&quot;,  <br>  &quot;brand_name&quot;: &quot;VÉRÉLLE&quot;,  <br>  &quot;product_name&quot;: &quot;Lumière Nectar — Youth Infusions&quot;,  <br>  &quot;container_shape&quot;: &quot;tall faceted crystal vial with elegant vertical geometry&quot;,  <br>  &quot;material&quot;: &quot;optical crystal glass&quot;,  <br>  &quot;finish&quot;: &quot;prismatic clarity with soft light dispersion&quot;,  <br>  &quot;cap_design&quot;: &quot;brushed champagne-gold cap with beveled edge&quot;,</p><p>&quot;label_design&quot;: {  <br>    &quot;style&quot;: &quot;Parisian luxury serif typography&quot;,  <br>    &quot;primary_text&quot;: &quot;Lumière Nectar&quot;,  <br>    &quot;secondary_text&quot;: &quot;Youth Infusions&quot;,  <br>    &quot;finish&quot;: &quot;champagne foil emboss with micro-engraved detailing&quot;  <br>  },</p><p>&quot;liquid_color&quot;: &quot;soft golden nectar with luminous micro-pearl shimmer&quot;  <br>},</p><p>&quot;composition&quot;: {  <br>  &quot;placement&quot;: &quot;center hero placement&quot;,  <br>  &quot;pedestal&quot;: &quot;ivory marble pedestal with subtle gold veining&quot;,  <br>  &quot;base_surface&quot;: &quot;polished reflective stone surface&quot;,</p><p>&quot;surrounding_elements&quot;: [  <br>    &quot;white orchid petals&quot;,  <br>    &quot;golden honey droplets&quot;,  <br>    &quot;chamomile blossoms&quot;,  <br>    &quot;glass dew spheres&quot;  <br>  ],</p><p>&quot;liquid_effect&quot;: &quot;soft golden mist swirl behind the vial&quot;  <br>},</p><p>&quot;lighting&quot;: {  <br>  &quot;style&quot;: &quot;high-end beauty studio lighting&quot;,  <br>  &quot;key_light&quot;: &quot;soft frontal glow for glass clarity&quot;,  <br>  &quot;rim_light&quot;: &quot;warm rim highlights enhancing crystal edges&quot;,  <br>  &quot;fill_light&quot;: &quot;luxury soft diffusion&quot;,  <br>  &quot;reflections&quot;: &quot;controlled highlights for premium finish&quot;  <br>},</p><p>&quot;background&quot;: {  <br>  &quot;color&quot;: &quot;warm ivory to champagne gradient&quot;,  <br>  &quot;style&quot;: &quot;clean editorial luxury backdrop&quot;,  <br>  &quot;depth&quot;: &quot;cinematic shallow depth with elegant falloff&quot;  <br>},</p><p>&quot;camera&quot;: {  <br>  &quot;angle&quot;: &quot;slightly low hero angle&quot;,  <br>  &quot;focus&quot;: &quot;crystal edges and typography&quot;,  <br>  &quot;depth_of_field&quot;: &quot;cinematic shallow depth&quot;,  <br>  &quot;resolution&quot;: &quot;8K ultra-detailed clarity&quot;  <br>},</p><p>&quot;mood_keywords&quot;: [  <br>  &quot;Parisian luxury&quot;,  <br>  &quot;timeless beauty&quot;,  <br>  &quot;radiant skin&quot;,  <br>  &quot;elegant purity&quot;,  <br>  &quot;premium skincare campaign&quot;,  <br>  &quot;refined sophistication&quot;  <br>]</p><p>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;master_prompt&quot;: {<br>&quot;scene_type&quot;: &quot;ultra-realistic luxury skincare commercial photography&quot;,</p><p>&quot;product&quot;: {  <br>  &quot;type&quot;: &quot;premium beauty elixir vial&quot;,  <br>  &quot;brand_name&quot;: &quot;VÉRÉLLE&quot;,  <br>  &quot;product_name&quot;: &quot;Lumière Nectar — Youth Infusions&quot;,  <br>  &quot;container_shape&quot;: &quot;tall faceted crystal vial with elegant vertical geometry&quot;,  <br>  &quot;material&quot;: &quot;optical crystal glass&quot;,  <br>  &quot;finish&quot;: &quot;prismatic clarity with soft light dispersion&quot;,  <br>  &quot;cap_design&quot;: &quot;brushed champagne-gold cap with beveled edge&quot;,</p><p>&quot;label_design&quot;: {  <br>    &quot;style&quot;: &quot;Parisian luxury serif typography&quot;,  <br>    &quot;primary_text&quot;: &quot;Lumière Nectar&quot;,  <br>    &quot;secondary_text&quot;: &quot;Youth Infusions&quot;,  <br>    &quot;finish&quot;: &quot;champagne foil emboss with micro-engraved detailing&quot;  <br>  },</p><p>&quot;liquid_color&quot;: &quot;soft golden nectar with luminous micro-pearl shimmer&quot;  <br>},</p><p>&quot;composition&quot;: {  <br>  &quot;placement&quot;: &quot;center hero placement&quot;,  <br>  &quot;pedestal&quot;: &quot;ivory marble pedestal with subtle gold veining&quot;,  <br>  &quot;base_surface&quot;: &quot;polished reflective stone surface&quot;,</p><p>&quot;surrounding_elements&quot;: [  <br>    &quot;white orchid petals&quot;,  <br>    &quot;golden honey droplets&quot;,  <br>    &quot;chamomile blossoms&quot;,  <br>    &quot;glass dew spheres&quot;  <br>  ],</p><p>&quot;liquid_effect&quot;: &quot;soft golden mist swirl behind the vial&quot;  <br>},</p><p>&quot;lighting&quot;: {  <br>  &quot;style&quot;: &quot;high-end beauty studio lighting&quot;,  <br>  &quot;key_light&quot;: &quot;soft frontal glow for glass clarity&quot;,  <br>  &quot;rim_light&quot;: &quot;warm rim highlights enhancing crystal edges&quot;,  <br>  &quot;fill_light&quot;: &quot;luxury soft diffusion&quot;,  <br>  &quot;reflections&quot;: &quot;controlled highlights for premium finish&quot;  <br>},</p><p>&quot;background&quot;: {  <br>  &quot;color&quot;: &quot;warm ivory to champagne gradient&quot;,  <br>  &quot;style&quot;: &quot;clean editorial luxury backdrop&quot;,  <br>  &quot;depth&quot;: &quot;cinematic shallow depth with elegant falloff&quot;  <br>},</p><p>&quot;camera&quot;: {  <br>  &quot;angle&quot;: &quot;slightly low hero angle&quot;,  <br>  &quot;focus&quot;: &quot;crystal edges and typography&quot;,  <br>  &quot;depth_of_field&quot;: &quot;cinematic shallow depth&quot;,  <br>  &quot;resolution&quot;: &quot;8K ultra-detailed clarity&quot;  <br>},</p><p>&quot;mood_keywords&quot;: [  <br>  &quot;Parisian luxury&quot;,  <br>  &quot;timeless beauty&quot;,  <br>  &quot;radiant skin&quot;,  <br>  &quot;elegant purity&quot;,  <br>  &quot;premium skincare campaign&quot;,  <br>  &quot;refined sophistication&quot;  <br>]</p><p>}<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2026285999660397026-1.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"><img src="/images/tweet-2026285999660397026-2.jpg" alt="&quot;master prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2247,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>soft, round face #2707 | Gem Nana AI 提示词库</title>
     <meta name="description" content="soft, round face fuller cheeks small chin slightly larger, expressive eyes (but still identity consistent) no beard,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2707.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2707.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2707.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839620">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022170">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("柔和、圆润的脸\n较丰满的脸颊\n小下巴\n略大些、富有表现力的眼睛（但仍保持身份一致）\n无胡须、无锐利下颌线、无成年特征\n表情应天真、温暖且略带俏皮，带有柔和的微笑并进行直接的目光接触。\n身体比例应可爱且儿童般（小巧、略胖的身体，头部略大）。\n\n姿势：放松站立，双手置于背后，头部和肩膀带有细微自然倾斜以避免僵硬。\n头发应与参考相符，但显得柔软、略有蓬松且自然造型，不要过于毛刺或人工化。\n皮肤应柔和且风格化，带有细微的次表面散射（SSS）以呈现温暖的光泽，哑光质感（无塑料光泽），颊部有轻柔自然的腮红。\n角色穿着半袖棉质毛衣，带有拼图图案，其中：\n\n颜色柔和但生动，略带鲜艳\n不过分饱和，也不过分褪色\n面料应显示真实的针织纹理和柔软的褶皱\n光照应柔和且具有电影感：\n\n主光来自左上方\n柔和的补光\n头发上有细微的轮廓光\n背景应为丰富的蓝色渐变，主体背后较亮，向边缘渐暗，具有平滑的深度（非平面）。\n输出应为：\n\n1:1 长宽比\n中景构图（头部到腰部）\n高细节、干净的3D渲染\n影片级质感（非玩具感，也不过分写实）", this)'>📋 复制</button>
         </div>
-        <p>柔和、圆润的脸<br>较丰满的脸颊<br>小下巴<br>略大些、富有表现力的眼睛（但仍保持身份一致）<br>无胡须、无锐利下颌线、无成年特征<br>表情应天真、温暖且略带俏皮，带有柔和的微笑并进行直接的目光接触。<br>身体比例应可爱且儿童般（小巧、略胖的身体，头部略大）。</p><p>姿势：放松站立，双手置于背后，头部和肩膀带有细微自然倾斜以避免僵硬。<br>头发应与参考相符，但显得柔软、略有蓬松且自然造型，不要过于毛刺或人工化。<br>皮肤应柔和且风格化，带有细微的次表面散射（SSS）以呈现温暖的光泽，哑光质感（无塑料光泽），颊部有轻柔自然的腮红。<br>角色穿着半袖棉质毛衣，带有拼图图案，其中：</p><p>颜色柔和但生动，略带鲜艳<br>不过分饱和，也不过分褪色<br>面料应显示真实的针织纹理和柔软的褶皱<br>光照应柔和且具有电影感：</p><p>主光来自左上方<br>柔和的补光<br>头发上有细微的轮廓光<br>背景应为丰富的蓝色渐变，主体背后较亮，向边缘渐暗，具有平滑的深度（非平面）。<br>输出应为：</p><p>1:1 长宽比<br>中景构图（头部到腰部）<br>高细节、干净的3D渲染<br>影片级质感（非玩具感，也不过分写实）</p>
+        <div data-nosnippet><p>柔和、圆润的脸<br>较丰满的脸颊<br>小下巴<br>略大些、富有表现力的眼睛（但仍保持身份一致）<br>无胡须、无锐利下颌线、无成年特征<br>表情应天真、温暖且略带俏皮，带有柔和的微笑并进行直接的目光接触。<br>身体比例应可爱且儿童般（小巧、略胖的身体，头部略大）。</p><p>姿势：放松站立，双手置于背后，头部和肩膀带有细微自然倾斜以避免僵硬。<br>头发应与参考相符，但显得柔软、略有蓬松且自然造型，不要过于毛刺或人工化。<br>皮肤应柔和且风格化，带有细微的次表面散射（SSS）以呈现温暖的光泽，哑光质感（无塑料光泽），颊部有轻柔自然的腮红。<br>角色穿着半袖棉质毛衣，带有拼图图案，其中：</p><p>颜色柔和但生动，略带鲜艳<br>不过分饱和，也不过分褪色<br>面料应显示真实的针织纹理和柔软的褶皱<br>光照应柔和且具有电影感：</p><p>主光来自左上方<br>柔和的补光<br>头发上有细微的轮廓光<br>背景应为丰富的蓝色渐变，主体背后较亮，向边缘渐暗，具有平滑的深度（非平面）。<br>输出应为：</p><p>1:1 长宽比<br>中景构图（头部到腰部）<br>高细节、干净的3D渲染<br>影片级质感（非玩具感，也不过分写实）</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("soft, round face\nfuller cheeks\nsmall chin\nslightly larger, expressive eyes (but still identity-consistent)\nno beard, no sharp jawline, no adult features\nExpression should be innocent, warm, and slightly playful, with a gentle smile and direct eye contact.\nBody proportions should be cute and childlike (small, slightly chubby body, slightly larger head).\n\nPose: relaxed standing with hands behind the back, with a subtle natural tilt in head and shoulders to avoid stiffness.\nHair should match the reference but appear soft, slightly voluminous, and naturally styled, not overly sharp or artificial.\nSkin should be soft and stylized, with subtle subsurface scattering (SSS) for a warm glow, matte finish (no plastic shine), and gentle natural blush on cheeks.\nThe character wears a half sleeves cotton sweater with a puzzle pattern, where:\n\ncolors are soft but lively and slightly vibrant\nnot oversaturated and not washed out\nThe fabric shows a realistic knit texture and soft folds\nLighting should be soft and cinematic:\n\nkey light from upper-left\ngentle fill light\nsubtle rim light on hair\nBackground should be a rich blue gradient, brighter behind the subject and darker toward the edges, with smooth depth (not flat).\nOutput should be:\n\n1:1 aspect ratio\nmid-length framing (head to waist)\nhigh-detail, clean 3D render\nfilm-quality finish (not toy-like, not overly realistic)", this)'>📋 复制</button>
         </div>
-        <p>soft, round face<br>fuller cheeks<br>small chin<br>slightly larger, expressive eyes (but still identity-consistent)<br>no beard, no sharp jawline, no adult features<br>Expression should be innocent, warm, and slightly playful, with a gentle smile and direct eye contact.<br>Body proportions should be cute and childlike (small, slightly chubby body, slightly larger head).</p><p>Pose: relaxed standing with hands behind the back, with a subtle natural tilt in head and shoulders to avoid stiffness.<br>Hair should match the reference but appear soft, slightly voluminous, and naturally styled, not overly sharp or artificial.<br>Skin should be soft and stylized, with subtle subsurface scattering (SSS) for a warm glow, matte finish (no plastic shine), and gentle natural blush on cheeks.<br>The character wears a half sleeves cotton sweater with a puzzle pattern, where:</p><p>colors are soft but lively and slightly vibrant<br>not oversaturated and not washed out<br>The fabric shows a realistic knit texture and soft folds<br>Lighting should be soft and cinematic:</p><p>key light from upper-left<br>gentle fill light<br>subtle rim light on hair<br>Background should be a rich blue gradient, brighter behind the subject and darker toward the edges, with smooth depth (not flat).<br>Output should be:</p><p>1:1 aspect ratio<br>mid-length framing (head to waist)<br>high-detail, clean 3D render<br>film-quality finish (not toy-like, not overly realistic)</p>
+        <div data-nosnippet><p>soft, round face<br>fuller cheeks<br>small chin<br>slightly larger, expressive eyes (but still identity-consistent)<br>no beard, no sharp jawline, no adult features<br>Expression should be innocent, warm, and slightly playful, with a gentle smile and direct eye contact.<br>Body proportions should be cute and childlike (small, slightly chubby body, slightly larger head).</p><p>Pose: relaxed standing with hands behind the back, with a subtle natural tilt in head and shoulders to avoid stiffness.<br>Hair should match the reference but appear soft, slightly voluminous, and naturally styled, not overly sharp or artificial.<br>Skin should be soft and stylized, with subtle subsurface scattering (SSS) for a warm glow, matte finish (no plastic shine), and gentle natural blush on cheeks.<br>The character wears a half sleeves cotton sweater with a puzzle pattern, where:</p><p>colors are soft but lively and slightly vibrant<br>not oversaturated and not washed out<br>The fabric shows a realistic knit texture and soft folds<br>Lighting should be soft and cinematic:</p><p>key light from upper-left<br>gentle fill light<br>subtle rim light on hair<br>Background should be a rich blue gradient, brighter behind the subject and darker toward the edges, with smooth depth (not flat).<br>Output should be:</p><p>1:1 aspect ratio<br>mid-length framing (head to waist)<br>high-detail, clean 3D render<br>film-quality finish (not toy-like, not overly realistic)</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2038114762945655072-1.jpg" alt="soft, round face" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2707,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

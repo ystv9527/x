@@ -7,11 +7,13 @@
     <title>[PERSON / CHARACTER NAME]. #1457 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[PERSON / CHARACTER NAME]. Act as a Lead Concept Artist for a cult classic early 2000s animated series (similar to ea...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1457.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1457.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1457.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840864">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022450">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[PERSON / CHARACTER NAME]. \n担任一部早期2000 年代的小众经典动画系列（类似早期 Gorillaz 或 Jet Set Radio）的首席概念艺术家。\n\nCOMPOSITION (FLOATING HEAD DRAFT):\n\n为 [CHARACTER / PERSON] 生成一个头部/胸像的单色线稿概念草图。\n\n构图：头部严格悬浮在画布的正中央。\n\n朝向：固定三分之四视角（3/4），以表现动感体量。\n\n负空间：在草图周围保留大量空白（留白）。\n\nVISUAL STYLE (ADVANCED VECTOR SKETCH):\n\n图像必须呈现“可投入制作的概念图”风格——原始、自信，但经过打磨。\n\nNO FILLS (Critical)：这是严格的线稿。不得使用任何颜色、渐变或灰色填充。面部、发型和服装内部必须保持白色（透明），仅由轮廓线定义。\n\n线条质量（“描线者之手”）：\n使用纯白纸上的纯黑墨线。\n变化线宽：外轮廓使用粗实线条以突出角色与背景的分离。内部细节（眼睛、鼻子、发丝质感）使用细而锐利的线条。\n流动感：线条应传达“快速”且富有表现力的感觉（如毛笔笔触或高级矢量笔触），而非颤抖或凌乱。属于“高级草稿”——清晰且专业。\n\nCHARACTERIZATION (THE Y2K VIBE):\n\n以略带棱角、前卫的面部特征进行风格化，典型于早期2000年代街头艺术。\n\n表情：酷、冷漠、略带叛逆，或“进入状态”。\n\nBACKGROUND：\n\n纯白（#FFFFFF）。一张干净的纸。", this)'>📋 复制</button>
         </div>
-        <p>[PERSON / CHARACTER NAME]. <br>担任一部早期2000 年代的小众经典动画系列（类似早期 Gorillaz 或 Jet Set Radio）的首席概念艺术家。</p><p>COMPOSITION (FLOATING HEAD DRAFT):</p><p>为 [CHARACTER / PERSON] 生成一个头部/胸像的单色线稿概念草图。</p><p>构图：头部严格悬浮在画布的正中央。</p><p>朝向：固定三分之四视角（3/4），以表现动感体量。</p><p>负空间：在草图周围保留大量空白（留白）。</p><p>VISUAL STYLE (ADVANCED VECTOR SKETCH):</p><p>图像必须呈现“可投入制作的概念图”风格——原始、自信，但经过打磨。</p><p>NO FILLS (Critical)：这是严格的线稿。不得使用任何颜色、渐变或灰色填充。面部、发型和服装内部必须保持白色（透明），仅由轮廓线定义。</p><p>线条质量（“描线者之手”）：<br>使用纯白纸上的纯黑墨线。<br>变化线宽：外轮廓使用粗实线条以突出角色与背景的分离。内部细节（眼睛、鼻子、发丝质感）使用细而锐利的线条。<br>流动感：线条应传达“快速”且富有表现力的感觉（如毛笔笔触或高级矢量笔触），而非颤抖或凌乱。属于“高级草稿”——清晰且专业。</p><p>CHARACTERIZATION (THE Y2K VIBE):</p><p>以略带棱角、前卫的面部特征进行风格化，典型于早期2000年代街头艺术。</p><p>表情：酷、冷漠、略带叛逆，或“进入状态”。</p><p>BACKGROUND：</p><p>纯白（#FFFFFF）。一张干净的纸。</p>
+        <div data-nosnippet><p>[PERSON / CHARACTER NAME]. <br>担任一部早期2000 年代的小众经典动画系列（类似早期 Gorillaz 或 Jet Set Radio）的首席概念艺术家。</p><p>COMPOSITION (FLOATING HEAD DRAFT):</p><p>为 [CHARACTER / PERSON] 生成一个头部/胸像的单色线稿概念草图。</p><p>构图：头部严格悬浮在画布的正中央。</p><p>朝向：固定三分之四视角（3/4），以表现动感体量。</p><p>负空间：在草图周围保留大量空白（留白）。</p><p>VISUAL STYLE (ADVANCED VECTOR SKETCH):</p><p>图像必须呈现“可投入制作的概念图”风格——原始、自信，但经过打磨。</p><p>NO FILLS (Critical)：这是严格的线稿。不得使用任何颜色、渐变或灰色填充。面部、发型和服装内部必须保持白色（透明），仅由轮廓线定义。</p><p>线条质量（“描线者之手”）：<br>使用纯白纸上的纯黑墨线。<br>变化线宽：外轮廓使用粗实线条以突出角色与背景的分离。内部细节（眼睛、鼻子、发丝质感）使用细而锐利的线条。<br>流动感：线条应传达“快速”且富有表现力的感觉（如毛笔笔触或高级矢量笔触），而非颤抖或凌乱。属于“高级草稿”——清晰且专业。</p><p>CHARACTERIZATION (THE Y2K VIBE):</p><p>以略带棱角、前卫的面部特征进行风格化，典型于早期2000年代街头艺术。</p><p>表情：酷、冷漠、略带叛逆，或“进入状态”。</p><p>BACKGROUND：</p><p>纯白（#FFFFFF）。一张干净的纸。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[PERSON / CHARACTER NAME]. \nAct as a Lead Concept Artist for a cult classic early 2000s animated series (similar to early Gorillaz or Jet Set Radio).\n\nCOMPOSITION (FLOATING HEAD DRAFT):\n\nGenerate a Monochrome Line-Art Concept Sketch of the head/bust of [CHARACTER / PERSON].\n\nFraming: The head floats strictly in the dead center of the canvas.\n\nOrientation: Fixed Three-Quarter View (3/4) for dynamic volume.\n\nNegative Space: Generous empty white space around the sketch.\n\nVISUAL STYLE (ADVANCED VECTOR SKETCH):\n\nThe image must look like a \"Production-Ready Concept Drawing\" — raw, confident, but polished.\n\nNO FILLS (Critical): This is strict LINE ART. Do not use any colors, gradients, or grey fills. The inside of the face, hair, and clothes must be white (transparent), defined only by the outlines.\n\nLine Quality (The \"Inker's Hand\"):\nUse Solid Black Ink on pure white paper.\nVariable Line Weight: Use a THICK, bold contour line for the outer silhouette to pop the character from the background. Use THIN, razor-sharp lines for internal details (eyes, nose, hair texture).\nFlow: The lines should feel \"fast\" and expressive (like a brush pen or sophisticated vector stroke), not shaky or messy. It is an \"Advanced Draft\" — distinct and professional.\n\nCHARACTERIZATION (THE Y2K VIBE):\n\nStylize the character with slightly angular, edgy features typical of early 2000s street art.\n\nExpression: Cool, detached, slightly rebellious, or \"in the zone\".\n\nBACKGROUND:\n\nPure White (#FFFFFF). A clean sheet of paper.", this)'>📋 复制</button>
         </div>
-        <p>[PERSON / CHARACTER NAME]. <br>Act as a Lead Concept Artist for a cult classic early 2000s animated series (similar to early Gorillaz or Jet Set Radio).</p><p>COMPOSITION (FLOATING HEAD DRAFT):</p><p>Generate a Monochrome Line-Art Concept Sketch of the head/bust of [CHARACTER / PERSON].</p><p>Framing: The head floats strictly in the dead center of the canvas.</p><p>Orientation: Fixed Three-Quarter View (3/4) for dynamic volume.</p><p>Negative Space: Generous empty white space around the sketch.</p><p>VISUAL STYLE (ADVANCED VECTOR SKETCH):</p><p>The image must look like a &quot;Production-Ready Concept Drawing&quot; — raw, confident, but polished.</p><p>NO FILLS (Critical): This is strict LINE ART. Do not use any colors, gradients, or grey fills. The inside of the face, hair, and clothes must be white (transparent), defined only by the outlines.</p><p>Line Quality (The &quot;Inker&#39;s Hand&quot;):<br>Use Solid Black Ink on pure white paper.<br>Variable Line Weight: Use a THICK, bold contour line for the outer silhouette to pop the character from the background. Use THIN, razor-sharp lines for internal details (eyes, nose, hair texture).<br>Flow: The lines should feel &quot;fast&quot; and expressive (like a brush pen or sophisticated vector stroke), not shaky or messy. It is an &quot;Advanced Draft&quot; — distinct and professional.</p><p>CHARACTERIZATION (THE Y2K VIBE):</p><p>Stylize the character with slightly angular, edgy features typical of early 2000s street art.</p><p>Expression: Cool, detached, slightly rebellious, or &quot;in the zone&quot;.</p><p>BACKGROUND:</p><p>Pure White (#FFFFFF). A clean sheet of paper.</p>
+        <div data-nosnippet><p>[PERSON / CHARACTER NAME]. <br>Act as a Lead Concept Artist for a cult classic early 2000s animated series (similar to early Gorillaz or Jet Set Radio).</p><p>COMPOSITION (FLOATING HEAD DRAFT):</p><p>Generate a Monochrome Line-Art Concept Sketch of the head/bust of [CHARACTER / PERSON].</p><p>Framing: The head floats strictly in the dead center of the canvas.</p><p>Orientation: Fixed Three-Quarter View (3/4) for dynamic volume.</p><p>Negative Space: Generous empty white space around the sketch.</p><p>VISUAL STYLE (ADVANCED VECTOR SKETCH):</p><p>The image must look like a &quot;Production-Ready Concept Drawing&quot; — raw, confident, but polished.</p><p>NO FILLS (Critical): This is strict LINE ART. Do not use any colors, gradients, or grey fills. The inside of the face, hair, and clothes must be white (transparent), defined only by the outlines.</p><p>Line Quality (The &quot;Inker&#39;s Hand&quot;):<br>Use Solid Black Ink on pure white paper.<br>Variable Line Weight: Use a THICK, bold contour line for the outer silhouette to pop the character from the background. Use THIN, razor-sharp lines for internal details (eyes, nose, hair texture).<br>Flow: The lines should feel &quot;fast&quot; and expressive (like a brush pen or sophisticated vector stroke), not shaky or messy. It is an &quot;Advanced Draft&quot; — distinct and professional.</p><p>CHARACTERIZATION (THE Y2K VIBE):</p><p>Stylize the character with slightly angular, edgy features typical of early 2000s street art.</p><p>Expression: Cool, detached, slightly rebellious, or &quot;in the zone&quot;.</p><p>BACKGROUND:</p><p>Pure White (#FFFFFF). A clean sheet of paper.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012223385607028761-1.jpg" alt="[PERSON / CHARACTER NAME]." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1457,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

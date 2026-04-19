@@ -7,11 +7,13 @@
     <title>&quot;image generation prompt&quot;: { #1426 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image generation prompt&quot;: { &quot;subject details&quot;: { &quot;demographics&quot;: &quot;Young woman, caucasian, estimated early 20s&quot;, &quot;h...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1426.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1426.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1426.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840899">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022457">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图像生成提示\": {\n    \"主体细节\": {\n      \"人口统计\": \"年轻女性，白人，估计二十出头\",\n      \"头发\": \"有纹理的金色卷发，凌乱的盘发/发髻，松散的细碎发丝和零散发丝环绕面部，逆光下的飞散发丝\",\n      \"面部\": \"自然皮肤质感，鼻梁和两颊可见雀斑，高颧骨，向上梳理的浓密眉毛，丰满的嘴唇，轮廓分明的下颌线，淡雅自然的妆容\",\n      \"凝视\": \"直视镜头，柔和且诱人的表情，嘴微微张开，神情平静\"\n    },\n    \"服装与造型\": {\n      \"服装\": \"黑色细肩带吊带背心，V 领，极简风格\",\n      \"配饰\": \"无明显可见配饰\",\n      \"造型\": \"随性、不费力的“刚睡醒就这样”美学，休闲时髦\"\n    },\n    \"姿势与构图\": {\n      \"类型\": \"特写肖像，自拍角度\",\n      \"构图\": \"头部与肩部，居中构图\",\n      \"姿态\": \"肩部略微倾斜，颈部拉长，锁骨可见，头部非常轻微地倾斜\"\n    },\n    \"环境与背景\": {\n      \"场景\": \"室内，靠近窗户的家居环境\",\n      \"背景\": \"带有垂直褶皱的半透明纹理窗帘，柔软面料细节\",\n      \"景深\": \"浅景深，背景略微虚化以突出主体\"\n    },\n    \"光线与氛围\": {\n      \"类型\": \"柔和的自然窗光（漫射）\",\n      \"方向\": \"正面为主，略微偏侧\",\n      \"高光\": \"额头、鼻尖和颧骨上的柔和镜面高光\",\n      \"阴影\": \"下巴下方及颈部塑形的轻柔、不突兀的阴影\",\n      \"氛围\": \"亲密、原始、抓拍感、宁静、感伤\"\n    },\n    \"技术规格\": {\n      \"媒介\": \"黑白摄影，单色\",\n      \"相机模拟\": \"iPhone 前置摄像头或等效的 35mm 胶片相机\",\n      \"镜头\": \"35mm 焦距（适合人像但略显宽的自拍感）\",\n      \"光圈\": \"f/2.8\",\n      \"胶片颗粒\": \"添加细腻的胶片颗粒质感以增强真实感\",\n      \"质量标签\": [\n        \"拟真摄影\",\n        \"8k 分辨率\",\n        \"高度细致的皮肤毛孔\",\n        \"眼部清晰聚焦\",\n        \"高对比单色调\",\n        \"原始照片风格\"\n      ]\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;图像生成提示&quot;: {<br>    &quot;主体细节&quot;: {<br>      &quot;人口统计&quot;: &quot;年轻女性，白人，估计二十出头&quot;,<br>      &quot;头发&quot;: &quot;有纹理的金色卷发，凌乱的盘发/发髻，松散的细碎发丝和零散发丝环绕面部，逆光下的飞散发丝&quot;,<br>      &quot;面部&quot;: &quot;自然皮肤质感，鼻梁和两颊可见雀斑，高颧骨，向上梳理的浓密眉毛，丰满的嘴唇，轮廓分明的下颌线，淡雅自然的妆容&quot;,<br>      &quot;凝视&quot;: &quot;直视镜头，柔和且诱人的表情，嘴微微张开，神情平静&quot;<br>    },<br>    &quot;服装与造型&quot;: {<br>      &quot;服装&quot;: &quot;黑色细肩带吊带背心，V 领，极简风格&quot;,<br>      &quot;配饰&quot;: &quot;无明显可见配饰&quot;,<br>      &quot;造型&quot;: &quot;随性、不费力的“刚睡醒就这样”美学，休闲时髦&quot;<br>    },<br>    &quot;姿势与构图&quot;: {<br>      &quot;类型&quot;: &quot;特写肖像，自拍角度&quot;,<br>      &quot;构图&quot;: &quot;头部与肩部，居中构图&quot;,<br>      &quot;姿态&quot;: &quot;肩部略微倾斜，颈部拉长，锁骨可见，头部非常轻微地倾斜&quot;<br>    },<br>    &quot;环境与背景&quot;: {<br>      &quot;场景&quot;: &quot;室内，靠近窗户的家居环境&quot;,<br>      &quot;背景&quot;: &quot;带有垂直褶皱的半透明纹理窗帘，柔软面料细节&quot;,<br>      &quot;景深&quot;: &quot;浅景深，背景略微虚化以突出主体&quot;<br>    },<br>    &quot;光线与氛围&quot;: {<br>      &quot;类型&quot;: &quot;柔和的自然窗光（漫射）&quot;,<br>      &quot;方向&quot;: &quot;正面为主，略微偏侧&quot;,<br>      &quot;高光&quot;: &quot;额头、鼻尖和颧骨上的柔和镜面高光&quot;,<br>      &quot;阴影&quot;: &quot;下巴下方及颈部塑形的轻柔、不突兀的阴影&quot;,<br>      &quot;氛围&quot;: &quot;亲密、原始、抓拍感、宁静、感伤&quot;<br>    },<br>    &quot;技术规格&quot;: {<br>      &quot;媒介&quot;: &quot;黑白摄影，单色&quot;,<br>      &quot;相机模拟&quot;: &quot;iPhone 前置摄像头或等效的 35mm 胶片相机&quot;,<br>      &quot;镜头&quot;: &quot;35mm 焦距（适合人像但略显宽的自拍感）&quot;,<br>      &quot;光圈&quot;: &quot;f/2.8&quot;,<br>      &quot;胶片颗粒&quot;: &quot;添加细腻的胶片颗粒质感以增强真实感&quot;,<br>      &quot;质量标签&quot;: [<br>        &quot;拟真摄影&quot;,<br>        &quot;8k 分辨率&quot;,<br>        &quot;高度细致的皮肤毛孔&quot;,<br>        &quot;眼部清晰聚焦&quot;,<br>        &quot;高对比单色调&quot;,<br>        &quot;原始照片风格&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图像生成提示&quot;: {<br>    &quot;主体细节&quot;: {<br>      &quot;人口统计&quot;: &quot;年轻女性，白人，估计二十出头&quot;,<br>      &quot;头发&quot;: &quot;有纹理的金色卷发，凌乱的盘发/发髻，松散的细碎发丝和零散发丝环绕面部，逆光下的飞散发丝&quot;,<br>      &quot;面部&quot;: &quot;自然皮肤质感，鼻梁和两颊可见雀斑，高颧骨，向上梳理的浓密眉毛，丰满的嘴唇，轮廓分明的下颌线，淡雅自然的妆容&quot;,<br>      &quot;凝视&quot;: &quot;直视镜头，柔和且诱人的表情，嘴微微张开，神情平静&quot;<br>    },<br>    &quot;服装与造型&quot;: {<br>      &quot;服装&quot;: &quot;黑色细肩带吊带背心，V 领，极简风格&quot;,<br>      &quot;配饰&quot;: &quot;无明显可见配饰&quot;,<br>      &quot;造型&quot;: &quot;随性、不费力的“刚睡醒就这样”美学，休闲时髦&quot;<br>    },<br>    &quot;姿势与构图&quot;: {<br>      &quot;类型&quot;: &quot;特写肖像，自拍角度&quot;,<br>      &quot;构图&quot;: &quot;头部与肩部，居中构图&quot;,<br>      &quot;姿态&quot;: &quot;肩部略微倾斜，颈部拉长，锁骨可见，头部非常轻微地倾斜&quot;<br>    },<br>    &quot;环境与背景&quot;: {<br>      &quot;场景&quot;: &quot;室内，靠近窗户的家居环境&quot;,<br>      &quot;背景&quot;: &quot;带有垂直褶皱的半透明纹理窗帘，柔软面料细节&quot;,<br>      &quot;景深&quot;: &quot;浅景深，背景略微虚化以突出主体&quot;<br>    },<br>    &quot;光线与氛围&quot;: {<br>      &quot;类型&quot;: &quot;柔和的自然窗光（漫射）&quot;,<br>      &quot;方向&quot;: &quot;正面为主，略微偏侧&quot;,<br>      &quot;高光&quot;: &quot;额头、鼻尖和颧骨上的柔和镜面高光&quot;,<br>      &quot;阴影&quot;: &quot;下巴下方及颈部塑形的轻柔、不突兀的阴影&quot;,<br>      &quot;氛围&quot;: &quot;亲密、原始、抓拍感、宁静、感伤&quot;<br>    },<br>    &quot;技术规格&quot;: {<br>      &quot;媒介&quot;: &quot;黑白摄影，单色&quot;,<br>      &quot;相机模拟&quot;: &quot;iPhone 前置摄像头或等效的 35mm 胶片相机&quot;,<br>      &quot;镜头&quot;: &quot;35mm 焦距（适合人像但略显宽的自拍感）&quot;,<br>      &quot;光圈&quot;: &quot;f/2.8&quot;,<br>      &quot;胶片颗粒&quot;: &quot;添加细腻的胶片颗粒质感以增强真实感&quot;,<br>      &quot;质量标签&quot;: [<br>        &quot;拟真摄影&quot;,<br>        &quot;8k 分辨率&quot;,<br>        &quot;高度细致的皮肤毛孔&quot;,<br>        &quot;眼部清晰聚焦&quot;,<br>        &quot;高对比单色调&quot;,<br>        &quot;原始照片风格&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompt\": {\n    \"subject_details\": {\n      \"demographics\": \"Young woman, caucasian, estimated early 20s\",\n      \"hair\": \"Textured blonde curly hair styled in a messy updo/bun, loose wispy tendrils and stray hairs framing the face, backlit flyaways\",\n      \"face\": \"Natural skin texture with visible freckles across nose and cheeks, high cheekbones, strong brushed-up eyebrows, full lips, defined jawline, light natural makeup\",\n      \"gaze\": \"Direct eye contact, soft and alluring expression, slightly parted lips, calm demeanor\"\n    },\n    \"apparel_and_styling\": {\n      \"clothing\": \"Black spaghetti strap camisole top, V-neck, minimalist style\",\n      \"accessories\": \"None visible\",\n      \"styling\": \"Effortless, 'woke up like this' aesthetic, casual chic\"\n    },\n    \"pose_and_composition\": {\n      \"type\": \"Close-up portrait, selfie angle\",\n      \"framing\": \"Head and shoulders, center composition\",\n      \"posture\": \"Shoulders slightly angled, neck elongated, visible collarbones, head tilted very slightly\"\n    },\n    \"environment_and_background\": {\n      \"setting\": \"Indoor, domestic setting near a window\",\n      \"backdrop\": \"Sheer textured curtains with vertical folds, soft fabric detail\",\n      \"depth\": \"Shallow depth of field, background slightly out of focus to emphasize subject\"\n    },\n    \"lighting_and_atmosphere\": {\n      \"type\": \"Soft natural window lighting (diffused)\",\n      \"direction\": \"Front-lit with slight side bias\",\n      \"highlights\": \"Soft specular highlights on forehead, nose tip, and cheekbones\",\n      \"shadows\": \"Gentle, non-intrusive shadows under the chin and defining the neck\",\n      \"mood\": \"Intimate, raw, candid, serene, sentimental\"\n    },\n    \"technical_specs\": {\n      \"medium\": \"Black and white photography, monochrome\",\n      \"camera_emulation\": \"iPhone front camera or 35mm film camera equivalent\",\n      \"lens\": \"35mm focal length (portrait appropriate but slightly wide for selfie feel)\",\n      \"aperture\": \"f/2.8\",\n      \"film_grain\": \"Fine film grain texture added for realism\",\n      \"quality_tags\": [\n        \"Photorealistic\",\n        \"8k resolution\",\n        \"highly detailed skin pores\",\n        \"sharp focus on eyes\",\n        \"high contrast monochrome\",\n        \"raw photo style\"\n      ]\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject_details&quot;: {<br>      &quot;demographics&quot;: &quot;Young woman, caucasian, estimated early 20s&quot;,<br>      &quot;hair&quot;: &quot;Textured blonde curly hair styled in a messy updo/bun, loose wispy tendrils and stray hairs framing the face, backlit flyaways&quot;,<br>      &quot;face&quot;: &quot;Natural skin texture with visible freckles across nose and cheeks, high cheekbones, strong brushed-up eyebrows, full lips, defined jawline, light natural makeup&quot;,<br>      &quot;gaze&quot;: &quot;Direct eye contact, soft and alluring expression, slightly parted lips, calm demeanor&quot;<br>    },<br>    &quot;apparel_and_styling&quot;: {<br>      &quot;clothing&quot;: &quot;Black spaghetti strap camisole top, V-neck, minimalist style&quot;,<br>      &quot;accessories&quot;: &quot;None visible&quot;,<br>      &quot;styling&quot;: &quot;Effortless, &#39;woke up like this&#39; aesthetic, casual chic&quot;<br>    },<br>    &quot;pose_and_composition&quot;: {<br>      &quot;type&quot;: &quot;Close-up portrait, selfie angle&quot;,<br>      &quot;framing&quot;: &quot;Head and shoulders, center composition&quot;,<br>      &quot;posture&quot;: &quot;Shoulders slightly angled, neck elongated, visible collarbones, head tilted very slightly&quot;<br>    },<br>    &quot;environment_and_background&quot;: {<br>      &quot;setting&quot;: &quot;Indoor, domestic setting near a window&quot;,<br>      &quot;backdrop&quot;: &quot;Sheer textured curtains with vertical folds, soft fabric detail&quot;,<br>      &quot;depth&quot;: &quot;Shallow depth of field, background slightly out of focus to emphasize subject&quot;<br>    },<br>    &quot;lighting_and_atmosphere&quot;: {<br>      &quot;type&quot;: &quot;Soft natural window lighting (diffused)&quot;,<br>      &quot;direction&quot;: &quot;Front-lit with slight side bias&quot;,<br>      &quot;highlights&quot;: &quot;Soft specular highlights on forehead, nose tip, and cheekbones&quot;,<br>      &quot;shadows&quot;: &quot;Gentle, non-intrusive shadows under the chin and defining the neck&quot;,<br>      &quot;mood&quot;: &quot;Intimate, raw, candid, serene, sentimental&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;medium&quot;: &quot;Black and white photography, monochrome&quot;,<br>      &quot;camera_emulation&quot;: &quot;iPhone front camera or 35mm film camera equivalent&quot;,<br>      &quot;lens&quot;: &quot;35mm focal length (portrait appropriate but slightly wide for selfie feel)&quot;,<br>      &quot;aperture&quot;: &quot;f/2.8&quot;,<br>      &quot;film_grain&quot;: &quot;Fine film grain texture added for realism&quot;,<br>      &quot;quality_tags&quot;: [<br>        &quot;Photorealistic&quot;,<br>        &quot;8k resolution&quot;,<br>        &quot;highly detailed skin pores&quot;,<br>        &quot;sharp focus on eyes&quot;,<br>        &quot;high contrast monochrome&quot;,<br>        &quot;raw photo style&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject_details&quot;: {<br>      &quot;demographics&quot;: &quot;Young woman, caucasian, estimated early 20s&quot;,<br>      &quot;hair&quot;: &quot;Textured blonde curly hair styled in a messy updo/bun, loose wispy tendrils and stray hairs framing the face, backlit flyaways&quot;,<br>      &quot;face&quot;: &quot;Natural skin texture with visible freckles across nose and cheeks, high cheekbones, strong brushed-up eyebrows, full lips, defined jawline, light natural makeup&quot;,<br>      &quot;gaze&quot;: &quot;Direct eye contact, soft and alluring expression, slightly parted lips, calm demeanor&quot;<br>    },<br>    &quot;apparel_and_styling&quot;: {<br>      &quot;clothing&quot;: &quot;Black spaghetti strap camisole top, V-neck, minimalist style&quot;,<br>      &quot;accessories&quot;: &quot;None visible&quot;,<br>      &quot;styling&quot;: &quot;Effortless, &#39;woke up like this&#39; aesthetic, casual chic&quot;<br>    },<br>    &quot;pose_and_composition&quot;: {<br>      &quot;type&quot;: &quot;Close-up portrait, selfie angle&quot;,<br>      &quot;framing&quot;: &quot;Head and shoulders, center composition&quot;,<br>      &quot;posture&quot;: &quot;Shoulders slightly angled, neck elongated, visible collarbones, head tilted very slightly&quot;<br>    },<br>    &quot;environment_and_background&quot;: {<br>      &quot;setting&quot;: &quot;Indoor, domestic setting near a window&quot;,<br>      &quot;backdrop&quot;: &quot;Sheer textured curtains with vertical folds, soft fabric detail&quot;,<br>      &quot;depth&quot;: &quot;Shallow depth of field, background slightly out of focus to emphasize subject&quot;<br>    },<br>    &quot;lighting_and_atmosphere&quot;: {<br>      &quot;type&quot;: &quot;Soft natural window lighting (diffused)&quot;,<br>      &quot;direction&quot;: &quot;Front-lit with slight side bias&quot;,<br>      &quot;highlights&quot;: &quot;Soft specular highlights on forehead, nose tip, and cheekbones&quot;,<br>      &quot;shadows&quot;: &quot;Gentle, non-intrusive shadows under the chin and defining the neck&quot;,<br>      &quot;mood&quot;: &quot;Intimate, raw, candid, serene, sentimental&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;medium&quot;: &quot;Black and white photography, monochrome&quot;,<br>      &quot;camera_emulation&quot;: &quot;iPhone front camera or 35mm film camera equivalent&quot;,<br>      &quot;lens&quot;: &quot;35mm focal length (portrait appropriate but slightly wide for selfie feel)&quot;,<br>      &quot;aperture&quot;: &quot;f/2.8&quot;,<br>      &quot;film_grain&quot;: &quot;Fine film grain texture added for realism&quot;,<br>      &quot;quality_tags&quot;: [<br>        &quot;Photorealistic&quot;,<br>        &quot;8k resolution&quot;,<br>        &quot;highly detailed skin pores&quot;,<br>        &quot;sharp focus on eyes&quot;,<br>        &quot;high contrast monochrome&quot;,<br>        &quot;raw photo style&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012098266360578337-1.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1426,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

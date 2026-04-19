@@ -7,11 +7,13 @@
     <title>何周か回って、Midjourneyめっちゃいい説。 #1094 | Gem Nana AI 提示词库</title>
     <meta name="description" content="何周か回って、Midjourneyめっちゃいい説。 新作アルバムのジャケ絵を、既存の画像の作風を変化させられる「Style Creator」を利用してみました。 ①元画像（1stアルバムのジャケ） ②Style Creatorで混ぜる...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1094.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1094.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1094.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841247">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022534">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("兜了好几圈，感觉 Midjourney 真是太棒了。\n\n我试用了能改变现有图片画风的「Style Creator」，来做新专辑的封面插画。\n\n①原图（第一张专辑的封面）\n②用 Style Creator 混合\n③一旦出现喜欢的风格就扭蛋\n④完成！\n\n能从①到④就做出来真是很新鲜呢。 https://t.co/wl8g19X8bU", this)'>📋 复制</button>
         </div>
-        <p>兜了好几圈，感觉 Midjourney 真是太棒了。</p><p>我试用了能改变现有图片画风的「Style Creator」，来做新专辑的封面插画。</p><p>①原图（第一张专辑的封面）<br>②用 Style Creator 混合<br>③一旦出现喜欢的风格就扭蛋<br>④完成！</p><p>能从①到④就做出来真是很新鲜呢。 https://t.co/wl8g19X8bU</p>
+        <div data-nosnippet><p>兜了好几圈，感觉 Midjourney 真是太棒了。</p><p>我试用了能改变现有图片画风的「Style Creator」，来做新专辑的封面插画。</p><p>①原图（第一张专辑的封面）<br>②用 Style Creator 混合<br>③一旦出现喜欢的风格就扭蛋<br>④完成！</p><p>能从①到④就做出来真是很新鲜呢。 https://t.co/wl8g19X8bU</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("何周か回って、Midjourneyめっちゃいい説。\n\n新作アルバムのジャケ絵を、既存の画像の作風を変化させられる「Style Creator」を利用してみました。\n\n①元画像（1stアルバムのジャケ）\n②Style Creatorで混ぜる\n③好みのテイストが出たらガチャ\n④完成！\n\n①→④が作れるのは新しいですね。 https://t.co/wl8g19X8bU", this)'>📋 复制</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("After going around a few times, I think the Midjourney thing is seriously amazing.\n\nI tried using “Style Creator,” which can alter the style of an existing image, to create the cover art for a new album.\n\n① Original image (1st album cover)\n② Mix with Style Creator\n③ If the taste I like comes out, it’s a gacha\n④ Done!\n\nIt’s new that you can make ①→④. https://t.co/wl8g19X8bU", this)'>📋 复制</button>
         </div>
-        <p>何周か回って、Midjourneyめっちゃいい説。</p><p>新作アルバムのジャケ絵を、既存の画像の作風を変化させられる「Style Creator」を利用してみました。</p><p>①元画像（1stアルバムのジャケ）<br>②Style Creatorで混ぜる<br>③好みのテイストが出たらガチャ<br>④完成！</p><p>①→④が作れるのは新しいですね。 https://t.co/wl8g19X8bU</p>
+        <div data-nosnippet><p>After going around a few times, I think the Midjourney thing is seriously amazing.</p><p>I tried using “Style Creator,” which can alter the style of an existing image, to create the cover art for a new album.</p><p>① Original image (1st album cover)<br>② Mix with Style Creator<br>③ If the taste I like comes out, it’s a gacha<br>④ Done!</p><p>It’s new that you can make ①→④. https://t.co/wl8g19X8bU</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010853922609775012-1.jpg" alt="何周か回って、Midjourneyめっちゃいい説。" loading="lazy"><img src="/images/tweet-2010853922609775012-2.jpg" alt="何周か回って、Midjourneyめっちゃいい説。" loading="lazy"><img src="/images/tweet-2010853922609775012-3.jpg" alt="何周か回って、Midjourneyめっちゃいい説。" loading="lazy"><img src="/images/tweet-2010853922609775012-4.jpg" alt="何周か回って、Midjourneyめっちゃいい説。" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1094,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

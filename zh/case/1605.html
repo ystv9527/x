@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Hyper realistic 8K black and white studio portrait... #1605 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Hyper realistic 8K black and white studio portrait captured as a medium shot from a slightly low angle p...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1605.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1605.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1605.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840740">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022416">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"超写实 8K 黑白工作室人像，拍摄为中景，采用略微低角度视角，使用 50mm 镜头以获得自然的视野。构图主体为女性，100% 使用上传的人脸作为参考（不要更改面部特征或身份），坐位偏右，留出上方和左侧的强烈负空间。她戴着宽檐软呢礼帽，身穿宽松的白色亚麻衬衫，领口未扣，露出层叠的银项链，搭配白色亚麻长裤和深色皮质乐福鞋，双腕佩戴精致串珠手链。主体舒适地坐在一把简洁现代的黑色皮质休闲椅上，左腿搭在右腿上，左手轻触帽檐，右臂随意搭在椅子扶手上。戏剧性的高对比明暗法（chiaroscuro）照明主导场景，来自前左方的强主光制造出深邃阴影和明亮高光，强调亚麻面料、皮椅、毡帽和头发的细腻纹理。细微的轮廓光勾勒出主体与椅子，使其从纯深黑背景中分离，增强电影般的纵深感和专业奢华工作室摄影美学。\",\n  \"color_style\": \"黑白\",\n  \"resolution\": \"8K\",\n  \"camera_lens\": \"50mm\",\n  \"camera_angle\": \"略微低角度\",\n  \"style\": \"电影感工作室人像，奢华编辑风格\",\n  \"lighting\": \"明暗对照（chiaroscuro），高对比影棚灯光\",\n  \"reference_image\": \"严格仅使用上传的图像\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;超写实 8K 黑白工作室人像，拍摄为中景，采用略微低角度视角，使用 50mm 镜头以获得自然的视野。构图主体为女性，100% 使用上传的人脸作为参考（不要更改面部特征或身份），坐位偏右，留出上方和左侧的强烈负空间。她戴着宽檐软呢礼帽，身穿宽松的白色亚麻衬衫，领口未扣，露出层叠的银项链，搭配白色亚麻长裤和深色皮质乐福鞋，双腕佩戴精致串珠手链。主体舒适地坐在一把简洁现代的黑色皮质休闲椅上，左腿搭在右腿上，左手轻触帽檐，右臂随意搭在椅子扶手上。戏剧性的高对比明暗法（chiaroscuro）照明主导场景，来自前左方的强主光制造出深邃阴影和明亮高光，强调亚麻面料、皮椅、毡帽和头发的细腻纹理。细微的轮廓光勾勒出主体与椅子，使其从纯深黑背景中分离，增强电影般的纵深感和专业奢华工作室摄影美学。&quot;,<br>  &quot;color_style&quot;: &quot;黑白&quot;,<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;camera_lens&quot;: &quot;50mm&quot;,<br>  &quot;camera_angle&quot;: &quot;略微低角度&quot;,<br>  &quot;style&quot;: &quot;电影感工作室人像，奢华编辑风格&quot;,<br>  &quot;lighting&quot;: &quot;明暗对照（chiaroscuro），高对比影棚灯光&quot;,<br>  &quot;reference_image&quot;: &quot;严格仅使用上传的图像&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;超写实 8K 黑白工作室人像，拍摄为中景，采用略微低角度视角，使用 50mm 镜头以获得自然的视野。构图主体为女性，100% 使用上传的人脸作为参考（不要更改面部特征或身份），坐位偏右，留出上方和左侧的强烈负空间。她戴着宽檐软呢礼帽，身穿宽松的白色亚麻衬衫，领口未扣，露出层叠的银项链，搭配白色亚麻长裤和深色皮质乐福鞋，双腕佩戴精致串珠手链。主体舒适地坐在一把简洁现代的黑色皮质休闲椅上，左腿搭在右腿上，左手轻触帽檐，右臂随意搭在椅子扶手上。戏剧性的高对比明暗法（chiaroscuro）照明主导场景，来自前左方的强主光制造出深邃阴影和明亮高光，强调亚麻面料、皮椅、毡帽和头发的细腻纹理。细微的轮廓光勾勒出主体与椅子，使其从纯深黑背景中分离，增强电影般的纵深感和专业奢华工作室摄影美学。&quot;,<br>  &quot;color_style&quot;: &quot;黑白&quot;,<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;camera_lens&quot;: &quot;50mm&quot;,<br>  &quot;camera_angle&quot;: &quot;略微低角度&quot;,<br>  &quot;style&quot;: &quot;电影感工作室人像，奢华编辑风格&quot;,<br>  &quot;lighting&quot;: &quot;明暗对照（chiaroscuro），高对比影棚灯光&quot;,<br>  &quot;reference_image&quot;: &quot;严格仅使用上传的图像&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"Hyper-realistic 8K black-and-white studio portrait captured as a medium shot from a slightly low-angle perspective, using a 50mm lens for a natural field of view. The composition features a female subject, 100% using the uploaded face as reference (do not alter facial features or identity), seated off-center to the right, leaving strong negative space above and to the left. She wears a wide-brimmed fedora-style hat, a loose white linen blouse unbuttoned at the collar revealing layered silver necklaces, white linen trousers, and dark leather loafers, with delicate beaded bracelets on both wrists. The subject is seated comfortably in a sleek modern black leather lounge chair, left leg crossed over the right, left hand lightly touching the brim of the hat, and right arm casually resting on the chair’s armrest. Dramatic high-contrast chiaroscuro lighting dominates the scene, with a strong key light from the front-left creating deep shadows and bright highlights that emphasize the detailed textures of the linen fabric, leather chair, felt hat, and hair. Subtle rim lighting outlines the subject and chair, separating them from a pure deep-black background, enhancing cinematic depth and a professional luxury studio photography aesthetic.\",\n  \"color_style\": \"black and white\",\n  \"resolution\": \"8K\",\n  \"camera_lens\": \"50mm\",\n  \"camera_angle\": \"slightly low-angle\",\n  \"style\": \"cinematic studio portrait, luxury editorial\",\n  \"lighting\": \"chiaroscuro, high-contrast studio lighting\",\n  \"reference_image\": \"strictly use uploaded image only\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;Hyper-realistic 8K black-and-white studio portrait captured as a medium shot from a slightly low-angle perspective, using a 50mm lens for a natural field of view. The composition features a female subject, 100% using the uploaded face as reference (do not alter facial features or identity), seated off-center to the right, leaving strong negative space above and to the left. She wears a wide-brimmed fedora-style hat, a loose white linen blouse unbuttoned at the collar revealing layered silver necklaces, white linen trousers, and dark leather loafers, with delicate beaded bracelets on both wrists. The subject is seated comfortably in a sleek modern black leather lounge chair, left leg crossed over the right, left hand lightly touching the brim of the hat, and right arm casually resting on the chair’s armrest. Dramatic high-contrast chiaroscuro lighting dominates the scene, with a strong key light from the front-left creating deep shadows and bright highlights that emphasize the detailed textures of the linen fabric, leather chair, felt hat, and hair. Subtle rim lighting outlines the subject and chair, separating them from a pure deep-black background, enhancing cinematic depth and a professional luxury studio photography aesthetic.&quot;,<br>  &quot;color_style&quot;: &quot;black and white&quot;,<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;camera_lens&quot;: &quot;50mm&quot;,<br>  &quot;camera_angle&quot;: &quot;slightly low-angle&quot;,<br>  &quot;style&quot;: &quot;cinematic studio portrait, luxury editorial&quot;,<br>  &quot;lighting&quot;: &quot;chiaroscuro, high-contrast studio lighting&quot;,<br>  &quot;reference_image&quot;: &quot;strictly use uploaded image only&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;Hyper-realistic 8K black-and-white studio portrait captured as a medium shot from a slightly low-angle perspective, using a 50mm lens for a natural field of view. The composition features a female subject, 100% using the uploaded face as reference (do not alter facial features or identity), seated off-center to the right, leaving strong negative space above and to the left. She wears a wide-brimmed fedora-style hat, a loose white linen blouse unbuttoned at the collar revealing layered silver necklaces, white linen trousers, and dark leather loafers, with delicate beaded bracelets on both wrists. The subject is seated comfortably in a sleek modern black leather lounge chair, left leg crossed over the right, left hand lightly touching the brim of the hat, and right arm casually resting on the chair’s armrest. Dramatic high-contrast chiaroscuro lighting dominates the scene, with a strong key light from the front-left creating deep shadows and bright highlights that emphasize the detailed textures of the linen fabric, leather chair, felt hat, and hair. Subtle rim lighting outlines the subject and chair, separating them from a pure deep-black background, enhancing cinematic depth and a professional luxury studio photography aesthetic.&quot;,<br>  &quot;color_style&quot;: &quot;black and white&quot;,<br>  &quot;resolution&quot;: &quot;8K&quot;,<br>  &quot;camera_lens&quot;: &quot;50mm&quot;,<br>  &quot;camera_angle&quot;: &quot;slightly low-angle&quot;,<br>  &quot;style&quot;: &quot;cinematic studio portrait, luxury editorial&quot;,<br>  &quot;lighting&quot;: &quot;chiaroscuro, high-contrast studio lighting&quot;,<br>  &quot;reference_image&quot;: &quot;strictly use uploaded image only&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2013448656767328610-1.jpg" alt="&quot;prompt&quot;: &quot;Hyper realistic 8K black and white studio portrait..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1605,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

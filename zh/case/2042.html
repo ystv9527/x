@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #2042 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;name&quot;: &quot;Zhao Lusi (Rosy Zhao)&quot;, &quot;profession&quot;: &quot;Chinese actress&quot;, &quot;pose&quot;: &quot;Centered composition, facin...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2042.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2042.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2042.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840312">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022315">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"subject\": {\n\"name\": \"赵露思（Rosy Zhao）\",\n\"profession\": \"中国女演员\",\n\"pose\": \"居中构图，正面朝向\",\n\"expression\": \"从容、宁静、自信\",\n\"gaze\": \"与镜头直接对视\"\n},\n\"styling\": {\n\"aesthetic\": \"高端时尚编辑风，现代致命女郎\",\n\"mood\": \"优雅、有力、前卫\",\n\"contrast\": \"柔和肤质光与硬朗皮革质感的对比\"\n},\n\"attire\": {\n\"dress\": {\n\"type\": \"抹胸礼服\",\n\"material\": \"黑色皮革\",\n\"design\": \"前卫、建筑感设计\",\n\"details\": [\n\"蓬松荷叶边\",\n\"褶皱布料装饰\",\n\"戏剧性雕塑轮廓\"\n]\n}\n},\n\"jewelry\": {\n\"material\": \"玫瑰金\",\n\"design\": \"蜂巢 / 六角格栅几何\",\n\"pieces\": [\n\"夸张垂坠耳环\",\n\"几何项链\",\n\"左腕宽版手环\"\n]\n},\n\"makeup\": {\n\"eyes\": \"柔和暖色调眼影\",\n\"lips\": \"大胆的偏红橙色口红\",\n\"finish\": \"高端华丽的刊物化妆光泽\"\n},\n\"skin_texture\": {\n\"primary\": \"水润肌肤\",\n\"alternatives\": [\n\"闪亮肌肤\",\n\"微油光\",\n\"轻微汗润质感\"\n]\n},\n\"camera\": {\n\"type\": \"特写人像\",\n\"style\": \"微距摄影\",\n\"focus\": \"面部细节、皮肤质感、珠宝清晰度\",\n\"depth_of_field\": \"浅景深，主体被孤立\"\n},\n\"lighting\": {\n\"type\": \"柔和定向的工作室灯光\",\n\"effect\": \"皮肤高光平滑，阴影可控\",\n\"emphasis\": \"强调面部轮廓和珠宝反光\"\n},\n\"background\": {\n\"color\": \"暖棕褐色 / 焦糖色\",\n\"style\": \"纯色、极简\",\n\"purpose\": \"增强与深色皮革和金属首饰的对比\"\n},\n\"overall_vibe\": {\n\"image_shift\": \"从邻家女孩转变为高端华丽偶像\",\n\"visual_impact\": \"强烈、现代、杂志级的力量感造型\"\n}\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;subject&quot;: {<br>&quot;name&quot;: &quot;赵露思（Rosy Zhao）&quot;,<br>&quot;profession&quot;: &quot;中国女演员&quot;,<br>&quot;pose&quot;: &quot;居中构图，正面朝向&quot;,<br>&quot;expression&quot;: &quot;从容、宁静、自信&quot;,<br>&quot;gaze&quot;: &quot;与镜头直接对视&quot;<br>},<br>&quot;styling&quot;: {<br>&quot;aesthetic&quot;: &quot;高端时尚编辑风，现代致命女郎&quot;,<br>&quot;mood&quot;: &quot;优雅、有力、前卫&quot;,<br>&quot;contrast&quot;: &quot;柔和肤质光与硬朗皮革质感的对比&quot;<br>},<br>&quot;attire&quot;: {<br>&quot;dress&quot;: {<br>&quot;type&quot;: &quot;抹胸礼服&quot;,<br>&quot;material&quot;: &quot;黑色皮革&quot;,<br>&quot;design&quot;: &quot;前卫、建筑感设计&quot;,<br>&quot;details&quot;: [<br>&quot;蓬松荷叶边&quot;,<br>&quot;褶皱布料装饰&quot;,<br>&quot;戏剧性雕塑轮廓&quot;<br>]<br>}<br>},<br>&quot;jewelry&quot;: {<br>&quot;material&quot;: &quot;玫瑰金&quot;,<br>&quot;design&quot;: &quot;蜂巢 / 六角格栅几何&quot;,<br>&quot;pieces&quot;: [<br>&quot;夸张垂坠耳环&quot;,<br>&quot;几何项链&quot;,<br>&quot;左腕宽版手环&quot;<br>]<br>},<br>&quot;makeup&quot;: {<br>&quot;eyes&quot;: &quot;柔和暖色调眼影&quot;,<br>&quot;lips&quot;: &quot;大胆的偏红橙色口红&quot;,<br>&quot;finish&quot;: &quot;高端华丽的刊物化妆光泽&quot;<br>},<br>&quot;skin_texture&quot;: {<br>&quot;primary&quot;: &quot;水润肌肤&quot;,<br>&quot;alternatives&quot;: [<br>&quot;闪亮肌肤&quot;,<br>&quot;微油光&quot;,<br>&quot;轻微汗润质感&quot;<br>]<br>},<br>&quot;camera&quot;: {<br>&quot;type&quot;: &quot;特写人像&quot;,<br>&quot;style&quot;: &quot;微距摄影&quot;,<br>&quot;focus&quot;: &quot;面部细节、皮肤质感、珠宝清晰度&quot;,<br>&quot;depth_of_field&quot;: &quot;浅景深，主体被孤立&quot;<br>},<br>&quot;lighting&quot;: {<br>&quot;type&quot;: &quot;柔和定向的工作室灯光&quot;,<br>&quot;effect&quot;: &quot;皮肤高光平滑，阴影可控&quot;,<br>&quot;emphasis&quot;: &quot;强调面部轮廓和珠宝反光&quot;<br>},<br>&quot;background&quot;: {<br>&quot;color&quot;: &quot;暖棕褐色 / 焦糖色&quot;,<br>&quot;style&quot;: &quot;纯色、极简&quot;,<br>&quot;purpose&quot;: &quot;增强与深色皮革和金属首饰的对比&quot;<br>},<br>&quot;overall_vibe&quot;: {<br>&quot;image_shift&quot;: &quot;从邻家女孩转变为高端华丽偶像&quot;,<br>&quot;visual_impact&quot;: &quot;强烈、现代、杂志级的力量感造型&quot;<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;subject&quot;: {<br>&quot;name&quot;: &quot;赵露思（Rosy Zhao）&quot;,<br>&quot;profession&quot;: &quot;中国女演员&quot;,<br>&quot;pose&quot;: &quot;居中构图，正面朝向&quot;,<br>&quot;expression&quot;: &quot;从容、宁静、自信&quot;,<br>&quot;gaze&quot;: &quot;与镜头直接对视&quot;<br>},<br>&quot;styling&quot;: {<br>&quot;aesthetic&quot;: &quot;高端时尚编辑风，现代致命女郎&quot;,<br>&quot;mood&quot;: &quot;优雅、有力、前卫&quot;,<br>&quot;contrast&quot;: &quot;柔和肤质光与硬朗皮革质感的对比&quot;<br>},<br>&quot;attire&quot;: {<br>&quot;dress&quot;: {<br>&quot;type&quot;: &quot;抹胸礼服&quot;,<br>&quot;material&quot;: &quot;黑色皮革&quot;,<br>&quot;design&quot;: &quot;前卫、建筑感设计&quot;,<br>&quot;details&quot;: [<br>&quot;蓬松荷叶边&quot;,<br>&quot;褶皱布料装饰&quot;,<br>&quot;戏剧性雕塑轮廓&quot;<br>]<br>}<br>},<br>&quot;jewelry&quot;: {<br>&quot;material&quot;: &quot;玫瑰金&quot;,<br>&quot;design&quot;: &quot;蜂巢 / 六角格栅几何&quot;,<br>&quot;pieces&quot;: [<br>&quot;夸张垂坠耳环&quot;,<br>&quot;几何项链&quot;,<br>&quot;左腕宽版手环&quot;<br>]<br>},<br>&quot;makeup&quot;: {<br>&quot;eyes&quot;: &quot;柔和暖色调眼影&quot;,<br>&quot;lips&quot;: &quot;大胆的偏红橙色口红&quot;,<br>&quot;finish&quot;: &quot;高端华丽的刊物化妆光泽&quot;<br>},<br>&quot;skin_texture&quot;: {<br>&quot;primary&quot;: &quot;水润肌肤&quot;,<br>&quot;alternatives&quot;: [<br>&quot;闪亮肌肤&quot;,<br>&quot;微油光&quot;,<br>&quot;轻微汗润质感&quot;<br>]<br>},<br>&quot;camera&quot;: {<br>&quot;type&quot;: &quot;特写人像&quot;,<br>&quot;style&quot;: &quot;微距摄影&quot;,<br>&quot;focus&quot;: &quot;面部细节、皮肤质感、珠宝清晰度&quot;,<br>&quot;depth_of_field&quot;: &quot;浅景深，主体被孤立&quot;<br>},<br>&quot;lighting&quot;: {<br>&quot;type&quot;: &quot;柔和定向的工作室灯光&quot;,<br>&quot;effect&quot;: &quot;皮肤高光平滑，阴影可控&quot;,<br>&quot;emphasis&quot;: &quot;强调面部轮廓和珠宝反光&quot;<br>},<br>&quot;background&quot;: {<br>&quot;color&quot;: &quot;暖棕褐色 / 焦糖色&quot;,<br>&quot;style&quot;: &quot;纯色、极简&quot;,<br>&quot;purpose&quot;: &quot;增强与深色皮革和金属首饰的对比&quot;<br>},<br>&quot;overall_vibe&quot;: {<br>&quot;image_shift&quot;: &quot;从邻家女孩转变为高端华丽偶像&quot;,<br>&quot;visual_impact&quot;: &quot;强烈、现代、杂志级的力量感造型&quot;<br>}<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"subject\": {\n\"name\": \"Zhao Lusi (Rosy Zhao)\",\n\"profession\": \"Chinese actress\",\n\"pose\": \"Centered composition, facing forward\",\n\"expression\": \"Poised, serene, confident\",\n\"gaze\": \"Direct eye contact with camera\"\n},\n\"styling\": {\n\"aesthetic\": \"High-fashion editorial, modern femme fatale\",\n\"mood\": \"Elegant, powerful, edgy\",\n\"contrast\": \"Soft skin lighting vs tough leather texture\"\n},\n\"attire\": {\n\"dress\": {\n\"type\": \"Strapless gown\",\n\"material\": \"Black leather\",\n\"design\": \"Avant-garde, architectural\",\n\"details\": [\n\"Voluminous ruffles\",\n\"Pleated fabric accents\",\n\"Dramatic sculptural silhouette\"\n]\n}\n},\n\"jewelry\": {\n\"material\": \"Rose-gold\",\n\"design\": \"Honeycomb / hexagonal lattice geometry\",\n\"pieces\": [\n\"Statement drop earrings\",\n\"Geometric necklace\",\n\"Wide cuff bracelet on left wrist\"\n]\n},\n\"makeup\": {\n\"eyes\": \"Soft warm-toned eyeshadow\",\n\"lips\": \"Bold reddish-orange lipstick\",\n\"finish\": \"High-glamour editorial polish\"\n},\n\"skin_texture\": {\n\"primary\": \"Dewy skin\",\n\"alternatives\": [\n\"Glistening skin\",\n\"Subtle oily sheen\",\n\"Light sweaty texture\"\n]\n},\n\"camera\": {\n\"type\": \"Close-up portrait\",\n\"style\": \"Macro photography\",\n\"focus\": \"Facial details, skin texture, jewelry sharpness\",\n\"depth_of_field\": \"Shallow, subject isolated\"\n},\n\"lighting\": {\n\"type\": \"Soft directional studio lighting\",\n\"effect\": \"Smooth highlights on skin, controlled shadows\",\n\"emphasis\": \"Face contours and jewelry reflections\"\n},\n\"background\": {\n\"color\": \"Warm tan / caramel\",\n\"style\": \"Solid, minimalist\",\n\"purpose\": \"Enhance contrast with dark leather and metallic jewelry\"\n},\n\"overall_vibe\": {\n\"image_shift\": \"From girl-next-door to high-glamour icon\",\n\"visual_impact\": \"Strong, modern, editorial power look\"\n}\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;subject&quot;: {<br>&quot;name&quot;: &quot;Zhao Lusi (Rosy Zhao)&quot;,<br>&quot;profession&quot;: &quot;Chinese actress&quot;,<br>&quot;pose&quot;: &quot;Centered composition, facing forward&quot;,<br>&quot;expression&quot;: &quot;Poised, serene, confident&quot;,<br>&quot;gaze&quot;: &quot;Direct eye contact with camera&quot;<br>},<br>&quot;styling&quot;: {<br>&quot;aesthetic&quot;: &quot;High-fashion editorial, modern femme fatale&quot;,<br>&quot;mood&quot;: &quot;Elegant, powerful, edgy&quot;,<br>&quot;contrast&quot;: &quot;Soft skin lighting vs tough leather texture&quot;<br>},<br>&quot;attire&quot;: {<br>&quot;dress&quot;: {<br>&quot;type&quot;: &quot;Strapless gown&quot;,<br>&quot;material&quot;: &quot;Black leather&quot;,<br>&quot;design&quot;: &quot;Avant-garde, architectural&quot;,<br>&quot;details&quot;: [<br>&quot;Voluminous ruffles&quot;,<br>&quot;Pleated fabric accents&quot;,<br>&quot;Dramatic sculptural silhouette&quot;<br>]<br>}<br>},<br>&quot;jewelry&quot;: {<br>&quot;material&quot;: &quot;Rose-gold&quot;,<br>&quot;design&quot;: &quot;Honeycomb / hexagonal lattice geometry&quot;,<br>&quot;pieces&quot;: [<br>&quot;Statement drop earrings&quot;,<br>&quot;Geometric necklace&quot;,<br>&quot;Wide cuff bracelet on left wrist&quot;<br>]<br>},<br>&quot;makeup&quot;: {<br>&quot;eyes&quot;: &quot;Soft warm-toned eyeshadow&quot;,<br>&quot;lips&quot;: &quot;Bold reddish-orange lipstick&quot;,<br>&quot;finish&quot;: &quot;High-glamour editorial polish&quot;<br>},<br>&quot;skin_texture&quot;: {<br>&quot;primary&quot;: &quot;Dewy skin&quot;,<br>&quot;alternatives&quot;: [<br>&quot;Glistening skin&quot;,<br>&quot;Subtle oily sheen&quot;,<br>&quot;Light sweaty texture&quot;<br>]<br>},<br>&quot;camera&quot;: {<br>&quot;type&quot;: &quot;Close-up portrait&quot;,<br>&quot;style&quot;: &quot;Macro photography&quot;,<br>&quot;focus&quot;: &quot;Facial details, skin texture, jewelry sharpness&quot;,<br>&quot;depth_of_field&quot;: &quot;Shallow, subject isolated&quot;<br>},<br>&quot;lighting&quot;: {<br>&quot;type&quot;: &quot;Soft directional studio lighting&quot;,<br>&quot;effect&quot;: &quot;Smooth highlights on skin, controlled shadows&quot;,<br>&quot;emphasis&quot;: &quot;Face contours and jewelry reflections&quot;<br>},<br>&quot;background&quot;: {<br>&quot;color&quot;: &quot;Warm tan / caramel&quot;,<br>&quot;style&quot;: &quot;Solid, minimalist&quot;,<br>&quot;purpose&quot;: &quot;Enhance contrast with dark leather and metallic jewelry&quot;<br>},<br>&quot;overall_vibe&quot;: {<br>&quot;image_shift&quot;: &quot;From girl-next-door to high-glamour icon&quot;,<br>&quot;visual_impact&quot;: &quot;Strong, modern, editorial power look&quot;<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;subject&quot;: {<br>&quot;name&quot;: &quot;Zhao Lusi (Rosy Zhao)&quot;,<br>&quot;profession&quot;: &quot;Chinese actress&quot;,<br>&quot;pose&quot;: &quot;Centered composition, facing forward&quot;,<br>&quot;expression&quot;: &quot;Poised, serene, confident&quot;,<br>&quot;gaze&quot;: &quot;Direct eye contact with camera&quot;<br>},<br>&quot;styling&quot;: {<br>&quot;aesthetic&quot;: &quot;High-fashion editorial, modern femme fatale&quot;,<br>&quot;mood&quot;: &quot;Elegant, powerful, edgy&quot;,<br>&quot;contrast&quot;: &quot;Soft skin lighting vs tough leather texture&quot;<br>},<br>&quot;attire&quot;: {<br>&quot;dress&quot;: {<br>&quot;type&quot;: &quot;Strapless gown&quot;,<br>&quot;material&quot;: &quot;Black leather&quot;,<br>&quot;design&quot;: &quot;Avant-garde, architectural&quot;,<br>&quot;details&quot;: [<br>&quot;Voluminous ruffles&quot;,<br>&quot;Pleated fabric accents&quot;,<br>&quot;Dramatic sculptural silhouette&quot;<br>]<br>}<br>},<br>&quot;jewelry&quot;: {<br>&quot;material&quot;: &quot;Rose-gold&quot;,<br>&quot;design&quot;: &quot;Honeycomb / hexagonal lattice geometry&quot;,<br>&quot;pieces&quot;: [<br>&quot;Statement drop earrings&quot;,<br>&quot;Geometric necklace&quot;,<br>&quot;Wide cuff bracelet on left wrist&quot;<br>]<br>},<br>&quot;makeup&quot;: {<br>&quot;eyes&quot;: &quot;Soft warm-toned eyeshadow&quot;,<br>&quot;lips&quot;: &quot;Bold reddish-orange lipstick&quot;,<br>&quot;finish&quot;: &quot;High-glamour editorial polish&quot;<br>},<br>&quot;skin_texture&quot;: {<br>&quot;primary&quot;: &quot;Dewy skin&quot;,<br>&quot;alternatives&quot;: [<br>&quot;Glistening skin&quot;,<br>&quot;Subtle oily sheen&quot;,<br>&quot;Light sweaty texture&quot;<br>]<br>},<br>&quot;camera&quot;: {<br>&quot;type&quot;: &quot;Close-up portrait&quot;,<br>&quot;style&quot;: &quot;Macro photography&quot;,<br>&quot;focus&quot;: &quot;Facial details, skin texture, jewelry sharpness&quot;,<br>&quot;depth_of_field&quot;: &quot;Shallow, subject isolated&quot;<br>},<br>&quot;lighting&quot;: {<br>&quot;type&quot;: &quot;Soft directional studio lighting&quot;,<br>&quot;effect&quot;: &quot;Smooth highlights on skin, controlled shadows&quot;,<br>&quot;emphasis&quot;: &quot;Face contours and jewelry reflections&quot;<br>},<br>&quot;background&quot;: {<br>&quot;color&quot;: &quot;Warm tan / caramel&quot;,<br>&quot;style&quot;: &quot;Solid, minimalist&quot;,<br>&quot;purpose&quot;: &quot;Enhance contrast with dark leather and metallic jewelry&quot;<br>},<br>&quot;overall_vibe&quot;: {<br>&quot;image_shift&quot;: &quot;From girl-next-door to high-glamour icon&quot;,<br>&quot;visual_impact&quot;: &quot;Strong, modern, editorial power look&quot;<br>}<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2020644696952078338-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2020644696952078338-2.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2020644696952078338-3.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2042,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

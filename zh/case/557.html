@@ -7,11 +7,13 @@
     <title>用 Nano Banana Pro 可视化五时代食物历史微缩景观 #557 | Gem Nana AI 提示词库</title>
     <meta name="description" content="以高角度微缩景观呈现辣鸡翅在五个时代的形态与工人造型，强调层级分布、背景质感与长影效果，输出为1:1、8K分辨率的单图。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/557.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/557.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/557.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841742">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022667">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("提示：为辣鸡翅做这个：输入变量：[插入食物]（例如，炸鸡、寿司、玉米卷、咖啡）\r\n系统指令：\r\n生成一个超逼真的、高角度的“食物历史微缩景观”，采用曼陀罗格式排列。\r\n**严重警告：场景必须由 1:87 比例的微型人偶（厨师）填充，这些人偶需与每个戒指所代表的具体时代相对应。**\r\n**1. 时间线分析：**\r\n分析输入食物的历史，以确定 5 个时代中工人的服饰和工具：\r\n阶段 0（中心）：现代厨师（白大褂、厨师帽、镊子）。\r\n第一阶段（商业）：快餐店员工（安全帽、Polo 衫、耳机）。\r\n第二阶段（家庭）：家庭厨师（花边围裙、烤箱手套）。\r\n第三阶段（工业）：屠夫/面包师（脏白围裙、砍刀、卷起袖子）。\r\n第四阶段（古代）：猎人/采集者（束腰外衣、腰布、石器、火）。\r\n2. 构图：\r\n视角：高角度（75 度）。并非完全平坦。我们需要看到微小人物的全身，而不仅仅是头部。\r\n轨道：5 个清晰的同心圆。\r\n边界（人行道）：每两个圆之间有一个可见的负空间（一个细小的缝隙）。这就是微小厨师站立、向观众展示食物的地方。\r\n3. 环与居民逻辑):\r\n中心（现代顶峰）:\r\n食物：解构，青石上的精致摆盘。\r\n形象：一位主厨用镊子小心翼翼地放置微小的绿色装饰。\r\n环 1（商业时代）：\r\n食物：明亮的包装，一致性。\r\n人物：一个青少年快餐工人，手持托盘或汽水杯，站在纸箱旁边。\r\n环 2（家庭时代）：\r\n食物：砂锅或带图案的瓷盘。\r\n人物：一位 1950 年代的家庭主妇或厨师，手持餐勺或派刀。\r\n第三环（工业时代）：\r\n食物：铸铁平底锅、锡盘、丰盛的份量。\r\n人物：一位魁梧的 19 世纪屠夫或厨师，手持一把沉重的刀或铁勺。\r\n第四环（远古起源）：\r\n食物：在篝火旁烹饪，使用石器工具，生食材（但烤得足够香，看起来诱人）。\r\n人物：一位古代人类照看一个小型篝火或用石头磨香料。\r\n4. 背景形态：\r\n人物下方的表面纹理随之变化：\r\n中心：抛光石。\r\n中间：乙烯基/木桌。\r\n边缘：尘土/地球。\r\n5. 照明与比例：\r\n微距模糊：轻微模糊边缘，以强调人物的小比例。\r\n阴影：人物必须投下长影在食物上，以证明他们确实站在那里。\r\nOutput: 一张图片，1:1 纵横比，8k 分辨率，微缩摄影风格。", this)'>📋 复制</button>
         </div>
-        <p>提示：为辣鸡翅做这个：输入变量：[插入食物]（例如，炸鸡、寿司、玉米卷、咖啡）<br>系统指令：<br>生成一个超逼真的、高角度的“食物历史微缩景观”，采用曼陀罗格式排列。<br>**严重警告：场景必须由 1:87 比例的微型人偶（厨师）填充，这些人偶需与每个戒指所代表的具体时代相对应。**<br>**1. 时间线分析：**<br>分析输入食物的历史，以确定 5 个时代中工人的服饰和工具：<br>阶段 0（中心）：现代厨师（白大褂、厨师帽、镊子）。<br>第一阶段（商业）：快餐店员工（安全帽、Polo 衫、耳机）。<br>第二阶段（家庭）：家庭厨师（花边围裙、烤箱手套）。<br>第三阶段（工业）：屠夫/面包师（脏白围裙、砍刀、卷起袖子）。<br>第四阶段（古代）：猎人/采集者（束腰外衣、腰布、石器、火）。<br>2. 构图：<br>视角：高角度（75 度）。并非完全平坦。我们需要看到微小人物的全身，而不仅仅是头部。<br>轨道：5 个清晰的同心圆。<br>边界（人行道）：每两个圆之间有一个可见的负空间（一个细小的缝隙）。这就是微小厨师站立、向观众展示食物的地方。<br>3. 环与居民逻辑):<br>中心（现代顶峰）:<br>食物：解构，青石上的精致摆盘。<br>形象：一位主厨用镊子小心翼翼地放置微小的绿色装饰。<br>环 1（商业时代）：<br>食物：明亮的包装，一致性。<br>人物：一个青少年快餐工人，手持托盘或汽水杯，站在纸箱旁边。<br>环 2（家庭时代）：<br>食物：砂锅或带图案的瓷盘。<br>人物：一位 1950 年代的家庭主妇或厨师，手持餐勺或派刀。<br>第三环（工业时代）：<br>食物：铸铁平底锅、锡盘、丰盛的份量。<br>人物：一位魁梧的 19 世纪屠夫或厨师，手持一把沉重的刀或铁勺。<br>第四环（远古起源）：<br>食物：在篝火旁烹饪，使用石器工具，生食材（但烤得足够香，看起来诱人）。<br>人物：一位古代人类照看一个小型篝火或用石头磨香料。<br>4. 背景形态：<br>人物下方的表面纹理随之变化：<br>中心：抛光石。<br>中间：乙烯基/木桌。<br>边缘：尘土/地球。<br>5. 照明与比例：<br>微距模糊：轻微模糊边缘，以强调人物的小比例。<br>阴影：人物必须投下长影在食物上，以证明他们确实站在那里。<br>Output: 一张图片，1:1 纵横比，8k 分辨率，微缩摄影风格。</p>
+        <div data-nosnippet><p>提示：为辣鸡翅做这个：输入变量：[插入食物]（例如，炸鸡、寿司、玉米卷、咖啡）<br>系统指令：<br>生成一个超逼真的、高角度的“食物历史微缩景观”，采用曼陀罗格式排列。<br>**严重警告：场景必须由 1:87 比例的微型人偶（厨师）填充，这些人偶需与每个戒指所代表的具体时代相对应。**<br>**1. 时间线分析：**<br>分析输入食物的历史，以确定 5 个时代中工人的服饰和工具：<br>阶段 0（中心）：现代厨师（白大褂、厨师帽、镊子）。<br>第一阶段（商业）：快餐店员工（安全帽、Polo 衫、耳机）。<br>第二阶段（家庭）：家庭厨师（花边围裙、烤箱手套）。<br>第三阶段（工业）：屠夫/面包师（脏白围裙、砍刀、卷起袖子）。<br>第四阶段（古代）：猎人/采集者（束腰外衣、腰布、石器、火）。<br>2. 构图：<br>视角：高角度（75 度）。并非完全平坦。我们需要看到微小人物的全身，而不仅仅是头部。<br>轨道：5 个清晰的同心圆。<br>边界（人行道）：每两个圆之间有一个可见的负空间（一个细小的缝隙）。这就是微小厨师站立、向观众展示食物的地方。<br>3. 环与居民逻辑):<br>中心（现代顶峰）:<br>食物：解构，青石上的精致摆盘。<br>形象：一位主厨用镊子小心翼翼地放置微小的绿色装饰。<br>环 1（商业时代）：<br>食物：明亮的包装，一致性。<br>人物：一个青少年快餐工人，手持托盘或汽水杯，站在纸箱旁边。<br>环 2（家庭时代）：<br>食物：砂锅或带图案的瓷盘。<br>人物：一位 1950 年代的家庭主妇或厨师，手持餐勺或派刀。<br>第三环（工业时代）：<br>食物：铸铁平底锅、锡盘、丰盛的份量。<br>人物：一位魁梧的 19 世纪屠夫或厨师，手持一把沉重的刀或铁勺。<br>第四环（远古起源）：<br>食物：在篝火旁烹饪，使用石器工具，生食材（但烤得足够香，看起来诱人）。<br>人物：一位古代人类照看一个小型篝火或用石头磨香料。<br>4. 背景形态：<br>人物下方的表面纹理随之变化：<br>中心：抛光石。<br>中间：乙烯基/木桌。<br>边缘：尘土/地球。<br>5. 照明与比例：<br>微距模糊：轻微模糊边缘，以强调人物的小比例。<br>阴影：人物必须投下长影在食物上，以证明他们确实站在那里。<br>Output: 一张图片，1:1 纵横比，8k 分辨率，微缩摄影风格。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Prompt: do this for spicy chicken wings: Input Variable: [INSERT FOOD] (e.g., Fried Chicken, Sushi, Tacos, Coffee)\r\nSystem Instruction:\r\nGenerate a hyper-realistic, high-angle \"Food History Diorama\" arranged in a Mandala format.\r\nCRITICAL: The scene must be populated by Tiny 1:87 Scale Figures (Chefs) that correspond to the specific era of each ring.\r\n1.  Timeline Analysis:\r\nAnalyze the history of the Input Food to determine the Attire and Tools of the workers in 5 eras:\r\nStage 0 (Center): The Modern Chef (White Coat, Toque, Tweezers).\r\nStage 1 (Commercial): The Fast Food Worker (Visor, Polo Shirt, Headset).\r\nStage 2 (Domestic): The Home Cook (Floral Apron, Oven Mitts).\r\nStage 3 (Industrial): The Butcher/Baker (Dirty White Apron, Cleaver, Rolled Sleeves).\r\nStage 4 (Ancient): The Hunter/Gatherer (Tunic, Loincloth, Stone Tools, Fire).\r\n2. The Composition :\r\nPerspective: High Angle (75 Degrees). Not completely flat. We need to see the bodies of the tiny figures, not just their heads.\r\nThe Orbits: 5 Distinct Concentric Rings.\r\nThe Boundary (The Catwalk): Between each ring, there is a visible Negative Space (a thin gap). This is where the tiny chefs stand, presenting the food to the viewer.\r\n3. The Rings & The Residents Logic):\r\nThe Center (Modern Pinnacle):\r\nFood: Deconstructed, gourmet plating on slate.\r\nThe Figure: A Master Chef carefully placing a micro-green garnish with tweezers.\r\nRing 1 (The Commercial Age):\r\nFood: Bright packaging, uniformity.\r\nThe Figure: A Teenage Fast Food Worker holding a tray or a soda cup, standing next to the cardboard boxes.\r\nRing 2 (The Domestic Age):\r\nFood: Casserole dishes or patterned china.\r\nThe Figure: A 1950s Housewife or Home Cook holding a serving spoon or pie cutter.\r\nRing 3 (The Industrial Age):\r\nFood: Cast iron skillets, tin plates, hearty portions.\r\nThe Figure: A burly 19th Century Butcher or Cook holding a heavy knife or iron ladle.\r\nRing 4 (The Ancient Origin):\r\nFood: Cooking over open fire, stone tools, raw ingredients (but cooked/charred enough to look appetizing).\r\nThe Figure: An Ancient Human tending to a mini-campfire or grinding spices with a stone.\r\n4. The Background Morph:\r\nThe surface texture underneath the figures changes with them:\r\nCenter: Polished Stone.\r\nMiddle: Linoleum/Wood Table.\r\nEdge: Dirt/Earth.\r\n5. Lighting & Scale:\r\nTilt-Shift: Blur the outer edges slightly to emphasize the miniature scale of the people.\r\nShadows: The figures must cast long shadows across the food to prove they are physically standing there.\r\nOutput: ONE image, 1:1 Aspect Ratio, 8k Resolution, Miniature Photography style.使用 Nano Banana Pro 以", this)'>📋 复制</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("do this for spicy chicken wings: Input Variable: [INSERT FOOD] (e.g., Fried Chicken, Sushi, Tacos, Coffee)\nSystem Instruction:\nGenerate a hyper-realistic, high-angle \"Food History Diorama\" arranged in a Mandala format.\nCRITICAL: The scene must be populated by Tiny 1:87 Scale Figures (Chefs) that correspond to the specific era of each ring.\n1.  Timeline Analysis:\nAnalyze the history of the Input Food to determine the Attire and Tools of the workers in 5 eras:\nStage 0 (Center): The Modern Chef (White Coat, Toque, Tweezers).\nStage 1 (Commercial): The Fast Food Worker (Visor, Polo Shirt, Headset).\nStage 2 (Domestic): The Home Cook (Floral Apron, Oven Mitts).\nStage 3 (Industrial): The Butcher/Baker (Dirty White Apron, Cleaver, Rolled Sleeves).\nStage 4 (Ancient): The Hunter/Gatherer (Tunic, Loincloth, Stone Tools, Fire).\n2. The Composition :\nPerspective: High Angle (75 Degrees). Not completely flat. We need to see the bodies of the tiny figures, not just their heads.\nThe Orbits: 5 Distinct Concentric Rings.\nThe Boundary (The Catwalk): Between each ring, there is a visible Negative Space (a thin gap). This is where the tiny chefs stand, presenting the food to the viewer.\n3. The Rings & The Residents Logic ):\nThe Center (Modern Pinnacle):\nFood: Deconstructed, gourmet plating on slate.\nThe Figure: A Master Chef carefully placing a micro-green garnish with tweezers.\nRing 1 (The Commercial Age):\nFood: Bright packaging, uniformity.\nThe Figure: A Teenage Fast Food Worker holding a tray or a soda cup, standing next to the cardboard boxes.\nRing 2 (The Domestic Age):\nFood: Casserole dishes or patterned china.\nThe Figure: A 1950s Housewife or Home Cook holding a serving spoon or pie cutter.\nRing 3 (The Industrial Age):\nFood: Cast iron skillets, tin plates, hearty portions.\nThe Figure: A burly 19th Century Butcher or Cook holding a heavy knife or iron ladle.\nRing 4 (The Ancient Origin):\nFood: Cooking over open fire, stone tools, raw ingredients (but cooked/charred enough to look appetizing).\nThe Figure: An Ancient Human tending to a mini-campfire or grinding spices with a stone.\n4. The Background Morph:\nThe surface texture underneath the figures changes with them:\nCenter: Polished Stone.\nMiddle: Linoleum/Wood Table.\nEdge: Dirt/Earth.\n5. Lighting & Scale:\nTilt-Shift: Blur the outer edges slightly to emphasize the miniature scale of the people.\nShadows: The figures must cast long shadows across the food to prove they are physically standing there.\nOutput: ONE image, 1:1 Aspect Ratio, 8k Resolution, Miniature Photography style. Use Nano Banana Pro with", this)'>📋 复制</button>
         </div>
-        <p>Prompt: do this for spicy chicken wings: Input Variable: [INSERT FOOD] (e.g., Fried Chicken, Sushi, Tacos, Coffee)<br>System Instruction:<br>Generate a hyper-realistic, high-angle &quot;Food History Diorama&quot; arranged in a Mandala format.<br>CRITICAL: The scene must be populated by Tiny 1:87 Scale Figures (Chefs) that correspond to the specific era of each ring.<br>1.  Timeline Analysis:<br>Analyze the history of the Input Food to determine the Attire and Tools of the workers in 5 eras:<br>Stage 0 (Center): The Modern Chef (White Coat, Toque, Tweezers).<br>Stage 1 (Commercial): The Fast Food Worker (Visor, Polo Shirt, Headset).<br>Stage 2 (Domestic): The Home Cook (Floral Apron, Oven Mitts).<br>Stage 3 (Industrial): The Butcher/Baker (Dirty White Apron, Cleaver, Rolled Sleeves).<br>Stage 4 (Ancient): The Hunter/Gatherer (Tunic, Loincloth, Stone Tools, Fire).<br>2. The Composition :<br>Perspective: High Angle (75 Degrees). Not completely flat. We need to see the bodies of the tiny figures, not just their heads.<br>The Orbits: 5 Distinct Concentric Rings.<br>The Boundary (The Catwalk): Between each ring, there is a visible Negative Space (a thin gap). This is where the tiny chefs stand, presenting the food to the viewer.<br>3. The Rings &amp; The Residents Logic):<br>The Center (Modern Pinnacle):<br>Food: Deconstructed, gourmet plating on slate.<br>The Figure: A Master Chef carefully placing a micro-green garnish with tweezers.<br>Ring 1 (The Commercial Age):<br>Food: Bright packaging, uniformity.<br>The Figure: A Teenage Fast Food Worker holding a tray or a soda cup, standing next to the cardboard boxes.<br>Ring 2 (The Domestic Age):<br>Food: Casserole dishes or patterned china.<br>The Figure: A 1950s Housewife or Home Cook holding a serving spoon or pie cutter.<br>Ring 3 (The Industrial Age):<br>Food: Cast iron skillets, tin plates, hearty portions.<br>The Figure: A burly 19th Century Butcher or Cook holding a heavy knife or iron ladle.<br>Ring 4 (The Ancient Origin):<br>Food: Cooking over open fire, stone tools, raw ingredients (but cooked/charred enough to look appetizing).<br>The Figure: An Ancient Human tending to a mini-campfire or grinding spices with a stone.<br>4. The Background Morph:<br>The surface texture underneath the figures changes with them:<br>Center: Polished Stone.<br>Middle: Linoleum/Wood Table.<br>Edge: Dirt/Earth.<br>5. Lighting &amp; Scale:<br>Tilt-Shift: Blur the outer edges slightly to emphasize the miniature scale of the people.<br>Shadows: The figures must cast long shadows across the food to prove they are physically standing there.<br>Output: ONE image, 1:1 Aspect Ratio, 8k Resolution, Miniature Photography style.使用 Nano Banana Pro 以</p>
+        <div data-nosnippet><p>do this for spicy chicken wings: Input Variable: [INSERT FOOD] (e.g., Fried Chicken, Sushi, Tacos, Coffee)<br>System Instruction:<br>Generate a hyper-realistic, high-angle &quot;Food History Diorama&quot; arranged in a Mandala format.<br>CRITICAL: The scene must be populated by Tiny 1:87 Scale Figures (Chefs) that correspond to the specific era of each ring.<br>1.  Timeline Analysis:<br>Analyze the history of the Input Food to determine the Attire and Tools of the workers in 5 eras:<br>Stage 0 (Center): The Modern Chef (White Coat, Toque, Tweezers).<br>Stage 1 (Commercial): The Fast Food Worker (Visor, Polo Shirt, Headset).<br>Stage 2 (Domestic): The Home Cook (Floral Apron, Oven Mitts).<br>Stage 3 (Industrial): The Butcher/Baker (Dirty White Apron, Cleaver, Rolled Sleeves).<br>Stage 4 (Ancient): The Hunter/Gatherer (Tunic, Loincloth, Stone Tools, Fire).<br>2. The Composition :<br>Perspective: High Angle (75 Degrees). Not completely flat. We need to see the bodies of the tiny figures, not just their heads.<br>The Orbits: 5 Distinct Concentric Rings.<br>The Boundary (The Catwalk): Between each ring, there is a visible Negative Space (a thin gap). This is where the tiny chefs stand, presenting the food to the viewer.<br>3. The Rings &amp; The Residents Logic ):<br>The Center (Modern Pinnacle):<br>Food: Deconstructed, gourmet plating on slate.<br>The Figure: A Master Chef carefully placing a micro-green garnish with tweezers.<br>Ring 1 (The Commercial Age):<br>Food: Bright packaging, uniformity.<br>The Figure: A Teenage Fast Food Worker holding a tray or a soda cup, standing next to the cardboard boxes.<br>Ring 2 (The Domestic Age):<br>Food: Casserole dishes or patterned china.<br>The Figure: A 1950s Housewife or Home Cook holding a serving spoon or pie cutter.<br>Ring 3 (The Industrial Age):<br>Food: Cast iron skillets, tin plates, hearty portions.<br>The Figure: A burly 19th Century Butcher or Cook holding a heavy knife or iron ladle.<br>Ring 4 (The Ancient Origin):<br>Food: Cooking over open fire, stone tools, raw ingredients (but cooked/charred enough to look appetizing).<br>The Figure: An Ancient Human tending to a mini-campfire or grinding spices with a stone.<br>4. The Background Morph:<br>The surface texture underneath the figures changes with them:<br>Center: Polished Stone.<br>Middle: Linoleum/Wood Table.<br>Edge: Dirt/Earth.<br>5. Lighting &amp; Scale:<br>Tilt-Shift: Blur the outer edges slightly to emphasize the miniature scale of the people.<br>Shadows: The figures must cast long shadows across the food to prove they are physically standing there.<br>Output: ONE image, 1:1 Aspect Ratio, 8k Resolution, Miniature Photography style. Use Nano Banana Pro with</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009005370229051599-1.jpg" alt="用 Nano Banana Pro 可视化五时代食物历史微缩景观" loading="lazy"><img src="/images/tweet-2009005370229051599-2.jpg" alt="用 Nano Banana Pro 可视化五时代食物历史微缩景观" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 557,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

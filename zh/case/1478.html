@@ -7,11 +7,13 @@
     <title>&quot;options&quot;: { #1478 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;options&quot;: { &quot;gender&quot;: [&quot;man&quot;, &quot;woman&quot;] }, &quot;prompt&quot;: &quot;A high fashion editorial shot of a [GENDER] model sitting or...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1478.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1478.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1478.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840843">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022446">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"options\": {\n    \"gender\": [\"man\", \"woman\"]\n  },\n  \"prompt\": \"一张高定时尚编辑式镜头，拍摄对象为一个 [GENDER] 模特，在起飞时坐着或站在飞行魔毯上。模特穿着复杂、层叠的服装，呈现出如 Céline、Balenciaga、Ralph Lauren、Givenchy 与 Zegna 等奢华品牌所典型的结构感轮廓与高级质感。衣料在风中优雅地鼓起。地毯华丽且细致，升起时扬起一丝微尘，来自阳光充足、极简主义建筑露台。灯光具有电影感且温暖，突出动态与奢华面料。低角度视角，完全聚焦于主体与场景。\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;options&quot;: {<br>    &quot;gender&quot;: [&quot;man&quot;, &quot;woman&quot;]<br>  },<br>  &quot;prompt&quot;: &quot;一张高定时尚编辑式镜头，拍摄对象为一个 [GENDER] 模特，在起飞时坐着或站在飞行魔毯上。模特穿着复杂、层叠的服装，呈现出如 Céline、Balenciaga、Ralph Lauren、Givenchy 与 Zegna 等奢华品牌所典型的结构感轮廓与高级质感。衣料在风中优雅地鼓起。地毯华丽且细致，升起时扬起一丝微尘，来自阳光充足、极简主义建筑露台。灯光具有电影感且温暖，突出动态与奢华面料。低角度视角，完全聚焦于主体与场景。&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;options&quot;: {<br>    &quot;gender&quot;: [&quot;man&quot;, &quot;woman&quot;]<br>  },<br>  &quot;prompt&quot;: &quot;一张高定时尚编辑式镜头，拍摄对象为一个 [GENDER] 模特，在起飞时坐着或站在飞行魔毯上。模特穿着复杂、层叠的服装，呈现出如 Céline、Balenciaga、Ralph Lauren、Givenchy 与 Zegna 等奢华品牌所典型的结构感轮廓与高级质感。衣料在风中优雅地鼓起。地毯华丽且细致，升起时扬起一丝微尘，来自阳光充足、极简主义建筑露台。灯光具有电影感且温暖，突出动态与奢华面料。低角度视角，完全聚焦于主体与场景。&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"options\": {\n    \"gender\": [\"man\", \"woman\"]\n  },\n  \"prompt\": \"A high-fashion editorial shot of a [GENDER] model sitting or standing on a flying magic carpet during takeoff. The model is wearing a sophisticated, layered outfit featuring the structured silhouettes and premium textures typical of luxury brands like Celine, Balenciaga, Ralph Lauren, Givenchy, and Zegna. The clothes billow elegantly in the wind. The carpet is ornate and detailed, kicking up a subtle dust cloud as it ascends from a sun-drenched, minimalist architectural terrace. The lighting is cinematic and warm, highlighting the motion and the luxurious fabrics. Low angle perspective focusing entirely on the subject and the scene.\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;options&quot;: {<br>    &quot;gender&quot;: [&quot;man&quot;, &quot;woman&quot;]<br>  },<br>  &quot;prompt&quot;: &quot;A high-fashion editorial shot of a [GENDER] model sitting or standing on a flying magic carpet during takeoff. The model is wearing a sophisticated, layered outfit featuring the structured silhouettes and premium textures typical of luxury brands like Celine, Balenciaga, Ralph Lauren, Givenchy, and Zegna. The clothes billow elegantly in the wind. The carpet is ornate and detailed, kicking up a subtle dust cloud as it ascends from a sun-drenched, minimalist architectural terrace. The lighting is cinematic and warm, highlighting the motion and the luxurious fabrics. Low angle perspective focusing entirely on the subject and the scene.&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;options&quot;: {<br>    &quot;gender&quot;: [&quot;man&quot;, &quot;woman&quot;]<br>  },<br>  &quot;prompt&quot;: &quot;A high-fashion editorial shot of a [GENDER] model sitting or standing on a flying magic carpet during takeoff. The model is wearing a sophisticated, layered outfit featuring the structured silhouettes and premium textures typical of luxury brands like Celine, Balenciaga, Ralph Lauren, Givenchy, and Zegna. The clothes billow elegantly in the wind. The carpet is ornate and detailed, kicking up a subtle dust cloud as it ascends from a sun-drenched, minimalist architectural terrace. The lighting is cinematic and warm, highlighting the motion and the luxurious fabrics. Low angle perspective focusing entirely on the subject and the scene.&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012343238472892738-1.jpg" alt="&quot;options&quot;: {" loading="lazy"><img src="/images/tweet-2012343238472892738-2.jpg" alt="&quot;options&quot;: {" loading="lazy"><img src="/images/tweet-2012343238472892738-3.jpg" alt="&quot;options&quot;: {" loading="lazy"><img src="/images/tweet-2012343238472892738-4.jpg" alt="&quot;options&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1478,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

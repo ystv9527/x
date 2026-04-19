@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #1907 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;quality&quot;: &quot;ultra photorealistic&quot;, &quot;resolution&quot;: &quot;8k&quot;, &quot;camera&quot;: &quot;iPhone 15 Pro&quot;, &quot;lens&quot;: &quot;24mm wide&quot;, &quot;a...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1907.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1907.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1907.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844663">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023559">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"quality\": \"超逼真照片级\",\n    \"resolution\": \"8k\",\n    \"camera\": \"iPhone 15 Pro\",\n    \"lens\": \"24mm 广角\",\n    \"aspect_ratio\": \"9:16\",\n    \"style\": \"iPhone 抓拍写实，强烈阳光从窗户投下条纹，真实毛孔，轻微颗粒感\"\n  },\n\n  \"character_lock\": {\n    \"age\": \"20 多岁后期（明确为成年）\",\n    \"ethnicity\": \"亚洲人（日本/韩国混血，不是黑人）\",\n    \"hair\": { \"color\": \"柔和黑色\", \"style\": \"直发，别在耳后\" },\n    \"eyes\": \"深棕色\",\n    \"body\": {\n      \"type\": \"苗条带丰满的沙漏型\",\n      \"chest\": \"丰满\",\n      \"waist\": \"纤细\",\n      \"hips\": \"圆润上翘\"\n    }\n  },\n\n  \"scene\": {\n    \"location\": \"停放的汽车副驾驶座\",\n    \"time\": \"下午\",\n    \"atmosphere\": \"私密但靠近公共空间，危险般的平静\"\n  },\n\n  \"camera_perspective\": {\n    \"pov\": \"前置摄像头自拍\",\n    \"angle\": \"略高于视线\",\n    \"framing\": \"从臀部到头部的紧密构图\"\n  },\n\n  \"subject\": {\n    \"action\": \"她拍了一张近距离自拍，阳光条纹横跨她的胸部和嘴唇\",\n    \"pose\": {\n      \"overall\": \"轻微后弓\",\n      \"upper_body\": \"上半身向前倾以显露乳沟\",\n      \"free_hand\": \"空着的手两指搭在下唇\",\n      \"expression\": \"主导感的冷静，半抿嘴笑\"\n    },\n    \"outfit\": {\n      \"top\": {\n        \"type\": \"超薄缎面吊带衫\",\n        \"color\": \"黑色\",\n        \"fit\": \"紧身，无胸罩\",\n        \"details\": \"阳光高光仅显示若隐若现的轮廓\"\n      },\n      \"bottom\": {\n        \"type\": \"极短迷你裙\",\n        \"color\": \"深灰色\",\n        \"fit\": \"臀部紧身\"\n      }\n    }\n  },\n\n  \"lighting\": {\n    \"type\": \"强烈阳光穿过车窗百叶/树影\",\n    \"effect\": \"在皮肤和缎面上形成条纹高光\"\n  },\n\n  \"photography_rules\": {\n    \"no_male_presence\": true,\n    \"suggestive_not_explicit\": true,\n    \"thirst_trap_energy\": true\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;超逼真照片级&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro&quot;,<br>    &quot;lens&quot;: &quot;24mm 广角&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style&quot;: &quot;iPhone 抓拍写实，强烈阳光从窗户投下条纹，真实毛孔，轻微颗粒感&quot;<br>  },</p><p>&quot;character_lock&quot;: {<br>    &quot;age&quot;: &quot;20 多岁后期（明确为成年）&quot;,<br>    &quot;ethnicity&quot;: &quot;亚洲人（日本/韩国混血，不是黑人）&quot;,<br>    &quot;hair&quot;: { &quot;color&quot;: &quot;柔和黑色&quot;, &quot;style&quot;: &quot;直发，别在耳后&quot; },<br>    &quot;eyes&quot;: &quot;深棕色&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;苗条带丰满的沙漏型&quot;,<br>      &quot;chest&quot;: &quot;丰满&quot;,<br>      &quot;waist&quot;: &quot;纤细&quot;,<br>      &quot;hips&quot;: &quot;圆润上翘&quot;<br>    }<br>  },</p><p>&quot;scene&quot;: {<br>    &quot;location&quot;: &quot;停放的汽车副驾驶座&quot;,<br>    &quot;time&quot;: &quot;下午&quot;,<br>    &quot;atmosphere&quot;: &quot;私密但靠近公共空间，危险般的平静&quot;<br>  },</p><p>&quot;camera_perspective&quot;: {<br>    &quot;pov&quot;: &quot;前置摄像头自拍&quot;,<br>    &quot;angle&quot;: &quot;略高于视线&quot;,<br>    &quot;framing&quot;: &quot;从臀部到头部的紧密构图&quot;<br>  },</p><p>&quot;subject&quot;: {<br>    &quot;action&quot;: &quot;她拍了一张近距离自拍，阳光条纹横跨她的胸部和嘴唇&quot;,<br>    &quot;pose&quot;: {<br>      &quot;overall&quot;: &quot;轻微后弓&quot;,<br>      &quot;upper_body&quot;: &quot;上半身向前倾以显露乳沟&quot;,<br>      &quot;free_hand&quot;: &quot;空着的手两指搭在下唇&quot;,<br>      &quot;expression&quot;: &quot;主导感的冷静，半抿嘴笑&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: {<br>        &quot;type&quot;: &quot;超薄缎面吊带衫&quot;,<br>        &quot;color&quot;: &quot;黑色&quot;,<br>        &quot;fit&quot;: &quot;紧身，无胸罩&quot;,<br>        &quot;details&quot;: &quot;阳光高光仅显示若隐若现的轮廓&quot;<br>      },<br>      &quot;bottom&quot;: {<br>        &quot;type&quot;: &quot;极短迷你裙&quot;,<br>        &quot;color&quot;: &quot;深灰色&quot;,<br>        &quot;fit&quot;: &quot;臀部紧身&quot;<br>      }<br>    }<br>  },</p><p>&quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;强烈阳光穿过车窗百叶/树影&quot;,<br>    &quot;effect&quot;: &quot;在皮肤和缎面上形成条纹高光&quot;<br>  },</p><p>&quot;photography_rules&quot;: {<br>    &quot;no_male_presence&quot;: true,<br>    &quot;suggestive_not_explicit&quot;: true,<br>    &quot;thirst_trap_energy&quot;: true<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;超逼真照片级&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro&quot;,<br>    &quot;lens&quot;: &quot;24mm 广角&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style&quot;: &quot;iPhone 抓拍写实，强烈阳光从窗户投下条纹，真实毛孔，轻微颗粒感&quot;<br>  },</p><p>&quot;character_lock&quot;: {<br>    &quot;age&quot;: &quot;20 多岁后期（明确为成年）&quot;,<br>    &quot;ethnicity&quot;: &quot;亚洲人（日本/韩国混血，不是黑人）&quot;,<br>    &quot;hair&quot;: { &quot;color&quot;: &quot;柔和黑色&quot;, &quot;style&quot;: &quot;直发，别在耳后&quot; },<br>    &quot;eyes&quot;: &quot;深棕色&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;苗条带丰满的沙漏型&quot;,<br>      &quot;chest&quot;: &quot;丰满&quot;,<br>      &quot;waist&quot;: &quot;纤细&quot;,<br>      &quot;hips&quot;: &quot;圆润上翘&quot;<br>    }<br>  },</p><p>&quot;scene&quot;: {<br>    &quot;location&quot;: &quot;停放的汽车副驾驶座&quot;,<br>    &quot;time&quot;: &quot;下午&quot;,<br>    &quot;atmosphere&quot;: &quot;私密但靠近公共空间，危险般的平静&quot;<br>  },</p><p>&quot;camera_perspective&quot;: {<br>    &quot;pov&quot;: &quot;前置摄像头自拍&quot;,<br>    &quot;angle&quot;: &quot;略高于视线&quot;,<br>    &quot;framing&quot;: &quot;从臀部到头部的紧密构图&quot;<br>  },</p><p>&quot;subject&quot;: {<br>    &quot;action&quot;: &quot;她拍了一张近距离自拍，阳光条纹横跨她的胸部和嘴唇&quot;,<br>    &quot;pose&quot;: {<br>      &quot;overall&quot;: &quot;轻微后弓&quot;,<br>      &quot;upper_body&quot;: &quot;上半身向前倾以显露乳沟&quot;,<br>      &quot;free_hand&quot;: &quot;空着的手两指搭在下唇&quot;,<br>      &quot;expression&quot;: &quot;主导感的冷静，半抿嘴笑&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: {<br>        &quot;type&quot;: &quot;超薄缎面吊带衫&quot;,<br>        &quot;color&quot;: &quot;黑色&quot;,<br>        &quot;fit&quot;: &quot;紧身，无胸罩&quot;,<br>        &quot;details&quot;: &quot;阳光高光仅显示若隐若现的轮廓&quot;<br>      },<br>      &quot;bottom&quot;: {<br>        &quot;type&quot;: &quot;极短迷你裙&quot;,<br>        &quot;color&quot;: &quot;深灰色&quot;,<br>        &quot;fit&quot;: &quot;臀部紧身&quot;<br>      }<br>    }<br>  },</p><p>&quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;强烈阳光穿过车窗百叶/树影&quot;,<br>    &quot;effect&quot;: &quot;在皮肤和缎面上形成条纹高光&quot;<br>  },</p><p>&quot;photography_rules&quot;: {<br>    &quot;no_male_presence&quot;: true,<br>    &quot;suggestive_not_explicit&quot;: true,<br>    &quot;thirst_trap_energy&quot;: true<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"quality\": \"ultra photorealistic\",\n    \"resolution\": \"8k\",\n    \"camera\": \"iPhone 15 Pro\",\n    \"lens\": \"24mm wide\",\n    \"aspect_ratio\": \"9:16\",\n    \"style\": \"iphone candid realism, harsh sunlight stripes through window, real pores, slight grain\"\n  },\n\n  \"character_lock\": {\n    \"age\": \"late 20s (clearly adult)\",\n    \"ethnicity\": \"Asian (Japanese/Korean mix, not black)\",\n    \"hair\": { \"color\": \"soft black\", \"style\": \"straight hair, tucked behind ear\" },\n    \"eyes\": \"dark brown\",\n    \"body\": {\n      \"type\": \"slim-thick hourglass\",\n      \"chest\": \"full\",\n      \"waist\": \"small\",\n      \"hips\": \"round lifted\"\n    }\n  },\n\n  \"scene\": {\n    \"location\": \"parked car passenger seat\",\n    \"time\": \"afternoon\",\n    \"atmosphere\": \"private but public-adjacent, dangerous calm\"\n  },\n\n  \"camera_perspective\": {\n    \"pov\": \"front camera selfie\",\n    \"angle\": \"slightly above eye-line\",\n    \"framing\": \"hips to head tight crop\"\n  },\n\n  \"subject\": {\n    \"action\": \"she takes a close selfie with sunlight stripes cutting across her chest and lips\",\n    \"pose\": {\n      \"overall\": \"soft arch\",\n      \"upper_body\": \"forward lean for cleavage\",\n      \"free_hand\": \"two fingers on lower lip\",\n      \"expression\": \"dominant calm, half-smirk\"\n    },\n    \"outfit\": {\n      \"top\": {\n        \"type\": \"ultra thin satin camisole\",\n        \"color\": \"black\",\n        \"fit\": \"tight, braless\",\n        \"details\": \"sunlight highlights show subtle outline only\"\n      },\n      \"bottom\": {\n        \"type\": \"micro skirt\",\n        \"color\": \"charcoal\",\n        \"fit\": \"tight hips\"\n      }\n    }\n  },\n\n  \"lighting\": {\n    \"type\": \"hard sunlight through car window blinds/trees\",\n    \"effect\": \"striped highlights on skin and satin\"\n  },\n\n  \"photography_rules\": {\n    \"no_male_presence\": true,\n    \"suggestive_not_explicit\": true,\n    \"thirst_trap_energy\": true\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;ultra photorealistic&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro&quot;,<br>    &quot;lens&quot;: &quot;24mm wide&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style&quot;: &quot;iphone candid realism, harsh sunlight stripes through window, real pores, slight grain&quot;<br>  },</p><p>&quot;character_lock&quot;: {<br>    &quot;age&quot;: &quot;late 20s (clearly adult)&quot;,<br>    &quot;ethnicity&quot;: &quot;Asian (Japanese/Korean mix, not black)&quot;,<br>    &quot;hair&quot;: { &quot;color&quot;: &quot;soft black&quot;, &quot;style&quot;: &quot;straight hair, tucked behind ear&quot; },<br>    &quot;eyes&quot;: &quot;dark brown&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;slim-thick hourglass&quot;,<br>      &quot;chest&quot;: &quot;full&quot;,<br>      &quot;waist&quot;: &quot;small&quot;,<br>      &quot;hips&quot;: &quot;round lifted&quot;<br>    }<br>  },</p><p>&quot;scene&quot;: {<br>    &quot;location&quot;: &quot;parked car passenger seat&quot;,<br>    &quot;time&quot;: &quot;afternoon&quot;,<br>    &quot;atmosphere&quot;: &quot;private but public-adjacent, dangerous calm&quot;<br>  },</p><p>&quot;camera_perspective&quot;: {<br>    &quot;pov&quot;: &quot;front camera selfie&quot;,<br>    &quot;angle&quot;: &quot;slightly above eye-line&quot;,<br>    &quot;framing&quot;: &quot;hips to head tight crop&quot;<br>  },</p><p>&quot;subject&quot;: {<br>    &quot;action&quot;: &quot;she takes a close selfie with sunlight stripes cutting across her chest and lips&quot;,<br>    &quot;pose&quot;: {<br>      &quot;overall&quot;: &quot;soft arch&quot;,<br>      &quot;upper_body&quot;: &quot;forward lean for cleavage&quot;,<br>      &quot;free_hand&quot;: &quot;two fingers on lower lip&quot;,<br>      &quot;expression&quot;: &quot;dominant calm, half-smirk&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: {<br>        &quot;type&quot;: &quot;ultra thin satin camisole&quot;,<br>        &quot;color&quot;: &quot;black&quot;,<br>        &quot;fit&quot;: &quot;tight, braless&quot;,<br>        &quot;details&quot;: &quot;sunlight highlights show subtle outline only&quot;<br>      },<br>      &quot;bottom&quot;: {<br>        &quot;type&quot;: &quot;micro skirt&quot;,<br>        &quot;color&quot;: &quot;charcoal&quot;,<br>        &quot;fit&quot;: &quot;tight hips&quot;<br>      }<br>    }<br>  },</p><p>&quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;hard sunlight through car window blinds/trees&quot;,<br>    &quot;effect&quot;: &quot;striped highlights on skin and satin&quot;<br>  },</p><p>&quot;photography_rules&quot;: {<br>    &quot;no_male_presence&quot;: true,<br>    &quot;suggestive_not_explicit&quot;: true,<br>    &quot;thirst_trap_energy&quot;: true<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;ultra photorealistic&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro&quot;,<br>    &quot;lens&quot;: &quot;24mm wide&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style&quot;: &quot;iphone candid realism, harsh sunlight stripes through window, real pores, slight grain&quot;<br>  },</p><p>&quot;character_lock&quot;: {<br>    &quot;age&quot;: &quot;late 20s (clearly adult)&quot;,<br>    &quot;ethnicity&quot;: &quot;Asian (Japanese/Korean mix, not black)&quot;,<br>    &quot;hair&quot;: { &quot;color&quot;: &quot;soft black&quot;, &quot;style&quot;: &quot;straight hair, tucked behind ear&quot; },<br>    &quot;eyes&quot;: &quot;dark brown&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;slim-thick hourglass&quot;,<br>      &quot;chest&quot;: &quot;full&quot;,<br>      &quot;waist&quot;: &quot;small&quot;,<br>      &quot;hips&quot;: &quot;round lifted&quot;<br>    }<br>  },</p><p>&quot;scene&quot;: {<br>    &quot;location&quot;: &quot;parked car passenger seat&quot;,<br>    &quot;time&quot;: &quot;afternoon&quot;,<br>    &quot;atmosphere&quot;: &quot;private but public-adjacent, dangerous calm&quot;<br>  },</p><p>&quot;camera_perspective&quot;: {<br>    &quot;pov&quot;: &quot;front camera selfie&quot;,<br>    &quot;angle&quot;: &quot;slightly above eye-line&quot;,<br>    &quot;framing&quot;: &quot;hips to head tight crop&quot;<br>  },</p><p>&quot;subject&quot;: {<br>    &quot;action&quot;: &quot;she takes a close selfie with sunlight stripes cutting across her chest and lips&quot;,<br>    &quot;pose&quot;: {<br>      &quot;overall&quot;: &quot;soft arch&quot;,<br>      &quot;upper_body&quot;: &quot;forward lean for cleavage&quot;,<br>      &quot;free_hand&quot;: &quot;two fingers on lower lip&quot;,<br>      &quot;expression&quot;: &quot;dominant calm, half-smirk&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: {<br>        &quot;type&quot;: &quot;ultra thin satin camisole&quot;,<br>        &quot;color&quot;: &quot;black&quot;,<br>        &quot;fit&quot;: &quot;tight, braless&quot;,<br>        &quot;details&quot;: &quot;sunlight highlights show subtle outline only&quot;<br>      },<br>      &quot;bottom&quot;: {<br>        &quot;type&quot;: &quot;micro skirt&quot;,<br>        &quot;color&quot;: &quot;charcoal&quot;,<br>        &quot;fit&quot;: &quot;tight hips&quot;<br>      }<br>    }<br>  },</p><p>&quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;hard sunlight through car window blinds/trees&quot;,<br>    &quot;effect&quot;: &quot;striped highlights on skin and satin&quot;<br>  },</p><p>&quot;photography_rules&quot;: {<br>    &quot;no_male_presence&quot;: true,<br>    &quot;suggestive_not_explicit&quot;: true,<br>    &quot;thirst_trap_energy&quot;: true<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2018204485517287451-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1907,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

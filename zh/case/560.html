@@ -7,11 +7,13 @@
     <title>今日自拍拼贴：胶片风格双联画的空灵晨光私照 #560 | Gem Nana AI 提示词库</title>
     <meta name="description" content="呈现两联拼贴的空灵胶片风格自拍，左图镜面自拍，右图近景肩颈细节，光影柔和、颗粒感明显，营造安静亲密的晨间氛围。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/560.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/560.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/560.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841740">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022666">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n  \"prompt_configuration\": {\r\n\"风格预设\": \"林浩川电影美学\"\r\n\"媒体类型\": \"模拟胶片摄影双联画 (两联拼贴)\"\r\n\"整体氛围\": \"空灵，梦幻，轻盈，静谧的亲密，纯粹性感，过度曝光\"\r\n}\r\n\"全局技术参数\": {\r\n    \"胶片类型\": \"中画幅，富士 Pro 400H 模拟\",\r\n    \"胶片特性\": \"厚重自然颗粒感，柔和光晕，去饱和柔和粉彩色调，乳白色调，轻微青色偏移\",\r\n    \"布光方式\": \"漫射自然日光，高调布光，高光过曝，极柔和阴影\"\r\n\"焦点\": \"柔焦，浅景深\"\r\n  },\r\n  \"panel_1_left_image\": {\r\n    \"构图\": \"简约浴室中的中景镜像自拍\"\r\n\"主题\": {\r\n      \"身份\": \"年轻日本女性偶像，自然黑发松散束起\",\r\n      \"表情\": \"凝视镜面屏幕，温柔，放松，略带脆弱感\",\r\n      \"着装\": \"宽松，薄透白色棉质衬衫，随意滑落一只肩头\"\r\n},\r\n    \"props\": {\r\n      \"main_item\": \"苹果 iPhone 16 Pro Max\",\r\n      \"details\": \"白色钛金属工艺，流畅的现代设计与柔和的胶片颗粒感形成鲜明对比\"\r\n\"动作\": \"双手优雅地持握手机\"\r\n    },\r\n    \"环境\": {\r\n      \"场景\": \"明亮简洁的房间，白色陶瓷地砖，自然光线从窗户倾泻而入\"\r\n\"vibe\": \"一个转瞬即逝的私密晨间瞬间，沐浴在淡光之中\"\r\n    }\r\n  },\r\n  \"panel_2_right_image\": {\r\n\"构图\": \"亲密特写细节镜头，浅景深\",\r\n\"焦点\": \"偶像裸露的肩膀和精致的锁骨\",\r\n\"细节\": {\r\n\"主体状态\": \"纯白色棉质衬衫布料皱褶滑落，露出光滑的肩部曲线\"\r\n\"纹理\": \"聚焦于柔和、苍白肌肤与轻盈、半透明棉布褶皱之间的对比\",\r\n\"光线\": \"柔和、过曝的自然光勾勒肩部轮廓，捕捉锁骨结构\"\r\n},\r\n\"特定氛围\": \"精致、脆弱、触感，强调露肩设计风格\"\r\n}\r\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_configuration&quot;: {<br>&quot;风格预设&quot;: &quot;林浩川电影美学&quot;<br>&quot;媒体类型&quot;: &quot;模拟胶片摄影双联画 (两联拼贴)&quot;<br>&quot;整体氛围&quot;: &quot;空灵，梦幻，轻盈，静谧的亲密，纯粹性感，过度曝光&quot;<br>}<br>&quot;全局技术参数&quot;: {<br>    &quot;胶片类型&quot;: &quot;中画幅，富士 Pro 400H 模拟&quot;,<br>    &quot;胶片特性&quot;: &quot;厚重自然颗粒感，柔和光晕，去饱和柔和粉彩色调，乳白色调，轻微青色偏移&quot;,<br>    &quot;布光方式&quot;: &quot;漫射自然日光，高调布光，高光过曝，极柔和阴影&quot;<br>&quot;焦点&quot;: &quot;柔焦，浅景深&quot;<br>  },<br>  &quot;panel_1_left_image&quot;: {<br>    &quot;构图&quot;: &quot;简约浴室中的中景镜像自拍&quot;<br>&quot;主题&quot;: {<br>      &quot;身份&quot;: &quot;年轻日本女性偶像，自然黑发松散束起&quot;,<br>      &quot;表情&quot;: &quot;凝视镜面屏幕，温柔，放松，略带脆弱感&quot;,<br>      &quot;着装&quot;: &quot;宽松，薄透白色棉质衬衫，随意滑落一只肩头&quot;<br>},<br>    &quot;props&quot;: {<br>      &quot;main_item&quot;: &quot;苹果 iPhone 16 Pro Max&quot;,<br>      &quot;details&quot;: &quot;白色钛金属工艺，流畅的现代设计与柔和的胶片颗粒感形成鲜明对比&quot;<br>&quot;动作&quot;: &quot;双手优雅地持握手机&quot;<br>    },<br>    &quot;环境&quot;: {<br>      &quot;场景&quot;: &quot;明亮简洁的房间，白色陶瓷地砖，自然光线从窗户倾泻而入&quot;<br>&quot;vibe&quot;: &quot;一个转瞬即逝的私密晨间瞬间，沐浴在淡光之中&quot;<br>    }<br>  },<br>  &quot;panel_2_right_image&quot;: {<br>&quot;构图&quot;: &quot;亲密特写细节镜头，浅景深&quot;,<br>&quot;焦点&quot;: &quot;偶像裸露的肩膀和精致的锁骨&quot;,<br>&quot;细节&quot;: {<br>&quot;主体状态&quot;: &quot;纯白色棉质衬衫布料皱褶滑落，露出光滑的肩部曲线&quot;<br>&quot;纹理&quot;: &quot;聚焦于柔和、苍白肌肤与轻盈、半透明棉布褶皱之间的对比&quot;,<br>&quot;光线&quot;: &quot;柔和、过曝的自然光勾勒肩部轮廓，捕捉锁骨结构&quot;<br>},<br>&quot;特定氛围&quot;: &quot;精致、脆弱、触感，强调露肩设计风格&quot;<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_configuration&quot;: {<br>&quot;风格预设&quot;: &quot;林浩川电影美学&quot;<br>&quot;媒体类型&quot;: &quot;模拟胶片摄影双联画 (两联拼贴)&quot;<br>&quot;整体氛围&quot;: &quot;空灵，梦幻，轻盈，静谧的亲密，纯粹性感，过度曝光&quot;<br>}<br>&quot;全局技术参数&quot;: {<br>    &quot;胶片类型&quot;: &quot;中画幅，富士 Pro 400H 模拟&quot;,<br>    &quot;胶片特性&quot;: &quot;厚重自然颗粒感，柔和光晕，去饱和柔和粉彩色调，乳白色调，轻微青色偏移&quot;,<br>    &quot;布光方式&quot;: &quot;漫射自然日光，高调布光，高光过曝，极柔和阴影&quot;<br>&quot;焦点&quot;: &quot;柔焦，浅景深&quot;<br>  },<br>  &quot;panel_1_left_image&quot;: {<br>    &quot;构图&quot;: &quot;简约浴室中的中景镜像自拍&quot;<br>&quot;主题&quot;: {<br>      &quot;身份&quot;: &quot;年轻日本女性偶像，自然黑发松散束起&quot;,<br>      &quot;表情&quot;: &quot;凝视镜面屏幕，温柔，放松，略带脆弱感&quot;,<br>      &quot;着装&quot;: &quot;宽松，薄透白色棉质衬衫，随意滑落一只肩头&quot;<br>},<br>    &quot;props&quot;: {<br>      &quot;main_item&quot;: &quot;苹果 iPhone 16 Pro Max&quot;,<br>      &quot;details&quot;: &quot;白色钛金属工艺，流畅的现代设计与柔和的胶片颗粒感形成鲜明对比&quot;<br>&quot;动作&quot;: &quot;双手优雅地持握手机&quot;<br>    },<br>    &quot;环境&quot;: {<br>      &quot;场景&quot;: &quot;明亮简洁的房间，白色陶瓷地砖，自然光线从窗户倾泻而入&quot;<br>&quot;vibe&quot;: &quot;一个转瞬即逝的私密晨间瞬间，沐浴在淡光之中&quot;<br>    }<br>  },<br>  &quot;panel_2_right_image&quot;: {<br>&quot;构图&quot;: &quot;亲密特写细节镜头，浅景深&quot;,<br>&quot;焦点&quot;: &quot;偶像裸露的肩膀和精致的锁骨&quot;,<br>&quot;细节&quot;: {<br>&quot;主体状态&quot;: &quot;纯白色棉质衬衫布料皱褶滑落，露出光滑的肩部曲线&quot;<br>&quot;纹理&quot;: &quot;聚焦于柔和、苍白肌肤与轻盈、半透明棉布褶皱之间的对比&quot;,<br>&quot;光线&quot;: &quot;柔和、过曝的自然光勾勒肩部轮廓，捕捉锁骨结构&quot;<br>},<br>&quot;特定氛围&quot;: &quot;精致、脆弱、触感，强调露肩设计风格&quot;<br>}<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n  \"prompt_configuration\": {\r\n    \"style_preset\": \"Rinko Kawauchi Film Aesthetic\",\r\n    \"media_type\": \"Analog Film Photography Diptych (Two-panel collage)\",\r\n    \"overall_mood\": \"Ethereal, dreamy, airy, quiet intimacy, pure sexy, overexposed\"\r\n  },\r\n  \"global_technical_params\": {\r\n    \"film_stock\": \"Medium Format, Fujifilm Pro 400H emulation\",\r\n    \"film_characteristics\": \"Heavy natural grain, soft halation, desaturated pastel colors, milky whites, slight cyan shift\",\r\n    \"lighting\": \"Diffused natural daylight, high-key, blown-out highlights, very soft shadows\",\r\n    \"focus\": \"Soft focus, shallow depth of field\"\r\n  },\r\n  \"panel_1_left_image\": {\r\n    \"composition\": \"Medium shot mirror selfie in a minimalist bathroom\",\r\n    \"subject\": {\r\n      \"identity\": \"Young Japanese female idol, natural dark hair loosely tied\",\r\n      \"expression\": \"Gazing into the mirror screen, gentle, relaxed, slightly vulnerable\",\r\n      \"attire\": \"Oversized, sheer white cotton shirt, casually slipping off one shoulder\"\r\n    },\r\n    \"props\": {\r\n      \"main_item\": \"Apple iPhone 16 Pro Max\",\r\n      \"details\": \"White Titanium finish, sleek modern design contrasting with the soft film grain\",\r\n      \"action\": \"Holding the phone elegantly with both hands\"\r\n    },\r\n    \"environment\": {\r\n      \"setting\": \"Bright, simple room, white ceramic tiles, natural light flooding from a window\",\r\n      \"vibe\": \"A fleeting, private morning moment, bathed in pale light\"\r\n    }\r\n  },\r\n  \"panel_2_right_image\": {\r\n    \"composition\": \"Intimate close-up detail shot, shallow depth of field\",\r\n    \"focus_point\": \"The idol's exposed bare shoulder and delicate collarbone\",\r\n    \"details\": {\r\n      \"subject_state\": \"The sheer white cotton shirt fabric is bunched up and slipping down, revealing the smooth curve of the shoulder\",\r\n      \"texture\": \"Focus on the contrast between soft, pale skin and the airy, translucent cotton fabric folds\",\r\n      \"lighting\": \"Gentle, overexposed natural light rimming the shoulder and catching the collarbone structure\"\r\n    },\r\n    \"specific_vibe\": \"Delicate, fragile, tactile, emphasizing the off-shoulder styling\"\r\n  }\r\n}---prompt---", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_configuration&quot;: {<br>    &quot;style_preset&quot;: &quot;Rinko Kawauchi Film Aesthetic&quot;,<br>    &quot;media_type&quot;: &quot;Analog Film Photography Diptych (Two-panel collage)&quot;,<br>    &quot;overall_mood&quot;: &quot;Ethereal, dreamy, airy, quiet intimacy, pure sexy, overexposed&quot;<br>  },<br>  &quot;global_technical_params&quot;: {<br>    &quot;film_stock&quot;: &quot;Medium Format, Fujifilm Pro 400H emulation&quot;,<br>    &quot;film_characteristics&quot;: &quot;Heavy natural grain, soft halation, desaturated pastel colors, milky whites, slight cyan shift&quot;,<br>    &quot;lighting&quot;: &quot;Diffused natural daylight, high-key, blown-out highlights, very soft shadows&quot;,<br>    &quot;focus&quot;: &quot;Soft focus, shallow depth of field&quot;<br>  },<br>  &quot;panel_1_left_image&quot;: {<br>    &quot;composition&quot;: &quot;Medium shot mirror selfie in a minimalist bathroom&quot;,<br>    &quot;subject&quot;: {<br>      &quot;identity&quot;: &quot;Young Japanese female idol, natural dark hair loosely tied&quot;,<br>      &quot;expression&quot;: &quot;Gazing into the mirror screen, gentle, relaxed, slightly vulnerable&quot;,<br>      &quot;attire&quot;: &quot;Oversized, sheer white cotton shirt, casually slipping off one shoulder&quot;<br>    },<br>    &quot;props&quot;: {<br>      &quot;main_item&quot;: &quot;Apple iPhone 16 Pro Max&quot;,<br>      &quot;details&quot;: &quot;White Titanium finish, sleek modern design contrasting with the soft film grain&quot;,<br>      &quot;action&quot;: &quot;Holding the phone elegantly with both hands&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Bright, simple room, white ceramic tiles, natural light flooding from a window&quot;,<br>      &quot;vibe&quot;: &quot;A fleeting, private morning moment, bathed in pale light&quot;<br>    }<br>  },<br>  &quot;panel_2_right_image&quot;: {<br>    &quot;composition&quot;: &quot;Intimate close-up detail shot, shallow depth of field&quot;,<br>    &quot;focus_point&quot;: &quot;The idol&#39;s exposed bare shoulder and delicate collarbone&quot;,<br>    &quot;details&quot;: {<br>      &quot;subject_state&quot;: &quot;The sheer white cotton shirt fabric is bunched up and slipping down, revealing the smooth curve of the shoulder&quot;,<br>      &quot;texture&quot;: &quot;Focus on the contrast between soft, pale skin and the airy, translucent cotton fabric folds&quot;,<br>      &quot;lighting&quot;: &quot;Gentle, overexposed natural light rimming the shoulder and catching the collarbone structure&quot;<br>    },<br>    &quot;specific_vibe&quot;: &quot;Delicate, fragile, tactile, emphasizing the off-shoulder styling&quot;<br>  }<br>}---prompt---</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_configuration&quot;: {<br>    &quot;style_preset&quot;: &quot;Rinko Kawauchi Film Aesthetic&quot;,<br>    &quot;media_type&quot;: &quot;Analog Film Photography Diptych (Two-panel collage)&quot;,<br>    &quot;overall_mood&quot;: &quot;Ethereal, dreamy, airy, quiet intimacy, pure sexy, overexposed&quot;<br>  },<br>  &quot;global_technical_params&quot;: {<br>    &quot;film_stock&quot;: &quot;Medium Format, Fujifilm Pro 400H emulation&quot;,<br>    &quot;film_characteristics&quot;: &quot;Heavy natural grain, soft halation, desaturated pastel colors, milky whites, slight cyan shift&quot;,<br>    &quot;lighting&quot;: &quot;Diffused natural daylight, high-key, blown-out highlights, very soft shadows&quot;,<br>    &quot;focus&quot;: &quot;Soft focus, shallow depth of field&quot;<br>  },<br>  &quot;panel_1_left_image&quot;: {<br>    &quot;composition&quot;: &quot;Medium shot mirror selfie in a minimalist bathroom&quot;,<br>    &quot;subject&quot;: {<br>      &quot;identity&quot;: &quot;Young Japanese female idol, natural dark hair loosely tied&quot;,<br>      &quot;expression&quot;: &quot;Gazing into the mirror screen, gentle, relaxed, slightly vulnerable&quot;,<br>      &quot;attire&quot;: &quot;Oversized, sheer white cotton shirt, casually slipping off one shoulder&quot;<br>    },<br>    &quot;props&quot;: {<br>      &quot;main_item&quot;: &quot;Apple iPhone 16 Pro Max&quot;,<br>      &quot;details&quot;: &quot;White Titanium finish, sleek modern design contrasting with the soft film grain&quot;,<br>      &quot;action&quot;: &quot;Holding the phone elegantly with both hands&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Bright, simple room, white ceramic tiles, natural light flooding from a window&quot;,<br>      &quot;vibe&quot;: &quot;A fleeting, private morning moment, bathed in pale light&quot;<br>    }<br>  },<br>  &quot;panel_2_right_image&quot;: {<br>    &quot;composition&quot;: &quot;Intimate close-up detail shot, shallow depth of field&quot;,<br>    &quot;focus_point&quot;: &quot;The idol&#39;s exposed bare shoulder and delicate collarbone&quot;,<br>    &quot;details&quot;: {<br>      &quot;subject_state&quot;: &quot;The sheer white cotton shirt fabric is bunched up and slipping down, revealing the smooth curve of the shoulder&quot;,<br>      &quot;texture&quot;: &quot;Focus on the contrast between soft, pale skin and the airy, translucent cotton fabric folds&quot;,<br>      &quot;lighting&quot;: &quot;Gentle, overexposed natural light rimming the shoulder and catching the collarbone structure&quot;<br>    },<br>    &quot;specific_vibe&quot;: &quot;Delicate, fragile, tactile, emphasizing the off-shoulder styling&quot;<br>  }<br>}---prompt---</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009434240140661234-1.jpg" alt="今日自拍拼贴：胶片风格双联画的空灵晨光私照" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 560,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

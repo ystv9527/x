@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Using the uploaded reference image, generate a hig... #1286 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Using the uploaded reference image, generate a highly realistic full body portrait of the SAME person wi...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1286.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1286.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1286.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841078">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022490">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"使用上传的参考图像，生成同一人的高度真实全身肖像，面部结构、肤色、面部比例和整体身份均与参考图像百分之百相同。绝对不要以任何方式改变面部。\\n\\n一位自豪的南印度妇女在庆祝泰蓬格尔节（Thaipongal），清晨优雅地站在传统的泰米尔乡村院落中。她身着优雅的传统丝绸纱丽（康吉瓦拉姆风格），色彩浓郁、节日感强，带有金色扎里边饰，披戴地道。配套的上衣与纱丽相衬。她的发型以传统方式整齐梳理，点缀着新鲜的茉莉花（mallipoo）。额头上可见细微的檀香或库库姆（kumkum）额点。她一手轻握一根长长的褐色带叶甘蔗杆。\\n\\n在前景中，一个装饰过的陶制Pongal锅在柴火砖灶上沸腾溢出，米饭翻滚，象征着丰饶。灶旁绑着褐色甘蔗杆、鲜嫩的姜黄植株、香蕉，地面上绘有复杂多彩的kolam（rangoli）图案。\\n\\n背景是一座带茅草屋顶的质朴泥房，装饰着芒果叶门饰（torans）、万寿菊花环和悬挂的陶制油灯。温暖的金色晨光充满了整个场景，柴火升起柔和的烟雾，营造出欢乐而吉祥的节日气氛。\\n\\n超真实的电影感光照、浅景深、自然的南印度皮肤质感、地道的泰米尔乡村美学、8K 超细节质量、竖构图、文化准确性、节日氛围。\",\n  \"style\": \"电影真实主义，南印度传统肖像\",\n  \"lighting\": \"温暖的金色晨光，柔和的电影般光晕\",\n  \"environment\": \"传统的泰米尔乡村院落\",\n  \"camera\": \"专业人像摄影，浅景深\",\n  \"quality\": \"超真实，8K，极其细节化\",\n  \"composition\": \"全身，竖构图\",\n  \"constraints\": \"面部必须与上传的参考图像百分之百相同，绝对不得进行任何面部修改\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;使用上传的参考图像，生成同一人的高度真实全身肖像，面部结构、肤色、面部比例和整体身份均与参考图像百分之百相同。绝对不要以任何方式改变面部。\n\n一位自豪的南印度妇女在庆祝泰蓬格尔节（Thaipongal），清晨优雅地站在传统的泰米尔乡村院落中。她身着优雅的传统丝绸纱丽（康吉瓦拉姆风格），色彩浓郁、节日感强，带有金色扎里边饰，披戴地道。配套的上衣与纱丽相衬。她的发型以传统方式整齐梳理，点缀着新鲜的茉莉花（mallipoo）。额头上可见细微的檀香或库库姆（kumkum）额点。她一手轻握一根长长的褐色带叶甘蔗杆。\n\n在前景中，一个装饰过的陶制Pongal锅在柴火砖灶上沸腾溢出，米饭翻滚，象征着丰饶。灶旁绑着褐色甘蔗杆、鲜嫩的姜黄植株、香蕉，地面上绘有复杂多彩的kolam（rangoli）图案。\n\n背景是一座带茅草屋顶的质朴泥房，装饰着芒果叶门饰（torans）、万寿菊花环和悬挂的陶制油灯。温暖的金色晨光充满了整个场景，柴火升起柔和的烟雾，营造出欢乐而吉祥的节日气氛。\n\n超真实的电影感光照、浅景深、自然的南印度皮肤质感、地道的泰米尔乡村美学、8K 超细节质量、竖构图、文化准确性、节日氛围。&quot;,<br>  &quot;style&quot;: &quot;电影真实主义，南印度传统肖像&quot;,<br>  &quot;lighting&quot;: &quot;温暖的金色晨光，柔和的电影般光晕&quot;,<br>  &quot;environment&quot;: &quot;传统的泰米尔乡村院落&quot;,<br>  &quot;camera&quot;: &quot;专业人像摄影，浅景深&quot;,<br>  &quot;quality&quot;: &quot;超真实，8K，极其细节化&quot;,<br>  &quot;composition&quot;: &quot;全身，竖构图&quot;,<br>  &quot;constraints&quot;: &quot;面部必须与上传的参考图像百分之百相同，绝对不得进行任何面部修改&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;使用上传的参考图像，生成同一人的高度真实全身肖像，面部结构、肤色、面部比例和整体身份均与参考图像百分之百相同。绝对不要以任何方式改变面部。\n\n一位自豪的南印度妇女在庆祝泰蓬格尔节（Thaipongal），清晨优雅地站在传统的泰米尔乡村院落中。她身着优雅的传统丝绸纱丽（康吉瓦拉姆风格），色彩浓郁、节日感强，带有金色扎里边饰，披戴地道。配套的上衣与纱丽相衬。她的发型以传统方式整齐梳理，点缀着新鲜的茉莉花（mallipoo）。额头上可见细微的檀香或库库姆（kumkum）额点。她一手轻握一根长长的褐色带叶甘蔗杆。\n\n在前景中，一个装饰过的陶制Pongal锅在柴火砖灶上沸腾溢出，米饭翻滚，象征着丰饶。灶旁绑着褐色甘蔗杆、鲜嫩的姜黄植株、香蕉，地面上绘有复杂多彩的kolam（rangoli）图案。\n\n背景是一座带茅草屋顶的质朴泥房，装饰着芒果叶门饰（torans）、万寿菊花环和悬挂的陶制油灯。温暖的金色晨光充满了整个场景，柴火升起柔和的烟雾，营造出欢乐而吉祥的节日气氛。\n\n超真实的电影感光照、浅景深、自然的南印度皮肤质感、地道的泰米尔乡村美学、8K 超细节质量、竖构图、文化准确性、节日氛围。&quot;,<br>  &quot;style&quot;: &quot;电影真实主义，南印度传统肖像&quot;,<br>  &quot;lighting&quot;: &quot;温暖的金色晨光，柔和的电影般光晕&quot;,<br>  &quot;environment&quot;: &quot;传统的泰米尔乡村院落&quot;,<br>  &quot;camera&quot;: &quot;专业人像摄影，浅景深&quot;,<br>  &quot;quality&quot;: &quot;超真实，8K，极其细节化&quot;,<br>  &quot;composition&quot;: &quot;全身，竖构图&quot;,<br>  &quot;constraints&quot;: &quot;面部必须与上传的参考图像百分之百相同，绝对不得进行任何面部修改&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"Using the uploaded reference image, generate a highly realistic full-body portrait of the SAME person with 100% identical facial structure, skin tone, facial proportions, and overall identity. Do NOT alter the face in any way.\\n\\nA proud South Indian woman celebrating the Thaipongal festival, standing gracefully in a traditional rural Tamil village courtyard at sunrise. She is wearing an elegant traditional silk saree (Kanjivaram-style) in rich festive colors with a gold zari border, draped authentically. A matching blouse complements the saree. Her hair is neatly styled in a traditional manner, adorned with fresh jasmine flowers (mallipoo). A subtle sandalwood or kumkum tilak is visible on her forehead. She holds a long brown leafy sugarcane stalk gently in one hand.\\n\\nIn the foreground, a decorated clay Pongal pot is boiling over on a wood-fired brick stove, with rice frothing out, symbolizing prosperity. Beside the stove are tied brown sugarcane stalks, fresh turmeric plants, bananas, and intricate colorful kolam (rangoli) designs drawn on the ground.\\n\\nThe background features a rustic mud house with a thatched roof, decorated with mango-leaf torans, marigold flower garlands, and hanging clay oil lamps. Warm golden sunrise light fills the scene, with soft smoke rising from firewood, creating a joyful and auspicious festive atmosphere.\\n\\nUltra-realistic cinematic lighting, shallow depth of field, natural South Indian skin texture, authentic Tamil rural aesthetic, 8K ultra-detailed quality, vertical composition, cultural accuracy, festive mood.\",\n  \"style\": \"cinematic realism, South Indian traditional portrait\",\n  \"lighting\": \"warm golden sunrise light, soft cinematic glow\",\n  \"environment\": \"traditional Tamil rural village courtyard\",\n  \"camera\": \"professional portrait photography, shallow depth of field\",\n  \"quality\": \"ultra-realistic, 8K, highly detailed\",\n  \"composition\": \"full-body, vertical frame\",\n  \"constraints\": \"face must remain 100% identical to the uploaded reference image with absolutely no facial modification\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;Using the uploaded reference image, generate a highly realistic full-body portrait of the SAME person with 100% identical facial structure, skin tone, facial proportions, and overall identity. Do NOT alter the face in any way.\n\nA proud South Indian woman celebrating the Thaipongal festival, standing gracefully in a traditional rural Tamil village courtyard at sunrise. She is wearing an elegant traditional silk saree (Kanjivaram-style) in rich festive colors with a gold zari border, draped authentically. A matching blouse complements the saree. Her hair is neatly styled in a traditional manner, adorned with fresh jasmine flowers (mallipoo). A subtle sandalwood or kumkum tilak is visible on her forehead. She holds a long brown leafy sugarcane stalk gently in one hand.\n\nIn the foreground, a decorated clay Pongal pot is boiling over on a wood-fired brick stove, with rice frothing out, symbolizing prosperity. Beside the stove are tied brown sugarcane stalks, fresh turmeric plants, bananas, and intricate colorful kolam (rangoli) designs drawn on the ground.\n\nThe background features a rustic mud house with a thatched roof, decorated with mango-leaf torans, marigold flower garlands, and hanging clay oil lamps. Warm golden sunrise light fills the scene, with soft smoke rising from firewood, creating a joyful and auspicious festive atmosphere.\n\nUltra-realistic cinematic lighting, shallow depth of field, natural South Indian skin texture, authentic Tamil rural aesthetic, 8K ultra-detailed quality, vertical composition, cultural accuracy, festive mood.&quot;,<br>  &quot;style&quot;: &quot;cinematic realism, South Indian traditional portrait&quot;,<br>  &quot;lighting&quot;: &quot;warm golden sunrise light, soft cinematic glow&quot;,<br>  &quot;environment&quot;: &quot;traditional Tamil rural village courtyard&quot;,<br>  &quot;camera&quot;: &quot;professional portrait photography, shallow depth of field&quot;,<br>  &quot;quality&quot;: &quot;ultra-realistic, 8K, highly detailed&quot;,<br>  &quot;composition&quot;: &quot;full-body, vertical frame&quot;,<br>  &quot;constraints&quot;: &quot;face must remain 100% identical to the uploaded reference image with absolutely no facial modification&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;Using the uploaded reference image, generate a highly realistic full-body portrait of the SAME person with 100% identical facial structure, skin tone, facial proportions, and overall identity. Do NOT alter the face in any way.\n\nA proud South Indian woman celebrating the Thaipongal festival, standing gracefully in a traditional rural Tamil village courtyard at sunrise. She is wearing an elegant traditional silk saree (Kanjivaram-style) in rich festive colors with a gold zari border, draped authentically. A matching blouse complements the saree. Her hair is neatly styled in a traditional manner, adorned with fresh jasmine flowers (mallipoo). A subtle sandalwood or kumkum tilak is visible on her forehead. She holds a long brown leafy sugarcane stalk gently in one hand.\n\nIn the foreground, a decorated clay Pongal pot is boiling over on a wood-fired brick stove, with rice frothing out, symbolizing prosperity. Beside the stove are tied brown sugarcane stalks, fresh turmeric plants, bananas, and intricate colorful kolam (rangoli) designs drawn on the ground.\n\nThe background features a rustic mud house with a thatched roof, decorated with mango-leaf torans, marigold flower garlands, and hanging clay oil lamps. Warm golden sunrise light fills the scene, with soft smoke rising from firewood, creating a joyful and auspicious festive atmosphere.\n\nUltra-realistic cinematic lighting, shallow depth of field, natural South Indian skin texture, authentic Tamil rural aesthetic, 8K ultra-detailed quality, vertical composition, cultural accuracy, festive mood.&quot;,<br>  &quot;style&quot;: &quot;cinematic realism, South Indian traditional portrait&quot;,<br>  &quot;lighting&quot;: &quot;warm golden sunrise light, soft cinematic glow&quot;,<br>  &quot;environment&quot;: &quot;traditional Tamil rural village courtyard&quot;,<br>  &quot;camera&quot;: &quot;professional portrait photography, shallow depth of field&quot;,<br>  &quot;quality&quot;: &quot;ultra-realistic, 8K, highly detailed&quot;,<br>  &quot;composition&quot;: &quot;full-body, vertical frame&quot;,<br>  &quot;constraints&quot;: &quot;face must remain 100% identical to the uploaded reference image with absolutely no facial modification&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011629245949493378-1.jpg" alt="&quot;prompt&quot;: &quot;Using the uploaded reference image, generate a hig..." loading="lazy"><img src="/images/tweet-2011629245949493378-2.jpg" alt="&quot;prompt&quot;: &quot;Using the uploaded reference image, generate a hig..." loading="lazy"><img src="/images/tweet-2011629245949493378-3.jpg" alt="&quot;prompt&quot;: &quot;Using the uploaded reference image, generate a hig..." loading="lazy"><img src="/images/tweet-2011629245949493378-4.jpg" alt="&quot;prompt&quot;: &quot;Using the uploaded reference image, generate a hig..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1286,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

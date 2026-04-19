@@ -7,11 +7,13 @@
     <title>[BRAND NAME]: Enter the brand name here. #2548 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[BRAND NAME]: Enter the brand name here. Goal: Generate a minimalist organic image where a stylized logo icon of [BRA...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2548.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2548.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2548.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839786">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022205">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]：在此输入品牌名称。\n目标：生成一幅极简有机图像，其中将[BRAND NAME]的风格化标志图标转化为一个大型苔藓质感的物件，底部带有小型品牌签名。\n约束：中央苔藓图标内部或紧邻其周围不得有任何文字。仅允许底部签名。\n\n1. 中央苔藓图标\n- 主体：一个大型、几何精确的符号，雕刻为与[BRAND NAME]标志图标完全相同的形状。\n- 材质：该符号完全由浓密、质感强烈的天然绿色稳定苔藓构成。纹理粗糙且有机，呈现出不同的绿褐色调。\n- 形态：几何边缘锋利干净，但内部充满柔软、蓬松的苔藓质感。\n\n2. 环境与布局\n- 视角：俯视中央平铺视角。\n- 背景：完美、均匀的哑光白色摄影棚背景。完整的极简负空间。\n- 灯光：明亮、柔和、漫射的摄影棚灯光，强调苔藓的触感纹理，同时尽量减少强烈阴影。\n\n3. 底部品牌签名（关键）\n- 位置：一个干净的水平签名块，居中放置在底部，远离苔藓图标的下方。\n- 元素：左侧为一个微小、平面、极简的[BRAND NAME]标志图标版本。\n- 文本：在微小标志的正右侧，使用干净、粗体、黑色无衬线字体书写“[BRAND NAME]”一词。\n- 比例：与中央苔藓物件相比，签名必须非常小。\n\n4. 美学\n- 贴近自然的设计、精品产品摄影、干净、清新、通透的高端编辑风格。8k 分辨率。", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]：在此输入品牌名称。<br>目标：生成一幅极简有机图像，其中将[BRAND NAME]的风格化标志图标转化为一个大型苔藓质感的物件，底部带有小型品牌签名。<br>约束：中央苔藓图标内部或紧邻其周围不得有任何文字。仅允许底部签名。</p><p>1. 中央苔藓图标<br>- 主体：一个大型、几何精确的符号，雕刻为与[BRAND NAME]标志图标完全相同的形状。<br>- 材质：该符号完全由浓密、质感强烈的天然绿色稳定苔藓构成。纹理粗糙且有机，呈现出不同的绿褐色调。<br>- 形态：几何边缘锋利干净，但内部充满柔软、蓬松的苔藓质感。</p><p>2. 环境与布局<br>- 视角：俯视中央平铺视角。<br>- 背景：完美、均匀的哑光白色摄影棚背景。完整的极简负空间。<br>- 灯光：明亮、柔和、漫射的摄影棚灯光，强调苔藓的触感纹理，同时尽量减少强烈阴影。</p><p>3. 底部品牌签名（关键）<br>- 位置：一个干净的水平签名块，居中放置在底部，远离苔藓图标的下方。<br>- 元素：左侧为一个微小、平面、极简的[BRAND NAME]标志图标版本。<br>- 文本：在微小标志的正右侧，使用干净、粗体、黑色无衬线字体书写“[BRAND NAME]”一词。<br>- 比例：与中央苔藓物件相比，签名必须非常小。</p><p>4. 美学<br>- 贴近自然的设计、精品产品摄影、干净、清新、通透的高端编辑风格。8k 分辨率。</p>
+        <div data-nosnippet><p>[BRAND NAME]：在此输入品牌名称。<br>目标：生成一幅极简有机图像，其中将[BRAND NAME]的风格化标志图标转化为一个大型苔藓质感的物件，底部带有小型品牌签名。<br>约束：中央苔藓图标内部或紧邻其周围不得有任何文字。仅允许底部签名。</p><p>1. 中央苔藓图标<br>- 主体：一个大型、几何精确的符号，雕刻为与[BRAND NAME]标志图标完全相同的形状。<br>- 材质：该符号完全由浓密、质感强烈的天然绿色稳定苔藓构成。纹理粗糙且有机，呈现出不同的绿褐色调。<br>- 形态：几何边缘锋利干净，但内部充满柔软、蓬松的苔藓质感。</p><p>2. 环境与布局<br>- 视角：俯视中央平铺视角。<br>- 背景：完美、均匀的哑光白色摄影棚背景。完整的极简负空间。<br>- 灯光：明亮、柔和、漫射的摄影棚灯光，强调苔藓的触感纹理，同时尽量减少强烈阴影。</p><p>3. 底部品牌签名（关键）<br>- 位置：一个干净的水平签名块，居中放置在底部，远离苔藓图标的下方。<br>- 元素：左侧为一个微小、平面、极简的[BRAND NAME]标志图标版本。<br>- 文本：在微小标志的正右侧，使用干净、粗体、黑色无衬线字体书写“[BRAND NAME]”一词。<br>- 比例：与中央苔藓物件相比，签名必须非常小。</p><p>4. 美学<br>- 贴近自然的设计、精品产品摄影、干净、清新、通透的高端编辑风格。8k 分辨率。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]: Enter the brand name here.\nGoal: Generate a minimalist organic image where a stylized logo icon of [BRAND NAME] is transformed into a large moss-textured artifact, with a small brand signature at the bottom.\nConstraint: NO TEXT inside or immediately near the central moss icon. Only the bottom signature.\n\n1. THE CENTRAL MOSS ICON\n- Main Subject: A large, geometrically precise symbol, sculpted into the exact form of the [BRAND NAME] logo icon.\n- Material: The symbol is entirely made of dense, heavily textured, natural green stabilizing moss. The texture is rough and organic with varying shades of green and brown.\n- Form: The geometric edges are sharp and clean, but filled with the soft, billowy texture of moss.\n\n2. ENVIRONMENT & LAYOUT\n- View: A top-down, central flat lay view.\n- Background: A flawless, uniform, matte white studio background. Full minimalist negative space.\n- Lighting: Bright, soft, diffused studio lighting that emphasizes the tactile moss texture while minimizing harsh shadows.\n\n3. BOTTOM BRAND SIGNATURE (CRITICAL)\n- Placement: A clean horizontal signature block centered at the bottom, far below the moss icon.\n- Elements: A tiny, flat, minimalist version of the [BRAND NAME] logo icon on the left.\n- Text: The word \"[BRAND NAME]\" in a clean, bold, black sans-serif typeface immediately to the right of the tiny logo.\n- Scale: The signature must be very small compared to the central moss artifact.\n\n4. AESTHETIC\n- Biophilic design, premium product photography, clean, fresh, airy, high-end editorial look. 8k resolution.", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]: Enter the brand name here.<br>Goal: Generate a minimalist organic image where a stylized logo icon of [BRAND NAME] is transformed into a large moss-textured artifact, with a small brand signature at the bottom.<br>Constraint: NO TEXT inside or immediately near the central moss icon. Only the bottom signature.</p><p>1. THE CENTRAL MOSS ICON<br>- Main Subject: A large, geometrically precise symbol, sculpted into the exact form of the [BRAND NAME] logo icon.<br>- Material: The symbol is entirely made of dense, heavily textured, natural green stabilizing moss. The texture is rough and organic with varying shades of green and brown.<br>- Form: The geometric edges are sharp and clean, but filled with the soft, billowy texture of moss.</p><p>2. ENVIRONMENT &amp; LAYOUT<br>- View: A top-down, central flat lay view.<br>- Background: A flawless, uniform, matte white studio background. Full minimalist negative space.<br>- Lighting: Bright, soft, diffused studio lighting that emphasizes the tactile moss texture while minimizing harsh shadows.</p><p>3. BOTTOM BRAND SIGNATURE (CRITICAL)<br>- Placement: A clean horizontal signature block centered at the bottom, far below the moss icon.<br>- Elements: A tiny, flat, minimalist version of the [BRAND NAME] logo icon on the left.<br>- Text: The word &quot;[BRAND NAME]&quot; in a clean, bold, black sans-serif typeface immediately to the right of the tiny logo.<br>- Scale: The signature must be very small compared to the central moss artifact.</p><p>4. AESTHETIC<br>- Biophilic design, premium product photography, clean, fresh, airy, high-end editorial look. 8k resolution.</p>
+        <div data-nosnippet><p>[BRAND NAME]: Enter the brand name here.<br>Goal: Generate a minimalist organic image where a stylized logo icon of [BRAND NAME] is transformed into a large moss-textured artifact, with a small brand signature at the bottom.<br>Constraint: NO TEXT inside or immediately near the central moss icon. Only the bottom signature.</p><p>1. THE CENTRAL MOSS ICON<br>- Main Subject: A large, geometrically precise symbol, sculpted into the exact form of the [BRAND NAME] logo icon.<br>- Material: The symbol is entirely made of dense, heavily textured, natural green stabilizing moss. The texture is rough and organic with varying shades of green and brown.<br>- Form: The geometric edges are sharp and clean, but filled with the soft, billowy texture of moss.</p><p>2. ENVIRONMENT &amp; LAYOUT<br>- View: A top-down, central flat lay view.<br>- Background: A flawless, uniform, matte white studio background. Full minimalist negative space.<br>- Lighting: Bright, soft, diffused studio lighting that emphasizes the tactile moss texture while minimizing harsh shadows.</p><p>3. BOTTOM BRAND SIGNATURE (CRITICAL)<br>- Placement: A clean horizontal signature block centered at the bottom, far below the moss icon.<br>- Elements: A tiny, flat, minimalist version of the [BRAND NAME] logo icon on the left.<br>- Text: The word &quot;[BRAND NAME]&quot; in a clean, bold, black sans-serif typeface immediately to the right of the tiny logo.<br>- Scale: The signature must be very small compared to the central moss artifact.</p><p>4. AESTHETIC<br>- Biophilic design, premium product photography, clean, fresh, airy, high-end editorial look. 8k resolution.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2033260707525914989-1.jpg" alt="[BRAND NAME]: Enter the brand name here." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2548,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

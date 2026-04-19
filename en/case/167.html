@@ -7,11 +7,13 @@
     <title>Liquid metal design products #167 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Liquid metal design product — prompts for AI image generation.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/167.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/167.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/167.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846399">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023915">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("以 1：1 的比例创建图像\n我用以下 json 对我附加的照片进行 retexture\n{ “style_name”： “hermes_subtle_specular_gradient”， “background”： { “type”： “solid”， “color”： “#000000”， “light_reflection”： “none” }， “base_material”： { “type”： “polished_metal”， “color”： “#B0B0B0”， “finish”： “glossy”， “reflectivity”： 0.75， “surface_variation”： { “micro_noise”： 0.005， “brushed_direction”： “none” } }， “highlight_strategy”： { “mode”： “localized_specular_enhancement”， “trigger”： “朝光曲面和直接照明 faces“， ”color_gradient“： [”#121A28“， ”#3D4C6B“， ”#8c71b7“， ”#4d21cd“]， ”gradient_type“： ”fluid_blend“， ”intensity_curve“： ”从高光中心缓出“， ”衰减“： 0.8， ”blend_mode“： ”soft_light“， ”saturation_level“： 0.4， ”coverage_ratio“： 0.2， ”transition_smoothness“： 0.95 }， ”lighting“： { ”scene_type“： ”high-control studio“， ”key_light“： { ”intensity“：1.0， “color”： “#FFFFFF”， “angle”： “上侧 35°”， “柔和度”： 0.6 }， “fill_light”： { “enabled”： false }， “rim_light”： { “enabled”： false }， “reflection_behavior”： { “mirrored_zones”： “仅限于高曝光区域”， “glow_color”： “从低饱和度渐变应用” } }， “specular_color_behavior”： { “base_surface”： “金属中性”， “highlight_zones”： “低饱和度色度 reflection“， ”edge_bleed“： ”minimal“， ”inner_glow“： 0.1 }， ”detail_features“： { ”engraved_elements“： { ”type“： ”精确凹陷“， ”lighting_response“： ”低反弹“， ”shadow_edge“： ”#222222“， ”rim_light_tint“： ”#888888“ } }， ”application_targets“： [ ”对象产品 photography“， ”具有选择性照明的 3D 图标“， ”品牌渲染“， ”豪华 UI 组件样式“ ]， ”visual_effect_notes“： { ”mood“： ”低调奢华、技术精确、受控情感“， ”realism“： ”风格化的物理逻辑“， ”focus“： ”仅在具有流体般渐变过渡的面向光线的曲面上优化彩色镜面反射“ } }", this)'>📋 Copy</button>
         </div>
-        <p>以 1：1 的比例创建图像<br>我用以下 json 对我附加的照片进行 retexture<br>{ “style_name”： “hermes_subtle_specular_gradient”， “background”： { “type”： “solid”， “color”： “#000000”， “light_reflection”： “none” }， “base_material”： { “type”： “polished_metal”， “color”： “#B0B0B0”， “finish”： “glossy”， “reflectivity”： 0.75， “surface_variation”： { “micro_noise”： 0.005， “brushed_direction”： “none” } }， “highlight_strategy”： { “mode”： “localized_specular_enhancement”， “trigger”： “朝光曲面和直接照明 faces“， ”color_gradient“： [”#121A28“， ”#3D4C6B“， ”#8c71b7“， ”#4d21cd“]， ”gradient_type“： ”fluid_blend“， ”intensity_curve“： ”从高光中心缓出“， ”衰减“： 0.8， ”blend_mode“： ”soft_light“， ”saturation_level“： 0.4， ”coverage_ratio“： 0.2， ”transition_smoothness“： 0.95 }， ”lighting“： { ”scene_type“： ”high-control studio“， ”key_light“： { ”intensity“：1.0， “color”： “#FFFFFF”， “angle”： “上侧 35°”， “柔和度”： 0.6 }， “fill_light”： { “enabled”： false }， “rim_light”： { “enabled”： false }， “reflection_behavior”： { “mirrored_zones”： “仅限于高曝光区域”， “glow_color”： “从低饱和度渐变应用” } }， “specular_color_behavior”： { “base_surface”： “金属中性”， “highlight_zones”： “低饱和度色度 reflection“， ”edge_bleed“： ”minimal“， ”inner_glow“： 0.1 }， ”detail_features“： { ”engraved_elements“： { ”type“： ”精确凹陷“， ”lighting_response“： ”低反弹“， ”shadow_edge“： ”#222222“， ”rim_light_tint“： ”#888888“ } }， ”application_targets“： [ ”对象产品 photography“， ”具有选择性照明的 3D 图标“， ”品牌渲染“， ”豪华 UI 组件样式“ ]， ”visual_effect_notes“： { ”mood“： ”低调奢华、技术精确、受控情感“， ”realism“： ”风格化的物理逻辑“， ”focus“： ”仅在具有流体般渐变过渡的面向光线的曲面上优化彩色镜面反射“ } }</p>
+        <div data-nosnippet><p>以 1：1 的比例创建图像<br>我用以下 json 对我附加的照片进行 retexture<br>{ “style_name”： “hermes_subtle_specular_gradient”， “background”： { “type”： “solid”， “color”： “#000000”， “light_reflection”： “none” }， “base_material”： { “type”： “polished_metal”， “color”： “#B0B0B0”， “finish”： “glossy”， “reflectivity”： 0.75， “surface_variation”： { “micro_noise”： 0.005， “brushed_direction”： “none” } }， “highlight_strategy”： { “mode”： “localized_specular_enhancement”， “trigger”： “朝光曲面和直接照明 faces“， ”color_gradient“： [”#121A28“， ”#3D4C6B“， ”#8c71b7“， ”#4d21cd“]， ”gradient_type“： ”fluid_blend“， ”intensity_curve“： ”从高光中心缓出“， ”衰减“： 0.8， ”blend_mode“： ”soft_light“， ”saturation_level“： 0.4， ”coverage_ratio“： 0.2， ”transition_smoothness“： 0.95 }， ”lighting“： { ”scene_type“： ”high-control studio“， ”key_light“： { ”intensity“：1.0， “color”： “#FFFFFF”， “angle”： “上侧 35°”， “柔和度”： 0.6 }， “fill_light”： { “enabled”： false }， “rim_light”： { “enabled”： false }， “reflection_behavior”： { “mirrored_zones”： “仅限于高曝光区域”， “glow_color”： “从低饱和度渐变应用” } }， “specular_color_behavior”： { “base_surface”： “金属中性”， “highlight_zones”： “低饱和度色度 reflection“， ”edge_bleed“： ”minimal“， ”inner_glow“： 0.1 }， ”detail_features“： { ”engraved_elements“： { ”type“： ”精确凹陷“， ”lighting_response“： ”低反弹“， ”shadow_edge“： ”#222222“， ”rim_light_tint“： ”#888888“ } }， ”application_targets“： [ ”对象产品 photography“， ”具有选择性照明的 3D 图标“， ”品牌渲染“， ”豪华 UI 组件样式“ ]， ”visual_effect_notes“： { ”mood“： ”低调奢华、技术精确、受控情感“， ”realism“： ”风格化的物理逻辑“， ”focus“： ”仅在具有流体般渐变过渡的面向光线的曲面上优化彩色镜面反射“ } }</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("create image with 1:1 ratio \nretexture the photo I attached with the following json \n{   \"style_name\": \"hermes_subtle_specular_gradient\",   \"background\": {     \"type\": \"solid\",     \"color\": \"#000000\",     \"light_reflection\": \"none\"   },   \"base_material\": {     \"type\": \"polished_metal\",     \"color\": \"#B0B0B0\",     \"finish\": \"glossy\",     \"reflectivity\": 0.75,     \"surface_variation\": {       \"micro_noise\": 0.005,       \"brushed_direction\": \"none\"     }   },   \"highlight_strategy\": {     \"mode\": \"localized_specular_enhancement\",     \"trigger\": \"light-facing curved planes and direct lit faces\",     \"color_gradient\": [\"#121A28\", \"#3D4C6B\", \"#8c71b7\", \"#4d21cd\"],     \"gradient_type\": \"fluid_blend\",     \"intensity_curve\": \"ease-out from highlight center\",     \"falloff\": 0.8,     \"blend_mode\": \"soft_light\",     \"saturation_level\": 0.4,     \"coverage_ratio\": 0.2,     \"transition_smoothness\": 0.95   },   \"lighting\": {     \"scene_type\": \"high-control studio\",     \"key_light\": {       \"intensity\": 1.0,       \"color\": \"#FFFFFF\",       \"angle\": \"35° above and side\",       \"softness\": 0.6     },     \"fill_light\": {       \"enabled\": false     },     \"rim_light\": {       \"enabled\": false     },     \"reflection_behavior\": {       \"mirrored_zones\": \"limited to high exposure zones\",       \"glow_color\": \"applied from gradient with low saturation\"     }   },   \"specular_color_behavior\": {     \"base_surface\": \"metallic neutral\",     \"highlight_zones\": \"low-saturation chromatic reflection\",     \"edge_bleed\": \"minimal\",     \"inner_glow\": 0.1   },   \"detail_features\": {     \"engraved_elements\": {       \"type\": \"precise deboss\",       \"lighting_response\": \"low bounce\",       \"shadow_edge\": \"#222222\",       \"rim_light_tint\": \"#888888\"     }   },   \"application_targets\": [     \"object product photography\",     \"3D icons with selective lighting\",     \"branding renders\",     \"luxury UI component styling\"   ],   \"visual_effect_notes\": {     \"mood\": \"understated luxury, technical precision, controlled emotion\",     \"realism\": \"stylized physical logic\",     \"focus\": \"refined colored specular only on light-facing curved surfaces with fluid-like gradient transitions\"   } }", this)'>📋 Copy</button>
         </div>
-        <p>create image with 1:1 ratio <br>retexture the photo I attached with the following json <br>{   &quot;style_name&quot;: &quot;hermes_subtle_specular_gradient&quot;,   &quot;background&quot;: {     &quot;type&quot;: &quot;solid&quot;,     &quot;color&quot;: &quot;#000000&quot;,     &quot;light_reflection&quot;: &quot;none&quot;   },   &quot;base_material&quot;: {     &quot;type&quot;: &quot;polished_metal&quot;,     &quot;color&quot;: &quot;#B0B0B0&quot;,     &quot;finish&quot;: &quot;glossy&quot;,     &quot;reflectivity&quot;: 0.75,     &quot;surface_variation&quot;: {       &quot;micro_noise&quot;: 0.005,       &quot;brushed_direction&quot;: &quot;none&quot;     }   },   &quot;highlight_strategy&quot;: {     &quot;mode&quot;: &quot;localized_specular_enhancement&quot;,     &quot;trigger&quot;: &quot;light-facing curved planes and direct lit faces&quot;,     &quot;color_gradient&quot;: [&quot;#121A28&quot;, &quot;#3D4C6B&quot;, &quot;#8c71b7&quot;, &quot;#4d21cd&quot;],     &quot;gradient_type&quot;: &quot;fluid_blend&quot;,     &quot;intensity_curve&quot;: &quot;ease-out from highlight center&quot;,     &quot;falloff&quot;: 0.8,     &quot;blend_mode&quot;: &quot;soft_light&quot;,     &quot;saturation_level&quot;: 0.4,     &quot;coverage_ratio&quot;: 0.2,     &quot;transition_smoothness&quot;: 0.95   },   &quot;lighting&quot;: {     &quot;scene_type&quot;: &quot;high-control studio&quot;,     &quot;key_light&quot;: {       &quot;intensity&quot;: 1.0,       &quot;color&quot;: &quot;#FFFFFF&quot;,       &quot;angle&quot;: &quot;35° above and side&quot;,       &quot;softness&quot;: 0.6     },     &quot;fill_light&quot;: {       &quot;enabled&quot;: false     },     &quot;rim_light&quot;: {       &quot;enabled&quot;: false     },     &quot;reflection_behavior&quot;: {       &quot;mirrored_zones&quot;: &quot;limited to high exposure zones&quot;,       &quot;glow_color&quot;: &quot;applied from gradient with low saturation&quot;     }   },   &quot;specular_color_behavior&quot;: {     &quot;base_surface&quot;: &quot;metallic neutral&quot;,     &quot;highlight_zones&quot;: &quot;low-saturation chromatic reflection&quot;,     &quot;edge_bleed&quot;: &quot;minimal&quot;,     &quot;inner_glow&quot;: 0.1   },   &quot;detail_features&quot;: {     &quot;engraved_elements&quot;: {       &quot;type&quot;: &quot;precise deboss&quot;,       &quot;lighting_response&quot;: &quot;low bounce&quot;,       &quot;shadow_edge&quot;: &quot;#222222&quot;,       &quot;rim_light_tint&quot;: &quot;#888888&quot;     }   },   &quot;application_targets&quot;: [     &quot;object product photography&quot;,     &quot;3D icons with selective lighting&quot;,     &quot;branding renders&quot;,     &quot;luxury UI component styling&quot;   ],   &quot;visual_effect_notes&quot;: {     &quot;mood&quot;: &quot;understated luxury, technical precision, controlled emotion&quot;,     &quot;realism&quot;: &quot;stylized physical logic&quot;,     &quot;focus&quot;: &quot;refined colored specular only on light-facing curved surfaces with fluid-like gradient transitions&quot;   } }</p>
+        <div data-nosnippet><p>create image with 1:1 ratio <br>retexture the photo I attached with the following json <br>{   &quot;style_name&quot;: &quot;hermes_subtle_specular_gradient&quot;,   &quot;background&quot;: {     &quot;type&quot;: &quot;solid&quot;,     &quot;color&quot;: &quot;#000000&quot;,     &quot;light_reflection&quot;: &quot;none&quot;   },   &quot;base_material&quot;: {     &quot;type&quot;: &quot;polished_metal&quot;,     &quot;color&quot;: &quot;#B0B0B0&quot;,     &quot;finish&quot;: &quot;glossy&quot;,     &quot;reflectivity&quot;: 0.75,     &quot;surface_variation&quot;: {       &quot;micro_noise&quot;: 0.005,       &quot;brushed_direction&quot;: &quot;none&quot;     }   },   &quot;highlight_strategy&quot;: {     &quot;mode&quot;: &quot;localized_specular_enhancement&quot;,     &quot;trigger&quot;: &quot;light-facing curved planes and direct lit faces&quot;,     &quot;color_gradient&quot;: [&quot;#121A28&quot;, &quot;#3D4C6B&quot;, &quot;#8c71b7&quot;, &quot;#4d21cd&quot;],     &quot;gradient_type&quot;: &quot;fluid_blend&quot;,     &quot;intensity_curve&quot;: &quot;ease-out from highlight center&quot;,     &quot;falloff&quot;: 0.8,     &quot;blend_mode&quot;: &quot;soft_light&quot;,     &quot;saturation_level&quot;: 0.4,     &quot;coverage_ratio&quot;: 0.2,     &quot;transition_smoothness&quot;: 0.95   },   &quot;lighting&quot;: {     &quot;scene_type&quot;: &quot;high-control studio&quot;,     &quot;key_light&quot;: {       &quot;intensity&quot;: 1.0,       &quot;color&quot;: &quot;#FFFFFF&quot;,       &quot;angle&quot;: &quot;35° above and side&quot;,       &quot;softness&quot;: 0.6     },     &quot;fill_light&quot;: {       &quot;enabled&quot;: false     },     &quot;rim_light&quot;: {       &quot;enabled&quot;: false     },     &quot;reflection_behavior&quot;: {       &quot;mirrored_zones&quot;: &quot;limited to high exposure zones&quot;,       &quot;glow_color&quot;: &quot;applied from gradient with low saturation&quot;     }   },   &quot;specular_color_behavior&quot;: {     &quot;base_surface&quot;: &quot;metallic neutral&quot;,     &quot;highlight_zones&quot;: &quot;low-saturation chromatic reflection&quot;,     &quot;edge_bleed&quot;: &quot;minimal&quot;,     &quot;inner_glow&quot;: 0.1   },   &quot;detail_features&quot;: {     &quot;engraved_elements&quot;: {       &quot;type&quot;: &quot;precise deboss&quot;,       &quot;lighting_response&quot;: &quot;low bounce&quot;,       &quot;shadow_edge&quot;: &quot;#222222&quot;,       &quot;rim_light_tint&quot;: &quot;#888888&quot;     }   },   &quot;application_targets&quot;: [     &quot;object product photography&quot;,     &quot;3D icons with selective lighting&quot;,     &quot;branding renders&quot;,     &quot;luxury UI component styling&quot;   ],   &quot;visual_effect_notes&quot;: {     &quot;mood&quot;: &quot;understated luxury, technical precision, controlled emotion&quot;,     &quot;realism&quot;: &quot;stylized physical logic&quot;,     &quot;focus&quot;: &quot;refined colored specular only on light-facing curved surfaces with fluid-like gradient transitions&quot;   } }</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/167.jpeg" alt="液态金属设计产品" loading="lazy"><img src="/images/167-2.png" alt="液态金属设计产品" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 167,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

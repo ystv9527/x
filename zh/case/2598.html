@@ -7,11 +7,13 @@
     <title>Using the uploaded selfie as the ONLY and exclusive face refe... #2598 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Using the uploaded selfie as the ONLY and exclusive face reference, generate a Pixar style 3D character sticker set....">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2598.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2598.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2598.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839732">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022193">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用上传的自拍照作为唯一且排他的人脸参考，生成一套皮克斯风格的3D角色贴纸。角色必须清晰可辨认为自拍照中的本人。创建一个整洁的3×3网格拼贴（共九个贴纸）。最终长宽比严格为4:5。每个单元格展示不同的姿势和面部表情。风格和基调：皮克斯风格的3D动画，带有表情包导向的感觉。夸张、略显荒诞的情绪，戏谑式的过度表演。\n\n在小尺寸下也高度可读的表情，眼睛、眉毛和嘴巴要富有表现力。必要时可有细微的手部动作。背景与输出：完全透明背景（PNG）。无背景布景、无背景阴影。无文字、标题、标识或界面元素。贴纸必须可直接用于即时通讯工具。\n\n一致性：九个贴纸在发型、服装、颜色和角色比例上保持一致。仅改变面部表情和姿势。\n\n干净、精致的3D贴纸外观。情绪（每个贴纸一个，3×3 网格）：惊讶、恼怒、困惑、沮丧、沉思、讽刺、担心、无聊、好奇。", this)'>📋 复制</button>
         </div>
-        <p>使用上传的自拍照作为唯一且排他的人脸参考，生成一套皮克斯风格的3D角色贴纸。角色必须清晰可辨认为自拍照中的本人。创建一个整洁的3×3网格拼贴（共九个贴纸）。最终长宽比严格为4:5。每个单元格展示不同的姿势和面部表情。风格和基调：皮克斯风格的3D动画，带有表情包导向的感觉。夸张、略显荒诞的情绪，戏谑式的过度表演。</p><p>在小尺寸下也高度可读的表情，眼睛、眉毛和嘴巴要富有表现力。必要时可有细微的手部动作。背景与输出：完全透明背景（PNG）。无背景布景、无背景阴影。无文字、标题、标识或界面元素。贴纸必须可直接用于即时通讯工具。</p><p>一致性：九个贴纸在发型、服装、颜色和角色比例上保持一致。仅改变面部表情和姿势。</p><p>干净、精致的3D贴纸外观。情绪（每个贴纸一个，3×3 网格）：惊讶、恼怒、困惑、沮丧、沉思、讽刺、担心、无聊、好奇。</p>
+        <div data-nosnippet><p>使用上传的自拍照作为唯一且排他的人脸参考，生成一套皮克斯风格的3D角色贴纸。角色必须清晰可辨认为自拍照中的本人。创建一个整洁的3×3网格拼贴（共九个贴纸）。最终长宽比严格为4:5。每个单元格展示不同的姿势和面部表情。风格和基调：皮克斯风格的3D动画，带有表情包导向的感觉。夸张、略显荒诞的情绪，戏谑式的过度表演。</p><p>在小尺寸下也高度可读的表情，眼睛、眉毛和嘴巴要富有表现力。必要时可有细微的手部动作。背景与输出：完全透明背景（PNG）。无背景布景、无背景阴影。无文字、标题、标识或界面元素。贴纸必须可直接用于即时通讯工具。</p><p>一致性：九个贴纸在发型、服装、颜色和角色比例上保持一致。仅改变面部表情和姿势。</p><p>干净、精致的3D贴纸外观。情绪（每个贴纸一个，3×3 网格）：惊讶、恼怒、困惑、沮丧、沉思、讽刺、担心、无聊、好奇。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Using the uploaded selfie as the ONLY and exclusive face reference, generate a Pixar-style 3D character sticker set. The character must be clearly recognizable as the person from the selfie. Create a neat 3×3 grid collage (nine stickers total). Final aspect ratio is strictly 4:5. Each cell shows a distinct pose and facial expression. Style and tone: Pixar-style 3D animation with a meme-oriented feel. Exaggerated, slightly absurd emotions, playful overacting. \n\nHighly readable expressions at small sizes, with expressive eyes, eyebrows, and mouth. Subtle hand gestures where appropriate. Background and output: Fully transparent background (PNG). No backdrop, no background shadows. No text, captions, logos, or UI elements. Stickers must be ready for direct use in messengers. Consistency: Same hairstyle, clothing, colors, and character proportions across all nine stickers. Only facial expression and pose change.\n\nClean, polished 3D sticker look. Emotions (one per sticker, 3×3 grid): Surprised, Annoyed, Confused, Frustrated, Thoughtful, Sarcastic, Worried, Bored, Curious.", this)'>📋 复制</button>
         </div>
-        <p>Using the uploaded selfie as the ONLY and exclusive face reference, generate a Pixar-style 3D character sticker set. The character must be clearly recognizable as the person from the selfie. Create a neat 3×3 grid collage (nine stickers total). Final aspect ratio is strictly 4:5. Each cell shows a distinct pose and facial expression. Style and tone: Pixar-style 3D animation with a meme-oriented feel. Exaggerated, slightly absurd emotions, playful overacting.</p><p>Highly readable expressions at small sizes, with expressive eyes, eyebrows, and mouth. Subtle hand gestures where appropriate. Background and output: Fully transparent background (PNG). No backdrop, no background shadows. No text, captions, logos, or UI elements. Stickers must be ready for direct use in messengers. Consistency: Same hairstyle, clothing, colors, and character proportions across all nine stickers. Only facial expression and pose change.</p><p>Clean, polished 3D sticker look. Emotions (one per sticker, 3×3 grid): Surprised, Annoyed, Confused, Frustrated, Thoughtful, Sarcastic, Worried, Bored, Curious.</p>
+        <div data-nosnippet><p>Using the uploaded selfie as the ONLY and exclusive face reference, generate a Pixar-style 3D character sticker set. The character must be clearly recognizable as the person from the selfie. Create a neat 3×3 grid collage (nine stickers total). Final aspect ratio is strictly 4:5. Each cell shows a distinct pose and facial expression. Style and tone: Pixar-style 3D animation with a meme-oriented feel. Exaggerated, slightly absurd emotions, playful overacting.</p><p>Highly readable expressions at small sizes, with expressive eyes, eyebrows, and mouth. Subtle hand gestures where appropriate. Background and output: Fully transparent background (PNG). No backdrop, no background shadows. No text, captions, logos, or UI elements. Stickers must be ready for direct use in messengers. Consistency: Same hairstyle, clothing, colors, and character proportions across all nine stickers. Only facial expression and pose change.</p><p>Clean, polished 3D sticker look. Emotions (one per sticker, 3×3 grid): Surprised, Annoyed, Confused, Frustrated, Thoughtful, Sarcastic, Worried, Bored, Curious.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2034263750539411550-1.jpg" alt="Using the uploaded selfie as the ONLY and exclusive face refe..." loading="lazy"><img src="/images/tweet-2034263750539411550-2.jpg" alt="Using the uploaded selfie as the ONLY and exclusive face refe..." loading="lazy"><img src="/images/tweet-2034263750539411550-3.jpg" alt="Using the uploaded selfie as the ONLY and exclusive face refe..." loading="lazy"><img src="/images/tweet-2034263750539411550-4.jpg" alt="Using the uploaded selfie as the ONLY and exclusive face refe..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2598,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

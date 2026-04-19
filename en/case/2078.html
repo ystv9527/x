@@ -7,11 +7,13 @@
     <title>&quot;image generation&quot;: { #2078 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image generation&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;stylish young woman sitting on an airplane wing high above the c...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2078.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2078.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2078.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844462">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023525">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"subject\": {\n      \"description\": \"时尚的年轻女子坐在高高云层之上的飞机机翼上\",\n      \"pose\": \"随意地坐在飞机机翼上，一只手向前伸出仿佛在自拍，姿态放松但自信\",\n      \"expression\": \"平静、自信、沉着\",\n      \"gaze\": \"带着冷静且自信的神情看向镜头\"\n    },\n    \"appearance\": {\n      \"hair\": {\n        \"style\": \"长发，自然，随风微扬\",\n        \"look\": \"随性自然\"\n      },\n      \"accessories\": [\n        \"深色太阳镜\",\n        \"极简首饰\"\n      ],\n      \"vibe\": \"冒险、勇敢、现代\"\n    },\n    \"outfit\": {\n      \"style\": \"运动休闲\",\n      \"details\": \"黑色连帽衫、黑色修身裤、干净的白色运动鞋\"\n    },\n    \"environment\": {\n      \"setting\": \"在云层之上的飞机机翼上\",\n      \"sky\": \"晴朗的蓝天，下面是柔软的云朵\",\n      \"atmosphere\": \"开阔、通透、戏剧性的空中视角\"\n    },\n    \"lighting\": {\n      \"type\": \"自然阳光\",\n      \"style\": \"明亮且电影感\",\n      \"direction\": \"来自太阳的侧光\",\n      \"quality\": \"清晰的高光与柔和的阴影\"\n    },\n    \"camera\": {\n      \"angle\": \"以略微抬高角度的广角自拍视角\",\n      \"lens\": \"超广角\",\n      \"depth_of_field\": \"深景深，同时捕捉主体和广阔的天空背景\",\n      \"composition\": \"动态、富有冒险感的构图，强调高度和开阔感\"\n    },\n    \"aesthetic\": {\n      \"style\": \"电影感冒险摄影\",\n      \"vibe\": \"大胆、无畏、现代、旅行生活方式\",\n      \"color_grading\": \"干净的电影色调，保留自然的蓝色与柔和的对比度\"\n    },\n    \"quality\": {\n      \"realism\": \"照片级真实感\",\n      \"detail\": \"高细节\",\n      \"resolution\": \"高分辨率\",\n      \"finish\": \"专业、清晰、超写实\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;时尚的年轻女子坐在高高云层之上的飞机机翼上&quot;,<br>      &quot;pose&quot;: &quot;随意地坐在飞机机翼上，一只手向前伸出仿佛在自拍，姿态放松但自信&quot;,<br>      &quot;expression&quot;: &quot;平静、自信、沉着&quot;,<br>      &quot;gaze&quot;: &quot;带着冷静且自信的神情看向镜头&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;style&quot;: &quot;长发，自然，随风微扬&quot;,<br>        &quot;look&quot;: &quot;随性自然&quot;<br>      },<br>      &quot;accessories&quot;: [<br>        &quot;深色太阳镜&quot;,<br>        &quot;极简首饰&quot;<br>      ],<br>      &quot;vibe&quot;: &quot;冒险、勇敢、现代&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;style&quot;: &quot;运动休闲&quot;,<br>      &quot;details&quot;: &quot;黑色连帽衫、黑色修身裤、干净的白色运动鞋&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;在云层之上的飞机机翼上&quot;,<br>      &quot;sky&quot;: &quot;晴朗的蓝天，下面是柔软的云朵&quot;,<br>      &quot;atmosphere&quot;: &quot;开阔、通透、戏剧性的空中视角&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;自然阳光&quot;,<br>      &quot;style&quot;: &quot;明亮且电影感&quot;,<br>      &quot;direction&quot;: &quot;来自太阳的侧光&quot;,<br>      &quot;quality&quot;: &quot;清晰的高光与柔和的阴影&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;以略微抬高角度的广角自拍视角&quot;,<br>      &quot;lens&quot;: &quot;超广角&quot;,<br>      &quot;depth_of_field&quot;: &quot;深景深，同时捕捉主体和广阔的天空背景&quot;,<br>      &quot;composition&quot;: &quot;动态、富有冒险感的构图，强调高度和开阔感&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;电影感冒险摄影&quot;,<br>      &quot;vibe&quot;: &quot;大胆、无畏、现代、旅行生活方式&quot;,<br>      &quot;color_grading&quot;: &quot;干净的电影色调，保留自然的蓝色与柔和的对比度&quot;<br>    },<br>    &quot;quality&quot;: {<br>      &quot;realism&quot;: &quot;照片级真实感&quot;,<br>      &quot;detail&quot;: &quot;高细节&quot;,<br>      &quot;resolution&quot;: &quot;高分辨率&quot;,<br>      &quot;finish&quot;: &quot;专业、清晰、超写实&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;时尚的年轻女子坐在高高云层之上的飞机机翼上&quot;,<br>      &quot;pose&quot;: &quot;随意地坐在飞机机翼上，一只手向前伸出仿佛在自拍，姿态放松但自信&quot;,<br>      &quot;expression&quot;: &quot;平静、自信、沉着&quot;,<br>      &quot;gaze&quot;: &quot;带着冷静且自信的神情看向镜头&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;style&quot;: &quot;长发，自然，随风微扬&quot;,<br>        &quot;look&quot;: &quot;随性自然&quot;<br>      },<br>      &quot;accessories&quot;: [<br>        &quot;深色太阳镜&quot;,<br>        &quot;极简首饰&quot;<br>      ],<br>      &quot;vibe&quot;: &quot;冒险、勇敢、现代&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;style&quot;: &quot;运动休闲&quot;,<br>      &quot;details&quot;: &quot;黑色连帽衫、黑色修身裤、干净的白色运动鞋&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;在云层之上的飞机机翼上&quot;,<br>      &quot;sky&quot;: &quot;晴朗的蓝天，下面是柔软的云朵&quot;,<br>      &quot;atmosphere&quot;: &quot;开阔、通透、戏剧性的空中视角&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;自然阳光&quot;,<br>      &quot;style&quot;: &quot;明亮且电影感&quot;,<br>      &quot;direction&quot;: &quot;来自太阳的侧光&quot;,<br>      &quot;quality&quot;: &quot;清晰的高光与柔和的阴影&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;以略微抬高角度的广角自拍视角&quot;,<br>      &quot;lens&quot;: &quot;超广角&quot;,<br>      &quot;depth_of_field&quot;: &quot;深景深，同时捕捉主体和广阔的天空背景&quot;,<br>      &quot;composition&quot;: &quot;动态、富有冒险感的构图，强调高度和开阔感&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;电影感冒险摄影&quot;,<br>      &quot;vibe&quot;: &quot;大胆、无畏、现代、旅行生活方式&quot;,<br>      &quot;color_grading&quot;: &quot;干净的电影色调，保留自然的蓝色与柔和的对比度&quot;<br>    },<br>    &quot;quality&quot;: {<br>      &quot;realism&quot;: &quot;照片级真实感&quot;,<br>      &quot;detail&quot;: &quot;高细节&quot;,<br>      &quot;resolution&quot;: &quot;高分辨率&quot;,<br>      &quot;finish&quot;: &quot;专业、清晰、超写实&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"subject\": {\n      \"description\": \"stylish young woman sitting on an airplane wing high above the clouds\",\n      \"pose\": \"seated casually on the airplane wing, one hand extended forward as if taking a selfie, relaxed but confident posture\",\n      \"expression\": \"calm, confident, composed\",\n      \"gaze\": \"looking toward the camera with a cool, self-assured expression\"\n    },\n    \"appearance\": {\n      \"hair\": {\n        \"style\": \"long, natural, slightly flowing in the wind\",\n        \"look\": \"casual and effortless\"\n      },\n      \"accessories\": [\n        \"dark sunglasses\",\n        \"minimal jewelry\"\n      ],\n      \"vibe\": \"adventurous, bold, modern\"\n    },\n    \"outfit\": {\n      \"style\": \"sporty casual\",\n      \"details\": \"black hoodie, black fitted pants, clean white sneakers\"\n    },\n    \"environment\": {\n      \"setting\": \"high above the clouds on an airplane wing\",\n      \"sky\": \"clear blue sky with soft clouds below\",\n      \"atmosphere\": \"open, airy, dramatic aerial view\"\n    },\n    \"lighting\": {\n      \"type\": \"natural sunlight\",\n      \"style\": \"bright and cinematic\",\n      \"direction\": \"side lighting from the sun\",\n      \"quality\": \"crisp highlights with soft shadows\"\n    },\n    \"camera\": {\n      \"angle\": \"wide selfie-style perspective from a slightly elevated angle\",\n      \"lens\": \"ultra wide-angle\",\n      \"depth_of_field\": \"deep focus capturing both subject and vast sky background\",\n      \"composition\": \"dynamic, adventurous framing emphasizing height and openness\"\n    },\n    \"aesthetic\": {\n      \"style\": \"cinematic adventure photography\",\n      \"vibe\": \"bold, fearless, modern, travel lifestyle\",\n      \"color_grading\": \"clean cinematic tones with natural blues and soft contrast\"\n    },\n    \"quality\": {\n      \"realism\": \"photorealistic\",\n      \"detail\": \"high detail\",\n      \"resolution\": \"high resolution\",\n      \"finish\": \"professional, crisp, ultra-realistic\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;stylish young woman sitting on an airplane wing high above the clouds&quot;,<br>      &quot;pose&quot;: &quot;seated casually on the airplane wing, one hand extended forward as if taking a selfie, relaxed but confident posture&quot;,<br>      &quot;expression&quot;: &quot;calm, confident, composed&quot;,<br>      &quot;gaze&quot;: &quot;looking toward the camera with a cool, self-assured expression&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;style&quot;: &quot;long, natural, slightly flowing in the wind&quot;,<br>        &quot;look&quot;: &quot;casual and effortless&quot;<br>      },<br>      &quot;accessories&quot;: [<br>        &quot;dark sunglasses&quot;,<br>        &quot;minimal jewelry&quot;<br>      ],<br>      &quot;vibe&quot;: &quot;adventurous, bold, modern&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;style&quot;: &quot;sporty casual&quot;,<br>      &quot;details&quot;: &quot;black hoodie, black fitted pants, clean white sneakers&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;high above the clouds on an airplane wing&quot;,<br>      &quot;sky&quot;: &quot;clear blue sky with soft clouds below&quot;,<br>      &quot;atmosphere&quot;: &quot;open, airy, dramatic aerial view&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;natural sunlight&quot;,<br>      &quot;style&quot;: &quot;bright and cinematic&quot;,<br>      &quot;direction&quot;: &quot;side lighting from the sun&quot;,<br>      &quot;quality&quot;: &quot;crisp highlights with soft shadows&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;wide selfie-style perspective from a slightly elevated angle&quot;,<br>      &quot;lens&quot;: &quot;ultra wide-angle&quot;,<br>      &quot;depth_of_field&quot;: &quot;deep focus capturing both subject and vast sky background&quot;,<br>      &quot;composition&quot;: &quot;dynamic, adventurous framing emphasizing height and openness&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;cinematic adventure photography&quot;,<br>      &quot;vibe&quot;: &quot;bold, fearless, modern, travel lifestyle&quot;,<br>      &quot;color_grading&quot;: &quot;clean cinematic tones with natural blues and soft contrast&quot;<br>    },<br>    &quot;quality&quot;: {<br>      &quot;realism&quot;: &quot;photorealistic&quot;,<br>      &quot;detail&quot;: &quot;high detail&quot;,<br>      &quot;resolution&quot;: &quot;high resolution&quot;,<br>      &quot;finish&quot;: &quot;professional, crisp, ultra-realistic&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;stylish young woman sitting on an airplane wing high above the clouds&quot;,<br>      &quot;pose&quot;: &quot;seated casually on the airplane wing, one hand extended forward as if taking a selfie, relaxed but confident posture&quot;,<br>      &quot;expression&quot;: &quot;calm, confident, composed&quot;,<br>      &quot;gaze&quot;: &quot;looking toward the camera with a cool, self-assured expression&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;style&quot;: &quot;long, natural, slightly flowing in the wind&quot;,<br>        &quot;look&quot;: &quot;casual and effortless&quot;<br>      },<br>      &quot;accessories&quot;: [<br>        &quot;dark sunglasses&quot;,<br>        &quot;minimal jewelry&quot;<br>      ],<br>      &quot;vibe&quot;: &quot;adventurous, bold, modern&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;style&quot;: &quot;sporty casual&quot;,<br>      &quot;details&quot;: &quot;black hoodie, black fitted pants, clean white sneakers&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;high above the clouds on an airplane wing&quot;,<br>      &quot;sky&quot;: &quot;clear blue sky with soft clouds below&quot;,<br>      &quot;atmosphere&quot;: &quot;open, airy, dramatic aerial view&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;natural sunlight&quot;,<br>      &quot;style&quot;: &quot;bright and cinematic&quot;,<br>      &quot;direction&quot;: &quot;side lighting from the sun&quot;,<br>      &quot;quality&quot;: &quot;crisp highlights with soft shadows&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;wide selfie-style perspective from a slightly elevated angle&quot;,<br>      &quot;lens&quot;: &quot;ultra wide-angle&quot;,<br>      &quot;depth_of_field&quot;: &quot;deep focus capturing both subject and vast sky background&quot;,<br>      &quot;composition&quot;: &quot;dynamic, adventurous framing emphasizing height and openness&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;cinematic adventure photography&quot;,<br>      &quot;vibe&quot;: &quot;bold, fearless, modern, travel lifestyle&quot;,<br>      &quot;color_grading&quot;: &quot;clean cinematic tones with natural blues and soft contrast&quot;<br>    },<br>    &quot;quality&quot;: {<br>      &quot;realism&quot;: &quot;photorealistic&quot;,<br>      &quot;detail&quot;: &quot;high detail&quot;,<br>      &quot;resolution&quot;: &quot;high resolution&quot;,<br>      &quot;finish&quot;: &quot;professional, crisp, ultra-realistic&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2021553869168550103-1.jpg" alt="&quot;image generation&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2078,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

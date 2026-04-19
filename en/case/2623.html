@@ -7,11 +7,13 @@
     <title>Ultra detailed stylized 3D portrait using the provided refere... #2623 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Ultra detailed stylized 3D portrait using the provided reference photo lebron james as the exact facial base. Preserv...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2623.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2623.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2623.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843894">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023397">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用提供的参考照片 勒布朗·詹姆斯 作为精确面部基础，制作超细致风格化3D肖像。\n完美保留该人物——面部形状、骨骼结构、下颌线、眼睛、鼻子、嘴唇、肤色、痕迹、雀斑、表情和比例完全一致。\n绝对不要以任何方式修改面部身份。\n仅转换为高端风格化3D写实。\n\n头部与元素：\n仅浮空头部（无颈、无肩、无身体）\n严格保留参考图中人物头上所有物件——相同发型、相同发长与发质、相同帽子、帽檐、太阳镜、眼镜、耳机或任何配饰。不得移除或添加任何物品。\n\n皮肤精细处理：\n自然光滑皮肤（非塑料感）。可见逼真的微观纹理与毛孔。细微次表面散射以实现自然光线扩散。颧骨、鼻梁与鼻尖有柔和高光。平衡的真实阴影以营造层次感。\n\n头发与配件（若参考图中存在）：\n超写实体积发丝。自然光泽与柔和边缘反光。完全保留形状与位置。\n\n光照：\n强烈电影感紫色环境背景。柔和正面主光均匀照亮面部。细微轮廓光使头部与背景分离。下巴下方柔和阴影以增加深度。光线渐变平滑，无强烈对比。\n\n渲染风格：\n高级皮克斯品质的风格化写实。干净平滑的着色。全局光照。高光处柔和辉光。超清晰边缘，无噪点的专业CGI。\n\n相机与质量：\n居中肖像构图。浅景深效果幻觉。超高分辨率。电影质感。\n\n规则：\n100%尊重参考面容。\n完全尊重所有头部配件与发型。\n仅转换为风格化3D。不得夸张。不得卡通化扭曲。不得更改面部。", this)'>📋 Copy</button>
         </div>
-        <p>使用提供的参考照片 勒布朗·詹姆斯 作为精确面部基础，制作超细致风格化3D肖像。<br>完美保留该人物——面部形状、骨骼结构、下颌线、眼睛、鼻子、嘴唇、肤色、痕迹、雀斑、表情和比例完全一致。<br>绝对不要以任何方式修改面部身份。<br>仅转换为高端风格化3D写实。</p><p>头部与元素：<br>仅浮空头部（无颈、无肩、无身体）<br>严格保留参考图中人物头上所有物件——相同发型、相同发长与发质、相同帽子、帽檐、太阳镜、眼镜、耳机或任何配饰。不得移除或添加任何物品。</p><p>皮肤精细处理：<br>自然光滑皮肤（非塑料感）。可见逼真的微观纹理与毛孔。细微次表面散射以实现自然光线扩散。颧骨、鼻梁与鼻尖有柔和高光。平衡的真实阴影以营造层次感。</p><p>头发与配件（若参考图中存在）：<br>超写实体积发丝。自然光泽与柔和边缘反光。完全保留形状与位置。</p><p>光照：<br>强烈电影感紫色环境背景。柔和正面主光均匀照亮面部。细微轮廓光使头部与背景分离。下巴下方柔和阴影以增加深度。光线渐变平滑，无强烈对比。</p><p>渲染风格：<br>高级皮克斯品质的风格化写实。干净平滑的着色。全局光照。高光处柔和辉光。超清晰边缘，无噪点的专业CGI。</p><p>相机与质量：<br>居中肖像构图。浅景深效果幻觉。超高分辨率。电影质感。</p><p>规则：<br>100%尊重参考面容。<br>完全尊重所有头部配件与发型。<br>仅转换为风格化3D。不得夸张。不得卡通化扭曲。不得更改面部。</p>
+        <div data-nosnippet><p>使用提供的参考照片 勒布朗·詹姆斯 作为精确面部基础，制作超细致风格化3D肖像。<br>完美保留该人物——面部形状、骨骼结构、下颌线、眼睛、鼻子、嘴唇、肤色、痕迹、雀斑、表情和比例完全一致。<br>绝对不要以任何方式修改面部身份。<br>仅转换为高端风格化3D写实。</p><p>头部与元素：<br>仅浮空头部（无颈、无肩、无身体）<br>严格保留参考图中人物头上所有物件——相同发型、相同发长与发质、相同帽子、帽檐、太阳镜、眼镜、耳机或任何配饰。不得移除或添加任何物品。</p><p>皮肤精细处理：<br>自然光滑皮肤（非塑料感）。可见逼真的微观纹理与毛孔。细微次表面散射以实现自然光线扩散。颧骨、鼻梁与鼻尖有柔和高光。平衡的真实阴影以营造层次感。</p><p>头发与配件（若参考图中存在）：<br>超写实体积发丝。自然光泽与柔和边缘反光。完全保留形状与位置。</p><p>光照：<br>强烈电影感紫色环境背景。柔和正面主光均匀照亮面部。细微轮廓光使头部与背景分离。下巴下方柔和阴影以增加深度。光线渐变平滑，无强烈对比。</p><p>渲染风格：<br>高级皮克斯品质的风格化写实。干净平滑的着色。全局光照。高光处柔和辉光。超清晰边缘，无噪点的专业CGI。</p><p>相机与质量：<br>居中肖像构图。浅景深效果幻觉。超高分辨率。电影质感。</p><p>规则：<br>100%尊重参考面容。<br>完全尊重所有头部配件与发型。<br>仅转换为风格化3D。不得夸张。不得卡通化扭曲。不得更改面部。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Ultra-detailed stylized 3D portrait using the provided reference photo lebron james as the exact facial base.\nPreserve the person perfectly — identical face shape, bone structure, jawline, eyes, nose, lips, skin tone, marks, freckles, expression and proportions.\nDO NOT modify facial identity in any way.\nConvert ONLY into high-end stylized 3D realism.\nHead & elements:\nFloating head only (no neck, no shoulders, no body)\nKeep EXACTLY whatever the person has on their head in the reference image — same hairstyle, same hair length and texture, same hat, cap, sunglasses, glasses, headphones or any accessory. Do not remove or add anything.\nSkin refinement:\nNatural smooth skin (not plastic).Visible realistic micro-texture and pores. Subtle subsurface scattering for natural light diffusion. Soft highlights on cheekbones, nose bridge and tip.Balanced realistic shadows for depth\nHair & accessories (if present in reference):\nUltra-realistic volumetric strands.Natural shine and soft rim reflections. Perfectly preserved shape and position\nLighting:\nStrong cinematic purple ambient background. Soft frontal key light evenly illuminating the face. Subtle rim light separating head from background. Gentle under-chin shadow for depth. Smooth light gradients, no harsh contrast\nRendering style:\nPremium Pixar-quality stylized realism. Clean smooth shading. Global illumination. Soft bloom on highlights. Ultra sharp edgesNoise-free professional CGI\nCamera & quality:\nCentered portrait composition. Shallow depth of field illusion. Ultra high resolution. Cinematic look\nRules:\nRespect reference face 100%.Respect all head accessories and hair exactly. Only convert to stylized 3D. No exaggeration. No cartoon distortion. No facial changes", this)'>📋 Copy</button>
         </div>
-        <p>Ultra-detailed stylized 3D portrait using the provided reference photo lebron james as the exact facial base.<br>Preserve the person perfectly — identical face shape, bone structure, jawline, eyes, nose, lips, skin tone, marks, freckles, expression and proportions.<br>DO NOT modify facial identity in any way.<br>Convert ONLY into high-end stylized 3D realism.<br>Head &amp; elements:<br>Floating head only (no neck, no shoulders, no body)<br>Keep EXACTLY whatever the person has on their head in the reference image — same hairstyle, same hair length and texture, same hat, cap, sunglasses, glasses, headphones or any accessory. Do not remove or add anything.<br>Skin refinement:<br>Natural smooth skin (not plastic).Visible realistic micro-texture and pores. Subtle subsurface scattering for natural light diffusion. Soft highlights on cheekbones, nose bridge and tip.Balanced realistic shadows for depth<br>Hair &amp; accessories (if present in reference):<br>Ultra-realistic volumetric strands.Natural shine and soft rim reflections. Perfectly preserved shape and position<br>Lighting:<br>Strong cinematic purple ambient background. Soft frontal key light evenly illuminating the face. Subtle rim light separating head from background. Gentle under-chin shadow for depth. Smooth light gradients, no harsh contrast<br>Rendering style:<br>Premium Pixar-quality stylized realism. Clean smooth shading. Global illumination. Soft bloom on highlights. Ultra sharp edgesNoise-free professional CGI<br>Camera &amp; quality:<br>Centered portrait composition. Shallow depth of field illusion. Ultra high resolution. Cinematic look<br>Rules:<br>Respect reference face 100%.Respect all head accessories and hair exactly. Only convert to stylized 3D. No exaggeration. No cartoon distortion. No facial changes</p>
+        <div data-nosnippet><p>Ultra-detailed stylized 3D portrait using the provided reference photo lebron james as the exact facial base.<br>Preserve the person perfectly — identical face shape, bone structure, jawline, eyes, nose, lips, skin tone, marks, freckles, expression and proportions.<br>DO NOT modify facial identity in any way.<br>Convert ONLY into high-end stylized 3D realism.<br>Head &amp; elements:<br>Floating head only (no neck, no shoulders, no body)<br>Keep EXACTLY whatever the person has on their head in the reference image — same hairstyle, same hair length and texture, same hat, cap, sunglasses, glasses, headphones or any accessory. Do not remove or add anything.<br>Skin refinement:<br>Natural smooth skin (not plastic).Visible realistic micro-texture and pores. Subtle subsurface scattering for natural light diffusion. Soft highlights on cheekbones, nose bridge and tip.Balanced realistic shadows for depth<br>Hair &amp; accessories (if present in reference):<br>Ultra-realistic volumetric strands.Natural shine and soft rim reflections. Perfectly preserved shape and position<br>Lighting:<br>Strong cinematic purple ambient background. Soft frontal key light evenly illuminating the face. Subtle rim light separating head from background. Gentle under-chin shadow for depth. Smooth light gradients, no harsh contrast<br>Rendering style:<br>Premium Pixar-quality stylized realism. Clean smooth shading. Global illumination. Soft bloom on highlights. Ultra sharp edgesNoise-free professional CGI<br>Camera &amp; quality:<br>Centered portrait composition. Shallow depth of field illusion. Ultra high resolution. Cinematic look<br>Rules:<br>Respect reference face 100%.Respect all head accessories and hair exactly. Only convert to stylized 3D. No exaggeration. No cartoon distortion. No facial changes</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2034967465487163740-1.jpg" alt="Ultra detailed stylized 3D portrait using the provided refere..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2623,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

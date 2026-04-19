@@ -7,11 +7,13 @@
     <title>Utilize exclusively and obligatorily the uploaded reference p... #1048 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Utilize exclusively and obligatorily the uploaded reference photos as the primary and authoritative source for the mo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1048.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1048.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1048.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845527">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023736">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("专门且强制性地仅使用上传的参考照片，作为模特脸部、面部结构、比例、肤色、真实皮肤质地以及其发丝自然特征的主要且权威来源。\n不得理想化、美化、改变、回春、瘦脸、抚平皮肤或修改任何真实特征。\n不得去除或改变雀斑、毛孔、细纹或自然瑕疵。外观必须与参考图像完全一致，做到绝对忠实。\n创作一幅超写实、空灵的微距美术肖像照片，使用 Leica APO-Macro-Elmarit-R 100mm f/2.8，全画幅拍摄。\n年轻女性面部的极端特写，肤色苍白，完全尊重参考照片中所示模特的真实面相。\n皮肤质感超细致且完全自然，毛孔清晰可见，不进行人为平滑。\n一只清澈、带有忧郁神情的眼睛处于完美的关键对焦，呈现 Leica 光学特有的自然微对比。\n长而自然的睫毛。\n唇微微分开，自然的浅粉色调，无过度或人为的妆容。\n淡紫色和柔和紫调的野花精致地轻放在面颊上，并与松散、自然不完美的发丝交织，完全遵循参考图像中真实的发丝走向。\n有些花在前景中出现轻微虚化，营造有机的纵深和分层构图。\n柔和、冷调、漫射的自然光，如同阴天时的光线。\n无硬朗阴影，无人为照明。\n宁静、脆弱、诗意且微妙带忧郁的氛围。\n微距摄影，极浅的景深，边缘与背景融化为奶油般平滑的散景。\n虹膜与真实皮肤纹理处于绝对关键对焦。\n色彩去饱和、冷色系的柔和粉彩调——浅灰、米色与淡紫。\n美术审美，真实的 Leica 光学忠实度，真实的摄影外观。\n超高分辨率 8K，且无任何 AI 生成的外观。", this)'>📋 Copy</button>
         </div>
-        <p>专门且强制性地仅使用上传的参考照片，作为模特脸部、面部结构、比例、肤色、真实皮肤质地以及其发丝自然特征的主要且权威来源。<br>不得理想化、美化、改变、回春、瘦脸、抚平皮肤或修改任何真实特征。<br>不得去除或改变雀斑、毛孔、细纹或自然瑕疵。外观必须与参考图像完全一致，做到绝对忠实。<br>创作一幅超写实、空灵的微距美术肖像照片，使用 Leica APO-Macro-Elmarit-R 100mm f/2.8，全画幅拍摄。<br>年轻女性面部的极端特写，肤色苍白，完全尊重参考照片中所示模特的真实面相。<br>皮肤质感超细致且完全自然，毛孔清晰可见，不进行人为平滑。<br>一只清澈、带有忧郁神情的眼睛处于完美的关键对焦，呈现 Leica 光学特有的自然微对比。<br>长而自然的睫毛。<br>唇微微分开，自然的浅粉色调，无过度或人为的妆容。<br>淡紫色和柔和紫调的野花精致地轻放在面颊上，并与松散、自然不完美的发丝交织，完全遵循参考图像中真实的发丝走向。<br>有些花在前景中出现轻微虚化，营造有机的纵深和分层构图。<br>柔和、冷调、漫射的自然光，如同阴天时的光线。<br>无硬朗阴影，无人为照明。<br>宁静、脆弱、诗意且微妙带忧郁的氛围。<br>微距摄影，极浅的景深，边缘与背景融化为奶油般平滑的散景。<br>虹膜与真实皮肤纹理处于绝对关键对焦。<br>色彩去饱和、冷色系的柔和粉彩调——浅灰、米色与淡紫。<br>美术审美，真实的 Leica 光学忠实度，真实的摄影外观。<br>超高分辨率 8K，且无任何 AI 生成的外观。</p>
+        <div data-nosnippet><p>专门且强制性地仅使用上传的参考照片，作为模特脸部、面部结构、比例、肤色、真实皮肤质地以及其发丝自然特征的主要且权威来源。<br>不得理想化、美化、改变、回春、瘦脸、抚平皮肤或修改任何真实特征。<br>不得去除或改变雀斑、毛孔、细纹或自然瑕疵。外观必须与参考图像完全一致，做到绝对忠实。<br>创作一幅超写实、空灵的微距美术肖像照片，使用 Leica APO-Macro-Elmarit-R 100mm f/2.8，全画幅拍摄。<br>年轻女性面部的极端特写，肤色苍白，完全尊重参考照片中所示模特的真实面相。<br>皮肤质感超细致且完全自然，毛孔清晰可见，不进行人为平滑。<br>一只清澈、带有忧郁神情的眼睛处于完美的关键对焦，呈现 Leica 光学特有的自然微对比。<br>长而自然的睫毛。<br>唇微微分开，自然的浅粉色调，无过度或人为的妆容。<br>淡紫色和柔和紫调的野花精致地轻放在面颊上，并与松散、自然不完美的发丝交织，完全遵循参考图像中真实的发丝走向。<br>有些花在前景中出现轻微虚化，营造有机的纵深和分层构图。<br>柔和、冷调、漫射的自然光，如同阴天时的光线。<br>无硬朗阴影，无人为照明。<br>宁静、脆弱、诗意且微妙带忧郁的氛围。<br>微距摄影，极浅的景深，边缘与背景融化为奶油般平滑的散景。<br>虹膜与真实皮肤纹理处于绝对关键对焦。<br>色彩去饱和、冷色系的柔和粉彩调——浅灰、米色与淡紫。<br>美术审美，真实的 Leica 光学忠实度，真实的摄影外观。<br>超高分辨率 8K，且无任何 AI 生成的外观。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Utilize exclusively and obligatorily the uploaded reference photos as the primary and authoritative source for the model’s face, facial structure, proportions, skin tone, real skin texture, and the exact natural characteristics of her hair.\nDo not idealize, beautify, alter, rejuvenate, slim the face, smooth the skin, or modify any real features.\nDo not remove or change freckles, pores, fine lines, or natural imperfections.The appearance must match the reference images exactly, with absolute fidelity.\nCreate a hyper-realistic, ethereal macro Fine Art portrait photograph, captured with a Leica APO-Macro-Elmarit-R 100mm f/2.8, full-frame.\nAn extreme close-up of a young woman’s face with pale skin, fully respecting the real physiognomy of the model as shown in the reference photos.\nSkin texture is ultra-detailed and completely natural, with clearly visible pores and no artificial smoothing.\nOne crystal-clear, melancholic eye is in perfect critical focus, displaying natural micro-contrast characteristic of Leica optics.\nLong, natural eyelashes.\nLips slightly parted, in a natural pale pink tone, with no excessive or artificial makeup.\nDelicate wildflowers in soft lilac and muted purple tones rest gently on the cheek and intertwine with loose, naturally imperfect hair strands, exactly following the real hair pattern seen in the reference images.\nSome flowers appear softly out of focus in the foreground, creating organic depth and layered composition.\nSoft, cool, diffused natural light, as on an overcast day.\nNo harsh shadows, no artificial lighting.\nA serene, fragile, poetic, and subtly melancholic atmosphere.\nMacro photography with an extremely shallow depth of field, edges and background melting into a creamy, smooth bokeh.\nAbsolute critical focus on the iris and the true skin texture.\nDesaturated color palette, cool pastel tones — soft gray, beige, and lilac.\nFine Art aesthetic, authentic Leica optical fidelity, true photographic appearance.\nUltra-high resolution 8K, with no AI-generated look.", this)'>📋 Copy</button>
         </div>
-        <p>Utilize exclusively and obligatorily the uploaded reference photos as the primary and authoritative source for the model’s face, facial structure, proportions, skin tone, real skin texture, and the exact natural characteristics of her hair.<br>Do not idealize, beautify, alter, rejuvenate, slim the face, smooth the skin, or modify any real features.<br>Do not remove or change freckles, pores, fine lines, or natural imperfections.The appearance must match the reference images exactly, with absolute fidelity.<br>Create a hyper-realistic, ethereal macro Fine Art portrait photograph, captured with a Leica APO-Macro-Elmarit-R 100mm f/2.8, full-frame.<br>An extreme close-up of a young woman’s face with pale skin, fully respecting the real physiognomy of the model as shown in the reference photos.<br>Skin texture is ultra-detailed and completely natural, with clearly visible pores and no artificial smoothing.<br>One crystal-clear, melancholic eye is in perfect critical focus, displaying natural micro-contrast characteristic of Leica optics.<br>Long, natural eyelashes.<br>Lips slightly parted, in a natural pale pink tone, with no excessive or artificial makeup.<br>Delicate wildflowers in soft lilac and muted purple tones rest gently on the cheek and intertwine with loose, naturally imperfect hair strands, exactly following the real hair pattern seen in the reference images.<br>Some flowers appear softly out of focus in the foreground, creating organic depth and layered composition.<br>Soft, cool, diffused natural light, as on an overcast day.<br>No harsh shadows, no artificial lighting.<br>A serene, fragile, poetic, and subtly melancholic atmosphere.<br>Macro photography with an extremely shallow depth of field, edges and background melting into a creamy, smooth bokeh.<br>Absolute critical focus on the iris and the true skin texture.<br>Desaturated color palette, cool pastel tones — soft gray, beige, and lilac.<br>Fine Art aesthetic, authentic Leica optical fidelity, true photographic appearance.<br>Ultra-high resolution 8K, with no AI-generated look.</p>
+        <div data-nosnippet><p>Utilize exclusively and obligatorily the uploaded reference photos as the primary and authoritative source for the model’s face, facial structure, proportions, skin tone, real skin texture, and the exact natural characteristics of her hair.<br>Do not idealize, beautify, alter, rejuvenate, slim the face, smooth the skin, or modify any real features.<br>Do not remove or change freckles, pores, fine lines, or natural imperfections.The appearance must match the reference images exactly, with absolute fidelity.<br>Create a hyper-realistic, ethereal macro Fine Art portrait photograph, captured with a Leica APO-Macro-Elmarit-R 100mm f/2.8, full-frame.<br>An extreme close-up of a young woman’s face with pale skin, fully respecting the real physiognomy of the model as shown in the reference photos.<br>Skin texture is ultra-detailed and completely natural, with clearly visible pores and no artificial smoothing.<br>One crystal-clear, melancholic eye is in perfect critical focus, displaying natural micro-contrast characteristic of Leica optics.<br>Long, natural eyelashes.<br>Lips slightly parted, in a natural pale pink tone, with no excessive or artificial makeup.<br>Delicate wildflowers in soft lilac and muted purple tones rest gently on the cheek and intertwine with loose, naturally imperfect hair strands, exactly following the real hair pattern seen in the reference images.<br>Some flowers appear softly out of focus in the foreground, creating organic depth and layered composition.<br>Soft, cool, diffused natural light, as on an overcast day.<br>No harsh shadows, no artificial lighting.<br>A serene, fragile, poetic, and subtly melancholic atmosphere.<br>Macro photography with an extremely shallow depth of field, edges and background melting into a creamy, smooth bokeh.<br>Absolute critical focus on the iris and the true skin texture.<br>Desaturated color palette, cool pastel tones — soft gray, beige, and lilac.<br>Fine Art aesthetic, authentic Leica optical fidelity, true photographic appearance.<br>Ultra-high resolution 8K, with no AI-generated look.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2010578685070582235-1.jpg" alt="Utilize exclusively and obligatorily the uploaded reference p..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1048,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

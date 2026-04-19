@@ -7,11 +7,13 @@
     <title>Use the uploaded image as a reference for the character. Crea... #1179 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Use the uploaded image as a reference for the character. Create a sweet, cute, youthful looking girl with a relaxed,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1179.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1179.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1179.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841173">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022514">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用上传的图像作为角色参考。创造一个甜美、可爱、看起来年轻的女孩，姿态放松、慵懒，表情富有表现力。\n她手捧一束用牛皮纸包裹的大花束，周围环绕着许多绿植。画面应具有触感、沉浸感和氛围感，带有一种超现实的精致感与微妙的运动模糊。女孩有柔软的深棕色头发，自然造型，构图呈不对称，眼神左右顾盼，发型应能增强整体情绪。她的妆容甜美自然，五官细腻且写实。\n光线应柔和温暖，身后有一盏橙色灯泡柔和地散发橙光，形成细腻的阴影，在她的头发、头部和面庞上投射出温暖的光，营造令人安慰的氛围。衣着应显得休闲且写实，姿势自然协调，传达一种放松舒适的生活方式。她戴着银色圈形耳环。", this)'>📋 复制</button>
         </div>
-        <p>使用上传的图像作为角色参考。创造一个甜美、可爱、看起来年轻的女孩，姿态放松、慵懒，表情富有表现力。<br>她手捧一束用牛皮纸包裹的大花束，周围环绕着许多绿植。画面应具有触感、沉浸感和氛围感，带有一种超现实的精致感与微妙的运动模糊。女孩有柔软的深棕色头发，自然造型，构图呈不对称，眼神左右顾盼，发型应能增强整体情绪。她的妆容甜美自然，五官细腻且写实。<br>光线应柔和温暖，身后有一盏橙色灯泡柔和地散发橙光，形成细腻的阴影，在她的头发、头部和面庞上投射出温暖的光，营造令人安慰的氛围。衣着应显得休闲且写实，姿势自然协调，传达一种放松舒适的生活方式。她戴着银色圈形耳环。</p>
+        <div data-nosnippet><p>使用上传的图像作为角色参考。创造一个甜美、可爱、看起来年轻的女孩，姿态放松、慵懒，表情富有表现力。<br>她手捧一束用牛皮纸包裹的大花束，周围环绕着许多绿植。画面应具有触感、沉浸感和氛围感，带有一种超现实的精致感与微妙的运动模糊。女孩有柔软的深棕色头发，自然造型，构图呈不对称，眼神左右顾盼，发型应能增强整体情绪。她的妆容甜美自然，五官细腻且写实。<br>光线应柔和温暖，身后有一盏橙色灯泡柔和地散发橙光，形成细腻的阴影，在她的头发、头部和面庞上投射出温暖的光，营造令人安慰的氛围。衣着应显得休闲且写实，姿势自然协调，传达一种放松舒适的生活方式。她戴着银色圈形耳环。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use the uploaded image as a reference for the character. Create a sweet, cute, youthful-looking girl with a relaxed, languid posture and expressive emotions.\nShe is holding a large bouquet of flowers wrapped in kraft paper, She is surrounded by many green plants. The image should feel tactile, immersive, and atmospheric, with a sense of surreal sophistication and subtle motion blur. The girl has soft dark brown hair styled naturally, with an asymmetrical composition, glancing left and right,and her hairstyle should enhance the mood. Her makeup is sweet and natural, facial features delicate and realistic.\nLighting should be soft, warm and a lamp orange bulb behind her creates softly orange, with nuanced shadows, creating a warm light on her hair, head and on her face, comforting atmosphere. Clothing should feel casual and realistic, and her pose should be natural and coordinated, conveying a relaxed, comfortable lifestyle. She wears silver hoop earrings.", this)'>📋 复制</button>
         </div>
-        <p>Use the uploaded image as a reference for the character. Create a sweet, cute, youthful-looking girl with a relaxed, languid posture and expressive emotions.<br>She is holding a large bouquet of flowers wrapped in kraft paper, She is surrounded by many green plants. The image should feel tactile, immersive, and atmospheric, with a sense of surreal sophistication and subtle motion blur. The girl has soft dark brown hair styled naturally, with an asymmetrical composition, glancing left and right,and her hairstyle should enhance the mood. Her makeup is sweet and natural, facial features delicate and realistic.<br>Lighting should be soft, warm and a lamp orange bulb behind her creates softly orange, with nuanced shadows, creating a warm light on her hair, head and on her face, comforting atmosphere. Clothing should feel casual and realistic, and her pose should be natural and coordinated, conveying a relaxed, comfortable lifestyle. She wears silver hoop earrings.</p>
+        <div data-nosnippet><p>Use the uploaded image as a reference for the character. Create a sweet, cute, youthful-looking girl with a relaxed, languid posture and expressive emotions.<br>She is holding a large bouquet of flowers wrapped in kraft paper, She is surrounded by many green plants. The image should feel tactile, immersive, and atmospheric, with a sense of surreal sophistication and subtle motion blur. The girl has soft dark brown hair styled naturally, with an asymmetrical composition, glancing left and right,and her hairstyle should enhance the mood. Her makeup is sweet and natural, facial features delicate and realistic.<br>Lighting should be soft, warm and a lamp orange bulb behind her creates softly orange, with nuanced shadows, creating a warm light on her hair, head and on her face, comforting atmosphere. Clothing should feel casual and realistic, and her pose should be natural and coordinated, conveying a relaxed, comfortable lifestyle. She wears silver hoop earrings.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011248143925723306-1.jpg" alt="Use the uploaded image as a reference for the character. Crea..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1179,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

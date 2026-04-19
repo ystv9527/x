@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: &quot;Young woman sitting casually on outdoor concrete... #847 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;subject&quot;: &quot;Young woman sitting casually on outdoor concrete stairs, posing with a cool, confident demeanor.&quot;, &quot;clo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/847.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/847.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/847.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845726">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023777">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": \"在户外混凝土楼梯上随意坐着的年轻女性，姿态从容、冷静且自信。\",\n  \"clothing\": \"穿着一件超大号的灰色与米色格纹法兰绒衬衫，敞开穿着，里面是一件普通黑色圆领 T 恤，搭配宽松的深色长裤，以及一双厚底白色运动鞋。\",\n  \"hair\": \"长而直的浅棕色头发，中分，自然垂落在肩上。\",\n  \"face\": \"中性、沉着的表情，轮廓分明的红唇，眼睛被太阳镜遮住。\",\n  \"accessories\": \"圆形深色太阳镜，细金属边框，简约的银色项链。\",\n  \"environment\": \"背景是一座高大的灰色混凝土公寓楼，窗格呈网格状，前景是风化的混凝土台阶。\",\n  \"lighting\": \"柔和、漫射的自然日光，呈现阴天的光线，光线均匀且没有明显阴影。\",\n  \"camera\": \"低角度拍摄，向上仰视主体，突出背景建筑的高度，主体清晰，背景略微虚化。\",\n  \"style\": \"都市街头风格摄影，90年代 grunge 风格，情绪化且富有氛围，电影感的竖向构图。\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: &quot;在户外混凝土楼梯上随意坐着的年轻女性，姿态从容、冷静且自信。&quot;,<br>  &quot;clothing&quot;: &quot;穿着一件超大号的灰色与米色格纹法兰绒衬衫，敞开穿着，里面是一件普通黑色圆领 T 恤，搭配宽松的深色长裤，以及一双厚底白色运动鞋。&quot;,<br>  &quot;hair&quot;: &quot;长而直的浅棕色头发，中分，自然垂落在肩上。&quot;,<br>  &quot;face&quot;: &quot;中性、沉着的表情，轮廓分明的红唇，眼睛被太阳镜遮住。&quot;,<br>  &quot;accessories&quot;: &quot;圆形深色太阳镜，细金属边框，简约的银色项链。&quot;,<br>  &quot;environment&quot;: &quot;背景是一座高大的灰色混凝土公寓楼，窗格呈网格状，前景是风化的混凝土台阶。&quot;,<br>  &quot;lighting&quot;: &quot;柔和、漫射的自然日光，呈现阴天的光线，光线均匀且没有明显阴影。&quot;,<br>  &quot;camera&quot;: &quot;低角度拍摄，向上仰视主体，突出背景建筑的高度，主体清晰，背景略微虚化。&quot;,<br>  &quot;style&quot;: &quot;都市街头风格摄影，90年代 grunge 风格，情绪化且富有氛围，电影感的竖向构图。&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: &quot;在户外混凝土楼梯上随意坐着的年轻女性，姿态从容、冷静且自信。&quot;,<br>  &quot;clothing&quot;: &quot;穿着一件超大号的灰色与米色格纹法兰绒衬衫，敞开穿着，里面是一件普通黑色圆领 T 恤，搭配宽松的深色长裤，以及一双厚底白色运动鞋。&quot;,<br>  &quot;hair&quot;: &quot;长而直的浅棕色头发，中分，自然垂落在肩上。&quot;,<br>  &quot;face&quot;: &quot;中性、沉着的表情，轮廓分明的红唇，眼睛被太阳镜遮住。&quot;,<br>  &quot;accessories&quot;: &quot;圆形深色太阳镜，细金属边框，简约的银色项链。&quot;,<br>  &quot;environment&quot;: &quot;背景是一座高大的灰色混凝土公寓楼，窗格呈网格状，前景是风化的混凝土台阶。&quot;,<br>  &quot;lighting&quot;: &quot;柔和、漫射的自然日光，呈现阴天的光线，光线均匀且没有明显阴影。&quot;,<br>  &quot;camera&quot;: &quot;低角度拍摄，向上仰视主体，突出背景建筑的高度，主体清晰，背景略微虚化。&quot;,<br>  &quot;style&quot;: &quot;都市街头风格摄影，90年代 grunge 风格，情绪化且富有氛围，电影感的竖向构图。&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": \"Young woman sitting casually on outdoor concrete stairs, posing with a cool, confident demeanor.\",\n  \"clothing\": \"Oversized grey and beige plaid flannel shirt worn open, plain black crew-neck t-shirt underneath, loose-fitting dark trousers, chunky white sneakers.\",\n  \"hair\": \"Long, straight light brown hair with a middle part, falling naturally over the shoulders.\",\n  \"face\": \"Neutral, poised expression with defined red lips, eyes concealed behind sunglasses.\",\n  \"accessories\": \"Round dark sunglasses with thin metal frames, simple silver chain necklace.\",\n  \"environment\": \"Urban setting with a tall, grey concrete apartment block featuring a grid of windows in the background, weathered concrete steps in the foreground.\",\n  \"lighting\": \"Soft, diffuse natural daylight indicative of an overcast sky, creating even illumination without harsh shadows.\",\n  \"camera\": \"Low-angle shot looking up at the subject, emphasizing the height of the background building, sharp focus on the subject with a slightly softened background.\",\n  \"style\": \"Urban streetwear photography, 90s grunge aesthetic, moody and atmospheric, cinematic vertical composition.\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: &quot;Young woman sitting casually on outdoor concrete stairs, posing with a cool, confident demeanor.&quot;,<br>  &quot;clothing&quot;: &quot;Oversized grey and beige plaid flannel shirt worn open, plain black crew-neck t-shirt underneath, loose-fitting dark trousers, chunky white sneakers.&quot;,<br>  &quot;hair&quot;: &quot;Long, straight light brown hair with a middle part, falling naturally over the shoulders.&quot;,<br>  &quot;face&quot;: &quot;Neutral, poised expression with defined red lips, eyes concealed behind sunglasses.&quot;,<br>  &quot;accessories&quot;: &quot;Round dark sunglasses with thin metal frames, simple silver chain necklace.&quot;,<br>  &quot;environment&quot;: &quot;Urban setting with a tall, grey concrete apartment block featuring a grid of windows in the background, weathered concrete steps in the foreground.&quot;,<br>  &quot;lighting&quot;: &quot;Soft, diffuse natural daylight indicative of an overcast sky, creating even illumination without harsh shadows.&quot;,<br>  &quot;camera&quot;: &quot;Low-angle shot looking up at the subject, emphasizing the height of the background building, sharp focus on the subject with a slightly softened background.&quot;,<br>  &quot;style&quot;: &quot;Urban streetwear photography, 90s grunge aesthetic, moody and atmospheric, cinematic vertical composition.&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: &quot;Young woman sitting casually on outdoor concrete stairs, posing with a cool, confident demeanor.&quot;,<br>  &quot;clothing&quot;: &quot;Oversized grey and beige plaid flannel shirt worn open, plain black crew-neck t-shirt underneath, loose-fitting dark trousers, chunky white sneakers.&quot;,<br>  &quot;hair&quot;: &quot;Long, straight light brown hair with a middle part, falling naturally over the shoulders.&quot;,<br>  &quot;face&quot;: &quot;Neutral, poised expression with defined red lips, eyes concealed behind sunglasses.&quot;,<br>  &quot;accessories&quot;: &quot;Round dark sunglasses with thin metal frames, simple silver chain necklace.&quot;,<br>  &quot;environment&quot;: &quot;Urban setting with a tall, grey concrete apartment block featuring a grid of windows in the background, weathered concrete steps in the foreground.&quot;,<br>  &quot;lighting&quot;: &quot;Soft, diffuse natural daylight indicative of an overcast sky, creating even illumination without harsh shadows.&quot;,<br>  &quot;camera&quot;: &quot;Low-angle shot looking up at the subject, emphasizing the height of the background building, sharp focus on the subject with a slightly softened background.&quot;,<br>  &quot;style&quot;: &quot;Urban streetwear photography, 90s grunge aesthetic, moody and atmospheric, cinematic vertical composition.&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2009215763937415243-1.jpg" alt="&quot;subject&quot;: &quot;Young woman sitting casually on outdoor concrete..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 847,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

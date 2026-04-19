@@ -7,11 +7,13 @@
     <title>&quot;presentation&quot;: &quot;Deconstructed exploded view floating in mid... #1781 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;presentation&quot;: &quot;Deconstructed exploded view floating in mid air above a finished burger on a plate&quot;, &quot;burger paddy...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1781.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1781.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1781.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840588">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022376">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"展示\": \"解构的炸开视图在半空中漂浮，位于盘子上完整汉堡的上方\",\n    \"汉堡饼\": \"烤藜麦和黑豆饼，带明显烤焦痕迹，对半切开，蒸汽升腾\",\n    \"漂浮食材\": [\n      \"熟藜麦颗粒\",\n      \"整颗黑豆\",\n      \"烤红薯丁\",\n      \"新鲜菠菜和芝麻菜叶\",\n      \"成熟牛油果切片\",\n      \"奶油质地的芝麻酱柠檬调味汁滴落\",\n      \"切丁的红洋葱\"\n    ],\n    \"摆盘项目\": \"一份完整的汉堡，置于带籽全麦面包上，配有新鲜绿叶和调味汁，呈于陶瓷盘并附一份配菜沙拉\"\n  },\n  \"风格\": {\n    \"美学\": \"专业商业食品摄影\",\n    \"光线\": \"温暖、电影感、情绪化的光线，对食物质地有柔和的高光\",\n    \"背景\": \"暗色、质朴、有质感的石材或粘土炉背景，浅景深（背景虚化）\",\n    \"配色方案\": \"泥土色调、深棕色、鲜明的绿色和温暖的橙色\"\n  },\n  \"构图\": {\n    \"角度\": \"平视，正面拍摄\",\n    \"动态元素\": \"漂浮、违抗重力的摆放，缕缕蒸汽，酱汁滴落\",\n    \"文字覆盖（可选）\": \"顶部可选干净的金色衬线字体，写着『健康藜麦汉堡』\"\n  },\n  \"技术规格\": {\n    \"对焦\": \"对漂浮的汉堡饼和食材进行清晰对焦\",\n    \"镜头\": \"微距镜头以展现谷物和蔬菜的高细节质地\",\n    \"质量\": \"8K 分辨率，照片级真实感，商业广告品质\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;展示&quot;: &quot;解构的炸开视图在半空中漂浮，位于盘子上完整汉堡的上方&quot;,<br>    &quot;汉堡饼&quot;: &quot;烤藜麦和黑豆饼，带明显烤焦痕迹，对半切开，蒸汽升腾&quot;,<br>    &quot;漂浮食材&quot;: [<br>      &quot;熟藜麦颗粒&quot;,<br>      &quot;整颗黑豆&quot;,<br>      &quot;烤红薯丁&quot;,<br>      &quot;新鲜菠菜和芝麻菜叶&quot;,<br>      &quot;成熟牛油果切片&quot;,<br>      &quot;奶油质地的芝麻酱柠檬调味汁滴落&quot;,<br>      &quot;切丁的红洋葱&quot;<br>    ],<br>    &quot;摆盘项目&quot;: &quot;一份完整的汉堡，置于带籽全麦面包上，配有新鲜绿叶和调味汁，呈于陶瓷盘并附一份配菜沙拉&quot;<br>  },<br>  &quot;风格&quot;: {<br>    &quot;美学&quot;: &quot;专业商业食品摄影&quot;,<br>    &quot;光线&quot;: &quot;温暖、电影感、情绪化的光线，对食物质地有柔和的高光&quot;,<br>    &quot;背景&quot;: &quot;暗色、质朴、有质感的石材或粘土炉背景，浅景深（背景虚化）&quot;,<br>    &quot;配色方案&quot;: &quot;泥土色调、深棕色、鲜明的绿色和温暖的橙色&quot;<br>  },<br>  &quot;构图&quot;: {<br>    &quot;角度&quot;: &quot;平视，正面拍摄&quot;,<br>    &quot;动态元素&quot;: &quot;漂浮、违抗重力的摆放，缕缕蒸汽，酱汁滴落&quot;,<br>    &quot;文字覆盖（可选）&quot;: &quot;顶部可选干净的金色衬线字体，写着『健康藜麦汉堡』&quot;<br>  },<br>  &quot;技术规格&quot;: {<br>    &quot;对焦&quot;: &quot;对漂浮的汉堡饼和食材进行清晰对焦&quot;,<br>    &quot;镜头&quot;: &quot;微距镜头以展现谷物和蔬菜的高细节质地&quot;,<br>    &quot;质量&quot;: &quot;8K 分辨率，照片级真实感，商业广告品质&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;展示&quot;: &quot;解构的炸开视图在半空中漂浮，位于盘子上完整汉堡的上方&quot;,<br>    &quot;汉堡饼&quot;: &quot;烤藜麦和黑豆饼，带明显烤焦痕迹，对半切开，蒸汽升腾&quot;,<br>    &quot;漂浮食材&quot;: [<br>      &quot;熟藜麦颗粒&quot;,<br>      &quot;整颗黑豆&quot;,<br>      &quot;烤红薯丁&quot;,<br>      &quot;新鲜菠菜和芝麻菜叶&quot;,<br>      &quot;成熟牛油果切片&quot;,<br>      &quot;奶油质地的芝麻酱柠檬调味汁滴落&quot;,<br>      &quot;切丁的红洋葱&quot;<br>    ],<br>    &quot;摆盘项目&quot;: &quot;一份完整的汉堡，置于带籽全麦面包上，配有新鲜绿叶和调味汁，呈于陶瓷盘并附一份配菜沙拉&quot;<br>  },<br>  &quot;风格&quot;: {<br>    &quot;美学&quot;: &quot;专业商业食品摄影&quot;,<br>    &quot;光线&quot;: &quot;温暖、电影感、情绪化的光线，对食物质地有柔和的高光&quot;,<br>    &quot;背景&quot;: &quot;暗色、质朴、有质感的石材或粘土炉背景，浅景深（背景虚化）&quot;,<br>    &quot;配色方案&quot;: &quot;泥土色调、深棕色、鲜明的绿色和温暖的橙色&quot;<br>  },<br>  &quot;构图&quot;: {<br>    &quot;角度&quot;: &quot;平视，正面拍摄&quot;,<br>    &quot;动态元素&quot;: &quot;漂浮、违抗重力的摆放，缕缕蒸汽，酱汁滴落&quot;,<br>    &quot;文字覆盖（可选）&quot;: &quot;顶部可选干净的金色衬线字体，写着『健康藜麦汉堡』&quot;<br>  },<br>  &quot;技术规格&quot;: {<br>    &quot;对焦&quot;: &quot;对漂浮的汉堡饼和食材进行清晰对焦&quot;,<br>    &quot;镜头&quot;: &quot;微距镜头以展现谷物和蔬菜的高细节质地&quot;,<br>    &quot;质量&quot;: &quot;8K 分辨率，照片级真实感，商业广告品质&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"presentation\": \"Deconstructed exploded view floating in mid-air above a finished burger on a plate\",\n    \"burger_paddy\": \"Grilled quinoa and black bean patty with visible char marks, split in half with steam rising\",\n    \"floating_ingredients\": [\n      \"Grains of cooked quinoa\",\n      \"Whole black beans\",\n      \"Roasted sweet potato cubes\",\n      \"Fresh spinach and arugula leaves\",\n      \"Slices of ripe avocado\",\n      \"Drips of creamy tahini-lemon dressing\",\n      \"Diced red onion\"\n    ],\n    \"plated_item\": \"A complete burger on a seeded whole-grain bun with fresh greens and dressing, served on a ceramic plate with a side salad\"\n  },\n  \"style\": {\n    \"aesthetic\": \"Professional commercial food photography\",\n    \"lighting\": \"Warm, cinematic, moody lighting with soft highlights on the textures of the food\",\n    \"background\": \"Dark, rustic, textured stone or clay oven-like background with a shallow depth of field (bokeh)\",\n    \"color_palette\": \"Earthy tones, deep browns, vibrant greens, and warm oranges\"\n  },\n  \"composition\": {\n    \"angle\": \"Eye-level, straight-on shot\",\n    \"dynamic_elements\": \"Floating gravity-defying arrangement, wisps of steam, droplets of sauce\",\n    \"text_overlay_optional\": \"Clean gold serif typography at the top reading 'HEALTHY QUINOA BURGER'\"\n  },\n  \"technical_specs\": {\n    \"focus\": \"Sharp focus on the floating patty and ingredients\",\n    \"lens\": \"Macro lens for high detail texture on grains and vegetables\",\n    \"quality\": \"8k resolution, photorealistic, commercial advertising quality\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;presentation&quot;: &quot;Deconstructed exploded view floating in mid-air above a finished burger on a plate&quot;,<br>    &quot;burger_paddy&quot;: &quot;Grilled quinoa and black bean patty with visible char marks, split in half with steam rising&quot;,<br>    &quot;floating_ingredients&quot;: [<br>      &quot;Grains of cooked quinoa&quot;,<br>      &quot;Whole black beans&quot;,<br>      &quot;Roasted sweet potato cubes&quot;,<br>      &quot;Fresh spinach and arugula leaves&quot;,<br>      &quot;Slices of ripe avocado&quot;,<br>      &quot;Drips of creamy tahini-lemon dressing&quot;,<br>      &quot;Diced red onion&quot;<br>    ],<br>    &quot;plated_item&quot;: &quot;A complete burger on a seeded whole-grain bun with fresh greens and dressing, served on a ceramic plate with a side salad&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;aesthetic&quot;: &quot;Professional commercial food photography&quot;,<br>    &quot;lighting&quot;: &quot;Warm, cinematic, moody lighting with soft highlights on the textures of the food&quot;,<br>    &quot;background&quot;: &quot;Dark, rustic, textured stone or clay oven-like background with a shallow depth of field (bokeh)&quot;,<br>    &quot;color_palette&quot;: &quot;Earthy tones, deep browns, vibrant greens, and warm oranges&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;angle&quot;: &quot;Eye-level, straight-on shot&quot;,<br>    &quot;dynamic_elements&quot;: &quot;Floating gravity-defying arrangement, wisps of steam, droplets of sauce&quot;,<br>    &quot;text_overlay_optional&quot;: &quot;Clean gold serif typography at the top reading &#39;HEALTHY QUINOA BURGER&#39;&quot;<br>  },<br>  &quot;technical_specs&quot;: {<br>    &quot;focus&quot;: &quot;Sharp focus on the floating patty and ingredients&quot;,<br>    &quot;lens&quot;: &quot;Macro lens for high detail texture on grains and vegetables&quot;,<br>    &quot;quality&quot;: &quot;8k resolution, photorealistic, commercial advertising quality&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;presentation&quot;: &quot;Deconstructed exploded view floating in mid-air above a finished burger on a plate&quot;,<br>    &quot;burger_paddy&quot;: &quot;Grilled quinoa and black bean patty with visible char marks, split in half with steam rising&quot;,<br>    &quot;floating_ingredients&quot;: [<br>      &quot;Grains of cooked quinoa&quot;,<br>      &quot;Whole black beans&quot;,<br>      &quot;Roasted sweet potato cubes&quot;,<br>      &quot;Fresh spinach and arugula leaves&quot;,<br>      &quot;Slices of ripe avocado&quot;,<br>      &quot;Drips of creamy tahini-lemon dressing&quot;,<br>      &quot;Diced red onion&quot;<br>    ],<br>    &quot;plated_item&quot;: &quot;A complete burger on a seeded whole-grain bun with fresh greens and dressing, served on a ceramic plate with a side salad&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;aesthetic&quot;: &quot;Professional commercial food photography&quot;,<br>    &quot;lighting&quot;: &quot;Warm, cinematic, moody lighting with soft highlights on the textures of the food&quot;,<br>    &quot;background&quot;: &quot;Dark, rustic, textured stone or clay oven-like background with a shallow depth of field (bokeh)&quot;,<br>    &quot;color_palette&quot;: &quot;Earthy tones, deep browns, vibrant greens, and warm oranges&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;angle&quot;: &quot;Eye-level, straight-on shot&quot;,<br>    &quot;dynamic_elements&quot;: &quot;Floating gravity-defying arrangement, wisps of steam, droplets of sauce&quot;,<br>    &quot;text_overlay_optional&quot;: &quot;Clean gold serif typography at the top reading &#39;HEALTHY QUINOA BURGER&#39;&quot;<br>  },<br>  &quot;technical_specs&quot;: {<br>    &quot;focus&quot;: &quot;Sharp focus on the floating patty and ingredients&quot;,<br>    &quot;lens&quot;: &quot;Macro lens for high detail texture on grains and vegetables&quot;,<br>    &quot;quality&quot;: &quot;8k resolution, photorealistic, commercial advertising quality&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2016340217146507313-1.jpg" alt="&quot;presentation&quot;: &quot;Deconstructed exploded view floating in mid..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1781,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

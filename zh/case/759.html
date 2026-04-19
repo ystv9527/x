@@ -7,11 +7,13 @@
     <title>&quot;generation request&quot;: { #759 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;generation request&quot;: { &quot;meta data&quot;: { &quot;tool&quot;: &quot;NanoBanana Pro&quot;, &quot;task type&quot;: &quot;photorealistic single image editoria...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/759.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/759.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/759.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841529">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022617">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"generation_request\": {\n    \"meta_data\": {\n      \"tool\": \"NanoBanana Pro\",\n      \"task_type\": \"photorealistic_single_image_editorial\",\n      \"version\": \"v1.6_日落海岸红色礼服社论\",\n      \"priority\": \"最高优先级\"\n    },\n    \"references\": {\n      \"female_character_reference_image\": \"上传女性角色参考图（必填：身份 + 姿势灵感）\"\n    },\n    \"output_settings\": {\n      \"aspect_ratio\": \"2:3\",\n      \"orientation\": \"竖屏\",\n      \"resolution\": \"超高分辨率\",\n      \"render_style\": \"超真实感的高定时尚社论风格\",\n      \"sharpness\": \"清晰但自然\",\n      \"film_grain\": \"微妙的胶片颗粒感\",\n      \"color_grade\": \"日落电影感暖色豪华\"\n    },\n    \"hard_constraints\": [\n      \"仅限一个主体（女性）。\",\n      \"与上传的参考完全身份匹配（脸部和身体不变）。\",\n      \"无文本、无标志、无水印。\",\n      \"解剖结构完美：手、腿、比例正确。\",\n      \"真实皮肤质感；无塑料感或过度平滑皮肤。\",\n      \"无额外人物、倒影或背景面孔。\"\n    ],\n    \"creative_prompt\": {\n      \"scene_summary\": \"超真实感的极致时尚社论海边日落肖像。与参考图中的女性为同一人，站在靠近海洋的深色岸岩上自信地摆姿。她穿着一件引人注目的红色颈背吊带迷你裙，材质柔软飘逸，动作优雅。她的姿态端庄而女性化，略微向镜头倾坐，双腿自然弯曲。 \\n\\n发型：长而光泽的深色波浪披肩，被海风轻轻塑形。妆容：光彩夺目的社论妆容——眉毛轮廓分明，修容柔和，肌肤发光，眼妆柔和烟熏，唇色光泽裸粉玫瑰色。表情：自信、冷静、具有磁性，与镜头直接对视。 \\n\\n背景：开阔的海面，波光粼粼，远方地平线，日落天空呈现深橙、粉、紫、蓝的渐变，云层点缀。灯光：电影感的黄昏灯光，对主体使用微弱补光以平衡曝光；来自日落的自然轮廓光勾勒出头发和肩膀。肤色温暖且真实。 \\n\\n相机：85mm社论人像镜头效果，浅景深；主体清晰无比锐利，而海洋和云层柔和地落下。氛围：感性、强大、永恒、奢华时尚品牌能量——社论、电影感、标志性。\"\n    },\n    \"negative_prompt\": [\n      \"任何文本、标志、水印\",\n      \"身份漂移\",\n      \"额外人物\",\n      \"解剖结构扭曲\",\n      \"多余的四肢或手指\",\n      \"卡通、动漫、CGI风格\",\n      \"塑料感或过度平滑的皮肤\",\n      \"强烈的闪光导致过曝\",\n      \"分辨率低\",\n      \"颜色过度饱和\",\n      \"廉价造型或人造面料外观\"\n    ]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;generation_request&quot;: {<br>    &quot;meta_data&quot;: {<br>      &quot;tool&quot;: &quot;NanoBanana Pro&quot;,<br>      &quot;task_type&quot;: &quot;photorealistic_single_image_editorial&quot;,<br>      &quot;version&quot;: &quot;v1.6_日落海岸红色礼服社论&quot;,<br>      &quot;priority&quot;: &quot;最高优先级&quot;<br>    },<br>    &quot;references&quot;: {<br>      &quot;female_character_reference_image&quot;: &quot;上传女性角色参考图（必填：身份 + 姿势灵感）&quot;<br>    },<br>    &quot;output_settings&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;2:3&quot;,<br>      &quot;orientation&quot;: &quot;竖屏&quot;,<br>      &quot;resolution&quot;: &quot;超高分辨率&quot;,<br>      &quot;render_style&quot;: &quot;超真实感的高定时尚社论风格&quot;,<br>      &quot;sharpness&quot;: &quot;清晰但自然&quot;,<br>      &quot;film_grain&quot;: &quot;微妙的胶片颗粒感&quot;,<br>      &quot;color_grade&quot;: &quot;日落电影感暖色豪华&quot;<br>    },<br>    &quot;hard_constraints&quot;: [<br>      &quot;仅限一个主体（女性）。&quot;,<br>      &quot;与上传的参考完全身份匹配（脸部和身体不变）。&quot;,<br>      &quot;无文本、无标志、无水印。&quot;,<br>      &quot;解剖结构完美：手、腿、比例正确。&quot;,<br>      &quot;真实皮肤质感；无塑料感或过度平滑皮肤。&quot;,<br>      &quot;无额外人物、倒影或背景面孔。&quot;<br>    ],<br>    &quot;creative_prompt&quot;: {<br>      &quot;scene_summary&quot;: &quot;超真实感的极致时尚社论海边日落肖像。与参考图中的女性为同一人，站在靠近海洋的深色岸岩上自信地摆姿。她穿着一件引人注目的红色颈背吊带迷你裙，材质柔软飘逸，动作优雅。她的姿态端庄而女性化，略微向镜头倾坐，双腿自然弯曲。 \n\n发型：长而光泽的深色波浪披肩，被海风轻轻塑形。妆容：光彩夺目的社论妆容——眉毛轮廓分明，修容柔和，肌肤发光，眼妆柔和烟熏，唇色光泽裸粉玫瑰色。表情：自信、冷静、具有磁性，与镜头直接对视。 \n\n背景：开阔的海面，波光粼粼，远方地平线，日落天空呈现深橙、粉、紫、蓝的渐变，云层点缀。灯光：电影感的黄昏灯光，对主体使用微弱补光以平衡曝光；来自日落的自然轮廓光勾勒出头发和肩膀。肤色温暖且真实。 \n\n相机：85mm社论人像镜头效果，浅景深；主体清晰无比锐利，而海洋和云层柔和地落下。氛围：感性、强大、永恒、奢华时尚品牌能量——社论、电影感、标志性。&quot;<br>    },<br>    &quot;negative_prompt&quot;: [<br>      &quot;任何文本、标志、水印&quot;,<br>      &quot;身份漂移&quot;,<br>      &quot;额外人物&quot;,<br>      &quot;解剖结构扭曲&quot;,<br>      &quot;多余的四肢或手指&quot;,<br>      &quot;卡通、动漫、CGI风格&quot;,<br>      &quot;塑料感或过度平滑的皮肤&quot;,<br>      &quot;强烈的闪光导致过曝&quot;,<br>      &quot;分辨率低&quot;,<br>      &quot;颜色过度饱和&quot;,<br>      &quot;廉价造型或人造面料外观&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;generation_request&quot;: {<br>    &quot;meta_data&quot;: {<br>      &quot;tool&quot;: &quot;NanoBanana Pro&quot;,<br>      &quot;task_type&quot;: &quot;photorealistic_single_image_editorial&quot;,<br>      &quot;version&quot;: &quot;v1.6_日落海岸红色礼服社论&quot;,<br>      &quot;priority&quot;: &quot;最高优先级&quot;<br>    },<br>    &quot;references&quot;: {<br>      &quot;female_character_reference_image&quot;: &quot;上传女性角色参考图（必填：身份 + 姿势灵感）&quot;<br>    },<br>    &quot;output_settings&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;2:3&quot;,<br>      &quot;orientation&quot;: &quot;竖屏&quot;,<br>      &quot;resolution&quot;: &quot;超高分辨率&quot;,<br>      &quot;render_style&quot;: &quot;超真实感的高定时尚社论风格&quot;,<br>      &quot;sharpness&quot;: &quot;清晰但自然&quot;,<br>      &quot;film_grain&quot;: &quot;微妙的胶片颗粒感&quot;,<br>      &quot;color_grade&quot;: &quot;日落电影感暖色豪华&quot;<br>    },<br>    &quot;hard_constraints&quot;: [<br>      &quot;仅限一个主体（女性）。&quot;,<br>      &quot;与上传的参考完全身份匹配（脸部和身体不变）。&quot;,<br>      &quot;无文本、无标志、无水印。&quot;,<br>      &quot;解剖结构完美：手、腿、比例正确。&quot;,<br>      &quot;真实皮肤质感；无塑料感或过度平滑皮肤。&quot;,<br>      &quot;无额外人物、倒影或背景面孔。&quot;<br>    ],<br>    &quot;creative_prompt&quot;: {<br>      &quot;scene_summary&quot;: &quot;超真实感的极致时尚社论海边日落肖像。与参考图中的女性为同一人，站在靠近海洋的深色岸岩上自信地摆姿。她穿着一件引人注目的红色颈背吊带迷你裙，材质柔软飘逸，动作优雅。她的姿态端庄而女性化，略微向镜头倾坐，双腿自然弯曲。 \n\n发型：长而光泽的深色波浪披肩，被海风轻轻塑形。妆容：光彩夺目的社论妆容——眉毛轮廓分明，修容柔和，肌肤发光，眼妆柔和烟熏，唇色光泽裸粉玫瑰色。表情：自信、冷静、具有磁性，与镜头直接对视。 \n\n背景：开阔的海面，波光粼粼，远方地平线，日落天空呈现深橙、粉、紫、蓝的渐变，云层点缀。灯光：电影感的黄昏灯光，对主体使用微弱补光以平衡曝光；来自日落的自然轮廓光勾勒出头发和肩膀。肤色温暖且真实。 \n\n相机：85mm社论人像镜头效果，浅景深；主体清晰无比锐利，而海洋和云层柔和地落下。氛围：感性、强大、永恒、奢华时尚品牌能量——社论、电影感、标志性。&quot;<br>    },<br>    &quot;negative_prompt&quot;: [<br>      &quot;任何文本、标志、水印&quot;,<br>      &quot;身份漂移&quot;,<br>      &quot;额外人物&quot;,<br>      &quot;解剖结构扭曲&quot;,<br>      &quot;多余的四肢或手指&quot;,<br>      &quot;卡通、动漫、CGI风格&quot;,<br>      &quot;塑料感或过度平滑的皮肤&quot;,<br>      &quot;强烈的闪光导致过曝&quot;,<br>      &quot;分辨率低&quot;,<br>      &quot;颜色过度饱和&quot;,<br>      &quot;廉价造型或人造面料外观&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"generation_request\": {\n    \"meta_data\": {\n      \"tool\": \"NanoBanana Pro\",\n      \"task_type\": \"photorealistic_single_image_editorial\",\n      \"version\": \"v1.6_SUNSET_SEA_RED_DRESS_EDITORIAL\",\n      \"priority\": \"highest\"\n    },\n    \"references\": {\n      \"female_character_reference_image\": \"UPLOAD_FEMALE_REFERENCE (REQUIRED: IDENTITY + POSE INSPIRATION)\"\n    },\n    \"output_settings\": {\n      \"aspect_ratio\": \"2:3\",\n      \"orientation\": \"portrait\",\n      \"resolution\": \"ultra_high_res\",\n      \"render_style\": \"ultra_photoreal_high_fashion_editorial\",\n      \"sharpness\": \"crisp_but_natural\",\n      \"film_grain\": \"subtle_analog_film\",\n      \"color_grade\": \"sunset_cinematic_warm_luxury\"\n    },\n    \"hard_constraints\": [\n      \"ONE subject only (female).\",\n      \"Perfect identity match to the uploaded reference (no face or body changes).\",\n      \"No text, no logos, no watermarks.\",\n      \"Perfect anatomy: hands, legs, proportions correct.\",\n      \"Photoreal skin texture; no plastic or over-smoothed skin.\",\n      \"No extra people, reflections, or background faces.\"\n    ],\n    \"creative_prompt\": {\n      \"scene_summary\": \"Ultra-photoreal high-fashion editorial portrait at the seaside during sunset. The same woman as the reference poses confidently on dark coastal rocks by the ocean. She wears a striking red halter-neck mini dress with soft flowing fabric and elegant movement. Her posture is poised and feminine, seated slightly angled toward the camera with legs bent naturally.\\n\\nHair: long, glossy dark waves worn down, softly shaped by the sea breeze. Makeup: luminous editorial glam—defined brows, subtle contour, glowing skin, soft smoky eyes, glossy nude-rose lips. Expression: confident, calm, magnetic, direct eye contact with the camera.\\n\\nBackground: open sea with gentle waves, distant horizon line, dramatic sunset sky in gradients of deep orange, pink, purple, and blue with scattered clouds. Lighting: cinematic dusk lighting with subtle fill flash on the subject to balance exposure; natural rim light from the sunset outlining hair and shoulders. Skin tones warm and realistic.\\n\\nCamera: 85mm editorial portrait lens look, shallow depth of field; subject tack sharp while ocean and clouds fall off softly. Mood: sensual, powerful, timeless, luxury fashion campaign energy—editorial, cinematic, and iconic.\"\n    },\n    \"negative_prompt\": [\n      \"any text, logo, watermark\",\n      \"identity drift\",\n      \"extra people\",\n      \"distorted anatomy\",\n      \"extra limbs or fingers\",\n      \"cartoon, anime, CGI look\",\n      \"plastic or over-smoothed skin\",\n      \"harsh flash blowout\",\n      \"low resolution\",\n      \"overly saturated colors\",\n      \"cheap styling or artificial fabric look\"\n    ]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;generation_request&quot;: {<br>    &quot;meta_data&quot;: {<br>      &quot;tool&quot;: &quot;NanoBanana Pro&quot;,<br>      &quot;task_type&quot;: &quot;photorealistic_single_image_editorial&quot;,<br>      &quot;version&quot;: &quot;v1.6_SUNSET_SEA_RED_DRESS_EDITORIAL&quot;,<br>      &quot;priority&quot;: &quot;highest&quot;<br>    },<br>    &quot;references&quot;: {<br>      &quot;female_character_reference_image&quot;: &quot;UPLOAD_FEMALE_REFERENCE (REQUIRED: IDENTITY + POSE INSPIRATION)&quot;<br>    },<br>    &quot;output_settings&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;2:3&quot;,<br>      &quot;orientation&quot;: &quot;portrait&quot;,<br>      &quot;resolution&quot;: &quot;ultra_high_res&quot;,<br>      &quot;render_style&quot;: &quot;ultra_photoreal_high_fashion_editorial&quot;,<br>      &quot;sharpness&quot;: &quot;crisp_but_natural&quot;,<br>      &quot;film_grain&quot;: &quot;subtle_analog_film&quot;,<br>      &quot;color_grade&quot;: &quot;sunset_cinematic_warm_luxury&quot;<br>    },<br>    &quot;hard_constraints&quot;: [<br>      &quot;ONE subject only (female).&quot;,<br>      &quot;Perfect identity match to the uploaded reference (no face or body changes).&quot;,<br>      &quot;No text, no logos, no watermarks.&quot;,<br>      &quot;Perfect anatomy: hands, legs, proportions correct.&quot;,<br>      &quot;Photoreal skin texture; no plastic or over-smoothed skin.&quot;,<br>      &quot;No extra people, reflections, or background faces.&quot;<br>    ],<br>    &quot;creative_prompt&quot;: {<br>      &quot;scene_summary&quot;: &quot;Ultra-photoreal high-fashion editorial portrait at the seaside during sunset. The same woman as the reference poses confidently on dark coastal rocks by the ocean. She wears a striking red halter-neck mini dress with soft flowing fabric and elegant movement. Her posture is poised and feminine, seated slightly angled toward the camera with legs bent naturally.\n\nHair: long, glossy dark waves worn down, softly shaped by the sea breeze. Makeup: luminous editorial glam—defined brows, subtle contour, glowing skin, soft smoky eyes, glossy nude-rose lips. Expression: confident, calm, magnetic, direct eye contact with the camera.\n\nBackground: open sea with gentle waves, distant horizon line, dramatic sunset sky in gradients of deep orange, pink, purple, and blue with scattered clouds. Lighting: cinematic dusk lighting with subtle fill flash on the subject to balance exposure; natural rim light from the sunset outlining hair and shoulders. Skin tones warm and realistic.\n\nCamera: 85mm editorial portrait lens look, shallow depth of field; subject tack sharp while ocean and clouds fall off softly. Mood: sensual, powerful, timeless, luxury fashion campaign energy—editorial, cinematic, and iconic.&quot;<br>    },<br>    &quot;negative_prompt&quot;: [<br>      &quot;any text, logo, watermark&quot;,<br>      &quot;identity drift&quot;,<br>      &quot;extra people&quot;,<br>      &quot;distorted anatomy&quot;,<br>      &quot;extra limbs or fingers&quot;,<br>      &quot;cartoon, anime, CGI look&quot;,<br>      &quot;plastic or over-smoothed skin&quot;,<br>      &quot;harsh flash blowout&quot;,<br>      &quot;low resolution&quot;,<br>      &quot;overly saturated colors&quot;,<br>      &quot;cheap styling or artificial fabric look&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;generation_request&quot;: {<br>    &quot;meta_data&quot;: {<br>      &quot;tool&quot;: &quot;NanoBanana Pro&quot;,<br>      &quot;task_type&quot;: &quot;photorealistic_single_image_editorial&quot;,<br>      &quot;version&quot;: &quot;v1.6_SUNSET_SEA_RED_DRESS_EDITORIAL&quot;,<br>      &quot;priority&quot;: &quot;highest&quot;<br>    },<br>    &quot;references&quot;: {<br>      &quot;female_character_reference_image&quot;: &quot;UPLOAD_FEMALE_REFERENCE (REQUIRED: IDENTITY + POSE INSPIRATION)&quot;<br>    },<br>    &quot;output_settings&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;2:3&quot;,<br>      &quot;orientation&quot;: &quot;portrait&quot;,<br>      &quot;resolution&quot;: &quot;ultra_high_res&quot;,<br>      &quot;render_style&quot;: &quot;ultra_photoreal_high_fashion_editorial&quot;,<br>      &quot;sharpness&quot;: &quot;crisp_but_natural&quot;,<br>      &quot;film_grain&quot;: &quot;subtle_analog_film&quot;,<br>      &quot;color_grade&quot;: &quot;sunset_cinematic_warm_luxury&quot;<br>    },<br>    &quot;hard_constraints&quot;: [<br>      &quot;ONE subject only (female).&quot;,<br>      &quot;Perfect identity match to the uploaded reference (no face or body changes).&quot;,<br>      &quot;No text, no logos, no watermarks.&quot;,<br>      &quot;Perfect anatomy: hands, legs, proportions correct.&quot;,<br>      &quot;Photoreal skin texture; no plastic or over-smoothed skin.&quot;,<br>      &quot;No extra people, reflections, or background faces.&quot;<br>    ],<br>    &quot;creative_prompt&quot;: {<br>      &quot;scene_summary&quot;: &quot;Ultra-photoreal high-fashion editorial portrait at the seaside during sunset. The same woman as the reference poses confidently on dark coastal rocks by the ocean. She wears a striking red halter-neck mini dress with soft flowing fabric and elegant movement. Her posture is poised and feminine, seated slightly angled toward the camera with legs bent naturally.\n\nHair: long, glossy dark waves worn down, softly shaped by the sea breeze. Makeup: luminous editorial glam—defined brows, subtle contour, glowing skin, soft smoky eyes, glossy nude-rose lips. Expression: confident, calm, magnetic, direct eye contact with the camera.\n\nBackground: open sea with gentle waves, distant horizon line, dramatic sunset sky in gradients of deep orange, pink, purple, and blue with scattered clouds. Lighting: cinematic dusk lighting with subtle fill flash on the subject to balance exposure; natural rim light from the sunset outlining hair and shoulders. Skin tones warm and realistic.\n\nCamera: 85mm editorial portrait lens look, shallow depth of field; subject tack sharp while ocean and clouds fall off softly. Mood: sensual, powerful, timeless, luxury fashion campaign energy—editorial, cinematic, and iconic.&quot;<br>    },<br>    &quot;negative_prompt&quot;: [<br>      &quot;any text, logo, watermark&quot;,<br>      &quot;identity drift&quot;,<br>      &quot;extra people&quot;,<br>      &quot;distorted anatomy&quot;,<br>      &quot;extra limbs or fingers&quot;,<br>      &quot;cartoon, anime, CGI look&quot;,<br>      &quot;plastic or over-smoothed skin&quot;,<br>      &quot;harsh flash blowout&quot;,<br>      &quot;low resolution&quot;,<br>      &quot;overly saturated colors&quot;,<br>      &quot;cheap styling or artificial fabric look&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008595862771892704-1.jpg" alt="&quot;generation request&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 759,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

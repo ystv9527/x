@@ -7,11 +7,13 @@
     <title>A ultra realistic group selfie, center is the person from the... #1206 | Gem Nana AI 提示词库</title>
     <meta name="description" content="A ultra realistic group selfie, center is the person from the attached image, wearing a fitted black shirt and ripped...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1206.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1206.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1206.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841143">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022508">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一张超逼真的群体自拍，中央是附图中的人，穿着贴身黑色衬衫和破洞牛仔裤，手持一部 iPhone 在自拍。周围是克里斯·海姆斯沃斯（饰雷神）、盖尔·加朵（饰神奇女侠）、斯嘉丽·约翰逊（饰黑寡妇）、马克·鲁法洛（饰浩克）、亨利·卡维尔（饰超人）、小罗伯特·唐尼穿着全套盔甲，大家互相拥抱、微笑，像亲密朋友一样随意摆姿势。欢乐愉快的氛围，明亮的日光，电影质感，自然的外观，细节丰富。", this)'>📋 复制</button>
         </div>
-        <p>一张超逼真的群体自拍，中央是附图中的人，穿着贴身黑色衬衫和破洞牛仔裤，手持一部 iPhone 在自拍。周围是克里斯·海姆斯沃斯（饰雷神）、盖尔·加朵（饰神奇女侠）、斯嘉丽·约翰逊（饰黑寡妇）、马克·鲁法洛（饰浩克）、亨利·卡维尔（饰超人）、小罗伯特·唐尼穿着全套盔甲，大家互相拥抱、微笑，像亲密朋友一样随意摆姿势。欢乐愉快的氛围，明亮的日光，电影质感，自然的外观，细节丰富。</p>
+        <div data-nosnippet><p>一张超逼真的群体自拍，中央是附图中的人，穿着贴身黑色衬衫和破洞牛仔裤，手持一部 iPhone 在自拍。周围是克里斯·海姆斯沃斯（饰雷神）、盖尔·加朵（饰神奇女侠）、斯嘉丽·约翰逊（饰黑寡妇）、马克·鲁法洛（饰浩克）、亨利·卡维尔（饰超人）、小罗伯特·唐尼穿着全套盔甲，大家互相拥抱、微笑，像亲密朋友一样随意摆姿势。欢乐愉快的氛围，明亮的日光，电影质感，自然的外观，细节丰富。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A ultra realistic group selfie, center is the person from the attached image, wearing a fitted black shirt and ripped jeans, holding an iPhone for the selfie. Around are Chris Hemsworth as Thor, Gal Gadot as Wonder Woman, Scarlett Johansson as Black Widow, Mark Ruffalo as Hulk, Henry Cavill as Superman, RDJ in full armor all hugging, smiling, posing casually like close friends. Fun, joyful mood, bright daylight, cinematic quality, natural look, high detail.", this)'>📋 复制</button>
         </div>
-        <p>A ultra realistic group selfie, center is the person from the attached image, wearing a fitted black shirt and ripped jeans, holding an iPhone for the selfie. Around are Chris Hemsworth as Thor, Gal Gadot as Wonder Woman, Scarlett Johansson as Black Widow, Mark Ruffalo as Hulk, Henry Cavill as Superman, RDJ in full armor all hugging, smiling, posing casually like close friends. Fun, joyful mood, bright daylight, cinematic quality, natural look, high detail.</p>
+        <div data-nosnippet><p>A ultra realistic group selfie, center is the person from the attached image, wearing a fitted black shirt and ripped jeans, holding an iPhone for the selfie. Around are Chris Hemsworth as Thor, Gal Gadot as Wonder Woman, Scarlett Johansson as Black Widow, Mark Ruffalo as Hulk, Henry Cavill as Superman, RDJ in full armor all hugging, smiling, posing casually like close friends. Fun, joyful mood, bright daylight, cinematic quality, natural look, high detail.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011365103527166084-1.jpg" alt="A ultra realistic group selfie, center is the person from the..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1206,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

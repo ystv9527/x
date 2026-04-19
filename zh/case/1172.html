@@ -7,11 +7,13 @@
     <title>&quot;subject details&quot;: { #1172 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject details&quot;: { &quot;demographics&quot;: &quot;Female motorcyclist.&quot;, &quot;hair&quot;: &quot;Dark hair styled in a single braid visible ha...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1172.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1172.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1172.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841179">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022516">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject_details\": {\n    \"demographics\": \"女性摩托骑手。\",\n    \"hair\": \"深色头发，扎成一条单辫，从头盔下方垂下可见。\",\n    \"outfit\": {\n      \"headwear\": \"白色全盔摩托头盔，配有黑色面罩和复杂的图案贴花。\",\n      \"top\": \"白色长袖短款赛车运动衫/冲浪防晒衣，带有黑色和红色文字标志。\",\n      \"bottom\": \"深灰色牛仔短裤，配黑色铆钉腰带。\",\n      \"footwear\": \"白色装甲摩托赛车靴，带蓝色点缀。\",\n      \"accessories\": \"黑白配色赛车手套。\"\n    }\n  },\n  \"vehicle_details\": {\n    \"type\": \"现代运动型/超级运动摩托车（CFMOTO 450SR风格）。\",\n    \"color\": \"珠白色车壳，搭配黑色饰条和蓝色细节。\",\n    \"features\": \"裸露发动机壳体，发动机附近有蓝色LED氛围灯/底灯，黑色轮毂配蓝色轮圈贴纸。\"\n  },\n  \"exact_pose_anatomical\": {\n    \"stance\": \"靠在摩托车左侧半坐半靠（未跨坐）。\",\n    \"torso\": \"左臀靠在骑手座位和油箱交界处。\",\n    \"arms\": \"自信地双臂交叉抱于胸前。\",\n    \"head\": \"头部向右转90度（侧面视角），视线看向摩托车前方，背对镜头。\",\n    \"legs\": \"左腿笔直踩地，右腿膝盖弯曲，脚踩在摩托脚踏上。\",\n    \"vibe\": \"酷感、神秘、等待。\"\n  },\n  \"environment_and_background\": {\n    \"setting\": \"夜晚的城市街道或大型广场。\",\n    \"background_architecture\": \"一座巨大的现代体育场或会展中心，弯曲的屋顶结构被白色灯光网格照亮。\",\n    \"ground\": \"铺石人行道或沥青路面。\",\n    \"sky\": \"深蓝色/黑色的夜晚多云天空。\"\n  },\n  \"camera_technical_values\": {\n    \"perspective\": \"平视/略低机位。\",\n    \"focal_length\": \"28mm（广角，能拍下全车及宏伟建筑背景）。\",\n    \"aperture\": \"f/2.8（夜景足够明亮，景深适中）。\",\n    \"shutter_speed\": \"1/60秒。\",\n    \"iso\": \"ISO 1600（夜间噪点/颗粒感）。\",\n    \"color_grading\": \"冷色调为主，以蓝色、白色和灰色为主。\"\n  },\n  \"lighting_setup\": {\n    \"ambient\": \"背景可见路灯，作为背光源。\",\n    \"key_light\": \"软质冷白色人造街灯从前左方照射主体。\",\n    \"accents\": \"摩托车发动机舱散发蓝色光晕。\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject_details&quot;: {<br>    &quot;demographics&quot;: &quot;女性摩托骑手。&quot;,<br>    &quot;hair&quot;: &quot;深色头发，扎成一条单辫，从头盔下方垂下可见。&quot;,<br>    &quot;outfit&quot;: {<br>      &quot;headwear&quot;: &quot;白色全盔摩托头盔，配有黑色面罩和复杂的图案贴花。&quot;,<br>      &quot;top&quot;: &quot;白色长袖短款赛车运动衫/冲浪防晒衣，带有黑色和红色文字标志。&quot;,<br>      &quot;bottom&quot;: &quot;深灰色牛仔短裤，配黑色铆钉腰带。&quot;,<br>      &quot;footwear&quot;: &quot;白色装甲摩托赛车靴，带蓝色点缀。&quot;,<br>      &quot;accessories&quot;: &quot;黑白配色赛车手套。&quot;<br>    }<br>  },<br>  &quot;vehicle_details&quot;: {<br>    &quot;type&quot;: &quot;现代运动型/超级运动摩托车（CFMOTO 450SR风格）。&quot;,<br>    &quot;color&quot;: &quot;珠白色车壳，搭配黑色饰条和蓝色细节。&quot;,<br>    &quot;features&quot;: &quot;裸露发动机壳体，发动机附近有蓝色LED氛围灯/底灯，黑色轮毂配蓝色轮圈贴纸。&quot;<br>  },<br>  &quot;exact_pose_anatomical&quot;: {<br>    &quot;stance&quot;: &quot;靠在摩托车左侧半坐半靠（未跨坐）。&quot;,<br>    &quot;torso&quot;: &quot;左臀靠在骑手座位和油箱交界处。&quot;,<br>    &quot;arms&quot;: &quot;自信地双臂交叉抱于胸前。&quot;,<br>    &quot;head&quot;: &quot;头部向右转90度（侧面视角），视线看向摩托车前方，背对镜头。&quot;,<br>    &quot;legs&quot;: &quot;左腿笔直踩地，右腿膝盖弯曲，脚踩在摩托脚踏上。&quot;,<br>    &quot;vibe&quot;: &quot;酷感、神秘、等待。&quot;<br>  },<br>  &quot;environment_and_background&quot;: {<br>    &quot;setting&quot;: &quot;夜晚的城市街道或大型广场。&quot;,<br>    &quot;background_architecture&quot;: &quot;一座巨大的现代体育场或会展中心，弯曲的屋顶结构被白色灯光网格照亮。&quot;,<br>    &quot;ground&quot;: &quot;铺石人行道或沥青路面。&quot;,<br>    &quot;sky&quot;: &quot;深蓝色/黑色的夜晚多云天空。&quot;<br>  },<br>  &quot;camera_technical_values&quot;: {<br>    &quot;perspective&quot;: &quot;平视/略低机位。&quot;,<br>    &quot;focal_length&quot;: &quot;28mm（广角，能拍下全车及宏伟建筑背景）。&quot;,<br>    &quot;aperture&quot;: &quot;f/2.8（夜景足够明亮，景深适中）。&quot;,<br>    &quot;shutter_speed&quot;: &quot;1/60秒。&quot;,<br>    &quot;iso&quot;: &quot;ISO 1600（夜间噪点/颗粒感）。&quot;,<br>    &quot;color_grading&quot;: &quot;冷色调为主，以蓝色、白色和灰色为主。&quot;<br>  },<br>  &quot;lighting_setup&quot;: {<br>    &quot;ambient&quot;: &quot;背景可见路灯，作为背光源。&quot;,<br>    &quot;key_light&quot;: &quot;软质冷白色人造街灯从前左方照射主体。&quot;,<br>    &quot;accents&quot;: &quot;摩托车发动机舱散发蓝色光晕。&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject_details&quot;: {<br>    &quot;demographics&quot;: &quot;女性摩托骑手。&quot;,<br>    &quot;hair&quot;: &quot;深色头发，扎成一条单辫，从头盔下方垂下可见。&quot;,<br>    &quot;outfit&quot;: {<br>      &quot;headwear&quot;: &quot;白色全盔摩托头盔，配有黑色面罩和复杂的图案贴花。&quot;,<br>      &quot;top&quot;: &quot;白色长袖短款赛车运动衫/冲浪防晒衣，带有黑色和红色文字标志。&quot;,<br>      &quot;bottom&quot;: &quot;深灰色牛仔短裤，配黑色铆钉腰带。&quot;,<br>      &quot;footwear&quot;: &quot;白色装甲摩托赛车靴，带蓝色点缀。&quot;,<br>      &quot;accessories&quot;: &quot;黑白配色赛车手套。&quot;<br>    }<br>  },<br>  &quot;vehicle_details&quot;: {<br>    &quot;type&quot;: &quot;现代运动型/超级运动摩托车（CFMOTO 450SR风格）。&quot;,<br>    &quot;color&quot;: &quot;珠白色车壳，搭配黑色饰条和蓝色细节。&quot;,<br>    &quot;features&quot;: &quot;裸露发动机壳体，发动机附近有蓝色LED氛围灯/底灯，黑色轮毂配蓝色轮圈贴纸。&quot;<br>  },<br>  &quot;exact_pose_anatomical&quot;: {<br>    &quot;stance&quot;: &quot;靠在摩托车左侧半坐半靠（未跨坐）。&quot;,<br>    &quot;torso&quot;: &quot;左臀靠在骑手座位和油箱交界处。&quot;,<br>    &quot;arms&quot;: &quot;自信地双臂交叉抱于胸前。&quot;,<br>    &quot;head&quot;: &quot;头部向右转90度（侧面视角），视线看向摩托车前方，背对镜头。&quot;,<br>    &quot;legs&quot;: &quot;左腿笔直踩地，右腿膝盖弯曲，脚踩在摩托脚踏上。&quot;,<br>    &quot;vibe&quot;: &quot;酷感、神秘、等待。&quot;<br>  },<br>  &quot;environment_and_background&quot;: {<br>    &quot;setting&quot;: &quot;夜晚的城市街道或大型广场。&quot;,<br>    &quot;background_architecture&quot;: &quot;一座巨大的现代体育场或会展中心，弯曲的屋顶结构被白色灯光网格照亮。&quot;,<br>    &quot;ground&quot;: &quot;铺石人行道或沥青路面。&quot;,<br>    &quot;sky&quot;: &quot;深蓝色/黑色的夜晚多云天空。&quot;<br>  },<br>  &quot;camera_technical_values&quot;: {<br>    &quot;perspective&quot;: &quot;平视/略低机位。&quot;,<br>    &quot;focal_length&quot;: &quot;28mm（广角，能拍下全车及宏伟建筑背景）。&quot;,<br>    &quot;aperture&quot;: &quot;f/2.8（夜景足够明亮，景深适中）。&quot;,<br>    &quot;shutter_speed&quot;: &quot;1/60秒。&quot;,<br>    &quot;iso&quot;: &quot;ISO 1600（夜间噪点/颗粒感）。&quot;,<br>    &quot;color_grading&quot;: &quot;冷色调为主，以蓝色、白色和灰色为主。&quot;<br>  },<br>  &quot;lighting_setup&quot;: {<br>    &quot;ambient&quot;: &quot;背景可见路灯，作为背光源。&quot;,<br>    &quot;key_light&quot;: &quot;软质冷白色人造街灯从前左方照射主体。&quot;,<br>    &quot;accents&quot;: &quot;摩托车发动机舱散发蓝色光晕。&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject_details\": {\n    \"demographics\": \"Female motorcyclist.\",\n    \"hair\": \"Dark hair styled in a single braid visible hanging down from the helmet.\",\n    \"outfit\": {\n      \"headwear\": \"White full-face motorcycle helmet with black visor and intricate graphic decals.\",\n      \"top\": \"White long-sleeve cropped racing jersey/rash guard with black and red text logos.\",\n      \"bottom\": \"Dark grey denim shorts with a black studded belt.\",\n      \"footwear\": \"White armored motorcycle racing boots with blue accents.\",\n      \"accessories\": \"Black and white racing gloves.\"\n    }\n  },\n  \"vehicle_details\": {\n    \"type\": \"Modern Sportbike / Supersport Motorcycle (CFMOTO 450SR style).\",\n    \"color\": \"Pearl white fairings with black accents and blue details.\",\n    \"features\": \"Exposed engine casing, blue LED accent light/underglow near the engine, black wheels with blue rim tape.\"\n  },\n  \"exact_pose_anatomical\": {\n    \"stance\": \"Leaning/Sitting against the left side of the bike (not straddling).\",\n    \"torso\": \"Leaning the left hip against the rider's seat/tank junction.\",\n    \"arms\": \"Crossed confidently over the chest.\",\n    \"head\": \"Turned 90 degrees to the subject's right (profile view), looking away from the camera towards the front of the bike.\",\n    \"legs\": \"Left leg planted straight on the ground. Right leg bent at the knee, foot resting on the bike's foot peg.\",\n    \"vibe\": \"Cool, mysterious, waiting.\"\n  },\n  \"environment_and_background\": {\n    \"setting\": \"Urban street or large plaza at night.\",\n    \"background_architecture\": \"A massive modern stadium or convention center with a curved roof structure illuminated by a grid of white lights.\",\n    \"ground\": \"Paved stone sidewalk or tarmac.\",\n    \"sky\": \"Dark, overcast night sky (deep blue/black).\"\n  },\n  \"camera_technical_values\": {\n    \"perspective\": \"Eye-level / Slightly low angle.\",\n    \"focal_length\": \"28mm (Wide angle to capture the full bike and the large architectural background).\",\n    \"aperture\": \"f/2.8 (Bright enough for night shooting, moderate depth of field).\",\n    \"shutter_speed\": \"1/60s.\",\n    \"iso\": \"ISO 1600 (Nighttime grain/noise).\",\n    \"color_grading\": \"Cool tones, dominant blues, whites, and greys.\"\n  },\n  \"lighting_setup\": {\n    \"ambient\": \"Street lamps visible in the background providing backlighting.\",\n    \"key_light\": \"Soft, cool-white artificial street light hitting the subject from the front-left.\",\n    \"accents\": \"Blue glow from the motorcycle engine bay.\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject_details&quot;: {<br>    &quot;demographics&quot;: &quot;Female motorcyclist.&quot;,<br>    &quot;hair&quot;: &quot;Dark hair styled in a single braid visible hanging down from the helmet.&quot;,<br>    &quot;outfit&quot;: {<br>      &quot;headwear&quot;: &quot;White full-face motorcycle helmet with black visor and intricate graphic decals.&quot;,<br>      &quot;top&quot;: &quot;White long-sleeve cropped racing jersey/rash guard with black and red text logos.&quot;,<br>      &quot;bottom&quot;: &quot;Dark grey denim shorts with a black studded belt.&quot;,<br>      &quot;footwear&quot;: &quot;White armored motorcycle racing boots with blue accents.&quot;,<br>      &quot;accessories&quot;: &quot;Black and white racing gloves.&quot;<br>    }<br>  },<br>  &quot;vehicle_details&quot;: {<br>    &quot;type&quot;: &quot;Modern Sportbike / Supersport Motorcycle (CFMOTO 450SR style).&quot;,<br>    &quot;color&quot;: &quot;Pearl white fairings with black accents and blue details.&quot;,<br>    &quot;features&quot;: &quot;Exposed engine casing, blue LED accent light/underglow near the engine, black wheels with blue rim tape.&quot;<br>  },<br>  &quot;exact_pose_anatomical&quot;: {<br>    &quot;stance&quot;: &quot;Leaning/Sitting against the left side of the bike (not straddling).&quot;,<br>    &quot;torso&quot;: &quot;Leaning the left hip against the rider&#39;s seat/tank junction.&quot;,<br>    &quot;arms&quot;: &quot;Crossed confidently over the chest.&quot;,<br>    &quot;head&quot;: &quot;Turned 90 degrees to the subject&#39;s right (profile view), looking away from the camera towards the front of the bike.&quot;,<br>    &quot;legs&quot;: &quot;Left leg planted straight on the ground. Right leg bent at the knee, foot resting on the bike&#39;s foot peg.&quot;,<br>    &quot;vibe&quot;: &quot;Cool, mysterious, waiting.&quot;<br>  },<br>  &quot;environment_and_background&quot;: {<br>    &quot;setting&quot;: &quot;Urban street or large plaza at night.&quot;,<br>    &quot;background_architecture&quot;: &quot;A massive modern stadium or convention center with a curved roof structure illuminated by a grid of white lights.&quot;,<br>    &quot;ground&quot;: &quot;Paved stone sidewalk or tarmac.&quot;,<br>    &quot;sky&quot;: &quot;Dark, overcast night sky (deep blue/black).&quot;<br>  },<br>  &quot;camera_technical_values&quot;: {<br>    &quot;perspective&quot;: &quot;Eye-level / Slightly low angle.&quot;,<br>    &quot;focal_length&quot;: &quot;28mm (Wide angle to capture the full bike and the large architectural background).&quot;,<br>    &quot;aperture&quot;: &quot;f/2.8 (Bright enough for night shooting, moderate depth of field).&quot;,<br>    &quot;shutter_speed&quot;: &quot;1/60s.&quot;,<br>    &quot;iso&quot;: &quot;ISO 1600 (Nighttime grain/noise).&quot;,<br>    &quot;color_grading&quot;: &quot;Cool tones, dominant blues, whites, and greys.&quot;<br>  },<br>  &quot;lighting_setup&quot;: {<br>    &quot;ambient&quot;: &quot;Street lamps visible in the background providing backlighting.&quot;,<br>    &quot;key_light&quot;: &quot;Soft, cool-white artificial street light hitting the subject from the front-left.&quot;,<br>    &quot;accents&quot;: &quot;Blue glow from the motorcycle engine bay.&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject_details&quot;: {<br>    &quot;demographics&quot;: &quot;Female motorcyclist.&quot;,<br>    &quot;hair&quot;: &quot;Dark hair styled in a single braid visible hanging down from the helmet.&quot;,<br>    &quot;outfit&quot;: {<br>      &quot;headwear&quot;: &quot;White full-face motorcycle helmet with black visor and intricate graphic decals.&quot;,<br>      &quot;top&quot;: &quot;White long-sleeve cropped racing jersey/rash guard with black and red text logos.&quot;,<br>      &quot;bottom&quot;: &quot;Dark grey denim shorts with a black studded belt.&quot;,<br>      &quot;footwear&quot;: &quot;White armored motorcycle racing boots with blue accents.&quot;,<br>      &quot;accessories&quot;: &quot;Black and white racing gloves.&quot;<br>    }<br>  },<br>  &quot;vehicle_details&quot;: {<br>    &quot;type&quot;: &quot;Modern Sportbike / Supersport Motorcycle (CFMOTO 450SR style).&quot;,<br>    &quot;color&quot;: &quot;Pearl white fairings with black accents and blue details.&quot;,<br>    &quot;features&quot;: &quot;Exposed engine casing, blue LED accent light/underglow near the engine, black wheels with blue rim tape.&quot;<br>  },<br>  &quot;exact_pose_anatomical&quot;: {<br>    &quot;stance&quot;: &quot;Leaning/Sitting against the left side of the bike (not straddling).&quot;,<br>    &quot;torso&quot;: &quot;Leaning the left hip against the rider&#39;s seat/tank junction.&quot;,<br>    &quot;arms&quot;: &quot;Crossed confidently over the chest.&quot;,<br>    &quot;head&quot;: &quot;Turned 90 degrees to the subject&#39;s right (profile view), looking away from the camera towards the front of the bike.&quot;,<br>    &quot;legs&quot;: &quot;Left leg planted straight on the ground. Right leg bent at the knee, foot resting on the bike&#39;s foot peg.&quot;,<br>    &quot;vibe&quot;: &quot;Cool, mysterious, waiting.&quot;<br>  },<br>  &quot;environment_and_background&quot;: {<br>    &quot;setting&quot;: &quot;Urban street or large plaza at night.&quot;,<br>    &quot;background_architecture&quot;: &quot;A massive modern stadium or convention center with a curved roof structure illuminated by a grid of white lights.&quot;,<br>    &quot;ground&quot;: &quot;Paved stone sidewalk or tarmac.&quot;,<br>    &quot;sky&quot;: &quot;Dark, overcast night sky (deep blue/black).&quot;<br>  },<br>  &quot;camera_technical_values&quot;: {<br>    &quot;perspective&quot;: &quot;Eye-level / Slightly low angle.&quot;,<br>    &quot;focal_length&quot;: &quot;28mm (Wide angle to capture the full bike and the large architectural background).&quot;,<br>    &quot;aperture&quot;: &quot;f/2.8 (Bright enough for night shooting, moderate depth of field).&quot;,<br>    &quot;shutter_speed&quot;: &quot;1/60s.&quot;,<br>    &quot;iso&quot;: &quot;ISO 1600 (Nighttime grain/noise).&quot;,<br>    &quot;color_grading&quot;: &quot;Cool tones, dominant blues, whites, and greys.&quot;<br>  },<br>  &quot;lighting_setup&quot;: {<br>    &quot;ambient&quot;: &quot;Street lamps visible in the background providing backlighting.&quot;,<br>    &quot;key_light&quot;: &quot;Soft, cool-white artificial street light hitting the subject from the front-left.&quot;,<br>    &quot;accents&quot;: &quot;Blue glow from the motorcycle engine bay.&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011177721754443954-1.jpg" alt="&quot;subject details&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1172,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

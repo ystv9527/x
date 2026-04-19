@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #894 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;person&quot;: &quot;Woman, appears to be in her 20s or 30s&quot;, &quot;pose and expression&quot;: [ &quot;Standing by window, look...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/894.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/894.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/894.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841415">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022585">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"person\": \"女性，外表看起来二十多或三十多岁\",\n    \"pose_and_expression\": [\n      \"站在窗边，望向窗外，放松\",\n      \"伸手拿柜台上的瓶子，手部为焦点\",\n      \"照镜子，微笑\",\n      \"手从瓶中按出精华，特写\",\n      \"精华滴在指尖，微距拍摄\",\n      \"将精华涂抹于脸上，闭眼，安详\",\n      \"面部特写，闭眼，满足\",\n      \"瓶子与兰花摆放在柜台上，静物\",\n      \"背对相机走向窗边，站在窗边\"\n    ]\n  },\n  \"clothing\": {\n    \"items\": \"白色浴袍，白色睡衣/居家服\",\n    \"material\": \"柔软、垂感面料\",\n    \"style\": \"休闲，奢华\"\n  },\n  \"hair\": {\n    \"color\": \"深褐色\",\n    \"style\": \"向后梳理，整洁的丸子头或马尾\"\n  },\n  \"face\": {\n    \"makeup\": \"自然，淡妆\",\n    \"skin\": \"清透有光泽的肌肤\",\n    \"expression\": \"平静、安详、满足\"\n  },\n  \"accessories\": {\n    \"jewelry\": \"无名指上戴着简约戒指\",\n    \"props\": [\n      \"带金色按压泵的玻璃护肤瓶\",\n      \"产品标签：'Promptopia'\",\n      \"白色兰花插在小白花瓶中\"\n    ]\n  },\n  \"environment\": {\n    \"location\": \"现代、奢华的浴室\",\n    \"elements\": [\n      \"大面积落地窗\",\n      \"大理石台面和墙面\",\n      \"圆形镜子\",\n      \"可看到窗外的树木/花园\",\n      \"窗外有雾气或薄雾\"\n    ],\n    \"atmosphere\": \"宁静，水疗般，安宁\"\n  },\n  \"lighting\": {\n    \"source\": \"自然日光\",\n    \"quality\": \"温暖、金色、柔和、漫射\",\n    \"time_of_day\": \"日出或黄金时段\"\n  },\n  \"camera\": {\n    \"type\": \"摄影拼贴\",\n    \"shots\": [\n      \"广角镜头\",\n      \"中景\",\n      \"特写\",\n      \"微距\"\n    ],\n    \"focus\": \"主体和产品清晰，背景柔和虚化（散景）\"\n  },\n  \"style\": {\n    \"aesthetic\": \"电影感、编辑风格、美容、健康、干净、极简\",\n    \"color_palette\": \"温暖中性色、白色、金色、自然绿色\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;女性，外表看起来二十多或三十多岁&quot;,<br>    &quot;pose_and_expression&quot;: [<br>      &quot;站在窗边，望向窗外，放松&quot;,<br>      &quot;伸手拿柜台上的瓶子，手部为焦点&quot;,<br>      &quot;照镜子，微笑&quot;,<br>      &quot;手从瓶中按出精华，特写&quot;,<br>      &quot;精华滴在指尖，微距拍摄&quot;,<br>      &quot;将精华涂抹于脸上，闭眼，安详&quot;,<br>      &quot;面部特写，闭眼，满足&quot;,<br>      &quot;瓶子与兰花摆放在柜台上，静物&quot;,<br>      &quot;背对相机走向窗边，站在窗边&quot;<br>    ]<br>  },<br>  &quot;clothing&quot;: {<br>    &quot;items&quot;: &quot;白色浴袍，白色睡衣/居家服&quot;,<br>    &quot;material&quot;: &quot;柔软、垂感面料&quot;,<br>    &quot;style&quot;: &quot;休闲，奢华&quot;<br>  },<br>  &quot;hair&quot;: {<br>    &quot;color&quot;: &quot;深褐色&quot;,<br>    &quot;style&quot;: &quot;向后梳理，整洁的丸子头或马尾&quot;<br>  },<br>  &quot;face&quot;: {<br>    &quot;makeup&quot;: &quot;自然，淡妆&quot;,<br>    &quot;skin&quot;: &quot;清透有光泽的肌肤&quot;,<br>    &quot;expression&quot;: &quot;平静、安详、满足&quot;<br>  },<br>  &quot;accessories&quot;: {<br>    &quot;jewelry&quot;: &quot;无名指上戴着简约戒指&quot;,<br>    &quot;props&quot;: [<br>      &quot;带金色按压泵的玻璃护肤瓶&quot;,<br>      &quot;产品标签：&#39;Promptopia&#39;&quot;,<br>      &quot;白色兰花插在小白花瓶中&quot;<br>    ]<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;现代、奢华的浴室&quot;,<br>    &quot;elements&quot;: [<br>      &quot;大面积落地窗&quot;,<br>      &quot;大理石台面和墙面&quot;,<br>      &quot;圆形镜子&quot;,<br>      &quot;可看到窗外的树木/花园&quot;,<br>      &quot;窗外有雾气或薄雾&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;宁静，水疗般，安宁&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;source&quot;: &quot;自然日光&quot;,<br>    &quot;quality&quot;: &quot;温暖、金色、柔和、漫射&quot;,<br>    &quot;time_of_day&quot;: &quot;日出或黄金时段&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;type&quot;: &quot;摄影拼贴&quot;,<br>    &quot;shots&quot;: [<br>      &quot;广角镜头&quot;,<br>      &quot;中景&quot;,<br>      &quot;特写&quot;,<br>      &quot;微距&quot;<br>    ],<br>    &quot;focus&quot;: &quot;主体和产品清晰，背景柔和虚化（散景）&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;aesthetic&quot;: &quot;电影感、编辑风格、美容、健康、干净、极简&quot;,<br>    &quot;color_palette&quot;: &quot;温暖中性色、白色、金色、自然绿色&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;女性，外表看起来二十多或三十多岁&quot;,<br>    &quot;pose_and_expression&quot;: [<br>      &quot;站在窗边，望向窗外，放松&quot;,<br>      &quot;伸手拿柜台上的瓶子，手部为焦点&quot;,<br>      &quot;照镜子，微笑&quot;,<br>      &quot;手从瓶中按出精华，特写&quot;,<br>      &quot;精华滴在指尖，微距拍摄&quot;,<br>      &quot;将精华涂抹于脸上，闭眼，安详&quot;,<br>      &quot;面部特写，闭眼，满足&quot;,<br>      &quot;瓶子与兰花摆放在柜台上，静物&quot;,<br>      &quot;背对相机走向窗边，站在窗边&quot;<br>    ]<br>  },<br>  &quot;clothing&quot;: {<br>    &quot;items&quot;: &quot;白色浴袍，白色睡衣/居家服&quot;,<br>    &quot;material&quot;: &quot;柔软、垂感面料&quot;,<br>    &quot;style&quot;: &quot;休闲，奢华&quot;<br>  },<br>  &quot;hair&quot;: {<br>    &quot;color&quot;: &quot;深褐色&quot;,<br>    &quot;style&quot;: &quot;向后梳理，整洁的丸子头或马尾&quot;<br>  },<br>  &quot;face&quot;: {<br>    &quot;makeup&quot;: &quot;自然，淡妆&quot;,<br>    &quot;skin&quot;: &quot;清透有光泽的肌肤&quot;,<br>    &quot;expression&quot;: &quot;平静、安详、满足&quot;<br>  },<br>  &quot;accessories&quot;: {<br>    &quot;jewelry&quot;: &quot;无名指上戴着简约戒指&quot;,<br>    &quot;props&quot;: [<br>      &quot;带金色按压泵的玻璃护肤瓶&quot;,<br>      &quot;产品标签：&#39;Promptopia&#39;&quot;,<br>      &quot;白色兰花插在小白花瓶中&quot;<br>    ]<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;现代、奢华的浴室&quot;,<br>    &quot;elements&quot;: [<br>      &quot;大面积落地窗&quot;,<br>      &quot;大理石台面和墙面&quot;,<br>      &quot;圆形镜子&quot;,<br>      &quot;可看到窗外的树木/花园&quot;,<br>      &quot;窗外有雾气或薄雾&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;宁静，水疗般，安宁&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;source&quot;: &quot;自然日光&quot;,<br>    &quot;quality&quot;: &quot;温暖、金色、柔和、漫射&quot;,<br>    &quot;time_of_day&quot;: &quot;日出或黄金时段&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;type&quot;: &quot;摄影拼贴&quot;,<br>    &quot;shots&quot;: [<br>      &quot;广角镜头&quot;,<br>      &quot;中景&quot;,<br>      &quot;特写&quot;,<br>      &quot;微距&quot;<br>    ],<br>    &quot;focus&quot;: &quot;主体和产品清晰，背景柔和虚化（散景）&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;aesthetic&quot;: &quot;电影感、编辑风格、美容、健康、干净、极简&quot;,<br>    &quot;color_palette&quot;: &quot;温暖中性色、白色、金色、自然绿色&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"person\": \"Woman, appears to be in her 20s or 30s\",\n    \"pose_and_expression\": [\n      \"Standing by window, looking out, relaxed\",\n      \"Reaching for bottle on counter, hand focus\",\n      \"Looking in mirror, slight smile\",\n      \"Hand dispensing serum from bottle, close-up\",\n      \"Serum drop on fingertip, macro shot\",\n      \"Applying serum to face, eyes closed, serene\",\n      \"Face close-up, eyes closed, content\",\n      \"Bottle and orchid on counter, still life\",\n      \"Walking away from camera, standing by window\"\n    ]\n  },\n  \"clothing\": {\n    \"items\": \"White robe, white pajamas/loungewear\",\n    \"material\": \"Soft, flowing fabric\",\n    \"style\": \"Casual, luxurious\"\n  },\n  \"hair\": {\n    \"color\": \"Dark brown\",\n    \"style\": \"Pulled back, neat bun or ponytail\"\n  },\n  \"face\": {\n    \"makeup\": \"Natural, minimal\",\n    \"skin\": \"Clear, glowing\",\n    \"expression\": \"Calm, serene, content\"\n  },\n  \"accessories\": {\n    \"jewelry\": \"Simple ring on ring finger\",\n    \"props\": [\n      \"Glass skincare bottle with gold pump dispenser\",\n      \"Product label: 'Promptopia'\",\n      \"White orchid in a small white vase\"\n    ]\n  },\n  \"environment\": {\n    \"location\": \"Modern, luxurious bathroom\",\n    \"elements\": [\n      \"Large floor-to-ceiling windows\",\n      \"Marble countertop and walls\",\n      \"Round mirror\",\n      \"View of trees/garden outside\",\n      \"Fog or mist outside window\"\n    ],\n    \"atmosphere\": \"Serene, spa-like, tranquil\"\n  },\n  \"lighting\": {\n    \"source\": \"Natural daylight\",\n    \"quality\": \"Warm, golden, soft, diffused\",\n    \"time_of_day\": \"Sunrise or golden hour\"\n  },\n  \"camera\": {\n    \"type\": \"Photography collage\",\n    \"shots\": [\n      \"Wide shot\",\n      \"Medium shot\",\n      \"Close-up\",\n      \"Macro shot\"\n    ],\n    \"focus\": \"Sharp on subject and product, soft background blur (bokeh)\"\n  },\n  \"style\": {\n    \"aesthetic\": \"Cinematic, editorial, beauty, wellness, clean, minimalist\",\n    \"color_palette\": \"Warm neutrals, white, gold, natural greens\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;Woman, appears to be in her 20s or 30s&quot;,<br>    &quot;pose_and_expression&quot;: [<br>      &quot;Standing by window, looking out, relaxed&quot;,<br>      &quot;Reaching for bottle on counter, hand focus&quot;,<br>      &quot;Looking in mirror, slight smile&quot;,<br>      &quot;Hand dispensing serum from bottle, close-up&quot;,<br>      &quot;Serum drop on fingertip, macro shot&quot;,<br>      &quot;Applying serum to face, eyes closed, serene&quot;,<br>      &quot;Face close-up, eyes closed, content&quot;,<br>      &quot;Bottle and orchid on counter, still life&quot;,<br>      &quot;Walking away from camera, standing by window&quot;<br>    ]<br>  },<br>  &quot;clothing&quot;: {<br>    &quot;items&quot;: &quot;White robe, white pajamas/loungewear&quot;,<br>    &quot;material&quot;: &quot;Soft, flowing fabric&quot;,<br>    &quot;style&quot;: &quot;Casual, luxurious&quot;<br>  },<br>  &quot;hair&quot;: {<br>    &quot;color&quot;: &quot;Dark brown&quot;,<br>    &quot;style&quot;: &quot;Pulled back, neat bun or ponytail&quot;<br>  },<br>  &quot;face&quot;: {<br>    &quot;makeup&quot;: &quot;Natural, minimal&quot;,<br>    &quot;skin&quot;: &quot;Clear, glowing&quot;,<br>    &quot;expression&quot;: &quot;Calm, serene, content&quot;<br>  },<br>  &quot;accessories&quot;: {<br>    &quot;jewelry&quot;: &quot;Simple ring on ring finger&quot;,<br>    &quot;props&quot;: [<br>      &quot;Glass skincare bottle with gold pump dispenser&quot;,<br>      &quot;Product label: &#39;Promptopia&#39;&quot;,<br>      &quot;White orchid in a small white vase&quot;<br>    ]<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;Modern, luxurious bathroom&quot;,<br>    &quot;elements&quot;: [<br>      &quot;Large floor-to-ceiling windows&quot;,<br>      &quot;Marble countertop and walls&quot;,<br>      &quot;Round mirror&quot;,<br>      &quot;View of trees/garden outside&quot;,<br>      &quot;Fog or mist outside window&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;Serene, spa-like, tranquil&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;source&quot;: &quot;Natural daylight&quot;,<br>    &quot;quality&quot;: &quot;Warm, golden, soft, diffused&quot;,<br>    &quot;time_of_day&quot;: &quot;Sunrise or golden hour&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;type&quot;: &quot;Photography collage&quot;,<br>    &quot;shots&quot;: [<br>      &quot;Wide shot&quot;,<br>      &quot;Medium shot&quot;,<br>      &quot;Close-up&quot;,<br>      &quot;Macro shot&quot;<br>    ],<br>    &quot;focus&quot;: &quot;Sharp on subject and product, soft background blur (bokeh)&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;aesthetic&quot;: &quot;Cinematic, editorial, beauty, wellness, clean, minimalist&quot;,<br>    &quot;color_palette&quot;: &quot;Warm neutrals, white, gold, natural greens&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;person&quot;: &quot;Woman, appears to be in her 20s or 30s&quot;,<br>    &quot;pose_and_expression&quot;: [<br>      &quot;Standing by window, looking out, relaxed&quot;,<br>      &quot;Reaching for bottle on counter, hand focus&quot;,<br>      &quot;Looking in mirror, slight smile&quot;,<br>      &quot;Hand dispensing serum from bottle, close-up&quot;,<br>      &quot;Serum drop on fingertip, macro shot&quot;,<br>      &quot;Applying serum to face, eyes closed, serene&quot;,<br>      &quot;Face close-up, eyes closed, content&quot;,<br>      &quot;Bottle and orchid on counter, still life&quot;,<br>      &quot;Walking away from camera, standing by window&quot;<br>    ]<br>  },<br>  &quot;clothing&quot;: {<br>    &quot;items&quot;: &quot;White robe, white pajamas/loungewear&quot;,<br>    &quot;material&quot;: &quot;Soft, flowing fabric&quot;,<br>    &quot;style&quot;: &quot;Casual, luxurious&quot;<br>  },<br>  &quot;hair&quot;: {<br>    &quot;color&quot;: &quot;Dark brown&quot;,<br>    &quot;style&quot;: &quot;Pulled back, neat bun or ponytail&quot;<br>  },<br>  &quot;face&quot;: {<br>    &quot;makeup&quot;: &quot;Natural, minimal&quot;,<br>    &quot;skin&quot;: &quot;Clear, glowing&quot;,<br>    &quot;expression&quot;: &quot;Calm, serene, content&quot;<br>  },<br>  &quot;accessories&quot;: {<br>    &quot;jewelry&quot;: &quot;Simple ring on ring finger&quot;,<br>    &quot;props&quot;: [<br>      &quot;Glass skincare bottle with gold pump dispenser&quot;,<br>      &quot;Product label: &#39;Promptopia&#39;&quot;,<br>      &quot;White orchid in a small white vase&quot;<br>    ]<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;Modern, luxurious bathroom&quot;,<br>    &quot;elements&quot;: [<br>      &quot;Large floor-to-ceiling windows&quot;,<br>      &quot;Marble countertop and walls&quot;,<br>      &quot;Round mirror&quot;,<br>      &quot;View of trees/garden outside&quot;,<br>      &quot;Fog or mist outside window&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;Serene, spa-like, tranquil&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;source&quot;: &quot;Natural daylight&quot;,<br>    &quot;quality&quot;: &quot;Warm, golden, soft, diffused&quot;,<br>    &quot;time_of_day&quot;: &quot;Sunrise or golden hour&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;type&quot;: &quot;Photography collage&quot;,<br>    &quot;shots&quot;: [<br>      &quot;Wide shot&quot;,<br>      &quot;Medium shot&quot;,<br>      &quot;Close-up&quot;,<br>      &quot;Macro shot&quot;<br>    ],<br>    &quot;focus&quot;: &quot;Sharp on subject and product, soft background blur (bokeh)&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;aesthetic&quot;: &quot;Cinematic, editorial, beauty, wellness, clean, minimalist&quot;,<br>    &quot;color_palette&quot;: &quot;Warm neutrals, white, gold, natural greens&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009580453083201822-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 894,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

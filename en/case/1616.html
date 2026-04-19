@@ -7,11 +7,13 @@
     <title>&quot;scene type&quot;: &quot;editorial beauty collage&quot;, #1616 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;scene type&quot;: &quot;editorial beauty collage&quot;, &quot;subject&quot;: { &quot;identity lock&quot;: true, &quot;face consistency&quot;: &quot;perfectly matche...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1616.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1616.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1616.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844947">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023616">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"场景类型\": \"编辑类美容拼贴\",\n  \"主体\": {\n    \"身份锁定\": true,\n    \"面部一致性\": \"在所有画面中面部完全匹配\",\n    \"表情\": \"表情不变，中性且放松\",\n    \"皮肤\": \"皮肤质感真实，自然毛孔，高保真\"\n  },\n  \"布局\": {\n    \"网格\": \"4x3\",\n    \"构图\": \"等大小的人像面板\",\n    \"一致性\": \"每一帧面部对齐且对称\"\n  },\n  \"发型变化\": [\n    \"顺滑的长直发\",\n    \"高马尾\",\n    \"质感凌乱的丸子头\",\n    \"精灵短发\",\n    \"皇冠编发\",\n    \"柔和飘逸的波浪发\",\n    \"带刘海的短鲍勃发\",\n    \"低束丸子头\",\n    \"侧边辫子\",\n    \"松散而有层次的卷发\"\n  ],\n  \"造型\": {\n    \"服装\": \"所有面板使用相同的中性衣着\",\n    \"化妆\": \"每张画面相同的清新干净美妆\"\n  },\n  \"照明\": {\n    \"类型\": \"柔和的摄影棚灯光\",\n    \"色调\": \"暖色调\",\n    \"阴影\": \"柔和自然的阴影\"\n  },\n  \"背景\": {\n    \"风格\": \"微妙模糊的摄影棚背景\",\n    \"颜色\": \"暖中性色调\"\n  },\n  \"质量\": {\n    \"细节\": \"超详细\",\n    \"摄影\": \"专业人像摄影\",\n    \"效果\": \"高端编辑风格\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;场景类型&quot;: &quot;编辑类美容拼贴&quot;,<br>  &quot;主体&quot;: {<br>    &quot;身份锁定&quot;: true,<br>    &quot;面部一致性&quot;: &quot;在所有画面中面部完全匹配&quot;,<br>    &quot;表情&quot;: &quot;表情不变，中性且放松&quot;,<br>    &quot;皮肤&quot;: &quot;皮肤质感真实，自然毛孔，高保真&quot;<br>  },<br>  &quot;布局&quot;: {<br>    &quot;网格&quot;: &quot;4x3&quot;,<br>    &quot;构图&quot;: &quot;等大小的人像面板&quot;,<br>    &quot;一致性&quot;: &quot;每一帧面部对齐且对称&quot;<br>  },<br>  &quot;发型变化&quot;: [<br>    &quot;顺滑的长直发&quot;,<br>    &quot;高马尾&quot;,<br>    &quot;质感凌乱的丸子头&quot;,<br>    &quot;精灵短发&quot;,<br>    &quot;皇冠编发&quot;,<br>    &quot;柔和飘逸的波浪发&quot;,<br>    &quot;带刘海的短鲍勃发&quot;,<br>    &quot;低束丸子头&quot;,<br>    &quot;侧边辫子&quot;,<br>    &quot;松散而有层次的卷发&quot;<br>  ],<br>  &quot;造型&quot;: {<br>    &quot;服装&quot;: &quot;所有面板使用相同的中性衣着&quot;,<br>    &quot;化妆&quot;: &quot;每张画面相同的清新干净美妆&quot;<br>  },<br>  &quot;照明&quot;: {<br>    &quot;类型&quot;: &quot;柔和的摄影棚灯光&quot;,<br>    &quot;色调&quot;: &quot;暖色调&quot;,<br>    &quot;阴影&quot;: &quot;柔和自然的阴影&quot;<br>  },<br>  &quot;背景&quot;: {<br>    &quot;风格&quot;: &quot;微妙模糊的摄影棚背景&quot;,<br>    &quot;颜色&quot;: &quot;暖中性色调&quot;<br>  },<br>  &quot;质量&quot;: {<br>    &quot;细节&quot;: &quot;超详细&quot;,<br>    &quot;摄影&quot;: &quot;专业人像摄影&quot;,<br>    &quot;效果&quot;: &quot;高端编辑风格&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;场景类型&quot;: &quot;编辑类美容拼贴&quot;,<br>  &quot;主体&quot;: {<br>    &quot;身份锁定&quot;: true,<br>    &quot;面部一致性&quot;: &quot;在所有画面中面部完全匹配&quot;,<br>    &quot;表情&quot;: &quot;表情不变，中性且放松&quot;,<br>    &quot;皮肤&quot;: &quot;皮肤质感真实，自然毛孔，高保真&quot;<br>  },<br>  &quot;布局&quot;: {<br>    &quot;网格&quot;: &quot;4x3&quot;,<br>    &quot;构图&quot;: &quot;等大小的人像面板&quot;,<br>    &quot;一致性&quot;: &quot;每一帧面部对齐且对称&quot;<br>  },<br>  &quot;发型变化&quot;: [<br>    &quot;顺滑的长直发&quot;,<br>    &quot;高马尾&quot;,<br>    &quot;质感凌乱的丸子头&quot;,<br>    &quot;精灵短发&quot;,<br>    &quot;皇冠编发&quot;,<br>    &quot;柔和飘逸的波浪发&quot;,<br>    &quot;带刘海的短鲍勃发&quot;,<br>    &quot;低束丸子头&quot;,<br>    &quot;侧边辫子&quot;,<br>    &quot;松散而有层次的卷发&quot;<br>  ],<br>  &quot;造型&quot;: {<br>    &quot;服装&quot;: &quot;所有面板使用相同的中性衣着&quot;,<br>    &quot;化妆&quot;: &quot;每张画面相同的清新干净美妆&quot;<br>  },<br>  &quot;照明&quot;: {<br>    &quot;类型&quot;: &quot;柔和的摄影棚灯光&quot;,<br>    &quot;色调&quot;: &quot;暖色调&quot;,<br>    &quot;阴影&quot;: &quot;柔和自然的阴影&quot;<br>  },<br>  &quot;背景&quot;: {<br>    &quot;风格&quot;: &quot;微妙模糊的摄影棚背景&quot;,<br>    &quot;颜色&quot;: &quot;暖中性色调&quot;<br>  },<br>  &quot;质量&quot;: {<br>    &quot;细节&quot;: &quot;超详细&quot;,<br>    &quot;摄影&quot;: &quot;专业人像摄影&quot;,<br>    &quot;效果&quot;: &quot;高端编辑风格&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene_type\": \"editorial beauty collage\",\n  \"subject\": {\n    \"identity_lock\": true,\n    \"face_consistency\": \"perfectly matched across all frames\",\n    \"expression\": \"unchanged, neutral and relaxed\",\n    \"skin\": \"realistic texture, natural pores, high fidelity\"\n  },\n  \"layout\": {\n    \"grid\": \"4x3\",\n    \"framing\": \"equal-sized portrait panels\",\n    \"consistency\": \"symmetrical facial alignment in every frame\"\n  },\n  \"hairstyle_variations\": [\n    \"sleek long straight hair\",\n    \"high ponytail\",\n    \"textured messy bun\",\n    \"pixie haircut\",\n    \"braided crown\",\n    \"soft flowing waves\",\n    \"short bob with bangs\",\n    \"low tied bun\",\n    \"side braid\",\n    \"loose defined curls\"\n  ],\n  \"styling\": {\n    \"outfit\": \"same neutral wardrobe across all panels\",\n    \"makeup\": \"identical clean beauty makeup in every shot\"\n  },\n  \"lighting\": {\n    \"type\": \"soft studio lighting\",\n    \"tone\": \"warm\",\n    \"shadows\": \"gentle and natural\"\n  },\n  \"background\": {\n    \"style\": \"subtle blurred studio backdrop\",\n    \"color\": \"warm neutral tones\"\n  },\n  \"quality\": {\n    \"detail\": \"ultra-detailed\",\n    \"photography\": \"professional portrait\",\n    \"finish\": \"high-end editorial look\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;scene_type&quot;: &quot;editorial beauty collage&quot;,<br>  &quot;subject&quot;: {<br>    &quot;identity_lock&quot;: true,<br>    &quot;face_consistency&quot;: &quot;perfectly matched across all frames&quot;,<br>    &quot;expression&quot;: &quot;unchanged, neutral and relaxed&quot;,<br>    &quot;skin&quot;: &quot;realistic texture, natural pores, high fidelity&quot;<br>  },<br>  &quot;layout&quot;: {<br>    &quot;grid&quot;: &quot;4x3&quot;,<br>    &quot;framing&quot;: &quot;equal-sized portrait panels&quot;,<br>    &quot;consistency&quot;: &quot;symmetrical facial alignment in every frame&quot;<br>  },<br>  &quot;hairstyle_variations&quot;: [<br>    &quot;sleek long straight hair&quot;,<br>    &quot;high ponytail&quot;,<br>    &quot;textured messy bun&quot;,<br>    &quot;pixie haircut&quot;,<br>    &quot;braided crown&quot;,<br>    &quot;soft flowing waves&quot;,<br>    &quot;short bob with bangs&quot;,<br>    &quot;low tied bun&quot;,<br>    &quot;side braid&quot;,<br>    &quot;loose defined curls&quot;<br>  ],<br>  &quot;styling&quot;: {<br>    &quot;outfit&quot;: &quot;same neutral wardrobe across all panels&quot;,<br>    &quot;makeup&quot;: &quot;identical clean beauty makeup in every shot&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft studio lighting&quot;,<br>    &quot;tone&quot;: &quot;warm&quot;,<br>    &quot;shadows&quot;: &quot;gentle and natural&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;style&quot;: &quot;subtle blurred studio backdrop&quot;,<br>    &quot;color&quot;: &quot;warm neutral tones&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;detail&quot;: &quot;ultra-detailed&quot;,<br>    &quot;photography&quot;: &quot;professional portrait&quot;,<br>    &quot;finish&quot;: &quot;high-end editorial look&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene_type&quot;: &quot;editorial beauty collage&quot;,<br>  &quot;subject&quot;: {<br>    &quot;identity_lock&quot;: true,<br>    &quot;face_consistency&quot;: &quot;perfectly matched across all frames&quot;,<br>    &quot;expression&quot;: &quot;unchanged, neutral and relaxed&quot;,<br>    &quot;skin&quot;: &quot;realistic texture, natural pores, high fidelity&quot;<br>  },<br>  &quot;layout&quot;: {<br>    &quot;grid&quot;: &quot;4x3&quot;,<br>    &quot;framing&quot;: &quot;equal-sized portrait panels&quot;,<br>    &quot;consistency&quot;: &quot;symmetrical facial alignment in every frame&quot;<br>  },<br>  &quot;hairstyle_variations&quot;: [<br>    &quot;sleek long straight hair&quot;,<br>    &quot;high ponytail&quot;,<br>    &quot;textured messy bun&quot;,<br>    &quot;pixie haircut&quot;,<br>    &quot;braided crown&quot;,<br>    &quot;soft flowing waves&quot;,<br>    &quot;short bob with bangs&quot;,<br>    &quot;low tied bun&quot;,<br>    &quot;side braid&quot;,<br>    &quot;loose defined curls&quot;<br>  ],<br>  &quot;styling&quot;: {<br>    &quot;outfit&quot;: &quot;same neutral wardrobe across all panels&quot;,<br>    &quot;makeup&quot;: &quot;identical clean beauty makeup in every shot&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft studio lighting&quot;,<br>    &quot;tone&quot;: &quot;warm&quot;,<br>    &quot;shadows&quot;: &quot;gentle and natural&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;style&quot;: &quot;subtle blurred studio backdrop&quot;,<br>    &quot;color&quot;: &quot;warm neutral tones&quot;<br>  },<br>  &quot;quality&quot;: {<br>    &quot;detail&quot;: &quot;ultra-detailed&quot;,<br>    &quot;photography&quot;: &quot;professional portrait&quot;,<br>    &quot;finish&quot;: &quot;high-end editorial look&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2013525972524712055-1.jpg" alt="&quot;scene type&quot;: &quot;editorial beauty collage&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1616,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

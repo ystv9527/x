@@ -7,11 +7,13 @@
     <title>史莱姆制成的玩具运输车 #122 | Gem Nana AI 提示词库</title>
     <meta name="description" content="史莱姆制成的玩具运输车 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/122.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/122.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/122.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842128">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022758">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n“style”： “逼真的 3D 渲染”，\n“material”： “有光泽的粘液状材质”，\n“texture”： [“光滑”， “柔软”， “弹性”， “闪亮”]，\n“color”： “变量”，\n“object_type”： “变量”，\n“background”： “纯白色”，\n“lighting”： “柔和的工作室照明”，\n“详细信息”： {\n“focus”： “以单个对象为中心”，\n“shadows”： “柔和而微妙”，\n“reflection”： “表面上的光高光”，\n“depth”： “浅景深”\n},\n“format”： “特写或四分之三视图”，\n“mood”： “俏皮的、干净的、玩具般的”，\n“prompt_template”： “由有光泽的粘液材料制成的 {color} {object_type}，质地柔软有弹性，逼真的 3D 外观，以纯白色背景为背景，光线柔和，高光平滑”\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>“style”： “逼真的 3D 渲染”，<br>“material”： “有光泽的粘液状材质”，<br>“texture”： [“光滑”， “柔软”， “弹性”， “闪亮”]，<br>“color”： “变量”，<br>“object_type”： “变量”，<br>“background”： “纯白色”，<br>“lighting”： “柔和的工作室照明”，<br>“详细信息”： {<br>“focus”： “以单个对象为中心”，<br>“shadows”： “柔和而微妙”，<br>“reflection”： “表面上的光高光”，<br>“depth”： “浅景深”<br>},<br>“format”： “特写或四分之三视图”，<br>“mood”： “俏皮的、干净的、玩具般的”，<br>“prompt_template”： “由有光泽的粘液材料制成的 {color} {object_type}，质地柔软有弹性，逼真的 3D 外观，以纯白色背景为背景，光线柔和，高光平滑”<br>}</p>
+        <div data-nosnippet><p>{<br>“style”： “逼真的 3D 渲染”，<br>“material”： “有光泽的粘液状材质”，<br>“texture”： [“光滑”， “柔软”， “弹性”， “闪亮”]，<br>“color”： “变量”，<br>“object_type”： “变量”，<br>“background”： “纯白色”，<br>“lighting”： “柔和的工作室照明”，<br>“详细信息”： {<br>“focus”： “以单个对象为中心”，<br>“shadows”： “柔和而微妙”，<br>“reflection”： “表面上的光高光”，<br>“depth”： “浅景深”<br>},<br>“format”： “特写或四分之三视图”，<br>“mood”： “俏皮的、干净的、玩具般的”，<br>“prompt_template”： “由有光泽的粘液材料制成的 {color} {object_type}，质地柔软有弹性，逼真的 3D 外观，以纯白色背景为背景，光线柔和，高光平滑”<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"style\": \"realistic 3D rendering\",\n  \"material\": \"glossy, slimy material\",\n  \"texture\": [\"smooth\", \"soft\", \"elastic\", \"shiny\"],\n  \"color\": \"variable\",\n  \"object_type\": \"variable\",\n  \"background\": \"pure white\",\n  \"lighting\": \"soft studio lighting\",\n  \"details\": {\n    \"focus\": \"centered on a single object\",\n    \"shadows\": \"soft and subtle\",\n    \"reflection\": \"highlights on the surface\",\n    \"depth\": \"shallow depth of field\"\n  },\n  \"format\": \"close-up or three-quarter view\",\n  \"mood\": \"playful, clean, toy-like\",\n  \"prompt_template\": \"A {color} {object_type} made of glossy, slimy material, with a soft, elastic texture, realistic 3D appearance, set against a pure white background, with soft lighting and smooth highlights\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;style&quot;: &quot;realistic 3D rendering&quot;,<br>  &quot;material&quot;: &quot;glossy, slimy material&quot;,<br>  &quot;texture&quot;: [&quot;smooth&quot;, &quot;soft&quot;, &quot;elastic&quot;, &quot;shiny&quot;],<br>  &quot;color&quot;: &quot;variable&quot;,<br>  &quot;object_type&quot;: &quot;variable&quot;,<br>  &quot;background&quot;: &quot;pure white&quot;,<br>  &quot;lighting&quot;: &quot;soft studio lighting&quot;,<br>  &quot;details&quot;: {<br>    &quot;focus&quot;: &quot;centered on a single object&quot;,<br>    &quot;shadows&quot;: &quot;soft and subtle&quot;,<br>    &quot;reflection&quot;: &quot;highlights on the surface&quot;,<br>    &quot;depth&quot;: &quot;shallow depth of field&quot;<br>  },<br>  &quot;format&quot;: &quot;close-up or three-quarter view&quot;,<br>  &quot;mood&quot;: &quot;playful, clean, toy-like&quot;,<br>  &quot;prompt_template&quot;: &quot;A {color} {object_type} made of glossy, slimy material, with a soft, elastic texture, realistic 3D appearance, set against a pure white background, with soft lighting and smooth highlights&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;style&quot;: &quot;realistic 3D rendering&quot;,<br>  &quot;material&quot;: &quot;glossy, slimy material&quot;,<br>  &quot;texture&quot;: [&quot;smooth&quot;, &quot;soft&quot;, &quot;elastic&quot;, &quot;shiny&quot;],<br>  &quot;color&quot;: &quot;variable&quot;,<br>  &quot;object_type&quot;: &quot;variable&quot;,<br>  &quot;background&quot;: &quot;pure white&quot;,<br>  &quot;lighting&quot;: &quot;soft studio lighting&quot;,<br>  &quot;details&quot;: {<br>    &quot;focus&quot;: &quot;centered on a single object&quot;,<br>    &quot;shadows&quot;: &quot;soft and subtle&quot;,<br>    &quot;reflection&quot;: &quot;highlights on the surface&quot;,<br>    &quot;depth&quot;: &quot;shallow depth of field&quot;<br>  },<br>  &quot;format&quot;: &quot;close-up or three-quarter view&quot;,<br>  &quot;mood&quot;: &quot;playful, clean, toy-like&quot;,<br>  &quot;prompt_template&quot;: &quot;A {color} {object_type} made of glossy, slimy material, with a soft, elastic texture, realistic 3D appearance, set against a pure white background, with soft lighting and smooth highlights&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/122.png" alt="史莱姆制成的玩具运输车" loading="lazy"><img src="/images/122-2.jpeg" alt="史莱姆制成的玩具运输车" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 122,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>Edit this photo without changing the face. Portrait aspect ra... #1305 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Edit this photo without changing the face. Portrait aspect ratio 2:3. Disposable camera aesthetic with a candid, warm...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1305.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1305.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1305.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841061">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022486">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("在不更改面部的前提下编辑这张照片。人像纵向比例 2:3。一次性相机美学，真实、温暖并带有轻微自然的虚化。画面应该有被一次性胶片相机捕捉到的自发瞬间感，充满怀旧、亲密和温馨的居家氛围。\n一位年轻女性依偎在伴侣的肩膀上，深情靠着。她面向镜头，头略微侧倾。一只手按着脸颊，做出可爱的姿势。天真无邪的表情，双眼大而有神，带着轻柔的微笑或自然的唇形。伴侣仅部分可见（仅露出肩膀和颈部），营造私密、亲昵的瞬间。\n她穿着白色或奶油色针织毛衣，款式简单，有小面积蓝色或黑色点缀。长黑发，带自然刘海，略显凌乱而非精心打理。几缕散发垂落在脸上，呈现原始真实的胶片照片质感。\n妆容非常淡且清新。保留自然肌肤质感（不过度完美或过度磨皮）。眉毛细而自然。淡粉色腮红。自然粉色唇带微微光泽。佩戴棕色隐形眼镜。\n背景为家居室内，墙面简单。室内暖色光线，略微不均匀，带有柔和阴影和胶片特有的自然光噪。无专业灯光布置。\n使用一次性相机拍摄（Kodak / Fujifilm 风格）。固定广角镜头约 30mm。柔和对焦，不要过于锐利。光圈 f/8（一次性镜头固定）。ISO 400–800。快门速度 1/60。白平衡设为暖色/钨丝灯。直闪开启。\n高角度自拍，从上方拍摄，紧密构图为脸部和肩膀。画面轻微倾斜、偏离中心构图，以增强自发、未经过度设计的感觉。\n一次性相机色调处理：温暖的黄调，略带绿色偏移，低对比度，颜色柔和，强烈的胶片颗粒，轻微模糊与暗角，以及由闪光灯引起的高光泛光。", this)'>📋 复制</button>
         </div>
-        <p>在不更改面部的前提下编辑这张照片。人像纵向比例 2:3。一次性相机美学，真实、温暖并带有轻微自然的虚化。画面应该有被一次性胶片相机捕捉到的自发瞬间感，充满怀旧、亲密和温馨的居家氛围。<br>一位年轻女性依偎在伴侣的肩膀上，深情靠着。她面向镜头，头略微侧倾。一只手按着脸颊，做出可爱的姿势。天真无邪的表情，双眼大而有神，带着轻柔的微笑或自然的唇形。伴侣仅部分可见（仅露出肩膀和颈部），营造私密、亲昵的瞬间。<br>她穿着白色或奶油色针织毛衣，款式简单，有小面积蓝色或黑色点缀。长黑发，带自然刘海，略显凌乱而非精心打理。几缕散发垂落在脸上，呈现原始真实的胶片照片质感。<br>妆容非常淡且清新。保留自然肌肤质感（不过度完美或过度磨皮）。眉毛细而自然。淡粉色腮红。自然粉色唇带微微光泽。佩戴棕色隐形眼镜。<br>背景为家居室内，墙面简单。室内暖色光线，略微不均匀，带有柔和阴影和胶片特有的自然光噪。无专业灯光布置。<br>使用一次性相机拍摄（Kodak / Fujifilm 风格）。固定广角镜头约 30mm。柔和对焦，不要过于锐利。光圈 f/8（一次性镜头固定）。ISO 400–800。快门速度 1/60。白平衡设为暖色/钨丝灯。直闪开启。<br>高角度自拍，从上方拍摄，紧密构图为脸部和肩膀。画面轻微倾斜、偏离中心构图，以增强自发、未经过度设计的感觉。<br>一次性相机色调处理：温暖的黄调，略带绿色偏移，低对比度，颜色柔和，强烈的胶片颗粒，轻微模糊与暗角，以及由闪光灯引起的高光泛光。</p>
+        <div data-nosnippet><p>在不更改面部的前提下编辑这张照片。人像纵向比例 2:3。一次性相机美学，真实、温暖并带有轻微自然的虚化。画面应该有被一次性胶片相机捕捉到的自发瞬间感，充满怀旧、亲密和温馨的居家氛围。<br>一位年轻女性依偎在伴侣的肩膀上，深情靠着。她面向镜头，头略微侧倾。一只手按着脸颊，做出可爱的姿势。天真无邪的表情，双眼大而有神，带着轻柔的微笑或自然的唇形。伴侣仅部分可见（仅露出肩膀和颈部），营造私密、亲昵的瞬间。<br>她穿着白色或奶油色针织毛衣，款式简单，有小面积蓝色或黑色点缀。长黑发，带自然刘海，略显凌乱而非精心打理。几缕散发垂落在脸上，呈现原始真实的胶片照片质感。<br>妆容非常淡且清新。保留自然肌肤质感（不过度完美或过度磨皮）。眉毛细而自然。淡粉色腮红。自然粉色唇带微微光泽。佩戴棕色隐形眼镜。<br>背景为家居室内，墙面简单。室内暖色光线，略微不均匀，带有柔和阴影和胶片特有的自然光噪。无专业灯光布置。<br>使用一次性相机拍摄（Kodak / Fujifilm 风格）。固定广角镜头约 30mm。柔和对焦，不要过于锐利。光圈 f/8（一次性镜头固定）。ISO 400–800。快门速度 1/60。白平衡设为暖色/钨丝灯。直闪开启。<br>高角度自拍，从上方拍摄，紧密构图为脸部和肩膀。画面轻微倾斜、偏离中心构图，以增强自发、未经过度设计的感觉。<br>一次性相机色调处理：温暖的黄调，略带绿色偏移，低对比度，颜色柔和，强烈的胶片颗粒，轻微模糊与暗角，以及由闪光灯引起的高光泛光。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Edit this photo without changing the face. Portrait aspect ratio 2:3. Disposable camera aesthetic with a candid, warm, and slightly natural blur. The image should feel like a spontaneous moment captured on a single-use film camera, full of nostalgia, intimacy, and a cozy homey vibe.\nA young woman is leaning affectionately on her partner’s shoulder. Her face is turned toward the camera with her head slightly tilted. One hand presses her cheek, creating a cute pose. Innocent expression, big open eyes, with a soft smile or neutral lips. The partner is only partially visible (shoulder and neck only), creating a private, intimate moment.\nShe is wearing a white or cream knit sweater with a simple design and small blue or black accents. Long black hair with natural bangs, slightly messy and not styled neatly. A few loose strands fall across the face for a raw, real film-photo look.\nMakeup is very minimal and fresh. Natural skin texture (not flawless or overly smooth). Thin, natural eyebrows. Soft pink blush. Natural pink lips with a slight gloss. Wearing brown contact lenses.\nBackground is a home interior with plain walls. Warm indoor lighting, slightly uneven, with soft shadows and natural light noise typical of film. No professional lighting setup.\nShot on a disposable camera (Kodak / Fujifilm style). Fixed wide lens around 30mm. Soft focus, not overly sharp. Aperture f/8 (fixed disposable lens). ISO 400–800. Shutter speed 1/60. White balance set to warm / tungsten. Direct flash ON.\nHigh-angle selfie taken from above, close-up framing of face and shoulders. Slightly tilted, off-center composition to enhance the spontaneous, unplanned feel.\nDisposable camera color grading: warm yellow tones, slight green tint, low contrast, muted colors, heavy film grain, slight blur and vignette, with highlight bloom caused by the flash.", this)'>📋 复制</button>
         </div>
-        <p>Edit this photo without changing the face. Portrait aspect ratio 2:3. Disposable camera aesthetic with a candid, warm, and slightly natural blur. The image should feel like a spontaneous moment captured on a single-use film camera, full of nostalgia, intimacy, and a cozy homey vibe.<br>A young woman is leaning affectionately on her partner’s shoulder. Her face is turned toward the camera with her head slightly tilted. One hand presses her cheek, creating a cute pose. Innocent expression, big open eyes, with a soft smile or neutral lips. The partner is only partially visible (shoulder and neck only), creating a private, intimate moment.<br>She is wearing a white or cream knit sweater with a simple design and small blue or black accents. Long black hair with natural bangs, slightly messy and not styled neatly. A few loose strands fall across the face for a raw, real film-photo look.<br>Makeup is very minimal and fresh. Natural skin texture (not flawless or overly smooth). Thin, natural eyebrows. Soft pink blush. Natural pink lips with a slight gloss. Wearing brown contact lenses.<br>Background is a home interior with plain walls. Warm indoor lighting, slightly uneven, with soft shadows and natural light noise typical of film. No professional lighting setup.<br>Shot on a disposable camera (Kodak / Fujifilm style). Fixed wide lens around 30mm. Soft focus, not overly sharp. Aperture f/8 (fixed disposable lens). ISO 400–800. Shutter speed 1/60. White balance set to warm / tungsten. Direct flash ON.<br>High-angle selfie taken from above, close-up framing of face and shoulders. Slightly tilted, off-center composition to enhance the spontaneous, unplanned feel.<br>Disposable camera color grading: warm yellow tones, slight green tint, low contrast, muted colors, heavy film grain, slight blur and vignette, with highlight bloom caused by the flash.</p>
+        <div data-nosnippet><p>Edit this photo without changing the face. Portrait aspect ratio 2:3. Disposable camera aesthetic with a candid, warm, and slightly natural blur. The image should feel like a spontaneous moment captured on a single-use film camera, full of nostalgia, intimacy, and a cozy homey vibe.<br>A young woman is leaning affectionately on her partner’s shoulder. Her face is turned toward the camera with her head slightly tilted. One hand presses her cheek, creating a cute pose. Innocent expression, big open eyes, with a soft smile or neutral lips. The partner is only partially visible (shoulder and neck only), creating a private, intimate moment.<br>She is wearing a white or cream knit sweater with a simple design and small blue or black accents. Long black hair with natural bangs, slightly messy and not styled neatly. A few loose strands fall across the face for a raw, real film-photo look.<br>Makeup is very minimal and fresh. Natural skin texture (not flawless or overly smooth). Thin, natural eyebrows. Soft pink blush. Natural pink lips with a slight gloss. Wearing brown contact lenses.<br>Background is a home interior with plain walls. Warm indoor lighting, slightly uneven, with soft shadows and natural light noise typical of film. No professional lighting setup.<br>Shot on a disposable camera (Kodak / Fujifilm style). Fixed wide lens around 30mm. Soft focus, not overly sharp. Aperture f/8 (fixed disposable lens). ISO 400–800. Shutter speed 1/60. White balance set to warm / tungsten. Direct flash ON.<br>High-angle selfie taken from above, close-up framing of face and shoulders. Slightly tilted, off-center composition to enhance the spontaneous, unplanned feel.<br>Disposable camera color grading: warm yellow tones, slight green tint, low contrast, muted colors, heavy film grain, slight blur and vignette, with highlight bloom caused by the flash.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011688281227084147-1.jpg" alt="Edit this photo without changing the face. Portrait aspect ra..." loading="lazy"><img src="/images/tweet-2011688281227084147-2.jpg" alt="Edit this photo without changing the face. Portrait aspect ra..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1305,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

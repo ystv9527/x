@@ -7,11 +7,13 @@
     <title>&quot;image prompt data&quot;: { #1949 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image prompt data&quot;: { &quot;subjects&quot;: { &quot;human&quot;: { &quot;appearance&quot;: &quot;Young woman with long, tousled blonde hair falling o...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1949.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1949.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1949.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840435">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022336">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt_data\": {\n    \"subjects\": {\n      \"human\": {\n        \"appearance\": \"年轻女性，长而凌乱的金发披肩。\",\n        \"facial_features\": \"表情中性到严肃，鼻梁处有明显的红晕或泛红，嘴唇有光泽。\",\n        \"pose\": \"蹲伏或向前倾，手握着一条皮革牵引绳。\"\n      },\n      \"animal\": {\n        \"type\": \"虎斑猫（棕色、黑色和灰色条纹）。\",\n        \"expression\": \"张大嘴，发出嘶叫、喵叫或打哈欠；可见牙齿和舌头；表情激烈且充满能量。\",\n        \"position\": \"位于前景，坐着或站着并被牵着。\"\n      }\n    },\n    \"attire_and_accessories\": {\n      \"human_clothing\": \"白色尼龙运动夹克或风挡夹克，袖子上有向下延伸的黑色滚边/条纹；复古运动美学。\",\n      \"eyewear\": \"厚边白色矩形太阳镜，镜片呈琥珀/橙色色调。\",\n      \"animal_gear\": \"黑色皮革背带饰有金属铆钉，脖子上系着黑色佩斯利图案的头巾。\",\n      \"props\": \"紧绷的棕色皮革牵引绳。\"\n    },\n    \"setting_and_background\": {\n      \"location\": \"夜间城市外景。\",\n      \"background\": \"深色墙壁覆盖着色彩斑斓、模糊的涂鸦标签（可见蓝色、黄色、红色的油漆）。\",\n      \"atmosphere\": \"粗砺、地下、街头风格氛围。\"\n    },\n    \"lighting_and_style\": {\n      \"lighting_technique\": \"直接相机闪光（闪光摄影），硬光，高对比，明亮的前景主体对比暗色背景。\",\n      \"visual_style\": \"狗仔风格、抓拍、前卫时尚编辑风格，粗粝且写实。\",\n      \"color_palette\": \"高对比；明亮的白色、深邃的黑色、琥珀色调和沉闷的涂鸦色彩。\"\n    },\n    \"technical_specifications\": {\n      \"quality\": \"4K，超高清，照片级写实。\",\n      \"details\": \"高分辨率，女性与猫的焦点清晰，猫毛和夹克面料的纹理细节丰富。\",\n      \"aspect_ratio\": \"纵向。\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt_data&quot;: {<br>    &quot;subjects&quot;: {<br>      &quot;human&quot;: {<br>        &quot;appearance&quot;: &quot;年轻女性，长而凌乱的金发披肩。&quot;,<br>        &quot;facial_features&quot;: &quot;表情中性到严肃，鼻梁处有明显的红晕或泛红，嘴唇有光泽。&quot;,<br>        &quot;pose&quot;: &quot;蹲伏或向前倾，手握着一条皮革牵引绳。&quot;<br>      },<br>      &quot;animal&quot;: {<br>        &quot;type&quot;: &quot;虎斑猫（棕色、黑色和灰色条纹）。&quot;,<br>        &quot;expression&quot;: &quot;张大嘴，发出嘶叫、喵叫或打哈欠；可见牙齿和舌头；表情激烈且充满能量。&quot;,<br>        &quot;position&quot;: &quot;位于前景，坐着或站着并被牵着。&quot;<br>      }<br>    },<br>    &quot;attire_and_accessories&quot;: {<br>      &quot;human_clothing&quot;: &quot;白色尼龙运动夹克或风挡夹克，袖子上有向下延伸的黑色滚边/条纹；复古运动美学。&quot;,<br>      &quot;eyewear&quot;: &quot;厚边白色矩形太阳镜，镜片呈琥珀/橙色色调。&quot;,<br>      &quot;animal_gear&quot;: &quot;黑色皮革背带饰有金属铆钉，脖子上系着黑色佩斯利图案的头巾。&quot;,<br>      &quot;props&quot;: &quot;紧绷的棕色皮革牵引绳。&quot;<br>    },<br>    &quot;setting_and_background&quot;: {<br>      &quot;location&quot;: &quot;夜间城市外景。&quot;,<br>      &quot;background&quot;: &quot;深色墙壁覆盖着色彩斑斓、模糊的涂鸦标签（可见蓝色、黄色、红色的油漆）。&quot;,<br>      &quot;atmosphere&quot;: &quot;粗砺、地下、街头风格氛围。&quot;<br>    },<br>    &quot;lighting_and_style&quot;: {<br>      &quot;lighting_technique&quot;: &quot;直接相机闪光（闪光摄影），硬光，高对比，明亮的前景主体对比暗色背景。&quot;,<br>      &quot;visual_style&quot;: &quot;狗仔风格、抓拍、前卫时尚编辑风格，粗粝且写实。&quot;,<br>      &quot;color_palette&quot;: &quot;高对比；明亮的白色、深邃的黑色、琥珀色调和沉闷的涂鸦色彩。&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;quality&quot;: &quot;4K，超高清，照片级写实。&quot;,<br>      &quot;details&quot;: &quot;高分辨率，女性与猫的焦点清晰，猫毛和夹克面料的纹理细节丰富。&quot;,<br>      &quot;aspect_ratio&quot;: &quot;纵向。&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt_data&quot;: {<br>    &quot;subjects&quot;: {<br>      &quot;human&quot;: {<br>        &quot;appearance&quot;: &quot;年轻女性，长而凌乱的金发披肩。&quot;,<br>        &quot;facial_features&quot;: &quot;表情中性到严肃，鼻梁处有明显的红晕或泛红，嘴唇有光泽。&quot;,<br>        &quot;pose&quot;: &quot;蹲伏或向前倾，手握着一条皮革牵引绳。&quot;<br>      },<br>      &quot;animal&quot;: {<br>        &quot;type&quot;: &quot;虎斑猫（棕色、黑色和灰色条纹）。&quot;,<br>        &quot;expression&quot;: &quot;张大嘴，发出嘶叫、喵叫或打哈欠；可见牙齿和舌头；表情激烈且充满能量。&quot;,<br>        &quot;position&quot;: &quot;位于前景，坐着或站着并被牵着。&quot;<br>      }<br>    },<br>    &quot;attire_and_accessories&quot;: {<br>      &quot;human_clothing&quot;: &quot;白色尼龙运动夹克或风挡夹克，袖子上有向下延伸的黑色滚边/条纹；复古运动美学。&quot;,<br>      &quot;eyewear&quot;: &quot;厚边白色矩形太阳镜，镜片呈琥珀/橙色色调。&quot;,<br>      &quot;animal_gear&quot;: &quot;黑色皮革背带饰有金属铆钉，脖子上系着黑色佩斯利图案的头巾。&quot;,<br>      &quot;props&quot;: &quot;紧绷的棕色皮革牵引绳。&quot;<br>    },<br>    &quot;setting_and_background&quot;: {<br>      &quot;location&quot;: &quot;夜间城市外景。&quot;,<br>      &quot;background&quot;: &quot;深色墙壁覆盖着色彩斑斓、模糊的涂鸦标签（可见蓝色、黄色、红色的油漆）。&quot;,<br>      &quot;atmosphere&quot;: &quot;粗砺、地下、街头风格氛围。&quot;<br>    },<br>    &quot;lighting_and_style&quot;: {<br>      &quot;lighting_technique&quot;: &quot;直接相机闪光（闪光摄影），硬光，高对比，明亮的前景主体对比暗色背景。&quot;,<br>      &quot;visual_style&quot;: &quot;狗仔风格、抓拍、前卫时尚编辑风格，粗粝且写实。&quot;,<br>      &quot;color_palette&quot;: &quot;高对比；明亮的白色、深邃的黑色、琥珀色调和沉闷的涂鸦色彩。&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;quality&quot;: &quot;4K，超高清，照片级写实。&quot;,<br>      &quot;details&quot;: &quot;高分辨率，女性与猫的焦点清晰，猫毛和夹克面料的纹理细节丰富。&quot;,<br>      &quot;aspect_ratio&quot;: &quot;纵向。&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt_data\": {\n    \"subjects\": {\n      \"human\": {\n        \"appearance\": \"Young woman with long, tousled blonde hair falling over shoulders.\",\n        \"facial_features\": \"Neutral to serious expression, visible rosy mark or redness on the bridge of the nose, glossy lips.\",\n        \"pose\": \"Crouching or leaning forward, hand gripping a leather leash.\"\n      },\n      \"animal\": {\n        \"type\": \"Tabby cat (brown, black, and grey stripes).\",\n        \"expression\": \"Mouth wide open in a hiss, meow, or yawn; visible teeth and tongue; intense and energetic expression.\",\n        \"position\": \"Foreground, sitting or standing while leashed.\"\n      }\n    },\n    \"attire_and_accessories\": {\n      \"human_clothing\": \"White nylon track jacket or windbreaker with black piping/stripes running down the sleeves; retro sporty aesthetic.\",\n      \"eyewear\": \"Thick-framed white rectangular sunglasses with amber/orange tinted lenses.\",\n      \"animal_gear\": \"Black leather harness adorned with metal studs, black paisley bandana around the neck.\",\n      \"props\": \"Brown leather leash held taut.\"\n    },\n    \"setting_and_background\": {\n      \"location\": \"Urban exterior at night.\",\n      \"background\": \"Dark wall covered in colorful, blurred graffiti tags (blue, yellow, red paint visible).\",\n      \"atmosphere\": \"Gritty, underground, street-style vibe.\"\n    },\n    \"lighting_and_style\": {\n      \"lighting_technique\": \"Direct camera flash (flash photography), hard lighting with high contrast, bright foreground subjects against a dark background.\",\n      \"visual_style\": \"Paparazzi style, candid, edgy fashion editorial, raw and realistic.\",\n      \"color_palette\": \"High contrast; bright whites, deep blacks, amber tints, and muted graffiti colors.\"\n    },\n    \"technical_specifications\": {\n      \"quality\": \"4K, Ultra HD, photorealistic.\",\n      \"details\": \"High resolution, sharp focus on the woman and cat, detailed texture on the cat's fur and the jacket fabric.\",\n      \"aspect_ratio\": \"Portrait.\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt_data&quot;: {<br>    &quot;subjects&quot;: {<br>      &quot;human&quot;: {<br>        &quot;appearance&quot;: &quot;Young woman with long, tousled blonde hair falling over shoulders.&quot;,<br>        &quot;facial_features&quot;: &quot;Neutral to serious expression, visible rosy mark or redness on the bridge of the nose, glossy lips.&quot;,<br>        &quot;pose&quot;: &quot;Crouching or leaning forward, hand gripping a leather leash.&quot;<br>      },<br>      &quot;animal&quot;: {<br>        &quot;type&quot;: &quot;Tabby cat (brown, black, and grey stripes).&quot;,<br>        &quot;expression&quot;: &quot;Mouth wide open in a hiss, meow, or yawn; visible teeth and tongue; intense and energetic expression.&quot;,<br>        &quot;position&quot;: &quot;Foreground, sitting or standing while leashed.&quot;<br>      }<br>    },<br>    &quot;attire_and_accessories&quot;: {<br>      &quot;human_clothing&quot;: &quot;White nylon track jacket or windbreaker with black piping/stripes running down the sleeves; retro sporty aesthetic.&quot;,<br>      &quot;eyewear&quot;: &quot;Thick-framed white rectangular sunglasses with amber/orange tinted lenses.&quot;,<br>      &quot;animal_gear&quot;: &quot;Black leather harness adorned with metal studs, black paisley bandana around the neck.&quot;,<br>      &quot;props&quot;: &quot;Brown leather leash held taut.&quot;<br>    },<br>    &quot;setting_and_background&quot;: {<br>      &quot;location&quot;: &quot;Urban exterior at night.&quot;,<br>      &quot;background&quot;: &quot;Dark wall covered in colorful, blurred graffiti tags (blue, yellow, red paint visible).&quot;,<br>      &quot;atmosphere&quot;: &quot;Gritty, underground, street-style vibe.&quot;<br>    },<br>    &quot;lighting_and_style&quot;: {<br>      &quot;lighting_technique&quot;: &quot;Direct camera flash (flash photography), hard lighting with high contrast, bright foreground subjects against a dark background.&quot;,<br>      &quot;visual_style&quot;: &quot;Paparazzi style, candid, edgy fashion editorial, raw and realistic.&quot;,<br>      &quot;color_palette&quot;: &quot;High contrast; bright whites, deep blacks, amber tints, and muted graffiti colors.&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;quality&quot;: &quot;4K, Ultra HD, photorealistic.&quot;,<br>      &quot;details&quot;: &quot;High resolution, sharp focus on the woman and cat, detailed texture on the cat&#39;s fur and the jacket fabric.&quot;,<br>      &quot;aspect_ratio&quot;: &quot;Portrait.&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt_data&quot;: {<br>    &quot;subjects&quot;: {<br>      &quot;human&quot;: {<br>        &quot;appearance&quot;: &quot;Young woman with long, tousled blonde hair falling over shoulders.&quot;,<br>        &quot;facial_features&quot;: &quot;Neutral to serious expression, visible rosy mark or redness on the bridge of the nose, glossy lips.&quot;,<br>        &quot;pose&quot;: &quot;Crouching or leaning forward, hand gripping a leather leash.&quot;<br>      },<br>      &quot;animal&quot;: {<br>        &quot;type&quot;: &quot;Tabby cat (brown, black, and grey stripes).&quot;,<br>        &quot;expression&quot;: &quot;Mouth wide open in a hiss, meow, or yawn; visible teeth and tongue; intense and energetic expression.&quot;,<br>        &quot;position&quot;: &quot;Foreground, sitting or standing while leashed.&quot;<br>      }<br>    },<br>    &quot;attire_and_accessories&quot;: {<br>      &quot;human_clothing&quot;: &quot;White nylon track jacket or windbreaker with black piping/stripes running down the sleeves; retro sporty aesthetic.&quot;,<br>      &quot;eyewear&quot;: &quot;Thick-framed white rectangular sunglasses with amber/orange tinted lenses.&quot;,<br>      &quot;animal_gear&quot;: &quot;Black leather harness adorned with metal studs, black paisley bandana around the neck.&quot;,<br>      &quot;props&quot;: &quot;Brown leather leash held taut.&quot;<br>    },<br>    &quot;setting_and_background&quot;: {<br>      &quot;location&quot;: &quot;Urban exterior at night.&quot;,<br>      &quot;background&quot;: &quot;Dark wall covered in colorful, blurred graffiti tags (blue, yellow, red paint visible).&quot;,<br>      &quot;atmosphere&quot;: &quot;Gritty, underground, street-style vibe.&quot;<br>    },<br>    &quot;lighting_and_style&quot;: {<br>      &quot;lighting_technique&quot;: &quot;Direct camera flash (flash photography), hard lighting with high contrast, bright foreground subjects against a dark background.&quot;,<br>      &quot;visual_style&quot;: &quot;Paparazzi style, candid, edgy fashion editorial, raw and realistic.&quot;,<br>      &quot;color_palette&quot;: &quot;High contrast; bright whites, deep blacks, amber tints, and muted graffiti colors.&quot;<br>    },<br>    &quot;technical_specifications&quot;: {<br>      &quot;quality&quot;: &quot;4K, Ultra HD, photorealistic.&quot;,<br>      &quot;details&quot;: &quot;High resolution, sharp focus on the woman and cat, detailed texture on the cat&#39;s fur and the jacket fabric.&quot;,<br>      &quot;aspect_ratio&quot;: &quot;Portrait.&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2018681442151084258-1.jpg" alt="&quot;image prompt data&quot;: {" loading="lazy"><img src="/images/tweet-2018681442151084258-2.jpg" alt="&quot;image prompt data&quot;: {" loading="lazy"><img src="/images/tweet-2018681442151084258-3.jpg" alt="&quot;image prompt data&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1949,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

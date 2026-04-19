@@ -7,11 +7,13 @@
     <title>&quot;image prompt&quot;: { #1784 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image prompt&quot;: { &quot;main description&quot;: &quot;Poetic cinematic close up portrait of a young woman partially obscured by so...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1784.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1784.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1784.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840587">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022375">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt\": {\n    \"main_description\": \"诗意的电影感特写肖像：一位年轻女性的脸庞部分被前景柔和的粉色花朵和花瓣遮挡。\",\n    \"subject_details\": {\n      \"appearance\": \"年轻女性，富有表情的绿色眼眸，平静内省的表情，自然美\",\n      \"skin_texture\": \"超逼真的皮肤质感\",\n      \"apparel\": \"闪烁的玫瑰金高领连衣裙，在温暖的阳光下熠熠生辉\"\n    },\n    \"composition_and_framing\": {\n      \"framing\": \"特写，通过花朵缝隙清晰对焦面部\",\n      \"foreground\": \"柔和的粉色花朵与花瓣，前景柔焦\",\n      \"background\": \"深蓝色天空，奶油般的散景\",\n      \"depth\": \"浅景深\"\n    },\n    \"lighting_and_color\": {\n      \"lighting_source\": \"黄金时刻光线\",\n      \"effects\": \"花瓣在皮肤上投下细腻的阴影，礼服捕捉阳光\",\n      \"palette\": \"柔和粉色、暖桃色调、玫瑰金、深蓝色\"\n    },\n    \"atmosphere_and_style\": {\n      \"mood\": \"浪漫的春日氛围，空灵，诗意\",\n      \"style\": \"时尚编辑摄影\",\n      \"grading\": \"电影色调\"\n    },\n    \"technical_specs\": {\n      \"quality\": \"8K 分辨率，高细节\",\n      \"visuals\": \"超写实\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;main_description&quot;: &quot;诗意的电影感特写肖像：一位年轻女性的脸庞部分被前景柔和的粉色花朵和花瓣遮挡。&quot;,<br>    &quot;subject_details&quot;: {<br>      &quot;appearance&quot;: &quot;年轻女性，富有表情的绿色眼眸，平静内省的表情，自然美&quot;,<br>      &quot;skin_texture&quot;: &quot;超逼真的皮肤质感&quot;,<br>      &quot;apparel&quot;: &quot;闪烁的玫瑰金高领连衣裙，在温暖的阳光下熠熠生辉&quot;<br>    },<br>    &quot;composition_and_framing&quot;: {<br>      &quot;framing&quot;: &quot;特写，通过花朵缝隙清晰对焦面部&quot;,<br>      &quot;foreground&quot;: &quot;柔和的粉色花朵与花瓣，前景柔焦&quot;,<br>      &quot;background&quot;: &quot;深蓝色天空，奶油般的散景&quot;,<br>      &quot;depth&quot;: &quot;浅景深&quot;<br>    },<br>    &quot;lighting_and_color&quot;: {<br>      &quot;lighting_source&quot;: &quot;黄金时刻光线&quot;,<br>      &quot;effects&quot;: &quot;花瓣在皮肤上投下细腻的阴影，礼服捕捉阳光&quot;,<br>      &quot;palette&quot;: &quot;柔和粉色、暖桃色调、玫瑰金、深蓝色&quot;<br>    },<br>    &quot;atmosphere_and_style&quot;: {<br>      &quot;mood&quot;: &quot;浪漫的春日氛围，空灵，诗意&quot;,<br>      &quot;style&quot;: &quot;时尚编辑摄影&quot;,<br>      &quot;grading&quot;: &quot;电影色调&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;quality&quot;: &quot;8K 分辨率，高细节&quot;,<br>      &quot;visuals&quot;: &quot;超写实&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;main_description&quot;: &quot;诗意的电影感特写肖像：一位年轻女性的脸庞部分被前景柔和的粉色花朵和花瓣遮挡。&quot;,<br>    &quot;subject_details&quot;: {<br>      &quot;appearance&quot;: &quot;年轻女性，富有表情的绿色眼眸，平静内省的表情，自然美&quot;,<br>      &quot;skin_texture&quot;: &quot;超逼真的皮肤质感&quot;,<br>      &quot;apparel&quot;: &quot;闪烁的玫瑰金高领连衣裙，在温暖的阳光下熠熠生辉&quot;<br>    },<br>    &quot;composition_and_framing&quot;: {<br>      &quot;framing&quot;: &quot;特写，通过花朵缝隙清晰对焦面部&quot;,<br>      &quot;foreground&quot;: &quot;柔和的粉色花朵与花瓣，前景柔焦&quot;,<br>      &quot;background&quot;: &quot;深蓝色天空，奶油般的散景&quot;,<br>      &quot;depth&quot;: &quot;浅景深&quot;<br>    },<br>    &quot;lighting_and_color&quot;: {<br>      &quot;lighting_source&quot;: &quot;黄金时刻光线&quot;,<br>      &quot;effects&quot;: &quot;花瓣在皮肤上投下细腻的阴影，礼服捕捉阳光&quot;,<br>      &quot;palette&quot;: &quot;柔和粉色、暖桃色调、玫瑰金、深蓝色&quot;<br>    },<br>    &quot;atmosphere_and_style&quot;: {<br>      &quot;mood&quot;: &quot;浪漫的春日氛围，空灵，诗意&quot;,<br>      &quot;style&quot;: &quot;时尚编辑摄影&quot;,<br>      &quot;grading&quot;: &quot;电影色调&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;quality&quot;: &quot;8K 分辨率，高细节&quot;,<br>      &quot;visuals&quot;: &quot;超写实&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_prompt\": {\n    \"main_description\": \"Poetic cinematic close-up portrait of a young woman partially obscured by soft pink blossoms and petals in the foreground.\",\n    \"subject_details\": {\n      \"appearance\": \"Young woman, expressive green eyes, calm introspective expression, natural beauty\",\n      \"skin_texture\": \"Ultra-realistic skin texture\",\n      \"apparel\": \"Shimmering rose-gold high-neck dress that catches warm sunlight\"\n    },\n    \"composition_and_framing\": {\n      \"framing\": \"Close-up, face in sharp focus through gaps in the flowers\",\n      \"foreground\": \"Soft pink blossoms and petals, soft blur\",\n      \"background\": \"Deep blue sky, creamy bokeh\",\n      \"depth\": \"Shallow depth of field\"\n    },\n    \"lighting_and_color\": {\n      \"lighting_source\": \"Golden-hour lighting\",\n      \"effects\": \"Delicate shadows of petals across skin, dress catching sunlight\",\n      \"palette\": \"Pastel pinks, warm peach tones, rose-gold, deep blue\"\n    },\n    \"atmosphere_and_style\": {\n      \"mood\": \"Romantic spring atmosphere, ethereal, poetic\",\n      \"style\": \"Editorial fashion photography\",\n      \"grading\": \"Cinematic color grading\"\n    },\n    \"technical_specs\": {\n      \"quality\": \"8K resolution, high detail\",\n      \"visuals\": \"Ultra-realistic\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;main_description&quot;: &quot;Poetic cinematic close-up portrait of a young woman partially obscured by soft pink blossoms and petals in the foreground.&quot;,<br>    &quot;subject_details&quot;: {<br>      &quot;appearance&quot;: &quot;Young woman, expressive green eyes, calm introspective expression, natural beauty&quot;,<br>      &quot;skin_texture&quot;: &quot;Ultra-realistic skin texture&quot;,<br>      &quot;apparel&quot;: &quot;Shimmering rose-gold high-neck dress that catches warm sunlight&quot;<br>    },<br>    &quot;composition_and_framing&quot;: {<br>      &quot;framing&quot;: &quot;Close-up, face in sharp focus through gaps in the flowers&quot;,<br>      &quot;foreground&quot;: &quot;Soft pink blossoms and petals, soft blur&quot;,<br>      &quot;background&quot;: &quot;Deep blue sky, creamy bokeh&quot;,<br>      &quot;depth&quot;: &quot;Shallow depth of field&quot;<br>    },<br>    &quot;lighting_and_color&quot;: {<br>      &quot;lighting_source&quot;: &quot;Golden-hour lighting&quot;,<br>      &quot;effects&quot;: &quot;Delicate shadows of petals across skin, dress catching sunlight&quot;,<br>      &quot;palette&quot;: &quot;Pastel pinks, warm peach tones, rose-gold, deep blue&quot;<br>    },<br>    &quot;atmosphere_and_style&quot;: {<br>      &quot;mood&quot;: &quot;Romantic spring atmosphere, ethereal, poetic&quot;,<br>      &quot;style&quot;: &quot;Editorial fashion photography&quot;,<br>      &quot;grading&quot;: &quot;Cinematic color grading&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;quality&quot;: &quot;8K resolution, high detail&quot;,<br>      &quot;visuals&quot;: &quot;Ultra-realistic&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_prompt&quot;: {<br>    &quot;main_description&quot;: &quot;Poetic cinematic close-up portrait of a young woman partially obscured by soft pink blossoms and petals in the foreground.&quot;,<br>    &quot;subject_details&quot;: {<br>      &quot;appearance&quot;: &quot;Young woman, expressive green eyes, calm introspective expression, natural beauty&quot;,<br>      &quot;skin_texture&quot;: &quot;Ultra-realistic skin texture&quot;,<br>      &quot;apparel&quot;: &quot;Shimmering rose-gold high-neck dress that catches warm sunlight&quot;<br>    },<br>    &quot;composition_and_framing&quot;: {<br>      &quot;framing&quot;: &quot;Close-up, face in sharp focus through gaps in the flowers&quot;,<br>      &quot;foreground&quot;: &quot;Soft pink blossoms and petals, soft blur&quot;,<br>      &quot;background&quot;: &quot;Deep blue sky, creamy bokeh&quot;,<br>      &quot;depth&quot;: &quot;Shallow depth of field&quot;<br>    },<br>    &quot;lighting_and_color&quot;: {<br>      &quot;lighting_source&quot;: &quot;Golden-hour lighting&quot;,<br>      &quot;effects&quot;: &quot;Delicate shadows of petals across skin, dress catching sunlight&quot;,<br>      &quot;palette&quot;: &quot;Pastel pinks, warm peach tones, rose-gold, deep blue&quot;<br>    },<br>    &quot;atmosphere_and_style&quot;: {<br>      &quot;mood&quot;: &quot;Romantic spring atmosphere, ethereal, poetic&quot;,<br>      &quot;style&quot;: &quot;Editorial fashion photography&quot;,<br>      &quot;grading&quot;: &quot;Cinematic color grading&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;quality&quot;: &quot;8K resolution, high detail&quot;,<br>      &quot;visuals&quot;: &quot;Ultra-realistic&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2016357678680039438-1.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2016357678680039438-2.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2016357678680039438-3.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"><img src="/images/tweet-2016357678680039438-4.jpg" alt="&quot;image prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1784,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

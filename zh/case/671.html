@@ -7,11 +7,13 @@
     <title>Create a hyper realistic 3D diorama style model of [LANDMARK... #671 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create a hyper realistic 3D diorama style model of [LANDMARK NAME]. The model should appear as a miniature, set on a...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/671.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/671.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/671.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841624">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022638">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一个极致写实的3D景观微缩模型，主题为[LANDMARK NAME]。该模型应呈现为一个微缩模型，置于一块凸出的地截面之上，暴露出在茂盛草坪表层下的土壤和岩层。结构必须极其细致、比例准确，周围环绕着微小且真实的元素，如区域相应的路灯、本地树木、灌木、水景（如小喷泉）以及历史或文化相符的路径。场景应能唤起[LANDMARK NAME]周边景观的独特特征。环境中必须包含一个柔和的白色背景，以便将注意力完全聚焦于模型。请在景观盒前方的巨幅牌匾上，用大而粗体、优雅的字体清晰地写上“[LANDMARK NAME]”，显眼而引人注目，另外在[LANDMARK NAME]旁边设置一根高大而显眼的旗杆，旗帜清晰可见、在风中飘扬，挂着一面大型国旗。尺寸为1080x1080。", this)'>📋 复制</button>
         </div>
-        <p>创建一个极致写实的3D景观微缩模型，主题为[LANDMARK NAME]。该模型应呈现为一个微缩模型，置于一块凸出的地截面之上，暴露出在茂盛草坪表层下的土壤和岩层。结构必须极其细致、比例准确，周围环绕着微小且真实的元素，如区域相应的路灯、本地树木、灌木、水景（如小喷泉）以及历史或文化相符的路径。场景应能唤起[LANDMARK NAME]周边景观的独特特征。环境中必须包含一个柔和的白色背景，以便将注意力完全聚焦于模型。请在景观盒前方的巨幅牌匾上，用大而粗体、优雅的字体清晰地写上“[LANDMARK NAME]”，显眼而引人注目，另外在[LANDMARK NAME]旁边设置一根高大而显眼的旗杆，旗帜清晰可见、在风中飘扬，挂着一面大型国旗。尺寸为1080x1080。</p>
+        <div data-nosnippet><p>创建一个极致写实的3D景观微缩模型，主题为[LANDMARK NAME]。该模型应呈现为一个微缩模型，置于一块凸出的地截面之上，暴露出在茂盛草坪表层下的土壤和岩层。结构必须极其细致、比例准确，周围环绕着微小且真实的元素，如区域相应的路灯、本地树木、灌木、水景（如小喷泉）以及历史或文化相符的路径。场景应能唤起[LANDMARK NAME]周边景观的独特特征。环境中必须包含一个柔和的白色背景，以便将注意力完全聚焦于模型。请在景观盒前方的巨幅牌匾上，用大而粗体、优雅的字体清晰地写上“[LANDMARK NAME]”，显眼而引人注目，另外在[LANDMARK NAME]旁边设置一根高大而显眼的旗杆，旗帜清晰可见、在风中飘扬，挂着一面大型国旗。尺寸为1080x1080。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a hyper-realistic 3D diorama-style model of [LANDMARK NAME]. The model should appear as a miniature, set on a raised cross-section of earth that reveals soil and rock layers beneath a lush grassy surface. The structure must be highly detailed and proportionally accurate, surrounded by tiny realistic elements like region-appropriate street lamps, native trees, shrubs, water features like small fountains, and historically or culturally fitting pathways. The scene should evoke the unique character of [LANDMARK NAME]’s surrounding landscape. The environment must include a soft white background to draw full attention to the model. Include the text “[LANDMARK NAME]” in large, bold, elegant lettering prominently displayed on a big sign or billboard at the front of the diorama, easily readable and eye-catching, along with a large national flag on a tall, prominent flagpole positioned beside [LANDMARK NAME], clearly visible and waving. 1080x1080 dimension", this)'>📋 复制</button>
         </div>
-        <p>Create a hyper-realistic 3D diorama-style model of [LANDMARK NAME]. The model should appear as a miniature, set on a raised cross-section of earth that reveals soil and rock layers beneath a lush grassy surface. The structure must be highly detailed and proportionally accurate, surrounded by tiny realistic elements like region-appropriate street lamps, native trees, shrubs, water features like small fountains, and historically or culturally fitting pathways. The scene should evoke the unique character of [LANDMARK NAME]’s surrounding landscape. The environment must include a soft white background to draw full attention to the model. Include the text “[LANDMARK NAME]” in large, bold, elegant lettering prominently displayed on a big sign or billboard at the front of the diorama, easily readable and eye-catching, along with a large national flag on a tall, prominent flagpole positioned beside [LANDMARK NAME], clearly visible and waving. 1080x1080 dimension</p>
+        <div data-nosnippet><p>Create a hyper-realistic 3D diorama-style model of [LANDMARK NAME]. The model should appear as a miniature, set on a raised cross-section of earth that reveals soil and rock layers beneath a lush grassy surface. The structure must be highly detailed and proportionally accurate, surrounded by tiny realistic elements like region-appropriate street lamps, native trees, shrubs, water features like small fountains, and historically or culturally fitting pathways. The scene should evoke the unique character of [LANDMARK NAME]’s surrounding landscape. The environment must include a soft white background to draw full attention to the model. Include the text “[LANDMARK NAME]” in large, bold, elegant lettering prominently displayed on a big sign or billboard at the front of the diorama, easily readable and eye-catching, along with a large national flag on a tall, prominent flagpole positioned beside [LANDMARK NAME], clearly visible and waving. 1080x1080 dimension</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2007904078274445709-1.jpg" alt="Create a hyper realistic 3D diorama style model of [LANDMARK..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 671,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

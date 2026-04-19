@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区案例 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="10 条 社区案例 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/社区案例.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/社区案例.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/社区案例.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1776599397170">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"社区案例 · 图片生成提示词","description":"10 条 社区案例 相关案例","url":"https://gemnana.com/zh/image/社区案例.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2855</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2827</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">25</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/社区案例.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>社区案例 · 图片生成提示词</h1>
+      <p>10 条 社区案例 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="GPT Image 2">GPT Image 2 (10)</button><button type="button" class="tag-filter" data-tag="图片">图片 (10)</button><button type="button" class="tag-filter" data-tag="模型对比">模型对比 (10)</button><button type="button" class="tag-filter" data-tag="社区案例">社区案例 (10)</button><button type="button" class="tag-filter" data-tag="教程">教程 (10)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 10 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2861" data-search="案例2861 a/b 测试签名输出 gpt-image-2 社区实践案例，整理「a/b 测试签名输出」相关的提示词技巧、工具流程或实验观察。 x / @saskr_13 https://x.com/saskr_13/status/2044744396932079934 gpt image 2 图片 模型对比 社区案例 教程 をシェアします💗🤣 gpt image 2 はまだ正式リリースされてないと言っておりましたが、添付した 2 枚は「 a / b どちらが良いか」選ばせるタイプでした。 よく見ると右下にサインまで…！ これが噂の 2 なのでしょうか？ 懐かしの「私がどんなふうに扱ったか」シリーズです(笑) -------------------- ✅#prompt : 私があなたをどんなふうに扱ってきたか、4 コマ漫画風に描いてください。まずは 800 字くらいのプロットをテキストで出して、私が「描いて」と言ったらプロットに沿った 4 コマ漫画を描いてください。 --------------------" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2861.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case16/output.jpg" alt="A/B 测试签名输出" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2861</span></span><span class="case-title-text">A/B 测试签名输出</span></h3>
+          <p class="case-summary">GPT-Image-2 社区实践案例，整理「A/B 测试签名输出」相关的提示词技巧、工具流程或实验观察。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/saskr_13/status/2044744396932079934">X / @saskr_13</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>をシェアします💗🤣
+GPT Image 2 はまだ正式リリースされてないと言っておりましたが、添付した 2 枚は「 A / B どちらが良いか」選ばせるタイプでした。
+よく見ると右下にサインまで…！
+これが噂の 2 なのでしょうか？
+懐かしの「私がどんなふうに扱ったか」シリーズです(笑)
+--------------------
+✅#prompt : 
+私があなたをどんなふうに扱ってきたか、4...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2861.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2857" data-search="案例2857 gpt-image-2 vs nano banana 2 版面测试 gpt-image-2 社区对比案例，围绕「gpt-image-2 vs nano banana 2 版面测试」观察不同模型的画面质量、版面控制和提示词跟随效果。 x / @old_pgmrs_will https://x.com/old_pgmrs_will/status/2045379349399101707 gpt image 2 图片 模型对比 社区案例 教程 で ☝️gpt-image-2 👇nano banana 2 スタイルもかなり違うけど、細かいレイアウティングになるほど gpt-image-2 のほうがキレイに生成してくれる... そしてプロンプト追従性が圧倒的に高い" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2857.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case12/output.jpg" alt="GPT-Image-2 vs Nano Banana 2 版面测试" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2857</span></span><span class="case-title-text">GPT-Image-2 vs Nano Banana 2 版面测试</span></h3>
+          <p class="case-summary">GPT-Image-2 社区对比案例，围绕「GPT-Image-2 vs Nano Banana 2 版面测试」观察不同模型的画面质量、版面控制和提示词跟随效果。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/old_pgmrs_will/status/2045379349399101707">X / @old_pgmrs_will</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>で
+☝️GPT-Image-2
+👇Nano Banana 2
+スタイルもかなり違うけど、細かいレイアウティングになるほど GPT-Image-2 のほうがキレイに生成してくれる... そしてプロンプト追従性が圧倒的に高い</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2857.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2855" data-search="案例2855 gpt-image-2 细节展示 gpt-image-2 社区实践案例，整理「gpt-image-2 细节展示」相关的提示词技巧、工具流程或实验观察。 x / @liyue_ai https://x.com/liyue_ai/status/2045000106919997637 gpt image 2 图片 模型对比 社区案例 教程 ，gpt-image-2的效果真的太出彩了。 看到这张图的第一眼只觉得震撼， 眼睛的纹理，特效，文字样式竟然能精细准确到如此程度， 这完全就是奔着商业化方向去的。 提示词见原贴。" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2855.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case10/output.jpg" alt="GPT-Image-2 细节展示" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2855</span></span><span class="case-title-text">GPT-Image-2 细节展示</span></h3>
+          <p class="case-summary">GPT-Image-2 社区实践案例，整理「GPT-Image-2 细节展示」相关的提示词技巧、工具流程或实验观察。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045000106919997637">X / @liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>，gpt-image-2的效果真的太出彩了。
+看到这张图的第一眼只觉得震撼，
+眼睛的纹理，特效，文字样式竟然能精细准确到如此程度，
+这完全就是奔着商业化方向去的。
+提示词见原贴。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2855.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2852" data-search="案例2852 gpt image 2 vs nano banana 2 展示 gpt-image-2 社区对比案例，围绕「gpt image 2 vs nano banana 2 展示」观察不同模型的画面质量、版面控制和提示词跟随效果。 x / @zerolu_eth https://x.com/zerolu_eth/status/2044981771641798862 gpt image 2 图片 模型对比 社区案例 教程 gpt image v2 almost beat nano banana 2 in every categories! ui replication, casual photos, you name it! link in the comment👇" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2852.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case7/output.jpg" alt="GPT Image 2 vs Nano Banana 2 展示" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2852</span></span><span class="case-title-text">GPT Image 2 vs Nano Banana 2 展示</span></h3>
+          <p class="case-summary">GPT-Image-2 社区对比案例，围绕「GPT Image 2 vs Nano Banana 2 展示」观察不同模型的画面质量、版面控制和提示词跟随效果。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/zerolu_eth/status/2044981771641798862">X / @zerolu_eth</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>GPT Image v2 almost beat Nano Banana 2 in every categories!
+UI replication, casual photos, you name it!
+Link in the comment👇</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2852.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2851" data-search="案例2851 特朗普与拜登在椭圆形办公室握手 gpt-image-2 社区案例，围绕「特朗普与拜登在椭圆形办公室握手」展示模型效果、提示词跟随或创作流程。 x / @signedbywill https://x.com/signedbywill/status/2045013141629845844 gpt image 2 图片 模型对比 社区案例 教程 generate an image of donald trump shaking hands with a confused joe biden as they stand in the oval office" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2851.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case6/output.jpg" alt="特朗普与拜登在椭圆形办公室握手" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2851</span></span><span class="case-title-text">特朗普与拜登在椭圆形办公室握手</span></h3>
+          <p class="case-summary">GPT-Image-2 社区案例，围绕「特朗普与拜登在椭圆形办公室握手」展示模型效果、提示词跟随或创作流程。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/signedbywill/status/2045013141629845844">X / @signedbywill</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>generate an image of donald trump shaking hands with a confused joe biden as they stand in the oval office</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2851.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2850" data-search="案例2850 木制书架提示词测试 gpt-image-2 社区实践案例，整理「木制书架提示词测试」相关的提示词技巧、工具流程或实验观察。 x / @chetaslua https://x.com/chetaslua/status/2044331451077013749 gpt image 2 图片 模型对比 社区案例 教程 duct-tape-2 just solved the prompt one shot none of the current sota able to solve in 3 attempts nanobanana pro 🍌, nano banana 2🍌 &amp; gpt-image-1.5 prompt : a wooden bookshelf consisting of three shelves: on the top shelf, there should be one book, on the second shelf, there should be three books, a" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2850.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case5/output.jpg" alt="木制书架提示词测试" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2850</span></span><span class="case-title-text">木制书架提示词测试</span></h3>
+          <p class="case-summary">GPT-Image-2 社区实践案例，整理「木制书架提示词测试」相关的提示词技巧、工具流程或实验观察。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/chetaslua/status/2044331451077013749">X / @chetaslua</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Duct-tape-2 just solved the prompt ONE SHOT
+None of the current sota able to solve in 3 attempts
+Nanobanana Pro 🍌, Nano banana 2🍌 &amp; Gpt-image-1.5
+Prompt : A wooden bookshelf consisting of three shel...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2850.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2849" data-search="案例2849 gpt-image-2 发布展示 gpt-image-2 社区实践案例，整理「gpt-image-2 发布展示」相关的提示词技巧、工具流程或实验观察。 x / @mikelecheve https://x.com/mikelecheve/status/2044703635024621703 gpt image 2 图片 模型对比 社区案例 教程 gpt-image-2 is rolling out 👀 @openai just leveled up image generation: • handwritten notes • realistic ads • posters • anime art all in seconds. same prompt, wildly different styles." data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2849.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case4/output.jpg" alt="GPT-Image-2 发布展示" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2849</span></span><span class="case-title-text">GPT-Image-2 发布展示</span></h3>
+          <p class="case-summary">GPT-Image-2 社区实践案例，整理「GPT-Image-2 发布展示」相关的提示词技巧、工具流程或实验观察。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MikelEcheve/status/2044703635024621703">X / @MikelEcheve</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>GPT-Image-2 is rolling out 👀
+
+@OpenAI just leveled up image generation:
+
+• handwritten notes
+• realistic ads
+• posters
+• anime art
+
+All in seconds. Same prompt, wildly different styles.</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2849.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2848" data-search="案例2848 参考画面场景导演 gpt-image-2 社区案例，围绕「参考画面场景导演」展示模型效果、提示词跟随或创作流程。 x / @hulijason https://x.com/hulijason/status/2044894209673490495 gpt image 2 图片 模型对比 社区案例 教程 i&#39;m honestly blown away. gpt image 2 doesn&#39;t &quot;prompt&quot; scenes, it directs them. mark actions and camera moves right on a reference frame → 10x more context and near-total control in one shot #gptimage2 #seedance2" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2848.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case3/output.jpg" alt="参考画面场景导演" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2848</span></span><span class="case-title-text">参考画面场景导演</span></h3>
+          <p class="case-summary">GPT-Image-2 社区案例，围绕「参考画面场景导演」展示模型效果、提示词跟随或创作流程。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/HuliJason/status/2044894209673490495">X / @HuliJason</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>I&#39;m honestly blown away.
+GPT IMAGE 2 doesn&#39;t &quot;prompt&quot; scenes, it directs them.
+Mark actions and camera moves right on a reference frame → 10x more context and near-total control in one shot #gptimage2...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2848.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2847" data-search="案例2847 在参考画面上直接导演 gpt-image-2 社区案例，围绕「在参考画面上直接导演」展示模型效果、提示词跟随或创作流程。 x / @samifox_ai https://x.com/samifox_ai/status/2044898023159853100 gpt image 2 图片 模型对比 社区案例 教程 i&#39;m honestly blown away. gpt image 2 doesn&#39;t &quot;prompt&quot; scenes, it directs them. mark actions and camera moves right on a reference frame → 10x more context and near-total control in one shot #gptimage2 #seedance2" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2847.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case2/output.jpg" alt="在参考画面上直接导演" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2847</span></span><span class="case-title-text">在参考画面上直接导演</span></h3>
+          <p class="case-summary">GPT-Image-2 社区案例，围绕「在参考画面上直接导演」展示模型效果、提示词跟随或创作流程。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/samifox_ai/status/2044898023159853100">X / @samifox_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>I&#39;m honestly blown away. GPT IMAGE 2 doesn&#39;t &quot;prompt&quot; scenes, it directs them. Mark actions and camera moves right on a reference frame → 10x more context and near-total control in one shot #gptimage2...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2847.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2846" data-search="案例2846 模型比较：gpt image 2 vs nano banana 2 gpt-image-2 社区对比案例，围绕「模型比较：gpt image 2 vs nano banana 2」观察不同模型的画面质量、版面控制和提示词跟随效果。 x / @desds1678 https://x.com/desds1678/status/2045144798454280411 gpt image 2 图片 模型对比 社区案例 教程 原來chatgpt嘅圖像生成model又更新咗 講多無謂! 直接用同樣嘅prompt同參考圖測試下 (左) gpt image 2 (右) nano banana 2 本身gpt image都有主體同背景光線強度不一嘅問題 而家仲要整到個主體嘅頭,身,腳嘅比例好奇怪😮 我會用災難級嚟形容gpt image 2嘅表現" data-tags="GPT Image 2|图片|模型对比|社区案例|教程">
+      <a class="case-card-link" href="/zh/case/2846.html">
+        <div class="case-thumbnail"><img src="https://raw.githubusercontent.com/EvoLinkAI/awesome-gpt-image-2-prompts/main/images/comparison_case1/output.jpg" alt="模型比较：GPT Image 2 vs Nano Banana 2" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2846</span></span><span class="case-title-text">模型比较：GPT Image 2 vs Nano Banana 2</span></h3>
+          <p class="case-summary">GPT-Image-2 社区对比案例，围绕「模型比较：GPT Image 2 vs Nano Banana 2」观察不同模型的画面质量、版面控制和提示词跟随效果。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/desds1678/status/2045144798454280411">X / @desds1678</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image 2</span><span class="tag">图片</span><span class="tag">模型对比</span><span class="tag">社区案例</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>原來ChatGPT嘅圖像生成Model又更新咗
+講多無謂! 直接用同樣嘅Prompt同參考圖測試下
+(左) GPT Image 2 (右) Nano Banana 2
+本身GPT Image都有主體同背景光線強度不一嘅問題
+而家仲要整到個主體嘅頭,身,腳嘅比例好奇怪😮
+我會用災難級嚟形容GPT Image 2嘅表現</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2846.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

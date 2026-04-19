@@ -7,11 +7,13 @@
     <title>&quot;portrait prompt&quot;: { #1747 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;portrait prompt&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;Based on &lt;User Portrait , a young Asian woman in glamorous beauty...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1747.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1747.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1747.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844823">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023591">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"portrait_prompt\": {\n    \"subject\": {\n      \"description\": \"基于<User Portrait>，一位年轻的亚洲女性，华丽美容特写，一只手优雅地遮住右眼，手指轻柔分开\",\n      \"features\": {\n        \"hair\": \"发丝松散，垂落在脸部两侧勾勒脸型\",\n        \"eyes\": \"内眼角及下眼睑有闪亮亮片眼影，睫毛卷翘且修长\",\n        \"expression\": \"嘴唇微微张开，性感嘟嘴，唇面有光泽并带有闪粉颗粒\",\n        \"makeup\": \"水润光泽的肌肤，眼睑和唇部点缀闪粉，自然眉形\",\n        \"accessories\": \"小金色环形耳环，可见手指上的银金色闪粉美甲\"\n      },\n      \"pose\": \"一只手抬至面部遮住一只眼，手指优雅分开\"\n    },\n    \"attire\": {\n      \"type\": \"基于用户上传的服装参考\",\n      \"details\": [\"柔和粉色的蓬松/羽毛质感\", \"露肩或低胸设计\"],\n      \"color\": \"以服装参考为准\"\n    },\n    \"composition\": {\n      \"shot_type\": \"极近距离特写美容人像\",\n      \"focal_length\": \"85mm f/1.4\",\n      \"camera_angle\": \"轻微侧角视角，面部充满画面\",\n      \"framing\": \"粉色蓬松的前景元素形成柔和的散景边框\"\n    },\n    \"lighting\": {\n      \"type\": \"柔和漫射的影棚灯光\",\n      \"direction\": \"正面照明并略有侧面补光\",\n      \"mood\": \"温柔华丽的光泽，强调闪粉妆容的高光\"\n    },\n    \"color_palette\": {\n      \"film_simulation\": \"ASTIA\",\n      \"style\": \"富士ASTIA/柔和风格的色彩分级，柔和对比，温和的粉彩饱和度，温暖且细腻的肤色，通透的高光，均衡的阴影，优雅的人像氛围，精致且沉静的色彩表现\",\n      \"tones\": [\"柔和粉色\", \"温暖象牙色肤色\", \"银金色闪粉点缀\"]\n    },\n    \"environment\": {\n      \"setting\": \"美容摄影工作室\",\n      \"background\": \"暗色模糊背景\",\n      \"atmosphere\": \"柔和粉色蓬松的前景散景元素\"\n    },\n    \"mood\": \"华丽的韩系美妆编辑风格，既性感又优雅\",\n    \"technical_tags\": [\"8K\", \"摄影写实\", \"美妆摄影\", \"极浅景深\", \"皮肤质感细节\", \"闪粉颗粒清晰\"],\n    \"character_reference\": \"基于用户上传的角色参考\",\n    \"clothing_reference\": \"基于用户上传的服装参考\",\n    \"negative_prompt\": \"高对比、颗粒感生硬、偏橙色肤色、蜡状皮肤、过度锐化、颜色过于鲜艳、强烈刺眼的光照\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;portrait_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;基于&lt;User Portrait&gt;，一位年轻的亚洲女性，华丽美容特写，一只手优雅地遮住右眼，手指轻柔分开&quot;,<br>      &quot;features&quot;: {<br>        &quot;hair&quot;: &quot;发丝松散，垂落在脸部两侧勾勒脸型&quot;,<br>        &quot;eyes&quot;: &quot;内眼角及下眼睑有闪亮亮片眼影，睫毛卷翘且修长&quot;,<br>        &quot;expression&quot;: &quot;嘴唇微微张开，性感嘟嘴，唇面有光泽并带有闪粉颗粒&quot;,<br>        &quot;makeup&quot;: &quot;水润光泽的肌肤，眼睑和唇部点缀闪粉，自然眉形&quot;,<br>        &quot;accessories&quot;: &quot;小金色环形耳环，可见手指上的银金色闪粉美甲&quot;<br>      },<br>      &quot;pose&quot;: &quot;一只手抬至面部遮住一只眼，手指优雅分开&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;type&quot;: &quot;基于用户上传的服装参考&quot;,<br>      &quot;details&quot;: [&quot;柔和粉色的蓬松/羽毛质感&quot;, &quot;露肩或低胸设计&quot;],<br>      &quot;color&quot;: &quot;以服装参考为准&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;shot_type&quot;: &quot;极近距离特写美容人像&quot;,<br>      &quot;focal_length&quot;: &quot;85mm f/1.4&quot;,<br>      &quot;camera_angle&quot;: &quot;轻微侧角视角，面部充满画面&quot;,<br>      &quot;framing&quot;: &quot;粉色蓬松的前景元素形成柔和的散景边框&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;柔和漫射的影棚灯光&quot;,<br>      &quot;direction&quot;: &quot;正面照明并略有侧面补光&quot;,<br>      &quot;mood&quot;: &quot;温柔华丽的光泽，强调闪粉妆容的高光&quot;<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;film_simulation&quot;: &quot;ASTIA&quot;,<br>      &quot;style&quot;: &quot;富士ASTIA/柔和风格的色彩分级，柔和对比，温和的粉彩饱和度，温暖且细腻的肤色，通透的高光，均衡的阴影，优雅的人像氛围，精致且沉静的色彩表现&quot;,<br>      &quot;tones&quot;: [&quot;柔和粉色&quot;, &quot;温暖象牙色肤色&quot;, &quot;银金色闪粉点缀&quot;]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;美容摄影工作室&quot;,<br>      &quot;background&quot;: &quot;暗色模糊背景&quot;,<br>      &quot;atmosphere&quot;: &quot;柔和粉色蓬松的前景散景元素&quot;<br>    },<br>    &quot;mood&quot;: &quot;华丽的韩系美妆编辑风格，既性感又优雅&quot;,<br>    &quot;technical_tags&quot;: [&quot;8K&quot;, &quot;摄影写实&quot;, &quot;美妆摄影&quot;, &quot;极浅景深&quot;, &quot;皮肤质感细节&quot;, &quot;闪粉颗粒清晰&quot;],<br>    &quot;character_reference&quot;: &quot;基于用户上传的角色参考&quot;,<br>    &quot;clothing_reference&quot;: &quot;基于用户上传的服装参考&quot;,<br>    &quot;negative_prompt&quot;: &quot;高对比、颗粒感生硬、偏橙色肤色、蜡状皮肤、过度锐化、颜色过于鲜艳、强烈刺眼的光照&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;portrait_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;基于&lt;User Portrait&gt;，一位年轻的亚洲女性，华丽美容特写，一只手优雅地遮住右眼，手指轻柔分开&quot;,<br>      &quot;features&quot;: {<br>        &quot;hair&quot;: &quot;发丝松散，垂落在脸部两侧勾勒脸型&quot;,<br>        &quot;eyes&quot;: &quot;内眼角及下眼睑有闪亮亮片眼影，睫毛卷翘且修长&quot;,<br>        &quot;expression&quot;: &quot;嘴唇微微张开，性感嘟嘴，唇面有光泽并带有闪粉颗粒&quot;,<br>        &quot;makeup&quot;: &quot;水润光泽的肌肤，眼睑和唇部点缀闪粉，自然眉形&quot;,<br>        &quot;accessories&quot;: &quot;小金色环形耳环，可见手指上的银金色闪粉美甲&quot;<br>      },<br>      &quot;pose&quot;: &quot;一只手抬至面部遮住一只眼，手指优雅分开&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;type&quot;: &quot;基于用户上传的服装参考&quot;,<br>      &quot;details&quot;: [&quot;柔和粉色的蓬松/羽毛质感&quot;, &quot;露肩或低胸设计&quot;],<br>      &quot;color&quot;: &quot;以服装参考为准&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;shot_type&quot;: &quot;极近距离特写美容人像&quot;,<br>      &quot;focal_length&quot;: &quot;85mm f/1.4&quot;,<br>      &quot;camera_angle&quot;: &quot;轻微侧角视角，面部充满画面&quot;,<br>      &quot;framing&quot;: &quot;粉色蓬松的前景元素形成柔和的散景边框&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;柔和漫射的影棚灯光&quot;,<br>      &quot;direction&quot;: &quot;正面照明并略有侧面补光&quot;,<br>      &quot;mood&quot;: &quot;温柔华丽的光泽，强调闪粉妆容的高光&quot;<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;film_simulation&quot;: &quot;ASTIA&quot;,<br>      &quot;style&quot;: &quot;富士ASTIA/柔和风格的色彩分级，柔和对比，温和的粉彩饱和度，温暖且细腻的肤色，通透的高光，均衡的阴影，优雅的人像氛围，精致且沉静的色彩表现&quot;,<br>      &quot;tones&quot;: [&quot;柔和粉色&quot;, &quot;温暖象牙色肤色&quot;, &quot;银金色闪粉点缀&quot;]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;美容摄影工作室&quot;,<br>      &quot;background&quot;: &quot;暗色模糊背景&quot;,<br>      &quot;atmosphere&quot;: &quot;柔和粉色蓬松的前景散景元素&quot;<br>    },<br>    &quot;mood&quot;: &quot;华丽的韩系美妆编辑风格，既性感又优雅&quot;,<br>    &quot;technical_tags&quot;: [&quot;8K&quot;, &quot;摄影写实&quot;, &quot;美妆摄影&quot;, &quot;极浅景深&quot;, &quot;皮肤质感细节&quot;, &quot;闪粉颗粒清晰&quot;],<br>    &quot;character_reference&quot;: &quot;基于用户上传的角色参考&quot;,<br>    &quot;clothing_reference&quot;: &quot;基于用户上传的服装参考&quot;,<br>    &quot;negative_prompt&quot;: &quot;高对比、颗粒感生硬、偏橙色肤色、蜡状皮肤、过度锐化、颜色过于鲜艳、强烈刺眼的光照&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"portrait_prompt\": {\n    \"subject\": {\n      \"description\": \"Based on <User Portrait>, a young Asian woman in glamorous beauty closeup, one hand elegantly covering right eye with fingers spread apart\",\n      \"features\": {\n        \"hair\": \"hair with loose strands framing face\",\n        \"eyes\": \"Sparkling glitter eyeshadow on inner corners and under eyes, long curled lashes\",\n        \"expression\": \"Lips slightly parted in sensual pout, glossy lips with sparkle particles\",\n        \"makeup\": \"Dewy glowing skin, glitter accents on eyelids and lips, natural brows\",\n        \"accessories\": \"Small gold hoop earring, silver-gold glitter nail art on visible fingers\"\n      },\n      \"pose\": \"Hand raised to face covering one eye, fingers gracefully spread\"\n    },\n    \"attire\": {\n      \"type\": \"Based on user-uploaded clothing reference\",\n      \"details\": [\"Soft pink fluffy/feathery texture\", \"Off-shoulder or low neckline\"],\n      \"color\": \"As per clothing reference\"\n    },\n    \"composition\": {\n      \"shot_type\": \"Extreme close-up beauty portrait\",\n      \"focal_length\": \"85mm f/1.4\",\n      \"camera_angle\": \"Slightly angled side view, face filling frame\",\n      \"framing\": \"Pink fluffy foreground element creating soft bokeh frame\"\n    },\n    \"lighting\": {\n      \"type\": \"Soft diffused studio lighting\",\n      \"direction\": \"Front-facing with slight side fill\",\n      \"mood\": \"Gentle glamorous glow, highlights on glitter makeup\"\n    },\n    \"color_palette\": {\n      \"film_simulation\": \"ASTIA\",\n      \"style\": \"Fujifilm ASTIA/Soft inspired color grading, soft contrast, gentle pastel saturation, warm and smooth skin tones, airy highlights, balanced shadows, elegant portrait feel, refined and calm color response\",\n      \"tones\": [\"Soft pink\", \"Warm ivory skin\", \"Silver-gold sparkle accents\"]\n    },\n    \"environment\": {\n      \"setting\": \"Beauty photography studio\",\n      \"background\": \"Dark blurred backdrop\",\n      \"atmosphere\": \"Soft pink fluffy foreground bokeh element\"\n    },\n    \"mood\": \"Glamorous K-beauty editorial, sensual yet elegant\",\n    \"technical_tags\": [\"8K\", \"photorealistic\", \"beauty photography\", \"extreme shallow depth of field\", \"skin texture detail\", \"glitter particles sharp\"],\n    \"character_reference\": \"Based on user-uploaded character reference\",\n    \"clothing_reference\": \"Based on user-uploaded clothing reference\",\n    \"negative_prompt\": \"harsh contrast, crunchy texture, orange skin, waxy skin, oversharpening, overly vivid colors, harsh lighting\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;portrait_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Based on &lt;User Portrait&gt;, a young Asian woman in glamorous beauty closeup, one hand elegantly covering right eye with fingers spread apart&quot;,<br>      &quot;features&quot;: {<br>        &quot;hair&quot;: &quot;hair with loose strands framing face&quot;,<br>        &quot;eyes&quot;: &quot;Sparkling glitter eyeshadow on inner corners and under eyes, long curled lashes&quot;,<br>        &quot;expression&quot;: &quot;Lips slightly parted in sensual pout, glossy lips with sparkle particles&quot;,<br>        &quot;makeup&quot;: &quot;Dewy glowing skin, glitter accents on eyelids and lips, natural brows&quot;,<br>        &quot;accessories&quot;: &quot;Small gold hoop earring, silver-gold glitter nail art on visible fingers&quot;<br>      },<br>      &quot;pose&quot;: &quot;Hand raised to face covering one eye, fingers gracefully spread&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;type&quot;: &quot;Based on user-uploaded clothing reference&quot;,<br>      &quot;details&quot;: [&quot;Soft pink fluffy/feathery texture&quot;, &quot;Off-shoulder or low neckline&quot;],<br>      &quot;color&quot;: &quot;As per clothing reference&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;shot_type&quot;: &quot;Extreme close-up beauty portrait&quot;,<br>      &quot;focal_length&quot;: &quot;85mm f/1.4&quot;,<br>      &quot;camera_angle&quot;: &quot;Slightly angled side view, face filling frame&quot;,<br>      &quot;framing&quot;: &quot;Pink fluffy foreground element creating soft bokeh frame&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Soft diffused studio lighting&quot;,<br>      &quot;direction&quot;: &quot;Front-facing with slight side fill&quot;,<br>      &quot;mood&quot;: &quot;Gentle glamorous glow, highlights on glitter makeup&quot;<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;film_simulation&quot;: &quot;ASTIA&quot;,<br>      &quot;style&quot;: &quot;Fujifilm ASTIA/Soft inspired color grading, soft contrast, gentle pastel saturation, warm and smooth skin tones, airy highlights, balanced shadows, elegant portrait feel, refined and calm color response&quot;,<br>      &quot;tones&quot;: [&quot;Soft pink&quot;, &quot;Warm ivory skin&quot;, &quot;Silver-gold sparkle accents&quot;]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Beauty photography studio&quot;,<br>      &quot;background&quot;: &quot;Dark blurred backdrop&quot;,<br>      &quot;atmosphere&quot;: &quot;Soft pink fluffy foreground bokeh element&quot;<br>    },<br>    &quot;mood&quot;: &quot;Glamorous K-beauty editorial, sensual yet elegant&quot;,<br>    &quot;technical_tags&quot;: [&quot;8K&quot;, &quot;photorealistic&quot;, &quot;beauty photography&quot;, &quot;extreme shallow depth of field&quot;, &quot;skin texture detail&quot;, &quot;glitter particles sharp&quot;],<br>    &quot;character_reference&quot;: &quot;Based on user-uploaded character reference&quot;,<br>    &quot;clothing_reference&quot;: &quot;Based on user-uploaded clothing reference&quot;,<br>    &quot;negative_prompt&quot;: &quot;harsh contrast, crunchy texture, orange skin, waxy skin, oversharpening, overly vivid colors, harsh lighting&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;portrait_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Based on &lt;User Portrait&gt;, a young Asian woman in glamorous beauty closeup, one hand elegantly covering right eye with fingers spread apart&quot;,<br>      &quot;features&quot;: {<br>        &quot;hair&quot;: &quot;hair with loose strands framing face&quot;,<br>        &quot;eyes&quot;: &quot;Sparkling glitter eyeshadow on inner corners and under eyes, long curled lashes&quot;,<br>        &quot;expression&quot;: &quot;Lips slightly parted in sensual pout, glossy lips with sparkle particles&quot;,<br>        &quot;makeup&quot;: &quot;Dewy glowing skin, glitter accents on eyelids and lips, natural brows&quot;,<br>        &quot;accessories&quot;: &quot;Small gold hoop earring, silver-gold glitter nail art on visible fingers&quot;<br>      },<br>      &quot;pose&quot;: &quot;Hand raised to face covering one eye, fingers gracefully spread&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;type&quot;: &quot;Based on user-uploaded clothing reference&quot;,<br>      &quot;details&quot;: [&quot;Soft pink fluffy/feathery texture&quot;, &quot;Off-shoulder or low neckline&quot;],<br>      &quot;color&quot;: &quot;As per clothing reference&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;shot_type&quot;: &quot;Extreme close-up beauty portrait&quot;,<br>      &quot;focal_length&quot;: &quot;85mm f/1.4&quot;,<br>      &quot;camera_angle&quot;: &quot;Slightly angled side view, face filling frame&quot;,<br>      &quot;framing&quot;: &quot;Pink fluffy foreground element creating soft bokeh frame&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Soft diffused studio lighting&quot;,<br>      &quot;direction&quot;: &quot;Front-facing with slight side fill&quot;,<br>      &quot;mood&quot;: &quot;Gentle glamorous glow, highlights on glitter makeup&quot;<br>    },<br>    &quot;color_palette&quot;: {<br>      &quot;film_simulation&quot;: &quot;ASTIA&quot;,<br>      &quot;style&quot;: &quot;Fujifilm ASTIA/Soft inspired color grading, soft contrast, gentle pastel saturation, warm and smooth skin tones, airy highlights, balanced shadows, elegant portrait feel, refined and calm color response&quot;,<br>      &quot;tones&quot;: [&quot;Soft pink&quot;, &quot;Warm ivory skin&quot;, &quot;Silver-gold sparkle accents&quot;]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;Beauty photography studio&quot;,<br>      &quot;background&quot;: &quot;Dark blurred backdrop&quot;,<br>      &quot;atmosphere&quot;: &quot;Soft pink fluffy foreground bokeh element&quot;<br>    },<br>    &quot;mood&quot;: &quot;Glamorous K-beauty editorial, sensual yet elegant&quot;,<br>    &quot;technical_tags&quot;: [&quot;8K&quot;, &quot;photorealistic&quot;, &quot;beauty photography&quot;, &quot;extreme shallow depth of field&quot;, &quot;skin texture detail&quot;, &quot;glitter particles sharp&quot;],<br>    &quot;character_reference&quot;: &quot;Based on user-uploaded character reference&quot;,<br>    &quot;clothing_reference&quot;: &quot;Based on user-uploaded clothing reference&quot;,<br>    &quot;negative_prompt&quot;: &quot;harsh contrast, crunchy texture, orange skin, waxy skin, oversharpening, overly vivid colors, harsh lighting&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2016001706392498633-1.jpg" alt="&quot;portrait prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1747,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

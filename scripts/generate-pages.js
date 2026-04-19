@@ -22,6 +22,8 @@ const EN_TRANSLATION_CACHE_FILE = path.join(DATA_DIR, 'en-title-summary-cache.js
 const EN_TRANSLATE_RECENT_LIMIT = 80;
 const EN_TRANSLATE_MAX_NEW_PER_RUN = 20;
 const PAGE_SIZE = Number(process.env.PAGE_SIZE || 120);
+const ROBOTS_INDEXABLE = 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
+const ROBOTS_NOINDEX = 'noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1';
 
 const LANGS = {
   zh: {
@@ -59,8 +61,11 @@ const LANGS = {
     backToList: '← 返回列表',
     detailNoPrompt: '该案例暂无可展示的提示词内容。',
     localPublish: '发布到公众号草稿箱',
+    localPublishXhsImage: '发布图文到小红书',
+    localPublishXhsVideo: '发布视频到小红书',
     localDelete: '删除该案例',
     publishLoading: '发布中...',
+    publishXhsLoading: '发布到小红书中...',
     deleteConfirm: '确认删除该案例？此操作不可恢复。',
     deleteSuccess: '删除成功',
     settingsLabel: '⚙️ 设置',
@@ -107,8 +112,11 @@ const LANGS = {
     backToList: '← Back to list',
     detailNoPrompt: 'No prompt content is available for this case.',
     localPublish: 'Publish to WeChat Draft',
+    localPublishXhsImage: 'Publish Image Post to XHS',
+    localPublishXhsVideo: 'Publish Video Post to XHS',
     localDelete: 'Delete this case',
     publishLoading: 'Publishing...',
+    publishXhsLoading: 'Publishing to XHS...',
     deleteConfirm: 'Delete this case? This action cannot be undone.',
     deleteSuccess: 'Deleted successfully',
     settingsLabel: '⚙️ Settings',
@@ -619,6 +627,7 @@ function getChunkBaseUrl(lang, listKey) {
 }
 
 function getAbsoluteAssetPath(assetPath) {
+  if (/^https?:\/\//i.test(String(assetPath || ''))) return String(assetPath);
   const clean = String(assetPath || '').replace(/^\/+/, '');
   return `/${clean}`;
 }
@@ -894,7 +903,7 @@ function renderFilterScript(lang, options = {}) {
   `;
 }
 
-function renderHead({ lang, title, description, canonicalPath }) {
+function renderHead({ lang, title, description, canonicalPath, robots = ROBOTS_INDEXABLE }) {
   const t = LANGS[lang];
   const canonical = `${SITE_URL}/${lang}${canonicalPath}`;
   const zhAlt = `${SITE_URL}/zh${canonicalPath}`;
@@ -916,6 +925,8 @@ function renderHead({ lang, title, description, canonicalPath }) {
     <title>${escapeHtml(title)} | ${escapeHtml(t.titleSuffix)}</title>
     <meta name="description" content="${escapeAttr(description)}">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="${escapeAttr(robots)}">
+    <meta name="googlebot" content="${escapeAttr(robots)}">
     <link rel="canonical" href="${canonical}">
     <link rel="alternate" hreflang="zh-CN" href="${zhAlt}">
     <link rel="alternate" hreflang="en" href="${enAlt}">
@@ -981,7 +992,7 @@ function renderHead({ lang, title, description, canonicalPath }) {
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -1054,6 +1065,7 @@ function renderPageTemplate({
   title,
   description,
   canonicalPath,
+  robots = ROBOTS_INDEXABLE,
   currentNav,
   stats,
   content,
@@ -1063,7 +1075,7 @@ function renderPageTemplate({
   return `<!DOCTYPE html>
 <html lang="${LANGS[lang].htmlLang}">
 <head>
-${renderHead({ lang, title, description, canonicalPath })}
+${renderHead({ lang, title, description, canonicalPath, robots })}
 </head>
 <body class="layout-sidebar">
 ${renderSidebar(lang, currentNav, stats, canonicalPath)}
@@ -1159,6 +1171,7 @@ function renderListPage({
   enableLoadMore = false
 }) {
   const t = LANGS[lang];
+  const isPagedPage = Number(currentPage) > 1;
   const cardsHtml = items.map((item) => renderCaseCard(item, lang)).join('\n');
   const paginationHtml = renderPagination(lang, canonicalPath, currentPage, totalPages);
   const hasMore = enableLoadMore && currentPage < totalPages;
@@ -1190,6 +1203,7 @@ function renderListPage({
     title,
     description,
     canonicalPath,
+    robots: isPagedPage ? ROBOTS_NOINDEX : ROBOTS_INDEXABLE,
     currentNav,
     stats,
     content,
@@ -1218,6 +1232,8 @@ function renderDetailPage({ lang, item, stats }) {
 
   const images = Array.isArray(item.images) ? item.images : [];
   const videos = Array.isArray(item.videos) ? item.videos : [];
+  const hasImageMedia = images.length > 0;
+  const hasVideoMedia = videos.length > 0;
 
   const imagesHtml = images.length
     ? `<div class="detail-block"><h3>📷 ${t.imagesHeading}</h3><div class="detail-media-grid">${images.map((img) => `<img src="${getAbsoluteAssetPath(img)}" alt="${escapeAttr(item.title || '')}" loading="lazy">`).join('')}</div></div>`
@@ -1246,6 +1262,8 @@ function renderDetailPage({ lang, item, stats }) {
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">${t.localPublish}</button>
+        ${hasImageMedia ? `<button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">${t.localPublishXhsImage}</button>` : ''}
+        ${hasVideoMedia ? `<button class="view-full-btn" id="publishXhsVideoBtn" onclick="publishCurrentCaseToXhs(this, 'video')">${t.localPublishXhsVideo}</button>` : ''}
         <button class="view-full-btn" onclick="deleteCurrentCase()">${t.localDelete}</button>
       </div>
 
@@ -1255,14 +1273,14 @@ function renderDetailPage({ lang, item, stats }) {
           <h3>🎨 ${t.promptCnHeading}${zhFallback ? ` <span class="fallback-badge">${t.promptCnFallback}</span>` : ''}</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText(${JSON.stringify(zhPrompt)}, this)'>${t.copyLabel}</button>
         </div>
-        ${zhPrompt ? formatMultilineText(zhPrompt) : `<p>${escapeHtml(t.detailNoPrompt)}</p>`}
+        <div data-nosnippet>${zhPrompt ? formatMultilineText(zhPrompt) : `<p>${escapeHtml(t.detailNoPrompt)}</p>`}</div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 ${t.promptEnHeading}${enFallback ? ` <span class="fallback-badge">${t.promptEnFallback}</span>` : ''}</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText(${JSON.stringify(enPrompt)}, this)'>${t.copyLabel}</button>
         </div>
-        ${enPrompt ? formatMultilineText(enPrompt) : `<p>${escapeHtml(t.detailNoPrompt)}</p>`}
+        <div data-nosnippet>${enPrompt ? formatMultilineText(enPrompt) : `<p>${escapeHtml(t.detailNoPrompt)}</p>`}</div>
       </div>
       ${imagesHtml}
       ${videosHtml}
@@ -1314,7 +1332,7 @@ function renderDetailPage({ lang, item, stats }) {
         if (!button) return;
         const original = button.textContent;
         button.disabled = true;
-        button.textContent = ${JSON.stringify(t.localPublish === 'Publish to WeChat Draft' ? t.publishLoading : t.publishLoading)};
+        button.textContent = ${JSON.stringify(t.publishLoading)};
         try {
           const res = await fetch('/api/wechat-publish', {
             method: 'POST',
@@ -1328,6 +1346,33 @@ function renderDetailPage({ lang, item, stats }) {
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = ${JSON.stringify(t.publishXhsLoading)};
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: ${Number(item.id)},
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

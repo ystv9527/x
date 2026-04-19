@@ -7,11 +7,13 @@
     <title>&quot;juice boxes&quot;: [ #1023 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;juice boxes&quot;: [ { &quot;id&quot;: 1, &quot;product&quot;: { &quot;brand&quot;: &quot;Tip Top&quot;, &quot;flavor&quot;: &quot;Strawberry&quot;, &quot;image&quot;: { &quot;description&quot;: &quot;str...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1023.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1023.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1023.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845552">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023741">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"juice_boxes\": [\n    {\n      \"id\": 1,\n      \"product\": {\n        \"brand\": \"Tip-Top\",\n        \"flavor\": \"草莓\",\n        \"image\": {\n          \"description\": \"草莓果汁与成熟草莓\",\n          \"background\": {\n            \"color\": \"清新粉彩的粉红色\",\n            \"elements\": [\n              \"草莓切半\",\n              \"果汁飞溅\",\n              \"围绕包装动态盘旋\"\n            ]\n          }\n        }\n      },\n      \"design\": {\n        \"style\": {\n          \"detail\": \"高品质细节\",\n          \"texture\": \"商业级照片写实\"\n        },\n        \"aspect_ratio\": \"2:3\"\n      }\n    },\n    {\n      \"id\": 2,\n      \"product\": {\n        \"brand\": \"Tip-Top\",\n        \"flavor\": \"芒果\",\n        \"image\": {\n          \"description\": \"芒果果汁与成熟的金黄色芒果\",\n          \"background\": {\n            \"color\": \"热带橙黄渐变\",\n            \"elements\": [\n              \"芒果块\",\n              \"盘旋的果汁流\",\n              \"充满活力且令人垂涎的场景\"\n            ]\n          }\n        }\n      },\n      \"design\": {\n        \"style\": {\n          \"texture\": \"超写实的包装材质质感\"\n        },\n        \"aspect_ratio\": \"2:3\"\n      }\n    },\n    {\n      \"id\": 3,\n      \"product\": {\n        \"brand\": \"Tip-Top\",\n        \"flavor\": \"葡萄\",\n        \"image\": {\n          \"description\": \"葡萄果汁与紫色葡萄\",\n          \"background\": {\n            \"color\": \"深紫色渐变\",\n            \"elements\": [\n              \"葡萄串\",\n              \"光泽果汁飞溅\",\n              \"环绕纸盒周围\"\n            ]\n          }\n        }\n      },\n      \"design\": {\n        \"style\": {\n          \"tone\": \"优雅\",\n          \"mood\": \"活力十足的商业促销风格\"\n        },\n        \"aspect_ratio\": \"2:3\"\n      }\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;juice_boxes&quot;: [<br>    {<br>      &quot;id&quot;: 1,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;草莓&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;草莓果汁与成熟草莓&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;清新粉彩的粉红色&quot;,<br>            &quot;elements&quot;: [<br>              &quot;草莓切半&quot;,<br>              &quot;果汁飞溅&quot;,<br>              &quot;围绕包装动态盘旋&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;detail&quot;: &quot;高品质细节&quot;,<br>          &quot;texture&quot;: &quot;商业级照片写实&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    },<br>    {<br>      &quot;id&quot;: 2,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;芒果&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;芒果果汁与成熟的金黄色芒果&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;热带橙黄渐变&quot;,<br>            &quot;elements&quot;: [<br>              &quot;芒果块&quot;,<br>              &quot;盘旋的果汁流&quot;,<br>              &quot;充满活力且令人垂涎的场景&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;texture&quot;: &quot;超写实的包装材质质感&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    },<br>    {<br>      &quot;id&quot;: 3,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;葡萄&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;葡萄果汁与紫色葡萄&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;深紫色渐变&quot;,<br>            &quot;elements&quot;: [<br>              &quot;葡萄串&quot;,<br>              &quot;光泽果汁飞溅&quot;,<br>              &quot;环绕纸盒周围&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;tone&quot;: &quot;优雅&quot;,<br>          &quot;mood&quot;: &quot;活力十足的商业促销风格&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;juice_boxes&quot;: [<br>    {<br>      &quot;id&quot;: 1,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;草莓&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;草莓果汁与成熟草莓&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;清新粉彩的粉红色&quot;,<br>            &quot;elements&quot;: [<br>              &quot;草莓切半&quot;,<br>              &quot;果汁飞溅&quot;,<br>              &quot;围绕包装动态盘旋&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;detail&quot;: &quot;高品质细节&quot;,<br>          &quot;texture&quot;: &quot;商业级照片写实&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    },<br>    {<br>      &quot;id&quot;: 2,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;芒果&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;芒果果汁与成熟的金黄色芒果&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;热带橙黄渐变&quot;,<br>            &quot;elements&quot;: [<br>              &quot;芒果块&quot;,<br>              &quot;盘旋的果汁流&quot;,<br>              &quot;充满活力且令人垂涎的场景&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;texture&quot;: &quot;超写实的包装材质质感&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    },<br>    {<br>      &quot;id&quot;: 3,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;葡萄&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;葡萄果汁与紫色葡萄&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;深紫色渐变&quot;,<br>            &quot;elements&quot;: [<br>              &quot;葡萄串&quot;,<br>              &quot;光泽果汁飞溅&quot;,<br>              &quot;环绕纸盒周围&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;tone&quot;: &quot;优雅&quot;,<br>          &quot;mood&quot;: &quot;活力十足的商业促销风格&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"juice_boxes\": [\n    {\n      \"id\": 1,\n      \"product\": {\n        \"brand\": \"Tip-Top\",\n        \"flavor\": \"Strawberry\",\n        \"image\": {\n          \"description\": \"strawberry juice with ripe strawberries\",\n          \"background\": {\n            \"color\": \"fresh pastel pink\",\n            \"elements\": [\n              \"strawberry halves\",\n              \"juice splashes\",\n              \"dynamic swirling around the pack\"\n            ]\n          }\n        }\n      },\n      \"design\": {\n        \"style\": {\n          \"detail\": \"high-quality detail\",\n          \"texture\": \"commercial-grade photorealism\"\n        },\n        \"aspect_ratio\": \"2:3\"\n      }\n    },\n    {\n      \"id\": 2,\n      \"product\": {\n        \"brand\": \"Tip-Top\",\n        \"flavor\": \"Mango\",\n        \"image\": {\n          \"description\": \"mango juice with ripe golden mangoes\",\n          \"background\": {\n            \"color\": \"tropical orange-yellow gradient\",\n            \"elements\": [\n              \"mango cubes\",\n              \"swirling juice streams\",\n              \"energetic and appetizing scene\"\n            ]\n          }\n        }\n      },\n      \"design\": {\n        \"style\": {\n          \"texture\": \"ultra-realistic packaging material texture\"\n        },\n        \"aspect_ratio\": \"2:3\"\n      }\n    },\n    {\n      \"id\": 3,\n      \"product\": {\n        \"brand\": \"Tip-Top\",\n        \"flavor\": \"Grape\",\n        \"image\": {\n          \"description\": \"grape juice with purple grapes\",\n          \"background\": {\n            \"color\": \"deep purple gradient\",\n            \"elements\": [\n              \"grape bunches\",\n              \"glossy juice splashes\",\n              \"surrounding the carton\"\n            ]\n          }\n        }\n      },\n      \"design\": {\n        \"style\": {\n          \"tone\": \"elegant\",\n          \"mood\": \"lively commercial promotion style\"\n        },\n        \"aspect_ratio\": \"2:3\"\n      }\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;juice_boxes&quot;: [<br>    {<br>      &quot;id&quot;: 1,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;Strawberry&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;strawberry juice with ripe strawberries&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;fresh pastel pink&quot;,<br>            &quot;elements&quot;: [<br>              &quot;strawberry halves&quot;,<br>              &quot;juice splashes&quot;,<br>              &quot;dynamic swirling around the pack&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;detail&quot;: &quot;high-quality detail&quot;,<br>          &quot;texture&quot;: &quot;commercial-grade photorealism&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    },<br>    {<br>      &quot;id&quot;: 2,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;Mango&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;mango juice with ripe golden mangoes&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;tropical orange-yellow gradient&quot;,<br>            &quot;elements&quot;: [<br>              &quot;mango cubes&quot;,<br>              &quot;swirling juice streams&quot;,<br>              &quot;energetic and appetizing scene&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;texture&quot;: &quot;ultra-realistic packaging material texture&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    },<br>    {<br>      &quot;id&quot;: 3,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;Grape&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;grape juice with purple grapes&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;deep purple gradient&quot;,<br>            &quot;elements&quot;: [<br>              &quot;grape bunches&quot;,<br>              &quot;glossy juice splashes&quot;,<br>              &quot;surrounding the carton&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;tone&quot;: &quot;elegant&quot;,<br>          &quot;mood&quot;: &quot;lively commercial promotion style&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;juice_boxes&quot;: [<br>    {<br>      &quot;id&quot;: 1,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;Strawberry&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;strawberry juice with ripe strawberries&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;fresh pastel pink&quot;,<br>            &quot;elements&quot;: [<br>              &quot;strawberry halves&quot;,<br>              &quot;juice splashes&quot;,<br>              &quot;dynamic swirling around the pack&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;detail&quot;: &quot;high-quality detail&quot;,<br>          &quot;texture&quot;: &quot;commercial-grade photorealism&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    },<br>    {<br>      &quot;id&quot;: 2,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;Mango&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;mango juice with ripe golden mangoes&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;tropical orange-yellow gradient&quot;,<br>            &quot;elements&quot;: [<br>              &quot;mango cubes&quot;,<br>              &quot;swirling juice streams&quot;,<br>              &quot;energetic and appetizing scene&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;texture&quot;: &quot;ultra-realistic packaging material texture&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    },<br>    {<br>      &quot;id&quot;: 3,<br>      &quot;product&quot;: {<br>        &quot;brand&quot;: &quot;Tip-Top&quot;,<br>        &quot;flavor&quot;: &quot;Grape&quot;,<br>        &quot;image&quot;: {<br>          &quot;description&quot;: &quot;grape juice with purple grapes&quot;,<br>          &quot;background&quot;: {<br>            &quot;color&quot;: &quot;deep purple gradient&quot;,<br>            &quot;elements&quot;: [<br>              &quot;grape bunches&quot;,<br>              &quot;glossy juice splashes&quot;,<br>              &quot;surrounding the carton&quot;<br>            ]<br>          }<br>        }<br>      },<br>      &quot;design&quot;: {<br>        &quot;style&quot;: {<br>          &quot;tone&quot;: &quot;elegant&quot;,<br>          &quot;mood&quot;: &quot;lively commercial promotion style&quot;<br>        },<br>        &quot;aspect_ratio&quot;: &quot;2:3&quot;<br>      }<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2010381897730339152-1.jpg" alt="&quot;juice boxes&quot;: [" loading="lazy"><img src="/images/tweet-2010381897730339152-2.jpg" alt="&quot;juice boxes&quot;: [" loading="lazy"><img src="/images/tweet-2010381897730339152-3.jpg" alt="&quot;juice boxes&quot;: [" loading="lazy"><img src="/images/tweet-2010381897730339152-4.jpg" alt="&quot;juice boxes&quot;: [" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1023,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

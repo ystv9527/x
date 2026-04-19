@@ -7,11 +7,13 @@
     <title>渲染宝石 #159 | Gem Nana AI 提示词库</title>
     <meta name="description" content="渲染宝石 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/159.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/159.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/159.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842098">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022750">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用提供的 JSON 的 pamareters 重新创建此图像。\n{\n“name”： “宝石渲染”，\n“对象”： {\n“type”： “auto”， //类型\n“detected_color”： “auto”，\n“form”： “保留真实、自然的形式”，\n“material”： “水晶或刻面宝石玻璃”，\n“surface”： “精确切割的刻面，清晰的反射”，\n“transparency”： “高清晰度，光线折射”，\n“internal_features”： “颜色深度、内部微光和光色散”\n  },\n“color_and_light”： {\n“primary_color”： “{detected_color}”，\n“highlight_effects”： “镜面高光、宝石亮度、焦散”，\n“lighting_setup”： “白色或柔和背景的工作室照明”，\n“metallic_accents”： {\n“enabled”： true 和\n“material”： “金或铬”，\n“application”： “边缘、茎或边缘细节”\n    }\n  },\n“样式”： {\n“artistic_style”：[\n“逼真的 3D 渲染”，\n“Gemstone Render Style”（宝石渲染样式）、\n“奢侈品对象可视化”\n],\n“design_language”：[\n“faceted precision modeling”，\n“珠宝般的渲染”，\n“光学深度和亮度”\n    ]\n  },\n“technical_details”： {\n“render_engine”：[\n“带循环的 Blender”，\n“Cinema 4D + Redshift/Octane”\n],\n“rendering_techniques”：[\n“基于物理的渲染 （PBR）”，\n“光线追踪”，\n“全局照明”\n],\n“resolution”： “超高分辨率 （4K–8K）”，\n“post_processing”：[\n“微妙的光芒”，\n“增强反射”，\n“保色对比度提升”\n    ]\n  }", this)'>📋 复制</button>
         </div>
-        <p>使用提供的 JSON 的 pamareters 重新创建此图像。<br>{<br>“name”： “宝石渲染”，<br>“对象”： {<br>“type”： “auto”， //类型<br>“detected_color”： “auto”，<br>“form”： “保留真实、自然的形式”，<br>“material”： “水晶或刻面宝石玻璃”，<br>“surface”： “精确切割的刻面，清晰的反射”，<br>“transparency”： “高清晰度，光线折射”，<br>“internal_features”： “颜色深度、内部微光和光色散”<br>  },<br>“color_and_light”： {<br>“primary_color”： “{detected_color}”，<br>“highlight_effects”： “镜面高光、宝石亮度、焦散”，<br>“lighting_setup”： “白色或柔和背景的工作室照明”，<br>“metallic_accents”： {<br>“enabled”： true 和<br>“material”： “金或铬”，<br>“application”： “边缘、茎或边缘细节”<br>    }<br>  },<br>“样式”： {<br>“artistic_style”：[<br>“逼真的 3D 渲染”，<br>“Gemstone Render Style”（宝石渲染样式）、<br>“奢侈品对象可视化”<br>],<br>“design_language”：[<br>“faceted precision modeling”，<br>“珠宝般的渲染”，<br>“光学深度和亮度”<br>    ]<br>  },<br>“technical_details”： {<br>“render_engine”：[<br>“带循环的 Blender”，<br>“Cinema 4D + Redshift/Octane”<br>],<br>“rendering_techniques”：[<br>“基于物理的渲染 （PBR）”，<br>“光线追踪”，<br>“全局照明”<br>],<br>“resolution”： “超高分辨率 （4K–8K）”，<br>“post_processing”：[<br>“微妙的光芒”，<br>“增强反射”，<br>“保色对比度提升”<br>    ]<br>  }</p>
+        <div data-nosnippet><p>使用提供的 JSON 的 pamareters 重新创建此图像。<br>{<br>“name”： “宝石渲染”，<br>“对象”： {<br>“type”： “auto”， //类型<br>“detected_color”： “auto”，<br>“form”： “保留真实、自然的形式”，<br>“material”： “水晶或刻面宝石玻璃”，<br>“surface”： “精确切割的刻面，清晰的反射”，<br>“transparency”： “高清晰度，光线折射”，<br>“internal_features”： “颜色深度、内部微光和光色散”<br>  },<br>“color_and_light”： {<br>“primary_color”： “{detected_color}”，<br>“highlight_effects”： “镜面高光、宝石亮度、焦散”，<br>“lighting_setup”： “白色或柔和背景的工作室照明”，<br>“metallic_accents”： {<br>“enabled”： true 和<br>“material”： “金或铬”，<br>“application”： “边缘、茎或边缘细节”<br>    }<br>  },<br>“样式”： {<br>“artistic_style”：[<br>“逼真的 3D 渲染”，<br>“Gemstone Render Style”（宝石渲染样式）、<br>“奢侈品对象可视化”<br>],<br>“design_language”：[<br>“faceted precision modeling”，<br>“珠宝般的渲染”，<br>“光学深度和亮度”<br>    ]<br>  },<br>“technical_details”： {<br>“render_engine”：[<br>“带循环的 Blender”，<br>“Cinema 4D + Redshift/Octane”<br>],<br>“rendering_techniques”：[<br>“基于物理的渲染 （PBR）”，<br>“光线追踪”，<br>“全局照明”<br>],<br>“resolution”： “超高分辨率 （4K–8K）”，<br>“post_processing”：[<br>“微妙的光芒”，<br>“增强反射”，<br>“保色对比度提升”<br>    ]<br>  }</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Recreate this image using the pamareters of the JSON provided.\n{\n  \"name\": \"Gemstone Render\",\n  \"object\": {\n    \"type\": \"auto\",\n    \"detected_color\": \"auto\",\n    \"form\": \"realistic, natural form preserved\",\n    \"material\": \"crystal or faceted gemstone glass\",\n    \"surface\": \"precision-cut facets, sharp reflections\",\n    \"transparency\": \"high clarity with light refraction\",\n    \"internal_features\": \"color depth, internal shimmer, and light dispersion\"\n  },\n  \"color_and_light\": {\n    \"primary_color\": \"{detected_color}\",\n    \"highlight_effects\": \"specular highlights, gemstone brilliance, caustics\",\n    \"lighting_setup\": \"studio lighting with white or soft background\",\n    \"metallic_accents\": {\n      \"enabled\": true,\n      \"material\": \"gold or chrome\",\n      \"application\": \"rim, stem, or edge detailing\"\n    }\n  },\n  \"style\": {\n    \"artistic_style\": [\n      \"photorealistic 3D render\",\n      \"Gemstone Render Style\",\n      \"luxury object visualization\"\n    ],\n    \"design_language\": [\n      \"faceted precision modeling\",\n      \"jewelry-like rendering\",\n      \"optical depth and brilliance\"\n    ]\n  },\n  \"technical_details\": {\n    \"render_engine\": [\n      \"Blender with Cycles\",\n      \"Cinema 4D + Redshift/Octane\"\n    ],\n    \"rendering_techniques\": [\n      \"physically-based rendering (PBR)\",\n      \"ray tracing\",\n      \"global illumination\"\n    ],\n    \"resolution\": \"ultra high-res (4K–8K)\",\n    \"post_processing\": [\n      \"subtle glow\",\n      \"enhanced reflections\",\n      \"color-preserving contrast boost\"\n    ]\n  }", this)'>📋 复制</button>
         </div>
-        <p>Recreate this image using the pamareters of the JSON provided.<br>{<br>  &quot;name&quot;: &quot;Gemstone Render&quot;,<br>  &quot;object&quot;: {<br>    &quot;type&quot;: &quot;auto&quot;,<br>    &quot;detected_color&quot;: &quot;auto&quot;,<br>    &quot;form&quot;: &quot;realistic, natural form preserved&quot;,<br>    &quot;material&quot;: &quot;crystal or faceted gemstone glass&quot;,<br>    &quot;surface&quot;: &quot;precision-cut facets, sharp reflections&quot;,<br>    &quot;transparency&quot;: &quot;high clarity with light refraction&quot;,<br>    &quot;internal_features&quot;: &quot;color depth, internal shimmer, and light dispersion&quot;<br>  },<br>  &quot;color_and_light&quot;: {<br>    &quot;primary_color&quot;: &quot;{detected_color}&quot;,<br>    &quot;highlight_effects&quot;: &quot;specular highlights, gemstone brilliance, caustics&quot;,<br>    &quot;lighting_setup&quot;: &quot;studio lighting with white or soft background&quot;,<br>    &quot;metallic_accents&quot;: {<br>      &quot;enabled&quot;: true,<br>      &quot;material&quot;: &quot;gold or chrome&quot;,<br>      &quot;application&quot;: &quot;rim, stem, or edge detailing&quot;<br>    }<br>  },<br>  &quot;style&quot;: {<br>    &quot;artistic_style&quot;: [<br>      &quot;photorealistic 3D render&quot;,<br>      &quot;Gemstone Render Style&quot;,<br>      &quot;luxury object visualization&quot;<br>    ],<br>    &quot;design_language&quot;: [<br>      &quot;faceted precision modeling&quot;,<br>      &quot;jewelry-like rendering&quot;,<br>      &quot;optical depth and brilliance&quot;<br>    ]<br>  },<br>  &quot;technical_details&quot;: {<br>    &quot;render_engine&quot;: [<br>      &quot;Blender with Cycles&quot;,<br>      &quot;Cinema 4D + Redshift/Octane&quot;<br>    ],<br>    &quot;rendering_techniques&quot;: [<br>      &quot;physically-based rendering (PBR)&quot;,<br>      &quot;ray tracing&quot;,<br>      &quot;global illumination&quot;<br>    ],<br>    &quot;resolution&quot;: &quot;ultra high-res (4K–8K)&quot;,<br>    &quot;post_processing&quot;: [<br>      &quot;subtle glow&quot;,<br>      &quot;enhanced reflections&quot;,<br>      &quot;color-preserving contrast boost&quot;<br>    ]<br>  }</p>
+        <div data-nosnippet><p>Recreate this image using the pamareters of the JSON provided.<br>{<br>  &quot;name&quot;: &quot;Gemstone Render&quot;,<br>  &quot;object&quot;: {<br>    &quot;type&quot;: &quot;auto&quot;,<br>    &quot;detected_color&quot;: &quot;auto&quot;,<br>    &quot;form&quot;: &quot;realistic, natural form preserved&quot;,<br>    &quot;material&quot;: &quot;crystal or faceted gemstone glass&quot;,<br>    &quot;surface&quot;: &quot;precision-cut facets, sharp reflections&quot;,<br>    &quot;transparency&quot;: &quot;high clarity with light refraction&quot;,<br>    &quot;internal_features&quot;: &quot;color depth, internal shimmer, and light dispersion&quot;<br>  },<br>  &quot;color_and_light&quot;: {<br>    &quot;primary_color&quot;: &quot;{detected_color}&quot;,<br>    &quot;highlight_effects&quot;: &quot;specular highlights, gemstone brilliance, caustics&quot;,<br>    &quot;lighting_setup&quot;: &quot;studio lighting with white or soft background&quot;,<br>    &quot;metallic_accents&quot;: {<br>      &quot;enabled&quot;: true,<br>      &quot;material&quot;: &quot;gold or chrome&quot;,<br>      &quot;application&quot;: &quot;rim, stem, or edge detailing&quot;<br>    }<br>  },<br>  &quot;style&quot;: {<br>    &quot;artistic_style&quot;: [<br>      &quot;photorealistic 3D render&quot;,<br>      &quot;Gemstone Render Style&quot;,<br>      &quot;luxury object visualization&quot;<br>    ],<br>    &quot;design_language&quot;: [<br>      &quot;faceted precision modeling&quot;,<br>      &quot;jewelry-like rendering&quot;,<br>      &quot;optical depth and brilliance&quot;<br>    ]<br>  },<br>  &quot;technical_details&quot;: {<br>    &quot;render_engine&quot;: [<br>      &quot;Blender with Cycles&quot;,<br>      &quot;Cinema 4D + Redshift/Octane&quot;<br>    ],<br>    &quot;rendering_techniques&quot;: [<br>      &quot;physically-based rendering (PBR)&quot;,<br>      &quot;ray tracing&quot;,<br>      &quot;global illumination&quot;<br>    ],<br>    &quot;resolution&quot;: &quot;ultra high-res (4K–8K)&quot;,<br>    &quot;post_processing&quot;: [<br>      &quot;subtle glow&quot;,<br>      &quot;enhanced reflections&quot;,<br>      &quot;color-preserving contrast boost&quot;<br>    ]<br>  }</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/159.jpeg" alt="渲染宝石" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 159,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

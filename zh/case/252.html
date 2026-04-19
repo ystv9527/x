@@ -7,11 +7,13 @@
     <title>漂浮玻璃霓虹3D #252 | Gem Nana AI 提示词库</title>
     <meta name="description" content="漂浮玻璃霓虹3D - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/252.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/252.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/252.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842018">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022731">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("根据以下JSON对附加图片进行重新纹理处理：\n\n{\n  \"风格名称\": \"漂浮玻璃霓虹3D\",\n  \"重纹理模式\": \"形状锁定\",\n  \"对象分析\": {\n    \"保留轮廓\": true,\n    \"几何敏感映射\": true,\n    \"细节保留\": \"维持轮廓、体积和层次感\"\n  },\n  \"材质属性\": {\n    \"基础材质\": \"半透明霓虹玻璃胶\",\n    \"表面处理\": \"半光泽，边缘带有柔和光晕\",\n    \"透明度\": \"高，带有柔和的光折射\",\n    \"折射效果\": \"轻微弯曲，曲线处有微妙光晕\",\n    \"内置效果\": \"内部光散射和边缘霓虹发光\",\n    \"色彩混合\": {\n      \"主色\": [\"水绿色\", \"电蓝色\", \"霓虹紫\"],\n      \"渐变方向\": \"左上角至右下角\",\n      \"过渡平滑度\": \"非常平滑\"\n    }\n  },\n  \"光照\": {\n    \"类型\": \"柔光箱HDRI\",\n    \"强度\": \"柔和明亮\",\n    \"光源方向\": \" overhead 且略微偏前\",\n    \"高光表现\": \"柔和光晕，带有玻璃闪光\"\n  },\n  \"阴影表现\": {\n    \"类型\": \"漂浮接触阴影\",\n    \"外观\": \"极其柔和、模糊的椭圆形\",\n    \"不透明度\": 0.07,\n    \"物体下方距离\": \"适中\",\n    \"颜色\": \"中性灰\"\n  },\n  \"背景\": {\n    \"类型\": \"纯色\",\n    \"颜色\": \"#ffffff\",\n    \"发光效果\": \"无\",\n    \"渐变\": \"无\"\n  },\n  \"渲染\": {\n    \"景深\": \"轻微，带有轻微渐晕\",\n    \"焦点\": \"漂浮物体的中心\",\n    \"环境光遮蔽\": \"最小化以保持明亮感\",\n    \"渲染引擎\": \"3D风格化，带有光扩散和高镜面细节\",\n    \"相机角度\": \"略高于物体，正面视角\",\n    \"分辨率\": \"极高，适用于产品品牌推广\"\n  },\n  \"特殊效果\": {\n    \"漂浮效果\": true,\n    \"视觉失重感\": true,\n    \"阴影柔和度\": \"最大\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>根据以下JSON对附加图片进行重新纹理处理：</p><p>{<br>  &quot;风格名称&quot;: &quot;漂浮玻璃霓虹3D&quot;,<br>  &quot;重纹理模式&quot;: &quot;形状锁定&quot;,<br>  &quot;对象分析&quot;: {<br>    &quot;保留轮廓&quot;: true,<br>    &quot;几何敏感映射&quot;: true,<br>    &quot;细节保留&quot;: &quot;维持轮廓、体积和层次感&quot;<br>  },<br>  &quot;材质属性&quot;: {<br>    &quot;基础材质&quot;: &quot;半透明霓虹玻璃胶&quot;,<br>    &quot;表面处理&quot;: &quot;半光泽，边缘带有柔和光晕&quot;,<br>    &quot;透明度&quot;: &quot;高，带有柔和的光折射&quot;,<br>    &quot;折射效果&quot;: &quot;轻微弯曲，曲线处有微妙光晕&quot;,<br>    &quot;内置效果&quot;: &quot;内部光散射和边缘霓虹发光&quot;,<br>    &quot;色彩混合&quot;: {<br>      &quot;主色&quot;: [&quot;水绿色&quot;, &quot;电蓝色&quot;, &quot;霓虹紫&quot;],<br>      &quot;渐变方向&quot;: &quot;左上角至右下角&quot;,<br>      &quot;过渡平滑度&quot;: &quot;非常平滑&quot;<br>    }<br>  },<br>  &quot;光照&quot;: {<br>    &quot;类型&quot;: &quot;柔光箱HDRI&quot;,<br>    &quot;强度&quot;: &quot;柔和明亮&quot;,<br>    &quot;光源方向&quot;: &quot; overhead 且略微偏前&quot;,<br>    &quot;高光表现&quot;: &quot;柔和光晕，带有玻璃闪光&quot;<br>  },<br>  &quot;阴影表现&quot;: {<br>    &quot;类型&quot;: &quot;漂浮接触阴影&quot;,<br>    &quot;外观&quot;: &quot;极其柔和、模糊的椭圆形&quot;,<br>    &quot;不透明度&quot;: 0.07,<br>    &quot;物体下方距离&quot;: &quot;适中&quot;,<br>    &quot;颜色&quot;: &quot;中性灰&quot;<br>  },<br>  &quot;背景&quot;: {<br>    &quot;类型&quot;: &quot;纯色&quot;,<br>    &quot;颜色&quot;: &quot;#ffffff&quot;,<br>    &quot;发光效果&quot;: &quot;无&quot;,<br>    &quot;渐变&quot;: &quot;无&quot;<br>  },<br>  &quot;渲染&quot;: {<br>    &quot;景深&quot;: &quot;轻微，带有轻微渐晕&quot;,<br>    &quot;焦点&quot;: &quot;漂浮物体的中心&quot;,<br>    &quot;环境光遮蔽&quot;: &quot;最小化以保持明亮感&quot;,<br>    &quot;渲染引擎&quot;: &quot;3D风格化，带有光扩散和高镜面细节&quot;,<br>    &quot;相机角度&quot;: &quot;略高于物体，正面视角&quot;,<br>    &quot;分辨率&quot;: &quot;极高，适用于产品品牌推广&quot;<br>  },<br>  &quot;特殊效果&quot;: {<br>    &quot;漂浮效果&quot;: true,<br>    &quot;视觉失重感&quot;: true,<br>    &quot;阴影柔和度&quot;: &quot;最大&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>根据以下JSON对附加图片进行重新纹理处理：</p><p>{<br>  &quot;风格名称&quot;: &quot;漂浮玻璃霓虹3D&quot;,<br>  &quot;重纹理模式&quot;: &quot;形状锁定&quot;,<br>  &quot;对象分析&quot;: {<br>    &quot;保留轮廓&quot;: true,<br>    &quot;几何敏感映射&quot;: true,<br>    &quot;细节保留&quot;: &quot;维持轮廓、体积和层次感&quot;<br>  },<br>  &quot;材质属性&quot;: {<br>    &quot;基础材质&quot;: &quot;半透明霓虹玻璃胶&quot;,<br>    &quot;表面处理&quot;: &quot;半光泽，边缘带有柔和光晕&quot;,<br>    &quot;透明度&quot;: &quot;高，带有柔和的光折射&quot;,<br>    &quot;折射效果&quot;: &quot;轻微弯曲，曲线处有微妙光晕&quot;,<br>    &quot;内置效果&quot;: &quot;内部光散射和边缘霓虹发光&quot;,<br>    &quot;色彩混合&quot;: {<br>      &quot;主色&quot;: [&quot;水绿色&quot;, &quot;电蓝色&quot;, &quot;霓虹紫&quot;],<br>      &quot;渐变方向&quot;: &quot;左上角至右下角&quot;,<br>      &quot;过渡平滑度&quot;: &quot;非常平滑&quot;<br>    }<br>  },<br>  &quot;光照&quot;: {<br>    &quot;类型&quot;: &quot;柔光箱HDRI&quot;,<br>    &quot;强度&quot;: &quot;柔和明亮&quot;,<br>    &quot;光源方向&quot;: &quot; overhead 且略微偏前&quot;,<br>    &quot;高光表现&quot;: &quot;柔和光晕，带有玻璃闪光&quot;<br>  },<br>  &quot;阴影表现&quot;: {<br>    &quot;类型&quot;: &quot;漂浮接触阴影&quot;,<br>    &quot;外观&quot;: &quot;极其柔和、模糊的椭圆形&quot;,<br>    &quot;不透明度&quot;: 0.07,<br>    &quot;物体下方距离&quot;: &quot;适中&quot;,<br>    &quot;颜色&quot;: &quot;中性灰&quot;<br>  },<br>  &quot;背景&quot;: {<br>    &quot;类型&quot;: &quot;纯色&quot;,<br>    &quot;颜色&quot;: &quot;#ffffff&quot;,<br>    &quot;发光效果&quot;: &quot;无&quot;,<br>    &quot;渐变&quot;: &quot;无&quot;<br>  },<br>  &quot;渲染&quot;: {<br>    &quot;景深&quot;: &quot;轻微，带有轻微渐晕&quot;,<br>    &quot;焦点&quot;: &quot;漂浮物体的中心&quot;,<br>    &quot;环境光遮蔽&quot;: &quot;最小化以保持明亮感&quot;,<br>    &quot;渲染引擎&quot;: &quot;3D风格化，带有光扩散和高镜面细节&quot;,<br>    &quot;相机角度&quot;: &quot;略高于物体，正面视角&quot;,<br>    &quot;分辨率&quot;: &quot;极高，适用于产品品牌推广&quot;<br>  },<br>  &quot;特殊效果&quot;: {<br>    &quot;漂浮效果&quot;: true,<br>    &quot;视觉失重感&quot;: true,<br>    &quot;阴影柔和度&quot;: &quot;最大&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("retexture the image attached based on the JSON below:\n\n{\n  \"style_name\": \"Floating Glassy Neon 3D\",\n  \"retexture_mode\": \"shape_lock\",\n  \"object_analysis\": {\n    \"preserve_silhouette\": true,\n    \"geometry_sensitive_mapping\": true,\n    \"detail_retention\": \"maintain contours, volumes, and layering\"\n  },\n  \"material_properties\": {\n    \"base_material\": \"translucent neon glass-gel\",\n    \"surface_finish\": \"semi-gloss with soft glow edges\",\n    \"transparency\": \"high, with soft light refraction\",\n    \"refraction\": \"gentle bend with subtle halo on curves\",\n    \"embedded_effects\": \"internal light scatter and edge neon glow\",\n    \"color_blend\": {\n      \"primary\": [\"aqua\", \"electric blue\", \"neon violet\"],\n      \"gradient_direction\": \"top-left to bottom-right\",\n      \"transition_smoothness\": \"very smooth\"\n    }\n  },\n  \"lighting\": {\n    \"type\": \"softbox HDRI\",\n    \"intensity\": \"soft and bright\",\n    \"source_direction\": \"overhead and slightly front\",\n    \"highlight_behavior\": \"gentle bloom with glass sparkle\"\n  },\n  \"shadow_behavior\": {\n    \"type\": \"floating contact shadow\",\n    \"appearance\": \"extremely soft, blurred ellipse\",\n    \"opacity\": 0.07,\n    \"distance_below_object\": \"moderate\",\n    \"color\": \"neutral gray\"\n  },\n  \"background\": {\n    \"type\": \"solid color\",\n    \"color\": \"#ffffff\",\n    \"glow_effect\": \"none\",\n    \"gradient\": \"none\"\n  },\n  \"rendering\": {\n    \"depth_of_field\": \"subtle with slight vignette\",\n    \"focus_point\": \"center of floating object\",\n    \"ambient_occlusion\": \"minimal to preserve light feel\",\n    \"render_engine\": \"3D stylized with light diffusion and high specular detail\",\n    \"camera_angle\": \"slightly above object, frontal\",\n    \"resolution\": \"very high for product branding\"\n  },\n  \"special_effects\": {\n    \"floating_behavior\": true,\n    \"visual_weightlessness\": true,\n    \"shadow_softness\": \"maximum\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>retexture the image attached based on the JSON below:</p><p>{<br>  &quot;style_name&quot;: &quot;Floating Glassy Neon 3D&quot;,<br>  &quot;retexture_mode&quot;: &quot;shape_lock&quot;,<br>  &quot;object_analysis&quot;: {<br>    &quot;preserve_silhouette&quot;: true,<br>    &quot;geometry_sensitive_mapping&quot;: true,<br>    &quot;detail_retention&quot;: &quot;maintain contours, volumes, and layering&quot;<br>  },<br>  &quot;material_properties&quot;: {<br>    &quot;base_material&quot;: &quot;translucent neon glass-gel&quot;,<br>    &quot;surface_finish&quot;: &quot;semi-gloss with soft glow edges&quot;,<br>    &quot;transparency&quot;: &quot;high, with soft light refraction&quot;,<br>    &quot;refraction&quot;: &quot;gentle bend with subtle halo on curves&quot;,<br>    &quot;embedded_effects&quot;: &quot;internal light scatter and edge neon glow&quot;,<br>    &quot;color_blend&quot;: {<br>      &quot;primary&quot;: [&quot;aqua&quot;, &quot;electric blue&quot;, &quot;neon violet&quot;],<br>      &quot;gradient_direction&quot;: &quot;top-left to bottom-right&quot;,<br>      &quot;transition_smoothness&quot;: &quot;very smooth&quot;<br>    }<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;softbox HDRI&quot;,<br>    &quot;intensity&quot;: &quot;soft and bright&quot;,<br>    &quot;source_direction&quot;: &quot;overhead and slightly front&quot;,<br>    &quot;highlight_behavior&quot;: &quot;gentle bloom with glass sparkle&quot;<br>  },<br>  &quot;shadow_behavior&quot;: {<br>    &quot;type&quot;: &quot;floating contact shadow&quot;,<br>    &quot;appearance&quot;: &quot;extremely soft, blurred ellipse&quot;,<br>    &quot;opacity&quot;: 0.07,<br>    &quot;distance_below_object&quot;: &quot;moderate&quot;,<br>    &quot;color&quot;: &quot;neutral gray&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;type&quot;: &quot;solid color&quot;,<br>    &quot;color&quot;: &quot;#ffffff&quot;,<br>    &quot;glow_effect&quot;: &quot;none&quot;,<br>    &quot;gradient&quot;: &quot;none&quot;<br>  },<br>  &quot;rendering&quot;: {<br>    &quot;depth_of_field&quot;: &quot;subtle with slight vignette&quot;,<br>    &quot;focus_point&quot;: &quot;center of floating object&quot;,<br>    &quot;ambient_occlusion&quot;: &quot;minimal to preserve light feel&quot;,<br>    &quot;render_engine&quot;: &quot;3D stylized with light diffusion and high specular detail&quot;,<br>    &quot;camera_angle&quot;: &quot;slightly above object, frontal&quot;,<br>    &quot;resolution&quot;: &quot;very high for product branding&quot;<br>  },<br>  &quot;special_effects&quot;: {<br>    &quot;floating_behavior&quot;: true,<br>    &quot;visual_weightlessness&quot;: true,<br>    &quot;shadow_softness&quot;: &quot;maximum&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>retexture the image attached based on the JSON below:</p><p>{<br>  &quot;style_name&quot;: &quot;Floating Glassy Neon 3D&quot;,<br>  &quot;retexture_mode&quot;: &quot;shape_lock&quot;,<br>  &quot;object_analysis&quot;: {<br>    &quot;preserve_silhouette&quot;: true,<br>    &quot;geometry_sensitive_mapping&quot;: true,<br>    &quot;detail_retention&quot;: &quot;maintain contours, volumes, and layering&quot;<br>  },<br>  &quot;material_properties&quot;: {<br>    &quot;base_material&quot;: &quot;translucent neon glass-gel&quot;,<br>    &quot;surface_finish&quot;: &quot;semi-gloss with soft glow edges&quot;,<br>    &quot;transparency&quot;: &quot;high, with soft light refraction&quot;,<br>    &quot;refraction&quot;: &quot;gentle bend with subtle halo on curves&quot;,<br>    &quot;embedded_effects&quot;: &quot;internal light scatter and edge neon glow&quot;,<br>    &quot;color_blend&quot;: {<br>      &quot;primary&quot;: [&quot;aqua&quot;, &quot;electric blue&quot;, &quot;neon violet&quot;],<br>      &quot;gradient_direction&quot;: &quot;top-left to bottom-right&quot;,<br>      &quot;transition_smoothness&quot;: &quot;very smooth&quot;<br>    }<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;softbox HDRI&quot;,<br>    &quot;intensity&quot;: &quot;soft and bright&quot;,<br>    &quot;source_direction&quot;: &quot;overhead and slightly front&quot;,<br>    &quot;highlight_behavior&quot;: &quot;gentle bloom with glass sparkle&quot;<br>  },<br>  &quot;shadow_behavior&quot;: {<br>    &quot;type&quot;: &quot;floating contact shadow&quot;,<br>    &quot;appearance&quot;: &quot;extremely soft, blurred ellipse&quot;,<br>    &quot;opacity&quot;: 0.07,<br>    &quot;distance_below_object&quot;: &quot;moderate&quot;,<br>    &quot;color&quot;: &quot;neutral gray&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;type&quot;: &quot;solid color&quot;,<br>    &quot;color&quot;: &quot;#ffffff&quot;,<br>    &quot;glow_effect&quot;: &quot;none&quot;,<br>    &quot;gradient&quot;: &quot;none&quot;<br>  },<br>  &quot;rendering&quot;: {<br>    &quot;depth_of_field&quot;: &quot;subtle with slight vignette&quot;,<br>    &quot;focus_point&quot;: &quot;center of floating object&quot;,<br>    &quot;ambient_occlusion&quot;: &quot;minimal to preserve light feel&quot;,<br>    &quot;render_engine&quot;: &quot;3D stylized with light diffusion and high specular detail&quot;,<br>    &quot;camera_angle&quot;: &quot;slightly above object, frontal&quot;,<br>    &quot;resolution&quot;: &quot;very high for product branding&quot;<br>  },<br>  &quot;special_effects&quot;: {<br>    &quot;floating_behavior&quot;: true,<br>    &quot;visual_weightlessness&quot;: true,<br>    &quot;shadow_softness&quot;: &quot;maximum&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/256.jpeg" alt="漂浮玻璃霓虹3D" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 252,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

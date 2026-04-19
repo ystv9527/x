@@ -7,11 +7,13 @@
     <title>&quot;album malomat&quot;: { #1867 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;album malomat&quot;: { &quot;location&quot;: &quot;Paris, France&quot;, &quot;mausam&quot;: &quot;Sardiyan aur barfbari&quot;, &quot;markazi kirdar&quot;: &quot;Ek naujawan k...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1867.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1867.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1867.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844709">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023566">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"album_malomat\": {\n    \"location\": \"巴黎，法国\",\n    \"mausam\": \"冬季与降雪\",\n    \"markazi_kirdar\": \"一位年轻女士\"\n  },\n  \"tasveeron_ki_tafseel\": [\n    {\n      \"tasvir_id\": \"01\",\n      \"manzar_kashi\": {\n        \"mahaul\": \"宁静且浪漫\",\n        \"waqt\": \"黄昏的余晖\",\n        \"background\": \"埃菲尔铁塔若隐若现，后方咖啡馆的金色灯光（散景效果）带来一丝温暖的感觉。\"\n      },\n      \"kirdar_ka_huliya\": {\n        \"chehra\": \"肤色清晰，淡妆，平静的目光望向天空。\",\n        \"libas\": {\n          \"topi\": \"黑色羊毛贝雷帽，上面落着雪。\",\n          \"scarf\": \"米色的厚实针织围巾。\",\n          \"coat\": \"黑色的冬季厚外套。\"\n        },\n        \"baal\": \"头发整理得整洁，但略显松散。\"\n      }\n    },\n    {\n      \"tasvir_id\": \"02\",\n      \"manzar_kashi\": {\n        \"mahaul\": \"更戏剧化且寒冷\",\n        \"waqt\": \"夜间\",\n        \"background\": \"灯光比之前更模糊，落雪的轮廓更加清晰可见。\"\n      },\n      \"kirdar_ka_huliya\": {\n        \"chehra\": \"脸上有湿润和潮湿感，眼神带有些许情绪。\",\n        \"libas\": {\n          \"topi\": \"这张照片中没有戴帽子。\",\n          \"scarf\": \"仍是那条米色围巾，但上面积了更多雪。\",\n          \"coat\": \"黑色外套感觉有些潮湿。\"\n        },\n        \"baal\": \"由于雪和湿度，头发湿漉且凌乱，体现出天气的严酷。\"\n      }\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;album_malomat&quot;: {<br>    &quot;location&quot;: &quot;巴黎，法国&quot;,<br>    &quot;mausam&quot;: &quot;冬季与降雪&quot;,<br>    &quot;markazi_kirdar&quot;: &quot;一位年轻女士&quot;<br>  },<br>  &quot;tasveeron_ki_tafseel&quot;: [<br>    {<br>      &quot;tasvir_id&quot;: &quot;01&quot;,<br>      &quot;manzar_kashi&quot;: {<br>        &quot;mahaul&quot;: &quot;宁静且浪漫&quot;,<br>        &quot;waqt&quot;: &quot;黄昏的余晖&quot;,<br>        &quot;background&quot;: &quot;埃菲尔铁塔若隐若现，后方咖啡馆的金色灯光（散景效果）带来一丝温暖的感觉。&quot;<br>      },<br>      &quot;kirdar_ka_huliya&quot;: {<br>        &quot;chehra&quot;: &quot;肤色清晰，淡妆，平静的目光望向天空。&quot;,<br>        &quot;libas&quot;: {<br>          &quot;topi&quot;: &quot;黑色羊毛贝雷帽，上面落着雪。&quot;,<br>          &quot;scarf&quot;: &quot;米色的厚实针织围巾。&quot;,<br>          &quot;coat&quot;: &quot;黑色的冬季厚外套。&quot;<br>        },<br>        &quot;baal&quot;: &quot;头发整理得整洁，但略显松散。&quot;<br>      }<br>    },<br>    {<br>      &quot;tasvir_id&quot;: &quot;02&quot;,<br>      &quot;manzar_kashi&quot;: {<br>        &quot;mahaul&quot;: &quot;更戏剧化且寒冷&quot;,<br>        &quot;waqt&quot;: &quot;夜间&quot;,<br>        &quot;background&quot;: &quot;灯光比之前更模糊，落雪的轮廓更加清晰可见。&quot;<br>      },<br>      &quot;kirdar_ka_huliya&quot;: {<br>        &quot;chehra&quot;: &quot;脸上有湿润和潮湿感，眼神带有些许情绪。&quot;,<br>        &quot;libas&quot;: {<br>          &quot;topi&quot;: &quot;这张照片中没有戴帽子。&quot;,<br>          &quot;scarf&quot;: &quot;仍是那条米色围巾，但上面积了更多雪。&quot;,<br>          &quot;coat&quot;: &quot;黑色外套感觉有些潮湿。&quot;<br>        },<br>        &quot;baal&quot;: &quot;由于雪和湿度，头发湿漉且凌乱，体现出天气的严酷。&quot;<br>      }<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;album_malomat&quot;: {<br>    &quot;location&quot;: &quot;巴黎，法国&quot;,<br>    &quot;mausam&quot;: &quot;冬季与降雪&quot;,<br>    &quot;markazi_kirdar&quot;: &quot;一位年轻女士&quot;<br>  },<br>  &quot;tasveeron_ki_tafseel&quot;: [<br>    {<br>      &quot;tasvir_id&quot;: &quot;01&quot;,<br>      &quot;manzar_kashi&quot;: {<br>        &quot;mahaul&quot;: &quot;宁静且浪漫&quot;,<br>        &quot;waqt&quot;: &quot;黄昏的余晖&quot;,<br>        &quot;background&quot;: &quot;埃菲尔铁塔若隐若现，后方咖啡馆的金色灯光（散景效果）带来一丝温暖的感觉。&quot;<br>      },<br>      &quot;kirdar_ka_huliya&quot;: {<br>        &quot;chehra&quot;: &quot;肤色清晰，淡妆，平静的目光望向天空。&quot;,<br>        &quot;libas&quot;: {<br>          &quot;topi&quot;: &quot;黑色羊毛贝雷帽，上面落着雪。&quot;,<br>          &quot;scarf&quot;: &quot;米色的厚实针织围巾。&quot;,<br>          &quot;coat&quot;: &quot;黑色的冬季厚外套。&quot;<br>        },<br>        &quot;baal&quot;: &quot;头发整理得整洁，但略显松散。&quot;<br>      }<br>    },<br>    {<br>      &quot;tasvir_id&quot;: &quot;02&quot;,<br>      &quot;manzar_kashi&quot;: {<br>        &quot;mahaul&quot;: &quot;更戏剧化且寒冷&quot;,<br>        &quot;waqt&quot;: &quot;夜间&quot;,<br>        &quot;background&quot;: &quot;灯光比之前更模糊，落雪的轮廓更加清晰可见。&quot;<br>      },<br>      &quot;kirdar_ka_huliya&quot;: {<br>        &quot;chehra&quot;: &quot;脸上有湿润和潮湿感，眼神带有些许情绪。&quot;,<br>        &quot;libas&quot;: {<br>          &quot;topi&quot;: &quot;这张照片中没有戴帽子。&quot;,<br>          &quot;scarf&quot;: &quot;仍是那条米色围巾，但上面积了更多雪。&quot;,<br>          &quot;coat&quot;: &quot;黑色外套感觉有些潮湿。&quot;<br>        },<br>        &quot;baal&quot;: &quot;由于雪和湿度，头发湿漉且凌乱，体现出天气的严酷。&quot;<br>      }<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"album_malomat\": {\n    \"location\": \"Paris, France\",\n    \"mausam\": \"Sardiyan aur barfbari\",\n    \"markazi_kirdar\": \"Ek naujawan khatoon\"\n  },\n  \"tasveeron_ki_tafseel\": [\n    {\n      \"tasvir_id\": \"01\",\n      \"manzar_kashi\": {\n        \"mahaul\": \"Pur-sukoon aur romantic\",\n        \"waqt\": \"Sham ka dhundalka\",\n        \"background\": \"Eiffel Tower halka sa numayan hai aur peechay cafe ki sunhari roshniyan (bokeh effect) ek garmi ka ehsas dila rahi hain.\"\n      },\n      \"kirdar_ka_huliya\": {\n        \"chehra\": \"Saaf rangat, halka makeup, aur pursukoon nazrein jo aasman ki taraf hain.\",\n        \"libas\": {\n          \"topi\": \"Siyah rang ki oon (wool) ki beret jis par barf giri hui hai.\",\n          \"scarf\": \"Bhure (beige) rang ka mota knitted scarf.\",\n          \"coat\": \"Siyah rang ka sardiyon ka heavy coat.\"\n        },\n        \"baal\": \"Saliqe se sanware hue aur halkay bikhre hue.\"\n      }\n    },\n    {\n      \"tasvir_id\": \"02\",\n      \"manzar_kashi\": {\n        \"mahaul\": \"Zyada daramaee (dramatic) aur thanda\",\n        \"waqt\": \"Raat ka waqt\",\n        \"background\": \"Roshniyan pehle se zyada dhundli hain aur barf ke gaale zyada wazeh dikhayi de rahe hain.\"\n      },\n      \"kirdar_ka_huliya\": {\n        \"chehra\": \"Chehre par nami aur geelapan hai, ankhon mein thoda jazbati pan hai.\",\n        \"libas\": {\n          \"topi\": \"Is tasvir mein topi nahi pehni hui.\",\n          \"scarf\": \"Wohi beige scarf lekin barf se zyada bhara hua.\",\n          \"coat\": \"Siyah coat jo geela mehsoos ho raha hai.\"\n        },\n        \"baal\": \"Barf aur nami ki wajah se geele aur bikhre hue, jo mausam ki shidat ko zahir karte hain.\"\n      }\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;album_malomat&quot;: {<br>    &quot;location&quot;: &quot;Paris, France&quot;,<br>    &quot;mausam&quot;: &quot;Sardiyan aur barfbari&quot;,<br>    &quot;markazi_kirdar&quot;: &quot;Ek naujawan khatoon&quot;<br>  },<br>  &quot;tasveeron_ki_tafseel&quot;: [<br>    {<br>      &quot;tasvir_id&quot;: &quot;01&quot;,<br>      &quot;manzar_kashi&quot;: {<br>        &quot;mahaul&quot;: &quot;Pur-sukoon aur romantic&quot;,<br>        &quot;waqt&quot;: &quot;Sham ka dhundalka&quot;,<br>        &quot;background&quot;: &quot;Eiffel Tower halka sa numayan hai aur peechay cafe ki sunhari roshniyan (bokeh effect) ek garmi ka ehsas dila rahi hain.&quot;<br>      },<br>      &quot;kirdar_ka_huliya&quot;: {<br>        &quot;chehra&quot;: &quot;Saaf rangat, halka makeup, aur pursukoon nazrein jo aasman ki taraf hain.&quot;,<br>        &quot;libas&quot;: {<br>          &quot;topi&quot;: &quot;Siyah rang ki oon (wool) ki beret jis par barf giri hui hai.&quot;,<br>          &quot;scarf&quot;: &quot;Bhure (beige) rang ka mota knitted scarf.&quot;,<br>          &quot;coat&quot;: &quot;Siyah rang ka sardiyon ka heavy coat.&quot;<br>        },<br>        &quot;baal&quot;: &quot;Saliqe se sanware hue aur halkay bikhre hue.&quot;<br>      }<br>    },<br>    {<br>      &quot;tasvir_id&quot;: &quot;02&quot;,<br>      &quot;manzar_kashi&quot;: {<br>        &quot;mahaul&quot;: &quot;Zyada daramaee (dramatic) aur thanda&quot;,<br>        &quot;waqt&quot;: &quot;Raat ka waqt&quot;,<br>        &quot;background&quot;: &quot;Roshniyan pehle se zyada dhundli hain aur barf ke gaale zyada wazeh dikhayi de rahe hain.&quot;<br>      },<br>      &quot;kirdar_ka_huliya&quot;: {<br>        &quot;chehra&quot;: &quot;Chehre par nami aur geelapan hai, ankhon mein thoda jazbati pan hai.&quot;,<br>        &quot;libas&quot;: {<br>          &quot;topi&quot;: &quot;Is tasvir mein topi nahi pehni hui.&quot;,<br>          &quot;scarf&quot;: &quot;Wohi beige scarf lekin barf se zyada bhara hua.&quot;,<br>          &quot;coat&quot;: &quot;Siyah coat jo geela mehsoos ho raha hai.&quot;<br>        },<br>        &quot;baal&quot;: &quot;Barf aur nami ki wajah se geele aur bikhre hue, jo mausam ki shidat ko zahir karte hain.&quot;<br>      }<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;album_malomat&quot;: {<br>    &quot;location&quot;: &quot;Paris, France&quot;,<br>    &quot;mausam&quot;: &quot;Sardiyan aur barfbari&quot;,<br>    &quot;markazi_kirdar&quot;: &quot;Ek naujawan khatoon&quot;<br>  },<br>  &quot;tasveeron_ki_tafseel&quot;: [<br>    {<br>      &quot;tasvir_id&quot;: &quot;01&quot;,<br>      &quot;manzar_kashi&quot;: {<br>        &quot;mahaul&quot;: &quot;Pur-sukoon aur romantic&quot;,<br>        &quot;waqt&quot;: &quot;Sham ka dhundalka&quot;,<br>        &quot;background&quot;: &quot;Eiffel Tower halka sa numayan hai aur peechay cafe ki sunhari roshniyan (bokeh effect) ek garmi ka ehsas dila rahi hain.&quot;<br>      },<br>      &quot;kirdar_ka_huliya&quot;: {<br>        &quot;chehra&quot;: &quot;Saaf rangat, halka makeup, aur pursukoon nazrein jo aasman ki taraf hain.&quot;,<br>        &quot;libas&quot;: {<br>          &quot;topi&quot;: &quot;Siyah rang ki oon (wool) ki beret jis par barf giri hui hai.&quot;,<br>          &quot;scarf&quot;: &quot;Bhure (beige) rang ka mota knitted scarf.&quot;,<br>          &quot;coat&quot;: &quot;Siyah rang ka sardiyon ka heavy coat.&quot;<br>        },<br>        &quot;baal&quot;: &quot;Saliqe se sanware hue aur halkay bikhre hue.&quot;<br>      }<br>    },<br>    {<br>      &quot;tasvir_id&quot;: &quot;02&quot;,<br>      &quot;manzar_kashi&quot;: {<br>        &quot;mahaul&quot;: &quot;Zyada daramaee (dramatic) aur thanda&quot;,<br>        &quot;waqt&quot;: &quot;Raat ka waqt&quot;,<br>        &quot;background&quot;: &quot;Roshniyan pehle se zyada dhundli hain aur barf ke gaale zyada wazeh dikhayi de rahe hain.&quot;<br>      },<br>      &quot;kirdar_ka_huliya&quot;: {<br>        &quot;chehra&quot;: &quot;Chehre par nami aur geelapan hai, ankhon mein thoda jazbati pan hai.&quot;,<br>        &quot;libas&quot;: {<br>          &quot;topi&quot;: &quot;Is tasvir mein topi nahi pehni hui.&quot;,<br>          &quot;scarf&quot;: &quot;Wohi beige scarf lekin barf se zyada bhara hua.&quot;,<br>          &quot;coat&quot;: &quot;Siyah coat jo geela mehsoos ho raha hai.&quot;<br>        },<br>        &quot;baal&quot;: &quot;Barf aur nami ki wajah se geele aur bikhre hue, jo mausam ki shidat ko zahir karte hain.&quot;<br>      }<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2017750739985260923-1.jpg" alt="&quot;album malomat&quot;: {" loading="lazy"><img src="/images/tweet-2017750739985260923-2.jpg" alt="&quot;album malomat&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1867,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>Create a hyper real, studio portrait using [USER PHOTO] as th... #1828 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create a hyper real, studio portrait using [USER PHOTO] as the exact identity reference (same face, hairstyle, skin t...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1828.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1828.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1828.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840556">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022366">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一幅超现实、摄影棚风格的人像，使用 [USER_PHOTO] 作为精确身份参考（相同面容、发型、皮肤纹理和年龄）。将此人描绘成一位自信的 [PROFESSION]，随意坐在一把现代白色人体工学办公椅上，双腿交叉，位于画面中央。添加一种风格化的“多臂”幻觉（共6–8只手臂），从躯干后方放射，类似现代受湿婆/毗湿奴启发的轮廓，但要照片级逼真：每只额外的手臂必须具有正确的解剖结构、可信的关节、肌腱、皮肤毛孔和自然阴影；手指不可扭曲变形。\n\n道具（必须与职业相关）：自动选择并放置真实 [PROFESSION] 会使用的不同工具，每只手/手臂对应一个道具，所有道具在设计上都清晰可辨且准确。示例类别：主要工具、次要工具、通讯设备、测量/诊断工具、配件，以及一个“主打”道具。主/前手务必握持一部真实的智能手机。避免通用的随机物品——每个道具必须合理且逻辑上属于该 [PROFESSION]。如果 [PROFESSION] 属于数字/科技：包含笔记本电脑、平板、相机/监视器、测光表、触控笔、键盘、麦克风等。如果 [PROFESSION] 属于医疗：听诊器、病历夹、检耳镜、注射器（安全/临床）等。如果 [PROFESSION] 属于烹饪：厨师刀、夹子、摆盘镊子、食谱平板等。（始终与 [PROFESSION] 匹配。）\n\n背景色（主题匹配）：使用无缝纸质摄影棚背景，选用与职业主题相匹配的单一主色（例如：创意/媒体使用暖芥末色，医疗使用冷青色，工程使用石墨/钢灰，户外使用浓郁橄榄色，奢侈品使用深酒红）。颜色需与肤色和服装互相补色。添加细微的渐变衰减和柔和的反光以增加深度（背景不可平面单调）。\n\n灯光与布景：高端商业摄影棚质感。相机左侧一个大型柔光主灯，右侧有受控的补光，清晰的轮廓光用于分离主体，且道具上有真实感的镜面高光。在主体后方（部分可见处）加入一个大型圆形银色反光盘以增强视觉效果。地面上添加与光源方向一致的细微阴影。\n\n服装与造型：服装须符合顶级 [PROFESSION] 的可信形象（干净、现代、略作风格化），具有质地细节（面料纹理、缝线）。添加极少量的配饰（手表/手链），呈现高级感。表情：专注、略带强度，处于“专注投入”的状态。\n\n构图与镜头：全身竖构图（4:5），50mm 镜头视角，平视相机，面部对焦锐利，浅景深但道具仍可辨识。皮肤超细节、自然色彩分级、高动态范围、清晰的微对比度。\n\n真实规则：禁止卡通化、禁止CGI外观。不得出现额外面孔或重复头部。手部必须符合解剖（5指），不得出现融化的物体，除非自然存在否则不可有无法辨认的文字或标识。保持场景整洁且高端。\n\n输出：照片级超现实社论摄影，8K 细节，摄影棚级修图，自然皮肤质感保留。", this)'>📋 复制</button>
         </div>
-        <p>创建一幅超现实、摄影棚风格的人像，使用 [USER_PHOTO] 作为精确身份参考（相同面容、发型、皮肤纹理和年龄）。将此人描绘成一位自信的 [PROFESSION]，随意坐在一把现代白色人体工学办公椅上，双腿交叉，位于画面中央。添加一种风格化的“多臂”幻觉（共6–8只手臂），从躯干后方放射，类似现代受湿婆/毗湿奴启发的轮廓，但要照片级逼真：每只额外的手臂必须具有正确的解剖结构、可信的关节、肌腱、皮肤毛孔和自然阴影；手指不可扭曲变形。</p><p>道具（必须与职业相关）：自动选择并放置真实 [PROFESSION] 会使用的不同工具，每只手/手臂对应一个道具，所有道具在设计上都清晰可辨且准确。示例类别：主要工具、次要工具、通讯设备、测量/诊断工具、配件，以及一个“主打”道具。主/前手务必握持一部真实的智能手机。避免通用的随机物品——每个道具必须合理且逻辑上属于该 [PROFESSION]。如果 [PROFESSION] 属于数字/科技：包含笔记本电脑、平板、相机/监视器、测光表、触控笔、键盘、麦克风等。如果 [PROFESSION] 属于医疗：听诊器、病历夹、检耳镜、注射器（安全/临床）等。如果 [PROFESSION] 属于烹饪：厨师刀、夹子、摆盘镊子、食谱平板等。（始终与 [PROFESSION] 匹配。）</p><p>背景色（主题匹配）：使用无缝纸质摄影棚背景，选用与职业主题相匹配的单一主色（例如：创意/媒体使用暖芥末色，医疗使用冷青色，工程使用石墨/钢灰，户外使用浓郁橄榄色，奢侈品使用深酒红）。颜色需与肤色和服装互相补色。添加细微的渐变衰减和柔和的反光以增加深度（背景不可平面单调）。</p><p>灯光与布景：高端商业摄影棚质感。相机左侧一个大型柔光主灯，右侧有受控的补光，清晰的轮廓光用于分离主体，且道具上有真实感的镜面高光。在主体后方（部分可见处）加入一个大型圆形银色反光盘以增强视觉效果。地面上添加与光源方向一致的细微阴影。</p><p>服装与造型：服装须符合顶级 [PROFESSION] 的可信形象（干净、现代、略作风格化），具有质地细节（面料纹理、缝线）。添加极少量的配饰（手表/手链），呈现高级感。表情：专注、略带强度，处于“专注投入”的状态。</p><p>构图与镜头：全身竖构图（4:5），50mm 镜头视角，平视相机，面部对焦锐利，浅景深但道具仍可辨识。皮肤超细节、自然色彩分级、高动态范围、清晰的微对比度。</p><p>真实规则：禁止卡通化、禁止CGI外观。不得出现额外面孔或重复头部。手部必须符合解剖（5指），不得出现融化的物体，除非自然存在否则不可有无法辨认的文字或标识。保持场景整洁且高端。</p><p>输出：照片级超现实社论摄影，8K 细节，摄影棚级修图，自然皮肤质感保留。</p>
+        <div data-nosnippet><p>创建一幅超现实、摄影棚风格的人像，使用 [USER_PHOTO] 作为精确身份参考（相同面容、发型、皮肤纹理和年龄）。将此人描绘成一位自信的 [PROFESSION]，随意坐在一把现代白色人体工学办公椅上，双腿交叉，位于画面中央。添加一种风格化的“多臂”幻觉（共6–8只手臂），从躯干后方放射，类似现代受湿婆/毗湿奴启发的轮廓，但要照片级逼真：每只额外的手臂必须具有正确的解剖结构、可信的关节、肌腱、皮肤毛孔和自然阴影；手指不可扭曲变形。</p><p>道具（必须与职业相关）：自动选择并放置真实 [PROFESSION] 会使用的不同工具，每只手/手臂对应一个道具，所有道具在设计上都清晰可辨且准确。示例类别：主要工具、次要工具、通讯设备、测量/诊断工具、配件，以及一个“主打”道具。主/前手务必握持一部真实的智能手机。避免通用的随机物品——每个道具必须合理且逻辑上属于该 [PROFESSION]。如果 [PROFESSION] 属于数字/科技：包含笔记本电脑、平板、相机/监视器、测光表、触控笔、键盘、麦克风等。如果 [PROFESSION] 属于医疗：听诊器、病历夹、检耳镜、注射器（安全/临床）等。如果 [PROFESSION] 属于烹饪：厨师刀、夹子、摆盘镊子、食谱平板等。（始终与 [PROFESSION] 匹配。）</p><p>背景色（主题匹配）：使用无缝纸质摄影棚背景，选用与职业主题相匹配的单一主色（例如：创意/媒体使用暖芥末色，医疗使用冷青色，工程使用石墨/钢灰，户外使用浓郁橄榄色，奢侈品使用深酒红）。颜色需与肤色和服装互相补色。添加细微的渐变衰减和柔和的反光以增加深度（背景不可平面单调）。</p><p>灯光与布景：高端商业摄影棚质感。相机左侧一个大型柔光主灯，右侧有受控的补光，清晰的轮廓光用于分离主体，且道具上有真实感的镜面高光。在主体后方（部分可见处）加入一个大型圆形银色反光盘以增强视觉效果。地面上添加与光源方向一致的细微阴影。</p><p>服装与造型：服装须符合顶级 [PROFESSION] 的可信形象（干净、现代、略作风格化），具有质地细节（面料纹理、缝线）。添加极少量的配饰（手表/手链），呈现高级感。表情：专注、略带强度，处于“专注投入”的状态。</p><p>构图与镜头：全身竖构图（4:5），50mm 镜头视角，平视相机，面部对焦锐利，浅景深但道具仍可辨识。皮肤超细节、自然色彩分级、高动态范围、清晰的微对比度。</p><p>真实规则：禁止卡通化、禁止CGI外观。不得出现额外面孔或重复头部。手部必须符合解剖（5指），不得出现融化的物体，除非自然存在否则不可有无法辨认的文字或标识。保持场景整洁且高端。</p><p>输出：照片级超现实社论摄影，8K 细节，摄影棚级修图，自然皮肤质感保留。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a hyper-real, studio portrait using [USER_PHOTO] as the exact identity reference (same face, hairstyle, skin texture, and age). Depict the person as a confident [PROFESSION] sitting casually on a modern white ergonomic office chair, legs crossed, centered in frame. Add a stylized “multi-arm” illusion (6–8 arms total) radiating behind the torso like a modern Shiva/Vishnu-inspired silhouette, but photorealistic: each extra arm must have correct anatomy, believable joints, tendons, skin pores, and natural shadowing; no warped fingers.\n\nPROPS (must be profession-relevant): Automatically choose and place different tools that a real [PROFESSION] would use, one per hand/arm, all clearly readable and accurate in design. Examples of categories: primary tool, secondary tool, communication device, measurement/diagnostic tool, accessory, and a “hero” prop. Keep one real smartphone in the main/front hand. Avoid generic random objects—every prop must logically belong to [PROFESSION]. If [PROFESSION] is digital/tech: include items like laptop, tablet, camera/monitor, light meter, stylus, keyboard, mic, etc. If [PROFESSION] is medical: stethoscope, clipboard, otoscope, syringe (safe/clinical), etc. If [PROFESSION] is culinary: chef knife, tongs, plating tweezers, recipe tablet, etc. (Always match [PROFESSION].)\n\nBACKGROUND COLOR (topic-matched): Use a seamless paper studio backdrop with a single dominant color that matches the profession theme (e.g., warm mustard for creative/media, cool teal for healthcare, graphite/steel for engineering, rich olive for outdoors, deep burgundy for luxury). The color should complement skin tones and wardrobe. Add subtle gradient falloff and soft bounce for depth (no flat background).\n\nLIGHTING & SET: High-end commercial studio look. One large soft key light from camera-left, controlled fill from right, crisp rim light to separate subject, and realistic specular highlights on props. Include a large circular silver reflector disk behind the subject (partially visible) for visual punch. Add a subtle shadow on the floor consistent with light direction.\n\nWARDROBE & STYLING: Outfit must be believable for a top-tier [PROFESSION] (clean, modern, slightly stylized), with texture detail (fabric weave, seams). Add minimal accessories (watch/bracelet) that feel premium. Expression: focused, slightly intense, “in the zone.”\n\nCOMPOSITION & CAMERA: Full-body vertical portrait (4:5), 50mm lens look, eye-level camera, sharp focus on face, shallow depth of field but props still readable. Ultra-detailed skin, natural color grading, high dynamic range, crisp micro-contrast.\n\nREALISM RULES: No cartoon, no CGI look. No extra faces, no duplicated heads. Hands must be anatomically correct (5 fingers), no melted objects, no unreadable text logos unless naturally present. Keep the scene clean and premium.\n\nOutput: hyper-real editorial photograph, 8K detail, studio-quality retouching, natural skin texture preserved.", this)'>📋 复制</button>
         </div>
-        <p>Create a hyper-real, studio portrait using [USER_PHOTO] as the exact identity reference (same face, hairstyle, skin texture, and age). Depict the person as a confident [PROFESSION] sitting casually on a modern white ergonomic office chair, legs crossed, centered in frame. Add a stylized “multi-arm” illusion (6–8 arms total) radiating behind the torso like a modern Shiva/Vishnu-inspired silhouette, but photorealistic: each extra arm must have correct anatomy, believable joints, tendons, skin pores, and natural shadowing; no warped fingers.</p><p>PROPS (must be profession-relevant): Automatically choose and place different tools that a real [PROFESSION] would use, one per hand/arm, all clearly readable and accurate in design. Examples of categories: primary tool, secondary tool, communication device, measurement/diagnostic tool, accessory, and a “hero” prop. Keep one real smartphone in the main/front hand. Avoid generic random objects—every prop must logically belong to [PROFESSION]. If [PROFESSION] is digital/tech: include items like laptop, tablet, camera/monitor, light meter, stylus, keyboard, mic, etc. If [PROFESSION] is medical: stethoscope, clipboard, otoscope, syringe (safe/clinical), etc. If [PROFESSION] is culinary: chef knife, tongs, plating tweezers, recipe tablet, etc. (Always match [PROFESSION].)</p><p>BACKGROUND COLOR (topic-matched): Use a seamless paper studio backdrop with a single dominant color that matches the profession theme (e.g., warm mustard for creative/media, cool teal for healthcare, graphite/steel for engineering, rich olive for outdoors, deep burgundy for luxury). The color should complement skin tones and wardrobe. Add subtle gradient falloff and soft bounce for depth (no flat background).</p><p>LIGHTING &amp; SET: High-end commercial studio look. One large soft key light from camera-left, controlled fill from right, crisp rim light to separate subject, and realistic specular highlights on props. Include a large circular silver reflector disk behind the subject (partially visible) for visual punch. Add a subtle shadow on the floor consistent with light direction.</p><p>WARDROBE &amp; STYLING: Outfit must be believable for a top-tier [PROFESSION] (clean, modern, slightly stylized), with texture detail (fabric weave, seams). Add minimal accessories (watch/bracelet) that feel premium. Expression: focused, slightly intense, “in the zone.”</p><p>COMPOSITION &amp; CAMERA: Full-body vertical portrait (4:5), 50mm lens look, eye-level camera, sharp focus on face, shallow depth of field but props still readable. Ultra-detailed skin, natural color grading, high dynamic range, crisp micro-contrast.</p><p>REALISM RULES: No cartoon, no CGI look. No extra faces, no duplicated heads. Hands must be anatomically correct (5 fingers), no melted objects, no unreadable text logos unless naturally present. Keep the scene clean and premium.</p><p>Output: hyper-real editorial photograph, 8K detail, studio-quality retouching, natural skin texture preserved.</p>
+        <div data-nosnippet><p>Create a hyper-real, studio portrait using [USER_PHOTO] as the exact identity reference (same face, hairstyle, skin texture, and age). Depict the person as a confident [PROFESSION] sitting casually on a modern white ergonomic office chair, legs crossed, centered in frame. Add a stylized “multi-arm” illusion (6–8 arms total) radiating behind the torso like a modern Shiva/Vishnu-inspired silhouette, but photorealistic: each extra arm must have correct anatomy, believable joints, tendons, skin pores, and natural shadowing; no warped fingers.</p><p>PROPS (must be profession-relevant): Automatically choose and place different tools that a real [PROFESSION] would use, one per hand/arm, all clearly readable and accurate in design. Examples of categories: primary tool, secondary tool, communication device, measurement/diagnostic tool, accessory, and a “hero” prop. Keep one real smartphone in the main/front hand. Avoid generic random objects—every prop must logically belong to [PROFESSION]. If [PROFESSION] is digital/tech: include items like laptop, tablet, camera/monitor, light meter, stylus, keyboard, mic, etc. If [PROFESSION] is medical: stethoscope, clipboard, otoscope, syringe (safe/clinical), etc. If [PROFESSION] is culinary: chef knife, tongs, plating tweezers, recipe tablet, etc. (Always match [PROFESSION].)</p><p>BACKGROUND COLOR (topic-matched): Use a seamless paper studio backdrop with a single dominant color that matches the profession theme (e.g., warm mustard for creative/media, cool teal for healthcare, graphite/steel for engineering, rich olive for outdoors, deep burgundy for luxury). The color should complement skin tones and wardrobe. Add subtle gradient falloff and soft bounce for depth (no flat background).</p><p>LIGHTING &amp; SET: High-end commercial studio look. One large soft key light from camera-left, controlled fill from right, crisp rim light to separate subject, and realistic specular highlights on props. Include a large circular silver reflector disk behind the subject (partially visible) for visual punch. Add a subtle shadow on the floor consistent with light direction.</p><p>WARDROBE &amp; STYLING: Outfit must be believable for a top-tier [PROFESSION] (clean, modern, slightly stylized), with texture detail (fabric weave, seams). Add minimal accessories (watch/bracelet) that feel premium. Expression: focused, slightly intense, “in the zone.”</p><p>COMPOSITION &amp; CAMERA: Full-body vertical portrait (4:5), 50mm lens look, eye-level camera, sharp focus on face, shallow depth of field but props still readable. Ultra-detailed skin, natural color grading, high dynamic range, crisp micro-contrast.</p><p>REALISM RULES: No cartoon, no CGI look. No extra faces, no duplicated heads. Hands must be anatomically correct (5 fingers), no melted objects, no unreadable text logos unless naturally present. Keep the scene clean and premium.</p><p>Output: hyper-real editorial photograph, 8K detail, studio-quality retouching, natural skin texture preserved.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2017190762346078697-1.jpg" alt="Create a hyper real, studio portrait using [USER PHOTO] as th..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1828,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

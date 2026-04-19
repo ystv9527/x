@@ -7,11 +7,13 @@
     <title>Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片 #518 | Gem Nana AI 提示词库</title>
     <meta name="description" content="本文介绍了利用Google AI工作室Gemini（纳米香蕉）2.5 Pro，通过详细提示生成高分辨率、超逼真风格的时尚杂志照片，包括人物造型、背景效果和排版布局，展现AI在高端视觉创作中的应用潜力。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/518.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/518.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/518.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841779">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022676">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n\"image_style\": \"超逼真 8K 高清高分辨率照片\",\r\n“作品”： {\r\n对象： '打开时尚杂志'\r\n“放置方式”：“躺在深灰色表面上”，\r\n“视角”：“从上方斜角拍摄（俯视特写）”\r\n“效果”：[\r\n“柔光箱的微妙反射”\r\n“杂志下方逼真的阴影”\r\n],\r\n\"magazine_details\": {\r\n“纹理”：“逼真的光面纸张反射和精细的纸张纹理”，\r\n“形状”：“略微弯曲的页面”，\r\n“下面”： “下面堆放着杂志”\r\n    }\r\n  },\r\n\"page_layout\": {\r\n\"left_page\": {\r\n“内容”：“印刷编辑照片（特写）”\r\n“主题”： {\r\n“人物”：“上传图片中的女性（保留了原脸）”\r\n“姿势”：“头部微微上扬，眼神自信而迷人”，\r\n“头发”：长长的、略微蓬松的、有光泽的头发，\r\n“服装”：“与上传图片中的服装相同（未来主义皮夹克）”\r\n“配件”： [\r\n“精致的银手镯”，\r\n“精致的耳环”\r\n],\r\n“风格”： “现代、优雅、自信的高级时装”\r\n      },\r\n\"photo_background\": {\r\n“颜色”： “鲜艳的橙色背景”，\r\n“灯光”：“强烈的正面顶光，在她脸部和颈部营造出戏剧性的高光和阴影”，\r\n“美学”：“光泽感强、对比度高、景深浅、大胆的高级时装大片风格”\r\n      }\r\n    },\r\n\"right_page\": {\r\n\"内容\": \"文本和徽标\",\r\n“元素”：[\r\n“小 𝕏 标志”\r\n“处理 \\” @saniaspeaks 采用简洁现代的无衬线字体\r\n],\r\n\"aesthetic_note\": \"保持奢侈时尚杂志的风格\",\r\n\"added_text\": {\r\n单词： 独特，\r\n“位置”：“右下角的小而低调的字体”\r\n      }\r\n    }\r\n  },\r\n\"整体美学\": {\r\n“氛围”：“电影感十足，优雅”，\r\n\"detail_level\": \"超精细\",\r\n\"quality_focus\": [\r\n“现实的反思”，\r\n“高端杂志的编辑美学”\r\n    ]\r\n  },\r\n\"technical_parameters\": {\r\n\"aspect_ratio\": \"16:9\",\r\n\"风格\": \"原始\"\r\n“质量”：2，\r\n“版本”：6，\r\n“upscale”: “upbeta”\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;image_style&quot;: &quot;超逼真 8K 高清高分辨率照片&quot;,<br>“作品”： {<br>对象： &#39;打开时尚杂志&#39;<br>“放置方式”：“躺在深灰色表面上”，<br>“视角”：“从上方斜角拍摄（俯视特写）”<br>“效果”：[<br>“柔光箱的微妙反射”<br>“杂志下方逼真的阴影”<br>],<br>&quot;magazine_details&quot;: {<br>“纹理”：“逼真的光面纸张反射和精细的纸张纹理”，<br>“形状”：“略微弯曲的页面”，<br>“下面”： “下面堆放着杂志”<br>    }<br>  },<br>&quot;page_layout&quot;: {<br>&quot;left_page&quot;: {<br>“内容”：“印刷编辑照片（特写）”<br>“主题”： {<br>“人物”：“上传图片中的女性（保留了原脸）”<br>“姿势”：“头部微微上扬，眼神自信而迷人”，<br>“头发”：长长的、略微蓬松的、有光泽的头发，<br>“服装”：“与上传图片中的服装相同（未来主义皮夹克）”<br>“配件”： [<br>“精致的银手镯”，<br>“精致的耳环”<br>],<br>“风格”： “现代、优雅、自信的高级时装”<br>      },<br>&quot;photo_background&quot;: {<br>“颜色”： “鲜艳的橙色背景”，<br>“灯光”：“强烈的正面顶光，在她脸部和颈部营造出戏剧性的高光和阴影”，<br>“美学”：“光泽感强、对比度高、景深浅、大胆的高级时装大片风格”<br>      }<br>    },<br>&quot;right_page&quot;: {<br>&quot;内容&quot;: &quot;文本和徽标&quot;,<br>“元素”：[<br>“小 𝕏 标志”<br>“处理 \” @saniaspeaks 采用简洁现代的无衬线字体<br>],<br>&quot;aesthetic_note&quot;: &quot;保持奢侈时尚杂志的风格&quot;,<br>&quot;added_text&quot;: {<br>单词： 独特，<br>“位置”：“右下角的小而低调的字体”<br>      }<br>    }<br>  },<br>&quot;整体美学&quot;: {<br>“氛围”：“电影感十足，优雅”，<br>&quot;detail_level&quot;: &quot;超精细&quot;,<br>&quot;quality_focus&quot;: [<br>“现实的反思”，<br>“高端杂志的编辑美学”<br>    ]<br>  },<br>&quot;technical_parameters&quot;: {<br>&quot;aspect_ratio&quot;: &quot;16:9&quot;,<br>&quot;风格&quot;: &quot;原始&quot;<br>“质量”：2，<br>“版本”：6，<br>“upscale”: “upbeta”<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;image_style&quot;: &quot;超逼真 8K 高清高分辨率照片&quot;,<br>“作品”： {<br>对象： &#39;打开时尚杂志&#39;<br>“放置方式”：“躺在深灰色表面上”，<br>“视角”：“从上方斜角拍摄（俯视特写）”<br>“效果”：[<br>“柔光箱的微妙反射”<br>“杂志下方逼真的阴影”<br>],<br>&quot;magazine_details&quot;: {<br>“纹理”：“逼真的光面纸张反射和精细的纸张纹理”，<br>“形状”：“略微弯曲的页面”，<br>“下面”： “下面堆放着杂志”<br>    }<br>  },<br>&quot;page_layout&quot;: {<br>&quot;left_page&quot;: {<br>“内容”：“印刷编辑照片（特写）”<br>“主题”： {<br>“人物”：“上传图片中的女性（保留了原脸）”<br>“姿势”：“头部微微上扬，眼神自信而迷人”，<br>“头发”：长长的、略微蓬松的、有光泽的头发，<br>“服装”：“与上传图片中的服装相同（未来主义皮夹克）”<br>“配件”： [<br>“精致的银手镯”，<br>“精致的耳环”<br>],<br>“风格”： “现代、优雅、自信的高级时装”<br>      },<br>&quot;photo_background&quot;: {<br>“颜色”： “鲜艳的橙色背景”，<br>“灯光”：“强烈的正面顶光，在她脸部和颈部营造出戏剧性的高光和阴影”，<br>“美学”：“光泽感强、对比度高、景深浅、大胆的高级时装大片风格”<br>      }<br>    },<br>&quot;right_page&quot;: {<br>&quot;内容&quot;: &quot;文本和徽标&quot;,<br>“元素”：[<br>“小 𝕏 标志”<br>“处理 \” @saniaspeaks 采用简洁现代的无衬线字体<br>],<br>&quot;aesthetic_note&quot;: &quot;保持奢侈时尚杂志的风格&quot;,<br>&quot;added_text&quot;: {<br>单词： 独特，<br>“位置”：“右下角的小而低调的字体”<br>      }<br>    }<br>  },<br>&quot;整体美学&quot;: {<br>“氛围”：“电影感十足，优雅”，<br>&quot;detail_level&quot;: &quot;超精细&quot;,<br>&quot;quality_focus&quot;: [<br>“现实的反思”，<br>“高端杂志的编辑美学”<br>    ]<br>  },<br>&quot;technical_parameters&quot;: {<br>&quot;aspect_ratio&quot;: &quot;16:9&quot;,<br>&quot;风格&quot;: &quot;原始&quot;<br>“质量”：2，<br>“版本”：6，<br>“upscale”: “upbeta”<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"image_style\": \"Hyper-realistic 8K HD high-resolution photo\",\r\n  \"composition\": {\r\n    \"object\": \"Open fashion magazine\",\r\n    \"placement\": \"Lying on a dark gray surface\",\r\n    \"perspective\": \"Shot diagonally from above (overhead close-up)\",\r\n    \"effects\": [\r\n      \"Subtle softbox reflections\",\r\n      \"Realistic shadows beneath the magazine\"\r\n    ],\r\n    \"magazine_details\": {\r\n      \"texture\": \"Realistic glossy paper reflections and fine paper texture\",\r\n      \"shape\": \"Slightly curved pages\",\r\n      \"underneath\": \"Stacked magazines underneath\"\r\n    }\r\n  },\r\n  \"page_layout\": {\r\n    \"left_page\": {\r\n      \"content\": \"Printed editorial photo (close-up)\",\r\n      \"subject\": {\r\n        \"figure\": \"Woman from the uploaded image (original face kept)\",\r\n        \"pose\": \"Head tilted slightly upward, confident and captivating gaze\",\r\n        \"hair\": \"Long, slightly tousled glossy hair\",\r\n        \"outfit\": \"Same outfit from the uploaded image (futuristic leather jacket)\",\r\n        \"accessories\": [\r\n          \"Delicate silver bracelet\",\r\n          \"Delicate earrings\"\r\n        ],\r\n        \"vibe\": \"Modern, elegant, and confident high-fashion\"\r\n      },\r\n      \"photo_background\": {\r\n        \"color\": \"Vivid orange backdrop\",\r\n        \"lighting\": \"Strong front-top lighting, creating dramatic highlights and shadows on her face and neck\",\r\n        \"aesthetic\": \"Glossy, high-contrast, shallow depth of field, bold high-fashion editorial\"\r\n      }\r\n    },\r\n    \"right_page\": {\r\n      \"content\": \"Text and logo\",\r\n      \"elements\": [\r\n        \"Small 𝕏 logo\",\r\n        \"Handle \\\"@saniaspeaks\\\" in a sleek, modern sans-serif font\"\r\n      ],\r\n      \"aesthetic_note\": \"Maintaining a luxury fashion-magazine composition\",\r\n      \"added_text\": {\r\n        \"word\": \"Unique\",\r\n        \"placement\": \"Small, subtle font in the bottom right corner\"\r\n      }\r\n    }\r\n  },\r\n  \"overall_aesthetic\": {\r\n    \"mood\": \"Cinematic, elegant\",\r\n    \"detail_level\": \"Ultra-detailed\",\r\n    \"quality_focus\": [\r\n      \"Realistic reflections\",\r\n      \"Premium editorial magazine aesthetics\"\r\n    ]\r\n  },\r\n  \"technical_parameters\": {\r\n    \"aspect_ratio\": \"16:9\",\r\n    \"style\": \"raw\",\r\n    \"quality\": 2,\r\n    \"version\": 6,\r\n    \"upscale\": \"upbeta\"\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>&quot;image_style&quot;: &quot;Hyper-realistic 8K HD high-resolution photo&quot;,<br>  &quot;composition&quot;: {<br>    &quot;object&quot;: &quot;Open fashion magazine&quot;,<br>    &quot;placement&quot;: &quot;Lying on a dark gray surface&quot;,<br>    &quot;perspective&quot;: &quot;Shot diagonally from above (overhead close-up)&quot;,<br>    &quot;effects&quot;: [<br>      &quot;Subtle softbox reflections&quot;,<br>      &quot;Realistic shadows beneath the magazine&quot;<br>    ],<br>    &quot;magazine_details&quot;: {<br>      &quot;texture&quot;: &quot;Realistic glossy paper reflections and fine paper texture&quot;,<br>      &quot;shape&quot;: &quot;Slightly curved pages&quot;,<br>      &quot;underneath&quot;: &quot;Stacked magazines underneath&quot;<br>    }<br>  },<br>  &quot;page_layout&quot;: {<br>    &quot;left_page&quot;: {<br>      &quot;content&quot;: &quot;Printed editorial photo (close-up)&quot;,<br>      &quot;subject&quot;: {<br>        &quot;figure&quot;: &quot;Woman from the uploaded image (original face kept)&quot;,<br>        &quot;pose&quot;: &quot;Head tilted slightly upward, confident and captivating gaze&quot;,<br>        &quot;hair&quot;: &quot;Long, slightly tousled glossy hair&quot;,<br>        &quot;outfit&quot;: &quot;Same outfit from the uploaded image (futuristic leather jacket)&quot;,<br>        &quot;accessories&quot;: [<br>          &quot;Delicate silver bracelet&quot;,<br>          &quot;Delicate earrings&quot;<br>        ],<br>        &quot;vibe&quot;: &quot;Modern, elegant, and confident high-fashion&quot;<br>      },<br>      &quot;photo_background&quot;: {<br>        &quot;color&quot;: &quot;Vivid orange backdrop&quot;,<br>        &quot;lighting&quot;: &quot;Strong front-top lighting, creating dramatic highlights and shadows on her face and neck&quot;,<br>        &quot;aesthetic&quot;: &quot;Glossy, high-contrast, shallow depth of field, bold high-fashion editorial&quot;<br>      }<br>    },<br>    &quot;right_page&quot;: {<br>      &quot;content&quot;: &quot;Text and logo&quot;,<br>      &quot;elements&quot;: [<br>        &quot;Small 𝕏 logo&quot;,<br>        &quot;Handle \&quot;@saniaspeaks\&quot; in a sleek, modern sans-serif font&quot;<br>      ],<br>      &quot;aesthetic_note&quot;: &quot;Maintaining a luxury fashion-magazine composition&quot;,<br>      &quot;added_text&quot;: {<br>        &quot;word&quot;: &quot;Unique&quot;,<br>        &quot;placement&quot;: &quot;Small, subtle font in the bottom right corner&quot;<br>      }<br>    }<br>  },<br>  &quot;overall_aesthetic&quot;: {<br>    &quot;mood&quot;: &quot;Cinematic, elegant&quot;,<br>    &quot;detail_level&quot;: &quot;Ultra-detailed&quot;,<br>    &quot;quality_focus&quot;: [<br>      &quot;Realistic reflections&quot;,<br>      &quot;Premium editorial magazine aesthetics&quot;<br>    ]<br>  },<br>  &quot;technical_parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;16:9&quot;,<br>    &quot;style&quot;: &quot;raw&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;version&quot;: 6,<br>    &quot;upscale&quot;: &quot;upbeta&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>&quot;image_style&quot;: &quot;Hyper-realistic 8K HD high-resolution photo&quot;,<br>  &quot;composition&quot;: {<br>    &quot;object&quot;: &quot;Open fashion magazine&quot;,<br>    &quot;placement&quot;: &quot;Lying on a dark gray surface&quot;,<br>    &quot;perspective&quot;: &quot;Shot diagonally from above (overhead close-up)&quot;,<br>    &quot;effects&quot;: [<br>      &quot;Subtle softbox reflections&quot;,<br>      &quot;Realistic shadows beneath the magazine&quot;<br>    ],<br>    &quot;magazine_details&quot;: {<br>      &quot;texture&quot;: &quot;Realistic glossy paper reflections and fine paper texture&quot;,<br>      &quot;shape&quot;: &quot;Slightly curved pages&quot;,<br>      &quot;underneath&quot;: &quot;Stacked magazines underneath&quot;<br>    }<br>  },<br>  &quot;page_layout&quot;: {<br>    &quot;left_page&quot;: {<br>      &quot;content&quot;: &quot;Printed editorial photo (close-up)&quot;,<br>      &quot;subject&quot;: {<br>        &quot;figure&quot;: &quot;Woman from the uploaded image (original face kept)&quot;,<br>        &quot;pose&quot;: &quot;Head tilted slightly upward, confident and captivating gaze&quot;,<br>        &quot;hair&quot;: &quot;Long, slightly tousled glossy hair&quot;,<br>        &quot;outfit&quot;: &quot;Same outfit from the uploaded image (futuristic leather jacket)&quot;,<br>        &quot;accessories&quot;: [<br>          &quot;Delicate silver bracelet&quot;,<br>          &quot;Delicate earrings&quot;<br>        ],<br>        &quot;vibe&quot;: &quot;Modern, elegant, and confident high-fashion&quot;<br>      },<br>      &quot;photo_background&quot;: {<br>        &quot;color&quot;: &quot;Vivid orange backdrop&quot;,<br>        &quot;lighting&quot;: &quot;Strong front-top lighting, creating dramatic highlights and shadows on her face and neck&quot;,<br>        &quot;aesthetic&quot;: &quot;Glossy, high-contrast, shallow depth of field, bold high-fashion editorial&quot;<br>      }<br>    },<br>    &quot;right_page&quot;: {<br>      &quot;content&quot;: &quot;Text and logo&quot;,<br>      &quot;elements&quot;: [<br>        &quot;Small 𝕏 logo&quot;,<br>        &quot;Handle \&quot;@saniaspeaks\&quot; in a sleek, modern sans-serif font&quot;<br>      ],<br>      &quot;aesthetic_note&quot;: &quot;Maintaining a luxury fashion-magazine composition&quot;,<br>      &quot;added_text&quot;: {<br>        &quot;word&quot;: &quot;Unique&quot;,<br>        &quot;placement&quot;: &quot;Small, subtle font in the bottom right corner&quot;<br>      }<br>    }<br>  },<br>  &quot;overall_aesthetic&quot;: {<br>    &quot;mood&quot;: &quot;Cinematic, elegant&quot;,<br>    &quot;detail_level&quot;: &quot;Ultra-detailed&quot;,<br>    &quot;quality_focus&quot;: [<br>      &quot;Realistic reflections&quot;,<br>      &quot;Premium editorial magazine aesthetics&quot;<br>    ]<br>  },<br>  &quot;technical_parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;16:9&quot;,<br>    &quot;style&quot;: &quot;raw&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;version&quot;: 6,<br>    &quot;upscale&quot;: &quot;upbeta&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-1989158529803121113-1.jpg" alt="Google AI Studio Gemini 2.5 Pro打造超逼真高端时尚杂志风格图片" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 518,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

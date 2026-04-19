@@ -7,11 +7,13 @@
     <title>&quot;image request&quot;: { #1000 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image request&quot;: { &quot;format&quot;: &quot;4 panel collage&quot;, &quot;style&quot;: &quot;Realistic portrait&quot;, &quot;perspective&quot;: &quot;High angle shot, clo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1000.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1000.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1000.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841321">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022557">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图像请求\": {\n    \"格式\": \"4格拼贴\",\n    \"风格\": \"写实人像\",\n    \"视角\": \"高角度拍摄，靠近面部\",\n    \"约束\": \"面部在所有面板中必须100%相同\",\n    \"主体\": {\n      \"外貌\": \"漂亮的年轻女性，肤色白皙、光滑、无瑕，显得健康且自然散发光泽。棕色亮发，梳成随意的低髻（凌乱髻）。妆容柔和细腻，嘴唇呈微微泛红的粉色。\",\n      \"配饰\": [\"厚大款透明镜框眼镜，带粉色色调（透明镜框 1.2）\", \"小银色蝴蝶项链\"],\n      \"服装\": \"粉色T恤\",\n      \"视线\": \"直视镜头\"\n    },\n    \"光线和色调\": {\n      \"光源类型\": \"直闪灯，带柔和、散射的辉光效果\",\n      \"光线特性\": \"闪光均匀散布，高光略微过曝，皮肤有柔和的反光高光\",\n      \"色彩方案\": \"奶油白 / 奶油淡紫\",\n      \"肤色光泽\": \"略带粉色光泽\"\n    },\n    \"面板\": {\n      \"面板_1\": \"甜美的笑容姿势\",\n      \"面板_2\": \"比V手势\",\n      \"面板_3\": \"摇滚（牛角）手势\",\n      \"面板_4\": \"可爱姿势\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;图像请求&quot;: {<br>    &quot;格式&quot;: &quot;4格拼贴&quot;,<br>    &quot;风格&quot;: &quot;写实人像&quot;,<br>    &quot;视角&quot;: &quot;高角度拍摄，靠近面部&quot;,<br>    &quot;约束&quot;: &quot;面部在所有面板中必须100%相同&quot;,<br>    &quot;主体&quot;: {<br>      &quot;外貌&quot;: &quot;漂亮的年轻女性，肤色白皙、光滑、无瑕，显得健康且自然散发光泽。棕色亮发，梳成随意的低髻（凌乱髻）。妆容柔和细腻，嘴唇呈微微泛红的粉色。&quot;,<br>      &quot;配饰&quot;: [&quot;厚大款透明镜框眼镜，带粉色色调（透明镜框 1.2）&quot;, &quot;小银色蝴蝶项链&quot;],<br>      &quot;服装&quot;: &quot;粉色T恤&quot;,<br>      &quot;视线&quot;: &quot;直视镜头&quot;<br>    },<br>    &quot;光线和色调&quot;: {<br>      &quot;光源类型&quot;: &quot;直闪灯，带柔和、散射的辉光效果&quot;,<br>      &quot;光线特性&quot;: &quot;闪光均匀散布，高光略微过曝，皮肤有柔和的反光高光&quot;,<br>      &quot;色彩方案&quot;: &quot;奶油白 / 奶油淡紫&quot;,<br>      &quot;肤色光泽&quot;: &quot;略带粉色光泽&quot;<br>    },<br>    &quot;面板&quot;: {<br>      &quot;面板_1&quot;: &quot;甜美的笑容姿势&quot;,<br>      &quot;面板_2&quot;: &quot;比V手势&quot;,<br>      &quot;面板_3&quot;: &quot;摇滚（牛角）手势&quot;,<br>      &quot;面板_4&quot;: &quot;可爱姿势&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图像请求&quot;: {<br>    &quot;格式&quot;: &quot;4格拼贴&quot;,<br>    &quot;风格&quot;: &quot;写实人像&quot;,<br>    &quot;视角&quot;: &quot;高角度拍摄，靠近面部&quot;,<br>    &quot;约束&quot;: &quot;面部在所有面板中必须100%相同&quot;,<br>    &quot;主体&quot;: {<br>      &quot;外貌&quot;: &quot;漂亮的年轻女性，肤色白皙、光滑、无瑕，显得健康且自然散发光泽。棕色亮发，梳成随意的低髻（凌乱髻）。妆容柔和细腻，嘴唇呈微微泛红的粉色。&quot;,<br>      &quot;配饰&quot;: [&quot;厚大款透明镜框眼镜，带粉色色调（透明镜框 1.2）&quot;, &quot;小银色蝴蝶项链&quot;],<br>      &quot;服装&quot;: &quot;粉色T恤&quot;,<br>      &quot;视线&quot;: &quot;直视镜头&quot;<br>    },<br>    &quot;光线和色调&quot;: {<br>      &quot;光源类型&quot;: &quot;直闪灯，带柔和、散射的辉光效果&quot;,<br>      &quot;光线特性&quot;: &quot;闪光均匀散布，高光略微过曝，皮肤有柔和的反光高光&quot;,<br>      &quot;色彩方案&quot;: &quot;奶油白 / 奶油淡紫&quot;,<br>      &quot;肤色光泽&quot;: &quot;略带粉色光泽&quot;<br>    },<br>    &quot;面板&quot;: {<br>      &quot;面板_1&quot;: &quot;甜美的笑容姿势&quot;,<br>      &quot;面板_2&quot;: &quot;比V手势&quot;,<br>      &quot;面板_3&quot;: &quot;摇滚（牛角）手势&quot;,<br>      &quot;面板_4&quot;: &quot;可爱姿势&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_request\": {\n    \"format\": \"4-panel collage\",\n    \"style\": \"Realistic portrait\",\n    \"perspective\": \"High-angle shot, close to face\",\n    \"constraints\": \"Face must be 100% identical across all panels\",\n    \"subject\": {\n      \"appearance\": \"Beautiful young woman with fair, smooth, flawless skin that looks healthy and naturally glowing. Shiny brown hair styled in a loose bun (messy bun). Soft, gentle makeup with flushed pink lips.\",\n      \"accessories\": [\"Thick, large, transparent clear-frame glasses with a pink tone (clear frame 1.2)\", \"Small silver butterfly necklace\"],\n      \"clothing\": \"Pink T-shirt\",\n      \"gaze\": \"Directly at the camera\"\n    },\n    \"lighting_and_tone\": {\n      \"lighting_type\": \"Direct flash with a soft, diffused glow effect\",\n      \"lighting_characteristics\": \"Flash light spreads evenly, highlights slightly overexposed, soft reflective highlights on skin\",\n      \"color_palette\": \"Creamy white / creamy mauve\",\n      \"skin_glow\": \"Slightly pinkish glow\"\n    },\n    \"panels\": {\n      \"panel_1\": \"Sweet laughing pose\",\n      \"panel_2\": \"Peace sign pose\",\n      \"panel_3\": \"Metal hand sign pose\",\n      \"panel_4\": \"Cute pose\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_request&quot;: {<br>    &quot;format&quot;: &quot;4-panel collage&quot;,<br>    &quot;style&quot;: &quot;Realistic portrait&quot;,<br>    &quot;perspective&quot;: &quot;High-angle shot, close to face&quot;,<br>    &quot;constraints&quot;: &quot;Face must be 100% identical across all panels&quot;,<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;Beautiful young woman with fair, smooth, flawless skin that looks healthy and naturally glowing. Shiny brown hair styled in a loose bun (messy bun). Soft, gentle makeup with flushed pink lips.&quot;,<br>      &quot;accessories&quot;: [&quot;Thick, large, transparent clear-frame glasses with a pink tone (clear frame 1.2)&quot;, &quot;Small silver butterfly necklace&quot;],<br>      &quot;clothing&quot;: &quot;Pink T-shirt&quot;,<br>      &quot;gaze&quot;: &quot;Directly at the camera&quot;<br>    },<br>    &quot;lighting_and_tone&quot;: {<br>      &quot;lighting_type&quot;: &quot;Direct flash with a soft, diffused glow effect&quot;,<br>      &quot;lighting_characteristics&quot;: &quot;Flash light spreads evenly, highlights slightly overexposed, soft reflective highlights on skin&quot;,<br>      &quot;color_palette&quot;: &quot;Creamy white / creamy mauve&quot;,<br>      &quot;skin_glow&quot;: &quot;Slightly pinkish glow&quot;<br>    },<br>    &quot;panels&quot;: {<br>      &quot;panel_1&quot;: &quot;Sweet laughing pose&quot;,<br>      &quot;panel_2&quot;: &quot;Peace sign pose&quot;,<br>      &quot;panel_3&quot;: &quot;Metal hand sign pose&quot;,<br>      &quot;panel_4&quot;: &quot;Cute pose&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_request&quot;: {<br>    &quot;format&quot;: &quot;4-panel collage&quot;,<br>    &quot;style&quot;: &quot;Realistic portrait&quot;,<br>    &quot;perspective&quot;: &quot;High-angle shot, close to face&quot;,<br>    &quot;constraints&quot;: &quot;Face must be 100% identical across all panels&quot;,<br>    &quot;subject&quot;: {<br>      &quot;appearance&quot;: &quot;Beautiful young woman with fair, smooth, flawless skin that looks healthy and naturally glowing. Shiny brown hair styled in a loose bun (messy bun). Soft, gentle makeup with flushed pink lips.&quot;,<br>      &quot;accessories&quot;: [&quot;Thick, large, transparent clear-frame glasses with a pink tone (clear frame 1.2)&quot;, &quot;Small silver butterfly necklace&quot;],<br>      &quot;clothing&quot;: &quot;Pink T-shirt&quot;,<br>      &quot;gaze&quot;: &quot;Directly at the camera&quot;<br>    },<br>    &quot;lighting_and_tone&quot;: {<br>      &quot;lighting_type&quot;: &quot;Direct flash with a soft, diffused glow effect&quot;,<br>      &quot;lighting_characteristics&quot;: &quot;Flash light spreads evenly, highlights slightly overexposed, soft reflective highlights on skin&quot;,<br>      &quot;color_palette&quot;: &quot;Creamy white / creamy mauve&quot;,<br>      &quot;skin_glow&quot;: &quot;Slightly pinkish glow&quot;<br>    },<br>    &quot;panels&quot;: {<br>      &quot;panel_1&quot;: &quot;Sweet laughing pose&quot;,<br>      &quot;panel_2&quot;: &quot;Peace sign pose&quot;,<br>      &quot;panel_3&quot;: &quot;Metal hand sign pose&quot;,<br>      &quot;panel_4&quot;: &quot;Cute pose&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010295688245006626-1.jpg" alt="&quot;image request&quot;: {" loading="lazy"><img src="/images/tweet-2010295688245006626-2.jpg" alt="&quot;image request&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1000,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

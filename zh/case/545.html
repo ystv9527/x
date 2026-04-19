@@ -7,11 +7,13 @@
     <title>雾镜中的温馨夜感自拍：暖光、羞怯微笑与圣诞氛围 #545 | Gem Nana AI 提示词库</title>
     <meta name="description" content="9:16竖屏自拍，浴室雾镜与暖光营造温馨夜感。主角湿润高马尾、露肩圣诞袍，指尖抹雾，镜前绘有圣诞月亮，整体氛围亲密柔和。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/545.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/545.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/545.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841754">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022670">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n\"image_type\": \"照片\",\r\n“质量”: “普通”\r\n\"aspect_ratio\": \"9:16\",\r\n“方向”: “垂直”，\r\n\"camera_style\": \"手机自拍\",\r\n“场景”： {\r\n“环境”：“浴室镜子”，\r\n\"mirror_state\": \"雾蒙蒙的\",\r\n“蒸汽”：“可见的”，\r\n“灯光”： {\r\n类型：暖顶灯，\r\n“强度”： “柔和”，\r\n“心情”：“温馨的夜晚”\r\n    }\r\n  },\r\n“主题”： {\r\n\"性别\": \"女性\",\r\n“位置”：“站在雾蒙蒙的镜子后面”，\r\n“焦点”: “柔和模糊”，\r\n“表达”： {\r\n脸部表情：害羞的微笑，\r\n“嘴”: “咬下唇”\r\n    },\r\n“头发”： {\r\n“发型”：“高马尾辫”，\r\n状况：潮湿，\r\n“质感”：“略显凌乱”\r\n    },\r\n“配件”： [\r\n“手中拿着银杯”，\r\n“圈形耳环”\r\n],\r\n“全套服装”： {\r\n\"type\": \"圣诞女孩长袍\",\r\n款式：露肩\r\n    }\r\n  },\r\n“相互作用”： {\r\n\"hand_action\": \"用指尖在镜子上擦掉一小圈雾气\"\r\n  },\r\n\"mirror_drawing\": {\r\n“元素”：[\r\n“小小的圣诞月亮”，\r\n“手写短语”\r\n],\r\n\"text_style\": \"粗略描摹\",\r\n“锐利度”： “不锐利”，\r\n\"text_content\": \"晚安各位，\"\r\n“层次感”：“图画在前面，主体在其后可见”\r\n  },\r\n\"约束\": {\r\n\"no_text_overlay\": true,\r\n\"no_watermark\": true,\r\n\"no_logo\": true\r\n  },\r\n“审美的”： {\r\n氛围：亲密的，\r\n\"音调\": \"柔和\",\r\n\"night_feel\": true\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;image_type&quot;: &quot;照片&quot;,<br>“质量”: “普通”<br>&quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>“方向”: “垂直”，<br>&quot;camera_style&quot;: &quot;手机自拍&quot;,<br>“场景”： {<br>“环境”：“浴室镜子”，<br>&quot;mirror_state&quot;: &quot;雾蒙蒙的&quot;,<br>“蒸汽”：“可见的”，<br>“灯光”： {<br>类型：暖顶灯，<br>“强度”： “柔和”，<br>“心情”：“温馨的夜晚”<br>    }<br>  },<br>“主题”： {<br>&quot;性别&quot;: &quot;女性&quot;,<br>“位置”：“站在雾蒙蒙的镜子后面”，<br>“焦点”: “柔和模糊”，<br>“表达”： {<br>脸部表情：害羞的微笑，<br>“嘴”: “咬下唇”<br>    },<br>“头发”： {<br>“发型”：“高马尾辫”，<br>状况：潮湿，<br>“质感”：“略显凌乱”<br>    },<br>“配件”： [<br>“手中拿着银杯”，<br>“圈形耳环”<br>],<br>“全套服装”： {<br>&quot;type&quot;: &quot;圣诞女孩长袍&quot;,<br>款式：露肩<br>    }<br>  },<br>“相互作用”： {<br>&quot;hand_action&quot;: &quot;用指尖在镜子上擦掉一小圈雾气&quot;<br>  },<br>&quot;mirror_drawing&quot;: {<br>“元素”：[<br>“小小的圣诞月亮”，<br>“手写短语”<br>],<br>&quot;text_style&quot;: &quot;粗略描摹&quot;,<br>“锐利度”： “不锐利”，<br>&quot;text_content&quot;: &quot;晚安各位，&quot;<br>“层次感”：“图画在前面，主体在其后可见”<br>  },<br>&quot;约束&quot;: {<br>&quot;no_text_overlay&quot;: true,<br>&quot;no_watermark&quot;: true,<br>&quot;no_logo&quot;: true<br>  },<br>“审美的”： {<br>氛围：亲密的，<br>&quot;音调&quot;: &quot;柔和&quot;,<br>&quot;night_feel&quot;: true<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;image_type&quot;: &quot;照片&quot;,<br>“质量”: “普通”<br>&quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>“方向”: “垂直”，<br>&quot;camera_style&quot;: &quot;手机自拍&quot;,<br>“场景”： {<br>“环境”：“浴室镜子”，<br>&quot;mirror_state&quot;: &quot;雾蒙蒙的&quot;,<br>“蒸汽”：“可见的”，<br>“灯光”： {<br>类型：暖顶灯，<br>“强度”： “柔和”，<br>“心情”：“温馨的夜晚”<br>    }<br>  },<br>“主题”： {<br>&quot;性别&quot;: &quot;女性&quot;,<br>“位置”：“站在雾蒙蒙的镜子后面”，<br>“焦点”: “柔和模糊”，<br>“表达”： {<br>脸部表情：害羞的微笑，<br>“嘴”: “咬下唇”<br>    },<br>“头发”： {<br>“发型”：“高马尾辫”，<br>状况：潮湿，<br>“质感”：“略显凌乱”<br>    },<br>“配件”： [<br>“手中拿着银杯”，<br>“圈形耳环”<br>],<br>“全套服装”： {<br>&quot;type&quot;: &quot;圣诞女孩长袍&quot;,<br>款式：露肩<br>    }<br>  },<br>“相互作用”： {<br>&quot;hand_action&quot;: &quot;用指尖在镜子上擦掉一小圈雾气&quot;<br>  },<br>&quot;mirror_drawing&quot;: {<br>“元素”：[<br>“小小的圣诞月亮”，<br>“手写短语”<br>],<br>&quot;text_style&quot;: &quot;粗略描摹&quot;,<br>“锐利度”： “不锐利”，<br>&quot;text_content&quot;: &quot;晚安各位，&quot;<br>“层次感”：“图画在前面，主体在其后可见”<br>  },<br>&quot;约束&quot;: {<br>&quot;no_text_overlay&quot;: true,<br>&quot;no_watermark&quot;: true,<br>&quot;no_logo&quot;: true<br>  },<br>“审美的”： {<br>氛围：亲密的，<br>&quot;音调&quot;: &quot;柔和&quot;,<br>&quot;night_feel&quot;: true<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\r\n  \"image_type\": \"photo\",\r\n  \"quality\": \"regular\",\r\n  \"aspect_ratio\": \"9:16\",\r\n  \"orientation\": \"vertical\",\r\n  \"camera_style\": \"phone selfie\",\r\n  \"scene\": {\r\n    \"environment\": \"bathroom mirror\",\r\n    \"mirror_state\": \"fogged\",\r\n    \"steam\": \"visible\",\r\n    \"lighting\": {\r\n      \"type\": \"warm top light\",\r\n      \"intensity\": \"soft\",\r\n      \"mood\": \"cozy night\"\r\n    }\r\n  },\r\n  \"subject\": {\r\n    \"gender\": \"female\",\r\n    \"position\": \"standing behind fogged mirror\",\r\n    \"focus\": \"soft blur\",\r\n    \"expression\": {\r\n      \"face\": \"shy smile\",\r\n      \"mouth\": \"biting lower lip\"\r\n    },\r\n    \"hair\": {\r\n      \"style\": \"high ponytail\",\r\n      \"condition\": \"damp\",\r\n      \"texture\": \"slightly messy\"\r\n    },\r\n    \"accessories\": [\r\n      \"silver glasses held in hand\",\r\n      \"hoop earrings\"\r\n    ],\r\n    \"outfit\": {\r\n      \"type\": \"Santa Girl robe\",\r\n      \"style\": \"off one shoulder\"\r\n    }\r\n  },\r\n  \"interaction\": {\r\n    \"hand_action\": \"wiping a small circle of fog on the mirror with fingertips\"\r\n  },\r\n  \"mirror_drawing\": {\r\n    \"elements\": [\r\n      \"small Christmas moon\",\r\n      \"handwritten phrase\"\r\n    ],\r\n    \"text_style\": \"roughly traced\",\r\n    \"sharpness\": \"not sharp\",\r\n    \"text_content\": \"Good night guys\",\r\n    \"layering\": \"drawing appears in front, subject visible behind it\"\r\n  },\r\n  \"constraints\": {\r\n    \"no_text_overlay\": true,\r\n    \"no_watermark\": true,\r\n    \"no_logo\": true\r\n  },\r\n  \"aesthetic\": {\r\n    \"vibe\": \"intimate\",\r\n    \"tone\": \"soft\",\r\n    \"night_feel\": true\r\n  }\r\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_type&quot;: &quot;photo&quot;,<br>  &quot;quality&quot;: &quot;regular&quot;,<br>  &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>  &quot;orientation&quot;: &quot;vertical&quot;,<br>  &quot;camera_style&quot;: &quot;phone selfie&quot;,<br>  &quot;scene&quot;: {<br>    &quot;environment&quot;: &quot;bathroom mirror&quot;,<br>    &quot;mirror_state&quot;: &quot;fogged&quot;,<br>    &quot;steam&quot;: &quot;visible&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;warm top light&quot;,<br>      &quot;intensity&quot;: &quot;soft&quot;,<br>      &quot;mood&quot;: &quot;cozy night&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;position&quot;: &quot;standing behind fogged mirror&quot;,<br>    &quot;focus&quot;: &quot;soft blur&quot;,<br>    &quot;expression&quot;: {<br>      &quot;face&quot;: &quot;shy smile&quot;,<br>      &quot;mouth&quot;: &quot;biting lower lip&quot;<br>    },<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;high ponytail&quot;,<br>      &quot;condition&quot;: &quot;damp&quot;,<br>      &quot;texture&quot;: &quot;slightly messy&quot;<br>    },<br>    &quot;accessories&quot;: [<br>      &quot;silver glasses held in hand&quot;,<br>      &quot;hoop earrings&quot;<br>    ],<br>    &quot;outfit&quot;: {<br>      &quot;type&quot;: &quot;Santa Girl robe&quot;,<br>      &quot;style&quot;: &quot;off one shoulder&quot;<br>    }<br>  },<br>  &quot;interaction&quot;: {<br>    &quot;hand_action&quot;: &quot;wiping a small circle of fog on the mirror with fingertips&quot;<br>  },<br>  &quot;mirror_drawing&quot;: {<br>    &quot;elements&quot;: [<br>      &quot;small Christmas moon&quot;,<br>      &quot;handwritten phrase&quot;<br>    ],<br>    &quot;text_style&quot;: &quot;roughly traced&quot;,<br>    &quot;sharpness&quot;: &quot;not sharp&quot;,<br>    &quot;text_content&quot;: &quot;Good night guys&quot;,<br>    &quot;layering&quot;: &quot;drawing appears in front, subject visible behind it&quot;<br>  },<br>  &quot;constraints&quot;: {<br>    &quot;no_text_overlay&quot;: true,<br>    &quot;no_watermark&quot;: true,<br>    &quot;no_logo&quot;: true<br>  },<br>  &quot;aesthetic&quot;: {<br>    &quot;vibe&quot;: &quot;intimate&quot;,<br>    &quot;tone&quot;: &quot;soft&quot;,<br>    &quot;night_feel&quot;: true<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_type&quot;: &quot;photo&quot;,<br>  &quot;quality&quot;: &quot;regular&quot;,<br>  &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>  &quot;orientation&quot;: &quot;vertical&quot;,<br>  &quot;camera_style&quot;: &quot;phone selfie&quot;,<br>  &quot;scene&quot;: {<br>    &quot;environment&quot;: &quot;bathroom mirror&quot;,<br>    &quot;mirror_state&quot;: &quot;fogged&quot;,<br>    &quot;steam&quot;: &quot;visible&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;warm top light&quot;,<br>      &quot;intensity&quot;: &quot;soft&quot;,<br>      &quot;mood&quot;: &quot;cozy night&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;position&quot;: &quot;standing behind fogged mirror&quot;,<br>    &quot;focus&quot;: &quot;soft blur&quot;,<br>    &quot;expression&quot;: {<br>      &quot;face&quot;: &quot;shy smile&quot;,<br>      &quot;mouth&quot;: &quot;biting lower lip&quot;<br>    },<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;high ponytail&quot;,<br>      &quot;condition&quot;: &quot;damp&quot;,<br>      &quot;texture&quot;: &quot;slightly messy&quot;<br>    },<br>    &quot;accessories&quot;: [<br>      &quot;silver glasses held in hand&quot;,<br>      &quot;hoop earrings&quot;<br>    ],<br>    &quot;outfit&quot;: {<br>      &quot;type&quot;: &quot;Santa Girl robe&quot;,<br>      &quot;style&quot;: &quot;off one shoulder&quot;<br>    }<br>  },<br>  &quot;interaction&quot;: {<br>    &quot;hand_action&quot;: &quot;wiping a small circle of fog on the mirror with fingertips&quot;<br>  },<br>  &quot;mirror_drawing&quot;: {<br>    &quot;elements&quot;: [<br>      &quot;small Christmas moon&quot;,<br>      &quot;handwritten phrase&quot;<br>    ],<br>    &quot;text_style&quot;: &quot;roughly traced&quot;,<br>    &quot;sharpness&quot;: &quot;not sharp&quot;,<br>    &quot;text_content&quot;: &quot;Good night guys&quot;,<br>    &quot;layering&quot;: &quot;drawing appears in front, subject visible behind it&quot;<br>  },<br>  &quot;constraints&quot;: {<br>    &quot;no_text_overlay&quot;: true,<br>    &quot;no_watermark&quot;: true,<br>    &quot;no_logo&quot;: true<br>  },<br>  &quot;aesthetic&quot;: {<br>    &quot;vibe&quot;: &quot;intimate&quot;,<br>    &quot;tone&quot;: &quot;soft&quot;,<br>    &quot;night_feel&quot;: true<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2007510143915716928-1.jpg" alt="雾镜中的温馨夜感自拍：暖光、羞怯微笑与圣诞氛围" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 545,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>Ultra realistic macro scene depicting tiny restoration worker... #1306 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Ultra realistic macro scene depicting tiny restoration workers collaboratively repairing an antique pocket watch. Sev...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1306.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1306.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1306.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841060">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022486">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"超写实的微距场景，描绘微小的修复工人协力修复一只古董怀表。几位人物用细小的刷子精细清洁复杂的黄铜齿轮，其他人则稳住打开的表壳并固定微型部件。怀表置于有纹理的天然表面上，例如风化的木头或石头，突显岁月与历史。此场景象征时间、耐心、工艺与团队合作。\",\n  \"style\": {\n    \"photography_type\": \"微距摄影\",\n    \"realism\": \"超写实\",\n    \"mood\": \"情感化且具有电影感\",\n    \"lighting\": \"柔和、温暖的定向光，带有细腻的高光和自然阴影\",\n    \"depth_of_field\": \"浅景深，前景细节清晰对焦，背景呈平滑散景\"\n  },\n  \"composition\": {\n    \"shot_type\": \"特写微距\",\n    \"angle\": \"略微抬高的视角\",\n    \"focus\": \"对齿轮、工具及微型人物互动的极致细节\",\n    \"framing\": \"怀表居中，工人自然分布于机芯各处\"\n  },\n  \"textures_and_details\": {\n    \"materials\": \"老化金属、抛光黄铜齿轮、磨损的皮革表带、天然表面纹理\",\n    \"details\": \"可见的尘粒、细微划痕、指纹和机械磨损\"\n  },\n  \"atmosphere\": {\n    \"tone\": \"温暖、怀旧、充满希望\",\n    \"symbolism\": \"通过集体努力与细心呵护来修复时间的象征\"\n  },\n  \"render_settings\": {\n    \"aspect_ratio\": \"4:5\",\n    \"quality\": 2,\n    \"resolution\": \"高分辨率\",\n    \"style_precision\": \"专业工作室级构图\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>&quot;超写实的微距场景，描绘微小的修复工人协力修复一只古董怀表。几位人物用细小的刷子精细清洁复杂的黄铜齿轮，其他人则稳住打开的表壳并固定微型部件。怀表置于有纹理的天然表面上，例如风化的木头或石头，突显岁月与历史。此场景象征时间、耐心、工艺与团队合作。&quot;,<br>  &quot;style&quot;: {<br>    &quot;photography_type&quot;: &quot;微距摄影&quot;,<br>    &quot;realism&quot;: &quot;超写实&quot;,<br>    &quot;mood&quot;: &quot;情感化且具有电影感&quot;,<br>    &quot;lighting&quot;: &quot;柔和、温暖的定向光，带有细腻的高光和自然阴影&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深，前景细节清晰对焦，背景呈平滑散景&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;shot_type&quot;: &quot;特写微距&quot;,<br>    &quot;angle&quot;: &quot;略微抬高的视角&quot;,<br>    &quot;focus&quot;: &quot;对齿轮、工具及微型人物互动的极致细节&quot;,<br>    &quot;framing&quot;: &quot;怀表居中，工人自然分布于机芯各处&quot;<br>  },<br>  &quot;textures_and_details&quot;: {<br>    &quot;materials&quot;: &quot;老化金属、抛光黄铜齿轮、磨损的皮革表带、天然表面纹理&quot;,<br>    &quot;details&quot;: &quot;可见的尘粒、细微划痕、指纹和机械磨损&quot;<br>  },<br>  &quot;atmosphere&quot;: {<br>    &quot;tone&quot;: &quot;温暖、怀旧、充满希望&quot;,<br>    &quot;symbolism&quot;: &quot;通过集体努力与细心呵护来修复时间的象征&quot;<br>  },<br>  &quot;render_settings&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;resolution&quot;: &quot;高分辨率&quot;,<br>    &quot;style_precision&quot;: &quot;专业工作室级构图&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>&quot;超写实的微距场景，描绘微小的修复工人协力修复一只古董怀表。几位人物用细小的刷子精细清洁复杂的黄铜齿轮，其他人则稳住打开的表壳并固定微型部件。怀表置于有纹理的天然表面上，例如风化的木头或石头，突显岁月与历史。此场景象征时间、耐心、工艺与团队合作。&quot;,<br>  &quot;style&quot;: {<br>    &quot;photography_type&quot;: &quot;微距摄影&quot;,<br>    &quot;realism&quot;: &quot;超写实&quot;,<br>    &quot;mood&quot;: &quot;情感化且具有电影感&quot;,<br>    &quot;lighting&quot;: &quot;柔和、温暖的定向光，带有细腻的高光和自然阴影&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深，前景细节清晰对焦，背景呈平滑散景&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;shot_type&quot;: &quot;特写微距&quot;,<br>    &quot;angle&quot;: &quot;略微抬高的视角&quot;,<br>    &quot;focus&quot;: &quot;对齿轮、工具及微型人物互动的极致细节&quot;,<br>    &quot;framing&quot;: &quot;怀表居中，工人自然分布于机芯各处&quot;<br>  },<br>  &quot;textures_and_details&quot;: {<br>    &quot;materials&quot;: &quot;老化金属、抛光黄铜齿轮、磨损的皮革表带、天然表面纹理&quot;,<br>    &quot;details&quot;: &quot;可见的尘粒、细微划痕、指纹和机械磨损&quot;<br>  },<br>  &quot;atmosphere&quot;: {<br>    &quot;tone&quot;: &quot;温暖、怀旧、充满希望&quot;,<br>    &quot;symbolism&quot;: &quot;通过集体努力与细心呵护来修复时间的象征&quot;<br>  },<br>  &quot;render_settings&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;resolution&quot;: &quot;高分辨率&quot;,<br>    &quot;style_precision&quot;: &quot;专业工作室级构图&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Ultra-realistic macro scene depicting tiny restoration workers collaboratively repairing an antique pocket watch. Several figures delicately clean intricate brass gears using fine brushes, while others stabilize the open watch casing and hold miniature components in place. The pocket watch lies on a textured natural surface, such as weathered wood or stone, emphasizing age and history. The scene symbolizes time, patience, craftsmanship, and teamwork.\",\n  \"style\": {\n    \"photography_type\": \"Macro photography\",\n    \"realism\": \"Ultra-realistic\",\n    \"mood\": \"Emotional and cinematic\",\n    \"lighting\": \"Soft, warm, directional lighting with gentle highlights and natural shadows\",\n    \"depth_of_field\": \"Shallow depth of field with sharp focus on foreground details and smooth background bokeh\"\n  },\n  \"composition\": {\n    \"shot_type\": \"Close-up macro\",\n    \"angle\": \"Slightly elevated perspective\",\n    \"focus\": \"Extreme detail on gears, tools, and figurines’ interactions\",\n    \"framing\": \"Pocket watch centered with workers distributed naturally across the mechanism\"\n  },\n  \"textures_and_details\": {\n    \"materials\": \"Aged metal, polished brass gears, worn leather strap, natural surface grain\",\n    \"details\": \"Visible dust particles, subtle scratches, fingerprints, and mechanical wear\"\n  },\n  \"atmosphere\": {\n    \"tone\": \"Warm, nostalgic, hopeful\",\n    \"symbolism\": \"Restoration of time through collective effort and care\"\n  },\n  \"render_settings\": {\n    \"aspect_ratio\": \"4:5\",\n    \"quality\": 2,\n    \"resolution\": \"High-resolution\",\n    \"style_precision\": \"Professional studio-level composition\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>Ultra-realistic macro scene depicting tiny restoration workers collaboratively repairing an antique pocket watch. Several figures delicately clean intricate brass gears using fine brushes, while others stabilize the open watch casing and hold miniature components in place. The pocket watch lies on a textured natural surface, such as weathered wood or stone, emphasizing age and history. The scene symbolizes time, patience, craftsmanship, and teamwork.&quot;,<br>  &quot;style&quot;: {<br>    &quot;photography_type&quot;: &quot;Macro photography&quot;,<br>    &quot;realism&quot;: &quot;Ultra-realistic&quot;,<br>    &quot;mood&quot;: &quot;Emotional and cinematic&quot;,<br>    &quot;lighting&quot;: &quot;Soft, warm, directional lighting with gentle highlights and natural shadows&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow depth of field with sharp focus on foreground details and smooth background bokeh&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;shot_type&quot;: &quot;Close-up macro&quot;,<br>    &quot;angle&quot;: &quot;Slightly elevated perspective&quot;,<br>    &quot;focus&quot;: &quot;Extreme detail on gears, tools, and figurines’ interactions&quot;,<br>    &quot;framing&quot;: &quot;Pocket watch centered with workers distributed naturally across the mechanism&quot;<br>  },<br>  &quot;textures_and_details&quot;: {<br>    &quot;materials&quot;: &quot;Aged metal, polished brass gears, worn leather strap, natural surface grain&quot;,<br>    &quot;details&quot;: &quot;Visible dust particles, subtle scratches, fingerprints, and mechanical wear&quot;<br>  },<br>  &quot;atmosphere&quot;: {<br>    &quot;tone&quot;: &quot;Warm, nostalgic, hopeful&quot;,<br>    &quot;symbolism&quot;: &quot;Restoration of time through collective effort and care&quot;<br>  },<br>  &quot;render_settings&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;resolution&quot;: &quot;High-resolution&quot;,<br>    &quot;style_precision&quot;: &quot;Professional studio-level composition&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>Ultra-realistic macro scene depicting tiny restoration workers collaboratively repairing an antique pocket watch. Several figures delicately clean intricate brass gears using fine brushes, while others stabilize the open watch casing and hold miniature components in place. The pocket watch lies on a textured natural surface, such as weathered wood or stone, emphasizing age and history. The scene symbolizes time, patience, craftsmanship, and teamwork.&quot;,<br>  &quot;style&quot;: {<br>    &quot;photography_type&quot;: &quot;Macro photography&quot;,<br>    &quot;realism&quot;: &quot;Ultra-realistic&quot;,<br>    &quot;mood&quot;: &quot;Emotional and cinematic&quot;,<br>    &quot;lighting&quot;: &quot;Soft, warm, directional lighting with gentle highlights and natural shadows&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow depth of field with sharp focus on foreground details and smooth background bokeh&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;shot_type&quot;: &quot;Close-up macro&quot;,<br>    &quot;angle&quot;: &quot;Slightly elevated perspective&quot;,<br>    &quot;focus&quot;: &quot;Extreme detail on gears, tools, and figurines’ interactions&quot;,<br>    &quot;framing&quot;: &quot;Pocket watch centered with workers distributed naturally across the mechanism&quot;<br>  },<br>  &quot;textures_and_details&quot;: {<br>    &quot;materials&quot;: &quot;Aged metal, polished brass gears, worn leather strap, natural surface grain&quot;,<br>    &quot;details&quot;: &quot;Visible dust particles, subtle scratches, fingerprints, and mechanical wear&quot;<br>  },<br>  &quot;atmosphere&quot;: {<br>    &quot;tone&quot;: &quot;Warm, nostalgic, hopeful&quot;,<br>    &quot;symbolism&quot;: &quot;Restoration of time through collective effort and care&quot;<br>  },<br>  &quot;render_settings&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: 2,<br>    &quot;resolution&quot;: &quot;High-resolution&quot;,<br>    &quot;style_precision&quot;: &quot;Professional studio-level composition&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011688509665657263-1.jpg" alt="Ultra realistic macro scene depicting tiny restoration worker..." loading="lazy"><img src="/images/tweet-2011688509665657263-2.jpg" alt="Ultra realistic macro scene depicting tiny restoration worker..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1306,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

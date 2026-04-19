@@ -7,11 +7,13 @@
     <title>A stylish young man with medium length wavy dark hair and a c... #2662 | Gem Nana AI 提示词库</title>
     <meta name="description" content="A stylish young man with medium length wavy dark hair and a clean face, wearing a muted olive green button up shirt w...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2662.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2662.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2662.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839671">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022180">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一位时尚年轻男子，及肩波浪深色中长发，面容干净，穿着低调的橄榄绿色纽扣衬衫（袖子微卷），搭配宽松直筒黑色长裤和白色运动鞋。整体造型简约、现代、有美感。\n制作一个有5个区域的时尚拼贴布局：\n中心：一张干净的服装抠图（橄榄色衬衫 + 黑色长裤）垂直放置，微微悬浮，周围有柔和的白色轮廓光晕。\n围绕中心：四张同一名男子穿着该套装的不同生活方式照片。\n左上：现代大堂室内镜面自拍，大理石墙面与光亮地面，手持手机遮挡面部，放松行走的姿势。\n右上：户外绿色植被环境，有植物和树木，双手插兜行走，侧身望向一侧。\n左下：坐在长椅或矮台上的坐姿，微微前倾，一只手拨头发，情绪感强的灯光。\n右下：城市街道或楼梯背景，混凝土质感，随性行走并双手插兜。\n从每张生活方式图片向中心服装指向的地方添加简约的白色弯曲箭头。\n灯光：柔和自然光、略带暖色调、电影感阴影、Instagram 风格美学。\n调色板：中性基调、橄榄绿、黑色、白色、柔和灰色。\n风格：干净、极简、高端时尚型录，Pinterest / Instagram 美学。\n相机：35mm 镜头、浅景深、主体清晰对焦。\n画质：超逼真、高分辨率、4K、细致的面料纹理细节。", this)'>📋 复制</button>
         </div>
-        <p>一位时尚年轻男子，及肩波浪深色中长发，面容干净，穿着低调的橄榄绿色纽扣衬衫（袖子微卷），搭配宽松直筒黑色长裤和白色运动鞋。整体造型简约、现代、有美感。<br>制作一个有5个区域的时尚拼贴布局：<br>中心：一张干净的服装抠图（橄榄色衬衫 + 黑色长裤）垂直放置，微微悬浮，周围有柔和的白色轮廓光晕。<br>围绕中心：四张同一名男子穿着该套装的不同生活方式照片。<br>左上：现代大堂室内镜面自拍，大理石墙面与光亮地面，手持手机遮挡面部，放松行走的姿势。<br>右上：户外绿色植被环境，有植物和树木，双手插兜行走，侧身望向一侧。<br>左下：坐在长椅或矮台上的坐姿，微微前倾，一只手拨头发，情绪感强的灯光。<br>右下：城市街道或楼梯背景，混凝土质感，随性行走并双手插兜。<br>从每张生活方式图片向中心服装指向的地方添加简约的白色弯曲箭头。<br>灯光：柔和自然光、略带暖色调、电影感阴影、Instagram 风格美学。<br>调色板：中性基调、橄榄绿、黑色、白色、柔和灰色。<br>风格：干净、极简、高端时尚型录，Pinterest / Instagram 美学。<br>相机：35mm 镜头、浅景深、主体清晰对焦。<br>画质：超逼真、高分辨率、4K、细致的面料纹理细节。</p>
+        <div data-nosnippet><p>一位时尚年轻男子，及肩波浪深色中长发，面容干净，穿着低调的橄榄绿色纽扣衬衫（袖子微卷），搭配宽松直筒黑色长裤和白色运动鞋。整体造型简约、现代、有美感。<br>制作一个有5个区域的时尚拼贴布局：<br>中心：一张干净的服装抠图（橄榄色衬衫 + 黑色长裤）垂直放置，微微悬浮，周围有柔和的白色轮廓光晕。<br>围绕中心：四张同一名男子穿着该套装的不同生活方式照片。<br>左上：现代大堂室内镜面自拍，大理石墙面与光亮地面，手持手机遮挡面部，放松行走的姿势。<br>右上：户外绿色植被环境，有植物和树木，双手插兜行走，侧身望向一侧。<br>左下：坐在长椅或矮台上的坐姿，微微前倾，一只手拨头发，情绪感强的灯光。<br>右下：城市街道或楼梯背景，混凝土质感，随性行走并双手插兜。<br>从每张生活方式图片向中心服装指向的地方添加简约的白色弯曲箭头。<br>灯光：柔和自然光、略带暖色调、电影感阴影、Instagram 风格美学。<br>调色板：中性基调、橄榄绿、黑色、白色、柔和灰色。<br>风格：干净、极简、高端时尚型录，Pinterest / Instagram 美学。<br>相机：35mm 镜头、浅景深、主体清晰对焦。<br>画质：超逼真、高分辨率、4K、细致的面料纹理细节。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A stylish young man with medium-length wavy dark hair and a clean face, wearing a muted olive green button-up shirt with sleeves slightly rolled up, paired with loose fit black straight pants and white sneakers. The outfit looks minimal, modern, and aesthetic.\nCreate a fashion collage layout with 5 sections:\nCenter: a clean cutout of the outfit (olive shirt + black pants) placed vertically, slightly floating, with a soft white outline glow around it.\nAround the center: four different lifestyle shots of the same man wearing the outfit.\nTop left: indoor mirror selfie in a modern lobby with marble walls and shiny floor, holding phone covering face, relaxed walking pose.\nTop right: outdoor greenery setting with plants and trees, walking pose with hands in pockets, looking sideways.\nBottom left: sitting pose on a bench or ledge, slightly leaning forward, one hand in hair, moody lighting.\nBottom right: urban street or stairs background with concrete textures, walking casually with hands in pockets.\nAdd minimal white curved arrows pointing from each lifestyle image toward the center outfit.\nLighting: soft natural light, slightly warm tone, cinematic shadows, Instagram aesthetic.\nColor palette: neutral tones, olive green, black, white, soft greys.\nStyle: clean, minimal, high-end fashion lookbook, Pinterest / Instagram aesthetic.\nCamera: 35mm lens, shallow depth of field, sharp subject focus.\nQuality: ultra realistic, high resolution, 4K, detailed fabric texture.", this)'>📋 复制</button>
         </div>
-        <p>A stylish young man with medium-length wavy dark hair and a clean face, wearing a muted olive green button-up shirt with sleeves slightly rolled up, paired with loose fit black straight pants and white sneakers. The outfit looks minimal, modern, and aesthetic.<br>Create a fashion collage layout with 5 sections:<br>Center: a clean cutout of the outfit (olive shirt + black pants) placed vertically, slightly floating, with a soft white outline glow around it.<br>Around the center: four different lifestyle shots of the same man wearing the outfit.<br>Top left: indoor mirror selfie in a modern lobby with marble walls and shiny floor, holding phone covering face, relaxed walking pose.<br>Top right: outdoor greenery setting with plants and trees, walking pose with hands in pockets, looking sideways.<br>Bottom left: sitting pose on a bench or ledge, slightly leaning forward, one hand in hair, moody lighting.<br>Bottom right: urban street or stairs background with concrete textures, walking casually with hands in pockets.<br>Add minimal white curved arrows pointing from each lifestyle image toward the center outfit.<br>Lighting: soft natural light, slightly warm tone, cinematic shadows, Instagram aesthetic.<br>Color palette: neutral tones, olive green, black, white, soft greys.<br>Style: clean, minimal, high-end fashion lookbook, Pinterest / Instagram aesthetic.<br>Camera: 35mm lens, shallow depth of field, sharp subject focus.<br>Quality: ultra realistic, high resolution, 4K, detailed fabric texture.</p>
+        <div data-nosnippet><p>A stylish young man with medium-length wavy dark hair and a clean face, wearing a muted olive green button-up shirt with sleeves slightly rolled up, paired with loose fit black straight pants and white sneakers. The outfit looks minimal, modern, and aesthetic.<br>Create a fashion collage layout with 5 sections:<br>Center: a clean cutout of the outfit (olive shirt + black pants) placed vertically, slightly floating, with a soft white outline glow around it.<br>Around the center: four different lifestyle shots of the same man wearing the outfit.<br>Top left: indoor mirror selfie in a modern lobby with marble walls and shiny floor, holding phone covering face, relaxed walking pose.<br>Top right: outdoor greenery setting with plants and trees, walking pose with hands in pockets, looking sideways.<br>Bottom left: sitting pose on a bench or ledge, slightly leaning forward, one hand in hair, moody lighting.<br>Bottom right: urban street or stairs background with concrete textures, walking casually with hands in pockets.<br>Add minimal white curved arrows pointing from each lifestyle image toward the center outfit.<br>Lighting: soft natural light, slightly warm tone, cinematic shadows, Instagram aesthetic.<br>Color palette: neutral tones, olive green, black, white, soft greys.<br>Style: clean, minimal, high-end fashion lookbook, Pinterest / Instagram aesthetic.<br>Camera: 35mm lens, shallow depth of field, sharp subject focus.<br>Quality: ultra realistic, high resolution, 4K, detailed fabric texture.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2036365607827099705-1.jpg" alt="A stylish young man with medium length wavy dark hair and a c..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2662,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

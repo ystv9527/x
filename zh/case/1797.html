@@ -7,11 +7,13 @@
     <title>&quot;scene&quot;: &quot;An intimate indoor portrait taken in a personal bed... #1797 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;scene&quot;: &quot;An intimate indoor portrait taken in a personal bedroom or studio space, walls covered with taped photos,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1797.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1797.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1797.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840578">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022373">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene\": \"一个亲密的室内肖像，拍摄于个人卧室或工作室，墙上贴满了用胶带固定的照片、素描和票根\",\n  \"subject\": {\n    \"gender\": \"男性\",\n    \"age\": \"二十出头\",\n    \"expression\": \"平静、略带防备、内省\",\n    \"pose\": \"随意站立，肩膀放松，微微倾斜，双手在画面外\",\n    \"gaze\": \"直视镜头但不做作的目光接触\",\n    \"hair\": \"短且凌乱的发型，自然蓬松，刘海略微参差不齐\",\n    \"wardrobe\": {\n      \"top\": \"有纹理的针织毛衣，带柔和的紫色渐变\",\n      \"bottom\": \"低调的长裤，朴素休闲\",\n      \"style\": \"不费力、生活化、独立风格的编辑感\"\n    }\n  },\n  \"environment\": {\n    \"location\": \"个人房间或创作空间\",\n    \"background_elements\": [\n      \"用胶带贴在墙上的宝丽来照片\",\n      \"手绘草图和涂鸦\",\n      \"音乐会或旅行票根\",\n      \"可见且不完美的美纹胶带\"\n    ],\n    \"atmosphere\": \"怀旧、个人化、略显粗粝\"\n  },\n  \"lighting\": {\n    \"type\": \"直接机内闪光灯\",\n    \"quality\": \"硬朗但可控\",\n    \"shadow\": \"硬阴影投在主体身后\",\n    \"mood\": \"90年代末/2000年代初的抓拍写实感\"\n  },\n  \"camera\": {\n    \"shot_type\": \"中景人像\",\n    \"lens\": \"35mm\",\n    \"perspective\": \"与眼平齐的快照式构图\",\n    \"depth_of_field\": \"景深足够大以保持墙面细节可辨\",\n    \"imperfections\": \"轻微暗角、闪光衰减\"\n  },\n  \"color_grading\": {\n    \"palette\": \"柔和的中性调，强调淡淡薰衣草色\",\n    \"contrast\": \"适中\",\n    \"tones\": \"自然肤色，带一点暖意\"\n  },\n  \"texture_and_detail\": {\n    \"skin\": \"真实的皮肤质感，可见瑕疵，无磨皮\",\n    \"fabric\": \"清晰可见的针织面料纹理\",\n    \"grain\": \"显著的胶片颗粒感\",\n    \"timestamp\": \"角落里带有微弱的日期戳\"\n  },\n  \"style\": \"受模拟胶片启发、日记般的肖像、低保真编辑写实风\",\n  \"negative_prompt\": [\n    \"棚拍灯光\",\n    \"美容修图\",\n    \"塑料感皮肤\",\n    \"完美对称\",\n    \"过度锐化\",\n    \"干净极简的背景\",\n    \"AI 伪影\"\n  ]\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;scene&quot;: &quot;一个亲密的室内肖像，拍摄于个人卧室或工作室，墙上贴满了用胶带固定的照片、素描和票根&quot;,<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;男性&quot;,<br>    &quot;age&quot;: &quot;二十出头&quot;,<br>    &quot;expression&quot;: &quot;平静、略带防备、内省&quot;,<br>    &quot;pose&quot;: &quot;随意站立，肩膀放松，微微倾斜，双手在画面外&quot;,<br>    &quot;gaze&quot;: &quot;直视镜头但不做作的目光接触&quot;,<br>    &quot;hair&quot;: &quot;短且凌乱的发型，自然蓬松，刘海略微参差不齐&quot;,<br>    &quot;wardrobe&quot;: {<br>      &quot;top&quot;: &quot;有纹理的针织毛衣，带柔和的紫色渐变&quot;,<br>      &quot;bottom&quot;: &quot;低调的长裤，朴素休闲&quot;,<br>      &quot;style&quot;: &quot;不费力、生活化、独立风格的编辑感&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;个人房间或创作空间&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;用胶带贴在墙上的宝丽来照片&quot;,<br>      &quot;手绘草图和涂鸦&quot;,<br>      &quot;音乐会或旅行票根&quot;,<br>      &quot;可见且不完美的美纹胶带&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;怀旧、个人化、略显粗粝&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;直接机内闪光灯&quot;,<br>    &quot;quality&quot;: &quot;硬朗但可控&quot;,<br>    &quot;shadow&quot;: &quot;硬阴影投在主体身后&quot;,<br>    &quot;mood&quot;: &quot;90年代末/2000年代初的抓拍写实感&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;shot_type&quot;: &quot;中景人像&quot;,<br>    &quot;lens&quot;: &quot;35mm&quot;,<br>    &quot;perspective&quot;: &quot;与眼平齐的快照式构图&quot;,<br>    &quot;depth_of_field&quot;: &quot;景深足够大以保持墙面细节可辨&quot;,<br>    &quot;imperfections&quot;: &quot;轻微暗角、闪光衰减&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;柔和的中性调，强调淡淡薰衣草色&quot;,<br>    &quot;contrast&quot;: &quot;适中&quot;,<br>    &quot;tones&quot;: &quot;自然肤色，带一点暖意&quot;<br>  },<br>  &quot;texture_and_detail&quot;: {<br>    &quot;skin&quot;: &quot;真实的皮肤质感，可见瑕疵，无磨皮&quot;,<br>    &quot;fabric&quot;: &quot;清晰可见的针织面料纹理&quot;,<br>    &quot;grain&quot;: &quot;显著的胶片颗粒感&quot;,<br>    &quot;timestamp&quot;: &quot;角落里带有微弱的日期戳&quot;<br>  },<br>  &quot;style&quot;: &quot;受模拟胶片启发、日记般的肖像、低保真编辑写实风&quot;,<br>  &quot;negative_prompt&quot;: [<br>    &quot;棚拍灯光&quot;,<br>    &quot;美容修图&quot;,<br>    &quot;塑料感皮肤&quot;,<br>    &quot;完美对称&quot;,<br>    &quot;过度锐化&quot;,<br>    &quot;干净极简的背景&quot;,<br>    &quot;AI 伪影&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene&quot;: &quot;一个亲密的室内肖像，拍摄于个人卧室或工作室，墙上贴满了用胶带固定的照片、素描和票根&quot;,<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;男性&quot;,<br>    &quot;age&quot;: &quot;二十出头&quot;,<br>    &quot;expression&quot;: &quot;平静、略带防备、内省&quot;,<br>    &quot;pose&quot;: &quot;随意站立，肩膀放松，微微倾斜，双手在画面外&quot;,<br>    &quot;gaze&quot;: &quot;直视镜头但不做作的目光接触&quot;,<br>    &quot;hair&quot;: &quot;短且凌乱的发型，自然蓬松，刘海略微参差不齐&quot;,<br>    &quot;wardrobe&quot;: {<br>      &quot;top&quot;: &quot;有纹理的针织毛衣，带柔和的紫色渐变&quot;,<br>      &quot;bottom&quot;: &quot;低调的长裤，朴素休闲&quot;,<br>      &quot;style&quot;: &quot;不费力、生活化、独立风格的编辑感&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;个人房间或创作空间&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;用胶带贴在墙上的宝丽来照片&quot;,<br>      &quot;手绘草图和涂鸦&quot;,<br>      &quot;音乐会或旅行票根&quot;,<br>      &quot;可见且不完美的美纹胶带&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;怀旧、个人化、略显粗粝&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;直接机内闪光灯&quot;,<br>    &quot;quality&quot;: &quot;硬朗但可控&quot;,<br>    &quot;shadow&quot;: &quot;硬阴影投在主体身后&quot;,<br>    &quot;mood&quot;: &quot;90年代末/2000年代初的抓拍写实感&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;shot_type&quot;: &quot;中景人像&quot;,<br>    &quot;lens&quot;: &quot;35mm&quot;,<br>    &quot;perspective&quot;: &quot;与眼平齐的快照式构图&quot;,<br>    &quot;depth_of_field&quot;: &quot;景深足够大以保持墙面细节可辨&quot;,<br>    &quot;imperfections&quot;: &quot;轻微暗角、闪光衰减&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;柔和的中性调，强调淡淡薰衣草色&quot;,<br>    &quot;contrast&quot;: &quot;适中&quot;,<br>    &quot;tones&quot;: &quot;自然肤色，带一点暖意&quot;<br>  },<br>  &quot;texture_and_detail&quot;: {<br>    &quot;skin&quot;: &quot;真实的皮肤质感，可见瑕疵，无磨皮&quot;,<br>    &quot;fabric&quot;: &quot;清晰可见的针织面料纹理&quot;,<br>    &quot;grain&quot;: &quot;显著的胶片颗粒感&quot;,<br>    &quot;timestamp&quot;: &quot;角落里带有微弱的日期戳&quot;<br>  },<br>  &quot;style&quot;: &quot;受模拟胶片启发、日记般的肖像、低保真编辑写实风&quot;,<br>  &quot;negative_prompt&quot;: [<br>    &quot;棚拍灯光&quot;,<br>    &quot;美容修图&quot;,<br>    &quot;塑料感皮肤&quot;,<br>    &quot;完美对称&quot;,<br>    &quot;过度锐化&quot;,<br>    &quot;干净极简的背景&quot;,<br>    &quot;AI 伪影&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene\": \"An intimate indoor portrait taken in a personal bedroom or studio space, walls covered with taped photos, sketches, and ticket stubs\",\n  \"subject\": {\n    \"gender\": \"male\",\n    \"age\": \"early 20s\",\n    \"expression\": \"calm, slightly guarded, introspective\",\n    \"pose\": \"standing casually, shoulders relaxed, slight lean, hands out of frame\",\n    \"gaze\": \"direct but unforced eye contact with the camera\",\n    \"hair\": \"short, messy crop with natural volume, slightly uneven fringe\",\n    \"wardrobe\": {\n      \"top\": \"textured knit sweater with soft purple gradient fade\",\n      \"bottom\": \"muted trousers, understated and casual\",\n      \"style\": \"effortless, lived-in, indie editorial\"\n    }\n  },\n  \"environment\": {\n    \"location\": \"personal room or creative space\",\n    \"background_elements\": [\n      \"polaroid photographs taped to wall\",\n      \"handwritten sketches and doodles\",\n      \"concert or travel ticket stubs\",\n      \"masking tape visible and imperfect\"\n    ],\n    \"atmosphere\": \"nostalgic, personal, slightly raw\"\n  },\n  \"lighting\": {\n    \"type\": \"direct on-camera flash\",\n    \"quality\": \"harsh but controlled\",\n    \"shadow\": \"hard shadows falling behind subject\",\n    \"mood\": \"late 90s / early 2000s candid realism\"\n  },\n  \"camera\": {\n    \"shot_type\": \"medium portrait\",\n    \"lens\": \"35mm\",\n    \"perspective\": \"eye-level, snapshot-style framing\",\n    \"depth_of_field\": \"deep enough to keep wall details readable\",\n    \"imperfections\": \"slight vignetting, flash falloff\"\n  },\n  \"color_grading\": {\n    \"palette\": \"muted neutrals with soft lavender emphasis\",\n    \"contrast\": \"moderate\",\n    \"tones\": \"natural skin tones with slight warmth\"\n  },\n  \"texture_and_detail\": {\n    \"skin\": \"real texture, visible blemishes, no smoothing\",\n    \"fabric\": \"clearly defined knit texture\",\n    \"grain\": \"noticeable film grain\",\n    \"timestamp\": \"subtle date stamp in corner\"\n  },\n  \"style\": \"analog-inspired, diary-like portrait, lo-fi editorial realism\",\n  \"negative_prompt\": [\n    \"studio lighting\",\n    \"beauty retouching\",\n    \"plastic skin\",\n    \"perfect symmetry\",\n    \"over-sharpening\",\n    \"clean minimal background\",\n    \"AI artifacts\"\n  ]\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;scene&quot;: &quot;An intimate indoor portrait taken in a personal bedroom or studio space, walls covered with taped photos, sketches, and ticket stubs&quot;,<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;male&quot;,<br>    &quot;age&quot;: &quot;early 20s&quot;,<br>    &quot;expression&quot;: &quot;calm, slightly guarded, introspective&quot;,<br>    &quot;pose&quot;: &quot;standing casually, shoulders relaxed, slight lean, hands out of frame&quot;,<br>    &quot;gaze&quot;: &quot;direct but unforced eye contact with the camera&quot;,<br>    &quot;hair&quot;: &quot;short, messy crop with natural volume, slightly uneven fringe&quot;,<br>    &quot;wardrobe&quot;: {<br>      &quot;top&quot;: &quot;textured knit sweater with soft purple gradient fade&quot;,<br>      &quot;bottom&quot;: &quot;muted trousers, understated and casual&quot;,<br>      &quot;style&quot;: &quot;effortless, lived-in, indie editorial&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;personal room or creative space&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;polaroid photographs taped to wall&quot;,<br>      &quot;handwritten sketches and doodles&quot;,<br>      &quot;concert or travel ticket stubs&quot;,<br>      &quot;masking tape visible and imperfect&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;nostalgic, personal, slightly raw&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;direct on-camera flash&quot;,<br>    &quot;quality&quot;: &quot;harsh but controlled&quot;,<br>    &quot;shadow&quot;: &quot;hard shadows falling behind subject&quot;,<br>    &quot;mood&quot;: &quot;late 90s / early 2000s candid realism&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;shot_type&quot;: &quot;medium portrait&quot;,<br>    &quot;lens&quot;: &quot;35mm&quot;,<br>    &quot;perspective&quot;: &quot;eye-level, snapshot-style framing&quot;,<br>    &quot;depth_of_field&quot;: &quot;deep enough to keep wall details readable&quot;,<br>    &quot;imperfections&quot;: &quot;slight vignetting, flash falloff&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;muted neutrals with soft lavender emphasis&quot;,<br>    &quot;contrast&quot;: &quot;moderate&quot;,<br>    &quot;tones&quot;: &quot;natural skin tones with slight warmth&quot;<br>  },<br>  &quot;texture_and_detail&quot;: {<br>    &quot;skin&quot;: &quot;real texture, visible blemishes, no smoothing&quot;,<br>    &quot;fabric&quot;: &quot;clearly defined knit texture&quot;,<br>    &quot;grain&quot;: &quot;noticeable film grain&quot;,<br>    &quot;timestamp&quot;: &quot;subtle date stamp in corner&quot;<br>  },<br>  &quot;style&quot;: &quot;analog-inspired, diary-like portrait, lo-fi editorial realism&quot;,<br>  &quot;negative_prompt&quot;: [<br>    &quot;studio lighting&quot;,<br>    &quot;beauty retouching&quot;,<br>    &quot;plastic skin&quot;,<br>    &quot;perfect symmetry&quot;,<br>    &quot;over-sharpening&quot;,<br>    &quot;clean minimal background&quot;,<br>    &quot;AI artifacts&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene&quot;: &quot;An intimate indoor portrait taken in a personal bedroom or studio space, walls covered with taped photos, sketches, and ticket stubs&quot;,<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;male&quot;,<br>    &quot;age&quot;: &quot;early 20s&quot;,<br>    &quot;expression&quot;: &quot;calm, slightly guarded, introspective&quot;,<br>    &quot;pose&quot;: &quot;standing casually, shoulders relaxed, slight lean, hands out of frame&quot;,<br>    &quot;gaze&quot;: &quot;direct but unforced eye contact with the camera&quot;,<br>    &quot;hair&quot;: &quot;short, messy crop with natural volume, slightly uneven fringe&quot;,<br>    &quot;wardrobe&quot;: {<br>      &quot;top&quot;: &quot;textured knit sweater with soft purple gradient fade&quot;,<br>      &quot;bottom&quot;: &quot;muted trousers, understated and casual&quot;,<br>      &quot;style&quot;: &quot;effortless, lived-in, indie editorial&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;personal room or creative space&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;polaroid photographs taped to wall&quot;,<br>      &quot;handwritten sketches and doodles&quot;,<br>      &quot;concert or travel ticket stubs&quot;,<br>      &quot;masking tape visible and imperfect&quot;<br>    ],<br>    &quot;atmosphere&quot;: &quot;nostalgic, personal, slightly raw&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;direct on-camera flash&quot;,<br>    &quot;quality&quot;: &quot;harsh but controlled&quot;,<br>    &quot;shadow&quot;: &quot;hard shadows falling behind subject&quot;,<br>    &quot;mood&quot;: &quot;late 90s / early 2000s candid realism&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;shot_type&quot;: &quot;medium portrait&quot;,<br>    &quot;lens&quot;: &quot;35mm&quot;,<br>    &quot;perspective&quot;: &quot;eye-level, snapshot-style framing&quot;,<br>    &quot;depth_of_field&quot;: &quot;deep enough to keep wall details readable&quot;,<br>    &quot;imperfections&quot;: &quot;slight vignetting, flash falloff&quot;<br>  },<br>  &quot;color_grading&quot;: {<br>    &quot;palette&quot;: &quot;muted neutrals with soft lavender emphasis&quot;,<br>    &quot;contrast&quot;: &quot;moderate&quot;,<br>    &quot;tones&quot;: &quot;natural skin tones with slight warmth&quot;<br>  },<br>  &quot;texture_and_detail&quot;: {<br>    &quot;skin&quot;: &quot;real texture, visible blemishes, no smoothing&quot;,<br>    &quot;fabric&quot;: &quot;clearly defined knit texture&quot;,<br>    &quot;grain&quot;: &quot;noticeable film grain&quot;,<br>    &quot;timestamp&quot;: &quot;subtle date stamp in corner&quot;<br>  },<br>  &quot;style&quot;: &quot;analog-inspired, diary-like portrait, lo-fi editorial realism&quot;,<br>  &quot;negative_prompt&quot;: [<br>    &quot;studio lighting&quot;,<br>    &quot;beauty retouching&quot;,<br>    &quot;plastic skin&quot;,<br>    &quot;perfect symmetry&quot;,<br>    &quot;over-sharpening&quot;,<br>    &quot;clean minimal background&quot;,<br>    &quot;AI artifacts&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2016448117617602890-1.jpg" alt="&quot;scene&quot;: &quot;An intimate indoor portrait taken in a personal bed..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1797,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

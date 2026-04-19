@@ -7,11 +7,13 @@
     <title>History in the Toy Box #99 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="The History of the Toy Box: AI Image Generation Prompts">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/99.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/99.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/99.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846463">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023938">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一张超真实的俯视照片，拍摄在米色纸板盒内的3D打印沙盘，盒盖由两只人手撑开。盒子内部展现了一个微型的[COUNTRY NAME]景观，包含标志性地标、地形、建筑、河流、植被和成群的微小、细节化的人形。沙盘充满了充满活力、地理上合适的元素，所有元素都使用可触感的玩具式风格，通过哑光3D打印纹理且有可见的层线制作。在顶部，盒盖内侧以大的、多彩的、凸起的塑料字母显示短语“[COUNTRY NAME]”——每个字母为不同的亮色。灯光温暖且具有电影感，突出纹理和阴影以唤起真实感与魅力，仿佛观者正在打开一个国家的魔法微型版natio", this)'>📋 Copy</button>
         </div>
-        <p>一张超真实的俯视照片，拍摄在米色纸板盒内的3D打印沙盘，盒盖由两只人手撑开。盒子内部展现了一个微型的[COUNTRY NAME]景观，包含标志性地标、地形、建筑、河流、植被和成群的微小、细节化的人形。沙盘充满了充满活力、地理上合适的元素，所有元素都使用可触感的玩具式风格，通过哑光3D打印纹理且有可见的层线制作。在顶部，盒盖内侧以大的、多彩的、凸起的塑料字母显示短语“[COUNTRY NAME]”——每个字母为不同的亮色。灯光温暖且具有电影感，突出纹理和阴影以唤起真实感与魅力，仿佛观者正在打开一个国家的魔法微型版natio</p>
+        <div data-nosnippet><p>一张超真实的俯视照片，拍摄在米色纸板盒内的3D打印沙盘，盒盖由两只人手撑开。盒子内部展现了一个微型的[COUNTRY NAME]景观，包含标志性地标、地形、建筑、河流、植被和成群的微小、细节化的人形。沙盘充满了充满活力、地理上合适的元素，所有元素都使用可触感的玩具式风格，通过哑光3D打印纹理且有可见的层线制作。在顶部，盒盖内侧以大的、多彩的、凸起的塑料字母显示短语“[COUNTRY NAME]”——每个字母为不同的亮色。灯光温暖且具有电影感，突出纹理和阴影以唤起真实感与魅力，仿佛观者正在打开一个国家的魔法微型版natio</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("An ultra-realistic top-down photograph of a 3D-printed diorama inside a beige cardboard box, with the lid being held open by two human hands. The interior of the box reveals a miniature landscape of [COUNTRY NAME], featuring iconic landmarks, terrain, buildings, rivers, vegetation, and crowds of tiny, detailed human figures. The diorama is filled with vibrant, geographically appropriate elements, all crafted in a tactile, toy-like style using matte 3D-printed textures with visible layer lines. At the top, the inside of the box lid displays the phrase “[COUNTRY NAME]” in large, colorful, raised plastic letters—each letter in a different bright color. The lighting is warm and cinematic, highlighting the textures and shadows to evoke a sense of realism and charm, as if the viewer is opening a magical miniature version of the natio", this)'>📋 Copy</button>
         </div>
-        <p>An ultra-realistic top-down photograph of a 3D-printed diorama inside a beige cardboard box, with the lid being held open by two human hands. The interior of the box reveals a miniature landscape of [COUNTRY NAME], featuring iconic landmarks, terrain, buildings, rivers, vegetation, and crowds of tiny, detailed human figures. The diorama is filled with vibrant, geographically appropriate elements, all crafted in a tactile, toy-like style using matte 3D-printed textures with visible layer lines. At the top, the inside of the box lid displays the phrase “[COUNTRY NAME]” in large, colorful, raised plastic letters—each letter in a different bright color. The lighting is warm and cinematic, highlighting the textures and shadows to evoke a sense of realism and charm, as if the viewer is opening a magical miniature version of the natio</p>
+        <div data-nosnippet><p>An ultra-realistic top-down photograph of a 3D-printed diorama inside a beige cardboard box, with the lid being held open by two human hands. The interior of the box reveals a miniature landscape of [COUNTRY NAME], featuring iconic landmarks, terrain, buildings, rivers, vegetation, and crowds of tiny, detailed human figures. The diorama is filled with vibrant, geographically appropriate elements, all crafted in a tactile, toy-like style using matte 3D-printed textures with visible layer lines. At the top, the inside of the box lid displays the phrase “[COUNTRY NAME]” in large, colorful, raised plastic letters—each letter in a different bright color. The lighting is warm and cinematic, highlighting the textures and shadows to evoke a sense of realism and charm, as if the viewer is opening a magical miniature version of the natio</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/99.png" alt="玩具盒中的历史" loading="lazy"><img src="/images/99-2.jpeg" alt="玩具盒中的历史" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 99,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

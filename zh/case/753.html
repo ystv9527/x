@@ -7,11 +7,13 @@
     <title>A preservation architect&#39;s survey board for [BUILDING / STRUC... #753 | Gem Nana AI 提示词库</title>
     <meta name="description" content="A preservation architect&#39;s survey board for [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD]. Left section: site...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/753.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/753.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/753.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841533">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022619">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一份用于 [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD] 的保护建筑师勘察展板。左侧部分：现场平面图及环境背景，展示建筑在其城市或景观环境中的位置，并标注朝向、阴影和邻近关系。中间部分：对建筑进行剖解，剖切的等角透视图揭示结构体系、材料层次、隐藏的基础设施，并用标注区分原始元素与修改元素。右侧部分：以典型视点、理想光线下拍摄的建筑体验画面，画中配有人物以显示尺度与生活气息，建筑呈现出被居住的状态。视觉风格从技术性勘察蓝线过渡到中性分析灰，再到黄金时刻的暖色调。标题块写着 “[BUILDING NAME] — [ARCHITECT], [CITY], [YEAR], 遗产勘察”。", this)'>📋 复制</button>
         </div>
-        <p>一份用于 [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD] 的保护建筑师勘察展板。左侧部分：现场平面图及环境背景，展示建筑在其城市或景观环境中的位置，并标注朝向、阴影和邻近关系。中间部分：对建筑进行剖解，剖切的等角透视图揭示结构体系、材料层次、隐藏的基础设施，并用标注区分原始元素与修改元素。右侧部分：以典型视点、理想光线下拍摄的建筑体验画面，画中配有人物以显示尺度与生活气息，建筑呈现出被居住的状态。视觉风格从技术性勘察蓝线过渡到中性分析灰，再到黄金时刻的暖色调。标题块写着 “[BUILDING NAME] — [ARCHITECT], [CITY], [YEAR], 遗产勘察”。</p>
+        <div data-nosnippet><p>一份用于 [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD] 的保护建筑师勘察展板。左侧部分：现场平面图及环境背景，展示建筑在其城市或景观环境中的位置，并标注朝向、阴影和邻近关系。中间部分：对建筑进行剖解，剖切的等角透视图揭示结构体系、材料层次、隐藏的基础设施，并用标注区分原始元素与修改元素。右侧部分：以典型视点、理想光线下拍摄的建筑体验画面，画中配有人物以显示尺度与生活气息，建筑呈现出被居住的状态。视觉风格从技术性勘察蓝线过渡到中性分析灰，再到黄金时刻的暖色调。标题块写着 “[BUILDING NAME] — [ARCHITECT], [CITY], [YEAR], 遗产勘察”。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A preservation architect's survey board for [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD]. Left section: site plan and context, showing the structure in its urban or landscape setting with orientation, shadows, and neighboring relationships mapped. Center section: the building dissected, a cutaway axonometric revealing structural system, material layers, hidden infrastructure, with callouts identifying original versus modified elements. Right section: the building as experienced, photographed from the canonical viewpoint in ideal light, with human figures for scale and life, the architecture inhabited. Visual style transitions from technical survey blue-line through neutral analytical greys to golden-hour warmth. Title block reading \"[BUILDING NAME] — [ARCHITECT], [CITY], [YEAR], HERITAGE SURVEY\".", this)'>📋 复制</button>
         </div>
-        <p>A preservation architect&#39;s survey board for [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD]. Left section: site plan and context, showing the structure in its urban or landscape setting with orientation, shadows, and neighboring relationships mapped. Center section: the building dissected, a cutaway axonometric revealing structural system, material layers, hidden infrastructure, with callouts identifying original versus modified elements. Right section: the building as experienced, photographed from the canonical viewpoint in ideal light, with human figures for scale and life, the architecture inhabited. Visual style transitions from technical survey blue-line through neutral analytical greys to golden-hour warmth. Title block reading &quot;[BUILDING NAME] — [ARCHITECT], [CITY], [YEAR], HERITAGE SURVEY&quot;.</p>
+        <div data-nosnippet><p>A preservation architect&#39;s survey board for [BUILDING / STRUCTURE] — [STYLE / ARCHITECT / PERIOD]. Left section: site plan and context, showing the structure in its urban or landscape setting with orientation, shadows, and neighboring relationships mapped. Center section: the building dissected, a cutaway axonometric revealing structural system, material layers, hidden infrastructure, with callouts identifying original versus modified elements. Right section: the building as experienced, photographed from the canonical viewpoint in ideal light, with human figures for scale and life, the architecture inhabited. Visual style transitions from technical survey blue-line through neutral analytical greys to golden-hour warmth. Title block reading &quot;[BUILDING NAME] — [ARCHITECT], [CITY], [YEAR], HERITAGE SURVEY&quot;.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008559432016286198-1.jpg" alt="A preservation architect&#39;s survey board for [BUILDING / STRUC..." loading="lazy"><img src="/images/tweet-2008559432016286198-2.jpg" alt="A preservation architect&#39;s survey board for [BUILDING / STRUC..." loading="lazy"><img src="/images/tweet-2008559432016286198-3.jpg" alt="A preservation architect&#39;s survey board for [BUILDING / STRUC..." loading="lazy"><img src="/images/tweet-2008559432016286198-4.jpg" alt="A preservation architect&#39;s survey board for [BUILDING / STRUC..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 753,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

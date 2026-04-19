@@ -7,11 +7,13 @@
     <title>Use the uploaded image as the exact visual reference. #2329 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Use the uploaded image as the exact visual reference. Keep the product centered. Do not change the tube position, lig...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2329.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2329.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2329.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844167">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023462">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用上传的图像作为精确的视觉参考。\n保持产品居中。\n不要更改管子的位置、光线色调、花卉摆放或色彩方案。\n保持深蓝单色美学。\n不得添加额外光源。\n不得更改色彩分级。\n\n相机：\n相机固定。\n禁止变焦。\n禁止旋转。\n不得更改角度。\n静态高级构图。\n\n动作：\n将周围蓬松的蓝色旋转云雾以超慢动作动画化。\n这些类云形态（柔软的布料/墨迹式漩涡）轻柔地围绕产品移动和卷曲。\n运动应感觉流畅、沉重且奢华。\n自下而上的柔和滚动运动。\n围绕管身的微妙内向螺旋运动。\n禁止剧烈运动。\n禁止快速运动。\n不得对产品进行变形。\n\n花卉：\n保持大体稳定。\n呈非常细微的自然微动，仿佛被轻微气流影响。\n花瓣不得脱落。\n不得添加新花瓣。\n\n物理效果：\n平滑、致密、烟雾状的模拟。\n天鹅绒般的质感。\n褶皱内的柔和阴影过渡。\n自然的深度和层次感。\n\n氛围：\n优雅。\n高端。\n艺术性的美妆宣传。\n高端化妆品广告。\n\n声音（如支持可选）：\n柔和的环境氛围音色。\n非常细微的空气质感。\n无旁白。\n\n结束画面：\n云雾持续缓慢环绕产品流动。\n产品保持清晰且完美居中。\n超真实。\n豪华慢动作收尾。", this)'>📋 Copy</button>
         </div>
-        <p>使用上传的图像作为精确的视觉参考。<br>保持产品居中。<br>不要更改管子的位置、光线色调、花卉摆放或色彩方案。<br>保持深蓝单色美学。<br>不得添加额外光源。<br>不得更改色彩分级。</p><p>相机：<br>相机固定。<br>禁止变焦。<br>禁止旋转。<br>不得更改角度。<br>静态高级构图。</p><p>动作：<br>将周围蓬松的蓝色旋转云雾以超慢动作动画化。<br>这些类云形态（柔软的布料/墨迹式漩涡）轻柔地围绕产品移动和卷曲。<br>运动应感觉流畅、沉重且奢华。<br>自下而上的柔和滚动运动。<br>围绕管身的微妙内向螺旋运动。<br>禁止剧烈运动。<br>禁止快速运动。<br>不得对产品进行变形。</p><p>花卉：<br>保持大体稳定。<br>呈非常细微的自然微动，仿佛被轻微气流影响。<br>花瓣不得脱落。<br>不得添加新花瓣。</p><p>物理效果：<br>平滑、致密、烟雾状的模拟。<br>天鹅绒般的质感。<br>褶皱内的柔和阴影过渡。<br>自然的深度和层次感。</p><p>氛围：<br>优雅。<br>高端。<br>艺术性的美妆宣传。<br>高端化妆品广告。</p><p>声音（如支持可选）：<br>柔和的环境氛围音色。<br>非常细微的空气质感。<br>无旁白。</p><p>结束画面：<br>云雾持续缓慢环绕产品流动。<br>产品保持清晰且完美居中。<br>超真实。<br>豪华慢动作收尾。</p>
+        <div data-nosnippet><p>使用上传的图像作为精确的视觉参考。<br>保持产品居中。<br>不要更改管子的位置、光线色调、花卉摆放或色彩方案。<br>保持深蓝单色美学。<br>不得添加额外光源。<br>不得更改色彩分级。</p><p>相机：<br>相机固定。<br>禁止变焦。<br>禁止旋转。<br>不得更改角度。<br>静态高级构图。</p><p>动作：<br>将周围蓬松的蓝色旋转云雾以超慢动作动画化。<br>这些类云形态（柔软的布料/墨迹式漩涡）轻柔地围绕产品移动和卷曲。<br>运动应感觉流畅、沉重且奢华。<br>自下而上的柔和滚动运动。<br>围绕管身的微妙内向螺旋运动。<br>禁止剧烈运动。<br>禁止快速运动。<br>不得对产品进行变形。</p><p>花卉：<br>保持大体稳定。<br>呈非常细微的自然微动，仿佛被轻微气流影响。<br>花瓣不得脱落。<br>不得添加新花瓣。</p><p>物理效果：<br>平滑、致密、烟雾状的模拟。<br>天鹅绒般的质感。<br>褶皱内的柔和阴影过渡。<br>自然的深度和层次感。</p><p>氛围：<br>优雅。<br>高端。<br>艺术性的美妆宣传。<br>高端化妆品广告。</p><p>声音（如支持可选）：<br>柔和的环境氛围音色。<br>非常细微的空气质感。<br>无旁白。</p><p>结束画面：<br>云雾持续缓慢环绕产品流动。<br>产品保持清晰且完美居中。<br>超真实。<br>豪华慢动作收尾。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use the uploaded image as the exact visual reference.\nKeep the product centered.\nDo not change the tube position, lighting tone, flower placement, or color palette.\nMaintain the deep blue monochromatic aesthetic.\nNo additional lights.\nNo color grading changes.\nCamera:\nLocked camera.\nNo zoom.\nNo rotation.\nNo angle change.\nStatic premium composition.\nAction:\nAnimate the surrounding voluminous blue swirling clouds in ultra slow motion.\nThe cloud-like forms (soft fabric/ink-style swirls) gently move and curl around the product.\nMovement should feel fluid, heavy, and luxurious.\nSoft rolling motion from bottom to top.\nSubtle inward spiral motion around the tube.\nNo aggressive motion.\nNo fast movement.\nNo deformation of the product.\nFlowers:\nRemain mostly stable.\nVery subtle natural micro movement as if lightly affected by airflow.\nPetals should not detach.\nNo new petals added.\nPhysics:\nSmooth, dense, smoke-like simulation.\nVelvety texture.\nSoft shadow transitions within the folds.\nNatural depth and layering.\n\nMood:\nElegant.\nPremium.\nArtistic beauty campaign.\nHigh-end cosmetic advertisement.\n\nSound (optional if supported):\nSoft ambient atmospheric tone.\nVery subtle airy texture.\nNo voiceover.\nEnd Frame:\nClouds continue slowly flowing around the product.\nProduct remains sharp and perfectly centered.\nUltra realistic.\nLuxury slow-motion finish.", this)'>📋 Copy</button>
         </div>
-        <p>Use the uploaded image as the exact visual reference.<br>Keep the product centered.<br>Do not change the tube position, lighting tone, flower placement, or color palette.<br>Maintain the deep blue monochromatic aesthetic.<br>No additional lights.<br>No color grading changes.<br>Camera:<br>Locked camera.<br>No zoom.<br>No rotation.<br>No angle change.<br>Static premium composition.<br>Action:<br>Animate the surrounding voluminous blue swirling clouds in ultra slow motion.<br>The cloud-like forms (soft fabric/ink-style swirls) gently move and curl around the product.<br>Movement should feel fluid, heavy, and luxurious.<br>Soft rolling motion from bottom to top.<br>Subtle inward spiral motion around the tube.<br>No aggressive motion.<br>No fast movement.<br>No deformation of the product.<br>Flowers:<br>Remain mostly stable.<br>Very subtle natural micro movement as if lightly affected by airflow.<br>Petals should not detach.<br>No new petals added.<br>Physics:<br>Smooth, dense, smoke-like simulation.<br>Velvety texture.<br>Soft shadow transitions within the folds.<br>Natural depth and layering.</p><p>Mood:<br>Elegant.<br>Premium.<br>Artistic beauty campaign.<br>High-end cosmetic advertisement.</p><p>Sound (optional if supported):<br>Soft ambient atmospheric tone.<br>Very subtle airy texture.<br>No voiceover.<br>End Frame:<br>Clouds continue slowly flowing around the product.<br>Product remains sharp and perfectly centered.<br>Ultra realistic.<br>Luxury slow-motion finish.</p>
+        <div data-nosnippet><p>Use the uploaded image as the exact visual reference.<br>Keep the product centered.<br>Do not change the tube position, lighting tone, flower placement, or color palette.<br>Maintain the deep blue monochromatic aesthetic.<br>No additional lights.<br>No color grading changes.<br>Camera:<br>Locked camera.<br>No zoom.<br>No rotation.<br>No angle change.<br>Static premium composition.<br>Action:<br>Animate the surrounding voluminous blue swirling clouds in ultra slow motion.<br>The cloud-like forms (soft fabric/ink-style swirls) gently move and curl around the product.<br>Movement should feel fluid, heavy, and luxurious.<br>Soft rolling motion from bottom to top.<br>Subtle inward spiral motion around the tube.<br>No aggressive motion.<br>No fast movement.<br>No deformation of the product.<br>Flowers:<br>Remain mostly stable.<br>Very subtle natural micro movement as if lightly affected by airflow.<br>Petals should not detach.<br>No new petals added.<br>Physics:<br>Smooth, dense, smoke-like simulation.<br>Velvety texture.<br>Soft shadow transitions within the folds.<br>Natural depth and layering.</p><p>Mood:<br>Elegant.<br>Premium.<br>Artistic beauty campaign.<br>High-end cosmetic advertisement.</p><p>Sound (optional if supported):<br>Soft ambient atmospheric tone.<br>Very subtle airy texture.<br>No voiceover.<br>End Frame:<br>Clouds continue slowly flowing around the product.<br>Product remains sharp and perfectly centered.<br>Ultra realistic.<br>Luxury slow-motion finish.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2028077442074566800-1.jpg" alt="Use the uploaded image as the exact visual reference." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2329,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

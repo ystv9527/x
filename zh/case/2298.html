@@ -7,11 +7,13 @@
     <title>[BRAND NAME]. Act as a fashion photographer and creative dire... #2298 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[BRAND NAME]. Act as a fashion photographer and creative director shooting a high end editorial lookbook for a bespok...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2298.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2298.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2298.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840056">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022259">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]。扮演一位时尚摄影师兼创意总监，为该品牌设计的定制足球球衣拍摄高端编辑风格的画册。\n\nTHE SUBJECT & COMPOSITION (FLOATING & ANGLED):\n单件高端定制足球球衣悬浮在半空中，置于画面中央。不可见衣架。\n关键角度：球衣并非正面平展呈现。它略微旋转（约15度倾斜视角），以展示深度、形态和动态轮廓。尽管呈悬浮状态，面料必须表现出真实的重量感，具有深刻、看似违抗重力的褶皱、折痕和自然皱褶。它应感觉像一件真实的、厚重的服装被冻结在时间中，而非僵硬的3D模型。\n\nBRANDED DESIGN & AESTHETICS:\n球衣的设计是对[BRAND NAME]视觉识别的成熟诠释。\n品牌位置：官方[BRAND NAME]标识真实地作为胸前主队徽呈现（例如刺绣徽章或高品质热转印）。\n\nMATERIALITY & TEXTURE (CRITICAL):\n关注点仍在奢华、触感丰富的质感上。\n面料：中厚重、复古风格的运动棉混纺或功能性针织，具有可见的粗糙织纹结构。\n\nENVIRONMENT & BACKGROUND (WHITE STUDIO):\n球衣悬浮在抽象的无限白色摄影棚环幕空间中。背景完全无缝、纯净、干净的白色，极简且绝无干扰，将全部注意力集中在悬浮的服装上。\n\nLIGHTING & PHOTOGRAPHY STYLE:\n风格：超写实的编辑时尚摄影。干净、高调的美学。\n灯光：精致的棚内灯光。柔和、漫散的光线雕塑出面料的褶皱，并在纯白背景上突出质感。细腻的柔和阴影可以投射在球衣本身，以在白色空间中定义其形体。", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]。扮演一位时尚摄影师兼创意总监，为该品牌设计的定制足球球衣拍摄高端编辑风格的画册。</p><p>THE SUBJECT &amp; COMPOSITION (FLOATING &amp; ANGLED):<br>单件高端定制足球球衣悬浮在半空中，置于画面中央。不可见衣架。<br>关键角度：球衣并非正面平展呈现。它略微旋转（约15度倾斜视角），以展示深度、形态和动态轮廓。尽管呈悬浮状态，面料必须表现出真实的重量感，具有深刻、看似违抗重力的褶皱、折痕和自然皱褶。它应感觉像一件真实的、厚重的服装被冻结在时间中，而非僵硬的3D模型。</p><p>BRANDED DESIGN &amp; AESTHETICS:<br>球衣的设计是对[BRAND NAME]视觉识别的成熟诠释。<br>品牌位置：官方[BRAND NAME]标识真实地作为胸前主队徽呈现（例如刺绣徽章或高品质热转印）。</p><p>MATERIALITY &amp; TEXTURE (CRITICAL):<br>关注点仍在奢华、触感丰富的质感上。<br>面料：中厚重、复古风格的运动棉混纺或功能性针织，具有可见的粗糙织纹结构。</p><p>ENVIRONMENT &amp; BACKGROUND (WHITE STUDIO):<br>球衣悬浮在抽象的无限白色摄影棚环幕空间中。背景完全无缝、纯净、干净的白色，极简且绝无干扰，将全部注意力集中在悬浮的服装上。</p><p>LIGHTING &amp; PHOTOGRAPHY STYLE:<br>风格：超写实的编辑时尚摄影。干净、高调的美学。<br>灯光：精致的棚内灯光。柔和、漫散的光线雕塑出面料的褶皱，并在纯白背景上突出质感。细腻的柔和阴影可以投射在球衣本身，以在白色空间中定义其形体。</p>
+        <div data-nosnippet><p>[BRAND NAME]。扮演一位时尚摄影师兼创意总监，为该品牌设计的定制足球球衣拍摄高端编辑风格的画册。</p><p>THE SUBJECT &amp; COMPOSITION (FLOATING &amp; ANGLED):<br>单件高端定制足球球衣悬浮在半空中，置于画面中央。不可见衣架。<br>关键角度：球衣并非正面平展呈现。它略微旋转（约15度倾斜视角），以展示深度、形态和动态轮廓。尽管呈悬浮状态，面料必须表现出真实的重量感，具有深刻、看似违抗重力的褶皱、折痕和自然皱褶。它应感觉像一件真实的、厚重的服装被冻结在时间中，而非僵硬的3D模型。</p><p>BRANDED DESIGN &amp; AESTHETICS:<br>球衣的设计是对[BRAND NAME]视觉识别的成熟诠释。<br>品牌位置：官方[BRAND NAME]标识真实地作为胸前主队徽呈现（例如刺绣徽章或高品质热转印）。</p><p>MATERIALITY &amp; TEXTURE (CRITICAL):<br>关注点仍在奢华、触感丰富的质感上。<br>面料：中厚重、复古风格的运动棉混纺或功能性针织，具有可见的粗糙织纹结构。</p><p>ENVIRONMENT &amp; BACKGROUND (WHITE STUDIO):<br>球衣悬浮在抽象的无限白色摄影棚环幕空间中。背景完全无缝、纯净、干净的白色，极简且绝无干扰，将全部注意力集中在悬浮的服装上。</p><p>LIGHTING &amp; PHOTOGRAPHY STYLE:<br>风格：超写实的编辑时尚摄影。干净、高调的美学。<br>灯光：精致的棚内灯光。柔和、漫散的光线雕塑出面料的褶皱，并在纯白背景上突出质感。细腻的柔和阴影可以投射在球衣本身，以在白色空间中定义其形体。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]. Act as a fashion photographer and creative director shooting a high-end editorial lookbook for a bespoke football jersey designed by this brand.\nTHE SUBJECT & COMPOSITION (FLOATING & ANGLED):\nA single, premium custom football jersey is floating suspended in mid-air, centered in the frame. There is no hanger visible.\nCrucial Angle: The jersey is NOT presented flatly frontal. It is rotated slightly (approximately 15 degrees angled view) to show depth, form, and a dynamic profile. Despite floating, the fabric must show realistic weight, deep gravity-defying folds, creases, and natural wrinkles. It must feel like a real, heavy garment frozen in time, not a stiff 3D model.\nBRANDED DESIGN & AESTHETICS:\nThe jersey's design is a sophisticated interpretation of [BRAND NAME]'s visual identity.\nBranding Placement: The official [BRAND NAME] logo is authentically applied as the main club crest on the chest (e.g., embroidered patch or high-quality heat transfer).\nMATERIALITY & TEXTURE (CRITICAL):\nThe focus remains on luxurious, tactile textures.\nFabric: A heavyweight, retro-inspired athletic cotton-blend or technical knit with a visible, coarse weave structure.\nENVIRONMENT & BACKGROUND (WHITE STUDIO):\nThe jersey floats within an abstract, infinite white photo studio cyclorama space. The background is completely seamless, pure, clean white, and minimalist, with absolutely zero distractions, placing total focus on the suspended garment.\nLIGHTING & PHOTOGRAPHY STYLE:\nStyle: Hyper-realistic editorial fashion photography. Clean, high-key aesthetic.\nLighting: sophisticated studio lighting. Soft, diffused light that sculpts the folds of the fabric and highlights the texture against the pure white background. Subtle soft shadows might be cast on the jersey itself to define its form in the white space.", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]. Act as a fashion photographer and creative director shooting a high-end editorial lookbook for a bespoke football jersey designed by this brand.<br>THE SUBJECT &amp; COMPOSITION (FLOATING &amp; ANGLED):<br>A single, premium custom football jersey is floating suspended in mid-air, centered in the frame. There is no hanger visible.<br>Crucial Angle: The jersey is NOT presented flatly frontal. It is rotated slightly (approximately 15 degrees angled view) to show depth, form, and a dynamic profile. Despite floating, the fabric must show realistic weight, deep gravity-defying folds, creases, and natural wrinkles. It must feel like a real, heavy garment frozen in time, not a stiff 3D model.<br>BRANDED DESIGN &amp; AESTHETICS:<br>The jersey&#39;s design is a sophisticated interpretation of [BRAND NAME]&#39;s visual identity.<br>Branding Placement: The official [BRAND NAME] logo is authentically applied as the main club crest on the chest (e.g., embroidered patch or high-quality heat transfer).<br>MATERIALITY &amp; TEXTURE (CRITICAL):<br>The focus remains on luxurious, tactile textures.<br>Fabric: A heavyweight, retro-inspired athletic cotton-blend or technical knit with a visible, coarse weave structure.<br>ENVIRONMENT &amp; BACKGROUND (WHITE STUDIO):<br>The jersey floats within an abstract, infinite white photo studio cyclorama space. The background is completely seamless, pure, clean white, and minimalist, with absolutely zero distractions, placing total focus on the suspended garment.<br>LIGHTING &amp; PHOTOGRAPHY STYLE:<br>Style: Hyper-realistic editorial fashion photography. Clean, high-key aesthetic.<br>Lighting: sophisticated studio lighting. Soft, diffused light that sculpts the folds of the fabric and highlights the texture against the pure white background. Subtle soft shadows might be cast on the jersey itself to define its form in the white space.</p>
+        <div data-nosnippet><p>[BRAND NAME]. Act as a fashion photographer and creative director shooting a high-end editorial lookbook for a bespoke football jersey designed by this brand.<br>THE SUBJECT &amp; COMPOSITION (FLOATING &amp; ANGLED):<br>A single, premium custom football jersey is floating suspended in mid-air, centered in the frame. There is no hanger visible.<br>Crucial Angle: The jersey is NOT presented flatly frontal. It is rotated slightly (approximately 15 degrees angled view) to show depth, form, and a dynamic profile. Despite floating, the fabric must show realistic weight, deep gravity-defying folds, creases, and natural wrinkles. It must feel like a real, heavy garment frozen in time, not a stiff 3D model.<br>BRANDED DESIGN &amp; AESTHETICS:<br>The jersey&#39;s design is a sophisticated interpretation of [BRAND NAME]&#39;s visual identity.<br>Branding Placement: The official [BRAND NAME] logo is authentically applied as the main club crest on the chest (e.g., embroidered patch or high-quality heat transfer).<br>MATERIALITY &amp; TEXTURE (CRITICAL):<br>The focus remains on luxurious, tactile textures.<br>Fabric: A heavyweight, retro-inspired athletic cotton-blend or technical knit with a visible, coarse weave structure.<br>ENVIRONMENT &amp; BACKGROUND (WHITE STUDIO):<br>The jersey floats within an abstract, infinite white photo studio cyclorama space. The background is completely seamless, pure, clean white, and minimalist, with absolutely zero distractions, placing total focus on the suspended garment.<br>LIGHTING &amp; PHOTOGRAPHY STYLE:<br>Style: Hyper-realistic editorial fashion photography. Clean, high-key aesthetic.<br>Lighting: sophisticated studio lighting. Soft, diffused light that sculpts the folds of the fabric and highlights the texture against the pure white background. Subtle soft shadows might be cast on the jersey itself to define its form in the white space.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2027393294469128313-1.jpg" alt="[BRAND NAME]. Act as a fashion photographer and creative dire..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2298,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

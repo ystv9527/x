@@ -7,11 +7,13 @@
     <title>&quot;prompt type&quot;: &quot;Ultra Photorealistic Image Generation&quot;, #1335 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt type&quot;: &quot;Ultra Photorealistic Image Generation&quot;, &quot;subject&quot;: { &quot;description&quot;: &quot;Young woman with long, straigh...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1335.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1335.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1335.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841033">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022477">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_type\": \"超写实逼真图像生成\",\n  \"subject\": {\n    \"description\": \"年轻女性，深棕色长直发披在背后\",\n    \"skin_tone\": \"阳光晒成、光彩照人的肤色\",\n    \"features\": \"侧面可见，带笑（或大笑）的表情，双手举起顽皮地遮住眼睛/脸\",\n    \"details\": \"红色修甲指甲，低调的珠宝，包括左手的一个戒指和一条细手链\"\n  },\n  \"fashion_and_styling\": {\n    \"outfit\": \"白色复古风束胸式迷你连衣裙，带瑞士点纹理\",\n    \"garment_details\": \"心形领口，荷叶边小飞袖，前侧系带蝴蝶结细节，贴身胸衣，荷叶边下摆，略微透光的面料\",\n    \"aesthetic\": \"俏皮女人风（coquette）、田园风（cottagecore）、柔美奢华、夏季度假风\"\n  },\n  \"pose_and_action\": {\n    \"pose\": \"优雅地坐在椅子上，身体略微朝远离相机的方向倾斜\",\n    \"gesture\": \"双手抬起以遮挡阳光或捕捉笑时的瞬间，头微微后仰\",\n    \"interaction\": \"在咖啡馆桌旁以放松的姿势坐着\"\n  },\n  \"environment\": {\n    \"setting\": \"户外豪华酒店露台或咖啡馆阳台，俯瞰风景如画的景致\",\n    \"background_elements\": \"带有 'HOTEL FLORENCE' 招牌的历史黄色建筑，远处茂密的绿色山脉，多云的蓝天，复古球形路灯\",\n    \"foreground_elements\": \"圆形玻璃桌面，黑色锻铁花园椅\",\n    \"props\": \"两个放在杯碟上的白色陶瓷咖啡杯，桌上放着一本平装书\"\n  },\n  \"lighting\": {\n    \"type\": \"自然明亮的日光，下午的阳光\",\n    \"quality\": \"高对比，桌面上投下清晰的阴影，头发有背光产生光晕效果，阳光普照的氛围\",\n    \"direction\": \"侧面/正面光照亮主体\"\n  },\n  \"mood_and_atmosphere\": {\n    \"vibe\": \"欢乐、自然而不做作、奢华、无忧无虑、意大利夏日度假氛围\",\n    \"emotion\": \"快乐、放松、顽皮\"\n  },\n  \"technical_camera_details\": {\n    \"quality\": \"8K 分辨率，RAW 照片，超写实，极其细致的纹理\",\n    \"camera_simulation\": \"单反相机，85mm 人像镜头\",\n    \"aperture\": \"f/2.8（浅景深以模糊背景的山脉和酒店）\",\n    \"shutter_speed\": \"1/500 秒（冻结抓拍动作）\",\n    \"iso\": \"ISO 100（干净，无噪点）\",\n    \"color_grading\": \"鲜明自然的色彩，略带暖调，白色清晰\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_type&quot;: &quot;超写实逼真图像生成&quot;,<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;年轻女性，深棕色长直发披在背后&quot;,<br>    &quot;skin_tone&quot;: &quot;阳光晒成、光彩照人的肤色&quot;,<br>    &quot;features&quot;: &quot;侧面可见，带笑（或大笑）的表情，双手举起顽皮地遮住眼睛/脸&quot;,<br>    &quot;details&quot;: &quot;红色修甲指甲，低调的珠宝，包括左手的一个戒指和一条细手链&quot;<br>  },<br>  &quot;fashion_and_styling&quot;: {<br>    &quot;outfit&quot;: &quot;白色复古风束胸式迷你连衣裙，带瑞士点纹理&quot;,<br>    &quot;garment_details&quot;: &quot;心形领口，荷叶边小飞袖，前侧系带蝴蝶结细节，贴身胸衣，荷叶边下摆，略微透光的面料&quot;,<br>    &quot;aesthetic&quot;: &quot;俏皮女人风（coquette）、田园风（cottagecore）、柔美奢华、夏季度假风&quot;<br>  },<br>  &quot;pose_and_action&quot;: {<br>    &quot;pose&quot;: &quot;优雅地坐在椅子上，身体略微朝远离相机的方向倾斜&quot;,<br>    &quot;gesture&quot;: &quot;双手抬起以遮挡阳光或捕捉笑时的瞬间，头微微后仰&quot;,<br>    &quot;interaction&quot;: &quot;在咖啡馆桌旁以放松的姿势坐着&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;户外豪华酒店露台或咖啡馆阳台，俯瞰风景如画的景致&quot;,<br>    &quot;background_elements&quot;: &quot;带有 &#39;HOTEL FLORENCE&#39; 招牌的历史黄色建筑，远处茂密的绿色山脉，多云的蓝天，复古球形路灯&quot;,<br>    &quot;foreground_elements&quot;: &quot;圆形玻璃桌面，黑色锻铁花园椅&quot;,<br>    &quot;props&quot;: &quot;两个放在杯碟上的白色陶瓷咖啡杯，桌上放着一本平装书&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;自然明亮的日光，下午的阳光&quot;,<br>    &quot;quality&quot;: &quot;高对比，桌面上投下清晰的阴影，头发有背光产生光晕效果，阳光普照的氛围&quot;,<br>    &quot;direction&quot;: &quot;侧面/正面光照亮主体&quot;<br>  },<br>  &quot;mood_and_atmosphere&quot;: {<br>    &quot;vibe&quot;: &quot;欢乐、自然而不做作、奢华、无忧无虑、意大利夏日度假氛围&quot;,<br>    &quot;emotion&quot;: &quot;快乐、放松、顽皮&quot;<br>  },<br>  &quot;technical_camera_details&quot;: {<br>    &quot;quality&quot;: &quot;8K 分辨率，RAW 照片，超写实，极其细致的纹理&quot;,<br>    &quot;camera_simulation&quot;: &quot;单反相机，85mm 人像镜头&quot;,<br>    &quot;aperture&quot;: &quot;f/2.8（浅景深以模糊背景的山脉和酒店）&quot;,<br>    &quot;shutter_speed&quot;: &quot;1/500 秒（冻结抓拍动作）&quot;,<br>    &quot;iso&quot;: &quot;ISO 100（干净，无噪点）&quot;,<br>    &quot;color_grading&quot;: &quot;鲜明自然的色彩，略带暖调，白色清晰&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_type&quot;: &quot;超写实逼真图像生成&quot;,<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;年轻女性，深棕色长直发披在背后&quot;,<br>    &quot;skin_tone&quot;: &quot;阳光晒成、光彩照人的肤色&quot;,<br>    &quot;features&quot;: &quot;侧面可见，带笑（或大笑）的表情，双手举起顽皮地遮住眼睛/脸&quot;,<br>    &quot;details&quot;: &quot;红色修甲指甲，低调的珠宝，包括左手的一个戒指和一条细手链&quot;<br>  },<br>  &quot;fashion_and_styling&quot;: {<br>    &quot;outfit&quot;: &quot;白色复古风束胸式迷你连衣裙，带瑞士点纹理&quot;,<br>    &quot;garment_details&quot;: &quot;心形领口，荷叶边小飞袖，前侧系带蝴蝶结细节，贴身胸衣，荷叶边下摆，略微透光的面料&quot;,<br>    &quot;aesthetic&quot;: &quot;俏皮女人风（coquette）、田园风（cottagecore）、柔美奢华、夏季度假风&quot;<br>  },<br>  &quot;pose_and_action&quot;: {<br>    &quot;pose&quot;: &quot;优雅地坐在椅子上，身体略微朝远离相机的方向倾斜&quot;,<br>    &quot;gesture&quot;: &quot;双手抬起以遮挡阳光或捕捉笑时的瞬间，头微微后仰&quot;,<br>    &quot;interaction&quot;: &quot;在咖啡馆桌旁以放松的姿势坐着&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;户外豪华酒店露台或咖啡馆阳台，俯瞰风景如画的景致&quot;,<br>    &quot;background_elements&quot;: &quot;带有 &#39;HOTEL FLORENCE&#39; 招牌的历史黄色建筑，远处茂密的绿色山脉，多云的蓝天，复古球形路灯&quot;,<br>    &quot;foreground_elements&quot;: &quot;圆形玻璃桌面，黑色锻铁花园椅&quot;,<br>    &quot;props&quot;: &quot;两个放在杯碟上的白色陶瓷咖啡杯，桌上放着一本平装书&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;自然明亮的日光，下午的阳光&quot;,<br>    &quot;quality&quot;: &quot;高对比，桌面上投下清晰的阴影，头发有背光产生光晕效果，阳光普照的氛围&quot;,<br>    &quot;direction&quot;: &quot;侧面/正面光照亮主体&quot;<br>  },<br>  &quot;mood_and_atmosphere&quot;: {<br>    &quot;vibe&quot;: &quot;欢乐、自然而不做作、奢华、无忧无虑、意大利夏日度假氛围&quot;,<br>    &quot;emotion&quot;: &quot;快乐、放松、顽皮&quot;<br>  },<br>  &quot;technical_camera_details&quot;: {<br>    &quot;quality&quot;: &quot;8K 分辨率，RAW 照片，超写实，极其细致的纹理&quot;,<br>    &quot;camera_simulation&quot;: &quot;单反相机，85mm 人像镜头&quot;,<br>    &quot;aperture&quot;: &quot;f/2.8（浅景深以模糊背景的山脉和酒店）&quot;,<br>    &quot;shutter_speed&quot;: &quot;1/500 秒（冻结抓拍动作）&quot;,<br>    &quot;iso&quot;: &quot;ISO 100（干净，无噪点）&quot;,<br>    &quot;color_grading&quot;: &quot;鲜明自然的色彩，略带暖调，白色清晰&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_type\": \"Ultra Photorealistic Image Generation\",\n  \"subject\": {\n    \"description\": \"Young woman with long, straight dark brown hair cascading down her back\",\n    \"skin_tone\": \"Sun-kissed, glowing complexion\",\n    \"features\": \"Side profile visible, smiling/laughing expression, hands raised covering eyes/face playfully\",\n    \"details\": \"Red manicured fingernails, subtle jewelry including a ring on the left hand and a thin bracelet\"\n  },\n  \"fashion_and_styling\": {\n    \"outfit\": \"White, vintage-inspired corset-style mini dress with Swiss dot texture\",\n    \"garment_details\": \"Sweetheart neckline, ruffled cap sleeves, front lace-up ribbon detailing, fitted bodice, ruffled hem, slightly sheer fabric\",\n    \"aesthetic\": \"Coquette, cottagecore, soft feminine luxury, summer vacation style\"\n  },\n  \"pose_and_action\": {\n    \"pose\": \"Seated elegantly on a chair, body angled slightly away from the camera\",\n    \"gesture\": \"Both hands raised to shield eyes from the sun or in a candid moment of laughter, head tilted back slightly\",\n    \"interaction\": \"Relaxed posture sitting at a cafe table\"\n  },\n  \"environment\": {\n    \"setting\": \"Outdoor luxury hotel terrace or cafe balcony overlooking a scenic landscape\",\n    \"background_elements\": \"Historic yellow building with 'HOTEL FLORENCE' signage, lush green mountains in the distance, cloudy blue sky, vintage globe street lamps\",\n    \"foreground_elements\": \"Round glass-top table, black wrought-iron garden chairs\",\n    \"props\": \"Two white ceramic coffee cups on saucers, a paperback book lying on the table\"\n  },\n  \"lighting\": {\n    \"type\": \"Natural bright daylight, afternoon sun\",\n    \"quality\": \"High contrast, casting sharp shadows on the table, backlighting on hair creating a halo effect, sun-drenched atmosphere\",\n    \"direction\": \"Side/Front lighting illuminating the subject\"\n  },\n  \"mood_and_atmosphere\": {\n    \"vibe\": \"Joyful, candid, luxurious, carefree, Italian summer holiday\",\n    \"emotion\": \"Happiness, relaxation, playfulness\"\n  },\n  \"technical_camera_details\": {\n    \"quality\": \"8k resolution, RAW photo, hyper-realistic, highly detailed texture\",\n    \"camera_simulation\": \"DSLR, 85mm portrait lens\",\n    \"aperture\": \"f/2.8 (shallow depth of field to blur the background mountains and hotel)\",\n    \"shutter_speed\": \"1/500s (to freeze the candid movement)\",\n    \"iso\": \"100 (clean, noise-free image)\",\n    \"color_grading\": \"Vibrant, natural colors with slightly warm tones, clear whites\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_type&quot;: &quot;Ultra Photorealistic Image Generation&quot;,<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;Young woman with long, straight dark brown hair cascading down her back&quot;,<br>    &quot;skin_tone&quot;: &quot;Sun-kissed, glowing complexion&quot;,<br>    &quot;features&quot;: &quot;Side profile visible, smiling/laughing expression, hands raised covering eyes/face playfully&quot;,<br>    &quot;details&quot;: &quot;Red manicured fingernails, subtle jewelry including a ring on the left hand and a thin bracelet&quot;<br>  },<br>  &quot;fashion_and_styling&quot;: {<br>    &quot;outfit&quot;: &quot;White, vintage-inspired corset-style mini dress with Swiss dot texture&quot;,<br>    &quot;garment_details&quot;: &quot;Sweetheart neckline, ruffled cap sleeves, front lace-up ribbon detailing, fitted bodice, ruffled hem, slightly sheer fabric&quot;,<br>    &quot;aesthetic&quot;: &quot;Coquette, cottagecore, soft feminine luxury, summer vacation style&quot;<br>  },<br>  &quot;pose_and_action&quot;: {<br>    &quot;pose&quot;: &quot;Seated elegantly on a chair, body angled slightly away from the camera&quot;,<br>    &quot;gesture&quot;: &quot;Both hands raised to shield eyes from the sun or in a candid moment of laughter, head tilted back slightly&quot;,<br>    &quot;interaction&quot;: &quot;Relaxed posture sitting at a cafe table&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;Outdoor luxury hotel terrace or cafe balcony overlooking a scenic landscape&quot;,<br>    &quot;background_elements&quot;: &quot;Historic yellow building with &#39;HOTEL FLORENCE&#39; signage, lush green mountains in the distance, cloudy blue sky, vintage globe street lamps&quot;,<br>    &quot;foreground_elements&quot;: &quot;Round glass-top table, black wrought-iron garden chairs&quot;,<br>    &quot;props&quot;: &quot;Two white ceramic coffee cups on saucers, a paperback book lying on the table&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Natural bright daylight, afternoon sun&quot;,<br>    &quot;quality&quot;: &quot;High contrast, casting sharp shadows on the table, backlighting on hair creating a halo effect, sun-drenched atmosphere&quot;,<br>    &quot;direction&quot;: &quot;Side/Front lighting illuminating the subject&quot;<br>  },<br>  &quot;mood_and_atmosphere&quot;: {<br>    &quot;vibe&quot;: &quot;Joyful, candid, luxurious, carefree, Italian summer holiday&quot;,<br>    &quot;emotion&quot;: &quot;Happiness, relaxation, playfulness&quot;<br>  },<br>  &quot;technical_camera_details&quot;: {<br>    &quot;quality&quot;: &quot;8k resolution, RAW photo, hyper-realistic, highly detailed texture&quot;,<br>    &quot;camera_simulation&quot;: &quot;DSLR, 85mm portrait lens&quot;,<br>    &quot;aperture&quot;: &quot;f/2.8 (shallow depth of field to blur the background mountains and hotel)&quot;,<br>    &quot;shutter_speed&quot;: &quot;1/500s (to freeze the candid movement)&quot;,<br>    &quot;iso&quot;: &quot;100 (clean, noise-free image)&quot;,<br>    &quot;color_grading&quot;: &quot;Vibrant, natural colors with slightly warm tones, clear whites&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_type&quot;: &quot;Ultra Photorealistic Image Generation&quot;,<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;Young woman with long, straight dark brown hair cascading down her back&quot;,<br>    &quot;skin_tone&quot;: &quot;Sun-kissed, glowing complexion&quot;,<br>    &quot;features&quot;: &quot;Side profile visible, smiling/laughing expression, hands raised covering eyes/face playfully&quot;,<br>    &quot;details&quot;: &quot;Red manicured fingernails, subtle jewelry including a ring on the left hand and a thin bracelet&quot;<br>  },<br>  &quot;fashion_and_styling&quot;: {<br>    &quot;outfit&quot;: &quot;White, vintage-inspired corset-style mini dress with Swiss dot texture&quot;,<br>    &quot;garment_details&quot;: &quot;Sweetheart neckline, ruffled cap sleeves, front lace-up ribbon detailing, fitted bodice, ruffled hem, slightly sheer fabric&quot;,<br>    &quot;aesthetic&quot;: &quot;Coquette, cottagecore, soft feminine luxury, summer vacation style&quot;<br>  },<br>  &quot;pose_and_action&quot;: {<br>    &quot;pose&quot;: &quot;Seated elegantly on a chair, body angled slightly away from the camera&quot;,<br>    &quot;gesture&quot;: &quot;Both hands raised to shield eyes from the sun or in a candid moment of laughter, head tilted back slightly&quot;,<br>    &quot;interaction&quot;: &quot;Relaxed posture sitting at a cafe table&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;Outdoor luxury hotel terrace or cafe balcony overlooking a scenic landscape&quot;,<br>    &quot;background_elements&quot;: &quot;Historic yellow building with &#39;HOTEL FLORENCE&#39; signage, lush green mountains in the distance, cloudy blue sky, vintage globe street lamps&quot;,<br>    &quot;foreground_elements&quot;: &quot;Round glass-top table, black wrought-iron garden chairs&quot;,<br>    &quot;props&quot;: &quot;Two white ceramic coffee cups on saucers, a paperback book lying on the table&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Natural bright daylight, afternoon sun&quot;,<br>    &quot;quality&quot;: &quot;High contrast, casting sharp shadows on the table, backlighting on hair creating a halo effect, sun-drenched atmosphere&quot;,<br>    &quot;direction&quot;: &quot;Side/Front lighting illuminating the subject&quot;<br>  },<br>  &quot;mood_and_atmosphere&quot;: {<br>    &quot;vibe&quot;: &quot;Joyful, candid, luxurious, carefree, Italian summer holiday&quot;,<br>    &quot;emotion&quot;: &quot;Happiness, relaxation, playfulness&quot;<br>  },<br>  &quot;technical_camera_details&quot;: {<br>    &quot;quality&quot;: &quot;8k resolution, RAW photo, hyper-realistic, highly detailed texture&quot;,<br>    &quot;camera_simulation&quot;: &quot;DSLR, 85mm portrait lens&quot;,<br>    &quot;aperture&quot;: &quot;f/2.8 (shallow depth of field to blur the background mountains and hotel)&quot;,<br>    &quot;shutter_speed&quot;: &quot;1/500s (to freeze the candid movement)&quot;,<br>    &quot;iso&quot;: &quot;100 (clean, noise-free image)&quot;,<br>    &quot;color_grading&quot;: &quot;Vibrant, natural colors with slightly warm tones, clear whites&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011768378969481414-1.jpg" alt="&quot;prompt type&quot;: &quot;Ultra Photorealistic Image Generation&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1335,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

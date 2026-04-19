@@ -7,11 +7,13 @@
     <title>&quot;reference usage&quot;: { #1153 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;reference usage&quot;: { &quot;use reference for&quot;: [ &quot;pose&quot;, &quot;framing&quot;, &quot;camera angle&quot;, &quot;lighting style&quot;, &quot;background style&quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1153.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1153.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1153.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845418">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023715">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"参考使用\": {\n    \"用于参考\": [\n      \"姿势\",\n      \"构图\",\n      \"相机角度\",\n      \"灯光风格\",\n      \"背景风格\",\n      \"整体构图\"\n    ],\n    \"不复制\": [\n      \"脸部\",\n      \"面部结构\",\n      \"身份\",\n      \"名人相似度\"\n    ]\n  },\n  \"场景\": {\n    \"类型\": \"工作室\",\n    \"背景\": \"与参考相同的平滑中性色渐变\",\n    \"灯光\": \"与参考相同的柔和均衡专业工作室灯光\"\n  },\n  \"主体\": {\n    \"身份\": \"通用成年男性（非真实人物）\",\n    \"年龄范围\": \"20多岁后期到30多岁中期\",\n    \"姿势\": \"与参考相同的直立头肩姿势\",\n    \"表情\": \"自信友好的微笑，强度类似\",\n    \"凝视\": \"直视镜头\",\n    \"头发\": {\n      \"风格\": \"短发整洁\",\n      \"颜色\": \"深棕色或黑色\"\n    },\n    \"面部特征\": \"原创独特面容，不与参考相同\"\n  },\n  \"服装\": {\n    \"类型\": \"正式商务\",\n    \"外套\": \"定制深灰色西装\",\n    \"衬衫\": \"干净的白色衬衫\",\n    \"领带\": \"经典海军蓝\"\n  },\n  \"相机\": {\n    \"构图\": \"紧凑的头肩特写\",\n    \"角度\": \"与参考相同的正面角度\",\n    \"镜头\": \"85mm 人像\",\n    \"光圈\": \"f/2.8\",\n    \"景深\": \"浅景深\",\n    \"对焦\": \"面部锐利对焦\"\n  },\n  \"风格\": {\n    \"外观\": \"写实高端企业肖像\",\n    \"皮肤质感\": \"自然真实\",\n    \"对比度\": \"干净专业\",\n    \"细节等级\": \"高\"\n  },\n  \"否定提示\": [\n    \"克里斯蒂亚诺·罗纳尔多\",\n    \"名人\",\n    \"知名人士\",\n    \"模仿者\",\n    \"与参考相同的面容\",\n    \"身份匹配\",\n    \"过度风格化\",\n    \"卡通\",\n    \"插画\",\n    \"模糊\",\n    \"低质量\"\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;参考使用&quot;: {<br>    &quot;用于参考&quot;: [<br>      &quot;姿势&quot;,<br>      &quot;构图&quot;,<br>      &quot;相机角度&quot;,<br>      &quot;灯光风格&quot;,<br>      &quot;背景风格&quot;,<br>      &quot;整体构图&quot;<br>    ],<br>    &quot;不复制&quot;: [<br>      &quot;脸部&quot;,<br>      &quot;面部结构&quot;,<br>      &quot;身份&quot;,<br>      &quot;名人相似度&quot;<br>    ]<br>  },<br>  &quot;场景&quot;: {<br>    &quot;类型&quot;: &quot;工作室&quot;,<br>    &quot;背景&quot;: &quot;与参考相同的平滑中性色渐变&quot;,<br>    &quot;灯光&quot;: &quot;与参考相同的柔和均衡专业工作室灯光&quot;<br>  },<br>  &quot;主体&quot;: {<br>    &quot;身份&quot;: &quot;通用成年男性（非真实人物）&quot;,<br>    &quot;年龄范围&quot;: &quot;20多岁后期到30多岁中期&quot;,<br>    &quot;姿势&quot;: &quot;与参考相同的直立头肩姿势&quot;,<br>    &quot;表情&quot;: &quot;自信友好的微笑，强度类似&quot;,<br>    &quot;凝视&quot;: &quot;直视镜头&quot;,<br>    &quot;头发&quot;: {<br>      &quot;风格&quot;: &quot;短发整洁&quot;,<br>      &quot;颜色&quot;: &quot;深棕色或黑色&quot;<br>    },<br>    &quot;面部特征&quot;: &quot;原创独特面容，不与参考相同&quot;<br>  },<br>  &quot;服装&quot;: {<br>    &quot;类型&quot;: &quot;正式商务&quot;,<br>    &quot;外套&quot;: &quot;定制深灰色西装&quot;,<br>    &quot;衬衫&quot;: &quot;干净的白色衬衫&quot;,<br>    &quot;领带&quot;: &quot;经典海军蓝&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;构图&quot;: &quot;紧凑的头肩特写&quot;,<br>    &quot;角度&quot;: &quot;与参考相同的正面角度&quot;,<br>    &quot;镜头&quot;: &quot;85mm 人像&quot;,<br>    &quot;光圈&quot;: &quot;f/2.8&quot;,<br>    &quot;景深&quot;: &quot;浅景深&quot;,<br>    &quot;对焦&quot;: &quot;面部锐利对焦&quot;<br>  },<br>  &quot;风格&quot;: {<br>    &quot;外观&quot;: &quot;写实高端企业肖像&quot;,<br>    &quot;皮肤质感&quot;: &quot;自然真实&quot;,<br>    &quot;对比度&quot;: &quot;干净专业&quot;,<br>    &quot;细节等级&quot;: &quot;高&quot;<br>  },<br>  &quot;否定提示&quot;: [<br>    &quot;克里斯蒂亚诺·罗纳尔多&quot;,<br>    &quot;名人&quot;,<br>    &quot;知名人士&quot;,<br>    &quot;模仿者&quot;,<br>    &quot;与参考相同的面容&quot;,<br>    &quot;身份匹配&quot;,<br>    &quot;过度风格化&quot;,<br>    &quot;卡通&quot;,<br>    &quot;插画&quot;,<br>    &quot;模糊&quot;,<br>    &quot;低质量&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;参考使用&quot;: {<br>    &quot;用于参考&quot;: [<br>      &quot;姿势&quot;,<br>      &quot;构图&quot;,<br>      &quot;相机角度&quot;,<br>      &quot;灯光风格&quot;,<br>      &quot;背景风格&quot;,<br>      &quot;整体构图&quot;<br>    ],<br>    &quot;不复制&quot;: [<br>      &quot;脸部&quot;,<br>      &quot;面部结构&quot;,<br>      &quot;身份&quot;,<br>      &quot;名人相似度&quot;<br>    ]<br>  },<br>  &quot;场景&quot;: {<br>    &quot;类型&quot;: &quot;工作室&quot;,<br>    &quot;背景&quot;: &quot;与参考相同的平滑中性色渐变&quot;,<br>    &quot;灯光&quot;: &quot;与参考相同的柔和均衡专业工作室灯光&quot;<br>  },<br>  &quot;主体&quot;: {<br>    &quot;身份&quot;: &quot;通用成年男性（非真实人物）&quot;,<br>    &quot;年龄范围&quot;: &quot;20多岁后期到30多岁中期&quot;,<br>    &quot;姿势&quot;: &quot;与参考相同的直立头肩姿势&quot;,<br>    &quot;表情&quot;: &quot;自信友好的微笑，强度类似&quot;,<br>    &quot;凝视&quot;: &quot;直视镜头&quot;,<br>    &quot;头发&quot;: {<br>      &quot;风格&quot;: &quot;短发整洁&quot;,<br>      &quot;颜色&quot;: &quot;深棕色或黑色&quot;<br>    },<br>    &quot;面部特征&quot;: &quot;原创独特面容，不与参考相同&quot;<br>  },<br>  &quot;服装&quot;: {<br>    &quot;类型&quot;: &quot;正式商务&quot;,<br>    &quot;外套&quot;: &quot;定制深灰色西装&quot;,<br>    &quot;衬衫&quot;: &quot;干净的白色衬衫&quot;,<br>    &quot;领带&quot;: &quot;经典海军蓝&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;构图&quot;: &quot;紧凑的头肩特写&quot;,<br>    &quot;角度&quot;: &quot;与参考相同的正面角度&quot;,<br>    &quot;镜头&quot;: &quot;85mm 人像&quot;,<br>    &quot;光圈&quot;: &quot;f/2.8&quot;,<br>    &quot;景深&quot;: &quot;浅景深&quot;,<br>    &quot;对焦&quot;: &quot;面部锐利对焦&quot;<br>  },<br>  &quot;风格&quot;: {<br>    &quot;外观&quot;: &quot;写实高端企业肖像&quot;,<br>    &quot;皮肤质感&quot;: &quot;自然真实&quot;,<br>    &quot;对比度&quot;: &quot;干净专业&quot;,<br>    &quot;细节等级&quot;: &quot;高&quot;<br>  },<br>  &quot;否定提示&quot;: [<br>    &quot;克里斯蒂亚诺·罗纳尔多&quot;,<br>    &quot;名人&quot;,<br>    &quot;知名人士&quot;,<br>    &quot;模仿者&quot;,<br>    &quot;与参考相同的面容&quot;,<br>    &quot;身份匹配&quot;,<br>    &quot;过度风格化&quot;,<br>    &quot;卡通&quot;,<br>    &quot;插画&quot;,<br>    &quot;模糊&quot;,<br>    &quot;低质量&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"reference_usage\": {\n    \"use_reference_for\": [\n      \"pose\",\n      \"framing\",\n      \"camera_angle\",\n      \"lighting_style\",\n      \"background_style\",\n      \"overall_composition\"\n    ],\n    \"do_not_copy\": [\n      \"face\",\n      \"facial_structure\",\n      \"identity\",\n      \"celebrity_likeness\"\n    ]\n  },\n  \"scene\": {\n    \"type\": \"studio\",\n    \"background\": \"smooth_neutral_gradient_same_as_reference\",\n    \"lighting\": \"soft_balanced_professional_studio_lighting_same_as_reference\"\n  },\n  \"subject\": {\n    \"identity\": \"generic_adult_male_not_a_real_person\",\n    \"age_range\": \"late_20s_to_mid_30s\",\n    \"pose\": \"upright_head_and_shoulders_pose_same_as_reference\",\n    \"expression\": \"confident_friendly_smile_similar_intensity\",\n    \"gaze\": \"direct_eye_contact_with_camera\",\n    \"hair\": {\n      \"style\": \"short_neatly_groomed\",\n      \"color\": \"dark_brown_or_black\"\n    },\n    \"facial_features\": \"original_unique_face_not_matching_reference\"\n  },\n  \"outfit\": {\n    \"type\": \"formal_business\",\n    \"jacket\": \"tailored_dark_gray_suit\",\n    \"shirt\": \"clean_white_dress_shirt\",\n    \"tie\": \"navy_blue_classic\"\n  },\n  \"camera\": {\n    \"framing\": \"tight_head_and_shoulders\",\n    \"angle\": \"straight_on_same_as_reference\",\n    \"lens\": \"85mm_portrait\",\n    \"aperture\": \"f2.8\",\n    \"depth_of_field\": \"shallow\",\n    \"focus\": \"razor_sharp_on_face\"\n  },\n  \"style\": {\n    \"look\": \"photorealistic_high_end_corporate_portrait\",\n    \"skin_texture\": \"natural_realistic\",\n    \"contrast\": \"clean_professional\",\n    \"detail_level\": \"high\"\n  },\n  \"negative_prompt\": [\n    \"Cristiano Ronaldo\",\n    \"celebrity\",\n    \"famous person\",\n    \"lookalike\",\n    \"same face as reference\",\n    \"identity match\",\n    \"overly stylized\",\n    \"cartoon\",\n    \"illustration\",\n    \"blur\",\n    \"low quality\"\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;reference_usage&quot;: {<br>    &quot;use_reference_for&quot;: [<br>      &quot;pose&quot;,<br>      &quot;framing&quot;,<br>      &quot;camera_angle&quot;,<br>      &quot;lighting_style&quot;,<br>      &quot;background_style&quot;,<br>      &quot;overall_composition&quot;<br>    ],<br>    &quot;do_not_copy&quot;: [<br>      &quot;face&quot;,<br>      &quot;facial_structure&quot;,<br>      &quot;identity&quot;,<br>      &quot;celebrity_likeness&quot;<br>    ]<br>  },<br>  &quot;scene&quot;: {<br>    &quot;type&quot;: &quot;studio&quot;,<br>    &quot;background&quot;: &quot;smooth_neutral_gradient_same_as_reference&quot;,<br>    &quot;lighting&quot;: &quot;soft_balanced_professional_studio_lighting_same_as_reference&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;generic_adult_male_not_a_real_person&quot;,<br>    &quot;age_range&quot;: &quot;late_20s_to_mid_30s&quot;,<br>    &quot;pose&quot;: &quot;upright_head_and_shoulders_pose_same_as_reference&quot;,<br>    &quot;expression&quot;: &quot;confident_friendly_smile_similar_intensity&quot;,<br>    &quot;gaze&quot;: &quot;direct_eye_contact_with_camera&quot;,<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;short_neatly_groomed&quot;,<br>      &quot;color&quot;: &quot;dark_brown_or_black&quot;<br>    },<br>    &quot;facial_features&quot;: &quot;original_unique_face_not_matching_reference&quot;<br>  },<br>  &quot;outfit&quot;: {<br>    &quot;type&quot;: &quot;formal_business&quot;,<br>    &quot;jacket&quot;: &quot;tailored_dark_gray_suit&quot;,<br>    &quot;shirt&quot;: &quot;clean_white_dress_shirt&quot;,<br>    &quot;tie&quot;: &quot;navy_blue_classic&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;framing&quot;: &quot;tight_head_and_shoulders&quot;,<br>    &quot;angle&quot;: &quot;straight_on_same_as_reference&quot;,<br>    &quot;lens&quot;: &quot;85mm_portrait&quot;,<br>    &quot;aperture&quot;: &quot;f2.8&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;razor_sharp_on_face&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;look&quot;: &quot;photorealistic_high_end_corporate_portrait&quot;,<br>    &quot;skin_texture&quot;: &quot;natural_realistic&quot;,<br>    &quot;contrast&quot;: &quot;clean_professional&quot;,<br>    &quot;detail_level&quot;: &quot;high&quot;<br>  },<br>  &quot;negative_prompt&quot;: [<br>    &quot;Cristiano Ronaldo&quot;,<br>    &quot;celebrity&quot;,<br>    &quot;famous person&quot;,<br>    &quot;lookalike&quot;,<br>    &quot;same face as reference&quot;,<br>    &quot;identity match&quot;,<br>    &quot;overly stylized&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;illustration&quot;,<br>    &quot;blur&quot;,<br>    &quot;low quality&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;reference_usage&quot;: {<br>    &quot;use_reference_for&quot;: [<br>      &quot;pose&quot;,<br>      &quot;framing&quot;,<br>      &quot;camera_angle&quot;,<br>      &quot;lighting_style&quot;,<br>      &quot;background_style&quot;,<br>      &quot;overall_composition&quot;<br>    ],<br>    &quot;do_not_copy&quot;: [<br>      &quot;face&quot;,<br>      &quot;facial_structure&quot;,<br>      &quot;identity&quot;,<br>      &quot;celebrity_likeness&quot;<br>    ]<br>  },<br>  &quot;scene&quot;: {<br>    &quot;type&quot;: &quot;studio&quot;,<br>    &quot;background&quot;: &quot;smooth_neutral_gradient_same_as_reference&quot;,<br>    &quot;lighting&quot;: &quot;soft_balanced_professional_studio_lighting_same_as_reference&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;generic_adult_male_not_a_real_person&quot;,<br>    &quot;age_range&quot;: &quot;late_20s_to_mid_30s&quot;,<br>    &quot;pose&quot;: &quot;upright_head_and_shoulders_pose_same_as_reference&quot;,<br>    &quot;expression&quot;: &quot;confident_friendly_smile_similar_intensity&quot;,<br>    &quot;gaze&quot;: &quot;direct_eye_contact_with_camera&quot;,<br>    &quot;hair&quot;: {<br>      &quot;style&quot;: &quot;short_neatly_groomed&quot;,<br>      &quot;color&quot;: &quot;dark_brown_or_black&quot;<br>    },<br>    &quot;facial_features&quot;: &quot;original_unique_face_not_matching_reference&quot;<br>  },<br>  &quot;outfit&quot;: {<br>    &quot;type&quot;: &quot;formal_business&quot;,<br>    &quot;jacket&quot;: &quot;tailored_dark_gray_suit&quot;,<br>    &quot;shirt&quot;: &quot;clean_white_dress_shirt&quot;,<br>    &quot;tie&quot;: &quot;navy_blue_classic&quot;<br>  },<br>  &quot;camera&quot;: {<br>    &quot;framing&quot;: &quot;tight_head_and_shoulders&quot;,<br>    &quot;angle&quot;: &quot;straight_on_same_as_reference&quot;,<br>    &quot;lens&quot;: &quot;85mm_portrait&quot;,<br>    &quot;aperture&quot;: &quot;f2.8&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;focus&quot;: &quot;razor_sharp_on_face&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;look&quot;: &quot;photorealistic_high_end_corporate_portrait&quot;,<br>    &quot;skin_texture&quot;: &quot;natural_realistic&quot;,<br>    &quot;contrast&quot;: &quot;clean_professional&quot;,<br>    &quot;detail_level&quot;: &quot;high&quot;<br>  },<br>  &quot;negative_prompt&quot;: [<br>    &quot;Cristiano Ronaldo&quot;,<br>    &quot;celebrity&quot;,<br>    &quot;famous person&quot;,<br>    &quot;lookalike&quot;,<br>    &quot;same face as reference&quot;,<br>    &quot;identity match&quot;,<br>    &quot;overly stylized&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;illustration&quot;,<br>    &quot;blur&quot;,<br>    &quot;low quality&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011107848068194432-1.jpg" alt="&quot;reference usage&quot;: {" loading="lazy"><img src="/images/tweet-2011107848068194432-2.jpg" alt="&quot;reference usage&quot;: {" loading="lazy"><img src="/images/tweet-2011107848068194432-3.jpg" alt="&quot;reference usage&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1153,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

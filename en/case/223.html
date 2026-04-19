@@ -7,11 +7,13 @@
     <title>A comfortable weekend starts here. #223 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="A comfortable weekend starts here — AI image generation prompts.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/223.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/223.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/223.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846345">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023905">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("根据以下 JSON 重新纹理附加的图像：\n{\n\"style_name\": \"柔和极简 3D 塑料风格\",\n  \"retexture_mode\": \"形状锁定\",\n  \"object_analysis\": {\n    \"preserve_silhouette\": true,\n\"geometry_sensitive_mapping\": true,\n    \"detail_retention\": \"将复杂的细节简化为简化的几何块\"\n  },\n  \"material_properties\": {\n\"base_material\": [\n\"光滑磨砂塑料\"，\n\"金属边缘饰条，缎面处理\"，\n\"半反射黑色屏幕表面\"\n],\n\"表面细节\": [\n\"微妙的颜色渐变\"，\n\"圆润的斜角和边角\"，\n\"表面之间的柔和过渡\"\n    ]\n  },\n\"lighting\": {\n\"类型\": \"柔和渐变环境光\",\n    \"阴影\": \"极少，边缘柔和的阴影\",\n    \"高光\": \"弥散，低强度的反射\"\n  },\n\"背景\": {\n    \"颜色\": \"柔和渐变（蓝色到奶油色）\",\n    \"纹理\": \"光滑无纹理\",\n    \"元素\": \"干净背景，无添加几何图形\"\n  },\n\"渲染\": {\n\"风格\": \"等距 3D 渲染\",\n\"分辨率\": \"高，略带轻微泛光\"\n\"focus\": \"中心对象，无深度模糊\"\n  },\n  \"color_palette\": {\n    \"primary\": [\"冷灰色\", \"钢蓝色\", \"柔和的炭黑色\"],\n\"accents\": [\"浅薰衣草色\", \"淡黄色\"]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>根据以下 JSON 重新纹理附加的图像：<br>{<br>&quot;style_name&quot;: &quot;柔和极简 3D 塑料风格&quot;,<br>  &quot;retexture_mode&quot;: &quot;形状锁定&quot;,<br>  &quot;object_analysis&quot;: {<br>    &quot;preserve_silhouette&quot;: true,<br>&quot;geometry_sensitive_mapping&quot;: true,<br>    &quot;detail_retention&quot;: &quot;将复杂的细节简化为简化的几何块&quot;<br>  },<br>  &quot;material_properties&quot;: {<br>&quot;base_material&quot;: [<br>&quot;光滑磨砂塑料&quot;，<br>&quot;金属边缘饰条，缎面处理&quot;，<br>&quot;半反射黑色屏幕表面&quot;<br>],<br>&quot;表面细节&quot;: [<br>&quot;微妙的颜色渐变&quot;，<br>&quot;圆润的斜角和边角&quot;，<br>&quot;表面之间的柔和过渡&quot;<br>    ]<br>  },<br>&quot;lighting&quot;: {<br>&quot;类型&quot;: &quot;柔和渐变环境光&quot;,<br>    &quot;阴影&quot;: &quot;极少，边缘柔和的阴影&quot;,<br>    &quot;高光&quot;: &quot;弥散，低强度的反射&quot;<br>  },<br>&quot;背景&quot;: {<br>    &quot;颜色&quot;: &quot;柔和渐变（蓝色到奶油色）&quot;,<br>    &quot;纹理&quot;: &quot;光滑无纹理&quot;,<br>    &quot;元素&quot;: &quot;干净背景，无添加几何图形&quot;<br>  },<br>&quot;渲染&quot;: {<br>&quot;风格&quot;: &quot;等距 3D 渲染&quot;,<br>&quot;分辨率&quot;: &quot;高，略带轻微泛光&quot;<br>&quot;focus&quot;: &quot;中心对象，无深度模糊&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;primary&quot;: [&quot;冷灰色&quot;, &quot;钢蓝色&quot;, &quot;柔和的炭黑色&quot;],<br>&quot;accents&quot;: [&quot;浅薰衣草色&quot;, &quot;淡黄色&quot;]<br>  }<br>}</p>
+        <div data-nosnippet><p>根据以下 JSON 重新纹理附加的图像：<br>{<br>&quot;style_name&quot;: &quot;柔和极简 3D 塑料风格&quot;,<br>  &quot;retexture_mode&quot;: &quot;形状锁定&quot;,<br>  &quot;object_analysis&quot;: {<br>    &quot;preserve_silhouette&quot;: true,<br>&quot;geometry_sensitive_mapping&quot;: true,<br>    &quot;detail_retention&quot;: &quot;将复杂的细节简化为简化的几何块&quot;<br>  },<br>  &quot;material_properties&quot;: {<br>&quot;base_material&quot;: [<br>&quot;光滑磨砂塑料&quot;，<br>&quot;金属边缘饰条，缎面处理&quot;，<br>&quot;半反射黑色屏幕表面&quot;<br>],<br>&quot;表面细节&quot;: [<br>&quot;微妙的颜色渐变&quot;，<br>&quot;圆润的斜角和边角&quot;，<br>&quot;表面之间的柔和过渡&quot;<br>    ]<br>  },<br>&quot;lighting&quot;: {<br>&quot;类型&quot;: &quot;柔和渐变环境光&quot;,<br>    &quot;阴影&quot;: &quot;极少，边缘柔和的阴影&quot;,<br>    &quot;高光&quot;: &quot;弥散，低强度的反射&quot;<br>  },<br>&quot;背景&quot;: {<br>    &quot;颜色&quot;: &quot;柔和渐变（蓝色到奶油色）&quot;,<br>    &quot;纹理&quot;: &quot;光滑无纹理&quot;,<br>    &quot;元素&quot;: &quot;干净背景，无添加几何图形&quot;<br>  },<br>&quot;渲染&quot;: {<br>&quot;风格&quot;: &quot;等距 3D 渲染&quot;,<br>&quot;分辨率&quot;: &quot;高，略带轻微泛光&quot;<br>&quot;focus&quot;: &quot;中心对象，无深度模糊&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;primary&quot;: [&quot;冷灰色&quot;, &quot;钢蓝色&quot;, &quot;柔和的炭黑色&quot;],<br>&quot;accents&quot;: [&quot;浅薰衣草色&quot;, &quot;淡黄色&quot;]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("retexture the image attached based on the json below:\n{\n  \"style_name\": \"Soft Minimal 3D Plastic\",\n  \"retexture_mode\": \"shape_lock\",\n  \"object_analysis\": {\n    \"preserve_silhouette\": true,\n    \"geometry_sensitive_mapping\": true,\n    \"detail_retention\": \"flatten complex details into simplified geometry blocks\"\n  },\n  \"material_properties\": {\n    \"base_material\": [\n      \"smooth matte plastic\",\n      \"metallic edge trim with satin finish\",\n      \"semi-reflective black screen surface\"\n    ],\n    \"surface_details\": [\n      \"subtle color gradient\",\n      \"rounded bevels and corners\",\n      \"soft transition between surfaces\"\n    ]\n  },\n  \"lighting\": {\n    \"type\": \"soft gradient ambient light\",\n    \"shadows\": \"minimal, soft-edged shadows\",\n    \"highlights\": \"diffused, low-intensity reflections\"\n  },\n  \"background\": {\n    \"color\": \"pastel gradient (blue to cream)\",\n    \"texture\": \"smooth and untextured\",\n    \"elements\": \"clean background with no added geometry\"\n  },\n  \"rendering\": {\n    \"style\": \"isometric 3D render\",\n    \"resolution\": \"high, with slight bloom\",\n    \"focus\": \"central object, no depth blur\"\n  },\n  \"color_palette\": {\n    \"primary\": [\"cool grey\", \"steel blue\", \"soft charcoal\"],\n    \"accents\": [\"light lavender\", \"pastel yellow\"]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>retexture the image attached based on the json below:<br>{<br>  &quot;style_name&quot;: &quot;Soft Minimal 3D Plastic&quot;,<br>  &quot;retexture_mode&quot;: &quot;shape_lock&quot;,<br>  &quot;object_analysis&quot;: {<br>    &quot;preserve_silhouette&quot;: true,<br>    &quot;geometry_sensitive_mapping&quot;: true,<br>    &quot;detail_retention&quot;: &quot;flatten complex details into simplified geometry blocks&quot;<br>  },<br>  &quot;material_properties&quot;: {<br>    &quot;base_material&quot;: [<br>      &quot;smooth matte plastic&quot;,<br>      &quot;metallic edge trim with satin finish&quot;,<br>      &quot;semi-reflective black screen surface&quot;<br>    ],<br>    &quot;surface_details&quot;: [<br>      &quot;subtle color gradient&quot;,<br>      &quot;rounded bevels and corners&quot;,<br>      &quot;soft transition between surfaces&quot;<br>    ]<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft gradient ambient light&quot;,<br>    &quot;shadows&quot;: &quot;minimal, soft-edged shadows&quot;,<br>    &quot;highlights&quot;: &quot;diffused, low-intensity reflections&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;pastel gradient (blue to cream)&quot;,<br>    &quot;texture&quot;: &quot;smooth and untextured&quot;,<br>    &quot;elements&quot;: &quot;clean background with no added geometry&quot;<br>  },<br>  &quot;rendering&quot;: {<br>    &quot;style&quot;: &quot;isometric 3D render&quot;,<br>    &quot;resolution&quot;: &quot;high, with slight bloom&quot;,<br>    &quot;focus&quot;: &quot;central object, no depth blur&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;primary&quot;: [&quot;cool grey&quot;, &quot;steel blue&quot;, &quot;soft charcoal&quot;],<br>    &quot;accents&quot;: [&quot;light lavender&quot;, &quot;pastel yellow&quot;]<br>  }<br>}</p>
+        <div data-nosnippet><p>retexture the image attached based on the json below:<br>{<br>  &quot;style_name&quot;: &quot;Soft Minimal 3D Plastic&quot;,<br>  &quot;retexture_mode&quot;: &quot;shape_lock&quot;,<br>  &quot;object_analysis&quot;: {<br>    &quot;preserve_silhouette&quot;: true,<br>    &quot;geometry_sensitive_mapping&quot;: true,<br>    &quot;detail_retention&quot;: &quot;flatten complex details into simplified geometry blocks&quot;<br>  },<br>  &quot;material_properties&quot;: {<br>    &quot;base_material&quot;: [<br>      &quot;smooth matte plastic&quot;,<br>      &quot;metallic edge trim with satin finish&quot;,<br>      &quot;semi-reflective black screen surface&quot;<br>    ],<br>    &quot;surface_details&quot;: [<br>      &quot;subtle color gradient&quot;,<br>      &quot;rounded bevels and corners&quot;,<br>      &quot;soft transition between surfaces&quot;<br>    ]<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft gradient ambient light&quot;,<br>    &quot;shadows&quot;: &quot;minimal, soft-edged shadows&quot;,<br>    &quot;highlights&quot;: &quot;diffused, low-intensity reflections&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;pastel gradient (blue to cream)&quot;,<br>    &quot;texture&quot;: &quot;smooth and untextured&quot;,<br>    &quot;elements&quot;: &quot;clean background with no added geometry&quot;<br>  },<br>  &quot;rendering&quot;: {<br>    &quot;style&quot;: &quot;isometric 3D render&quot;,<br>    &quot;resolution&quot;: &quot;high, with slight bloom&quot;,<br>    &quot;focus&quot;: &quot;central object, no depth blur&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;primary&quot;: [&quot;cool grey&quot;, &quot;steel blue&quot;, &quot;soft charcoal&quot;],<br>    &quot;accents&quot;: [&quot;light lavender&quot;, &quot;pastel yellow&quot;]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/224.png" alt="舒适的周末从这里开始" loading="lazy"><img src="/images/224-2.png" alt="舒适的周末从这里开始" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 223,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

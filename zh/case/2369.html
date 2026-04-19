@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;A young red haired woman sitting inside a bright r... #2369 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;A young red haired woman sitting inside a bright retro style fast food restaurant, eating a cheeseburger...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2369.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2369.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2369.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839979">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022244">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"提示\": \"一位年轻的红发女子坐在一家明亮的复古风快餐店里，正在吃一只芝士汉堡。她坐在靠大窗的红色人造革卡座里，阳光从窗外洒进来。她一边咬着汉堡一边眨眼。她面前的桌子上有一个红色托盘，托盘上放着一个汉堡、一些薯条和一杯带有红色棕榈树图案的白色杯装软饮。餐厅内部以白色瓷砖墙和红色点缀为特色，墙上有一幅装框的画。灯光温暖自然，营造出一种随性、抓拍般的氛围。\",\n  \"风格\": \"照片写实\",\n  \"灯光\": \"自然阳光，暖色调\",\n  \"相机角度\": \"眼平视角，居中构图\",\n  \"环境\": \"复古美式快餐店\",\n  \"氛围\": \"俏皮随性\",\n  \"细节\": \"对焦清晰，高分辨率，真实的皮肤质感，色彩鲜艳\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;提示&quot;: &quot;一位年轻的红发女子坐在一家明亮的复古风快餐店里，正在吃一只芝士汉堡。她坐在靠大窗的红色人造革卡座里，阳光从窗外洒进来。她一边咬着汉堡一边眨眼。她面前的桌子上有一个红色托盘，托盘上放着一个汉堡、一些薯条和一杯带有红色棕榈树图案的白色杯装软饮。餐厅内部以白色瓷砖墙和红色点缀为特色，墙上有一幅装框的画。灯光温暖自然，营造出一种随性、抓拍般的氛围。&quot;,<br>  &quot;风格&quot;: &quot;照片写实&quot;,<br>  &quot;灯光&quot;: &quot;自然阳光，暖色调&quot;,<br>  &quot;相机角度&quot;: &quot;眼平视角，居中构图&quot;,<br>  &quot;环境&quot;: &quot;复古美式快餐店&quot;,<br>  &quot;氛围&quot;: &quot;俏皮随性&quot;,<br>  &quot;细节&quot;: &quot;对焦清晰，高分辨率，真实的皮肤质感，色彩鲜艳&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;提示&quot;: &quot;一位年轻的红发女子坐在一家明亮的复古风快餐店里，正在吃一只芝士汉堡。她坐在靠大窗的红色人造革卡座里，阳光从窗外洒进来。她一边咬着汉堡一边眨眼。她面前的桌子上有一个红色托盘，托盘上放着一个汉堡、一些薯条和一杯带有红色棕榈树图案的白色杯装软饮。餐厅内部以白色瓷砖墙和红色点缀为特色，墙上有一幅装框的画。灯光温暖自然，营造出一种随性、抓拍般的氛围。&quot;,<br>  &quot;风格&quot;: &quot;照片写实&quot;,<br>  &quot;灯光&quot;: &quot;自然阳光，暖色调&quot;,<br>  &quot;相机角度&quot;: &quot;眼平视角，居中构图&quot;,<br>  &quot;环境&quot;: &quot;复古美式快餐店&quot;,<br>  &quot;氛围&quot;: &quot;俏皮随性&quot;,<br>  &quot;细节&quot;: &quot;对焦清晰，高分辨率，真实的皮肤质感，色彩鲜艳&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"A young red-haired woman sitting inside a bright retro-style fast food restaurant, eating a cheeseburger. She is seated in a red vinyl booth by a large window with sunlight streaming in. She is winking while taking a bite of the burger. On the table in front of her is a red tray holding a burger, French fries, and a soft drink in a white cup with red palm tree graphics. The restaurant interior features white tiled walls with red accents and a framed picture on the wall. The lighting is warm and natural, creating a casual, candid atmosphere.\",\n  \"style\": \"photorealistic\",\n  \"lighting\": \"natural sunlight, warm tones\",\n  \"camera_angle\": \"eye-level, centered composition\",\n  \"environment\": \"retro American fast food diner\",\n  \"mood\": \"playful and casual\",\n  \"details\": \"sharp focus, high resolution, realistic skin texture, vibrant colors\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;A young red-haired woman sitting inside a bright retro-style fast food restaurant, eating a cheeseburger. She is seated in a red vinyl booth by a large window with sunlight streaming in. She is winking while taking a bite of the burger. On the table in front of her is a red tray holding a burger, French fries, and a soft drink in a white cup with red palm tree graphics. The restaurant interior features white tiled walls with red accents and a framed picture on the wall. The lighting is warm and natural, creating a casual, candid atmosphere.&quot;,<br>  &quot;style&quot;: &quot;photorealistic&quot;,<br>  &quot;lighting&quot;: &quot;natural sunlight, warm tones&quot;,<br>  &quot;camera_angle&quot;: &quot;eye-level, centered composition&quot;,<br>  &quot;environment&quot;: &quot;retro American fast food diner&quot;,<br>  &quot;mood&quot;: &quot;playful and casual&quot;,<br>  &quot;details&quot;: &quot;sharp focus, high resolution, realistic skin texture, vibrant colors&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;A young red-haired woman sitting inside a bright retro-style fast food restaurant, eating a cheeseburger. She is seated in a red vinyl booth by a large window with sunlight streaming in. She is winking while taking a bite of the burger. On the table in front of her is a red tray holding a burger, French fries, and a soft drink in a white cup with red palm tree graphics. The restaurant interior features white tiled walls with red accents and a framed picture on the wall. The lighting is warm and natural, creating a casual, candid atmosphere.&quot;,<br>  &quot;style&quot;: &quot;photorealistic&quot;,<br>  &quot;lighting&quot;: &quot;natural sunlight, warm tones&quot;,<br>  &quot;camera_angle&quot;: &quot;eye-level, centered composition&quot;,<br>  &quot;environment&quot;: &quot;retro American fast food diner&quot;,<br>  &quot;mood&quot;: &quot;playful and casual&quot;,<br>  &quot;details&quot;: &quot;sharp focus, high resolution, realistic skin texture, vibrant colors&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2028878781612798040-1.jpg" alt="&quot;prompt&quot;: &quot;A young red haired woman sitting inside a bright r..." loading="lazy"><img src="/images/tweet-2028878781612798040-2.jpg" alt="&quot;prompt&quot;: &quot;A young red haired woman sitting inside a bright r..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2369,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

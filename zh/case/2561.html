@@ -7,11 +7,13 @@
     <title>{ &quot;image info&quot;: { &quot;width&quot;: 768, &quot;height&quot;: 1365, &quot;aspect ratio... #2561 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image info&quot;: { &quot;width&quot;: 768, &quot;height&quot;: 1365, &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;orientation&quot;: &quot;vertical&quot; }, &quot;subject&quot;: { &quot;ty...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2561.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2561.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2561.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839768">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022202">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{   \"image_info\": {     \"width\": 768,     \"height\": 1365,     \"aspect_ratio\": \"9:16\",     \"orientation\": \"竖向\"   },    \"subject\": {     \"type\": \"特写肖像\",     \"description\": \"一位年轻的东亚女性在镜头前用双手比出心形，头微微侧倾\"   },    \"clothing\": {     \"visible\": false,     \"notes\": \"画面中无可见衣物\"   },    \"hair\": {     \"color\": \"黑色\",     \"style\": \"直发\",     \"details\": \"散落的发丝自然垂在脸颊上\"   },    \"face\": {     \"eyes\": {       \"shape\": \"杏仁形\",       \"color\": \"深棕色\",       \"makeup\": \"淡淡眼线、睫毛有明显修饰、眼皮带有柔和的闪光\",       \"expression\": \"一只眼睛眨着，另一只轻轻睁开\"     },     \"eyebrows\": \"自然，略微拱起\",     \"skin\": \"肌肤光滑，带有自然光泽\",     \"lips\": {       \"shape\": \"饱满\",       \"color\": \"粉色光泽唇彩\",       \"expression\": \"嘟嘴（接吻状）\"     },     \"other_details\": \"左眼下方有一颗小痣\"   },    \"accessories\": {     \"visible\": false   },    \"environment\": {     \"background\": \"不可见；被极端特写构图完全遮挡\"   },    \"lighting\": {     \"type\": \"柔和散射光\",     \"effects\": \"均匀照明，阴影极少，肤质自然高光\"   },    \"camera\": {     \"framing\": \"极端特写（眼睛、鼻子和嘴唇充满画面）\",     \"angle\": \"正面\",     \"depth_of_field\": \"景深非常浅\",     \"focus\": \"聚焦清晰于眼睛和嘴唇\",     \"foreground_elements\": \"手部在面前比出心形作为前景元素\"   },    \"style\": {     \"aesthetic\": \"柔和、俏皮、亲密\",     \"texture\": \"高分辨率肖像，带有胶片般柔和质感\",     \"vibe\": \"可爱、富有表情、带有调情感\"   } }", this)'>📋 复制</button>
         </div>
-        <p>{   &quot;image_info&quot;: {     &quot;width&quot;: 768,     &quot;height&quot;: 1365,     &quot;aspect_ratio&quot;: &quot;9:16&quot;,     &quot;orientation&quot;: &quot;竖向&quot;   },    &quot;subject&quot;: {     &quot;type&quot;: &quot;特写肖像&quot;,     &quot;description&quot;: &quot;一位年轻的东亚女性在镜头前用双手比出心形，头微微侧倾&quot;   },    &quot;clothing&quot;: {     &quot;visible&quot;: false,     &quot;notes&quot;: &quot;画面中无可见衣物&quot;   },    &quot;hair&quot;: {     &quot;color&quot;: &quot;黑色&quot;,     &quot;style&quot;: &quot;直发&quot;,     &quot;details&quot;: &quot;散落的发丝自然垂在脸颊上&quot;   },    &quot;face&quot;: {     &quot;eyes&quot;: {       &quot;shape&quot;: &quot;杏仁形&quot;,       &quot;color&quot;: &quot;深棕色&quot;,       &quot;makeup&quot;: &quot;淡淡眼线、睫毛有明显修饰、眼皮带有柔和的闪光&quot;,       &quot;expression&quot;: &quot;一只眼睛眨着，另一只轻轻睁开&quot;     },     &quot;eyebrows&quot;: &quot;自然，略微拱起&quot;,     &quot;skin&quot;: &quot;肌肤光滑，带有自然光泽&quot;,     &quot;lips&quot;: {       &quot;shape&quot;: &quot;饱满&quot;,       &quot;color&quot;: &quot;粉色光泽唇彩&quot;,       &quot;expression&quot;: &quot;嘟嘴（接吻状）&quot;     },     &quot;other_details&quot;: &quot;左眼下方有一颗小痣&quot;   },    &quot;accessories&quot;: {     &quot;visible&quot;: false   },    &quot;environment&quot;: {     &quot;background&quot;: &quot;不可见；被极端特写构图完全遮挡&quot;   },    &quot;lighting&quot;: {     &quot;type&quot;: &quot;柔和散射光&quot;,     &quot;effects&quot;: &quot;均匀照明，阴影极少，肤质自然高光&quot;   },    &quot;camera&quot;: {     &quot;framing&quot;: &quot;极端特写（眼睛、鼻子和嘴唇充满画面）&quot;,     &quot;angle&quot;: &quot;正面&quot;,     &quot;depth_of_field&quot;: &quot;景深非常浅&quot;,     &quot;focus&quot;: &quot;聚焦清晰于眼睛和嘴唇&quot;,     &quot;foreground_elements&quot;: &quot;手部在面前比出心形作为前景元素&quot;   },    &quot;style&quot;: {     &quot;aesthetic&quot;: &quot;柔和、俏皮、亲密&quot;,     &quot;texture&quot;: &quot;高分辨率肖像，带有胶片般柔和质感&quot;,     &quot;vibe&quot;: &quot;可爱、富有表情、带有调情感&quot;   } }</p>
+        <div data-nosnippet><p>{   &quot;image_info&quot;: {     &quot;width&quot;: 768,     &quot;height&quot;: 1365,     &quot;aspect_ratio&quot;: &quot;9:16&quot;,     &quot;orientation&quot;: &quot;竖向&quot;   },    &quot;subject&quot;: {     &quot;type&quot;: &quot;特写肖像&quot;,     &quot;description&quot;: &quot;一位年轻的东亚女性在镜头前用双手比出心形，头微微侧倾&quot;   },    &quot;clothing&quot;: {     &quot;visible&quot;: false,     &quot;notes&quot;: &quot;画面中无可见衣物&quot;   },    &quot;hair&quot;: {     &quot;color&quot;: &quot;黑色&quot;,     &quot;style&quot;: &quot;直发&quot;,     &quot;details&quot;: &quot;散落的发丝自然垂在脸颊上&quot;   },    &quot;face&quot;: {     &quot;eyes&quot;: {       &quot;shape&quot;: &quot;杏仁形&quot;,       &quot;color&quot;: &quot;深棕色&quot;,       &quot;makeup&quot;: &quot;淡淡眼线、睫毛有明显修饰、眼皮带有柔和的闪光&quot;,       &quot;expression&quot;: &quot;一只眼睛眨着，另一只轻轻睁开&quot;     },     &quot;eyebrows&quot;: &quot;自然，略微拱起&quot;,     &quot;skin&quot;: &quot;肌肤光滑，带有自然光泽&quot;,     &quot;lips&quot;: {       &quot;shape&quot;: &quot;饱满&quot;,       &quot;color&quot;: &quot;粉色光泽唇彩&quot;,       &quot;expression&quot;: &quot;嘟嘴（接吻状）&quot;     },     &quot;other_details&quot;: &quot;左眼下方有一颗小痣&quot;   },    &quot;accessories&quot;: {     &quot;visible&quot;: false   },    &quot;environment&quot;: {     &quot;background&quot;: &quot;不可见；被极端特写构图完全遮挡&quot;   },    &quot;lighting&quot;: {     &quot;type&quot;: &quot;柔和散射光&quot;,     &quot;effects&quot;: &quot;均匀照明，阴影极少，肤质自然高光&quot;   },    &quot;camera&quot;: {     &quot;framing&quot;: &quot;极端特写（眼睛、鼻子和嘴唇充满画面）&quot;,     &quot;angle&quot;: &quot;正面&quot;,     &quot;depth_of_field&quot;: &quot;景深非常浅&quot;,     &quot;focus&quot;: &quot;聚焦清晰于眼睛和嘴唇&quot;,     &quot;foreground_elements&quot;: &quot;手部在面前比出心形作为前景元素&quot;   },    &quot;style&quot;: {     &quot;aesthetic&quot;: &quot;柔和、俏皮、亲密&quot;,     &quot;texture&quot;: &quot;高分辨率肖像，带有胶片般柔和质感&quot;,     &quot;vibe&quot;: &quot;可爱、富有表情、带有调情感&quot;   } }</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{   \"image_info\": {     \"width\": 768,     \"height\": 1365,     \"aspect_ratio\": \"9:16\",     \"orientation\": \"vertical\"   },    \"subject\": {     \"type\": \"close-up portrait\",     \"description\": \"A young East Asian woman making a heart shape with her hands directly in front of the camera, with her head gently tilted\"   },    \"clothing\": {     \"visible\": false,     \"notes\": \"No clothing visible within the framing\"   },    \"hair\": {     \"color\": \"black\",     \"style\": \"straight\",     \"details\": \"Loose strands falling naturally across her face\"   },    \"face\": {     \"eyes\": {       \"shape\": \"almond-shaped\",       \"color\": \"dark brown\",       \"makeup\": \"subtle eyeliner, defined lashes, soft shimmer on lids\",       \"expression\": \"one eye winked, the other softly open\"     },     \"eyebrows\": \"natural, slightly arched\",     \"skin\": \"smooth, natural glow\",     \"lips\": {       \"shape\": \"full\",       \"color\": \"pink glossy tint\",       \"expression\": \"kiss face (puckered lips)\"     },     \"other_details\": \"small mole under the left eye\"   },    \"accessories\": {     \"visible\": false   },    \"environment\": {     \"background\": \"not visible; fully obscured by the extreme close-up framing\"   },    \"lighting\": {     \"type\": \"soft diffused light\",     \"effects\": \"even illumination, minimal shadows, natural skin highlights\"   },    \"camera\": {     \"framing\": \"extreme close-up (eyes, nose, and lips filling the frame)\",     \"angle\": \"straight-on\",     \"depth_of_field\": \"very shallow\",     \"focus\": \"sharp on eyes and lips\",     \"foreground_elements\": \"hands forming a heart shape in front of the face\"   },    \"style\": {     \"aesthetic\": \"soft, playful, intimate\",     \"texture\": \"high-resolution portrait with film-like softness\",     \"vibe\": \"cute, expressive, flirtatious\"   } }", this)'>📋 复制</button>
         </div>
-        <p>{   &quot;image_info&quot;: {     &quot;width&quot;: 768,     &quot;height&quot;: 1365,     &quot;aspect_ratio&quot;: &quot;9:16&quot;,     &quot;orientation&quot;: &quot;vertical&quot;   },    &quot;subject&quot;: {     &quot;type&quot;: &quot;close-up portrait&quot;,     &quot;description&quot;: &quot;A young East Asian woman making a heart shape with her hands directly in front of the camera, with her head gently tilted&quot;   },    &quot;clothing&quot;: {     &quot;visible&quot;: false,     &quot;notes&quot;: &quot;No clothing visible within the framing&quot;   },    &quot;hair&quot;: {     &quot;color&quot;: &quot;black&quot;,     &quot;style&quot;: &quot;straight&quot;,     &quot;details&quot;: &quot;Loose strands falling naturally across her face&quot;   },    &quot;face&quot;: {     &quot;eyes&quot;: {       &quot;shape&quot;: &quot;almond-shaped&quot;,       &quot;color&quot;: &quot;dark brown&quot;,       &quot;makeup&quot;: &quot;subtle eyeliner, defined lashes, soft shimmer on lids&quot;,       &quot;expression&quot;: &quot;one eye winked, the other softly open&quot;     },     &quot;eyebrows&quot;: &quot;natural, slightly arched&quot;,     &quot;skin&quot;: &quot;smooth, natural glow&quot;,     &quot;lips&quot;: {       &quot;shape&quot;: &quot;full&quot;,       &quot;color&quot;: &quot;pink glossy tint&quot;,       &quot;expression&quot;: &quot;kiss face (puckered lips)&quot;     },     &quot;other_details&quot;: &quot;small mole under the left eye&quot;   },    &quot;accessories&quot;: {     &quot;visible&quot;: false   },    &quot;environment&quot;: {     &quot;background&quot;: &quot;not visible; fully obscured by the extreme close-up framing&quot;   },    &quot;lighting&quot;: {     &quot;type&quot;: &quot;soft diffused light&quot;,     &quot;effects&quot;: &quot;even illumination, minimal shadows, natural skin highlights&quot;   },    &quot;camera&quot;: {     &quot;framing&quot;: &quot;extreme close-up (eyes, nose, and lips filling the frame)&quot;,     &quot;angle&quot;: &quot;straight-on&quot;,     &quot;depth_of_field&quot;: &quot;very shallow&quot;,     &quot;focus&quot;: &quot;sharp on eyes and lips&quot;,     &quot;foreground_elements&quot;: &quot;hands forming a heart shape in front of the face&quot;   },    &quot;style&quot;: {     &quot;aesthetic&quot;: &quot;soft, playful, intimate&quot;,     &quot;texture&quot;: &quot;high-resolution portrait with film-like softness&quot;,     &quot;vibe&quot;: &quot;cute, expressive, flirtatious&quot;   } }</p>
+        <div data-nosnippet><p>{   &quot;image_info&quot;: {     &quot;width&quot;: 768,     &quot;height&quot;: 1365,     &quot;aspect_ratio&quot;: &quot;9:16&quot;,     &quot;orientation&quot;: &quot;vertical&quot;   },    &quot;subject&quot;: {     &quot;type&quot;: &quot;close-up portrait&quot;,     &quot;description&quot;: &quot;A young East Asian woman making a heart shape with her hands directly in front of the camera, with her head gently tilted&quot;   },    &quot;clothing&quot;: {     &quot;visible&quot;: false,     &quot;notes&quot;: &quot;No clothing visible within the framing&quot;   },    &quot;hair&quot;: {     &quot;color&quot;: &quot;black&quot;,     &quot;style&quot;: &quot;straight&quot;,     &quot;details&quot;: &quot;Loose strands falling naturally across her face&quot;   },    &quot;face&quot;: {     &quot;eyes&quot;: {       &quot;shape&quot;: &quot;almond-shaped&quot;,       &quot;color&quot;: &quot;dark brown&quot;,       &quot;makeup&quot;: &quot;subtle eyeliner, defined lashes, soft shimmer on lids&quot;,       &quot;expression&quot;: &quot;one eye winked, the other softly open&quot;     },     &quot;eyebrows&quot;: &quot;natural, slightly arched&quot;,     &quot;skin&quot;: &quot;smooth, natural glow&quot;,     &quot;lips&quot;: {       &quot;shape&quot;: &quot;full&quot;,       &quot;color&quot;: &quot;pink glossy tint&quot;,       &quot;expression&quot;: &quot;kiss face (puckered lips)&quot;     },     &quot;other_details&quot;: &quot;small mole under the left eye&quot;   },    &quot;accessories&quot;: {     &quot;visible&quot;: false   },    &quot;environment&quot;: {     &quot;background&quot;: &quot;not visible; fully obscured by the extreme close-up framing&quot;   },    &quot;lighting&quot;: {     &quot;type&quot;: &quot;soft diffused light&quot;,     &quot;effects&quot;: &quot;even illumination, minimal shadows, natural skin highlights&quot;   },    &quot;camera&quot;: {     &quot;framing&quot;: &quot;extreme close-up (eyes, nose, and lips filling the frame)&quot;,     &quot;angle&quot;: &quot;straight-on&quot;,     &quot;depth_of_field&quot;: &quot;very shallow&quot;,     &quot;focus&quot;: &quot;sharp on eyes and lips&quot;,     &quot;foreground_elements&quot;: &quot;hands forming a heart shape in front of the face&quot;   },    &quot;style&quot;: {     &quot;aesthetic&quot;: &quot;soft, playful, intimate&quot;,     &quot;texture&quot;: &quot;high-resolution portrait with film-like softness&quot;,     &quot;vibe&quot;: &quot;cute, expressive, flirtatious&quot;   } }</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2033550156663283861-1.jpg" alt="{ &quot;image info&quot;: { &quot;width&quot;: 768, &quot;height&quot;: 1365, &quot;aspect ratio..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2561,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

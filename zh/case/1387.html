@@ -7,11 +7,13 @@
     <title>おはようございます💡 #1387 | Gem Nana AI 提示词库</title>
     <meta name="description" content="おはようございます💡 今日は禁酒の日、アメリカ合衆国で1920年のこの日に禁酒法が施行されたそうです。 13年間10ヶ月にわたってお酒が禁止されたそうですが、逆に密造酒やマフィアが暗躍したりと治安の悪化につながったとか👀 極端なこ...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1387.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1387.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1387.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840943">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022466">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("おはようございます💡\n今日は禁酒の日、アメリカ合衆国で1920年のこの日に禁酒法が施行されたそうです。\n13年間10ヶ月にわたってお酒が禁止されたそうですが、逆に密造酒やマフィアが暗躍したりと治安の悪化につながったとか👀\n極端なことはうまくいかないものですよね。\n\n#nanobanana\n#おはようvtuber https://t.co/djUJGh4eYe", this)'>📋 复制</button>
         </div>
-        <p>おはようございます💡<br>今日は禁酒の日、アメリカ合衆国で1920年のこの日に禁酒法が施行されたそうです。<br>13年間10ヶ月にわたってお酒が禁止されたそうですが、逆に密造酒やマフィアが暗躍したりと治安の悪化につながったとか👀<br>極端なことはうまくいかないものですよね。</p><p>#nanobanana<br>#おはようvtuber https://t.co/djUJGh4eYe</p>
+        <div data-nosnippet><p>おはようございます💡<br>今日は禁酒の日、アメリカ合衆国で1920年のこの日に禁酒法が施行されたそうです。<br>13年間10ヶ月にわたってお酒が禁止されたそうですが、逆に密造酒やマフィアが暗躍したりと治安の悪化につながったとか👀<br>極端なことはうまくいかないものですよね。</p><p>#nanobanana<br>#おはようvtuber https://t.co/djUJGh4eYe</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Good morning 💡\nToday is Prohibition Day; it seems that on this day in 1920 Prohibition was enacted in the United States.\nAlcohol was apparently banned for 13 years and 10 months, but on the contrary it led to bootlegging and the mafia operating in the shadows, contributing to a deterioration in public safety 👀\nExtreme measures don't tend to work out well, do they?\n\n#nanobanana\n#goodmorningvtuber https://t.co/djUJGh4eYe", this)'>📋 复制</button>
         </div>
-        <p>Good morning 💡<br>Today is Prohibition Day; it seems that on this day in 1920 Prohibition was enacted in the United States.<br>Alcohol was apparently banned for 13 years and 10 months, but on the contrary it led to bootlegging and the mafia operating in the shadows, contributing to a deterioration in public safety 👀<br>Extreme measures don&#39;t tend to work out well, do they?</p><p>#nanobanana<br>#goodmorningvtuber https://t.co/djUJGh4eYe</p>
+        <div data-nosnippet><p>Good morning 💡<br>Today is Prohibition Day; it seems that on this day in 1920 Prohibition was enacted in the United States.<br>Alcohol was apparently banned for 13 years and 10 months, but on the contrary it led to bootlegging and the mafia operating in the shadows, contributing to a deterioration in public safety 👀<br>Extreme measures don&#39;t tend to work out well, do they?</p><p>#nanobanana<br>#goodmorningvtuber https://t.co/djUJGh4eYe</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011940450215903352-1.jpg" alt="おはようございます💡" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1387,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

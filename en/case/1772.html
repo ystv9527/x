@@ -7,11 +7,13 @@
     <title>&quot;image generation prompt&quot;: { #1772 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image generation prompt&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;A photorealistic young woman with brown hair tied back in...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1772.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1772.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1772.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844798">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023586">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"description\": \"一位照片级写实的年轻女性，棕色头发束成马尾，坐在凳子上。\",\n      \"pose\": \"坐着，一只膝盖抬起，双手环抱小腿，微微侧看，表情平静且专注。\",\n      \"clothing\": {\n        \"top\": \"米色T恤，胸前有白色耐克勾形标志。\",\n        \"bottoms\": \"深蓝色紧身裤，大腿处有小白色勾形标志。\",\n        \"footwear\": \"白色运动鞋。\"\n      }\n    },\n    \"composition\": {\n      \"foreground_element\": \"一个大型3D渲染的白色社交媒体框架，类似Instagram帖子，物理上框住主体。\",\n      \"ui_details\": {\n        \"header\": {\n          \"profile_picture\": \"该女性的头像\",\n          \"username\": \"玛丽亚\",\n          \"follow_button\": {\n            \"text\": \"关注\",\n            \"color\": \"蓝色\"\n          }\n        },\n        \"footer_icons\": [\n          {\n            \"type\": \"喜欢\",\n            \"icon\": \"心形\",\n            \"color\": \"红色\",\n            \"state\": \"已点赞\"\n          },\n          {\n            \"type\": \"评论\",\n            \"icon\": \"评论气泡\"\n          },\n          {\n            \"type\": \"分享\",\n            \"icon\": \"纸飞机\"\n          },\n          {\n            \"type\": \"收藏\",\n            \"icon\": \"书签\"\n          }\n        ],\n        \"likes_count\": 785,\n        \"caption\": \"自由不在舒适中找到。它是在纪律与信念相遇的那些宁静时刻中建立起来的。\"\n      }\n    },\n    \"environment\": {\n      \"setting\": \"昏暗且充满氛围的健身房背景。\",\n      \"details\": \"阴影中模糊的健身器械，营造强烈的景深。\"\n    },\n    \"style\": {\n      \"visual_style\": \"使用虚幻引擎5的3D写实渲染，电影感且高保真。\",\n      \"lighting\": {\n        \"subject\": \"柔和的聚光灯聚焦在女性身上\",\n        \"background\": \"冷色环境光与细微阴影\"\n      }\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;一位照片级写实的年轻女性，棕色头发束成马尾，坐在凳子上。&quot;,<br>      &quot;pose&quot;: &quot;坐着，一只膝盖抬起，双手环抱小腿，微微侧看，表情平静且专注。&quot;,<br>      &quot;clothing&quot;: {<br>        &quot;top&quot;: &quot;米色T恤，胸前有白色耐克勾形标志。&quot;,<br>        &quot;bottoms&quot;: &quot;深蓝色紧身裤，大腿处有小白色勾形标志。&quot;,<br>        &quot;footwear&quot;: &quot;白色运动鞋。&quot;<br>      }<br>    },<br>    &quot;composition&quot;: {<br>      &quot;foreground_element&quot;: &quot;一个大型3D渲染的白色社交媒体框架，类似Instagram帖子，物理上框住主体。&quot;,<br>      &quot;ui_details&quot;: {<br>        &quot;header&quot;: {<br>          &quot;profile_picture&quot;: &quot;该女性的头像&quot;,<br>          &quot;username&quot;: &quot;玛丽亚&quot;,<br>          &quot;follow_button&quot;: {<br>            &quot;text&quot;: &quot;关注&quot;,<br>            &quot;color&quot;: &quot;蓝色&quot;<br>          }<br>        },<br>        &quot;footer_icons&quot;: [<br>          {<br>            &quot;type&quot;: &quot;喜欢&quot;,<br>            &quot;icon&quot;: &quot;心形&quot;,<br>            &quot;color&quot;: &quot;红色&quot;,<br>            &quot;state&quot;: &quot;已点赞&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;评论&quot;,<br>            &quot;icon&quot;: &quot;评论气泡&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;分享&quot;,<br>            &quot;icon&quot;: &quot;纸飞机&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;收藏&quot;,<br>            &quot;icon&quot;: &quot;书签&quot;<br>          }<br>        ],<br>        &quot;likes_count&quot;: 785,<br>        &quot;caption&quot;: &quot;自由不在舒适中找到。它是在纪律与信念相遇的那些宁静时刻中建立起来的。&quot;<br>      }<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;昏暗且充满氛围的健身房背景。&quot;,<br>      &quot;details&quot;: &quot;阴影中模糊的健身器械，营造强烈的景深。&quot;<br>    },<br>    &quot;style&quot;: {<br>      &quot;visual_style&quot;: &quot;使用虚幻引擎5的3D写实渲染，电影感且高保真。&quot;,<br>      &quot;lighting&quot;: {<br>        &quot;subject&quot;: &quot;柔和的聚光灯聚焦在女性身上&quot;,<br>        &quot;background&quot;: &quot;冷色环境光与细微阴影&quot;<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;一位照片级写实的年轻女性，棕色头发束成马尾，坐在凳子上。&quot;,<br>      &quot;pose&quot;: &quot;坐着，一只膝盖抬起，双手环抱小腿，微微侧看，表情平静且专注。&quot;,<br>      &quot;clothing&quot;: {<br>        &quot;top&quot;: &quot;米色T恤，胸前有白色耐克勾形标志。&quot;,<br>        &quot;bottoms&quot;: &quot;深蓝色紧身裤，大腿处有小白色勾形标志。&quot;,<br>        &quot;footwear&quot;: &quot;白色运动鞋。&quot;<br>      }<br>    },<br>    &quot;composition&quot;: {<br>      &quot;foreground_element&quot;: &quot;一个大型3D渲染的白色社交媒体框架，类似Instagram帖子，物理上框住主体。&quot;,<br>      &quot;ui_details&quot;: {<br>        &quot;header&quot;: {<br>          &quot;profile_picture&quot;: &quot;该女性的头像&quot;,<br>          &quot;username&quot;: &quot;玛丽亚&quot;,<br>          &quot;follow_button&quot;: {<br>            &quot;text&quot;: &quot;关注&quot;,<br>            &quot;color&quot;: &quot;蓝色&quot;<br>          }<br>        },<br>        &quot;footer_icons&quot;: [<br>          {<br>            &quot;type&quot;: &quot;喜欢&quot;,<br>            &quot;icon&quot;: &quot;心形&quot;,<br>            &quot;color&quot;: &quot;红色&quot;,<br>            &quot;state&quot;: &quot;已点赞&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;评论&quot;,<br>            &quot;icon&quot;: &quot;评论气泡&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;分享&quot;,<br>            &quot;icon&quot;: &quot;纸飞机&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;收藏&quot;,<br>            &quot;icon&quot;: &quot;书签&quot;<br>          }<br>        ],<br>        &quot;likes_count&quot;: 785,<br>        &quot;caption&quot;: &quot;自由不在舒适中找到。它是在纪律与信念相遇的那些宁静时刻中建立起来的。&quot;<br>      }<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;昏暗且充满氛围的健身房背景。&quot;,<br>      &quot;details&quot;: &quot;阴影中模糊的健身器械，营造强烈的景深。&quot;<br>    },<br>    &quot;style&quot;: {<br>      &quot;visual_style&quot;: &quot;使用虚幻引擎5的3D写实渲染，电影感且高保真。&quot;,<br>      &quot;lighting&quot;: {<br>        &quot;subject&quot;: &quot;柔和的聚光灯聚焦在女性身上&quot;,<br>        &quot;background&quot;: &quot;冷色环境光与细微阴影&quot;<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompt\": {\n    \"subject\": {\n      \"description\": \"A photorealistic young woman with brown hair tied back in a ponytail, sitting on a stool.\",\n      \"pose\": \"Sitting with one knee raised, hands clasped around her shin, looking slightly to the side with a calm, focused expression.\",\n      \"clothing\": {\n        \"top\": \"Beige t-shirt with a white Nike swoosh logo on the chest.\",\n        \"bottoms\": \"Dark blue leggings with a small white swoosh logo on the thigh.\",\n        \"footwear\": \"White athletic sneakers.\"\n      }\n    },\n    \"composition\": {\n      \"foreground_element\": \"A large, 3D-rendered white social media frame resembling an Instagram post, physically framing the subject.\",\n      \"ui_details\": {\n        \"header\": {\n          \"profile_picture\": \"Profile picture of the woman\",\n          \"username\": \"Maria\",\n          \"follow_button\": {\n            \"text\": \"FOLLOW\",\n            \"color\": \"Blue\"\n          }\n        },\n        \"footer_icons\": [\n          {\n            \"type\": \"like\",\n            \"icon\": \"Heart\",\n            \"color\": \"Red\",\n            \"state\": \"Liked\"\n          },\n          {\n            \"type\": \"comment\",\n            \"icon\": \"Comment bubble\"\n          },\n          {\n            \"type\": \"share\",\n            \"icon\": \"Paper plane\"\n          },\n          {\n            \"type\": \"bookmark\",\n            \"icon\": \"Bookmark\"\n          }\n        ],\n        \"likes_count\": 785,\n        \"caption\": \"Freedom isn’t found in comfort. It’s built in the quiet moments where discipline meets belief.\"\n      }\n    },\n    \"environment\": {\n      \"setting\": \"A dimly lit, atmospheric gym background.\",\n      \"details\": \"Blurred gym equipment in the shadows, creating a strong depth of field.\"\n    },\n    \"style\": {\n      \"visual_style\": \"3D realistic render using Unreal Engine 5, cinematic and high fidelity.\",\n      \"lighting\": {\n        \"subject\": \"Soft spotlight focused on the woman\",\n        \"background\": \"Cool ambient lighting with subtle shadows\"\n      }\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;A photorealistic young woman with brown hair tied back in a ponytail, sitting on a stool.&quot;,<br>      &quot;pose&quot;: &quot;Sitting with one knee raised, hands clasped around her shin, looking slightly to the side with a calm, focused expression.&quot;,<br>      &quot;clothing&quot;: {<br>        &quot;top&quot;: &quot;Beige t-shirt with a white Nike swoosh logo on the chest.&quot;,<br>        &quot;bottoms&quot;: &quot;Dark blue leggings with a small white swoosh logo on the thigh.&quot;,<br>        &quot;footwear&quot;: &quot;White athletic sneakers.&quot;<br>      }<br>    },<br>    &quot;composition&quot;: {<br>      &quot;foreground_element&quot;: &quot;A large, 3D-rendered white social media frame resembling an Instagram post, physically framing the subject.&quot;,<br>      &quot;ui_details&quot;: {<br>        &quot;header&quot;: {<br>          &quot;profile_picture&quot;: &quot;Profile picture of the woman&quot;,<br>          &quot;username&quot;: &quot;Maria&quot;,<br>          &quot;follow_button&quot;: {<br>            &quot;text&quot;: &quot;FOLLOW&quot;,<br>            &quot;color&quot;: &quot;Blue&quot;<br>          }<br>        },<br>        &quot;footer_icons&quot;: [<br>          {<br>            &quot;type&quot;: &quot;like&quot;,<br>            &quot;icon&quot;: &quot;Heart&quot;,<br>            &quot;color&quot;: &quot;Red&quot;,<br>            &quot;state&quot;: &quot;Liked&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;comment&quot;,<br>            &quot;icon&quot;: &quot;Comment bubble&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;share&quot;,<br>            &quot;icon&quot;: &quot;Paper plane&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;bookmark&quot;,<br>            &quot;icon&quot;: &quot;Bookmark&quot;<br>          }<br>        ],<br>        &quot;likes_count&quot;: 785,<br>        &quot;caption&quot;: &quot;Freedom isn’t found in comfort. It’s built in the quiet moments where discipline meets belief.&quot;<br>      }<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;A dimly lit, atmospheric gym background.&quot;,<br>      &quot;details&quot;: &quot;Blurred gym equipment in the shadows, creating a strong depth of field.&quot;<br>    },<br>    &quot;style&quot;: {<br>      &quot;visual_style&quot;: &quot;3D realistic render using Unreal Engine 5, cinematic and high fidelity.&quot;,<br>      &quot;lighting&quot;: {<br>        &quot;subject&quot;: &quot;Soft spotlight focused on the woman&quot;,<br>        &quot;background&quot;: &quot;Cool ambient lighting with subtle shadows&quot;<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompt&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;A photorealistic young woman with brown hair tied back in a ponytail, sitting on a stool.&quot;,<br>      &quot;pose&quot;: &quot;Sitting with one knee raised, hands clasped around her shin, looking slightly to the side with a calm, focused expression.&quot;,<br>      &quot;clothing&quot;: {<br>        &quot;top&quot;: &quot;Beige t-shirt with a white Nike swoosh logo on the chest.&quot;,<br>        &quot;bottoms&quot;: &quot;Dark blue leggings with a small white swoosh logo on the thigh.&quot;,<br>        &quot;footwear&quot;: &quot;White athletic sneakers.&quot;<br>      }<br>    },<br>    &quot;composition&quot;: {<br>      &quot;foreground_element&quot;: &quot;A large, 3D-rendered white social media frame resembling an Instagram post, physically framing the subject.&quot;,<br>      &quot;ui_details&quot;: {<br>        &quot;header&quot;: {<br>          &quot;profile_picture&quot;: &quot;Profile picture of the woman&quot;,<br>          &quot;username&quot;: &quot;Maria&quot;,<br>          &quot;follow_button&quot;: {<br>            &quot;text&quot;: &quot;FOLLOW&quot;,<br>            &quot;color&quot;: &quot;Blue&quot;<br>          }<br>        },<br>        &quot;footer_icons&quot;: [<br>          {<br>            &quot;type&quot;: &quot;like&quot;,<br>            &quot;icon&quot;: &quot;Heart&quot;,<br>            &quot;color&quot;: &quot;Red&quot;,<br>            &quot;state&quot;: &quot;Liked&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;comment&quot;,<br>            &quot;icon&quot;: &quot;Comment bubble&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;share&quot;,<br>            &quot;icon&quot;: &quot;Paper plane&quot;<br>          },<br>          {<br>            &quot;type&quot;: &quot;bookmark&quot;,<br>            &quot;icon&quot;: &quot;Bookmark&quot;<br>          }<br>        ],<br>        &quot;likes_count&quot;: 785,<br>        &quot;caption&quot;: &quot;Freedom isn’t found in comfort. It’s built in the quiet moments where discipline meets belief.&quot;<br>      }<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;A dimly lit, atmospheric gym background.&quot;,<br>      &quot;details&quot;: &quot;Blurred gym equipment in the shadows, creating a strong depth of field.&quot;<br>    },<br>    &quot;style&quot;: {<br>      &quot;visual_style&quot;: &quot;3D realistic render using Unreal Engine 5, cinematic and high fidelity.&quot;,<br>      &quot;lighting&quot;: {<br>        &quot;subject&quot;: &quot;Soft spotlight focused on the woman&quot;,<br>        &quot;background&quot;: &quot;Cool ambient lighting with subtle shadows&quot;<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2016154222765527482-1.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"><img src="/images/tweet-2016154222765527482-2.jpg" alt="&quot;image generation prompt&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1772,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

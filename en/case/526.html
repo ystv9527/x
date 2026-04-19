@@ -7,11 +7,13 @@
     <title>A wonderful experience of flying a drone by a cliff with my dog. #526 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Imagine you and your dog on the edge of a cliff, piloting a drone and enjoying the breathtaking natural scenery. With the Gemini app, you can generate an ultra-realistic drone image that captures this moment. In just a few simple steps, you can create your own exquisite landscape shot!">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/526.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/526.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/526.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846055">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023852">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("生成一张超逼真的无人机航拍风景图，画面中一名男子（附图为参考照片，请 100%还原参考照片中的人物面部，拍摄全身照，无人机距离该男子十英尺）坐在悬崖边的岩架上。他身穿印有“NANO BANANA”（纳米香蕉）字样的黑色 T 恤、修身破洞牛仔裤，戴着橙色镜片的 Oakley 太阳镜。他双腿悬空于岩架边缘，神情平静地直视无人机，手中握着遥控器。他的英国斗牛犬坐在他身旁。无人机镜头还捕捉到了周围令人惊叹的壮丽景色。无人机镜头下的景象非同寻常，俯瞰着下方气势磅礴的壮丽景色，宛如一幅精细的山峦画卷，一条清澈的蓝色河流或湖泊从两山之间流过。远处还有一群白色的海鸥在飞翔。壮丽的秋景中，树叶呈现出红色、橙色和黄色等不同的色彩，但主色调仍然是绿色。河岸上还可见零星的积雪。天空晴朗湛蓝，点缀着朵朵白云，更添壮美之感。请使用 8K 数码单反高分辨率渲染此画面。利用自然光，打造逼真生动的图像，捕捉画面的精髓。确保光线、表情和细节尽可能自然，营造真实感。确保背景和前景无缝衔接，呈现和谐自然的视觉效果。", this)'>📋 Copy</button>
         </div>
-        <p>生成一张超逼真的无人机航拍风景图，画面中一名男子（附图为参考照片，请 100%还原参考照片中的人物面部，拍摄全身照，无人机距离该男子十英尺）坐在悬崖边的岩架上。他身穿印有“NANO BANANA”（纳米香蕉）字样的黑色 T 恤、修身破洞牛仔裤，戴着橙色镜片的 Oakley 太阳镜。他双腿悬空于岩架边缘，神情平静地直视无人机，手中握着遥控器。他的英国斗牛犬坐在他身旁。无人机镜头还捕捉到了周围令人惊叹的壮丽景色。无人机镜头下的景象非同寻常，俯瞰着下方气势磅礴的壮丽景色，宛如一幅精细的山峦画卷，一条清澈的蓝色河流或湖泊从两山之间流过。远处还有一群白色的海鸥在飞翔。壮丽的秋景中，树叶呈现出红色、橙色和黄色等不同的色彩，但主色调仍然是绿色。河岸上还可见零星的积雪。天空晴朗湛蓝，点缀着朵朵白云，更添壮美之感。请使用 8K 数码单反高分辨率渲染此画面。利用自然光，打造逼真生动的图像，捕捉画面的精髓。确保光线、表情和细节尽可能自然，营造真实感。确保背景和前景无缝衔接，呈现和谐自然的视觉效果。</p>
+        <div data-nosnippet><p>生成一张超逼真的无人机航拍风景图，画面中一名男子（附图为参考照片，请 100%还原参考照片中的人物面部，拍摄全身照，无人机距离该男子十英尺）坐在悬崖边的岩架上。他身穿印有“NANO BANANA”（纳米香蕉）字样的黑色 T 恤、修身破洞牛仔裤，戴着橙色镜片的 Oakley 太阳镜。他双腿悬空于岩架边缘，神情平静地直视无人机，手中握着遥控器。他的英国斗牛犬坐在他身旁。无人机镜头还捕捉到了周围令人惊叹的壮丽景色。无人机镜头下的景象非同寻常，俯瞰着下方气势磅礴的壮丽景色，宛如一幅精细的山峦画卷，一条清澈的蓝色河流或湖泊从两山之间流过。远处还有一群白色的海鸥在飞翔。壮丽的秋景中，树叶呈现出红色、橙色和黄色等不同的色彩，但主色调仍然是绿色。河岸上还可见零星的积雪。天空晴朗湛蓝，点缀着朵朵白云，更添壮美之感。请使用 8K 数码单反高分辨率渲染此画面。利用自然光，打造逼真生动的图像，捕捉画面的精髓。确保光线、表情和细节尽可能自然，营造真实感。确保背景和前景无缝衔接，呈现和谐自然的视觉效果。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("2. Click create image and upload your photo \r\n3. Copy and Paste the prompt below on      \r\n    \"Describe your image\" section \r\n4. Click Generate button \r\n\r\nGenerate a hyper-realistic landscape image of a drone shot of a man (attached photo as reference,  Keep the face of the person 100% accurate from the reference image , full body shot, the drone shot was ten feet away from the woman) sitting on a ledge off a cliff. He is wearing a black t-shirt with a printed \"NANO BANANA\" on it, a fitted distressed blue jeans and Oakley with orange lens. His two legs dangling from the ledge while his expression is calm and looking directly at the drone while he is holding the remote control of the drone. Beside him sits his English bulldog. The drone cam also captures the the stunning and breath-taking view of the surroundings. The view from the drone camera is nothing sort of ordinary since its overlooking the epic grandeur of the scenery below which is a like a detailed landscape of two mountainous gorge with a clear blue river or lake that passes between the two mountains. There are also a flock of white seagulls flying from the distance. The epic landscapes' are showing patches of different colors such as red, orange and yellow of autumn originating from the leaves of the trees that grew from it but the dominant color is still green. There are also patches of snow showing on the riverbank. The sky is sunny and clear blue with lots of scattered clouds that completes the epic scenery. Render this shot in 8K DSLR high resolution. Natural lightings, Create a realistic, lifelike image that captures the essence of the picture. Make sure the lighting, expressions, and details look as natural as possible, with a sense of realism. Ensure the background and foreground blend seamlessly for a cohesive and genuine look.", this)'>📋 Copy</button>
         </div>
-        <p>2. Click create image and upload your photo <br>3. Copy and Paste the prompt below on      <br>    &quot;Describe your image&quot; section <br>4. Click Generate button <br><br>Generate a hyper-realistic landscape image of a drone shot of a man (attached photo as reference,  Keep the face of the person 100% accurate from the reference image , full body shot, the drone shot was ten feet away from the woman) sitting on a ledge off a cliff. He is wearing a black t-shirt with a printed &quot;NANO BANANA&quot; on it, a fitted distressed blue jeans and Oakley with orange lens. His two legs dangling from the ledge while his expression is calm and looking directly at the drone while he is holding the remote control of the drone. Beside him sits his English bulldog. The drone cam also captures the the stunning and breath-taking view of the surroundings. The view from the drone camera is nothing sort of ordinary since its overlooking the epic grandeur of the scenery below which is a like a detailed landscape of two mountainous gorge with a clear blue river or lake that passes between the two mountains. There are also a flock of white seagulls flying from the distance. The epic landscapes&#39; are showing patches of different colors such as red, orange and yellow of autumn originating from the leaves of the trees that grew from it but the dominant color is still green. There are also patches of snow showing on the riverbank. The sky is sunny and clear blue with lots of scattered clouds that completes the epic scenery. Render this shot in 8K DSLR high resolution. Natural lightings, Create a realistic, lifelike image that captures the essence of the picture. Make sure the lighting, expressions, and details look as natural as possible, with a sense of realism. Ensure the background and foreground blend seamlessly for a cohesive and genuine look.</p>
+        <div data-nosnippet><p>2. Click create image and upload your photo <br>3. Copy and Paste the prompt below on      <br>    &quot;Describe your image&quot; section <br>4. Click Generate button <br><br>Generate a hyper-realistic landscape image of a drone shot of a man (attached photo as reference,  Keep the face of the person 100% accurate from the reference image , full body shot, the drone shot was ten feet away from the woman) sitting on a ledge off a cliff. He is wearing a black t-shirt with a printed &quot;NANO BANANA&quot; on it, a fitted distressed blue jeans and Oakley with orange lens. His two legs dangling from the ledge while his expression is calm and looking directly at the drone while he is holding the remote control of the drone. Beside him sits his English bulldog. The drone cam also captures the the stunning and breath-taking view of the surroundings. The view from the drone camera is nothing sort of ordinary since its overlooking the epic grandeur of the scenery below which is a like a detailed landscape of two mountainous gorge with a clear blue river or lake that passes between the two mountains. There are also a flock of white seagulls flying from the distance. The epic landscapes&#39; are showing patches of different colors such as red, orange and yellow of autumn originating from the leaves of the trees that grew from it but the dominant color is still green. There are also patches of snow showing on the riverbank. The sky is sunny and clear blue with lots of scattered clouds that completes the epic scenery. Render this shot in 8K DSLR high resolution. Natural lightings, Create a realistic, lifelike image that captures the essence of the picture. Make sure the lighting, expressions, and details look as natural as possible, with a sense of realism. Ensure the background and foreground blend seamlessly for a cohesive and genuine look.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-1990536869218546082-1.jpg" alt="与狗狗一起在悬崖边飞无人机的奇妙体验" loading="lazy"><img src="/images/tweet-1990536869218546082-2.jpg" alt="与狗狗一起在悬崖边飞无人机的奇妙体验" loading="lazy"><img src="/images/tweet-1990536869218546082-3.jpg" alt="与狗狗一起在悬崖边飞无人机的奇妙体验" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 526,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

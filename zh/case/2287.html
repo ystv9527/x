@@ -7,11 +7,13 @@
     <title>&quot;Character&quot;: { #2287 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;Character&quot;: { &quot;Subject&quot;: &quot;Japanese female idol, late teens to early 20s&quot;, &quot;Face and Skin&quot;: &quot;pure innocent face wit...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2287.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2287.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2287.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840064">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022262">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"Character\": {\n    \"Subject\": \"日本女性偶像，十几岁后期到二十出头\",\n    \"Face_and_Skin\": \"纯洁无辜的面容，半透明的浅色皮肤，光滑真实的皮肤质感，带有细微自然光泽\",\n    \"Makeup\": \"极简“无妆”妆感，非常细腻的淡粉腮红，光泽清透的润唇膏\",\n    \"Hair\": \"自然深棕色中长波波头，微风中轻轻摆动，无帽\",\n    \"Eyes_and_Expression\": \"清澈无辜的宽大柔和眼睛捕捉光线，直视镜头，表情温柔、短暂且纯净\",\n    \"Pose\": \"坐在木制縁側上，双膝抱于胸前，下巴优雅地倚在膝上，双臂轻柔环抱小腿，赤脚，放松自然的姿态\",\n    \"Outfit\": \"宽松薄透的白色亚麻夏裙，无袖，面料在逆光下略微半透明，锁骨若隐若现，纯净空灵的全白美学\"\n  },\n  \"Scene\": {\n    \"Environment\": \"木制縁側（传统日式走廊），传统日式房屋，拉开玻璃推拉门通向郁郁葱葱的夏日花园\",\n    \"Details\": \"背景中明亮的白色薄纱窗帘飘动，柔和的绿色、棕色和白色配色\",\n    \"Atmosphere\": \"清爽的夏日晨风，带有怀旧与短暂感的氛围，感受柔和的夏风\"\n  },\n  \"Photography\": {\n    \"Style\": \"日本偶像写真集（shashin-shu）风格，通透轻盈的摄影，杰作，最佳质量，摄影写实\",\n    \"Camera_and_Lens\": \"Contax 645 中画幅风格，Carl Zeiss Planar 80mm f/2 镜头，浅景深，柔和通透的奶油般散景，边缘柔软空灵的焦外，眼睛处清晰\",\n    \"Framing\": \"从眼平拍摄，中近景构图，膝上构图\",\n    \"Lighting\": \"柔和自然日光，阴天或窗户漫射光，高调光（低对比度），略微过曝（+1 EV）以增强通透感，柔和包裹的光线，眼中明亮的方形高光\",\n    \"Film_Simulation_and_Color\": \"Fujifilm Pro 400H 胶片模拟，粉彩色调，阴影中带有冷青绿色底色，乳白提亮的黑位，柔和发光的高光且不出现纯白裁切\",\n    \"Effects\": \"细腻微妙的胶片颗粒（0.2），非常轻微的暗角（0.1），从上角缓和的柔和漏光\"\n    \"Aapect Ratio\": \"3:4\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;Character&quot;: {<br>    &quot;Subject&quot;: &quot;日本女性偶像，十几岁后期到二十出头&quot;,<br>    &quot;Face_and_Skin&quot;: &quot;纯洁无辜的面容，半透明的浅色皮肤，光滑真实的皮肤质感，带有细微自然光泽&quot;,<br>    &quot;Makeup&quot;: &quot;极简“无妆”妆感，非常细腻的淡粉腮红，光泽清透的润唇膏&quot;,<br>    &quot;Hair&quot;: &quot;自然深棕色中长波波头，微风中轻轻摆动，无帽&quot;,<br>    &quot;Eyes_and_Expression&quot;: &quot;清澈无辜的宽大柔和眼睛捕捉光线，直视镜头，表情温柔、短暂且纯净&quot;,<br>    &quot;Pose&quot;: &quot;坐在木制縁側上，双膝抱于胸前，下巴优雅地倚在膝上，双臂轻柔环抱小腿，赤脚，放松自然的姿态&quot;,<br>    &quot;Outfit&quot;: &quot;宽松薄透的白色亚麻夏裙，无袖，面料在逆光下略微半透明，锁骨若隐若现，纯净空灵的全白美学&quot;<br>  },<br>  &quot;Scene&quot;: {<br>    &quot;Environment&quot;: &quot;木制縁側（传统日式走廊），传统日式房屋，拉开玻璃推拉门通向郁郁葱葱的夏日花园&quot;,<br>    &quot;Details&quot;: &quot;背景中明亮的白色薄纱窗帘飘动，柔和的绿色、棕色和白色配色&quot;,<br>    &quot;Atmosphere&quot;: &quot;清爽的夏日晨风，带有怀旧与短暂感的氛围，感受柔和的夏风&quot;<br>  },<br>  &quot;Photography&quot;: {<br>    &quot;Style&quot;: &quot;日本偶像写真集（shashin-shu）风格，通透轻盈的摄影，杰作，最佳质量，摄影写实&quot;,<br>    &quot;Camera_and_Lens&quot;: &quot;Contax 645 中画幅风格，Carl Zeiss Planar 80mm f/2 镜头，浅景深，柔和通透的奶油般散景，边缘柔软空灵的焦外，眼睛处清晰&quot;,<br>    &quot;Framing&quot;: &quot;从眼平拍摄，中近景构图，膝上构图&quot;,<br>    &quot;Lighting&quot;: &quot;柔和自然日光，阴天或窗户漫射光，高调光（低对比度），略微过曝（+1 EV）以增强通透感，柔和包裹的光线，眼中明亮的方形高光&quot;,<br>    &quot;Film_Simulation_and_Color&quot;: &quot;Fujifilm Pro 400H 胶片模拟，粉彩色调，阴影中带有冷青绿色底色，乳白提亮的黑位，柔和发光的高光且不出现纯白裁切&quot;,<br>    &quot;Effects&quot;: &quot;细腻微妙的胶片颗粒（0.2），非常轻微的暗角（0.1），从上角缓和的柔和漏光&quot;<br>    &quot;Aapect Ratio&quot;: &quot;3:4&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;Character&quot;: {<br>    &quot;Subject&quot;: &quot;日本女性偶像，十几岁后期到二十出头&quot;,<br>    &quot;Face_and_Skin&quot;: &quot;纯洁无辜的面容，半透明的浅色皮肤，光滑真实的皮肤质感，带有细微自然光泽&quot;,<br>    &quot;Makeup&quot;: &quot;极简“无妆”妆感，非常细腻的淡粉腮红，光泽清透的润唇膏&quot;,<br>    &quot;Hair&quot;: &quot;自然深棕色中长波波头，微风中轻轻摆动，无帽&quot;,<br>    &quot;Eyes_and_Expression&quot;: &quot;清澈无辜的宽大柔和眼睛捕捉光线，直视镜头，表情温柔、短暂且纯净&quot;,<br>    &quot;Pose&quot;: &quot;坐在木制縁側上，双膝抱于胸前，下巴优雅地倚在膝上，双臂轻柔环抱小腿，赤脚，放松自然的姿态&quot;,<br>    &quot;Outfit&quot;: &quot;宽松薄透的白色亚麻夏裙，无袖，面料在逆光下略微半透明，锁骨若隐若现，纯净空灵的全白美学&quot;<br>  },<br>  &quot;Scene&quot;: {<br>    &quot;Environment&quot;: &quot;木制縁側（传统日式走廊），传统日式房屋，拉开玻璃推拉门通向郁郁葱葱的夏日花园&quot;,<br>    &quot;Details&quot;: &quot;背景中明亮的白色薄纱窗帘飘动，柔和的绿色、棕色和白色配色&quot;,<br>    &quot;Atmosphere&quot;: &quot;清爽的夏日晨风，带有怀旧与短暂感的氛围，感受柔和的夏风&quot;<br>  },<br>  &quot;Photography&quot;: {<br>    &quot;Style&quot;: &quot;日本偶像写真集（shashin-shu）风格，通透轻盈的摄影，杰作，最佳质量，摄影写实&quot;,<br>    &quot;Camera_and_Lens&quot;: &quot;Contax 645 中画幅风格，Carl Zeiss Planar 80mm f/2 镜头，浅景深，柔和通透的奶油般散景，边缘柔软空灵的焦外，眼睛处清晰&quot;,<br>    &quot;Framing&quot;: &quot;从眼平拍摄，中近景构图，膝上构图&quot;,<br>    &quot;Lighting&quot;: &quot;柔和自然日光，阴天或窗户漫射光，高调光（低对比度），略微过曝（+1 EV）以增强通透感，柔和包裹的光线，眼中明亮的方形高光&quot;,<br>    &quot;Film_Simulation_and_Color&quot;: &quot;Fujifilm Pro 400H 胶片模拟，粉彩色调，阴影中带有冷青绿色底色，乳白提亮的黑位，柔和发光的高光且不出现纯白裁切&quot;,<br>    &quot;Effects&quot;: &quot;细腻微妙的胶片颗粒（0.2），非常轻微的暗角（0.1），从上角缓和的柔和漏光&quot;<br>    &quot;Aapect Ratio&quot;: &quot;3:4&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"Character\": {\n    \"Subject\": \"Japanese female idol, late teens to early 20s\",\n    \"Face_and_Skin\": \"pure innocent face with translucent pale skin, glassy realistic skin texture with a subtle natural glow\",\n    \"Makeup\": \"minimal 'no-makeup' look, very subtle soft pink blush, glossy clear lip balm\",\n    \"Hair\": \"natural dark brown medium-length bob hair gently swaying in the breeze, no hat\",\n    \"Eyes_and_Expression\": \"wide innocent soft eyes capturing the light, looking directly at camera with a gentle, ephemeral and pure expression\",\n    \"Pose\": \"SITTING on a wooden engawa, HUGGING KNEES to chest, chin resting gracefully on knees, arms wrapped softly around shins, bare feet, relaxed and natural posture\",\n    \"Outfit\": \"loose-fitting thin white linen summer dress, sleeveless, slightly translucent fabric catching the backlight, delicate collarbone visible, pure and ethereal all-white aesthetic\"\n  },\n  \"Scene\": {\n    \"Environment\": \"wooden engawa (traditional Japanese veranda), traditional Japanese house with sliding glass doors open to a lush green summer garden\",\n    \"Details\": \"bright white sheer curtains blowing in the background, soft green, brown, and white color palette\",\n    \"Atmosphere\": \"clear summer morning breeze, nostalgic and ephemeral atmosphere, feeling the gentle summer breeze\"\n  },\n  \"Photography\": {\n    \"Style\": \"Japanese idol photobook (shashin-shu), airy and transparent photography, masterpiece, best quality, photorealistic\",\n    \"Camera_and_Lens\": \"Contax 645 medium format look, Carl Zeiss Planar 80mm f/2 lens, shallow depth of field, soft airy creamy bokeh, soft ethereal focus on the edges, sharp on the eyes\",\n    \"Framing\": \"shot from EYE LEVEL, medium close-up framing, knee-up composition\",\n    \"Lighting\": \"SOFT NATURAL DAYLIGHT, OVERCAST or DIFFUSED WINDOW LIGHT, high-key lighting (low contrast), slightly overexposed (+1 EV) for transparency, soft wrap-around light, bright square catchlights in eyes\",\n    \"Film_Simulation_and_Color\": \"Fujifilm Pro 400H film simulation, pastel color grading, cool cyan-green undertones in the shadows, milky lifted blacks, soft glowing highlights without pure white clipping\",\n    \"Effects\": \"fine subtle film grain (0.2), very mild vignette (0.1), soft gentle light leak from the top corner\"\n    \"Aapect Ratio\": \"3:4\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;Character&quot;: {<br>    &quot;Subject&quot;: &quot;Japanese female idol, late teens to early 20s&quot;,<br>    &quot;Face_and_Skin&quot;: &quot;pure innocent face with translucent pale skin, glassy realistic skin texture with a subtle natural glow&quot;,<br>    &quot;Makeup&quot;: &quot;minimal &#39;no-makeup&#39; look, very subtle soft pink blush, glossy clear lip balm&quot;,<br>    &quot;Hair&quot;: &quot;natural dark brown medium-length bob hair gently swaying in the breeze, no hat&quot;,<br>    &quot;Eyes_and_Expression&quot;: &quot;wide innocent soft eyes capturing the light, looking directly at camera with a gentle, ephemeral and pure expression&quot;,<br>    &quot;Pose&quot;: &quot;SITTING on a wooden engawa, HUGGING KNEES to chest, chin resting gracefully on knees, arms wrapped softly around shins, bare feet, relaxed and natural posture&quot;,<br>    &quot;Outfit&quot;: &quot;loose-fitting thin white linen summer dress, sleeveless, slightly translucent fabric catching the backlight, delicate collarbone visible, pure and ethereal all-white aesthetic&quot;<br>  },<br>  &quot;Scene&quot;: {<br>    &quot;Environment&quot;: &quot;wooden engawa (traditional Japanese veranda), traditional Japanese house with sliding glass doors open to a lush green summer garden&quot;,<br>    &quot;Details&quot;: &quot;bright white sheer curtains blowing in the background, soft green, brown, and white color palette&quot;,<br>    &quot;Atmosphere&quot;: &quot;clear summer morning breeze, nostalgic and ephemeral atmosphere, feeling the gentle summer breeze&quot;<br>  },<br>  &quot;Photography&quot;: {<br>    &quot;Style&quot;: &quot;Japanese idol photobook (shashin-shu), airy and transparent photography, masterpiece, best quality, photorealistic&quot;,<br>    &quot;Camera_and_Lens&quot;: &quot;Contax 645 medium format look, Carl Zeiss Planar 80mm f/2 lens, shallow depth of field, soft airy creamy bokeh, soft ethereal focus on the edges, sharp on the eyes&quot;,<br>    &quot;Framing&quot;: &quot;shot from EYE LEVEL, medium close-up framing, knee-up composition&quot;,<br>    &quot;Lighting&quot;: &quot;SOFT NATURAL DAYLIGHT, OVERCAST or DIFFUSED WINDOW LIGHT, high-key lighting (low contrast), slightly overexposed (+1 EV) for transparency, soft wrap-around light, bright square catchlights in eyes&quot;,<br>    &quot;Film_Simulation_and_Color&quot;: &quot;Fujifilm Pro 400H film simulation, pastel color grading, cool cyan-green undertones in the shadows, milky lifted blacks, soft glowing highlights without pure white clipping&quot;,<br>    &quot;Effects&quot;: &quot;fine subtle film grain (0.2), very mild vignette (0.1), soft gentle light leak from the top corner&quot;<br>    &quot;Aapect Ratio&quot;: &quot;3:4&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;Character&quot;: {<br>    &quot;Subject&quot;: &quot;Japanese female idol, late teens to early 20s&quot;,<br>    &quot;Face_and_Skin&quot;: &quot;pure innocent face with translucent pale skin, glassy realistic skin texture with a subtle natural glow&quot;,<br>    &quot;Makeup&quot;: &quot;minimal &#39;no-makeup&#39; look, very subtle soft pink blush, glossy clear lip balm&quot;,<br>    &quot;Hair&quot;: &quot;natural dark brown medium-length bob hair gently swaying in the breeze, no hat&quot;,<br>    &quot;Eyes_and_Expression&quot;: &quot;wide innocent soft eyes capturing the light, looking directly at camera with a gentle, ephemeral and pure expression&quot;,<br>    &quot;Pose&quot;: &quot;SITTING on a wooden engawa, HUGGING KNEES to chest, chin resting gracefully on knees, arms wrapped softly around shins, bare feet, relaxed and natural posture&quot;,<br>    &quot;Outfit&quot;: &quot;loose-fitting thin white linen summer dress, sleeveless, slightly translucent fabric catching the backlight, delicate collarbone visible, pure and ethereal all-white aesthetic&quot;<br>  },<br>  &quot;Scene&quot;: {<br>    &quot;Environment&quot;: &quot;wooden engawa (traditional Japanese veranda), traditional Japanese house with sliding glass doors open to a lush green summer garden&quot;,<br>    &quot;Details&quot;: &quot;bright white sheer curtains blowing in the background, soft green, brown, and white color palette&quot;,<br>    &quot;Atmosphere&quot;: &quot;clear summer morning breeze, nostalgic and ephemeral atmosphere, feeling the gentle summer breeze&quot;<br>  },<br>  &quot;Photography&quot;: {<br>    &quot;Style&quot;: &quot;Japanese idol photobook (shashin-shu), airy and transparent photography, masterpiece, best quality, photorealistic&quot;,<br>    &quot;Camera_and_Lens&quot;: &quot;Contax 645 medium format look, Carl Zeiss Planar 80mm f/2 lens, shallow depth of field, soft airy creamy bokeh, soft ethereal focus on the edges, sharp on the eyes&quot;,<br>    &quot;Framing&quot;: &quot;shot from EYE LEVEL, medium close-up framing, knee-up composition&quot;,<br>    &quot;Lighting&quot;: &quot;SOFT NATURAL DAYLIGHT, OVERCAST or DIFFUSED WINDOW LIGHT, high-key lighting (low contrast), slightly overexposed (+1 EV) for transparency, soft wrap-around light, bright square catchlights in eyes&quot;,<br>    &quot;Film_Simulation_and_Color&quot;: &quot;Fujifilm Pro 400H film simulation, pastel color grading, cool cyan-green undertones in the shadows, milky lifted blacks, soft glowing highlights without pure white clipping&quot;,<br>    &quot;Effects&quot;: &quot;fine subtle film grain (0.2), very mild vignette (0.1), soft gentle light leak from the top corner&quot;<br>    &quot;Aapect Ratio&quot;: &quot;3:4&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2027114611636572306-1.jpg" alt="&quot;Character&quot;: {" loading="lazy"><img src="/images/tweet-2027114611636572306-2.jpg" alt="&quot;Character&quot;: {" loading="lazy"><img src="/images/tweet-2027114611636572306-3.jpg" alt="&quot;Character&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2287,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

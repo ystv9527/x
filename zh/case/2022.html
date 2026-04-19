@@ -7,11 +7,13 @@
     <title>&quot;scene description&quot;: { #2022 | Gem Nana AI 提示词库</title>
     <meta name="description" content="&quot;scene description&quot;: { &quot;location&quot;: &quot;Urban rooftop or high vantage point with a backdrop of towering glass skyscrapers...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2022.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2022.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2022.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840336">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022319">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"scene_description\": {\n    \"location\": \"城市屋顶或高点，背景为高耸的玻璃摩天大楼和流线型的现代建筑\",\n    \"vibe\": \"充满活力、年轻化、都市街头风格，动态且略带透视变形\",\n    \"lighting\": \"明亮的日光，强烈的阳光在左上角形成太阳光束/镜头光晕，光滑表面上有高对比的阴影，色彩鲜艳\",\n    \"camera_settings\": \"超广角或鱼眼镜头（约8mm-12mm），极低角度（虫眼视角），强制透视，深景深，从鞋底到天际线均为清晰对焦，女性的靠近全身特写\"\n  },\n  \"primary_subjects\": [\n    {\n      \"character\": \"及肩的棕色头发的年轻女性\",\n      \"role\": \"街头服饰模特 / 城市探险者\",\n      \"action\": \"随意地坐在现代极简风格的边缘或平台角落，俯视镜头，表情自信放松。一条腿向镜头前方伸出，造成极端的透视缩短，保持之前的相同姿势\",\n      \"details\": \"鲜红色运动夹克，袖子有白色条纹；鲜红色修身紧身裤；巨大的白色厚底粗犷运动鞋，鞋底有明显的红色鞋纹（鞋子为主导的前景元素）\"\n    }\n  ],\n  \"environment_details\": {\n    \"crowd\": \"无\",\n    \"architecture\": \"环绕主体的弧形现代玻璃摩天大楼，前景为光滑的浅色混凝土或金属边缘（而非红砖墙），干净的现代质感\",\n    \"fidelity\": \"高分辨率摄影，运动鞋皮革与现代材料的逼真质感，建筑上的镜头畸变效果\"\n  }", this)'>📋 复制</button>
         </div>
-        <p>&quot;scene_description&quot;: {<br>    &quot;location&quot;: &quot;城市屋顶或高点，背景为高耸的玻璃摩天大楼和流线型的现代建筑&quot;,<br>    &quot;vibe&quot;: &quot;充满活力、年轻化、都市街头风格，动态且略带透视变形&quot;,<br>    &quot;lighting&quot;: &quot;明亮的日光，强烈的阳光在左上角形成太阳光束/镜头光晕，光滑表面上有高对比的阴影，色彩鲜艳&quot;,<br>    &quot;camera_settings&quot;: &quot;超广角或鱼眼镜头（约8mm-12mm），极低角度（虫眼视角），强制透视，深景深，从鞋底到天际线均为清晰对焦，女性的靠近全身特写&quot;<br>  },<br>  &quot;primary_subjects&quot;: [<br>    {<br>      &quot;character&quot;: &quot;及肩的棕色头发的年轻女性&quot;,<br>      &quot;role&quot;: &quot;街头服饰模特 / 城市探险者&quot;,<br>      &quot;action&quot;: &quot;随意地坐在现代极简风格的边缘或平台角落，俯视镜头，表情自信放松。一条腿向镜头前方伸出，造成极端的透视缩短，保持之前的相同姿势&quot;,<br>      &quot;details&quot;: &quot;鲜红色运动夹克，袖子有白色条纹；鲜红色修身紧身裤；巨大的白色厚底粗犷运动鞋，鞋底有明显的红色鞋纹（鞋子为主导的前景元素）&quot;<br>    }<br>  ],<br>  &quot;environment_details&quot;: {<br>    &quot;crowd&quot;: &quot;无&quot;,<br>    &quot;architecture&quot;: &quot;环绕主体的弧形现代玻璃摩天大楼，前景为光滑的浅色混凝土或金属边缘（而非红砖墙），干净的现代质感&quot;,<br>    &quot;fidelity&quot;: &quot;高分辨率摄影，运动鞋皮革与现代材料的逼真质感，建筑上的镜头畸变效果&quot;<br>  }</p>
+        <div data-nosnippet><p>&quot;scene_description&quot;: {<br>    &quot;location&quot;: &quot;城市屋顶或高点，背景为高耸的玻璃摩天大楼和流线型的现代建筑&quot;,<br>    &quot;vibe&quot;: &quot;充满活力、年轻化、都市街头风格，动态且略带透视变形&quot;,<br>    &quot;lighting&quot;: &quot;明亮的日光，强烈的阳光在左上角形成太阳光束/镜头光晕，光滑表面上有高对比的阴影，色彩鲜艳&quot;,<br>    &quot;camera_settings&quot;: &quot;超广角或鱼眼镜头（约8mm-12mm），极低角度（虫眼视角），强制透视，深景深，从鞋底到天际线均为清晰对焦，女性的靠近全身特写&quot;<br>  },<br>  &quot;primary_subjects&quot;: [<br>    {<br>      &quot;character&quot;: &quot;及肩的棕色头发的年轻女性&quot;,<br>      &quot;role&quot;: &quot;街头服饰模特 / 城市探险者&quot;,<br>      &quot;action&quot;: &quot;随意地坐在现代极简风格的边缘或平台角落，俯视镜头，表情自信放松。一条腿向镜头前方伸出，造成极端的透视缩短，保持之前的相同姿势&quot;,<br>      &quot;details&quot;: &quot;鲜红色运动夹克，袖子有白色条纹；鲜红色修身紧身裤；巨大的白色厚底粗犷运动鞋，鞋底有明显的红色鞋纹（鞋子为主导的前景元素）&quot;<br>    }<br>  ],<br>  &quot;environment_details&quot;: {<br>    &quot;crowd&quot;: &quot;无&quot;,<br>    &quot;architecture&quot;: &quot;环绕主体的弧形现代玻璃摩天大楼，前景为光滑的浅色混凝土或金属边缘（而非红砖墙），干净的现代质感&quot;,<br>    &quot;fidelity&quot;: &quot;高分辨率摄影，运动鞋皮革与现代材料的逼真质感，建筑上的镜头畸变效果&quot;<br>  }</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"scene_description\": {\n    \"location\": \"Urban rooftop or high vantage point with a backdrop of towering glass skyscrapers and sleek modern architecture\",\n    \"vibe\": \"Energetic, youthful, urban streetwear, dynamic and slightly distorted perspective\",\n    \"lighting\": \"Bright daylight, harsh sunlight creating a sunburst/lens flare in the upper left, high contrast shadows on the sleek surfaces, vibrant colors\",\n    \"camera_settings\": \"Ultra-wide angle or Fisheye lens (approx 8mm-12mm), extreme low angle (worm's-eye view), forced perspective, deep depth of field, sharp focus from shoe sole to skyline, close up full body shot of the woman\"\n  },\n  \"primary_subjects\": [\n    {\n      \"character\": \"Young woman with shoulder-length brown hair\",\n      \"role\": \"Streetwear model / Urban explorer\",\n      \"action\": \"Sitting casually on the corner of a modern minimalist ledge or platform, looking down at the camera with a confident, relaxed expression. One leg is extended forward towards the lens creating extreme foreshortening, maintaining the same pose as before\",\n      \"details\": \"Bright red track jacket with white stripes on sleeves, Bright Red fitted leggings, massive white chunky platform sneakers with a distinct red tread pattern on the sole (shoe is the dominant foreground element)\"\n    }\n  ],\n  \"environment_details\": {\n    \"crowd\": \"None\",\n    \"architecture\": \"Curved modern glass skyscrapers surrounding the subject, smooth light concrete or metallic ledge in the foreground instead of a red brick wall, clean modern textures\",\n    \"fidelity\": \"High-resolution photography, realistic texture on the sneaker leather and modern materials, lens distortion effect on the buildings\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>&quot;scene_description&quot;: {<br>    &quot;location&quot;: &quot;Urban rooftop or high vantage point with a backdrop of towering glass skyscrapers and sleek modern architecture&quot;,<br>    &quot;vibe&quot;: &quot;Energetic, youthful, urban streetwear, dynamic and slightly distorted perspective&quot;,<br>    &quot;lighting&quot;: &quot;Bright daylight, harsh sunlight creating a sunburst/lens flare in the upper left, high contrast shadows on the sleek surfaces, vibrant colors&quot;,<br>    &quot;camera_settings&quot;: &quot;Ultra-wide angle or Fisheye lens (approx 8mm-12mm), extreme low angle (worm&#39;s-eye view), forced perspective, deep depth of field, sharp focus from shoe sole to skyline, close up full body shot of the woman&quot;<br>  },<br>  &quot;primary_subjects&quot;: [<br>    {<br>      &quot;character&quot;: &quot;Young woman with shoulder-length brown hair&quot;,<br>      &quot;role&quot;: &quot;Streetwear model / Urban explorer&quot;,<br>      &quot;action&quot;: &quot;Sitting casually on the corner of a modern minimalist ledge or platform, looking down at the camera with a confident, relaxed expression. One leg is extended forward towards the lens creating extreme foreshortening, maintaining the same pose as before&quot;,<br>      &quot;details&quot;: &quot;Bright red track jacket with white stripes on sleeves, Bright Red fitted leggings, massive white chunky platform sneakers with a distinct red tread pattern on the sole (shoe is the dominant foreground element)&quot;<br>    }<br>  ],<br>  &quot;environment_details&quot;: {<br>    &quot;crowd&quot;: &quot;None&quot;,<br>    &quot;architecture&quot;: &quot;Curved modern glass skyscrapers surrounding the subject, smooth light concrete or metallic ledge in the foreground instead of a red brick wall, clean modern textures&quot;,<br>    &quot;fidelity&quot;: &quot;High-resolution photography, realistic texture on the sneaker leather and modern materials, lens distortion effect on the buildings&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>&quot;scene_description&quot;: {<br>    &quot;location&quot;: &quot;Urban rooftop or high vantage point with a backdrop of towering glass skyscrapers and sleek modern architecture&quot;,<br>    &quot;vibe&quot;: &quot;Energetic, youthful, urban streetwear, dynamic and slightly distorted perspective&quot;,<br>    &quot;lighting&quot;: &quot;Bright daylight, harsh sunlight creating a sunburst/lens flare in the upper left, high contrast shadows on the sleek surfaces, vibrant colors&quot;,<br>    &quot;camera_settings&quot;: &quot;Ultra-wide angle or Fisheye lens (approx 8mm-12mm), extreme low angle (worm&#39;s-eye view), forced perspective, deep depth of field, sharp focus from shoe sole to skyline, close up full body shot of the woman&quot;<br>  },<br>  &quot;primary_subjects&quot;: [<br>    {<br>      &quot;character&quot;: &quot;Young woman with shoulder-length brown hair&quot;,<br>      &quot;role&quot;: &quot;Streetwear model / Urban explorer&quot;,<br>      &quot;action&quot;: &quot;Sitting casually on the corner of a modern minimalist ledge or platform, looking down at the camera with a confident, relaxed expression. One leg is extended forward towards the lens creating extreme foreshortening, maintaining the same pose as before&quot;,<br>      &quot;details&quot;: &quot;Bright red track jacket with white stripes on sleeves, Bright Red fitted leggings, massive white chunky platform sneakers with a distinct red tread pattern on the sole (shoe is the dominant foreground element)&quot;<br>    }<br>  ],<br>  &quot;environment_details&quot;: {<br>    &quot;crowd&quot;: &quot;None&quot;,<br>    &quot;architecture&quot;: &quot;Curved modern glass skyscrapers surrounding the subject, smooth light concrete or metallic ledge in the foreground instead of a red brick wall, clean modern textures&quot;,<br>    &quot;fidelity&quot;: &quot;High-resolution photography, realistic texture on the sneaker leather and modern materials, lens distortion effect on the buildings&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2020152101528301587-1.jpg" alt="&quot;scene description&quot;: {" loading="lazy"><img src="/images/tweet-2020152101528301587-2.jpg" alt="&quot;scene description&quot;: {" loading="lazy"><img src="/images/tweet-2020152101528301587-3.jpg" alt="&quot;scene description&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2022,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

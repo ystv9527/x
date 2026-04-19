@@ -7,11 +7,13 @@
     <title>极简胶囊品牌海报：透明剖面与品牌元素填充 #578 | Gem Nana AI 提示词库</title>
     <meta name="description" content="以大型胶囊为核心主体，上半部分呈现品牌色与 Logo，下半部分用透明玻璃展示与品牌相关的物件填充，搭配纯白影棚背景和高端产品摄影布光，适合做极简商业海报与品牌视觉概念图。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/578.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/578.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/578.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841720">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022660">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创作一张极简海报。画面中央放置一枚大型胶囊药丸。胶囊上半部分为纯色，并清晰印有 [BRAND] 的品牌标志；下半部分为透明玻璃材质。透明部分内部填满大量与品牌相关的 [OBJECT]。整体采用超干净的白色影棚背景、柔和阴影、高端产品摄影布光、具有光泽的写实材质、丰富细节、极简设计、居中构图与现代广告视觉风格。画幅尺寸为 1080x1080。", this)'>📋 复制</button>
         </div>
-        <p>创作一张极简海报。画面中央放置一枚大型胶囊药丸。胶囊上半部分为纯色，并清晰印有 [BRAND] 的品牌标志；下半部分为透明玻璃材质。透明部分内部填满大量与品牌相关的 [OBJECT]。整体采用超干净的白色影棚背景、柔和阴影、高端产品摄影布光、具有光泽的写实材质、丰富细节、极简设计、居中构图与现代广告视觉风格。画幅尺寸为 1080x1080。</p>
+        <div data-nosnippet><p>创作一张极简海报。画面中央放置一枚大型胶囊药丸。胶囊上半部分为纯色，并清晰印有 [BRAND] 的品牌标志；下半部分为透明玻璃材质。透明部分内部填满大量与品牌相关的 [OBJECT]。整体采用超干净的白色影棚背景、柔和阴影、高端产品摄影布光、具有光泽的写实材质、丰富细节、极简设计、居中构图与现代广告视觉风格。画幅尺寸为 1080x1080。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a minimal poster. A large capsule pill centered in the frame. The top half of the pill is solid colored and features the [BRAND] logo clearly printed on it. The bottom half of the pill is transparent glass. Inside the transparent part of the capsule, fill it with a large amount of [OBJECT] related to the brand. Ultra clean white studio background, soft shadows, high-end product photography lighting, glossy realistic materials, highly detailed, minimal design, centered composition, modern advertising style. 1080x1080 dimension.", this)'>📋 复制</button>
         </div>
-        <p>Create a minimal poster. A large capsule pill centered in the frame. The top half of the pill is solid colored and features the [BRAND] logo clearly printed on it. The bottom half of the pill is transparent glass. Inside the transparent part of the capsule, fill it with a large amount of [OBJECT] related to the brand. Ultra clean white studio background, soft shadows, high-end product photography lighting, glossy realistic materials, highly detailed, minimal design, centered composition, modern advertising style. 1080x1080 dimension.</p>
+        <div data-nosnippet><p>Create a minimal poster. A large capsule pill centered in the frame. The top half of the pill is solid colored and features the [BRAND] logo clearly printed on it. The bottom half of the pill is transparent glass. Inside the transparent part of the capsule, fill it with a large amount of [OBJECT] related to the brand. Ultra clean white studio background, soft shadows, high-end product photography lighting, glossy realistic materials, highly detailed, minimal design, centered composition, modern advertising style. 1080x1080 dimension.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2038694130650435769-1.jpg" alt="极简胶囊品牌海报：透明剖面与品牌元素填充" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 578,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

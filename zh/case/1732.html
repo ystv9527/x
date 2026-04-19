@@ -7,11 +7,13 @@
     <title>&quot;image generation&quot;: { #1732 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image generation&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;young woman sitting on stone steps in a quiet old European stree...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1732.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1732.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1732.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840622">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022388">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"subject\": {\n      \"description\": \"年轻女子坐在宁静的欧洲老街的石阶上\",\n      \"pose\": \"随意地坐在磨损的石阶上，双腿微微交叉，手里拿着笔记本和笔\",\n      \"expression\": \"若有所思、平静、内省\",\n      \"action\": \"一边写笔记一边看向一旁\"\n    },\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"深棕色\",\n        \"style\": \"凌乱的发髻，柔和的刘海修饰脸庞\"\n      },\n      \"face\": {\n        \"features\": \"柔和自然的面部特征\",\n        \"makeup\": \"淡妆，自然妆容\"\n      }\n    },\n    \"outfit\": {\n      \"top\": \"黑色宽松的西装外套\",\n      \"bottom\": \"蓝色直筒牛仔裤\",\n      \"shoes\": \"黑色芭蕾平底鞋\"\n    },\n    \"accessories\": {\n      \"bag\": \"小型棕色皮质单肩包\",\n      \"objects\": [\n        \"小笔记本\",\n        \"笔\",\n        \"放在她旁边的一本合上的书\"\n      ]\n    },\n    \"environment\": {\n      \"setting\": \"古老的欧洲巷道\",\n      \"background\": \"风化的石墙、绿色木门、鹅卵石街道\",\n      \"architecture\": \"复古、质朴、具有历史感的质地\"\n    },\n    \"lighting\": {\n      \"type\": \"自然日光\",\n      \"quality\": \"柔和、漫射\",\n      \"mood\": \"温暖、平静、电影感\"\n    },\n    \"camera\": {\n      \"angle\": \"平视角度\",\n      \"framing\": \"中等距离全身镜头\",\n      \"style\": \"社论式生活方式摄影\",\n      \"focus\": \"主体清晰，背景带有细腻的纹理\",\n      \"quality\": \"高分辨率、写实\"\n    },\n    \"aesthetic\": {\n      \"style\": \"巴黎街头风格\",\n      \"vibe\": \"艺术感、文学气息、舒适温馨\",\n      \"color_palette\": \"中性大地色调、柔和的绿色、石板灰、牛仔蓝\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;年轻女子坐在宁静的欧洲老街的石阶上&quot;,<br>      &quot;pose&quot;: &quot;随意地坐在磨损的石阶上，双腿微微交叉，手里拿着笔记本和笔&quot;,<br>      &quot;expression&quot;: &quot;若有所思、平静、内省&quot;,<br>      &quot;action&quot;: &quot;一边写笔记一边看向一旁&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;深棕色&quot;,<br>        &quot;style&quot;: &quot;凌乱的发髻，柔和的刘海修饰脸庞&quot;<br>      },<br>      &quot;face&quot;: {<br>        &quot;features&quot;: &quot;柔和自然的面部特征&quot;,<br>        &quot;makeup&quot;: &quot;淡妆，自然妆容&quot;<br>      }<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: &quot;黑色宽松的西装外套&quot;,<br>      &quot;bottom&quot;: &quot;蓝色直筒牛仔裤&quot;,<br>      &quot;shoes&quot;: &quot;黑色芭蕾平底鞋&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;bag&quot;: &quot;小型棕色皮质单肩包&quot;,<br>      &quot;objects&quot;: [<br>        &quot;小笔记本&quot;,<br>        &quot;笔&quot;,<br>        &quot;放在她旁边的一本合上的书&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;古老的欧洲巷道&quot;,<br>      &quot;background&quot;: &quot;风化的石墙、绿色木门、鹅卵石街道&quot;,<br>      &quot;architecture&quot;: &quot;复古、质朴、具有历史感的质地&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;自然日光&quot;,<br>      &quot;quality&quot;: &quot;柔和、漫射&quot;,<br>      &quot;mood&quot;: &quot;温暖、平静、电影感&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;平视角度&quot;,<br>      &quot;framing&quot;: &quot;中等距离全身镜头&quot;,<br>      &quot;style&quot;: &quot;社论式生活方式摄影&quot;,<br>      &quot;focus&quot;: &quot;主体清晰，背景带有细腻的纹理&quot;,<br>      &quot;quality&quot;: &quot;高分辨率、写实&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;巴黎街头风格&quot;,<br>      &quot;vibe&quot;: &quot;艺术感、文学气息、舒适温馨&quot;,<br>      &quot;color_palette&quot;: &quot;中性大地色调、柔和的绿色、石板灰、牛仔蓝&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;年轻女子坐在宁静的欧洲老街的石阶上&quot;,<br>      &quot;pose&quot;: &quot;随意地坐在磨损的石阶上，双腿微微交叉，手里拿着笔记本和笔&quot;,<br>      &quot;expression&quot;: &quot;若有所思、平静、内省&quot;,<br>      &quot;action&quot;: &quot;一边写笔记一边看向一旁&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;深棕色&quot;,<br>        &quot;style&quot;: &quot;凌乱的发髻，柔和的刘海修饰脸庞&quot;<br>      },<br>      &quot;face&quot;: {<br>        &quot;features&quot;: &quot;柔和自然的面部特征&quot;,<br>        &quot;makeup&quot;: &quot;淡妆，自然妆容&quot;<br>      }<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: &quot;黑色宽松的西装外套&quot;,<br>      &quot;bottom&quot;: &quot;蓝色直筒牛仔裤&quot;,<br>      &quot;shoes&quot;: &quot;黑色芭蕾平底鞋&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;bag&quot;: &quot;小型棕色皮质单肩包&quot;,<br>      &quot;objects&quot;: [<br>        &quot;小笔记本&quot;,<br>        &quot;笔&quot;,<br>        &quot;放在她旁边的一本合上的书&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;古老的欧洲巷道&quot;,<br>      &quot;background&quot;: &quot;风化的石墙、绿色木门、鹅卵石街道&quot;,<br>      &quot;architecture&quot;: &quot;复古、质朴、具有历史感的质地&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;自然日光&quot;,<br>      &quot;quality&quot;: &quot;柔和、漫射&quot;,<br>      &quot;mood&quot;: &quot;温暖、平静、电影感&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;平视角度&quot;,<br>      &quot;framing&quot;: &quot;中等距离全身镜头&quot;,<br>      &quot;style&quot;: &quot;社论式生活方式摄影&quot;,<br>      &quot;focus&quot;: &quot;主体清晰，背景带有细腻的纹理&quot;,<br>      &quot;quality&quot;: &quot;高分辨率、写实&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;巴黎街头风格&quot;,<br>      &quot;vibe&quot;: &quot;艺术感、文学气息、舒适温馨&quot;,<br>      &quot;color_palette&quot;: &quot;中性大地色调、柔和的绿色、石板灰、牛仔蓝&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"subject\": {\n      \"description\": \"young woman sitting on stone steps in a quiet old European street\",\n      \"pose\": \"seated casually on worn stone stairs, legs crossed slightly, holding a notebook and pen\",\n      \"expression\": \"thoughtful, calm, introspective\",\n      \"action\": \"writing notes while glancing to the side\"\n    },\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"dark brown\",\n        \"style\": \"messy bun with soft bangs framing the face\"\n      },\n      \"face\": {\n        \"features\": \"soft natural facial features\",\n        \"makeup\": \"minimal, natural look\"\n      }\n    },\n    \"outfit\": {\n      \"top\": \"black oversized blazer\",\n      \"bottom\": \"blue straight-leg jeans\",\n      \"shoes\": \"black ballet flats\"\n    },\n    \"accessories\": {\n      \"bag\": \"small brown leather shoulder bag\",\n      \"objects\": [\n        \"small notebook\",\n        \"pen\",\n        \"closed book placed beside her\"\n      ]\n    },\n    \"environment\": {\n      \"setting\": \"old European alleyway\",\n      \"background\": \"weathered stone wall, green wooden door, cobblestone street\",\n      \"architecture\": \"vintage, rustic, historic textures\"\n    },\n    \"lighting\": {\n      \"type\": \"natural daylight\",\n      \"quality\": \"soft, diffused\",\n      \"mood\": \"warm, calm, cinematic\"\n    },\n    \"camera\": {\n      \"angle\": \"eye-level\",\n      \"framing\": \"medium full-body shot\",\n      \"style\": \"editorial lifestyle photography\",\n      \"focus\": \"sharp subject with subtly textured background\",\n      \"quality\": \"high resolution, realistic\"\n    },\n    \"aesthetic\": {\n      \"style\": \"Parisian street style\",\n      \"vibe\": \"artistic, literary, cozy\",\n      \"color_palette\": \"neutral earth tones, muted greens, stone gray, denim blue\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;young woman sitting on stone steps in a quiet old European street&quot;,<br>      &quot;pose&quot;: &quot;seated casually on worn stone stairs, legs crossed slightly, holding a notebook and pen&quot;,<br>      &quot;expression&quot;: &quot;thoughtful, calm, introspective&quot;,<br>      &quot;action&quot;: &quot;writing notes while glancing to the side&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;dark brown&quot;,<br>        &quot;style&quot;: &quot;messy bun with soft bangs framing the face&quot;<br>      },<br>      &quot;face&quot;: {<br>        &quot;features&quot;: &quot;soft natural facial features&quot;,<br>        &quot;makeup&quot;: &quot;minimal, natural look&quot;<br>      }<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: &quot;black oversized blazer&quot;,<br>      &quot;bottom&quot;: &quot;blue straight-leg jeans&quot;,<br>      &quot;shoes&quot;: &quot;black ballet flats&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;bag&quot;: &quot;small brown leather shoulder bag&quot;,<br>      &quot;objects&quot;: [<br>        &quot;small notebook&quot;,<br>        &quot;pen&quot;,<br>        &quot;closed book placed beside her&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;old European alleyway&quot;,<br>      &quot;background&quot;: &quot;weathered stone wall, green wooden door, cobblestone street&quot;,<br>      &quot;architecture&quot;: &quot;vintage, rustic, historic textures&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;natural daylight&quot;,<br>      &quot;quality&quot;: &quot;soft, diffused&quot;,<br>      &quot;mood&quot;: &quot;warm, calm, cinematic&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;eye-level&quot;,<br>      &quot;framing&quot;: &quot;medium full-body shot&quot;,<br>      &quot;style&quot;: &quot;editorial lifestyle photography&quot;,<br>      &quot;focus&quot;: &quot;sharp subject with subtly textured background&quot;,<br>      &quot;quality&quot;: &quot;high resolution, realistic&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;Parisian street style&quot;,<br>      &quot;vibe&quot;: &quot;artistic, literary, cozy&quot;,<br>      &quot;color_palette&quot;: &quot;neutral earth tones, muted greens, stone gray, denim blue&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;young woman sitting on stone steps in a quiet old European street&quot;,<br>      &quot;pose&quot;: &quot;seated casually on worn stone stairs, legs crossed slightly, holding a notebook and pen&quot;,<br>      &quot;expression&quot;: &quot;thoughtful, calm, introspective&quot;,<br>      &quot;action&quot;: &quot;writing notes while glancing to the side&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;dark brown&quot;,<br>        &quot;style&quot;: &quot;messy bun with soft bangs framing the face&quot;<br>      },<br>      &quot;face&quot;: {<br>        &quot;features&quot;: &quot;soft natural facial features&quot;,<br>        &quot;makeup&quot;: &quot;minimal, natural look&quot;<br>      }<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: &quot;black oversized blazer&quot;,<br>      &quot;bottom&quot;: &quot;blue straight-leg jeans&quot;,<br>      &quot;shoes&quot;: &quot;black ballet flats&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;bag&quot;: &quot;small brown leather shoulder bag&quot;,<br>      &quot;objects&quot;: [<br>        &quot;small notebook&quot;,<br>        &quot;pen&quot;,<br>        &quot;closed book placed beside her&quot;<br>      ]<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;old European alleyway&quot;,<br>      &quot;background&quot;: &quot;weathered stone wall, green wooden door, cobblestone street&quot;,<br>      &quot;architecture&quot;: &quot;vintage, rustic, historic textures&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;natural daylight&quot;,<br>      &quot;quality&quot;: &quot;soft, diffused&quot;,<br>      &quot;mood&quot;: &quot;warm, calm, cinematic&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;eye-level&quot;,<br>      &quot;framing&quot;: &quot;medium full-body shot&quot;,<br>      &quot;style&quot;: &quot;editorial lifestyle photography&quot;,<br>      &quot;focus&quot;: &quot;sharp subject with subtly textured background&quot;,<br>      &quot;quality&quot;: &quot;high resolution, realistic&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;Parisian street style&quot;,<br>      &quot;vibe&quot;: &quot;artistic, literary, cozy&quot;,<br>      &quot;color_palette&quot;: &quot;neutral earth tones, muted greens, stone gray, denim blue&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015795776363081772-1.jpg" alt="&quot;image generation&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1732,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

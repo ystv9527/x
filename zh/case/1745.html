@@ -7,11 +7,13 @@
     <title>Create an infographic image of [OBJECT], combining a realisti... #1745 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create an infographic image of [OBJECT], combining a realistic photograph or photorealistic render of the object with...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1745.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1745.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1745.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840613">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022385">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一个关于 [OBJECT] 的信息图像，将对象的真实照片或照片写实渲染与直接覆盖的技术注释叠层结合在一起。\n\n使用黑色墨线风格的线条图和文本（技术笔/建筑草图风格），在纯白色工作室背景上。\n\n包括：\n• 关键组成部件标签\n• 内部剖切或爆炸图轮廓（如相关）\n• 尺寸、尺度标注及比例尺\n• 材料标注和数量\n• 指示功能、力或流动的箭头（空气、声音、电力、压力、运动）\n• 如适用的简单示意图或剖面图\n\n将标题 [OBJECT] 放置在角落的手绘技术注解框内。\n\n风格与布局规则：\n• 实物在注释之下仍然清晰可见\n• 注释看起来像手绘、技术性、建筑性\n• 干净的构图与平衡的留白\n• 教育性，博物馆展览/工程手册氛围\n\n视觉风格：\n极简的技术插图美学\n黑色线条层叠在真实影像之上\n精准但略带手绘感\n\n调色板：\n纯白背景\n仅黑色注释线条和文字\n不使用颜色\n\n输出：\n1080 × 1080 分辨率\n超清晰\n社媒适配\n无水印", this)'>📋 复制</button>
         </div>
-        <p>创建一个关于 [OBJECT] 的信息图像，将对象的真实照片或照片写实渲染与直接覆盖的技术注释叠层结合在一起。</p><p>使用黑色墨线风格的线条图和文本（技术笔/建筑草图风格），在纯白色工作室背景上。</p><p>包括：<br>• 关键组成部件标签<br>• 内部剖切或爆炸图轮廓（如相关）<br>• 尺寸、尺度标注及比例尺<br>• 材料标注和数量<br>• 指示功能、力或流动的箭头（空气、声音、电力、压力、运动）<br>• 如适用的简单示意图或剖面图</p><p>将标题 [OBJECT] 放置在角落的手绘技术注解框内。</p><p>风格与布局规则：<br>• 实物在注释之下仍然清晰可见<br>• 注释看起来像手绘、技术性、建筑性<br>• 干净的构图与平衡的留白<br>• 教育性，博物馆展览/工程手册氛围</p><p>视觉风格：<br>极简的技术插图美学<br>黑色线条层叠在真实影像之上<br>精准但略带手绘感</p><p>调色板：<br>纯白背景<br>仅黑色注释线条和文字<br>不使用颜色</p><p>输出：<br>1080 × 1080 分辨率<br>超清晰<br>社媒适配<br>无水印</p>
+        <div data-nosnippet><p>创建一个关于 [OBJECT] 的信息图像，将对象的真实照片或照片写实渲染与直接覆盖的技术注释叠层结合在一起。</p><p>使用黑色墨线风格的线条图和文本（技术笔/建筑草图风格），在纯白色工作室背景上。</p><p>包括：<br>• 关键组成部件标签<br>• 内部剖切或爆炸图轮廓（如相关）<br>• 尺寸、尺度标注及比例尺<br>• 材料标注和数量<br>• 指示功能、力或流动的箭头（空气、声音、电力、压力、运动）<br>• 如适用的简单示意图或剖面图</p><p>将标题 [OBJECT] 放置在角落的手绘技术注解框内。</p><p>风格与布局规则：<br>• 实物在注释之下仍然清晰可见<br>• 注释看起来像手绘、技术性、建筑性<br>• 干净的构图与平衡的留白<br>• 教育性，博物馆展览/工程手册氛围</p><p>视觉风格：<br>极简的技术插图美学<br>黑色线条层叠在真实影像之上<br>精准但略带手绘感</p><p>调色板：<br>纯白背景<br>仅黑色注释线条和文字<br>不使用颜色</p><p>输出：<br>1080 × 1080 分辨率<br>超清晰<br>社媒适配<br>无水印</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an infographic image of [OBJECT], combining a realistic photograph or photorealistic render of the object with technical annotation overlays placed directly on top.\n\nUse black ink–style line drawings and text (technical pen / architectural sketch look) on a pure white studio background.\n\nInclude:\n•Key component labels\n•Internal cutaway or exploded-view outlines (where relevant)\n•Measurements, dimensions, and scale markers\n•Material callouts and quantities\n•Arrows indicating function, force, or flow (air, sound, power, pressure, movement)\n•Simple schematic or sectional diagrams where applicable\n\nPlace the title [OBJECT] inside a hand-drawn technical annotation box in one corner.\n\nStyle & layout rules:\n•The real object remains clearly visible beneath the annotations\n•Annotations look hand-sketched, technical, and architectural\n•Clean composition with balanced negative space\n•Educational, museum-exhibit / engineering-manual vibe\n\nVisual style:\nMinimal technical illustration aesthetic.\nBlack linework layered over realistic imagery.\nPrecise but slightly hand-drawn feel.\n\nColor palette:\nPure white background.\nBlack annotation lines and text only.\nNo colors.\n\nOutput:\n1080 × 1080 resolution\nUltra-crisp\nSocial-feed optimized\nNo watermark", this)'>📋 复制</button>
         </div>
-        <p>Create an infographic image of [OBJECT], combining a realistic photograph or photorealistic render of the object with technical annotation overlays placed directly on top.</p><p>Use black ink–style line drawings and text (technical pen / architectural sketch look) on a pure white studio background.</p><p>Include:<br>•Key component labels<br>•Internal cutaway or exploded-view outlines (where relevant)<br>•Measurements, dimensions, and scale markers<br>•Material callouts and quantities<br>•Arrows indicating function, force, or flow (air, sound, power, pressure, movement)<br>•Simple schematic or sectional diagrams where applicable</p><p>Place the title [OBJECT] inside a hand-drawn technical annotation box in one corner.</p><p>Style &amp; layout rules:<br>•The real object remains clearly visible beneath the annotations<br>•Annotations look hand-sketched, technical, and architectural<br>•Clean composition with balanced negative space<br>•Educational, museum-exhibit / engineering-manual vibe</p><p>Visual style:<br>Minimal technical illustration aesthetic.<br>Black linework layered over realistic imagery.<br>Precise but slightly hand-drawn feel.</p><p>Color palette:<br>Pure white background.<br>Black annotation lines and text only.<br>No colors.</p><p>Output:<br>1080 × 1080 resolution<br>Ultra-crisp<br>Social-feed optimized<br>No watermark</p>
+        <div data-nosnippet><p>Create an infographic image of [OBJECT], combining a realistic photograph or photorealistic render of the object with technical annotation overlays placed directly on top.</p><p>Use black ink–style line drawings and text (technical pen / architectural sketch look) on a pure white studio background.</p><p>Include:<br>•Key component labels<br>•Internal cutaway or exploded-view outlines (where relevant)<br>•Measurements, dimensions, and scale markers<br>•Material callouts and quantities<br>•Arrows indicating function, force, or flow (air, sound, power, pressure, movement)<br>•Simple schematic or sectional diagrams where applicable</p><p>Place the title [OBJECT] inside a hand-drawn technical annotation box in one corner.</p><p>Style &amp; layout rules:<br>•The real object remains clearly visible beneath the annotations<br>•Annotations look hand-sketched, technical, and architectural<br>•Clean composition with balanced negative space<br>•Educational, museum-exhibit / engineering-manual vibe</p><p>Visual style:<br>Minimal technical illustration aesthetic.<br>Black linework layered over realistic imagery.<br>Precise but slightly hand-drawn feel.</p><p>Color palette:<br>Pure white background.<br>Black annotation lines and text only.<br>No colors.</p><p>Output:<br>1080 × 1080 resolution<br>Ultra-crisp<br>Social-feed optimized<br>No watermark</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015982694228975977-1.jpg" alt="Create an infographic image of [OBJECT], combining a realisti..." loading="lazy"><img src="/images/tweet-2015982694228975977-2.jpg" alt="Create an infographic image of [OBJECT], combining a realisti..." loading="lazy"><img src="/images/tweet-2015982694228975977-3.jpg" alt="Create an infographic image of [OBJECT], combining a realisti..." loading="lazy"><img src="/images/tweet-2015982694228975977-4.jpg" alt="Create an infographic image of [OBJECT], combining a realisti..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1745,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

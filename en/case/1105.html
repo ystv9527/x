@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial iden... #1105 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial identity reference. Preserve the same woman exactly — no c...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1105.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1105.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1105.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845471">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023725">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"严格使用已上传的照片作为面部身份参考。完全保留同一名女性——不得更改面部结构、年龄、肤色或任何决定性特征。\\n\\n创建一张电影感的9:16纵向超写实高管肖像，表现一位自信、现代的职业女性，站在当代城市露台上，靠近一面简洁反光的玻璃墙。背景为柔和虚化的蓝灰色摩天大楼，营造精致的企业奢华氛围。\\n\\n灯光为柔和魅力型且讨人喜爱：漫射的自然日光结合细微的补光，产生平滑的高光、柔和的阴影，以及既有光泽又真实的皮肤质感。整体氛围平静、强大且优雅。\\n\\n造型与服装：\\n• 定制的深红色或象牙色丝质上衣，领口简洁\\n• 高腰黑色定制西裤，线条利落的高管轮廓\\n• 简约黑色皮带，配抛光金属扣\\n• 优雅的银色或玫瑰金色腕表\\n\\n发型与妆容：\\n• 发型整洁（柔和波浪或顺滑低马尾）\\n• 软魅力妆容：自然底妆、细微修容、中性眼妆、清晰眉型、裸色或淡玫瑰色唇\\n\\n姿势与肢体语言：\\n• 直立、自信的姿态\\n• 一手轻放于裤袋\\n• 另一只手自然垂放于身体一侧\\n• 眼平中景镜头，表情沉稳、充满领导力\\n\\n相机与画质：\\n全画幅电影感外观，35–50mm镜头，f/2.0，ISO 100–300，5400K白平衡。超干净的电影级真实感，顶级编辑风格，浅景深，主体清晰对焦，专业高管摄影质感，4K–8K画质。\",\n  \"negative_prompt\": \"面部改变、身份更改、浓重魅力妆、夸张姿势、卡通、CGI、插画、塑料感皮肤、过度修图、失真、模糊、低分辨率、水印、标志、文字、强烈生硬的光照\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;严格使用已上传的照片作为面部身份参考。完全保留同一名女性——不得更改面部结构、年龄、肤色或任何决定性特征。\n\n创建一张电影感的9:16纵向超写实高管肖像，表现一位自信、现代的职业女性，站在当代城市露台上，靠近一面简洁反光的玻璃墙。背景为柔和虚化的蓝灰色摩天大楼，营造精致的企业奢华氛围。\n\n灯光为柔和魅力型且讨人喜爱：漫射的自然日光结合细微的补光，产生平滑的高光、柔和的阴影，以及既有光泽又真实的皮肤质感。整体氛围平静、强大且优雅。\n\n造型与服装：\n• 定制的深红色或象牙色丝质上衣，领口简洁\n• 高腰黑色定制西裤，线条利落的高管轮廓\n• 简约黑色皮带，配抛光金属扣\n• 优雅的银色或玫瑰金色腕表\n\n发型与妆容：\n• 发型整洁（柔和波浪或顺滑低马尾）\n• 软魅力妆容：自然底妆、细微修容、中性眼妆、清晰眉型、裸色或淡玫瑰色唇\n\n姿势与肢体语言：\n• 直立、自信的姿态\n• 一手轻放于裤袋\n• 另一只手自然垂放于身体一侧\n• 眼平中景镜头，表情沉稳、充满领导力\n\n相机与画质：\n全画幅电影感外观，35–50mm镜头，f/2.0，ISO 100–300，5400K白平衡。超干净的电影级真实感，顶级编辑风格，浅景深，主体清晰对焦，专业高管摄影质感，4K–8K画质。&quot;,<br>  &quot;negative_prompt&quot;: &quot;面部改变、身份更改、浓重魅力妆、夸张姿势、卡通、CGI、插画、塑料感皮肤、过度修图、失真、模糊、低分辨率、水印、标志、文字、强烈生硬的光照&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;严格使用已上传的照片作为面部身份参考。完全保留同一名女性——不得更改面部结构、年龄、肤色或任何决定性特征。\n\n创建一张电影感的9:16纵向超写实高管肖像，表现一位自信、现代的职业女性，站在当代城市露台上，靠近一面简洁反光的玻璃墙。背景为柔和虚化的蓝灰色摩天大楼，营造精致的企业奢华氛围。\n\n灯光为柔和魅力型且讨人喜爱：漫射的自然日光结合细微的补光，产生平滑的高光、柔和的阴影，以及既有光泽又真实的皮肤质感。整体氛围平静、强大且优雅。\n\n造型与服装：\n• 定制的深红色或象牙色丝质上衣，领口简洁\n• 高腰黑色定制西裤，线条利落的高管轮廓\n• 简约黑色皮带，配抛光金属扣\n• 优雅的银色或玫瑰金色腕表\n\n发型与妆容：\n• 发型整洁（柔和波浪或顺滑低马尾）\n• 软魅力妆容：自然底妆、细微修容、中性眼妆、清晰眉型、裸色或淡玫瑰色唇\n\n姿势与肢体语言：\n• 直立、自信的姿态\n• 一手轻放于裤袋\n• 另一只手自然垂放于身体一侧\n• 眼平中景镜头，表情沉稳、充满领导力\n\n相机与画质：\n全画幅电影感外观，35–50mm镜头，f/2.0，ISO 100–300，5400K白平衡。超干净的电影级真实感，顶级编辑风格，浅景深，主体清晰对焦，专业高管摄影质感，4K–8K画质。&quot;,<br>  &quot;negative_prompt&quot;: &quot;面部改变、身份更改、浓重魅力妆、夸张姿势、卡通、CGI、插画、塑料感皮肤、过度修图、失真、模糊、低分辨率、水印、标志、文字、强烈生硬的光照&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"Use the uploaded photo STRICTLY as the facial identity reference. Preserve the same woman exactly — no change to facial structure, age, skin tone, or defining features.\\n\\nCreate a cinematic 9:16 vertical ultra-realistic executive portrait of a confident, modern professional woman standing on a contemporary city terrace beside a sleek reflective glass wall. The background features softly blurred blue-gray skyscrapers, creating a refined corporate-luxury atmosphere.\\n\\nLighting is soft glam and flattering: diffused natural daylight combined with subtle fill light, creating smooth highlights, gentle shadows, and luminous yet realistic skin texture. The mood is calm, powerful, and elegant.\\n\\nStyling & outfit:\\n• Tailored deep red or ivory silk blouse with a clean neckline\\n• High-waisted black tailored trousers with a sharp executive silhouette\\n• Minimal black leather belt with polished metal buckle\\n• Elegant silver or rose-gold wristwatch\\n\\nHair & makeup:\\n• Neatly styled hair (soft waves or sleek low ponytail)\\n• Soft glam makeup: natural base, subtle contour, neutral eyes, defined brows, nude or soft rose lips\\n\\nPose & body language:\\n• Upright, confident posture\\n• One hand lightly resting in the trouser pocket\\n• Other arm relaxed by the side\\n• Eye-level medium shot with composed, leadership-focused expression\\n\\nCamera & quality:\\nFull-frame cinematic look, 35–50mm lens, f/2.0, ISO 100–300, 5400K white balance. Ultra-clean cinematic realism, premium editorial finish, shallow depth of field, sharp subject focus, professional executive photography, 4K–8K quality.\",\n  \"negative_prompt\": \"face change, identity alteration, heavy glamour makeup, exaggerated posing, cartoon, CGI, illustration, plastic skin, over-retouching, distortion, blur, low resolution, watermark, logo, text, harsh lighting\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial identity reference. Preserve the same woman exactly — no change to facial structure, age, skin tone, or defining features.\n\nCreate a cinematic 9:16 vertical ultra-realistic executive portrait of a confident, modern professional woman standing on a contemporary city terrace beside a sleek reflective glass wall. The background features softly blurred blue-gray skyscrapers, creating a refined corporate-luxury atmosphere.\n\nLighting is soft glam and flattering: diffused natural daylight combined with subtle fill light, creating smooth highlights, gentle shadows, and luminous yet realistic skin texture. The mood is calm, powerful, and elegant.\n\nStyling &amp; outfit:\n• Tailored deep red or ivory silk blouse with a clean neckline\n• High-waisted black tailored trousers with a sharp executive silhouette\n• Minimal black leather belt with polished metal buckle\n• Elegant silver or rose-gold wristwatch\n\nHair &amp; makeup:\n• Neatly styled hair (soft waves or sleek low ponytail)\n• Soft glam makeup: natural base, subtle contour, neutral eyes, defined brows, nude or soft rose lips\n\nPose &amp; body language:\n• Upright, confident posture\n• One hand lightly resting in the trouser pocket\n• Other arm relaxed by the side\n• Eye-level medium shot with composed, leadership-focused expression\n\nCamera &amp; quality:\nFull-frame cinematic look, 35–50mm lens, f/2.0, ISO 100–300, 5400K white balance. Ultra-clean cinematic realism, premium editorial finish, shallow depth of field, sharp subject focus, professional executive photography, 4K–8K quality.&quot;,<br>  &quot;negative_prompt&quot;: &quot;face change, identity alteration, heavy glamour makeup, exaggerated posing, cartoon, CGI, illustration, plastic skin, over-retouching, distortion, blur, low resolution, watermark, logo, text, harsh lighting&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial identity reference. Preserve the same woman exactly — no change to facial structure, age, skin tone, or defining features.\n\nCreate a cinematic 9:16 vertical ultra-realistic executive portrait of a confident, modern professional woman standing on a contemporary city terrace beside a sleek reflective glass wall. The background features softly blurred blue-gray skyscrapers, creating a refined corporate-luxury atmosphere.\n\nLighting is soft glam and flattering: diffused natural daylight combined with subtle fill light, creating smooth highlights, gentle shadows, and luminous yet realistic skin texture. The mood is calm, powerful, and elegant.\n\nStyling &amp; outfit:\n• Tailored deep red or ivory silk blouse with a clean neckline\n• High-waisted black tailored trousers with a sharp executive silhouette\n• Minimal black leather belt with polished metal buckle\n• Elegant silver or rose-gold wristwatch\n\nHair &amp; makeup:\n• Neatly styled hair (soft waves or sleek low ponytail)\n• Soft glam makeup: natural base, subtle contour, neutral eyes, defined brows, nude or soft rose lips\n\nPose &amp; body language:\n• Upright, confident posture\n• One hand lightly resting in the trouser pocket\n• Other arm relaxed by the side\n• Eye-level medium shot with composed, leadership-focused expression\n\nCamera &amp; quality:\nFull-frame cinematic look, 35–50mm lens, f/2.0, ISO 100–300, 5400K white balance. Ultra-clean cinematic realism, premium editorial finish, shallow depth of field, sharp subject focus, professional executive photography, 4K–8K quality.&quot;,<br>  &quot;negative_prompt&quot;: &quot;face change, identity alteration, heavy glamour makeup, exaggerated posing, cartoon, CGI, illustration, plastic skin, over-retouching, distortion, blur, low resolution, watermark, logo, text, harsh lighting&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011026753205256288-1.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial iden..." loading="lazy"><img src="/images/tweet-2011026753205256288-2.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial iden..." loading="lazy"><img src="/images/tweet-2011026753205256288-3.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial iden..." loading="lazy"><img src="/images/tweet-2011026753205256288-4.jpg" alt="&quot;prompt&quot;: &quot;Use the uploaded photo STRICTLY as the facial iden..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1105,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

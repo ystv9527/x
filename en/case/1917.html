@@ -7,11 +7,13 @@
     <title>&quot;prompt data&quot;: { #1917 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt data&quot;: { &quot;layout&quot;: { &quot;type&quot;: &quot;4 panel split screen&quot;, &quot;structure&quot;: &quot;2x2 grid, equal distribution&quot;, &quot;frame co...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1917.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1917.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1917.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844652">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023557">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_data\": {\n    \"layout\": {\n      \"type\": \"四格分屏\",\n      \"structure\": \"2x2 网格，均等分布\",\n      \"frame_count\": \"四个独立画面\",\n      \"consistency\": \"角色在所有画面中保持连续性\"\n    },\n    \"subject\": {\n      \"reference\": \"与 Billie Eilish 相似\",\n      \"hair_styling\": \"深侧分缝，90 年代超模式蓬松造型，极大体积向头顶盘起。浓密赤褐色波浪发，飞散的碎发可见。\",\n      \"skin_details\": \"皮肤细节真实呈现，高频细腻质感，可见毛孔，面颊上的绒毛（桃茸）清晰可见，皮肤略有半透明感，未经修饰，自然的痣和雀斑\",\n      \"eyes\": \"穿透力强的蓝色眼睛，工作室闪光产生的反光点，虹膜细节清晰\"\n    },\n    \"attire\": {\n      \"top\": \"无肩带高级定制束身胸衣，大型亮片\",\n      \"pattern\": \"变色虹彩黑色底色，向深紫和洋红色转换\",\n      \"neckwear\": \"刚性高抛光金质欧米伽链项圈（平领样式）\",\n      \"wristwear\": \"奢华手饰叠戴：宽平手镯，混合金属（金、银）与黑色陶瓷，带有可见螺丝头五金图案\"\n    },\n    \"poses\": [\n      \"画面1：正面特写，冷静而强烈的凝视，发型大幅扫过\",\n      \"画面2：面颊靠在紧握的拳上，微微得意的笑，手腕叠饰显眼\",\n      \"画面3：下巴放在摊开的平手掌上，温柔而引人注目的微笑\",\n      \"画面4：自然大笑，头向后仰，手托下巴，侧面视角\"\n    ],\n    \"technical_specs\": {\n      \"lighting\": \"硬式工作室闪光，直接闪灯，高对比蝴蝶式光线\",\n      \"camera\": \"Phase One XF IQ4，150MP\",\n      \"lens\": \"Schneider Kreuznach 80mm LS f/2.8\",\n      \"film_stock\": \"Kodak Portra 400 仿真胶片效果\",\n      \"raw_tags\": \"ISO 100，轻微色差，自然景深，未抛光，质感丰富\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_data&quot;: {<br>    &quot;layout&quot;: {<br>      &quot;type&quot;: &quot;四格分屏&quot;,<br>      &quot;structure&quot;: &quot;2x2 网格，均等分布&quot;,<br>      &quot;frame_count&quot;: &quot;四个独立画面&quot;,<br>      &quot;consistency&quot;: &quot;角色在所有画面中保持连续性&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;reference&quot;: &quot;与 Billie Eilish 相似&quot;,<br>      &quot;hair_styling&quot;: &quot;深侧分缝，90 年代超模式蓬松造型，极大体积向头顶盘起。浓密赤褐色波浪发，飞散的碎发可见。&quot;,<br>      &quot;skin_details&quot;: &quot;皮肤细节真实呈现，高频细腻质感，可见毛孔，面颊上的绒毛（桃茸）清晰可见，皮肤略有半透明感，未经修饰，自然的痣和雀斑&quot;,<br>      &quot;eyes&quot;: &quot;穿透力强的蓝色眼睛，工作室闪光产生的反光点，虹膜细节清晰&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: &quot;无肩带高级定制束身胸衣，大型亮片&quot;,<br>      &quot;pattern&quot;: &quot;变色虹彩黑色底色，向深紫和洋红色转换&quot;,<br>      &quot;neckwear&quot;: &quot;刚性高抛光金质欧米伽链项圈（平领样式）&quot;,<br>      &quot;wristwear&quot;: &quot;奢华手饰叠戴：宽平手镯，混合金属（金、银）与黑色陶瓷，带有可见螺丝头五金图案&quot;<br>    },<br>    &quot;poses&quot;: [<br>      &quot;画面1：正面特写，冷静而强烈的凝视，发型大幅扫过&quot;,<br>      &quot;画面2：面颊靠在紧握的拳上，微微得意的笑，手腕叠饰显眼&quot;,<br>      &quot;画面3：下巴放在摊开的平手掌上，温柔而引人注目的微笑&quot;,<br>      &quot;画面4：自然大笑，头向后仰，手托下巴，侧面视角&quot;<br>    ],<br>    &quot;technical_specs&quot;: {<br>      &quot;lighting&quot;: &quot;硬式工作室闪光，直接闪灯，高对比蝴蝶式光线&quot;,<br>      &quot;camera&quot;: &quot;Phase One XF IQ4，150MP&quot;,<br>      &quot;lens&quot;: &quot;Schneider Kreuznach 80mm LS f/2.8&quot;,<br>      &quot;film_stock&quot;: &quot;Kodak Portra 400 仿真胶片效果&quot;,<br>      &quot;raw_tags&quot;: &quot;ISO 100，轻微色差，自然景深，未抛光，质感丰富&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_data&quot;: {<br>    &quot;layout&quot;: {<br>      &quot;type&quot;: &quot;四格分屏&quot;,<br>      &quot;structure&quot;: &quot;2x2 网格，均等分布&quot;,<br>      &quot;frame_count&quot;: &quot;四个独立画面&quot;,<br>      &quot;consistency&quot;: &quot;角色在所有画面中保持连续性&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;reference&quot;: &quot;与 Billie Eilish 相似&quot;,<br>      &quot;hair_styling&quot;: &quot;深侧分缝，90 年代超模式蓬松造型，极大体积向头顶盘起。浓密赤褐色波浪发，飞散的碎发可见。&quot;,<br>      &quot;skin_details&quot;: &quot;皮肤细节真实呈现，高频细腻质感，可见毛孔，面颊上的绒毛（桃茸）清晰可见，皮肤略有半透明感，未经修饰，自然的痣和雀斑&quot;,<br>      &quot;eyes&quot;: &quot;穿透力强的蓝色眼睛，工作室闪光产生的反光点，虹膜细节清晰&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: &quot;无肩带高级定制束身胸衣，大型亮片&quot;,<br>      &quot;pattern&quot;: &quot;变色虹彩黑色底色，向深紫和洋红色转换&quot;,<br>      &quot;neckwear&quot;: &quot;刚性高抛光金质欧米伽链项圈（平领样式）&quot;,<br>      &quot;wristwear&quot;: &quot;奢华手饰叠戴：宽平手镯，混合金属（金、银）与黑色陶瓷，带有可见螺丝头五金图案&quot;<br>    },<br>    &quot;poses&quot;: [<br>      &quot;画面1：正面特写，冷静而强烈的凝视，发型大幅扫过&quot;,<br>      &quot;画面2：面颊靠在紧握的拳上，微微得意的笑，手腕叠饰显眼&quot;,<br>      &quot;画面3：下巴放在摊开的平手掌上，温柔而引人注目的微笑&quot;,<br>      &quot;画面4：自然大笑，头向后仰，手托下巴，侧面视角&quot;<br>    ],<br>    &quot;technical_specs&quot;: {<br>      &quot;lighting&quot;: &quot;硬式工作室闪光，直接闪灯，高对比蝴蝶式光线&quot;,<br>      &quot;camera&quot;: &quot;Phase One XF IQ4，150MP&quot;,<br>      &quot;lens&quot;: &quot;Schneider Kreuznach 80mm LS f/2.8&quot;,<br>      &quot;film_stock&quot;: &quot;Kodak Portra 400 仿真胶片效果&quot;,<br>      &quot;raw_tags&quot;: &quot;ISO 100，轻微色差，自然景深，未抛光，质感丰富&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_data\": {\n    \"layout\": {\n      \"type\": \"4-panel split screen\",\n      \"structure\": \"2x2 grid, equal distribution\",\n      \"frame_count\": \"Four distinct frames\",\n      \"consistency\": \"Character continuity maintained across all frames\"\n    },\n    \"subject\": {\n      \"reference\": \"Billie Eilish resemblance\",\n      \"hair_styling\": \"Deep side-part, 90s supermodel blowout, extreme volume swept over the crown. Thick auburn waves, flyaways visible.\",\n      \"skin_details\": \"Dermatological reality, high-frequency texture, visible pores, fine vellus hair (peach fuzz) on cheeks, slight skin translucency, unretouched, natural moles and freckles\",\n      \"eyes\": \"Piercing blue, catchlights from studio flash, sharp iris details\"\n    },\n    \"attire\": {\n      \"top\": \"Strapless couture bustier, large pailette sequins\",\n      \"pattern\": \"Iridescent black base shifting to deep violet and magenta\",\n      \"neckwear\": \"Rigid high-polish gold Omega chain choker (flat collar style)\",\n      \"wristwear\": \"Luxury stack: Wide flat bangles, mixed metals (Gold, Silver) and Black Ceramic with visible screw-head hardware motifs\"\n    },\n    \"poses\": [\n      \"Frame 1: Frontal close-up, neutral intense stare, heavy hair sweep\",\n      \"Frame 2: Leaning cheek on closed fist, slight smirk, wrist stack prominent\",\n      \"Frame 3: Chin resting on open flat palm, soft engaging smile\",\n      \"Frame 4: Candid laughter, head thrown back, hand under chin, profile view\"\n    ],\n    \"technical_specs\": {\n      \"lighting\": \"Hard studio flash, direct strobe, high contrast butterfly lighting\",\n      \"camera\": \"Phase One XF IQ4, 150MP\",\n      \"lens\": \"Schneider Kreuznach 80mm LS f/2.8\",\n      \"film_stock\": \"Kodak Portra 400 emulation\",\n      \"raw_tags\": \"ISO 100, slight chromatic aberration, natural depth of field, unpolished, texture-rich\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_data&quot;: {<br>    &quot;layout&quot;: {<br>      &quot;type&quot;: &quot;4-panel split screen&quot;,<br>      &quot;structure&quot;: &quot;2x2 grid, equal distribution&quot;,<br>      &quot;frame_count&quot;: &quot;Four distinct frames&quot;,<br>      &quot;consistency&quot;: &quot;Character continuity maintained across all frames&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;reference&quot;: &quot;Billie Eilish resemblance&quot;,<br>      &quot;hair_styling&quot;: &quot;Deep side-part, 90s supermodel blowout, extreme volume swept over the crown. Thick auburn waves, flyaways visible.&quot;,<br>      &quot;skin_details&quot;: &quot;Dermatological reality, high-frequency texture, visible pores, fine vellus hair (peach fuzz) on cheeks, slight skin translucency, unretouched, natural moles and freckles&quot;,<br>      &quot;eyes&quot;: &quot;Piercing blue, catchlights from studio flash, sharp iris details&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: &quot;Strapless couture bustier, large pailette sequins&quot;,<br>      &quot;pattern&quot;: &quot;Iridescent black base shifting to deep violet and magenta&quot;,<br>      &quot;neckwear&quot;: &quot;Rigid high-polish gold Omega chain choker (flat collar style)&quot;,<br>      &quot;wristwear&quot;: &quot;Luxury stack: Wide flat bangles, mixed metals (Gold, Silver) and Black Ceramic with visible screw-head hardware motifs&quot;<br>    },<br>    &quot;poses&quot;: [<br>      &quot;Frame 1: Frontal close-up, neutral intense stare, heavy hair sweep&quot;,<br>      &quot;Frame 2: Leaning cheek on closed fist, slight smirk, wrist stack prominent&quot;,<br>      &quot;Frame 3: Chin resting on open flat palm, soft engaging smile&quot;,<br>      &quot;Frame 4: Candid laughter, head thrown back, hand under chin, profile view&quot;<br>    ],<br>    &quot;technical_specs&quot;: {<br>      &quot;lighting&quot;: &quot;Hard studio flash, direct strobe, high contrast butterfly lighting&quot;,<br>      &quot;camera&quot;: &quot;Phase One XF IQ4, 150MP&quot;,<br>      &quot;lens&quot;: &quot;Schneider Kreuznach 80mm LS f/2.8&quot;,<br>      &quot;film_stock&quot;: &quot;Kodak Portra 400 emulation&quot;,<br>      &quot;raw_tags&quot;: &quot;ISO 100, slight chromatic aberration, natural depth of field, unpolished, texture-rich&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_data&quot;: {<br>    &quot;layout&quot;: {<br>      &quot;type&quot;: &quot;4-panel split screen&quot;,<br>      &quot;structure&quot;: &quot;2x2 grid, equal distribution&quot;,<br>      &quot;frame_count&quot;: &quot;Four distinct frames&quot;,<br>      &quot;consistency&quot;: &quot;Character continuity maintained across all frames&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;reference&quot;: &quot;Billie Eilish resemblance&quot;,<br>      &quot;hair_styling&quot;: &quot;Deep side-part, 90s supermodel blowout, extreme volume swept over the crown. Thick auburn waves, flyaways visible.&quot;,<br>      &quot;skin_details&quot;: &quot;Dermatological reality, high-frequency texture, visible pores, fine vellus hair (peach fuzz) on cheeks, slight skin translucency, unretouched, natural moles and freckles&quot;,<br>      &quot;eyes&quot;: &quot;Piercing blue, catchlights from studio flash, sharp iris details&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: &quot;Strapless couture bustier, large pailette sequins&quot;,<br>      &quot;pattern&quot;: &quot;Iridescent black base shifting to deep violet and magenta&quot;,<br>      &quot;neckwear&quot;: &quot;Rigid high-polish gold Omega chain choker (flat collar style)&quot;,<br>      &quot;wristwear&quot;: &quot;Luxury stack: Wide flat bangles, mixed metals (Gold, Silver) and Black Ceramic with visible screw-head hardware motifs&quot;<br>    },<br>    &quot;poses&quot;: [<br>      &quot;Frame 1: Frontal close-up, neutral intense stare, heavy hair sweep&quot;,<br>      &quot;Frame 2: Leaning cheek on closed fist, slight smirk, wrist stack prominent&quot;,<br>      &quot;Frame 3: Chin resting on open flat palm, soft engaging smile&quot;,<br>      &quot;Frame 4: Candid laughter, head thrown back, hand under chin, profile view&quot;<br>    ],<br>    &quot;technical_specs&quot;: {<br>      &quot;lighting&quot;: &quot;Hard studio flash, direct strobe, high contrast butterfly lighting&quot;,<br>      &quot;camera&quot;: &quot;Phase One XF IQ4, 150MP&quot;,<br>      &quot;lens&quot;: &quot;Schneider Kreuznach 80mm LS f/2.8&quot;,<br>      &quot;film_stock&quot;: &quot;Kodak Portra 400 emulation&quot;,<br>      &quot;raw_tags&quot;: &quot;ISO 100, slight chromatic aberration, natural depth of field, unpolished, texture-rich&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2018275572204314804-1.jpg" alt="&quot;prompt data&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1917,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

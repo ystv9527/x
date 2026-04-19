@@ -7,11 +7,13 @@
     <title>&quot;request&quot;: { #2028 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;request&quot;: { &quot;product&quot;: &quot;[PRODUCT HERE]&quot;, &quot;background color&quot;: &quot; 59925C&quot;, &quot;style&quot;: &quot;prismatic industrial minimalism&quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2028.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2028.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2028.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844526">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023535">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"request\": {\n    \"product\": \"[在此处填写产品]\",\n    \"background_color\": \"#59925C\",\n    \"style\": \"棱镜式工业极简主义\",\n    \"visual_elements\": {\n      \"structure\": \"多个独立的垂直亚克力层形成产品轮廓——每一层都是独立的平面面板，层与层之间有明显空气间隙，像将产品切片并相互分隔开\",\n      \"material\": \"高透明度玻璃，带有彩虹棱镜干涉的虹彩色调\",\n      \"hardware\": \"不锈钢穿通螺栓，带可见的内六角内六角槽头——螺栓从前到后穿过所有层，将它们固定在一起并保持可见间隙\",\n      \"orientation\": \"严格垂直直立放置，完整物体可见\",\n      \"lighting\": \"色散的光谱高光和锐利的焦散\"\n    },\n    \"composition\": {\n      \"frame\": \"广角拍摄，无裁切，置中完整产品视图\",\n      \"camera_angle\": \"眼平影室视角，略微倾斜以展示层间的缝隙\",\n      \"depth_of_field\": \"景深足够以保持硬件细节清晰\",\n      \"background\": \"无缝纯色 #59925C 背景，无地面、表面、底座、平台、桌子、投影底面或地平线——产品悬浮在统一的单色场上\",\n      \"grounding\": \"无可见地面平面，产品下方无反射表面\"\n    },\n    \"rendering_details\": {\n      \"transparency\": \"多层折射并带薄膜干涉效果\",\n      \"finish\": \"抛光边缘并带有细微全息光色散\",\n      \"hardware_detail\": \"六角头螺栓内孔的微距级精细刻画\",\n      \"layer_direction\": \"每层玻璃/亚克力严格垂直——无水平层板、无曲面壳体或模制形态\",\n      \"layer_separation\": \"每块玻璃面板必须明显分隔并留有空气缝隙——不得熔接或接触——螺栓是连接各层的唯一元素\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;request&quot;: {<br>    &quot;product&quot;: &quot;[在此处填写产品]&quot;,<br>    &quot;background_color&quot;: &quot;#59925C&quot;,<br>    &quot;style&quot;: &quot;棱镜式工业极简主义&quot;,<br>    &quot;visual_elements&quot;: {<br>      &quot;structure&quot;: &quot;多个独立的垂直亚克力层形成产品轮廓——每一层都是独立的平面面板，层与层之间有明显空气间隙，像将产品切片并相互分隔开&quot;,<br>      &quot;material&quot;: &quot;高透明度玻璃，带有彩虹棱镜干涉的虹彩色调&quot;,<br>      &quot;hardware&quot;: &quot;不锈钢穿通螺栓，带可见的内六角内六角槽头——螺栓从前到后穿过所有层，将它们固定在一起并保持可见间隙&quot;,<br>      &quot;orientation&quot;: &quot;严格垂直直立放置，完整物体可见&quot;,<br>      &quot;lighting&quot;: &quot;色散的光谱高光和锐利的焦散&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;frame&quot;: &quot;广角拍摄，无裁切，置中完整产品视图&quot;,<br>      &quot;camera_angle&quot;: &quot;眼平影室视角，略微倾斜以展示层间的缝隙&quot;,<br>      &quot;depth_of_field&quot;: &quot;景深足够以保持硬件细节清晰&quot;,<br>      &quot;background&quot;: &quot;无缝纯色 #59925C 背景，无地面、表面、底座、平台、桌子、投影底面或地平线——产品悬浮在统一的单色场上&quot;,<br>      &quot;grounding&quot;: &quot;无可见地面平面，产品下方无反射表面&quot;<br>    },<br>    &quot;rendering_details&quot;: {<br>      &quot;transparency&quot;: &quot;多层折射并带薄膜干涉效果&quot;,<br>      &quot;finish&quot;: &quot;抛光边缘并带有细微全息光色散&quot;,<br>      &quot;hardware_detail&quot;: &quot;六角头螺栓内孔的微距级精细刻画&quot;,<br>      &quot;layer_direction&quot;: &quot;每层玻璃/亚克力严格垂直——无水平层板、无曲面壳体或模制形态&quot;,<br>      &quot;layer_separation&quot;: &quot;每块玻璃面板必须明显分隔并留有空气缝隙——不得熔接或接触——螺栓是连接各层的唯一元素&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;request&quot;: {<br>    &quot;product&quot;: &quot;[在此处填写产品]&quot;,<br>    &quot;background_color&quot;: &quot;#59925C&quot;,<br>    &quot;style&quot;: &quot;棱镜式工业极简主义&quot;,<br>    &quot;visual_elements&quot;: {<br>      &quot;structure&quot;: &quot;多个独立的垂直亚克力层形成产品轮廓——每一层都是独立的平面面板，层与层之间有明显空气间隙，像将产品切片并相互分隔开&quot;,<br>      &quot;material&quot;: &quot;高透明度玻璃，带有彩虹棱镜干涉的虹彩色调&quot;,<br>      &quot;hardware&quot;: &quot;不锈钢穿通螺栓，带可见的内六角内六角槽头——螺栓从前到后穿过所有层，将它们固定在一起并保持可见间隙&quot;,<br>      &quot;orientation&quot;: &quot;严格垂直直立放置，完整物体可见&quot;,<br>      &quot;lighting&quot;: &quot;色散的光谱高光和锐利的焦散&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;frame&quot;: &quot;广角拍摄，无裁切，置中完整产品视图&quot;,<br>      &quot;camera_angle&quot;: &quot;眼平影室视角，略微倾斜以展示层间的缝隙&quot;,<br>      &quot;depth_of_field&quot;: &quot;景深足够以保持硬件细节清晰&quot;,<br>      &quot;background&quot;: &quot;无缝纯色 #59925C 背景，无地面、表面、底座、平台、桌子、投影底面或地平线——产品悬浮在统一的单色场上&quot;,<br>      &quot;grounding&quot;: &quot;无可见地面平面，产品下方无反射表面&quot;<br>    },<br>    &quot;rendering_details&quot;: {<br>      &quot;transparency&quot;: &quot;多层折射并带薄膜干涉效果&quot;,<br>      &quot;finish&quot;: &quot;抛光边缘并带有细微全息光色散&quot;,<br>      &quot;hardware_detail&quot;: &quot;六角头螺栓内孔的微距级精细刻画&quot;,<br>      &quot;layer_direction&quot;: &quot;每层玻璃/亚克力严格垂直——无水平层板、无曲面壳体或模制形态&quot;,<br>      &quot;layer_separation&quot;: &quot;每块玻璃面板必须明显分隔并留有空气缝隙——不得熔接或接触——螺栓是连接各层的唯一元素&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"request\": {\n    \"product\": \"[PRODUCT HERE]\",\n    \"background_color\": \"#59925C\",\n    \"style\": \"prismatic_industrial_minimalism\",\n    \"visual_elements\": {\n      \"structure\": \"multiple separate vertical acrylic layers forming the product silhouette — each layer is a distinct flat panel with visible air gaps between them, like slices of the product spaced apart\",\n      \"material\": \"high-clarity glass with rainbow prismatic iridescent tint\",\n      \"hardware\": \"stainless steel through-bolts with visible internal Allen hexagonal socket heads — bolts pass through all layers front to back, holding them together with visible spacing\",\n      \"orientation\": \"strictly upright vertical placement, full object visibility\",\n      \"lighting\": \"dispersive spectral highlights and sharp caustics\"\n    },\n    \"composition\": {\n      \"frame\": \"wide shot, no cropping, centered full-product view\",\n      \"camera_angle\": \"eye-level studio perspective, slightly angled to reveal gaps between layers\",\n      \"depth_of_field\": \"deep enough to maintain focus on hardware details\",\n      \"background\": \"seamless solid #59925C background with no floor, surface, pedestal, platform, table, shadow ground, or horizon line — the product floats against a uniform single-color field\",\n      \"grounding\": \"no visible ground plane, no reflective surface beneath the product\"\n    },\n    \"rendering_details\": {\n      \"transparency\": \"multi-layered refraction with thin-film interference\",\n      \"finish\": \"polished edges with subtle holographic light dispersion\",\n      \"hardware_detail\": \"macro-precision on hex-head bolt sockets\",\n      \"layer_direction\": \"every glass/acrylic layer is strictly vertical — no horizontal slabs, curved shells, or molded forms\",\n      \"layer_separation\": \"each glass panel must be visibly separated with clear air gaps — not fused or touching — bolts are the only element connecting the layers\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;request&quot;: {<br>    &quot;product&quot;: &quot;[PRODUCT HERE]&quot;,<br>    &quot;background_color&quot;: &quot;#59925C&quot;,<br>    &quot;style&quot;: &quot;prismatic_industrial_minimalism&quot;,<br>    &quot;visual_elements&quot;: {<br>      &quot;structure&quot;: &quot;multiple separate vertical acrylic layers forming the product silhouette — each layer is a distinct flat panel with visible air gaps between them, like slices of the product spaced apart&quot;,<br>      &quot;material&quot;: &quot;high-clarity glass with rainbow prismatic iridescent tint&quot;,<br>      &quot;hardware&quot;: &quot;stainless steel through-bolts with visible internal Allen hexagonal socket heads — bolts pass through all layers front to back, holding them together with visible spacing&quot;,<br>      &quot;orientation&quot;: &quot;strictly upright vertical placement, full object visibility&quot;,<br>      &quot;lighting&quot;: &quot;dispersive spectral highlights and sharp caustics&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;frame&quot;: &quot;wide shot, no cropping, centered full-product view&quot;,<br>      &quot;camera_angle&quot;: &quot;eye-level studio perspective, slightly angled to reveal gaps between layers&quot;,<br>      &quot;depth_of_field&quot;: &quot;deep enough to maintain focus on hardware details&quot;,<br>      &quot;background&quot;: &quot;seamless solid #59925C background with no floor, surface, pedestal, platform, table, shadow ground, or horizon line — the product floats against a uniform single-color field&quot;,<br>      &quot;grounding&quot;: &quot;no visible ground plane, no reflective surface beneath the product&quot;<br>    },<br>    &quot;rendering_details&quot;: {<br>      &quot;transparency&quot;: &quot;multi-layered refraction with thin-film interference&quot;,<br>      &quot;finish&quot;: &quot;polished edges with subtle holographic light dispersion&quot;,<br>      &quot;hardware_detail&quot;: &quot;macro-precision on hex-head bolt sockets&quot;,<br>      &quot;layer_direction&quot;: &quot;every glass/acrylic layer is strictly vertical — no horizontal slabs, curved shells, or molded forms&quot;,<br>      &quot;layer_separation&quot;: &quot;each glass panel must be visibly separated with clear air gaps — not fused or touching — bolts are the only element connecting the layers&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;request&quot;: {<br>    &quot;product&quot;: &quot;[PRODUCT HERE]&quot;,<br>    &quot;background_color&quot;: &quot;#59925C&quot;,<br>    &quot;style&quot;: &quot;prismatic_industrial_minimalism&quot;,<br>    &quot;visual_elements&quot;: {<br>      &quot;structure&quot;: &quot;multiple separate vertical acrylic layers forming the product silhouette — each layer is a distinct flat panel with visible air gaps between them, like slices of the product spaced apart&quot;,<br>      &quot;material&quot;: &quot;high-clarity glass with rainbow prismatic iridescent tint&quot;,<br>      &quot;hardware&quot;: &quot;stainless steel through-bolts with visible internal Allen hexagonal socket heads — bolts pass through all layers front to back, holding them together with visible spacing&quot;,<br>      &quot;orientation&quot;: &quot;strictly upright vertical placement, full object visibility&quot;,<br>      &quot;lighting&quot;: &quot;dispersive spectral highlights and sharp caustics&quot;<br>    },<br>    &quot;composition&quot;: {<br>      &quot;frame&quot;: &quot;wide shot, no cropping, centered full-product view&quot;,<br>      &quot;camera_angle&quot;: &quot;eye-level studio perspective, slightly angled to reveal gaps between layers&quot;,<br>      &quot;depth_of_field&quot;: &quot;deep enough to maintain focus on hardware details&quot;,<br>      &quot;background&quot;: &quot;seamless solid #59925C background with no floor, surface, pedestal, platform, table, shadow ground, or horizon line — the product floats against a uniform single-color field&quot;,<br>      &quot;grounding&quot;: &quot;no visible ground plane, no reflective surface beneath the product&quot;<br>    },<br>    &quot;rendering_details&quot;: {<br>      &quot;transparency&quot;: &quot;multi-layered refraction with thin-film interference&quot;,<br>      &quot;finish&quot;: &quot;polished edges with subtle holographic light dispersion&quot;,<br>      &quot;hardware_detail&quot;: &quot;macro-precision on hex-head bolt sockets&quot;,<br>      &quot;layer_direction&quot;: &quot;every glass/acrylic layer is strictly vertical — no horizontal slabs, curved shells, or molded forms&quot;,<br>      &quot;layer_separation&quot;: &quot;each glass panel must be visibly separated with clear air gaps — not fused or touching — bolts are the only element connecting the layers&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2020332873736196341-1.jpg" alt="&quot;request&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2028,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

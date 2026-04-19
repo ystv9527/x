@@ -7,11 +7,13 @@
     <title>Ultra Realistic Promotional #823 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Ultra Realistic Promotional Present a clear, side miniature 3D cartoon view of [DUBAI] tallest buildings. Use minimal...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/823.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/823.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/823.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841476">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022603">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("超逼真宣传图\n呈现一个清晰的侧面迷你 3D 卡通视图，展示 [迪拜] 的最高建筑。使用最少的纹理，采用真实的材质和柔和、逼真的光照与阴影。使用干净、极简的构图，精确展示该地点仅有的三座最高建筑，严格从左到右按高度递减顺序排列。最高的一座必须明显最高，第二座必须明显比第一座矮，第三座必须明显比第二座矮。\n\n所有建筑必须遵循准确的相对比例：如果某座建筑在现实中更高，则在图像中也必须按大致相同的比例更高。任何建筑都不得在视觉上被拉伸或压缩。每座建筑应独立地立于一个薄且简洁的陶瓷底座上。\n\n在每个底座下方居中显示文本：\n- 米数高度 — 半粗体无衬线，中等字号\n- 建成年份 — 较细的无衬线字体，较小字号，直接位于高度文字下方\n\n提供一致的内边距、间距、行距和字距。在建筑上方居中写“迪拜”，使用中等大小的无衬线字体。建筑顶部不得与上方文本重叠或接触。基于真实世界参考使用准确的建筑比例。保持一致的相机角度并为每个建筑模型使用相同的缩放比例。\n\n不使用强制透视。采用正对的正投影风格渲染。不要夸张或风格化尺寸差异，必须遵循比例准确性。使用方形 1080x1080 的构图。使用干净、中性的背景。确保画面中没有额外物体。", this)'>📋 复制</button>
         </div>
-        <p>超逼真宣传图<br>呈现一个清晰的侧面迷你 3D 卡通视图，展示 [迪拜] 的最高建筑。使用最少的纹理，采用真实的材质和柔和、逼真的光照与阴影。使用干净、极简的构图，精确展示该地点仅有的三座最高建筑，严格从左到右按高度递减顺序排列。最高的一座必须明显最高，第二座必须明显比第一座矮，第三座必须明显比第二座矮。</p><p>所有建筑必须遵循准确的相对比例：如果某座建筑在现实中更高，则在图像中也必须按大致相同的比例更高。任何建筑都不得在视觉上被拉伸或压缩。每座建筑应独立地立于一个薄且简洁的陶瓷底座上。</p><p>在每个底座下方居中显示文本：<br>- 米数高度 — 半粗体无衬线，中等字号<br>- 建成年份 — 较细的无衬线字体，较小字号，直接位于高度文字下方</p><p>提供一致的内边距、间距、行距和字距。在建筑上方居中写“迪拜”，使用中等大小的无衬线字体。建筑顶部不得与上方文本重叠或接触。基于真实世界参考使用准确的建筑比例。保持一致的相机角度并为每个建筑模型使用相同的缩放比例。</p><p>不使用强制透视。采用正对的正投影风格渲染。不要夸张或风格化尺寸差异，必须遵循比例准确性。使用方形 1080x1080 的构图。使用干净、中性的背景。确保画面中没有额外物体。</p>
+        <div data-nosnippet><p>超逼真宣传图<br>呈现一个清晰的侧面迷你 3D 卡通视图，展示 [迪拜] 的最高建筑。使用最少的纹理，采用真实的材质和柔和、逼真的光照与阴影。使用干净、极简的构图，精确展示该地点仅有的三座最高建筑，严格从左到右按高度递减顺序排列。最高的一座必须明显最高，第二座必须明显比第一座矮，第三座必须明显比第二座矮。</p><p>所有建筑必须遵循准确的相对比例：如果某座建筑在现实中更高，则在图像中也必须按大致相同的比例更高。任何建筑都不得在视觉上被拉伸或压缩。每座建筑应独立地立于一个薄且简洁的陶瓷底座上。</p><p>在每个底座下方居中显示文本：<br>- 米数高度 — 半粗体无衬线，中等字号<br>- 建成年份 — 较细的无衬线字体，较小字号，直接位于高度文字下方</p><p>提供一致的内边距、间距、行距和字距。在建筑上方居中写“迪拜”，使用中等大小的无衬线字体。建筑顶部不得与上方文本重叠或接触。基于真实世界参考使用准确的建筑比例。保持一致的相机角度并为每个建筑模型使用相同的缩放比例。</p><p>不使用强制透视。采用正对的正投影风格渲染。不要夸张或风格化尺寸差异，必须遵循比例准确性。使用方形 1080x1080 的构图。使用干净、中性的背景。确保画面中没有额外物体。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Ultra-Realistic Promotional\nPresent a clear, side miniature 3D cartoon view of [DUBAI] tallest buildings. Use minimal textures with realistic materials and soft, lifelike lighting and shadows. Use a clean, minimalistic composition showing exactly the three tallest buildings in spot, arranged from LEFT to RIGHT in STRICT descending height order. The tallest must appear visibly tallest, the second must be clearly shorter than the first, and the third must be clearly shorter than the second.\nAll buildings must follow accurate relative proportions: if a building is taller in real life, it MUST be taller in the image by the same approximate ratio. No building may be visually stretched or compressed. Each building should stand separately on a thin, simple ceramic base.\nBelow each base, centered text should display:\nHeight in meters – semibold sans-serif, medium size\nYear built – lighter-weight sans-serif, smaller size, directly beneath the height text\nProvide consistent padding, spacing, leading, and kerning. Write “DUBAI” centered above the buildings using a medium-sized sans-serif font. No building top should overlap or touch the text above. Use accurate architectural proportions based on real-world references. Maintain consistent camera angle and identical scale for each building model.\nNo forced perspective. Use straight-on orthographic-style rendering. Do not exaggerate or stylize size differences beyond proportional accuracy. Use a square 1080x1080 composition. Use a clean, neutral background. Ensure no extra objects are present.", this)'>📋 复制</button>
         </div>
-        <p>Ultra-Realistic Promotional<br>Present a clear, side miniature 3D cartoon view of [DUBAI] tallest buildings. Use minimal textures with realistic materials and soft, lifelike lighting and shadows. Use a clean, minimalistic composition showing exactly the three tallest buildings in spot, arranged from LEFT to RIGHT in STRICT descending height order. The tallest must appear visibly tallest, the second must be clearly shorter than the first, and the third must be clearly shorter than the second.<br>All buildings must follow accurate relative proportions: if a building is taller in real life, it MUST be taller in the image by the same approximate ratio. No building may be visually stretched or compressed. Each building should stand separately on a thin, simple ceramic base.<br>Below each base, centered text should display:<br>Height in meters – semibold sans-serif, medium size<br>Year built – lighter-weight sans-serif, smaller size, directly beneath the height text<br>Provide consistent padding, spacing, leading, and kerning. Write “DUBAI” centered above the buildings using a medium-sized sans-serif font. No building top should overlap or touch the text above. Use accurate architectural proportions based on real-world references. Maintain consistent camera angle and identical scale for each building model.<br>No forced perspective. Use straight-on orthographic-style rendering. Do not exaggerate or stylize size differences beyond proportional accuracy. Use a square 1080x1080 composition. Use a clean, neutral background. Ensure no extra objects are present.</p>
+        <div data-nosnippet><p>Ultra-Realistic Promotional<br>Present a clear, side miniature 3D cartoon view of [DUBAI] tallest buildings. Use minimal textures with realistic materials and soft, lifelike lighting and shadows. Use a clean, minimalistic composition showing exactly the three tallest buildings in spot, arranged from LEFT to RIGHT in STRICT descending height order. The tallest must appear visibly tallest, the second must be clearly shorter than the first, and the third must be clearly shorter than the second.<br>All buildings must follow accurate relative proportions: if a building is taller in real life, it MUST be taller in the image by the same approximate ratio. No building may be visually stretched or compressed. Each building should stand separately on a thin, simple ceramic base.<br>Below each base, centered text should display:<br>Height in meters – semibold sans-serif, medium size<br>Year built – lighter-weight sans-serif, smaller size, directly beneath the height text<br>Provide consistent padding, spacing, leading, and kerning. Write “DUBAI” centered above the buildings using a medium-sized sans-serif font. No building top should overlap or touch the text above. Use accurate architectural proportions based on real-world references. Maintain consistent camera angle and identical scale for each building model.<br>No forced perspective. Use straight-on orthographic-style rendering. Do not exaggerate or stylize size differences beyond proportional accuracy. Use a square 1080x1080 composition. Use a clean, neutral background. Ensure no extra objects are present.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009073595776204834-1.jpg" alt="Ultra Realistic Promotional" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 823,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

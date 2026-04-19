@@ -7,11 +7,13 @@
     <title>아이브 가을의 &quot;Odd&quot; 를 보고 이미지를 만들었습니다. #2306 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="아이브 가을의 &quot;Odd&quot; 를 보고 이미지를 만들었습니다. 분홍색 달이 뜨며 베일이 벗겨지는 순간을 표현하고 싶었어요. &quot;일렁거리다&quot; 라는 부분이 표현되었을까요? 메인 이미지는 미드저니로 제작하였습니다. http...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2306.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2306.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2306.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844188">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023469">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("我看了 IVE 的秋季之作《Odd》后，制作了一个图像。\n\n我想表达粉色月亮升起、面纱被揭开的那一刻。\n\n“일렁거리다” 这一段有没有表达出来呢？\n\n主图是用 Midjourney 制作的。 https://t.co/TV66Q4Y40q", this)'>📋 Copy</button>
         </div>
-        <p>我看了 IVE 的秋季之作《Odd》后，制作了一个图像。</p><p>我想表达粉色月亮升起、面纱被揭开的那一刻。</p><p>“일렁거리다” 这一段有没有表达出来呢？</p><p>主图是用 Midjourney 制作的。 https://t.co/TV66Q4Y40q</p>
+        <div data-nosnippet><p>我看了 IVE 的秋季之作《Odd》后，制作了一个图像。</p><p>我想表达粉色月亮升起、面纱被揭开的那一刻。</p><p>“일렁거리다” 这一段有没有表达出来呢？</p><p>主图是用 Midjourney 制作的。 https://t.co/TV66Q4Y40q</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("아이브 가을의 \"Odd\" 를 보고 이미지를 만들었습니다. \n\n분홍색 달이 뜨며 베일이 벗겨지는 순간을 표현하고 싶었어요.\n\"일렁거리다\" 라는 부분이 표현되었을까요? \n\n메인 이미지는 미드저니로 제작하였습니다. https://t.co/TV66Q4Y40q", this)'>📋 Copy</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("I made an image after watching IVE Gaeul’s “Odd.”\n\nI wanted to express the moment when a pink moon rises and the veil is lifted.\nWas the part that says “wavering/flickering” depicted?\n\nThe main image was created with Midjourney. https://t.co/TV66Q4Y40q", this)'>📋 Copy</button>
         </div>
-        <p>아이브 가을의 &quot;Odd&quot; 를 보고 이미지를 만들었습니다.</p><p>분홍색 달이 뜨며 베일이 벗겨지는 순간을 표현하고 싶었어요.<br>&quot;일렁거리다&quot; 라는 부분이 표현되었을까요?</p><p>메인 이미지는 미드저니로 제작하였습니다. https://t.co/TV66Q4Y40q</p>
+        <div data-nosnippet><p>I made an image after watching IVE Gaeul’s “Odd.”</p><p>I wanted to express the moment when a pink moon rises and the veil is lifted.<br>Was the part that says “wavering/flickering” depicted?</p><p>The main image was created with Midjourney. https://t.co/TV66Q4Y40q</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2027601301237076003-1.jpg" alt="아이브 가을의 &quot;Odd&quot; 를 보고 이미지를 만들었습니다." loading="lazy"><img src="/images/tweet-2027601301237076003-2.jpg" alt="아이브 가을의 &quot;Odd&quot; 를 보고 이미지를 만들었습니다." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2306,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

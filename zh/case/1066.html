@@ -7,11 +7,13 @@
     <title>Create a collection of icons representing [ROUTINE / PROCESS... #1066 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create a collection of icons representing [ROUTINE / PROCESS / HABITS], with each icon depicting one specific routine...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1066.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1066.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1066.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841266">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022539">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一组图标，代表[日常 / 流程 / 习惯]，每个图标描绘一个具体的日常步骤，并清晰标注名称。\n\n它们属于同一个统一的主题。背景为纯白色。\n\n将标题“[日常名称]”置于图像顶部中央，在网格上方对称对齐，采用干净、简约的排版风格，与图标设计相互补充但不过分喧宾夺主。\n图标以友好、现代的3D风格呈现，具有平滑的渐变和柔和的阴影。\n\n在所有图标和标签中保持一致的比例、色彩和谐、材质和排版，使整个系列感觉统一且易于阅读。", this)'>📋 复制</button>
         </div>
-        <p>创建一组图标，代表[日常 / 流程 / 习惯]，每个图标描绘一个具体的日常步骤，并清晰标注名称。</p><p>它们属于同一个统一的主题。背景为纯白色。</p><p>将标题“[日常名称]”置于图像顶部中央，在网格上方对称对齐，采用干净、简约的排版风格，与图标设计相互补充但不过分喧宾夺主。<br>图标以友好、现代的3D风格呈现，具有平滑的渐变和柔和的阴影。</p><p>在所有图标和标签中保持一致的比例、色彩和谐、材质和排版，使整个系列感觉统一且易于阅读。</p>
+        <div data-nosnippet><p>创建一组图标，代表[日常 / 流程 / 习惯]，每个图标描绘一个具体的日常步骤，并清晰标注名称。</p><p>它们属于同一个统一的主题。背景为纯白色。</p><p>将标题“[日常名称]”置于图像顶部中央，在网格上方对称对齐，采用干净、简约的排版风格，与图标设计相互补充但不过分喧宾夺主。<br>图标以友好、现代的3D风格呈现，具有平滑的渐变和柔和的阴影。</p><p>在所有图标和标签中保持一致的比例、色彩和谐、材质和排版，使整个系列感觉统一且易于阅读。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a collection of icons representing [ROUTINE / PROCESS / HABITS], with each icon depicting one specific routine step and clearly labeled by name.\n\nThey belong together as a single cohesive theme. The background is pure white.\n\nPlace the title “[ROUTINE NAME]” at the top center of the image, aligned symmetrically above the grid, using a clean, minimal typography style that complements the icon design without overpowering it.\nIcons are rendered in a friendly, modern 3D style, featuring smooth gradients and soft shadows.\n\nMaintain consistent proportions, color harmony, materials, and typography across all icons and labels so the set feels unified and easy to read.", this)'>📋 复制</button>
         </div>
-        <p>Create a collection of icons representing [ROUTINE / PROCESS / HABITS], with each icon depicting one specific routine step and clearly labeled by name.</p><p>They belong together as a single cohesive theme. The background is pure white.</p><p>Place the title “[ROUTINE NAME]” at the top center of the image, aligned symmetrically above the grid, using a clean, minimal typography style that complements the icon design without overpowering it.<br>Icons are rendered in a friendly, modern 3D style, featuring smooth gradients and soft shadows.</p><p>Maintain consistent proportions, color harmony, materials, and typography across all icons and labels so the set feels unified and easy to read.</p>
+        <div data-nosnippet><p>Create a collection of icons representing [ROUTINE / PROCESS / HABITS], with each icon depicting one specific routine step and clearly labeled by name.</p><p>They belong together as a single cohesive theme. The background is pure white.</p><p>Place the title “[ROUTINE NAME]” at the top center of the image, aligned symmetrically above the grid, using a clean, minimal typography style that complements the icon design without overpowering it.<br>Icons are rendered in a friendly, modern 3D style, featuring smooth gradients and soft shadows.</p><p>Maintain consistent proportions, color harmony, materials, and typography across all icons and labels so the set feels unified and easy to read.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010682689633046534-1.jpg" alt="Create a collection of icons representing [ROUTINE / PROCESS..." loading="lazy"><img src="/images/tweet-2010682689633046534-2.jpg" alt="Create a collection of icons representing [ROUTINE / PROCESS..." loading="lazy"><img src="/images/tweet-2010682689633046534-3.jpg" alt="Create a collection of icons representing [ROUTINE / PROCESS..." loading="lazy"><img src="/images/tweet-2010682689633046534-4.jpg" alt="Create a collection of icons representing [ROUTINE / PROCESS..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1066,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

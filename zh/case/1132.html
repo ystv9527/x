@@ -7,11 +7,13 @@
     <title>&quot;prompt details&quot;: { #1132 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt details&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;elegant young woman descending a grand staircase&quot;, &quot;appearance&quot;: &quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1132.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1132.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1132.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841219">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022525">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_details\": {\n    \"subject\": {\n      \"description\": \"优雅的年轻女子走下宏伟的楼梯\",\n      \"appearance\": \"深棕色长卷发垂落肩上，低头，表情柔和优雅，皮肤白皙\",\n      \"pose\": \"下楼步行，一只手向后伸以扶住栏杆，动作富有动感但姿态端庄\"\n    },\n    \"attire\": {\n      \"outfit\": \"无肩带午夜海军蓝或黑色高级定制礼服，爱心形领口，质感面料，高低不一的裙摆设计，前短露腿，后摆长而飘逸\",\n      \"accessories\": \"极简首饰，细带黑色高跟凉鞋\"\n    },\n    \"environment\": {\n      \"setting\": \"豪华的室内环境，白色水平木质镶板墙面\",\n      \"architecture\": \"白色楼梯，配有精致华丽的金色金属栏杆\",\n      \"decor\": \"栏杆装饰着节日感的茂密绿叶花环和成簇的鲜艳红色浆果\"\n    },\n    \"technical_specs\": {\n      \"style\": \"超写实、高级时尚编辑摄影、电影感\",\n      \"lighting\": \"柔和暖色的环境光，专业影棚照明，柔和的阴影\",\n      \"quality\": \"8k 分辨率，极其细致，焦点清晰，杰作级\",\n      \"aspect_ratio\": \"9:16\",\n      \"format\": \"纵向长镜头\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;优雅的年轻女子走下宏伟的楼梯&quot;,<br>      &quot;appearance&quot;: &quot;深棕色长卷发垂落肩上，低头，表情柔和优雅，皮肤白皙&quot;,<br>      &quot;pose&quot;: &quot;下楼步行，一只手向后伸以扶住栏杆，动作富有动感但姿态端庄&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;outfit&quot;: &quot;无肩带午夜海军蓝或黑色高级定制礼服，爱心形领口，质感面料，高低不一的裙摆设计，前短露腿，后摆长而飘逸&quot;,<br>      &quot;accessories&quot;: &quot;极简首饰，细带黑色高跟凉鞋&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;豪华的室内环境，白色水平木质镶板墙面&quot;,<br>      &quot;architecture&quot;: &quot;白色楼梯，配有精致华丽的金色金属栏杆&quot;,<br>      &quot;decor&quot;: &quot;栏杆装饰着节日感的茂密绿叶花环和成簇的鲜艳红色浆果&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;超写实、高级时尚编辑摄影、电影感&quot;,<br>      &quot;lighting&quot;: &quot;柔和暖色的环境光，专业影棚照明，柔和的阴影&quot;,<br>      &quot;quality&quot;: &quot;8k 分辨率，极其细致，焦点清晰，杰作级&quot;,<br>      &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>      &quot;format&quot;: &quot;纵向长镜头&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;优雅的年轻女子走下宏伟的楼梯&quot;,<br>      &quot;appearance&quot;: &quot;深棕色长卷发垂落肩上，低头，表情柔和优雅，皮肤白皙&quot;,<br>      &quot;pose&quot;: &quot;下楼步行，一只手向后伸以扶住栏杆，动作富有动感但姿态端庄&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;outfit&quot;: &quot;无肩带午夜海军蓝或黑色高级定制礼服，爱心形领口，质感面料，高低不一的裙摆设计，前短露腿，后摆长而飘逸&quot;,<br>      &quot;accessories&quot;: &quot;极简首饰，细带黑色高跟凉鞋&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;豪华的室内环境，白色水平木质镶板墙面&quot;,<br>      &quot;architecture&quot;: &quot;白色楼梯，配有精致华丽的金色金属栏杆&quot;,<br>      &quot;decor&quot;: &quot;栏杆装饰着节日感的茂密绿叶花环和成簇的鲜艳红色浆果&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;超写实、高级时尚编辑摄影、电影感&quot;,<br>      &quot;lighting&quot;: &quot;柔和暖色的环境光，专业影棚照明，柔和的阴影&quot;,<br>      &quot;quality&quot;: &quot;8k 分辨率，极其细致，焦点清晰，杰作级&quot;,<br>      &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>      &quot;format&quot;: &quot;纵向长镜头&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_details\": {\n    \"subject\": {\n      \"description\": \"elegant young woman descending a grand staircase\",\n      \"appearance\": \"long wavy brunette hair falling over shoulders, looking down with a soft and graceful expression, fair skin tone\",\n      \"pose\": \"walking down steps, one hand extending back to hold the railing, dynamic but poised body language\"\n    },\n    \"attire\": {\n      \"outfit\": \"strapless midnight navy blue or black couture gown, sweetheart neckline, textured fabric, high-low hemline design with short front revealing legs and long flowing back train\",\n      \"accessories\": \"minimal jewelry, strappy black high heel sandals\"\n    },\n    \"environment\": {\n      \"setting\": \"luxurious interior with white horizontal wood paneling walls\",\n      \"architecture\": \"white staircase with intricate ornate gold metal railing\",\n      \"decor\": \"railing decorated with festive lush greenery garland and clusters of bright red berries\"\n    },\n    \"technical_specs\": {\n      \"style\": \"ultra realistic, high fashion editorial photography, cinematic\",\n      \"lighting\": \"soft warm ambient lighting, professional studio illumination, soft shadows\",\n      \"quality\": \"8k resolution, incredibly detailed, sharp focus, masterpiece\",\n      \"aspect_ratio\": \"9:16\",\n      \"format\": \"vertical long shot\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;elegant young woman descending a grand staircase&quot;,<br>      &quot;appearance&quot;: &quot;long wavy brunette hair falling over shoulders, looking down with a soft and graceful expression, fair skin tone&quot;,<br>      &quot;pose&quot;: &quot;walking down steps, one hand extending back to hold the railing, dynamic but poised body language&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;outfit&quot;: &quot;strapless midnight navy blue or black couture gown, sweetheart neckline, textured fabric, high-low hemline design with short front revealing legs and long flowing back train&quot;,<br>      &quot;accessories&quot;: &quot;minimal jewelry, strappy black high heel sandals&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;luxurious interior with white horizontal wood paneling walls&quot;,<br>      &quot;architecture&quot;: &quot;white staircase with intricate ornate gold metal railing&quot;,<br>      &quot;decor&quot;: &quot;railing decorated with festive lush greenery garland and clusters of bright red berries&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;ultra realistic, high fashion editorial photography, cinematic&quot;,<br>      &quot;lighting&quot;: &quot;soft warm ambient lighting, professional studio illumination, soft shadows&quot;,<br>      &quot;quality&quot;: &quot;8k resolution, incredibly detailed, sharp focus, masterpiece&quot;,<br>      &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>      &quot;format&quot;: &quot;vertical long shot&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;elegant young woman descending a grand staircase&quot;,<br>      &quot;appearance&quot;: &quot;long wavy brunette hair falling over shoulders, looking down with a soft and graceful expression, fair skin tone&quot;,<br>      &quot;pose&quot;: &quot;walking down steps, one hand extending back to hold the railing, dynamic but poised body language&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;outfit&quot;: &quot;strapless midnight navy blue or black couture gown, sweetheart neckline, textured fabric, high-low hemline design with short front revealing legs and long flowing back train&quot;,<br>      &quot;accessories&quot;: &quot;minimal jewelry, strappy black high heel sandals&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;luxurious interior with white horizontal wood paneling walls&quot;,<br>      &quot;architecture&quot;: &quot;white staircase with intricate ornate gold metal railing&quot;,<br>      &quot;decor&quot;: &quot;railing decorated with festive lush greenery garland and clusters of bright red berries&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;style&quot;: &quot;ultra realistic, high fashion editorial photography, cinematic&quot;,<br>      &quot;lighting&quot;: &quot;soft warm ambient lighting, professional studio illumination, soft shadows&quot;,<br>      &quot;quality&quot;: &quot;8k resolution, incredibly detailed, sharp focus, masterpiece&quot;,<br>      &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>      &quot;format&quot;: &quot;vertical long shot&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011074239994933506-1.jpg" alt="&quot;prompt details&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1132,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

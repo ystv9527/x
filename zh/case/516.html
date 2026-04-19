@@ -7,11 +7,13 @@
     <title>黎明时分大型造船厂的工业场景震撼呈现 #516 | Gem Nana AI 提示词库</title>
     <meta name="description" content="描绘黎明时分大规模造船厂中起重机同步移动集装箱的壮观场景，镜头逐渐揭示工人、引擎声和海鸥声，展现史诗级工业电影风格的逼真画面。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/516.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/516.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/516.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841780">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022676">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item active">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        
+        <button class="view-full-btn" id="publishXhsVideoBtn" onclick="publishCurrentCaseToXhs(this, 'video')">发布视频到小红书</button>
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("起重机到地面的过渡，黎明时分的大型造船厂，起重机同步移动集装箱，摄像机下降揭示穿着橙色制服的工人，引擎声、海鸥声和钢索的紧张声，淡金色光照，史诗工业电影现实主义风格。", this)'>📋 复制</button>
         </div>
-        <p>起重机到地面的过渡，黎明时分的大型造船厂，起重机同步移动集装箱，摄像机下降揭示穿着橙色制服的工人，引擎声、海鸥声和钢索的紧张声，淡金色光照，史诗工业电影现实主义风格。</p>
+        <div data-nosnippet><p>起重机到地面的过渡，黎明时分的大型造船厂，起重机同步移动集装箱，摄像机下降揭示穿着橙色制服的工人，引擎声、海鸥声和钢索的紧张声，淡金色光照，史诗工业电影现实主义风格。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Crane-to-ground transition, large shipyard at dawn as cranes move containers in sync, camera descends revealing workers in orange suits, sound of engines, seagulls, and steel tension cables, pale golden lighting, epic industrial cinematic realism style.", this)'>📋 复制</button>
         </div>
-        <p>Crane-to-ground transition, large shipyard at dawn as cranes move containers in sync, camera descends revealing workers in orange suits, sound of engines, seagulls, and steel tension cables, pale golden lighting, epic industrial cinematic realism style.</p>
+        <div data-nosnippet><p>Crane-to-ground transition, large shipyard at dawn as cranes move containers in sync, camera descends revealing workers in orange suits, sound of engines, seagulls, and steel tension cables, pale golden lighting, epic industrial cinematic realism style.</p></div>
       </div>
       
       <div class="detail-block"><h3>🎬 视频</h3><div class="detail-media-grid"><video controls><source src="/videos/tweet-1988717217219801306-1.mp4" type="video/mp4"></video></div></div>
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 516,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

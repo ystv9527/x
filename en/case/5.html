@@ -7,11 +7,13 @@
     <title>Create your own GTA character. #5 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Create your own GTA character - AI image generation prompts">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/5.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/5.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/5.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846547">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023958">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("担任 Rockstar Games 的创意总监。创建一个虚构的 GTA VI 角色卡片，风格与官方 GTA VI 宣传图完全一致。\n\n布局必须：\n\n一个横向的角色卡，角色在右侧，采取能体现其个性的动态姿势。\n左侧包含以下结构化文本：\n左上角的小型 \\\"VI\\\" 标志（请在视觉上提及它）。\n角色的名字以大号粗体显示。\n紧接其下用另一种鲜明颜色显示的吸引人标语或口号。\n一个简短的背景故事（3–5 行），用讽刺、街头智慧或俏皮的语气书写——就像 Rockstar 的语气。\n\n使用充满活力的 Vice City 美学，日落灯光、霓虹点缀，以及卡通粗绘风格。角色的服装、动作与环境须反映其原型和背景。\n\n让我自定义以下变量：\n\n原型：{your choice}\n\n性别：{your choice}\n\n肤色：{your choice}\n\n发型：{your choice}\n\n情绪：{your choice}\n\n服装：{your choice}\n\n武器或行动：{your choice}\n\n背景细节：{your choice}\n\n生成一个虚构的名字（标题形式）和英文描述\n\n将最终结果格式化为游戏内资产揭示的完成作品。氛围要夸张、时尚且充满个性——仿佛是 GTA VI 真实世界的一部分。\n\n（如果“Your choice”部分未填充个性化信息，由你自行随机生成）请直接从现在开始生成视觉效果", this)'>📋 Copy</button>
         </div>
-        <p>担任 Rockstar Games 的创意总监。创建一个虚构的 GTA VI 角色卡片，风格与官方 GTA VI 宣传图完全一致。</p><p>布局必须：</p><p>一个横向的角色卡，角色在右侧，采取能体现其个性的动态姿势。<br>左侧包含以下结构化文本：<br>左上角的小型 \&quot;VI\&quot; 标志（请在视觉上提及它）。<br>角色的名字以大号粗体显示。<br>紧接其下用另一种鲜明颜色显示的吸引人标语或口号。<br>一个简短的背景故事（3–5 行），用讽刺、街头智慧或俏皮的语气书写——就像 Rockstar 的语气。</p><p>使用充满活力的 Vice City 美学，日落灯光、霓虹点缀，以及卡通粗绘风格。角色的服装、动作与环境须反映其原型和背景。</p><p>让我自定义以下变量：</p><p>原型：{your choice}</p><p>性别：{your choice}</p><p>肤色：{your choice}</p><p>发型：{your choice}</p><p>情绪：{your choice}</p><p>服装：{your choice}</p><p>武器或行动：{your choice}</p><p>背景细节：{your choice}</p><p>生成一个虚构的名字（标题形式）和英文描述</p><p>将最终结果格式化为游戏内资产揭示的完成作品。氛围要夸张、时尚且充满个性——仿佛是 GTA VI 真实世界的一部分。</p><p>（如果“Your choice”部分未填充个性化信息，由你自行随机生成）请直接从现在开始生成视觉效果</p>
+        <div data-nosnippet><p>担任 Rockstar Games 的创意总监。创建一个虚构的 GTA VI 角色卡片，风格与官方 GTA VI 宣传图完全一致。</p><p>布局必须：</p><p>一个横向的角色卡，角色在右侧，采取能体现其个性的动态姿势。<br>左侧包含以下结构化文本：<br>左上角的小型 \&quot;VI\&quot; 标志（请在视觉上提及它）。<br>角色的名字以大号粗体显示。<br>紧接其下用另一种鲜明颜色显示的吸引人标语或口号。<br>一个简短的背景故事（3–5 行），用讽刺、街头智慧或俏皮的语气书写——就像 Rockstar 的语气。</p><p>使用充满活力的 Vice City 美学，日落灯光、霓虹点缀，以及卡通粗绘风格。角色的服装、动作与环境须反映其原型和背景。</p><p>让我自定义以下变量：</p><p>原型：{your choice}</p><p>性别：{your choice}</p><p>肤色：{your choice}</p><p>发型：{your choice}</p><p>情绪：{your choice}</p><p>服装：{your choice}</p><p>武器或行动：{your choice}</p><p>背景细节：{your choice}</p><p>生成一个虚构的名字（标题形式）和英文描述</p><p>将最终结果格式化为游戏内资产揭示的完成作品。氛围要夸张、时尚且充满个性——仿佛是 GTA VI 真实世界的一部分。</p><p>（如果“Your choice”部分未填充个性化信息，由你自行随机生成）请直接从现在开始生成视觉效果</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Act as a creative director at Rockstar Games. Create a fictional GTA VI character sheet in the exact same style as the official GTA VI promotional images.\n\nThe layout must be:\n\nA horizontal character sheet, with the character on the right, in a dynamic pose that reflects their personality.\nOn the left, include the following structured text:\nA small \"VI\" logo at the top left (mention it visually).\nThe character’s name in big bold text.\nA catchy slogan or tagline right below in a different bright color.\nA short backstory (3–5 lines) written in an ironic, street-smart, or playful tone — just like Rockstar’s tone of voice.\n\nUse the vibrant Vice City aesthetic with sunset lighting, neon accents, and cel-shaded comic style. The character’s clothing, action, and environment must reflect their archetype and background.\n\nLet me customize the following variables:\n\nArchetype: {your choice}\n\nGender: {your choice}\n\nSkin tone: {your choice}\n\nHairstyle: {your choice}\n\nEmotion : {your choice}\n\nOutfit: {your choice}\n\nWeapon or action: {your choice}\n\nBackground details: {your choice}\n\nGenerate a fictive name in tittle and a description in english\n\nFormat the final result like a finished in-game asset reveal. The vibe should be over-the-top, stylish, and full of personality — as if part of the real GTA VI world.\n\n(if the \"Your choice\" sections are not filled with personalized information, it's up to you to generate it randomly by yourself) generate the visual directly from now on", this)'>📋 Copy</button>
         </div>
-        <p>Act as a creative director at Rockstar Games. Create a fictional GTA VI character sheet in the exact same style as the official GTA VI promotional images.</p><p>The layout must be:</p><p>A horizontal character sheet, with the character on the right, in a dynamic pose that reflects their personality.<br>On the left, include the following structured text:<br>A small &quot;VI&quot; logo at the top left (mention it visually).<br>The character’s name in big bold text.<br>A catchy slogan or tagline right below in a different bright color.<br>A short backstory (3–5 lines) written in an ironic, street-smart, or playful tone — just like Rockstar’s tone of voice.</p><p>Use the vibrant Vice City aesthetic with sunset lighting, neon accents, and cel-shaded comic style. The character’s clothing, action, and environment must reflect their archetype and background.</p><p>Let me customize the following variables:</p><p>Archetype: {your choice}</p><p>Gender: {your choice}</p><p>Skin tone: {your choice}</p><p>Hairstyle: {your choice}</p><p>Emotion : {your choice}</p><p>Outfit: {your choice}</p><p>Weapon or action: {your choice}</p><p>Background details: {your choice}</p><p>Generate a fictive name in tittle and a description in english</p><p>Format the final result like a finished in-game asset reveal. The vibe should be over-the-top, stylish, and full of personality — as if part of the real GTA VI world.</p><p>(if the &quot;Your choice&quot; sections are not filled with personalized information, it&#39;s up to you to generate it randomly by yourself) generate the visual directly from now on</p>
+        <div data-nosnippet><p>Act as a creative director at Rockstar Games. Create a fictional GTA VI character sheet in the exact same style as the official GTA VI promotional images.</p><p>The layout must be:</p><p>A horizontal character sheet, with the character on the right, in a dynamic pose that reflects their personality.<br>On the left, include the following structured text:<br>A small &quot;VI&quot; logo at the top left (mention it visually).<br>The character’s name in big bold text.<br>A catchy slogan or tagline right below in a different bright color.<br>A short backstory (3–5 lines) written in an ironic, street-smart, or playful tone — just like Rockstar’s tone of voice.</p><p>Use the vibrant Vice City aesthetic with sunset lighting, neon accents, and cel-shaded comic style. The character’s clothing, action, and environment must reflect their archetype and background.</p><p>Let me customize the following variables:</p><p>Archetype: {your choice}</p><p>Gender: {your choice}</p><p>Skin tone: {your choice}</p><p>Hairstyle: {your choice}</p><p>Emotion : {your choice}</p><p>Outfit: {your choice}</p><p>Weapon or action: {your choice}</p><p>Background details: {your choice}</p><p>Generate a fictive name in tittle and a description in english</p><p>Format the final result like a finished in-game asset reveal. The vibe should be over-the-top, stylish, and full of personality — as if part of the real GTA VI world.</p><p>(if the &quot;Your choice&quot; sections are not filled with personalized information, it&#39;s up to you to generate it randomly by yourself) generate the visual directly from now on</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/5.png" alt="创建你自己的GTA角色" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 5,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;meta data&quot;: { #1592 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;meta data&quot;: { &quot;prompt version&quot;: &quot;2.0&quot;, &quot;use case&quot;: &quot;Photorealistic Image Generation&quot;, &quot;main subject count&quot;: 1 }, &quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1592.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1592.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1592.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844972">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023621">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"元数据\": {\n    \"提示版本\": \"2.0\",\n    \"用例\": \"逼真图像生成\",\n    \"主要主体数量\": 1\n  },\n  \"主体层\": {\n    \"解剖\": {\n      \"人口统计\": {\n        \"性别\": \"女性\",\n        \"年龄段\": \"年轻成人\",\n        \"种族\": \"西方\",\n        \"肤色\": \"古铜色\"\n      },\n      \"面部细节\": {\n        \"与参考相同\": true,\n        \"表情\": \"轻微的得意一笑\",\n        \"化妆\": \"自然\"\n      },\n      \"发型\": {\n        \"颜色\": \"金色\",\n        \"长度\": \"长\",\n        \"风格\": \"直发\"\n      },\n      \"身体\": {\n        \"姿势\": \"自信地站着\",\n        \"服装\": {\n          \"上衣\": \"性感的灰色挂脖垂坠上衣，深V领\",\n          \"下装\": \"浅蓝色牛仔迷你短裤\"\n        }\n      }\n    }\n  },\n  \"环境层\": {\n    \"地点\": \"现代明亮的艺术画廊\",\n    \"元素\": [\n      \"现代抽象画\",\n      \"白色墙壁\",\n      \"带天窗的高天花板\",\n      \"抛光混凝土地面\"\n    ],\n    \"照明\": \"柔和的自然画廊照明\"\n  },\n  \"摄影层\": {\n    \"风格\": \"专业时尚摄影\",\n    \"分辨率\": \"8k\",\n    \"细节\": \"超高细节，逼真\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;元数据&quot;: {<br>    &quot;提示版本&quot;: &quot;2.0&quot;,<br>    &quot;用例&quot;: &quot;逼真图像生成&quot;,<br>    &quot;主要主体数量&quot;: 1<br>  },<br>  &quot;主体层&quot;: {<br>    &quot;解剖&quot;: {<br>      &quot;人口统计&quot;: {<br>        &quot;性别&quot;: &quot;女性&quot;,<br>        &quot;年龄段&quot;: &quot;年轻成人&quot;,<br>        &quot;种族&quot;: &quot;西方&quot;,<br>        &quot;肤色&quot;: &quot;古铜色&quot;<br>      },<br>      &quot;面部细节&quot;: {<br>        &quot;与参考相同&quot;: true,<br>        &quot;表情&quot;: &quot;轻微的得意一笑&quot;,<br>        &quot;化妆&quot;: &quot;自然&quot;<br>      },<br>      &quot;发型&quot;: {<br>        &quot;颜色&quot;: &quot;金色&quot;,<br>        &quot;长度&quot;: &quot;长&quot;,<br>        &quot;风格&quot;: &quot;直发&quot;<br>      },<br>      &quot;身体&quot;: {<br>        &quot;姿势&quot;: &quot;自信地站着&quot;,<br>        &quot;服装&quot;: {<br>          &quot;上衣&quot;: &quot;性感的灰色挂脖垂坠上衣，深V领&quot;,<br>          &quot;下装&quot;: &quot;浅蓝色牛仔迷你短裤&quot;<br>        }<br>      }<br>    }<br>  },<br>  &quot;环境层&quot;: {<br>    &quot;地点&quot;: &quot;现代明亮的艺术画廊&quot;,<br>    &quot;元素&quot;: [<br>      &quot;现代抽象画&quot;,<br>      &quot;白色墙壁&quot;,<br>      &quot;带天窗的高天花板&quot;,<br>      &quot;抛光混凝土地面&quot;<br>    ],<br>    &quot;照明&quot;: &quot;柔和的自然画廊照明&quot;<br>  },<br>  &quot;摄影层&quot;: {<br>    &quot;风格&quot;: &quot;专业时尚摄影&quot;,<br>    &quot;分辨率&quot;: &quot;8k&quot;,<br>    &quot;细节&quot;: &quot;超高细节，逼真&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;元数据&quot;: {<br>    &quot;提示版本&quot;: &quot;2.0&quot;,<br>    &quot;用例&quot;: &quot;逼真图像生成&quot;,<br>    &quot;主要主体数量&quot;: 1<br>  },<br>  &quot;主体层&quot;: {<br>    &quot;解剖&quot;: {<br>      &quot;人口统计&quot;: {<br>        &quot;性别&quot;: &quot;女性&quot;,<br>        &quot;年龄段&quot;: &quot;年轻成人&quot;,<br>        &quot;种族&quot;: &quot;西方&quot;,<br>        &quot;肤色&quot;: &quot;古铜色&quot;<br>      },<br>      &quot;面部细节&quot;: {<br>        &quot;与参考相同&quot;: true,<br>        &quot;表情&quot;: &quot;轻微的得意一笑&quot;,<br>        &quot;化妆&quot;: &quot;自然&quot;<br>      },<br>      &quot;发型&quot;: {<br>        &quot;颜色&quot;: &quot;金色&quot;,<br>        &quot;长度&quot;: &quot;长&quot;,<br>        &quot;风格&quot;: &quot;直发&quot;<br>      },<br>      &quot;身体&quot;: {<br>        &quot;姿势&quot;: &quot;自信地站着&quot;,<br>        &quot;服装&quot;: {<br>          &quot;上衣&quot;: &quot;性感的灰色挂脖垂坠上衣，深V领&quot;,<br>          &quot;下装&quot;: &quot;浅蓝色牛仔迷你短裤&quot;<br>        }<br>      }<br>    }<br>  },<br>  &quot;环境层&quot;: {<br>    &quot;地点&quot;: &quot;现代明亮的艺术画廊&quot;,<br>    &quot;元素&quot;: [<br>      &quot;现代抽象画&quot;,<br>      &quot;白色墙壁&quot;,<br>      &quot;带天窗的高天花板&quot;,<br>      &quot;抛光混凝土地面&quot;<br>    ],<br>    &quot;照明&quot;: &quot;柔和的自然画廊照明&quot;<br>  },<br>  &quot;摄影层&quot;: {<br>    &quot;风格&quot;: &quot;专业时尚摄影&quot;,<br>    &quot;分辨率&quot;: &quot;8k&quot;,<br>    &quot;细节&quot;: &quot;超高细节，逼真&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta_data\": {\n    \"prompt_version\": \"2.0\",\n    \"use_case\": \"Photorealistic Image Generation\",\n    \"main_subject_count\": 1\n  },\n  \"subject_layer\": {\n    \"anatomy\": {\n      \"demographics\": {\n        \"gender\": \"Female\",\n        \"age_group\": \"Young adult\",\n        \"ethnicity\": \"Western\",\n        \"skin_tone\": \"Tanned\"\n      },\n      \"face_detail\": {\n        \"same_as_reference\": true,\n        \"expression\": \"Slight smirk\",\n        \"makeup\": \"Natural\"\n      },\n      \"hair\": {\n        \"color\": \"Blonde\",\n        \"length\": \"Long\",\n        \"style\": \"Straight\"\n      },\n      \"body\": {\n        \"pose\": \"Standing confidently\",\n        \"attire\": {\n          \"top\": \"Sexy grey halter-neck draped top with deep plunge neckline\",\n          \"bottom\": \"Light blue denim mini shorts\"\n        }\n      }\n    }\n  },\n  \"environment_layer\": {\n    \"location\": \"Modern bright art gallery\",\n    \"elements\": [\n      \"Contemporary abstract paintings\",\n      \"White walls\",\n      \"High ceiling with skylight\",\n      \"Polished concrete floor\"\n    ],\n    \"lighting\": \"Soft natural gallery lighting\"\n  },\n  \"photography_layer\": {\n    \"style\": \"Professional fashion photography\",\n    \"resolution\": \"8k\",\n    \"details\": \"Ultra detailed, realistic\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;meta_data&quot;: {<br>    &quot;prompt_version&quot;: &quot;2.0&quot;,<br>    &quot;use_case&quot;: &quot;Photorealistic Image Generation&quot;,<br>    &quot;main_subject_count&quot;: 1<br>  },<br>  &quot;subject_layer&quot;: {<br>    &quot;anatomy&quot;: {<br>      &quot;demographics&quot;: {<br>        &quot;gender&quot;: &quot;Female&quot;,<br>        &quot;age_group&quot;: &quot;Young adult&quot;,<br>        &quot;ethnicity&quot;: &quot;Western&quot;,<br>        &quot;skin_tone&quot;: &quot;Tanned&quot;<br>      },<br>      &quot;face_detail&quot;: {<br>        &quot;same_as_reference&quot;: true,<br>        &quot;expression&quot;: &quot;Slight smirk&quot;,<br>        &quot;makeup&quot;: &quot;Natural&quot;<br>      },<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Blonde&quot;,<br>        &quot;length&quot;: &quot;Long&quot;,<br>        &quot;style&quot;: &quot;Straight&quot;<br>      },<br>      &quot;body&quot;: {<br>        &quot;pose&quot;: &quot;Standing confidently&quot;,<br>        &quot;attire&quot;: {<br>          &quot;top&quot;: &quot;Sexy grey halter-neck draped top with deep plunge neckline&quot;,<br>          &quot;bottom&quot;: &quot;Light blue denim mini shorts&quot;<br>        }<br>      }<br>    }<br>  },<br>  &quot;environment_layer&quot;: {<br>    &quot;location&quot;: &quot;Modern bright art gallery&quot;,<br>    &quot;elements&quot;: [<br>      &quot;Contemporary abstract paintings&quot;,<br>      &quot;White walls&quot;,<br>      &quot;High ceiling with skylight&quot;,<br>      &quot;Polished concrete floor&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;Soft natural gallery lighting&quot;<br>  },<br>  &quot;photography_layer&quot;: {<br>    &quot;style&quot;: &quot;Professional fashion photography&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;details&quot;: &quot;Ultra detailed, realistic&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta_data&quot;: {<br>    &quot;prompt_version&quot;: &quot;2.0&quot;,<br>    &quot;use_case&quot;: &quot;Photorealistic Image Generation&quot;,<br>    &quot;main_subject_count&quot;: 1<br>  },<br>  &quot;subject_layer&quot;: {<br>    &quot;anatomy&quot;: {<br>      &quot;demographics&quot;: {<br>        &quot;gender&quot;: &quot;Female&quot;,<br>        &quot;age_group&quot;: &quot;Young adult&quot;,<br>        &quot;ethnicity&quot;: &quot;Western&quot;,<br>        &quot;skin_tone&quot;: &quot;Tanned&quot;<br>      },<br>      &quot;face_detail&quot;: {<br>        &quot;same_as_reference&quot;: true,<br>        &quot;expression&quot;: &quot;Slight smirk&quot;,<br>        &quot;makeup&quot;: &quot;Natural&quot;<br>      },<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Blonde&quot;,<br>        &quot;length&quot;: &quot;Long&quot;,<br>        &quot;style&quot;: &quot;Straight&quot;<br>      },<br>      &quot;body&quot;: {<br>        &quot;pose&quot;: &quot;Standing confidently&quot;,<br>        &quot;attire&quot;: {<br>          &quot;top&quot;: &quot;Sexy grey halter-neck draped top with deep plunge neckline&quot;,<br>          &quot;bottom&quot;: &quot;Light blue denim mini shorts&quot;<br>        }<br>      }<br>    }<br>  },<br>  &quot;environment_layer&quot;: {<br>    &quot;location&quot;: &quot;Modern bright art gallery&quot;,<br>    &quot;elements&quot;: [<br>      &quot;Contemporary abstract paintings&quot;,<br>      &quot;White walls&quot;,<br>      &quot;High ceiling with skylight&quot;,<br>      &quot;Polished concrete floor&quot;<br>    ],<br>    &quot;lighting&quot;: &quot;Soft natural gallery lighting&quot;<br>  },<br>  &quot;photography_layer&quot;: {<br>    &quot;style&quot;: &quot;Professional fashion photography&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;details&quot;: &quot;Ultra detailed, realistic&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2013290578415620128-1.jpg" alt="&quot;meta data&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1592,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

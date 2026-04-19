@@ -7,11 +7,13 @@
     <title>&quot;photograph&quot;: { #843 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;photograph&quot;: { &quot;style&quot;: &quot;ultra realistic portrait&quot;, &quot;camera&quot;: &quot;full frame DSLR&quot;, &quot;lens&quot;: &quot;85mm prime&quot;, &quot;resolution...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/843.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/843.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/843.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841458">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022598">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"photograph\": {\n    \"style\": \"超逼真肖像\",\n    \"camera\": \"全画幅数码单反\",\n    \"lens\": \"85mm 定焦镜头\",\n    \"resolution\": \"高\",\n    \"lighting\": {\n      \"type\": \"柔和自然的窗光\",\n      \"direction\": \"来自侧面\",\n      \"quality\": \"阴影过渡平滑，微妙的高光\"\n    },\n    \"focus\": {\n      \"depth_of_field\": \"浅\",\n      \"focal_point\": \"女性的眼睛和狗的面部\"\n    },\n    \"composition\": \"抓拍感，放松，注视镜头\",\n    \"mood\": \"平静、温暖、温柔\"\n  },\n  \"subject\": {\n    \"description\": \"年轻美丽的女性\",\n    \"features\": {\n      \"eyes\": \"绿色\",\n      \"skin\": \"白皙，真实肤色，可见毛孔和细腻自然的肌理\",\n      \"makeup\": \"简约精致，强调嘴唇和眼睛\"\n    },\n    \"hair\": \"自然波浪长发，棕色\",\n    \"clothing\": {\n      \"item\": \"合身的白色罗纹长袖毛衣\",\n      \"details\": \"领口和袖口有精致的贝壳边，真实的针织结构，柔软有弹性\"\n    },\n    \"expression\": \"平静、温暖、温柔\"\n  },\n  \"interaction\": {\n    \"action\": \"温柔地将一只小而蓬松的白色马耳他犬或比熊犬紧抱在胸前\",\n    \"dog\": {\n      \"breed\": \"马耳他犬或比熊犬\",\n      \"fur\": \"柔软，略显不均匀的自然白色\",\n      \"position\": \"头轻轻靠在她的肩膀上\",\n      \"expression\": \"平静，注视镜头\"\n    }\n  },\n  \"setting\": {\n    \"environment\": \"舒适的室内\",\n    \"background\": \"简洁的浅米色墙面，无装饰性干扰\",\n    \"furniture\": {\n      \"item\": \"黑色皮革沙发\",\n      \"details\": \"可见的皮革纹理和细微褶皱\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;photograph&quot;: {<br>    &quot;style&quot;: &quot;超逼真肖像&quot;,<br>    &quot;camera&quot;: &quot;全画幅数码单反&quot;,<br>    &quot;lens&quot;: &quot;85mm 定焦镜头&quot;,<br>    &quot;resolution&quot;: &quot;高&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;柔和自然的窗光&quot;,<br>      &quot;direction&quot;: &quot;来自侧面&quot;,<br>      &quot;quality&quot;: &quot;阴影过渡平滑，微妙的高光&quot;<br>    },<br>    &quot;focus&quot;: {<br>      &quot;depth_of_field&quot;: &quot;浅&quot;,<br>      &quot;focal_point&quot;: &quot;女性的眼睛和狗的面部&quot;<br>    },<br>    &quot;composition&quot;: &quot;抓拍感，放松，注视镜头&quot;,<br>    &quot;mood&quot;: &quot;平静、温暖、温柔&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;年轻美丽的女性&quot;,<br>    &quot;features&quot;: {<br>      &quot;eyes&quot;: &quot;绿色&quot;,<br>      &quot;skin&quot;: &quot;白皙，真实肤色，可见毛孔和细腻自然的肌理&quot;,<br>      &quot;makeup&quot;: &quot;简约精致，强调嘴唇和眼睛&quot;<br>    },<br>    &quot;hair&quot;: &quot;自然波浪长发，棕色&quot;,<br>    &quot;clothing&quot;: {<br>      &quot;item&quot;: &quot;合身的白色罗纹长袖毛衣&quot;,<br>      &quot;details&quot;: &quot;领口和袖口有精致的贝壳边，真实的针织结构，柔软有弹性&quot;<br>    },<br>    &quot;expression&quot;: &quot;平静、温暖、温柔&quot;<br>  },<br>  &quot;interaction&quot;: {<br>    &quot;action&quot;: &quot;温柔地将一只小而蓬松的白色马耳他犬或比熊犬紧抱在胸前&quot;,<br>    &quot;dog&quot;: {<br>      &quot;breed&quot;: &quot;马耳他犬或比熊犬&quot;,<br>      &quot;fur&quot;: &quot;柔软，略显不均匀的自然白色&quot;,<br>      &quot;position&quot;: &quot;头轻轻靠在她的肩膀上&quot;,<br>      &quot;expression&quot;: &quot;平静，注视镜头&quot;<br>    }<br>  },<br>  &quot;setting&quot;: {<br>    &quot;environment&quot;: &quot;舒适的室内&quot;,<br>    &quot;background&quot;: &quot;简洁的浅米色墙面，无装饰性干扰&quot;,<br>    &quot;furniture&quot;: {<br>      &quot;item&quot;: &quot;黑色皮革沙发&quot;,<br>      &quot;details&quot;: &quot;可见的皮革纹理和细微褶皱&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;photograph&quot;: {<br>    &quot;style&quot;: &quot;超逼真肖像&quot;,<br>    &quot;camera&quot;: &quot;全画幅数码单反&quot;,<br>    &quot;lens&quot;: &quot;85mm 定焦镜头&quot;,<br>    &quot;resolution&quot;: &quot;高&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;柔和自然的窗光&quot;,<br>      &quot;direction&quot;: &quot;来自侧面&quot;,<br>      &quot;quality&quot;: &quot;阴影过渡平滑，微妙的高光&quot;<br>    },<br>    &quot;focus&quot;: {<br>      &quot;depth_of_field&quot;: &quot;浅&quot;,<br>      &quot;focal_point&quot;: &quot;女性的眼睛和狗的面部&quot;<br>    },<br>    &quot;composition&quot;: &quot;抓拍感，放松，注视镜头&quot;,<br>    &quot;mood&quot;: &quot;平静、温暖、温柔&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;年轻美丽的女性&quot;,<br>    &quot;features&quot;: {<br>      &quot;eyes&quot;: &quot;绿色&quot;,<br>      &quot;skin&quot;: &quot;白皙，真实肤色，可见毛孔和细腻自然的肌理&quot;,<br>      &quot;makeup&quot;: &quot;简约精致，强调嘴唇和眼睛&quot;<br>    },<br>    &quot;hair&quot;: &quot;自然波浪长发，棕色&quot;,<br>    &quot;clothing&quot;: {<br>      &quot;item&quot;: &quot;合身的白色罗纹长袖毛衣&quot;,<br>      &quot;details&quot;: &quot;领口和袖口有精致的贝壳边，真实的针织结构，柔软有弹性&quot;<br>    },<br>    &quot;expression&quot;: &quot;平静、温暖、温柔&quot;<br>  },<br>  &quot;interaction&quot;: {<br>    &quot;action&quot;: &quot;温柔地将一只小而蓬松的白色马耳他犬或比熊犬紧抱在胸前&quot;,<br>    &quot;dog&quot;: {<br>      &quot;breed&quot;: &quot;马耳他犬或比熊犬&quot;,<br>      &quot;fur&quot;: &quot;柔软，略显不均匀的自然白色&quot;,<br>      &quot;position&quot;: &quot;头轻轻靠在她的肩膀上&quot;,<br>      &quot;expression&quot;: &quot;平静，注视镜头&quot;<br>    }<br>  },<br>  &quot;setting&quot;: {<br>    &quot;environment&quot;: &quot;舒适的室内&quot;,<br>    &quot;background&quot;: &quot;简洁的浅米色墙面，无装饰性干扰&quot;,<br>    &quot;furniture&quot;: {<br>      &quot;item&quot;: &quot;黑色皮革沙发&quot;,<br>      &quot;details&quot;: &quot;可见的皮革纹理和细微褶皱&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"photograph\": {\n    \"style\": \"ultra-realistic portrait\",\n    \"camera\": \"full-frame DSLR\",\n    \"lens\": \"85mm prime\",\n    \"resolution\": \"high\",\n    \"lighting\": {\n      \"type\": \"soft natural window light\",\n      \"direction\": \"from the side\",\n      \"quality\": \"smooth shadow transitions, subtle highlights\"\n    },\n    \"focus\": {\n      \"depth_of_field\": \"shallow\",\n      \"focal_point\": \"woman's eyes and dog's face\"\n    },\n    \"composition\": \"candid, relaxed, looking at camera\",\n    \"mood\": \"calm, warm, gentle\"\n  },\n  \"subject\": {\n    \"description\": \"young beautiful woman\",\n    \"features\": {\n      \"eyes\": \"green\",\n      \"skin\": \"fair, realistic tone with visible pores and subtle natural texture\",\n      \"makeup\": \"minimal refined, emphasizing lips and eyes\"\n    },\n    \"hair\": \"long naturally wavy, brown\",\n    \"clothing\": {\n      \"item\": \"fitted white ribbed long-sleeve sweater\",\n      \"details\": \"delicate scalloped edges along neckline and cuffs, realistic knit structure, soft stretch\"\n    },\n    \"expression\": \"calm, warm, gentle\"\n  },\n  \"interaction\": {\n    \"action\": \"tenderly hugging a small fluffy white Maltese or Bichon Frise dog close to chest\",\n    \"dog\": {\n      \"breed\": \"Maltese or Bichon Frise\",\n      \"fur\": \"soft, slightly uneven and natural white\",\n      \"position\": \"head resting gently on her shoulder\",\n      \"expression\": \"calm, looking at camera\"\n    }\n  },\n  \"setting\": {\n    \"environment\": \"cozy indoor\",\n    \"background\": \"plain light beige wall, no decorative distractions\",\n    \"furniture\": {\n      \"item\": \"black leather couch\",\n      \"details\": \"visible leather grain and gentle creases\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;photograph&quot;: {<br>    &quot;style&quot;: &quot;ultra-realistic portrait&quot;,<br>    &quot;camera&quot;: &quot;full-frame DSLR&quot;,<br>    &quot;lens&quot;: &quot;85mm prime&quot;,<br>    &quot;resolution&quot;: &quot;high&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;soft natural window light&quot;,<br>      &quot;direction&quot;: &quot;from the side&quot;,<br>      &quot;quality&quot;: &quot;smooth shadow transitions, subtle highlights&quot;<br>    },<br>    &quot;focus&quot;: {<br>      &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>      &quot;focal_point&quot;: &quot;woman&#39;s eyes and dog&#39;s face&quot;<br>    },<br>    &quot;composition&quot;: &quot;candid, relaxed, looking at camera&quot;,<br>    &quot;mood&quot;: &quot;calm, warm, gentle&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;young beautiful woman&quot;,<br>    &quot;features&quot;: {<br>      &quot;eyes&quot;: &quot;green&quot;,<br>      &quot;skin&quot;: &quot;fair, realistic tone with visible pores and subtle natural texture&quot;,<br>      &quot;makeup&quot;: &quot;minimal refined, emphasizing lips and eyes&quot;<br>    },<br>    &quot;hair&quot;: &quot;long naturally wavy, brown&quot;,<br>    &quot;clothing&quot;: {<br>      &quot;item&quot;: &quot;fitted white ribbed long-sleeve sweater&quot;,<br>      &quot;details&quot;: &quot;delicate scalloped edges along neckline and cuffs, realistic knit structure, soft stretch&quot;<br>    },<br>    &quot;expression&quot;: &quot;calm, warm, gentle&quot;<br>  },<br>  &quot;interaction&quot;: {<br>    &quot;action&quot;: &quot;tenderly hugging a small fluffy white Maltese or Bichon Frise dog close to chest&quot;,<br>    &quot;dog&quot;: {<br>      &quot;breed&quot;: &quot;Maltese or Bichon Frise&quot;,<br>      &quot;fur&quot;: &quot;soft, slightly uneven and natural white&quot;,<br>      &quot;position&quot;: &quot;head resting gently on her shoulder&quot;,<br>      &quot;expression&quot;: &quot;calm, looking at camera&quot;<br>    }<br>  },<br>  &quot;setting&quot;: {<br>    &quot;environment&quot;: &quot;cozy indoor&quot;,<br>    &quot;background&quot;: &quot;plain light beige wall, no decorative distractions&quot;,<br>    &quot;furniture&quot;: {<br>      &quot;item&quot;: &quot;black leather couch&quot;,<br>      &quot;details&quot;: &quot;visible leather grain and gentle creases&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;photograph&quot;: {<br>    &quot;style&quot;: &quot;ultra-realistic portrait&quot;,<br>    &quot;camera&quot;: &quot;full-frame DSLR&quot;,<br>    &quot;lens&quot;: &quot;85mm prime&quot;,<br>    &quot;resolution&quot;: &quot;high&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;soft natural window light&quot;,<br>      &quot;direction&quot;: &quot;from the side&quot;,<br>      &quot;quality&quot;: &quot;smooth shadow transitions, subtle highlights&quot;<br>    },<br>    &quot;focus&quot;: {<br>      &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>      &quot;focal_point&quot;: &quot;woman&#39;s eyes and dog&#39;s face&quot;<br>    },<br>    &quot;composition&quot;: &quot;candid, relaxed, looking at camera&quot;,<br>    &quot;mood&quot;: &quot;calm, warm, gentle&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;young beautiful woman&quot;,<br>    &quot;features&quot;: {<br>      &quot;eyes&quot;: &quot;green&quot;,<br>      &quot;skin&quot;: &quot;fair, realistic tone with visible pores and subtle natural texture&quot;,<br>      &quot;makeup&quot;: &quot;minimal refined, emphasizing lips and eyes&quot;<br>    },<br>    &quot;hair&quot;: &quot;long naturally wavy, brown&quot;,<br>    &quot;clothing&quot;: {<br>      &quot;item&quot;: &quot;fitted white ribbed long-sleeve sweater&quot;,<br>      &quot;details&quot;: &quot;delicate scalloped edges along neckline and cuffs, realistic knit structure, soft stretch&quot;<br>    },<br>    &quot;expression&quot;: &quot;calm, warm, gentle&quot;<br>  },<br>  &quot;interaction&quot;: {<br>    &quot;action&quot;: &quot;tenderly hugging a small fluffy white Maltese or Bichon Frise dog close to chest&quot;,<br>    &quot;dog&quot;: {<br>      &quot;breed&quot;: &quot;Maltese or Bichon Frise&quot;,<br>      &quot;fur&quot;: &quot;soft, slightly uneven and natural white&quot;,<br>      &quot;position&quot;: &quot;head resting gently on her shoulder&quot;,<br>      &quot;expression&quot;: &quot;calm, looking at camera&quot;<br>    }<br>  },<br>  &quot;setting&quot;: {<br>    &quot;environment&quot;: &quot;cozy indoor&quot;,<br>    &quot;background&quot;: &quot;plain light beige wall, no decorative distractions&quot;,<br>    &quot;furniture&quot;: {<br>      &quot;item&quot;: &quot;black leather couch&quot;,<br>      &quot;details&quot;: &quot;visible leather grain and gentle creases&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009206297737007306-1.jpg" alt="&quot;photograph&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 843,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

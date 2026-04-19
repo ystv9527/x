@@ -7,11 +7,13 @@
     <title>&quot;task&quot;: &quot;image style transfer 3d character&quot;, #2054 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;task&quot;: &quot;image style transfer 3d character&quot;, &quot;input&quot;: { &quot;source image&quot;: &quot;USER UPLOADED IMAGE&quot;, &quot;preserve identity&quot;:...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2054.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2054.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2054.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844494">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023530">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"任务\": \"图像风格迁移_3D角色\",\n  \"输入\": {\n    \"源图像\": \"USER_UPLOADED_IMAGE\",\n    \"保持身份\": true,\n    \"保持姿势\": true,\n    \"保持构图\": true\n  },\n  \"风格参考\": {\n    \"渲染风格\": \"风格化_3D角色\",\n    \"美学\": \"柔和极简卡通3D\",\n    \"灵感\": [\n      \"类似皮克斯但更简约\",\n      \"玩具人偶渲染\",\n      \"干净的产品角色设计\"\n    ]\n  },\n  \"角色设计\": {\n    \"皮肤\": {\n      \"材质\": \"平滑哑光塑料\",\n      \"纹理\": \"柔和均匀\",\n      \"次表面散射\": \"轻柔\"\n    },\n    \"面部特征\": {\n      \"眼睛\": \"半闭眼无聊表情\",\n      \"眼睑\": \"沉重\",\n      \"鼻子\": \"圆润简化\",\n      \"嘴巴\": \"平直中性\",\n      \"耳朵\": \"简化圆润\"\n    },\n    \"情绪\": \"不以为然、冷静、无聊\"\n  },\n  \"服装\": {\n    \"风格\": \"极简街头风\",\n    \"细节\": \"无标志无图案\",\n    \"面料\": \"柔和哑光\"\n  },\n  \"配饰\": {\n    \"头饰\": \"简约棒球帽（可选）\",\n    \"耳部配饰\": \"无线耳塞（可选）\"\n  },\n  \"照明\": {\n    \"布光\": \"影室柔光箱\",\n    \"阴影\": \"非常柔和\",\n    \"对比度\": \"低\",\n    \"高光\": \"细微\"\n  },\n  \"背景\": {\n    \"类型\": \"纯色\",\n    \"配色方案\": [\n      \"柔和绿色\",\n      \"粉彩色调\"\n    ],\n    \"渐变\": \"无\"\n  },\n  \"相机\": {\n    \"角度\": \"正面\",\n    \"构图\": \"中近景\",\n    \"镜头\": \"等效50mm\",\n    \"畸变\": \"无\"\n  },\n  \"渲染质量\": {\n    \"分辨率\": \"高\",\n    \"边缘\": \"干净\",\n    \"噪点\": \"无\",\n    \"写实平衡\": \"偏风格化高于写实\"\n  },\n  \"输出\": {\n    \"一致性\": \"高\",\n    \"风格强度\": \"强\",\n    \"写实程度\": false\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;任务&quot;: &quot;图像风格迁移_3D角色&quot;,<br>  &quot;输入&quot;: {<br>    &quot;源图像&quot;: &quot;USER_UPLOADED_IMAGE&quot;,<br>    &quot;保持身份&quot;: true,<br>    &quot;保持姿势&quot;: true,<br>    &quot;保持构图&quot;: true<br>  },<br>  &quot;风格参考&quot;: {<br>    &quot;渲染风格&quot;: &quot;风格化_3D角色&quot;,<br>    &quot;美学&quot;: &quot;柔和极简卡通3D&quot;,<br>    &quot;灵感&quot;: [<br>      &quot;类似皮克斯但更简约&quot;,<br>      &quot;玩具人偶渲染&quot;,<br>      &quot;干净的产品角色设计&quot;<br>    ]<br>  },<br>  &quot;角色设计&quot;: {<br>    &quot;皮肤&quot;: {<br>      &quot;材质&quot;: &quot;平滑哑光塑料&quot;,<br>      &quot;纹理&quot;: &quot;柔和均匀&quot;,<br>      &quot;次表面散射&quot;: &quot;轻柔&quot;<br>    },<br>    &quot;面部特征&quot;: {<br>      &quot;眼睛&quot;: &quot;半闭眼无聊表情&quot;,<br>      &quot;眼睑&quot;: &quot;沉重&quot;,<br>      &quot;鼻子&quot;: &quot;圆润简化&quot;,<br>      &quot;嘴巴&quot;: &quot;平直中性&quot;,<br>      &quot;耳朵&quot;: &quot;简化圆润&quot;<br>    },<br>    &quot;情绪&quot;: &quot;不以为然、冷静、无聊&quot;<br>  },<br>  &quot;服装&quot;: {<br>    &quot;风格&quot;: &quot;极简街头风&quot;,<br>    &quot;细节&quot;: &quot;无标志无图案&quot;,<br>    &quot;面料&quot;: &quot;柔和哑光&quot;<br>  },<br>  &quot;配饰&quot;: {<br>    &quot;头饰&quot;: &quot;简约棒球帽（可选）&quot;,<br>    &quot;耳部配饰&quot;: &quot;无线耳塞（可选）&quot;<br>  },<br>  &quot;照明&quot;: {<br>    &quot;布光&quot;: &quot;影室柔光箱&quot;,<br>    &quot;阴影&quot;: &quot;非常柔和&quot;,<br>    &quot;对比度&quot;: &quot;低&quot;,<br>    &quot;高光&quot;: &quot;细微&quot;<br>  },<br>  &quot;背景&quot;: {<br>    &quot;类型&quot;: &quot;纯色&quot;,<br>    &quot;配色方案&quot;: [<br>      &quot;柔和绿色&quot;,<br>      &quot;粉彩色调&quot;<br>    ],<br>    &quot;渐变&quot;: &quot;无&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;角度&quot;: &quot;正面&quot;,<br>    &quot;构图&quot;: &quot;中近景&quot;,<br>    &quot;镜头&quot;: &quot;等效50mm&quot;,<br>    &quot;畸变&quot;: &quot;无&quot;<br>  },<br>  &quot;渲染质量&quot;: {<br>    &quot;分辨率&quot;: &quot;高&quot;,<br>    &quot;边缘&quot;: &quot;干净&quot;,<br>    &quot;噪点&quot;: &quot;无&quot;,<br>    &quot;写实平衡&quot;: &quot;偏风格化高于写实&quot;<br>  },<br>  &quot;输出&quot;: {<br>    &quot;一致性&quot;: &quot;高&quot;,<br>    &quot;风格强度&quot;: &quot;强&quot;,<br>    &quot;写实程度&quot;: false<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;任务&quot;: &quot;图像风格迁移_3D角色&quot;,<br>  &quot;输入&quot;: {<br>    &quot;源图像&quot;: &quot;USER_UPLOADED_IMAGE&quot;,<br>    &quot;保持身份&quot;: true,<br>    &quot;保持姿势&quot;: true,<br>    &quot;保持构图&quot;: true<br>  },<br>  &quot;风格参考&quot;: {<br>    &quot;渲染风格&quot;: &quot;风格化_3D角色&quot;,<br>    &quot;美学&quot;: &quot;柔和极简卡通3D&quot;,<br>    &quot;灵感&quot;: [<br>      &quot;类似皮克斯但更简约&quot;,<br>      &quot;玩具人偶渲染&quot;,<br>      &quot;干净的产品角色设计&quot;<br>    ]<br>  },<br>  &quot;角色设计&quot;: {<br>    &quot;皮肤&quot;: {<br>      &quot;材质&quot;: &quot;平滑哑光塑料&quot;,<br>      &quot;纹理&quot;: &quot;柔和均匀&quot;,<br>      &quot;次表面散射&quot;: &quot;轻柔&quot;<br>    },<br>    &quot;面部特征&quot;: {<br>      &quot;眼睛&quot;: &quot;半闭眼无聊表情&quot;,<br>      &quot;眼睑&quot;: &quot;沉重&quot;,<br>      &quot;鼻子&quot;: &quot;圆润简化&quot;,<br>      &quot;嘴巴&quot;: &quot;平直中性&quot;,<br>      &quot;耳朵&quot;: &quot;简化圆润&quot;<br>    },<br>    &quot;情绪&quot;: &quot;不以为然、冷静、无聊&quot;<br>  },<br>  &quot;服装&quot;: {<br>    &quot;风格&quot;: &quot;极简街头风&quot;,<br>    &quot;细节&quot;: &quot;无标志无图案&quot;,<br>    &quot;面料&quot;: &quot;柔和哑光&quot;<br>  },<br>  &quot;配饰&quot;: {<br>    &quot;头饰&quot;: &quot;简约棒球帽（可选）&quot;,<br>    &quot;耳部配饰&quot;: &quot;无线耳塞（可选）&quot;<br>  },<br>  &quot;照明&quot;: {<br>    &quot;布光&quot;: &quot;影室柔光箱&quot;,<br>    &quot;阴影&quot;: &quot;非常柔和&quot;,<br>    &quot;对比度&quot;: &quot;低&quot;,<br>    &quot;高光&quot;: &quot;细微&quot;<br>  },<br>  &quot;背景&quot;: {<br>    &quot;类型&quot;: &quot;纯色&quot;,<br>    &quot;配色方案&quot;: [<br>      &quot;柔和绿色&quot;,<br>      &quot;粉彩色调&quot;<br>    ],<br>    &quot;渐变&quot;: &quot;无&quot;<br>  },<br>  &quot;相机&quot;: {<br>    &quot;角度&quot;: &quot;正面&quot;,<br>    &quot;构图&quot;: &quot;中近景&quot;,<br>    &quot;镜头&quot;: &quot;等效50mm&quot;,<br>    &quot;畸变&quot;: &quot;无&quot;<br>  },<br>  &quot;渲染质量&quot;: {<br>    &quot;分辨率&quot;: &quot;高&quot;,<br>    &quot;边缘&quot;: &quot;干净&quot;,<br>    &quot;噪点&quot;: &quot;无&quot;,<br>    &quot;写实平衡&quot;: &quot;偏风格化高于写实&quot;<br>  },<br>  &quot;输出&quot;: {<br>    &quot;一致性&quot;: &quot;高&quot;,<br>    &quot;风格强度&quot;: &quot;强&quot;,<br>    &quot;写实程度&quot;: false<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n \"task\": \"image_style_transfer_3d_character\",\n \"input\": {\n \"source_image\": \"USER_UPLOADED_IMAGE\",\n \"preserve_identity\": true,\n \"preserve_pose\": true,\n \"preserve_composition\": true\n },\n \"style_reference\": {\n \"render_style\": \"stylized_3d_character\",\n \"aesthetic\": \"soft_minimal_cartoon_3d\",\n \"inspiration\": [\n \"pixar_like_but_more_minimal\",\n \"toy_figure_render\",\n \"clean_product_character_design\"\n ]\n },\n \"character_design\": {\n \"skin\": {\n \"material\": \"smooth_matte_plastic\",\n \"texture\": \"soft_uniform\",\n \"subsurface_scattering\": \"gentle\"\n },\n \"facial_features\": {\n \"eyes\": \"half_closed_bored_expression\",\n \"eyelids\": \"heavy\",\n \"nose\": \"rounded_simplified\",\n \"mouth\": \"flat_neutral\",\n \"ears\": \"simplified_rounded\"\n },\n \"emotion\": \"unimpressed_calm_bored\"\n },\n \"clothing\": {\n \"style\": \"minimal_streetwear\",\n \"details\": \"no_logos_no_patterns\",\n \"fabric\": \"soft_matte\"\n },\n \"accessories\": {\n \"headwear\": \"simple_baseball_cap_optional\",\n \"ear_accessories\": \"wireless_earbuds_optional\"\n },\n \"lighting\": {\n \"setup\": \"studio_softbox\",\n \"shadows\": \"very_soft\",\n \"contrast\": \"low\",\n \"highlights\": \"subtle\"\n },\n \"background\": {\n \"type\": \"solid_color\",\n \"color_palette\": [\n \"muted_green\",\n \"pastel_tone\"\n ],\n \"gradient\": \"none\"\n },\n \"camera\": {\n \"angle\": \"front_facing\",\n \"framing\": \"medium_close_up\",\n \"lens\": \"50mm_equivalent\",\n \"distortion\": \"none\"\n },\n \"render_quality\": {\n \"resolution\": \"high\",\n \"edges\": \"clean\",\n \"noise\": \"none\",\n \"realism_balance\": \"stylized_over_realistic\"\n },\n \"output\": {\n \"consistency\": \"high\",\n \"style_strength\": \"strong\",\n \"photorealism\": false\n }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br> &quot;task&quot;: &quot;image_style_transfer_3d_character&quot;,<br> &quot;input&quot;: {<br> &quot;source_image&quot;: &quot;USER_UPLOADED_IMAGE&quot;,<br> &quot;preserve_identity&quot;: true,<br> &quot;preserve_pose&quot;: true,<br> &quot;preserve_composition&quot;: true<br> },<br> &quot;style_reference&quot;: {<br> &quot;render_style&quot;: &quot;stylized_3d_character&quot;,<br> &quot;aesthetic&quot;: &quot;soft_minimal_cartoon_3d&quot;,<br> &quot;inspiration&quot;: [<br> &quot;pixar_like_but_more_minimal&quot;,<br> &quot;toy_figure_render&quot;,<br> &quot;clean_product_character_design&quot;<br> ]<br> },<br> &quot;character_design&quot;: {<br> &quot;skin&quot;: {<br> &quot;material&quot;: &quot;smooth_matte_plastic&quot;,<br> &quot;texture&quot;: &quot;soft_uniform&quot;,<br> &quot;subsurface_scattering&quot;: &quot;gentle&quot;<br> },<br> &quot;facial_features&quot;: {<br> &quot;eyes&quot;: &quot;half_closed_bored_expression&quot;,<br> &quot;eyelids&quot;: &quot;heavy&quot;,<br> &quot;nose&quot;: &quot;rounded_simplified&quot;,<br> &quot;mouth&quot;: &quot;flat_neutral&quot;,<br> &quot;ears&quot;: &quot;simplified_rounded&quot;<br> },<br> &quot;emotion&quot;: &quot;unimpressed_calm_bored&quot;<br> },<br> &quot;clothing&quot;: {<br> &quot;style&quot;: &quot;minimal_streetwear&quot;,<br> &quot;details&quot;: &quot;no_logos_no_patterns&quot;,<br> &quot;fabric&quot;: &quot;soft_matte&quot;<br> },<br> &quot;accessories&quot;: {<br> &quot;headwear&quot;: &quot;simple_baseball_cap_optional&quot;,<br> &quot;ear_accessories&quot;: &quot;wireless_earbuds_optional&quot;<br> },<br> &quot;lighting&quot;: {<br> &quot;setup&quot;: &quot;studio_softbox&quot;,<br> &quot;shadows&quot;: &quot;very_soft&quot;,<br> &quot;contrast&quot;: &quot;low&quot;,<br> &quot;highlights&quot;: &quot;subtle&quot;<br> },<br> &quot;background&quot;: {<br> &quot;type&quot;: &quot;solid_color&quot;,<br> &quot;color_palette&quot;: [<br> &quot;muted_green&quot;,<br> &quot;pastel_tone&quot;<br> ],<br> &quot;gradient&quot;: &quot;none&quot;<br> },<br> &quot;camera&quot;: {<br> &quot;angle&quot;: &quot;front_facing&quot;,<br> &quot;framing&quot;: &quot;medium_close_up&quot;,<br> &quot;lens&quot;: &quot;50mm_equivalent&quot;,<br> &quot;distortion&quot;: &quot;none&quot;<br> },<br> &quot;render_quality&quot;: {<br> &quot;resolution&quot;: &quot;high&quot;,<br> &quot;edges&quot;: &quot;clean&quot;,<br> &quot;noise&quot;: &quot;none&quot;,<br> &quot;realism_balance&quot;: &quot;stylized_over_realistic&quot;<br> },<br> &quot;output&quot;: {<br> &quot;consistency&quot;: &quot;high&quot;,<br> &quot;style_strength&quot;: &quot;strong&quot;,<br> &quot;photorealism&quot;: false<br> }<br>}</p>
+        <div data-nosnippet><p>{<br> &quot;task&quot;: &quot;image_style_transfer_3d_character&quot;,<br> &quot;input&quot;: {<br> &quot;source_image&quot;: &quot;USER_UPLOADED_IMAGE&quot;,<br> &quot;preserve_identity&quot;: true,<br> &quot;preserve_pose&quot;: true,<br> &quot;preserve_composition&quot;: true<br> },<br> &quot;style_reference&quot;: {<br> &quot;render_style&quot;: &quot;stylized_3d_character&quot;,<br> &quot;aesthetic&quot;: &quot;soft_minimal_cartoon_3d&quot;,<br> &quot;inspiration&quot;: [<br> &quot;pixar_like_but_more_minimal&quot;,<br> &quot;toy_figure_render&quot;,<br> &quot;clean_product_character_design&quot;<br> ]<br> },<br> &quot;character_design&quot;: {<br> &quot;skin&quot;: {<br> &quot;material&quot;: &quot;smooth_matte_plastic&quot;,<br> &quot;texture&quot;: &quot;soft_uniform&quot;,<br> &quot;subsurface_scattering&quot;: &quot;gentle&quot;<br> },<br> &quot;facial_features&quot;: {<br> &quot;eyes&quot;: &quot;half_closed_bored_expression&quot;,<br> &quot;eyelids&quot;: &quot;heavy&quot;,<br> &quot;nose&quot;: &quot;rounded_simplified&quot;,<br> &quot;mouth&quot;: &quot;flat_neutral&quot;,<br> &quot;ears&quot;: &quot;simplified_rounded&quot;<br> },<br> &quot;emotion&quot;: &quot;unimpressed_calm_bored&quot;<br> },<br> &quot;clothing&quot;: {<br> &quot;style&quot;: &quot;minimal_streetwear&quot;,<br> &quot;details&quot;: &quot;no_logos_no_patterns&quot;,<br> &quot;fabric&quot;: &quot;soft_matte&quot;<br> },<br> &quot;accessories&quot;: {<br> &quot;headwear&quot;: &quot;simple_baseball_cap_optional&quot;,<br> &quot;ear_accessories&quot;: &quot;wireless_earbuds_optional&quot;<br> },<br> &quot;lighting&quot;: {<br> &quot;setup&quot;: &quot;studio_softbox&quot;,<br> &quot;shadows&quot;: &quot;very_soft&quot;,<br> &quot;contrast&quot;: &quot;low&quot;,<br> &quot;highlights&quot;: &quot;subtle&quot;<br> },<br> &quot;background&quot;: {<br> &quot;type&quot;: &quot;solid_color&quot;,<br> &quot;color_palette&quot;: [<br> &quot;muted_green&quot;,<br> &quot;pastel_tone&quot;<br> ],<br> &quot;gradient&quot;: &quot;none&quot;<br> },<br> &quot;camera&quot;: {<br> &quot;angle&quot;: &quot;front_facing&quot;,<br> &quot;framing&quot;: &quot;medium_close_up&quot;,<br> &quot;lens&quot;: &quot;50mm_equivalent&quot;,<br> &quot;distortion&quot;: &quot;none&quot;<br> },<br> &quot;render_quality&quot;: {<br> &quot;resolution&quot;: &quot;high&quot;,<br> &quot;edges&quot;: &quot;clean&quot;,<br> &quot;noise&quot;: &quot;none&quot;,<br> &quot;realism_balance&quot;: &quot;stylized_over_realistic&quot;<br> },<br> &quot;output&quot;: {<br> &quot;consistency&quot;: &quot;high&quot;,<br> &quot;style_strength&quot;: &quot;strong&quot;,<br> &quot;photorealism&quot;: false<br> }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2020856678351065532-1.jpg" alt="&quot;task&quot;: &quot;image style transfer 3d character&quot;," loading="lazy"><img src="/images/tweet-2020856678351065532-2.jpg" alt="&quot;task&quot;: &quot;image style transfer 3d character&quot;," loading="lazy"><img src="/images/tweet-2020856678351065532-3.jpg" alt="&quot;task&quot;: &quot;image style transfer 3d character&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2054,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

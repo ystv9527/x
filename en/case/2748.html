@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #2748 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;quality&quot;: &quot;ultra photorealistic, raw style, 8k, highly detailed&quot;, &quot;camera model&quot;: &quot;Full frame DSLR&quot;, &quot;le...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2748.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2748.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2748.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843777">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023370">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("抱歉，我无法协助翻译或生成涉及真实公众人物的性化内容。如果您愿意，我可以翻译一个将该公众人物替换为虚构人物的版本，或将描述改为不那么性化的版本。请告诉我您希望如何修改。", this)'>📋 Copy</button>
         </div>
-        <p>抱歉，我无法协助翻译或生成涉及真实公众人物的性化内容。如果您愿意，我可以翻译一个将该公众人物替换为虚构人物的版本，或将描述改为不那么性化的版本。请告诉我您希望如何修改。</p>
+        <div data-nosnippet><p>抱歉，我无法协助翻译或生成涉及真实公众人物的性化内容。如果您愿意，我可以翻译一个将该公众人物替换为虚构人物的版本，或将描述改为不那么性化的版本。请告诉我您希望如何修改。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"quality\": \"ultra-photorealistic, raw style, 8k, highly detailed\",\n    \"camera_model\": \"Full-frame DSLR\",\n    \"lens_spec\": \"35mm prime, f/2.8 aperture\",\n    \"aspect_ratio\": \"9:16\",\n    \"style_preset\": \"candid realism, high-fashion editorial\",\n    \"technical_rules\": \"no smoothing, visible digital grain, natural skin textures\"\n  },\n  \"scene\": {\n    \"location\": \"modern minimalist living room\",\n    \"time_of_day\": \"evening, indoor lighting\",\n    \"atmosphere\": \"intimate, sophisticated\",\n    \"background_elements\": [\n      \"white wall\",\n      \"abstract blue and black framed art\",\n      \"wooden flooring\",\n      \"white shag rug\"\n    ],\n    \"props\": [\n      \"vintage olive green winged armchair\"\n    ]\n  },\n  \"subject\": {\n    \"identity\": {\n      \"name_reference\": \"Miyeon from (G)I-DLE\",\n      \"biometric_details\": \"perfectly straight high bridge nose, symmetrical oval face, deer-like eyes\",\n      \"ethnicity_age\": \"Korean, mid 20s\"\n    },\n    \"physical\": {\n      \"body_type\": \"graceful, slim and athletic\",\n      \"skin_details\": \"bright porcelain skin, flawless texture, no tattoos\",\n      \"hair_style\": \"long voluminous platinum blonde waves\",\n      \"facial_features\": \"classic beauty, elegant features, soft smile\"\n    }\n  },\n  \"wardrobe\": {\n    \"outfit_description\": \"soft pink ribbed long-sleeve crop top, matching pink lace lingerie bottoms\",\n    \"materials\": \"knit cotton, delicate lace\",\n    \"footwear\": \"soft pink over-the-knee knit socks\",\n    \"accessories\": [\n      \"nude pink manicured nails\"\n    ]\n  },\n  \"pose_action\": {\n    \"primary_pose\": \"kneeling on the seat of an olive green armchair\",\n    \"body_language\": \"arched back, hands resting on thighs, torso turned toward camera\",\n    \"expression\": \"elegant, soft gaze\",\n    \"interaction\": \"direct eye contact with the lens\"\n  },\n  \"lighting\": {\n    \"setup\": \"frontal flash photography, warm overhead ambient light\",\n    \"effects\": \"sharp shadows against the wall, high contrast\",\n    \"color_grading\": \"neutral tones with warm highlights\"\n  },\n  \"composition\": {\n    \"shot_type\": \"full-body portrait\",\n    \"camera_angle\": \"eye-level, straight on\",\n    \"focus_point\": \"sharp focus on Miyeon's face\",\n    \"depth_of_field\": \"slight blur on the background wall\"\n  },\n  \"realism_focus\": {\n    \"textures\": [\n      \"ribbed fabric texture\",\n      \"detailed lace embroidery\",\n      \"realistic hair strands\"\n    ],\n    \"imperfections\": [\n      \"natural fabric folds\",\n      \"subtle skin highlights\"\n    ]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;ultra-photorealistic, raw style, 8k, highly detailed&quot;,<br>    &quot;camera_model&quot;: &quot;Full-frame DSLR&quot;,<br>    &quot;lens_spec&quot;: &quot;35mm prime, f/2.8 aperture&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style_preset&quot;: &quot;candid realism, high-fashion editorial&quot;,<br>    &quot;technical_rules&quot;: &quot;no smoothing, visible digital grain, natural skin textures&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;modern minimalist living room&quot;,<br>    &quot;time_of_day&quot;: &quot;evening, indoor lighting&quot;,<br>    &quot;atmosphere&quot;: &quot;intimate, sophisticated&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;white wall&quot;,<br>      &quot;abstract blue and black framed art&quot;,<br>      &quot;wooden flooring&quot;,<br>      &quot;white shag rug&quot;<br>    ],<br>    &quot;props&quot;: [<br>      &quot;vintage olive green winged armchair&quot;<br>    ]<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name_reference&quot;: &quot;Miyeon from (G)I-DLE&quot;,<br>      &quot;biometric_details&quot;: &quot;perfectly straight high bridge nose, symmetrical oval face, deer-like eyes&quot;,<br>      &quot;ethnicity_age&quot;: &quot;Korean, mid 20s&quot;<br>    },<br>    &quot;physical&quot;: {<br>      &quot;body_type&quot;: &quot;graceful, slim and athletic&quot;,<br>      &quot;skin_details&quot;: &quot;bright porcelain skin, flawless texture, no tattoos&quot;,<br>      &quot;hair_style&quot;: &quot;long voluminous platinum blonde waves&quot;,<br>      &quot;facial_features&quot;: &quot;classic beauty, elegant features, soft smile&quot;<br>    }<br>  },<br>  &quot;wardrobe&quot;: {<br>    &quot;outfit_description&quot;: &quot;soft pink ribbed long-sleeve crop top, matching pink lace lingerie bottoms&quot;,<br>    &quot;materials&quot;: &quot;knit cotton, delicate lace&quot;,<br>    &quot;footwear&quot;: &quot;soft pink over-the-knee knit socks&quot;,<br>    &quot;accessories&quot;: [<br>      &quot;nude pink manicured nails&quot;<br>    ]<br>  },<br>  &quot;pose_action&quot;: {<br>    &quot;primary_pose&quot;: &quot;kneeling on the seat of an olive green armchair&quot;,<br>    &quot;body_language&quot;: &quot;arched back, hands resting on thighs, torso turned toward camera&quot;,<br>    &quot;expression&quot;: &quot;elegant, soft gaze&quot;,<br>    &quot;interaction&quot;: &quot;direct eye contact with the lens&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;setup&quot;: &quot;frontal flash photography, warm overhead ambient light&quot;,<br>    &quot;effects&quot;: &quot;sharp shadows against the wall, high contrast&quot;,<br>    &quot;color_grading&quot;: &quot;neutral tones with warm highlights&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;shot_type&quot;: &quot;full-body portrait&quot;,<br>    &quot;camera_angle&quot;: &quot;eye-level, straight on&quot;,<br>    &quot;focus_point&quot;: &quot;sharp focus on Miyeon&#39;s face&quot;,<br>    &quot;depth_of_field&quot;: &quot;slight blur on the background wall&quot;<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: [<br>      &quot;ribbed fabric texture&quot;,<br>      &quot;detailed lace embroidery&quot;,<br>      &quot;realistic hair strands&quot;<br>    ],<br>    &quot;imperfections&quot;: [<br>      &quot;natural fabric folds&quot;,<br>      &quot;subtle skin highlights&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;ultra-photorealistic, raw style, 8k, highly detailed&quot;,<br>    &quot;camera_model&quot;: &quot;Full-frame DSLR&quot;,<br>    &quot;lens_spec&quot;: &quot;35mm prime, f/2.8 aperture&quot;,<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;style_preset&quot;: &quot;candid realism, high-fashion editorial&quot;,<br>    &quot;technical_rules&quot;: &quot;no smoothing, visible digital grain, natural skin textures&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;modern minimalist living room&quot;,<br>    &quot;time_of_day&quot;: &quot;evening, indoor lighting&quot;,<br>    &quot;atmosphere&quot;: &quot;intimate, sophisticated&quot;,<br>    &quot;background_elements&quot;: [<br>      &quot;white wall&quot;,<br>      &quot;abstract blue and black framed art&quot;,<br>      &quot;wooden flooring&quot;,<br>      &quot;white shag rug&quot;<br>    ],<br>    &quot;props&quot;: [<br>      &quot;vintage olive green winged armchair&quot;<br>    ]<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: {<br>      &quot;name_reference&quot;: &quot;Miyeon from (G)I-DLE&quot;,<br>      &quot;biometric_details&quot;: &quot;perfectly straight high bridge nose, symmetrical oval face, deer-like eyes&quot;,<br>      &quot;ethnicity_age&quot;: &quot;Korean, mid 20s&quot;<br>    },<br>    &quot;physical&quot;: {<br>      &quot;body_type&quot;: &quot;graceful, slim and athletic&quot;,<br>      &quot;skin_details&quot;: &quot;bright porcelain skin, flawless texture, no tattoos&quot;,<br>      &quot;hair_style&quot;: &quot;long voluminous platinum blonde waves&quot;,<br>      &quot;facial_features&quot;: &quot;classic beauty, elegant features, soft smile&quot;<br>    }<br>  },<br>  &quot;wardrobe&quot;: {<br>    &quot;outfit_description&quot;: &quot;soft pink ribbed long-sleeve crop top, matching pink lace lingerie bottoms&quot;,<br>    &quot;materials&quot;: &quot;knit cotton, delicate lace&quot;,<br>    &quot;footwear&quot;: &quot;soft pink over-the-knee knit socks&quot;,<br>    &quot;accessories&quot;: [<br>      &quot;nude pink manicured nails&quot;<br>    ]<br>  },<br>  &quot;pose_action&quot;: {<br>    &quot;primary_pose&quot;: &quot;kneeling on the seat of an olive green armchair&quot;,<br>    &quot;body_language&quot;: &quot;arched back, hands resting on thighs, torso turned toward camera&quot;,<br>    &quot;expression&quot;: &quot;elegant, soft gaze&quot;,<br>    &quot;interaction&quot;: &quot;direct eye contact with the lens&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;setup&quot;: &quot;frontal flash photography, warm overhead ambient light&quot;,<br>    &quot;effects&quot;: &quot;sharp shadows against the wall, high contrast&quot;,<br>    &quot;color_grading&quot;: &quot;neutral tones with warm highlights&quot;<br>  },<br>  &quot;composition&quot;: {<br>    &quot;shot_type&quot;: &quot;full-body portrait&quot;,<br>    &quot;camera_angle&quot;: &quot;eye-level, straight on&quot;,<br>    &quot;focus_point&quot;: &quot;sharp focus on Miyeon&#39;s face&quot;,<br>    &quot;depth_of_field&quot;: &quot;slight blur on the background wall&quot;<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: [<br>      &quot;ribbed fabric texture&quot;,<br>      &quot;detailed lace embroidery&quot;,<br>      &quot;realistic hair strands&quot;<br>    ],<br>    &quot;imperfections&quot;: [<br>      &quot;natural fabric folds&quot;,<br>      &quot;subtle skin highlights&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2039328426872508759-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2748,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

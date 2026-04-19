@@ -7,11 +7,13 @@
     <title>&quot;aspect ratio&quot;: &quot;3:4&quot;, #1331 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;render mode&quot;: &quot;raw&quot;, &quot;series&quot;: [ { &quot;index&quot;: &quot;1/5&quot;, &quot;prompt&quot;: &quot;two hands pulling apart a hot...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1331.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1331.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1331.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845234">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023679">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"aspect_ratio\": \"3:4\",\n  \"render_mode\": \"原始\",\n  \"series\": [\n    {\n      \"index\": \"1/5\",\n      \"prompt\": \"两只手拉开一片热腾腾、刚出炉的披萨，片与饼体之间有长长有弹性的马苏里拉奶酪拉丝，焦脆起泡的边缘，蒸汽上升，面包屑悬空落下，温暖的电影感灯光，超高细节的食物动作摄影\",\n      \"category\": \"奶酪拉丝\",\n      \"lighting\": \"温暖的电影感烤箱灯光\",\n      \"detail_level\": \"超高细节\"\n    },\n    {\n      \"index\": \"2/5\",\n      \"prompt\": \"两只手撕开一块浸满糖浆的巴克拉瓦，薄脆的菲洛面片层裂开，浓郁的开心果馅显露，浓厚的蜂蜜糖浆拉伸并在空中滴落，金黄温暖的光线，电影感的甜点动作摄影\",\n      \"category\": \"糖浆与酥脆\",\n      \"lighting\": \"金黄温暖的光\",\n      \"detail_level\": \"超高细节\"\n    },\n    {\n      \"index\": \"3/5\",\n      \"prompt\": \"两只手将一块熔岩巧克力蛋糕掰成两半，光滑深色的巧克力从中心流出，蒸汽轻轻升起，碎屑悬浮在空中，柔和温暖的聚光灯，电影感的甜点动作摄影\",\n      \"category\": \"熔岩巧克力\",\n      \"lighting\": \"柔和温暖的聚光灯\",\n      \"detail_level\": \"超高细节\"\n    },\n    {\n      \"index\": \"4/5\",\n      \"prompt\": \"两只手撕开一只抹了糖霜的肉桂卷，黏稠的肉桂糖馅以有光泽的丝状拉伸，糖霜缓慢滴落，蓬松的面团质地可见，温馨温暖的面包店光线，高细节的电影感美食摄影\",\n      \"category\": \"黏稠拉丝\",\n      \"lighting\": \"温暖的面包店灯光\",\n      \"detail_level\": \"超高细节\"\n    },\n    {\n      \"index\": \"5/5\",\n      \"prompt\": \"两只手分开一块经典纽约风味芝士蛋糕，超奶油的内馅慢慢分离，酥脆的饼干底断裂，细微的奶油拉伸，柔和的暖色工作室灯光，电影感的高细节甜点摄影\",\n      \"category\": \"奶油分离\",\n      \"lighting\": \"柔和的暖色工作室灯光\",\n      \"detail_level\": \"超高细节\"\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;render_mode&quot;: &quot;原始&quot;,<br>  &quot;series&quot;: [<br>    {<br>      &quot;index&quot;: &quot;1/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手拉开一片热腾腾、刚出炉的披萨，片与饼体之间有长长有弹性的马苏里拉奶酪拉丝，焦脆起泡的边缘，蒸汽上升，面包屑悬空落下，温暖的电影感灯光，超高细节的食物动作摄影&quot;,<br>      &quot;category&quot;: &quot;奶酪拉丝&quot;,<br>      &quot;lighting&quot;: &quot;温暖的电影感烤箱灯光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;2/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手撕开一块浸满糖浆的巴克拉瓦，薄脆的菲洛面片层裂开，浓郁的开心果馅显露，浓厚的蜂蜜糖浆拉伸并在空中滴落，金黄温暖的光线，电影感的甜点动作摄影&quot;,<br>      &quot;category&quot;: &quot;糖浆与酥脆&quot;,<br>      &quot;lighting&quot;: &quot;金黄温暖的光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;3/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手将一块熔岩巧克力蛋糕掰成两半，光滑深色的巧克力从中心流出，蒸汽轻轻升起，碎屑悬浮在空中，柔和温暖的聚光灯，电影感的甜点动作摄影&quot;,<br>      &quot;category&quot;: &quot;熔岩巧克力&quot;,<br>      &quot;lighting&quot;: &quot;柔和温暖的聚光灯&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;4/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手撕开一只抹了糖霜的肉桂卷，黏稠的肉桂糖馅以有光泽的丝状拉伸，糖霜缓慢滴落，蓬松的面团质地可见，温馨温暖的面包店光线，高细节的电影感美食摄影&quot;,<br>      &quot;category&quot;: &quot;黏稠拉丝&quot;,<br>      &quot;lighting&quot;: &quot;温暖的面包店灯光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;5/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手分开一块经典纽约风味芝士蛋糕，超奶油的内馅慢慢分离，酥脆的饼干底断裂，细微的奶油拉伸，柔和的暖色工作室灯光，电影感的高细节甜点摄影&quot;,<br>      &quot;category&quot;: &quot;奶油分离&quot;,<br>      &quot;lighting&quot;: &quot;柔和的暖色工作室灯光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;render_mode&quot;: &quot;原始&quot;,<br>  &quot;series&quot;: [<br>    {<br>      &quot;index&quot;: &quot;1/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手拉开一片热腾腾、刚出炉的披萨，片与饼体之间有长长有弹性的马苏里拉奶酪拉丝，焦脆起泡的边缘，蒸汽上升，面包屑悬空落下，温暖的电影感灯光，超高细节的食物动作摄影&quot;,<br>      &quot;category&quot;: &quot;奶酪拉丝&quot;,<br>      &quot;lighting&quot;: &quot;温暖的电影感烤箱灯光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;2/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手撕开一块浸满糖浆的巴克拉瓦，薄脆的菲洛面片层裂开，浓郁的开心果馅显露，浓厚的蜂蜜糖浆拉伸并在空中滴落，金黄温暖的光线，电影感的甜点动作摄影&quot;,<br>      &quot;category&quot;: &quot;糖浆与酥脆&quot;,<br>      &quot;lighting&quot;: &quot;金黄温暖的光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;3/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手将一块熔岩巧克力蛋糕掰成两半，光滑深色的巧克力从中心流出，蒸汽轻轻升起，碎屑悬浮在空中，柔和温暖的聚光灯，电影感的甜点动作摄影&quot;,<br>      &quot;category&quot;: &quot;熔岩巧克力&quot;,<br>      &quot;lighting&quot;: &quot;柔和温暖的聚光灯&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;4/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手撕开一只抹了糖霜的肉桂卷，黏稠的肉桂糖馅以有光泽的丝状拉伸，糖霜缓慢滴落，蓬松的面团质地可见，温馨温暖的面包店光线，高细节的电影感美食摄影&quot;,<br>      &quot;category&quot;: &quot;黏稠拉丝&quot;,<br>      &quot;lighting&quot;: &quot;温暖的面包店灯光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;5/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手分开一块经典纽约风味芝士蛋糕，超奶油的内馅慢慢分离，酥脆的饼干底断裂，细微的奶油拉伸，柔和的暖色工作室灯光，电影感的高细节甜点摄影&quot;,<br>      &quot;category&quot;: &quot;奶油分离&quot;,<br>      &quot;lighting&quot;: &quot;柔和的暖色工作室灯光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"aspect_ratio\": \"3:4\",\n  \"render_mode\": \"raw\",\n  \"series\": [\n    {\n      \"index\": \"1/5\",\n      \"prompt\": \"two hands pulling apart a hot freshly baked pizza slice, long elastic mozzarella cheese stretch between the slice and the pie, blistered crust edges, steam rising, crumbs falling mid-air, warm cinematic light, ultra high-detail food action photography\",\n      \"category\": \"cheese pull\",\n      \"lighting\": \"warm cinematic oven light\",\n      \"detail_level\": \"ultra-detailed\"\n    },\n    {\n      \"index\": \"2/5\",\n      \"prompt\": \"two hands pulling apart a syrup-soaked baklava piece, thin crispy phyllo layers cracking, rich pistachio filling visible, thick honey syrup stretching and dripping mid-air, golden warm light, cinematic dessert action photography\",\n      \"category\": \"syrup & crunch\",\n      \"lighting\": \"golden warm light\",\n      \"detail_level\": \"ultra-detailed\"\n    },\n    {\n      \"index\": \"3/5\",\n      \"prompt\": \"two hands breaking a molten chocolate lava cake in half, glossy dark chocolate flowing out from the center, steam rising gently, crumbs suspended mid-air, soft warm spotlight, cinematic dessert action photography\",\n      \"category\": \"molten chocolate\",\n      \"lighting\": \"soft warm spotlight\",\n      \"detail_level\": \"ultra-detailed\"\n    },\n    {\n      \"index\": \"4/5\",\n      \"prompt\": \"two hands tearing a glazed cinnamon roll apart, sticky cinnamon sugar filling stretching in glossy strands, icing dripping slowly, fluffy dough texture visible, cozy warm bakery light, high-detail cinematic food photography\",\n      \"category\": \"sticky pull\",\n      \"lighting\": \"warm bakery light\",\n      \"detail_level\": \"ultra-detailed\"\n    },\n    {\n      \"index\": \"5/5\",\n      \"prompt\": \"two hands splitting a classic New York-style cheesecake slice, ultra-creamy interior slowly separating, crumbly biscuit base breaking apart, subtle cream stretch, soft studio warm light, cinematic high-detail dessert photography\",\n      \"category\": \"creamy separation\",\n      \"lighting\": \"soft warm studio light\",\n      \"detail_level\": \"ultra-detailed\"\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;render_mode&quot;: &quot;raw&quot;,<br>  &quot;series&quot;: [<br>    {<br>      &quot;index&quot;: &quot;1/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands pulling apart a hot freshly baked pizza slice, long elastic mozzarella cheese stretch between the slice and the pie, blistered crust edges, steam rising, crumbs falling mid-air, warm cinematic light, ultra high-detail food action photography&quot;,<br>      &quot;category&quot;: &quot;cheese pull&quot;,<br>      &quot;lighting&quot;: &quot;warm cinematic oven light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;2/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands pulling apart a syrup-soaked baklava piece, thin crispy phyllo layers cracking, rich pistachio filling visible, thick honey syrup stretching and dripping mid-air, golden warm light, cinematic dessert action photography&quot;,<br>      &quot;category&quot;: &quot;syrup &amp; crunch&quot;,<br>      &quot;lighting&quot;: &quot;golden warm light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;3/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands breaking a molten chocolate lava cake in half, glossy dark chocolate flowing out from the center, steam rising gently, crumbs suspended mid-air, soft warm spotlight, cinematic dessert action photography&quot;,<br>      &quot;category&quot;: &quot;molten chocolate&quot;,<br>      &quot;lighting&quot;: &quot;soft warm spotlight&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;4/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands tearing a glazed cinnamon roll apart, sticky cinnamon sugar filling stretching in glossy strands, icing dripping slowly, fluffy dough texture visible, cozy warm bakery light, high-detail cinematic food photography&quot;,<br>      &quot;category&quot;: &quot;sticky pull&quot;,<br>      &quot;lighting&quot;: &quot;warm bakery light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;5/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands splitting a classic New York-style cheesecake slice, ultra-creamy interior slowly separating, crumbly biscuit base breaking apart, subtle cream stretch, soft studio warm light, cinematic high-detail dessert photography&quot;,<br>      &quot;category&quot;: &quot;creamy separation&quot;,<br>      &quot;lighting&quot;: &quot;soft warm studio light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;render_mode&quot;: &quot;raw&quot;,<br>  &quot;series&quot;: [<br>    {<br>      &quot;index&quot;: &quot;1/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands pulling apart a hot freshly baked pizza slice, long elastic mozzarella cheese stretch between the slice and the pie, blistered crust edges, steam rising, crumbs falling mid-air, warm cinematic light, ultra high-detail food action photography&quot;,<br>      &quot;category&quot;: &quot;cheese pull&quot;,<br>      &quot;lighting&quot;: &quot;warm cinematic oven light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;2/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands pulling apart a syrup-soaked baklava piece, thin crispy phyllo layers cracking, rich pistachio filling visible, thick honey syrup stretching and dripping mid-air, golden warm light, cinematic dessert action photography&quot;,<br>      &quot;category&quot;: &quot;syrup &amp; crunch&quot;,<br>      &quot;lighting&quot;: &quot;golden warm light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;3/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands breaking a molten chocolate lava cake in half, glossy dark chocolate flowing out from the center, steam rising gently, crumbs suspended mid-air, soft warm spotlight, cinematic dessert action photography&quot;,<br>      &quot;category&quot;: &quot;molten chocolate&quot;,<br>      &quot;lighting&quot;: &quot;soft warm spotlight&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;4/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands tearing a glazed cinnamon roll apart, sticky cinnamon sugar filling stretching in glossy strands, icing dripping slowly, fluffy dough texture visible, cozy warm bakery light, high-detail cinematic food photography&quot;,<br>      &quot;category&quot;: &quot;sticky pull&quot;,<br>      &quot;lighting&quot;: &quot;warm bakery light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;5/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands splitting a classic New York-style cheesecake slice, ultra-creamy interior slowly separating, crumbly biscuit base breaking apart, subtle cream stretch, soft studio warm light, cinematic high-detail dessert photography&quot;,<br>      &quot;category&quot;: &quot;creamy separation&quot;,<br>      &quot;lighting&quot;: &quot;soft warm studio light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011762827866845208-1.jpg" alt="&quot;aspect ratio&quot;: &quot;3:4&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1331,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>Police photo style. #48 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Police photo style - AI image generation prompts.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/48.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/48.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/48.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846513">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023949">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("将此图像转变为真实的警方嫌疑人照片。\\n添加带有姓名和案号的姓名牌，灰色背景和强烈的正面照明。\\n照片应看起来像官方的 FBI 或警察拘留照，纵向格式（4:5），表情中性且无配饰。", this)'>📋 Copy</button>
         </div>
-        <p>将此图像转变为真实的警方嫌疑人照片。\n添加带有姓名和案号的姓名牌，灰色背景和强烈的正面照明。\n照片应看起来像官方的 FBI 或警察拘留照，纵向格式（4:5），表情中性且无配饰。</p>
+        <div data-nosnippet><p>将此图像转变为真实的警方嫌疑人照片。\n添加带有姓名和案号的姓名牌，灰色背景和强烈的正面照明。\n照片应看起来像官方的 FBI 或警察拘留照，纵向格式（4:5），表情中性且无配饰。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Transform this image into a realistic police mugshot.\nAdd a gray background with height markings, harsh frontal lighting, and a nameplate with the person's name and a case number.\nThe photo should look like an official FBI or police booking photo, vertical format (4:5), with a neutral expression and no accessories.", this)'>📋 Copy</button>
         </div>
-        <p>Transform this image into a realistic police mugshot.<br>Add a gray background with height markings, harsh frontal lighting, and a nameplate with the person&#39;s name and a case number.<br>The photo should look like an official FBI or police booking photo, vertical format (4:5), with a neutral expression and no accessories.</p>
+        <div data-nosnippet><p>Transform this image into a realistic police mugshot.<br>Add a gray background with height markings, harsh frontal lighting, and a nameplate with the person&#39;s name and a case number.<br>The photo should look like an official FBI or police booking photo, vertical format (4:5), with a neutral expression and no accessories.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/48.png" alt="警方照片风格" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 48,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

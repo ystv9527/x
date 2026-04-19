@@ -7,11 +7,13 @@
     <title>&quot;task&quot;: &quot;temporal motion echo portrait effect&quot;, #2018 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;task&quot;: &quot;temporal motion echo portrait effect&quot;, &quot;input&quot;: { &quot;source image&quot;: &quot;USER UPLOADED IMAGE&quot;, &quot;preserve identit...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2018.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2018.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2018.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840341">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022320">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n \"task\": \"时间运动回声肖像效果\",\n \"input\": {\n \"source_image\": \"用户上传的图像\",\n \"preserve_identity\": true,\n \"preserve_pose\": true,\n \"preserve_outfit\": true,\n \"preserve_composition\": true\n },\n \"output\": {\n \"type\": \"单张图像\",\n \"resolution\": \"超高分辨率\",\n \"detail_preservation\": \"高\",\n \"ai_artifacts\": \"无\"\n },\n \"effect_design\": {\n \"core_effect\": \"运动回声时间位移\",\n \"echo_direction\": \"水平\",\n \"echo_behavior\": {\n \"center_subject\": \"清晰且完全对焦\",\n \"echo_layers\": \"多层时间偏移重复\",\n \"blur_progression\": \"距离中心越远模糊越强\",\n \"opacity_falloff\": \"向外柔和渐隐\",\n \"alignment\": \"与原主体完美对齐\"\n },\n \"motion_style\": {\n \"type\": \"时间涂抹\",\n \"speed_feel\": \"慢动作时间延展\",\n \"distortion\": \"无\"\n }\n },\n \"visual_style\": {\n \"background\": {\n \"treatment\": \"平滑简约渐变\",\n \"blur\": \"微妙\",\n \"color_continuity\": \"匹配原始背景\"\n },\n \"lighting\": {\n \"preserve_original_lighting\": true,\n \"contrast\": \"可控\",\n \"highlights\": \"柔和\",\n \"shadows\": \"干净\"\n },\n \"color\": {\n \"grade\": \"电影感柔和\",\n \"saturation\": \"自然\",\n \"skin_tones\": \"准确\"\n }\n },\n \"restrictions\": {\n \"no_new_elements\": true,\n \"no_pose_change\": true,\n \"no_face_warping\": true,\n \"no_outfit_modification\": true,\n \"no_background_replacement\": true\n }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br> &quot;task&quot;: &quot;时间运动回声肖像效果&quot;,<br> &quot;input&quot;: {<br> &quot;source_image&quot;: &quot;用户上传的图像&quot;,<br> &quot;preserve_identity&quot;: true,<br> &quot;preserve_pose&quot;: true,<br> &quot;preserve_outfit&quot;: true,<br> &quot;preserve_composition&quot;: true<br> },<br> &quot;output&quot;: {<br> &quot;type&quot;: &quot;单张图像&quot;,<br> &quot;resolution&quot;: &quot;超高分辨率&quot;,<br> &quot;detail_preservation&quot;: &quot;高&quot;,<br> &quot;ai_artifacts&quot;: &quot;无&quot;<br> },<br> &quot;effect_design&quot;: {<br> &quot;core_effect&quot;: &quot;运动回声时间位移&quot;,<br> &quot;echo_direction&quot;: &quot;水平&quot;,<br> &quot;echo_behavior&quot;: {<br> &quot;center_subject&quot;: &quot;清晰且完全对焦&quot;,<br> &quot;echo_layers&quot;: &quot;多层时间偏移重复&quot;,<br> &quot;blur_progression&quot;: &quot;距离中心越远模糊越强&quot;,<br> &quot;opacity_falloff&quot;: &quot;向外柔和渐隐&quot;,<br> &quot;alignment&quot;: &quot;与原主体完美对齐&quot;<br> },<br> &quot;motion_style&quot;: {<br> &quot;type&quot;: &quot;时间涂抹&quot;,<br> &quot;speed_feel&quot;: &quot;慢动作时间延展&quot;,<br> &quot;distortion&quot;: &quot;无&quot;<br> }<br> },<br> &quot;visual_style&quot;: {<br> &quot;background&quot;: {<br> &quot;treatment&quot;: &quot;平滑简约渐变&quot;,<br> &quot;blur&quot;: &quot;微妙&quot;,<br> &quot;color_continuity&quot;: &quot;匹配原始背景&quot;<br> },<br> &quot;lighting&quot;: {<br> &quot;preserve_original_lighting&quot;: true,<br> &quot;contrast&quot;: &quot;可控&quot;,<br> &quot;highlights&quot;: &quot;柔和&quot;,<br> &quot;shadows&quot;: &quot;干净&quot;<br> },<br> &quot;color&quot;: {<br> &quot;grade&quot;: &quot;电影感柔和&quot;,<br> &quot;saturation&quot;: &quot;自然&quot;,<br> &quot;skin_tones&quot;: &quot;准确&quot;<br> }<br> },<br> &quot;restrictions&quot;: {<br> &quot;no_new_elements&quot;: true,<br> &quot;no_pose_change&quot;: true,<br> &quot;no_face_warping&quot;: true,<br> &quot;no_outfit_modification&quot;: true,<br> &quot;no_background_replacement&quot;: true<br> }<br>}</p>
+        <div data-nosnippet><p>{<br> &quot;task&quot;: &quot;时间运动回声肖像效果&quot;,<br> &quot;input&quot;: {<br> &quot;source_image&quot;: &quot;用户上传的图像&quot;,<br> &quot;preserve_identity&quot;: true,<br> &quot;preserve_pose&quot;: true,<br> &quot;preserve_outfit&quot;: true,<br> &quot;preserve_composition&quot;: true<br> },<br> &quot;output&quot;: {<br> &quot;type&quot;: &quot;单张图像&quot;,<br> &quot;resolution&quot;: &quot;超高分辨率&quot;,<br> &quot;detail_preservation&quot;: &quot;高&quot;,<br> &quot;ai_artifacts&quot;: &quot;无&quot;<br> },<br> &quot;effect_design&quot;: {<br> &quot;core_effect&quot;: &quot;运动回声时间位移&quot;,<br> &quot;echo_direction&quot;: &quot;水平&quot;,<br> &quot;echo_behavior&quot;: {<br> &quot;center_subject&quot;: &quot;清晰且完全对焦&quot;,<br> &quot;echo_layers&quot;: &quot;多层时间偏移重复&quot;,<br> &quot;blur_progression&quot;: &quot;距离中心越远模糊越强&quot;,<br> &quot;opacity_falloff&quot;: &quot;向外柔和渐隐&quot;,<br> &quot;alignment&quot;: &quot;与原主体完美对齐&quot;<br> },<br> &quot;motion_style&quot;: {<br> &quot;type&quot;: &quot;时间涂抹&quot;,<br> &quot;speed_feel&quot;: &quot;慢动作时间延展&quot;,<br> &quot;distortion&quot;: &quot;无&quot;<br> }<br> },<br> &quot;visual_style&quot;: {<br> &quot;background&quot;: {<br> &quot;treatment&quot;: &quot;平滑简约渐变&quot;,<br> &quot;blur&quot;: &quot;微妙&quot;,<br> &quot;color_continuity&quot;: &quot;匹配原始背景&quot;<br> },<br> &quot;lighting&quot;: {<br> &quot;preserve_original_lighting&quot;: true,<br> &quot;contrast&quot;: &quot;可控&quot;,<br> &quot;highlights&quot;: &quot;柔和&quot;,<br> &quot;shadows&quot;: &quot;干净&quot;<br> },<br> &quot;color&quot;: {<br> &quot;grade&quot;: &quot;电影感柔和&quot;,<br> &quot;saturation&quot;: &quot;自然&quot;,<br> &quot;skin_tones&quot;: &quot;准确&quot;<br> }<br> },<br> &quot;restrictions&quot;: {<br> &quot;no_new_elements&quot;: true,<br> &quot;no_pose_change&quot;: true,<br> &quot;no_face_warping&quot;: true,<br> &quot;no_outfit_modification&quot;: true,<br> &quot;no_background_replacement&quot;: true<br> }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n \"task\": \"temporal_motion_echo_portrait_effect\",\n \"input\": {\n \"source_image\": \"USER_UPLOADED_IMAGE\",\n \"preserve_identity\": true,\n \"preserve_pose\": true,\n \"preserve_outfit\": true,\n \"preserve_composition\": true\n },\n \"output\": {\n \"type\": \"single_image\",\n \"resolution\": \"ultra_high_resolution\",\n \"detail_preservation\": \"high\",\n \"ai_artifacts\": \"none\"\n },\n \"effect_design\": {\n \"core_effect\": \"motion_echo_time_displacement\",\n \"echo_direction\": \"horizontal\",\n \"echo_behavior\": {\n \"center_subject\": \"sharp_and_fully_in_focus\",\n \"echo_layers\": \"multiple_time_offset_duplicates\",\n \"blur_progression\": \"increasing_blur_with_distance_from_center\",\n \"opacity_falloff\": \"soft_fade_outward\",\n \"alignment\": \"perfectly_registered_with_original_subject\"\n },\n \"motion_style\": {\n \"type\": \"temporal_smear\",\n \"speed_feel\": \"slow_motion_time_stretch\",\n \"distortion\": \"none\"\n }\n },\n \"visual_style\": {\n \"background\": {\n \"treatment\": \"smooth_minimal_gradient\",\n \"blur\": \"subtle\",\n \"color_continuity\": \"match_original_background\"\n },\n \"lighting\": {\n \"preserve_original_lighting\": true,\n \"contrast\": \"controlled\",\n \"highlights\": \"soft\",\n \"shadows\": \"clean\"\n },\n \"color\": {\n \"grade\": \"cinematic_muted\",\n \"saturation\": \"natural\",\n \"skin_tones\": \"accurate\"\n }\n },\n \"restrictions\": {\n \"no_new_elements\": true,\n \"no_pose_change\": true,\n \"no_face_warping\": true,\n \"no_outfit_modification\": true,\n \"no_background_replacement\": true\n }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br> &quot;task&quot;: &quot;temporal_motion_echo_portrait_effect&quot;,<br> &quot;input&quot;: {<br> &quot;source_image&quot;: &quot;USER_UPLOADED_IMAGE&quot;,<br> &quot;preserve_identity&quot;: true,<br> &quot;preserve_pose&quot;: true,<br> &quot;preserve_outfit&quot;: true,<br> &quot;preserve_composition&quot;: true<br> },<br> &quot;output&quot;: {<br> &quot;type&quot;: &quot;single_image&quot;,<br> &quot;resolution&quot;: &quot;ultra_high_resolution&quot;,<br> &quot;detail_preservation&quot;: &quot;high&quot;,<br> &quot;ai_artifacts&quot;: &quot;none&quot;<br> },<br> &quot;effect_design&quot;: {<br> &quot;core_effect&quot;: &quot;motion_echo_time_displacement&quot;,<br> &quot;echo_direction&quot;: &quot;horizontal&quot;,<br> &quot;echo_behavior&quot;: {<br> &quot;center_subject&quot;: &quot;sharp_and_fully_in_focus&quot;,<br> &quot;echo_layers&quot;: &quot;multiple_time_offset_duplicates&quot;,<br> &quot;blur_progression&quot;: &quot;increasing_blur_with_distance_from_center&quot;,<br> &quot;opacity_falloff&quot;: &quot;soft_fade_outward&quot;,<br> &quot;alignment&quot;: &quot;perfectly_registered_with_original_subject&quot;<br> },<br> &quot;motion_style&quot;: {<br> &quot;type&quot;: &quot;temporal_smear&quot;,<br> &quot;speed_feel&quot;: &quot;slow_motion_time_stretch&quot;,<br> &quot;distortion&quot;: &quot;none&quot;<br> }<br> },<br> &quot;visual_style&quot;: {<br> &quot;background&quot;: {<br> &quot;treatment&quot;: &quot;smooth_minimal_gradient&quot;,<br> &quot;blur&quot;: &quot;subtle&quot;,<br> &quot;color_continuity&quot;: &quot;match_original_background&quot;<br> },<br> &quot;lighting&quot;: {<br> &quot;preserve_original_lighting&quot;: true,<br> &quot;contrast&quot;: &quot;controlled&quot;,<br> &quot;highlights&quot;: &quot;soft&quot;,<br> &quot;shadows&quot;: &quot;clean&quot;<br> },<br> &quot;color&quot;: {<br> &quot;grade&quot;: &quot;cinematic_muted&quot;,<br> &quot;saturation&quot;: &quot;natural&quot;,<br> &quot;skin_tones&quot;: &quot;accurate&quot;<br> }<br> },<br> &quot;restrictions&quot;: {<br> &quot;no_new_elements&quot;: true,<br> &quot;no_pose_change&quot;: true,<br> &quot;no_face_warping&quot;: true,<br> &quot;no_outfit_modification&quot;: true,<br> &quot;no_background_replacement&quot;: true<br> }<br>}</p>
+        <div data-nosnippet><p>{<br> &quot;task&quot;: &quot;temporal_motion_echo_portrait_effect&quot;,<br> &quot;input&quot;: {<br> &quot;source_image&quot;: &quot;USER_UPLOADED_IMAGE&quot;,<br> &quot;preserve_identity&quot;: true,<br> &quot;preserve_pose&quot;: true,<br> &quot;preserve_outfit&quot;: true,<br> &quot;preserve_composition&quot;: true<br> },<br> &quot;output&quot;: {<br> &quot;type&quot;: &quot;single_image&quot;,<br> &quot;resolution&quot;: &quot;ultra_high_resolution&quot;,<br> &quot;detail_preservation&quot;: &quot;high&quot;,<br> &quot;ai_artifacts&quot;: &quot;none&quot;<br> },<br> &quot;effect_design&quot;: {<br> &quot;core_effect&quot;: &quot;motion_echo_time_displacement&quot;,<br> &quot;echo_direction&quot;: &quot;horizontal&quot;,<br> &quot;echo_behavior&quot;: {<br> &quot;center_subject&quot;: &quot;sharp_and_fully_in_focus&quot;,<br> &quot;echo_layers&quot;: &quot;multiple_time_offset_duplicates&quot;,<br> &quot;blur_progression&quot;: &quot;increasing_blur_with_distance_from_center&quot;,<br> &quot;opacity_falloff&quot;: &quot;soft_fade_outward&quot;,<br> &quot;alignment&quot;: &quot;perfectly_registered_with_original_subject&quot;<br> },<br> &quot;motion_style&quot;: {<br> &quot;type&quot;: &quot;temporal_smear&quot;,<br> &quot;speed_feel&quot;: &quot;slow_motion_time_stretch&quot;,<br> &quot;distortion&quot;: &quot;none&quot;<br> }<br> },<br> &quot;visual_style&quot;: {<br> &quot;background&quot;: {<br> &quot;treatment&quot;: &quot;smooth_minimal_gradient&quot;,<br> &quot;blur&quot;: &quot;subtle&quot;,<br> &quot;color_continuity&quot;: &quot;match_original_background&quot;<br> },<br> &quot;lighting&quot;: {<br> &quot;preserve_original_lighting&quot;: true,<br> &quot;contrast&quot;: &quot;controlled&quot;,<br> &quot;highlights&quot;: &quot;soft&quot;,<br> &quot;shadows&quot;: &quot;clean&quot;<br> },<br> &quot;color&quot;: {<br> &quot;grade&quot;: &quot;cinematic_muted&quot;,<br> &quot;saturation&quot;: &quot;natural&quot;,<br> &quot;skin_tones&quot;: &quot;accurate&quot;<br> }<br> },<br> &quot;restrictions&quot;: {<br> &quot;no_new_elements&quot;: true,<br> &quot;no_pose_change&quot;: true,<br> &quot;no_face_warping&quot;: true,<br> &quot;no_outfit_modification&quot;: true,<br> &quot;no_background_replacement&quot;: true<br> }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2020075837723193776-1.jpg" alt="&quot;task&quot;: &quot;temporal motion echo portrait effect&quot;," loading="lazy"><img src="/images/tweet-2020075837723193776-2.jpg" alt="&quot;task&quot;: &quot;temporal motion echo portrait effect&quot;," loading="lazy"><img src="/images/tweet-2020075837723193776-3.jpg" alt="&quot;task&quot;: &quot;temporal motion echo portrait effect&quot;," loading="lazy"><img src="/images/tweet-2020075837723193776-4.jpg" alt="&quot;task&quot;: &quot;temporal motion echo portrait effect&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2018,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

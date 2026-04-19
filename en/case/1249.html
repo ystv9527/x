@@ -7,11 +7,13 @@
     <title>&quot;image request&quot;: { #1249 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image request&quot;: { &quot;subject&quot;: &quot;Woman&quot;, &quot;setting&quot;: { &quot;location&quot;: &quot;Parking lot outside a party venue&quot;, &quot;time of day&quot;:...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1249.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1249.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1249.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845317">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023696">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_request\": {\n    \"subject\": \"女性\",\n    \"setting\": {\n      \"location\": \"派对场地外的停车场\",\n      \"time_of_day\": \"夜间\",\n      \"lighting\": \"直接闪光灯拍摄，伴有轻微动态模糊\"\n    },\n    \"woman_details\": {\n      \"hair\": {\n        \"description\": \"完全保持参考图中原有的长度、颜色和发量\",\n        \"style\": \"与所提供的图片保持一致（未更改）\"\n      },\n      \"facial_features\": \"与参考图完全相同，无任何修改\",\n      \"makeup\": {\n        \"lips\": \"淡淡的光泽唇妆\",\n        \"general\": \"妆容清晰可见\"\n      },\n      \"pose\": {\n        \"main_body\": \"双臂交叉，位置非常靠近相机\",\n        \"hands\": \"一只手抬到脸附近，暗示试图遮挡镜头\"\n      },\n      \"expression\": \"神情恍惚、心不在焉\"\n    },\n    \"attire\": {\n      \"top\": \"白色无肩带蕾丝紧身胸衣，前侧带钩扣或搭扣\",\n      \"bottom\": \"浅色水洗低腰紧身牛仔裤\",\n      \"accessories\": {\n        \"bag\": \"白色单肩包\",\n        \"jewelry\": [\n          \"项链（保留）\",\n          \"手链（保留）\"\n        ]\n      }\n    },\n    \"style_keywords\": [\n      \"夜晚外出派对氛围\",\n      \"Y2K 审美\",\n      \"潮流时尚\"\n    ],\n    \"camera_perspective\": {\n      \"distance\": \"极近距离\",\n      \"framing\": \"紧凑特写\",\n      \"angle\": \"正面直视\"\n    },\n    \"image_specifications\": {\n      \"dimensions\": \"1200 x 1200 像素\"\n    },\n    \"additional_notes\": \"图像看起来像是由朋友随意拍摄的。\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_request&quot;: {<br>    &quot;subject&quot;: &quot;女性&quot;,<br>    &quot;setting&quot;: {<br>      &quot;location&quot;: &quot;派对场地外的停车场&quot;,<br>      &quot;time_of_day&quot;: &quot;夜间&quot;,<br>      &quot;lighting&quot;: &quot;直接闪光灯拍摄，伴有轻微动态模糊&quot;<br>    },<br>    &quot;woman_details&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;description&quot;: &quot;完全保持参考图中原有的长度、颜色和发量&quot;,<br>        &quot;style&quot;: &quot;与所提供的图片保持一致（未更改）&quot;<br>      },<br>      &quot;facial_features&quot;: &quot;与参考图完全相同，无任何修改&quot;,<br>      &quot;makeup&quot;: {<br>        &quot;lips&quot;: &quot;淡淡的光泽唇妆&quot;,<br>        &quot;general&quot;: &quot;妆容清晰可见&quot;<br>      },<br>      &quot;pose&quot;: {<br>        &quot;main_body&quot;: &quot;双臂交叉，位置非常靠近相机&quot;,<br>        &quot;hands&quot;: &quot;一只手抬到脸附近，暗示试图遮挡镜头&quot;<br>      },<br>      &quot;expression&quot;: &quot;神情恍惚、心不在焉&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: &quot;白色无肩带蕾丝紧身胸衣，前侧带钩扣或搭扣&quot;,<br>      &quot;bottom&quot;: &quot;浅色水洗低腰紧身牛仔裤&quot;,<br>      &quot;accessories&quot;: {<br>        &quot;bag&quot;: &quot;白色单肩包&quot;,<br>        &quot;jewelry&quot;: [<br>          &quot;项链（保留）&quot;,<br>          &quot;手链（保留）&quot;<br>        ]<br>      }<br>    },<br>    &quot;style_keywords&quot;: [<br>      &quot;夜晚外出派对氛围&quot;,<br>      &quot;Y2K 审美&quot;,<br>      &quot;潮流时尚&quot;<br>    ],<br>    &quot;camera_perspective&quot;: {<br>      &quot;distance&quot;: &quot;极近距离&quot;,<br>      &quot;framing&quot;: &quot;紧凑特写&quot;,<br>      &quot;angle&quot;: &quot;正面直视&quot;<br>    },<br>    &quot;image_specifications&quot;: {<br>      &quot;dimensions&quot;: &quot;1200 x 1200 像素&quot;<br>    },<br>    &quot;additional_notes&quot;: &quot;图像看起来像是由朋友随意拍摄的。&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_request&quot;: {<br>    &quot;subject&quot;: &quot;女性&quot;,<br>    &quot;setting&quot;: {<br>      &quot;location&quot;: &quot;派对场地外的停车场&quot;,<br>      &quot;time_of_day&quot;: &quot;夜间&quot;,<br>      &quot;lighting&quot;: &quot;直接闪光灯拍摄，伴有轻微动态模糊&quot;<br>    },<br>    &quot;woman_details&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;description&quot;: &quot;完全保持参考图中原有的长度、颜色和发量&quot;,<br>        &quot;style&quot;: &quot;与所提供的图片保持一致（未更改）&quot;<br>      },<br>      &quot;facial_features&quot;: &quot;与参考图完全相同，无任何修改&quot;,<br>      &quot;makeup&quot;: {<br>        &quot;lips&quot;: &quot;淡淡的光泽唇妆&quot;,<br>        &quot;general&quot;: &quot;妆容清晰可见&quot;<br>      },<br>      &quot;pose&quot;: {<br>        &quot;main_body&quot;: &quot;双臂交叉，位置非常靠近相机&quot;,<br>        &quot;hands&quot;: &quot;一只手抬到脸附近，暗示试图遮挡镜头&quot;<br>      },<br>      &quot;expression&quot;: &quot;神情恍惚、心不在焉&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: &quot;白色无肩带蕾丝紧身胸衣，前侧带钩扣或搭扣&quot;,<br>      &quot;bottom&quot;: &quot;浅色水洗低腰紧身牛仔裤&quot;,<br>      &quot;accessories&quot;: {<br>        &quot;bag&quot;: &quot;白色单肩包&quot;,<br>        &quot;jewelry&quot;: [<br>          &quot;项链（保留）&quot;,<br>          &quot;手链（保留）&quot;<br>        ]<br>      }<br>    },<br>    &quot;style_keywords&quot;: [<br>      &quot;夜晚外出派对氛围&quot;,<br>      &quot;Y2K 审美&quot;,<br>      &quot;潮流时尚&quot;<br>    ],<br>    &quot;camera_perspective&quot;: {<br>      &quot;distance&quot;: &quot;极近距离&quot;,<br>      &quot;framing&quot;: &quot;紧凑特写&quot;,<br>      &quot;angle&quot;: &quot;正面直视&quot;<br>    },<br>    &quot;image_specifications&quot;: {<br>      &quot;dimensions&quot;: &quot;1200 x 1200 像素&quot;<br>    },<br>    &quot;additional_notes&quot;: &quot;图像看起来像是由朋友随意拍摄的。&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_request\": {\n    \"subject\": \"Woman\",\n    \"setting\": {\n      \"location\": \"Parking lot outside a party venue\",\n      \"time_of_day\": \"Nighttime\",\n      \"lighting\": \"Direct flash photography with slight motion blur\"\n    },\n    \"woman_details\": {\n      \"hair\": {\n        \"description\": \"Maintains the original length, color, and volume exactly as shown in the reference image\",\n        \"style\": \"Unchanged from the provided image\"\n      },\n      \"facial_features\": \"Identical to the reference image with no modifications\",\n      \"makeup\": {\n        \"lips\": \"Subtle glossy finish\",\n        \"general\": \"Clearly visible makeup\"\n      },\n      \"pose\": {\n        \"main_body\": \"Arms crossed, positioned very close to the camera\",\n        \"hands\": \"One hand lifted near the face, suggesting an attempt to shield from the camera\"\n      },\n      \"expression\": \"Unfocused and distracted\"\n    },\n    \"attire\": {\n      \"top\": \"White strapless lace corset featuring front hook or clasp closures\",\n      \"bottom\": \"Light-wash denim low-rise skinny jeans\",\n      \"accessories\": {\n        \"bag\": \"White shoulder bag\",\n        \"jewelry\": [\n          \"Necklace (kept on)\",\n          \"Bracelet (kept on)\"\n        ]\n      }\n    },\n    \"style_keywords\": [\n      \"Night-out party vibe\",\n      \"Y2K aesthetic\",\n      \"Trendy fashion\"\n    ],\n    \"camera_perspective\": {\n      \"distance\": \"Extremely close range\",\n      \"framing\": \"Tight close-up\",\n      \"angle\": \"Straight-on, front-facing\"\n    },\n    \"image_specifications\": {\n      \"dimensions\": \"1200 x 1200 pixels\"\n    },\n    \"additional_notes\": \"Image appears to be captured casually by a friend.\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_request&quot;: {<br>    &quot;subject&quot;: &quot;Woman&quot;,<br>    &quot;setting&quot;: {<br>      &quot;location&quot;: &quot;Parking lot outside a party venue&quot;,<br>      &quot;time_of_day&quot;: &quot;Nighttime&quot;,<br>      &quot;lighting&quot;: &quot;Direct flash photography with slight motion blur&quot;<br>    },<br>    &quot;woman_details&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;description&quot;: &quot;Maintains the original length, color, and volume exactly as shown in the reference image&quot;,<br>        &quot;style&quot;: &quot;Unchanged from the provided image&quot;<br>      },<br>      &quot;facial_features&quot;: &quot;Identical to the reference image with no modifications&quot;,<br>      &quot;makeup&quot;: {<br>        &quot;lips&quot;: &quot;Subtle glossy finish&quot;,<br>        &quot;general&quot;: &quot;Clearly visible makeup&quot;<br>      },<br>      &quot;pose&quot;: {<br>        &quot;main_body&quot;: &quot;Arms crossed, positioned very close to the camera&quot;,<br>        &quot;hands&quot;: &quot;One hand lifted near the face, suggesting an attempt to shield from the camera&quot;<br>      },<br>      &quot;expression&quot;: &quot;Unfocused and distracted&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: &quot;White strapless lace corset featuring front hook or clasp closures&quot;,<br>      &quot;bottom&quot;: &quot;Light-wash denim low-rise skinny jeans&quot;,<br>      &quot;accessories&quot;: {<br>        &quot;bag&quot;: &quot;White shoulder bag&quot;,<br>        &quot;jewelry&quot;: [<br>          &quot;Necklace (kept on)&quot;,<br>          &quot;Bracelet (kept on)&quot;<br>        ]<br>      }<br>    },<br>    &quot;style_keywords&quot;: [<br>      &quot;Night-out party vibe&quot;,<br>      &quot;Y2K aesthetic&quot;,<br>      &quot;Trendy fashion&quot;<br>    ],<br>    &quot;camera_perspective&quot;: {<br>      &quot;distance&quot;: &quot;Extremely close range&quot;,<br>      &quot;framing&quot;: &quot;Tight close-up&quot;,<br>      &quot;angle&quot;: &quot;Straight-on, front-facing&quot;<br>    },<br>    &quot;image_specifications&quot;: {<br>      &quot;dimensions&quot;: &quot;1200 x 1200 pixels&quot;<br>    },<br>    &quot;additional_notes&quot;: &quot;Image appears to be captured casually by a friend.&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_request&quot;: {<br>    &quot;subject&quot;: &quot;Woman&quot;,<br>    &quot;setting&quot;: {<br>      &quot;location&quot;: &quot;Parking lot outside a party venue&quot;,<br>      &quot;time_of_day&quot;: &quot;Nighttime&quot;,<br>      &quot;lighting&quot;: &quot;Direct flash photography with slight motion blur&quot;<br>    },<br>    &quot;woman_details&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;description&quot;: &quot;Maintains the original length, color, and volume exactly as shown in the reference image&quot;,<br>        &quot;style&quot;: &quot;Unchanged from the provided image&quot;<br>      },<br>      &quot;facial_features&quot;: &quot;Identical to the reference image with no modifications&quot;,<br>      &quot;makeup&quot;: {<br>        &quot;lips&quot;: &quot;Subtle glossy finish&quot;,<br>        &quot;general&quot;: &quot;Clearly visible makeup&quot;<br>      },<br>      &quot;pose&quot;: {<br>        &quot;main_body&quot;: &quot;Arms crossed, positioned very close to the camera&quot;,<br>        &quot;hands&quot;: &quot;One hand lifted near the face, suggesting an attempt to shield from the camera&quot;<br>      },<br>      &quot;expression&quot;: &quot;Unfocused and distracted&quot;<br>    },<br>    &quot;attire&quot;: {<br>      &quot;top&quot;: &quot;White strapless lace corset featuring front hook or clasp closures&quot;,<br>      &quot;bottom&quot;: &quot;Light-wash denim low-rise skinny jeans&quot;,<br>      &quot;accessories&quot;: {<br>        &quot;bag&quot;: &quot;White shoulder bag&quot;,<br>        &quot;jewelry&quot;: [<br>          &quot;Necklace (kept on)&quot;,<br>          &quot;Bracelet (kept on)&quot;<br>        ]<br>      }<br>    },<br>    &quot;style_keywords&quot;: [<br>      &quot;Night-out party vibe&quot;,<br>      &quot;Y2K aesthetic&quot;,<br>      &quot;Trendy fashion&quot;<br>    ],<br>    &quot;camera_perspective&quot;: {<br>      &quot;distance&quot;: &quot;Extremely close range&quot;,<br>      &quot;framing&quot;: &quot;Tight close-up&quot;,<br>      &quot;angle&quot;: &quot;Straight-on, front-facing&quot;<br>    },<br>    &quot;image_specifications&quot;: {<br>      &quot;dimensions&quot;: &quot;1200 x 1200 pixels&quot;<br>    },<br>    &quot;additional_notes&quot;: &quot;Image appears to be captured casually by a friend.&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011444902408671530-1.jpg" alt="&quot;image request&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1249,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

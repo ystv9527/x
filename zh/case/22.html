@@ -7,11 +7,13 @@
     <title>自定义气球 #22 | Gem Nana AI 提示词库</title>
     <meta name="description" content="自定义气球 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/22.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/22.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/22.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842211">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022795">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一件高度写实的 3D 装置艺术：字母 Z 被设计成充气球囊造型，整体形态如同流畅弯曲的“Z”字路径，由两段斜线和一个折角构成，边缘略微卷翘，充满柔软的气压感。\n\n视角为正面稍仰视角（约10°）的正交投影，主体置于画面正中央，占据几乎全部画幅，背景为纯黑色，形成类似剧院聚光灯的聚焦舞台效果。\n\n材质为高弹性亮面 PVC，表面涂有高光清漆。主色为柔亮粉色（#FF96AC），阴影部分渐变为淡紫粉色，表面同时具备镜面高光和柔和漫反射，呈现丝滑、饱满、有张力的视觉质感。\n\n左下角可见一个金属螺旋气嘴（银灰色），尺寸很小但极具真实感，暗示其为充气物体。右下笔画末端印有一串黑色的警示文字和安全图标，以“ZHOGUE”风格排版，呼应充气玩具视觉语言。\n\n主光源来自左上方约 35°，呈现清晰的硬边聚光灯效果：在顶部折角与中央斜线区域形成椭圆形白色高光，内折阴影区带有柔和的粉紫色内反射。\n\n辅光来自右后方，轻柔描边顶部和转折边缘，使形体与黑背景分离，整体光比约为 1:2，保持色彩通透与立体感。亮区色温偏冷，营造冷暖对比，进一步突显质感。\n\n球囊表面略显鼓胀，折角与转折区域有尖锐的折痕，带来软体与几何的视觉张力。最深的转折处投下细长阴影，仿佛即将破裂；下方末端则有轻微拉扯感，如气球尾部即将被牵动。\n\n整体概念融合了字母结构与充气玩具的材质语言，通过夸张体积、真实光感与极简舞台感构建出“字母也能呼吸”的视觉冲击，呈现理性几何与感性触觉的碰撞。", this)'>📋 复制</button>
         </div>
-        <p>一件高度写实的 3D 装置艺术：字母 Z 被设计成充气球囊造型，整体形态如同流畅弯曲的“Z”字路径，由两段斜线和一个折角构成，边缘略微卷翘，充满柔软的气压感。</p><p>视角为正面稍仰视角（约10°）的正交投影，主体置于画面正中央，占据几乎全部画幅，背景为纯黑色，形成类似剧院聚光灯的聚焦舞台效果。</p><p>材质为高弹性亮面 PVC，表面涂有高光清漆。主色为柔亮粉色（#FF96AC），阴影部分渐变为淡紫粉色，表面同时具备镜面高光和柔和漫反射，呈现丝滑、饱满、有张力的视觉质感。</p><p>左下角可见一个金属螺旋气嘴（银灰色），尺寸很小但极具真实感，暗示其为充气物体。右下笔画末端印有一串黑色的警示文字和安全图标，以“ZHOGUE”风格排版，呼应充气玩具视觉语言。</p><p>主光源来自左上方约 35°，呈现清晰的硬边聚光灯效果：在顶部折角与中央斜线区域形成椭圆形白色高光，内折阴影区带有柔和的粉紫色内反射。</p><p>辅光来自右后方，轻柔描边顶部和转折边缘，使形体与黑背景分离，整体光比约为 1:2，保持色彩通透与立体感。亮区色温偏冷，营造冷暖对比，进一步突显质感。</p><p>球囊表面略显鼓胀，折角与转折区域有尖锐的折痕，带来软体与几何的视觉张力。最深的转折处投下细长阴影，仿佛即将破裂；下方末端则有轻微拉扯感，如气球尾部即将被牵动。</p><p>整体概念融合了字母结构与充气玩具的材质语言，通过夸张体积、真实光感与极简舞台感构建出“字母也能呼吸”的视觉冲击，呈现理性几何与感性触觉的碰撞。</p>
+        <div data-nosnippet><p>一件高度写实的 3D 装置艺术：字母 Z 被设计成充气球囊造型，整体形态如同流畅弯曲的“Z”字路径，由两段斜线和一个折角构成，边缘略微卷翘，充满柔软的气压感。</p><p>视角为正面稍仰视角（约10°）的正交投影，主体置于画面正中央，占据几乎全部画幅，背景为纯黑色，形成类似剧院聚光灯的聚焦舞台效果。</p><p>材质为高弹性亮面 PVC，表面涂有高光清漆。主色为柔亮粉色（#FF96AC），阴影部分渐变为淡紫粉色，表面同时具备镜面高光和柔和漫反射，呈现丝滑、饱满、有张力的视觉质感。</p><p>左下角可见一个金属螺旋气嘴（银灰色），尺寸很小但极具真实感，暗示其为充气物体。右下笔画末端印有一串黑色的警示文字和安全图标，以“ZHOGUE”风格排版，呼应充气玩具视觉语言。</p><p>主光源来自左上方约 35°，呈现清晰的硬边聚光灯效果：在顶部折角与中央斜线区域形成椭圆形白色高光，内折阴影区带有柔和的粉紫色内反射。</p><p>辅光来自右后方，轻柔描边顶部和转折边缘，使形体与黑背景分离，整体光比约为 1:2，保持色彩通透与立体感。亮区色温偏冷，营造冷暖对比，进一步突显质感。</p><p>球囊表面略显鼓胀，折角与转折区域有尖锐的折痕，带来软体与几何的视觉张力。最深的转折处投下细长阴影，仿佛即将破裂；下方末端则有轻微拉扯感，如气球尾部即将被牵动。</p><p>整体概念融合了字母结构与充气玩具的材质语言，通过夸张体积、真实光感与极简舞台感构建出“字母也能呼吸”的视觉冲击，呈现理性几何与感性触觉的碰撞。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A highly realistic 3D installation art piece: the letter Z is designed to resemble an inflated balloon, with an overall form like a smoothly curved \"Z\" path composed of two diagonal segments and a bent corner. The edges are slightly curled, emphasizing a soft, inflated appearance with a sense of gentle pressure.\n\nThe viewpoint is an orthographic projection from a slightly upward angle (~10°), with the main subject centered in the frame, occupying nearly the entire canvas. The background is pure black, creating a spotlight-like stage effect reminiscent of theatrical lighting.\n\nMaterial is high-elasticity glossy PVC, coated with a high-gloss varnish. The primary color is soft, bright pink (#FF96AC), with shadows gradually fading into a pale purple-pink gradient. The surface exhibits both mirror-like highlights and soft diffuse reflections, producing a smooth, plump, and tense visual texture.\n\nIn the lower left corner, a tiny metallic spiral valve (silver-gray) is visible, highly realistic and suggesting an inflatable object. In the lower right corner, a string of black warning text and safety icons are printed at the end of a stroke, styled in the \"ZHOGUE\" font, echoing the visual language of inflatable toys.\n\nThe main light source is from approximately 35° above the upper left, creating a sharp, hard-edged spotlight effect: an elliptical white highlight appears on the top corner and central diagonal area, with internal shadowed regions reflecting soft pink-purple hues.\n\nA secondary light comes from the right rear, softly outlining the top and edges of bends, separating the form from the black background. The overall lighting ratio is about 1:2, maintaining color transparency and three-dimensionality. The highlights have a cooler color temperature, creating a contrast between warm and cool tones to further emphasize the material quality.\n\nThe balloon surface appears slightly bloated, with sharp creases at the bends and angles, adding a tension between soft form and geometric structure. Deepest fold areas cast slender shadows, as if about to rupture; the lower end shows a slight pulling effect, as if the balloon's tail is about to be tugged.\n\nOverall, the concept merges the structural language of the letter with inflatable toy materials, using exaggerated volume, realistic lighting, and a minimalistic stage to evoke the visual impact of \"letters that can breathe.\" It presents a collision of rational geometry and tactile sensibility.", this)'>📋 复制</button>
         </div>
-        <p>A highly realistic 3D installation art piece: the letter Z is designed to resemble an inflated balloon, with an overall form like a smoothly curved &quot;Z&quot; path composed of two diagonal segments and a bent corner. The edges are slightly curled, emphasizing a soft, inflated appearance with a sense of gentle pressure.</p><p>The viewpoint is an orthographic projection from a slightly upward angle (~10°), with the main subject centered in the frame, occupying nearly the entire canvas. The background is pure black, creating a spotlight-like stage effect reminiscent of theatrical lighting.</p><p>Material is high-elasticity glossy PVC, coated with a high-gloss varnish. The primary color is soft, bright pink (#FF96AC), with shadows gradually fading into a pale purple-pink gradient. The surface exhibits both mirror-like highlights and soft diffuse reflections, producing a smooth, plump, and tense visual texture.</p><p>In the lower left corner, a tiny metallic spiral valve (silver-gray) is visible, highly realistic and suggesting an inflatable object. In the lower right corner, a string of black warning text and safety icons are printed at the end of a stroke, styled in the &quot;ZHOGUE&quot; font, echoing the visual language of inflatable toys.</p><p>The main light source is from approximately 35° above the upper left, creating a sharp, hard-edged spotlight effect: an elliptical white highlight appears on the top corner and central diagonal area, with internal shadowed regions reflecting soft pink-purple hues.</p><p>A secondary light comes from the right rear, softly outlining the top and edges of bends, separating the form from the black background. The overall lighting ratio is about 1:2, maintaining color transparency and three-dimensionality. The highlights have a cooler color temperature, creating a contrast between warm and cool tones to further emphasize the material quality.</p><p>The balloon surface appears slightly bloated, with sharp creases at the bends and angles, adding a tension between soft form and geometric structure. Deepest fold areas cast slender shadows, as if about to rupture; the lower end shows a slight pulling effect, as if the balloon&#39;s tail is about to be tugged.</p><p>Overall, the concept merges the structural language of the letter with inflatable toy materials, using exaggerated volume, realistic lighting, and a minimalistic stage to evoke the visual impact of &quot;letters that can breathe.&quot; It presents a collision of rational geometry and tactile sensibility.</p>
+        <div data-nosnippet><p>A highly realistic 3D installation art piece: the letter Z is designed to resemble an inflated balloon, with an overall form like a smoothly curved &quot;Z&quot; path composed of two diagonal segments and a bent corner. The edges are slightly curled, emphasizing a soft, inflated appearance with a sense of gentle pressure.</p><p>The viewpoint is an orthographic projection from a slightly upward angle (~10°), with the main subject centered in the frame, occupying nearly the entire canvas. The background is pure black, creating a spotlight-like stage effect reminiscent of theatrical lighting.</p><p>Material is high-elasticity glossy PVC, coated with a high-gloss varnish. The primary color is soft, bright pink (#FF96AC), with shadows gradually fading into a pale purple-pink gradient. The surface exhibits both mirror-like highlights and soft diffuse reflections, producing a smooth, plump, and tense visual texture.</p><p>In the lower left corner, a tiny metallic spiral valve (silver-gray) is visible, highly realistic and suggesting an inflatable object. In the lower right corner, a string of black warning text and safety icons are printed at the end of a stroke, styled in the &quot;ZHOGUE&quot; font, echoing the visual language of inflatable toys.</p><p>The main light source is from approximately 35° above the upper left, creating a sharp, hard-edged spotlight effect: an elliptical white highlight appears on the top corner and central diagonal area, with internal shadowed regions reflecting soft pink-purple hues.</p><p>A secondary light comes from the right rear, softly outlining the top and edges of bends, separating the form from the black background. The overall lighting ratio is about 1:2, maintaining color transparency and three-dimensionality. The highlights have a cooler color temperature, creating a contrast between warm and cool tones to further emphasize the material quality.</p><p>The balloon surface appears slightly bloated, with sharp creases at the bends and angles, adding a tension between soft form and geometric structure. Deepest fold areas cast slender shadows, as if about to rupture; the lower end shows a slight pulling effect, as if the balloon&#39;s tail is about to be tugged.</p><p>Overall, the concept merges the structural language of the letter with inflatable toy materials, using exaggerated volume, realistic lighting, and a minimalistic stage to evoke the visual impact of &quot;letters that can breathe.&quot; It presents a collision of rational geometry and tactile sensibility.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/22.jpeg" alt="自定义气球" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 22,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

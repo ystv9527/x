@@ -7,11 +7,13 @@
     <title>A hyper realistic 8k high angle overhead shot, captured with... #2118 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="A hyper realistic 8k high angle overhead shot, captured with a wide angle lens, presents a romantic scene of a couple...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2118.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2118.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2118.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844411">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023512">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("超写实 8K 高角度俯拍，使用广角镜头捕捉，呈现一对情侣躺在浅色木地板上的浪漫场景。光线柔和自然，可能来自窗户，在气球上产生柔和的高光，在地板上投下细微的阴影，营造出电影感的氛围。女性主体（已上传人脸作为参考）仰卧着，穿着黑色露脐短上衣、浅蓝色牛仔短裤，外搭一件未扣的白色衬衫。她的左臂弯曲，手靠近头部，右臂轻轻伸向男性。男性主体（已上传人脸作为参考）也仰卧着，穿着浅灰色T恤和浅蓝色破洞牛仔裤。他的左臂弯曲，手靠近女性的头部，右臂放松。两人紧挨着躺着，头部相触，彼此凝视，带着温柔、充满爱意的微笑。周围及两人之间的整个地面上密集装饰着大量不同大小的闪亮红色心形铝箔气球，间杂若干白色圆形乳胶气球，以及无数红白相间的小玫瑰花瓣，在浅色木地板上形成高度细腻的质感和鲜明的色彩对比。构图为全身镜头，展示了这对情侣以及广泛而沉浸式的装饰。", this)'>📋 Copy</button>
         </div>
-        <p>超写实 8K 高角度俯拍，使用广角镜头捕捉，呈现一对情侣躺在浅色木地板上的浪漫场景。光线柔和自然，可能来自窗户，在气球上产生柔和的高光，在地板上投下细微的阴影，营造出电影感的氛围。女性主体（已上传人脸作为参考）仰卧着，穿着黑色露脐短上衣、浅蓝色牛仔短裤，外搭一件未扣的白色衬衫。她的左臂弯曲，手靠近头部，右臂轻轻伸向男性。男性主体（已上传人脸作为参考）也仰卧着，穿着浅灰色T恤和浅蓝色破洞牛仔裤。他的左臂弯曲，手靠近女性的头部，右臂放松。两人紧挨着躺着，头部相触，彼此凝视，带着温柔、充满爱意的微笑。周围及两人之间的整个地面上密集装饰着大量不同大小的闪亮红色心形铝箔气球，间杂若干白色圆形乳胶气球，以及无数红白相间的小玫瑰花瓣，在浅色木地板上形成高度细腻的质感和鲜明的色彩对比。构图为全身镜头，展示了这对情侣以及广泛而沉浸式的装饰。</p>
+        <div data-nosnippet><p>超写实 8K 高角度俯拍，使用广角镜头捕捉，呈现一对情侣躺在浅色木地板上的浪漫场景。光线柔和自然，可能来自窗户，在气球上产生柔和的高光，在地板上投下细微的阴影，营造出电影感的氛围。女性主体（已上传人脸作为参考）仰卧着，穿着黑色露脐短上衣、浅蓝色牛仔短裤，外搭一件未扣的白色衬衫。她的左臂弯曲，手靠近头部，右臂轻轻伸向男性。男性主体（已上传人脸作为参考）也仰卧着，穿着浅灰色T恤和浅蓝色破洞牛仔裤。他的左臂弯曲，手靠近女性的头部，右臂放松。两人紧挨着躺着，头部相触，彼此凝视，带着温柔、充满爱意的微笑。周围及两人之间的整个地面上密集装饰着大量不同大小的闪亮红色心形铝箔气球，间杂若干白色圆形乳胶气球，以及无数红白相间的小玫瑰花瓣，在浅色木地板上形成高度细腻的质感和鲜明的色彩对比。构图为全身镜头，展示了这对情侣以及广泛而沉浸式的装饰。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A hyper-realistic 8k high-angle overhead shot, captured with a wide-angle lens, presents a romantic scene of a couple lying on a light-colored wooden floor. The lighting is soft and natural, possibly from a window, creating gentle highlights on the balloons and subtle shadows on the floor, contributing to a cinematic atmosphere. The female subject, uploaded face as reference, is positioned on her back, wearing a black crop top, light blue denim shorts, and a white unbuttoned shirt draped over her. Her left arm is bent with her hand near her head, and her right arm is gently extended towards the male. The male subject, uploaded face as reference, is also on his back, wearing a light grey t-shirt and light blue distressed denim jeans. His left arm is bent, hand near the female's head, and his right arm is relaxed. They are lying close together, heads touching, looking into each other's eyes with soft, affectionate smiles. The entire floor around and between them is densely decorated with a multitude of shiny red heart-shaped foil balloons of varying sizes, interspersed with several white round latex balloons, and countless small red and white rose petals, creating a highly detailed texture and vibrant color contrast against the light wood. The composition is a full-body shot, showcasing the couple and the extensive, immersive decorations.", this)'>📋 Copy</button>
         </div>
-        <p>A hyper-realistic 8k high-angle overhead shot, captured with a wide-angle lens, presents a romantic scene of a couple lying on a light-colored wooden floor. The lighting is soft and natural, possibly from a window, creating gentle highlights on the balloons and subtle shadows on the floor, contributing to a cinematic atmosphere. The female subject, uploaded face as reference, is positioned on her back, wearing a black crop top, light blue denim shorts, and a white unbuttoned shirt draped over her. Her left arm is bent with her hand near her head, and her right arm is gently extended towards the male. The male subject, uploaded face as reference, is also on his back, wearing a light grey t-shirt and light blue distressed denim jeans. His left arm is bent, hand near the female&#39;s head, and his right arm is relaxed. They are lying close together, heads touching, looking into each other&#39;s eyes with soft, affectionate smiles. The entire floor around and between them is densely decorated with a multitude of shiny red heart-shaped foil balloons of varying sizes, interspersed with several white round latex balloons, and countless small red and white rose petals, creating a highly detailed texture and vibrant color contrast against the light wood. The composition is a full-body shot, showcasing the couple and the extensive, immersive decorations.</p>
+        <div data-nosnippet><p>A hyper-realistic 8k high-angle overhead shot, captured with a wide-angle lens, presents a romantic scene of a couple lying on a light-colored wooden floor. The lighting is soft and natural, possibly from a window, creating gentle highlights on the balloons and subtle shadows on the floor, contributing to a cinematic atmosphere. The female subject, uploaded face as reference, is positioned on her back, wearing a black crop top, light blue denim shorts, and a white unbuttoned shirt draped over her. Her left arm is bent with her hand near her head, and her right arm is gently extended towards the male. The male subject, uploaded face as reference, is also on his back, wearing a light grey t-shirt and light blue distressed denim jeans. His left arm is bent, hand near the female&#39;s head, and his right arm is relaxed. They are lying close together, heads touching, looking into each other&#39;s eyes with soft, affectionate smiles. The entire floor around and between them is densely decorated with a multitude of shiny red heart-shaped foil balloons of varying sizes, interspersed with several white round latex balloons, and countless small red and white rose petals, creating a highly detailed texture and vibrant color contrast against the light wood. The composition is a full-body shot, showcasing the couple and the extensive, immersive decorations.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2022667985039823362-1.jpg" alt="A hyper realistic 8k high angle overhead shot, captured with..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2118,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

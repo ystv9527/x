@@ -7,11 +7,13 @@
     <title>&quot;image generation&quot;: { #946 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image generation&quot;: { &quot;reference&quot;: {&quot;use uploaded photo&quot;: true, &quot;role&quot;: &quot;main subject&quot;, &quot;identity preservation&quot;: tr...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/946.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/946.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/946.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845629">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023757">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"reference\": {\"use_uploaded_photo\": true, \"role\": \"主要主体\", \"identity_preservation\": true},\n    \"scene\": {\n      \"location\": \"乡村\",\n      \"background\": [\"高高的枯黄草地\", \"远处的金属电力塔\"],\n      \"time\": \"黄金时段\",\n      \"atmosphere\": \"宁静、怀旧的公路旅行氛围\"\n    },\n    \"subject\": {\n      \"pose\": \"随意地靠在一辆复古汽车上，一只手臂搭在敞开的车门框上\",\n      \"expression\": \"若有所思、放松，目光望向一旁\",\n      \"hair\": \"头发被微风轻轻吹动\",\n      \"style\": \"自然、抓拍风格的人像\"\n    },\n    \"outfit\": {\n      \"top\": \"暖色系大地色调的复古条纹毛衣\",\n      \"bottom\": \"高腰米色长裤\"\n    },\n    \"lighting\": {\"type\": \"柔和的日落光线\", \"highlights\": \"暖色\", \"shadows\": \"偏冷的阴影\", \"contrast\": \"柔和\"},\n    \"camera\": {\n      \"lens\": \"35mm 胶片质感\",\n      \"depth_of_field\": \"浅景深\",\n      \"focus\": \"主体清晰，背景平滑虚化\",\n      \"composition\": \"社论风格的时尚人像构图\"\n    },\n    \"color_grading\": {\"style\": \"柔和的复古色调\", \"saturation\": \"略微降饱和\", \"film_grain\": \"细微\"},\n    \"quality\": {\"realism\": \"高真实度\", \"texture\": \"皮肤和面料的自然质感细节\", \"render\": \"电影感、社论风格、写实\"}\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;reference&quot;: {&quot;use_uploaded_photo&quot;: true, &quot;role&quot;: &quot;主要主体&quot;, &quot;identity_preservation&quot;: true},<br>    &quot;scene&quot;: {<br>      &quot;location&quot;: &quot;乡村&quot;,<br>      &quot;background&quot;: [&quot;高高的枯黄草地&quot;, &quot;远处的金属电力塔&quot;],<br>      &quot;time&quot;: &quot;黄金时段&quot;,<br>      &quot;atmosphere&quot;: &quot;宁静、怀旧的公路旅行氛围&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;pose&quot;: &quot;随意地靠在一辆复古汽车上，一只手臂搭在敞开的车门框上&quot;,<br>      &quot;expression&quot;: &quot;若有所思、放松，目光望向一旁&quot;,<br>      &quot;hair&quot;: &quot;头发被微风轻轻吹动&quot;,<br>      &quot;style&quot;: &quot;自然、抓拍风格的人像&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: &quot;暖色系大地色调的复古条纹毛衣&quot;,<br>      &quot;bottom&quot;: &quot;高腰米色长裤&quot;<br>    },<br>    &quot;lighting&quot;: {&quot;type&quot;: &quot;柔和的日落光线&quot;, &quot;highlights&quot;: &quot;暖色&quot;, &quot;shadows&quot;: &quot;偏冷的阴影&quot;, &quot;contrast&quot;: &quot;柔和&quot;},<br>    &quot;camera&quot;: {<br>      &quot;lens&quot;: &quot;35mm 胶片质感&quot;,<br>      &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>      &quot;focus&quot;: &quot;主体清晰，背景平滑虚化&quot;,<br>      &quot;composition&quot;: &quot;社论风格的时尚人像构图&quot;<br>    },<br>    &quot;color_grading&quot;: {&quot;style&quot;: &quot;柔和的复古色调&quot;, &quot;saturation&quot;: &quot;略微降饱和&quot;, &quot;film_grain&quot;: &quot;细微&quot;},<br>    &quot;quality&quot;: {&quot;realism&quot;: &quot;高真实度&quot;, &quot;texture&quot;: &quot;皮肤和面料的自然质感细节&quot;, &quot;render&quot;: &quot;电影感、社论风格、写实&quot;}<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;reference&quot;: {&quot;use_uploaded_photo&quot;: true, &quot;role&quot;: &quot;主要主体&quot;, &quot;identity_preservation&quot;: true},<br>    &quot;scene&quot;: {<br>      &quot;location&quot;: &quot;乡村&quot;,<br>      &quot;background&quot;: [&quot;高高的枯黄草地&quot;, &quot;远处的金属电力塔&quot;],<br>      &quot;time&quot;: &quot;黄金时段&quot;,<br>      &quot;atmosphere&quot;: &quot;宁静、怀旧的公路旅行氛围&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;pose&quot;: &quot;随意地靠在一辆复古汽车上，一只手臂搭在敞开的车门框上&quot;,<br>      &quot;expression&quot;: &quot;若有所思、放松，目光望向一旁&quot;,<br>      &quot;hair&quot;: &quot;头发被微风轻轻吹动&quot;,<br>      &quot;style&quot;: &quot;自然、抓拍风格的人像&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: &quot;暖色系大地色调的复古条纹毛衣&quot;,<br>      &quot;bottom&quot;: &quot;高腰米色长裤&quot;<br>    },<br>    &quot;lighting&quot;: {&quot;type&quot;: &quot;柔和的日落光线&quot;, &quot;highlights&quot;: &quot;暖色&quot;, &quot;shadows&quot;: &quot;偏冷的阴影&quot;, &quot;contrast&quot;: &quot;柔和&quot;},<br>    &quot;camera&quot;: {<br>      &quot;lens&quot;: &quot;35mm 胶片质感&quot;,<br>      &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>      &quot;focus&quot;: &quot;主体清晰，背景平滑虚化&quot;,<br>      &quot;composition&quot;: &quot;社论风格的时尚人像构图&quot;<br>    },<br>    &quot;color_grading&quot;: {&quot;style&quot;: &quot;柔和的复古色调&quot;, &quot;saturation&quot;: &quot;略微降饱和&quot;, &quot;film_grain&quot;: &quot;细微&quot;},<br>    &quot;quality&quot;: {&quot;realism&quot;: &quot;高真实度&quot;, &quot;texture&quot;: &quot;皮肤和面料的自然质感细节&quot;, &quot;render&quot;: &quot;电影感、社论风格、写实&quot;}<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"reference\": {\"use_uploaded_photo\": true, \"role\": \"main subject\", \"identity_preservation\": true},\n    \"scene\": {\n      \"location\": \"rural countryside\",\n      \"background\": [\"tall dry grass fields\", \"distant metal powerline tower\"],\n      \"time\": \"golden hour\",\n      \"atmosphere\": \"calm, nostalgic road trip mood\"\n    },\n    \"subject\": {\n      \"pose\": \"casually leaning against a vintage car, one arm resting on the open door frame\",\n      \"expression\": \"thoughtful, relaxed, looking off to the side\",\n      \"hair\": \"gently moved by the wind\",\n      \"style\": \"natural, candid portrait\"\n    },\n    \"outfit\": {\n      \"top\": \"retro striped sweater in warm earthy tones\",\n      \"bottom\": \"high waisted beige trousers\"\n    },\n    \"lighting\": {\"type\": \"soft sunset light\", \"highlights\": \"warm\", \"shadows\": \"cool\", \"contrast\": \"soft\"},\n    \"camera\": {\n      \"lens\": \"35mm analog look\",\n      \"depth_of_field\": \"shallow\",\n      \"focus\": \"sharp on subject, smooth background falloff\",\n      \"composition\": \"editorial fashion portrait\"\n    },\n    \"color_grading\": {\"style\": \"muted vintage tones\", \"saturation\": \"slightly reduced\", \"film_grain\": \"subtle\"},\n    \"quality\": {\"realism\": \"high\", \"texture\": \"natural skin and fabric detail\", \"render\": \"cinematic, editorial, realistic\"}\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;reference&quot;: {&quot;use_uploaded_photo&quot;: true, &quot;role&quot;: &quot;main subject&quot;, &quot;identity_preservation&quot;: true},<br>    &quot;scene&quot;: {<br>      &quot;location&quot;: &quot;rural countryside&quot;,<br>      &quot;background&quot;: [&quot;tall dry grass fields&quot;, &quot;distant metal powerline tower&quot;],<br>      &quot;time&quot;: &quot;golden hour&quot;,<br>      &quot;atmosphere&quot;: &quot;calm, nostalgic road trip mood&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;pose&quot;: &quot;casually leaning against a vintage car, one arm resting on the open door frame&quot;,<br>      &quot;expression&quot;: &quot;thoughtful, relaxed, looking off to the side&quot;,<br>      &quot;hair&quot;: &quot;gently moved by the wind&quot;,<br>      &quot;style&quot;: &quot;natural, candid portrait&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: &quot;retro striped sweater in warm earthy tones&quot;,<br>      &quot;bottom&quot;: &quot;high waisted beige trousers&quot;<br>    },<br>    &quot;lighting&quot;: {&quot;type&quot;: &quot;soft sunset light&quot;, &quot;highlights&quot;: &quot;warm&quot;, &quot;shadows&quot;: &quot;cool&quot;, &quot;contrast&quot;: &quot;soft&quot;},<br>    &quot;camera&quot;: {<br>      &quot;lens&quot;: &quot;35mm analog look&quot;,<br>      &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>      &quot;focus&quot;: &quot;sharp on subject, smooth background falloff&quot;,<br>      &quot;composition&quot;: &quot;editorial fashion portrait&quot;<br>    },<br>    &quot;color_grading&quot;: {&quot;style&quot;: &quot;muted vintage tones&quot;, &quot;saturation&quot;: &quot;slightly reduced&quot;, &quot;film_grain&quot;: &quot;subtle&quot;},<br>    &quot;quality&quot;: {&quot;realism&quot;: &quot;high&quot;, &quot;texture&quot;: &quot;natural skin and fabric detail&quot;, &quot;render&quot;: &quot;cinematic, editorial, realistic&quot;}<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;reference&quot;: {&quot;use_uploaded_photo&quot;: true, &quot;role&quot;: &quot;main subject&quot;, &quot;identity_preservation&quot;: true},<br>    &quot;scene&quot;: {<br>      &quot;location&quot;: &quot;rural countryside&quot;,<br>      &quot;background&quot;: [&quot;tall dry grass fields&quot;, &quot;distant metal powerline tower&quot;],<br>      &quot;time&quot;: &quot;golden hour&quot;,<br>      &quot;atmosphere&quot;: &quot;calm, nostalgic road trip mood&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;pose&quot;: &quot;casually leaning against a vintage car, one arm resting on the open door frame&quot;,<br>      &quot;expression&quot;: &quot;thoughtful, relaxed, looking off to the side&quot;,<br>      &quot;hair&quot;: &quot;gently moved by the wind&quot;,<br>      &quot;style&quot;: &quot;natural, candid portrait&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;top&quot;: &quot;retro striped sweater in warm earthy tones&quot;,<br>      &quot;bottom&quot;: &quot;high waisted beige trousers&quot;<br>    },<br>    &quot;lighting&quot;: {&quot;type&quot;: &quot;soft sunset light&quot;, &quot;highlights&quot;: &quot;warm&quot;, &quot;shadows&quot;: &quot;cool&quot;, &quot;contrast&quot;: &quot;soft&quot;},<br>    &quot;camera&quot;: {<br>      &quot;lens&quot;: &quot;35mm analog look&quot;,<br>      &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>      &quot;focus&quot;: &quot;sharp on subject, smooth background falloff&quot;,<br>      &quot;composition&quot;: &quot;editorial fashion portrait&quot;<br>    },<br>    &quot;color_grading&quot;: {&quot;style&quot;: &quot;muted vintage tones&quot;, &quot;saturation&quot;: &quot;slightly reduced&quot;, &quot;film_grain&quot;: &quot;subtle&quot;},<br>    &quot;quality&quot;: {&quot;realism&quot;: &quot;high&quot;, &quot;texture&quot;: &quot;natural skin and fabric detail&quot;, &quot;render&quot;: &quot;cinematic, editorial, realistic&quot;}<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2009915869489504532-1.jpg" alt="&quot;image generation&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 946,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

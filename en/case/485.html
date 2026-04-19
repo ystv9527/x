@@ -7,11 +7,13 @@
     <title>Create a movie poster. #485 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Creating a Movie Poster - Nano Banana AI Image Generation Case Study">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/485.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/485.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/485.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846100">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023859">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("分析上传的照片，检测其中的主体、情绪和氛围。\n自动将照片归类到合适的电影类型（爱情、动作、悬疑、恐怖等）。\n根据检测到的类型和氛围，用英文生成以下内容：\n- 电影标题：具有冲击力，符合该类型风格。\n- 短标语 / 宣传语：1–2 行，具有戏剧性或情感渲染。\n- 底部制作信息：包括导演、制片、音乐等虚拟姓名，风格类似真实电影海报。\n- 上映信息：如 “COMING SOON” 或 “In Theaters 2025”。\n将上述元素叠加在照片上，呈现电影海报风格：\n- 标题显著展示在中央或下三分之一位置。\n- 标语置于标题上方或下方。\n- 制作信息放在底部，文字较小。\n- 上映信息置于底部中央。\n- 最后添加主演信息，格式固定如下：\n\"Starring: <演员姓名>\"\n字体要求：粗体、戏剧性、符合电影类型。\n最终效果应看起来像真实的电影院海报，所有元素与照片的情绪和氛围协调一致。", this)'>📋 Copy</button>
         </div>
-        <p>分析上传的照片，检测其中的主体、情绪和氛围。<br>自动将照片归类到合适的电影类型（爱情、动作、悬疑、恐怖等）。<br>根据检测到的类型和氛围，用英文生成以下内容：<br>- 电影标题：具有冲击力，符合该类型风格。<br>- 短标语 / 宣传语：1–2 行，具有戏剧性或情感渲染。<br>- 底部制作信息：包括导演、制片、音乐等虚拟姓名，风格类似真实电影海报。<br>- 上映信息：如 “COMING SOON” 或 “In Theaters 2025”。<br>将上述元素叠加在照片上，呈现电影海报风格：<br>- 标题显著展示在中央或下三分之一位置。<br>- 标语置于标题上方或下方。<br>- 制作信息放在底部，文字较小。<br>- 上映信息置于底部中央。<br>- 最后添加主演信息，格式固定如下：<br>&quot;Starring: &lt;演员姓名&gt;&quot;<br>字体要求：粗体、戏剧性、符合电影类型。<br>最终效果应看起来像真实的电影院海报，所有元素与照片的情绪和氛围协调一致。</p>
+        <div data-nosnippet><p>分析上传的照片，检测其中的主体、情绪和氛围。<br>自动将照片归类到合适的电影类型（爱情、动作、悬疑、恐怖等）。<br>根据检测到的类型和氛围，用英文生成以下内容：<br>- 电影标题：具有冲击力，符合该类型风格。<br>- 短标语 / 宣传语：1–2 行，具有戏剧性或情感渲染。<br>- 底部制作信息：包括导演、制片、音乐等虚拟姓名，风格类似真实电影海报。<br>- 上映信息：如 “COMING SOON” 或 “In Theaters 2025”。<br>将上述元素叠加在照片上，呈现电影海报风格：<br>- 标题显著展示在中央或下三分之一位置。<br>- 标语置于标题上方或下方。<br>- 制作信息放在底部，文字较小。<br>- 上映信息置于底部中央。<br>- 最后添加主演信息，格式固定如下：<br>&quot;Starring: &lt;演员姓名&gt;&quot;<br>字体要求：粗体、戏剧性、符合电影类型。<br>最终效果应看起来像真实的电影院海报，所有元素与照片的情绪和氛围协调一致。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Analyze the uploaded photo to detect its main subject, mood, and atmosphere.  \nAutomatically categorize the photo into an appropriate film genre (romance, action, mystery, horror, etc.).  \nBased on the detected genre and mood, generate the following content in English:  \n- **Movie Title:** Impactful and fitting the style of the genre.  \n- **Tagline / Slogan:** 1–2 lines, dramatic or emotionally evocative.  \n- **Bottom Credits:** Include fictional names for director, producer, composer, etc., styled like a real movie poster.  \n- **Release Information:** Such as “COMING SOON” or “In Theaters 2025.”  \n\nOverlay these elements onto the photo to create a movie poster style:  \n- The title prominently displayed in the center or lower third.  \n- The tagline placed above or below the title.  \n- Credits at the bottom in smaller font.  \n- Release info at the bottom center.  \n- Add starring information in the following fixed format:  \n  **\"Starring: <Actor Names>\"**  \n  Font style: bold, dramatic, matching the genre.  \n\nThe final result should resemble a real movie poster, with all elements harmonized to match the photo’s mood and atmosphere.", this)'>📋 Copy</button>
         </div>
-        <p>Analyze the uploaded photo to detect its main subject, mood, and atmosphere.  <br>Automatically categorize the photo into an appropriate film genre (romance, action, mystery, horror, etc.).  <br>Based on the detected genre and mood, generate the following content in English:  <br>- **Movie Title:** Impactful and fitting the style of the genre.  <br>- **Tagline / Slogan:** 1–2 lines, dramatic or emotionally evocative.  <br>- **Bottom Credits:** Include fictional names for director, producer, composer, etc., styled like a real movie poster.  <br>- **Release Information:** Such as “COMING SOON” or “In Theaters 2025.”</p><p>Overlay these elements onto the photo to create a movie poster style:  <br>- The title prominently displayed in the center or lower third.  <br>- The tagline placed above or below the title.  <br>- Credits at the bottom in smaller font.  <br>- Release info at the bottom center.  <br>- Add starring information in the following fixed format:  <br>  **&quot;Starring: &lt;Actor Names&gt;&quot;**  <br>  Font style: bold, dramatic, matching the genre.</p><p>The final result should resemble a real movie poster, with all elements harmonized to match the photo’s mood and atmosphere.</p>
+        <div data-nosnippet><p>Analyze the uploaded photo to detect its main subject, mood, and atmosphere.  <br>Automatically categorize the photo into an appropriate film genre (romance, action, mystery, horror, etc.).  <br>Based on the detected genre and mood, generate the following content in English:  <br>- **Movie Title:** Impactful and fitting the style of the genre.  <br>- **Tagline / Slogan:** 1–2 lines, dramatic or emotionally evocative.  <br>- **Bottom Credits:** Include fictional names for director, producer, composer, etc., styled like a real movie poster.  <br>- **Release Information:** Such as “COMING SOON” or “In Theaters 2025.”</p><p>Overlay these elements onto the photo to create a movie poster style:  <br>- The title prominently displayed in the center or lower third.  <br>- The tagline placed above or below the title.  <br>- Credits at the bottom in smaller font.  <br>- Release info at the bottom center.  <br>- Add starring information in the following fixed format:  <br>  **&quot;Starring: &lt;Actor Names&gt;&quot;**  <br>  Font style: bold, dramatic, matching the genre.</p><p>The final result should resemble a real movie poster, with all elements harmonized to match the photo’s mood and atmosphere.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/nano-case98-output.jpg" alt="制作电影海报" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 485,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;prompt details&quot;: { #786 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt details&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;Handsome male trekker, dark wavy hair (no cap), full beard, rugged...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/786.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/786.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/786.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845789">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023799">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_details\": {\n    \"subject\": {\n      \"description\": \"英俊的男性徒步者，深色波浪发（无帽），浓密胡须，粗犷的外表\",\n      \"expression\": \"放松、平静，享受大自然\",\n      \"clothing\": \"绿色格子法兰绒衬衫叠穿在黑色T恤上，黑色多口袋登山裤，蓝色徒步靴，手表，颈部护颈圈\"\n    },\n    \"environment\": {\n      \"location\": \"山地露营地\",\n      \"elements\": \"背景中有搭好的露营帐篷，郁郁葱葱的绿山丘，岩石地面，也许还有一小堆篝火\",\n      \"time_of_day\": \"金色时刻或柔和的下午光线\"\n    },\n    \"style\": {\n      \"type\": \"超真实感户外摄影\",\n      \"quality\": \"8k 分辨率、电影级灯光、锐利对焦、细致纹理\",\n      \"camera_angle\": \"眼平视角或略低角度\"\n    }\n  },\n  \"full_prompt_text\": \"一位英俊的男性徒步者在山地露营地舒适地坐着，未戴帽子，留着深色波浪发和胡须。他穿着绿色格子衬衫叠穿在黑色T恤上，黑色多口袋登山裤，以及蓝色徒步靴。背景中可见一顶露营帐篷，背景是郁郁葱葱的绿色山岭。柔和的自然光线、真实的皮肤质感、电影感的户外探险风格、8k 分辨率。\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;英俊的男性徒步者，深色波浪发（无帽），浓密胡须，粗犷的外表&quot;,<br>      &quot;expression&quot;: &quot;放松、平静，享受大自然&quot;,<br>      &quot;clothing&quot;: &quot;绿色格子法兰绒衬衫叠穿在黑色T恤上，黑色多口袋登山裤，蓝色徒步靴，手表，颈部护颈圈&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;山地露营地&quot;,<br>      &quot;elements&quot;: &quot;背景中有搭好的露营帐篷，郁郁葱葱的绿山丘，岩石地面，也许还有一小堆篝火&quot;,<br>      &quot;time_of_day&quot;: &quot;金色时刻或柔和的下午光线&quot;<br>    },<br>    &quot;style&quot;: {<br>      &quot;type&quot;: &quot;超真实感户外摄影&quot;,<br>      &quot;quality&quot;: &quot;8k 分辨率、电影级灯光、锐利对焦、细致纹理&quot;,<br>      &quot;camera_angle&quot;: &quot;眼平视角或略低角度&quot;<br>    }<br>  },<br>  &quot;full_prompt_text&quot;: &quot;一位英俊的男性徒步者在山地露营地舒适地坐着，未戴帽子，留着深色波浪发和胡须。他穿着绿色格子衬衫叠穿在黑色T恤上，黑色多口袋登山裤，以及蓝色徒步靴。背景中可见一顶露营帐篷，背景是郁郁葱葱的绿色山岭。柔和的自然光线、真实的皮肤质感、电影感的户外探险风格、8k 分辨率。&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;英俊的男性徒步者，深色波浪发（无帽），浓密胡须，粗犷的外表&quot;,<br>      &quot;expression&quot;: &quot;放松、平静，享受大自然&quot;,<br>      &quot;clothing&quot;: &quot;绿色格子法兰绒衬衫叠穿在黑色T恤上，黑色多口袋登山裤，蓝色徒步靴，手表，颈部护颈圈&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;山地露营地&quot;,<br>      &quot;elements&quot;: &quot;背景中有搭好的露营帐篷，郁郁葱葱的绿山丘，岩石地面，也许还有一小堆篝火&quot;,<br>      &quot;time_of_day&quot;: &quot;金色时刻或柔和的下午光线&quot;<br>    },<br>    &quot;style&quot;: {<br>      &quot;type&quot;: &quot;超真实感户外摄影&quot;,<br>      &quot;quality&quot;: &quot;8k 分辨率、电影级灯光、锐利对焦、细致纹理&quot;,<br>      &quot;camera_angle&quot;: &quot;眼平视角或略低角度&quot;<br>    }<br>  },<br>  &quot;full_prompt_text&quot;: &quot;一位英俊的男性徒步者在山地露营地舒适地坐着，未戴帽子，留着深色波浪发和胡须。他穿着绿色格子衬衫叠穿在黑色T恤上，黑色多口袋登山裤，以及蓝色徒步靴。背景中可见一顶露营帐篷，背景是郁郁葱葱的绿色山岭。柔和的自然光线、真实的皮肤质感、电影感的户外探险风格、8k 分辨率。&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt_details\": {\n    \"subject\": {\n      \"description\": \"Handsome male trekker, dark wavy hair (no cap), full beard, rugged appearance\",\n      \"expression\": \"Relaxed, calm, enjoying the nature\",\n      \"clothing\": \"Green check flannel shirt layered over a black T-shirt, black cargo trekking pants, blue hiking boots, wristwatch, neck gaiter\"\n    },\n    \"environment\": {\n      \"location\": \"Mountain campsite\",\n      \"elements\": \"Pitched camping tent in background, lush green hills, rocky ground, perhaps a small campfire\",\n      \"time_of_day\": \"Golden hour or soft afternoon light\"\n    },\n    \"style\": {\n      \"type\": \"Hyper-realistic outdoor photography\",\n      \"quality\": \"8k resolution, cinematic lighting, sharp focus, detailed texture\",\n      \"camera_angle\": \"Eye-level or slightly low angle\"\n    }\n  },\n  \"full_prompt_text\": \"A handsome male trekker sitting comfortably at a mountain campsite, no cap, showing dark wavy hair and a beard. He is wearing a green check shirt over a black t-shirt, black cargo pants, and blue hiking boots. A camping tent is visible in the background amidst lush green mountains. Soft natural lighting, realistic skin texture, cinematic outdoor adventure style, 8k resolution.\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Handsome male trekker, dark wavy hair (no cap), full beard, rugged appearance&quot;,<br>      &quot;expression&quot;: &quot;Relaxed, calm, enjoying the nature&quot;,<br>      &quot;clothing&quot;: &quot;Green check flannel shirt layered over a black T-shirt, black cargo trekking pants, blue hiking boots, wristwatch, neck gaiter&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Mountain campsite&quot;,<br>      &quot;elements&quot;: &quot;Pitched camping tent in background, lush green hills, rocky ground, perhaps a small campfire&quot;,<br>      &quot;time_of_day&quot;: &quot;Golden hour or soft afternoon light&quot;<br>    },<br>    &quot;style&quot;: {<br>      &quot;type&quot;: &quot;Hyper-realistic outdoor photography&quot;,<br>      &quot;quality&quot;: &quot;8k resolution, cinematic lighting, sharp focus, detailed texture&quot;,<br>      &quot;camera_angle&quot;: &quot;Eye-level or slightly low angle&quot;<br>    }<br>  },<br>  &quot;full_prompt_text&quot;: &quot;A handsome male trekker sitting comfortably at a mountain campsite, no cap, showing dark wavy hair and a beard. He is wearing a green check shirt over a black t-shirt, black cargo pants, and blue hiking boots. A camping tent is visible in the background amidst lush green mountains. Soft natural lighting, realistic skin texture, cinematic outdoor adventure style, 8k resolution.&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt_details&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;Handsome male trekker, dark wavy hair (no cap), full beard, rugged appearance&quot;,<br>      &quot;expression&quot;: &quot;Relaxed, calm, enjoying the nature&quot;,<br>      &quot;clothing&quot;: &quot;Green check flannel shirt layered over a black T-shirt, black cargo trekking pants, blue hiking boots, wristwatch, neck gaiter&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;location&quot;: &quot;Mountain campsite&quot;,<br>      &quot;elements&quot;: &quot;Pitched camping tent in background, lush green hills, rocky ground, perhaps a small campfire&quot;,<br>      &quot;time_of_day&quot;: &quot;Golden hour or soft afternoon light&quot;<br>    },<br>    &quot;style&quot;: {<br>      &quot;type&quot;: &quot;Hyper-realistic outdoor photography&quot;,<br>      &quot;quality&quot;: &quot;8k resolution, cinematic lighting, sharp focus, detailed texture&quot;,<br>      &quot;camera_angle&quot;: &quot;Eye-level or slightly low angle&quot;<br>    }<br>  },<br>  &quot;full_prompt_text&quot;: &quot;A handsome male trekker sitting comfortably at a mountain campsite, no cap, showing dark wavy hair and a beard. He is wearing a green check shirt over a black t-shirt, black cargo pants, and blue hiking boots. A camping tent is visible in the background amidst lush green mountains. Soft natural lighting, realistic skin texture, cinematic outdoor adventure style, 8k resolution.&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2008794302630309945-1.jpg" alt="&quot;prompt details&quot;: {" loading="lazy"><img src="/images/tweet-2008794302630309945-2.jpg" alt="&quot;prompt details&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 786,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

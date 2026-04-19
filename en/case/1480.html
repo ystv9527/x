@@ -7,11 +7,13 @@
     <title>&quot;image generation prompts&quot;: { #1480 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image generation prompts&quot;: { &quot;natural language prompt&quot;: &quot;A photorealistic portrait of a young woman with long, wav...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1480.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1480.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1480.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845074">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023642">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompts\": {\n    \"natural_language_prompt\": \"一张写实风格的人像，描绘一位长而波浪状的铂金金发年轻女性，站在阳光明媚的街道户外。她闭着眼睛，表情宁静，微笑着并微微侧着头。右手在面颊附近比出“摇滚”手势（竖起食指和小拇指）。她穿着白色短袖校服衬衫，灰色袖口，胸前别着一簇由三条粉色和淡紫色组成的淡色丝带。她穿着灰色百褶裙，左手拿着一件粉色开衫。背景有混凝土墙、绿色灌木，并隐约可见一块带有日文文字的牌子，整个场景被温暖的黄金时刻阳光照亮，形成明显的阴影。\",\n    \"tag_based_prompt\": \"1位女孩, 单人, 角色扮演, 写实（照片级）, 逼真, 8K UHD, DSLR, 柔和光线, 黄金时刻, 长波浪发, 铂金金发, 闭眼, 微笑, 侧头, 举手, 摇滚手势, 牛角手势（摇滚手势）, 白衬衫, 短袖, 灰色袖口, 校服, 胸前三枚蝴蝶结, 粉色蝴蝶结, 淡紫色蝴蝶结, 百褶裙, 拿着粉色开衫, 户外, 街道, 混凝土墙, 植被, 树木, 日文招牌, 景深, 背景虚化\",\n    \"negative_prompt\": \"睁眼, 蓝色眼睛, 生气, 悲伤, 低质量, JPEG 压缩伪影, 模糊, 解剖结构错误, 手部错误, 缺失手指, 多余手指, 文字, 水印, 签名, 卡通, 2D, 素描, 插画, 昏暗, 夜间, 下雨\"\n  },\n  \"parameters\": {\n    \"aspect_ratio\": \"3:4\",\n    \"model_style\": \"写实 / 电影感\",\n    \"lighting\": \"自然阳光 / 黄金时刻\",\n    \"camera_angle\": \"眼平视角，中景镜头\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompts&quot;: {<br>    &quot;natural_language_prompt&quot;: &quot;一张写实风格的人像，描绘一位长而波浪状的铂金金发年轻女性，站在阳光明媚的街道户外。她闭着眼睛，表情宁静，微笑着并微微侧着头。右手在面颊附近比出“摇滚”手势（竖起食指和小拇指）。她穿着白色短袖校服衬衫，灰色袖口，胸前别着一簇由三条粉色和淡紫色组成的淡色丝带。她穿着灰色百褶裙，左手拿着一件粉色开衫。背景有混凝土墙、绿色灌木，并隐约可见一块带有日文文字的牌子，整个场景被温暖的黄金时刻阳光照亮，形成明显的阴影。&quot;,<br>    &quot;tag_based_prompt&quot;: &quot;1位女孩, 单人, 角色扮演, 写实（照片级）, 逼真, 8K UHD, DSLR, 柔和光线, 黄金时刻, 长波浪发, 铂金金发, 闭眼, 微笑, 侧头, 举手, 摇滚手势, 牛角手势（摇滚手势）, 白衬衫, 短袖, 灰色袖口, 校服, 胸前三枚蝴蝶结, 粉色蝴蝶结, 淡紫色蝴蝶结, 百褶裙, 拿着粉色开衫, 户外, 街道, 混凝土墙, 植被, 树木, 日文招牌, 景深, 背景虚化&quot;,<br>    &quot;negative_prompt&quot;: &quot;睁眼, 蓝色眼睛, 生气, 悲伤, 低质量, JPEG 压缩伪影, 模糊, 解剖结构错误, 手部错误, 缺失手指, 多余手指, 文字, 水印, 签名, 卡通, 2D, 素描, 插画, 昏暗, 夜间, 下雨&quot;<br>  },<br>  &quot;parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;model_style&quot;: &quot;写实 / 电影感&quot;,<br>    &quot;lighting&quot;: &quot;自然阳光 / 黄金时刻&quot;,<br>    &quot;camera_angle&quot;: &quot;眼平视角，中景镜头&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompts&quot;: {<br>    &quot;natural_language_prompt&quot;: &quot;一张写实风格的人像，描绘一位长而波浪状的铂金金发年轻女性，站在阳光明媚的街道户外。她闭着眼睛，表情宁静，微笑着并微微侧着头。右手在面颊附近比出“摇滚”手势（竖起食指和小拇指）。她穿着白色短袖校服衬衫，灰色袖口，胸前别着一簇由三条粉色和淡紫色组成的淡色丝带。她穿着灰色百褶裙，左手拿着一件粉色开衫。背景有混凝土墙、绿色灌木，并隐约可见一块带有日文文字的牌子，整个场景被温暖的黄金时刻阳光照亮，形成明显的阴影。&quot;,<br>    &quot;tag_based_prompt&quot;: &quot;1位女孩, 单人, 角色扮演, 写实（照片级）, 逼真, 8K UHD, DSLR, 柔和光线, 黄金时刻, 长波浪发, 铂金金发, 闭眼, 微笑, 侧头, 举手, 摇滚手势, 牛角手势（摇滚手势）, 白衬衫, 短袖, 灰色袖口, 校服, 胸前三枚蝴蝶结, 粉色蝴蝶结, 淡紫色蝴蝶结, 百褶裙, 拿着粉色开衫, 户外, 街道, 混凝土墙, 植被, 树木, 日文招牌, 景深, 背景虚化&quot;,<br>    &quot;negative_prompt&quot;: &quot;睁眼, 蓝色眼睛, 生气, 悲伤, 低质量, JPEG 压缩伪影, 模糊, 解剖结构错误, 手部错误, 缺失手指, 多余手指, 文字, 水印, 签名, 卡通, 2D, 素描, 插画, 昏暗, 夜间, 下雨&quot;<br>  },<br>  &quot;parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;model_style&quot;: &quot;写实 / 电影感&quot;,<br>    &quot;lighting&quot;: &quot;自然阳光 / 黄金时刻&quot;,<br>    &quot;camera_angle&quot;: &quot;眼平视角，中景镜头&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_prompts\": {\n    \"natural_language_prompt\": \"A photorealistic portrait of a young woman with long, wavy platinum blonde hair standing outdoors on a sunny street. She has her eyes closed in a serene expression and is smiling softly while tilting her head. She is making a 'rock on' hand sign (index and pinky finger raised) with her right hand near her face. She is wearing a white short-sleeved school uniform shirt with grey cuffs and a distinctive cluster of three pastel ribbons (pink and lavender) pinned to the chest. She wears a grey pleated skirt and is holding a pink cardigan in her left hand. The background features a concrete wall, green bushes, and a glimpse of a sign with Japanese text, all bathed in warm, golden-hour sunlight with distinct shadows.\",\n    \"tag_based_prompt\": \"1girl, solo, cosplay, photorealistic, realistic, 8k uhd, dslr, soft lighting, golden hour, long wavy hair, platinum blonde hair, closed eyes, smile, head tilt, hand up, rock on gesture, sign of the horns, white shirt, short sleeves, grey cuffs, school uniform, three bows on chest, pink bow, purple bow, pleated skirt, holding pink cardigan, outdoors, street, concrete wall, foliage, trees, japanese sign, depth of field, blurred background\",\n    \"negative_prompt\": \"open eyes, blue eyes, angry, sad, low quality, jpeg artifacts, blurry, bad anatomy, bad hands, missing fingers, extra fingers, text, watermark, signature, cartoon, 2d, sketch, illustration, dark, night, rain\"\n  },\n  \"parameters\": {\n    \"aspect_ratio\": \"3:4\",\n    \"model_style\": \"Photorealistic / Cinematic\",\n    \"lighting\": \"Natural Sunlight / Golden Hour\",\n    \"camera_angle\": \"Eye level, medium shot\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation_prompts&quot;: {<br>    &quot;natural_language_prompt&quot;: &quot;A photorealistic portrait of a young woman with long, wavy platinum blonde hair standing outdoors on a sunny street. She has her eyes closed in a serene expression and is smiling softly while tilting her head. She is making a &#39;rock on&#39; hand sign (index and pinky finger raised) with her right hand near her face. She is wearing a white short-sleeved school uniform shirt with grey cuffs and a distinctive cluster of three pastel ribbons (pink and lavender) pinned to the chest. She wears a grey pleated skirt and is holding a pink cardigan in her left hand. The background features a concrete wall, green bushes, and a glimpse of a sign with Japanese text, all bathed in warm, golden-hour sunlight with distinct shadows.&quot;,<br>    &quot;tag_based_prompt&quot;: &quot;1girl, solo, cosplay, photorealistic, realistic, 8k uhd, dslr, soft lighting, golden hour, long wavy hair, platinum blonde hair, closed eyes, smile, head tilt, hand up, rock on gesture, sign of the horns, white shirt, short sleeves, grey cuffs, school uniform, three bows on chest, pink bow, purple bow, pleated skirt, holding pink cardigan, outdoors, street, concrete wall, foliage, trees, japanese sign, depth of field, blurred background&quot;,<br>    &quot;negative_prompt&quot;: &quot;open eyes, blue eyes, angry, sad, low quality, jpeg artifacts, blurry, bad anatomy, bad hands, missing fingers, extra fingers, text, watermark, signature, cartoon, 2d, sketch, illustration, dark, night, rain&quot;<br>  },<br>  &quot;parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;model_style&quot;: &quot;Photorealistic / Cinematic&quot;,<br>    &quot;lighting&quot;: &quot;Natural Sunlight / Golden Hour&quot;,<br>    &quot;camera_angle&quot;: &quot;Eye level, medium shot&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_prompts&quot;: {<br>    &quot;natural_language_prompt&quot;: &quot;A photorealistic portrait of a young woman with long, wavy platinum blonde hair standing outdoors on a sunny street. She has her eyes closed in a serene expression and is smiling softly while tilting her head. She is making a &#39;rock on&#39; hand sign (index and pinky finger raised) with her right hand near her face. She is wearing a white short-sleeved school uniform shirt with grey cuffs and a distinctive cluster of three pastel ribbons (pink and lavender) pinned to the chest. She wears a grey pleated skirt and is holding a pink cardigan in her left hand. The background features a concrete wall, green bushes, and a glimpse of a sign with Japanese text, all bathed in warm, golden-hour sunlight with distinct shadows.&quot;,<br>    &quot;tag_based_prompt&quot;: &quot;1girl, solo, cosplay, photorealistic, realistic, 8k uhd, dslr, soft lighting, golden hour, long wavy hair, platinum blonde hair, closed eyes, smile, head tilt, hand up, rock on gesture, sign of the horns, white shirt, short sleeves, grey cuffs, school uniform, three bows on chest, pink bow, purple bow, pleated skirt, holding pink cardigan, outdoors, street, concrete wall, foliage, trees, japanese sign, depth of field, blurred background&quot;,<br>    &quot;negative_prompt&quot;: &quot;open eyes, blue eyes, angry, sad, low quality, jpeg artifacts, blurry, bad anatomy, bad hands, missing fingers, extra fingers, text, watermark, signature, cartoon, 2d, sketch, illustration, dark, night, rain&quot;<br>  },<br>  &quot;parameters&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>    &quot;model_style&quot;: &quot;Photorealistic / Cinematic&quot;,<br>    &quot;lighting&quot;: &quot;Natural Sunlight / Golden Hour&quot;,<br>    &quot;camera_angle&quot;: &quot;Eye level, medium shot&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2012351834577629691-1.jpg" alt="&quot;image generation prompts&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1480,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

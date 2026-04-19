@@ -7,11 +7,13 @@
     <title>[BRAND NAME] #2479 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[BRAND NAME] [PRODUCT TYPE] (Clothing / Food / Automotive / Tech). Goal: Generate a professional &quot;scrapbook&quot; style co...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2479.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2479.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2479.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839867">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022219">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]\n\n[PRODUCT TYPE]（服装/食品/汽车/科技）。\n\n目标：生成一个专业的“剪贴簿”风格拼贴海报，以 [BRAND NAME] 为中心，聚焦于 [PRODUCT TYPE]。\n\n1. HERO PRODUCT（底部焦点）\n\n- 对象：在画面底部居中呈现 [BRAND NAME] 的 [PRODUCT TYPE] 的高清现实感3D渲染。\n\n- 摆放：略微倾斜以显示深度，在纯米白色地板上呈现柔和真实的接触阴影。\n\n2. 多层拼贴堆叠\n\n- 照片：在产品上方竖直叠放的重叠照片，边缘呈锯齿状/撕裂边缘，向上延伸。\n\n- 内容：照片应展示 [PRODUCT TYPE] 的使用场景、与 [BRAND NAME] 相关的生活方式镜头，以及对具体细节的特写。\n\n- 材料：与 [PRODUCT TYPE] 相关的材质样本（例如服装的皮革/面料、汽车的金属/碳纤维、食品的有机原料）。包括可见的原边缘和缝线。\n\n- 固定件：使用半透明美纹胶带和黑色胶带条，正面印有白色的 [BRAND NAME] 徽标，用以“将各部分固定在一起”。\n\n3. 图形覆盖层与印章\n\n- 印章：在主视觉附近使用一个黑色、破旧风格的印章或密封章，文字为：“AUTHENTIC QUALITY // SUSTAINABLE CHOICE”。\n\n- 排版：在底部放置小型、干净的无衬线字体和打字机风格的文本区块，描述 [BRAND NAME] 的传承。\n\n- 徽标：在最底部居中的主要 [BRAND NAME] 标志，字体极简。\n\n4. 风格与氛围\n\n- 美学：工业风DIY、工作室风格的情绪板，高端编辑拼贴。\n\n- 光线：明亮的工作室高键光，纸片碎片与纹理之间有柔和、分层的阴影。\n\n- 质量：8K 分辨率，对纸张纹理、织物纤维和胶带粘合处进行宏观细节处理。", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]</p><p>[PRODUCT TYPE]（服装/食品/汽车/科技）。</p><p>目标：生成一个专业的“剪贴簿”风格拼贴海报，以 [BRAND NAME] 为中心，聚焦于 [PRODUCT TYPE]。</p><p>1. HERO PRODUCT（底部焦点）</p><p>- 对象：在画面底部居中呈现 [BRAND NAME] 的 [PRODUCT TYPE] 的高清现实感3D渲染。</p><p>- 摆放：略微倾斜以显示深度，在纯米白色地板上呈现柔和真实的接触阴影。</p><p>2. 多层拼贴堆叠</p><p>- 照片：在产品上方竖直叠放的重叠照片，边缘呈锯齿状/撕裂边缘，向上延伸。</p><p>- 内容：照片应展示 [PRODUCT TYPE] 的使用场景、与 [BRAND NAME] 相关的生活方式镜头，以及对具体细节的特写。</p><p>- 材料：与 [PRODUCT TYPE] 相关的材质样本（例如服装的皮革/面料、汽车的金属/碳纤维、食品的有机原料）。包括可见的原边缘和缝线。</p><p>- 固定件：使用半透明美纹胶带和黑色胶带条，正面印有白色的 [BRAND NAME] 徽标，用以“将各部分固定在一起”。</p><p>3. 图形覆盖层与印章</p><p>- 印章：在主视觉附近使用一个黑色、破旧风格的印章或密封章，文字为：“AUTHENTIC QUALITY // SUSTAINABLE CHOICE”。</p><p>- 排版：在底部放置小型、干净的无衬线字体和打字机风格的文本区块，描述 [BRAND NAME] 的传承。</p><p>- 徽标：在最底部居中的主要 [BRAND NAME] 标志，字体极简。</p><p>4. 风格与氛围</p><p>- 美学：工业风DIY、工作室风格的情绪板，高端编辑拼贴。</p><p>- 光线：明亮的工作室高键光，纸片碎片与纹理之间有柔和、分层的阴影。</p><p>- 质量：8K 分辨率，对纸张纹理、织物纤维和胶带粘合处进行宏观细节处理。</p>
+        <div data-nosnippet><p>[BRAND NAME]</p><p>[PRODUCT TYPE]（服装/食品/汽车/科技）。</p><p>目标：生成一个专业的“剪贴簿”风格拼贴海报，以 [BRAND NAME] 为中心，聚焦于 [PRODUCT TYPE]。</p><p>1. HERO PRODUCT（底部焦点）</p><p>- 对象：在画面底部居中呈现 [BRAND NAME] 的 [PRODUCT TYPE] 的高清现实感3D渲染。</p><p>- 摆放：略微倾斜以显示深度，在纯米白色地板上呈现柔和真实的接触阴影。</p><p>2. 多层拼贴堆叠</p><p>- 照片：在产品上方竖直叠放的重叠照片，边缘呈锯齿状/撕裂边缘，向上延伸。</p><p>- 内容：照片应展示 [PRODUCT TYPE] 的使用场景、与 [BRAND NAME] 相关的生活方式镜头，以及对具体细节的特写。</p><p>- 材料：与 [PRODUCT TYPE] 相关的材质样本（例如服装的皮革/面料、汽车的金属/碳纤维、食品的有机原料）。包括可见的原边缘和缝线。</p><p>- 固定件：使用半透明美纹胶带和黑色胶带条，正面印有白色的 [BRAND NAME] 徽标，用以“将各部分固定在一起”。</p><p>3. 图形覆盖层与印章</p><p>- 印章：在主视觉附近使用一个黑色、破旧风格的印章或密封章，文字为：“AUTHENTIC QUALITY // SUSTAINABLE CHOICE”。</p><p>- 排版：在底部放置小型、干净的无衬线字体和打字机风格的文本区块，描述 [BRAND NAME] 的传承。</p><p>- 徽标：在最底部居中的主要 [BRAND NAME] 标志，字体极简。</p><p>4. 风格与氛围</p><p>- 美学：工业风DIY、工作室风格的情绪板，高端编辑拼贴。</p><p>- 光线：明亮的工作室高键光，纸片碎片与纹理之间有柔和、分层的阴影。</p><p>- 质量：8K 分辨率，对纸张纹理、织物纤维和胶带粘合处进行宏观细节处理。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[BRAND NAME]\n\n[PRODUCT TYPE] (Clothing / Food / Automotive / Tech).\n\nGoal: Generate a professional \"scrapbook\" style collage poster for [BRAND NAME] centered around a [PRODUCT TYPE].\n\n1. HERO PRODUCT (BOTTOM FOCUS)\n\n- Object: A high-definition, realistic 3D render of a [PRODUCT TYPE] by [BRAND NAME] at the bottom center.\n\n- Placement: Slightly angled to show depth, with soft realistic contact shadows on a plain off-white floor.\n\n2. THE MULTI-LAYERED COLLAGE STACK\n\n- Photos: A vertical stack of overlapping photos with RAGGED, TORN paper edges rising above the product.\n\n- Content: Photos should show [PRODUCT TYPE] in use, lifestyle shots related to [BRAND NAME], and close-ups of specific details.\n\n- Materials: Physical swatches of textures related to [PRODUCT TYPE] (e.g., leather/fabric for clothing, metal/carbon for cars, organic ingredients for food). Include visible raw edges and stitching.\n\n- Fasteners: Use strips of semi-transparent masking tape and black duct tape with the \"[BRAND NAME]\" logo printed in white to \"hold\" the pieces together.\n\n3. GRAPHIC OVERLAYS & STAMPS\n\n- Stamp: A black, distressed ink stamp or seal near the hero product with text: \"AUTHENTIC QUALITY // SUSTAINABLE CHOICE\".\n\n- Typography: Small, clean sans-serif and typewriter-style text blocks describing the heritage of [BRAND NAME] placed at the bottom.\n\n- Logo: The primary \"[BRAND NAME]\" logo centered at the very bottom in a minimalist font.\n\n4. STYLE & ATMOSPHERE\n\n- Aesthetic: Industrial DIY, workshop moodboard, high-end editorial collage.\n\n- Lighting: Bright, studio high-key lighting with soft, multi-layered shadows between the paper scraps and textures.\n\n- Quality: 8K resolution, macro detail on paper grain, fabric fibers, and tape adhesive.", this)'>📋 复制</button>
         </div>
-        <p>[BRAND NAME]</p><p>[PRODUCT TYPE] (Clothing / Food / Automotive / Tech).</p><p>Goal: Generate a professional &quot;scrapbook&quot; style collage poster for [BRAND NAME] centered around a [PRODUCT TYPE].</p><p>1. HERO PRODUCT (BOTTOM FOCUS)</p><p>- Object: A high-definition, realistic 3D render of a [PRODUCT TYPE] by [BRAND NAME] at the bottom center.</p><p>- Placement: Slightly angled to show depth, with soft realistic contact shadows on a plain off-white floor.</p><p>2. THE MULTI-LAYERED COLLAGE STACK</p><p>- Photos: A vertical stack of overlapping photos with RAGGED, TORN paper edges rising above the product.</p><p>- Content: Photos should show [PRODUCT TYPE] in use, lifestyle shots related to [BRAND NAME], and close-ups of specific details.</p><p>- Materials: Physical swatches of textures related to [PRODUCT TYPE] (e.g., leather/fabric for clothing, metal/carbon for cars, organic ingredients for food). Include visible raw edges and stitching.</p><p>- Fasteners: Use strips of semi-transparent masking tape and black duct tape with the &quot;[BRAND NAME]&quot; logo printed in white to &quot;hold&quot; the pieces together.</p><p>3. GRAPHIC OVERLAYS &amp; STAMPS</p><p>- Stamp: A black, distressed ink stamp or seal near the hero product with text: &quot;AUTHENTIC QUALITY // SUSTAINABLE CHOICE&quot;.</p><p>- Typography: Small, clean sans-serif and typewriter-style text blocks describing the heritage of [BRAND NAME] placed at the bottom.</p><p>- Logo: The primary &quot;[BRAND NAME]&quot; logo centered at the very bottom in a minimalist font.</p><p>4. STYLE &amp; ATMOSPHERE</p><p>- Aesthetic: Industrial DIY, workshop moodboard, high-end editorial collage.</p><p>- Lighting: Bright, studio high-key lighting with soft, multi-layered shadows between the paper scraps and textures.</p><p>- Quality: 8K resolution, macro detail on paper grain, fabric fibers, and tape adhesive.</p>
+        <div data-nosnippet><p>[BRAND NAME]</p><p>[PRODUCT TYPE] (Clothing / Food / Automotive / Tech).</p><p>Goal: Generate a professional &quot;scrapbook&quot; style collage poster for [BRAND NAME] centered around a [PRODUCT TYPE].</p><p>1. HERO PRODUCT (BOTTOM FOCUS)</p><p>- Object: A high-definition, realistic 3D render of a [PRODUCT TYPE] by [BRAND NAME] at the bottom center.</p><p>- Placement: Slightly angled to show depth, with soft realistic contact shadows on a plain off-white floor.</p><p>2. THE MULTI-LAYERED COLLAGE STACK</p><p>- Photos: A vertical stack of overlapping photos with RAGGED, TORN paper edges rising above the product.</p><p>- Content: Photos should show [PRODUCT TYPE] in use, lifestyle shots related to [BRAND NAME], and close-ups of specific details.</p><p>- Materials: Physical swatches of textures related to [PRODUCT TYPE] (e.g., leather/fabric for clothing, metal/carbon for cars, organic ingredients for food). Include visible raw edges and stitching.</p><p>- Fasteners: Use strips of semi-transparent masking tape and black duct tape with the &quot;[BRAND NAME]&quot; logo printed in white to &quot;hold&quot; the pieces together.</p><p>3. GRAPHIC OVERLAYS &amp; STAMPS</p><p>- Stamp: A black, distressed ink stamp or seal near the hero product with text: &quot;AUTHENTIC QUALITY // SUSTAINABLE CHOICE&quot;.</p><p>- Typography: Small, clean sans-serif and typewriter-style text blocks describing the heritage of [BRAND NAME] placed at the bottom.</p><p>- Logo: The primary &quot;[BRAND NAME]&quot; logo centered at the very bottom in a minimalist font.</p><p>4. STYLE &amp; ATMOSPHERE</p><p>- Aesthetic: Industrial DIY, workshop moodboard, high-end editorial collage.</p><p>- Lighting: Bright, studio high-key lighting with soft, multi-layered shadows between the paper scraps and textures.</p><p>- Quality: 8K resolution, macro detail on paper grain, fabric fibers, and tape adhesive.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2031446250214572438-1.jpg" alt="[BRAND NAME]" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2479,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

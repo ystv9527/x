@@ -7,11 +7,13 @@
     <title>{ &quot;generation request&quot;: { &quot;meta data&quot;: { &quot;tool&quot;: &quot;NanoBanana... #850 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;generation request&quot;: { &quot;meta data&quot;: { &quot;tool&quot;: &quot;NanoBanana Pro&quot;, &quot;task type&quot;: &quot;photoreal artistic street photograph...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/850.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/850.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/850.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845723">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023776">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"generation_request\": {\n    \"meta_data\": {\n      \"tool\": \"NanoBanana Pro\",\n      \"task_type\": \"photoreal_artistic_street_photography\",\n      \"version\": \"v1.0_STREET_ART_REALISM_SER_EN\",\n      \"priority\": \"最高\"\n    },\n    \"output_settings\": {\n      \"aspect_ratio\": \"4:5\",\n      \"orientation\": \"纵向\",\n      \"resolution_target\": \"超高分辨率\",\n      \"render_style\": \"超写实抓拍胶片静帧\",\n      \"sharpness\": \"清晰但自然\",\n      \"film_grain\": \"微妙的35mm颗粒感\",\n      \"color_grade\": \"克制的电影写实色调\",\n      \"dynamic_range\": \"自然（非HDR）\",\n      \"skin_rendering\": \"真实质感，无修图\"\n    },\n    \"creative_prompt\": {\n      \"scene_summary\": \"现场拍摄的艺术性街头抓拍，位于 [城市/街区]。真实、未摆拍的瞬间，具有纪录感与情感真实性。\",\n      \"subject\": \"一位[年龄]的[性别]，身穿[服装]，被捕捉到正在[微动作]的瞬间。面部表情自然，保留轻微不对称。\",\n      \"camera\": \"等效35mm镜头，目平视角，近距离但保持尊重的距离，构图有不完美感，像真实街头摄影师的拍法，焦点在眼睛，浅到中等景深。\",\n      \"lighting\": \"光源：来自[来源：店铺橱窗 / 路灯 / 日落 / 霓虹]的自然动机光，阴影深但细节丰富，不使用工作室灯光。\",\n      \"environment_details\": \"环境细节：街道质感：破旧海报、刮花金属、雨点斑驳的人行道、玻璃中的细微倒影、真实的城市杂物，不是干净的摄影棚背景。\",\n      \"authenticity_markers\": \"真实性标志：仅背景有轻微运动模糊，高光有细微晕光，微小的胶片门纹理，真实颗粒感，不做美容修饰。\",\n      \"mood\": \"[情绪：忧郁 / 充满希望 / 紧张 / 宁静的喜悦]，具有电影感但可信。\"\n    },\n    \"negative_prompt\": [\n      \"工作室灯光\",\n      \"美容修图\",\n      \"塑料皮肤\",\n      \"过度锐化\",\n      \"HDR（高动态范围）\",\n      \"AI 光晕\",\n      \"完美对称\",\n      \"过于干净的背景\",\n      \"假的焦外光斑形状\",\n      \"文字\",\n      \"标志\",\n      \"水印\",\n      \"绘画风格\",\n      \"卡通化\"\n    ]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;generation_request&quot;: {<br>    &quot;meta_data&quot;: {<br>      &quot;tool&quot;: &quot;NanoBanana Pro&quot;,<br>      &quot;task_type&quot;: &quot;photoreal_artistic_street_photography&quot;,<br>      &quot;version&quot;: &quot;v1.0_STREET_ART_REALISM_SER_EN&quot;,<br>      &quot;priority&quot;: &quot;最高&quot;<br>    },<br>    &quot;output_settings&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>      &quot;orientation&quot;: &quot;纵向&quot;,<br>      &quot;resolution_target&quot;: &quot;超高分辨率&quot;,<br>      &quot;render_style&quot;: &quot;超写实抓拍胶片静帧&quot;,<br>      &quot;sharpness&quot;: &quot;清晰但自然&quot;,<br>      &quot;film_grain&quot;: &quot;微妙的35mm颗粒感&quot;,<br>      &quot;color_grade&quot;: &quot;克制的电影写实色调&quot;,<br>      &quot;dynamic_range&quot;: &quot;自然（非HDR）&quot;,<br>      &quot;skin_rendering&quot;: &quot;真实质感，无修图&quot;<br>    },<br>    &quot;creative_prompt&quot;: {<br>      &quot;scene_summary&quot;: &quot;现场拍摄的艺术性街头抓拍，位于 [城市/街区]。真实、未摆拍的瞬间，具有纪录感与情感真实性。&quot;,<br>      &quot;subject&quot;: &quot;一位[年龄]的[性别]，身穿[服装]，被捕捉到正在[微动作]的瞬间。面部表情自然，保留轻微不对称。&quot;,<br>      &quot;camera&quot;: &quot;等效35mm镜头，目平视角，近距离但保持尊重的距离，构图有不完美感，像真实街头摄影师的拍法，焦点在眼睛，浅到中等景深。&quot;,<br>      &quot;lighting&quot;: &quot;光源：来自[来源：店铺橱窗 / 路灯 / 日落 / 霓虹]的自然动机光，阴影深但细节丰富，不使用工作室灯光。&quot;,<br>      &quot;environment_details&quot;: &quot;环境细节：街道质感：破旧海报、刮花金属、雨点斑驳的人行道、玻璃中的细微倒影、真实的城市杂物，不是干净的摄影棚背景。&quot;,<br>      &quot;authenticity_markers&quot;: &quot;真实性标志：仅背景有轻微运动模糊，高光有细微晕光，微小的胶片门纹理，真实颗粒感，不做美容修饰。&quot;,<br>      &quot;mood&quot;: &quot;[情绪：忧郁 / 充满希望 / 紧张 / 宁静的喜悦]，具有电影感但可信。&quot;<br>    },<br>    &quot;negative_prompt&quot;: [<br>      &quot;工作室灯光&quot;,<br>      &quot;美容修图&quot;,<br>      &quot;塑料皮肤&quot;,<br>      &quot;过度锐化&quot;,<br>      &quot;HDR（高动态范围）&quot;,<br>      &quot;AI 光晕&quot;,<br>      &quot;完美对称&quot;,<br>      &quot;过于干净的背景&quot;,<br>      &quot;假的焦外光斑形状&quot;,<br>      &quot;文字&quot;,<br>      &quot;标志&quot;,<br>      &quot;水印&quot;,<br>      &quot;绘画风格&quot;,<br>      &quot;卡通化&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;generation_request&quot;: {<br>    &quot;meta_data&quot;: {<br>      &quot;tool&quot;: &quot;NanoBanana Pro&quot;,<br>      &quot;task_type&quot;: &quot;photoreal_artistic_street_photography&quot;,<br>      &quot;version&quot;: &quot;v1.0_STREET_ART_REALISM_SER_EN&quot;,<br>      &quot;priority&quot;: &quot;最高&quot;<br>    },<br>    &quot;output_settings&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>      &quot;orientation&quot;: &quot;纵向&quot;,<br>      &quot;resolution_target&quot;: &quot;超高分辨率&quot;,<br>      &quot;render_style&quot;: &quot;超写实抓拍胶片静帧&quot;,<br>      &quot;sharpness&quot;: &quot;清晰但自然&quot;,<br>      &quot;film_grain&quot;: &quot;微妙的35mm颗粒感&quot;,<br>      &quot;color_grade&quot;: &quot;克制的电影写实色调&quot;,<br>      &quot;dynamic_range&quot;: &quot;自然（非HDR）&quot;,<br>      &quot;skin_rendering&quot;: &quot;真实质感，无修图&quot;<br>    },<br>    &quot;creative_prompt&quot;: {<br>      &quot;scene_summary&quot;: &quot;现场拍摄的艺术性街头抓拍，位于 [城市/街区]。真实、未摆拍的瞬间，具有纪录感与情感真实性。&quot;,<br>      &quot;subject&quot;: &quot;一位[年龄]的[性别]，身穿[服装]，被捕捉到正在[微动作]的瞬间。面部表情自然，保留轻微不对称。&quot;,<br>      &quot;camera&quot;: &quot;等效35mm镜头，目平视角，近距离但保持尊重的距离，构图有不完美感，像真实街头摄影师的拍法，焦点在眼睛，浅到中等景深。&quot;,<br>      &quot;lighting&quot;: &quot;光源：来自[来源：店铺橱窗 / 路灯 / 日落 / 霓虹]的自然动机光，阴影深但细节丰富，不使用工作室灯光。&quot;,<br>      &quot;environment_details&quot;: &quot;环境细节：街道质感：破旧海报、刮花金属、雨点斑驳的人行道、玻璃中的细微倒影、真实的城市杂物，不是干净的摄影棚背景。&quot;,<br>      &quot;authenticity_markers&quot;: &quot;真实性标志：仅背景有轻微运动模糊，高光有细微晕光，微小的胶片门纹理，真实颗粒感，不做美容修饰。&quot;,<br>      &quot;mood&quot;: &quot;[情绪：忧郁 / 充满希望 / 紧张 / 宁静的喜悦]，具有电影感但可信。&quot;<br>    },<br>    &quot;negative_prompt&quot;: [<br>      &quot;工作室灯光&quot;,<br>      &quot;美容修图&quot;,<br>      &quot;塑料皮肤&quot;,<br>      &quot;过度锐化&quot;,<br>      &quot;HDR（高动态范围）&quot;,<br>      &quot;AI 光晕&quot;,<br>      &quot;完美对称&quot;,<br>      &quot;过于干净的背景&quot;,<br>      &quot;假的焦外光斑形状&quot;,<br>      &quot;文字&quot;,<br>      &quot;标志&quot;,<br>      &quot;水印&quot;,<br>      &quot;绘画风格&quot;,<br>      &quot;卡通化&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{ \"generation_request\": { \"meta_data\": { \"tool\": \"NanoBanana Pro\", \"task_type\": \"photoreal_artistic_street_photography\", \"version\": \"v1.0_STREET_ART_REALISM_SER_EN\", \"priority\": \"highest\" }, \"output_settings\": { \"aspect_ratio\": \"4:5\", \"orientation\": \"portrait\", \"resolution_target\": \"ultra_high_res\", \"render_style\": \"ultra_photoreal_candid_film_still\", \"sharpness\": \"crisp_but_natural\", \"film_grain\": \"subtle_35mm\", \"color_grade\": \"restrained_cinematic_realism\", \"dynamic_range\": \"natural_not_hdr\", \"skin_rendering\": \"real_texture_no_retouch\" }, \"creative_prompt\": { \"scene_summary\": \"Candid artistic street photograph on location in [CITY/NEIGHBORHOOD]. A real, unposed moment that feels documentary and emotionally true.\", \"subject\": \"A [AGE] [GENDER] wearing [CLOTHING], caught mid-action: [MICRO-ACTION]. Natural facial expression, slight asymmetry preserved.\", \"camera\": \"35mm lens equivalent, eye-level, close but respectful distance, imperfect framing like a real street photographer, focus on the eyes, shallow-to-medium depth of field.\", \"lighting\": \"Motivated natural light from [SOURCE: shop window / street lamp / sunset / neon], deep but detailed shadows, no studio lighting.\", \"environment_details\": \"Street textures: worn posters, scratched metal, rain-speckled pavement, subtle reflections in glass, real urban clutter, no clean studio background.\", \"authenticity_markers\": \"Subtle motion blur on background only, slight halation on highlights, tiny film gate weave, realistic grain, no beauty retouch.\", \"mood\": \"[MOOD: melancholic / hopeful / tense / quiet joy], cinematic but believable.\" }, \"negative_prompt\": [ \"studio lighting\", \"beauty retouch\", \"plastic skin\", \"over-sharpened\", \"HDR\", \"AI glow\", \"perfect symmetry\", \"overly clean background\", \"fake bokeh shapes\", \"text\", \"logo\", \"watermark\", \"painterly\", \"cartoon\" ] } }", this)'>📋 Copy</button>
         </div>
-        <p>{ &quot;generation_request&quot;: { &quot;meta_data&quot;: { &quot;tool&quot;: &quot;NanoBanana Pro&quot;, &quot;task_type&quot;: &quot;photoreal_artistic_street_photography&quot;, &quot;version&quot;: &quot;v1.0_STREET_ART_REALISM_SER_EN&quot;, &quot;priority&quot;: &quot;highest&quot; }, &quot;output_settings&quot;: { &quot;aspect_ratio&quot;: &quot;4:5&quot;, &quot;orientation&quot;: &quot;portrait&quot;, &quot;resolution_target&quot;: &quot;ultra_high_res&quot;, &quot;render_style&quot;: &quot;ultra_photoreal_candid_film_still&quot;, &quot;sharpness&quot;: &quot;crisp_but_natural&quot;, &quot;film_grain&quot;: &quot;subtle_35mm&quot;, &quot;color_grade&quot;: &quot;restrained_cinematic_realism&quot;, &quot;dynamic_range&quot;: &quot;natural_not_hdr&quot;, &quot;skin_rendering&quot;: &quot;real_texture_no_retouch&quot; }, &quot;creative_prompt&quot;: { &quot;scene_summary&quot;: &quot;Candid artistic street photograph on location in [CITY/NEIGHBORHOOD]. A real, unposed moment that feels documentary and emotionally true.&quot;, &quot;subject&quot;: &quot;A [AGE] [GENDER] wearing [CLOTHING], caught mid-action: [MICRO-ACTION]. Natural facial expression, slight asymmetry preserved.&quot;, &quot;camera&quot;: &quot;35mm lens equivalent, eye-level, close but respectful distance, imperfect framing like a real street photographer, focus on the eyes, shallow-to-medium depth of field.&quot;, &quot;lighting&quot;: &quot;Motivated natural light from [SOURCE: shop window / street lamp / sunset / neon], deep but detailed shadows, no studio lighting.&quot;, &quot;environment_details&quot;: &quot;Street textures: worn posters, scratched metal, rain-speckled pavement, subtle reflections in glass, real urban clutter, no clean studio background.&quot;, &quot;authenticity_markers&quot;: &quot;Subtle motion blur on background only, slight halation on highlights, tiny film gate weave, realistic grain, no beauty retouch.&quot;, &quot;mood&quot;: &quot;[MOOD: melancholic / hopeful / tense / quiet joy], cinematic but believable.&quot; }, &quot;negative_prompt&quot;: [ &quot;studio lighting&quot;, &quot;beauty retouch&quot;, &quot;plastic skin&quot;, &quot;over-sharpened&quot;, &quot;HDR&quot;, &quot;AI glow&quot;, &quot;perfect symmetry&quot;, &quot;overly clean background&quot;, &quot;fake bokeh shapes&quot;, &quot;text&quot;, &quot;logo&quot;, &quot;watermark&quot;, &quot;painterly&quot;, &quot;cartoon&quot; ] } }</p>
+        <div data-nosnippet><p>{ &quot;generation_request&quot;: { &quot;meta_data&quot;: { &quot;tool&quot;: &quot;NanoBanana Pro&quot;, &quot;task_type&quot;: &quot;photoreal_artistic_street_photography&quot;, &quot;version&quot;: &quot;v1.0_STREET_ART_REALISM_SER_EN&quot;, &quot;priority&quot;: &quot;highest&quot; }, &quot;output_settings&quot;: { &quot;aspect_ratio&quot;: &quot;4:5&quot;, &quot;orientation&quot;: &quot;portrait&quot;, &quot;resolution_target&quot;: &quot;ultra_high_res&quot;, &quot;render_style&quot;: &quot;ultra_photoreal_candid_film_still&quot;, &quot;sharpness&quot;: &quot;crisp_but_natural&quot;, &quot;film_grain&quot;: &quot;subtle_35mm&quot;, &quot;color_grade&quot;: &quot;restrained_cinematic_realism&quot;, &quot;dynamic_range&quot;: &quot;natural_not_hdr&quot;, &quot;skin_rendering&quot;: &quot;real_texture_no_retouch&quot; }, &quot;creative_prompt&quot;: { &quot;scene_summary&quot;: &quot;Candid artistic street photograph on location in [CITY/NEIGHBORHOOD]. A real, unposed moment that feels documentary and emotionally true.&quot;, &quot;subject&quot;: &quot;A [AGE] [GENDER] wearing [CLOTHING], caught mid-action: [MICRO-ACTION]. Natural facial expression, slight asymmetry preserved.&quot;, &quot;camera&quot;: &quot;35mm lens equivalent, eye-level, close but respectful distance, imperfect framing like a real street photographer, focus on the eyes, shallow-to-medium depth of field.&quot;, &quot;lighting&quot;: &quot;Motivated natural light from [SOURCE: shop window / street lamp / sunset / neon], deep but detailed shadows, no studio lighting.&quot;, &quot;environment_details&quot;: &quot;Street textures: worn posters, scratched metal, rain-speckled pavement, subtle reflections in glass, real urban clutter, no clean studio background.&quot;, &quot;authenticity_markers&quot;: &quot;Subtle motion blur on background only, slight halation on highlights, tiny film gate weave, realistic grain, no beauty retouch.&quot;, &quot;mood&quot;: &quot;[MOOD: melancholic / hopeful / tense / quiet joy], cinematic but believable.&quot; }, &quot;negative_prompt&quot;: [ &quot;studio lighting&quot;, &quot;beauty retouch&quot;, &quot;plastic skin&quot;, &quot;over-sharpened&quot;, &quot;HDR&quot;, &quot;AI glow&quot;, &quot;perfect symmetry&quot;, &quot;overly clean background&quot;, &quot;fake bokeh shapes&quot;, &quot;text&quot;, &quot;logo&quot;, &quot;watermark&quot;, &quot;painterly&quot;, &quot;cartoon&quot; ] } }</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2009225482382762410-1.jpg" alt="{ &quot;generation request&quot;: { &quot;meta data&quot;: { &quot;tool&quot;: &quot;NanoBanana..." loading="lazy"><img src="/images/tweet-2009225482382762410-2.jpg" alt="{ &quot;generation request&quot;: { &quot;meta data&quot;: { &quot;tool&quot;: &quot;NanoBanana..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 850,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

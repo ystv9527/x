@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #1150 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;type&quot;: &quot;Woman&quot;, &quot;age&quot;: &quot;Young adult&quot;, &quot;appearance&quot;: { &quot;hair&quot;: { &quot;color&quot;: &quot;Dark brown&quot;, &quot;style&quot;: &quot;Medi...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1150.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1150.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1150.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845421">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023715">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"type\": \"女性\",\n    \"age\": \"年轻成年女性\",\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"深棕色\",\n        \"style\": \"中等长度，带有凌乱的刘海\",\n        \"texture\": \"波浪状\"\n      },\n      \"eyes\": {\n        \"color\": \"榛色\",\n        \"gaze\": \"直视镜头\"\n      },\n      \"skin\": {\n        \"texture\": \"自然肌肤，带雀斑与温暖光泽\",\n        \"makeup\": \"清淡妆感，透亮妆效\"\n      },\n      \"features\": \"丰满双唇，颧骨突出\"\n    },\n    \"pose\": \"肖像，近景，中性表情，头部微微倾斜\"\n  },\n  \"styling\": {\n    \"clothing\": {\n      \"type\": \"上衣\",\n      \"material\": \"丝绒\",\n      \"color\": \"深酒红色/栗色\"\n    },\n    \"accessories\": {\n      \"type\": \"蝴蝶\",\n      \"color\": \"深红色，带黑色脉纹\",\n      \"placement\": [\n        \"一个遮住嘴巴\",\n        \"右侧发间的两个蝴蝶\",\n        \"左侧锁骨上的一个\"\n      ]\n    }\n  },\n  \"environment\": {\n    \"type\": \"工作室\",\n    \"background\": \"深色、模糊、暗棕色调\",\n    \"setting\": \"室内，低调\"\n  },\n  \"lighting\": {\n    \"type\": \"柔和、暖色、定向光\",\n    \"source\": \"来自左前方\",\n    \"effect\": \"产生柔和阴影，突出皮肤纹理和蝴蝶翅膀\"\n  },\n  \"mood\": {\n    \"atmosphere\": \"神秘、宁静、略带忧郁、亲密\"\n  },\n  \"photography\": {\n    \"style\": \"写实风格的肖像\",\n    \"shot_type\": \"特写\",\n    \"depth_of_field\": \"浅景深，聚焦在眼睛和蝴蝶翅膀\",\n    \"camera\": {\n      \"type\": \"数码单反相机\",\n      \"lens\": \"85mm人像镜头\",\n      \"aperture\": \"f/1.8\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;女性&quot;,<br>    &quot;age&quot;: &quot;年轻成年女性&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;深棕色&quot;,<br>        &quot;style&quot;: &quot;中等长度，带有凌乱的刘海&quot;,<br>        &quot;texture&quot;: &quot;波浪状&quot;<br>      },<br>      &quot;eyes&quot;: {<br>        &quot;color&quot;: &quot;榛色&quot;,<br>        &quot;gaze&quot;: &quot;直视镜头&quot;<br>      },<br>      &quot;skin&quot;: {<br>        &quot;texture&quot;: &quot;自然肌肤，带雀斑与温暖光泽&quot;,<br>        &quot;makeup&quot;: &quot;清淡妆感，透亮妆效&quot;<br>      },<br>      &quot;features&quot;: &quot;丰满双唇，颧骨突出&quot;<br>    },<br>    &quot;pose&quot;: &quot;肖像，近景，中性表情，头部微微倾斜&quot;<br>  },<br>  &quot;styling&quot;: {<br>    &quot;clothing&quot;: {<br>      &quot;type&quot;: &quot;上衣&quot;,<br>      &quot;material&quot;: &quot;丝绒&quot;,<br>      &quot;color&quot;: &quot;深酒红色/栗色&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;type&quot;: &quot;蝴蝶&quot;,<br>      &quot;color&quot;: &quot;深红色，带黑色脉纹&quot;,<br>      &quot;placement&quot;: [<br>        &quot;一个遮住嘴巴&quot;,<br>        &quot;右侧发间的两个蝴蝶&quot;,<br>        &quot;左侧锁骨上的一个&quot;<br>      ]<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;type&quot;: &quot;工作室&quot;,<br>    &quot;background&quot;: &quot;深色、模糊、暗棕色调&quot;,<br>    &quot;setting&quot;: &quot;室内，低调&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和、暖色、定向光&quot;,<br>    &quot;source&quot;: &quot;来自左前方&quot;,<br>    &quot;effect&quot;: &quot;产生柔和阴影，突出皮肤纹理和蝴蝶翅膀&quot;<br>  },<br>  &quot;mood&quot;: {<br>    &quot;atmosphere&quot;: &quot;神秘、宁静、略带忧郁、亲密&quot;<br>  },<br>  &quot;photography&quot;: {<br>    &quot;style&quot;: &quot;写实风格的肖像&quot;,<br>    &quot;shot_type&quot;: &quot;特写&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深，聚焦在眼睛和蝴蝶翅膀&quot;,<br>    &quot;camera&quot;: {<br>      &quot;type&quot;: &quot;数码单反相机&quot;,<br>      &quot;lens&quot;: &quot;85mm人像镜头&quot;,<br>      &quot;aperture&quot;: &quot;f/1.8&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;女性&quot;,<br>    &quot;age&quot;: &quot;年轻成年女性&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;深棕色&quot;,<br>        &quot;style&quot;: &quot;中等长度，带有凌乱的刘海&quot;,<br>        &quot;texture&quot;: &quot;波浪状&quot;<br>      },<br>      &quot;eyes&quot;: {<br>        &quot;color&quot;: &quot;榛色&quot;,<br>        &quot;gaze&quot;: &quot;直视镜头&quot;<br>      },<br>      &quot;skin&quot;: {<br>        &quot;texture&quot;: &quot;自然肌肤，带雀斑与温暖光泽&quot;,<br>        &quot;makeup&quot;: &quot;清淡妆感，透亮妆效&quot;<br>      },<br>      &quot;features&quot;: &quot;丰满双唇，颧骨突出&quot;<br>    },<br>    &quot;pose&quot;: &quot;肖像，近景，中性表情，头部微微倾斜&quot;<br>  },<br>  &quot;styling&quot;: {<br>    &quot;clothing&quot;: {<br>      &quot;type&quot;: &quot;上衣&quot;,<br>      &quot;material&quot;: &quot;丝绒&quot;,<br>      &quot;color&quot;: &quot;深酒红色/栗色&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;type&quot;: &quot;蝴蝶&quot;,<br>      &quot;color&quot;: &quot;深红色，带黑色脉纹&quot;,<br>      &quot;placement&quot;: [<br>        &quot;一个遮住嘴巴&quot;,<br>        &quot;右侧发间的两个蝴蝶&quot;,<br>        &quot;左侧锁骨上的一个&quot;<br>      ]<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;type&quot;: &quot;工作室&quot;,<br>    &quot;background&quot;: &quot;深色、模糊、暗棕色调&quot;,<br>    &quot;setting&quot;: &quot;室内，低调&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和、暖色、定向光&quot;,<br>    &quot;source&quot;: &quot;来自左前方&quot;,<br>    &quot;effect&quot;: &quot;产生柔和阴影，突出皮肤纹理和蝴蝶翅膀&quot;<br>  },<br>  &quot;mood&quot;: {<br>    &quot;atmosphere&quot;: &quot;神秘、宁静、略带忧郁、亲密&quot;<br>  },<br>  &quot;photography&quot;: {<br>    &quot;style&quot;: &quot;写实风格的肖像&quot;,<br>    &quot;shot_type&quot;: &quot;特写&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深，聚焦在眼睛和蝴蝶翅膀&quot;,<br>    &quot;camera&quot;: {<br>      &quot;type&quot;: &quot;数码单反相机&quot;,<br>      &quot;lens&quot;: &quot;85mm人像镜头&quot;,<br>      &quot;aperture&quot;: &quot;f/1.8&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"type\": \"Woman\",\n    \"age\": \"Young adult\",\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"Dark brown\",\n        \"style\": \"Medium length, with messy bangs\",\n        \"texture\": \"Wavy\"\n      },\n      \"eyes\": {\n        \"color\": \"Hazel\",\n        \"gaze\": \"Directly at camera\"\n      },\n      \"skin\": {\n        \"texture\": \"Natural, with freckles and a warm glow\",\n        \"makeup\": \"Minimal, dewy finish\"\n      },\n      \"features\": \"Full lips, prominent cheekbones\"\n    },\n    \"pose\": \"Portrait, close-up, neutral expression, head slightly tilted\"\n  },\n  \"styling\": {\n    \"clothing\": {\n      \"type\": \"Top\",\n      \"material\": \"Velvet\",\n      \"color\": \"Dark burgundy/maroon\"\n    },\n    \"accessories\": {\n      \"type\": \"Butterflies\",\n      \"color\": \"Dark red with black veining\",\n      \"placement\": [\n        \"One covering the mouth\",\n        \"Two in the hair on the right side\",\n        \"One on the left collarbone\"\n      ]\n    }\n  },\n  \"environment\": {\n    \"type\": \"Studio\",\n    \"background\": \"Dark, blurred, muted brown tones\",\n    \"setting\": \"Indoors, low-key\"\n  },\n  \"lighting\": {\n    \"type\": \"Soft, warm, directional\",\n    \"source\": \"From the front-left\",\n    \"effect\": \"Creates gentle shadows, highlights skin texture and butterfly wings\"\n  },\n  \"mood\": {\n    \"atmosphere\": \"Mysterious, serene, slightly melancholic, intimate\"\n  },\n  \"photography\": {\n    \"style\": \"Photorealistic portrait\",\n    \"shot_type\": \"Close-up\",\n    \"depth_of_field\": \"Shallow, sharp focus on eyes and butterflies\",\n    \"camera\": {\n      \"type\": \"DSLR\",\n      \"lens\": \"85mm portrait lens\",\n      \"aperture\": \"f/1.8\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;Woman&quot;,<br>    &quot;age&quot;: &quot;Young adult&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Dark brown&quot;,<br>        &quot;style&quot;: &quot;Medium length, with messy bangs&quot;,<br>        &quot;texture&quot;: &quot;Wavy&quot;<br>      },<br>      &quot;eyes&quot;: {<br>        &quot;color&quot;: &quot;Hazel&quot;,<br>        &quot;gaze&quot;: &quot;Directly at camera&quot;<br>      },<br>      &quot;skin&quot;: {<br>        &quot;texture&quot;: &quot;Natural, with freckles and a warm glow&quot;,<br>        &quot;makeup&quot;: &quot;Minimal, dewy finish&quot;<br>      },<br>      &quot;features&quot;: &quot;Full lips, prominent cheekbones&quot;<br>    },<br>    &quot;pose&quot;: &quot;Portrait, close-up, neutral expression, head slightly tilted&quot;<br>  },<br>  &quot;styling&quot;: {<br>    &quot;clothing&quot;: {<br>      &quot;type&quot;: &quot;Top&quot;,<br>      &quot;material&quot;: &quot;Velvet&quot;,<br>      &quot;color&quot;: &quot;Dark burgundy/maroon&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;type&quot;: &quot;Butterflies&quot;,<br>      &quot;color&quot;: &quot;Dark red with black veining&quot;,<br>      &quot;placement&quot;: [<br>        &quot;One covering the mouth&quot;,<br>        &quot;Two in the hair on the right side&quot;,<br>        &quot;One on the left collarbone&quot;<br>      ]<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;type&quot;: &quot;Studio&quot;,<br>    &quot;background&quot;: &quot;Dark, blurred, muted brown tones&quot;,<br>    &quot;setting&quot;: &quot;Indoors, low-key&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Soft, warm, directional&quot;,<br>    &quot;source&quot;: &quot;From the front-left&quot;,<br>    &quot;effect&quot;: &quot;Creates gentle shadows, highlights skin texture and butterfly wings&quot;<br>  },<br>  &quot;mood&quot;: {<br>    &quot;atmosphere&quot;: &quot;Mysterious, serene, slightly melancholic, intimate&quot;<br>  },<br>  &quot;photography&quot;: {<br>    &quot;style&quot;: &quot;Photorealistic portrait&quot;,<br>    &quot;shot_type&quot;: &quot;Close-up&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow, sharp focus on eyes and butterflies&quot;,<br>    &quot;camera&quot;: {<br>      &quot;type&quot;: &quot;DSLR&quot;,<br>      &quot;lens&quot;: &quot;85mm portrait lens&quot;,<br>      &quot;aperture&quot;: &quot;f/1.8&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;Woman&quot;,<br>    &quot;age&quot;: &quot;Young adult&quot;,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;Dark brown&quot;,<br>        &quot;style&quot;: &quot;Medium length, with messy bangs&quot;,<br>        &quot;texture&quot;: &quot;Wavy&quot;<br>      },<br>      &quot;eyes&quot;: {<br>        &quot;color&quot;: &quot;Hazel&quot;,<br>        &quot;gaze&quot;: &quot;Directly at camera&quot;<br>      },<br>      &quot;skin&quot;: {<br>        &quot;texture&quot;: &quot;Natural, with freckles and a warm glow&quot;,<br>        &quot;makeup&quot;: &quot;Minimal, dewy finish&quot;<br>      },<br>      &quot;features&quot;: &quot;Full lips, prominent cheekbones&quot;<br>    },<br>    &quot;pose&quot;: &quot;Portrait, close-up, neutral expression, head slightly tilted&quot;<br>  },<br>  &quot;styling&quot;: {<br>    &quot;clothing&quot;: {<br>      &quot;type&quot;: &quot;Top&quot;,<br>      &quot;material&quot;: &quot;Velvet&quot;,<br>      &quot;color&quot;: &quot;Dark burgundy/maroon&quot;<br>    },<br>    &quot;accessories&quot;: {<br>      &quot;type&quot;: &quot;Butterflies&quot;,<br>      &quot;color&quot;: &quot;Dark red with black veining&quot;,<br>      &quot;placement&quot;: [<br>        &quot;One covering the mouth&quot;,<br>        &quot;Two in the hair on the right side&quot;,<br>        &quot;One on the left collarbone&quot;<br>      ]<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;type&quot;: &quot;Studio&quot;,<br>    &quot;background&quot;: &quot;Dark, blurred, muted brown tones&quot;,<br>    &quot;setting&quot;: &quot;Indoors, low-key&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Soft, warm, directional&quot;,<br>    &quot;source&quot;: &quot;From the front-left&quot;,<br>    &quot;effect&quot;: &quot;Creates gentle shadows, highlights skin texture and butterfly wings&quot;<br>  },<br>  &quot;mood&quot;: {<br>    &quot;atmosphere&quot;: &quot;Mysterious, serene, slightly melancholic, intimate&quot;<br>  },<br>  &quot;photography&quot;: {<br>    &quot;style&quot;: &quot;Photorealistic portrait&quot;,<br>    &quot;shot_type&quot;: &quot;Close-up&quot;,<br>    &quot;depth_of_field&quot;: &quot;Shallow, sharp focus on eyes and butterflies&quot;,<br>    &quot;camera&quot;: {<br>      &quot;type&quot;: &quot;DSLR&quot;,<br>      &quot;lens&quot;: &quot;85mm portrait lens&quot;,<br>      &quot;aperture&quot;: &quot;f/1.8&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011106561838723266-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1150,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

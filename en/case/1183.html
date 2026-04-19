@@ -7,11 +7,13 @@
     <title>&quot;model&quot;: &quot;Nano Banana / Gemini style&quot;, #1183 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;model&quot;: &quot;Nano Banana / Gemini style&quot;, &quot;aspect ratio&quot;: &quot;3:4&quot;, &quot;render mode&quot;: &quot;raw&quot;, &quot;series&quot;: [ { &quot;index&quot;: &quot;1/5&quot;, &quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1183.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1183.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1183.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845384">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023709">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"model\": \"Nano Banana / Gemini 风格\",\n  \"aspect_ratio\": \"3:4\",\n  \"render_mode\": \"原始\",\n  \"series\": [\n    {\n      \"index\": \"1/5\",\n      \"prompt\": \"两只手把一块烤奶酪三明治拉开，融化的切达奶酪在两半之间戏剧性地拉出丝，烤面包边缘酥脆金黄，面包屑悬在半空，温暖舒适的光线，电影风格的美食动作摄影\",\n      \"category\": \"奶酪拉丝\",\n      \"lighting\": \"温暖舒适的电影式光线\",\n      \"detail_level\": \"高细节\"\n    },\n    {\n      \"index\": \"2/5\",\n      \"prompt\": \"两只手把一块热巧克力碎饼干掰成两半，融化的巧克力丝在碎片之间拉伸，面包屑悬在半空，温暖舒适的光线，高细节的美食动作摄影\",\n      \"category\": \"巧克力拉伸\",\n      \"lighting\": \"柔和温暖舒适的光线\",\n      \"detail_level\": \"高细节\"\n    },\n    {\n      \"index\": \"3/5\",\n      \"prompt\": \"两只手把一块花生酱果酱三明治掰成两半，厚厚的花生酱和果酱拉成粘稠的丝，烤面包边缘酥脆，面包屑悬在半空，温暖的逆光，高细节的美食动作摄影\",\n      \"category\": \"粘稠抹酱拉丝\",\n      \"lighting\": \"温暖的逆光\",\n      \"detail_level\": \"高细节\"\n    },\n    {\n      \"index\": \"4/5\",\n      \"prompt\": \"两只手撕开一块浸有糖浆的比利时华夫，焦糖丝在片间拉伸，面包屑和糖浆滴悬浮在半空，金色时刻的逆光，温馨的电影风格美食动作摄影\",\n      \"category\": \"糖浆拉伸\",\n      \"lighting\": \"金色时刻的逆光\",\n      \"detail_level\": \"超高细节\"\n    },\n    {\n      \"index\": \"5/5\",\n      \"prompt\": \"两只手把一块南方风格的黄油松饼掰成两半，热气升腾，融化的黄油在裂缝中汇集，面包屑悬在半空，温暖的乡村厨房光线，电影风格的高细节美食动作摄影\",\n      \"category\": \"蒸汽与黄油\",\n      \"lighting\": \"温暖的厨房光线\",\n      \"detail_level\": \"超高细节\"\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;model&quot;: &quot;Nano Banana / Gemini 风格&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;render_mode&quot;: &quot;原始&quot;,<br>  &quot;series&quot;: [<br>    {<br>      &quot;index&quot;: &quot;1/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手把一块烤奶酪三明治拉开，融化的切达奶酪在两半之间戏剧性地拉出丝，烤面包边缘酥脆金黄，面包屑悬在半空，温暖舒适的光线，电影风格的美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;奶酪拉丝&quot;,<br>      &quot;lighting&quot;: &quot;温暖舒适的电影式光线&quot;,<br>      &quot;detail_level&quot;: &quot;高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;2/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手把一块热巧克力碎饼干掰成两半，融化的巧克力丝在碎片之间拉伸，面包屑悬在半空，温暖舒适的光线，高细节的美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;巧克力拉伸&quot;,<br>      &quot;lighting&quot;: &quot;柔和温暖舒适的光线&quot;,<br>      &quot;detail_level&quot;: &quot;高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;3/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手把一块花生酱果酱三明治掰成两半，厚厚的花生酱和果酱拉成粘稠的丝，烤面包边缘酥脆，面包屑悬在半空，温暖的逆光，高细节的美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;粘稠抹酱拉丝&quot;,<br>      &quot;lighting&quot;: &quot;温暖的逆光&quot;,<br>      &quot;detail_level&quot;: &quot;高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;4/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手撕开一块浸有糖浆的比利时华夫，焦糖丝在片间拉伸，面包屑和糖浆滴悬浮在半空，金色时刻的逆光，温馨的电影风格美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;糖浆拉伸&quot;,<br>      &quot;lighting&quot;: &quot;金色时刻的逆光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;5/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手把一块南方风格的黄油松饼掰成两半，热气升腾，融化的黄油在裂缝中汇集，面包屑悬在半空，温暖的乡村厨房光线，电影风格的高细节美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;蒸汽与黄油&quot;,<br>      &quot;lighting&quot;: &quot;温暖的厨房光线&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;model&quot;: &quot;Nano Banana / Gemini 风格&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;render_mode&quot;: &quot;原始&quot;,<br>  &quot;series&quot;: [<br>    {<br>      &quot;index&quot;: &quot;1/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手把一块烤奶酪三明治拉开，融化的切达奶酪在两半之间戏剧性地拉出丝，烤面包边缘酥脆金黄，面包屑悬在半空，温暖舒适的光线，电影风格的美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;奶酪拉丝&quot;,<br>      &quot;lighting&quot;: &quot;温暖舒适的电影式光线&quot;,<br>      &quot;detail_level&quot;: &quot;高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;2/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手把一块热巧克力碎饼干掰成两半，融化的巧克力丝在碎片之间拉伸，面包屑悬在半空，温暖舒适的光线，高细节的美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;巧克力拉伸&quot;,<br>      &quot;lighting&quot;: &quot;柔和温暖舒适的光线&quot;,<br>      &quot;detail_level&quot;: &quot;高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;3/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手把一块花生酱果酱三明治掰成两半，厚厚的花生酱和果酱拉成粘稠的丝，烤面包边缘酥脆，面包屑悬在半空，温暖的逆光，高细节的美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;粘稠抹酱拉丝&quot;,<br>      &quot;lighting&quot;: &quot;温暖的逆光&quot;,<br>      &quot;detail_level&quot;: &quot;高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;4/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手撕开一块浸有糖浆的比利时华夫，焦糖丝在片间拉伸，面包屑和糖浆滴悬浮在半空，金色时刻的逆光，温馨的电影风格美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;糖浆拉伸&quot;,<br>      &quot;lighting&quot;: &quot;金色时刻的逆光&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;5/5&quot;,<br>      &quot;prompt&quot;: &quot;两只手把一块南方风格的黄油松饼掰成两半，热气升腾，融化的黄油在裂缝中汇集，面包屑悬在半空，温暖的乡村厨房光线，电影风格的高细节美食动作摄影&quot;,<br>      &quot;category&quot;: &quot;蒸汽与黄油&quot;,<br>      &quot;lighting&quot;: &quot;温暖的厨房光线&quot;,<br>      &quot;detail_level&quot;: &quot;超高细节&quot;<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"model\": \"Nano Banana / Gemini-style\",\n  \"aspect_ratio\": \"3:4\",\n  \"render_mode\": \"raw\",\n  \"series\": [\n    {\n      \"index\": \"1/5\",\n      \"prompt\": \"two hands pulling apart a grilled cheese sandwich, strands of melted cheddar stretching dramatically between the halves, toasted bread edges crisp and golden, crumbs falling mid-air, warm cozy light, cinematic food action photography\",\n      \"category\": \"cheese pull\",\n      \"lighting\": \"warm cozy cinematic light\",\n      \"detail_level\": \"high-detail\"\n    },\n    {\n      \"index\": \"2/5\",\n      \"prompt\": \"two hands breaking a warm chocolate chip cookie in half, melted chocolate strands stretching between the pieces, crumbs falling mid-air, cozy warm light, high-detail food action photography\",\n      \"category\": \"chocolate stretch\",\n      \"lighting\": \"soft cozy warm light\",\n      \"detail_level\": \"high-detail\"\n    },\n    {\n      \"index\": \"3/5\",\n      \"prompt\": \"two hands splitting a peanut butter and jelly sandwich in half, thick peanut butter and jam stretching in gooey strands, toasted bread edges crisp, crumbs falling mid-air, warm cozy backlight, high-detail food action photography\",\n      \"category\": \"gooey spread pull\",\n      \"lighting\": \"warm backlight\",\n      \"detail_level\": \"high-detail\"\n    },\n    {\n      \"index\": \"4/5\",\n      \"prompt\": \"two hands tearing a syrup-soaked Belgian waffle, caramel strands stretching between pieces, crumbs and syrup droplets suspended mid-air, golden hour backlight, cozy cinematic food action photography\",\n      \"category\": \"syrup stretch\",\n      \"lighting\": \"golden hour backlight\",\n      \"detail_level\": \"ultra-detailed\"\n    },\n    {\n      \"index\": \"5/5\",\n      \"prompt\": \"two hands breaking a southern-style buttery biscuit in half, hot steam rising, melted butter pooling inside the cracks, crumbs falling mid-air, warm country kitchen light, cinematic high-detail food action photography\",\n      \"category\": \"steam & butter\",\n      \"lighting\": \"warm kitchen light\",\n      \"detail_level\": \"ultra-detailed\"\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;model&quot;: &quot;Nano Banana / Gemini-style&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;render_mode&quot;: &quot;raw&quot;,<br>  &quot;series&quot;: [<br>    {<br>      &quot;index&quot;: &quot;1/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands pulling apart a grilled cheese sandwich, strands of melted cheddar stretching dramatically between the halves, toasted bread edges crisp and golden, crumbs falling mid-air, warm cozy light, cinematic food action photography&quot;,<br>      &quot;category&quot;: &quot;cheese pull&quot;,<br>      &quot;lighting&quot;: &quot;warm cozy cinematic light&quot;,<br>      &quot;detail_level&quot;: &quot;high-detail&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;2/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands breaking a warm chocolate chip cookie in half, melted chocolate strands stretching between the pieces, crumbs falling mid-air, cozy warm light, high-detail food action photography&quot;,<br>      &quot;category&quot;: &quot;chocolate stretch&quot;,<br>      &quot;lighting&quot;: &quot;soft cozy warm light&quot;,<br>      &quot;detail_level&quot;: &quot;high-detail&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;3/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands splitting a peanut butter and jelly sandwich in half, thick peanut butter and jam stretching in gooey strands, toasted bread edges crisp, crumbs falling mid-air, warm cozy backlight, high-detail food action photography&quot;,<br>      &quot;category&quot;: &quot;gooey spread pull&quot;,<br>      &quot;lighting&quot;: &quot;warm backlight&quot;,<br>      &quot;detail_level&quot;: &quot;high-detail&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;4/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands tearing a syrup-soaked Belgian waffle, caramel strands stretching between pieces, crumbs and syrup droplets suspended mid-air, golden hour backlight, cozy cinematic food action photography&quot;,<br>      &quot;category&quot;: &quot;syrup stretch&quot;,<br>      &quot;lighting&quot;: &quot;golden hour backlight&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;5/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands breaking a southern-style buttery biscuit in half, hot steam rising, melted butter pooling inside the cracks, crumbs falling mid-air, warm country kitchen light, cinematic high-detail food action photography&quot;,<br>      &quot;category&quot;: &quot;steam &amp; butter&quot;,<br>      &quot;lighting&quot;: &quot;warm kitchen light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;model&quot;: &quot;Nano Banana / Gemini-style&quot;,<br>  &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>  &quot;render_mode&quot;: &quot;raw&quot;,<br>  &quot;series&quot;: [<br>    {<br>      &quot;index&quot;: &quot;1/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands pulling apart a grilled cheese sandwich, strands of melted cheddar stretching dramatically between the halves, toasted bread edges crisp and golden, crumbs falling mid-air, warm cozy light, cinematic food action photography&quot;,<br>      &quot;category&quot;: &quot;cheese pull&quot;,<br>      &quot;lighting&quot;: &quot;warm cozy cinematic light&quot;,<br>      &quot;detail_level&quot;: &quot;high-detail&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;2/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands breaking a warm chocolate chip cookie in half, melted chocolate strands stretching between the pieces, crumbs falling mid-air, cozy warm light, high-detail food action photography&quot;,<br>      &quot;category&quot;: &quot;chocolate stretch&quot;,<br>      &quot;lighting&quot;: &quot;soft cozy warm light&quot;,<br>      &quot;detail_level&quot;: &quot;high-detail&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;3/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands splitting a peanut butter and jelly sandwich in half, thick peanut butter and jam stretching in gooey strands, toasted bread edges crisp, crumbs falling mid-air, warm cozy backlight, high-detail food action photography&quot;,<br>      &quot;category&quot;: &quot;gooey spread pull&quot;,<br>      &quot;lighting&quot;: &quot;warm backlight&quot;,<br>      &quot;detail_level&quot;: &quot;high-detail&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;4/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands tearing a syrup-soaked Belgian waffle, caramel strands stretching between pieces, crumbs and syrup droplets suspended mid-air, golden hour backlight, cozy cinematic food action photography&quot;,<br>      &quot;category&quot;: &quot;syrup stretch&quot;,<br>      &quot;lighting&quot;: &quot;golden hour backlight&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    },<br>    {<br>      &quot;index&quot;: &quot;5/5&quot;,<br>      &quot;prompt&quot;: &quot;two hands breaking a southern-style buttery biscuit in half, hot steam rising, melted butter pooling inside the cracks, crumbs falling mid-air, warm country kitchen light, cinematic high-detail food action photography&quot;,<br>      &quot;category&quot;: &quot;steam &amp; butter&quot;,<br>      &quot;lighting&quot;: &quot;warm kitchen light&quot;,<br>      &quot;detail_level&quot;: &quot;ultra-detailed&quot;<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011261271946187209-1.jpg" alt="&quot;model&quot;: &quot;Nano Banana / Gemini style&quot;," loading="lazy"><img src="/images/tweet-2011261271946187209-2.jpg" alt="&quot;model&quot;: &quot;Nano Banana / Gemini style&quot;," loading="lazy"><img src="/images/tweet-2011261271946187209-3.jpg" alt="&quot;model&quot;: &quot;Nano Banana / Gemini style&quot;," loading="lazy"><img src="/images/tweet-2011261271946187209-4.jpg" alt="&quot;model&quot;: &quot;Nano Banana / Gemini style&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1183,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

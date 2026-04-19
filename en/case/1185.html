@@ -7,11 +7,13 @@
     <title>&quot;image description&quot;: &quot;A high quality, cinematic portrait of a... #1185 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image description&quot;: &quot;A high quality, cinematic portrait of a beautiful young woman with long blonde hair, styled i...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1185.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1185.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1185.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845382">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023709">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图像描述\": \"一张高质量、电影感的肖像照：一位美丽的年轻女子，长长的金发做成半盘发造型，面带温暖微笑，手中拿着一个小型风格化的 3D 卡通人偶，正是她自己的缩小版。女子穿着浅粉色羊毛大衣，内搭白色高领毛衣。人偶完全模仿她的外貌，包括金发、粉色外套、白色上衣和蓝色牛仔裤，但以可爱的大眼睛 chibi 或受皮克斯启发的动画风格呈现，双臂欢举表达喜悦。光线柔和偏金色，营造专业影棚的散景背景，带有温暖的圆形光斑。焦点清晰地落在女子的面部和人偶上，突出逼真的皮肤质感以及玩具光滑的哑光表面。\",\n  \"构图\": {\n    \"拍摄类型\": \"特写\",\n    \"角度\": \"平视\",\n    \"焦点\": \"对人偶和面部表情的微距聚焦\"\n  },\n  \"风格\": {\n    \"整体\": \"超写实摄影与3D角色设计融合\",\n    \"灯光\": \"柔和的轮廓光，黄金时刻美感，暖色调\",\n    \"色彩\": \"淡粉色、奶油白、金黄色、柔和米色\"\n  },\n  \"技术细节\": {\n    \"相机\": \"85mm 镜头，f/1.8\",\n    \"特性\": \"深景深、纹理清晰、高分辨率 8K\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;图像描述&quot;: &quot;一张高质量、电影感的肖像照：一位美丽的年轻女子，长长的金发做成半盘发造型，面带温暖微笑，手中拿着一个小型风格化的 3D 卡通人偶，正是她自己的缩小版。女子穿着浅粉色羊毛大衣，内搭白色高领毛衣。人偶完全模仿她的外貌，包括金发、粉色外套、白色上衣和蓝色牛仔裤，但以可爱的大眼睛 chibi 或受皮克斯启发的动画风格呈现，双臂欢举表达喜悦。光线柔和偏金色，营造专业影棚的散景背景，带有温暖的圆形光斑。焦点清晰地落在女子的面部和人偶上，突出逼真的皮肤质感以及玩具光滑的哑光表面。&quot;,<br>  &quot;构图&quot;: {<br>    &quot;拍摄类型&quot;: &quot;特写&quot;,<br>    &quot;角度&quot;: &quot;平视&quot;,<br>    &quot;焦点&quot;: &quot;对人偶和面部表情的微距聚焦&quot;<br>  },<br>  &quot;风格&quot;: {<br>    &quot;整体&quot;: &quot;超写实摄影与3D角色设计融合&quot;,<br>    &quot;灯光&quot;: &quot;柔和的轮廓光，黄金时刻美感，暖色调&quot;,<br>    &quot;色彩&quot;: &quot;淡粉色、奶油白、金黄色、柔和米色&quot;<br>  },<br>  &quot;技术细节&quot;: {<br>    &quot;相机&quot;: &quot;85mm 镜头，f/1.8&quot;,<br>    &quot;特性&quot;: &quot;深景深、纹理清晰、高分辨率 8K&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图像描述&quot;: &quot;一张高质量、电影感的肖像照：一位美丽的年轻女子，长长的金发做成半盘发造型，面带温暖微笑，手中拿着一个小型风格化的 3D 卡通人偶，正是她自己的缩小版。女子穿着浅粉色羊毛大衣，内搭白色高领毛衣。人偶完全模仿她的外貌，包括金发、粉色外套、白色上衣和蓝色牛仔裤，但以可爱的大眼睛 chibi 或受皮克斯启发的动画风格呈现，双臂欢举表达喜悦。光线柔和偏金色，营造专业影棚的散景背景，带有温暖的圆形光斑。焦点清晰地落在女子的面部和人偶上，突出逼真的皮肤质感以及玩具光滑的哑光表面。&quot;,<br>  &quot;构图&quot;: {<br>    &quot;拍摄类型&quot;: &quot;特写&quot;,<br>    &quot;角度&quot;: &quot;平视&quot;,<br>    &quot;焦点&quot;: &quot;对人偶和面部表情的微距聚焦&quot;<br>  },<br>  &quot;风格&quot;: {<br>    &quot;整体&quot;: &quot;超写实摄影与3D角色设计融合&quot;,<br>    &quot;灯光&quot;: &quot;柔和的轮廓光，黄金时刻美感，暖色调&quot;,<br>    &quot;色彩&quot;: &quot;淡粉色、奶油白、金黄色、柔和米色&quot;<br>  },<br>  &quot;技术细节&quot;: {<br>    &quot;相机&quot;: &quot;85mm 镜头，f/1.8&quot;,<br>    &quot;特性&quot;: &quot;深景深、纹理清晰、高分辨率 8K&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_description\": \"A high-quality, cinematic portrait of a beautiful young woman with long blonde hair, styled in a half-updo, smiling warmly while holding a small, stylized 3D cartoon figurine of herself. The woman is wearing a light pink woolen coat over a white turtleneck sweater. The figurine mimics her appearance exactly, including the blonde hair, pink coat, white top, and blue jeans, but is rendered in a cute, large-eyed 'chibi' or Pixar-inspired animation style with arms raised in joy. The lighting is soft and golden, creating a professional studio bokeh background with warm, circular light orbs. The focus is sharp on the woman's face and the figurine, highlighting the realistic skin textures and the smooth, matte finish of the toy.\",\n  \"composition\": {\n    \"shot_type\": \"Close-up\",\n    \"angle\": \"Eye-level\",\n    \"focus\": \"Macro focus on figurine and facial expression\"\n  },\n  \"style\": {\n    \"overall\": \"Hyper-realistic photography blended with 3D character design\",\n    \"lighting\": \"Soft rim lighting, golden hour aesthetic, warm tones\",\n    \"colors\": \"Pastel pink, cream white, golden yellow, soft beige\"\n  },\n  \"technical_details\": {\n    \"camera\": \"85mm lens, f/1.8\",\n    \"features\": \"Deep depth of field, sharp textures, high resolution 8k\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_description&quot;: &quot;A high-quality, cinematic portrait of a beautiful young woman with long blonde hair, styled in a half-updo, smiling warmly while holding a small, stylized 3D cartoon figurine of herself. The woman is wearing a light pink woolen coat over a white turtleneck sweater. The figurine mimics her appearance exactly, including the blonde hair, pink coat, white top, and blue jeans, but is rendered in a cute, large-eyed &#39;chibi&#39; or Pixar-inspired animation style with arms raised in joy. The lighting is soft and golden, creating a professional studio bokeh background with warm, circular light orbs. The focus is sharp on the woman&#39;s face and the figurine, highlighting the realistic skin textures and the smooth, matte finish of the toy.&quot;,<br>  &quot;composition&quot;: {<br>    &quot;shot_type&quot;: &quot;Close-up&quot;,<br>    &quot;angle&quot;: &quot;Eye-level&quot;,<br>    &quot;focus&quot;: &quot;Macro focus on figurine and facial expression&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;overall&quot;: &quot;Hyper-realistic photography blended with 3D character design&quot;,<br>    &quot;lighting&quot;: &quot;Soft rim lighting, golden hour aesthetic, warm tones&quot;,<br>    &quot;colors&quot;: &quot;Pastel pink, cream white, golden yellow, soft beige&quot;<br>  },<br>  &quot;technical_details&quot;: {<br>    &quot;camera&quot;: &quot;85mm lens, f/1.8&quot;,<br>    &quot;features&quot;: &quot;Deep depth of field, sharp textures, high resolution 8k&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_description&quot;: &quot;A high-quality, cinematic portrait of a beautiful young woman with long blonde hair, styled in a half-updo, smiling warmly while holding a small, stylized 3D cartoon figurine of herself. The woman is wearing a light pink woolen coat over a white turtleneck sweater. The figurine mimics her appearance exactly, including the blonde hair, pink coat, white top, and blue jeans, but is rendered in a cute, large-eyed &#39;chibi&#39; or Pixar-inspired animation style with arms raised in joy. The lighting is soft and golden, creating a professional studio bokeh background with warm, circular light orbs. The focus is sharp on the woman&#39;s face and the figurine, highlighting the realistic skin textures and the smooth, matte finish of the toy.&quot;,<br>  &quot;composition&quot;: {<br>    &quot;shot_type&quot;: &quot;Close-up&quot;,<br>    &quot;angle&quot;: &quot;Eye-level&quot;,<br>    &quot;focus&quot;: &quot;Macro focus on figurine and facial expression&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;overall&quot;: &quot;Hyper-realistic photography blended with 3D character design&quot;,<br>    &quot;lighting&quot;: &quot;Soft rim lighting, golden hour aesthetic, warm tones&quot;,<br>    &quot;colors&quot;: &quot;Pastel pink, cream white, golden yellow, soft beige&quot;<br>  },<br>  &quot;technical_details&quot;: {<br>    &quot;camera&quot;: &quot;85mm lens, f/1.8&quot;,<br>    &quot;features&quot;: &quot;Deep depth of field, sharp textures, high resolution 8k&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011264845187072356-1.jpg" alt="&quot;image description&quot;: &quot;A high quality, cinematic portrait of a..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1185,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

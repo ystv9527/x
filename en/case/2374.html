@@ -7,11 +7,13 @@
     <title>Use the uploaded image as the exact visual reference for jar... #2374 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Use the uploaded image as the exact visual reference for jar design, label, strawberries, raspberries, flowers, leave...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2374.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2374.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2374.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844131">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023453">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("使用上传的图像作为罐子设计、标签、草莓、覆盆子、花朵、叶子、凝结水滴、红色渐变背景和反光表面的精确视觉参考。\n\n相机：\n锁定正面拍摄相机。\n不缩放。\n不旋转。\n不改变角度。\n工作室构图保持居中。\n\n风格：\n高端美容商业风。\n平滑组装序列。\n超写实。\n慢动作但不过分戏剧化。\n\n场景 – 开始（空白设置）：\n以空的红色渐变背景和光亮反光表面开始。\n没有罐子。\n没有水果。\n没有花朵。\n没有水滴。\n\n组装序列：\n\n1. 玻璃罐底座从下方平滑滑入画面并完美居中落定。\n2. 罐盖从上方缓缓降下并与罐体完美对齐。\n3. 凝结水滴在玻璃表面微妙出现，仿佛自然形成。\n4. 覆盆子从左侧和右侧轻柔滚入，围绕底部自然停放。\n5. 草莓对半切片滑入前方位置。\n6. 整颗草莓从上方轻轻落入打开的罐口并自然安置。\n7. 小白花轻柔落入，置于草莓之间。\n8. 绿叶从罐后滑入以构成边框。\n9. 最后微小水滴出现在水果表面以营造新鲜感。\n\n所有动作平滑且可控。\n无弹跳感。\n无夸张动作。\n无戏剧性光线变化。\n\n灯光：\n保持原始工作室照明。\n深红色背景光保持一致。\n在光亮表面呈现柔和反光。\n\n声音（如支持）：\n柔和细腻的组装音效设计。\n轻柔的水果放置声。\n轻微玻璃接触声。\n无音乐，或仅有非常细微的高端环境音。\n\n结束画面：\n完全组装的构图与参考图像完全一致。\n所有元素完美排列。\n停留 1–2 秒。\n超净奢华护肤商业画面收尾。", this)'>📋 Copy</button>
         </div>
-        <p>使用上传的图像作为罐子设计、标签、草莓、覆盆子、花朵、叶子、凝结水滴、红色渐变背景和反光表面的精确视觉参考。</p><p>相机：<br>锁定正面拍摄相机。<br>不缩放。<br>不旋转。<br>不改变角度。<br>工作室构图保持居中。</p><p>风格：<br>高端美容商业风。<br>平滑组装序列。<br>超写实。<br>慢动作但不过分戏剧化。</p><p>场景 – 开始（空白设置）：<br>以空的红色渐变背景和光亮反光表面开始。<br>没有罐子。<br>没有水果。<br>没有花朵。<br>没有水滴。</p><p>组装序列：</p><p>1. 玻璃罐底座从下方平滑滑入画面并完美居中落定。<br>2. 罐盖从上方缓缓降下并与罐体完美对齐。<br>3. 凝结水滴在玻璃表面微妙出现，仿佛自然形成。<br>4. 覆盆子从左侧和右侧轻柔滚入，围绕底部自然停放。<br>5. 草莓对半切片滑入前方位置。<br>6. 整颗草莓从上方轻轻落入打开的罐口并自然安置。<br>7. 小白花轻柔落入，置于草莓之间。<br>8. 绿叶从罐后滑入以构成边框。<br>9. 最后微小水滴出现在水果表面以营造新鲜感。</p><p>所有动作平滑且可控。<br>无弹跳感。<br>无夸张动作。<br>无戏剧性光线变化。</p><p>灯光：<br>保持原始工作室照明。<br>深红色背景光保持一致。<br>在光亮表面呈现柔和反光。</p><p>声音（如支持）：<br>柔和细腻的组装音效设计。<br>轻柔的水果放置声。<br>轻微玻璃接触声。<br>无音乐，或仅有非常细微的高端环境音。</p><p>结束画面：<br>完全组装的构图与参考图像完全一致。<br>所有元素完美排列。<br>停留 1–2 秒。<br>超净奢华护肤商业画面收尾。</p>
+        <div data-nosnippet><p>使用上传的图像作为罐子设计、标签、草莓、覆盆子、花朵、叶子、凝结水滴、红色渐变背景和反光表面的精确视觉参考。</p><p>相机：<br>锁定正面拍摄相机。<br>不缩放。<br>不旋转。<br>不改变角度。<br>工作室构图保持居中。</p><p>风格：<br>高端美容商业风。<br>平滑组装序列。<br>超写实。<br>慢动作但不过分戏剧化。</p><p>场景 – 开始（空白设置）：<br>以空的红色渐变背景和光亮反光表面开始。<br>没有罐子。<br>没有水果。<br>没有花朵。<br>没有水滴。</p><p>组装序列：</p><p>1. 玻璃罐底座从下方平滑滑入画面并完美居中落定。<br>2. 罐盖从上方缓缓降下并与罐体完美对齐。<br>3. 凝结水滴在玻璃表面微妙出现，仿佛自然形成。<br>4. 覆盆子从左侧和右侧轻柔滚入，围绕底部自然停放。<br>5. 草莓对半切片滑入前方位置。<br>6. 整颗草莓从上方轻轻落入打开的罐口并自然安置。<br>7. 小白花轻柔落入，置于草莓之间。<br>8. 绿叶从罐后滑入以构成边框。<br>9. 最后微小水滴出现在水果表面以营造新鲜感。</p><p>所有动作平滑且可控。<br>无弹跳感。<br>无夸张动作。<br>无戏剧性光线变化。</p><p>灯光：<br>保持原始工作室照明。<br>深红色背景光保持一致。<br>在光亮表面呈现柔和反光。</p><p>声音（如支持）：<br>柔和细腻的组装音效设计。<br>轻柔的水果放置声。<br>轻微玻璃接触声。<br>无音乐，或仅有非常细微的高端环境音。</p><p>结束画面：<br>完全组装的构图与参考图像完全一致。<br>所有元素完美排列。<br>停留 1–2 秒。<br>超净奢华护肤商业画面收尾。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Use the uploaded image as the exact visual reference for jar design, label, strawberries, raspberries, flowers, leaves, condensation droplets, red gradient background, and reflective surface.\n\nCamera:\nLocked front-facing camera.\nNo zoom.\nNo rotation.\nNo angle change.\nStudio composition remains centered.\n\nStyle:\nPremium beauty commercial.\nSmooth assembling sequence.\nUltra realistic.\nSlow motion but not dramatic.\n\nScene – Start (Empty Setup):\nStart with an empty red gradient background and glossy reflective surface.\nNo jar.\nNo fruits.\nNo flowers.\nNo water droplets.\n\nAssembling Sequence:\n\n1. The glass jar base smoothly slides into frame from below and settles perfectly centered.\n2. The lid gently lowers from above and aligns perfectly on the jar.\n3. Condensation droplets subtly appear on the glass surface as if forming naturally.\n4. Raspberries roll in softly from left and right, stopping naturally around the base.\n5. Strawberry halves slide into position at the front.\n6. Whole strawberries gently drop from above into the open jar top and settle naturally.\n7. Small white flowers softly fall into place between the strawberries.\n8. Green leaves slide in behind the jar to frame it.\n9. Final micro water droplets appear on fruits for freshness effect.\n\nAll movements smooth and controlled.\nNo bouncing.\nNo exaggerated motion.\nNo dramatic lighting changes.\n\nLighting:\nKeep original studio lighting.\nDeep red background glow remains consistent.\nSoft reflections on the glossy surface.\n\nSound (if supported):\nSoft subtle assembling sound design.\nGentle fruit placement sounds.\nLight glass contact sound.\nNo music or very subtle premium ambient tone.\n\nEnd Frame:\nFully assembled composition exactly matching the reference image.\nEverything perfectly arranged.\nHold for 1–2 seconds.\nUltra clean luxury skincare commercial finish.", this)'>📋 Copy</button>
         </div>
-        <p>Use the uploaded image as the exact visual reference for jar design, label, strawberries, raspberries, flowers, leaves, condensation droplets, red gradient background, and reflective surface.</p><p>Camera:<br>Locked front-facing camera.<br>No zoom.<br>No rotation.<br>No angle change.<br>Studio composition remains centered.</p><p>Style:<br>Premium beauty commercial.<br>Smooth assembling sequence.<br>Ultra realistic.<br>Slow motion but not dramatic.</p><p>Scene – Start (Empty Setup):<br>Start with an empty red gradient background and glossy reflective surface.<br>No jar.<br>No fruits.<br>No flowers.<br>No water droplets.</p><p>Assembling Sequence:</p><p>1. The glass jar base smoothly slides into frame from below and settles perfectly centered.<br>2. The lid gently lowers from above and aligns perfectly on the jar.<br>3. Condensation droplets subtly appear on the glass surface as if forming naturally.<br>4. Raspberries roll in softly from left and right, stopping naturally around the base.<br>5. Strawberry halves slide into position at the front.<br>6. Whole strawberries gently drop from above into the open jar top and settle naturally.<br>7. Small white flowers softly fall into place between the strawberries.<br>8. Green leaves slide in behind the jar to frame it.<br>9. Final micro water droplets appear on fruits for freshness effect.</p><p>All movements smooth and controlled.<br>No bouncing.<br>No exaggerated motion.<br>No dramatic lighting changes.</p><p>Lighting:<br>Keep original studio lighting.<br>Deep red background glow remains consistent.<br>Soft reflections on the glossy surface.</p><p>Sound (if supported):<br>Soft subtle assembling sound design.<br>Gentle fruit placement sounds.<br>Light glass contact sound.<br>No music or very subtle premium ambient tone.</p><p>End Frame:<br>Fully assembled composition exactly matching the reference image.<br>Everything perfectly arranged.<br>Hold for 1–2 seconds.<br>Ultra clean luxury skincare commercial finish.</p>
+        <div data-nosnippet><p>Use the uploaded image as the exact visual reference for jar design, label, strawberries, raspberries, flowers, leaves, condensation droplets, red gradient background, and reflective surface.</p><p>Camera:<br>Locked front-facing camera.<br>No zoom.<br>No rotation.<br>No angle change.<br>Studio composition remains centered.</p><p>Style:<br>Premium beauty commercial.<br>Smooth assembling sequence.<br>Ultra realistic.<br>Slow motion but not dramatic.</p><p>Scene – Start (Empty Setup):<br>Start with an empty red gradient background and glossy reflective surface.<br>No jar.<br>No fruits.<br>No flowers.<br>No water droplets.</p><p>Assembling Sequence:</p><p>1. The glass jar base smoothly slides into frame from below and settles perfectly centered.<br>2. The lid gently lowers from above and aligns perfectly on the jar.<br>3. Condensation droplets subtly appear on the glass surface as if forming naturally.<br>4. Raspberries roll in softly from left and right, stopping naturally around the base.<br>5. Strawberry halves slide into position at the front.<br>6. Whole strawberries gently drop from above into the open jar top and settle naturally.<br>7. Small white flowers softly fall into place between the strawberries.<br>8. Green leaves slide in behind the jar to frame it.<br>9. Final micro water droplets appear on fruits for freshness effect.</p><p>All movements smooth and controlled.<br>No bouncing.<br>No exaggerated motion.<br>No dramatic lighting changes.</p><p>Lighting:<br>Keep original studio lighting.<br>Deep red background glow remains consistent.<br>Soft reflections on the glossy surface.</p><p>Sound (if supported):<br>Soft subtle assembling sound design.<br>Gentle fruit placement sounds.<br>Light glass contact sound.<br>No music or very subtle premium ambient tone.</p><p>End Frame:<br>Fully assembled composition exactly matching the reference image.<br>Everything perfectly arranged.<br>Hold for 1–2 seconds.<br>Ultra clean luxury skincare commercial finish.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2029019321364824452-1.jpg" alt="Use the uploaded image as the exact visual reference for jar..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2374,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

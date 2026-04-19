@@ -7,11 +7,13 @@
     <title>Split composition image, left and right halves clearly divide... #1893 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Split composition image, left and right halves clearly divided in 16:9 widescreen format. Left Half: Highly detailed...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1893.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1893.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1893.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840487">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022350">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("分割构图图像，左右两半在 16:9 宽屏格式中清晰分隔。\nLeft Half:\n高度详尽的[LANDMARK]建筑平面图与剖面插图，采用现代极简风格。俯视图显示主要结构布局、内部划分、流线、关键厅室或空间并带有标注。材料注记、结构支撑系统和建筑细节清晰标示。中性米色与暖灰色调，干净的线条、柔和阴影、细腻纹理。专业建筑展示风格。包含显示垂直层次和内部结构的详细剖面图。蓝图美学，技术准确并带分区标注。\nRight Half:\n超写实的航拍外观照片，拍摄角度自上而侧（高位等角透视，而非正上方俯拍）。展示完整建筑，具有真实风化纹理、陈旧材料、周边景观，金色时刻的戏剧性阳光投下清晰阴影，带有暗示历史意义的大气薄雾。视角同时揭示外部雄伟与内部尺度感。温暖金色光线、真实的铜绿与磨损痕迹、真实的建筑比例。呈现如航拍照片般捕捉该纪念性建筑真正壮丽与规模的效果。\n两半在视觉上对齐，清晰展示建筑工程蓝图与其考古或历史现实中实际宏伟结构的对比。\nStyle & Mood:\n• 建筑蓝图可视化与历史航拍摄影的结合\n• 工程精准与历史重要性的并置\n• 教育性、博物馆展览呈现\n• 工程示意到现实的比较\n• 强调规模与建筑复杂性的宏伟感\nLighting & Color:\n• 左侧：平坦均匀照明，中性蓝图色调，技术审美\n• 右侧：金色时刻自然光，戏剧性阴影，温暖色调，大气层次感\n• 两侧保持一致的暖色调\nCamera & Technical Details:\n• 左：俯视正投影 + 详细剖面建筑视图，带标注分区\n• 右：高位航拍视角（45度等角角度），从上方与侧面同时捕捉整个结构\n• 高分辨率，左侧建筑细节锐利；右侧呈现照片级真实风化质感\nNegative Prompt:\n卡通风格、低细节、构图混乱、现代元素、不真实比例、刺眼光线、夸张色彩、文字覆盖、水印、CGI 感、无生命感渲染、正上方俯拍、缺乏大气感、过于完好无损", this)'>📋 复制</button>
         </div>
-        <p>分割构图图像，左右两半在 16:9 宽屏格式中清晰分隔。<br>Left Half:<br>高度详尽的[LANDMARK]建筑平面图与剖面插图，采用现代极简风格。俯视图显示主要结构布局、内部划分、流线、关键厅室或空间并带有标注。材料注记、结构支撑系统和建筑细节清晰标示。中性米色与暖灰色调，干净的线条、柔和阴影、细腻纹理。专业建筑展示风格。包含显示垂直层次和内部结构的详细剖面图。蓝图美学，技术准确并带分区标注。<br>Right Half:<br>超写实的航拍外观照片，拍摄角度自上而侧（高位等角透视，而非正上方俯拍）。展示完整建筑，具有真实风化纹理、陈旧材料、周边景观，金色时刻的戏剧性阳光投下清晰阴影，带有暗示历史意义的大气薄雾。视角同时揭示外部雄伟与内部尺度感。温暖金色光线、真实的铜绿与磨损痕迹、真实的建筑比例。呈现如航拍照片般捕捉该纪念性建筑真正壮丽与规模的效果。<br>两半在视觉上对齐，清晰展示建筑工程蓝图与其考古或历史现实中实际宏伟结构的对比。<br>Style &amp; Mood:<br>• 建筑蓝图可视化与历史航拍摄影的结合<br>• 工程精准与历史重要性的并置<br>• 教育性、博物馆展览呈现<br>• 工程示意到现实的比较<br>• 强调规模与建筑复杂性的宏伟感<br>Lighting &amp; Color:<br>• 左侧：平坦均匀照明，中性蓝图色调，技术审美<br>• 右侧：金色时刻自然光，戏剧性阴影，温暖色调，大气层次感<br>• 两侧保持一致的暖色调<br>Camera &amp; Technical Details:<br>• 左：俯视正投影 + 详细剖面建筑视图，带标注分区<br>• 右：高位航拍视角（45度等角角度），从上方与侧面同时捕捉整个结构<br>• 高分辨率，左侧建筑细节锐利；右侧呈现照片级真实风化质感<br>Negative Prompt:<br>卡通风格、低细节、构图混乱、现代元素、不真实比例、刺眼光线、夸张色彩、文字覆盖、水印、CGI 感、无生命感渲染、正上方俯拍、缺乏大气感、过于完好无损</p>
+        <div data-nosnippet><p>分割构图图像，左右两半在 16:9 宽屏格式中清晰分隔。<br>Left Half:<br>高度详尽的[LANDMARK]建筑平面图与剖面插图，采用现代极简风格。俯视图显示主要结构布局、内部划分、流线、关键厅室或空间并带有标注。材料注记、结构支撑系统和建筑细节清晰标示。中性米色与暖灰色调，干净的线条、柔和阴影、细腻纹理。专业建筑展示风格。包含显示垂直层次和内部结构的详细剖面图。蓝图美学，技术准确并带分区标注。<br>Right Half:<br>超写实的航拍外观照片，拍摄角度自上而侧（高位等角透视，而非正上方俯拍）。展示完整建筑，具有真实风化纹理、陈旧材料、周边景观，金色时刻的戏剧性阳光投下清晰阴影，带有暗示历史意义的大气薄雾。视角同时揭示外部雄伟与内部尺度感。温暖金色光线、真实的铜绿与磨损痕迹、真实的建筑比例。呈现如航拍照片般捕捉该纪念性建筑真正壮丽与规模的效果。<br>两半在视觉上对齐，清晰展示建筑工程蓝图与其考古或历史现实中实际宏伟结构的对比。<br>Style &amp; Mood:<br>• 建筑蓝图可视化与历史航拍摄影的结合<br>• 工程精准与历史重要性的并置<br>• 教育性、博物馆展览呈现<br>• 工程示意到现实的比较<br>• 强调规模与建筑复杂性的宏伟感<br>Lighting &amp; Color:<br>• 左侧：平坦均匀照明，中性蓝图色调，技术审美<br>• 右侧：金色时刻自然光，戏剧性阴影，温暖色调，大气层次感<br>• 两侧保持一致的暖色调<br>Camera &amp; Technical Details:<br>• 左：俯视正投影 + 详细剖面建筑视图，带标注分区<br>• 右：高位航拍视角（45度等角角度），从上方与侧面同时捕捉整个结构<br>• 高分辨率，左侧建筑细节锐利；右侧呈现照片级真实风化质感<br>Negative Prompt:<br>卡通风格、低细节、构图混乱、现代元素、不真实比例、刺眼光线、夸张色彩、文字覆盖、水印、CGI 感、无生命感渲染、正上方俯拍、缺乏大气感、过于完好无损</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Split composition image, left and right halves clearly divided in 16:9 widescreen format.\nLeft Half:\nHighly detailed architectural floor plan and cross-section illustration of [LANDMARK] in a modern minimalist style. Top-down view showing main structural layout, internal divisions, circulation paths, key chambers or spaces with labels. Material callouts, structural support systems, and architectural details clearly marked. Neutral beige and warm gray color palette, clean linework, soft shadows, subtle textures. Professional architectural-presentation style. Include detailed cross-sectional diagram showing vertical layers and internal structure. Blueprint aesthetic with technical accuracy and labeled sections.\nRight Half:\nUltra-realistic aerial exterior photograph of [LANDMARK] captured from above and to the side (elevated isometric perspective, not straight overhead). Shows the complete structure with authentic weathered textures, aged materials, surrounding landscape, dramatic golden-hour sunlight creating sharp shadows, atmospheric haze suggesting historical significance. The perspective reveals both external grandeur and internal scale simultaneously. Warm golden-light lighting, realistic patina and wear patterns, authentic architectural proportions. Feels like an aerial photograph capturing the monument’s true majesty and scale.\nBoth halves align visually, clearly showing architectural engineering blueprint vs. the actual monumental structure in its archaeological or historical reality.\nStyle & Mood:\n•Architectural blueprint visualization meets historical aerial photography\n•Engineering precision and historical significance\n•Educational, museum-exhibit presentation\n•Engineering schematic-to-reality comparison\n•Grandeur emphasizing scale and architectural sophistication\nLighting & Color:\n•Left: Flat, even lighting, neutral blueprint tones, technical aesthetic\n•Right: Golden-hour natural light, dramatic shadows, warm tones, atmospheric depth\n•Consistent warm palette between both halves\nCamera & Technical Details:\n•Left: Top-down orthographic + detailed cross-sectional architectural view with labeled sections\n•Right: Elevated aerial perspective (45-degree isometric angle), capturing full structure from above-and-to-the-side\n•High resolution, sharp architectural details on left; photorealistic weathered textures on right\nNegative Prompt:\nCartoon style, low detail, cluttered composition, modern elements, unrealistic proportions, harsh lighting, exaggerated colors, text overlays, watermarks, CGI look, sterile rendering, straight-down overhead view, no atmospheric quality, overly pristine condition", this)'>📋 复制</button>
         </div>
-        <p>Split composition image, left and right halves clearly divided in 16:9 widescreen format.<br>Left Half:<br>Highly detailed architectural floor plan and cross-section illustration of [LANDMARK] in a modern minimalist style. Top-down view showing main structural layout, internal divisions, circulation paths, key chambers or spaces with labels. Material callouts, structural support systems, and architectural details clearly marked. Neutral beige and warm gray color palette, clean linework, soft shadows, subtle textures. Professional architectural-presentation style. Include detailed cross-sectional diagram showing vertical layers and internal structure. Blueprint aesthetic with technical accuracy and labeled sections.<br>Right Half:<br>Ultra-realistic aerial exterior photograph of [LANDMARK] captured from above and to the side (elevated isometric perspective, not straight overhead). Shows the complete structure with authentic weathered textures, aged materials, surrounding landscape, dramatic golden-hour sunlight creating sharp shadows, atmospheric haze suggesting historical significance. The perspective reveals both external grandeur and internal scale simultaneously. Warm golden-light lighting, realistic patina and wear patterns, authentic architectural proportions. Feels like an aerial photograph capturing the monument’s true majesty and scale.<br>Both halves align visually, clearly showing architectural engineering blueprint vs. the actual monumental structure in its archaeological or historical reality.<br>Style &amp; Mood:<br>•Architectural blueprint visualization meets historical aerial photography<br>•Engineering precision and historical significance<br>•Educational, museum-exhibit presentation<br>•Engineering schematic-to-reality comparison<br>•Grandeur emphasizing scale and architectural sophistication<br>Lighting &amp; Color:<br>•Left: Flat, even lighting, neutral blueprint tones, technical aesthetic<br>•Right: Golden-hour natural light, dramatic shadows, warm tones, atmospheric depth<br>•Consistent warm palette between both halves<br>Camera &amp; Technical Details:<br>•Left: Top-down orthographic + detailed cross-sectional architectural view with labeled sections<br>•Right: Elevated aerial perspective (45-degree isometric angle), capturing full structure from above-and-to-the-side<br>•High resolution, sharp architectural details on left; photorealistic weathered textures on right<br>Negative Prompt:<br>Cartoon style, low detail, cluttered composition, modern elements, unrealistic proportions, harsh lighting, exaggerated colors, text overlays, watermarks, CGI look, sterile rendering, straight-down overhead view, no atmospheric quality, overly pristine condition</p>
+        <div data-nosnippet><p>Split composition image, left and right halves clearly divided in 16:9 widescreen format.<br>Left Half:<br>Highly detailed architectural floor plan and cross-section illustration of [LANDMARK] in a modern minimalist style. Top-down view showing main structural layout, internal divisions, circulation paths, key chambers or spaces with labels. Material callouts, structural support systems, and architectural details clearly marked. Neutral beige and warm gray color palette, clean linework, soft shadows, subtle textures. Professional architectural-presentation style. Include detailed cross-sectional diagram showing vertical layers and internal structure. Blueprint aesthetic with technical accuracy and labeled sections.<br>Right Half:<br>Ultra-realistic aerial exterior photograph of [LANDMARK] captured from above and to the side (elevated isometric perspective, not straight overhead). Shows the complete structure with authentic weathered textures, aged materials, surrounding landscape, dramatic golden-hour sunlight creating sharp shadows, atmospheric haze suggesting historical significance. The perspective reveals both external grandeur and internal scale simultaneously. Warm golden-light lighting, realistic patina and wear patterns, authentic architectural proportions. Feels like an aerial photograph capturing the monument’s true majesty and scale.<br>Both halves align visually, clearly showing architectural engineering blueprint vs. the actual monumental structure in its archaeological or historical reality.<br>Style &amp; Mood:<br>•Architectural blueprint visualization meets historical aerial photography<br>•Engineering precision and historical significance<br>•Educational, museum-exhibit presentation<br>•Engineering schematic-to-reality comparison<br>•Grandeur emphasizing scale and architectural sophistication<br>Lighting &amp; Color:<br>•Left: Flat, even lighting, neutral blueprint tones, technical aesthetic<br>•Right: Golden-hour natural light, dramatic shadows, warm tones, atmospheric depth<br>•Consistent warm palette between both halves<br>Camera &amp; Technical Details:<br>•Left: Top-down orthographic + detailed cross-sectional architectural view with labeled sections<br>•Right: Elevated aerial perspective (45-degree isometric angle), capturing full structure from above-and-to-the-side<br>•High resolution, sharp architectural details on left; photorealistic weathered textures on right<br>Negative Prompt:<br>Cartoon style, low detail, cluttered composition, modern elements, unrealistic proportions, harsh lighting, exaggerated colors, text overlays, watermarks, CGI look, sterile rendering, straight-down overhead view, no atmospheric quality, overly pristine condition</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2018029876356239823-1.jpg" alt="Split composition image, left and right halves clearly divide..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1893,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

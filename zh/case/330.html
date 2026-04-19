@@ -7,11 +7,13 @@
     <title>全身夜景肖像 #330 | Gem Nana AI 提示词库</title>
     <meta name="description" content="全身夜景肖像 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/330.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/330.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/330.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841958">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022715">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"description\": \"这是一张超现实主义、4K、全身夜景肖像，照片中的一名 23 岁的韩国女性，皮肤白皙，一头长长的直黑发别在耳后。\",\n“主题”： {\n“年龄”：23岁，\n“种族”：“韩国人”，\n\"skin_tone\": \"苍白\",\n“头发”： {\n“颜色”：“黑色”，\n“style”：“长而直，塞在一只耳朵后面”\n}，\n\"pose\": \"站在结霜的公交车站，双臂交叉抵御寒冷\",\n“表达”：“70% 是无声的恼怒，30% 是好笑的顺从，就像在重读一条她后悔发过的短信”\n}，\n“全套服装”： {\n\"顶层\"：[\n“黑色西装外套”，\n“海军蓝运动衫”，\n“清爽的白色正装衬衫”，\n“细黑领带”\n]，\n\"bottom\": \"超短黑色百褶裙\",\n\"legwear\": \"全新白色及膝长袜\",\n“footwear”：“抛光黑鞋”\n}，\n“环境”： {\n\"location\": \"夜间城市公交车站\",\n“ground”：“结冰的路面反射着远处的车灯”，\n\"雾\"：\"浓密，占据了画面的上三分之一\"\n\"公交车站\"：{\n“玻璃”：“用手指画的笑脸被蒸腾起来，融化得比周围的冷凝水还快”\n}，\n“照明”：“冷蓝白色，高对比度，电影感”\n}，\n\"hidden_​​detail\": \"她左脚鞋子里的倒影：一辆模糊的红色双层巴士，可能快到了，也可能还没到\"\n“相机”： {\n\"角度\": \"低视线，全身在画面中\",\n\"lens_simulation\": \"Phase-One 中画幅真实感\",\n\"depth_of_field\": \"清晰对焦主体，柔和远方灯光的散景\"\n}，\n“输出”： {\n“风格”：“超现实、电影、酷炫色彩分级”\n}\n}\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>&quot;description&quot;: &quot;这是一张超现实主义、4K、全身夜景肖像，照片中的一名 23 岁的韩国女性，皮肤白皙，一头长长的直黑发别在耳后。&quot;,<br>“主题”： {<br>“年龄”：23岁，<br>“种族”：“韩国人”，<br>&quot;skin_tone&quot;: &quot;苍白&quot;,<br>“头发”： {<br>“颜色”：“黑色”，<br>“style”：“长而直，塞在一只耳朵后面”<br>}，<br>&quot;pose&quot;: &quot;站在结霜的公交车站，双臂交叉抵御寒冷&quot;,<br>“表达”：“70% 是无声的恼怒，30% 是好笑的顺从，就像在重读一条她后悔发过的短信”<br>}，<br>“全套服装”： {<br>&quot;顶层&quot;：[<br>“黑色西装外套”，<br>“海军蓝运动衫”，<br>“清爽的白色正装衬衫”，<br>“细黑领带”<br>]，<br>&quot;bottom&quot;: &quot;超短黑色百褶裙&quot;,<br>&quot;legwear&quot;: &quot;全新白色及膝长袜&quot;,<br>“footwear”：“抛光黑鞋”<br>}，<br>“环境”： {<br>&quot;location&quot;: &quot;夜间城市公交车站&quot;,<br>“ground”：“结冰的路面反射着远处的车灯”，<br>&quot;雾&quot;：&quot;浓密，占据了画面的上三分之一&quot;<br>&quot;公交车站&quot;：{<br>“玻璃”：“用手指画的笑脸被蒸腾起来，融化得比周围的冷凝水还快”<br>}，<br>“照明”：“冷蓝白色，高对比度，电影感”<br>}，<br>&quot;hidden_​​detail&quot;: &quot;她左脚鞋子里的倒影：一辆模糊的红色双层巴士，可能快到了，也可能还没到&quot;<br>“相机”： {<br>&quot;角度&quot;: &quot;低视线，全身在画面中&quot;,<br>&quot;lens_simulation&quot;: &quot;Phase-One 中画幅真实感&quot;,<br>&quot;depth_of_field&quot;: &quot;清晰对焦主体，柔和远方灯光的散景&quot;<br>}，<br>“输出”： {<br>“风格”：“超现实、电影、酷炫色彩分级”<br>}<br>}<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;description&quot;: &quot;这是一张超现实主义、4K、全身夜景肖像，照片中的一名 23 岁的韩国女性，皮肤白皙，一头长长的直黑发别在耳后。&quot;,<br>“主题”： {<br>“年龄”：23岁，<br>“种族”：“韩国人”，<br>&quot;skin_tone&quot;: &quot;苍白&quot;,<br>“头发”： {<br>“颜色”：“黑色”，<br>“style”：“长而直，塞在一只耳朵后面”<br>}，<br>&quot;pose&quot;: &quot;站在结霜的公交车站，双臂交叉抵御寒冷&quot;,<br>“表达”：“70% 是无声的恼怒，30% 是好笑的顺从，就像在重读一条她后悔发过的短信”<br>}，<br>“全套服装”： {<br>&quot;顶层&quot;：[<br>“黑色西装外套”，<br>“海军蓝运动衫”，<br>“清爽的白色正装衬衫”，<br>“细黑领带”<br>]，<br>&quot;bottom&quot;: &quot;超短黑色百褶裙&quot;,<br>&quot;legwear&quot;: &quot;全新白色及膝长袜&quot;,<br>“footwear”：“抛光黑鞋”<br>}，<br>“环境”： {<br>&quot;location&quot;: &quot;夜间城市公交车站&quot;,<br>“ground”：“结冰的路面反射着远处的车灯”，<br>&quot;雾&quot;：&quot;浓密，占据了画面的上三分之一&quot;<br>&quot;公交车站&quot;：{<br>“玻璃”：“用手指画的笑脸被蒸腾起来，融化得比周围的冷凝水还快”<br>}，<br>“照明”：“冷蓝白色，高对比度，电影感”<br>}，<br>&quot;hidden_​​detail&quot;: &quot;她左脚鞋子里的倒影：一辆模糊的红色双层巴士，可能快到了，也可能还没到&quot;<br>“相机”： {<br>&quot;角度&quot;: &quot;低视线，全身在画面中&quot;,<br>&quot;lens_simulation&quot;: &quot;Phase-One 中画幅真实感&quot;,<br>&quot;depth_of_field&quot;: &quot;清晰对焦主体，柔和远方灯光的散景&quot;<br>}，<br>“输出”： {<br>“风格”：“超现实、电影、酷炫色彩分级”<br>}<br>}<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"description\": \"A surreal, 4K full-body night city portrait of a 23-year-old Korean woman with fair skin and long straight black hair tucked behind one ear.\",\n  \"theme\": {\n    \"age\": 23,\n    \"ethnicity\": \"Korean\",\n    \"skin_tone\": \"pale\",\n    \"hair\": {\n      \"color\": \"black\",\n      \"style\": \"long and straight, tucked behind one ear\"\n    },\n    \"pose\": \"Standing at a frosted bus stop, arms crossed to keep warm\",\n    \"expression\": \"70% silent annoyance, 30% amused compliance, as if rereading a regretful text message\"\n  },\n  \"full_outfit\": {\n    \"top\": [\n      \"black blazer\",\n      \"navy blue sweatshirt\",\n      \"fresh white dress shirt\",\n      \"thin black tie\"\n    ],\n    \"bottom\": \"ultra-short black pleated skirt\",\n    \"legwear\": \"brand-new white knee-high socks\",\n    \"footwear\": \"polished black shoes\"\n  },\n  \"environment\": {\n    \"location\": \"night city bus stop\",\n    \"ground\": \"icy pavement reflecting distant car lights\",\n    \"fog\": \"dense, occupying the top third of the frame\",\n    \"bus_stop\": {\n      \"glass\": \"smiling face drawn with finger, vaporizing faster than the surrounding condensation\"\n    },\n    \"lighting\": \"cool blue-white, high contrast, cinematic feel\"\n  },\n  \"hidden_detail\": \"Reflection in her left shoe: a blurry red double-decker bus, possibly arriving or still far away\",\n  \"camera\": {\n    \"angle\": \"low perspective, full body in frame\",\n    \"lens_simulation\": \"Phase-One medium format realism\",\n    \"depth_of_field\": \"sharp focus on subject, soft bokeh of distant lights\"\n  },\n  \"output\": {\n    \"style\": \"surreal, cinematic, cool color grading\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;description&quot;: &quot;A surreal, 4K full-body night city portrait of a 23-year-old Korean woman with fair skin and long straight black hair tucked behind one ear.&quot;,<br>  &quot;theme&quot;: {<br>    &quot;age&quot;: 23,<br>    &quot;ethnicity&quot;: &quot;Korean&quot;,<br>    &quot;skin_tone&quot;: &quot;pale&quot;,<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;black&quot;,<br>      &quot;style&quot;: &quot;long and straight, tucked behind one ear&quot;<br>    },<br>    &quot;pose&quot;: &quot;Standing at a frosted bus stop, arms crossed to keep warm&quot;,<br>    &quot;expression&quot;: &quot;70% silent annoyance, 30% amused compliance, as if rereading a regretful text message&quot;<br>  },<br>  &quot;full_outfit&quot;: {<br>    &quot;top&quot;: [<br>      &quot;black blazer&quot;,<br>      &quot;navy blue sweatshirt&quot;,<br>      &quot;fresh white dress shirt&quot;,<br>      &quot;thin black tie&quot;<br>    ],<br>    &quot;bottom&quot;: &quot;ultra-short black pleated skirt&quot;,<br>    &quot;legwear&quot;: &quot;brand-new white knee-high socks&quot;,<br>    &quot;footwear&quot;: &quot;polished black shoes&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;night city bus stop&quot;,<br>    &quot;ground&quot;: &quot;icy pavement reflecting distant car lights&quot;,<br>    &quot;fog&quot;: &quot;dense, occupying the top third of the frame&quot;,<br>    &quot;bus_stop&quot;: {<br>      &quot;glass&quot;: &quot;smiling face drawn with finger, vaporizing faster than the surrounding condensation&quot;<br>    },<br>    &quot;lighting&quot;: &quot;cool blue-white, high contrast, cinematic feel&quot;<br>  },<br>  &quot;hidden_detail&quot;: &quot;Reflection in her left shoe: a blurry red double-decker bus, possibly arriving or still far away&quot;,<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;low perspective, full body in frame&quot;,<br>    &quot;lens_simulation&quot;: &quot;Phase-One medium format realism&quot;,<br>    &quot;depth_of_field&quot;: &quot;sharp focus on subject, soft bokeh of distant lights&quot;<br>  },<br>  &quot;output&quot;: {<br>    &quot;style&quot;: &quot;surreal, cinematic, cool color grading&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;description&quot;: &quot;A surreal, 4K full-body night city portrait of a 23-year-old Korean woman with fair skin and long straight black hair tucked behind one ear.&quot;,<br>  &quot;theme&quot;: {<br>    &quot;age&quot;: 23,<br>    &quot;ethnicity&quot;: &quot;Korean&quot;,<br>    &quot;skin_tone&quot;: &quot;pale&quot;,<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;black&quot;,<br>      &quot;style&quot;: &quot;long and straight, tucked behind one ear&quot;<br>    },<br>    &quot;pose&quot;: &quot;Standing at a frosted bus stop, arms crossed to keep warm&quot;,<br>    &quot;expression&quot;: &quot;70% silent annoyance, 30% amused compliance, as if rereading a regretful text message&quot;<br>  },<br>  &quot;full_outfit&quot;: {<br>    &quot;top&quot;: [<br>      &quot;black blazer&quot;,<br>      &quot;navy blue sweatshirt&quot;,<br>      &quot;fresh white dress shirt&quot;,<br>      &quot;thin black tie&quot;<br>    ],<br>    &quot;bottom&quot;: &quot;ultra-short black pleated skirt&quot;,<br>    &quot;legwear&quot;: &quot;brand-new white knee-high socks&quot;,<br>    &quot;footwear&quot;: &quot;polished black shoes&quot;<br>  },<br>  &quot;environment&quot;: {<br>    &quot;location&quot;: &quot;night city bus stop&quot;,<br>    &quot;ground&quot;: &quot;icy pavement reflecting distant car lights&quot;,<br>    &quot;fog&quot;: &quot;dense, occupying the top third of the frame&quot;,<br>    &quot;bus_stop&quot;: {<br>      &quot;glass&quot;: &quot;smiling face drawn with finger, vaporizing faster than the surrounding condensation&quot;<br>    },<br>    &quot;lighting&quot;: &quot;cool blue-white, high contrast, cinematic feel&quot;<br>  },<br>  &quot;hidden_detail&quot;: &quot;Reflection in her left shoe: a blurry red double-decker bus, possibly arriving or still far away&quot;,<br>  &quot;camera&quot;: {<br>    &quot;angle&quot;: &quot;low perspective, full body in frame&quot;,<br>    &quot;lens_simulation&quot;: &quot;Phase-One medium format realism&quot;,<br>    &quot;depth_of_field&quot;: &quot;sharp focus on subject, soft bokeh of distant lights&quot;<br>  },<br>  &quot;output&quot;: {<br>    &quot;style&quot;: &quot;surreal, cinematic, cool color grading&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/334.jpeg" alt="全身夜景肖像" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 330,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

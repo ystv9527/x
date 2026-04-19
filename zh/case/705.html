@@ -7,11 +7,13 @@
     <title>&quot;Objective&quot;: &quot;Generate a cinematic, photorealistic portrait i... #705 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;Objective&quot;: &quot;Generate a cinematic, photorealistic portrait inspired by a winter forest atmosphere&quot;, &quot;PersonaDetail...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/705.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/705.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/705.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841586">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022630">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"目标\": \"生成一张以冬季森林氛围为灵感的电影感、逼真写实的肖像\",\n  \"人物设定\": {\n    \"主体\": \"年轻女性\",\n    \"形象\": {\n      \"发型\": \"长而波浪状的深棕色头发，略带风吹拂\",\n      \"眼睛\": \"浅蓝色\",\n      \"皮肤\": \"白皙，带自然雀斑\",\n      \"表情\": \"柔和、内省、略带忧郁\"\n    },\n    \"服装\": {\n      \"外套\": \"深棕色羊毛大衣\",\n      \"配饰\": \"中性色调的针织围巾\"\n    }\n  },\n  \"场景描述\": {\n    \"环境\": \"雪地森林，常青树呈现柔焦效果\",\n    \"天气\": \"细雪纷飞\",\n    \"季节\": \"冬季\",\n    \"情绪\": \"安静、电影感、忧郁、空灵\"\n  },\n  \"摄影风格\": {\n    \"类型\": \"电影感肖像摄影\",\n    \"光线\": \"柔和自然光，阴天的冬日光照\",\n    \"景深\": \"浅景深，奶油般的背景虚化\",\n    \"相机角度\": \"三分之二/四分之三侧脸，主体回头望向肩部\",\n    \"分辨率\": \"超高分辨率，面部细节清晰\"\n  },\n  \"美术指引\": {\n    \"色彩搭配\": \"低饱和的地球色调，冷绿与柔白\",\n    \"材质质感\": \"自然肌肤质感，可见的雪粒\",\n    \"真实感水平\": \"高度写实\"\n  },\n  \"负面提示\": [\n    \"卡通\",\n    \"动漫风格\",\n    \"过于光滑的皮肤\",\n    \"强烈光线\",\n    \"模糊的脸部\",\n    \"解剖结构扭曲\",\n    \"颜色过饱和\"\n  ],\n  \"响应格式\": {\n    \"类型\": \"单张图片\",\n    \"方向\": \"竖向\",\n    \"纵横比\": \"2:3\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;目标&quot;: &quot;生成一张以冬季森林氛围为灵感的电影感、逼真写实的肖像&quot;,<br>  &quot;人物设定&quot;: {<br>    &quot;主体&quot;: &quot;年轻女性&quot;,<br>    &quot;形象&quot;: {<br>      &quot;发型&quot;: &quot;长而波浪状的深棕色头发，略带风吹拂&quot;,<br>      &quot;眼睛&quot;: &quot;浅蓝色&quot;,<br>      &quot;皮肤&quot;: &quot;白皙，带自然雀斑&quot;,<br>      &quot;表情&quot;: &quot;柔和、内省、略带忧郁&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;外套&quot;: &quot;深棕色羊毛大衣&quot;,<br>      &quot;配饰&quot;: &quot;中性色调的针织围巾&quot;<br>    }<br>  },<br>  &quot;场景描述&quot;: {<br>    &quot;环境&quot;: &quot;雪地森林，常青树呈现柔焦效果&quot;,<br>    &quot;天气&quot;: &quot;细雪纷飞&quot;,<br>    &quot;季节&quot;: &quot;冬季&quot;,<br>    &quot;情绪&quot;: &quot;安静、电影感、忧郁、空灵&quot;<br>  },<br>  &quot;摄影风格&quot;: {<br>    &quot;类型&quot;: &quot;电影感肖像摄影&quot;,<br>    &quot;光线&quot;: &quot;柔和自然光，阴天的冬日光照&quot;,<br>    &quot;景深&quot;: &quot;浅景深，奶油般的背景虚化&quot;,<br>    &quot;相机角度&quot;: &quot;三分之二/四分之三侧脸，主体回头望向肩部&quot;,<br>    &quot;分辨率&quot;: &quot;超高分辨率，面部细节清晰&quot;<br>  },<br>  &quot;美术指引&quot;: {<br>    &quot;色彩搭配&quot;: &quot;低饱和的地球色调，冷绿与柔白&quot;,<br>    &quot;材质质感&quot;: &quot;自然肌肤质感，可见的雪粒&quot;,<br>    &quot;真实感水平&quot;: &quot;高度写实&quot;<br>  },<br>  &quot;负面提示&quot;: [<br>    &quot;卡通&quot;,<br>    &quot;动漫风格&quot;,<br>    &quot;过于光滑的皮肤&quot;,<br>    &quot;强烈光线&quot;,<br>    &quot;模糊的脸部&quot;,<br>    &quot;解剖结构扭曲&quot;,<br>    &quot;颜色过饱和&quot;<br>  ],<br>  &quot;响应格式&quot;: {<br>    &quot;类型&quot;: &quot;单张图片&quot;,<br>    &quot;方向&quot;: &quot;竖向&quot;,<br>    &quot;纵横比&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;目标&quot;: &quot;生成一张以冬季森林氛围为灵感的电影感、逼真写实的肖像&quot;,<br>  &quot;人物设定&quot;: {<br>    &quot;主体&quot;: &quot;年轻女性&quot;,<br>    &quot;形象&quot;: {<br>      &quot;发型&quot;: &quot;长而波浪状的深棕色头发，略带风吹拂&quot;,<br>      &quot;眼睛&quot;: &quot;浅蓝色&quot;,<br>      &quot;皮肤&quot;: &quot;白皙，带自然雀斑&quot;,<br>      &quot;表情&quot;: &quot;柔和、内省、略带忧郁&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;外套&quot;: &quot;深棕色羊毛大衣&quot;,<br>      &quot;配饰&quot;: &quot;中性色调的针织围巾&quot;<br>    }<br>  },<br>  &quot;场景描述&quot;: {<br>    &quot;环境&quot;: &quot;雪地森林，常青树呈现柔焦效果&quot;,<br>    &quot;天气&quot;: &quot;细雪纷飞&quot;,<br>    &quot;季节&quot;: &quot;冬季&quot;,<br>    &quot;情绪&quot;: &quot;安静、电影感、忧郁、空灵&quot;<br>  },<br>  &quot;摄影风格&quot;: {<br>    &quot;类型&quot;: &quot;电影感肖像摄影&quot;,<br>    &quot;光线&quot;: &quot;柔和自然光，阴天的冬日光照&quot;,<br>    &quot;景深&quot;: &quot;浅景深，奶油般的背景虚化&quot;,<br>    &quot;相机角度&quot;: &quot;三分之二/四分之三侧脸，主体回头望向肩部&quot;,<br>    &quot;分辨率&quot;: &quot;超高分辨率，面部细节清晰&quot;<br>  },<br>  &quot;美术指引&quot;: {<br>    &quot;色彩搭配&quot;: &quot;低饱和的地球色调，冷绿与柔白&quot;,<br>    &quot;材质质感&quot;: &quot;自然肌肤质感，可见的雪粒&quot;,<br>    &quot;真实感水平&quot;: &quot;高度写实&quot;<br>  },<br>  &quot;负面提示&quot;: [<br>    &quot;卡通&quot;,<br>    &quot;动漫风格&quot;,<br>    &quot;过于光滑的皮肤&quot;,<br>    &quot;强烈光线&quot;,<br>    &quot;模糊的脸部&quot;,<br>    &quot;解剖结构扭曲&quot;,<br>    &quot;颜色过饱和&quot;<br>  ],<br>  &quot;响应格式&quot;: {<br>    &quot;类型&quot;: &quot;单张图片&quot;,<br>    &quot;方向&quot;: &quot;竖向&quot;,<br>    &quot;纵横比&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"Objective\": \"Generate a cinematic, photorealistic portrait inspired by a winter forest atmosphere\",\n  \"PersonaDetails\": {\n    \"Subject\": \"Young woman\",\n    \"Appearance\": {\n      \"Hair\": \"Long, wavy dark brown hair, slightly windblown\",\n      \"Eyes\": \"Light blue\",\n      \"Skin\": \"Fair with natural freckles\",\n      \"Expression\": \"Soft, introspective, slightly wistful\"\n    },\n    \"Clothing\": {\n      \"Outerwear\": \"Dark brown wool coat\",\n      \"Accessories\": \"Knitted scarf in neutral tones\"\n    }\n  },\n  \"SceneDescription\": {\n    \"Environment\": \"Snowy forest with soft-focus evergreen trees\",\n    \"Weather\": \"Gentle snowfall\",\n    \"Season\": \"Winter\",\n    \"Mood\": \"Quiet, cinematic, melancholic, ethereal\"\n  },\n  \"PhotographyStyle\": {\n    \"Type\": \"Cinematic portrait photography\",\n    \"Lighting\": \"Soft natural light, overcast winter lighting\",\n    \"DepthOfField\": \"Shallow depth of field with creamy bokeh\",\n    \"CameraAngle\": \"Three-quarter profile, subject looking back over shoulder\",\n    \"Resolution\": \"Ultra high resolution, sharp facial details\"\n  },\n  \"ArtDirection\": {\n    \"ColorPalette\": \"Muted earth tones, cool greens and soft whites\",\n    \"Texture\": \"Natural skin texture, visible snow particles\",\n    \"RealismLevel\": \"Highly photorealistic\"\n  },\n  \"NegativePrompt\": [\n    \"cartoon\",\n    \"anime\",\n    \"overly smooth skin\",\n    \"harsh lighting\",\n    \"blurry face\",\n    \"distorted anatomy\",\n    \"oversaturated colors\"\n  ],\n  \"ResponseFormat\": {\n    \"Type\": \"Single image\",\n    \"Orientation\": \"Portrait\",\n    \"AspectRatio\": \"2:3\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;Objective&quot;: &quot;Generate a cinematic, photorealistic portrait inspired by a winter forest atmosphere&quot;,<br>  &quot;PersonaDetails&quot;: {<br>    &quot;Subject&quot;: &quot;Young woman&quot;,<br>    &quot;Appearance&quot;: {<br>      &quot;Hair&quot;: &quot;Long, wavy dark brown hair, slightly windblown&quot;,<br>      &quot;Eyes&quot;: &quot;Light blue&quot;,<br>      &quot;Skin&quot;: &quot;Fair with natural freckles&quot;,<br>      &quot;Expression&quot;: &quot;Soft, introspective, slightly wistful&quot;<br>    },<br>    &quot;Clothing&quot;: {<br>      &quot;Outerwear&quot;: &quot;Dark brown wool coat&quot;,<br>      &quot;Accessories&quot;: &quot;Knitted scarf in neutral tones&quot;<br>    }<br>  },<br>  &quot;SceneDescription&quot;: {<br>    &quot;Environment&quot;: &quot;Snowy forest with soft-focus evergreen trees&quot;,<br>    &quot;Weather&quot;: &quot;Gentle snowfall&quot;,<br>    &quot;Season&quot;: &quot;Winter&quot;,<br>    &quot;Mood&quot;: &quot;Quiet, cinematic, melancholic, ethereal&quot;<br>  },<br>  &quot;PhotographyStyle&quot;: {<br>    &quot;Type&quot;: &quot;Cinematic portrait photography&quot;,<br>    &quot;Lighting&quot;: &quot;Soft natural light, overcast winter lighting&quot;,<br>    &quot;DepthOfField&quot;: &quot;Shallow depth of field with creamy bokeh&quot;,<br>    &quot;CameraAngle&quot;: &quot;Three-quarter profile, subject looking back over shoulder&quot;,<br>    &quot;Resolution&quot;: &quot;Ultra high resolution, sharp facial details&quot;<br>  },<br>  &quot;ArtDirection&quot;: {<br>    &quot;ColorPalette&quot;: &quot;Muted earth tones, cool greens and soft whites&quot;,<br>    &quot;Texture&quot;: &quot;Natural skin texture, visible snow particles&quot;,<br>    &quot;RealismLevel&quot;: &quot;Highly photorealistic&quot;<br>  },<br>  &quot;NegativePrompt&quot;: [<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;,<br>    &quot;overly smooth skin&quot;,<br>    &quot;harsh lighting&quot;,<br>    &quot;blurry face&quot;,<br>    &quot;distorted anatomy&quot;,<br>    &quot;oversaturated colors&quot;<br>  ],<br>  &quot;ResponseFormat&quot;: {<br>    &quot;Type&quot;: &quot;Single image&quot;,<br>    &quot;Orientation&quot;: &quot;Portrait&quot;,<br>    &quot;AspectRatio&quot;: &quot;2:3&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;Objective&quot;: &quot;Generate a cinematic, photorealistic portrait inspired by a winter forest atmosphere&quot;,<br>  &quot;PersonaDetails&quot;: {<br>    &quot;Subject&quot;: &quot;Young woman&quot;,<br>    &quot;Appearance&quot;: {<br>      &quot;Hair&quot;: &quot;Long, wavy dark brown hair, slightly windblown&quot;,<br>      &quot;Eyes&quot;: &quot;Light blue&quot;,<br>      &quot;Skin&quot;: &quot;Fair with natural freckles&quot;,<br>      &quot;Expression&quot;: &quot;Soft, introspective, slightly wistful&quot;<br>    },<br>    &quot;Clothing&quot;: {<br>      &quot;Outerwear&quot;: &quot;Dark brown wool coat&quot;,<br>      &quot;Accessories&quot;: &quot;Knitted scarf in neutral tones&quot;<br>    }<br>  },<br>  &quot;SceneDescription&quot;: {<br>    &quot;Environment&quot;: &quot;Snowy forest with soft-focus evergreen trees&quot;,<br>    &quot;Weather&quot;: &quot;Gentle snowfall&quot;,<br>    &quot;Season&quot;: &quot;Winter&quot;,<br>    &quot;Mood&quot;: &quot;Quiet, cinematic, melancholic, ethereal&quot;<br>  },<br>  &quot;PhotographyStyle&quot;: {<br>    &quot;Type&quot;: &quot;Cinematic portrait photography&quot;,<br>    &quot;Lighting&quot;: &quot;Soft natural light, overcast winter lighting&quot;,<br>    &quot;DepthOfField&quot;: &quot;Shallow depth of field with creamy bokeh&quot;,<br>    &quot;CameraAngle&quot;: &quot;Three-quarter profile, subject looking back over shoulder&quot;,<br>    &quot;Resolution&quot;: &quot;Ultra high resolution, sharp facial details&quot;<br>  },<br>  &quot;ArtDirection&quot;: {<br>    &quot;ColorPalette&quot;: &quot;Muted earth tones, cool greens and soft whites&quot;,<br>    &quot;Texture&quot;: &quot;Natural skin texture, visible snow particles&quot;,<br>    &quot;RealismLevel&quot;: &quot;Highly photorealistic&quot;<br>  },<br>  &quot;NegativePrompt&quot;: [<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;,<br>    &quot;overly smooth skin&quot;,<br>    &quot;harsh lighting&quot;,<br>    &quot;blurry face&quot;,<br>    &quot;distorted anatomy&quot;,<br>    &quot;oversaturated colors&quot;<br>  ],<br>  &quot;ResponseFormat&quot;: {<br>    &quot;Type&quot;: &quot;Single image&quot;,<br>    &quot;Orientation&quot;: &quot;Portrait&quot;,<br>    &quot;AspectRatio&quot;: &quot;2:3&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008379371405668478-1.jpg" alt="&quot;Objective&quot;: &quot;Generate a cinematic, photorealistic portrait i..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 705,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #1237 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;aspect ratio&quot;: &quot;9:16&quot;, &quot;quality&quot;: &quot;photorealistic, raw, unedited smartphone photograph&quot;, &quot;resolution&quot;: &quot;...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1237.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1237.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1237.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841115">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022501">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"元数据\": {\n    \"纵横比\": \"9:16\",\n    \"质量\": \"照片写实、原始、未编辑的智能手机照片\",\n    \"分辨率\": \"8k\",\n    \"相机\": \"智能手机相机（例如 iPhone 14 Pro）\",\n    \"镜头\": \"广角智能手机镜头\",\n    \"风格\": \"抓拍镜子自拍，自然室内夜晚光线，暖色调\",\n    \"构图\": \"坐在地毯上的女性全身镜像，手持智能手机拍照。\"\n  },\n  \"场景\": {\n    \"位置\": \"室内客厅\",\n    \"环境\": [\n      \"木地板上的大型灰色绒毛地毯\",\n      \"背景中的深灰色沙发\",\n      \"白色双开门\",\n      \"来自台灯的暖色环境光\"\n    ],\n    \"时间\": \"晚上\",\n    \"氛围\": \"随意、放松、亲密\"\n  },\n  \"照明\": {\n    \"类型\": \"温暖、昏暗的室内灯光\",\n    \"光源\": \"来自侧面的台灯光和智能手机屏幕光\",\n    \"效果\": \"柔和的暖色光晕和阴影，突出湿发和渔网袜的纹理。\"\n  },\n  \"主体\": {\n    \"身份\": \"来自 image_0.png 的女性，湿的铂金金色头发。\",\n    \"身体\": {\n      \"姿势\": \"盘腿坐在灰色地毯上，注视手中的智能手机，将其举起拍镜子自拍。\",\n      \"体型\": \"苗条体型。\"\n    },\n    \"服装\": {\n      \"衣物\": \"黑色短袖迷你连衣裙，黑色渔网袜。\",\n      \"配饰\": \"除了智能手机外没有可见配饰。\"\n    }\n  },\n  \"真实感重点\": {\n    \"纹理\": \"湿发发丝、渔网袜的细致网格、灰色绒毛地毯的质感、黑色连衣裙的面料。\",\n    \"瑕疵\": \"自然的皮肤质感，镜中真实的手机反光。\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;元数据&quot;: {<br>    &quot;纵横比&quot;: &quot;9:16&quot;,<br>    &quot;质量&quot;: &quot;照片写实、原始、未编辑的智能手机照片&quot;,<br>    &quot;分辨率&quot;: &quot;8k&quot;,<br>    &quot;相机&quot;: &quot;智能手机相机（例如 iPhone 14 Pro）&quot;,<br>    &quot;镜头&quot;: &quot;广角智能手机镜头&quot;,<br>    &quot;风格&quot;: &quot;抓拍镜子自拍，自然室内夜晚光线，暖色调&quot;,<br>    &quot;构图&quot;: &quot;坐在地毯上的女性全身镜像，手持智能手机拍照。&quot;<br>  },<br>  &quot;场景&quot;: {<br>    &quot;位置&quot;: &quot;室内客厅&quot;,<br>    &quot;环境&quot;: [<br>      &quot;木地板上的大型灰色绒毛地毯&quot;,<br>      &quot;背景中的深灰色沙发&quot;,<br>      &quot;白色双开门&quot;,<br>      &quot;来自台灯的暖色环境光&quot;<br>    ],<br>    &quot;时间&quot;: &quot;晚上&quot;,<br>    &quot;氛围&quot;: &quot;随意、放松、亲密&quot;<br>  },<br>  &quot;照明&quot;: {<br>    &quot;类型&quot;: &quot;温暖、昏暗的室内灯光&quot;,<br>    &quot;光源&quot;: &quot;来自侧面的台灯光和智能手机屏幕光&quot;,<br>    &quot;效果&quot;: &quot;柔和的暖色光晕和阴影，突出湿发和渔网袜的纹理。&quot;<br>  },<br>  &quot;主体&quot;: {<br>    &quot;身份&quot;: &quot;来自 image_0.png 的女性，湿的铂金金色头发。&quot;,<br>    &quot;身体&quot;: {<br>      &quot;姿势&quot;: &quot;盘腿坐在灰色地毯上，注视手中的智能手机，将其举起拍镜子自拍。&quot;,<br>      &quot;体型&quot;: &quot;苗条体型。&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;衣物&quot;: &quot;黑色短袖迷你连衣裙，黑色渔网袜。&quot;,<br>      &quot;配饰&quot;: &quot;除了智能手机外没有可见配饰。&quot;<br>    }<br>  },<br>  &quot;真实感重点&quot;: {<br>    &quot;纹理&quot;: &quot;湿发发丝、渔网袜的细致网格、灰色绒毛地毯的质感、黑色连衣裙的面料。&quot;,<br>    &quot;瑕疵&quot;: &quot;自然的皮肤质感，镜中真实的手机反光。&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;元数据&quot;: {<br>    &quot;纵横比&quot;: &quot;9:16&quot;,<br>    &quot;质量&quot;: &quot;照片写实、原始、未编辑的智能手机照片&quot;,<br>    &quot;分辨率&quot;: &quot;8k&quot;,<br>    &quot;相机&quot;: &quot;智能手机相机（例如 iPhone 14 Pro）&quot;,<br>    &quot;镜头&quot;: &quot;广角智能手机镜头&quot;,<br>    &quot;风格&quot;: &quot;抓拍镜子自拍，自然室内夜晚光线，暖色调&quot;,<br>    &quot;构图&quot;: &quot;坐在地毯上的女性全身镜像，手持智能手机拍照。&quot;<br>  },<br>  &quot;场景&quot;: {<br>    &quot;位置&quot;: &quot;室内客厅&quot;,<br>    &quot;环境&quot;: [<br>      &quot;木地板上的大型灰色绒毛地毯&quot;,<br>      &quot;背景中的深灰色沙发&quot;,<br>      &quot;白色双开门&quot;,<br>      &quot;来自台灯的暖色环境光&quot;<br>    ],<br>    &quot;时间&quot;: &quot;晚上&quot;,<br>    &quot;氛围&quot;: &quot;随意、放松、亲密&quot;<br>  },<br>  &quot;照明&quot;: {<br>    &quot;类型&quot;: &quot;温暖、昏暗的室内灯光&quot;,<br>    &quot;光源&quot;: &quot;来自侧面的台灯光和智能手机屏幕光&quot;,<br>    &quot;效果&quot;: &quot;柔和的暖色光晕和阴影，突出湿发和渔网袜的纹理。&quot;<br>  },<br>  &quot;主体&quot;: {<br>    &quot;身份&quot;: &quot;来自 image_0.png 的女性，湿的铂金金色头发。&quot;,<br>    &quot;身体&quot;: {<br>      &quot;姿势&quot;: &quot;盘腿坐在灰色地毯上，注视手中的智能手机，将其举起拍镜子自拍。&quot;,<br>      &quot;体型&quot;: &quot;苗条体型。&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;衣物&quot;: &quot;黑色短袖迷你连衣裙，黑色渔网袜。&quot;,<br>      &quot;配饰&quot;: &quot;除了智能手机外没有可见配饰。&quot;<br>    }<br>  },<br>  &quot;真实感重点&quot;: {<br>    &quot;纹理&quot;: &quot;湿发发丝、渔网袜的细致网格、灰色绒毛地毯的质感、黑色连衣裙的面料。&quot;,<br>    &quot;瑕疵&quot;: &quot;自然的皮肤质感，镜中真实的手机反光。&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"aspect_ratio\": \"9:16\",\n    \"quality\": \"photorealistic, raw, unedited smartphone photograph\",\n    \"resolution\": \"8k\",\n    \"camera\": \"Smartphone camera (e.g., iPhone 14 Pro)\",\n    \"lens\": \"Wide-angle smartphone lens\",\n    \"style\": \"Candid mirror selfie, natural indoor evening light, warm tone\",\n    \"composition\": \"Full-body mirror shot of a woman sitting on a rug, holding a smartphone to take the photo.\"\n  },\n  \"scene\": {\n    \"location\": \"Indoor living room\",\n    \"environment\": [\n      \"Large grey shag rug on wooden floor\",\n      \"Dark grey sofa in background\",\n      \"White double doors\",\n      \"Warm ambient lighting from a lamp\"\n    ],\n    \"time\": \"Evening\",\n    \"atmosphere\": \"Casual, relaxed, intimate\"\n  },\n  \"lighting\": {\n    \"type\": \"Warm, dim indoor light\",\n    \"source\": \"Lamp light from the side and smartphone screen light\",\n    \"effect\": \"Soft, warm glow with shadows, highlighting wet hair and fishnet texture.\"\n  },\n  \"subject\": {\n    \"identity\": \"The woman from image_0.png with wet platinum blonde hair.\",\n    \"body\": {\n      \"pose\": \"Sitting cross-legged on the grey rug, looking at the smartphone in her hand, holding it up for a mirror selfie.\",\n      \"physique\": \"Slim build.\"\n    },\n    \"outfit\": {\n      \"clothing\": \"Black short-sleeved mini-dress, black fishnet tights.\",\n      \"accessories\": \"None visible besides the smartphone.\"\n    }\n  },\n  \"realism_focus\": {\n    \"textures\": \"Wet hair strands, detailed mesh of the fishnet tights, texture of the grey shag rug, fabric of the black dress.\",\n    \"imperfections\": \"Natural skin texture, realistic phone reflection in the mirror.\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality&quot;: &quot;photorealistic, raw, unedited smartphone photograph&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;Smartphone camera (e.g., iPhone 14 Pro)&quot;,<br>    &quot;lens&quot;: &quot;Wide-angle smartphone lens&quot;,<br>    &quot;style&quot;: &quot;Candid mirror selfie, natural indoor evening light, warm tone&quot;,<br>    &quot;composition&quot;: &quot;Full-body mirror shot of a woman sitting on a rug, holding a smartphone to take the photo.&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;Indoor living room&quot;,<br>    &quot;environment&quot;: [<br>      &quot;Large grey shag rug on wooden floor&quot;,<br>      &quot;Dark grey sofa in background&quot;,<br>      &quot;White double doors&quot;,<br>      &quot;Warm ambient lighting from a lamp&quot;<br>    ],<br>    &quot;time&quot;: &quot;Evening&quot;,<br>    &quot;atmosphere&quot;: &quot;Casual, relaxed, intimate&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Warm, dim indoor light&quot;,<br>    &quot;source&quot;: &quot;Lamp light from the side and smartphone screen light&quot;,<br>    &quot;effect&quot;: &quot;Soft, warm glow with shadows, highlighting wet hair and fishnet texture.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;The woman from image_0.png with wet platinum blonde hair.&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;Sitting cross-legged on the grey rug, looking at the smartphone in her hand, holding it up for a mirror selfie.&quot;,<br>      &quot;physique&quot;: &quot;Slim build.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;Black short-sleeved mini-dress, black fishnet tights.&quot;,<br>      &quot;accessories&quot;: &quot;None visible besides the smartphone.&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;Wet hair strands, detailed mesh of the fishnet tights, texture of the grey shag rug, fabric of the black dress.&quot;,<br>    &quot;imperfections&quot;: &quot;Natural skin texture, realistic phone reflection in the mirror.&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;9:16&quot;,<br>    &quot;quality&quot;: &quot;photorealistic, raw, unedited smartphone photograph&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;Smartphone camera (e.g., iPhone 14 Pro)&quot;,<br>    &quot;lens&quot;: &quot;Wide-angle smartphone lens&quot;,<br>    &quot;style&quot;: &quot;Candid mirror selfie, natural indoor evening light, warm tone&quot;,<br>    &quot;composition&quot;: &quot;Full-body mirror shot of a woman sitting on a rug, holding a smartphone to take the photo.&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;Indoor living room&quot;,<br>    &quot;environment&quot;: [<br>      &quot;Large grey shag rug on wooden floor&quot;,<br>      &quot;Dark grey sofa in background&quot;,<br>      &quot;White double doors&quot;,<br>      &quot;Warm ambient lighting from a lamp&quot;<br>    ],<br>    &quot;time&quot;: &quot;Evening&quot;,<br>    &quot;atmosphere&quot;: &quot;Casual, relaxed, intimate&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Warm, dim indoor light&quot;,<br>    &quot;source&quot;: &quot;Lamp light from the side and smartphone screen light&quot;,<br>    &quot;effect&quot;: &quot;Soft, warm glow with shadows, highlighting wet hair and fishnet texture.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;The woman from image_0.png with wet platinum blonde hair.&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;Sitting cross-legged on the grey rug, looking at the smartphone in her hand, holding it up for a mirror selfie.&quot;,<br>      &quot;physique&quot;: &quot;Slim build.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;Black short-sleeved mini-dress, black fishnet tights.&quot;,<br>      &quot;accessories&quot;: &quot;None visible besides the smartphone.&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;Wet hair strands, detailed mesh of the fishnet tights, texture of the grey shag rug, fabric of the black dress.&quot;,<br>    &quot;imperfections&quot;: &quot;Natural skin texture, realistic phone reflection in the mirror.&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011435742375948739-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1237,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

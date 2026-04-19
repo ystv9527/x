@@ -7,11 +7,13 @@
     <title>Ultra detailed large scale miniature diorama of the [ICONIC S... #2464 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Ultra detailed large scale miniature diorama of the [ICONIC SCENE] from [MOVIE/SHOW] presented as a premium museum qu...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2464.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2464.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2464.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839889">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022223">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("超精细大比例微缩场景模型，展示来自 [MOVIE/SHOW] 的 [ICONIC SCENE]，以高端博物馆级桌面展览模型呈现。\n真实比例的模型工艺，极其精细的细节。\n[ICONIC SCENE] 在构图中完全可见并居中：关键角色以微缩形态准确呈现，标志性道具和布景件精准复原，整个场景捕捉于其最具辨识度的瞬间。\n周边微型布景环境：准确的地点细节、富有氛围的背景元素、微小的环境细节强化场景设定。\n比例：整个场景在画面内可见，从宽广的俯视角度完整展示环境，无任何元素被裁切。\n地面纹理：表面材质与场景环境相匹配，微小细节如碎屑、家具或自然物件增加真实感。\n材质：与场景美学相符的真实微缩质感、哑光模型表面、精确的人物与道具细节，博物馆级工艺。\n展示底座：优雅的矩形展览底座，配有精致的金属铭牌，刻有 “[MOVIE/SHOW] – [ICONIC SCENE]”。\n灯光：来自上方的柔和博物馆聚光灯，轻柔阴影增强场景戏剧细节，干净的工作室环境。\n摄影：宽广的高位鸟瞰角度，从上方展示整个微缩场景，移轴微型美学，画面从边缘到边缘完整可见，中心极为清晰，边缘略有景深衰减，无近景裁切。\n超逼真的收藏级电影场景模型，8K 分辨率，豪华博物馆展览呈现。\n纵向画幅，纵横比 4:5。", this)'>📋 复制</button>
         </div>
-        <p>超精细大比例微缩场景模型，展示来自 [MOVIE/SHOW] 的 [ICONIC SCENE]，以高端博物馆级桌面展览模型呈现。<br>真实比例的模型工艺，极其精细的细节。<br>[ICONIC SCENE] 在构图中完全可见并居中：关键角色以微缩形态准确呈现，标志性道具和布景件精准复原，整个场景捕捉于其最具辨识度的瞬间。<br>周边微型布景环境：准确的地点细节、富有氛围的背景元素、微小的环境细节强化场景设定。<br>比例：整个场景在画面内可见，从宽广的俯视角度完整展示环境，无任何元素被裁切。<br>地面纹理：表面材质与场景环境相匹配，微小细节如碎屑、家具或自然物件增加真实感。<br>材质：与场景美学相符的真实微缩质感、哑光模型表面、精确的人物与道具细节，博物馆级工艺。<br>展示底座：优雅的矩形展览底座，配有精致的金属铭牌，刻有 “[MOVIE/SHOW] – [ICONIC SCENE]”。<br>灯光：来自上方的柔和博物馆聚光灯，轻柔阴影增强场景戏剧细节，干净的工作室环境。<br>摄影：宽广的高位鸟瞰角度，从上方展示整个微缩场景，移轴微型美学，画面从边缘到边缘完整可见，中心极为清晰，边缘略有景深衰减，无近景裁切。<br>超逼真的收藏级电影场景模型，8K 分辨率，豪华博物馆展览呈现。<br>纵向画幅，纵横比 4:5。</p>
+        <div data-nosnippet><p>超精细大比例微缩场景模型，展示来自 [MOVIE/SHOW] 的 [ICONIC SCENE]，以高端博物馆级桌面展览模型呈现。<br>真实比例的模型工艺，极其精细的细节。<br>[ICONIC SCENE] 在构图中完全可见并居中：关键角色以微缩形态准确呈现，标志性道具和布景件精准复原，整个场景捕捉于其最具辨识度的瞬间。<br>周边微型布景环境：准确的地点细节、富有氛围的背景元素、微小的环境细节强化场景设定。<br>比例：整个场景在画面内可见，从宽广的俯视角度完整展示环境，无任何元素被裁切。<br>地面纹理：表面材质与场景环境相匹配，微小细节如碎屑、家具或自然物件增加真实感。<br>材质：与场景美学相符的真实微缩质感、哑光模型表面、精确的人物与道具细节，博物馆级工艺。<br>展示底座：优雅的矩形展览底座，配有精致的金属铭牌，刻有 “[MOVIE/SHOW] – [ICONIC SCENE]”。<br>灯光：来自上方的柔和博物馆聚光灯，轻柔阴影增强场景戏剧细节，干净的工作室环境。<br>摄影：宽广的高位鸟瞰角度，从上方展示整个微缩场景，移轴微型美学，画面从边缘到边缘完整可见，中心极为清晰，边缘略有景深衰减，无近景裁切。<br>超逼真的收藏级电影场景模型，8K 分辨率，豪华博物馆展览呈现。<br>纵向画幅，纵横比 4:5。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Ultra-detailed large-scale miniature diorama of the [ICONIC SCENE] from [MOVIE/SHOW] presented as a premium museum-quality desktop exhibition model.\nTrue scale model craftsmanship with extreme fine detail.\n[ICONIC SCENE] fully visible and centered in the composition: key characters accurately represented in miniature, iconic props and set pieces recreated in precise detail, the entire scene captured at its most recognizable moment.\nSurrounding miniature set environment: accurate location details, atmospheric background elements, tiny environmental details reinforcing the scene’s setting.\nScale: entire scene visible within frame, full environment shown from a wide overhead perspective, no elements cropped out.\nGround textures: surface materials matching the scene’s environment, micro details like debris, furniture, or natural elements adding realism.\nMaterials: realistic miniature textures matching the scene’s aesthetic, matte model surfaces, precise character and prop detailing, museum-grade craftsmanship.\nDisplay base: elegant rectangular exhibition base, subtle engraved metal plate reading “[MOVIE/SHOW] – [ICONIC SCENE]”.\nLighting: soft museum spotlighting from above, gentle shadows enhancing the scene’s dramatic details, clean studio environment.\nCamera: wide elevated bird’s-eye overview angle showing the entire diorama from above, tilt-shift miniature aesthetic, full scene visible from edge to edge, center extremely sharp with slight edge depth falloff, no close-up cropping.\nUltra realistic collectible movie scene model, 8K resolution, luxury museum exhibition presentation.\nAspect ratio 4:5 vertical.​​​​​​​​​​​​​​​​", this)'>📋 复制</button>
         </div>
-        <p>Ultra-detailed large-scale miniature diorama of the [ICONIC SCENE] from [MOVIE/SHOW] presented as a premium museum-quality desktop exhibition model.<br>True scale model craftsmanship with extreme fine detail.<br>[ICONIC SCENE] fully visible and centered in the composition: key characters accurately represented in miniature, iconic props and set pieces recreated in precise detail, the entire scene captured at its most recognizable moment.<br>Surrounding miniature set environment: accurate location details, atmospheric background elements, tiny environmental details reinforcing the scene’s setting.<br>Scale: entire scene visible within frame, full environment shown from a wide overhead perspective, no elements cropped out.<br>Ground textures: surface materials matching the scene’s environment, micro details like debris, furniture, or natural elements adding realism.<br>Materials: realistic miniature textures matching the scene’s aesthetic, matte model surfaces, precise character and prop detailing, museum-grade craftsmanship.<br>Display base: elegant rectangular exhibition base, subtle engraved metal plate reading “[MOVIE/SHOW] – [ICONIC SCENE]”.<br>Lighting: soft museum spotlighting from above, gentle shadows enhancing the scene’s dramatic details, clean studio environment.<br>Camera: wide elevated bird’s-eye overview angle showing the entire diorama from above, tilt-shift miniature aesthetic, full scene visible from edge to edge, center extremely sharp with slight edge depth falloff, no close-up cropping.<br>Ultra realistic collectible movie scene model, 8K resolution, luxury museum exhibition presentation.<br>Aspect ratio 4:5 vertical.​​​​​​​​​​​​​​​​</p>
+        <div data-nosnippet><p>Ultra-detailed large-scale miniature diorama of the [ICONIC SCENE] from [MOVIE/SHOW] presented as a premium museum-quality desktop exhibition model.<br>True scale model craftsmanship with extreme fine detail.<br>[ICONIC SCENE] fully visible and centered in the composition: key characters accurately represented in miniature, iconic props and set pieces recreated in precise detail, the entire scene captured at its most recognizable moment.<br>Surrounding miniature set environment: accurate location details, atmospheric background elements, tiny environmental details reinforcing the scene’s setting.<br>Scale: entire scene visible within frame, full environment shown from a wide overhead perspective, no elements cropped out.<br>Ground textures: surface materials matching the scene’s environment, micro details like debris, furniture, or natural elements adding realism.<br>Materials: realistic miniature textures matching the scene’s aesthetic, matte model surfaces, precise character and prop detailing, museum-grade craftsmanship.<br>Display base: elegant rectangular exhibition base, subtle engraved metal plate reading “[MOVIE/SHOW] – [ICONIC SCENE]”.<br>Lighting: soft museum spotlighting from above, gentle shadows enhancing the scene’s dramatic details, clean studio environment.<br>Camera: wide elevated bird’s-eye overview angle showing the entire diorama from above, tilt-shift miniature aesthetic, full scene visible from edge to edge, center extremely sharp with slight edge depth falloff, no close-up cropping.<br>Ultra realistic collectible movie scene model, 8K resolution, luxury museum exhibition presentation.<br>Aspect ratio 4:5 vertical.​​​​​​​​​​​​​​​​</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2031083876005576937-1.jpg" alt="Ultra detailed large scale miniature diorama of the [ICONIC S..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2464,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #1468 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;aspect ratio&quot;: &quot;4:5&quot;, &quot;quality&quot;: &quot;ultra photorealistic, raw, professional fashion photography&quot;, &quot;resolut...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1468.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1468.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1468.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845085">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023644">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"aspect_ratio\": \"4:5\",\n    \"quality\": \"极致写实、RAW、专业时尚摄影\",\n    \"resolution\": \"8K\",\n    \"camera\": \"无反相机（如 Sony A7R IV）\",\n    \"lens\": \"24mm f/1.4 广角镜头\",\n    \"style\": \"干净美学、极简、运动型生活方式、高端工作室质感\",\n    \"composition\": \"极高角度俯视拍摄，直接向下拍摄跪坐的女性，被摄主体居中，聚焦于脸部和上半身。\"\n  },\n  \"scene\": {\n    \"location\": \"一个极简、明亮的室内空间，色调中性。\",\n    \"environment\": [\n      \"地面上有一张大型、柔软、毛茸茸的米色人造毛皮地毯\",\n      \"背景为纯净的米白色或浅米色墙面\",\n      \"干净、简洁、极简的空间\"\n    ],\n    \"time\": \"白天，室内明亮通透。\",\n    \"atmosphere\": \"自信、舒适、现代、精致。\"\n  },\n  \"lighting\": {\n    \"type\": \"柔和、漫射的自然日光或顶灯柔光箱照明。\",\n    \"source\": \"来自正上方的大窗户或专业工作室灯光。\",\n    \"effect\": \"均匀、明亮的照明，消除强烈阴影，突出肌肤光泽与金发的质感。\"\n  },\n  \"subject\": {\n    \"identity\": \"身份：一位极其美丽的年轻女性，拥有光滑的铂金色头发、白皙肌肤和淡绿色眼睛。她的双唇圆润自然、眉毛轮廓分明。\",\n    \"body\": {\n      \"pose\": \"跪在毛茸茸的地毯上，身体向镜头前倾，双手抬至头部调整高马尾。\",\n      \"physique\": \"健美的、运动型身材，臂部和肩部线条结实。\"\n    },\n    \"outfit\": {\n      \"clothing\": \"黑色无袖罗纹短上衣，搭配高腰黑色瑜伽紧身裤。\",\n      \"accessories\": \"优雅的白珍珠项链、小型金色圈形耳环。\"\n    }\n  },\n  \"realism_focus\": {\n    \"textures\": \"纹理：毛茸茸地毯的纤维细节、黑色上衣的罗纹面料、金发的单根发丝及光泽、光滑但真实的皮肤质感与微小毛孔。\",\n    \"imperfections\": \"瑕疵：嘴唇和眼睛的自然高光、落在地毯上的柔和阴影、卷发时手臂的真实紧张感。\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: &quot;极致写实、RAW、专业时尚摄影&quot;,<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;camera&quot;: &quot;无反相机（如 Sony A7R IV）&quot;,<br>    &quot;lens&quot;: &quot;24mm f/1.4 广角镜头&quot;,<br>    &quot;style&quot;: &quot;干净美学、极简、运动型生活方式、高端工作室质感&quot;,<br>    &quot;composition&quot;: &quot;极高角度俯视拍摄，直接向下拍摄跪坐的女性，被摄主体居中，聚焦于脸部和上半身。&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;一个极简、明亮的室内空间，色调中性。&quot;,<br>    &quot;environment&quot;: [<br>      &quot;地面上有一张大型、柔软、毛茸茸的米色人造毛皮地毯&quot;,<br>      &quot;背景为纯净的米白色或浅米色墙面&quot;,<br>      &quot;干净、简洁、极简的空间&quot;<br>    ],<br>    &quot;time&quot;: &quot;白天，室内明亮通透。&quot;,<br>    &quot;atmosphere&quot;: &quot;自信、舒适、现代、精致。&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和、漫射的自然日光或顶灯柔光箱照明。&quot;,<br>    &quot;source&quot;: &quot;来自正上方的大窗户或专业工作室灯光。&quot;,<br>    &quot;effect&quot;: &quot;均匀、明亮的照明，消除强烈阴影，突出肌肤光泽与金发的质感。&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;身份：一位极其美丽的年轻女性，拥有光滑的铂金色头发、白皙肌肤和淡绿色眼睛。她的双唇圆润自然、眉毛轮廓分明。&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;跪在毛茸茸的地毯上，身体向镜头前倾，双手抬至头部调整高马尾。&quot;,<br>      &quot;physique&quot;: &quot;健美的、运动型身材，臂部和肩部线条结实。&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;黑色无袖罗纹短上衣，搭配高腰黑色瑜伽紧身裤。&quot;,<br>      &quot;accessories&quot;: &quot;优雅的白珍珠项链、小型金色圈形耳环。&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;纹理：毛茸茸地毯的纤维细节、黑色上衣的罗纹面料、金发的单根发丝及光泽、光滑但真实的皮肤质感与微小毛孔。&quot;,<br>    &quot;imperfections&quot;: &quot;瑕疵：嘴唇和眼睛的自然高光、落在地毯上的柔和阴影、卷发时手臂的真实紧张感。&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: &quot;极致写实、RAW、专业时尚摄影&quot;,<br>    &quot;resolution&quot;: &quot;8K&quot;,<br>    &quot;camera&quot;: &quot;无反相机（如 Sony A7R IV）&quot;,<br>    &quot;lens&quot;: &quot;24mm f/1.4 广角镜头&quot;,<br>    &quot;style&quot;: &quot;干净美学、极简、运动型生活方式、高端工作室质感&quot;,<br>    &quot;composition&quot;: &quot;极高角度俯视拍摄，直接向下拍摄跪坐的女性，被摄主体居中，聚焦于脸部和上半身。&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;一个极简、明亮的室内空间，色调中性。&quot;,<br>    &quot;environment&quot;: [<br>      &quot;地面上有一张大型、柔软、毛茸茸的米色人造毛皮地毯&quot;,<br>      &quot;背景为纯净的米白色或浅米色墙面&quot;,<br>      &quot;干净、简洁、极简的空间&quot;<br>    ],<br>    &quot;time&quot;: &quot;白天，室内明亮通透。&quot;,<br>    &quot;atmosphere&quot;: &quot;自信、舒适、现代、精致。&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和、漫射的自然日光或顶灯柔光箱照明。&quot;,<br>    &quot;source&quot;: &quot;来自正上方的大窗户或专业工作室灯光。&quot;,<br>    &quot;effect&quot;: &quot;均匀、明亮的照明，消除强烈阴影，突出肌肤光泽与金发的质感。&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;身份：一位极其美丽的年轻女性，拥有光滑的铂金色头发、白皙肌肤和淡绿色眼睛。她的双唇圆润自然、眉毛轮廓分明。&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;跪在毛茸茸的地毯上，身体向镜头前倾，双手抬至头部调整高马尾。&quot;,<br>      &quot;physique&quot;: &quot;健美的、运动型身材，臂部和肩部线条结实。&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;黑色无袖罗纹短上衣，搭配高腰黑色瑜伽紧身裤。&quot;,<br>      &quot;accessories&quot;: &quot;优雅的白珍珠项链、小型金色圈形耳环。&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;纹理：毛茸茸地毯的纤维细节、黑色上衣的罗纹面料、金发的单根发丝及光泽、光滑但真实的皮肤质感与微小毛孔。&quot;,<br>    &quot;imperfections&quot;: &quot;瑕疵：嘴唇和眼睛的自然高光、落在地毯上的柔和阴影、卷发时手臂的真实紧张感。&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"aspect_ratio\": \"4:5\",\n    \"quality\": \"ultra_photorealistic, raw, professional fashion photography\",\n    \"resolution\": \"8k\",\n    \"camera\": \"Mirrorless camera (e.g., Sony A7R IV)\",\n    \"lens\": \"24mm f/1.4 wide-angle lens\",\n    \"style\": \"Clean girl aesthetic, minimalist, athletic lifestyle, high-end studio look\",\n    \"composition\": \"Extreme high-angle shot looking directly down at a woman kneeling, centered framing, focus on face and upper body.\"\n  },\n  \"scene\": {\n    \"location\": \"A minimalist, bright interior room with neutral tones.\",\n    \"environment\": [\n      \"Large, plush, shaggy beige faux-fur rug on the floor\",\n      \"Plain off-white or light beige wall in the background\",\n      \"Clean, uncluttered minimalist space\"\n    ],\n    \"time\": \"Daytime, bright and airy indoor setting.\",\n    \"atmosphere\": \"Confident, cozy, modern, polished.\"\n  },\n  \"lighting\": {\n    \"type\": \"Soft, diffused natural daylight or overhead softbox lighting.\",\n    \"source\": \"Large window or professional studio light from above.\",\n    \"effect\": \"Even, bright illumination that eliminates harsh shadows, highlighting the glow of the skin and the texture of the blonde hair.\"\n  },\n  \"subject\": {\n    \"identity\": \"A stunningly beautiful young woman with sleek platinum blonde hair, fair skin, and light green eyes. She has distinctively plump, natural lips and defined eyebrows.\",\n    \"body\": {\n      \"pose\": \"Kneeling on the shaggy rug, leaning her body forward towards the lens, hands raised to her head as she adjusts a high ponytail.\",\n      \"physique\": \"Fit, athletic build with toned arms and shoulders.\"\n    },\n    \"outfit\": {\n      \"clothing\": \"Black sleeveless ribbed crop top, matching high-waisted black yoga leggings.\",\n      \"accessories\": \"Elegant white pearl necklace, small gold hoop earrings.\"\n    }\n  },\n  \"realism_focus\": {\n    \"textures\": \"Detailed fiber texture of the shaggy rug, ribbed fabric of the black top, individual strands and sheen of the blonde hair, smooth but realistic skin texture with subtle pores.\",\n    \"imperfections\": \"Natural highlights on the lips and eyes, soft shadows cast on the rug, realistic tension in the arms while holding the hair.\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: &quot;ultra_photorealistic, raw, professional fashion photography&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;Mirrorless camera (e.g., Sony A7R IV)&quot;,<br>    &quot;lens&quot;: &quot;24mm f/1.4 wide-angle lens&quot;,<br>    &quot;style&quot;: &quot;Clean girl aesthetic, minimalist, athletic lifestyle, high-end studio look&quot;,<br>    &quot;composition&quot;: &quot;Extreme high-angle shot looking directly down at a woman kneeling, centered framing, focus on face and upper body.&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;A minimalist, bright interior room with neutral tones.&quot;,<br>    &quot;environment&quot;: [<br>      &quot;Large, plush, shaggy beige faux-fur rug on the floor&quot;,<br>      &quot;Plain off-white or light beige wall in the background&quot;,<br>      &quot;Clean, uncluttered minimalist space&quot;<br>    ],<br>    &quot;time&quot;: &quot;Daytime, bright and airy indoor setting.&quot;,<br>    &quot;atmosphere&quot;: &quot;Confident, cozy, modern, polished.&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Soft, diffused natural daylight or overhead softbox lighting.&quot;,<br>    &quot;source&quot;: &quot;Large window or professional studio light from above.&quot;,<br>    &quot;effect&quot;: &quot;Even, bright illumination that eliminates harsh shadows, highlighting the glow of the skin and the texture of the blonde hair.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;A stunningly beautiful young woman with sleek platinum blonde hair, fair skin, and light green eyes. She has distinctively plump, natural lips and defined eyebrows.&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;Kneeling on the shaggy rug, leaning her body forward towards the lens, hands raised to her head as she adjusts a high ponytail.&quot;,<br>      &quot;physique&quot;: &quot;Fit, athletic build with toned arms and shoulders.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;Black sleeveless ribbed crop top, matching high-waisted black yoga leggings.&quot;,<br>      &quot;accessories&quot;: &quot;Elegant white pearl necklace, small gold hoop earrings.&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;Detailed fiber texture of the shaggy rug, ribbed fabric of the black top, individual strands and sheen of the blonde hair, smooth but realistic skin texture with subtle pores.&quot;,<br>    &quot;imperfections&quot;: &quot;Natural highlights on the lips and eyes, soft shadows cast on the rug, realistic tension in the arms while holding the hair.&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;,<br>    &quot;quality&quot;: &quot;ultra_photorealistic, raw, professional fashion photography&quot;,<br>    &quot;resolution&quot;: &quot;8k&quot;,<br>    &quot;camera&quot;: &quot;Mirrorless camera (e.g., Sony A7R IV)&quot;,<br>    &quot;lens&quot;: &quot;24mm f/1.4 wide-angle lens&quot;,<br>    &quot;style&quot;: &quot;Clean girl aesthetic, minimalist, athletic lifestyle, high-end studio look&quot;,<br>    &quot;composition&quot;: &quot;Extreme high-angle shot looking directly down at a woman kneeling, centered framing, focus on face and upper body.&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;A minimalist, bright interior room with neutral tones.&quot;,<br>    &quot;environment&quot;: [<br>      &quot;Large, plush, shaggy beige faux-fur rug on the floor&quot;,<br>      &quot;Plain off-white or light beige wall in the background&quot;,<br>      &quot;Clean, uncluttered minimalist space&quot;<br>    ],<br>    &quot;time&quot;: &quot;Daytime, bright and airy indoor setting.&quot;,<br>    &quot;atmosphere&quot;: &quot;Confident, cozy, modern, polished.&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;Soft, diffused natural daylight or overhead softbox lighting.&quot;,<br>    &quot;source&quot;: &quot;Large window or professional studio light from above.&quot;,<br>    &quot;effect&quot;: &quot;Even, bright illumination that eliminates harsh shadows, highlighting the glow of the skin and the texture of the blonde hair.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;A stunningly beautiful young woman with sleek platinum blonde hair, fair skin, and light green eyes. She has distinctively plump, natural lips and defined eyebrows.&quot;,<br>    &quot;body&quot;: {<br>      &quot;pose&quot;: &quot;Kneeling on the shaggy rug, leaning her body forward towards the lens, hands raised to her head as she adjusts a high ponytail.&quot;,<br>      &quot;physique&quot;: &quot;Fit, athletic build with toned arms and shoulders.&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;clothing&quot;: &quot;Black sleeveless ribbed crop top, matching high-waisted black yoga leggings.&quot;,<br>      &quot;accessories&quot;: &quot;Elegant white pearl necklace, small gold hoop earrings.&quot;<br>    }<br>  },<br>  &quot;realism_focus&quot;: {<br>    &quot;textures&quot;: &quot;Detailed fiber texture of the shaggy rug, ribbed fabric of the black top, individual strands and sheen of the blonde hair, smooth but realistic skin texture with subtle pores.&quot;,<br>    &quot;imperfections&quot;: &quot;Natural highlights on the lips and eyes, soft shadows cast on the rug, realistic tension in the arms while holding the hair.&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2012264538234564772-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1468,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;meta&quot;: { #2222 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;meta&quot;: { &quot;quality&quot;: &quot;ultra photorealistic, raw style, 8k&quot;, &quot;camera&quot;: &quot;iPhone 15 Pro Max&quot;, &quot;lighting&quot;: &quot;direct hars...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2222.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2222.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2222.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840125">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022275">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("抱歉，我无法协助翻译可能涉及未成年人或带有高度性化描述的人物内容。若您确认文中人物年满18岁并希望继续翻译，请明确说明；或者如果您愿意，我可以在不包含性化细节的前提下对文本进行翻译。请告诉我您想如何处理。", this)'>📋 复制</button>
         </div>
-        <p>抱歉，我无法协助翻译可能涉及未成年人或带有高度性化描述的人物内容。若您确认文中人物年满18岁并希望继续翻译，请明确说明；或者如果您愿意，我可以在不包含性化细节的前提下对文本进行翻译。请告诉我您想如何处理。</p>
+        <div data-nosnippet><p>抱歉，我无法协助翻译可能涉及未成年人或带有高度性化描述的人物内容。若您确认文中人物年满18岁并希望继续翻译，请明确说明；或者如果您愿意，我可以在不包含性化细节的前提下对文本进行翻译。请告诉我您想如何处理。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"meta\": {\n    \"quality\": \"ultra_photorealistic, raw style, 8k\",\n    \"camera\": \"iPhone 15 Pro Max\",\n    \"lighting\": \"direct harsh flash, 2000s disposable camera aesthetic\",\n    \"style\": \"amateur selfie, no filter, sharp focus, nostalgic Y2K vibe\"\n  },\n  \"scene\": {\n    \"location\": \"A nostalgic Y2K-themed bedroom with boy band posters Backstreet Boys, a pink 'Y2K Cutie' calendar, and purple beaded curtains.\",\n    \"atmosphere\": \"Retro 2000s party, playful, high-energy, nostalgic pop-culture aesthetic.\"\n  },\n  \"subject\": {\n    \"gender\": \"female\",\n    \"body\": {\n      \"type\": \"hyper-extreme hourglass figure, non-standard proportions, biologically impossible ratio\",\n      \"breasts\": \"massive volumetric breasts, heavy full chest, deep cleavage, spilling out, impossibly large\",\n      \"waist\": \"impossibly tiny waist, snatched waist, corset-like definition, extreme inward curve\",\n      \"hips\": \"wide shelf hips, thick thighs, curvy silhouette, dramatic flare from the waist\"\n    },\n    \"face\": {\n      \"features\": \"natural beauty, minimal makeup, realistic skin texture, visible pores, slight imperfections, blonde curly hair with butterfly clips\",\n      \"expression\": \"playful wink, tongue out, joyful and energetic\"\n    },\n    \"outfit\": {\n      \"description\": \"Sparkly blue sequin halter top, ultra-short denim mini skirt, and chunky platform sandals.\",\n      \"fit\": \"extremely tight, bursting seams, struggling to contain volume, fabric under maximum tension, low-rise fit emphasizing the hip curve\"\n    },\n    \"pose\": \"Kneeling on a clear inflatable chair, holding a silver flip phone up, winking at the camera.\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;ultra_photorealistic, raw style, 8k&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro Max&quot;,<br>    &quot;lighting&quot;: &quot;direct harsh flash, 2000s disposable camera aesthetic&quot;,<br>    &quot;style&quot;: &quot;amateur selfie, no filter, sharp focus, nostalgic Y2K vibe&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;A nostalgic Y2K-themed bedroom with boy band posters Backstreet Boys, a pink &#39;Y2K Cutie&#39; calendar, and purple beaded curtains.&quot;,<br>    &quot;atmosphere&quot;: &quot;Retro 2000s party, playful, high-energy, nostalgic pop-culture aesthetic.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;hyper-extreme hourglass figure, non-standard proportions, biologically impossible ratio&quot;,<br>      &quot;breasts&quot;: &quot;massive volumetric breasts, heavy full chest, deep cleavage, spilling out, impossibly large&quot;,<br>      &quot;waist&quot;: &quot;impossibly tiny waist, snatched waist, corset-like definition, extreme inward curve&quot;,<br>      &quot;hips&quot;: &quot;wide shelf hips, thick thighs, curvy silhouette, dramatic flare from the waist&quot;<br>    },<br>    &quot;face&quot;: {<br>      &quot;features&quot;: &quot;natural beauty, minimal makeup, realistic skin texture, visible pores, slight imperfections, blonde curly hair with butterfly clips&quot;,<br>      &quot;expression&quot;: &quot;playful wink, tongue out, joyful and energetic&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;description&quot;: &quot;Sparkly blue sequin halter top, ultra-short denim mini skirt, and chunky platform sandals.&quot;,<br>      &quot;fit&quot;: &quot;extremely tight, bursting seams, struggling to contain volume, fabric under maximum tension, low-rise fit emphasizing the hip curve&quot;<br>    },<br>    &quot;pose&quot;: &quot;Kneeling on a clear inflatable chair, holding a silver flip phone up, winking at the camera.&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;meta&quot;: {<br>    &quot;quality&quot;: &quot;ultra_photorealistic, raw style, 8k&quot;,<br>    &quot;camera&quot;: &quot;iPhone 15 Pro Max&quot;,<br>    &quot;lighting&quot;: &quot;direct harsh flash, 2000s disposable camera aesthetic&quot;,<br>    &quot;style&quot;: &quot;amateur selfie, no filter, sharp focus, nostalgic Y2K vibe&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;A nostalgic Y2K-themed bedroom with boy band posters Backstreet Boys, a pink &#39;Y2K Cutie&#39; calendar, and purple beaded curtains.&quot;,<br>    &quot;atmosphere&quot;: &quot;Retro 2000s party, playful, high-energy, nostalgic pop-culture aesthetic.&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;body&quot;: {<br>      &quot;type&quot;: &quot;hyper-extreme hourglass figure, non-standard proportions, biologically impossible ratio&quot;,<br>      &quot;breasts&quot;: &quot;massive volumetric breasts, heavy full chest, deep cleavage, spilling out, impossibly large&quot;,<br>      &quot;waist&quot;: &quot;impossibly tiny waist, snatched waist, corset-like definition, extreme inward curve&quot;,<br>      &quot;hips&quot;: &quot;wide shelf hips, thick thighs, curvy silhouette, dramatic flare from the waist&quot;<br>    },<br>    &quot;face&quot;: {<br>      &quot;features&quot;: &quot;natural beauty, minimal makeup, realistic skin texture, visible pores, slight imperfections, blonde curly hair with butterfly clips&quot;,<br>      &quot;expression&quot;: &quot;playful wink, tongue out, joyful and energetic&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;description&quot;: &quot;Sparkly blue sequin halter top, ultra-short denim mini skirt, and chunky platform sandals.&quot;,<br>      &quot;fit&quot;: &quot;extremely tight, bursting seams, struggling to contain volume, fabric under maximum tension, low-rise fit emphasizing the hip curve&quot;<br>    },<br>    &quot;pose&quot;: &quot;Kneeling on a clear inflatable chair, holding a silver flip phone up, winking at the camera.&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2025885106750025862-1.jpg" alt="&quot;meta&quot;: {" loading="lazy"><img src="/images/tweet-2025885106750025862-2.jpg" alt="&quot;meta&quot;: {" loading="lazy"><img src="/images/tweet-2025885106750025862-3.jpg" alt="&quot;meta&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2222,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

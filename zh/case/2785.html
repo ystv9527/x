@@ -7,11 +7,13 @@
     <title>雨夜真人+Q版同框拍法 #2785 | Gem Nana AI 提示词库</title>
     <meta name="description" content="提供雨夜8K电影质感提示词：一次只用一个姿势，让真人与Q版双身在霓虹湿路上同步互动。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2785.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2785.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2785.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839527">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022152">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,16 +206,16 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一个超写实的8K电影镜头，拍摄一位年轻女子和她的迷你Q版替身，在雨水湿滑的城市斑马线上。环境设有湿滑的沥青斑马线，映照着鲜艳的霓虹城市灯光，细雨细作，形成细微涟漪和氛围深度。灯光氛围浓郁且具电影感，红、蓝、黄的招牌在地面上闪烁。\r\n这名女子留着长发，略带湿气，穿着一件棕褐色风衣，外面是黑色上衣和黑色裤子，脚踩白色运动鞋。她手里拿着一把透明伞。她身旁站着一个小巧可爱的Q版版，完美匹配她的服装、发型和配饰，手里还拿着一把迷你透明伞。Q版角色反映了主角的情绪和互动。\r\n姿势：\r\n1。她站在斑马线中央，直视镜头，表情镇定，伞举过头顶。Q版站在她身旁，模仿着姿势，但姿势略显夸张可爱。\r\n2.她半步走过斑马线，脸上带着平静自信的表情微微侧头，伞举过肩膀。Q版版则用细小而有力的步伐跟在她身旁，努力跟上。\r\n3. 她半步走过斑马线，脸上带着平静自信的表情微微侧头，伞举过肩膀。Q版版则用细小而有力的步伐跟在她身旁，努力跟上。\r\n4. 她轻轻地原地旋转，风衣微微张开，微笑着，雨滴四散。Q版旋转得很兴奋，略显失衡，形成可爱而动感的对比。”", this)'>📋 复制</button>
         </div>
-        <p>一个超写实的8K电影镜头，拍摄一位年轻女子和她的迷你Q版替身，在雨水湿滑的城市斑马线上。环境设有湿滑的沥青斑马线，映照着鲜艳的霓虹城市灯光，细雨细作，形成细微涟漪和氛围深度。灯光氛围浓郁且具电影感，红、蓝、黄的招牌在地面上闪烁。<br>这名女子留着长发，略带湿气，穿着一件棕褐色风衣，外面是黑色上衣和黑色裤子，脚踩白色运动鞋。她手里拿着一把透明伞。她身旁站着一个小巧可爱的Q版版，完美匹配她的服装、发型和配饰，手里还拿着一把迷你透明伞。Q版角色反映了主角的情绪和互动。<br>姿势：<br>1。她站在斑马线中央，直视镜头，表情镇定，伞举过头顶。Q版站在她身旁，模仿着姿势，但姿势略显夸张可爱。<br>2.她半步走过斑马线，脸上带着平静自信的表情微微侧头，伞举过肩膀。Q版版则用细小而有力的步伐跟在她身旁，努力跟上。<br>3. 她半步走过斑马线，脸上带着平静自信的表情微微侧头，伞举过肩膀。Q版版则用细小而有力的步伐跟在她身旁，努力跟上。<br>4. 她轻轻地原地旋转，风衣微微张开，微笑着，雨滴四散。Q版旋转得很兴奋，略显失衡，形成可爱而动感的对比。”</p>
+        <div data-nosnippet><p>一个超写实的8K电影镜头，拍摄一位年轻女子和她的迷你Q版替身，在雨水湿滑的城市斑马线上。环境设有湿滑的沥青斑马线，映照着鲜艳的霓虹城市灯光，细雨细作，形成细微涟漪和氛围深度。灯光氛围浓郁且具电影感，红、蓝、黄的招牌在地面上闪烁。<br>这名女子留着长发，略带湿气，穿着一件棕褐色风衣，外面是黑色上衣和黑色裤子，脚踩白色运动鞋。她手里拿着一把透明伞。她身旁站着一个小巧可爱的Q版版，完美匹配她的服装、发型和配饰，手里还拿着一把迷你透明伞。Q版角色反映了主角的情绪和互动。<br>姿势：<br>1。她站在斑马线中央，直视镜头，表情镇定，伞举过头顶。Q版站在她身旁，模仿着姿势，但姿势略显夸张可爱。<br>2.她半步走过斑马线，脸上带着平静自信的表情微微侧头，伞举过肩膀。Q版版则用细小而有力的步伐跟在她身旁，努力跟上。<br>3. 她半步走过斑马线，脸上带着平静自信的表情微微侧头，伞举过肩膀。Q版版则用细小而有力的步伐跟在她身旁，努力跟上。<br>4. 她轻轻地原地旋转，风衣微微张开，微笑着，雨滴四散。Q版旋转得很兴奋，略显失衡，形成可爱而动感的对比。”</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("\"A hyper-realistic cinematic 8K shot of a young woman and her miniature chibi-style double on a rain-slicked city crosswalk at night. The environment features a wet asphalt zebra crossing reflecting vibrant neon city lights, with soft rain creating subtle ripples and atmospheric depth. The lighting is moody and cinematic, with reflections of red, blue, and yellow signage shimmering across the ground.\r\nThe woman has long, slightly damp hair and wears a tan trench coat over a black top and black trousers, paired with white sneakers. She holds a transparent umbrella. Beside her stands a tiny, adorable chibi version of herself, perfectly matching her outfit, hairstyle, and accessories, also holding a miniature clear umbrella. The chibi character mirrors the mood and interaction of the main subject.\r\nPose:\r\n1. She stands upright at the center of the crosswalk, looking directly at the camera with a composed expression, umbrella held above her head. The chibi version stands beside her, mimicking the pose but with a slightly exaggerated, adorable posture.\r\n2. She walks mid-step across the crosswalk, looking slightly to the side with a calm, confident expression, umbrella held above her shoulder. The chibi version marches beside her with tiny, energetic steps, trying to keep up.\r\n3. She walks mid-step across the crosswalk, looking slightly to the side with a calm, confident expression, umbrella held above her shoulder. The chibi version marches beside her with tiny, energetic steps, trying to keep up.\r\n4. She spins lightly in place, trench coat flaring subtly, smiling as raindrops scatter around. The chibi version spins enthusiastically, slightly off-balance, creating a cute, dynamic contrast.", this)'>📋 复制</button>
         </div>
-        <p>&quot;A hyper-realistic cinematic 8K shot of a young woman and her miniature chibi-style double on a rain-slicked city crosswalk at night. The environment features a wet asphalt zebra crossing reflecting vibrant neon city lights, with soft rain creating subtle ripples and atmospheric depth. The lighting is moody and cinematic, with reflections of red, blue, and yellow signage shimmering across the ground.<br>The woman has long, slightly damp hair and wears a tan trench coat over a black top and black trousers, paired with white sneakers. She holds a transparent umbrella. Beside her stands a tiny, adorable chibi version of herself, perfectly matching her outfit, hairstyle, and accessories, also holding a miniature clear umbrella. The chibi character mirrors the mood and interaction of the main subject.<br>Pose:<br>1. She stands upright at the center of the crosswalk, looking directly at the camera with a composed expression, umbrella held above her head. The chibi version stands beside her, mimicking the pose but with a slightly exaggerated, adorable posture.<br>2. She walks mid-step across the crosswalk, looking slightly to the side with a calm, confident expression, umbrella held above her shoulder. The chibi version marches beside her with tiny, energetic steps, trying to keep up.<br>3. She walks mid-step across the crosswalk, looking slightly to the side with a calm, confident expression, umbrella held above her shoulder. The chibi version marches beside her with tiny, energetic steps, trying to keep up.<br>4. She spins lightly in place, trench coat flaring subtly, smiling as raindrops scatter around. The chibi version spins enthusiastically, slightly off-balance, creating a cute, dynamic contrast.</p>
+        <div data-nosnippet><p>&quot;A hyper-realistic cinematic 8K shot of a young woman and her miniature chibi-style double on a rain-slicked city crosswalk at night. The environment features a wet asphalt zebra crossing reflecting vibrant neon city lights, with soft rain creating subtle ripples and atmospheric depth. The lighting is moody and cinematic, with reflections of red, blue, and yellow signage shimmering across the ground.<br>The woman has long, slightly damp hair and wears a tan trench coat over a black top and black trousers, paired with white sneakers. She holds a transparent umbrella. Beside her stands a tiny, adorable chibi version of herself, perfectly matching her outfit, hairstyle, and accessories, also holding a miniature clear umbrella. The chibi character mirrors the mood and interaction of the main subject.<br>Pose:<br>1. She stands upright at the center of the crosswalk, looking directly at the camera with a composed expression, umbrella held above her head. The chibi version stands beside her, mimicking the pose but with a slightly exaggerated, adorable posture.<br>2. She walks mid-step across the crosswalk, looking slightly to the side with a calm, confident expression, umbrella held above her shoulder. The chibi version marches beside her with tiny, energetic steps, trying to keep up.<br>3. She walks mid-step across the crosswalk, looking slightly to the side with a calm, confident expression, umbrella held above her shoulder. The chibi version marches beside her with tiny, energetic steps, trying to keep up.<br>4. She spins lightly in place, trench coat flaring subtly, smiling as raindrops scatter around. The chibi version spins enthusiastically, slightly off-balance, creating a cute, dynamic contrast.</p></div>
       </div>
-      <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/../images/tweet-2035938043824427028-1.jpg" alt="雨夜真人+Q版同框拍法" loading="lazy"><img src="/../images/tweet-2035938043824427028-2.jpg" alt="雨夜真人+Q版同框拍法" loading="lazy"><img src="/../images/tweet-2035938043824427028-3.jpg" alt="雨夜真人+Q版同框拍法" loading="lazy"></div></div>
+      <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2035938043824427028-1.jpg" alt="雨夜真人+Q版同框拍法" loading="lazy"><img src="/images/tweet-2035938043824427028-2.jpg" alt="雨夜真人+Q版同框拍法" loading="lazy"><img src="/images/tweet-2035938043824427028-3.jpg" alt="雨夜真人+Q版同框拍法" loading="lazy"></div></div>
       
       
     </div>
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2785,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

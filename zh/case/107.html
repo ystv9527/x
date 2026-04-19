@@ -7,11 +7,13 @@
     <title>超级动物英雄 #107 | Gem Nana AI 提示词库</title>
     <meta name="description" content="超级动物英雄 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/107.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/107.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/107.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842140">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022762">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一张超逼真的正方形1:1肖像，呈现一只[YOUR ANIMAL]以英雄姿态站立，面向略左。该动物穿着质感深灰色的超级英雄紧身服，贴合身形且哑光，具有可见的织物纹理和细微缝线。\n\n其胸前，在一个金色金属的超人式菱形徽章内，是[COUNTRY]国旗的织物刺绣版本（真实的缝线，略微凸起）。\n\n披在动物肩上的披风由[COUNTRY]国旗制成，具有丰富的布料褶皱和自然垂感。\n\n在主体背后，使用真实的布料背景展示完整的[COUNTRY]国旗，略微虚化以增加景深，并用柔和阴影增强真实感。\n\n照明应为温暖且具方向性（影棚风格），强调动物的毛发纹理、服装材质以及微妙肌肉胸部的轮廓。整体基调具有戏剧性和电影感，带有温暖的色彩分级且不过度对比。头部必须完全可见——不得裁切。", this)'>📋 复制</button>
         </div>
-        <p>一张超逼真的正方形1:1肖像，呈现一只[YOUR ANIMAL]以英雄姿态站立，面向略左。该动物穿着质感深灰色的超级英雄紧身服，贴合身形且哑光，具有可见的织物纹理和细微缝线。</p><p>其胸前，在一个金色金属的超人式菱形徽章内，是[COUNTRY]国旗的织物刺绣版本（真实的缝线，略微凸起）。</p><p>披在动物肩上的披风由[COUNTRY]国旗制成，具有丰富的布料褶皱和自然垂感。</p><p>在主体背后，使用真实的布料背景展示完整的[COUNTRY]国旗，略微虚化以增加景深，并用柔和阴影增强真实感。</p><p>照明应为温暖且具方向性（影棚风格），强调动物的毛发纹理、服装材质以及微妙肌肉胸部的轮廓。整体基调具有戏剧性和电影感，带有温暖的色彩分级且不过度对比。头部必须完全可见——不得裁切。</p>
+        <div data-nosnippet><p>一张超逼真的正方形1:1肖像，呈现一只[YOUR ANIMAL]以英雄姿态站立，面向略左。该动物穿着质感深灰色的超级英雄紧身服，贴合身形且哑光，具有可见的织物纹理和细微缝线。</p><p>其胸前，在一个金色金属的超人式菱形徽章内，是[COUNTRY]国旗的织物刺绣版本（真实的缝线，略微凸起）。</p><p>披在动物肩上的披风由[COUNTRY]国旗制成，具有丰富的布料褶皱和自然垂感。</p><p>在主体背后，使用真实的布料背景展示完整的[COUNTRY]国旗，略微虚化以增加景深，并用柔和阴影增强真实感。</p><p>照明应为温暖且具方向性（影棚风格），强调动物的毛发纹理、服装材质以及微妙肌肉胸部的轮廓。整体基调具有戏剧性和电影感，带有温暖的色彩分级且不过度对比。头部必须完全可见——不得裁切。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A hyper-realistic square 1:1 portrait of a [YOUR ANIMAL] standing in a heroic pose, facing slightly left. The animal wears a textured dark gray superhero suit, form-fitting and matte, with visible fabric grain and subtle seams.\n\nOn its chest, inside a golden metallic Superman-style diamond emblem, is a fabric-embroidered version of the [COUNTRY] national flag (realistic stitching, slightly raised).\n\nDraped over the animal’s shoulder is a flowing cape designed from the [COUNTRY] flag, with rich fabric folds and natural weight.\n\nBehind the subject, use a realistic fabric backdrop displaying the full [COUNTRY] flag, slightly out of focus to add depth, with soft shadows to enhance realism.\n\nLighting should be warm and directional (studio-style), emphasizing the animal’s fur texture, suit material, and the contours of a subtly muscular chest. The overall tone is dramatic and cinematic, with a warm color grading and no excessive contrast. The head must be fully visible — no cropping.", this)'>📋 复制</button>
         </div>
-        <p>A hyper-realistic square 1:1 portrait of a [YOUR ANIMAL] standing in a heroic pose, facing slightly left. The animal wears a textured dark gray superhero suit, form-fitting and matte, with visible fabric grain and subtle seams.</p><p>On its chest, inside a golden metallic Superman-style diamond emblem, is a fabric-embroidered version of the [COUNTRY] national flag (realistic stitching, slightly raised).</p><p>Draped over the animal’s shoulder is a flowing cape designed from the [COUNTRY] flag, with rich fabric folds and natural weight.</p><p>Behind the subject, use a realistic fabric backdrop displaying the full [COUNTRY] flag, slightly out of focus to add depth, with soft shadows to enhance realism.</p><p>Lighting should be warm and directional (studio-style), emphasizing the animal’s fur texture, suit material, and the contours of a subtly muscular chest. The overall tone is dramatic and cinematic, with a warm color grading and no excessive contrast. The head must be fully visible — no cropping.</p>
+        <div data-nosnippet><p>A hyper-realistic square 1:1 portrait of a [YOUR ANIMAL] standing in a heroic pose, facing slightly left. The animal wears a textured dark gray superhero suit, form-fitting and matte, with visible fabric grain and subtle seams.</p><p>On its chest, inside a golden metallic Superman-style diamond emblem, is a fabric-embroidered version of the [COUNTRY] national flag (realistic stitching, slightly raised).</p><p>Draped over the animal’s shoulder is a flowing cape designed from the [COUNTRY] flag, with rich fabric folds and natural weight.</p><p>Behind the subject, use a realistic fabric backdrop displaying the full [COUNTRY] flag, slightly out of focus to add depth, with soft shadows to enhance realism.</p><p>Lighting should be warm and directional (studio-style), emphasizing the animal’s fur texture, suit material, and the contours of a subtly muscular chest. The overall tone is dramatic and cinematic, with a warm color grading and no excessive contrast. The head must be fully visible — no cropping.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/107.png" alt="超级动物英雄" loading="lazy"><img src="/images/107-2.jpeg" alt="超级动物英雄" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 107,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

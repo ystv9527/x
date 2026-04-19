@@ -7,11 +7,13 @@
     <title>&quot;reference priority&quot;: { #1191 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;reference priority&quot;: { &quot;character face&quot;: &quot;STRICT REFER TO IMAGE&quot;, &quot;outfit and hair logic&quot;: &quot;FORCE EXACT REPLICA FR...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1191.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1191.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1191.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845376">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023707">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"参考优先级\": {\n    \"人物面部\": \"严格参照图片\",\n    \"服装及发型逻辑\": \"强制从参考中完全复制\",\n    \"鞋履逻辑\": \"强制从参考中完全复制\",\n    \"一致性权重\": \"最高\"\n  },\n  \"主体\": {\n    \"类型\": \"女性，身份与参考图完全匹配\",\n    \"构图\": \"极高角度鸟瞰全身照\",\n    \"身份锁定\": \"保持与参考图完全一致的面部特征\",\n    \"特征\": {\n      \"眼睛\": \"向上看镜头，目光明亮友好\",\n      \"头发\": \"完全复制参考发型：长度、颜色、质感和造型必须一模一样，无头饰\",\n      \"表情\": \"愉快可爱，带有俏皮微笑\"\n    },\n    \"姿势结构锁定\": {\n      \"整体\": \"自信站立于崎岖山峰最高点\",\n      \"手臂\": \"右手举至眼部附近，做出和平手势V字YA动作\",\n      \"手部\": \"手指清晰摆成脸侧和平手势\",\n      \"肩膀\": \"稍显耸肩，形成自上而下的透视缩短效果\",\n      \"视角\": \"重度广角畸变，使头部看起来比脚大\"\n    }\n  },\n  \"服装规格\": {\n    \"逻辑\": \"服装及鞋履必须与参考图完全克隆一致\",\n    \"主服装\": {\n      \"上衣\": \"与参考图内层完全相同\",\n      \"裤子\": \"与参考图裤子完全相同\",\n      \"鞋履\": \"完全复制参考图鞋款：鞋款、颜色及设计细节必须一模一样\"\n    }\n  },\n  \"环境\": {\n    \"场景\": \"高山峰顶，岩石崎岖，悬崖边缘\",\n    \"光线\": \"明亮自然日光，云层柔和漂浮于下方\",\n    \"背景\": \"远处天空里巨大的云朵排列清晰组成‘BeautyVerse’字样，悬浮于山脉之上\",\n    \"氛围\": \"宏伟且充满冒险的高海拔氛围，带有超现实元素\"\n  },\n  \"真实感及渲染\": {\n    \"风格\": \"冒险户外摄影，融合超现实主义元素\",\n    \"相机\": \"超广角镜头自上方拍摄，突出峰顶高度感\",\n    \"图像质量\": \"8K分辨率，极其逼真的岩石纹理和织物质感\",\n    \"长宽比\": \"3:4\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;参考优先级&quot;: {<br>    &quot;人物面部&quot;: &quot;严格参照图片&quot;,<br>    &quot;服装及发型逻辑&quot;: &quot;强制从参考中完全复制&quot;,<br>    &quot;鞋履逻辑&quot;: &quot;强制从参考中完全复制&quot;,<br>    &quot;一致性权重&quot;: &quot;最高&quot;<br>  },<br>  &quot;主体&quot;: {<br>    &quot;类型&quot;: &quot;女性，身份与参考图完全匹配&quot;,<br>    &quot;构图&quot;: &quot;极高角度鸟瞰全身照&quot;,<br>    &quot;身份锁定&quot;: &quot;保持与参考图完全一致的面部特征&quot;,<br>    &quot;特征&quot;: {<br>      &quot;眼睛&quot;: &quot;向上看镜头，目光明亮友好&quot;,<br>      &quot;头发&quot;: &quot;完全复制参考发型：长度、颜色、质感和造型必须一模一样，无头饰&quot;,<br>      &quot;表情&quot;: &quot;愉快可爱，带有俏皮微笑&quot;<br>    },<br>    &quot;姿势结构锁定&quot;: {<br>      &quot;整体&quot;: &quot;自信站立于崎岖山峰最高点&quot;,<br>      &quot;手臂&quot;: &quot;右手举至眼部附近，做出和平手势V字YA动作&quot;,<br>      &quot;手部&quot;: &quot;手指清晰摆成脸侧和平手势&quot;,<br>      &quot;肩膀&quot;: &quot;稍显耸肩，形成自上而下的透视缩短效果&quot;,<br>      &quot;视角&quot;: &quot;重度广角畸变，使头部看起来比脚大&quot;<br>    }<br>  },<br>  &quot;服装规格&quot;: {<br>    &quot;逻辑&quot;: &quot;服装及鞋履必须与参考图完全克隆一致&quot;,<br>    &quot;主服装&quot;: {<br>      &quot;上衣&quot;: &quot;与参考图内层完全相同&quot;,<br>      &quot;裤子&quot;: &quot;与参考图裤子完全相同&quot;,<br>      &quot;鞋履&quot;: &quot;完全复制参考图鞋款：鞋款、颜色及设计细节必须一模一样&quot;<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;场景&quot;: &quot;高山峰顶，岩石崎岖，悬崖边缘&quot;,<br>    &quot;光线&quot;: &quot;明亮自然日光，云层柔和漂浮于下方&quot;,<br>    &quot;背景&quot;: &quot;远处天空里巨大的云朵排列清晰组成‘BeautyVerse’字样，悬浮于山脉之上&quot;,<br>    &quot;氛围&quot;: &quot;宏伟且充满冒险的高海拔氛围，带有超现实元素&quot;<br>  },<br>  &quot;真实感及渲染&quot;: {<br>    &quot;风格&quot;: &quot;冒险户外摄影，融合超现实主义元素&quot;,<br>    &quot;相机&quot;: &quot;超广角镜头自上方拍摄，突出峰顶高度感&quot;,<br>    &quot;图像质量&quot;: &quot;8K分辨率，极其逼真的岩石纹理和织物质感&quot;,<br>    &quot;长宽比&quot;: &quot;3:4&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;参考优先级&quot;: {<br>    &quot;人物面部&quot;: &quot;严格参照图片&quot;,<br>    &quot;服装及发型逻辑&quot;: &quot;强制从参考中完全复制&quot;,<br>    &quot;鞋履逻辑&quot;: &quot;强制从参考中完全复制&quot;,<br>    &quot;一致性权重&quot;: &quot;最高&quot;<br>  },<br>  &quot;主体&quot;: {<br>    &quot;类型&quot;: &quot;女性，身份与参考图完全匹配&quot;,<br>    &quot;构图&quot;: &quot;极高角度鸟瞰全身照&quot;,<br>    &quot;身份锁定&quot;: &quot;保持与参考图完全一致的面部特征&quot;,<br>    &quot;特征&quot;: {<br>      &quot;眼睛&quot;: &quot;向上看镜头，目光明亮友好&quot;,<br>      &quot;头发&quot;: &quot;完全复制参考发型：长度、颜色、质感和造型必须一模一样，无头饰&quot;,<br>      &quot;表情&quot;: &quot;愉快可爱，带有俏皮微笑&quot;<br>    },<br>    &quot;姿势结构锁定&quot;: {<br>      &quot;整体&quot;: &quot;自信站立于崎岖山峰最高点&quot;,<br>      &quot;手臂&quot;: &quot;右手举至眼部附近，做出和平手势V字YA动作&quot;,<br>      &quot;手部&quot;: &quot;手指清晰摆成脸侧和平手势&quot;,<br>      &quot;肩膀&quot;: &quot;稍显耸肩，形成自上而下的透视缩短效果&quot;,<br>      &quot;视角&quot;: &quot;重度广角畸变，使头部看起来比脚大&quot;<br>    }<br>  },<br>  &quot;服装规格&quot;: {<br>    &quot;逻辑&quot;: &quot;服装及鞋履必须与参考图完全克隆一致&quot;,<br>    &quot;主服装&quot;: {<br>      &quot;上衣&quot;: &quot;与参考图内层完全相同&quot;,<br>      &quot;裤子&quot;: &quot;与参考图裤子完全相同&quot;,<br>      &quot;鞋履&quot;: &quot;完全复制参考图鞋款：鞋款、颜色及设计细节必须一模一样&quot;<br>    }<br>  },<br>  &quot;环境&quot;: {<br>    &quot;场景&quot;: &quot;高山峰顶，岩石崎岖，悬崖边缘&quot;,<br>    &quot;光线&quot;: &quot;明亮自然日光，云层柔和漂浮于下方&quot;,<br>    &quot;背景&quot;: &quot;远处天空里巨大的云朵排列清晰组成‘BeautyVerse’字样，悬浮于山脉之上&quot;,<br>    &quot;氛围&quot;: &quot;宏伟且充满冒险的高海拔氛围，带有超现实元素&quot;<br>  },<br>  &quot;真实感及渲染&quot;: {<br>    &quot;风格&quot;: &quot;冒险户外摄影，融合超现实主义元素&quot;,<br>    &quot;相机&quot;: &quot;超广角镜头自上方拍摄，突出峰顶高度感&quot;,<br>    &quot;图像质量&quot;: &quot;8K分辨率，极其逼真的岩石纹理和织物质感&quot;,<br>    &quot;长宽比&quot;: &quot;3:4&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"reference_priority\": {\n    \"character_face\": \"STRICT_REFER_TO_IMAGE\",\n    \"outfit_and_hair_logic\": \"FORCE_EXACT_REPLICA_FROM_REFERENCE\",\n    \"footwear_logic\": \"FORCE_EXACT_REPLICA_FROM_REFERENCE\",\n    \"consistency_weight\": \"MAXIMUM\"\n  },\n  \"subject\": {\n    \"type\": \"woman_identity_perfectly_matched_to_reference_image\",\n    \"framing\": \"extreme_high-angle_bird's-eye_view_full-body_shot\",\n    \"identity_lock\": \"maintaining_identical_facial_features_from_reference\",\n    \"features\": {\n      \"eyes\": \"looking_up_at_camera_with_a_bright_friendly_gaze\",\n      \"hair\": \"EXACT_REPLICATE_HAIRSTYLE_FROM_REFERENCE: length, color, texture, and style must be identical, no headwear\",\n      \"expression\": \"cheerful_and_cute_expression_with_a_playful_smile\"\n    },\n    \"pose_structural_lock\": {\n      \"overall\": \"standing_confidently_at_the_highest_point_of_a_rugged_mountain_peak\",\n      \"arms\": \"right_hand_raised_near_the_eye_making_a_peace_sign_V-sign_YA_gesture\",\n      \"hands\": \"fingers_clearly_formed_into_a_peace_sign_near_the_face\",\n      \"shoulders\": \"slightly_slouched_creating_a_top-down_foreshortening_effect\",\n      \"perspective\": \"heavy_wide-angle_distortion_making_the_head_look_larger_than_feet\"\n    }\n  },\n  \"apparel_specification\": {\n    \"logic\": \"CLOTHING_AND_FOOTWEAR_MUST_BE_AN_EXACT_CLONE_OF_REFERENCE_IMAGE\",\n    \"outfit_main_piece\": {\n      \"top\": \"Identical_inner_layer_as_seen_in_reference\",\n      \"bottom\": \"Identical_pants_from_reference_image\",\n      \"footwear\": \"EXACT_REPLICATE_FOOTWEAR_FROM_REFERENCE: replicate the specific shoes, colors, and design from the reference image exactly\"\n    }\n  },\n  \"environment\": {\n    \"setting\": \"the_summit_of_a_high_mountain_with_jagged_rocks_and_a_cliff_edge\",\n    \"lighting\": \"bright_natural_daylight_with_soft_clouds_below\",\n    \"background\": \"monumental_cloud_formations_in_the_distant_sky_arranged_clearly_to_spell_out_the_word_'BeautyVerse'_hovering_above_mountain_ranges\",\n    \"atmosphere\": \"majestic_and_adventurous_high-altitude_vibe_with_surreal_elements\"\n  },\n  \"realism_and_rendering\": {\n    \"style\": \"adventure_outdoor_photography_with_surrealist_elements\",\n    \"camera\": \"Ultra-wide_angle_lens_shot_from_above_height_emphasizing_the_height_of_the_peak\",\n    \"image_quality\": \"8k_resolution_hyper-realistic_rock_textures_and_fabric_weave\",\n    \"aspect_ratio\": \"3:4\"\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;reference_priority&quot;: {<br>    &quot;character_face&quot;: &quot;STRICT_REFER_TO_IMAGE&quot;,<br>    &quot;outfit_and_hair_logic&quot;: &quot;FORCE_EXACT_REPLICA_FROM_REFERENCE&quot;,<br>    &quot;footwear_logic&quot;: &quot;FORCE_EXACT_REPLICA_FROM_REFERENCE&quot;,<br>    &quot;consistency_weight&quot;: &quot;MAXIMUM&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;woman_identity_perfectly_matched_to_reference_image&quot;,<br>    &quot;framing&quot;: &quot;extreme_high-angle_bird&#39;s-eye_view_full-body_shot&quot;,<br>    &quot;identity_lock&quot;: &quot;maintaining_identical_facial_features_from_reference&quot;,<br>    &quot;features&quot;: {<br>      &quot;eyes&quot;: &quot;looking_up_at_camera_with_a_bright_friendly_gaze&quot;,<br>      &quot;hair&quot;: &quot;EXACT_REPLICATE_HAIRSTYLE_FROM_REFERENCE: length, color, texture, and style must be identical, no headwear&quot;,<br>      &quot;expression&quot;: &quot;cheerful_and_cute_expression_with_a_playful_smile&quot;<br>    },<br>    &quot;pose_structural_lock&quot;: {<br>      &quot;overall&quot;: &quot;standing_confidently_at_the_highest_point_of_a_rugged_mountain_peak&quot;,<br>      &quot;arms&quot;: &quot;right_hand_raised_near_the_eye_making_a_peace_sign_V-sign_YA_gesture&quot;,<br>      &quot;hands&quot;: &quot;fingers_clearly_formed_into_a_peace_sign_near_the_face&quot;,<br>      &quot;shoulders&quot;: &quot;slightly_slouched_creating_a_top-down_foreshortening_effect&quot;,<br>      &quot;perspective&quot;: &quot;heavy_wide-angle_distortion_making_the_head_look_larger_than_feet&quot;<br>    }<br>  },<br>  &quot;apparel_specification&quot;: {<br>    &quot;logic&quot;: &quot;CLOTHING_AND_FOOTWEAR_MUST_BE_AN_EXACT_CLONE_OF_REFERENCE_IMAGE&quot;,<br>    &quot;outfit_main_piece&quot;: {<br>      &quot;top&quot;: &quot;Identical_inner_layer_as_seen_in_reference&quot;,<br>      &quot;bottom&quot;: &quot;Identical_pants_from_reference_image&quot;,<br>      &quot;footwear&quot;: &quot;EXACT_REPLICATE_FOOTWEAR_FROM_REFERENCE: replicate the specific shoes, colors, and design from the reference image exactly&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;the_summit_of_a_high_mountain_with_jagged_rocks_and_a_cliff_edge&quot;,<br>    &quot;lighting&quot;: &quot;bright_natural_daylight_with_soft_clouds_below&quot;,<br>    &quot;background&quot;: &quot;monumental_cloud_formations_in_the_distant_sky_arranged_clearly_to_spell_out_the_word_&#39;BeautyVerse&#39;_hovering_above_mountain_ranges&quot;,<br>    &quot;atmosphere&quot;: &quot;majestic_and_adventurous_high-altitude_vibe_with_surreal_elements&quot;<br>  },<br>  &quot;realism_and_rendering&quot;: {<br>    &quot;style&quot;: &quot;adventure_outdoor_photography_with_surrealist_elements&quot;,<br>    &quot;camera&quot;: &quot;Ultra-wide_angle_lens_shot_from_above_height_emphasizing_the_height_of_the_peak&quot;,<br>    &quot;image_quality&quot;: &quot;8k_resolution_hyper-realistic_rock_textures_and_fabric_weave&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;reference_priority&quot;: {<br>    &quot;character_face&quot;: &quot;STRICT_REFER_TO_IMAGE&quot;,<br>    &quot;outfit_and_hair_logic&quot;: &quot;FORCE_EXACT_REPLICA_FROM_REFERENCE&quot;,<br>    &quot;footwear_logic&quot;: &quot;FORCE_EXACT_REPLICA_FROM_REFERENCE&quot;,<br>    &quot;consistency_weight&quot;: &quot;MAXIMUM&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;type&quot;: &quot;woman_identity_perfectly_matched_to_reference_image&quot;,<br>    &quot;framing&quot;: &quot;extreme_high-angle_bird&#39;s-eye_view_full-body_shot&quot;,<br>    &quot;identity_lock&quot;: &quot;maintaining_identical_facial_features_from_reference&quot;,<br>    &quot;features&quot;: {<br>      &quot;eyes&quot;: &quot;looking_up_at_camera_with_a_bright_friendly_gaze&quot;,<br>      &quot;hair&quot;: &quot;EXACT_REPLICATE_HAIRSTYLE_FROM_REFERENCE: length, color, texture, and style must be identical, no headwear&quot;,<br>      &quot;expression&quot;: &quot;cheerful_and_cute_expression_with_a_playful_smile&quot;<br>    },<br>    &quot;pose_structural_lock&quot;: {<br>      &quot;overall&quot;: &quot;standing_confidently_at_the_highest_point_of_a_rugged_mountain_peak&quot;,<br>      &quot;arms&quot;: &quot;right_hand_raised_near_the_eye_making_a_peace_sign_V-sign_YA_gesture&quot;,<br>      &quot;hands&quot;: &quot;fingers_clearly_formed_into_a_peace_sign_near_the_face&quot;,<br>      &quot;shoulders&quot;: &quot;slightly_slouched_creating_a_top-down_foreshortening_effect&quot;,<br>      &quot;perspective&quot;: &quot;heavy_wide-angle_distortion_making_the_head_look_larger_than_feet&quot;<br>    }<br>  },<br>  &quot;apparel_specification&quot;: {<br>    &quot;logic&quot;: &quot;CLOTHING_AND_FOOTWEAR_MUST_BE_AN_EXACT_CLONE_OF_REFERENCE_IMAGE&quot;,<br>    &quot;outfit_main_piece&quot;: {<br>      &quot;top&quot;: &quot;Identical_inner_layer_as_seen_in_reference&quot;,<br>      &quot;bottom&quot;: &quot;Identical_pants_from_reference_image&quot;,<br>      &quot;footwear&quot;: &quot;EXACT_REPLICATE_FOOTWEAR_FROM_REFERENCE: replicate the specific shoes, colors, and design from the reference image exactly&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;the_summit_of_a_high_mountain_with_jagged_rocks_and_a_cliff_edge&quot;,<br>    &quot;lighting&quot;: &quot;bright_natural_daylight_with_soft_clouds_below&quot;,<br>    &quot;background&quot;: &quot;monumental_cloud_formations_in_the_distant_sky_arranged_clearly_to_spell_out_the_word_&#39;BeautyVerse&#39;_hovering_above_mountain_ranges&quot;,<br>    &quot;atmosphere&quot;: &quot;majestic_and_adventurous_high-altitude_vibe_with_surreal_elements&quot;<br>  },<br>  &quot;realism_and_rendering&quot;: {<br>    &quot;style&quot;: &quot;adventure_outdoor_photography_with_surrealist_elements&quot;,<br>    &quot;camera&quot;: &quot;Ultra-wide_angle_lens_shot_from_above_height_emphasizing_the_height_of_the_peak&quot;,<br>    &quot;image_quality&quot;: &quot;8k_resolution_hyper-realistic_rock_textures_and_fabric_weave&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:4&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2011289215712256125-1.jpg" alt="&quot;reference priority&quot;: {" loading="lazy"><img src="/images/tweet-2011289215712256125-2.jpg" alt="&quot;reference priority&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1191,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

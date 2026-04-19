@@ -7,11 +7,13 @@
     <title>&quot;objective&quot;: &quot;Create a detailed product showcase image of a t... #1966 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;objective&quot;: &quot;Create a detailed product showcase image of a table design with multiple perspectives and material in...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1966.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1966.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1966.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844597">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023547">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"objective\": \"创建一个详细的产品展示图片，呈现桌子设计的多角度视图及材质信息\",\n  \"image_specifications\": {\n    \"style\": \"逼真的3D渲染或高质量产品插图\",\n    \"layout\": \"分屏视图\",\n    \"aspect_ratio\": \"3:2 或 4:3\",\n    \"background\": \"中性（浅灰或白色），以增强清晰度和对比度\"\n  },\n  \"left_side\": {\n    \"section_title\": \"桌子视图\",\n    \"views\": [\n      {\n        \"view\": \"俯视图\",\n        \"description\": \"从上方展示整个桌子，展示桌面形状、表面纹理及边缘细节\"\n      },\n      {\n        \"view\": \"侧视图\",\n        \"description\": \"展示桌子的侧面轮廓，呈现桌腿设计、桌子的高度及桌面厚度\"\n      },\n      {\n        \"view\": \"正视图\",\n        \"description\": \"正面直视展示桌子的宽度、对称性以及桌腿的排布\"\n      }\n    ],\n    \"visual_style\": \"一致的光影效果以增强真实感，使用细微的阴影以定义形体\"\n  },\n  \"right_side\": {\n    \"section_title\": \"材质拆解\",\n    \"content\": [\n      {\n        \"material\": \"桌面表层\",\n        \"material_type\": \"实木 / 人造板\",\n        \"swatch_image\": \"木纹贴近样本图\",\n        \"label_style\": \"简洁的无衬线字体，箭头指向对应桌面区域\"\n      },\n      {\n        \"material\": \"桌腿\",\n        \"material_type\": \"抛光橡木或金属\",\n        \"swatch_image\": \"材质贴近样本图\",\n        \"label_style\": \"统一的标签风格，与视图图片保持视觉连接\"\n      },\n      {\n        \"material\": \"框架\",\n        \"material_type\": \"哑光黑色钢材\",\n        \"swatch_image\": \"小型金属纹理样本图\",\n        \"label_style\": \"极简注释\"\n      }\n    ]\n  },\n  \"visual_elements\": {\n    \"separation\": \"竖直分割线或细微分屏背景\",\n    \"color_palette\": \"材质采用自然色调，背景与线条使用灰度\",\n    \"typography\": \"现代易读字体用于标签和分区标题\"\n  },\n  \"output_format\": {\n    \"type\": \"图片\",\n    \"high_resolution\": true,\n    \"use_case\": [\"产品说明书\", \"室内设计目录\", \"家具展示\"]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;objective&quot;: &quot;创建一个详细的产品展示图片，呈现桌子设计的多角度视图及材质信息&quot;,<br>  &quot;image_specifications&quot;: {<br>    &quot;style&quot;: &quot;逼真的3D渲染或高质量产品插图&quot;,<br>    &quot;layout&quot;: &quot;分屏视图&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:2 或 4:3&quot;,<br>    &quot;background&quot;: &quot;中性（浅灰或白色），以增强清晰度和对比度&quot;<br>  },<br>  &quot;left_side&quot;: {<br>    &quot;section_title&quot;: &quot;桌子视图&quot;,<br>    &quot;views&quot;: [<br>      {<br>        &quot;view&quot;: &quot;俯视图&quot;,<br>        &quot;description&quot;: &quot;从上方展示整个桌子，展示桌面形状、表面纹理及边缘细节&quot;<br>      },<br>      {<br>        &quot;view&quot;: &quot;侧视图&quot;,<br>        &quot;description&quot;: &quot;展示桌子的侧面轮廓，呈现桌腿设计、桌子的高度及桌面厚度&quot;<br>      },<br>      {<br>        &quot;view&quot;: &quot;正视图&quot;,<br>        &quot;description&quot;: &quot;正面直视展示桌子的宽度、对称性以及桌腿的排布&quot;<br>      }<br>    ],<br>    &quot;visual_style&quot;: &quot;一致的光影效果以增强真实感，使用细微的阴影以定义形体&quot;<br>  },<br>  &quot;right_side&quot;: {<br>    &quot;section_title&quot;: &quot;材质拆解&quot;,<br>    &quot;content&quot;: [<br>      {<br>        &quot;material&quot;: &quot;桌面表层&quot;,<br>        &quot;material_type&quot;: &quot;实木 / 人造板&quot;,<br>        &quot;swatch_image&quot;: &quot;木纹贴近样本图&quot;,<br>        &quot;label_style&quot;: &quot;简洁的无衬线字体，箭头指向对应桌面区域&quot;<br>      },<br>      {<br>        &quot;material&quot;: &quot;桌腿&quot;,<br>        &quot;material_type&quot;: &quot;抛光橡木或金属&quot;,<br>        &quot;swatch_image&quot;: &quot;材质贴近样本图&quot;,<br>        &quot;label_style&quot;: &quot;统一的标签风格，与视图图片保持视觉连接&quot;<br>      },<br>      {<br>        &quot;material&quot;: &quot;框架&quot;,<br>        &quot;material_type&quot;: &quot;哑光黑色钢材&quot;,<br>        &quot;swatch_image&quot;: &quot;小型金属纹理样本图&quot;,<br>        &quot;label_style&quot;: &quot;极简注释&quot;<br>      }<br>    ]<br>  },<br>  &quot;visual_elements&quot;: {<br>    &quot;separation&quot;: &quot;竖直分割线或细微分屏背景&quot;,<br>    &quot;color_palette&quot;: &quot;材质采用自然色调，背景与线条使用灰度&quot;,<br>    &quot;typography&quot;: &quot;现代易读字体用于标签和分区标题&quot;<br>  },<br>  &quot;output_format&quot;: {<br>    &quot;type&quot;: &quot;图片&quot;,<br>    &quot;high_resolution&quot;: true,<br>    &quot;use_case&quot;: [&quot;产品说明书&quot;, &quot;室内设计目录&quot;, &quot;家具展示&quot;]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;objective&quot;: &quot;创建一个详细的产品展示图片，呈现桌子设计的多角度视图及材质信息&quot;,<br>  &quot;image_specifications&quot;: {<br>    &quot;style&quot;: &quot;逼真的3D渲染或高质量产品插图&quot;,<br>    &quot;layout&quot;: &quot;分屏视图&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:2 或 4:3&quot;,<br>    &quot;background&quot;: &quot;中性（浅灰或白色），以增强清晰度和对比度&quot;<br>  },<br>  &quot;left_side&quot;: {<br>    &quot;section_title&quot;: &quot;桌子视图&quot;,<br>    &quot;views&quot;: [<br>      {<br>        &quot;view&quot;: &quot;俯视图&quot;,<br>        &quot;description&quot;: &quot;从上方展示整个桌子，展示桌面形状、表面纹理及边缘细节&quot;<br>      },<br>      {<br>        &quot;view&quot;: &quot;侧视图&quot;,<br>        &quot;description&quot;: &quot;展示桌子的侧面轮廓，呈现桌腿设计、桌子的高度及桌面厚度&quot;<br>      },<br>      {<br>        &quot;view&quot;: &quot;正视图&quot;,<br>        &quot;description&quot;: &quot;正面直视展示桌子的宽度、对称性以及桌腿的排布&quot;<br>      }<br>    ],<br>    &quot;visual_style&quot;: &quot;一致的光影效果以增强真实感，使用细微的阴影以定义形体&quot;<br>  },<br>  &quot;right_side&quot;: {<br>    &quot;section_title&quot;: &quot;材质拆解&quot;,<br>    &quot;content&quot;: [<br>      {<br>        &quot;material&quot;: &quot;桌面表层&quot;,<br>        &quot;material_type&quot;: &quot;实木 / 人造板&quot;,<br>        &quot;swatch_image&quot;: &quot;木纹贴近样本图&quot;,<br>        &quot;label_style&quot;: &quot;简洁的无衬线字体，箭头指向对应桌面区域&quot;<br>      },<br>      {<br>        &quot;material&quot;: &quot;桌腿&quot;,<br>        &quot;material_type&quot;: &quot;抛光橡木或金属&quot;,<br>        &quot;swatch_image&quot;: &quot;材质贴近样本图&quot;,<br>        &quot;label_style&quot;: &quot;统一的标签风格，与视图图片保持视觉连接&quot;<br>      },<br>      {<br>        &quot;material&quot;: &quot;框架&quot;,<br>        &quot;material_type&quot;: &quot;哑光黑色钢材&quot;,<br>        &quot;swatch_image&quot;: &quot;小型金属纹理样本图&quot;,<br>        &quot;label_style&quot;: &quot;极简注释&quot;<br>      }<br>    ]<br>  },<br>  &quot;visual_elements&quot;: {<br>    &quot;separation&quot;: &quot;竖直分割线或细微分屏背景&quot;,<br>    &quot;color_palette&quot;: &quot;材质采用自然色调，背景与线条使用灰度&quot;,<br>    &quot;typography&quot;: &quot;现代易读字体用于标签和分区标题&quot;<br>  },<br>  &quot;output_format&quot;: {<br>    &quot;type&quot;: &quot;图片&quot;,<br>    &quot;high_resolution&quot;: true,<br>    &quot;use_case&quot;: [&quot;产品说明书&quot;, &quot;室内设计目录&quot;, &quot;家具展示&quot;]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"objective\": \"Create a detailed product showcase image of a table design with multiple perspectives and material information\",\n  \"image_specifications\": {\n    \"style\": \"Realistic 3D render or high-quality product illustration\",\n    \"layout\": \"Split view\",\n    \"aspect_ratio\": \"3:2 or 4:3\",\n    \"background\": \"Neutral (light gray or white) to enhance clarity and contrast\"\n  },\n  \"left_side\": {\n    \"section_title\": \"Table Perspectives\",\n    \"views\": [\n      {\n        \"view\": \"Top-down\",\n        \"description\": \"Display the full table from above, showing tabletop shape, surface texture, and edge details\"\n      },\n      {\n        \"view\": \"Side view\",\n        \"description\": \"Profile of the table to show leg design, table height, and tabletop thickness\"\n      },\n      {\n        \"view\": \"Front view\",\n        \"description\": \"Straight-on view to show width, symmetry, and leg alignment\"\n      }\n    ],\n    \"visual_style\": \"Consistent lighting and shadows for realism, subtle shadows to define form\"\n  },\n  \"right_side\": {\n    \"section_title\": \"Material Breakdown\",\n    \"content\": [\n      {\n        \"material\": \"Tabletop Surface\",\n        \"material_type\": \"Solid wood / engineered wood\",\n        \"swatch_image\": \"Close-up wood texture sample\",\n        \"label_style\": \"Clean sans-serif text with arrows pointing to table sections\"\n      },\n      {\n        \"material\": \"Legs\",\n        \"material_type\": \"Polished oak wood or metal\",\n        \"swatch_image\": \"Close-up material texture sample\",\n        \"label_style\": \"Consistent labeling with visual connection to perspective images\"\n      },\n      {\n        \"material\": \"Frame\",\n        \"material_type\": \"Matte black steel\",\n        \"swatch_image\": \"Small metallic texture sample\",\n        \"label_style\": \"Minimalist annotations\"\n      }\n    ]\n  },\n  \"visual_elements\": {\n    \"separation\": \"Vertical dividing line or subtle split background\",\n    \"color_palette\": \"Natural tones for materials, grayscale for background and lines\",\n    \"typography\": \"Modern, readable font for labels and section titles\"\n  },\n  \"output_format\": {\n    \"type\": \"Image\",\n    \"high_resolution\": true,\n    \"use_case\": [\"Product sheet\", \"Interior design catalog\", \"Furniture showcase\"]\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;objective&quot;: &quot;Create a detailed product showcase image of a table design with multiple perspectives and material information&quot;,<br>  &quot;image_specifications&quot;: {<br>    &quot;style&quot;: &quot;Realistic 3D render or high-quality product illustration&quot;,<br>    &quot;layout&quot;: &quot;Split view&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:2 or 4:3&quot;,<br>    &quot;background&quot;: &quot;Neutral (light gray or white) to enhance clarity and contrast&quot;<br>  },<br>  &quot;left_side&quot;: {<br>    &quot;section_title&quot;: &quot;Table Perspectives&quot;,<br>    &quot;views&quot;: [<br>      {<br>        &quot;view&quot;: &quot;Top-down&quot;,<br>        &quot;description&quot;: &quot;Display the full table from above, showing tabletop shape, surface texture, and edge details&quot;<br>      },<br>      {<br>        &quot;view&quot;: &quot;Side view&quot;,<br>        &quot;description&quot;: &quot;Profile of the table to show leg design, table height, and tabletop thickness&quot;<br>      },<br>      {<br>        &quot;view&quot;: &quot;Front view&quot;,<br>        &quot;description&quot;: &quot;Straight-on view to show width, symmetry, and leg alignment&quot;<br>      }<br>    ],<br>    &quot;visual_style&quot;: &quot;Consistent lighting and shadows for realism, subtle shadows to define form&quot;<br>  },<br>  &quot;right_side&quot;: {<br>    &quot;section_title&quot;: &quot;Material Breakdown&quot;,<br>    &quot;content&quot;: [<br>      {<br>        &quot;material&quot;: &quot;Tabletop Surface&quot;,<br>        &quot;material_type&quot;: &quot;Solid wood / engineered wood&quot;,<br>        &quot;swatch_image&quot;: &quot;Close-up wood texture sample&quot;,<br>        &quot;label_style&quot;: &quot;Clean sans-serif text with arrows pointing to table sections&quot;<br>      },<br>      {<br>        &quot;material&quot;: &quot;Legs&quot;,<br>        &quot;material_type&quot;: &quot;Polished oak wood or metal&quot;,<br>        &quot;swatch_image&quot;: &quot;Close-up material texture sample&quot;,<br>        &quot;label_style&quot;: &quot;Consistent labeling with visual connection to perspective images&quot;<br>      },<br>      {<br>        &quot;material&quot;: &quot;Frame&quot;,<br>        &quot;material_type&quot;: &quot;Matte black steel&quot;,<br>        &quot;swatch_image&quot;: &quot;Small metallic texture sample&quot;,<br>        &quot;label_style&quot;: &quot;Minimalist annotations&quot;<br>      }<br>    ]<br>  },<br>  &quot;visual_elements&quot;: {<br>    &quot;separation&quot;: &quot;Vertical dividing line or subtle split background&quot;,<br>    &quot;color_palette&quot;: &quot;Natural tones for materials, grayscale for background and lines&quot;,<br>    &quot;typography&quot;: &quot;Modern, readable font for labels and section titles&quot;<br>  },<br>  &quot;output_format&quot;: {<br>    &quot;type&quot;: &quot;Image&quot;,<br>    &quot;high_resolution&quot;: true,<br>    &quot;use_case&quot;: [&quot;Product sheet&quot;, &quot;Interior design catalog&quot;, &quot;Furniture showcase&quot;]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;objective&quot;: &quot;Create a detailed product showcase image of a table design with multiple perspectives and material information&quot;,<br>  &quot;image_specifications&quot;: {<br>    &quot;style&quot;: &quot;Realistic 3D render or high-quality product illustration&quot;,<br>    &quot;layout&quot;: &quot;Split view&quot;,<br>    &quot;aspect_ratio&quot;: &quot;3:2 or 4:3&quot;,<br>    &quot;background&quot;: &quot;Neutral (light gray or white) to enhance clarity and contrast&quot;<br>  },<br>  &quot;left_side&quot;: {<br>    &quot;section_title&quot;: &quot;Table Perspectives&quot;,<br>    &quot;views&quot;: [<br>      {<br>        &quot;view&quot;: &quot;Top-down&quot;,<br>        &quot;description&quot;: &quot;Display the full table from above, showing tabletop shape, surface texture, and edge details&quot;<br>      },<br>      {<br>        &quot;view&quot;: &quot;Side view&quot;,<br>        &quot;description&quot;: &quot;Profile of the table to show leg design, table height, and tabletop thickness&quot;<br>      },<br>      {<br>        &quot;view&quot;: &quot;Front view&quot;,<br>        &quot;description&quot;: &quot;Straight-on view to show width, symmetry, and leg alignment&quot;<br>      }<br>    ],<br>    &quot;visual_style&quot;: &quot;Consistent lighting and shadows for realism, subtle shadows to define form&quot;<br>  },<br>  &quot;right_side&quot;: {<br>    &quot;section_title&quot;: &quot;Material Breakdown&quot;,<br>    &quot;content&quot;: [<br>      {<br>        &quot;material&quot;: &quot;Tabletop Surface&quot;,<br>        &quot;material_type&quot;: &quot;Solid wood / engineered wood&quot;,<br>        &quot;swatch_image&quot;: &quot;Close-up wood texture sample&quot;,<br>        &quot;label_style&quot;: &quot;Clean sans-serif text with arrows pointing to table sections&quot;<br>      },<br>      {<br>        &quot;material&quot;: &quot;Legs&quot;,<br>        &quot;material_type&quot;: &quot;Polished oak wood or metal&quot;,<br>        &quot;swatch_image&quot;: &quot;Close-up material texture sample&quot;,<br>        &quot;label_style&quot;: &quot;Consistent labeling with visual connection to perspective images&quot;<br>      },<br>      {<br>        &quot;material&quot;: &quot;Frame&quot;,<br>        &quot;material_type&quot;: &quot;Matte black steel&quot;,<br>        &quot;swatch_image&quot;: &quot;Small metallic texture sample&quot;,<br>        &quot;label_style&quot;: &quot;Minimalist annotations&quot;<br>      }<br>    ]<br>  },<br>  &quot;visual_elements&quot;: {<br>    &quot;separation&quot;: &quot;Vertical dividing line or subtle split background&quot;,<br>    &quot;color_palette&quot;: &quot;Natural tones for materials, grayscale for background and lines&quot;,<br>    &quot;typography&quot;: &quot;Modern, readable font for labels and section titles&quot;<br>  },<br>  &quot;output_format&quot;: {<br>    &quot;type&quot;: &quot;Image&quot;,<br>    &quot;high_resolution&quot;: true,<br>    &quot;use_case&quot;: [&quot;Product sheet&quot;, &quot;Interior design catalog&quot;, &quot;Furniture showcase&quot;]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2018964408417018277-1.jpg" alt="&quot;objective&quot;: &quot;Create a detailed product showcase image of a t..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1966,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

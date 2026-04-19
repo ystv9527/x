@@ -7,11 +7,13 @@
     <title>地下室独自拍摄的15秒野生动物追逐镜头设计 #2756 | Gem Nana AI 提示词库</title>
     <meta name="description" content="揭示单人制作野生动物纪录片时，如何实现15秒超真实连续追逐、尾巴抓持与自然光线的无剪辑镜头要点，并探讨使用 Kling 3.0 等工具的实现思路。">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2756.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2756.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2756.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839564">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022159">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item active">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        
+        <button class="view-full-btn" id="publishXhsVideoBtn" onclick="publishCurrentCaseToXhs(this, 'video')">发布视频到小红书</button>
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("“使用上传的图片作为第一帧。\r\n创建一个 15 秒的超真实连续追逐镜头。相机物理上抓住老虎的尾巴，锁定在僵硬的后视中。尾巴占据了前景，肌肉张紧，皮肤起伏，毛发因速度和气流而振动。\r\n前方，一只鹿惊慌地跨过草地。它的动作不规则且不平衡，恐惧驱动的步态变化和方向急剧改变，距离迅速变短，清晰可见。\r\n老虎的生物力学精确地加速进入全速冲刺：后腿的爆发性伸展，脊柱的可见压缩和释放，尾巴在每一步的对称性。草在冲击下平坦，泥土和碎片自然地被踢起来。地面上的地面力从相机抖动中不明显地震动着地平线。\r\n极端的前向速度在环境中产生强烈的运动错觉，而由于身体的抓地力，尾巴相对稳定。微小的振荡与每一步的周期完美同步。风呼啸，毛发不断后退。\r\n照明保持自然和连续，腿在身体的循环下，阴影在身体下闪烁。没有慢动作，没有剪辑，没有风格化。\r\n在最后的几秒钟里，老虎扑向鹿，撞上它，把它固定在地面上，并且抓住它的脖子。射门在动作的中间结束，仍然有全部重量、紧张和势头。”", this)'>📋 复制</button>
         </div>
-        <p>“使用上传的图片作为第一帧。<br>创建一个 15 秒的超真实连续追逐镜头。相机物理上抓住老虎的尾巴，锁定在僵硬的后视中。尾巴占据了前景，肌肉张紧，皮肤起伏，毛发因速度和气流而振动。<br>前方，一只鹿惊慌地跨过草地。它的动作不规则且不平衡，恐惧驱动的步态变化和方向急剧改变，距离迅速变短，清晰可见。<br>老虎的生物力学精确地加速进入全速冲刺：后腿的爆发性伸展，脊柱的可见压缩和释放，尾巴在每一步的对称性。草在冲击下平坦，泥土和碎片自然地被踢起来。地面上的地面力从相机抖动中不明显地震动着地平线。<br>极端的前向速度在环境中产生强烈的运动错觉，而由于身体的抓地力，尾巴相对稳定。微小的振荡与每一步的周期完美同步。风呼啸，毛发不断后退。<br>照明保持自然和连续，腿在身体的循环下，阴影在身体下闪烁。没有慢动作，没有剪辑，没有风格化。<br>在最后的几秒钟里，老虎扑向鹿，撞上它，把它固定在地面上，并且抓住它的脖子。射门在动作的中间结束，仍然有全部重量、紧张和势头。”</p>
+        <div data-nosnippet><p>“使用上传的图片作为第一帧。<br>创建一个 15 秒的超真实连续追逐镜头。相机物理上抓住老虎的尾巴，锁定在僵硬的后视中。尾巴占据了前景，肌肉张紧，皮肤起伏，毛发因速度和气流而振动。<br>前方，一只鹿惊慌地跨过草地。它的动作不规则且不平衡，恐惧驱动的步态变化和方向急剧改变，距离迅速变短，清晰可见。<br>老虎的生物力学精确地加速进入全速冲刺：后腿的爆发性伸展，脊柱的可见压缩和释放，尾巴在每一步的对称性。草在冲击下平坦，泥土和碎片自然地被踢起来。地面上的地面力从相机抖动中不明显地震动着地平线。<br>极端的前向速度在环境中产生强烈的运动错觉，而由于身体的抓地力，尾巴相对稳定。微小的振荡与每一步的周期完美同步。风呼啸，毛发不断后退。<br>照明保持自然和连续，腿在身体的循环下，阴影在身体下闪烁。没有慢动作，没有剪辑，没有风格化。<br>在最后的几秒钟里，老虎扑向鹿，撞上它，把它固定在地面上，并且抓住它的脖子。射门在动作的中间结束，仍然有全部重量、紧张和势头。”</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("。Prompt: \r\n\"Use the uploaded image as the exact first frame.\r\nCreate a 15-second ultra-realistic continuous chase shot. The camera is physically gripping the tiger’s tail, locked in a rigid trailing POV. The tail fills the foreground, muscles flexing, skin rippling, fur vibrating from speed and airflow.\r\nAhead, a deer sprints across the grassy field in panic. Its movement is erratic and unbalanced, fear-driven stride changes and sharp direction shifts clearly visible as the distance rapidly closes.\r\nThe tiger accelerates into a full sprint with precise biomechanics: explosive hind-leg extension, visible spine compression and release, tail counterbalancing each stride. Grass flattens under impact, dirt and debris kick up naturally. The horizon trembles subtly from ground force, not artificial camera shake.\r\nExtreme forward velocity creates strong motion parallax in the environment while the tail remains relatively stable due to the physical grip. Micro-oscillations sync perfectly with each stride cycle. Wind roars; fur streams backward consistently.\r\nLighting stays natural and continuous, shadows strobing beneath the body as legs cycle. No slow motion, no cuts, no stylization.\r\nIn the final moments, the tiger lunges, collides with the deer, pins it to the ground, and secures a decisive neck hold. The shot ends mid-action with full weight, tension, and momentum still present.\"提示：", this)'>📋 复制</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Prompt:\n\"Use the uploaded image as the exact first frame.\nCreate a 15-second ultra-realistic continuous chase shot. The camera is physically gripping the tiger’s tail, locked in a rigid trailing POV. The tail fills the foreground, muscles flexing, skin rippling, fur vibrating from speed and airflow.\nAhead, a deer sprints across the grassy field in panic. Its movement is erratic and unbalanced, fear-driven stride changes and sharp direction shifts clearly visible as the distance rapidly closes.\nThe tiger accelerates into a full sprint with precise biomechanics: explosive hind-leg extension, visible spine compression and release, tail counterbalancing each stride. Grass flattens under impact, dirt and debris kick up naturally. The horizon trembles subtly from ground force, not artificial camera shake.\nExtreme forward velocity creates strong motion parallax in the environment while the tail remains relatively stable due to the physical grip. Micro-oscillations sync perfectly with each stride cycle. Wind roars; fur streams backward consistently.\nLighting stays natural and continuous, shadows strobing beneath the body as legs cycle. No slow motion, no cuts, no stylization.\nIn the final moments, the tiger lunges, collides with the deer, pins it to the ground, and secures a decisive neck hold. The shot ends mid-action with full weight, tension, and momentum still present.\"", this)'>📋 复制</button>
         </div>
-        <p>。Prompt: <br>&quot;Use the uploaded image as the exact first frame.<br>Create a 15-second ultra-realistic continuous chase shot. The camera is physically gripping the tiger’s tail, locked in a rigid trailing POV. The tail fills the foreground, muscles flexing, skin rippling, fur vibrating from speed and airflow.<br>Ahead, a deer sprints across the grassy field in panic. Its movement is erratic and unbalanced, fear-driven stride changes and sharp direction shifts clearly visible as the distance rapidly closes.<br>The tiger accelerates into a full sprint with precise biomechanics: explosive hind-leg extension, visible spine compression and release, tail counterbalancing each stride. Grass flattens under impact, dirt and debris kick up naturally. The horizon trembles subtly from ground force, not artificial camera shake.<br>Extreme forward velocity creates strong motion parallax in the environment while the tail remains relatively stable due to the physical grip. Micro-oscillations sync perfectly with each stride cycle. Wind roars; fur streams backward consistently.<br>Lighting stays natural and continuous, shadows strobing beneath the body as legs cycle. No slow motion, no cuts, no stylization.<br>In the final moments, the tiger lunges, collides with the deer, pins it to the ground, and secures a decisive neck hold. The shot ends mid-action with full weight, tension, and momentum still present.&quot;提示：</p>
+        <div data-nosnippet><p>Prompt:<br>&quot;Use the uploaded image as the exact first frame.<br>Create a 15-second ultra-realistic continuous chase shot. The camera is physically gripping the tiger’s tail, locked in a rigid trailing POV. The tail fills the foreground, muscles flexing, skin rippling, fur vibrating from speed and airflow.<br>Ahead, a deer sprints across the grassy field in panic. Its movement is erratic and unbalanced, fear-driven stride changes and sharp direction shifts clearly visible as the distance rapidly closes.<br>The tiger accelerates into a full sprint with precise biomechanics: explosive hind-leg extension, visible spine compression and release, tail counterbalancing each stride. Grass flattens under impact, dirt and debris kick up naturally. The horizon trembles subtly from ground force, not artificial camera shake.<br>Extreme forward velocity creates strong motion parallax in the environment while the tail remains relatively stable due to the physical grip. Micro-oscillations sync perfectly with each stride cycle. Wind roars; fur streams backward consistently.<br>Lighting stays natural and continuous, shadows strobing beneath the body as legs cycle. No slow motion, no cuts, no stylization.<br>In the final moments, the tiger lunges, collides with the deer, pins it to the ground, and secures a decisive neck hold. The shot ends mid-action with full weight, tension, and momentum still present.&quot;</p></div>
       </div>
       
       <div class="detail-block"><h3>🎬 视频</h3><div class="detail-media-grid"><video controls><source src="/videos/tweet-2023596547397874057-1.mp4" type="video/mp4"></video></div></div>
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2756,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

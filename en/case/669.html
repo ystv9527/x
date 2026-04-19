@@ -7,11 +7,13 @@
     <title>&quot;type&quot;: &quot;image set&quot;, #669 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;type&quot;: &quot;image set&quot;, &quot;style&quot;: &quot;lifestyle fashion photography, clean and aesthetic&quot;, &quot;layout&quot;: { &quot;format&quot;: &quot;2x2 grid...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/669.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/669.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/669.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845899">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023822">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"image_set\",\n  \"style\": \"生活方式时尚摄影，干净、富有美感\",\n  \"layout\": {\n    \"format\": \"2x2 网格拼贴\",\n    \"orientation\": \"竖向图像拼接\"\n  },\n  \"scene\": {\n    \"setting\": \"户外咖啡馆步道\",\n    \"environment\": {\n      \"architecture\": \"带藤架的白色现代建筑\",\n      \"surroundings\": \"郁郁葱葱的绿植和藤蔓\",\n      \"ground\": \"石砖地面\",\n      \"lighting\": \"自然日光，柔和阴影\"\n    }\n  },\n  \"subject\": {\n    \"count\": 1,\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"金发\",\n        \"style\": \"长发，散落\"\n      },\n      \"expression_range\": [\"放松\", \"自信\", \"微笑\", \"中性\"]\n    },\n    \"clothing\": {\n      \"outfit\": \"白色运动套装\",\n      \"top\": \"露腹运动胸衣\",\n      \"bottom\": \"高腰短裤\",\n      \"footwear\": \"白色运动鞋，配全脚袜\",\n      \"accessories\": [\"黑色单肩包\", \"极简珠宝\"]\n    }\n  },\n  \"activity\": {\n    \"action\": \"手持并饮用一杯绿色饮品\",\n    \"drink\": \"透明杯中的绿色冰饮，带吸管\"\n  },\n  \"poses\": [\"随意站立\", \"倚靠花盆\", \"站立时微笑\", \"端着饮品蹲下\"],\n  \"composition\": {\n    \"focus\": \"每个画面中主体居中\",\n    \"depth\": \"主体与背景清晰分离\",\n    \"balance\": \"四张画面保持一致的取景\"\n  },\n  \"color_palette\": {\n    \"dominant_colors\": [\"白色\", \"绿色\", \"米色\"],\n    \"accent_colors\": [\"黑色\", \"自然肤色\"]\n  },\n  \"overall_tone\": \"清新、健康、时尚、夏日生活方式\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;image_set&quot;,<br>  &quot;style&quot;: &quot;生活方式时尚摄影，干净、富有美感&quot;,<br>  &quot;layout&quot;: {<br>    &quot;format&quot;: &quot;2x2 网格拼贴&quot;,<br>    &quot;orientation&quot;: &quot;竖向图像拼接&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;setting&quot;: &quot;户外咖啡馆步道&quot;,<br>    &quot;environment&quot;: {<br>      &quot;architecture&quot;: &quot;带藤架的白色现代建筑&quot;,<br>      &quot;surroundings&quot;: &quot;郁郁葱葱的绿植和藤蔓&quot;,<br>      &quot;ground&quot;: &quot;石砖地面&quot;,<br>      &quot;lighting&quot;: &quot;自然日光，柔和阴影&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;count&quot;: 1,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;金发&quot;,<br>        &quot;style&quot;: &quot;长发，散落&quot;<br>      },<br>      &quot;expression_range&quot;: [&quot;放松&quot;, &quot;自信&quot;, &quot;微笑&quot;, &quot;中性&quot;]<br>    },<br>    &quot;clothing&quot;: {<br>      &quot;outfit&quot;: &quot;白色运动套装&quot;,<br>      &quot;top&quot;: &quot;露腹运动胸衣&quot;,<br>      &quot;bottom&quot;: &quot;高腰短裤&quot;,<br>      &quot;footwear&quot;: &quot;白色运动鞋，配全脚袜&quot;,<br>      &quot;accessories&quot;: [&quot;黑色单肩包&quot;, &quot;极简珠宝&quot;]<br>    }<br>  },<br>  &quot;activity&quot;: {<br>    &quot;action&quot;: &quot;手持并饮用一杯绿色饮品&quot;,<br>    &quot;drink&quot;: &quot;透明杯中的绿色冰饮，带吸管&quot;<br>  },<br>  &quot;poses&quot;: [&quot;随意站立&quot;, &quot;倚靠花盆&quot;, &quot;站立时微笑&quot;, &quot;端着饮品蹲下&quot;],<br>  &quot;composition&quot;: {<br>    &quot;focus&quot;: &quot;每个画面中主体居中&quot;,<br>    &quot;depth&quot;: &quot;主体与背景清晰分离&quot;,<br>    &quot;balance&quot;: &quot;四张画面保持一致的取景&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;dominant_colors&quot;: [&quot;白色&quot;, &quot;绿色&quot;, &quot;米色&quot;],<br>    &quot;accent_colors&quot;: [&quot;黑色&quot;, &quot;自然肤色&quot;]<br>  },<br>  &quot;overall_tone&quot;: &quot;清新、健康、时尚、夏日生活方式&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;image_set&quot;,<br>  &quot;style&quot;: &quot;生活方式时尚摄影，干净、富有美感&quot;,<br>  &quot;layout&quot;: {<br>    &quot;format&quot;: &quot;2x2 网格拼贴&quot;,<br>    &quot;orientation&quot;: &quot;竖向图像拼接&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;setting&quot;: &quot;户外咖啡馆步道&quot;,<br>    &quot;environment&quot;: {<br>      &quot;architecture&quot;: &quot;带藤架的白色现代建筑&quot;,<br>      &quot;surroundings&quot;: &quot;郁郁葱葱的绿植和藤蔓&quot;,<br>      &quot;ground&quot;: &quot;石砖地面&quot;,<br>      &quot;lighting&quot;: &quot;自然日光，柔和阴影&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;count&quot;: 1,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;金发&quot;,<br>        &quot;style&quot;: &quot;长发，散落&quot;<br>      },<br>      &quot;expression_range&quot;: [&quot;放松&quot;, &quot;自信&quot;, &quot;微笑&quot;, &quot;中性&quot;]<br>    },<br>    &quot;clothing&quot;: {<br>      &quot;outfit&quot;: &quot;白色运动套装&quot;,<br>      &quot;top&quot;: &quot;露腹运动胸衣&quot;,<br>      &quot;bottom&quot;: &quot;高腰短裤&quot;,<br>      &quot;footwear&quot;: &quot;白色运动鞋，配全脚袜&quot;,<br>      &quot;accessories&quot;: [&quot;黑色单肩包&quot;, &quot;极简珠宝&quot;]<br>    }<br>  },<br>  &quot;activity&quot;: {<br>    &quot;action&quot;: &quot;手持并饮用一杯绿色饮品&quot;,<br>    &quot;drink&quot;: &quot;透明杯中的绿色冰饮，带吸管&quot;<br>  },<br>  &quot;poses&quot;: [&quot;随意站立&quot;, &quot;倚靠花盆&quot;, &quot;站立时微笑&quot;, &quot;端着饮品蹲下&quot;],<br>  &quot;composition&quot;: {<br>    &quot;focus&quot;: &quot;每个画面中主体居中&quot;,<br>    &quot;depth&quot;: &quot;主体与背景清晰分离&quot;,<br>    &quot;balance&quot;: &quot;四张画面保持一致的取景&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;dominant_colors&quot;: [&quot;白色&quot;, &quot;绿色&quot;, &quot;米色&quot;],<br>    &quot;accent_colors&quot;: [&quot;黑色&quot;, &quot;自然肤色&quot;]<br>  },<br>  &quot;overall_tone&quot;: &quot;清新、健康、时尚、夏日生活方式&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"type\": \"image_set\",\n  \"style\": \"lifestyle fashion photography, clean and aesthetic\",\n  \"layout\": {\n    \"format\": \"2x2 grid collage\",\n    \"orientation\": \"portrait images combined\"\n  },\n  \"scene\": {\n    \"setting\": \"outdoor café walkway\",\n    \"environment\": {\n      \"architecture\": \"white modern building with pergola\",\n      \"surroundings\": \"lush green plants and vines\",\n      \"ground\": \"stone tile flooring\",\n      \"lighting\": \"natural daylight with soft shadows\"\n    }\n  },\n  \"subject\": {\n    \"count\": 1,\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"blonde\",\n        \"style\": \"long, loose\"\n      },\n      \"expression_range\": [\"relaxed\", \"confident\", \"smiling\", \"neutral\"]\n    },\n    \"clothing\": {\n      \"outfit\": \"white athletic set\",\n      \"top\": \"cropped sports bra\",\n      \"bottom\": \"high-waisted shorts\",\n      \"footwear\": \"white sneakers with crew socks\",\n      \"accessories\": [\"black shoulder bag\", \"minimal jewelry\"]\n    }\n  },\n  \"activity\": {\n    \"action\": \"holding and drinking a green beverage\",\n    \"drink\": \"green iced drink in clear cup with straw\"\n  },\n  \"poses\": [\"standing casually\", \"leaning against planter\", \"smiling while standing\", \"crouching with drink\"],\n  \"composition\": {\n    \"focus\": \"subject centered in each frame\",\n    \"depth\": \"clear subject separation from background\",\n    \"balance\": \"consistent framing across all four images\"\n  },\n  \"color_palette\": {\n    \"dominant_colors\": [\"white\", \"green\", \"beige\"],\n    \"accent_colors\": [\"black\", \"natural skin tones\"]\n  },\n  \"overall_tone\": \"fresh, healthy, stylish, summer lifestyle\"\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;type&quot;: &quot;image_set&quot;,<br>  &quot;style&quot;: &quot;lifestyle fashion photography, clean and aesthetic&quot;,<br>  &quot;layout&quot;: {<br>    &quot;format&quot;: &quot;2x2 grid collage&quot;,<br>    &quot;orientation&quot;: &quot;portrait images combined&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;setting&quot;: &quot;outdoor café walkway&quot;,<br>    &quot;environment&quot;: {<br>      &quot;architecture&quot;: &quot;white modern building with pergola&quot;,<br>      &quot;surroundings&quot;: &quot;lush green plants and vines&quot;,<br>      &quot;ground&quot;: &quot;stone tile flooring&quot;,<br>      &quot;lighting&quot;: &quot;natural daylight with soft shadows&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;count&quot;: 1,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;blonde&quot;,<br>        &quot;style&quot;: &quot;long, loose&quot;<br>      },<br>      &quot;expression_range&quot;: [&quot;relaxed&quot;, &quot;confident&quot;, &quot;smiling&quot;, &quot;neutral&quot;]<br>    },<br>    &quot;clothing&quot;: {<br>      &quot;outfit&quot;: &quot;white athletic set&quot;,<br>      &quot;top&quot;: &quot;cropped sports bra&quot;,<br>      &quot;bottom&quot;: &quot;high-waisted shorts&quot;,<br>      &quot;footwear&quot;: &quot;white sneakers with crew socks&quot;,<br>      &quot;accessories&quot;: [&quot;black shoulder bag&quot;, &quot;minimal jewelry&quot;]<br>    }<br>  },<br>  &quot;activity&quot;: {<br>    &quot;action&quot;: &quot;holding and drinking a green beverage&quot;,<br>    &quot;drink&quot;: &quot;green iced drink in clear cup with straw&quot;<br>  },<br>  &quot;poses&quot;: [&quot;standing casually&quot;, &quot;leaning against planter&quot;, &quot;smiling while standing&quot;, &quot;crouching with drink&quot;],<br>  &quot;composition&quot;: {<br>    &quot;focus&quot;: &quot;subject centered in each frame&quot;,<br>    &quot;depth&quot;: &quot;clear subject separation from background&quot;,<br>    &quot;balance&quot;: &quot;consistent framing across all four images&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;dominant_colors&quot;: [&quot;white&quot;, &quot;green&quot;, &quot;beige&quot;],<br>    &quot;accent_colors&quot;: [&quot;black&quot;, &quot;natural skin tones&quot;]<br>  },<br>  &quot;overall_tone&quot;: &quot;fresh, healthy, stylish, summer lifestyle&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;type&quot;: &quot;image_set&quot;,<br>  &quot;style&quot;: &quot;lifestyle fashion photography, clean and aesthetic&quot;,<br>  &quot;layout&quot;: {<br>    &quot;format&quot;: &quot;2x2 grid collage&quot;,<br>    &quot;orientation&quot;: &quot;portrait images combined&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;setting&quot;: &quot;outdoor café walkway&quot;,<br>    &quot;environment&quot;: {<br>      &quot;architecture&quot;: &quot;white modern building with pergola&quot;,<br>      &quot;surroundings&quot;: &quot;lush green plants and vines&quot;,<br>      &quot;ground&quot;: &quot;stone tile flooring&quot;,<br>      &quot;lighting&quot;: &quot;natural daylight with soft shadows&quot;<br>    }<br>  },<br>  &quot;subject&quot;: {<br>    &quot;count&quot;: 1,<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;blonde&quot;,<br>        &quot;style&quot;: &quot;long, loose&quot;<br>      },<br>      &quot;expression_range&quot;: [&quot;relaxed&quot;, &quot;confident&quot;, &quot;smiling&quot;, &quot;neutral&quot;]<br>    },<br>    &quot;clothing&quot;: {<br>      &quot;outfit&quot;: &quot;white athletic set&quot;,<br>      &quot;top&quot;: &quot;cropped sports bra&quot;,<br>      &quot;bottom&quot;: &quot;high-waisted shorts&quot;,<br>      &quot;footwear&quot;: &quot;white sneakers with crew socks&quot;,<br>      &quot;accessories&quot;: [&quot;black shoulder bag&quot;, &quot;minimal jewelry&quot;]<br>    }<br>  },<br>  &quot;activity&quot;: {<br>    &quot;action&quot;: &quot;holding and drinking a green beverage&quot;,<br>    &quot;drink&quot;: &quot;green iced drink in clear cup with straw&quot;<br>  },<br>  &quot;poses&quot;: [&quot;standing casually&quot;, &quot;leaning against planter&quot;, &quot;smiling while standing&quot;, &quot;crouching with drink&quot;],<br>  &quot;composition&quot;: {<br>    &quot;focus&quot;: &quot;subject centered in each frame&quot;,<br>    &quot;depth&quot;: &quot;clear subject separation from background&quot;,<br>    &quot;balance&quot;: &quot;consistent framing across all four images&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;dominant_colors&quot;: [&quot;white&quot;, &quot;green&quot;, &quot;beige&quot;],<br>    &quot;accent_colors&quot;: [&quot;black&quot;, &quot;natural skin tones&quot;]<br>  },<br>  &quot;overall_tone&quot;: &quot;fresh, healthy, stylish, summer lifestyle&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2007872995361276103-1.jpg" alt="&quot;type&quot;: &quot;image set&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 669,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

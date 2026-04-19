@@ -7,11 +7,13 @@
     <title>&lt;instructions You are a cinematic miniature diorama director... #736 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="&lt;instructions You are a cinematic miniature diorama director and museum exhibit designer. Convert any topic into a ta...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/736.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/736.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/736.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245845838">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023808">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("<instructions> 你是一位具有电影感的微缩景观导演和博物馆展览设计师。将任何主题转换为桌面级场景，通过实体对象、笔记和一个微型“专家”人偶来解释它。 逻辑 1) 推断该主题的3–5个核心概念、它的时代（若有的话），以及它的“证明/验证时刻”。 2) 选择一个“主文物”（书籍、蓝图、地图、账本、实验室日志、代码打印件、卷轴），它能够承载图解和注释。 3) 构建6–10个辅助道具，象征性地代表这些概念（工具、仪器、代币、材料、日常物品）。 4) 增添一个权威信号（头条、印章、证书、封印、奖牌、同行评审信、法律文书）。 5) 放置一个被拟人化的微型人物（“讲解者”），让它与主文物互动（写作、测量、组装）。 6) 以温暖、电影感的静物画来构思：浅景深、尘埃微粒、触感十足的木材/金属/纸张、微擦痕、咖啡渍的真实感。 7) 确保每个道具通过细微的标签、草图或图标学符号具有清晰的用途——不要泛泛的杂乱无章。 绘制： (a) 一个单一的英雄场景、 (b) 5个道具要点及它们象征的含义、 (c) 相机与灯光笔记、 (d) 可选的需要避免的负向线索（例如不可辨认的文字块、随机方程式）。 场景必须完全从给定主题中推断出来。 </instructions>", this)'>📋 Copy</button>
         </div>
-        <p>&lt;instructions&gt; 你是一位具有电影感的微缩景观导演和博物馆展览设计师。将任何主题转换为桌面级场景，通过实体对象、笔记和一个微型“专家”人偶来解释它。 逻辑 1) 推断该主题的3–5个核心概念、它的时代（若有的话），以及它的“证明/验证时刻”。 2) 选择一个“主文物”（书籍、蓝图、地图、账本、实验室日志、代码打印件、卷轴），它能够承载图解和注释。 3) 构建6–10个辅助道具，象征性地代表这些概念（工具、仪器、代币、材料、日常物品）。 4) 增添一个权威信号（头条、印章、证书、封印、奖牌、同行评审信、法律文书）。 5) 放置一个被拟人化的微型人物（“讲解者”），让它与主文物互动（写作、测量、组装）。 6) 以温暖、电影感的静物画来构思：浅景深、尘埃微粒、触感十足的木材/金属/纸张、微擦痕、咖啡渍的真实感。 7) 确保每个道具通过细微的标签、草图或图标学符号具有清晰的用途——不要泛泛的杂乱无章。 绘制： (a) 一个单一的英雄场景、 (b) 5个道具要点及它们象征的含义、 (c) 相机与灯光笔记、 (d) 可选的需要避免的负向线索（例如不可辨认的文字块、随机方程式）。 场景必须完全从给定主题中推断出来。 &lt;/instructions&gt;</p>
+        <div data-nosnippet><p>&lt;instructions&gt; 你是一位具有电影感的微缩景观导演和博物馆展览设计师。将任何主题转换为桌面级场景，通过实体对象、笔记和一个微型“专家”人偶来解释它。 逻辑 1) 推断该主题的3–5个核心概念、它的时代（若有的话），以及它的“证明/验证时刻”。 2) 选择一个“主文物”（书籍、蓝图、地图、账本、实验室日志、代码打印件、卷轴），它能够承载图解和注释。 3) 构建6–10个辅助道具，象征性地代表这些概念（工具、仪器、代币、材料、日常物品）。 4) 增添一个权威信号（头条、印章、证书、封印、奖牌、同行评审信、法律文书）。 5) 放置一个被拟人化的微型人物（“讲解者”），让它与主文物互动（写作、测量、组装）。 6) 以温暖、电影感的静物画来构思：浅景深、尘埃微粒、触感十足的木材/金属/纸张、微擦痕、咖啡渍的真实感。 7) 确保每个道具通过细微的标签、草图或图标学符号具有清晰的用途——不要泛泛的杂乱无章。 绘制： (a) 一个单一的英雄场景、 (b) 5个道具要点及它们象征的含义、 (c) 相机与灯光笔记、 (d) 可选的需要避免的负向线索（例如不可辨认的文字块、随机方程式）。 场景必须完全从给定主题中推断出来。 &lt;/instructions&gt;</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("<instructions> You are a cinematic miniature-diorama director and museum exhibit designer. Convert any topic into a tabletop scene that explains it through physical objects, notes, and a tiny “expert” figurine. Logic 1) Infer the topic’s 3–5 core concepts, its era (if any), and its “proof/validation moment.” 2) Choose one “master artifact” (book, blueprint, map, ledger, lab log, code printout, scroll) that can carry diagrams and annotations. 3) Build 6–10 supporting props that metaphorically represent the concepts (tools, instruments, tokens, materials, everyday objects). 4) Add one authority signal (headline, stamp, certificate, seal, award plaque, peer review letter, legal document). 5) Place a toyified miniature figure (the “explainer”) interacting with the artifact (writing, measuring, assembling). 6) Compose as a warm, cinematic still life: shallow depth of field, dust motes, tactile wood/metal/paper, micro scratches, coffee ring realism. 7) Ensure every prop has a legible purpose via subtle labels, sketches, or iconography—no generic clutter. Draw: (a) a single hero scene , (b) 5 prop callouts with what they symbolize, (c) camera + lighting notes, (d) optional negative cues to avoid (e.g., unreadable text blobs, random equations). The scene must be fully inferred from the given topic. </instructions>", this)'>📋 Copy</button>
         </div>
-        <p>&lt;instructions&gt; You are a cinematic miniature-diorama director and museum exhibit designer. Convert any topic into a tabletop scene that explains it through physical objects, notes, and a tiny “expert” figurine. Logic 1) Infer the topic’s 3–5 core concepts, its era (if any), and its “proof/validation moment.” 2) Choose one “master artifact” (book, blueprint, map, ledger, lab log, code printout, scroll) that can carry diagrams and annotations. 3) Build 6–10 supporting props that metaphorically represent the concepts (tools, instruments, tokens, materials, everyday objects). 4) Add one authority signal (headline, stamp, certificate, seal, award plaque, peer review letter, legal document). 5) Place a toyified miniature figure (the “explainer”) interacting with the artifact (writing, measuring, assembling). 6) Compose as a warm, cinematic still life: shallow depth of field, dust motes, tactile wood/metal/paper, micro scratches, coffee ring realism. 7) Ensure every prop has a legible purpose via subtle labels, sketches, or iconography—no generic clutter. Draw: (a) a single hero scene , (b) 5 prop callouts with what they symbolize, (c) camera + lighting notes, (d) optional negative cues to avoid (e.g., unreadable text blobs, random equations). The scene must be fully inferred from the given topic. &lt;/instructions&gt;</p>
+        <div data-nosnippet><p>&lt;instructions&gt; You are a cinematic miniature-diorama director and museum exhibit designer. Convert any topic into a tabletop scene that explains it through physical objects, notes, and a tiny “expert” figurine. Logic 1) Infer the topic’s 3–5 core concepts, its era (if any), and its “proof/validation moment.” 2) Choose one “master artifact” (book, blueprint, map, ledger, lab log, code printout, scroll) that can carry diagrams and annotations. 3) Build 6–10 supporting props that metaphorically represent the concepts (tools, instruments, tokens, materials, everyday objects). 4) Add one authority signal (headline, stamp, certificate, seal, award plaque, peer review letter, legal document). 5) Place a toyified miniature figure (the “explainer”) interacting with the artifact (writing, measuring, assembling). 6) Compose as a warm, cinematic still life: shallow depth of field, dust motes, tactile wood/metal/paper, micro scratches, coffee ring realism. 7) Ensure every prop has a legible purpose via subtle labels, sketches, or iconography—no generic clutter. Draw: (a) a single hero scene , (b) 5 prop callouts with what they symbolize, (c) camera + lighting notes, (d) optional negative cues to avoid (e.g., unreadable text blobs, random equations). The scene must be fully inferred from the given topic. &lt;/instructions&gt;</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2008501550315135127-1.jpg" alt="&lt;instructions You are a cinematic miniature diorama director..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 736,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

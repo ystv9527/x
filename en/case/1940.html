@@ -7,11 +7,13 @@
     <title>An editorial poster style multi panel collage presents Subjec... #1940 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="An editorial poster style multi panel collage presents Subject[person in the image] across three asymmetric photograp...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1940.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1940.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1940.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844628">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023552">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一张编辑海报风格的多画格拼贴在三个不对称的摄影画格中呈现主体[图像中的人]，整体由沉静褐色的都市街头服饰美学和复古类比-数字混合的氛围统一。左上画格捕捉到一张反光窗镜头，主体将手机举在脸前，身着褐色格纹西装外套，内搭白色扣领衬衫、黄色领带、宽松深色长裤和褐色帽子；反光表面带来层叠的重影、若隐若现的建筑叠加，以及由玻璃弧度塑造的略微拉伸的全身轮廓。\n\n右上画格转为在鹅卵石街道上以向下俯视的超广角近景人像，主体双手插兜向前倾，夸张地噘着嘴，穿着同一套服装并配有夸张的琥珀色矩形大墨镜；由于镜头透视失真，鹅卵石向外弯曲并呈放射状。\n\n右下画格为亲密的俯视自拍，主体手持饮料，仍着同一套服装但佩带有线耳机，琥珀色墨镜在柔和的阴天光下占据画面，画面辅以若隐若现的数字网格叠层和极简的方形人脸边界图形。\n\n海报中部浮动着一个半透明的 iOS 风格 Apple Music 迷你播放器，显示 Tyler, The Creator 的《See You Again》，包含封面、进度条和播放控制且无阴影；它与细微的光标状边框线和拼贴边缘的矩形高光共同构成极简 UI 美学。\n\n整体色板强调温暖的琥珀色、洗淡的中性色、柔和的灰色、反光质感、羊毛格纹、抛光皮革和石质路面，全部以逼真的光照和自然的失真模式呈现，同时避免贴纸、额外人物、更换服装、错误的 UI 图标、霓虹色调变化或任何未来科幻元素。", this)'>📋 Copy</button>
         </div>
-        <p>一张编辑海报风格的多画格拼贴在三个不对称的摄影画格中呈现主体[图像中的人]，整体由沉静褐色的都市街头服饰美学和复古类比-数字混合的氛围统一。左上画格捕捉到一张反光窗镜头，主体将手机举在脸前，身着褐色格纹西装外套，内搭白色扣领衬衫、黄色领带、宽松深色长裤和褐色帽子；反光表面带来层叠的重影、若隐若现的建筑叠加，以及由玻璃弧度塑造的略微拉伸的全身轮廓。</p><p>右上画格转为在鹅卵石街道上以向下俯视的超广角近景人像，主体双手插兜向前倾，夸张地噘着嘴，穿着同一套服装并配有夸张的琥珀色矩形大墨镜；由于镜头透视失真，鹅卵石向外弯曲并呈放射状。</p><p>右下画格为亲密的俯视自拍，主体手持饮料，仍着同一套服装但佩带有线耳机，琥珀色墨镜在柔和的阴天光下占据画面，画面辅以若隐若现的数字网格叠层和极简的方形人脸边界图形。</p><p>海报中部浮动着一个半透明的 iOS 风格 Apple Music 迷你播放器，显示 Tyler, The Creator 的《See You Again》，包含封面、进度条和播放控制且无阴影；它与细微的光标状边框线和拼贴边缘的矩形高光共同构成极简 UI 美学。</p><p>整体色板强调温暖的琥珀色、洗淡的中性色、柔和的灰色、反光质感、羊毛格纹、抛光皮革和石质路面，全部以逼真的光照和自然的失真模式呈现，同时避免贴纸、额外人物、更换服装、错误的 UI 图标、霓虹色调变化或任何未来科幻元素。</p>
+        <div data-nosnippet><p>一张编辑海报风格的多画格拼贴在三个不对称的摄影画格中呈现主体[图像中的人]，整体由沉静褐色的都市街头服饰美学和复古类比-数字混合的氛围统一。左上画格捕捉到一张反光窗镜头，主体将手机举在脸前，身着褐色格纹西装外套，内搭白色扣领衬衫、黄色领带、宽松深色长裤和褐色帽子；反光表面带来层叠的重影、若隐若现的建筑叠加，以及由玻璃弧度塑造的略微拉伸的全身轮廓。</p><p>右上画格转为在鹅卵石街道上以向下俯视的超广角近景人像，主体双手插兜向前倾，夸张地噘着嘴，穿着同一套服装并配有夸张的琥珀色矩形大墨镜；由于镜头透视失真，鹅卵石向外弯曲并呈放射状。</p><p>右下画格为亲密的俯视自拍，主体手持饮料，仍着同一套服装但佩带有线耳机，琥珀色墨镜在柔和的阴天光下占据画面，画面辅以若隐若现的数字网格叠层和极简的方形人脸边界图形。</p><p>海报中部浮动着一个半透明的 iOS 风格 Apple Music 迷你播放器，显示 Tyler, The Creator 的《See You Again》，包含封面、进度条和播放控制且无阴影；它与细微的光标状边框线和拼贴边缘的矩形高光共同构成极简 UI 美学。</p><p>整体色板强调温暖的琥珀色、洗淡的中性色、柔和的灰色、反光质感、羊毛格纹、抛光皮革和石质路面，全部以逼真的光照和自然的失真模式呈现，同时避免贴纸、额外人物、更换服装、错误的 UI 图标、霓虹色调变化或任何未来科幻元素。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("An editorial poster-style multi-panel collage presents Subject[person in the image] across three asymmetric photographic frames, unified by a muted-brown urban streetwear aesthetic and a retro analog-digital fusion mood. The top-left frame captures a reflective window shot where the subject holds a phone in front of their face, dressed in a brown plaid blazer layered over a white button-up shirt, a yellow tie, loose dark trousers, and a brown cap; the reflective surface introduces layered ghosting, faint architectural overlays, and a subtly stretched full-body silhouette shaped by the curvature of the glass.\n\nThe top-right frame shifts into a close-range, downward-angled ultra-wide portrait taken on a cobblestone street, where the subject leans forward with hands in pockets and lips exaggeratedly pouting, wearing the same outfit now paired with oversized amber-tinted rectangular sunglasses, while the cobblestones warp and radiate outward due to lens perspective distortion.\n\nThe bottom-right frame becomes an intimate overhead selfie with the subject holding a drink, still in the same wardrobe but now with wired earphones, the amber sunglasses dominating the frame under soft overcast lighting, enhanced by faint digital-grid overlays and a minimal square facial-bounding graphic.\n\nFloating across the middle section of the poster is a translucent iOS-style Apple Music mini-player displaying \"See You Again\" by Tyler, The Creator, featuring artwork, timeline, and playback controls without shadows, contributing to the minimal Ul aesthetic alongside subtle cursor-like frame lines and rectangular highlights around the collage edges.\n\nThe overall palette emphasizes warm ambers, washed neutrals, soft greys, reflective textures, wool plaid patterning, polished leather, and stone pavement, all rendered with realistic lighting and natural distortion patterns while avoiding stickers, extra subjects, wardrobe changes, incorrect Ul icons, neon color shifts, or any futuristic sci-fi elements.", this)'>📋 Copy</button>
         </div>
-        <p>An editorial poster-style multi-panel collage presents Subject[person in the image] across three asymmetric photographic frames, unified by a muted-brown urban streetwear aesthetic and a retro analog-digital fusion mood. The top-left frame captures a reflective window shot where the subject holds a phone in front of their face, dressed in a brown plaid blazer layered over a white button-up shirt, a yellow tie, loose dark trousers, and a brown cap; the reflective surface introduces layered ghosting, faint architectural overlays, and a subtly stretched full-body silhouette shaped by the curvature of the glass.</p><p>The top-right frame shifts into a close-range, downward-angled ultra-wide portrait taken on a cobblestone street, where the subject leans forward with hands in pockets and lips exaggeratedly pouting, wearing the same outfit now paired with oversized amber-tinted rectangular sunglasses, while the cobblestones warp and radiate outward due to lens perspective distortion.</p><p>The bottom-right frame becomes an intimate overhead selfie with the subject holding a drink, still in the same wardrobe but now with wired earphones, the amber sunglasses dominating the frame under soft overcast lighting, enhanced by faint digital-grid overlays and a minimal square facial-bounding graphic.</p><p>Floating across the middle section of the poster is a translucent iOS-style Apple Music mini-player displaying &quot;See You Again&quot; by Tyler, The Creator, featuring artwork, timeline, and playback controls without shadows, contributing to the minimal Ul aesthetic alongside subtle cursor-like frame lines and rectangular highlights around the collage edges.</p><p>The overall palette emphasizes warm ambers, washed neutrals, soft greys, reflective textures, wool plaid patterning, polished leather, and stone pavement, all rendered with realistic lighting and natural distortion patterns while avoiding stickers, extra subjects, wardrobe changes, incorrect Ul icons, neon color shifts, or any futuristic sci-fi elements.</p>
+        <div data-nosnippet><p>An editorial poster-style multi-panel collage presents Subject[person in the image] across three asymmetric photographic frames, unified by a muted-brown urban streetwear aesthetic and a retro analog-digital fusion mood. The top-left frame captures a reflective window shot where the subject holds a phone in front of their face, dressed in a brown plaid blazer layered over a white button-up shirt, a yellow tie, loose dark trousers, and a brown cap; the reflective surface introduces layered ghosting, faint architectural overlays, and a subtly stretched full-body silhouette shaped by the curvature of the glass.</p><p>The top-right frame shifts into a close-range, downward-angled ultra-wide portrait taken on a cobblestone street, where the subject leans forward with hands in pockets and lips exaggeratedly pouting, wearing the same outfit now paired with oversized amber-tinted rectangular sunglasses, while the cobblestones warp and radiate outward due to lens perspective distortion.</p><p>The bottom-right frame becomes an intimate overhead selfie with the subject holding a drink, still in the same wardrobe but now with wired earphones, the amber sunglasses dominating the frame under soft overcast lighting, enhanced by faint digital-grid overlays and a minimal square facial-bounding graphic.</p><p>Floating across the middle section of the poster is a translucent iOS-style Apple Music mini-player displaying &quot;See You Again&quot; by Tyler, The Creator, featuring artwork, timeline, and playback controls without shadows, contributing to the minimal Ul aesthetic alongside subtle cursor-like frame lines and rectangular highlights around the collage edges.</p><p>The overall palette emphasizes warm ambers, washed neutrals, soft greys, reflective textures, wool plaid patterning, polished leather, and stone pavement, all rendered with realistic lighting and natural distortion patterns while avoiding stickers, extra subjects, wardrobe changes, incorrect Ul icons, neon color shifts, or any futuristic sci-fi elements.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2018566445031137556-1.jpg" alt="An editorial poster style multi panel collage presents Subjec..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1940,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

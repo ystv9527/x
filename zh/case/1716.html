@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #1716 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;name&quot;: &quot;Sydney Sweeney&quot;, &quot;gender&quot;: &quot;female&quot;, &quot;age&quot;: &quot;young adult&quot;, &quot;skin&quot;: &quot;fair&quot;, &quot;expression&quot;: &quot;cal...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1716.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1716.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1716.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840632">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022392">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"name\": \"Sydney Sweeney\",\n    \"gender\": \"女性\",\n    \"age\": \"年轻成人\",\n    \"skin\": \"白皙\",\n    \"expression\": \"平静，自信\"\n  },\n\n  \"pose\": {\n    \"body_position\": \"低蹲在地面\",\n    \"legs\": \"膝盖完全弯曲，脚跟着地\",\n    \"arms\": \"一只手肘撑在膝盖上\",\n    \"hands\": \"下巴被手轻轻托着\",\n    \"camera_angle\": \"低角度\",\n    \"framing\": \"全身可见\"\n  },\n\n  \"clothing\": {\n    \"top\": \"超大号淡粉色卫衣，长袖\",\n    \"bottom\": \"短款米色裙子或短裤\",\n    \"fit\": \"宽松，超大号\"\n  },\n\n  \"shoes\": {\n    \"type\": \"高跟凉鞋\",\n    \"color\": \"金属金色\",\n    \"details\": \"细带，露趾\"\n  },\n\n  \"accessories\": {\n    \"bag\": \"小型淡粉色单肩包，斜挎\",\n    \"style\": \"极简，时尚编辑风\"\n  },\n\n  \"hair\": {\n    \"color\": \"金发\",\n    \"style\": \"长发，波浪状\",\n    \"texture\": \"自然\"\n  },\n\n  \"gaze\": {\n    \"direction\": \"看向镜头\",\n    \"eye_expression\": \"柔和，放松\"\n  },\n\n  \"environment\": {\n    \"location\": \"地下停车场\",\n    \"atmosphere\": \"充满活力，热闹\",\n    \"lighting\": \"暖色灯光带霓虹点缀\",\n    \"background_style\": \"色彩斑斓的倒影，略微模糊\"\n  },\n\n  \"photography\": {\n    \"style\": \"都市时尚编辑风\",\n    \"realism\": \"照片级真实\",\n    \"quality\": \"高细节\",\n    \"lens\": \"35mm\",\n    \"depth_of_field\": \"浅景深\",\n    \"shadows\": \"柔和\"\n  },\n\n  \"negative_prompt\": [\n    \"身体扭曲\",\n    \"多余的四肢\",\n    \"不真实的解剖结构\",\n    \"面部畸形\",\n    \"模糊\",\n    \"低质量\",\n    \"卡通\",\n    \"动漫风\",\n    \"夸张的比例\"\n  ],\n\n  \"output\": {\n    \"width\": 1024,\n    \"height\": 1280,\n    \"aspect_ratio\": \"4:5\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;name&quot;: &quot;Sydney Sweeney&quot;,<br>    &quot;gender&quot;: &quot;女性&quot;,<br>    &quot;age&quot;: &quot;年轻成人&quot;,<br>    &quot;skin&quot;: &quot;白皙&quot;,<br>    &quot;expression&quot;: &quot;平静，自信&quot;<br>  },</p><p>&quot;pose&quot;: {<br>    &quot;body_position&quot;: &quot;低蹲在地面&quot;,<br>    &quot;legs&quot;: &quot;膝盖完全弯曲，脚跟着地&quot;,<br>    &quot;arms&quot;: &quot;一只手肘撑在膝盖上&quot;,<br>    &quot;hands&quot;: &quot;下巴被手轻轻托着&quot;,<br>    &quot;camera_angle&quot;: &quot;低角度&quot;,<br>    &quot;framing&quot;: &quot;全身可见&quot;<br>  },</p><p>&quot;clothing&quot;: {<br>    &quot;top&quot;: &quot;超大号淡粉色卫衣，长袖&quot;,<br>    &quot;bottom&quot;: &quot;短款米色裙子或短裤&quot;,<br>    &quot;fit&quot;: &quot;宽松，超大号&quot;<br>  },</p><p>&quot;shoes&quot;: {<br>    &quot;type&quot;: &quot;高跟凉鞋&quot;,<br>    &quot;color&quot;: &quot;金属金色&quot;,<br>    &quot;details&quot;: &quot;细带，露趾&quot;<br>  },</p><p>&quot;accessories&quot;: {<br>    &quot;bag&quot;: &quot;小型淡粉色单肩包，斜挎&quot;,<br>    &quot;style&quot;: &quot;极简，时尚编辑风&quot;<br>  },</p><p>&quot;hair&quot;: {<br>    &quot;color&quot;: &quot;金发&quot;,<br>    &quot;style&quot;: &quot;长发，波浪状&quot;,<br>    &quot;texture&quot;: &quot;自然&quot;<br>  },</p><p>&quot;gaze&quot;: {<br>    &quot;direction&quot;: &quot;看向镜头&quot;,<br>    &quot;eye_expression&quot;: &quot;柔和，放松&quot;<br>  },</p><p>&quot;environment&quot;: {<br>    &quot;location&quot;: &quot;地下停车场&quot;,<br>    &quot;atmosphere&quot;: &quot;充满活力，热闹&quot;,<br>    &quot;lighting&quot;: &quot;暖色灯光带霓虹点缀&quot;,<br>    &quot;background_style&quot;: &quot;色彩斑斓的倒影，略微模糊&quot;<br>  },</p><p>&quot;photography&quot;: {<br>    &quot;style&quot;: &quot;都市时尚编辑风&quot;,<br>    &quot;realism&quot;: &quot;照片级真实&quot;,<br>    &quot;quality&quot;: &quot;高细节&quot;,<br>    &quot;lens&quot;: &quot;35mm&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;shadows&quot;: &quot;柔和&quot;<br>  },</p><p>&quot;negative_prompt&quot;: [<br>    &quot;身体扭曲&quot;,<br>    &quot;多余的四肢&quot;,<br>    &quot;不真实的解剖结构&quot;,<br>    &quot;面部畸形&quot;,<br>    &quot;模糊&quot;,<br>    &quot;低质量&quot;,<br>    &quot;卡通&quot;,<br>    &quot;动漫风&quot;,<br>    &quot;夸张的比例&quot;<br>  ],</p><p>&quot;output&quot;: {<br>    &quot;width&quot;: 1024,<br>    &quot;height&quot;: 1280,<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;name&quot;: &quot;Sydney Sweeney&quot;,<br>    &quot;gender&quot;: &quot;女性&quot;,<br>    &quot;age&quot;: &quot;年轻成人&quot;,<br>    &quot;skin&quot;: &quot;白皙&quot;,<br>    &quot;expression&quot;: &quot;平静，自信&quot;<br>  },</p><p>&quot;pose&quot;: {<br>    &quot;body_position&quot;: &quot;低蹲在地面&quot;,<br>    &quot;legs&quot;: &quot;膝盖完全弯曲，脚跟着地&quot;,<br>    &quot;arms&quot;: &quot;一只手肘撑在膝盖上&quot;,<br>    &quot;hands&quot;: &quot;下巴被手轻轻托着&quot;,<br>    &quot;camera_angle&quot;: &quot;低角度&quot;,<br>    &quot;framing&quot;: &quot;全身可见&quot;<br>  },</p><p>&quot;clothing&quot;: {<br>    &quot;top&quot;: &quot;超大号淡粉色卫衣，长袖&quot;,<br>    &quot;bottom&quot;: &quot;短款米色裙子或短裤&quot;,<br>    &quot;fit&quot;: &quot;宽松，超大号&quot;<br>  },</p><p>&quot;shoes&quot;: {<br>    &quot;type&quot;: &quot;高跟凉鞋&quot;,<br>    &quot;color&quot;: &quot;金属金色&quot;,<br>    &quot;details&quot;: &quot;细带，露趾&quot;<br>  },</p><p>&quot;accessories&quot;: {<br>    &quot;bag&quot;: &quot;小型淡粉色单肩包，斜挎&quot;,<br>    &quot;style&quot;: &quot;极简，时尚编辑风&quot;<br>  },</p><p>&quot;hair&quot;: {<br>    &quot;color&quot;: &quot;金发&quot;,<br>    &quot;style&quot;: &quot;长发，波浪状&quot;,<br>    &quot;texture&quot;: &quot;自然&quot;<br>  },</p><p>&quot;gaze&quot;: {<br>    &quot;direction&quot;: &quot;看向镜头&quot;,<br>    &quot;eye_expression&quot;: &quot;柔和，放松&quot;<br>  },</p><p>&quot;environment&quot;: {<br>    &quot;location&quot;: &quot;地下停车场&quot;,<br>    &quot;atmosphere&quot;: &quot;充满活力，热闹&quot;,<br>    &quot;lighting&quot;: &quot;暖色灯光带霓虹点缀&quot;,<br>    &quot;background_style&quot;: &quot;色彩斑斓的倒影，略微模糊&quot;<br>  },</p><p>&quot;photography&quot;: {<br>    &quot;style&quot;: &quot;都市时尚编辑风&quot;,<br>    &quot;realism&quot;: &quot;照片级真实&quot;,<br>    &quot;quality&quot;: &quot;高细节&quot;,<br>    &quot;lens&quot;: &quot;35mm&quot;,<br>    &quot;depth_of_field&quot;: &quot;浅景深&quot;,<br>    &quot;shadows&quot;: &quot;柔和&quot;<br>  },</p><p>&quot;negative_prompt&quot;: [<br>    &quot;身体扭曲&quot;,<br>    &quot;多余的四肢&quot;,<br>    &quot;不真实的解剖结构&quot;,<br>    &quot;面部畸形&quot;,<br>    &quot;模糊&quot;,<br>    &quot;低质量&quot;,<br>    &quot;卡通&quot;,<br>    &quot;动漫风&quot;,<br>    &quot;夸张的比例&quot;<br>  ],</p><p>&quot;output&quot;: {<br>    &quot;width&quot;: 1024,<br>    &quot;height&quot;: 1280,<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"name\": \"Sydney Sweeney\",\n    \"gender\": \"female\",\n    \"age\": \"young adult\",\n    \"skin\": \"fair\",\n    \"expression\": \"calm, confident\"\n  },\n\n  \"pose\": {\n    \"body_position\": \"crouching low on the ground\",\n    \"legs\": \"knees fully bent, heels on the ground\",\n    \"arms\": \"one elbow resting on knee\",\n    \"hands\": \"chin gently supported by hand\",\n    \"camera_angle\": \"low angle\",\n    \"framing\": \"full body visible\"\n  },\n\n  \"clothing\": {\n    \"top\": \"oversized pastel pink sweatshirt, long sleeves\",\n    \"bottom\": \"short beige skirt or shorts\",\n    \"fit\": \"relaxed, oversized\"\n  },\n\n  \"shoes\": {\n    \"type\": \"high-heeled sandals\",\n    \"color\": \"metallic gold\",\n    \"details\": \"thin straps, open toe\"\n  },\n\n  \"accessories\": {\n    \"bag\": \"small pastel pink shoulder bag, crossbody\",\n    \"style\": \"minimal, fashion editorial\"\n  },\n\n  \"hair\": {\n    \"color\": \"blonde\",\n    \"style\": \"long, wavy\",\n    \"texture\": \"natural\"\n  },\n\n  \"gaze\": {\n    \"direction\": \"looking at camera\",\n    \"eye_expression\": \"soft, relaxed\"\n  },\n\n  \"environment\": {\n    \"location\": \"underground parking area\",\n    \"atmosphere\": \"vibrant, lively\",\n    \"lighting\": \"warm lights with neon accents\",\n    \"background_style\": \"colorful reflections, slightly blurred\"\n  },\n\n  \"photography\": {\n    \"style\": \"urban fashion editorial\",\n    \"realism\": \"photorealistic\",\n    \"quality\": \"high detail\",\n    \"lens\": \"35mm\",\n    \"depth_of_field\": \"shallow\",\n    \"shadows\": \"soft\"\n  },\n\n  \"negative_prompt\": [\n    \"distorted body\",\n    \"extra limbs\",\n    \"unrealistic anatomy\",\n    \"deformed face\",\n    \"blurry\",\n    \"low quality\",\n    \"cartoon\",\n    \"anime\",\n    \"exaggerated proportions\"\n  ],\n\n  \"output\": {\n    \"width\": 1024,\n    \"height\": 1280,\n    \"aspect_ratio\": \"4:5\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;name&quot;: &quot;Sydney Sweeney&quot;,<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;age&quot;: &quot;young adult&quot;,<br>    &quot;skin&quot;: &quot;fair&quot;,<br>    &quot;expression&quot;: &quot;calm, confident&quot;<br>  },</p><p>&quot;pose&quot;: {<br>    &quot;body_position&quot;: &quot;crouching low on the ground&quot;,<br>    &quot;legs&quot;: &quot;knees fully bent, heels on the ground&quot;,<br>    &quot;arms&quot;: &quot;one elbow resting on knee&quot;,<br>    &quot;hands&quot;: &quot;chin gently supported by hand&quot;,<br>    &quot;camera_angle&quot;: &quot;low angle&quot;,<br>    &quot;framing&quot;: &quot;full body visible&quot;<br>  },</p><p>&quot;clothing&quot;: {<br>    &quot;top&quot;: &quot;oversized pastel pink sweatshirt, long sleeves&quot;,<br>    &quot;bottom&quot;: &quot;short beige skirt or shorts&quot;,<br>    &quot;fit&quot;: &quot;relaxed, oversized&quot;<br>  },</p><p>&quot;shoes&quot;: {<br>    &quot;type&quot;: &quot;high-heeled sandals&quot;,<br>    &quot;color&quot;: &quot;metallic gold&quot;,<br>    &quot;details&quot;: &quot;thin straps, open toe&quot;<br>  },</p><p>&quot;accessories&quot;: {<br>    &quot;bag&quot;: &quot;small pastel pink shoulder bag, crossbody&quot;,<br>    &quot;style&quot;: &quot;minimal, fashion editorial&quot;<br>  },</p><p>&quot;hair&quot;: {<br>    &quot;color&quot;: &quot;blonde&quot;,<br>    &quot;style&quot;: &quot;long, wavy&quot;,<br>    &quot;texture&quot;: &quot;natural&quot;<br>  },</p><p>&quot;gaze&quot;: {<br>    &quot;direction&quot;: &quot;looking at camera&quot;,<br>    &quot;eye_expression&quot;: &quot;soft, relaxed&quot;<br>  },</p><p>&quot;environment&quot;: {<br>    &quot;location&quot;: &quot;underground parking area&quot;,<br>    &quot;atmosphere&quot;: &quot;vibrant, lively&quot;,<br>    &quot;lighting&quot;: &quot;warm lights with neon accents&quot;,<br>    &quot;background_style&quot;: &quot;colorful reflections, slightly blurred&quot;<br>  },</p><p>&quot;photography&quot;: {<br>    &quot;style&quot;: &quot;urban fashion editorial&quot;,<br>    &quot;realism&quot;: &quot;photorealistic&quot;,<br>    &quot;quality&quot;: &quot;high detail&quot;,<br>    &quot;lens&quot;: &quot;35mm&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;shadows&quot;: &quot;soft&quot;<br>  },</p><p>&quot;negative_prompt&quot;: [<br>    &quot;distorted body&quot;,<br>    &quot;extra limbs&quot;,<br>    &quot;unrealistic anatomy&quot;,<br>    &quot;deformed face&quot;,<br>    &quot;blurry&quot;,<br>    &quot;low quality&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;,<br>    &quot;exaggerated proportions&quot;<br>  ],</p><p>&quot;output&quot;: {<br>    &quot;width&quot;: 1024,<br>    &quot;height&quot;: 1280,<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;name&quot;: &quot;Sydney Sweeney&quot;,<br>    &quot;gender&quot;: &quot;female&quot;,<br>    &quot;age&quot;: &quot;young adult&quot;,<br>    &quot;skin&quot;: &quot;fair&quot;,<br>    &quot;expression&quot;: &quot;calm, confident&quot;<br>  },</p><p>&quot;pose&quot;: {<br>    &quot;body_position&quot;: &quot;crouching low on the ground&quot;,<br>    &quot;legs&quot;: &quot;knees fully bent, heels on the ground&quot;,<br>    &quot;arms&quot;: &quot;one elbow resting on knee&quot;,<br>    &quot;hands&quot;: &quot;chin gently supported by hand&quot;,<br>    &quot;camera_angle&quot;: &quot;low angle&quot;,<br>    &quot;framing&quot;: &quot;full body visible&quot;<br>  },</p><p>&quot;clothing&quot;: {<br>    &quot;top&quot;: &quot;oversized pastel pink sweatshirt, long sleeves&quot;,<br>    &quot;bottom&quot;: &quot;short beige skirt or shorts&quot;,<br>    &quot;fit&quot;: &quot;relaxed, oversized&quot;<br>  },</p><p>&quot;shoes&quot;: {<br>    &quot;type&quot;: &quot;high-heeled sandals&quot;,<br>    &quot;color&quot;: &quot;metallic gold&quot;,<br>    &quot;details&quot;: &quot;thin straps, open toe&quot;<br>  },</p><p>&quot;accessories&quot;: {<br>    &quot;bag&quot;: &quot;small pastel pink shoulder bag, crossbody&quot;,<br>    &quot;style&quot;: &quot;minimal, fashion editorial&quot;<br>  },</p><p>&quot;hair&quot;: {<br>    &quot;color&quot;: &quot;blonde&quot;,<br>    &quot;style&quot;: &quot;long, wavy&quot;,<br>    &quot;texture&quot;: &quot;natural&quot;<br>  },</p><p>&quot;gaze&quot;: {<br>    &quot;direction&quot;: &quot;looking at camera&quot;,<br>    &quot;eye_expression&quot;: &quot;soft, relaxed&quot;<br>  },</p><p>&quot;environment&quot;: {<br>    &quot;location&quot;: &quot;underground parking area&quot;,<br>    &quot;atmosphere&quot;: &quot;vibrant, lively&quot;,<br>    &quot;lighting&quot;: &quot;warm lights with neon accents&quot;,<br>    &quot;background_style&quot;: &quot;colorful reflections, slightly blurred&quot;<br>  },</p><p>&quot;photography&quot;: {<br>    &quot;style&quot;: &quot;urban fashion editorial&quot;,<br>    &quot;realism&quot;: &quot;photorealistic&quot;,<br>    &quot;quality&quot;: &quot;high detail&quot;,<br>    &quot;lens&quot;: &quot;35mm&quot;,<br>    &quot;depth_of_field&quot;: &quot;shallow&quot;,<br>    &quot;shadows&quot;: &quot;soft&quot;<br>  },</p><p>&quot;negative_prompt&quot;: [<br>    &quot;distorted body&quot;,<br>    &quot;extra limbs&quot;,<br>    &quot;unrealistic anatomy&quot;,<br>    &quot;deformed face&quot;,<br>    &quot;blurry&quot;,<br>    &quot;low quality&quot;,<br>    &quot;cartoon&quot;,<br>    &quot;anime&quot;,<br>    &quot;exaggerated proportions&quot;<br>  ],</p><p>&quot;output&quot;: {<br>    &quot;width&quot;: 1024,<br>    &quot;height&quot;: 1280,<br>    &quot;aspect_ratio&quot;: &quot;4:5&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015652179231576138-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2015652179231576138-2.jpg" alt="&quot;subject&quot;: {" loading="lazy"><img src="/images/tweet-2015652179231576138-3.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1716,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

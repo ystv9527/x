@@ -7,11 +7,13 @@
     <title>[PERSON NAME]. Act as a graphic designer creating a minimalis... #1170 | Gem Nana AI 提示词库</title>
     <meta name="description" content="[PERSON NAME]. Act as a graphic designer creating a minimalist, avant garde streetwear poster. COMPOSITION (THE FUSIO...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1170.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1170.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1170.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841180">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022516">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[PERSON NAME]。 扮演一名平面设计师，创作一张极简、前卫的街头服饰海报。\nCOMPOSITION（融合）：\n图像是一个巨型排版名字与单色人像的创意融合。\n主题：一张高对比、黑白的全身或3/4裁切人像照片，人物居中站立，呈现冷酷且超然的表情。\n排版：人物的名字水平写满整个画面宽度。文字与身体互相作用：人物穿插在字母之间，产生“交织”的纵深效果（部分肢体在文字前方，部分在后方），或人像为文字形成剪影蒙版。\nTYPOGRAPHY STYLE（混合字体）：\n模仿特定的“Street Editorial”字体搭配：\n首字母：名字的首字母以大幅、挥洒、富有表现力的书法体或毛笔字体呈现（动态且随性）。\n名字其余部分：其余字母以超重、几何无衬线字体呈现（类似 Impact 或 Helvetica Black）。\n颜色：文字为纯深灰或黑色。\n美学与氛围：\n配色：严格单色（黑、白及灰阶）。\n背景：纯粹、宽阔的白色极简背景。大量留白。\n氛围：原始、Zine 风格美学，剪贴拼贴感，高级街头时尚海报。\n版面细节：\n在画面极角添加非常小的、微观的功能性文字（例如，“poster design”、“2025”、“fig 01”），以增强瑞士设计海报的感觉。", this)'>📋 复制</button>
         </div>
-        <p>[PERSON NAME]。 扮演一名平面设计师，创作一张极简、前卫的街头服饰海报。<br>COMPOSITION（融合）：<br>图像是一个巨型排版名字与单色人像的创意融合。<br>主题：一张高对比、黑白的全身或3/4裁切人像照片，人物居中站立，呈现冷酷且超然的表情。<br>排版：人物的名字水平写满整个画面宽度。文字与身体互相作用：人物穿插在字母之间，产生“交织”的纵深效果（部分肢体在文字前方，部分在后方），或人像为文字形成剪影蒙版。<br>TYPOGRAPHY STYLE（混合字体）：<br>模仿特定的“Street Editorial”字体搭配：<br>首字母：名字的首字母以大幅、挥洒、富有表现力的书法体或毛笔字体呈现（动态且随性）。<br>名字其余部分：其余字母以超重、几何无衬线字体呈现（类似 Impact 或 Helvetica Black）。<br>颜色：文字为纯深灰或黑色。<br>美学与氛围：<br>配色：严格单色（黑、白及灰阶）。<br>背景：纯粹、宽阔的白色极简背景。大量留白。<br>氛围：原始、Zine 风格美学，剪贴拼贴感，高级街头时尚海报。<br>版面细节：<br>在画面极角添加非常小的、微观的功能性文字（例如，“poster design”、“2025”、“fig 01”），以增强瑞士设计海报的感觉。</p>
+        <div data-nosnippet><p>[PERSON NAME]。 扮演一名平面设计师，创作一张极简、前卫的街头服饰海报。<br>COMPOSITION（融合）：<br>图像是一个巨型排版名字与单色人像的创意融合。<br>主题：一张高对比、黑白的全身或3/4裁切人像照片，人物居中站立，呈现冷酷且超然的表情。<br>排版：人物的名字水平写满整个画面宽度。文字与身体互相作用：人物穿插在字母之间，产生“交织”的纵深效果（部分肢体在文字前方，部分在后方），或人像为文字形成剪影蒙版。<br>TYPOGRAPHY STYLE（混合字体）：<br>模仿特定的“Street Editorial”字体搭配：<br>首字母：名字的首字母以大幅、挥洒、富有表现力的书法体或毛笔字体呈现（动态且随性）。<br>名字其余部分：其余字母以超重、几何无衬线字体呈现（类似 Impact 或 Helvetica Black）。<br>颜色：文字为纯深灰或黑色。<br>美学与氛围：<br>配色：严格单色（黑、白及灰阶）。<br>背景：纯粹、宽阔的白色极简背景。大量留白。<br>氛围：原始、Zine 风格美学，剪贴拼贴感，高级街头时尚海报。<br>版面细节：<br>在画面极角添加非常小的、微观的功能性文字（例如，“poster design”、“2025”、“fig 01”），以增强瑞士设计海报的感觉。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("[PERSON NAME]. Act as a graphic designer creating a minimalist, avant-garde streetwear poster.\nCOMPOSITION (THE FUSION):\nThe image is a creative fusion of a massive typographic name and a monochrome portrait of [PERSON NAME].\nThe Subject: A high-contrast, black-and-white full-body or 3/4 cut-out photograph of [PERSON NAME]. The subject stands centrally, looking cool and detached.\nThe Typography: The person's name is written horizontally across the entire width of the image. The text interacts with the body: the person stands through the letters, creating a \"woven\" depth effect (some limbs in front of text, some behind), or the portrait creates a silhouette mask for the text.\nTYPOGRAPHY STYLE (MIXED SCRIPTS):\nMimic the specific \"Street Editorial\" font pairing:\nThe First Letter: The initial letter of the name is rendered in a large, sweeping, expressive Calligraphic Script or Brush font (dynamic and loose).\nThe Rest of the Name: The remaining letters are rendered in an Ultra-Heavy, Geometric Sans-Serif font (like Impact or Helvetica Black).\nColor: The text is solid Dark Grey or Black.\nAESTHETICS & ATMOSPHERE:\nPalette: Strictly Monochrome (Black, White, and Greyscale).\nBackground: Pure, vast White Minimalist background. Extensive negative space.\nVibe: Raw, \"Zine\" aesthetic, cut-and-paste collage feel, high-fashion streetwear poster.\nLAYOUT DETAILS:\nAdd very small, microscopic functional text in the extreme corners (e.g., \"poster design\", \"2025\", \"fig 01\") to enhance the Swiss Design poster feel.", this)'>📋 复制</button>
         </div>
-        <p>[PERSON NAME]. Act as a graphic designer creating a minimalist, avant-garde streetwear poster.<br>COMPOSITION (THE FUSION):<br>The image is a creative fusion of a massive typographic name and a monochrome portrait of [PERSON NAME].<br>The Subject: A high-contrast, black-and-white full-body or 3/4 cut-out photograph of [PERSON NAME]. The subject stands centrally, looking cool and detached.<br>The Typography: The person&#39;s name is written horizontally across the entire width of the image. The text interacts with the body: the person stands through the letters, creating a &quot;woven&quot; depth effect (some limbs in front of text, some behind), or the portrait creates a silhouette mask for the text.<br>TYPOGRAPHY STYLE (MIXED SCRIPTS):<br>Mimic the specific &quot;Street Editorial&quot; font pairing:<br>The First Letter: The initial letter of the name is rendered in a large, sweeping, expressive Calligraphic Script or Brush font (dynamic and loose).<br>The Rest of the Name: The remaining letters are rendered in an Ultra-Heavy, Geometric Sans-Serif font (like Impact or Helvetica Black).<br>Color: The text is solid Dark Grey or Black.<br>AESTHETICS &amp; ATMOSPHERE:<br>Palette: Strictly Monochrome (Black, White, and Greyscale).<br>Background: Pure, vast White Minimalist background. Extensive negative space.<br>Vibe: Raw, &quot;Zine&quot; aesthetic, cut-and-paste collage feel, high-fashion streetwear poster.<br>LAYOUT DETAILS:<br>Add very small, microscopic functional text in the extreme corners (e.g., &quot;poster design&quot;, &quot;2025&quot;, &quot;fig 01&quot;) to enhance the Swiss Design poster feel.</p>
+        <div data-nosnippet><p>[PERSON NAME]. Act as a graphic designer creating a minimalist, avant-garde streetwear poster.<br>COMPOSITION (THE FUSION):<br>The image is a creative fusion of a massive typographic name and a monochrome portrait of [PERSON NAME].<br>The Subject: A high-contrast, black-and-white full-body or 3/4 cut-out photograph of [PERSON NAME]. The subject stands centrally, looking cool and detached.<br>The Typography: The person&#39;s name is written horizontally across the entire width of the image. The text interacts with the body: the person stands through the letters, creating a &quot;woven&quot; depth effect (some limbs in front of text, some behind), or the portrait creates a silhouette mask for the text.<br>TYPOGRAPHY STYLE (MIXED SCRIPTS):<br>Mimic the specific &quot;Street Editorial&quot; font pairing:<br>The First Letter: The initial letter of the name is rendered in a large, sweeping, expressive Calligraphic Script or Brush font (dynamic and loose).<br>The Rest of the Name: The remaining letters are rendered in an Ultra-Heavy, Geometric Sans-Serif font (like Impact or Helvetica Black).<br>Color: The text is solid Dark Grey or Black.<br>AESTHETICS &amp; ATMOSPHERE:<br>Palette: Strictly Monochrome (Black, White, and Greyscale).<br>Background: Pure, vast White Minimalist background. Extensive negative space.<br>Vibe: Raw, &quot;Zine&quot; aesthetic, cut-and-paste collage feel, high-fashion streetwear poster.<br>LAYOUT DETAILS:<br>Add very small, microscopic functional text in the extreme corners (e.g., &quot;poster design&quot;, &quot;2025&quot;, &quot;fig 01&quot;) to enhance the Swiss Design poster feel.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011170447434649774-1.jpg" alt="[PERSON NAME]. Act as a graphic designer creating a minimalis..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1170,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>有趣的块状 3D 世界 #240 | Gem Nana AI 提示词库</title>
     <meta name="description" content="有趣的块状 3D 世界 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/240.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/240.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/240.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245842026">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022734">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("根据以下 JSON 对附加的图像进行重新纹理化\n{\n  \"style_name\": \"Playful Chunky 3D Aesthetic\",\n  \"retexture_mode\": \"stylized_3d_overlay\",\n\"对象分析\": {\n\"保留轮廓\": true,\n\"几何敏感映射\": true,\n\"细节保留\": \"中等 — 侧重于关键形态和比例\"\n  },\n\"材料属性\": {\n    \"基础材料\": [\"柔软磨砂塑料\", \"弹性聚合物\"],\n    \"表面细节\": [\n\"圆润的边缘和膨胀的体积\",\n\"光滑、玩具般的表面\",\n\"极少的接缝线\"\n    ]\n  },\n\"lighting\": {\n    \"type\": \"工作室漫射光\",\n    \"intensity\": \"中等\",\n\"阴影\": \"柔和的基础阴影\",\n    \"高光行为\": \"曲线和凸起表面的柔和光泽\"\n  },\n  \"配色方案\": {\n\"主色调\": [\" #f6f6f6 \", \" #3a3a3a \", \" #f05423 \"],\n    \"强调色\": [\" #ff875d \", \" #b0b0b0 \", \" #f3f3f3 \"]\n  },\n  \"背景\": {\n\"color\": \" #f9f9f9 \",\n    \"type\": \"solid\",\n    \"texture\": \"none\"\n  },\n\"风格标签\": []\n\"3D 卡通写实风格\"\n\"UI 图标包美学\"\n\"膨胀极简主义\"\n\"柔和科技感\",\n\"俏皮体积建模\"\n  ]\n}", this)'>📋 复制</button>
         </div>
-        <p>根据以下 JSON 对附加的图像进行重新纹理化<br>{<br>  &quot;style_name&quot;: &quot;Playful Chunky 3D Aesthetic&quot;,<br>  &quot;retexture_mode&quot;: &quot;stylized_3d_overlay&quot;,<br>&quot;对象分析&quot;: {<br>&quot;保留轮廓&quot;: true,<br>&quot;几何敏感映射&quot;: true,<br>&quot;细节保留&quot;: &quot;中等 — 侧重于关键形态和比例&quot;<br>  },<br>&quot;材料属性&quot;: {<br>    &quot;基础材料&quot;: [&quot;柔软磨砂塑料&quot;, &quot;弹性聚合物&quot;],<br>    &quot;表面细节&quot;: [<br>&quot;圆润的边缘和膨胀的体积&quot;,<br>&quot;光滑、玩具般的表面&quot;,<br>&quot;极少的接缝线&quot;<br>    ]<br>  },<br>&quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;工作室漫射光&quot;,<br>    &quot;intensity&quot;: &quot;中等&quot;,<br>&quot;阴影&quot;: &quot;柔和的基础阴影&quot;,<br>    &quot;高光行为&quot;: &quot;曲线和凸起表面的柔和光泽&quot;<br>  },<br>  &quot;配色方案&quot;: {<br>&quot;主色调&quot;: [&quot; #f6f6f6 &quot;, &quot; #3a3a3a &quot;, &quot; #f05423 &quot;],<br>    &quot;强调色&quot;: [&quot; #ff875d &quot;, &quot; #b0b0b0 &quot;, &quot; #f3f3f3 &quot;]<br>  },<br>  &quot;背景&quot;: {<br>&quot;color&quot;: &quot; #f9f9f9 &quot;,<br>    &quot;type&quot;: &quot;solid&quot;,<br>    &quot;texture&quot;: &quot;none&quot;<br>  },<br>&quot;风格标签&quot;: []<br>&quot;3D 卡通写实风格&quot;<br>&quot;UI 图标包美学&quot;<br>&quot;膨胀极简主义&quot;<br>&quot;柔和科技感&quot;,<br>&quot;俏皮体积建模&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>根据以下 JSON 对附加的图像进行重新纹理化<br>{<br>  &quot;style_name&quot;: &quot;Playful Chunky 3D Aesthetic&quot;,<br>  &quot;retexture_mode&quot;: &quot;stylized_3d_overlay&quot;,<br>&quot;对象分析&quot;: {<br>&quot;保留轮廓&quot;: true,<br>&quot;几何敏感映射&quot;: true,<br>&quot;细节保留&quot;: &quot;中等 — 侧重于关键形态和比例&quot;<br>  },<br>&quot;材料属性&quot;: {<br>    &quot;基础材料&quot;: [&quot;柔软磨砂塑料&quot;, &quot;弹性聚合物&quot;],<br>    &quot;表面细节&quot;: [<br>&quot;圆润的边缘和膨胀的体积&quot;,<br>&quot;光滑、玩具般的表面&quot;,<br>&quot;极少的接缝线&quot;<br>    ]<br>  },<br>&quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;工作室漫射光&quot;,<br>    &quot;intensity&quot;: &quot;中等&quot;,<br>&quot;阴影&quot;: &quot;柔和的基础阴影&quot;,<br>    &quot;高光行为&quot;: &quot;曲线和凸起表面的柔和光泽&quot;<br>  },<br>  &quot;配色方案&quot;: {<br>&quot;主色调&quot;: [&quot; #f6f6f6 &quot;, &quot; #3a3a3a &quot;, &quot; #f05423 &quot;],<br>    &quot;强调色&quot;: [&quot; #ff875d &quot;, &quot; #b0b0b0 &quot;, &quot; #f3f3f3 &quot;]<br>  },<br>  &quot;背景&quot;: {<br>&quot;color&quot;: &quot; #f9f9f9 &quot;,<br>    &quot;type&quot;: &quot;solid&quot;,<br>    &quot;texture&quot;: &quot;none&quot;<br>  },<br>&quot;风格标签&quot;: []<br>&quot;3D 卡通写实风格&quot;<br>&quot;UI 图标包美学&quot;<br>&quot;膨胀极简主义&quot;<br>&quot;柔和科技感&quot;,<br>&quot;俏皮体积建模&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Retexture the image attached based on the JSON below\n{\n  \"style_name\": \"Playful Chunky 3D Aesthetic\",\n  \"retexture_mode\": \"stylized_3d_overlay\",\n  \"object_analysis\": {\n    \"preserve_silhouette\": true,\n    \"geometry_sensitive_mapping\": true,\n    \"detail_retention\": \"moderate — focus on key forms and proportions\"\n  },\n  \"material_properties\": {\n    \"base_material\": [\"soft matte plastic\", \"rubbery polymer\"],\n    \"surface_details\": [\n      \"rounded edges and inflated volumes\",\n      \"smooth, toy-like finish\",\n      \"minimal seam lines\"\n    ]\n  },\n  \"lighting\": {\n    \"type\": \"studio diffused light\",\n    \"intensity\": \"medium\",\n    \"shadows\": \"soft base shadows\",\n    \"highlight_behavior\": \"gentle gloss on curves and raised surfaces\"\n  },\n  \"color_palette\": {\n    \"dominant_colors\": [\"#f6f6f6\", \"#3a3a3a\", \"#f05423\"],\n    \"accent_colors\": [\"#ff875d\", \"#b0b0b0\", \"#f3f3f3\"]\n  },\n  \"background\": {\n    \"color\": \"#f9f9f9\",\n    \"type\": \"solid\",\n    \"texture\": \"none\"\n  },\n  \"style_tags\": [\n    \"3D cartoon realism\",\n    \"UI icon pack aesthetic\",\n    \"inflated minimalism\",\n    \"soft tech look\",\n    \"playful volume modeling\"\n  ]\n}", this)'>📋 复制</button>
         </div>
-        <p>Retexture the image attached based on the JSON below<br>{<br>  &quot;style_name&quot;: &quot;Playful Chunky 3D Aesthetic&quot;,<br>  &quot;retexture_mode&quot;: &quot;stylized_3d_overlay&quot;,<br>  &quot;object_analysis&quot;: {<br>    &quot;preserve_silhouette&quot;: true,<br>    &quot;geometry_sensitive_mapping&quot;: true,<br>    &quot;detail_retention&quot;: &quot;moderate — focus on key forms and proportions&quot;<br>  },<br>  &quot;material_properties&quot;: {<br>    &quot;base_material&quot;: [&quot;soft matte plastic&quot;, &quot;rubbery polymer&quot;],<br>    &quot;surface_details&quot;: [<br>      &quot;rounded edges and inflated volumes&quot;,<br>      &quot;smooth, toy-like finish&quot;,<br>      &quot;minimal seam lines&quot;<br>    ]<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;studio diffused light&quot;,<br>    &quot;intensity&quot;: &quot;medium&quot;,<br>    &quot;shadows&quot;: &quot;soft base shadows&quot;,<br>    &quot;highlight_behavior&quot;: &quot;gentle gloss on curves and raised surfaces&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;dominant_colors&quot;: [&quot;#f6f6f6&quot;, &quot;#3a3a3a&quot;, &quot;#f05423&quot;],<br>    &quot;accent_colors&quot;: [&quot;#ff875d&quot;, &quot;#b0b0b0&quot;, &quot;#f3f3f3&quot;]<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;#f9f9f9&quot;,<br>    &quot;type&quot;: &quot;solid&quot;,<br>    &quot;texture&quot;: &quot;none&quot;<br>  },<br>  &quot;style_tags&quot;: [<br>    &quot;3D cartoon realism&quot;,<br>    &quot;UI icon pack aesthetic&quot;,<br>    &quot;inflated minimalism&quot;,<br>    &quot;soft tech look&quot;,<br>    &quot;playful volume modeling&quot;<br>  ]<br>}</p>
+        <div data-nosnippet><p>Retexture the image attached based on the JSON below<br>{<br>  &quot;style_name&quot;: &quot;Playful Chunky 3D Aesthetic&quot;,<br>  &quot;retexture_mode&quot;: &quot;stylized_3d_overlay&quot;,<br>  &quot;object_analysis&quot;: {<br>    &quot;preserve_silhouette&quot;: true,<br>    &quot;geometry_sensitive_mapping&quot;: true,<br>    &quot;detail_retention&quot;: &quot;moderate — focus on key forms and proportions&quot;<br>  },<br>  &quot;material_properties&quot;: {<br>    &quot;base_material&quot;: [&quot;soft matte plastic&quot;, &quot;rubbery polymer&quot;],<br>    &quot;surface_details&quot;: [<br>      &quot;rounded edges and inflated volumes&quot;,<br>      &quot;smooth, toy-like finish&quot;,<br>      &quot;minimal seam lines&quot;<br>    ]<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;studio diffused light&quot;,<br>    &quot;intensity&quot;: &quot;medium&quot;,<br>    &quot;shadows&quot;: &quot;soft base shadows&quot;,<br>    &quot;highlight_behavior&quot;: &quot;gentle gloss on curves and raised surfaces&quot;<br>  },<br>  &quot;color_palette&quot;: {<br>    &quot;dominant_colors&quot;: [&quot;#f6f6f6&quot;, &quot;#3a3a3a&quot;, &quot;#f05423&quot;],<br>    &quot;accent_colors&quot;: [&quot;#ff875d&quot;, &quot;#b0b0b0&quot;, &quot;#f3f3f3&quot;]<br>  },<br>  &quot;background&quot;: {<br>    &quot;color&quot;: &quot;#f9f9f9&quot;,<br>    &quot;type&quot;: &quot;solid&quot;,<br>    &quot;texture&quot;: &quot;none&quot;<br>  },<br>  &quot;style_tags&quot;: [<br>    &quot;3D cartoon realism&quot;,<br>    &quot;UI icon pack aesthetic&quot;,<br>    &quot;inflated minimalism&quot;,<br>    &quot;soft tech look&quot;,<br>    &quot;playful volume modeling&quot;<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/242.png" alt="有趣的块状 3D 世界" loading="lazy"><img src="/images/242-2.jpeg" alt="有趣的块状 3D 世界" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 240,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

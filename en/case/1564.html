@@ -7,11 +7,13 @@
     <title>みなさま、おはようございます！ #1564 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Good morning, everyone! Starting today, I’ll post a bit about AI skills. For those who are interested in AI art but have never really used Midjourney in a full-fledged way, I’ll cover some of the major updates that have recently occurred. 【Midjourne...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1564.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1564.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1564.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844998">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023627">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("みなさま、おはようございます！\n今日から少しAIスキル系について投稿してみます。\n\nAIアートには興味があるけれど、Midjourneyを本格的に操作した事が無い方向けに、最近あった本格的アップデートを扱いますね。\n\n【Midjourney最新アップデート①】\n\n・スタイルクリエイター登場\n\n「プロンプトで画風を説明しなくていい」 新機能。\n\nこれまで「この雰囲気、どう言葉にすればいいんだ…」\nと悩んでいた人、多いはず。\n\n操作はとてもシンプル。基本は4ステップ\n\n① cat / dog など\nシンプルな対象プロンプトを入力\n② 表示された画像（Grid画像）から\n好みのスタイルを選ぶ。\n③ 選択が反映された\n新しい画像を確認。\n④ 理想に近づくまで\n選択と調整を繰り返す\nこの「選ぶ → 反映 → また選ぶ」\nという流れを繰り返すことで、\nAIがあなたの好みを徐々に学習していきます。\n\nMidjourney公式いわく\n5回ほどリファイン（選択）を繰り返すと\nスタイルはかなり安定するとのこと。\n\nしかも完成すると、\n**自分専用の「スタイルコード」**が発行され、\n人物・風景・動物など\n被写体が変わっても\n同じ世界観で再利用可能。\n\nこれは単なる便利機能ではなく、\n「言葉でAIを操る時代」から\n「感覚でAIに伝える時代」への大きな一歩。\n\nプロンプトが苦手な人ほど、\nこのアップデートは革命かもしれません。\nあなたならどんな自分専用スタイルを\n作ってみたいですか？\n\n＊画像は、①MJでいつものように描いた「犬」。②MJスタイルクリエイター画像Gridで描いた、5度目の「犬」。③②のスタイルコードを適用して描いた「ネコ」。", this)'>📋 Copy</button>
         </div>
-        <p>みなさま、おはようございます！<br>今日から少しAIスキル系について投稿してみます。</p><p>AIアートには興味があるけれど、Midjourneyを本格的に操作した事が無い方向けに、最近あった本格的アップデートを扱いますね。</p><p>【Midjourney最新アップデート①】</p><p>・スタイルクリエイター登場</p><p>「プロンプトで画風を説明しなくていい」 新機能。</p><p>これまで「この雰囲気、どう言葉にすればいいんだ…」<br>と悩んでいた人、多いはず。</p><p>操作はとてもシンプル。基本は4ステップ</p><p>① cat / dog など<br>シンプルな対象プロンプトを入力<br>② 表示された画像（Grid画像）から<br>好みのスタイルを選ぶ。<br>③ 選択が反映された<br>新しい画像を確認。<br>④ 理想に近づくまで<br>選択と調整を繰り返す<br>この「選ぶ → 反映 → また選ぶ」<br>という流れを繰り返すことで、<br>AIがあなたの好みを徐々に学習していきます。</p><p>Midjourney公式いわく<br>5回ほどリファイン（選択）を繰り返すと<br>スタイルはかなり安定するとのこと。</p><p>しかも完成すると、<br>**自分専用の「スタイルコード」**が発行され、<br>人物・風景・動物など<br>被写体が変わっても<br>同じ世界観で再利用可能。</p><p>これは単なる便利機能ではなく、<br>「言葉でAIを操る時代」から<br>「感覚でAIに伝える時代」への大きな一歩。</p><p>プロンプトが苦手な人ほど、<br>このアップデートは革命かもしれません。<br>あなたならどんな自分専用スタイルを<br>作ってみたいですか？</p><p>＊画像は、①MJでいつものように描いた「犬」。②MJスタイルクリエイター画像Gridで描いた、5度目の「犬」。③②のスタイルコードを適用して描いた「ネコ」。</p>
+        <div data-nosnippet><p>みなさま、おはようございます！<br>今日から少しAIスキル系について投稿してみます。</p><p>AIアートには興味があるけれど、Midjourneyを本格的に操作した事が無い方向けに、最近あった本格的アップデートを扱いますね。</p><p>【Midjourney最新アップデート①】</p><p>・スタイルクリエイター登場</p><p>「プロンプトで画風を説明しなくていい」 新機能。</p><p>これまで「この雰囲気、どう言葉にすればいいんだ…」<br>と悩んでいた人、多いはず。</p><p>操作はとてもシンプル。基本は4ステップ</p><p>① cat / dog など<br>シンプルな対象プロンプトを入力<br>② 表示された画像（Grid画像）から<br>好みのスタイルを選ぶ。<br>③ 選択が反映された<br>新しい画像を確認。<br>④ 理想に近づくまで<br>選択と調整を繰り返す<br>この「選ぶ → 反映 → また選ぶ」<br>という流れを繰り返すことで、<br>AIがあなたの好みを徐々に学習していきます。</p><p>Midjourney公式いわく<br>5回ほどリファイン（選択）を繰り返すと<br>スタイルはかなり安定するとのこと。</p><p>しかも完成すると、<br>**自分専用の「スタイルコード」**が発行され、<br>人物・風景・動物など<br>被写体が変わっても<br>同じ世界観で再利用可能。</p><p>これは単なる便利機能ではなく、<br>「言葉でAIを操る時代」から<br>「感覚でAIに伝える時代」への大きな一歩。</p><p>プロンプトが苦手な人ほど、<br>このアップデートは革命かもしれません。<br>あなたならどんな自分専用スタイルを<br>作ってみたいですか？</p><p>＊画像は、①MJでいつものように描いた「犬」。②MJスタイルクリエイター画像Gridで描いた、5度目の「犬」。③②のスタイルコードを適用して描いた「ネコ」。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Good morning, everyone!  \nStarting today, I’ll be posting a bit about AI-related skills.  \n\nFor those who are interested in AI art but have never really operated Midjourney seriously, I’ll be covering a recent major update.  \n\n**[Midjourney Latest Update ①]**  \n\n- **Style Creator introduced**  \n\nA new feature where *you no longer need to describe the art style in the prompt*.  \n\nMany people have probably struggled before, thinking:  \n*\"How do I put this vibe into words…?\"*  \n\nThe operation is very simple — basically 4 steps:  \n\n1. Enter a simple subject prompt like `cat` or `dog`.  \n2. From the displayed images (Grid images), choose your preferred style.  \n3. Check the new images where your selection has been applied.  \n4. Repeat selecting and adjusting until it’s close to your ideal.  \n\nBy repeating this cycle of *choose → apply → choose again*,  \nthe AI gradually learns your preferences.  \n\nAccording to Midjourney’s official statement,  \nafter about 5 refinements (selections),  \nthe style becomes quite stable.  \n\nAnd once it’s complete, you’ll get  \n**your own personal “style code”**,  \nwhich you can reuse in the same worldview  \neven if the subject changes — whether it’s people, landscapes, or animals.  \n\nThis isn’t just a convenient feature,  \nit’s a big step forward from *the era of controlling AI with words*  \nto *the era of conveying to AI through intuition*.  \n\nFor those who struggle with prompts,  \nthis update could be a revolution.  \n\nWhat kind of personal style would you create?  \n\n*Images:  \n① “Dog” drawn in MJ as usual.  \n② “Dog” drawn for the fifth time using the MJ Style Creator image Grid.  \n③ “Cat” drawn by applying the style code from ②.*", this)'>📋 Copy</button>
         </div>
-        <p>Good morning, everyone!  <br>Starting today, I’ll be posting a bit about AI-related skills.</p><p>For those who are interested in AI art but have never really operated Midjourney seriously, I’ll be covering a recent major update.</p><p>**[Midjourney Latest Update ①]**</p><p>- **Style Creator introduced**</p><p>A new feature where *you no longer need to describe the art style in the prompt*.</p><p>Many people have probably struggled before, thinking:  <br>*&quot;How do I put this vibe into words…?&quot;*</p><p>The operation is very simple — basically 4 steps:</p><p>1. Enter a simple subject prompt like `cat` or `dog`.  <br>2. From the displayed images (Grid images), choose your preferred style.  <br>3. Check the new images where your selection has been applied.  <br>4. Repeat selecting and adjusting until it’s close to your ideal.</p><p>By repeating this cycle of *choose → apply → choose again*,  <br>the AI gradually learns your preferences.</p><p>According to Midjourney’s official statement,  <br>after about 5 refinements (selections),  <br>the style becomes quite stable.</p><p>And once it’s complete, you’ll get  <br>**your own personal “style code”**,  <br>which you can reuse in the same worldview  <br>even if the subject changes — whether it’s people, landscapes, or animals.</p><p>This isn’t just a convenient feature,  <br>it’s a big step forward from *the era of controlling AI with words*  <br>to *the era of conveying to AI through intuition*.</p><p>For those who struggle with prompts,  <br>this update could be a revolution.</p><p>What kind of personal style would you create?</p><p>*Images:  <br>① “Dog” drawn in MJ as usual.  <br>② “Dog” drawn for the fifth time using the MJ Style Creator image Grid.  <br>③ “Cat” drawn by applying the style code from ②.*</p>
+        <div data-nosnippet><p>Good morning, everyone!  <br>Starting today, I’ll be posting a bit about AI-related skills.</p><p>For those who are interested in AI art but have never really operated Midjourney seriously, I’ll be covering a recent major update.</p><p>**[Midjourney Latest Update ①]**</p><p>- **Style Creator introduced**</p><p>A new feature where *you no longer need to describe the art style in the prompt*.</p><p>Many people have probably struggled before, thinking:  <br>*&quot;How do I put this vibe into words…?&quot;*</p><p>The operation is very simple — basically 4 steps:</p><p>1. Enter a simple subject prompt like `cat` or `dog`.  <br>2. From the displayed images (Grid images), choose your preferred style.  <br>3. Check the new images where your selection has been applied.  <br>4. Repeat selecting and adjusting until it’s close to your ideal.</p><p>By repeating this cycle of *choose → apply → choose again*,  <br>the AI gradually learns your preferences.</p><p>According to Midjourney’s official statement,  <br>after about 5 refinements (selections),  <br>the style becomes quite stable.</p><p>And once it’s complete, you’ll get  <br>**your own personal “style code”**,  <br>which you can reuse in the same worldview  <br>even if the subject changes — whether it’s people, landscapes, or animals.</p><p>This isn’t just a convenient feature,  <br>it’s a big step forward from *the era of controlling AI with words*  <br>to *the era of conveying to AI through intuition*.</p><p>For those who struggle with prompts,  <br>this update could be a revolution.</p><p>What kind of personal style would you create?</p><p>*Images:  <br>① “Dog” drawn in MJ as usual.  <br>② “Dog” drawn for the fifth time using the MJ Style Creator image Grid.  <br>③ “Cat” drawn by applying the style code from ②.*</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2013030900293058663-1.jpg" alt="みなさま、おはようございます！" loading="lazy"><img src="/images/tweet-2013030900293058663-2.jpg" alt="みなさま、おはようございます！" loading="lazy"><img src="/images/tweet-2013030900293058663-3.jpg" alt="みなさま、おはようございます！" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1564,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

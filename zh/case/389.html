@@ -7,11 +7,13 @@
     <title>全身写实时尚肖像照 #389 | Gem Nana AI 提示词库</title>
     <meta name="description" content="全身写实时尚肖像照 - AI图片生成提示词">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/389.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/389.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/389.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841904">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022703">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n“说明”：“请创作一张现代东亚偶像全身写实时尚肖像照，造型为全黑。作品必须看起来像专业试镜照，而非动漫、角色扮演或奇幻风格。”\n\n“主题”： {\n“身份”：“东亚女偶像，二十出头的外貌，白皙光滑的皮肤，五官对称，下颌线条精致，大而自然的眼睛，柔和的裸色嘴唇。”\n“头发”： {\n颜色： 纯黑色，\n“发型”：“齐刘海修饰眼睛的直发”，\n长度：很长，垂过胸部，\n\"optional_variants\": [\n“干净利落的直发向下”，\n“双高马尾辫，配刘海和垂在脸颊两侧的碎发”\n]\n}，\n“身体”： {\n“体型”：“纤细、修长、比例优雅、线条优美”，\n“姿势”：“冷静、自信、控制的姿势，挺拔的站姿”\n“姿势”：“全身站立姿势，双臂放松地放在身体两侧或髋部略微弯曲，站姿自然，不要过度拱背”\n}\n}，\n\n“衣柜”： {\n“调色板”：“全黑单色风格”，\n\"look_variants\": [\n{\n“描述”：黑色长袖修身上衣，腰部收紧（类似束身衣的塑形效果），短款百褶迷你裙，配有腰带，黑色过膝系带厚底靴，精致的叠戴银色首饰。\n}，\n{\n描述：黑色露脐上衣，露出小蛮腰，黑色修身牛仔裤，贴身颈链叠戴吊坠项链，哑光黑色靴子\n}\n]，\n“注意”：“服装必须体现高级时装/街头偶像美学，而不是奇幻服装、科幻盔甲或乳胶恋物癖服装。”\n}，\n\n“相机”： {\n“构图”：“从头到脚的全身像，竖构图，主体居中并占据画面的大部分”，\n“角度”：“略低于躯干中部的相机高度，以微妙地拉长腿部，或者以中性的视线高度靠在门口构图”，\n\"lens_behavior\": \"清晰逼真的透视效果，无严重畸变，无鱼眼效果\"\n“焦点”： “从脸部到靴子，主体清晰对焦，景深适合时尚摄影”\n}，\n\n“环境”： {\n\"style_options\": [\n“工业风格的室内装潢，地面铺着磨损的瓷砖，背景是大型窗框/金属框架，整体色调为柔和的灰色。”\n“中性色调的建筑风格户外入口，浅色石材或油漆门，柔和的自然光线”\n]，\n“照明”：“柔和、漫射、感觉自然的光线，光线方向性衰减要柔和。皮肤应该看起来光滑真实，而不是塑料感。不要使用霓虹灯轮廓光，也不要使用彩色滤光片。”\n}，\n\n“审美的”： {\n\"色调\": \"干净的韩国偶像/街头时尚大片试拍\",\n\"color_grade\": \"背景采用柔和的冷色调中性色，服装采用深哑光黑色，肤色自然\",\n“成品”：高端时尚摄影，而非奇幻艺术、动漫渲染或华丽的VR虚拟形象。\n}，\n\n“technical_rendering”：{\n“意图”: “逼真的人物主体”，\n“关键词”：[\n“电影式人像摄影”，\n“摄影棚品质的时尚剧照”，\n“织物纹理上的 PBR 材质真实感（哑光黑布、皮带、系带靴）”\n“没有夸张的体型变化”，\n“没有塑料皮肤”，\n“没有卡通渲染风格”\n]\n}，\n\n“消极的”： {\n\"forbidden_​​styles\": [\n“动漫风格”，\n“卡通风格”，\n“3D游戏角色”，\n“虚拟偶像全息影像”\n“赛博朋克奇幻服装”，\n“乳胶紧身衣美学”，\n“科幻盔甲”，\n“色彩鲜艳的头发”，\n“大眼睛/娃娃脸”，\n“过度修饰的芭比娃娃质感”，\n“扭曲的体型比例”，\n“鱼眼畸变”，\n“文字叠加或水印”\n]，\n\"forbidden_​​words\": [\n“NSFW姿势”，\n“露骨的内衣镜头”，\n“可爱的角色扮演表情”，\n“激进的性感拱背”\n]\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>“说明”：“请创作一张现代东亚偶像全身写实时尚肖像照，造型为全黑。作品必须看起来像专业试镜照，而非动漫、角色扮演或奇幻风格。”</p><p>“主题”： {<br>“身份”：“东亚女偶像，二十出头的外貌，白皙光滑的皮肤，五官对称，下颌线条精致，大而自然的眼睛，柔和的裸色嘴唇。”<br>“头发”： {<br>颜色： 纯黑色，<br>“发型”：“齐刘海修饰眼睛的直发”，<br>长度：很长，垂过胸部，<br>&quot;optional_variants&quot;: [<br>“干净利落的直发向下”，<br>“双高马尾辫，配刘海和垂在脸颊两侧的碎发”<br>]<br>}，<br>“身体”： {<br>“体型”：“纤细、修长、比例优雅、线条优美”，<br>“姿势”：“冷静、自信、控制的姿势，挺拔的站姿”<br>“姿势”：“全身站立姿势，双臂放松地放在身体两侧或髋部略微弯曲，站姿自然，不要过度拱背”<br>}<br>}，</p><p>“衣柜”： {<br>“调色板”：“全黑单色风格”，<br>&quot;look_variants&quot;: [<br>{<br>“描述”：黑色长袖修身上衣，腰部收紧（类似束身衣的塑形效果），短款百褶迷你裙，配有腰带，黑色过膝系带厚底靴，精致的叠戴银色首饰。<br>}，<br>{<br>描述：黑色露脐上衣，露出小蛮腰，黑色修身牛仔裤，贴身颈链叠戴吊坠项链，哑光黑色靴子<br>}<br>]，<br>“注意”：“服装必须体现高级时装/街头偶像美学，而不是奇幻服装、科幻盔甲或乳胶恋物癖服装。”<br>}，</p><p>“相机”： {<br>“构图”：“从头到脚的全身像，竖构图，主体居中并占据画面的大部分”，<br>“角度”：“略低于躯干中部的相机高度，以微妙地拉长腿部，或者以中性的视线高度靠在门口构图”，<br>&quot;lens_behavior&quot;: &quot;清晰逼真的透视效果，无严重畸变，无鱼眼效果&quot;<br>“焦点”： “从脸部到靴子，主体清晰对焦，景深适合时尚摄影”<br>}，</p><p>“环境”： {<br>&quot;style_options&quot;: [<br>“工业风格的室内装潢，地面铺着磨损的瓷砖，背景是大型窗框/金属框架，整体色调为柔和的灰色。”<br>“中性色调的建筑风格户外入口，浅色石材或油漆门，柔和的自然光线”<br>]，<br>“照明”：“柔和、漫射、感觉自然的光线，光线方向性衰减要柔和。皮肤应该看起来光滑真实，而不是塑料感。不要使用霓虹灯轮廓光，也不要使用彩色滤光片。”<br>}，</p><p>“审美的”： {<br>&quot;色调&quot;: &quot;干净的韩国偶像/街头时尚大片试拍&quot;,<br>&quot;color_grade&quot;: &quot;背景采用柔和的冷色调中性色，服装采用深哑光黑色，肤色自然&quot;,<br>“成品”：高端时尚摄影，而非奇幻艺术、动漫渲染或华丽的VR虚拟形象。<br>}，</p><p>“technical_rendering”：{<br>“意图”: “逼真的人物主体”，<br>“关键词”：[<br>“电影式人像摄影”，<br>“摄影棚品质的时尚剧照”，<br>“织物纹理上的 PBR 材质真实感（哑光黑布、皮带、系带靴）”<br>“没有夸张的体型变化”，<br>“没有塑料皮肤”，<br>“没有卡通渲染风格”<br>]<br>}，</p><p>“消极的”： {<br>&quot;forbidden_​​styles&quot;: [<br>“动漫风格”，<br>“卡通风格”，<br>“3D游戏角色”，<br>“虚拟偶像全息影像”<br>“赛博朋克奇幻服装”，<br>“乳胶紧身衣美学”，<br>“科幻盔甲”，<br>“色彩鲜艳的头发”，<br>“大眼睛/娃娃脸”，<br>“过度修饰的芭比娃娃质感”，<br>“扭曲的体型比例”，<br>“鱼眼畸变”，<br>“文字叠加或水印”<br>]，<br>&quot;forbidden_​​words&quot;: [<br>“NSFW姿势”，<br>“露骨的内衣镜头”，<br>“可爱的角色扮演表情”，<br>“激进的性感拱背”<br>]<br>}</p>
+        <div data-nosnippet><p>{<br>“说明”：“请创作一张现代东亚偶像全身写实时尚肖像照，造型为全黑。作品必须看起来像专业试镜照，而非动漫、角色扮演或奇幻风格。”</p><p>“主题”： {<br>“身份”：“东亚女偶像，二十出头的外貌，白皙光滑的皮肤，五官对称，下颌线条精致，大而自然的眼睛，柔和的裸色嘴唇。”<br>“头发”： {<br>颜色： 纯黑色，<br>“发型”：“齐刘海修饰眼睛的直发”，<br>长度：很长，垂过胸部，<br>&quot;optional_variants&quot;: [<br>“干净利落的直发向下”，<br>“双高马尾辫，配刘海和垂在脸颊两侧的碎发”<br>]<br>}，<br>“身体”： {<br>“体型”：“纤细、修长、比例优雅、线条优美”，<br>“姿势”：“冷静、自信、控制的姿势，挺拔的站姿”<br>“姿势”：“全身站立姿势，双臂放松地放在身体两侧或髋部略微弯曲，站姿自然，不要过度拱背”<br>}<br>}，</p><p>“衣柜”： {<br>“调色板”：“全黑单色风格”，<br>&quot;look_variants&quot;: [<br>{<br>“描述”：黑色长袖修身上衣，腰部收紧（类似束身衣的塑形效果），短款百褶迷你裙，配有腰带，黑色过膝系带厚底靴，精致的叠戴银色首饰。<br>}，<br>{<br>描述：黑色露脐上衣，露出小蛮腰，黑色修身牛仔裤，贴身颈链叠戴吊坠项链，哑光黑色靴子<br>}<br>]，<br>“注意”：“服装必须体现高级时装/街头偶像美学，而不是奇幻服装、科幻盔甲或乳胶恋物癖服装。”<br>}，</p><p>“相机”： {<br>“构图”：“从头到脚的全身像，竖构图，主体居中并占据画面的大部分”，<br>“角度”：“略低于躯干中部的相机高度，以微妙地拉长腿部，或者以中性的视线高度靠在门口构图”，<br>&quot;lens_behavior&quot;: &quot;清晰逼真的透视效果，无严重畸变，无鱼眼效果&quot;<br>“焦点”： “从脸部到靴子，主体清晰对焦，景深适合时尚摄影”<br>}，</p><p>“环境”： {<br>&quot;style_options&quot;: [<br>“工业风格的室内装潢，地面铺着磨损的瓷砖，背景是大型窗框/金属框架，整体色调为柔和的灰色。”<br>“中性色调的建筑风格户外入口，浅色石材或油漆门，柔和的自然光线”<br>]，<br>“照明”：“柔和、漫射、感觉自然的光线，光线方向性衰减要柔和。皮肤应该看起来光滑真实，而不是塑料感。不要使用霓虹灯轮廓光，也不要使用彩色滤光片。”<br>}，</p><p>“审美的”： {<br>&quot;色调&quot;: &quot;干净的韩国偶像/街头时尚大片试拍&quot;,<br>&quot;color_grade&quot;: &quot;背景采用柔和的冷色调中性色，服装采用深哑光黑色，肤色自然&quot;,<br>“成品”：高端时尚摄影，而非奇幻艺术、动漫渲染或华丽的VR虚拟形象。<br>}，</p><p>“technical_rendering”：{<br>“意图”: “逼真的人物主体”，<br>“关键词”：[<br>“电影式人像摄影”，<br>“摄影棚品质的时尚剧照”，<br>“织物纹理上的 PBR 材质真实感（哑光黑布、皮带、系带靴）”<br>“没有夸张的体型变化”，<br>“没有塑料皮肤”，<br>“没有卡通渲染风格”<br>]<br>}，</p><p>“消极的”： {<br>&quot;forbidden_​​styles&quot;: [<br>“动漫风格”，<br>“卡通风格”，<br>“3D游戏角色”，<br>“虚拟偶像全息影像”<br>“赛博朋克奇幻服装”，<br>“乳胶紧身衣美学”，<br>“科幻盔甲”，<br>“色彩鲜艳的头发”，<br>“大眼睛/娃娃脸”，<br>“过度修饰的芭比娃娃质感”，<br>“扭曲的体型比例”，<br>“鱼眼畸变”，<br>“文字叠加或水印”<br>]，<br>&quot;forbidden_​​words&quot;: [<br>“NSFW姿势”，<br>“露骨的内衣镜头”，<br>“可爱的角色扮演表情”，<br>“激进的性感拱背”<br>]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a full-body, realistic fashion portrait of a modern East Asian idol in a full black outfit. The image must look like a professional audition photo, not anime, cosplay, or fantasy styles.\n\nTheme:\n- Identity: East Asian female idol, early twenties, with fair, smooth skin, symmetrical features, a delicate jawline, large and naturally expressive eyes, and soft nude lips.\n- Hair: Pure black, straight with bangs that frame the eyes. Length is very long, draping past the chest. Optional variants include sleek straight hair flowing downward or double high ponytails with bangs and loose strands framing the face.\n- Body: Slim, tall, with elegant proportions and graceful lines. Pose should be calm, confident, and controlled, with an upright stance. Full-body standing pose, arms relaxed at sides or slightly bent at the hips, natural posture without excessive arching.\n\nWardrobe:\n- Color palette: Monochrome black.\n- Look variants:\n  1. Tight-fitting black long-sleeve top with a cinched waist (shaping effect like a corset), short pleated mini skirt with a belt, over-the-knee lace-up chunky boots, and delicate layered silver jewelry.\n  2. Black crop top showing a small waist, black fitted jeans, layered necklaces with pendants, matte black boots.\n- Note: Clothing must reflect high fashion/street idol aesthetics, not fantasy costumes, sci-fi armor, or latex fetish wear.\n\nCamera:\n- Composition: Full-body shot from head to toe, vertical orientation, subject centered and occupying most of the frame.\n- Angle: Slightly below mid-torso to subtly elongate the legs, or at neutral eye level framing at the doorway.\n- Lens behavior: Clear, realistic perspective with no severe distortion or fisheye effect.\n- Focus: Sharp from face to boots, with appropriate depth of field for fashion photography.\n\nEnvironment:\n- Style options:\n  1. Industrial interior with worn tiles on the floor, large window frames or metal structures in the background, overall soft gray tones.\n  2. Neutral-toned outdoor entrance with light-colored stone or painted doors, soft natural lighting.\n- Lighting: Soft, diffuse, natural-looking light with gentle directional falloff. Skin should appear smooth and realistic, not plasticky. Avoid neon outlines or colored filters.\n\nAesthetic:\n- Tone: Clean, high-end Korean idol/street fashion editorial.\n- Color grading: Soft, cool neutral background tones; clothing in deep matte black; skin tone natural.\n- Final output: High-end fashion photography, not fantasy art, anime rendering, or VR virtual characters.\n\nTechnical rendering:\n- Intent: Realistic human subject.\n- Keywords: Cinematic portrait photography, studio-quality fashion shot, PBR textures on fabrics (matte black cloth, belts, laced boots), no exaggerated body modifications, no plastic skin, no cartoon style.\n\nNegative:\n- Forbidden styles: Anime, cartoon, 3D game characters, virtual idol holograms, cyberpunk fantasy costumes, latex fetish aesthetics, sci-fi armor, brightly colored hair, large eyes/doll faces, overly doll-like Barbie textures, distorted proportions, fisheye distortion, text overlays or watermarks.\n- Forbidden words: NSFW poses, revealing lingerie shots, cute cosplay expressions, provocative arching poses.", this)'>📋 复制</button>
         </div>
-        <p>Create a full-body, realistic fashion portrait of a modern East Asian idol in a full black outfit. The image must look like a professional audition photo, not anime, cosplay, or fantasy styles.</p><p>Theme:<br>- Identity: East Asian female idol, early twenties, with fair, smooth skin, symmetrical features, a delicate jawline, large and naturally expressive eyes, and soft nude lips.<br>- Hair: Pure black, straight with bangs that frame the eyes. Length is very long, draping past the chest. Optional variants include sleek straight hair flowing downward or double high ponytails with bangs and loose strands framing the face.<br>- Body: Slim, tall, with elegant proportions and graceful lines. Pose should be calm, confident, and controlled, with an upright stance. Full-body standing pose, arms relaxed at sides or slightly bent at the hips, natural posture without excessive arching.</p><p>Wardrobe:<br>- Color palette: Monochrome black.<br>- Look variants:<br>  1. Tight-fitting black long-sleeve top with a cinched waist (shaping effect like a corset), short pleated mini skirt with a belt, over-the-knee lace-up chunky boots, and delicate layered silver jewelry.<br>  2. Black crop top showing a small waist, black fitted jeans, layered necklaces with pendants, matte black boots.<br>- Note: Clothing must reflect high fashion/street idol aesthetics, not fantasy costumes, sci-fi armor, or latex fetish wear.</p><p>Camera:<br>- Composition: Full-body shot from head to toe, vertical orientation, subject centered and occupying most of the frame.<br>- Angle: Slightly below mid-torso to subtly elongate the legs, or at neutral eye level framing at the doorway.<br>- Lens behavior: Clear, realistic perspective with no severe distortion or fisheye effect.<br>- Focus: Sharp from face to boots, with appropriate depth of field for fashion photography.</p><p>Environment:<br>- Style options:<br>  1. Industrial interior with worn tiles on the floor, large window frames or metal structures in the background, overall soft gray tones.<br>  2. Neutral-toned outdoor entrance with light-colored stone or painted doors, soft natural lighting.<br>- Lighting: Soft, diffuse, natural-looking light with gentle directional falloff. Skin should appear smooth and realistic, not plasticky. Avoid neon outlines or colored filters.</p><p>Aesthetic:<br>- Tone: Clean, high-end Korean idol/street fashion editorial.<br>- Color grading: Soft, cool neutral background tones; clothing in deep matte black; skin tone natural.<br>- Final output: High-end fashion photography, not fantasy art, anime rendering, or VR virtual characters.</p><p>Technical rendering:<br>- Intent: Realistic human subject.<br>- Keywords: Cinematic portrait photography, studio-quality fashion shot, PBR textures on fabrics (matte black cloth, belts, laced boots), no exaggerated body modifications, no plastic skin, no cartoon style.</p><p>Negative:<br>- Forbidden styles: Anime, cartoon, 3D game characters, virtual idol holograms, cyberpunk fantasy costumes, latex fetish aesthetics, sci-fi armor, brightly colored hair, large eyes/doll faces, overly doll-like Barbie textures, distorted proportions, fisheye distortion, text overlays or watermarks.<br>- Forbidden words: NSFW poses, revealing lingerie shots, cute cosplay expressions, provocative arching poses.</p>
+        <div data-nosnippet><p>Create a full-body, realistic fashion portrait of a modern East Asian idol in a full black outfit. The image must look like a professional audition photo, not anime, cosplay, or fantasy styles.</p><p>Theme:<br>- Identity: East Asian female idol, early twenties, with fair, smooth skin, symmetrical features, a delicate jawline, large and naturally expressive eyes, and soft nude lips.<br>- Hair: Pure black, straight with bangs that frame the eyes. Length is very long, draping past the chest. Optional variants include sleek straight hair flowing downward or double high ponytails with bangs and loose strands framing the face.<br>- Body: Slim, tall, with elegant proportions and graceful lines. Pose should be calm, confident, and controlled, with an upright stance. Full-body standing pose, arms relaxed at sides or slightly bent at the hips, natural posture without excessive arching.</p><p>Wardrobe:<br>- Color palette: Monochrome black.<br>- Look variants:<br>  1. Tight-fitting black long-sleeve top with a cinched waist (shaping effect like a corset), short pleated mini skirt with a belt, over-the-knee lace-up chunky boots, and delicate layered silver jewelry.<br>  2. Black crop top showing a small waist, black fitted jeans, layered necklaces with pendants, matte black boots.<br>- Note: Clothing must reflect high fashion/street idol aesthetics, not fantasy costumes, sci-fi armor, or latex fetish wear.</p><p>Camera:<br>- Composition: Full-body shot from head to toe, vertical orientation, subject centered and occupying most of the frame.<br>- Angle: Slightly below mid-torso to subtly elongate the legs, or at neutral eye level framing at the doorway.<br>- Lens behavior: Clear, realistic perspective with no severe distortion or fisheye effect.<br>- Focus: Sharp from face to boots, with appropriate depth of field for fashion photography.</p><p>Environment:<br>- Style options:<br>  1. Industrial interior with worn tiles on the floor, large window frames or metal structures in the background, overall soft gray tones.<br>  2. Neutral-toned outdoor entrance with light-colored stone or painted doors, soft natural lighting.<br>- Lighting: Soft, diffuse, natural-looking light with gentle directional falloff. Skin should appear smooth and realistic, not plasticky. Avoid neon outlines or colored filters.</p><p>Aesthetic:<br>- Tone: Clean, high-end Korean idol/street fashion editorial.<br>- Color grading: Soft, cool neutral background tones; clothing in deep matte black; skin tone natural.<br>- Final output: High-end fashion photography, not fantasy art, anime rendering, or VR virtual characters.</p><p>Technical rendering:<br>- Intent: Realistic human subject.<br>- Keywords: Cinematic portrait photography, studio-quality fashion shot, PBR textures on fabrics (matte black cloth, belts, laced boots), no exaggerated body modifications, no plastic skin, no cartoon style.</p><p>Negative:<br>- Forbidden styles: Anime, cartoon, 3D game characters, virtual idol holograms, cyberpunk fantasy costumes, latex fetish aesthetics, sci-fi armor, brightly colored hair, large eyes/doll faces, overly doll-like Barbie textures, distorted proportions, fisheye distortion, text overlays or watermarks.<br>- Forbidden words: NSFW poses, revealing lingerie shots, cute cosplay expressions, provocative arching poses.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/393.jpeg" alt="全身写实时尚肖像照" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 389,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

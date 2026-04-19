@@ -7,11 +7,13 @@
     <title>A sleepy-eyed girl on a white pillow. #384 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="A sleepy-eyed girl on a white pillow - AI image generation prompt">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/384.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/384.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/384.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846204">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023877">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n“场景”： {\n\"location\": \"卧室，在床上\",\n\"background\": \"白色枕头、柔软、皱巴巴的床单、柔和的晨光\"\n}，\n“主题”： {\n\"年龄\": \"成人\",\n\"description\": \"东亚女子，美丽的‘刚睡醒’凌乱的头发，睡眼惺忪的眼睛\",\n\"wardrobe\": \"简单的细肩带吊带背心（例如丝绸或棉质），肩带略微从一侧肩膀垂下\",\n\"accessories\": \"无\",\n\"pose\": \"趴在床上，用手肘支撑身体，看着镜头\",\n\"expression\": \"温柔、困倦的微笑、亲密的‘早上好’表情\",\n\"gaze\": \"直视镜头，柔和而诱人\",\n\"body_notes\": \"照片般逼真的成人比例；自然的皮肤纹理，清晰可见的锁骨，‘困倦’的红晕\"\n}，\n“相机”： {\n“传感器”：“全帧”，\n\"焦距毫米\": 50,\n“aperture_f”：1.8，\n“shutter_s”：0.01，\n“iso”：400，\n\"白平衡k\": 5500,\n“距离米”：1.5，\n“相机高度”：0.8，\n\"framing\": \"特写（胸部以上），与她视线齐平\",\n“focus”：“eye_detect_AF 在最近的眼睛上”\n}，\n“灯光”： {\n\"key\": \"从侧面射入的大型漫射窗光，形成非常柔和的阴影\",\n\"fill\": \"从白色床单反射的光线\",\n\"hair\": \"窗户透出的柔和光晕\",\n\"catchlights\": \"大而柔和的窗户聚光灯\",\n\"notes\": \"非常柔软，高调，亲密\"\n}，\n“颜色等级”：{\n\"style\": \"亲密、柔和、‘早晨’美学\",\n\"palette\": \"白色、肤色、粉彩色；柔软、明亮的皮肤\",\n\"contrast\": \"非常低，梦幻\",\n\"saturation\": \"中等，柔和\"\n}，\n“化妆品”： {\n\"eyes\": \"无，‘素颜’样子\",\n\"cheeks\": \"自然、困倦的红晕\",\n\"lips\": \"自然、水润\"\n}，\n“后处理”：{\n\"retouch\": \"专业修图，保持“真实肌肤”外观\",\n\"clarity\": \"选择性地清晰眼睛和睫毛\",\n\"dodge_burn\": \"眼睛和锁骨处细微减淡\",\n\"vignette\": \"微妙、明亮的小插图\"\n}，\n“艺术指导”：{\n\"mood\": \"轻浮、亲密、暧昧、柔和、困倦、诱人\",\n\"keywords\": [\"照片写实\", \"调情\", \"早晨\", \"在床上\", \"模棱两可\", \"自然美\", \"困倦\"]\n}，\n\"negative_prompts\": [\n“nsfw”，\n“未成年的样子”，\n“文字或徽标”，\n“塑料娃娃皮肤”，\n“cg”，\n“3D渲染”，\n“日本动画片”，\n“浓妆艳抹”，\n“扭曲的手”\n]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>“场景”： {<br>&quot;location&quot;: &quot;卧室，在床上&quot;,<br>&quot;background&quot;: &quot;白色枕头、柔软、皱巴巴的床单、柔和的晨光&quot;<br>}，<br>“主题”： {<br>&quot;年龄&quot;: &quot;成人&quot;,<br>&quot;description&quot;: &quot;东亚女子，美丽的‘刚睡醒’凌乱的头发，睡眼惺忪的眼睛&quot;,<br>&quot;wardrobe&quot;: &quot;简单的细肩带吊带背心（例如丝绸或棉质），肩带略微从一侧肩膀垂下&quot;,<br>&quot;accessories&quot;: &quot;无&quot;,<br>&quot;pose&quot;: &quot;趴在床上，用手肘支撑身体，看着镜头&quot;,<br>&quot;expression&quot;: &quot;温柔、困倦的微笑、亲密的‘早上好’表情&quot;,<br>&quot;gaze&quot;: &quot;直视镜头，柔和而诱人&quot;,<br>&quot;body_notes&quot;: &quot;照片般逼真的成人比例；自然的皮肤纹理，清晰可见的锁骨，‘困倦’的红晕&quot;<br>}，<br>“相机”： {<br>“传感器”：“全帧”，<br>&quot;焦距毫米&quot;: 50,<br>“aperture_f”：1.8，<br>“shutter_s”：0.01，<br>“iso”：400，<br>&quot;白平衡k&quot;: 5500,<br>“距离米”：1.5，<br>“相机高度”：0.8，<br>&quot;framing&quot;: &quot;特写（胸部以上），与她视线齐平&quot;,<br>“focus”：“eye_detect_AF 在最近的眼睛上”<br>}，<br>“灯光”： {<br>&quot;key&quot;: &quot;从侧面射入的大型漫射窗光，形成非常柔和的阴影&quot;,<br>&quot;fill&quot;: &quot;从白色床单反射的光线&quot;,<br>&quot;hair&quot;: &quot;窗户透出的柔和光晕&quot;,<br>&quot;catchlights&quot;: &quot;大而柔和的窗户聚光灯&quot;,<br>&quot;notes&quot;: &quot;非常柔软，高调，亲密&quot;<br>}，<br>“颜色等级”：{<br>&quot;style&quot;: &quot;亲密、柔和、‘早晨’美学&quot;,<br>&quot;palette&quot;: &quot;白色、肤色、粉彩色；柔软、明亮的皮肤&quot;,<br>&quot;contrast&quot;: &quot;非常低，梦幻&quot;,<br>&quot;saturation&quot;: &quot;中等，柔和&quot;<br>}，<br>“化妆品”： {<br>&quot;eyes&quot;: &quot;无，‘素颜’样子&quot;,<br>&quot;cheeks&quot;: &quot;自然、困倦的红晕&quot;,<br>&quot;lips&quot;: &quot;自然、水润&quot;<br>}，<br>“后处理”：{<br>&quot;retouch&quot;: &quot;专业修图，保持“真实肌肤”外观&quot;,<br>&quot;clarity&quot;: &quot;选择性地清晰眼睛和睫毛&quot;,<br>&quot;dodge_burn&quot;: &quot;眼睛和锁骨处细微减淡&quot;,<br>&quot;vignette&quot;: &quot;微妙、明亮的小插图&quot;<br>}，<br>“艺术指导”：{<br>&quot;mood&quot;: &quot;轻浮、亲密、暧昧、柔和、困倦、诱人&quot;,<br>&quot;keywords&quot;: [&quot;照片写实&quot;, &quot;调情&quot;, &quot;早晨&quot;, &quot;在床上&quot;, &quot;模棱两可&quot;, &quot;自然美&quot;, &quot;困倦&quot;]<br>}，<br>&quot;negative_prompts&quot;: [<br>“nsfw”，<br>“未成年的样子”，<br>“文字或徽标”，<br>“塑料娃娃皮肤”，<br>“cg”，<br>“3D渲染”，<br>“日本动画片”，<br>“浓妆艳抹”，<br>“扭曲的手”<br>]<br>}</p>
+        <div data-nosnippet><p>{<br>“场景”： {<br>&quot;location&quot;: &quot;卧室，在床上&quot;,<br>&quot;background&quot;: &quot;白色枕头、柔软、皱巴巴的床单、柔和的晨光&quot;<br>}，<br>“主题”： {<br>&quot;年龄&quot;: &quot;成人&quot;,<br>&quot;description&quot;: &quot;东亚女子，美丽的‘刚睡醒’凌乱的头发，睡眼惺忪的眼睛&quot;,<br>&quot;wardrobe&quot;: &quot;简单的细肩带吊带背心（例如丝绸或棉质），肩带略微从一侧肩膀垂下&quot;,<br>&quot;accessories&quot;: &quot;无&quot;,<br>&quot;pose&quot;: &quot;趴在床上，用手肘支撑身体，看着镜头&quot;,<br>&quot;expression&quot;: &quot;温柔、困倦的微笑、亲密的‘早上好’表情&quot;,<br>&quot;gaze&quot;: &quot;直视镜头，柔和而诱人&quot;,<br>&quot;body_notes&quot;: &quot;照片般逼真的成人比例；自然的皮肤纹理，清晰可见的锁骨，‘困倦’的红晕&quot;<br>}，<br>“相机”： {<br>“传感器”：“全帧”，<br>&quot;焦距毫米&quot;: 50,<br>“aperture_f”：1.8，<br>“shutter_s”：0.01，<br>“iso”：400，<br>&quot;白平衡k&quot;: 5500,<br>“距离米”：1.5，<br>“相机高度”：0.8，<br>&quot;framing&quot;: &quot;特写（胸部以上），与她视线齐平&quot;,<br>“focus”：“eye_detect_AF 在最近的眼睛上”<br>}，<br>“灯光”： {<br>&quot;key&quot;: &quot;从侧面射入的大型漫射窗光，形成非常柔和的阴影&quot;,<br>&quot;fill&quot;: &quot;从白色床单反射的光线&quot;,<br>&quot;hair&quot;: &quot;窗户透出的柔和光晕&quot;,<br>&quot;catchlights&quot;: &quot;大而柔和的窗户聚光灯&quot;,<br>&quot;notes&quot;: &quot;非常柔软，高调，亲密&quot;<br>}，<br>“颜色等级”：{<br>&quot;style&quot;: &quot;亲密、柔和、‘早晨’美学&quot;,<br>&quot;palette&quot;: &quot;白色、肤色、粉彩色；柔软、明亮的皮肤&quot;,<br>&quot;contrast&quot;: &quot;非常低，梦幻&quot;,<br>&quot;saturation&quot;: &quot;中等，柔和&quot;<br>}，<br>“化妆品”： {<br>&quot;eyes&quot;: &quot;无，‘素颜’样子&quot;,<br>&quot;cheeks&quot;: &quot;自然、困倦的红晕&quot;,<br>&quot;lips&quot;: &quot;自然、水润&quot;<br>}，<br>“后处理”：{<br>&quot;retouch&quot;: &quot;专业修图，保持“真实肌肤”外观&quot;,<br>&quot;clarity&quot;: &quot;选择性地清晰眼睛和睫毛&quot;,<br>&quot;dodge_burn&quot;: &quot;眼睛和锁骨处细微减淡&quot;,<br>&quot;vignette&quot;: &quot;微妙、明亮的小插图&quot;<br>}，<br>“艺术指导”：{<br>&quot;mood&quot;: &quot;轻浮、亲密、暧昧、柔和、困倦、诱人&quot;,<br>&quot;keywords&quot;: [&quot;照片写实&quot;, &quot;调情&quot;, &quot;早晨&quot;, &quot;在床上&quot;, &quot;模棱两可&quot;, &quot;自然美&quot;, &quot;困倦&quot;]<br>}，<br>&quot;negative_prompts&quot;: [<br>“nsfw”，<br>“未成年的样子”，<br>“文字或徽标”，<br>“塑料娃娃皮肤”，<br>“cg”，<br>“3D渲染”，<br>“日本动画片”，<br>“浓妆艳抹”，<br>“扭曲的手”<br>]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n\"Scene\": {\n\"location\": \"Bedroom, on the bed\",\n\"background\": \"White pillows, soft and wrinkled sheets, gentle morning light\"\n},\n\"Subject\": {\n\"age\": \"Adult\",\n\"description\": \"East Asian woman, beautiful 'just woke up' messy hair, sleepy eyes\",\n\"wardrobe\": \"Simple spaghetti strap camisole (e.g., silk or cotton), straps slightly slipping off one shoulder\",\n\"accessories\": \"None\",\n\"pose\": \"Lying face down on the bed, supporting herself with elbows, looking at the camera\",\n\"expression\": \"Gentle, sleepy smile, an intimate 'Good morning' look\",\n\"gaze\": \"Directly at the camera, soft and alluring\",\n\"body_notes\": \"Photorealistic adult proportions; natural skin texture, clearly visible collarbones, a 'sleepy' blush\"\n},\n\"Camera\": {\n\"sensor\": \"Full-frame\",\n\"focal_length_mm\": 50,\n\"aperture_f\": 1.8,\n\"shutter_s\": 0.01,\n\"iso\": 400,\n\"white_balance_k\": 5500,\n\"distance_m\": 1.5,\n\"camera_height\": 0.8,\n\"framing\": \"Close-up (above the chest), level with her gaze\",\n\"focus\": \"Eye-detection autofocus on the nearest eyes\"\n},\n\"Lighting\": {\n\"key\": \"Large diffused window light from the side, creating very soft shadows\",\n\"fill\": \"Reflected light from white sheets\",\n\"hair\": \"Soft glow from the window light\",\n\"catchlights\": \"Large, soft window catchlights\",\n\"notes\": \"Very soft, high-key, intimate\"\n},\n\"Color Palette\": {\n\"style\": \"Intimate, soft, 'morning' aesthetic\",\n\"palette\": \"White, skin tones, pastel colors; soft, bright skin\",\n\"contrast\": \"Very low, dreamy\",\n\"saturation\": \"Moderate, gentle\"\n},\n\"Makeup\": {\n\"eyes\": \"None, natural look\",\n\"cheeks\": \"Natural, sleepy blush\",\n\"lips\": \"Natural, moist\"\n},\n\"Post-processing\": {\n\"retouch\": \"Professional editing to maintain a 'real skin' appearance\",\n\"clarity\": \"Selective sharpening on eyes and eyelashes\",\n\"dodge_burn\": \"Subtle lightening around eyes and collarbones\",\n\"vignette\": \"Delicate, bright vignette\"\n},\n\"Art Direction\": {\n\"mood\": \"Playful, intimate, flirtatious, soft, sleepy, alluring\",\n\"keywords\": [\"photorealistic\", \"flirty\", \"morning\", \"on the bed\", \"ambiguous\", \"natural beauty\", \"sleepy\"]\n},\n\"Negative Prompts\": [\n\"nsfw\",\n\"Underage appearance\",\n\"Text or logos\",\n\"Plastic doll skin\",\n\"CG\",\n\"3D rendering\",\n\"Japanese anime\",\n\"Heavy makeup\",\n\"Twisted hands\"\n]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>&quot;Scene&quot;: {<br>&quot;location&quot;: &quot;Bedroom, on the bed&quot;,<br>&quot;background&quot;: &quot;White pillows, soft and wrinkled sheets, gentle morning light&quot;<br>},<br>&quot;Subject&quot;: {<br>&quot;age&quot;: &quot;Adult&quot;,<br>&quot;description&quot;: &quot;East Asian woman, beautiful &#39;just woke up&#39; messy hair, sleepy eyes&quot;,<br>&quot;wardrobe&quot;: &quot;Simple spaghetti strap camisole (e.g., silk or cotton), straps slightly slipping off one shoulder&quot;,<br>&quot;accessories&quot;: &quot;None&quot;,<br>&quot;pose&quot;: &quot;Lying face down on the bed, supporting herself with elbows, looking at the camera&quot;,<br>&quot;expression&quot;: &quot;Gentle, sleepy smile, an intimate &#39;Good morning&#39; look&quot;,<br>&quot;gaze&quot;: &quot;Directly at the camera, soft and alluring&quot;,<br>&quot;body_notes&quot;: &quot;Photorealistic adult proportions; natural skin texture, clearly visible collarbones, a &#39;sleepy&#39; blush&quot;<br>},<br>&quot;Camera&quot;: {<br>&quot;sensor&quot;: &quot;Full-frame&quot;,<br>&quot;focal_length_mm&quot;: 50,<br>&quot;aperture_f&quot;: 1.8,<br>&quot;shutter_s&quot;: 0.01,<br>&quot;iso&quot;: 400,<br>&quot;white_balance_k&quot;: 5500,<br>&quot;distance_m&quot;: 1.5,<br>&quot;camera_height&quot;: 0.8,<br>&quot;framing&quot;: &quot;Close-up (above the chest), level with her gaze&quot;,<br>&quot;focus&quot;: &quot;Eye-detection autofocus on the nearest eyes&quot;<br>},<br>&quot;Lighting&quot;: {<br>&quot;key&quot;: &quot;Large diffused window light from the side, creating very soft shadows&quot;,<br>&quot;fill&quot;: &quot;Reflected light from white sheets&quot;,<br>&quot;hair&quot;: &quot;Soft glow from the window light&quot;,<br>&quot;catchlights&quot;: &quot;Large, soft window catchlights&quot;,<br>&quot;notes&quot;: &quot;Very soft, high-key, intimate&quot;<br>},<br>&quot;Color Palette&quot;: {<br>&quot;style&quot;: &quot;Intimate, soft, &#39;morning&#39; aesthetic&quot;,<br>&quot;palette&quot;: &quot;White, skin tones, pastel colors; soft, bright skin&quot;,<br>&quot;contrast&quot;: &quot;Very low, dreamy&quot;,<br>&quot;saturation&quot;: &quot;Moderate, gentle&quot;<br>},<br>&quot;Makeup&quot;: {<br>&quot;eyes&quot;: &quot;None, natural look&quot;,<br>&quot;cheeks&quot;: &quot;Natural, sleepy blush&quot;,<br>&quot;lips&quot;: &quot;Natural, moist&quot;<br>},<br>&quot;Post-processing&quot;: {<br>&quot;retouch&quot;: &quot;Professional editing to maintain a &#39;real skin&#39; appearance&quot;,<br>&quot;clarity&quot;: &quot;Selective sharpening on eyes and eyelashes&quot;,<br>&quot;dodge_burn&quot;: &quot;Subtle lightening around eyes and collarbones&quot;,<br>&quot;vignette&quot;: &quot;Delicate, bright vignette&quot;<br>},<br>&quot;Art Direction&quot;: {<br>&quot;mood&quot;: &quot;Playful, intimate, flirtatious, soft, sleepy, alluring&quot;,<br>&quot;keywords&quot;: [&quot;photorealistic&quot;, &quot;flirty&quot;, &quot;morning&quot;, &quot;on the bed&quot;, &quot;ambiguous&quot;, &quot;natural beauty&quot;, &quot;sleepy&quot;]<br>},<br>&quot;Negative Prompts&quot;: [<br>&quot;nsfw&quot;,<br>&quot;Underage appearance&quot;,<br>&quot;Text or logos&quot;,<br>&quot;Plastic doll skin&quot;,<br>&quot;CG&quot;,<br>&quot;3D rendering&quot;,<br>&quot;Japanese anime&quot;,<br>&quot;Heavy makeup&quot;,<br>&quot;Twisted hands&quot;<br>]<br>}</p>
+        <div data-nosnippet><p>{<br>&quot;Scene&quot;: {<br>&quot;location&quot;: &quot;Bedroom, on the bed&quot;,<br>&quot;background&quot;: &quot;White pillows, soft and wrinkled sheets, gentle morning light&quot;<br>},<br>&quot;Subject&quot;: {<br>&quot;age&quot;: &quot;Adult&quot;,<br>&quot;description&quot;: &quot;East Asian woman, beautiful &#39;just woke up&#39; messy hair, sleepy eyes&quot;,<br>&quot;wardrobe&quot;: &quot;Simple spaghetti strap camisole (e.g., silk or cotton), straps slightly slipping off one shoulder&quot;,<br>&quot;accessories&quot;: &quot;None&quot;,<br>&quot;pose&quot;: &quot;Lying face down on the bed, supporting herself with elbows, looking at the camera&quot;,<br>&quot;expression&quot;: &quot;Gentle, sleepy smile, an intimate &#39;Good morning&#39; look&quot;,<br>&quot;gaze&quot;: &quot;Directly at the camera, soft and alluring&quot;,<br>&quot;body_notes&quot;: &quot;Photorealistic adult proportions; natural skin texture, clearly visible collarbones, a &#39;sleepy&#39; blush&quot;<br>},<br>&quot;Camera&quot;: {<br>&quot;sensor&quot;: &quot;Full-frame&quot;,<br>&quot;focal_length_mm&quot;: 50,<br>&quot;aperture_f&quot;: 1.8,<br>&quot;shutter_s&quot;: 0.01,<br>&quot;iso&quot;: 400,<br>&quot;white_balance_k&quot;: 5500,<br>&quot;distance_m&quot;: 1.5,<br>&quot;camera_height&quot;: 0.8,<br>&quot;framing&quot;: &quot;Close-up (above the chest), level with her gaze&quot;,<br>&quot;focus&quot;: &quot;Eye-detection autofocus on the nearest eyes&quot;<br>},<br>&quot;Lighting&quot;: {<br>&quot;key&quot;: &quot;Large diffused window light from the side, creating very soft shadows&quot;,<br>&quot;fill&quot;: &quot;Reflected light from white sheets&quot;,<br>&quot;hair&quot;: &quot;Soft glow from the window light&quot;,<br>&quot;catchlights&quot;: &quot;Large, soft window catchlights&quot;,<br>&quot;notes&quot;: &quot;Very soft, high-key, intimate&quot;<br>},<br>&quot;Color Palette&quot;: {<br>&quot;style&quot;: &quot;Intimate, soft, &#39;morning&#39; aesthetic&quot;,<br>&quot;palette&quot;: &quot;White, skin tones, pastel colors; soft, bright skin&quot;,<br>&quot;contrast&quot;: &quot;Very low, dreamy&quot;,<br>&quot;saturation&quot;: &quot;Moderate, gentle&quot;<br>},<br>&quot;Makeup&quot;: {<br>&quot;eyes&quot;: &quot;None, natural look&quot;,<br>&quot;cheeks&quot;: &quot;Natural, sleepy blush&quot;,<br>&quot;lips&quot;: &quot;Natural, moist&quot;<br>},<br>&quot;Post-processing&quot;: {<br>&quot;retouch&quot;: &quot;Professional editing to maintain a &#39;real skin&#39; appearance&quot;,<br>&quot;clarity&quot;: &quot;Selective sharpening on eyes and eyelashes&quot;,<br>&quot;dodge_burn&quot;: &quot;Subtle lightening around eyes and collarbones&quot;,<br>&quot;vignette&quot;: &quot;Delicate, bright vignette&quot;<br>},<br>&quot;Art Direction&quot;: {<br>&quot;mood&quot;: &quot;Playful, intimate, flirtatious, soft, sleepy, alluring&quot;,<br>&quot;keywords&quot;: [&quot;photorealistic&quot;, &quot;flirty&quot;, &quot;morning&quot;, &quot;on the bed&quot;, &quot;ambiguous&quot;, &quot;natural beauty&quot;, &quot;sleepy&quot;]<br>},<br>&quot;Negative Prompts&quot;: [<br>&quot;nsfw&quot;,<br>&quot;Underage appearance&quot;,<br>&quot;Text or logos&quot;,<br>&quot;Plastic doll skin&quot;,<br>&quot;CG&quot;,<br>&quot;3D rendering&quot;,<br>&quot;Japanese anime&quot;,<br>&quot;Heavy makeup&quot;,<br>&quot;Twisted hands&quot;<br>]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/388.jpeg" alt="白色枕头上的睡眼惺忪女孩" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 384,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

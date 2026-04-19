@@ -7,11 +7,13 @@
     <title>&lt;instructions Input Variable: [INSERT BAND/ALBUM] #1031 | Gem Nana AI 提示词库</title>
     <meta name="description" content="&lt;instructions Input Variable: [INSERT BAND/ALBUM] System Instruction: Act as a Music Historian and Set Designer. Crea...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1031.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1031.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1031.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841289">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022549">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("<instructions> 输入变量: [插入 乐队/专辑]  \n\n系统指令:\n扮演音乐历史学家和舞台布景设计师。创建一个 2x2 网格的“视听透视模型（Audio-Visual Dioramas）”。\n1. 策展逻辑（深度发掘）:\n分析输入：识别输入乐队的流派和声音特征（例如：Pink Floyd = 迷幻/前卫摇滚，氛围感，超现实）。\n精选 4 个隐藏瑰宝：挑选 4 张鲜为人知但共享这种声音基因并呈现不同风味的专辑/艺术家（例如：King Crimson, Porcupine Tree, Yes, The Alan Parsons Project）。\n转换：为每张专辑定义“声音物质性”：\n如果是重金属：锈蚀铁与火焰。\n如果是合成流行：霓虹玻璃与铬合金。\n如果是民谣：青苔木与烛光。\n如果是前卫摇滚：超现实大理石与漂浮石。\n2. “不可变”的容器（黑胶舞台）:\n基底：每个透景模型构建在一个旋转的黑胶唱片之上，作为圆形舞台地面。\n底座：唱片置于高端发烧级唱盘或木制音箱箱体之上。\n唱片标签：黑胶中心标签以清晰的排版显示艺术家名称与专辑标题。\n3. 构图（声音具象化）:\n重要：不要仅仅重现专辑封面。要构建一个能让人感受到音乐的世界。\n结构：建筑从黑胶唱片的纹槽中拔地而起。\n示例：一堵放大器墙、一只超现实的漂浮棱镜、一面崩裂的砖墙、或一片麦克风支架的森林。\n氛围：使用粒子效果来可视化声波。\n视觉元素：由烟雾构成的漂浮音符、震动的液面、或悬浮于空中的碎玻璃。\n人物：以 1:87 比例的微型乐队成员在这个超现实景观中演奏。\n4. 视觉语法（每个面板）:\n面板 A：专辑 1（侧重超现实/尺度）。\n面板 B：专辑 2（侧重技术/机械感）。\n面板 C：专辑 3（侧重自然/有机质感）。\n面板 D：专辑 4（侧重光线/色彩）。\n5. 照明与氛围:\n演出照明：每个盒子都像舞台演出般照明。聚光灯、激光束与舞台雾效。\n景深：浅景深（移轴效果）使黑胶唱片显得宏大。\n背景：无缝板岩灰以保持对色彩的聚焦。\n输出：2x2 网格，高度写实的微缩场景设计，8k 分辨率，“发烧友（Audiophile）”美学。 </instructions>", this)'>📋 复制</button>
         </div>
-        <p>&lt;instructions&gt; 输入变量: [插入 乐队/专辑]</p><p>系统指令:<br>扮演音乐历史学家和舞台布景设计师。创建一个 2x2 网格的“视听透视模型（Audio-Visual Dioramas）”。<br>1. 策展逻辑（深度发掘）:<br>分析输入：识别输入乐队的流派和声音特征（例如：Pink Floyd = 迷幻/前卫摇滚，氛围感，超现实）。<br>精选 4 个隐藏瑰宝：挑选 4 张鲜为人知但共享这种声音基因并呈现不同风味的专辑/艺术家（例如：King Crimson, Porcupine Tree, Yes, The Alan Parsons Project）。<br>转换：为每张专辑定义“声音物质性”：<br>如果是重金属：锈蚀铁与火焰。<br>如果是合成流行：霓虹玻璃与铬合金。<br>如果是民谣：青苔木与烛光。<br>如果是前卫摇滚：超现实大理石与漂浮石。<br>2. “不可变”的容器（黑胶舞台）:<br>基底：每个透景模型构建在一个旋转的黑胶唱片之上，作为圆形舞台地面。<br>底座：唱片置于高端发烧级唱盘或木制音箱箱体之上。<br>唱片标签：黑胶中心标签以清晰的排版显示艺术家名称与专辑标题。<br>3. 构图（声音具象化）:<br>重要：不要仅仅重现专辑封面。要构建一个能让人感受到音乐的世界。<br>结构：建筑从黑胶唱片的纹槽中拔地而起。<br>示例：一堵放大器墙、一只超现实的漂浮棱镜、一面崩裂的砖墙、或一片麦克风支架的森林。<br>氛围：使用粒子效果来可视化声波。<br>视觉元素：由烟雾构成的漂浮音符、震动的液面、或悬浮于空中的碎玻璃。<br>人物：以 1:87 比例的微型乐队成员在这个超现实景观中演奏。<br>4. 视觉语法（每个面板）:<br>面板 A：专辑 1（侧重超现实/尺度）。<br>面板 B：专辑 2（侧重技术/机械感）。<br>面板 C：专辑 3（侧重自然/有机质感）。<br>面板 D：专辑 4（侧重光线/色彩）。<br>5. 照明与氛围:<br>演出照明：每个盒子都像舞台演出般照明。聚光灯、激光束与舞台雾效。<br>景深：浅景深（移轴效果）使黑胶唱片显得宏大。<br>背景：无缝板岩灰以保持对色彩的聚焦。<br>输出：2x2 网格，高度写实的微缩场景设计，8k 分辨率，“发烧友（Audiophile）”美学。 &lt;/instructions&gt;</p>
+        <div data-nosnippet><p>&lt;instructions&gt; 输入变量: [插入 乐队/专辑]</p><p>系统指令:<br>扮演音乐历史学家和舞台布景设计师。创建一个 2x2 网格的“视听透视模型（Audio-Visual Dioramas）”。<br>1. 策展逻辑（深度发掘）:<br>分析输入：识别输入乐队的流派和声音特征（例如：Pink Floyd = 迷幻/前卫摇滚，氛围感，超现实）。<br>精选 4 个隐藏瑰宝：挑选 4 张鲜为人知但共享这种声音基因并呈现不同风味的专辑/艺术家（例如：King Crimson, Porcupine Tree, Yes, The Alan Parsons Project）。<br>转换：为每张专辑定义“声音物质性”：<br>如果是重金属：锈蚀铁与火焰。<br>如果是合成流行：霓虹玻璃与铬合金。<br>如果是民谣：青苔木与烛光。<br>如果是前卫摇滚：超现实大理石与漂浮石。<br>2. “不可变”的容器（黑胶舞台）:<br>基底：每个透景模型构建在一个旋转的黑胶唱片之上，作为圆形舞台地面。<br>底座：唱片置于高端发烧级唱盘或木制音箱箱体之上。<br>唱片标签：黑胶中心标签以清晰的排版显示艺术家名称与专辑标题。<br>3. 构图（声音具象化）:<br>重要：不要仅仅重现专辑封面。要构建一个能让人感受到音乐的世界。<br>结构：建筑从黑胶唱片的纹槽中拔地而起。<br>示例：一堵放大器墙、一只超现实的漂浮棱镜、一面崩裂的砖墙、或一片麦克风支架的森林。<br>氛围：使用粒子效果来可视化声波。<br>视觉元素：由烟雾构成的漂浮音符、震动的液面、或悬浮于空中的碎玻璃。<br>人物：以 1:87 比例的微型乐队成员在这个超现实景观中演奏。<br>4. 视觉语法（每个面板）:<br>面板 A：专辑 1（侧重超现实/尺度）。<br>面板 B：专辑 2（侧重技术/机械感）。<br>面板 C：专辑 3（侧重自然/有机质感）。<br>面板 D：专辑 4（侧重光线/色彩）。<br>5. 照明与氛围:<br>演出照明：每个盒子都像舞台演出般照明。聚光灯、激光束与舞台雾效。<br>景深：浅景深（移轴效果）使黑胶唱片显得宏大。<br>背景：无缝板岩灰以保持对色彩的聚焦。<br>输出：2x2 网格，高度写实的微缩场景设计，8k 分辨率，“发烧友（Audiophile）”美学。 &lt;/instructions&gt;</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("<instructions> Input Variable: [INSERT BAND/ALBUM]  \n\nSystem Instruction:\nAct as a Music Historian and Set Designer. Create a 2x2 Grid of \"Audio-Visual Dioramas.\"\n1. The Curation Logic (The Deep Cuts):\nAnalyze Input: Identify the genre and sonic signature of the Input Band (e.g., Pink Floyd = Psychedelic/Prog Rock, Atmospheric, Surreal).\nSelect 4 Hidden Gems: Identify 4 lesser-known albums/artists that share this sonic DNA but offer a different flavor (e.g., King Crimson, Porcupine Tree, Yes, The Alan Parsons Project).\nThe Translation: For each album, define the \"Sonic Materiality\":\nIf Heavy Metal: Rusty Iron & Fire.\nIf Synth-Pop: Neon Glass & Chrome.\nIf Folk: Mossy Wood & Candlelight.\nIf Prog Rock: Surreal Marble & Floating Stone.\n2. The \"Immutable\" Container (The Vinyl Stage):\nThe Base: Each diorama is built on top of a Spinning Vinyl Record acting as the circular stage floor.\nThe Plinth: The record sits on a high-end audiophile turntable platter or a wooden speaker box.\nThe Label: The center label of the vinyl clearly displays the Artist Name & Album Title in crisp typography.\n3. The Composition (The Sound Made Solid):\nCRITICAL: Do not just recreate the album cover. Build a world that feels like the music.\nThe Structure: Architecture rises from the grooves of the vinyl record.\nExample: A wall of amplifiers, a surreal floating prism, a crumbling brick wall, or a forest of microphone stands.\nThe Atmosphere: Use particle effects to visualize the sound waves.\nVisuals: Floating musical notes made of smoke, vibrating liquid surfaces, or shattered glass suspended in mid-air.\nThe Figures: Tiny 1:87 scale band members performing inside this surreal landscape.\n4. Visual Syntax (Per Panel):\nPanel A: Album 1 (Focus on Surrealism/Scale).\nPanel B: Album 2 (Focus on Technology/Machinery).\nPanel C: Album 3 (Focus on Nature/Organic Textures).\nPanel D: Album 4 (Focus on Light/Color).\n5. Lighting & Atmosphere:\nConcert Lighting: Each box is lit like a stage show. Spotlights, laser beams, and stage haze.\nDepth: Shallow depth of field (Tilt-Shift) to make the vinyl record look massive.\nBackground: Seamless Slate Grey to keep the focus on the colors.\nOutput: 2x2 Grid, Hyper-Realistic Miniature Set Design, 8k Resolution, \"Audiophile\" Aesthetic. </instructions>", this)'>📋 复制</button>
         </div>
-        <p>&lt;instructions&gt; Input Variable: [INSERT BAND/ALBUM]</p><p>System Instruction:<br>Act as a Music Historian and Set Designer. Create a 2x2 Grid of &quot;Audio-Visual Dioramas.&quot;<br>1. The Curation Logic (The Deep Cuts):<br>Analyze Input: Identify the genre and sonic signature of the Input Band (e.g., Pink Floyd = Psychedelic/Prog Rock, Atmospheric, Surreal).<br>Select 4 Hidden Gems: Identify 4 lesser-known albums/artists that share this sonic DNA but offer a different flavor (e.g., King Crimson, Porcupine Tree, Yes, The Alan Parsons Project).<br>The Translation: For each album, define the &quot;Sonic Materiality&quot;:<br>If Heavy Metal: Rusty Iron &amp; Fire.<br>If Synth-Pop: Neon Glass &amp; Chrome.<br>If Folk: Mossy Wood &amp; Candlelight.<br>If Prog Rock: Surreal Marble &amp; Floating Stone.<br>2. The &quot;Immutable&quot; Container (The Vinyl Stage):<br>The Base: Each diorama is built on top of a Spinning Vinyl Record acting as the circular stage floor.<br>The Plinth: The record sits on a high-end audiophile turntable platter or a wooden speaker box.<br>The Label: The center label of the vinyl clearly displays the Artist Name &amp; Album Title in crisp typography.<br>3. The Composition (The Sound Made Solid):<br>CRITICAL: Do not just recreate the album cover. Build a world that feels like the music.<br>The Structure: Architecture rises from the grooves of the vinyl record.<br>Example: A wall of amplifiers, a surreal floating prism, a crumbling brick wall, or a forest of microphone stands.<br>The Atmosphere: Use particle effects to visualize the sound waves.<br>Visuals: Floating musical notes made of smoke, vibrating liquid surfaces, or shattered glass suspended in mid-air.<br>The Figures: Tiny 1:87 scale band members performing inside this surreal landscape.<br>4. Visual Syntax (Per Panel):<br>Panel A: Album 1 (Focus on Surrealism/Scale).<br>Panel B: Album 2 (Focus on Technology/Machinery).<br>Panel C: Album 3 (Focus on Nature/Organic Textures).<br>Panel D: Album 4 (Focus on Light/Color).<br>5. Lighting &amp; Atmosphere:<br>Concert Lighting: Each box is lit like a stage show. Spotlights, laser beams, and stage haze.<br>Depth: Shallow depth of field (Tilt-Shift) to make the vinyl record look massive.<br>Background: Seamless Slate Grey to keep the focus on the colors.<br>Output: 2x2 Grid, Hyper-Realistic Miniature Set Design, 8k Resolution, &quot;Audiophile&quot; Aesthetic. &lt;/instructions&gt;</p>
+        <div data-nosnippet><p>&lt;instructions&gt; Input Variable: [INSERT BAND/ALBUM]</p><p>System Instruction:<br>Act as a Music Historian and Set Designer. Create a 2x2 Grid of &quot;Audio-Visual Dioramas.&quot;<br>1. The Curation Logic (The Deep Cuts):<br>Analyze Input: Identify the genre and sonic signature of the Input Band (e.g., Pink Floyd = Psychedelic/Prog Rock, Atmospheric, Surreal).<br>Select 4 Hidden Gems: Identify 4 lesser-known albums/artists that share this sonic DNA but offer a different flavor (e.g., King Crimson, Porcupine Tree, Yes, The Alan Parsons Project).<br>The Translation: For each album, define the &quot;Sonic Materiality&quot;:<br>If Heavy Metal: Rusty Iron &amp; Fire.<br>If Synth-Pop: Neon Glass &amp; Chrome.<br>If Folk: Mossy Wood &amp; Candlelight.<br>If Prog Rock: Surreal Marble &amp; Floating Stone.<br>2. The &quot;Immutable&quot; Container (The Vinyl Stage):<br>The Base: Each diorama is built on top of a Spinning Vinyl Record acting as the circular stage floor.<br>The Plinth: The record sits on a high-end audiophile turntable platter or a wooden speaker box.<br>The Label: The center label of the vinyl clearly displays the Artist Name &amp; Album Title in crisp typography.<br>3. The Composition (The Sound Made Solid):<br>CRITICAL: Do not just recreate the album cover. Build a world that feels like the music.<br>The Structure: Architecture rises from the grooves of the vinyl record.<br>Example: A wall of amplifiers, a surreal floating prism, a crumbling brick wall, or a forest of microphone stands.<br>The Atmosphere: Use particle effects to visualize the sound waves.<br>Visuals: Floating musical notes made of smoke, vibrating liquid surfaces, or shattered glass suspended in mid-air.<br>The Figures: Tiny 1:87 scale band members performing inside this surreal landscape.<br>4. Visual Syntax (Per Panel):<br>Panel A: Album 1 (Focus on Surrealism/Scale).<br>Panel B: Album 2 (Focus on Technology/Machinery).<br>Panel C: Album 3 (Focus on Nature/Organic Textures).<br>Panel D: Album 4 (Focus on Light/Color).<br>5. Lighting &amp; Atmosphere:<br>Concert Lighting: Each box is lit like a stage show. Spotlights, laser beams, and stage haze.<br>Depth: Shallow depth of field (Tilt-Shift) to make the vinyl record look massive.<br>Background: Seamless Slate Grey to keep the focus on the colors.<br>Output: 2x2 Grid, Hyper-Realistic Miniature Set Design, 8k Resolution, &quot;Audiophile&quot; Aesthetic. &lt;/instructions&gt;</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010446114164744676-1.jpg" alt="&lt;instructions Input Variable: [INSERT BAND/ALBUM]" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1031,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;scene&quot;: { #2406 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;scene&quot;: { &quot;location&quot;: &quot;Busy Western metropolitan intersection, inspired by New York Times Square&quot;, &quot;architecture&quot;:...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2406.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2406.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2406.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839957">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022236">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene\": {\n    \"location\": \"繁忙的西方都市十字路口，灵感来自纽约时代广场\",\n    \"architecture\": {\n      \"surroundings\": \"现代玻璃摩天大楼、大型数字广告牌、简洁的城市建筑风格\",\n      \"special_features\": [\n        \"位于建筑角落的大型L形裸眼3D LED屏幕\"\n      ]\n    },\n    \"lighting\": \"来自真实城市环境的日光，在屏幕边缘和附近建筑上投射出逼真的阴影和反射\",\n    \"tone\": \"高端、编辑风格、博物馆级、电影感、接地气、富有尊重感、俏皮且依然高端\"\n  },\n  \"characters\": [\n    {\n      \"name\": \"Rapunzel\",\n      \"source\": \"Tangled\",\n      \"render_style\": \"高端电影级3D\",\n      \"details\": \"忠实于原始设计，增强为超细致的纹理、照明和深度\"\n    },\n    {\n      \"name\": \"Flynn Rider\",\n      \"source\": \"Tangled\",\n      \"render_style\": \"高端电影级3D\",\n      \"details\": \"忠实于原始设计，增强为超细致的纹理、照明和深度\"\n    },\n    {\n      \"name\": \"Judy Hopps\",\n      \"source\": \"Zootopia\",\n      \"positioning\": \"略微向前，探出屏幕，上半身和耳朵微微突破屏幕边界\",\n      \"details\": \"生动且富有表情，接近真实的毛发质感和面部表情\"\n    },\n    {\n      \"name\": \"Nick Wilde\",\n      \"source\": \"Zootopia\",\n      \"positioning\": \"在朱迪旁边，姿态放松，半含笑，尾巴和肩部延伸到现实空间\",\n      \"details\": \"生动且富有表情，接近真实的毛发质感和面部表情\"\n    }\n  ],\n  \"animation\": {\n    \"style\": \"裸眼3D、电影感、精致但不过于诡异\",\n    \"purpose\": \"好莱坞级别的户外广告装置，旨在让路人驻足观赏\",\n    \"overall_feel\": \"俏皮、高端、电影感、接地气\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;繁忙的西方都市十字路口，灵感来自纽约时代广场&quot;,<br>    &quot;architecture&quot;: {<br>      &quot;surroundings&quot;: &quot;现代玻璃摩天大楼、大型数字广告牌、简洁的城市建筑风格&quot;,<br>      &quot;special_features&quot;: [<br>        &quot;位于建筑角落的大型L形裸眼3D LED屏幕&quot;<br>      ]<br>    },<br>    &quot;lighting&quot;: &quot;来自真实城市环境的日光，在屏幕边缘和附近建筑上投射出逼真的阴影和反射&quot;,<br>    &quot;tone&quot;: &quot;高端、编辑风格、博物馆级、电影感、接地气、富有尊重感、俏皮且依然高端&quot;<br>  },<br>  &quot;characters&quot;: [<br>    {<br>      &quot;name&quot;: &quot;Rapunzel&quot;,<br>      &quot;source&quot;: &quot;Tangled&quot;,<br>      &quot;render_style&quot;: &quot;高端电影级3D&quot;,<br>      &quot;details&quot;: &quot;忠实于原始设计，增强为超细致的纹理、照明和深度&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Flynn Rider&quot;,<br>      &quot;source&quot;: &quot;Tangled&quot;,<br>      &quot;render_style&quot;: &quot;高端电影级3D&quot;,<br>      &quot;details&quot;: &quot;忠实于原始设计，增强为超细致的纹理、照明和深度&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Judy Hopps&quot;,<br>      &quot;source&quot;: &quot;Zootopia&quot;,<br>      &quot;positioning&quot;: &quot;略微向前，探出屏幕，上半身和耳朵微微突破屏幕边界&quot;,<br>      &quot;details&quot;: &quot;生动且富有表情，接近真实的毛发质感和面部表情&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Nick Wilde&quot;,<br>      &quot;source&quot;: &quot;Zootopia&quot;,<br>      &quot;positioning&quot;: &quot;在朱迪旁边，姿态放松，半含笑，尾巴和肩部延伸到现实空间&quot;,<br>      &quot;details&quot;: &quot;生动且富有表情，接近真实的毛发质感和面部表情&quot;<br>    }<br>  ],<br>  &quot;animation&quot;: {<br>    &quot;style&quot;: &quot;裸眼3D、电影感、精致但不过于诡异&quot;,<br>    &quot;purpose&quot;: &quot;好莱坞级别的户外广告装置，旨在让路人驻足观赏&quot;,<br>    &quot;overall_feel&quot;: &quot;俏皮、高端、电影感、接地气&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;繁忙的西方都市十字路口，灵感来自纽约时代广场&quot;,<br>    &quot;architecture&quot;: {<br>      &quot;surroundings&quot;: &quot;现代玻璃摩天大楼、大型数字广告牌、简洁的城市建筑风格&quot;,<br>      &quot;special_features&quot;: [<br>        &quot;位于建筑角落的大型L形裸眼3D LED屏幕&quot;<br>      ]<br>    },<br>    &quot;lighting&quot;: &quot;来自真实城市环境的日光，在屏幕边缘和附近建筑上投射出逼真的阴影和反射&quot;,<br>    &quot;tone&quot;: &quot;高端、编辑风格、博物馆级、电影感、接地气、富有尊重感、俏皮且依然高端&quot;<br>  },<br>  &quot;characters&quot;: [<br>    {<br>      &quot;name&quot;: &quot;Rapunzel&quot;,<br>      &quot;source&quot;: &quot;Tangled&quot;,<br>      &quot;render_style&quot;: &quot;高端电影级3D&quot;,<br>      &quot;details&quot;: &quot;忠实于原始设计，增强为超细致的纹理、照明和深度&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Flynn Rider&quot;,<br>      &quot;source&quot;: &quot;Tangled&quot;,<br>      &quot;render_style&quot;: &quot;高端电影级3D&quot;,<br>      &quot;details&quot;: &quot;忠实于原始设计，增强为超细致的纹理、照明和深度&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Judy Hopps&quot;,<br>      &quot;source&quot;: &quot;Zootopia&quot;,<br>      &quot;positioning&quot;: &quot;略微向前，探出屏幕，上半身和耳朵微微突破屏幕边界&quot;,<br>      &quot;details&quot;: &quot;生动且富有表情，接近真实的毛发质感和面部表情&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Nick Wilde&quot;,<br>      &quot;source&quot;: &quot;Zootopia&quot;,<br>      &quot;positioning&quot;: &quot;在朱迪旁边，姿态放松，半含笑，尾巴和肩部延伸到现实空间&quot;,<br>      &quot;details&quot;: &quot;生动且富有表情，接近真实的毛发质感和面部表情&quot;<br>    }<br>  ],<br>  &quot;animation&quot;: {<br>    &quot;style&quot;: &quot;裸眼3D、电影感、精致但不过于诡异&quot;,<br>    &quot;purpose&quot;: &quot;好莱坞级别的户外广告装置，旨在让路人驻足观赏&quot;,<br>    &quot;overall_feel&quot;: &quot;俏皮、高端、电影感、接地气&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"scene\": {\n    \"location\": \"Busy Western metropolitan intersection, inspired by New York Times Square\",\n    \"architecture\": {\n      \"surroundings\": \"Modern glass skyscrapers, large digital billboards, clean urban architecture\",\n      \"special_features\": [\n        \"Massive L-shaped naked-eye 3D LED screen on building corner\"\n      ]\n    },\n    \"lighting\": \"Daylight from real city environment casting realistic shadows and reflections onto screen edges and nearby buildings\",\n    \"tone\": \"Premium, editorial, museum-grade, cinematic, grounded, respectful, playful yet premium\"\n  },\n  \"characters\": [\n    {\n      \"name\": \"Rapunzel\",\n      \"source\": \"Tangled\",\n      \"render_style\": \"High-end cinematic 3D\",\n      \"details\": \"Faithful to original design, enhanced with ultra-detailed textures, lighting, and depth\"\n    },\n    {\n      \"name\": \"Flynn Rider\",\n      \"source\": \"Tangled\",\n      \"render_style\": \"High-end cinematic 3D\",\n      \"details\": \"Faithful to original design, enhanced with ultra-detailed textures, lighting, and depth\"\n    },\n    {\n      \"name\": \"Judy Hopps\",\n      \"source\": \"Zootopia\",\n      \"positioning\": \"Slightly forward, leaning out of the screen, upper body and ears subtly breaking screen boundary\",\n      \"details\": \"Alive and expressive, near-photorealistic fur texture and facial expression\"\n    },\n    {\n      \"name\": \"Nick Wilde\",\n      \"source\": \"Zootopia\",\n      \"positioning\": \"Beside Judy, relaxed posture, half-smiling, tail and shoulder extending into real-world space\",\n      \"details\": \"Alive and expressive, near-photorealistic fur texture and facial expression\"\n    }\n  ],\n  \"animation\": {\n    \"style\": \"Naked-eye 3D, cinematic, polished but not uncanny\",\n    \"purpose\": \"Hollywood-level outdoor advertising installation designed to stop pedestrians in their tracks\",\n    \"overall_feel\": \"Playful, premium, cinematic, grounded\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;Busy Western metropolitan intersection, inspired by New York Times Square&quot;,<br>    &quot;architecture&quot;: {<br>      &quot;surroundings&quot;: &quot;Modern glass skyscrapers, large digital billboards, clean urban architecture&quot;,<br>      &quot;special_features&quot;: [<br>        &quot;Massive L-shaped naked-eye 3D LED screen on building corner&quot;<br>      ]<br>    },<br>    &quot;lighting&quot;: &quot;Daylight from real city environment casting realistic shadows and reflections onto screen edges and nearby buildings&quot;,<br>    &quot;tone&quot;: &quot;Premium, editorial, museum-grade, cinematic, grounded, respectful, playful yet premium&quot;<br>  },<br>  &quot;characters&quot;: [<br>    {<br>      &quot;name&quot;: &quot;Rapunzel&quot;,<br>      &quot;source&quot;: &quot;Tangled&quot;,<br>      &quot;render_style&quot;: &quot;High-end cinematic 3D&quot;,<br>      &quot;details&quot;: &quot;Faithful to original design, enhanced with ultra-detailed textures, lighting, and depth&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Flynn Rider&quot;,<br>      &quot;source&quot;: &quot;Tangled&quot;,<br>      &quot;render_style&quot;: &quot;High-end cinematic 3D&quot;,<br>      &quot;details&quot;: &quot;Faithful to original design, enhanced with ultra-detailed textures, lighting, and depth&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Judy Hopps&quot;,<br>      &quot;source&quot;: &quot;Zootopia&quot;,<br>      &quot;positioning&quot;: &quot;Slightly forward, leaning out of the screen, upper body and ears subtly breaking screen boundary&quot;,<br>      &quot;details&quot;: &quot;Alive and expressive, near-photorealistic fur texture and facial expression&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Nick Wilde&quot;,<br>      &quot;source&quot;: &quot;Zootopia&quot;,<br>      &quot;positioning&quot;: &quot;Beside Judy, relaxed posture, half-smiling, tail and shoulder extending into real-world space&quot;,<br>      &quot;details&quot;: &quot;Alive and expressive, near-photorealistic fur texture and facial expression&quot;<br>    }<br>  ],<br>  &quot;animation&quot;: {<br>    &quot;style&quot;: &quot;Naked-eye 3D, cinematic, polished but not uncanny&quot;,<br>    &quot;purpose&quot;: &quot;Hollywood-level outdoor advertising installation designed to stop pedestrians in their tracks&quot;,<br>    &quot;overall_feel&quot;: &quot;Playful, premium, cinematic, grounded&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;Busy Western metropolitan intersection, inspired by New York Times Square&quot;,<br>    &quot;architecture&quot;: {<br>      &quot;surroundings&quot;: &quot;Modern glass skyscrapers, large digital billboards, clean urban architecture&quot;,<br>      &quot;special_features&quot;: [<br>        &quot;Massive L-shaped naked-eye 3D LED screen on building corner&quot;<br>      ]<br>    },<br>    &quot;lighting&quot;: &quot;Daylight from real city environment casting realistic shadows and reflections onto screen edges and nearby buildings&quot;,<br>    &quot;tone&quot;: &quot;Premium, editorial, museum-grade, cinematic, grounded, respectful, playful yet premium&quot;<br>  },<br>  &quot;characters&quot;: [<br>    {<br>      &quot;name&quot;: &quot;Rapunzel&quot;,<br>      &quot;source&quot;: &quot;Tangled&quot;,<br>      &quot;render_style&quot;: &quot;High-end cinematic 3D&quot;,<br>      &quot;details&quot;: &quot;Faithful to original design, enhanced with ultra-detailed textures, lighting, and depth&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Flynn Rider&quot;,<br>      &quot;source&quot;: &quot;Tangled&quot;,<br>      &quot;render_style&quot;: &quot;High-end cinematic 3D&quot;,<br>      &quot;details&quot;: &quot;Faithful to original design, enhanced with ultra-detailed textures, lighting, and depth&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Judy Hopps&quot;,<br>      &quot;source&quot;: &quot;Zootopia&quot;,<br>      &quot;positioning&quot;: &quot;Slightly forward, leaning out of the screen, upper body and ears subtly breaking screen boundary&quot;,<br>      &quot;details&quot;: &quot;Alive and expressive, near-photorealistic fur texture and facial expression&quot;<br>    },<br>    {<br>      &quot;name&quot;: &quot;Nick Wilde&quot;,<br>      &quot;source&quot;: &quot;Zootopia&quot;,<br>      &quot;positioning&quot;: &quot;Beside Judy, relaxed posture, half-smiling, tail and shoulder extending into real-world space&quot;,<br>      &quot;details&quot;: &quot;Alive and expressive, near-photorealistic fur texture and facial expression&quot;<br>    }<br>  ],<br>  &quot;animation&quot;: {<br>    &quot;style&quot;: &quot;Naked-eye 3D, cinematic, polished but not uncanny&quot;,<br>    &quot;purpose&quot;: &quot;Hollywood-level outdoor advertising installation designed to stop pedestrians in their tracks&quot;,<br>    &quot;overall_feel&quot;: &quot;Playful, premium, cinematic, grounded&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2029508809971118124-1.jpg" alt="&quot;scene&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2406,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

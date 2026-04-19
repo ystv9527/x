@@ -7,11 +7,13 @@
     <title>Editorial 3x3 photo grid in a clean soft beige studio. Charac... #2023 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Editorial 3x3 photo grid in a clean soft beige studio. Character (matches reference 100%) wearing lightweight dark na...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2023.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2023.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2023.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840335">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022319">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("编辑性 3x3 照片网格，干净柔和的米色摄影棚。人物（与参考图 100% 匹配）穿着轻薄深海军蓝衬衫、象牙色长裤，赤脚以呈现朴素简洁。光线：大型漫射主光置于正前偏右，左侧银色反光板，顶部有微弱轮廓光。拍摄镜头包括：\n1. 嘴唇与颧骨的极近特写，部分被模糊的手遮挡（85mm，f/1.8，剃刀般薄景深）；\n2. 紧裁眼部，直视镜头，可见灯带反光（85mm，f/2.0）；\n3. 黑白近身肖像，下巴撑在拳头上，面部充满画面（50mm，f/2.2）；\n4. 反肩拍摄，前景模糊的布帘构图框住半张脸（85mm，f/2.0）；\n5. 非常近的正面，双手重叠于面部，光带横穿眼部（50mm，f/2.5）；\n6. 斜角紧致肖像，头发落入眼内，背景柔焦（85mm，f/2.2）；\n7. 裁切手触下颌线的细节，眼睛被裁出（50mm，f/3.2，注重细节）；\n8. 半身侧坐于低方凳，头部急转向外，前景模糊（35mm，f/4.5）；\n9. 强烈的侧脸特写，单一泪状水滴，电影感光线切片横跨（85mm，f/1.9）。\n角度：以紧致头部肖像为主，略有上下倾斜以保持变化。拍摄 RAW，专业低饱和调色，顺滑的色调对比，细腻的电影颗粒。氛围：亲密、内省、以人物为主导的编辑性极简主义，精致地将布料作为道具使用。", this)'>📋 复制</button>
         </div>
-        <p>编辑性 3x3 照片网格，干净柔和的米色摄影棚。人物（与参考图 100% 匹配）穿着轻薄深海军蓝衬衫、象牙色长裤，赤脚以呈现朴素简洁。光线：大型漫射主光置于正前偏右，左侧银色反光板，顶部有微弱轮廓光。拍摄镜头包括：<br>1. 嘴唇与颧骨的极近特写，部分被模糊的手遮挡（85mm，f/1.8，剃刀般薄景深）；<br>2. 紧裁眼部，直视镜头，可见灯带反光（85mm，f/2.0）；<br>3. 黑白近身肖像，下巴撑在拳头上，面部充满画面（50mm，f/2.2）；<br>4. 反肩拍摄，前景模糊的布帘构图框住半张脸（85mm，f/2.0）；<br>5. 非常近的正面，双手重叠于面部，光带横穿眼部（50mm，f/2.5）；<br>6. 斜角紧致肖像，头发落入眼内，背景柔焦（85mm，f/2.2）；<br>7. 裁切手触下颌线的细节，眼睛被裁出（50mm，f/3.2，注重细节）；<br>8. 半身侧坐于低方凳，头部急转向外，前景模糊（35mm，f/4.5）；<br>9. 强烈的侧脸特写，单一泪状水滴，电影感光线切片横跨（85mm，f/1.9）。<br>角度：以紧致头部肖像为主，略有上下倾斜以保持变化。拍摄 RAW，专业低饱和调色，顺滑的色调对比，细腻的电影颗粒。氛围：亲密、内省、以人物为主导的编辑性极简主义，精致地将布料作为道具使用。</p>
+        <div data-nosnippet><p>编辑性 3x3 照片网格，干净柔和的米色摄影棚。人物（与参考图 100% 匹配）穿着轻薄深海军蓝衬衫、象牙色长裤，赤脚以呈现朴素简洁。光线：大型漫射主光置于正前偏右，左侧银色反光板，顶部有微弱轮廓光。拍摄镜头包括：<br>1. 嘴唇与颧骨的极近特写，部分被模糊的手遮挡（85mm，f/1.8，剃刀般薄景深）；<br>2. 紧裁眼部，直视镜头，可见灯带反光（85mm，f/2.0）；<br>3. 黑白近身肖像，下巴撑在拳头上，面部充满画面（50mm，f/2.2）；<br>4. 反肩拍摄，前景模糊的布帘构图框住半张脸（85mm，f/2.0）；<br>5. 非常近的正面，双手重叠于面部，光带横穿眼部（50mm，f/2.5）；<br>6. 斜角紧致肖像，头发落入眼内，背景柔焦（85mm，f/2.2）；<br>7. 裁切手触下颌线的细节，眼睛被裁出（50mm，f/3.2，注重细节）；<br>8. 半身侧坐于低方凳，头部急转向外，前景模糊（35mm，f/4.5）；<br>9. 强烈的侧脸特写，单一泪状水滴，电影感光线切片横跨（85mm，f/1.9）。<br>角度：以紧致头部肖像为主，略有上下倾斜以保持变化。拍摄 RAW，专业低饱和调色，顺滑的色调对比，细腻的电影颗粒。氛围：亲密、内省、以人物为主导的编辑性极简主义，精致地将布料作为道具使用。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Editorial 3x3 photo grid in a clean soft beige studio. Character (matches reference 100%) wearing lightweight dark navy shirt, ivory trousers, barefoot for raw simplicity. Lighting: large diffused key light directly front-right, silver reflector left, subtle rim from top. Shots to include: 1. extreme close-up of lips + cheekbone with blurred hand partially covering (85mm, f/1.8, razor-thin DOF); 2. tight crop on eyes looking into lens with reflection of light strip visible (85mm, f/2.0); 3. black & white close portrait resting chin on fist, face filling frame (50mm, f/2.2); 4. over-shoulder shot, blurred foreground fabric curtain framing half face (85mm, f/2.0); 5. very close frontal with hands overlapping face, light streak across eyes (50mm, f/2.5); 6. tight angled portrait showing hair falling into eyes, soft-focus background (85mm, f/2.2); 7. crop of hands touching jawline, eyes cropped out (50mm, f/3.2, detail-focused); 8. half-body seated sideways on low cube, head turned sharply away, blurred foreground (35mm, f/ 4.5); 9. intense close-up of profile with single tear-like water droplet, cinematic light slice across (85mm, f/ 1.9). Angles: mostly tight headshots with slight high/low tilts, maintaining variation. Capture RAW, professional muted grade, smooth tonal contrast, subtle cinematic grain. Mood: intimate, introspective, character-led editorial minimalism with delicate use of fabric as prop.", this)'>📋 复制</button>
         </div>
-        <p>Editorial 3x3 photo grid in a clean soft beige studio. Character (matches reference 100%) wearing lightweight dark navy shirt, ivory trousers, barefoot for raw simplicity. Lighting: large diffused key light directly front-right, silver reflector left, subtle rim from top. Shots to include: 1. extreme close-up of lips + cheekbone with blurred hand partially covering (85mm, f/1.8, razor-thin DOF); 2. tight crop on eyes looking into lens with reflection of light strip visible (85mm, f/2.0); 3. black &amp; white close portrait resting chin on fist, face filling frame (50mm, f/2.2); 4. over-shoulder shot, blurred foreground fabric curtain framing half face (85mm, f/2.0); 5. very close frontal with hands overlapping face, light streak across eyes (50mm, f/2.5); 6. tight angled portrait showing hair falling into eyes, soft-focus background (85mm, f/2.2); 7. crop of hands touching jawline, eyes cropped out (50mm, f/3.2, detail-focused); 8. half-body seated sideways on low cube, head turned sharply away, blurred foreground (35mm, f/ 4.5); 9. intense close-up of profile with single tear-like water droplet, cinematic light slice across (85mm, f/ 1.9). Angles: mostly tight headshots with slight high/low tilts, maintaining variation. Capture RAW, professional muted grade, smooth tonal contrast, subtle cinematic grain. Mood: intimate, introspective, character-led editorial minimalism with delicate use of fabric as prop.</p>
+        <div data-nosnippet><p>Editorial 3x3 photo grid in a clean soft beige studio. Character (matches reference 100%) wearing lightweight dark navy shirt, ivory trousers, barefoot for raw simplicity. Lighting: large diffused key light directly front-right, silver reflector left, subtle rim from top. Shots to include: 1. extreme close-up of lips + cheekbone with blurred hand partially covering (85mm, f/1.8, razor-thin DOF); 2. tight crop on eyes looking into lens with reflection of light strip visible (85mm, f/2.0); 3. black &amp; white close portrait resting chin on fist, face filling frame (50mm, f/2.2); 4. over-shoulder shot, blurred foreground fabric curtain framing half face (85mm, f/2.0); 5. very close frontal with hands overlapping face, light streak across eyes (50mm, f/2.5); 6. tight angled portrait showing hair falling into eyes, soft-focus background (85mm, f/2.2); 7. crop of hands touching jawline, eyes cropped out (50mm, f/3.2, detail-focused); 8. half-body seated sideways on low cube, head turned sharply away, blurred foreground (35mm, f/ 4.5); 9. intense close-up of profile with single tear-like water droplet, cinematic light slice across (85mm, f/ 1.9). Angles: mostly tight headshots with slight high/low tilts, maintaining variation. Capture RAW, professional muted grade, smooth tonal contrast, subtle cinematic grain. Mood: intimate, introspective, character-led editorial minimalism with delicate use of fabric as prop.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2020188222287229390-1.jpg" alt="Editorial 3x3 photo grid in a clean soft beige studio. Charac..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2023,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

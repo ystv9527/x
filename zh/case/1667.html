@@ -7,11 +7,13 @@
     <title>&quot;subject&quot;: { #1667 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;subject&quot;: { &quot;identity&quot;: &quot;User provided likeness&quot;, &quot;expression&quot;: &quot;Serene, effortlessly seductive&quot;, &quot;gaze&quot;: &quot;Direct,...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1667.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1667.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1667.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840673">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022403">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"identity\": \"用户提供的肖像\",\n    \"expression\": \"宁静，毫不费力地诱人\",\n    \"gaze\": \"直视，与相机对视\",\n    \"pose\": \"躺在床上，用手臂支撑体重\"\n  },\n  \"styling\": {\n    \"apparel\": {\n      \"item\": \"舒适针织毛衣\",\n      \"color\": \"奶白色\",\n      \"style\": \"露肩，宽松剪裁\"\n    },\n    \"jewelry\": [\n      {\n        \"type\": \"项链\",\n        \"material\": \"细链，配一颗锆石\"\n      },\n      {\n        \"type\": \"耳环\",\n        \"material\": \"锆石钻石耳钉\"\n      }\n    ],\n    \"hair\": {\n      \"color\": \"黑色\",\n      \"style\": \"披散，略显凌乱的波浪\",\n      \"placement\": \"靠在锁骨处\"\n    }\n  },\n  \"environment\": {\n    \"setting\": \"卧室\",\n    \"textiles\": \"柔软的白色床单\",\n    \"lighting\": {\n      \"type\": \"自然日光\",\n      \"temperature\": \"暖色调\",\n      \"effect\": \"黄金时刻的光晕，突出皮肤质感\"\n    }\n  },\n  \"photography_specs\": {\n    \"framing\": \"肩部高度 / 中近景\",\n    \"mood\": \"亲密、安静、优雅\",\n    \"color_palette\": [\"奶油色\", \"金色\", \"纯白\", \"自然肤色\"]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;用户提供的肖像&quot;,<br>    &quot;expression&quot;: &quot;宁静，毫不费力地诱人&quot;,<br>    &quot;gaze&quot;: &quot;直视，与相机对视&quot;,<br>    &quot;pose&quot;: &quot;躺在床上，用手臂支撑体重&quot;<br>  },<br>  &quot;styling&quot;: {<br>    &quot;apparel&quot;: {<br>      &quot;item&quot;: &quot;舒适针织毛衣&quot;,<br>      &quot;color&quot;: &quot;奶白色&quot;,<br>      &quot;style&quot;: &quot;露肩，宽松剪裁&quot;<br>    },<br>    &quot;jewelry&quot;: [<br>      {<br>        &quot;type&quot;: &quot;项链&quot;,<br>        &quot;material&quot;: &quot;细链，配一颗锆石&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;耳环&quot;,<br>        &quot;material&quot;: &quot;锆石钻石耳钉&quot;<br>      }<br>    ],<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;黑色&quot;,<br>      &quot;style&quot;: &quot;披散，略显凌乱的波浪&quot;,<br>      &quot;placement&quot;: &quot;靠在锁骨处&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;卧室&quot;,<br>    &quot;textiles&quot;: &quot;柔软的白色床单&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;自然日光&quot;,<br>      &quot;temperature&quot;: &quot;暖色调&quot;,<br>      &quot;effect&quot;: &quot;黄金时刻的光晕，突出皮肤质感&quot;<br>    }<br>  },<br>  &quot;photography_specs&quot;: {<br>    &quot;framing&quot;: &quot;肩部高度 / 中近景&quot;,<br>    &quot;mood&quot;: &quot;亲密、安静、优雅&quot;,<br>    &quot;color_palette&quot;: [&quot;奶油色&quot;, &quot;金色&quot;, &quot;纯白&quot;, &quot;自然肤色&quot;]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;用户提供的肖像&quot;,<br>    &quot;expression&quot;: &quot;宁静，毫不费力地诱人&quot;,<br>    &quot;gaze&quot;: &quot;直视，与相机对视&quot;,<br>    &quot;pose&quot;: &quot;躺在床上，用手臂支撑体重&quot;<br>  },<br>  &quot;styling&quot;: {<br>    &quot;apparel&quot;: {<br>      &quot;item&quot;: &quot;舒适针织毛衣&quot;,<br>      &quot;color&quot;: &quot;奶白色&quot;,<br>      &quot;style&quot;: &quot;露肩，宽松剪裁&quot;<br>    },<br>    &quot;jewelry&quot;: [<br>      {<br>        &quot;type&quot;: &quot;项链&quot;,<br>        &quot;material&quot;: &quot;细链，配一颗锆石&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;耳环&quot;,<br>        &quot;material&quot;: &quot;锆石钻石耳钉&quot;<br>      }<br>    ],<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;黑色&quot;,<br>      &quot;style&quot;: &quot;披散，略显凌乱的波浪&quot;,<br>      &quot;placement&quot;: &quot;靠在锁骨处&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;卧室&quot;,<br>    &quot;textiles&quot;: &quot;柔软的白色床单&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;自然日光&quot;,<br>      &quot;temperature&quot;: &quot;暖色调&quot;,<br>      &quot;effect&quot;: &quot;黄金时刻的光晕，突出皮肤质感&quot;<br>    }<br>  },<br>  &quot;photography_specs&quot;: {<br>    &quot;framing&quot;: &quot;肩部高度 / 中近景&quot;,<br>    &quot;mood&quot;: &quot;亲密、安静、优雅&quot;,<br>    &quot;color_palette&quot;: [&quot;奶油色&quot;, &quot;金色&quot;, &quot;纯白&quot;, &quot;自然肤色&quot;]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"subject\": {\n    \"identity\": \"User-provided likeness\",\n    \"expression\": \"Serene, effortlessly seductive\",\n    \"gaze\": \"Direct, meeting the camera\",\n    \"pose\": \"Lying on a bed, supporting weight on arms\"\n  },\n  \"styling\": {\n    \"apparel\": {\n      \"item\": \"Cozy knit sweater\",\n      \"color\": \"Off-white\",\n      \"style\": \"Off-the-shoulder, relaxed fit\"\n    },\n    \"jewelry\": [\n      {\n        \"type\": \"Necklace\",\n        \"material\": \"Delicate chain with a zirconia stone\"\n      },\n      {\n        \"type\": \"Earrings\",\n        \"material\": \"Zirconia diamond studs\"\n      }\n    ],\n    \"hair\": {\n      \"color\": \"Black\",\n      \"style\": \"Loose, slightly undone waves\",\n      \"placement\": \"Resting against the collarbone\"\n    }\n  },\n  \"environment\": {\n    \"setting\": \"Bedroom\",\n    \"textiles\": \"Soft white sheets\",\n    \"lighting\": {\n      \"type\": \"Natural sunlight\",\n      \"temperature\": \"Warm\",\n      \"effect\": \"Golden hour glow, highlighting skin texture\"\n    }\n  },\n  \"photography_specs\": {\n    \"framing\": \"Shoulder height / Medium-close up\",\n    \"mood\": \"Intimate, quiet, elegant\",\n    \"color_palette\": [\"Cream\", \"Gold\", \"Pure White\", \"Natural Skin Tones\"]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;User-provided likeness&quot;,<br>    &quot;expression&quot;: &quot;Serene, effortlessly seductive&quot;,<br>    &quot;gaze&quot;: &quot;Direct, meeting the camera&quot;,<br>    &quot;pose&quot;: &quot;Lying on a bed, supporting weight on arms&quot;<br>  },<br>  &quot;styling&quot;: {<br>    &quot;apparel&quot;: {<br>      &quot;item&quot;: &quot;Cozy knit sweater&quot;,<br>      &quot;color&quot;: &quot;Off-white&quot;,<br>      &quot;style&quot;: &quot;Off-the-shoulder, relaxed fit&quot;<br>    },<br>    &quot;jewelry&quot;: [<br>      {<br>        &quot;type&quot;: &quot;Necklace&quot;,<br>        &quot;material&quot;: &quot;Delicate chain with a zirconia stone&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;Earrings&quot;,<br>        &quot;material&quot;: &quot;Zirconia diamond studs&quot;<br>      }<br>    ],<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;Black&quot;,<br>      &quot;style&quot;: &quot;Loose, slightly undone waves&quot;,<br>      &quot;placement&quot;: &quot;Resting against the collarbone&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;Bedroom&quot;,<br>    &quot;textiles&quot;: &quot;Soft white sheets&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Natural sunlight&quot;,<br>      &quot;temperature&quot;: &quot;Warm&quot;,<br>      &quot;effect&quot;: &quot;Golden hour glow, highlighting skin texture&quot;<br>    }<br>  },<br>  &quot;photography_specs&quot;: {<br>    &quot;framing&quot;: &quot;Shoulder height / Medium-close up&quot;,<br>    &quot;mood&quot;: &quot;Intimate, quiet, elegant&quot;,<br>    &quot;color_palette&quot;: [&quot;Cream&quot;, &quot;Gold&quot;, &quot;Pure White&quot;, &quot;Natural Skin Tones&quot;]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;User-provided likeness&quot;,<br>    &quot;expression&quot;: &quot;Serene, effortlessly seductive&quot;,<br>    &quot;gaze&quot;: &quot;Direct, meeting the camera&quot;,<br>    &quot;pose&quot;: &quot;Lying on a bed, supporting weight on arms&quot;<br>  },<br>  &quot;styling&quot;: {<br>    &quot;apparel&quot;: {<br>      &quot;item&quot;: &quot;Cozy knit sweater&quot;,<br>      &quot;color&quot;: &quot;Off-white&quot;,<br>      &quot;style&quot;: &quot;Off-the-shoulder, relaxed fit&quot;<br>    },<br>    &quot;jewelry&quot;: [<br>      {<br>        &quot;type&quot;: &quot;Necklace&quot;,<br>        &quot;material&quot;: &quot;Delicate chain with a zirconia stone&quot;<br>      },<br>      {<br>        &quot;type&quot;: &quot;Earrings&quot;,<br>        &quot;material&quot;: &quot;Zirconia diamond studs&quot;<br>      }<br>    ],<br>    &quot;hair&quot;: {<br>      &quot;color&quot;: &quot;Black&quot;,<br>      &quot;style&quot;: &quot;Loose, slightly undone waves&quot;,<br>      &quot;placement&quot;: &quot;Resting against the collarbone&quot;<br>    }<br>  },<br>  &quot;environment&quot;: {<br>    &quot;setting&quot;: &quot;Bedroom&quot;,<br>    &quot;textiles&quot;: &quot;Soft white sheets&quot;,<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;Natural sunlight&quot;,<br>      &quot;temperature&quot;: &quot;Warm&quot;,<br>      &quot;effect&quot;: &quot;Golden hour glow, highlighting skin texture&quot;<br>    }<br>  },<br>  &quot;photography_specs&quot;: {<br>    &quot;framing&quot;: &quot;Shoulder height / Medium-close up&quot;,<br>    &quot;mood&quot;: &quot;Intimate, quiet, elegant&quot;,<br>    &quot;color_palette&quot;: [&quot;Cream&quot;, &quot;Gold&quot;, &quot;Pure White&quot;, &quot;Natural Skin Tones&quot;]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015218587531636805-1.jpg" alt="&quot;subject&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1667,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

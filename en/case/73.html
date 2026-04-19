@@ -7,11 +7,13 @@
     <title>Interesting fluffy letters. #73 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Interesting fluffy letters - prompts for AI image generation.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/73.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/73.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/73.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846489">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023944">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("一个高度真实的3D渲染字母 [A-Z]，被设计成一个全身的蓬松怪物。字母形状本身即是生物的身体——没有单独的头部或肢体。眼睛、嘴巴及其他怪物特征自然地嵌入字母形态。怪物通过眼睛和嘴巴的形状表达[mischievous / grumpy / shy / joyful / sleepy / surprised / confident]情感。纹理为密集、柔软、逼真的毛发，具有微妙的体积与阴影。色彩搭配大胆但干净——如薄荷绿、淡紫色、天蓝色或珊瑚色等纯净亮色（避免彩虹渐变）。在简单的粉彩背景上进行工作室灯光照明。不要戴帽子、不要道具派对——只需一个简约、高质量的角色设计与俏皮的表情。", this)'>📋 Copy</button>
         </div>
-        <p>一个高度真实的3D渲染字母 [A-Z]，被设计成一个全身的蓬松怪物。字母形状本身即是生物的身体——没有单独的头部或肢体。眼睛、嘴巴及其他怪物特征自然地嵌入字母形态。怪物通过眼睛和嘴巴的形状表达[mischievous / grumpy / shy / joyful / sleepy / surprised / confident]情感。纹理为密集、柔软、逼真的毛发，具有微妙的体积与阴影。色彩搭配大胆但干净——如薄荷绿、淡紫色、天蓝色或珊瑚色等纯净亮色（避免彩虹渐变）。在简单的粉彩背景上进行工作室灯光照明。不要戴帽子、不要道具派对——只需一个简约、高质量的角色设计与俏皮的表情。</p>
+        <div data-nosnippet><p>一个高度真实的3D渲染字母 [A-Z]，被设计成一个全身的蓬松怪物。字母形状本身即是生物的身体——没有单独的头部或肢体。眼睛、嘴巴及其他怪物特征自然地嵌入字母形态。怪物通过眼睛和嘴巴的形状表达[mischievous / grumpy / shy / joyful / sleepy / surprised / confident]情感。纹理为密集、柔软、逼真的毛发，具有微妙的体积与阴影。色彩搭配大胆但干净——如薄荷绿、淡紫色、天蓝色或珊瑚色等纯净亮色（避免彩虹渐变）。在简单的粉彩背景上进行工作室灯光照明。不要戴帽子、不要道具派对——只需一个简约、高质量的角色设计与俏皮的表情。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("A highly realistic 3D render of the letter [A-Z] designed as a full-body fluffy monster. The letter shape itself is the creature’s body — no separate head or limbs. The eyes, mouth, and other monster features are embedded naturally into the letter form. The monster expresses a [mischievous / grumpy / shy / joyful / sleepy / surprised / confident] emotion through its eyes and mouth shape. The texture is dense, soft, and realistic fur, with subtle volume and shadow. The color palette is bold but clean — solid vibrant tones like mint, lilac, sky blue, or coral (avoid rainbow gradients). Studio lighting on a simple pastel background. No hats, no party props — just a minimal, high-quality character design with playful expression.", this)'>📋 Copy</button>
         </div>
-        <p>A highly realistic 3D render of the letter [A-Z] designed as a full-body fluffy monster. The letter shape itself is the creature’s body — no separate head or limbs. The eyes, mouth, and other monster features are embedded naturally into the letter form. The monster expresses a [mischievous / grumpy / shy / joyful / sleepy / surprised / confident] emotion through its eyes and mouth shape. The texture is dense, soft, and realistic fur, with subtle volume and shadow. The color palette is bold but clean — solid vibrant tones like mint, lilac, sky blue, or coral (avoid rainbow gradients). Studio lighting on a simple pastel background. No hats, no party props — just a minimal, high-quality character design with playful expression.</p>
+        <div data-nosnippet><p>A highly realistic 3D render of the letter [A-Z] designed as a full-body fluffy monster. The letter shape itself is the creature’s body — no separate head or limbs. The eyes, mouth, and other monster features are embedded naturally into the letter form. The monster expresses a [mischievous / grumpy / shy / joyful / sleepy / surprised / confident] emotion through its eyes and mouth shape. The texture is dense, soft, and realistic fur, with subtle volume and shadow. The color palette is bold but clean — solid vibrant tones like mint, lilac, sky blue, or coral (avoid rainbow gradients). Studio lighting on a simple pastel background. No hats, no party props — just a minimal, high-quality character design with playful expression.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/73.png" alt="有趣的毛茸茸字母" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 73,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

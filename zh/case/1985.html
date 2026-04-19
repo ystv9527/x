@@ -7,11 +7,13 @@
     <title>Create an isometric miniature 3D diorama highlighting the nat... #1985 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create an isometric miniature 3D diorama highlighting the natural landmark [NATURAL WONDER] from [COUNTRY NAME/PLANET...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1985.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1985.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1985.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840395">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022329">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一个等距微型 3D 立体景观，突出来自 [COUNTRY NAME/PLANET] 的自然奇景 [NATURAL WONDER]。\n使用 40–45° 的俯视角。\n纹理呈现有机且逼真的质感，采用 PBR 材质。\n灯光柔和而富有氛围。\n高起的底座呈现地形层次、植被和周边地理环境。\n添加微型的风格化探险者或野生动物形象，面部无细节。\n背景保持为纯色 [BACKGROUND COLOR]。\n顶部中央文本以粗体显示 [COUNTRY NAME]。\n第二行显示 [NATURAL WONDER]。其下方放置一个极简风格的自然图标。\n文本会根据对比度自动调整。", this)'>📋 复制</button>
         </div>
-        <p>创建一个等距微型 3D 立体景观，突出来自 [COUNTRY NAME/PLANET] 的自然奇景 [NATURAL WONDER]。<br>使用 40–45° 的俯视角。<br>纹理呈现有机且逼真的质感，采用 PBR 材质。<br>灯光柔和而富有氛围。<br>高起的底座呈现地形层次、植被和周边地理环境。<br>添加微型的风格化探险者或野生动物形象，面部无细节。<br>背景保持为纯色 [BACKGROUND COLOR]。<br>顶部中央文本以粗体显示 [COUNTRY NAME]。<br>第二行显示 [NATURAL WONDER]。其下方放置一个极简风格的自然图标。<br>文本会根据对比度自动调整。</p>
+        <div data-nosnippet><p>创建一个等距微型 3D 立体景观，突出来自 [COUNTRY NAME/PLANET] 的自然奇景 [NATURAL WONDER]。<br>使用 40–45° 的俯视角。<br>纹理呈现有机且逼真的质感，采用 PBR 材质。<br>灯光柔和而富有氛围。<br>高起的底座呈现地形层次、植被和周边地理环境。<br>添加微型的风格化探险者或野生动物形象，面部无细节。<br>背景保持为纯色 [BACKGROUND COLOR]。<br>顶部中央文本以粗体显示 [COUNTRY NAME]。<br>第二行显示 [NATURAL WONDER]。其下方放置一个极简风格的自然图标。<br>文本会根据对比度自动调整。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an isometric miniature 3D diorama highlighting the natural landmark [NATURAL WONDER] from [COUNTRY NAME/PLANET].\n\nUse a 40–45° top-down view. Textures look organic and realistic with PBR materials. Lighting feels soft and atmospheric.\n\nThe raised base shows terrain layers, vegetation, and surrounding geography. Add tiny stylized explorers or wildlife with no facial details.\n\nBackground remains solid [BACKGROUND COLOR].\n\nTop center text displays [COUNTRY NAME] in bold.\nSecond line shows [NATURAL WONDER]. Place a minimal nature icon below. Text automatically adapts for contrast.", this)'>📋 复制</button>
         </div>
-        <p>Create an isometric miniature 3D diorama highlighting the natural landmark [NATURAL WONDER] from [COUNTRY NAME/PLANET].</p><p>Use a 40–45° top-down view. Textures look organic and realistic with PBR materials. Lighting feels soft and atmospheric.</p><p>The raised base shows terrain layers, vegetation, and surrounding geography. Add tiny stylized explorers or wildlife with no facial details.</p><p>Background remains solid [BACKGROUND COLOR].</p><p>Top center text displays [COUNTRY NAME] in bold.<br>Second line shows [NATURAL WONDER]. Place a minimal nature icon below. Text automatically adapts for contrast.</p>
+        <div data-nosnippet><p>Create an isometric miniature 3D diorama highlighting the natural landmark [NATURAL WONDER] from [COUNTRY NAME/PLANET].</p><p>Use a 40–45° top-down view. Textures look organic and realistic with PBR materials. Lighting feels soft and atmospheric.</p><p>The raised base shows terrain layers, vegetation, and surrounding geography. Add tiny stylized explorers or wildlife with no facial details.</p><p>Background remains solid [BACKGROUND COLOR].</p><p>Top center text displays [COUNTRY NAME] in bold.<br>Second line shows [NATURAL WONDER]. Place a minimal nature icon below. Text automatically adapts for contrast.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2019267462647439770-1.jpg" alt="Create an isometric miniature 3D diorama highlighting the nat..." loading="lazy"><img src="/images/tweet-2019267462647439770-2.jpg" alt="Create an isometric miniature 3D diorama highlighting the nat..." loading="lazy"><img src="/images/tweet-2019267462647439770-3.jpg" alt="Create an isometric miniature 3D diorama highlighting the nat..." loading="lazy"><img src="/images/tweet-2019267462647439770-4.jpg" alt="Create an isometric miniature 3D diorama highlighting the nat..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1985,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

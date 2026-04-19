@@ -7,11 +7,13 @@
     <title>&quot;image generation&quot;: { #2570 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image generation&quot;: { &quot;subject&quot;: { &quot;description&quot;: &quot;young woman sitting at the edge of a skyscraper rooftop with a d...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/2570.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2570.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2570.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245839756">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022199">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图像生成\": {\n    \"主体\": {\n      \"描述\": \"年轻女性坐在摩天大楼屋顶的边缘，下面是戏剧性的城市景色\",\n      \"姿势\": \"坐着，两腿向镜头伸展，双手举起比V手势\",\n      \"表情\": \"顽皮而自信的微笑\",\n      \"凝视\": \"直视镜头\"\n    },\n    \"外观\": {\n      \"头发\": {\n        \"颜色\": \"深棕色\",\n        \"发型\": \"头戴浅米色头巾，随风飘扬\"\n      },\n      \"皮肤\": {\n        \"肤色\": \"自然偏白的肤色\",\n        \"质地\": \"光滑且真实的皮肤质感\"\n      },\n      \"妆容\": \"淡雅自然的妆容\"\n    },\n    \"服装\": {\n      \"外套\": \"长款印花大衣\",\n      \"内搭\": \"黑色上衣配牛仔夹克\",\n      \"下装\": \"浅蓝色牛仔裤\",\n      \"鞋子\": \"彩色运动鞋，橙色鞋底\"\n    },\n    \"环境\": {\n      \"场景\": \"都市高楼屋顶\",\n      \"背景元素\": [\n        \"远处繁忙的城市街道\",\n        \"道路上的汽车和出租车\",\n        \"两侧的高楼大厦\",\n        \"玻璃屋顶表面\"\n      ],\n      \"时间\": \"白天\"\n    },\n    \"光线\": {\n      \"类型\": \"自然日光\",\n      \"方向\": \"柔和的顶光\",\n      \"效果\": \"明亮的都市光线，阴影分布均衡\"\n    },\n    \"相机\": {\n      \"角度\": \"极高角度/俯视视角\",\n      \"构图\": \"全身构图，透视感夸张\",\n      \"镜头\": \"广角镜头\",\n      \"景深\": \"较大景深，下面的城市细节清晰可见\"\n    },\n    \"美学\": {\n      \"风格\": \"都市生活方式摄影\",\n      \"氛围\": \"充满冒险与大胆的城市气息\",\n      \"色彩调性\": \"鲜活的城市色调，点缀橙色与蓝色\"\n    },\n    \"特效\": {\n      \"调色\": \"电影感鲜艳的色彩调色\",\n      \"锐度\": \"细节丰富，景深略微夸张\"\n    },\n    \"质量\": {\n      \"分辨率\": \"高分辨率\",\n      \"渲染\": \"照片级真实\",\n      \"细节\": \"清晰的纹理与强烈的透视深度\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;图像生成&quot;: {<br>    &quot;主体&quot;: {<br>      &quot;描述&quot;: &quot;年轻女性坐在摩天大楼屋顶的边缘，下面是戏剧性的城市景色&quot;,<br>      &quot;姿势&quot;: &quot;坐着，两腿向镜头伸展，双手举起比V手势&quot;,<br>      &quot;表情&quot;: &quot;顽皮而自信的微笑&quot;,<br>      &quot;凝视&quot;: &quot;直视镜头&quot;<br>    },<br>    &quot;外观&quot;: {<br>      &quot;头发&quot;: {<br>        &quot;颜色&quot;: &quot;深棕色&quot;,<br>        &quot;发型&quot;: &quot;头戴浅米色头巾，随风飘扬&quot;<br>      },<br>      &quot;皮肤&quot;: {<br>        &quot;肤色&quot;: &quot;自然偏白的肤色&quot;,<br>        &quot;质地&quot;: &quot;光滑且真实的皮肤质感&quot;<br>      },<br>      &quot;妆容&quot;: &quot;淡雅自然的妆容&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;外套&quot;: &quot;长款印花大衣&quot;,<br>      &quot;内搭&quot;: &quot;黑色上衣配牛仔夹克&quot;,<br>      &quot;下装&quot;: &quot;浅蓝色牛仔裤&quot;,<br>      &quot;鞋子&quot;: &quot;彩色运动鞋，橙色鞋底&quot;<br>    },<br>    &quot;环境&quot;: {<br>      &quot;场景&quot;: &quot;都市高楼屋顶&quot;,<br>      &quot;背景元素&quot;: [<br>        &quot;远处繁忙的城市街道&quot;,<br>        &quot;道路上的汽车和出租车&quot;,<br>        &quot;两侧的高楼大厦&quot;,<br>        &quot;玻璃屋顶表面&quot;<br>      ],<br>      &quot;时间&quot;: &quot;白天&quot;<br>    },<br>    &quot;光线&quot;: {<br>      &quot;类型&quot;: &quot;自然日光&quot;,<br>      &quot;方向&quot;: &quot;柔和的顶光&quot;,<br>      &quot;效果&quot;: &quot;明亮的都市光线，阴影分布均衡&quot;<br>    },<br>    &quot;相机&quot;: {<br>      &quot;角度&quot;: &quot;极高角度/俯视视角&quot;,<br>      &quot;构图&quot;: &quot;全身构图，透视感夸张&quot;,<br>      &quot;镜头&quot;: &quot;广角镜头&quot;,<br>      &quot;景深&quot;: &quot;较大景深，下面的城市细节清晰可见&quot;<br>    },<br>    &quot;美学&quot;: {<br>      &quot;风格&quot;: &quot;都市生活方式摄影&quot;,<br>      &quot;氛围&quot;: &quot;充满冒险与大胆的城市气息&quot;,<br>      &quot;色彩调性&quot;: &quot;鲜活的城市色调，点缀橙色与蓝色&quot;<br>    },<br>    &quot;特效&quot;: {<br>      &quot;调色&quot;: &quot;电影感鲜艳的色彩调色&quot;,<br>      &quot;锐度&quot;: &quot;细节丰富，景深略微夸张&quot;<br>    },<br>    &quot;质量&quot;: {<br>      &quot;分辨率&quot;: &quot;高分辨率&quot;,<br>      &quot;渲染&quot;: &quot;照片级真实&quot;,<br>      &quot;细节&quot;: &quot;清晰的纹理与强烈的透视深度&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图像生成&quot;: {<br>    &quot;主体&quot;: {<br>      &quot;描述&quot;: &quot;年轻女性坐在摩天大楼屋顶的边缘，下面是戏剧性的城市景色&quot;,<br>      &quot;姿势&quot;: &quot;坐着，两腿向镜头伸展，双手举起比V手势&quot;,<br>      &quot;表情&quot;: &quot;顽皮而自信的微笑&quot;,<br>      &quot;凝视&quot;: &quot;直视镜头&quot;<br>    },<br>    &quot;外观&quot;: {<br>      &quot;头发&quot;: {<br>        &quot;颜色&quot;: &quot;深棕色&quot;,<br>        &quot;发型&quot;: &quot;头戴浅米色头巾，随风飘扬&quot;<br>      },<br>      &quot;皮肤&quot;: {<br>        &quot;肤色&quot;: &quot;自然偏白的肤色&quot;,<br>        &quot;质地&quot;: &quot;光滑且真实的皮肤质感&quot;<br>      },<br>      &quot;妆容&quot;: &quot;淡雅自然的妆容&quot;<br>    },<br>    &quot;服装&quot;: {<br>      &quot;外套&quot;: &quot;长款印花大衣&quot;,<br>      &quot;内搭&quot;: &quot;黑色上衣配牛仔夹克&quot;,<br>      &quot;下装&quot;: &quot;浅蓝色牛仔裤&quot;,<br>      &quot;鞋子&quot;: &quot;彩色运动鞋，橙色鞋底&quot;<br>    },<br>    &quot;环境&quot;: {<br>      &quot;场景&quot;: &quot;都市高楼屋顶&quot;,<br>      &quot;背景元素&quot;: [<br>        &quot;远处繁忙的城市街道&quot;,<br>        &quot;道路上的汽车和出租车&quot;,<br>        &quot;两侧的高楼大厦&quot;,<br>        &quot;玻璃屋顶表面&quot;<br>      ],<br>      &quot;时间&quot;: &quot;白天&quot;<br>    },<br>    &quot;光线&quot;: {<br>      &quot;类型&quot;: &quot;自然日光&quot;,<br>      &quot;方向&quot;: &quot;柔和的顶光&quot;,<br>      &quot;效果&quot;: &quot;明亮的都市光线，阴影分布均衡&quot;<br>    },<br>    &quot;相机&quot;: {<br>      &quot;角度&quot;: &quot;极高角度/俯视视角&quot;,<br>      &quot;构图&quot;: &quot;全身构图，透视感夸张&quot;,<br>      &quot;镜头&quot;: &quot;广角镜头&quot;,<br>      &quot;景深&quot;: &quot;较大景深，下面的城市细节清晰可见&quot;<br>    },<br>    &quot;美学&quot;: {<br>      &quot;风格&quot;: &quot;都市生活方式摄影&quot;,<br>      &quot;氛围&quot;: &quot;充满冒险与大胆的城市气息&quot;,<br>      &quot;色彩调性&quot;: &quot;鲜活的城市色调，点缀橙色与蓝色&quot;<br>    },<br>    &quot;特效&quot;: {<br>      &quot;调色&quot;: &quot;电影感鲜艳的色彩调色&quot;,<br>      &quot;锐度&quot;: &quot;细节丰富，景深略微夸张&quot;<br>    },<br>    &quot;质量&quot;: {<br>      &quot;分辨率&quot;: &quot;高分辨率&quot;,<br>      &quot;渲染&quot;: &quot;照片级真实&quot;,<br>      &quot;细节&quot;: &quot;清晰的纹理与强烈的透视深度&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"subject\": {\n      \"description\": \"young woman sitting at the edge of a skyscraper rooftop with a dramatic city view below\",\n      \"pose\": \"sitting with legs extended toward the camera, both hands raised making peace signs\",\n      \"expression\": \"playful confident smile\",\n      \"gaze\": \"looking directly at the camera\"\n    },\n    \"appearance\": {\n      \"hair\": {\n        \"color\": \"dark brown\",\n        \"style\": \"covered with a light beige headscarf flowing in the wind\"\n      },\n      \"skin\": {\n        \"tone\": \"fair natural skin tone\",\n        \"texture\": \"smooth realistic skin\"\n      },\n      \"makeup\": \"light natural makeup\"\n    },\n    \"outfit\": {\n      \"outerwear\": \"long patterned coat\",\n      \"inner_layer\": \"black top with denim jacket\",\n      \"bottom\": \"light blue jeans\",\n      \"footwear\": \"colorful sneakers with orange soles\"\n    },\n    \"environment\": {\n      \"setting\": \"urban city high-rise rooftop\",\n      \"background_elements\": [\n        \"busy city street far below\",\n        \"cars and taxis on the road\",\n        \"tall buildings on both sides\",\n        \"glass rooftop surface\"\n      ],\n      \"time_of_day\": \"daytime\"\n    },\n    \"lighting\": {\n      \"type\": \"natural daylight\",\n      \"direction\": \"soft overhead light\",\n      \"effect\": \"bright urban lighting with balanced shadows\"\n    },\n    \"camera\": {\n      \"angle\": \"extreme high angle / top-down perspective\",\n      \"framing\": \"full body with exaggerated perspective\",\n      \"lens\": \"wide-angle lens\",\n      \"depth_of_field\": \"deep focus showing detailed city below\"\n    },\n    \"aesthetic\": {\n      \"style\": \"urban lifestyle photography\",\n      \"vibe\": \"adventurous bold city energy\",\n      \"color_palette\": \"vibrant city tones with pops of orange and blue\"\n    },\n    \"effects\": {\n      \"grading\": \"cinematic vibrant color grading\",\n      \"sharpness\": \"high detail with slight depth exaggeration\"\n    },\n    \"quality\": {\n      \"resolution\": \"high resolution\",\n      \"render\": \"photorealistic\",\n      \"details\": \"sharp textures with strong perspective depth\"\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;young woman sitting at the edge of a skyscraper rooftop with a dramatic city view below&quot;,<br>      &quot;pose&quot;: &quot;sitting with legs extended toward the camera, both hands raised making peace signs&quot;,<br>      &quot;expression&quot;: &quot;playful confident smile&quot;,<br>      &quot;gaze&quot;: &quot;looking directly at the camera&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;dark brown&quot;,<br>        &quot;style&quot;: &quot;covered with a light beige headscarf flowing in the wind&quot;<br>      },<br>      &quot;skin&quot;: {<br>        &quot;tone&quot;: &quot;fair natural skin tone&quot;,<br>        &quot;texture&quot;: &quot;smooth realistic skin&quot;<br>      },<br>      &quot;makeup&quot;: &quot;light natural makeup&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;outerwear&quot;: &quot;long patterned coat&quot;,<br>      &quot;inner_layer&quot;: &quot;black top with denim jacket&quot;,<br>      &quot;bottom&quot;: &quot;light blue jeans&quot;,<br>      &quot;footwear&quot;: &quot;colorful sneakers with orange soles&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;urban city high-rise rooftop&quot;,<br>      &quot;background_elements&quot;: [<br>        &quot;busy city street far below&quot;,<br>        &quot;cars and taxis on the road&quot;,<br>        &quot;tall buildings on both sides&quot;,<br>        &quot;glass rooftop surface&quot;<br>      ],<br>      &quot;time_of_day&quot;: &quot;daytime&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;natural daylight&quot;,<br>      &quot;direction&quot;: &quot;soft overhead light&quot;,<br>      &quot;effect&quot;: &quot;bright urban lighting with balanced shadows&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;extreme high angle / top-down perspective&quot;,<br>      &quot;framing&quot;: &quot;full body with exaggerated perspective&quot;,<br>      &quot;lens&quot;: &quot;wide-angle lens&quot;,<br>      &quot;depth_of_field&quot;: &quot;deep focus showing detailed city below&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;urban lifestyle photography&quot;,<br>      &quot;vibe&quot;: &quot;adventurous bold city energy&quot;,<br>      &quot;color_palette&quot;: &quot;vibrant city tones with pops of orange and blue&quot;<br>    },<br>    &quot;effects&quot;: {<br>      &quot;grading&quot;: &quot;cinematic vibrant color grading&quot;,<br>      &quot;sharpness&quot;: &quot;high detail with slight depth exaggeration&quot;<br>    },<br>    &quot;quality&quot;: {<br>      &quot;resolution&quot;: &quot;high resolution&quot;,<br>      &quot;render&quot;: &quot;photorealistic&quot;,<br>      &quot;details&quot;: &quot;sharp textures with strong perspective depth&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;subject&quot;: {<br>      &quot;description&quot;: &quot;young woman sitting at the edge of a skyscraper rooftop with a dramatic city view below&quot;,<br>      &quot;pose&quot;: &quot;sitting with legs extended toward the camera, both hands raised making peace signs&quot;,<br>      &quot;expression&quot;: &quot;playful confident smile&quot;,<br>      &quot;gaze&quot;: &quot;looking directly at the camera&quot;<br>    },<br>    &quot;appearance&quot;: {<br>      &quot;hair&quot;: {<br>        &quot;color&quot;: &quot;dark brown&quot;,<br>        &quot;style&quot;: &quot;covered with a light beige headscarf flowing in the wind&quot;<br>      },<br>      &quot;skin&quot;: {<br>        &quot;tone&quot;: &quot;fair natural skin tone&quot;,<br>        &quot;texture&quot;: &quot;smooth realistic skin&quot;<br>      },<br>      &quot;makeup&quot;: &quot;light natural makeup&quot;<br>    },<br>    &quot;outfit&quot;: {<br>      &quot;outerwear&quot;: &quot;long patterned coat&quot;,<br>      &quot;inner_layer&quot;: &quot;black top with denim jacket&quot;,<br>      &quot;bottom&quot;: &quot;light blue jeans&quot;,<br>      &quot;footwear&quot;: &quot;colorful sneakers with orange soles&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;urban city high-rise rooftop&quot;,<br>      &quot;background_elements&quot;: [<br>        &quot;busy city street far below&quot;,<br>        &quot;cars and taxis on the road&quot;,<br>        &quot;tall buildings on both sides&quot;,<br>        &quot;glass rooftop surface&quot;<br>      ],<br>      &quot;time_of_day&quot;: &quot;daytime&quot;<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;natural daylight&quot;,<br>      &quot;direction&quot;: &quot;soft overhead light&quot;,<br>      &quot;effect&quot;: &quot;bright urban lighting with balanced shadows&quot;<br>    },<br>    &quot;camera&quot;: {<br>      &quot;angle&quot;: &quot;extreme high angle / top-down perspective&quot;,<br>      &quot;framing&quot;: &quot;full body with exaggerated perspective&quot;,<br>      &quot;lens&quot;: &quot;wide-angle lens&quot;,<br>      &quot;depth_of_field&quot;: &quot;deep focus showing detailed city below&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;urban lifestyle photography&quot;,<br>      &quot;vibe&quot;: &quot;adventurous bold city energy&quot;,<br>      &quot;color_palette&quot;: &quot;vibrant city tones with pops of orange and blue&quot;<br>    },<br>    &quot;effects&quot;: {<br>      &quot;grading&quot;: &quot;cinematic vibrant color grading&quot;,<br>      &quot;sharpness&quot;: &quot;high detail with slight depth exaggeration&quot;<br>    },<br>    &quot;quality&quot;: {<br>      &quot;resolution&quot;: &quot;high resolution&quot;,<br>      &quot;render&quot;: &quot;photorealistic&quot;,<br>      &quot;details&quot;: &quot;sharp textures with strong perspective depth&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2033772942799343930-1.jpg" alt="&quot;image generation&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2570,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

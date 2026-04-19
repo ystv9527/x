@@ -7,11 +7,13 @@
     <title>Create a luxury fashion editorial still life of a sharp trian... #1579 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create a luxury fashion editorial still life of a sharp triangular prism cake slice made of hard crystal clear glass...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1579.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1579.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1579.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840760">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022422">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创作一幅奢华时尚编辑级静物：一片锐利的三棱锥形蛋糕切片，由坚硬、晶莹剔透的玻璃状材质构成，主打果实为[橙子]，采用单一统一的糖果玻璃色调，同时保留果实的原始自然色相和形体逻辑；明确排除对果梗和叶子的重新着色，使其保留自然的绿色。透明的玻璃蛋糕具有抛光边缘、优雅的折射、清晰的高光和与实体水晶相同的内部反射；蛋糕内部厚实饱满的无籽果实横截面呈现为纯净透明的玻璃，表面完美光滑无缝。一整个以镜面抛光半透明水晶玻璃糖果风格呈现的果实置于顶部，另一完整果实置于旁侧，所有果实时例除叶片外均共享相同的色调和材质表面。布置在光滑的白色陶瓷盘上，周围点缀透明水晶碎片、一把香槟金属质感的餐叉与极简的满天星，背景为柔软褶皱的白色丝绸布料；构图讲究均衡的比例与精致的留白，光线采用柔和漫射的高端编辑照明，保留糖果般的色彩饱和度与材质清晰度。超写实、超细节、顶级美学；无文字、无排版、无商标、无水印、无图形元素。排除粗糙纹理、哑面、立方体、方形或圆形蛋糕、冰块、亚克力或树脂块、浑浊的透明、人物、手部、面部。", this)'>📋 复制</button>
         </div>
-        <p>创作一幅奢华时尚编辑级静物：一片锐利的三棱锥形蛋糕切片，由坚硬、晶莹剔透的玻璃状材质构成，主打果实为[橙子]，采用单一统一的糖果玻璃色调，同时保留果实的原始自然色相和形体逻辑；明确排除对果梗和叶子的重新着色，使其保留自然的绿色。透明的玻璃蛋糕具有抛光边缘、优雅的折射、清晰的高光和与实体水晶相同的内部反射；蛋糕内部厚实饱满的无籽果实横截面呈现为纯净透明的玻璃，表面完美光滑无缝。一整个以镜面抛光半透明水晶玻璃糖果风格呈现的果实置于顶部，另一完整果实置于旁侧，所有果实时例除叶片外均共享相同的色调和材质表面。布置在光滑的白色陶瓷盘上，周围点缀透明水晶碎片、一把香槟金属质感的餐叉与极简的满天星，背景为柔软褶皱的白色丝绸布料；构图讲究均衡的比例与精致的留白，光线采用柔和漫射的高端编辑照明，保留糖果般的色彩饱和度与材质清晰度。超写实、超细节、顶级美学；无文字、无排版、无商标、无水印、无图形元素。排除粗糙纹理、哑面、立方体、方形或圆形蛋糕、冰块、亚克力或树脂块、浑浊的透明、人物、手部、面部。</p>
+        <div data-nosnippet><p>创作一幅奢华时尚编辑级静物：一片锐利的三棱锥形蛋糕切片，由坚硬、晶莹剔透的玻璃状材质构成，主打果实为[橙子]，采用单一统一的糖果玻璃色调，同时保留果实的原始自然色相和形体逻辑；明确排除对果梗和叶子的重新着色，使其保留自然的绿色。透明的玻璃蛋糕具有抛光边缘、优雅的折射、清晰的高光和与实体水晶相同的内部反射；蛋糕内部厚实饱满的无籽果实横截面呈现为纯净透明的玻璃，表面完美光滑无缝。一整个以镜面抛光半透明水晶玻璃糖果风格呈现的果实置于顶部，另一完整果实置于旁侧，所有果实时例除叶片外均共享相同的色调和材质表面。布置在光滑的白色陶瓷盘上，周围点缀透明水晶碎片、一把香槟金属质感的餐叉与极简的满天星，背景为柔软褶皱的白色丝绸布料；构图讲究均衡的比例与精致的留白，光线采用柔和漫射的高端编辑照明，保留糖果般的色彩饱和度与材质清晰度。超写实、超细节、顶级美学；无文字、无排版、无商标、无水印、无图形元素。排除粗糙纹理、哑面、立方体、方形或圆形蛋糕、冰块、亚克力或树脂块、浑浊的透明、人物、手部、面部。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a luxury fashion-editorial still life of a sharp triangular prism cake slice made of hard crystal-clear glass-like material, with the featured fruit being [orange], using a single unified candy-glass color tone while preserving the fruit’s original natural hue and form logic, explicitly excluding stems and leaves from recoloring so they retain natural green, the transparent glass cake has polished edges, elegant refraction, crisp highlights and internal reflections identical to solid crystal, inside the cake thick full-bodied seedless fruit cross-sections appear as pure clear glass with perfectly smooth seamless surfaces, one whole fruit in mirror-polished translucent crystal-glass candy style sits on top and another rests beside it, all fruit instances sharing identical color tone and material finish except leaves, arranged on a glossy white ceramic plate with clear crystal shards, a champagne-gold metallic fork and minimal baby’s-breath accents against softly draped white silk fabric, composed with balanced proportions and refined negative space, lit with soft diffused high-end editorial lighting that preserves candy-like color richness and material clarity, hyper-realistic, ultra-detailed, premium aesthetic, no text, no typography, no logo, no watermark, no graphic elements, exclude rough texture, matte surface, cube, square or round cake, ice cube, acrylic or resin block, cloudy transparency, people, hands, faces", this)'>📋 复制</button>
         </div>
-        <p>Create a luxury fashion-editorial still life of a sharp triangular prism cake slice made of hard crystal-clear glass-like material, with the featured fruit being [orange], using a single unified candy-glass color tone while preserving the fruit’s original natural hue and form logic, explicitly excluding stems and leaves from recoloring so they retain natural green, the transparent glass cake has polished edges, elegant refraction, crisp highlights and internal reflections identical to solid crystal, inside the cake thick full-bodied seedless fruit cross-sections appear as pure clear glass with perfectly smooth seamless surfaces, one whole fruit in mirror-polished translucent crystal-glass candy style sits on top and another rests beside it, all fruit instances sharing identical color tone and material finish except leaves, arranged on a glossy white ceramic plate with clear crystal shards, a champagne-gold metallic fork and minimal baby’s-breath accents against softly draped white silk fabric, composed with balanced proportions and refined negative space, lit with soft diffused high-end editorial lighting that preserves candy-like color richness and material clarity, hyper-realistic, ultra-detailed, premium aesthetic, no text, no typography, no logo, no watermark, no graphic elements, exclude rough texture, matte surface, cube, square or round cake, ice cube, acrylic or resin block, cloudy transparency, people, hands, faces</p>
+        <div data-nosnippet><p>Create a luxury fashion-editorial still life of a sharp triangular prism cake slice made of hard crystal-clear glass-like material, with the featured fruit being [orange], using a single unified candy-glass color tone while preserving the fruit’s original natural hue and form logic, explicitly excluding stems and leaves from recoloring so they retain natural green, the transparent glass cake has polished edges, elegant refraction, crisp highlights and internal reflections identical to solid crystal, inside the cake thick full-bodied seedless fruit cross-sections appear as pure clear glass with perfectly smooth seamless surfaces, one whole fruit in mirror-polished translucent crystal-glass candy style sits on top and another rests beside it, all fruit instances sharing identical color tone and material finish except leaves, arranged on a glossy white ceramic plate with clear crystal shards, a champagne-gold metallic fork and minimal baby’s-breath accents against softly draped white silk fabric, composed with balanced proportions and refined negative space, lit with soft diffused high-end editorial lighting that preserves candy-like color richness and material clarity, hyper-realistic, ultra-detailed, premium aesthetic, no text, no typography, no logo, no watermark, no graphic elements, exclude rough texture, matte surface, cube, square or round cake, ice cube, acrylic or resin block, cloudy transparency, people, hands, faces</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2013230019963986172-1.jpg" alt="Create a luxury fashion editorial still life of a sharp trian..." loading="lazy"><img src="/images/tweet-2013230019963986172-2.jpg" alt="Create a luxury fashion editorial still life of a sharp trian..." loading="lazy"><img src="/images/tweet-2013230019963986172-3.jpg" alt="Create a luxury fashion editorial still life of a sharp trian..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1579,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

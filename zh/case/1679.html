@@ -7,11 +7,13 @@
     <title>&quot;reference image&quot;: { #1679 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;reference image&quot;: { &quot;use same face&quot;: true, &quot;instruction&quot;: &quot;Use the exact same face from the reference image withou...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1679.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1679.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1679.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840662">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022399">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"reference_image\": {\n    \"use_same_face\": true,\n    \"instruction\": \"使用参考图像中完全相同的面孔，不改变面部特征\"\n  },\n  \"scene\": \"超真实的电影工作室环境\",\n  \"concept\": \"一名女性监督一个以她的微型自我为主角的幕后电影微缩布景\",\n  \"subjects\": [\n    {\n      \"type\": \"全尺寸女性\",\n      \"action\": \"查看微缩监视器\",\n      \"appearance\": \"与微缩版完全相同的面部特征、肢体语言和服装\"\n    },\n    {\n      \"type\": \"微型自我\",\n      \"action\": \"站在按比例缩小的灯光设备旁\",\n      \"appearance\": \"与全尺寸女性完全相同的面孔、服装和姿势\"\n    }\n  ],\n  \"environment_details\": [\n    \"微型导演椅\",\n    \"电缆\",\n    \"拍板\",\n    \"相机镜头\",\n    \"按比例缩小的照明设备\"\n  ],\n  \"lighting\": {\n    \"style\": \"低调的电影灯光\",\n    \"effect\": \"强调真实感、层次感和戏剧化对比\"\n  },\n  \"style\": {\n    \"realism\": \"超真实\",\n    \"mood\": \"电影感、专业摄影棚氛围\",\n    \"detail_level\": \"高细节、浅景深\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;reference_image&quot;: {<br>    &quot;use_same_face&quot;: true,<br>    &quot;instruction&quot;: &quot;使用参考图像中完全相同的面孔，不改变面部特征&quot;<br>  },<br>  &quot;scene&quot;: &quot;超真实的电影工作室环境&quot;,<br>  &quot;concept&quot;: &quot;一名女性监督一个以她的微型自我为主角的幕后电影微缩布景&quot;,<br>  &quot;subjects&quot;: [<br>    {<br>      &quot;type&quot;: &quot;全尺寸女性&quot;,<br>      &quot;action&quot;: &quot;查看微缩监视器&quot;,<br>      &quot;appearance&quot;: &quot;与微缩版完全相同的面部特征、肢体语言和服装&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;微型自我&quot;,<br>      &quot;action&quot;: &quot;站在按比例缩小的灯光设备旁&quot;,<br>      &quot;appearance&quot;: &quot;与全尺寸女性完全相同的面孔、服装和姿势&quot;<br>    }<br>  ],<br>  &quot;environment_details&quot;: [<br>    &quot;微型导演椅&quot;,<br>    &quot;电缆&quot;,<br>    &quot;拍板&quot;,<br>    &quot;相机镜头&quot;,<br>    &quot;按比例缩小的照明设备&quot;<br>  ],<br>  &quot;lighting&quot;: {<br>    &quot;style&quot;: &quot;低调的电影灯光&quot;,<br>    &quot;effect&quot;: &quot;强调真实感、层次感和戏剧化对比&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;realism&quot;: &quot;超真实&quot;,<br>    &quot;mood&quot;: &quot;电影感、专业摄影棚氛围&quot;,<br>    &quot;detail_level&quot;: &quot;高细节、浅景深&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;reference_image&quot;: {<br>    &quot;use_same_face&quot;: true,<br>    &quot;instruction&quot;: &quot;使用参考图像中完全相同的面孔，不改变面部特征&quot;<br>  },<br>  &quot;scene&quot;: &quot;超真实的电影工作室环境&quot;,<br>  &quot;concept&quot;: &quot;一名女性监督一个以她的微型自我为主角的幕后电影微缩布景&quot;,<br>  &quot;subjects&quot;: [<br>    {<br>      &quot;type&quot;: &quot;全尺寸女性&quot;,<br>      &quot;action&quot;: &quot;查看微缩监视器&quot;,<br>      &quot;appearance&quot;: &quot;与微缩版完全相同的面部特征、肢体语言和服装&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;微型自我&quot;,<br>      &quot;action&quot;: &quot;站在按比例缩小的灯光设备旁&quot;,<br>      &quot;appearance&quot;: &quot;与全尺寸女性完全相同的面孔、服装和姿势&quot;<br>    }<br>  ],<br>  &quot;environment_details&quot;: [<br>    &quot;微型导演椅&quot;,<br>    &quot;电缆&quot;,<br>    &quot;拍板&quot;,<br>    &quot;相机镜头&quot;,<br>    &quot;按比例缩小的照明设备&quot;<br>  ],<br>  &quot;lighting&quot;: {<br>    &quot;style&quot;: &quot;低调的电影灯光&quot;,<br>    &quot;effect&quot;: &quot;强调真实感、层次感和戏剧化对比&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;realism&quot;: &quot;超真实&quot;,<br>    &quot;mood&quot;: &quot;电影感、专业摄影棚氛围&quot;,<br>    &quot;detail_level&quot;: &quot;高细节、浅景深&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"reference_image\": {\n    \"use_same_face\": true,\n    \"instruction\": \"Use the exact same face from the reference image without changing facial features\"\n  },\n  \"scene\": \"Ultra-realistic cinematic studio environment\",\n  \"concept\": \"A woman supervising a miniature behind-the-scenes film set starring her tiny self\",\n  \"subjects\": [\n    {\n      \"type\": \"full_scale_woman\",\n      \"action\": \"Checking a miniature monitor\",\n      \"appearance\": \"Identical facial features, body language, and clothing as the miniature version\"\n    },\n    {\n      \"type\": \"miniature_self\",\n      \"action\": \"Standing near scaled lighting rigs\",\n      \"appearance\": \"Exact same face, clothing, and posture as the full-scale woman\"\n    }\n  ],\n  \"environment_details\": [\n    \"Mini director chairs\",\n    \"Cables\",\n    \"Clapperboards\",\n    \"Camera lenses\",\n    \"Scaled lighting equipment\"\n  ],\n  \"lighting\": {\n    \"style\": \"Low-key cinematic lighting\",\n    \"effect\": \"Emphasizes realism, depth, and dramatic contrast\"\n  },\n  \"style\": {\n    \"realism\": \"Ultra-realistic\",\n    \"mood\": \"Cinematic, professional studio atmosphere\",\n    \"detail_level\": \"High detail, shallow depth of field\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;reference_image&quot;: {<br>    &quot;use_same_face&quot;: true,<br>    &quot;instruction&quot;: &quot;Use the exact same face from the reference image without changing facial features&quot;<br>  },<br>  &quot;scene&quot;: &quot;Ultra-realistic cinematic studio environment&quot;,<br>  &quot;concept&quot;: &quot;A woman supervising a miniature behind-the-scenes film set starring her tiny self&quot;,<br>  &quot;subjects&quot;: [<br>    {<br>      &quot;type&quot;: &quot;full_scale_woman&quot;,<br>      &quot;action&quot;: &quot;Checking a miniature monitor&quot;,<br>      &quot;appearance&quot;: &quot;Identical facial features, body language, and clothing as the miniature version&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;miniature_self&quot;,<br>      &quot;action&quot;: &quot;Standing near scaled lighting rigs&quot;,<br>      &quot;appearance&quot;: &quot;Exact same face, clothing, and posture as the full-scale woman&quot;<br>    }<br>  ],<br>  &quot;environment_details&quot;: [<br>    &quot;Mini director chairs&quot;,<br>    &quot;Cables&quot;,<br>    &quot;Clapperboards&quot;,<br>    &quot;Camera lenses&quot;,<br>    &quot;Scaled lighting equipment&quot;<br>  ],<br>  &quot;lighting&quot;: {<br>    &quot;style&quot;: &quot;Low-key cinematic lighting&quot;,<br>    &quot;effect&quot;: &quot;Emphasizes realism, depth, and dramatic contrast&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;realism&quot;: &quot;Ultra-realistic&quot;,<br>    &quot;mood&quot;: &quot;Cinematic, professional studio atmosphere&quot;,<br>    &quot;detail_level&quot;: &quot;High detail, shallow depth of field&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;reference_image&quot;: {<br>    &quot;use_same_face&quot;: true,<br>    &quot;instruction&quot;: &quot;Use the exact same face from the reference image without changing facial features&quot;<br>  },<br>  &quot;scene&quot;: &quot;Ultra-realistic cinematic studio environment&quot;,<br>  &quot;concept&quot;: &quot;A woman supervising a miniature behind-the-scenes film set starring her tiny self&quot;,<br>  &quot;subjects&quot;: [<br>    {<br>      &quot;type&quot;: &quot;full_scale_woman&quot;,<br>      &quot;action&quot;: &quot;Checking a miniature monitor&quot;,<br>      &quot;appearance&quot;: &quot;Identical facial features, body language, and clothing as the miniature version&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;miniature_self&quot;,<br>      &quot;action&quot;: &quot;Standing near scaled lighting rigs&quot;,<br>      &quot;appearance&quot;: &quot;Exact same face, clothing, and posture as the full-scale woman&quot;<br>    }<br>  ],<br>  &quot;environment_details&quot;: [<br>    &quot;Mini director chairs&quot;,<br>    &quot;Cables&quot;,<br>    &quot;Clapperboards&quot;,<br>    &quot;Camera lenses&quot;,<br>    &quot;Scaled lighting equipment&quot;<br>  ],<br>  &quot;lighting&quot;: {<br>    &quot;style&quot;: &quot;Low-key cinematic lighting&quot;,<br>    &quot;effect&quot;: &quot;Emphasizes realism, depth, and dramatic contrast&quot;<br>  },<br>  &quot;style&quot;: {<br>    &quot;realism&quot;: &quot;Ultra-realistic&quot;,<br>    &quot;mood&quot;: &quot;Cinematic, professional studio atmosphere&quot;,<br>    &quot;detail_level&quot;: &quot;High detail, shallow depth of field&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015265925344448648-1.jpg" alt="&quot;reference image&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1679,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

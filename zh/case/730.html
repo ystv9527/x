@@ -7,11 +7,13 @@
     <title>&quot;image generation&quot;: { #730 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image generation&quot;: { &quot;face&quot;: { &quot;preserve original&quot;: true, &quot;reference match&quot;: true, &quot;description&quot;: &quot;Maintain the sa...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/730.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/730.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/730.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841558">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022624">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"face\": {\n      \"preserve_original\": true,\n      \"reference_match\": true,\n      \"description\": \"在所有帧中保持相同的面部结构、肤色、眼形和自然表情，并在每个姿势中保持一致的身份特征。\"\n    },\n    \"photo_style\": {\n      \"type\": \"黄金时刻人像拼贴\",\n      \"camera_angle\": \"多样化的特写与半身人像角度\",\n      \"lighting\": \"暖色黄金时段阳光投射出柔和的窗边阴影\",\n      \"mood\": \"柔和、平静、亲密、审美\",\n      \"texture\": \"自然肌理、柔和高光、温和对比\",\n      \"focus\": \"面部清晰聚焦，背景逐渐模糊\"\n    },\n    \"subject\": {\n      \"gender\": \"男性\",\n      \"age\": \"年轻成年\",\n      \"poses\": [\n        \"仰望光源\",\n        \"对镜头微笑\",\n        \"侧脸并向下凝视\",\n        \"越过肩膀的回眸\",\n        \"直接特写，嘴唇放松\",\n        \"把手放在头发中的休闲姿势\",\n        \"头部向光源后仰\",\n        \"干净的侧脸肖像\",\n        \"手托下巴的沉思姿势\"\n      ],\n      \"expression\": \"自然、简约、放松、情感微妙\",\n      \"hair\": {\n        \"style\": \"长直发自然披散\",\n        \"color\": \"浅棕至中棕色\",\n        \"details\": \"自然光泽，柔和光亮点\"\n      },\n      \"clothing\": {\n        \"type\": \"休闲极简风格服装\",\n        \"details\": \"简单深色T恤，无可见品牌标识\"\n      }\n    },\n    \"composition\": {\n      \"layout\": \"3x3网格拼贴\",\n      \"consistency\": \"所有帧的灯光和背景保持一致\",\n      \"framing\": \"整洁的人像取景，姿势略有变化\"\n    },\n    \"environment\": {\n      \"setting\": \"窗边的室内空间\",\n      \"background\": \"简单墙面，带有温暖阳光和阴影纹理\",\n      \"atmosphere\": \"安静、极简、富有艺术感的室内氛围\"\n    },\n    \"aesthetic\": {\n      \"style\": \"Instagram风格的人像集合\",\n      \"features\": [\n        \"黄金时段光线\",\n        \"窗影纹理\",\n        \"极简妆容\",\n        \"自然表情\",\n        \"干净的编辑风格人像照\"\n      ]\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;face&quot;: {<br>      &quot;preserve_original&quot;: true,<br>      &quot;reference_match&quot;: true,<br>      &quot;description&quot;: &quot;在所有帧中保持相同的面部结构、肤色、眼形和自然表情，并在每个姿势中保持一致的身份特征。&quot;<br>    },<br>    &quot;photo_style&quot;: {<br>      &quot;type&quot;: &quot;黄金时刻人像拼贴&quot;,<br>      &quot;camera_angle&quot;: &quot;多样化的特写与半身人像角度&quot;,<br>      &quot;lighting&quot;: &quot;暖色黄金时段阳光投射出柔和的窗边阴影&quot;,<br>      &quot;mood&quot;: &quot;柔和、平静、亲密、审美&quot;,<br>      &quot;texture&quot;: &quot;自然肌理、柔和高光、温和对比&quot;,<br>      &quot;focus&quot;: &quot;面部清晰聚焦，背景逐渐模糊&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;gender&quot;: &quot;男性&quot;,<br>      &quot;age&quot;: &quot;年轻成年&quot;,<br>      &quot;poses&quot;: [<br>        &quot;仰望光源&quot;,<br>        &quot;对镜头微笑&quot;,<br>        &quot;侧脸并向下凝视&quot;,<br>        &quot;越过肩膀的回眸&quot;,<br>        &quot;直接特写，嘴唇放松&quot;,<br>        &quot;把手放在头发中的休闲姿势&quot;,<br>        &quot;头部向光源后仰&quot;,<br>        &quot;干净的侧脸肖像&quot;,<br>        &quot;手托下巴的沉思姿势&quot;<br>      ],<br>      &quot;expression&quot;: &quot;自然、简约、放松、情感微妙&quot;,<br>      &quot;hair&quot;: {<br>        &quot;style&quot;: &quot;长直发自然披散&quot;,<br>        &quot;color&quot;: &quot;浅棕至中棕色&quot;,<br>        &quot;details&quot;: &quot;自然光泽，柔和光亮点&quot;<br>      },<br>      &quot;clothing&quot;: {<br>        &quot;type&quot;: &quot;休闲极简风格服装&quot;,<br>        &quot;details&quot;: &quot;简单深色T恤，无可见品牌标识&quot;<br>      }<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;3x3网格拼贴&quot;,<br>      &quot;consistency&quot;: &quot;所有帧的灯光和背景保持一致&quot;,<br>      &quot;framing&quot;: &quot;整洁的人像取景，姿势略有变化&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;窗边的室内空间&quot;,<br>      &quot;background&quot;: &quot;简单墙面，带有温暖阳光和阴影纹理&quot;,<br>      &quot;atmosphere&quot;: &quot;安静、极简、富有艺术感的室内氛围&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;Instagram风格的人像集合&quot;,<br>      &quot;features&quot;: [<br>        &quot;黄金时段光线&quot;,<br>        &quot;窗影纹理&quot;,<br>        &quot;极简妆容&quot;,<br>        &quot;自然表情&quot;,<br>        &quot;干净的编辑风格人像照&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;face&quot;: {<br>      &quot;preserve_original&quot;: true,<br>      &quot;reference_match&quot;: true,<br>      &quot;description&quot;: &quot;在所有帧中保持相同的面部结构、肤色、眼形和自然表情，并在每个姿势中保持一致的身份特征。&quot;<br>    },<br>    &quot;photo_style&quot;: {<br>      &quot;type&quot;: &quot;黄金时刻人像拼贴&quot;,<br>      &quot;camera_angle&quot;: &quot;多样化的特写与半身人像角度&quot;,<br>      &quot;lighting&quot;: &quot;暖色黄金时段阳光投射出柔和的窗边阴影&quot;,<br>      &quot;mood&quot;: &quot;柔和、平静、亲密、审美&quot;,<br>      &quot;texture&quot;: &quot;自然肌理、柔和高光、温和对比&quot;,<br>      &quot;focus&quot;: &quot;面部清晰聚焦，背景逐渐模糊&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;gender&quot;: &quot;男性&quot;,<br>      &quot;age&quot;: &quot;年轻成年&quot;,<br>      &quot;poses&quot;: [<br>        &quot;仰望光源&quot;,<br>        &quot;对镜头微笑&quot;,<br>        &quot;侧脸并向下凝视&quot;,<br>        &quot;越过肩膀的回眸&quot;,<br>        &quot;直接特写，嘴唇放松&quot;,<br>        &quot;把手放在头发中的休闲姿势&quot;,<br>        &quot;头部向光源后仰&quot;,<br>        &quot;干净的侧脸肖像&quot;,<br>        &quot;手托下巴的沉思姿势&quot;<br>      ],<br>      &quot;expression&quot;: &quot;自然、简约、放松、情感微妙&quot;,<br>      &quot;hair&quot;: {<br>        &quot;style&quot;: &quot;长直发自然披散&quot;,<br>        &quot;color&quot;: &quot;浅棕至中棕色&quot;,<br>        &quot;details&quot;: &quot;自然光泽，柔和光亮点&quot;<br>      },<br>      &quot;clothing&quot;: {<br>        &quot;type&quot;: &quot;休闲极简风格服装&quot;,<br>        &quot;details&quot;: &quot;简单深色T恤，无可见品牌标识&quot;<br>      }<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;3x3网格拼贴&quot;,<br>      &quot;consistency&quot;: &quot;所有帧的灯光和背景保持一致&quot;,<br>      &quot;framing&quot;: &quot;整洁的人像取景，姿势略有变化&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;窗边的室内空间&quot;,<br>      &quot;background&quot;: &quot;简单墙面，带有温暖阳光和阴影纹理&quot;,<br>      &quot;atmosphere&quot;: &quot;安静、极简、富有艺术感的室内氛围&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;Instagram风格的人像集合&quot;,<br>      &quot;features&quot;: [<br>        &quot;黄金时段光线&quot;,<br>        &quot;窗影纹理&quot;,<br>        &quot;极简妆容&quot;,<br>        &quot;自然表情&quot;,<br>        &quot;干净的编辑风格人像照&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation\": {\n    \"face\": {\n      \"preserve_original\": true,\n      \"reference_match\": true,\n      \"description\": \"Maintain the same facial structure, skin tone, eye shape, and natural expressions across all frames, with consistent identity in each pose.\"\n    },\n    \"photo_style\": {\n      \"type\": \"golden hour portrait collage\",\n      \"camera_angle\": \"varied close-up and medium portrait angles\",\n      \"lighting\": \"warm golden hour sunlight casting soft window shadows\",\n      \"mood\": \"soft, calm, intimate, aesthetic\",\n      \"texture\": \"natural skin texture, soft highlights, gentle contrast\",\n      \"focus\": \"sharp focus on face with smooth background falloff\"\n    },\n    \"subject\": {\n      \"gender\": \"male\",\n      \"age\": \"young adult\",\n      \"poses\": [\n        \"looking upward toward light\",\n        \"soft smile facing camera\",\n        \"side profile with downward gaze\",\n        \"over-the-shoulder glance\",\n        \"direct close-up with relaxed lips\",\n        \"hand in hair casual pose\",\n        \"head tilted back toward light\",\n        \"clean side profile portrait\",\n        \"thoughtful pose with hand near chin\"\n      ],\n      \"expression\": \"natural, minimal, relaxed, emotionally subtle\",\n      \"hair\": {\n        \"style\": \"long straight hair worn loose\",\n        \"color\": \"light to medium brown\",\n        \"details\": \"natural shine with soft light highlights\"\n      },\n      \"clothing\": {\n        \"type\": \"casual minimalist outfit\",\n        \"details\": \"simple dark t-shirt with no visible branding\"\n      }\n    },\n    \"composition\": {\n      \"layout\": \"3x3 grid collage\",\n      \"consistency\": \"uniform lighting and background across all frames\",\n      \"framing\": \"clean portrait framing with slight pose variation\"\n    },\n    \"environment\": {\n      \"setting\": \"indoor space near a window\",\n      \"background\": \"plain wall with warm sunlight and shadow patterns\",\n      \"atmosphere\": \"quiet, minimal, artistic indoor ambiance\"\n    },\n    \"aesthetic\": {\n      \"style\": \"Instagram aesthetic portrait set\",\n      \"features\": [\n        \"golden hour light\",\n        \"window shadow patterns\",\n        \"minimal makeup\",\n        \"natural expressions\",\n        \"clean editorial portrait look\"\n      ]\n    }\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation&quot;: {<br>    &quot;face&quot;: {<br>      &quot;preserve_original&quot;: true,<br>      &quot;reference_match&quot;: true,<br>      &quot;description&quot;: &quot;Maintain the same facial structure, skin tone, eye shape, and natural expressions across all frames, with consistent identity in each pose.&quot;<br>    },<br>    &quot;photo_style&quot;: {<br>      &quot;type&quot;: &quot;golden hour portrait collage&quot;,<br>      &quot;camera_angle&quot;: &quot;varied close-up and medium portrait angles&quot;,<br>      &quot;lighting&quot;: &quot;warm golden hour sunlight casting soft window shadows&quot;,<br>      &quot;mood&quot;: &quot;soft, calm, intimate, aesthetic&quot;,<br>      &quot;texture&quot;: &quot;natural skin texture, soft highlights, gentle contrast&quot;,<br>      &quot;focus&quot;: &quot;sharp focus on face with smooth background falloff&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;gender&quot;: &quot;male&quot;,<br>      &quot;age&quot;: &quot;young adult&quot;,<br>      &quot;poses&quot;: [<br>        &quot;looking upward toward light&quot;,<br>        &quot;soft smile facing camera&quot;,<br>        &quot;side profile with downward gaze&quot;,<br>        &quot;over-the-shoulder glance&quot;,<br>        &quot;direct close-up with relaxed lips&quot;,<br>        &quot;hand in hair casual pose&quot;,<br>        &quot;head tilted back toward light&quot;,<br>        &quot;clean side profile portrait&quot;,<br>        &quot;thoughtful pose with hand near chin&quot;<br>      ],<br>      &quot;expression&quot;: &quot;natural, minimal, relaxed, emotionally subtle&quot;,<br>      &quot;hair&quot;: {<br>        &quot;style&quot;: &quot;long straight hair worn loose&quot;,<br>        &quot;color&quot;: &quot;light to medium brown&quot;,<br>        &quot;details&quot;: &quot;natural shine with soft light highlights&quot;<br>      },<br>      &quot;clothing&quot;: {<br>        &quot;type&quot;: &quot;casual minimalist outfit&quot;,<br>        &quot;details&quot;: &quot;simple dark t-shirt with no visible branding&quot;<br>      }<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;3x3 grid collage&quot;,<br>      &quot;consistency&quot;: &quot;uniform lighting and background across all frames&quot;,<br>      &quot;framing&quot;: &quot;clean portrait framing with slight pose variation&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;indoor space near a window&quot;,<br>      &quot;background&quot;: &quot;plain wall with warm sunlight and shadow patterns&quot;,<br>      &quot;atmosphere&quot;: &quot;quiet, minimal, artistic indoor ambiance&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;Instagram aesthetic portrait set&quot;,<br>      &quot;features&quot;: [<br>        &quot;golden hour light&quot;,<br>        &quot;window shadow patterns&quot;,<br>        &quot;minimal makeup&quot;,<br>        &quot;natural expressions&quot;,<br>        &quot;clean editorial portrait look&quot;<br>      ]<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation&quot;: {<br>    &quot;face&quot;: {<br>      &quot;preserve_original&quot;: true,<br>      &quot;reference_match&quot;: true,<br>      &quot;description&quot;: &quot;Maintain the same facial structure, skin tone, eye shape, and natural expressions across all frames, with consistent identity in each pose.&quot;<br>    },<br>    &quot;photo_style&quot;: {<br>      &quot;type&quot;: &quot;golden hour portrait collage&quot;,<br>      &quot;camera_angle&quot;: &quot;varied close-up and medium portrait angles&quot;,<br>      &quot;lighting&quot;: &quot;warm golden hour sunlight casting soft window shadows&quot;,<br>      &quot;mood&quot;: &quot;soft, calm, intimate, aesthetic&quot;,<br>      &quot;texture&quot;: &quot;natural skin texture, soft highlights, gentle contrast&quot;,<br>      &quot;focus&quot;: &quot;sharp focus on face with smooth background falloff&quot;<br>    },<br>    &quot;subject&quot;: {<br>      &quot;gender&quot;: &quot;male&quot;,<br>      &quot;age&quot;: &quot;young adult&quot;,<br>      &quot;poses&quot;: [<br>        &quot;looking upward toward light&quot;,<br>        &quot;soft smile facing camera&quot;,<br>        &quot;side profile with downward gaze&quot;,<br>        &quot;over-the-shoulder glance&quot;,<br>        &quot;direct close-up with relaxed lips&quot;,<br>        &quot;hand in hair casual pose&quot;,<br>        &quot;head tilted back toward light&quot;,<br>        &quot;clean side profile portrait&quot;,<br>        &quot;thoughtful pose with hand near chin&quot;<br>      ],<br>      &quot;expression&quot;: &quot;natural, minimal, relaxed, emotionally subtle&quot;,<br>      &quot;hair&quot;: {<br>        &quot;style&quot;: &quot;long straight hair worn loose&quot;,<br>        &quot;color&quot;: &quot;light to medium brown&quot;,<br>        &quot;details&quot;: &quot;natural shine with soft light highlights&quot;<br>      },<br>      &quot;clothing&quot;: {<br>        &quot;type&quot;: &quot;casual minimalist outfit&quot;,<br>        &quot;details&quot;: &quot;simple dark t-shirt with no visible branding&quot;<br>      }<br>    },<br>    &quot;composition&quot;: {<br>      &quot;layout&quot;: &quot;3x3 grid collage&quot;,<br>      &quot;consistency&quot;: &quot;uniform lighting and background across all frames&quot;,<br>      &quot;framing&quot;: &quot;clean portrait framing with slight pose variation&quot;<br>    },<br>    &quot;environment&quot;: {<br>      &quot;setting&quot;: &quot;indoor space near a window&quot;,<br>      &quot;background&quot;: &quot;plain wall with warm sunlight and shadow patterns&quot;,<br>      &quot;atmosphere&quot;: &quot;quiet, minimal, artistic indoor ambiance&quot;<br>    },<br>    &quot;aesthetic&quot;: {<br>      &quot;style&quot;: &quot;Instagram aesthetic portrait set&quot;,<br>      &quot;features&quot;: [<br>        &quot;golden hour light&quot;,<br>        &quot;window shadow patterns&quot;,<br>        &quot;minimal makeup&quot;,<br>        &quot;natural expressions&quot;,<br>        &quot;clean editorial portrait look&quot;<br>      ]<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2008484790287430022-1.jpg" alt="&quot;image generation&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 730,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

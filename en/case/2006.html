@@ -7,11 +7,13 @@
     <title>&quot;image generation request&quot;: { #2006 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;image generation request&quot;: { &quot;subject&quot;: &quot;[INSERT PRODUCT HERE]&quot;, &quot;environment&quot;: { &quot;background&quot;: &quot;A smooth, profess...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2006.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2006.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2006.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844550">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023540">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"图像生成请求\": {\n    \"主体\": \"[在此处插入产品]\",\n    \"环境\": {\n      \"背景\": \"在 #111B24 与 #CAEFFF 之间的平滑、专业的双色渐变过渡\",\n      \"照明\": \"高对比度的工作室照明，带有明亮的轮廓高光以强调光亮纹理\"\n    },\n    \"风格元素\": {\n      \"美学\": \"Y2K Frutiger Aero 与现代超写实主义的结合\",\n      \"光学效果\": [\n        \"动态玻璃折射\",\n        \"透明物体边缘的棱镜色差\",\n        \"虹彩镜头耀斑\",\n        \"在前景中漂浮的扭曲玻璃覆盖层\"\n      ],\n      \"构图\": \"浮动、违抗重力的布局，采用广角视角\",\n      \"材质\": \"抛光铬、透明亚克力和高光塑料\"\n    },\n    \"技术规格\": {\n      \"分辨率\": \"8k 超高清\",\n      \"渲染引擎\": \"Octane Render 风格\",\n      \"细节\": \"以微距摄影为焦点，机械部件超高细节\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;图像生成请求&quot;: {<br>    &quot;主体&quot;: &quot;[在此处插入产品]&quot;,<br>    &quot;环境&quot;: {<br>      &quot;背景&quot;: &quot;在 #111B24 与 #CAEFFF 之间的平滑、专业的双色渐变过渡&quot;,<br>      &quot;照明&quot;: &quot;高对比度的工作室照明，带有明亮的轮廓高光以强调光亮纹理&quot;<br>    },<br>    &quot;风格元素&quot;: {<br>      &quot;美学&quot;: &quot;Y2K Frutiger Aero 与现代超写实主义的结合&quot;,<br>      &quot;光学效果&quot;: [<br>        &quot;动态玻璃折射&quot;,<br>        &quot;透明物体边缘的棱镜色差&quot;,<br>        &quot;虹彩镜头耀斑&quot;,<br>        &quot;在前景中漂浮的扭曲玻璃覆盖层&quot;<br>      ],<br>      &quot;构图&quot;: &quot;浮动、违抗重力的布局，采用广角视角&quot;,<br>      &quot;材质&quot;: &quot;抛光铬、透明亚克力和高光塑料&quot;<br>    },<br>    &quot;技术规格&quot;: {<br>      &quot;分辨率&quot;: &quot;8k 超高清&quot;,<br>      &quot;渲染引擎&quot;: &quot;Octane Render 风格&quot;,<br>      &quot;细节&quot;: &quot;以微距摄影为焦点，机械部件超高细节&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;图像生成请求&quot;: {<br>    &quot;主体&quot;: &quot;[在此处插入产品]&quot;,<br>    &quot;环境&quot;: {<br>      &quot;背景&quot;: &quot;在 #111B24 与 #CAEFFF 之间的平滑、专业的双色渐变过渡&quot;,<br>      &quot;照明&quot;: &quot;高对比度的工作室照明，带有明亮的轮廓高光以强调光亮纹理&quot;<br>    },<br>    &quot;风格元素&quot;: {<br>      &quot;美学&quot;: &quot;Y2K Frutiger Aero 与现代超写实主义的结合&quot;,<br>      &quot;光学效果&quot;: [<br>        &quot;动态玻璃折射&quot;,<br>        &quot;透明物体边缘的棱镜色差&quot;,<br>        &quot;虹彩镜头耀斑&quot;,<br>        &quot;在前景中漂浮的扭曲玻璃覆盖层&quot;<br>      ],<br>      &quot;构图&quot;: &quot;浮动、违抗重力的布局，采用广角视角&quot;,<br>      &quot;材质&quot;: &quot;抛光铬、透明亚克力和高光塑料&quot;<br>    },<br>    &quot;技术规格&quot;: {<br>      &quot;分辨率&quot;: &quot;8k 超高清&quot;,<br>      &quot;渲染引擎&quot;: &quot;Octane Render 风格&quot;,<br>      &quot;细节&quot;: &quot;以微距摄影为焦点，机械部件超高细节&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_request\": {\n    \"subject\": \"[INSERT PRODUCT HERE]\",\n    \"environment\": {\n      \"background\": \"A smooth, professional dual-tone gradient transition between #111B24 and #CAEFFF\",\n      \"lighting\": \"High-contrast studio lighting with bright rim highlights to emphasize glossy textures\"\n    },\n    \"style_elements\": {\n      \"aesthetic\": \"Y2K Frutiger Aero meets modern hyper-realism\",\n      \"optical_effects\": [\n        \"Dynamic glass refraction\",\n        \"Prismatic chromatic aberration at the edges of transparent objects\",\n        \"Iridescent lens flares\",\n        \"Distorted glass overlays floating in the foreground\"\n      ],\n      \"composition\": \"Floating, gravity-defying arrangement with a wide-angle perspective\",\n      \"textures\": \"Polished chrome, transparent acrylic, and high-gloss plastic\"\n    },\n    \"technical_specs\": {\n      \"resolution\": \"8k UHD\",\n      \"render_engine\": \"Octane Render style\",\n      \"detailing\": \"Macro photography focus, hyper-detailed mechanical parts\"\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;image_generation_request&quot;: {<br>    &quot;subject&quot;: &quot;[INSERT PRODUCT HERE]&quot;,<br>    &quot;environment&quot;: {<br>      &quot;background&quot;: &quot;A smooth, professional dual-tone gradient transition between #111B24 and #CAEFFF&quot;,<br>      &quot;lighting&quot;: &quot;High-contrast studio lighting with bright rim highlights to emphasize glossy textures&quot;<br>    },<br>    &quot;style_elements&quot;: {<br>      &quot;aesthetic&quot;: &quot;Y2K Frutiger Aero meets modern hyper-realism&quot;,<br>      &quot;optical_effects&quot;: [<br>        &quot;Dynamic glass refraction&quot;,<br>        &quot;Prismatic chromatic aberration at the edges of transparent objects&quot;,<br>        &quot;Iridescent lens flares&quot;,<br>        &quot;Distorted glass overlays floating in the foreground&quot;<br>      ],<br>      &quot;composition&quot;: &quot;Floating, gravity-defying arrangement with a wide-angle perspective&quot;,<br>      &quot;textures&quot;: &quot;Polished chrome, transparent acrylic, and high-gloss plastic&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;resolution&quot;: &quot;8k UHD&quot;,<br>      &quot;render_engine&quot;: &quot;Octane Render style&quot;,<br>      &quot;detailing&quot;: &quot;Macro photography focus, hyper-detailed mechanical parts&quot;<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_request&quot;: {<br>    &quot;subject&quot;: &quot;[INSERT PRODUCT HERE]&quot;,<br>    &quot;environment&quot;: {<br>      &quot;background&quot;: &quot;A smooth, professional dual-tone gradient transition between #111B24 and #CAEFFF&quot;,<br>      &quot;lighting&quot;: &quot;High-contrast studio lighting with bright rim highlights to emphasize glossy textures&quot;<br>    },<br>    &quot;style_elements&quot;: {<br>      &quot;aesthetic&quot;: &quot;Y2K Frutiger Aero meets modern hyper-realism&quot;,<br>      &quot;optical_effects&quot;: [<br>        &quot;Dynamic glass refraction&quot;,<br>        &quot;Prismatic chromatic aberration at the edges of transparent objects&quot;,<br>        &quot;Iridescent lens flares&quot;,<br>        &quot;Distorted glass overlays floating in the foreground&quot;<br>      ],<br>      &quot;composition&quot;: &quot;Floating, gravity-defying arrangement with a wide-angle perspective&quot;,<br>      &quot;textures&quot;: &quot;Polished chrome, transparent acrylic, and high-gloss plastic&quot;<br>    },<br>    &quot;technical_specs&quot;: {<br>      &quot;resolution&quot;: &quot;8k UHD&quot;,<br>      &quot;render_engine&quot;: &quot;Octane Render style&quot;,<br>      &quot;detailing&quot;: &quot;Macro photography focus, hyper-detailed mechanical parts&quot;<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2019788303214776494-1.jpg" alt="&quot;image generation request&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2006,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>&quot;image generation data&quot;: { #1685 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;image generation data&quot;: { &quot;prompts&quot;: { &quot;main subject&quot;: &quot;Full body shot of a woman resembling Margot Robbie look al...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1685.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1685.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1685.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840655">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022397">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_data\": {\n    \"prompts\": {\n      \"main_subject\": \"全身镜头，一位外貌类似 Margot Robbie 的女性，及肩的波浪形凌乱金发，一只手随意触碰头发。\",\n      \"outfit_description\": \"她穿着一件巨大的、蓬松参差的超大外套，由分层的金色和橙色金属流苏或金属丝质地构成，模仿仿皮草的质感。她穿着白色带状高跟凉鞋。\",\n      \"pose_and_action\": \"主体呈深蹲或蹲伏姿势，蜷缩在房间角落。身体略微侧向，膝盖深弯，展现出放松但高级时尚的态度。\",\n      \"environment\": \"极简室内，房间角落，墙壁为米色或乳白色，地面为中性色地毯。看不到家具。\",\n      \"lighting_and_atmosphere\": \"温暖的黄金时刻棚拍光线，投射柔和阴影。氛围偏编辑风、时髦且温暖。外套的金属质感与光滑墙面形成强烈反差。\",\n      \"camera_settings\": \"35mm 镜头，时尚摄影风格，面部与外套质感清晰对焦，中景。\"\n    },\n    \"negative_prompts\": [\n      \"站立\",\n      \"直发\",\n      \"深色\",\n      \"蓝色调\",\n      \"低分辨率\",\n      \"模糊\",\n      \"手部畸形\",\n      \"多余肢体\",\n      \"平面质感\",\n      \"过度光亮的皮肤\"\n    ],\n    \"parameters\": {\n      \"aspect_ratio\": \"3:4\",\n      \"seed\": 847201945,\n      \"guidance_scale\": 7.5,\n      \"steps\": 30,\n      \"sampler\": \"DPM++ 2M Karras\"\n    },\n    \"combined_prompt_string\": \"高级时装编辑风格照片：一位凌乱金发的女性在角落蹲伏，穿着巨大蓬松的金色金属流苏外套和白色带状高跟鞋。温暖光线，奶油色墙面，复杂织物质感，名人相似，8k 分辨率，电影感灯光 --ar 3:4 --stylize 250\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation_data&quot;: {<br>    &quot;prompts&quot;: {<br>      &quot;main_subject&quot;: &quot;全身镜头，一位外貌类似 Margot Robbie 的女性，及肩的波浪形凌乱金发，一只手随意触碰头发。&quot;,<br>      &quot;outfit_description&quot;: &quot;她穿着一件巨大的、蓬松参差的超大外套，由分层的金色和橙色金属流苏或金属丝质地构成，模仿仿皮草的质感。她穿着白色带状高跟凉鞋。&quot;,<br>      &quot;pose_and_action&quot;: &quot;主体呈深蹲或蹲伏姿势，蜷缩在房间角落。身体略微侧向，膝盖深弯，展现出放松但高级时尚的态度。&quot;,<br>      &quot;environment&quot;: &quot;极简室内，房间角落，墙壁为米色或乳白色，地面为中性色地毯。看不到家具。&quot;,<br>      &quot;lighting_and_atmosphere&quot;: &quot;温暖的黄金时刻棚拍光线，投射柔和阴影。氛围偏编辑风、时髦且温暖。外套的金属质感与光滑墙面形成强烈反差。&quot;,<br>      &quot;camera_settings&quot;: &quot;35mm 镜头，时尚摄影风格，面部与外套质感清晰对焦，中景。&quot;<br>    },<br>    &quot;negative_prompts&quot;: [<br>      &quot;站立&quot;,<br>      &quot;直发&quot;,<br>      &quot;深色&quot;,<br>      &quot;蓝色调&quot;,<br>      &quot;低分辨率&quot;,<br>      &quot;模糊&quot;,<br>      &quot;手部畸形&quot;,<br>      &quot;多余肢体&quot;,<br>      &quot;平面质感&quot;,<br>      &quot;过度光亮的皮肤&quot;<br>    ],<br>    &quot;parameters&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>      &quot;seed&quot;: 847201945,<br>      &quot;guidance_scale&quot;: 7.5,<br>      &quot;steps&quot;: 30,<br>      &quot;sampler&quot;: &quot;DPM++ 2M Karras&quot;<br>    },<br>    &quot;combined_prompt_string&quot;: &quot;高级时装编辑风格照片：一位凌乱金发的女性在角落蹲伏，穿着巨大蓬松的金色金属流苏外套和白色带状高跟鞋。温暖光线，奶油色墙面，复杂织物质感，名人相似，8k 分辨率，电影感灯光 --ar 3:4 --stylize 250&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_data&quot;: {<br>    &quot;prompts&quot;: {<br>      &quot;main_subject&quot;: &quot;全身镜头，一位外貌类似 Margot Robbie 的女性，及肩的波浪形凌乱金发，一只手随意触碰头发。&quot;,<br>      &quot;outfit_description&quot;: &quot;她穿着一件巨大的、蓬松参差的超大外套，由分层的金色和橙色金属流苏或金属丝质地构成，模仿仿皮草的质感。她穿着白色带状高跟凉鞋。&quot;,<br>      &quot;pose_and_action&quot;: &quot;主体呈深蹲或蹲伏姿势，蜷缩在房间角落。身体略微侧向，膝盖深弯，展现出放松但高级时尚的态度。&quot;,<br>      &quot;environment&quot;: &quot;极简室内，房间角落，墙壁为米色或乳白色，地面为中性色地毯。看不到家具。&quot;,<br>      &quot;lighting_and_atmosphere&quot;: &quot;温暖的黄金时刻棚拍光线，投射柔和阴影。氛围偏编辑风、时髦且温暖。外套的金属质感与光滑墙面形成强烈反差。&quot;,<br>      &quot;camera_settings&quot;: &quot;35mm 镜头，时尚摄影风格，面部与外套质感清晰对焦，中景。&quot;<br>    },<br>    &quot;negative_prompts&quot;: [<br>      &quot;站立&quot;,<br>      &quot;直发&quot;,<br>      &quot;深色&quot;,<br>      &quot;蓝色调&quot;,<br>      &quot;低分辨率&quot;,<br>      &quot;模糊&quot;,<br>      &quot;手部畸形&quot;,<br>      &quot;多余肢体&quot;,<br>      &quot;平面质感&quot;,<br>      &quot;过度光亮的皮肤&quot;<br>    ],<br>    &quot;parameters&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>      &quot;seed&quot;: 847201945,<br>      &quot;guidance_scale&quot;: 7.5,<br>      &quot;steps&quot;: 30,<br>      &quot;sampler&quot;: &quot;DPM++ 2M Karras&quot;<br>    },<br>    &quot;combined_prompt_string&quot;: &quot;高级时装编辑风格照片：一位凌乱金发的女性在角落蹲伏，穿着巨大蓬松的金色金属流苏外套和白色带状高跟鞋。温暖光线，奶油色墙面，复杂织物质感，名人相似，8k 分辨率，电影感灯光 --ar 3:4 --stylize 250&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"image_generation_data\": {\n    \"prompts\": {\n      \"main_subject\": \"Full body shot of a woman resembling Margot Robbie look alike with shoulder-length wavy, messy blonde hair, hand casually touching her hair.\",\n      \"outfit_description\": \"She is wearing a massive, voluminous, shaggy oversized coat made of tiered gold and orange metallic fringe or tinsel texture that mimics faux fur. She is wearing white strappy high-heel sandals.\",\n      \"pose_and_action\": \"The subject is in a deep squat or crouching pose, tucked into the corner of a room. Her body is angled slightly to the side, knees bent deeply, projecting a relaxed but high-fashion attitude.\",\n      \"environment\": \"Minimalist interior, the corner of a room with plain cream or off-white walls and a neutral carpeted floor. No furniture visible.\",\n      \"lighting_and_atmosphere\": \"Warm, golden-hour studio lighting casting soft shadows. The atmosphere is editorial, chic, and warm. High contrast between the metallic texture of the coat and the smooth wall.\",\n      \"camera_settings\": \"35mm lens, fashion photography style, sharp focus on the face and coat texture, medium-shot.\"\n    },\n    \"negative_prompts\": [\n      \"standing\",\n      \"straight hair\",\n      \"dark colors\",\n      \"blue tones\",\n      \"low resolution\",\n      \"blur\",\n      \"distorted hands\",\n      \"extra limbs\",\n      \"flat texture\",\n      \"shiny skin\"\n    ],\n    \"parameters\": {\n      \"aspect_ratio\": \"3:4\",\n      \"seed\": 847201945,\n      \"guidance_scale\": 7.5,\n      \"steps\": 30,\n      \"sampler\": \"DPM++ 2M Karras\"\n    },\n    \"combined_prompt_string\": \"High-fashion editorial photo of a woman with messy blonde hair crouching in a corner, wearing a gigantic voluminous gold metallic fringe coat and white strappy heels. Warm lighting, cream walls, intricate fabric texture, celebrity lookalike, 8k resolution, cinematic lighting --ar 3:4 --stylize 250\"\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;image_generation_data&quot;: {<br>    &quot;prompts&quot;: {<br>      &quot;main_subject&quot;: &quot;Full body shot of a woman resembling Margot Robbie look alike with shoulder-length wavy, messy blonde hair, hand casually touching her hair.&quot;,<br>      &quot;outfit_description&quot;: &quot;She is wearing a massive, voluminous, shaggy oversized coat made of tiered gold and orange metallic fringe or tinsel texture that mimics faux fur. She is wearing white strappy high-heel sandals.&quot;,<br>      &quot;pose_and_action&quot;: &quot;The subject is in a deep squat or crouching pose, tucked into the corner of a room. Her body is angled slightly to the side, knees bent deeply, projecting a relaxed but high-fashion attitude.&quot;,<br>      &quot;environment&quot;: &quot;Minimalist interior, the corner of a room with plain cream or off-white walls and a neutral carpeted floor. No furniture visible.&quot;,<br>      &quot;lighting_and_atmosphere&quot;: &quot;Warm, golden-hour studio lighting casting soft shadows. The atmosphere is editorial, chic, and warm. High contrast between the metallic texture of the coat and the smooth wall.&quot;,<br>      &quot;camera_settings&quot;: &quot;35mm lens, fashion photography style, sharp focus on the face and coat texture, medium-shot.&quot;<br>    },<br>    &quot;negative_prompts&quot;: [<br>      &quot;standing&quot;,<br>      &quot;straight hair&quot;,<br>      &quot;dark colors&quot;,<br>      &quot;blue tones&quot;,<br>      &quot;low resolution&quot;,<br>      &quot;blur&quot;,<br>      &quot;distorted hands&quot;,<br>      &quot;extra limbs&quot;,<br>      &quot;flat texture&quot;,<br>      &quot;shiny skin&quot;<br>    ],<br>    &quot;parameters&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>      &quot;seed&quot;: 847201945,<br>      &quot;guidance_scale&quot;: 7.5,<br>      &quot;steps&quot;: 30,<br>      &quot;sampler&quot;: &quot;DPM++ 2M Karras&quot;<br>    },<br>    &quot;combined_prompt_string&quot;: &quot;High-fashion editorial photo of a woman with messy blonde hair crouching in a corner, wearing a gigantic voluminous gold metallic fringe coat and white strappy heels. Warm lighting, cream walls, intricate fabric texture, celebrity lookalike, 8k resolution, cinematic lighting --ar 3:4 --stylize 250&quot;<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;image_generation_data&quot;: {<br>    &quot;prompts&quot;: {<br>      &quot;main_subject&quot;: &quot;Full body shot of a woman resembling Margot Robbie look alike with shoulder-length wavy, messy blonde hair, hand casually touching her hair.&quot;,<br>      &quot;outfit_description&quot;: &quot;She is wearing a massive, voluminous, shaggy oversized coat made of tiered gold and orange metallic fringe or tinsel texture that mimics faux fur. She is wearing white strappy high-heel sandals.&quot;,<br>      &quot;pose_and_action&quot;: &quot;The subject is in a deep squat or crouching pose, tucked into the corner of a room. Her body is angled slightly to the side, knees bent deeply, projecting a relaxed but high-fashion attitude.&quot;,<br>      &quot;environment&quot;: &quot;Minimalist interior, the corner of a room with plain cream or off-white walls and a neutral carpeted floor. No furniture visible.&quot;,<br>      &quot;lighting_and_atmosphere&quot;: &quot;Warm, golden-hour studio lighting casting soft shadows. The atmosphere is editorial, chic, and warm. High contrast between the metallic texture of the coat and the smooth wall.&quot;,<br>      &quot;camera_settings&quot;: &quot;35mm lens, fashion photography style, sharp focus on the face and coat texture, medium-shot.&quot;<br>    },<br>    &quot;negative_prompts&quot;: [<br>      &quot;standing&quot;,<br>      &quot;straight hair&quot;,<br>      &quot;dark colors&quot;,<br>      &quot;blue tones&quot;,<br>      &quot;low resolution&quot;,<br>      &quot;blur&quot;,<br>      &quot;distorted hands&quot;,<br>      &quot;extra limbs&quot;,<br>      &quot;flat texture&quot;,<br>      &quot;shiny skin&quot;<br>    ],<br>    &quot;parameters&quot;: {<br>      &quot;aspect_ratio&quot;: &quot;3:4&quot;,<br>      &quot;seed&quot;: 847201945,<br>      &quot;guidance_scale&quot;: 7.5,<br>      &quot;steps&quot;: 30,<br>      &quot;sampler&quot;: &quot;DPM++ 2M Karras&quot;<br>    },<br>    &quot;combined_prompt_string&quot;: &quot;High-fashion editorial photo of a woman with messy blonde hair crouching in a corner, wearing a gigantic voluminous gold metallic fringe coat and white strappy heels. Warm lighting, cream walls, intricate fabric texture, celebrity lookalike, 8k resolution, cinematic lighting --ar 3:4 --stylize 250&quot;<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2015325822379495722-1.jpg" alt="&quot;image generation data&quot;: {" loading="lazy"><img src="/images/tweet-2015325822379495722-2.jpg" alt="&quot;image generation data&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1685,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

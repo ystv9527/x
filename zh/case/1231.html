@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;Using the uploaded reference image of a 30 year ol... #1231 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;Using the uploaded reference image of a 30 year old adult, generate a highly realistic cinematic fashion...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1231.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1231.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1231.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841119">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022502">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"使用上传的30岁成人参考图像，生成一组高度逼真的电影感时尚社论摄影。人物随意倚靠在一面米色有质感的墙上，身体略微倾斜，一侧肩膀靠在墙上，传达出放松的自信。\\n\\n服装：宽松的淡粉蓝色扣襟衬衫，袖子随意卷起，剪裁考究的白色宽松休闲长裤，以及简约干净的白色或偏蓝白色运动鞋。造型现代、优雅且不费力。\\n\\n姿势与表情：成年人的时尚姿势，姿态自然——一只手插兜，另一只手拿着一朵小白雏菊。面部表情平静、自信且从容，带有柔和的社论凝视。\\n\\n光线与氛围：温暖的自然阳光自侧面照入，在墙面和脸部产生柔和的高光与轻微阴影。阳光充足、通透的氛围，具有电影般的纵深感。\\n\\n视觉风格：高端时尚社论美感，保留自然肌肤质感、面料细节清晰可见、细腻的中性调配色。\\n\\n相机与画质：专业时尚摄影，浅景深，电影化构图，超逼真的8K画质。\\n\\n整体感觉：现代、极简、阳光照耀的生活方式时尚宣传。\",\n  \"style\": \"电影感，高端成人时尚社论\",\n  \"lighting\": \"温暖的自然阳光，柔和的阴影\",\n  \"background\": \"极简米色墙面，阳光照射的质感\",\n  \"quality\": \"超逼真，8K，超清锐利\",\n  \"camera\": \"专业时尚摄影，浅景深\",\n  \"mood\": \"干净、现代、自信、放松\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;使用上传的30岁成人参考图像，生成一组高度逼真的电影感时尚社论摄影。人物随意倚靠在一面米色有质感的墙上，身体略微倾斜，一侧肩膀靠在墙上，传达出放松的自信。\n\n服装：宽松的淡粉蓝色扣襟衬衫，袖子随意卷起，剪裁考究的白色宽松休闲长裤，以及简约干净的白色或偏蓝白色运动鞋。造型现代、优雅且不费力。\n\n姿势与表情：成年人的时尚姿势，姿态自然——一只手插兜，另一只手拿着一朵小白雏菊。面部表情平静、自信且从容，带有柔和的社论凝视。\n\n光线与氛围：温暖的自然阳光自侧面照入，在墙面和脸部产生柔和的高光与轻微阴影。阳光充足、通透的氛围，具有电影般的纵深感。\n\n视觉风格：高端时尚社论美感，保留自然肌肤质感、面料细节清晰可见、细腻的中性调配色。\n\n相机与画质：专业时尚摄影，浅景深，电影化构图，超逼真的8K画质。\n\n整体感觉：现代、极简、阳光照耀的生活方式时尚宣传。&quot;,<br>  &quot;style&quot;: &quot;电影感，高端成人时尚社论&quot;,<br>  &quot;lighting&quot;: &quot;温暖的自然阳光，柔和的阴影&quot;,<br>  &quot;background&quot;: &quot;极简米色墙面，阳光照射的质感&quot;,<br>  &quot;quality&quot;: &quot;超逼真，8K，超清锐利&quot;,<br>  &quot;camera&quot;: &quot;专业时尚摄影，浅景深&quot;,<br>  &quot;mood&quot;: &quot;干净、现代、自信、放松&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;使用上传的30岁成人参考图像，生成一组高度逼真的电影感时尚社论摄影。人物随意倚靠在一面米色有质感的墙上，身体略微倾斜，一侧肩膀靠在墙上，传达出放松的自信。\n\n服装：宽松的淡粉蓝色扣襟衬衫，袖子随意卷起，剪裁考究的白色宽松休闲长裤，以及简约干净的白色或偏蓝白色运动鞋。造型现代、优雅且不费力。\n\n姿势与表情：成年人的时尚姿势，姿态自然——一只手插兜，另一只手拿着一朵小白雏菊。面部表情平静、自信且从容，带有柔和的社论凝视。\n\n光线与氛围：温暖的自然阳光自侧面照入，在墙面和脸部产生柔和的高光与轻微阴影。阳光充足、通透的氛围，具有电影般的纵深感。\n\n视觉风格：高端时尚社论美感，保留自然肌肤质感、面料细节清晰可见、细腻的中性调配色。\n\n相机与画质：专业时尚摄影，浅景深，电影化构图，超逼真的8K画质。\n\n整体感觉：现代、极简、阳光照耀的生活方式时尚宣传。&quot;,<br>  &quot;style&quot;: &quot;电影感，高端成人时尚社论&quot;,<br>  &quot;lighting&quot;: &quot;温暖的自然阳光，柔和的阴影&quot;,<br>  &quot;background&quot;: &quot;极简米色墙面，阳光照射的质感&quot;,<br>  &quot;quality&quot;: &quot;超逼真，8K，超清锐利&quot;,<br>  &quot;camera&quot;: &quot;专业时尚摄影，浅景深&quot;,<br>  &quot;mood&quot;: &quot;干净、现代、自信、放松&quot;<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"Using the uploaded reference image of a 30-year-old adult, generate a highly realistic cinematic fashion editorial photoshoot. The person is leaning casually against a beige textured wall, body slightly angled, one shoulder resting on the wall, conveying relaxed confidence.\\n\\nOutfit: a loose pastel blue button-down shirt with casually rolled-up sleeves, tailored white relaxed-fit trousers, and clean minimalist white or blue-white sneakers. Styling is modern, elegant, and effortless.\\n\\nPose & expression: stylish adult pose with natural posture — one hand in pocket, the other holding a small white daisy flower. Facial expression is calm, confident, and self-assured, with a soft editorial gaze.\\n\\nLighting & atmosphere: warm natural sunlight streaming from the side, creating soft highlights and gentle shadows on the wall and face. Sunlit, airy mood with cinematic depth.\\n\\nVisual style: high-end fashion editorial aesthetic, natural skin texture, crisp fabric details, refined neutral color palette.\\n\\nCamera & quality: professional fashion photography, shallow depth of field, cinematic framing, ultra-realistic 8K quality.\\n\\nOverall feel: modern, minimal, sunlit lifestyle fashion campaign.\",\n  \"style\": \"cinematic, high-end adult fashion editorial\",\n  \"lighting\": \"warm natural sunlight, soft shadows\",\n  \"background\": \"minimal beige wall, sunlit texture\",\n  \"quality\": \"ultra-realistic, 8K, ultra-sharp\",\n  \"camera\": \"professional fashion photography, shallow depth of field\",\n  \"mood\": \"clean, modern, confident, relaxed\"\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;Using the uploaded reference image of a 30-year-old adult, generate a highly realistic cinematic fashion editorial photoshoot. The person is leaning casually against a beige textured wall, body slightly angled, one shoulder resting on the wall, conveying relaxed confidence.\n\nOutfit: a loose pastel blue button-down shirt with casually rolled-up sleeves, tailored white relaxed-fit trousers, and clean minimalist white or blue-white sneakers. Styling is modern, elegant, and effortless.\n\nPose &amp; expression: stylish adult pose with natural posture — one hand in pocket, the other holding a small white daisy flower. Facial expression is calm, confident, and self-assured, with a soft editorial gaze.\n\nLighting &amp; atmosphere: warm natural sunlight streaming from the side, creating soft highlights and gentle shadows on the wall and face. Sunlit, airy mood with cinematic depth.\n\nVisual style: high-end fashion editorial aesthetic, natural skin texture, crisp fabric details, refined neutral color palette.\n\nCamera &amp; quality: professional fashion photography, shallow depth of field, cinematic framing, ultra-realistic 8K quality.\n\nOverall feel: modern, minimal, sunlit lifestyle fashion campaign.&quot;,<br>  &quot;style&quot;: &quot;cinematic, high-end adult fashion editorial&quot;,<br>  &quot;lighting&quot;: &quot;warm natural sunlight, soft shadows&quot;,<br>  &quot;background&quot;: &quot;minimal beige wall, sunlit texture&quot;,<br>  &quot;quality&quot;: &quot;ultra-realistic, 8K, ultra-sharp&quot;,<br>  &quot;camera&quot;: &quot;professional fashion photography, shallow depth of field&quot;,<br>  &quot;mood&quot;: &quot;clean, modern, confident, relaxed&quot;<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;Using the uploaded reference image of a 30-year-old adult, generate a highly realistic cinematic fashion editorial photoshoot. The person is leaning casually against a beige textured wall, body slightly angled, one shoulder resting on the wall, conveying relaxed confidence.\n\nOutfit: a loose pastel blue button-down shirt with casually rolled-up sleeves, tailored white relaxed-fit trousers, and clean minimalist white or blue-white sneakers. Styling is modern, elegant, and effortless.\n\nPose &amp; expression: stylish adult pose with natural posture — one hand in pocket, the other holding a small white daisy flower. Facial expression is calm, confident, and self-assured, with a soft editorial gaze.\n\nLighting &amp; atmosphere: warm natural sunlight streaming from the side, creating soft highlights and gentle shadows on the wall and face. Sunlit, airy mood with cinematic depth.\n\nVisual style: high-end fashion editorial aesthetic, natural skin texture, crisp fabric details, refined neutral color palette.\n\nCamera &amp; quality: professional fashion photography, shallow depth of field, cinematic framing, ultra-realistic 8K quality.\n\nOverall feel: modern, minimal, sunlit lifestyle fashion campaign.&quot;,<br>  &quot;style&quot;: &quot;cinematic, high-end adult fashion editorial&quot;,<br>  &quot;lighting&quot;: &quot;warm natural sunlight, soft shadows&quot;,<br>  &quot;background&quot;: &quot;minimal beige wall, sunlit texture&quot;,<br>  &quot;quality&quot;: &quot;ultra-realistic, 8K, ultra-sharp&quot;,<br>  &quot;camera&quot;: &quot;professional fashion photography, shallow depth of field&quot;,<br>  &quot;mood&quot;: &quot;clean, modern, confident, relaxed&quot;<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011420581695242358-1.jpg" alt="&quot;prompt&quot;: &quot;Using the uploaded reference image of a 30 year ol..." loading="lazy"><img src="/images/tweet-2011420581695242358-2.jpg" alt="&quot;prompt&quot;: &quot;Using the uploaded reference image of a 30 year ol..." loading="lazy"><img src="/images/tweet-2011420581695242358-3.jpg" alt="&quot;prompt&quot;: &quot;Using the uploaded reference image of a 30 year ol..." loading="lazy"><img src="/images/tweet-2011420581695242358-4.jpg" alt="&quot;prompt&quot;: &quot;Using the uploaded reference image of a 30 year ol..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1231,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

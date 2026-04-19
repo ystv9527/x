@@ -7,11 +7,13 @@
     <title>Hyper realistic 8K cinematic artwork with two vertically stac... #1590 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Hyper realistic 8K cinematic artwork with two vertically stacked computer monitors (one on top of the other) on a woo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1590.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1590.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1590.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844974">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023622">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("超真实 8K 电影质感艺术作品，画面为两台垂直堆叠的电脑显示器（上下排列）放置在一张木制桌子上。 在顶部显示器上，一个角色（性别灵活，面容与上传的照片完全一致，佩戴相同头饰），穿着深蓝色休闲服装（性别灵活的款式），用法式压滤壶倒出冒着热气的咖啡，但没有拿着杯子。 在底部显示器上，同一角色（性别灵活，面容与上传的照片完全一致，佩戴相同头饰）——此刻穿着白衬衫和黑色夹克（性别灵活的款式）——惊讶地将杯子向上倾斜，咖啡完美地流入杯中。 咖啡蒸汽在视觉上跨越两个显示器上升，将两个场景连成一体。 温暖的咖啡馆式灯光和柔和的木质纹理营造出舒适的氛围。 负面提示: \"模糊的面容，扭曲的比例，重复的身体部位，不匹配的配饰，性别特征不一致，多余的肢体，多余的手指，畸形的解剖结构，照明不良，水印，文字，低分辨率，不真实的服装褶皱，头部形状不一致，顶部显示器中的角色拿着杯子，错误的面容，错误的发型，错误的头饰。\" 3:4 比例", this)'>📋 Copy</button>
         </div>
-        <p>超真实 8K 电影质感艺术作品，画面为两台垂直堆叠的电脑显示器（上下排列）放置在一张木制桌子上。 在顶部显示器上，一个角色（性别灵活，面容与上传的照片完全一致，佩戴相同头饰），穿着深蓝色休闲服装（性别灵活的款式），用法式压滤壶倒出冒着热气的咖啡，但没有拿着杯子。 在底部显示器上，同一角色（性别灵活，面容与上传的照片完全一致，佩戴相同头饰）——此刻穿着白衬衫和黑色夹克（性别灵活的款式）——惊讶地将杯子向上倾斜，咖啡完美地流入杯中。 咖啡蒸汽在视觉上跨越两个显示器上升，将两个场景连成一体。 温暖的咖啡馆式灯光和柔和的木质纹理营造出舒适的氛围。 负面提示: &quot;模糊的面容，扭曲的比例，重复的身体部位，不匹配的配饰，性别特征不一致，多余的肢体，多余的手指，畸形的解剖结构，照明不良，水印，文字，低分辨率，不真实的服装褶皱，头部形状不一致，顶部显示器中的角色拿着杯子，错误的面容，错误的发型，错误的头饰。&quot; 3:4 比例</p>
+        <div data-nosnippet><p>超真实 8K 电影质感艺术作品，画面为两台垂直堆叠的电脑显示器（上下排列）放置在一张木制桌子上。 在顶部显示器上，一个角色（性别灵活，面容与上传的照片完全一致，佩戴相同头饰），穿着深蓝色休闲服装（性别灵活的款式），用法式压滤壶倒出冒着热气的咖啡，但没有拿着杯子。 在底部显示器上，同一角色（性别灵活，面容与上传的照片完全一致，佩戴相同头饰）——此刻穿着白衬衫和黑色夹克（性别灵活的款式）——惊讶地将杯子向上倾斜，咖啡完美地流入杯中。 咖啡蒸汽在视觉上跨越两个显示器上升，将两个场景连成一体。 温暖的咖啡馆式灯光和柔和的木质纹理营造出舒适的氛围。 负面提示: &quot;模糊的面容，扭曲的比例，重复的身体部位，不匹配的配饰，性别特征不一致，多余的肢体，多余的手指，畸形的解剖结构，照明不良，水印，文字，低分辨率，不真实的服装褶皱，头部形状不一致，顶部显示器中的角色拿着杯子，错误的面容，错误的发型，错误的头饰。&quot; 3:4 比例</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Hyper-realistic 8K cinematic artwork with two vertically stacked computer monitors (one on top of the other) on a wooden table. On the top monitor, a character (gender-flexible, face exactly as uploaded photo, same headpiece) wearing a casual navy blue outfit (gender-flexible style) pours steaming hot coffee from a French press without holding the cup. On the bottom monitor, the same character (gender-flexible, face exactly as uploaded photo, same headpiece) - now wearing a white shirt with a black jacket (gender-flexible style) - tilts his cup upward with a surprised expression as the coffee streams perfectly into it. Coffee steam visually rises across both monitors, uniting the two scenes. Warm cafe-style lighting and soft wood textures create a cozy atmosphere.\" Negative prompt: \"blurry face, distorted proportions, duplicate body parts, mismatched accessories, mismatched gender traits, extra limbs, extra fingers, distorted anatomy, poor lighting, watermark, text, low resolution, unrealistic clothing folds, inconsistent head shape, character in top monitor holding a cup, wrong face, wrong hair, wrong head accessory.\" 3:4 ratio", this)'>📋 Copy</button>
         </div>
-        <p>Hyper-realistic 8K cinematic artwork with two vertically stacked computer monitors (one on top of the other) on a wooden table. On the top monitor, a character (gender-flexible, face exactly as uploaded photo, same headpiece) wearing a casual navy blue outfit (gender-flexible style) pours steaming hot coffee from a French press without holding the cup. On the bottom monitor, the same character (gender-flexible, face exactly as uploaded photo, same headpiece) - now wearing a white shirt with a black jacket (gender-flexible style) - tilts his cup upward with a surprised expression as the coffee streams perfectly into it. Coffee steam visually rises across both monitors, uniting the two scenes. Warm cafe-style lighting and soft wood textures create a cozy atmosphere.&quot; Negative prompt: &quot;blurry face, distorted proportions, duplicate body parts, mismatched accessories, mismatched gender traits, extra limbs, extra fingers, distorted anatomy, poor lighting, watermark, text, low resolution, unrealistic clothing folds, inconsistent head shape, character in top monitor holding a cup, wrong face, wrong hair, wrong head accessory.&quot; 3:4 ratio</p>
+        <div data-nosnippet><p>Hyper-realistic 8K cinematic artwork with two vertically stacked computer monitors (one on top of the other) on a wooden table. On the top monitor, a character (gender-flexible, face exactly as uploaded photo, same headpiece) wearing a casual navy blue outfit (gender-flexible style) pours steaming hot coffee from a French press without holding the cup. On the bottom monitor, the same character (gender-flexible, face exactly as uploaded photo, same headpiece) - now wearing a white shirt with a black jacket (gender-flexible style) - tilts his cup upward with a surprised expression as the coffee streams perfectly into it. Coffee steam visually rises across both monitors, uniting the two scenes. Warm cafe-style lighting and soft wood textures create a cozy atmosphere.&quot; Negative prompt: &quot;blurry face, distorted proportions, duplicate body parts, mismatched accessories, mismatched gender traits, extra limbs, extra fingers, distorted anatomy, poor lighting, watermark, text, low resolution, unrealistic clothing folds, inconsistent head shape, character in top monitor holding a cup, wrong face, wrong hair, wrong head accessory.&quot; 3:4 ratio</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2013273152932176062-1.jpg" alt="Hyper realistic 8K cinematic artwork with two vertically stac..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1590,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

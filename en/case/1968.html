@@ -7,11 +7,13 @@
     <title>AI My Aoharu [Autumn/Winter Division] #1968 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="AI My Aoharu [Autumn/Winter Division] Participating in a wonderful event! High schoolers are like this, right~ Aoharu brings back memories 💕 Midjourney https://t.co/KPXrcQF4fh">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/1968.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1968.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1968.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245844594">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023547">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("#AI我的青春　【秋冬部门】\n\n参加了一个很棒的活动！\n高中生就是这种感觉呢～\n青春真的很怀念💕\n\nMidjourney https://t.co/KPXrcQF4fh", this)'>📋 Copy</button>
         </div>
-        <p>#AI我的青春　【秋冬部门】</p><p>参加了一个很棒的活动！<br>高中生就是这种感觉呢～<br>青春真的很怀念💕</p><p>Midjourney https://t.co/KPXrcQF4fh</p>
+        <div data-nosnippet><p>#AI我的青春　【秋冬部门】</p><p>参加了一个很棒的活动！<br>高中生就是这种感觉呢～<br>青春真的很怀念💕</p><p>Midjourney https://t.co/KPXrcQF4fh</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("#AI私のアオハル　【秋・冬の部門】\n\n素敵なイベントに参加！\n高校生ってこういうノリですよね〜\nアオハル懐かしい💕\n\nMidjourney https://t.co/KPXrcQF4fh", this)'>📋 Copy</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("#AI My Aoharu [Fall & Winter Division]\n\nJoin a wonderful event!\nIs this the kind of vibe high school students have?~\nSo nostalgic… my Aoharu 💕\n\nMidjourney https://t.co/KPXrcQF4fh", this)'>📋 Copy</button>
         </div>
-        <p>#AI私のアオハル　【秋・冬の部門】</p><p>素敵なイベントに参加！<br>高校生ってこういうノリですよね〜<br>アオハル懐かしい💕</p><p>Midjourney https://t.co/KPXrcQF4fh</p>
+        <div data-nosnippet><p>#AI My Aoharu [Fall &amp; Winter Division]</p><p>Join a wonderful event!<br>Is this the kind of vibe high school students have?~<br>So nostalgic… my Aoharu 💕</p><p>Midjourney https://t.co/KPXrcQF4fh</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2018979770411983357-1.jpg" alt="AI私のアオハル 【秋・冬の部門】" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1968,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

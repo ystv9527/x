@@ -7,11 +7,13 @@
     <title>&quot;render goal&quot;: &quot;Ultra cinematic, hyper realistic rainy street... #930 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;render goal&quot;: &quot;Ultra cinematic, hyper realistic rainy street portrait with shallow depth of field&quot;, &quot;scene&quot;: { &quot;lo...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/930.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/930.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/930.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841381">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022576">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"render_goal\": \"超电影感、超写实的雨中街头人像，浅景深\",\n  \"scene\": {\n    \"location\": \"繁忙的城市街道\",\n    \"weather\": \"持续降雨，潮湿且反光的路面，空气中有柔和的薄雾\",\n    \"time\": \"阴天白昼\",\n    \"atmosphere\": \"情绪化、电影感、情感丰富\"\n  },\n  \"subject\": {\n    \"identity\": \"与参考图中人物完全相同的女孩\",\n    \"action\": \"在拥挤的街道中撑伞向前行走\",\n    \"pose\": \"自然的行走姿势，放松的肩膀\",\n    \"expression\": \"冷静、自信，略带强烈感\",\n    \"eye_direction\": \"从远处直视镜头\",\n    \"outfit\": {\n      \"style\": \"优雅、现代、有吸引力\",\n      \"fit\": \"剪裁得体，修饰身形的轮廓\",\n      \"fabric_behavior\": \"略受雨水影响，湿润质感写实\"\n    }\n  },\n  \"composition\": {\n    \"camera_distance\": \"中远景\",\n    \"framing\": \"主体居中，留有均衡的负空间\",\n    \"angle\": \"平视角度，电影感街头摄影\",\n    \"focus\": \"仅对女孩进行极为锐利的对焦\",\n    \"depth_of_field\": \"极浅景深\"\n  },\n  \"background\": {\n    \"crowd\": \"密集人群向各个方向行走\",\n    \"motion\": \"人群完全模糊并带有运动模糊\",\n    \"detail_level\": \"面部和身体无法辨认\",\n    \"separation\": \"主体与背景强烈分离\"\n  },\n  \"lighting\": {\n    \"type\": \"柔和的漫射自然光\",\n    \"highlights\": \"细微的雨滴高光与反光\",\n    \"color_tone\": \"偏冷的电影级调色，略带对比\"\n  },\n  \"visual_style\": {\n    \"look\": \"电影感街头摄影\",\n    \"realism\": \"皮肤、织物和雨的物理表现极度写实\",\n    \"quality\": \"8K 细节，高动态范围\",\n    \"post_processing\": \"类胶片对比，细微颗粒，禁止过度锐化\"\n  },\n  \"constraints\": {\n    \"accuracy\": \"精确匹配参考的姿势、构图、氛围和对焦\",\n    \"avoid\": [\n      \"卡通化外观\",\n      \"高光过曝\",\n      \"画面中有额外清晰的主体\",\n      \"风格化或幻想元素\"\n    ]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;render_goal&quot;: &quot;超电影感、超写实的雨中街头人像，浅景深&quot;,<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;繁忙的城市街道&quot;,<br>    &quot;weather&quot;: &quot;持续降雨，潮湿且反光的路面，空气中有柔和的薄雾&quot;,<br>    &quot;time&quot;: &quot;阴天白昼&quot;,<br>    &quot;atmosphere&quot;: &quot;情绪化、电影感、情感丰富&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;与参考图中人物完全相同的女孩&quot;,<br>    &quot;action&quot;: &quot;在拥挤的街道中撑伞向前行走&quot;,<br>    &quot;pose&quot;: &quot;自然的行走姿势，放松的肩膀&quot;,<br>    &quot;expression&quot;: &quot;冷静、自信，略带强烈感&quot;,<br>    &quot;eye_direction&quot;: &quot;从远处直视镜头&quot;,<br>    &quot;outfit&quot;: {<br>      &quot;style&quot;: &quot;优雅、现代、有吸引力&quot;,<br>      &quot;fit&quot;: &quot;剪裁得体，修饰身形的轮廓&quot;,<br>      &quot;fabric_behavior&quot;: &quot;略受雨水影响，湿润质感写实&quot;<br>    }<br>  },<br>  &quot;composition&quot;: {<br>    &quot;camera_distance&quot;: &quot;中远景&quot;,<br>    &quot;framing&quot;: &quot;主体居中，留有均衡的负空间&quot;,<br>    &quot;angle&quot;: &quot;平视角度，电影感街头摄影&quot;,<br>    &quot;focus&quot;: &quot;仅对女孩进行极为锐利的对焦&quot;,<br>    &quot;depth_of_field&quot;: &quot;极浅景深&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;crowd&quot;: &quot;密集人群向各个方向行走&quot;,<br>    &quot;motion&quot;: &quot;人群完全模糊并带有运动模糊&quot;,<br>    &quot;detail_level&quot;: &quot;面部和身体无法辨认&quot;,<br>    &quot;separation&quot;: &quot;主体与背景强烈分离&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和的漫射自然光&quot;,<br>    &quot;highlights&quot;: &quot;细微的雨滴高光与反光&quot;,<br>    &quot;color_tone&quot;: &quot;偏冷的电影级调色，略带对比&quot;<br>  },<br>  &quot;visual_style&quot;: {<br>    &quot;look&quot;: &quot;电影感街头摄影&quot;,<br>    &quot;realism&quot;: &quot;皮肤、织物和雨的物理表现极度写实&quot;,<br>    &quot;quality&quot;: &quot;8K 细节，高动态范围&quot;,<br>    &quot;post_processing&quot;: &quot;类胶片对比，细微颗粒，禁止过度锐化&quot;<br>  },<br>  &quot;constraints&quot;: {<br>    &quot;accuracy&quot;: &quot;精确匹配参考的姿势、构图、氛围和对焦&quot;,<br>    &quot;avoid&quot;: [<br>      &quot;卡通化外观&quot;,<br>      &quot;高光过曝&quot;,<br>      &quot;画面中有额外清晰的主体&quot;,<br>      &quot;风格化或幻想元素&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;render_goal&quot;: &quot;超电影感、超写实的雨中街头人像，浅景深&quot;,<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;繁忙的城市街道&quot;,<br>    &quot;weather&quot;: &quot;持续降雨，潮湿且反光的路面，空气中有柔和的薄雾&quot;,<br>    &quot;time&quot;: &quot;阴天白昼&quot;,<br>    &quot;atmosphere&quot;: &quot;情绪化、电影感、情感丰富&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;与参考图中人物完全相同的女孩&quot;,<br>    &quot;action&quot;: &quot;在拥挤的街道中撑伞向前行走&quot;,<br>    &quot;pose&quot;: &quot;自然的行走姿势，放松的肩膀&quot;,<br>    &quot;expression&quot;: &quot;冷静、自信，略带强烈感&quot;,<br>    &quot;eye_direction&quot;: &quot;从远处直视镜头&quot;,<br>    &quot;outfit&quot;: {<br>      &quot;style&quot;: &quot;优雅、现代、有吸引力&quot;,<br>      &quot;fit&quot;: &quot;剪裁得体，修饰身形的轮廓&quot;,<br>      &quot;fabric_behavior&quot;: &quot;略受雨水影响，湿润质感写实&quot;<br>    }<br>  },<br>  &quot;composition&quot;: {<br>    &quot;camera_distance&quot;: &quot;中远景&quot;,<br>    &quot;framing&quot;: &quot;主体居中，留有均衡的负空间&quot;,<br>    &quot;angle&quot;: &quot;平视角度，电影感街头摄影&quot;,<br>    &quot;focus&quot;: &quot;仅对女孩进行极为锐利的对焦&quot;,<br>    &quot;depth_of_field&quot;: &quot;极浅景深&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;crowd&quot;: &quot;密集人群向各个方向行走&quot;,<br>    &quot;motion&quot;: &quot;人群完全模糊并带有运动模糊&quot;,<br>    &quot;detail_level&quot;: &quot;面部和身体无法辨认&quot;,<br>    &quot;separation&quot;: &quot;主体与背景强烈分离&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;柔和的漫射自然光&quot;,<br>    &quot;highlights&quot;: &quot;细微的雨滴高光与反光&quot;,<br>    &quot;color_tone&quot;: &quot;偏冷的电影级调色，略带对比&quot;<br>  },<br>  &quot;visual_style&quot;: {<br>    &quot;look&quot;: &quot;电影感街头摄影&quot;,<br>    &quot;realism&quot;: &quot;皮肤、织物和雨的物理表现极度写实&quot;,<br>    &quot;quality&quot;: &quot;8K 细节，高动态范围&quot;,<br>    &quot;post_processing&quot;: &quot;类胶片对比，细微颗粒，禁止过度锐化&quot;<br>  },<br>  &quot;constraints&quot;: {<br>    &quot;accuracy&quot;: &quot;精确匹配参考的姿势、构图、氛围和对焦&quot;,<br>    &quot;avoid&quot;: [<br>      &quot;卡通化外观&quot;,<br>      &quot;高光过曝&quot;,<br>      &quot;画面中有额外清晰的主体&quot;,<br>      &quot;风格化或幻想元素&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"render_goal\": \"Ultra-cinematic, hyper-realistic rainy street portrait with shallow depth of field\",\n  \"scene\": {\n    \"location\": \"busy city street\",\n    \"weather\": \"steady rain, wet reflective roads, soft mist in the air\",\n    \"time\": \"overcast daytime\",\n    \"atmosphere\": \"moody, cinematic, emotionally rich\"\n  },\n  \"subject\": {\n    \"identity\": \"girl identical to the reference\",\n    \"action\": \"walking forward through a crowded street while holding an umbrella\",\n    \"pose\": \"natural walking posture, relaxed shoulders\",\n    \"expression\": \"calm, confident, slightly intense\",\n    \"eye_direction\": \"looking directly at the camera from a distance\",\n    \"outfit\": {\n      \"style\": \"elegant, modern, attractive\",\n      \"fit\": \"well-tailored, flattering silhouette\",\n      \"fabric_behavior\": \"slightly affected by rain, realistic wet textures\"\n    }\n  },\n  \"composition\": {\n    \"camera_distance\": \"medium to long shot\",\n    \"framing\": \"subject centered with balanced negative space\",\n    \"angle\": \"eye-level, cinematic street photography\",\n    \"focus\": \"razor-sharp focus on the girl only\",\n    \"depth_of_field\": \"extremely shallow\"\n  },\n  \"background\": {\n    \"crowd\": \"dense crowd walking in all directions\",\n    \"motion\": \"crowd fully blurred with motion blur\",\n    \"detail_level\": \"faces and bodies indistinguishable\",\n    \"separation\": \"strong subject-background isolation\"\n  },\n  \"lighting\": {\n    \"type\": \"soft diffused natural light\",\n    \"highlights\": \"subtle rain highlights and reflections\",\n    \"color_tone\": \"cool cinematic color grading with slight contrast\"\n  },\n  \"visual_style\": {\n    \"look\": \"cinematic street photography\",\n    \"realism\": \"ultra-realistic skin, fabric, and rain physics\",\n    \"quality\": \"8K detail, high dynamic range\",\n    \"post_processing\": \"film-like contrast, subtle grain, no oversharpening\"\n  },\n  \"constraints\": {\n    \"accuracy\": \"match reference pose, framing, mood, and focus precisely\",\n    \"avoid\": [\n      \"cartoon look\",\n      \"overexposed highlights\",\n      \"extra subjects in focus\",\n      \"stylized or fantasy elements\"\n    ]\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;render_goal&quot;: &quot;Ultra-cinematic, hyper-realistic rainy street portrait with shallow depth of field&quot;,<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;busy city street&quot;,<br>    &quot;weather&quot;: &quot;steady rain, wet reflective roads, soft mist in the air&quot;,<br>    &quot;time&quot;: &quot;overcast daytime&quot;,<br>    &quot;atmosphere&quot;: &quot;moody, cinematic, emotionally rich&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;girl identical to the reference&quot;,<br>    &quot;action&quot;: &quot;walking forward through a crowded street while holding an umbrella&quot;,<br>    &quot;pose&quot;: &quot;natural walking posture, relaxed shoulders&quot;,<br>    &quot;expression&quot;: &quot;calm, confident, slightly intense&quot;,<br>    &quot;eye_direction&quot;: &quot;looking directly at the camera from a distance&quot;,<br>    &quot;outfit&quot;: {<br>      &quot;style&quot;: &quot;elegant, modern, attractive&quot;,<br>      &quot;fit&quot;: &quot;well-tailored, flattering silhouette&quot;,<br>      &quot;fabric_behavior&quot;: &quot;slightly affected by rain, realistic wet textures&quot;<br>    }<br>  },<br>  &quot;composition&quot;: {<br>    &quot;camera_distance&quot;: &quot;medium to long shot&quot;,<br>    &quot;framing&quot;: &quot;subject centered with balanced negative space&quot;,<br>    &quot;angle&quot;: &quot;eye-level, cinematic street photography&quot;,<br>    &quot;focus&quot;: &quot;razor-sharp focus on the girl only&quot;,<br>    &quot;depth_of_field&quot;: &quot;extremely shallow&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;crowd&quot;: &quot;dense crowd walking in all directions&quot;,<br>    &quot;motion&quot;: &quot;crowd fully blurred with motion blur&quot;,<br>    &quot;detail_level&quot;: &quot;faces and bodies indistinguishable&quot;,<br>    &quot;separation&quot;: &quot;strong subject-background isolation&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft diffused natural light&quot;,<br>    &quot;highlights&quot;: &quot;subtle rain highlights and reflections&quot;,<br>    &quot;color_tone&quot;: &quot;cool cinematic color grading with slight contrast&quot;<br>  },<br>  &quot;visual_style&quot;: {<br>    &quot;look&quot;: &quot;cinematic street photography&quot;,<br>    &quot;realism&quot;: &quot;ultra-realistic skin, fabric, and rain physics&quot;,<br>    &quot;quality&quot;: &quot;8K detail, high dynamic range&quot;,<br>    &quot;post_processing&quot;: &quot;film-like contrast, subtle grain, no oversharpening&quot;<br>  },<br>  &quot;constraints&quot;: {<br>    &quot;accuracy&quot;: &quot;match reference pose, framing, mood, and focus precisely&quot;,<br>    &quot;avoid&quot;: [<br>      &quot;cartoon look&quot;,<br>      &quot;overexposed highlights&quot;,<br>      &quot;extra subjects in focus&quot;,<br>      &quot;stylized or fantasy elements&quot;<br>    ]<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;render_goal&quot;: &quot;Ultra-cinematic, hyper-realistic rainy street portrait with shallow depth of field&quot;,<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;busy city street&quot;,<br>    &quot;weather&quot;: &quot;steady rain, wet reflective roads, soft mist in the air&quot;,<br>    &quot;time&quot;: &quot;overcast daytime&quot;,<br>    &quot;atmosphere&quot;: &quot;moody, cinematic, emotionally rich&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;identity&quot;: &quot;girl identical to the reference&quot;,<br>    &quot;action&quot;: &quot;walking forward through a crowded street while holding an umbrella&quot;,<br>    &quot;pose&quot;: &quot;natural walking posture, relaxed shoulders&quot;,<br>    &quot;expression&quot;: &quot;calm, confident, slightly intense&quot;,<br>    &quot;eye_direction&quot;: &quot;looking directly at the camera from a distance&quot;,<br>    &quot;outfit&quot;: {<br>      &quot;style&quot;: &quot;elegant, modern, attractive&quot;,<br>      &quot;fit&quot;: &quot;well-tailored, flattering silhouette&quot;,<br>      &quot;fabric_behavior&quot;: &quot;slightly affected by rain, realistic wet textures&quot;<br>    }<br>  },<br>  &quot;composition&quot;: {<br>    &quot;camera_distance&quot;: &quot;medium to long shot&quot;,<br>    &quot;framing&quot;: &quot;subject centered with balanced negative space&quot;,<br>    &quot;angle&quot;: &quot;eye-level, cinematic street photography&quot;,<br>    &quot;focus&quot;: &quot;razor-sharp focus on the girl only&quot;,<br>    &quot;depth_of_field&quot;: &quot;extremely shallow&quot;<br>  },<br>  &quot;background&quot;: {<br>    &quot;crowd&quot;: &quot;dense crowd walking in all directions&quot;,<br>    &quot;motion&quot;: &quot;crowd fully blurred with motion blur&quot;,<br>    &quot;detail_level&quot;: &quot;faces and bodies indistinguishable&quot;,<br>    &quot;separation&quot;: &quot;strong subject-background isolation&quot;<br>  },<br>  &quot;lighting&quot;: {<br>    &quot;type&quot;: &quot;soft diffused natural light&quot;,<br>    &quot;highlights&quot;: &quot;subtle rain highlights and reflections&quot;,<br>    &quot;color_tone&quot;: &quot;cool cinematic color grading with slight contrast&quot;<br>  },<br>  &quot;visual_style&quot;: {<br>    &quot;look&quot;: &quot;cinematic street photography&quot;,<br>    &quot;realism&quot;: &quot;ultra-realistic skin, fabric, and rain physics&quot;,<br>    &quot;quality&quot;: &quot;8K detail, high dynamic range&quot;,<br>    &quot;post_processing&quot;: &quot;film-like contrast, subtle grain, no oversharpening&quot;<br>  },<br>  &quot;constraints&quot;: {<br>    &quot;accuracy&quot;: &quot;match reference pose, framing, mood, and focus precisely&quot;,<br>    &quot;avoid&quot;: [<br>      &quot;cartoon look&quot;,<br>      &quot;overexposed highlights&quot;,<br>      &quot;extra subjects in focus&quot;,<br>      &quot;stylized or fantasy elements&quot;<br>    ]<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2009832919603311045-1.jpg" alt="&quot;render goal&quot;: &quot;Ultra cinematic, hyper realistic rainy street..." loading="lazy"><img src="/images/tweet-2009832919603311045-2.jpg" alt="&quot;render goal&quot;: &quot;Ultra cinematic, hyper realistic rainy street..." loading="lazy"><img src="/images/tweet-2009832919603311045-3.jpg" alt="&quot;render goal&quot;: &quot;Ultra cinematic, hyper realistic rainy street..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 930,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

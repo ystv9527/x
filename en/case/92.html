@@ -7,11 +7,13 @@
     <title>Neon glass glows. #92 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Neon Glass Glow - AI Image Generation Prompt">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/92.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/92.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/92.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245846471">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023940">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("请使用提供的 JSON 参数重新创建此图像。\n{\n  \"name\": \"Neon Glass Glow\",\n  \"style\": {\n    \"material\": {\n      \"type\": \"glass\",\n      \"transparency\": 0.92,\n      \"reflectivity\": 1.0,\n      \"refractionIndex\": 1.6,\n      \"color\": \"#ff00ff\",\n      \"emission\": {\n        \"color\": \"#ff66ff\",\n        \"intensity\": 0.8\n      },\n      \"surfaceFinish\": \"glossy\",\n      \"bloom\": true,\n      \"detail\": \"high\"\n    },\n    \"outline\": {\n      \"enabled\": true,\n      \"color\": \"#ffccff\",\n      \"width\": 1.8\n    },\n    \"lighting\": {\n      \"type\": \"studio\",\n      \"keyLightColor\": \"#ffffff\",\n      \"keyLightIntensity\": 1.0,\n      \"fillLightColor\": \"#9900ff\",\n      \"fillLightIntensity\": 0.7,\n      \"rimLightColor\": \"#00ffff\",\n      \"rimLightIntensity\": 0.7,\n      \"shadows\": \"crisp\"\n    },\n    \"background\": {\n      \"type\": \"solid\",\n      \"color\": \"#000000\"\n    },\n    \"render\": {\n      \"shadows\": true,\n      \"antiAliasing\": true,\n      \"superSampling\": \"4x\",\n      \"resolution\": \"high\",\n      \"depthOfField\": {\n        \"enabled\": true,\n        \"focusDistance\": 0.8,\n        \"blurAmount\": 0.1\n      }\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>请使用提供的 JSON 参数重新创建此图像。<br>{<br>  &quot;name&quot;: &quot;Neon Glass Glow&quot;,<br>  &quot;style&quot;: {<br>    &quot;material&quot;: {<br>      &quot;type&quot;: &quot;glass&quot;,<br>      &quot;transparency&quot;: 0.92,<br>      &quot;reflectivity&quot;: 1.0,<br>      &quot;refractionIndex&quot;: 1.6,<br>      &quot;color&quot;: &quot;#ff00ff&quot;,<br>      &quot;emission&quot;: {<br>        &quot;color&quot;: &quot;#ff66ff&quot;,<br>        &quot;intensity&quot;: 0.8<br>      },<br>      &quot;surfaceFinish&quot;: &quot;glossy&quot;,<br>      &quot;bloom&quot;: true,<br>      &quot;detail&quot;: &quot;high&quot;<br>    },<br>    &quot;outline&quot;: {<br>      &quot;enabled&quot;: true,<br>      &quot;color&quot;: &quot;#ffccff&quot;,<br>      &quot;width&quot;: 1.8<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;studio&quot;,<br>      &quot;keyLightColor&quot;: &quot;#ffffff&quot;,<br>      &quot;keyLightIntensity&quot;: 1.0,<br>      &quot;fillLightColor&quot;: &quot;#9900ff&quot;,<br>      &quot;fillLightIntensity&quot;: 0.7,<br>      &quot;rimLightColor&quot;: &quot;#00ffff&quot;,<br>      &quot;rimLightIntensity&quot;: 0.7,<br>      &quot;shadows&quot;: &quot;crisp&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;type&quot;: &quot;solid&quot;,<br>      &quot;color&quot;: &quot;#000000&quot;<br>    },<br>    &quot;render&quot;: {<br>      &quot;shadows&quot;: true,<br>      &quot;antiAliasing&quot;: true,<br>      &quot;superSampling&quot;: &quot;4x&quot;,<br>      &quot;resolution&quot;: &quot;high&quot;,<br>      &quot;depthOfField&quot;: {<br>        &quot;enabled&quot;: true,<br>        &quot;focusDistance&quot;: 0.8,<br>        &quot;blurAmount&quot;: 0.1<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>请使用提供的 JSON 参数重新创建此图像。<br>{<br>  &quot;name&quot;: &quot;Neon Glass Glow&quot;,<br>  &quot;style&quot;: {<br>    &quot;material&quot;: {<br>      &quot;type&quot;: &quot;glass&quot;,<br>      &quot;transparency&quot;: 0.92,<br>      &quot;reflectivity&quot;: 1.0,<br>      &quot;refractionIndex&quot;: 1.6,<br>      &quot;color&quot;: &quot;#ff00ff&quot;,<br>      &quot;emission&quot;: {<br>        &quot;color&quot;: &quot;#ff66ff&quot;,<br>        &quot;intensity&quot;: 0.8<br>      },<br>      &quot;surfaceFinish&quot;: &quot;glossy&quot;,<br>      &quot;bloom&quot;: true,<br>      &quot;detail&quot;: &quot;high&quot;<br>    },<br>    &quot;outline&quot;: {<br>      &quot;enabled&quot;: true,<br>      &quot;color&quot;: &quot;#ffccff&quot;,<br>      &quot;width&quot;: 1.8<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;studio&quot;,<br>      &quot;keyLightColor&quot;: &quot;#ffffff&quot;,<br>      &quot;keyLightIntensity&quot;: 1.0,<br>      &quot;fillLightColor&quot;: &quot;#9900ff&quot;,<br>      &quot;fillLightIntensity&quot;: 0.7,<br>      &quot;rimLightColor&quot;: &quot;#00ffff&quot;,<br>      &quot;rimLightIntensity&quot;: 0.7,<br>      &quot;shadows&quot;: &quot;crisp&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;type&quot;: &quot;solid&quot;,<br>      &quot;color&quot;: &quot;#000000&quot;<br>    },<br>    &quot;render&quot;: {<br>      &quot;shadows&quot;: true,<br>      &quot;antiAliasing&quot;: true,<br>      &quot;superSampling&quot;: &quot;4x&quot;,<br>      &quot;resolution&quot;: &quot;high&quot;,<br>      &quot;depthOfField&quot;: {<br>        &quot;enabled&quot;: true,<br>        &quot;focusDistance&quot;: 0.8,<br>        &quot;blurAmount&quot;: 0.1<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Recreate this image using the parameters from the JSON provided.\n{\n  \"name\": \"Neon Glass Glow\",\n  \"style\": {\n    \"material\": {\n      \"type\": \"glass\",\n      \"transparency\": 0.92,\n      \"reflectivity\": 1.0,\n      \"refractionIndex\": 1.6,\n      \"color\": \"#ff00ff\",\n      \"emission\": {\n        \"color\": \"#ff66ff\",\n        \"intensity\": 0.8\n      },\n      \"surfaceFinish\": \"glossy\",\n      \"bloom\": true,\n      \"detail\": \"high\"\n    },\n    \"outline\": {\n      \"enabled\": true,\n      \"color\": \"#ffccff\",\n      \"width\": 1.8\n    },\n    \"lighting\": {\n      \"type\": \"studio\",\n      \"keyLightColor\": \"#ffffff\",\n      \"keyLightIntensity\": 1.0,\n      \"fillLightColor\": \"#9900ff\",\n      \"fillLightIntensity\": 0.7,\n      \"rimLightColor\": \"#00ffff\",\n      \"rimLightIntensity\": 0.7,\n      \"shadows\": \"crisp\"\n    },\n    \"background\": {\n      \"type\": \"solid\",\n      \"color\": \"#000000\"\n    },\n    \"render\": {\n      \"shadows\": true,\n      \"antiAliasing\": true,\n      \"superSampling\": \"4x\",\n      \"resolution\": \"high\",\n      \"depthOfField\": {\n        \"enabled\": true,\n        \"focusDistance\": 0.8,\n        \"blurAmount\": 0.1\n      }\n    }\n  }\n}", this)'>📋 Copy</button>
         </div>
-        <p>Recreate this image using the parameters from the JSON provided.<br>{<br>  &quot;name&quot;: &quot;Neon Glass Glow&quot;,<br>  &quot;style&quot;: {<br>    &quot;material&quot;: {<br>      &quot;type&quot;: &quot;glass&quot;,<br>      &quot;transparency&quot;: 0.92,<br>      &quot;reflectivity&quot;: 1.0,<br>      &quot;refractionIndex&quot;: 1.6,<br>      &quot;color&quot;: &quot;#ff00ff&quot;,<br>      &quot;emission&quot;: {<br>        &quot;color&quot;: &quot;#ff66ff&quot;,<br>        &quot;intensity&quot;: 0.8<br>      },<br>      &quot;surfaceFinish&quot;: &quot;glossy&quot;,<br>      &quot;bloom&quot;: true,<br>      &quot;detail&quot;: &quot;high&quot;<br>    },<br>    &quot;outline&quot;: {<br>      &quot;enabled&quot;: true,<br>      &quot;color&quot;: &quot;#ffccff&quot;,<br>      &quot;width&quot;: 1.8<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;studio&quot;,<br>      &quot;keyLightColor&quot;: &quot;#ffffff&quot;,<br>      &quot;keyLightIntensity&quot;: 1.0,<br>      &quot;fillLightColor&quot;: &quot;#9900ff&quot;,<br>      &quot;fillLightIntensity&quot;: 0.7,<br>      &quot;rimLightColor&quot;: &quot;#00ffff&quot;,<br>      &quot;rimLightIntensity&quot;: 0.7,<br>      &quot;shadows&quot;: &quot;crisp&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;type&quot;: &quot;solid&quot;,<br>      &quot;color&quot;: &quot;#000000&quot;<br>    },<br>    &quot;render&quot;: {<br>      &quot;shadows&quot;: true,<br>      &quot;antiAliasing&quot;: true,<br>      &quot;superSampling&quot;: &quot;4x&quot;,<br>      &quot;resolution&quot;: &quot;high&quot;,<br>      &quot;depthOfField&quot;: {<br>        &quot;enabled&quot;: true,<br>        &quot;focusDistance&quot;: 0.8,<br>        &quot;blurAmount&quot;: 0.1<br>      }<br>    }<br>  }<br>}</p>
+        <div data-nosnippet><p>Recreate this image using the parameters from the JSON provided.<br>{<br>  &quot;name&quot;: &quot;Neon Glass Glow&quot;,<br>  &quot;style&quot;: {<br>    &quot;material&quot;: {<br>      &quot;type&quot;: &quot;glass&quot;,<br>      &quot;transparency&quot;: 0.92,<br>      &quot;reflectivity&quot;: 1.0,<br>      &quot;refractionIndex&quot;: 1.6,<br>      &quot;color&quot;: &quot;#ff00ff&quot;,<br>      &quot;emission&quot;: {<br>        &quot;color&quot;: &quot;#ff66ff&quot;,<br>        &quot;intensity&quot;: 0.8<br>      },<br>      &quot;surfaceFinish&quot;: &quot;glossy&quot;,<br>      &quot;bloom&quot;: true,<br>      &quot;detail&quot;: &quot;high&quot;<br>    },<br>    &quot;outline&quot;: {<br>      &quot;enabled&quot;: true,<br>      &quot;color&quot;: &quot;#ffccff&quot;,<br>      &quot;width&quot;: 1.8<br>    },<br>    &quot;lighting&quot;: {<br>      &quot;type&quot;: &quot;studio&quot;,<br>      &quot;keyLightColor&quot;: &quot;#ffffff&quot;,<br>      &quot;keyLightIntensity&quot;: 1.0,<br>      &quot;fillLightColor&quot;: &quot;#9900ff&quot;,<br>      &quot;fillLightIntensity&quot;: 0.7,<br>      &quot;rimLightColor&quot;: &quot;#00ffff&quot;,<br>      &quot;rimLightIntensity&quot;: 0.7,<br>      &quot;shadows&quot;: &quot;crisp&quot;<br>    },<br>    &quot;background&quot;: {<br>      &quot;type&quot;: &quot;solid&quot;,<br>      &quot;color&quot;: &quot;#000000&quot;<br>    },<br>    &quot;render&quot;: {<br>      &quot;shadows&quot;: true,<br>      &quot;antiAliasing&quot;: true,<br>      &quot;superSampling&quot;: &quot;4x&quot;,<br>      &quot;resolution&quot;: &quot;high&quot;,<br>      &quot;depthOfField&quot;: {<br>        &quot;enabled&quot;: true,<br>        &quot;focusDistance&quot;: 0.8,<br>        &quot;blurAmount&quot;: 0.1<br>      }<br>    }<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/92.jpeg" alt="霓虹玻璃发光" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 92,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

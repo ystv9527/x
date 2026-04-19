@@ -7,11 +7,13 @@
     <title>&quot;shot&quot;: { #1164 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;shot&quot;: { &quot;composition&quot;: &quot;full body dual shot, 50mm lens, static angle, high fashion composition&quot;, &quot;camera motion&quot;:...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1164.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1164.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1164.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841186">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022517">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"shot\": {\n    \"composition\": \"全身双人镜头，50mm 镜头，静态角度，高级时尚构图\",\n    \"camera_motion\": \"静态摄影棚布置\",\n    \"frame_rate\": \"静态摄影\",\n    \"film_grain\": \"轻度复古时尚颗粒感，模仿2000年代早期广告风格\"\n  },\n  \"subject\": {\n    \"description\": \"两位女性时尚模特摆出大胆的编辑式姿态。一位跪着，拥有长长的铂金粉色头发；另一位在她身后，短黑色头发。两人都穿着迷你 Dior 风格的服装和印有报纸图案的大腿靴。\",\n    \"wardrobe\": \"设计师印花比基尼、报纸印花大腿靴、大型宣言配饰、小型单肩包\",\n    \"makeup\": \"大胆眼线、外描唇，在双颊使用高光亮泽\",\n    \"hair\": \"模特1：铂金粉色直发，长发；模特2：短黑色波浪鲍勃头\"\n  },\n  \"scene\": {\n    \"location\": \"带白色无缝背景的摄影棚\",\n    \"time_of_day\": \"人造灯光，摄影棚拍摄\",\n    \"environment\": \"干净的背景，由柔和定向光在主体下方投射阴影\"\n  },\n  \"visual_details\": {\n    \"action\": \"模特1跪着并带着态度拱起背部，模特2在后方靠近坐着，手叉腰\",\n    \"props\": \"设计师手提包、大型耳环、印花过膝靴\"\n  },\n  \"cinematography\": {\n    \"lighting\": \"平坦的工作室光，正面柔和漫射补光，细微阴影用于轮廓塑造\",\n    \"tone\": \"高光光泽、大胆、挑衅性的时尚杂志风格\"\n  },\n  \"audio\": {\n    \"ambient\": \"无（照片）\",\n    \"music\": \"暗示性的编辑时尚拍摄的静默\"\n  },\n  \"color_palette\": \"去饱和的白色、铬色、牛仔蓝、柔和的肤色，并点缀印花\",\n  \"dialogue\": {\n    \"character\": \"不适用\",\n    \"line\": \"\",\n    \"subtitles\": false\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;shot&quot;: {<br>    &quot;composition&quot;: &quot;全身双人镜头，50mm 镜头，静态角度，高级时尚构图&quot;,<br>    &quot;camera_motion&quot;: &quot;静态摄影棚布置&quot;,<br>    &quot;frame_rate&quot;: &quot;静态摄影&quot;,<br>    &quot;film_grain&quot;: &quot;轻度复古时尚颗粒感，模仿2000年代早期广告风格&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;两位女性时尚模特摆出大胆的编辑式姿态。一位跪着，拥有长长的铂金粉色头发；另一位在她身后，短黑色头发。两人都穿着迷你 Dior 风格的服装和印有报纸图案的大腿靴。&quot;,<br>    &quot;wardrobe&quot;: &quot;设计师印花比基尼、报纸印花大腿靴、大型宣言配饰、小型单肩包&quot;,<br>    &quot;makeup&quot;: &quot;大胆眼线、外描唇，在双颊使用高光亮泽&quot;,<br>    &quot;hair&quot;: &quot;模特1：铂金粉色直发，长发；模特2：短黑色波浪鲍勃头&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;带白色无缝背景的摄影棚&quot;,<br>    &quot;time_of_day&quot;: &quot;人造灯光，摄影棚拍摄&quot;,<br>    &quot;environment&quot;: &quot;干净的背景，由柔和定向光在主体下方投射阴影&quot;<br>  },<br>  &quot;visual_details&quot;: {<br>    &quot;action&quot;: &quot;模特1跪着并带着态度拱起背部，模特2在后方靠近坐着，手叉腰&quot;,<br>    &quot;props&quot;: &quot;设计师手提包、大型耳环、印花过膝靴&quot;<br>  },<br>  &quot;cinematography&quot;: {<br>    &quot;lighting&quot;: &quot;平坦的工作室光，正面柔和漫射补光，细微阴影用于轮廓塑造&quot;,<br>    &quot;tone&quot;: &quot;高光光泽、大胆、挑衅性的时尚杂志风格&quot;<br>  },<br>  &quot;audio&quot;: {<br>    &quot;ambient&quot;: &quot;无（照片）&quot;,<br>    &quot;music&quot;: &quot;暗示性的编辑时尚拍摄的静默&quot;<br>  },<br>  &quot;color_palette&quot;: &quot;去饱和的白色、铬色、牛仔蓝、柔和的肤色，并点缀印花&quot;,<br>  &quot;dialogue&quot;: {<br>    &quot;character&quot;: &quot;不适用&quot;,<br>    &quot;line&quot;: &quot;&quot;,<br>    &quot;subtitles&quot;: false<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;shot&quot;: {<br>    &quot;composition&quot;: &quot;全身双人镜头，50mm 镜头，静态角度，高级时尚构图&quot;,<br>    &quot;camera_motion&quot;: &quot;静态摄影棚布置&quot;,<br>    &quot;frame_rate&quot;: &quot;静态摄影&quot;,<br>    &quot;film_grain&quot;: &quot;轻度复古时尚颗粒感，模仿2000年代早期广告风格&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;两位女性时尚模特摆出大胆的编辑式姿态。一位跪着，拥有长长的铂金粉色头发；另一位在她身后，短黑色头发。两人都穿着迷你 Dior 风格的服装和印有报纸图案的大腿靴。&quot;,<br>    &quot;wardrobe&quot;: &quot;设计师印花比基尼、报纸印花大腿靴、大型宣言配饰、小型单肩包&quot;,<br>    &quot;makeup&quot;: &quot;大胆眼线、外描唇，在双颊使用高光亮泽&quot;,<br>    &quot;hair&quot;: &quot;模特1：铂金粉色直发，长发；模特2：短黑色波浪鲍勃头&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;带白色无缝背景的摄影棚&quot;,<br>    &quot;time_of_day&quot;: &quot;人造灯光，摄影棚拍摄&quot;,<br>    &quot;environment&quot;: &quot;干净的背景，由柔和定向光在主体下方投射阴影&quot;<br>  },<br>  &quot;visual_details&quot;: {<br>    &quot;action&quot;: &quot;模特1跪着并带着态度拱起背部，模特2在后方靠近坐着，手叉腰&quot;,<br>    &quot;props&quot;: &quot;设计师手提包、大型耳环、印花过膝靴&quot;<br>  },<br>  &quot;cinematography&quot;: {<br>    &quot;lighting&quot;: &quot;平坦的工作室光，正面柔和漫射补光，细微阴影用于轮廓塑造&quot;,<br>    &quot;tone&quot;: &quot;高光光泽、大胆、挑衅性的时尚杂志风格&quot;<br>  },<br>  &quot;audio&quot;: {<br>    &quot;ambient&quot;: &quot;无（照片）&quot;,<br>    &quot;music&quot;: &quot;暗示性的编辑时尚拍摄的静默&quot;<br>  },<br>  &quot;color_palette&quot;: &quot;去饱和的白色、铬色、牛仔蓝、柔和的肤色，并点缀印花&quot;,<br>  &quot;dialogue&quot;: {<br>    &quot;character&quot;: &quot;不适用&quot;,<br>    &quot;line&quot;: &quot;&quot;,<br>    &quot;subtitles&quot;: false<br>  }<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"shot\": {\n    \"composition\": \"full body dual shot, 50mm lens, static angle, high fashion composition\",\n    \"camera_motion\": \"static studio setup\",\n    \"frame_rate\": \"still photography\",\n    \"film_grain\": \"light vintage fashion grain, mimicking early 2000s campaigns\"\n  },\n  \"subject\": {\n    \"description\": \"Two female fashion models in bold editorial poses. One kneeling with long platinum pink hair, the other behind her with short black hair. Both wear mini Dior-style outfits and newspaper-printed thigh-high boots.\",\n    \"wardrobe\": \"designer print bikinis, newspaper-print thigh-high boots, large statement accessories, small shoulder bags\",\n    \"makeup\": \"bold eyeliner, overlined lips, high-gloss highlight on cheeks\",\n    \"hair\": \"model 1: platinum pink straight, long; model 2: short black wavy bob\"\n  },\n  \"scene\": {\n    \"location\": \"studio with white seamless backdrop\",\n    \"time_of_day\": \"artificial lighting, studio session\",\n    \"environment\": \"clean background, shadow below subjects from soft directional lighting\"\n  },\n  \"visual_details\": {\n    \"action\": \"model 1 kneeling and arching her back with attitude, model 2 seated close behind with hand on hip\",\n    \"props\": \"designer handbags, large earrings, over-the-knee boots with printed patterns\"\n  },\n  \"cinematography\": {\n    \"lighting\": \"flat studio light, front-lit with soft diffused fill, subtle shadows for contour\",\n    \"tone\": \"high-gloss, bold, provocative fashion magazine look\"\n  },\n  \"audio\": {\n    \"ambient\": \"none (photo)\",\n    \"music\": \"implied editorial fashion shoot silence\"\n  },\n  \"color_palette\": \"desaturated whites, chrome, denim blue, muted skin tones, with pops of print\",\n  \"dialogue\": {\n    \"character\": \"N/A\",\n    \"line\": \"\",\n    \"subtitles\": false\n  }\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;shot&quot;: {<br>    &quot;composition&quot;: &quot;full body dual shot, 50mm lens, static angle, high fashion composition&quot;,<br>    &quot;camera_motion&quot;: &quot;static studio setup&quot;,<br>    &quot;frame_rate&quot;: &quot;still photography&quot;,<br>    &quot;film_grain&quot;: &quot;light vintage fashion grain, mimicking early 2000s campaigns&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;Two female fashion models in bold editorial poses. One kneeling with long platinum pink hair, the other behind her with short black hair. Both wear mini Dior-style outfits and newspaper-printed thigh-high boots.&quot;,<br>    &quot;wardrobe&quot;: &quot;designer print bikinis, newspaper-print thigh-high boots, large statement accessories, small shoulder bags&quot;,<br>    &quot;makeup&quot;: &quot;bold eyeliner, overlined lips, high-gloss highlight on cheeks&quot;,<br>    &quot;hair&quot;: &quot;model 1: platinum pink straight, long; model 2: short black wavy bob&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;studio with white seamless backdrop&quot;,<br>    &quot;time_of_day&quot;: &quot;artificial lighting, studio session&quot;,<br>    &quot;environment&quot;: &quot;clean background, shadow below subjects from soft directional lighting&quot;<br>  },<br>  &quot;visual_details&quot;: {<br>    &quot;action&quot;: &quot;model 1 kneeling and arching her back with attitude, model 2 seated close behind with hand on hip&quot;,<br>    &quot;props&quot;: &quot;designer handbags, large earrings, over-the-knee boots with printed patterns&quot;<br>  },<br>  &quot;cinematography&quot;: {<br>    &quot;lighting&quot;: &quot;flat studio light, front-lit with soft diffused fill, subtle shadows for contour&quot;,<br>    &quot;tone&quot;: &quot;high-gloss, bold, provocative fashion magazine look&quot;<br>  },<br>  &quot;audio&quot;: {<br>    &quot;ambient&quot;: &quot;none (photo)&quot;,<br>    &quot;music&quot;: &quot;implied editorial fashion shoot silence&quot;<br>  },<br>  &quot;color_palette&quot;: &quot;desaturated whites, chrome, denim blue, muted skin tones, with pops of print&quot;,<br>  &quot;dialogue&quot;: {<br>    &quot;character&quot;: &quot;N/A&quot;,<br>    &quot;line&quot;: &quot;&quot;,<br>    &quot;subtitles&quot;: false<br>  }<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;shot&quot;: {<br>    &quot;composition&quot;: &quot;full body dual shot, 50mm lens, static angle, high fashion composition&quot;,<br>    &quot;camera_motion&quot;: &quot;static studio setup&quot;,<br>    &quot;frame_rate&quot;: &quot;still photography&quot;,<br>    &quot;film_grain&quot;: &quot;light vintage fashion grain, mimicking early 2000s campaigns&quot;<br>  },<br>  &quot;subject&quot;: {<br>    &quot;description&quot;: &quot;Two female fashion models in bold editorial poses. One kneeling with long platinum pink hair, the other behind her with short black hair. Both wear mini Dior-style outfits and newspaper-printed thigh-high boots.&quot;,<br>    &quot;wardrobe&quot;: &quot;designer print bikinis, newspaper-print thigh-high boots, large statement accessories, small shoulder bags&quot;,<br>    &quot;makeup&quot;: &quot;bold eyeliner, overlined lips, high-gloss highlight on cheeks&quot;,<br>    &quot;hair&quot;: &quot;model 1: platinum pink straight, long; model 2: short black wavy bob&quot;<br>  },<br>  &quot;scene&quot;: {<br>    &quot;location&quot;: &quot;studio with white seamless backdrop&quot;,<br>    &quot;time_of_day&quot;: &quot;artificial lighting, studio session&quot;,<br>    &quot;environment&quot;: &quot;clean background, shadow below subjects from soft directional lighting&quot;<br>  },<br>  &quot;visual_details&quot;: {<br>    &quot;action&quot;: &quot;model 1 kneeling and arching her back with attitude, model 2 seated close behind with hand on hip&quot;,<br>    &quot;props&quot;: &quot;designer handbags, large earrings, over-the-knee boots with printed patterns&quot;<br>  },<br>  &quot;cinematography&quot;: {<br>    &quot;lighting&quot;: &quot;flat studio light, front-lit with soft diffused fill, subtle shadows for contour&quot;,<br>    &quot;tone&quot;: &quot;high-gloss, bold, provocative fashion magazine look&quot;<br>  },<br>  &quot;audio&quot;: {<br>    &quot;ambient&quot;: &quot;none (photo)&quot;,<br>    &quot;music&quot;: &quot;implied editorial fashion shoot silence&quot;<br>  },<br>  &quot;color_palette&quot;: &quot;desaturated whites, chrome, denim blue, muted skin tones, with pops of print&quot;,<br>  &quot;dialogue&quot;: {<br>    &quot;character&quot;: &quot;N/A&quot;,<br>    &quot;line&quot;: &quot;&quot;,<br>    &quot;subtitles&quot;: false<br>  }<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2011133595042398575-1.jpg" alt="&quot;shot&quot;: {" loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1164,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

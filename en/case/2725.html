@@ -7,11 +7,13 @@
     <title>&quot;prompt&quot;: &quot;An open children’s picture book rests on a wooden... #2725 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="{ &quot;prompt&quot;: &quot;An open children’s picture book rests on a wooden table, showing a whimsical illustration of a small bro...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2725.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2725.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2725.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843802">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023376">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"一本打开的儿童图画书放在木桌上，展示着一幅童趣的插画：卡通土壤中的小棕色种子。一个真实的人手从小喷壶中倒水，水流闪闪发光。温暖的金色光线，魔幻的氛围，俯视特写，照片级真实，4K。\",\n  \"style\": \"照片级真实\",\n  \"lighting\": \"温暖的金色\",\n  \"mood\": \"魔幻\",\n  \"perspective\": \"俯视特写\",\n  \"resolution\": \"4K\",\n  \"elements\": [\n    {\n      \"type\": \"书籍\",\n      \"description\": \"放在木桌上的打开的儿童图画书\"\n    },\n    {\n      \"type\": \"插画\",\n      \"description\": \"卡通土壤里童趣的小棕色种子\"\n    },\n    {\n      \"type\": \"手\",\n      \"description\": \"真实的人手从小喷壶中倒水\"\n    },\n    {\n      \"type\": \"水\",\n      \"description\": \"闪闪发光的水流\"\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;一本打开的儿童图画书放在木桌上，展示着一幅童趣的插画：卡通土壤中的小棕色种子。一个真实的人手从小喷壶中倒水，水流闪闪发光。温暖的金色光线，魔幻的氛围，俯视特写，照片级真实，4K。&quot;,<br>  &quot;style&quot;: &quot;照片级真实&quot;,<br>  &quot;lighting&quot;: &quot;温暖的金色&quot;,<br>  &quot;mood&quot;: &quot;魔幻&quot;,<br>  &quot;perspective&quot;: &quot;俯视特写&quot;,<br>  &quot;resolution&quot;: &quot;4K&quot;,<br>  &quot;elements&quot;: [<br>    {<br>      &quot;type&quot;: &quot;书籍&quot;,<br>      &quot;description&quot;: &quot;放在木桌上的打开的儿童图画书&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;插画&quot;,<br>      &quot;description&quot;: &quot;卡通土壤里童趣的小棕色种子&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;手&quot;,<br>      &quot;description&quot;: &quot;真实的人手从小喷壶中倒水&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;水&quot;,<br>      &quot;description&quot;: &quot;闪闪发光的水流&quot;<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;一本打开的儿童图画书放在木桌上，展示着一幅童趣的插画：卡通土壤中的小棕色种子。一个真实的人手从小喷壶中倒水，水流闪闪发光。温暖的金色光线，魔幻的氛围，俯视特写，照片级真实，4K。&quot;,<br>  &quot;style&quot;: &quot;照片级真实&quot;,<br>  &quot;lighting&quot;: &quot;温暖的金色&quot;,<br>  &quot;mood&quot;: &quot;魔幻&quot;,<br>  &quot;perspective&quot;: &quot;俯视特写&quot;,<br>  &quot;resolution&quot;: &quot;4K&quot;,<br>  &quot;elements&quot;: [<br>    {<br>      &quot;type&quot;: &quot;书籍&quot;,<br>      &quot;description&quot;: &quot;放在木桌上的打开的儿童图画书&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;插画&quot;,<br>      &quot;description&quot;: &quot;卡通土壤里童趣的小棕色种子&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;手&quot;,<br>      &quot;description&quot;: &quot;真实的人手从小喷壶中倒水&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;水&quot;,<br>      &quot;description&quot;: &quot;闪闪发光的水流&quot;<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"prompt\": \"An open children’s picture book rests on a wooden table, showing a whimsical illustration of a small brown seed in cartoon soil. A realistic human hand pours water from a tiny can, with a sparkling stream. Warm golden light, magical mood, overhead close-up, photorealistic, 4K.\",\n  \"style\": \"photorealistic\",\n  \"lighting\": \"warm golden\",\n  \"mood\": \"magical\",\n  \"perspective\": \"overhead close-up\",\n  \"resolution\": \"4K\",\n  \"elements\": [\n    {\n      \"type\": \"book\",\n      \"description\": \"children’s picture book open on wooden table\"\n    },\n    {\n      \"type\": \"illustration\",\n      \"description\": \"whimsical small brown seed in cartoon soil\"\n    },\n    {\n      \"type\": \"hand\",\n      \"description\": \"realistic human hand pouring water from tiny can\"\n    },\n    {\n      \"type\": \"water\",\n      \"description\": \"sparkling stream\"\n    }\n  ]\n}", this)'>📋 Copy</button>
         </div>
-        <p>{<br>  &quot;prompt&quot;: &quot;An open children’s picture book rests on a wooden table, showing a whimsical illustration of a small brown seed in cartoon soil. A realistic human hand pours water from a tiny can, with a sparkling stream. Warm golden light, magical mood, overhead close-up, photorealistic, 4K.&quot;,<br>  &quot;style&quot;: &quot;photorealistic&quot;,<br>  &quot;lighting&quot;: &quot;warm golden&quot;,<br>  &quot;mood&quot;: &quot;magical&quot;,<br>  &quot;perspective&quot;: &quot;overhead close-up&quot;,<br>  &quot;resolution&quot;: &quot;4K&quot;,<br>  &quot;elements&quot;: [<br>    {<br>      &quot;type&quot;: &quot;book&quot;,<br>      &quot;description&quot;: &quot;children’s picture book open on wooden table&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;illustration&quot;,<br>      &quot;description&quot;: &quot;whimsical small brown seed in cartoon soil&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;hand&quot;,<br>      &quot;description&quot;: &quot;realistic human hand pouring water from tiny can&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;water&quot;,<br>      &quot;description&quot;: &quot;sparkling stream&quot;<br>    }<br>  ]<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;prompt&quot;: &quot;An open children’s picture book rests on a wooden table, showing a whimsical illustration of a small brown seed in cartoon soil. A realistic human hand pours water from a tiny can, with a sparkling stream. Warm golden light, magical mood, overhead close-up, photorealistic, 4K.&quot;,<br>  &quot;style&quot;: &quot;photorealistic&quot;,<br>  &quot;lighting&quot;: &quot;warm golden&quot;,<br>  &quot;mood&quot;: &quot;magical&quot;,<br>  &quot;perspective&quot;: &quot;overhead close-up&quot;,<br>  &quot;resolution&quot;: &quot;4K&quot;,<br>  &quot;elements&quot;: [<br>    {<br>      &quot;type&quot;: &quot;book&quot;,<br>      &quot;description&quot;: &quot;children’s picture book open on wooden table&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;illustration&quot;,<br>      &quot;description&quot;: &quot;whimsical small brown seed in cartoon soil&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;hand&quot;,<br>      &quot;description&quot;: &quot;realistic human hand pouring water from tiny can&quot;<br>    },<br>    {<br>      &quot;type&quot;: &quot;water&quot;,<br>      &quot;description&quot;: &quot;sparkling stream&quot;<br>    }<br>  ]<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2038525426084323378-1.jpg" alt="&quot;prompt&quot;: &quot;An open children’s picture book rests on a wooden..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2725,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

@@ -7,11 +7,13 @@
     <title>Using the uploaded picture as the only reference and without... #2519 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Using the uploaded picture as the only reference and without changing the face, create a fashion editorial portrait o...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2519.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2519.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2519.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843991">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023419">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("以上传的图片作为唯一参考并在不更改面部特征的情况下，创作一幅时尚编辑人像：一位女性自信地坐在一把奢华超大粉色仿毛皮扶手椅上，背景为柔和的粉彩粉色；她穿着蓬松的粉色夹克、白色长裤和白色系带靴，双腿交叉，面带平静自信的表情；周围对称地摆放着多只奶油色、灰色和白色调的长毛蓬松猫，栖息在椅扶手、椅背及她周围的地面；高度风格化的单色粉色美学，柔和的影棚灯光，干净的背景，奢华的毛皮面料与猫毛质感，居中构图，时尚杂志风格，高度细节，浅景深，超锐利质感，高动态范围，8K 超级写实，杰作级品质。", this)'>📋 Copy</button>
         </div>
-        <p>以上传的图片作为唯一参考并在不更改面部特征的情况下，创作一幅时尚编辑人像：一位女性自信地坐在一把奢华超大粉色仿毛皮扶手椅上，背景为柔和的粉彩粉色；她穿着蓬松的粉色夹克、白色长裤和白色系带靴，双腿交叉，面带平静自信的表情；周围对称地摆放着多只奶油色、灰色和白色调的长毛蓬松猫，栖息在椅扶手、椅背及她周围的地面；高度风格化的单色粉色美学，柔和的影棚灯光，干净的背景，奢华的毛皮面料与猫毛质感，居中构图，时尚杂志风格，高度细节，浅景深，超锐利质感，高动态范围，8K 超级写实，杰作级品质。</p>
+        <div data-nosnippet><p>以上传的图片作为唯一参考并在不更改面部特征的情况下，创作一幅时尚编辑人像：一位女性自信地坐在一把奢华超大粉色仿毛皮扶手椅上，背景为柔和的粉彩粉色；她穿着蓬松的粉色夹克、白色长裤和白色系带靴，双腿交叉，面带平静自信的表情；周围对称地摆放着多只奶油色、灰色和白色调的长毛蓬松猫，栖息在椅扶手、椅背及她周围的地面；高度风格化的单色粉色美学，柔和的影棚灯光，干净的背景，奢华的毛皮面料与猫毛质感，居中构图，时尚杂志风格，高度细节，浅景深，超锐利质感，高动态范围，8K 超级写实，杰作级品质。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Using the uploaded picture as the only reference and without changing the face, create a fashion editorial portrait of a woman sitting confidently in a plush oversized pink faux-fur armchair against a soft pastel pink background; she wears a fluffy pink jacket, white trousers and white lace-up boots, seated with legs crossed and a calm confident expression; surrounded symmetrically by multiple fluffy long-haired cats in cream, gray and white tones perched on the chair arms, backrest and floor around her; highly stylized monochromatic pink aesthetic, soft studio lighting, clean background, luxurious textures in fur fabric and cat fur, centered composition, fashion magazine style, high detail, shallow depth of field, ultra-sharp textures, high dynamic range, 8k ultra-photorealism, masterpiece quality.", this)'>📋 Copy</button>
         </div>
-        <p>Using the uploaded picture as the only reference and without changing the face, create a fashion editorial portrait of a woman sitting confidently in a plush oversized pink faux-fur armchair against a soft pastel pink background; she wears a fluffy pink jacket, white trousers and white lace-up boots, seated with legs crossed and a calm confident expression; surrounded symmetrically by multiple fluffy long-haired cats in cream, gray and white tones perched on the chair arms, backrest and floor around her; highly stylized monochromatic pink aesthetic, soft studio lighting, clean background, luxurious textures in fur fabric and cat fur, centered composition, fashion magazine style, high detail, shallow depth of field, ultra-sharp textures, high dynamic range, 8k ultra-photorealism, masterpiece quality.</p>
+        <div data-nosnippet><p>Using the uploaded picture as the only reference and without changing the face, create a fashion editorial portrait of a woman sitting confidently in a plush oversized pink faux-fur armchair against a soft pastel pink background; she wears a fluffy pink jacket, white trousers and white lace-up boots, seated with legs crossed and a calm confident expression; surrounded symmetrically by multiple fluffy long-haired cats in cream, gray and white tones perched on the chair arms, backrest and floor around her; highly stylized monochromatic pink aesthetic, soft studio lighting, clean background, luxurious textures in fur fabric and cat fur, centered composition, fashion magazine style, high detail, shallow depth of field, ultra-sharp textures, high dynamic range, 8k ultra-photorealism, masterpiece quality.</p></div>
       </div>
       <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2032699901499551793-1.jpg" alt="Using the uploaded picture as the only reference and without..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2519,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

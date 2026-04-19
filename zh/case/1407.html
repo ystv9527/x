@@ -7,11 +7,13 @@
     <title>&quot;model&quot;: &quot;Nano Banana Pro (Gemini)&quot;, #1407 | Gem Nana AI 提示词库</title>
     <meta name="description" content="{ &quot;model&quot;: &quot;Nano Banana Pro (Gemini)&quot;, &quot;prompt&quot;: { &quot;layout&quot;: { &quot;type&quot;: &quot;3x3 照片拼贴 / 九宫格&quot;, &quot;description&quot;: &quot;9 张竖版人像照片以正方...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/1407.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/1407.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/1407.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245840922">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022461">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"model\": \"Nano Banana Pro (Gemini)\",\n  \"prompt\": {\n    \"layout\": {\n      \"type\": \"3x3 照片拼贴 / 九宫格\",\n      \"description\": \"9 张竖版人像照片以正方形网格排列\",\n      \"consistency\": \"9 个画面中为同一人物、同一服装、同一光线条件\"\n    },\n    \"aesthetic_style\": {\n      \"theme\": \"Z 世代居家派对 / 少女闺房写真\",\n      \"lighting_technique\": \"机顶直闪（硬光）\",\n      \"visuals\": \"高对比度、清晰锐利阴影、混乱有趣的氛围、鲜艳色彩、白色背景\"\n    },\n    \"subject_details\": {\n      \"appearance\": \"年轻亚洲女性，肤色白皙，深色长卷发，发量蓬松\",\n      \"outfit\": \"白色碎花吊带上衣，蓝色牛仔短裤\",\n      \"makeup\": \"浓重粉色腮红（Igari 醉酒妆风格），红色唇妆，脸颊带亮片\"\n    },\n    \"environment_and_props\": {\n      \"background\": \"贴有照片的白色墙面，白色床单\",\n      \"decor\": [\n        \"银色迪斯科球（多种尺寸）\",\n        \"五彩金属亮片纸散落\",\n        \"棕色泰迪熊\",\n        \"粉色复古有线电话\"\n      ]\n    },\n    \"panel_pose_breakdown\": {\n      \"1_top_left\": \"俯卧趴着，下巴放在交叉的手臂上，看向镜头，头发上有亮片\",\n      \"2_top_center\": \"俯拍视角仰躺，眨一只眼，比 V 手势，头发向四周散开\",\n      \"3_top_right\": \"侧坐，双膝弯曲，大笑抓拍，向空中抛洒亮片\",\n      \"4_middle_left\": \"上半身倚靠在大型银色迪斯科球上，目光强烈直视镜头\",\n      \"5_middle_center\": \"近景特写，双手贴在脸颊，惊讶或害羞表情，亮片粘在脸上\",\n      \"6_middle_right\": \"躺在迪斯科球之间，一只手向上伸向天花板或镜头\",\n      \"7_bottom_left\": \"倒置视角（头部在画面下方），俏皮表情，头发自然垂落\",\n      \"8_bottom_center\": \"盘腿坐姿，紧紧抱着棕色泰迪熊，微微嘟嘴\",\n      \"9_bottom_right\": \"坐直，手持粉色复古电话听筒贴在耳边，侧头像在听八卦\"\n    },\n    \"camera_technical_values\": {\n      \"focal_length\": \"35mm\",\n      \"aperture\": \"f/5.6\",", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;model&quot;: &quot;Nano Banana Pro (Gemini)&quot;,<br>  &quot;prompt&quot;: {<br>    &quot;layout&quot;: {<br>      &quot;type&quot;: &quot;3x3 照片拼贴 / 九宫格&quot;,<br>      &quot;description&quot;: &quot;9 张竖版人像照片以正方形网格排列&quot;,<br>      &quot;consistency&quot;: &quot;9 个画面中为同一人物、同一服装、同一光线条件&quot;<br>    },<br>    &quot;aesthetic_style&quot;: {<br>      &quot;theme&quot;: &quot;Z 世代居家派对 / 少女闺房写真&quot;,<br>      &quot;lighting_technique&quot;: &quot;机顶直闪（硬光）&quot;,<br>      &quot;visuals&quot;: &quot;高对比度、清晰锐利阴影、混乱有趣的氛围、鲜艳色彩、白色背景&quot;<br>    },<br>    &quot;subject_details&quot;: {<br>      &quot;appearance&quot;: &quot;年轻亚洲女性，肤色白皙，深色长卷发，发量蓬松&quot;,<br>      &quot;outfit&quot;: &quot;白色碎花吊带上衣，蓝色牛仔短裤&quot;,<br>      &quot;makeup&quot;: &quot;浓重粉色腮红（Igari 醉酒妆风格），红色唇妆，脸颊带亮片&quot;<br>    },<br>    &quot;environment_and_props&quot;: {<br>      &quot;background&quot;: &quot;贴有照片的白色墙面，白色床单&quot;,<br>      &quot;decor&quot;: [<br>        &quot;银色迪斯科球（多种尺寸）&quot;,<br>        &quot;五彩金属亮片纸散落&quot;,<br>        &quot;棕色泰迪熊&quot;,<br>        &quot;粉色复古有线电话&quot;<br>      ]<br>    },<br>    &quot;panel_pose_breakdown&quot;: {<br>      &quot;1_top_left&quot;: &quot;俯卧趴着，下巴放在交叉的手臂上，看向镜头，头发上有亮片&quot;,<br>      &quot;2_top_center&quot;: &quot;俯拍视角仰躺，眨一只眼，比 V 手势，头发向四周散开&quot;,<br>      &quot;3_top_right&quot;: &quot;侧坐，双膝弯曲，大笑抓拍，向空中抛洒亮片&quot;,<br>      &quot;4_middle_left&quot;: &quot;上半身倚靠在大型银色迪斯科球上，目光强烈直视镜头&quot;,<br>      &quot;5_middle_center&quot;: &quot;近景特写，双手贴在脸颊，惊讶或害羞表情，亮片粘在脸上&quot;,<br>      &quot;6_middle_right&quot;: &quot;躺在迪斯科球之间，一只手向上伸向天花板或镜头&quot;,<br>      &quot;7_bottom_left&quot;: &quot;倒置视角（头部在画面下方），俏皮表情，头发自然垂落&quot;,<br>      &quot;8_bottom_center&quot;: &quot;盘腿坐姿，紧紧抱着棕色泰迪熊，微微嘟嘴&quot;,<br>      &quot;9_bottom_right&quot;: &quot;坐直，手持粉色复古电话听筒贴在耳边，侧头像在听八卦&quot;<br>    },<br>    &quot;camera_technical_values&quot;: {<br>      &quot;focal_length&quot;: &quot;35mm&quot;,<br>      &quot;aperture&quot;: &quot;f/5.6&quot;,</p>
+        <div data-nosnippet><p>{<br>  &quot;model&quot;: &quot;Nano Banana Pro (Gemini)&quot;,<br>  &quot;prompt&quot;: {<br>    &quot;layout&quot;: {<br>      &quot;type&quot;: &quot;3x3 照片拼贴 / 九宫格&quot;,<br>      &quot;description&quot;: &quot;9 张竖版人像照片以正方形网格排列&quot;,<br>      &quot;consistency&quot;: &quot;9 个画面中为同一人物、同一服装、同一光线条件&quot;<br>    },<br>    &quot;aesthetic_style&quot;: {<br>      &quot;theme&quot;: &quot;Z 世代居家派对 / 少女闺房写真&quot;,<br>      &quot;lighting_technique&quot;: &quot;机顶直闪（硬光）&quot;,<br>      &quot;visuals&quot;: &quot;高对比度、清晰锐利阴影、混乱有趣的氛围、鲜艳色彩、白色背景&quot;<br>    },<br>    &quot;subject_details&quot;: {<br>      &quot;appearance&quot;: &quot;年轻亚洲女性，肤色白皙，深色长卷发，发量蓬松&quot;,<br>      &quot;outfit&quot;: &quot;白色碎花吊带上衣，蓝色牛仔短裤&quot;,<br>      &quot;makeup&quot;: &quot;浓重粉色腮红（Igari 醉酒妆风格），红色唇妆，脸颊带亮片&quot;<br>    },<br>    &quot;environment_and_props&quot;: {<br>      &quot;background&quot;: &quot;贴有照片的白色墙面，白色床单&quot;,<br>      &quot;decor&quot;: [<br>        &quot;银色迪斯科球（多种尺寸）&quot;,<br>        &quot;五彩金属亮片纸散落&quot;,<br>        &quot;棕色泰迪熊&quot;,<br>        &quot;粉色复古有线电话&quot;<br>      ]<br>    },<br>    &quot;panel_pose_breakdown&quot;: {<br>      &quot;1_top_left&quot;: &quot;俯卧趴着，下巴放在交叉的手臂上，看向镜头，头发上有亮片&quot;,<br>      &quot;2_top_center&quot;: &quot;俯拍视角仰躺，眨一只眼，比 V 手势，头发向四周散开&quot;,<br>      &quot;3_top_right&quot;: &quot;侧坐，双膝弯曲，大笑抓拍，向空中抛洒亮片&quot;,<br>      &quot;4_middle_left&quot;: &quot;上半身倚靠在大型银色迪斯科球上，目光强烈直视镜头&quot;,<br>      &quot;5_middle_center&quot;: &quot;近景特写，双手贴在脸颊，惊讶或害羞表情，亮片粘在脸上&quot;,<br>      &quot;6_middle_right&quot;: &quot;躺在迪斯科球之间，一只手向上伸向天花板或镜头&quot;,<br>      &quot;7_bottom_left&quot;: &quot;倒置视角（头部在画面下方），俏皮表情，头发自然垂落&quot;,<br>      &quot;8_bottom_center&quot;: &quot;盘腿坐姿，紧紧抱着棕色泰迪熊，微微嘟嘴&quot;,<br>      &quot;9_bottom_right&quot;: &quot;坐直，手持粉色复古电话听筒贴在耳边，侧头像在听八卦&quot;<br>    },<br>    &quot;camera_technical_values&quot;: {<br>      &quot;focal_length&quot;: &quot;35mm&quot;,<br>      &quot;aperture&quot;: &quot;f/5.6&quot;,</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("{\n  \"model\": \"Nano Banana Pro (Gemini)\",\n  \"prompt\": {\n    \"layout\": {\n      \"type\": \"3x3 photo collage / nine-grid\",\n      \"description\": \"9 vertical portrait photos arranged in a square grid\",\n      \"consistency\": \"In all 9 frames the same person, the same outfit, and the same lighting conditions\"\n    },\n    \"aesthetic_style\": {\n      \"theme\": \"Gen Z at-home party / girlish boudoir portrait\",\n      \"lighting_technique\": \"on-camera flash from above (hard light)\",\n      \"visuals\": \"high contrast, sharp crisp shadows, playful chaotic atmosphere, vibrant colors, white background\"\n    },\n    \"subject_details\": {\n      \"appearance\": \"young Asian woman, fair skin, long dark wavy hair, voluminous hair\",\n      \"outfit\": \"white floral camisole top, blue denim shorts\",\n      \"makeup\": \"heavy pink blush (Igari 'drunk' makeup style), red lipstick, cheeks with glitter\"\n    },\n    \"environment_and_props\": {\n      \"background\": \"white wall with photos attached, white bedsheet\",\n      \"decor\": [\n        \"silver disco balls (various sizes)\",\n        \"multicolored metallic sequin paper scattered\",\n        \"brown teddy bear\",\n        \"pink vintage corded telephone\"\n      ]\n    },\n    \"panel_pose_breakdown\": {\n      \"1_top_left\": \"lying prone on stomach, chin on crossed arms, looking at the camera, glitter in hair\",\n      \"2_top_center\": \"overhead shot of her lying on her back, winking one eye, making a V sign, hair splayed around\",\n      \"3_top_right\": \"sitting sideways, knees bent, captured mid-laugh, tossing glitter into the air\",\n      \"4_middle_left\": \"upper body leaning against a large silver disco ball, intense gaze directly at the camera\",\n      \"5_middle_center\": \"close-up, hands pressed to cheeks, surprised or shy expression, glitter stuck to face\",\n      \"6_middle_right\": \"lying among disco balls, one hand reaching up toward the ceiling or camera\",\n      \"7_bottom_left\": \"inverted angle (head at bottom of frame), playful expression, hair naturally hanging down\",\n      \"8_bottom_center\": \"sitting cross-legged, hugging a brown teddy bear tightly, slightly pouting\",\n      \"9_bottom_right\": \"sitting upright, holding the pink vintage phone receiver to her ear, profile like she's listening to gossip\"\n    },\n    \"camera_technical_values\": {\n      \"focal_length\": \"35mm\",\n      \"aperture\": \"f/5.6\",\n}", this)'>📋 复制</button>
         </div>
-        <p>{<br>  &quot;model&quot;: &quot;Nano Banana Pro (Gemini)&quot;,<br>  &quot;prompt&quot;: {<br>    &quot;layout&quot;: {<br>      &quot;type&quot;: &quot;3x3 photo collage / nine-grid&quot;,<br>      &quot;description&quot;: &quot;9 vertical portrait photos arranged in a square grid&quot;,<br>      &quot;consistency&quot;: &quot;In all 9 frames the same person, the same outfit, and the same lighting conditions&quot;<br>    },<br>    &quot;aesthetic_style&quot;: {<br>      &quot;theme&quot;: &quot;Gen Z at-home party / girlish boudoir portrait&quot;,<br>      &quot;lighting_technique&quot;: &quot;on-camera flash from above (hard light)&quot;,<br>      &quot;visuals&quot;: &quot;high contrast, sharp crisp shadows, playful chaotic atmosphere, vibrant colors, white background&quot;<br>    },<br>    &quot;subject_details&quot;: {<br>      &quot;appearance&quot;: &quot;young Asian woman, fair skin, long dark wavy hair, voluminous hair&quot;,<br>      &quot;outfit&quot;: &quot;white floral camisole top, blue denim shorts&quot;,<br>      &quot;makeup&quot;: &quot;heavy pink blush (Igari &#39;drunk&#39; makeup style), red lipstick, cheeks with glitter&quot;<br>    },<br>    &quot;environment_and_props&quot;: {<br>      &quot;background&quot;: &quot;white wall with photos attached, white bedsheet&quot;,<br>      &quot;decor&quot;: [<br>        &quot;silver disco balls (various sizes)&quot;,<br>        &quot;multicolored metallic sequin paper scattered&quot;,<br>        &quot;brown teddy bear&quot;,<br>        &quot;pink vintage corded telephone&quot;<br>      ]<br>    },<br>    &quot;panel_pose_breakdown&quot;: {<br>      &quot;1_top_left&quot;: &quot;lying prone on stomach, chin on crossed arms, looking at the camera, glitter in hair&quot;,<br>      &quot;2_top_center&quot;: &quot;overhead shot of her lying on her back, winking one eye, making a V sign, hair splayed around&quot;,<br>      &quot;3_top_right&quot;: &quot;sitting sideways, knees bent, captured mid-laugh, tossing glitter into the air&quot;,<br>      &quot;4_middle_left&quot;: &quot;upper body leaning against a large silver disco ball, intense gaze directly at the camera&quot;,<br>      &quot;5_middle_center&quot;: &quot;close-up, hands pressed to cheeks, surprised or shy expression, glitter stuck to face&quot;,<br>      &quot;6_middle_right&quot;: &quot;lying among disco balls, one hand reaching up toward the ceiling or camera&quot;,<br>      &quot;7_bottom_left&quot;: &quot;inverted angle (head at bottom of frame), playful expression, hair naturally hanging down&quot;,<br>      &quot;8_bottom_center&quot;: &quot;sitting cross-legged, hugging a brown teddy bear tightly, slightly pouting&quot;,<br>      &quot;9_bottom_right&quot;: &quot;sitting upright, holding the pink vintage phone receiver to her ear, profile like she&#39;s listening to gossip&quot;<br>    },<br>    &quot;camera_technical_values&quot;: {<br>      &quot;focal_length&quot;: &quot;35mm&quot;,<br>      &quot;aperture&quot;: &quot;f/5.6&quot;,<br>}</p>
+        <div data-nosnippet><p>{<br>  &quot;model&quot;: &quot;Nano Banana Pro (Gemini)&quot;,<br>  &quot;prompt&quot;: {<br>    &quot;layout&quot;: {<br>      &quot;type&quot;: &quot;3x3 photo collage / nine-grid&quot;,<br>      &quot;description&quot;: &quot;9 vertical portrait photos arranged in a square grid&quot;,<br>      &quot;consistency&quot;: &quot;In all 9 frames the same person, the same outfit, and the same lighting conditions&quot;<br>    },<br>    &quot;aesthetic_style&quot;: {<br>      &quot;theme&quot;: &quot;Gen Z at-home party / girlish boudoir portrait&quot;,<br>      &quot;lighting_technique&quot;: &quot;on-camera flash from above (hard light)&quot;,<br>      &quot;visuals&quot;: &quot;high contrast, sharp crisp shadows, playful chaotic atmosphere, vibrant colors, white background&quot;<br>    },<br>    &quot;subject_details&quot;: {<br>      &quot;appearance&quot;: &quot;young Asian woman, fair skin, long dark wavy hair, voluminous hair&quot;,<br>      &quot;outfit&quot;: &quot;white floral camisole top, blue denim shorts&quot;,<br>      &quot;makeup&quot;: &quot;heavy pink blush (Igari &#39;drunk&#39; makeup style), red lipstick, cheeks with glitter&quot;<br>    },<br>    &quot;environment_and_props&quot;: {<br>      &quot;background&quot;: &quot;white wall with photos attached, white bedsheet&quot;,<br>      &quot;decor&quot;: [<br>        &quot;silver disco balls (various sizes)&quot;,<br>        &quot;multicolored metallic sequin paper scattered&quot;,<br>        &quot;brown teddy bear&quot;,<br>        &quot;pink vintage corded telephone&quot;<br>      ]<br>    },<br>    &quot;panel_pose_breakdown&quot;: {<br>      &quot;1_top_left&quot;: &quot;lying prone on stomach, chin on crossed arms, looking at the camera, glitter in hair&quot;,<br>      &quot;2_top_center&quot;: &quot;overhead shot of her lying on her back, winking one eye, making a V sign, hair splayed around&quot;,<br>      &quot;3_top_right&quot;: &quot;sitting sideways, knees bent, captured mid-laugh, tossing glitter into the air&quot;,<br>      &quot;4_middle_left&quot;: &quot;upper body leaning against a large silver disco ball, intense gaze directly at the camera&quot;,<br>      &quot;5_middle_center&quot;: &quot;close-up, hands pressed to cheeks, surprised or shy expression, glitter stuck to face&quot;,<br>      &quot;6_middle_right&quot;: &quot;lying among disco balls, one hand reaching up toward the ceiling or camera&quot;,<br>      &quot;7_bottom_left&quot;: &quot;inverted angle (head at bottom of frame), playful expression, hair naturally hanging down&quot;,<br>      &quot;8_bottom_center&quot;: &quot;sitting cross-legged, hugging a brown teddy bear tightly, slightly pouting&quot;,<br>      &quot;9_bottom_right&quot;: &quot;sitting upright, holding the pink vintage phone receiver to her ear, profile like she&#39;s listening to gossip&quot;<br>    },<br>    &quot;camera_technical_values&quot;: {<br>      &quot;focal_length&quot;: &quot;35mm&quot;,<br>      &quot;aperture&quot;: &quot;f/5.6&quot;,<br>}</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2012027041580007890-1.jpg" alt="&quot;model&quot;: &quot;Nano Banana Pro (Gemini)&quot;," loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 1407,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

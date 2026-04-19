@@ -7,11 +7,13 @@
     <title>Seedance 2.0 Grid Layout Techniques #2779 | Gem Nana AI Prompt Library</title>
     <meta name="description" content="Generate a tips checklist with Grok, then use a grid and banana controls to manage the degrees of freedom for movement. Suitable for choreographing skating moves and editing in SD2.">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/en/case/2779.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2779.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2779.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245843744">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606023361">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/en/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">Home</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/en/image/index.html" class="nav-item ">
           <span class="nav-icon">📷</span>
           <span class="nav-text">Image</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/en/video/index.html" class="nav-item active">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">Video</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/en/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        <button class="view-full-btn" id="publishXhsVideoBtn" onclick="publishCurrentCaseToXhs(this, 'video')">Publish Video Post to XHS</button>
         <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
       </div>
 
@@ -202,17 +206,17 @@
           <h3>🎨 Chinese Prompt</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Seedance 2.0 小技巧：\r\n我就是用网格来给AI足够的自由度，同时保持一套受控的招式和技巧。非常适合任何有编排的动作。\r\n工作流程：\r\n用Grok生成一份你可以选择的技巧列表。选择9种变化。\r\n用香蕉做成网格。指定每个网格中的姿势应当在当下最能代表 tenique。\r\nSD2 提示：\r\n一位奥运滑冰选手正在表演她美丽且节奏明快的滑冰编舞。在她的表演过程中，从@图片2中随机选出至少3个动作。动作之间不停歇。每一步都应锐利且顺畅衔接下一步。每次动作不得超过4秒。通过戏剧性剪辑突出她的速度和准确执行，展现她的面部表情，成为情感高潮。必须包含至少一次旋转和一次跳跃。镜头工作应包括快速360度轨道、快速喷射剪辑、ECU镜头到她落地跳跃时的镜头、滑冰鞋在镜头前滑行的动态推拉动作，或者任何你认为合适的镜头。世界级滑冰选手的完美表现。", this)'>📋 Copy</button>
         </div>
-        <p>Seedance 2.0 小技巧：<br>我就是用网格来给AI足够的自由度，同时保持一套受控的招式和技巧。非常适合任何有编排的动作。<br>工作流程：<br>用Grok生成一份你可以选择的技巧列表。选择9种变化。<br>用香蕉做成网格。指定每个网格中的姿势应当在当下最能代表 tenique。<br>SD2 提示：<br>一位奥运滑冰选手正在表演她美丽且节奏明快的滑冰编舞。在她的表演过程中，从@图片2中随机选出至少3个动作。动作之间不停歇。每一步都应锐利且顺畅衔接下一步。每次动作不得超过4秒。通过戏剧性剪辑突出她的速度和准确执行，展现她的面部表情，成为情感高潮。必须包含至少一次旋转和一次跳跃。镜头工作应包括快速360度轨道、快速喷射剪辑、ECU镜头到她落地跳跃时的镜头、滑冰鞋在镜头前滑行的动态推拉动作，或者任何你认为合适的镜头。世界级滑冰选手的完美表现。</p>
+        <div data-nosnippet><p>Seedance 2.0 小技巧：<br>我就是用网格来给AI足够的自由度，同时保持一套受控的招式和技巧。非常适合任何有编排的动作。<br>工作流程：<br>用Grok生成一份你可以选择的技巧列表。选择9种变化。<br>用香蕉做成网格。指定每个网格中的姿势应当在当下最能代表 tenique。<br>SD2 提示：<br>一位奥运滑冰选手正在表演她美丽且节奏明快的滑冰编舞。在她的表演过程中，从@图片2中随机选出至少3个动作。动作之间不停歇。每一步都应锐利且顺畅衔接下一步。每次动作不得超过4秒。通过戏剧性剪辑突出她的速度和准确执行，展现她的面部表情，成为情感高潮。必须包含至少一次旋转和一次跳跃。镜头工作应包括快速360度轨道、快速喷射剪辑、ECU镜头到她落地跳跃时的镜头、滑冰鞋在镜头前滑行的动态推拉动作，或者任何你认为合适的镜头。世界级滑冰选手的完美表现。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 English Prompt</h3>
-          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Seedance 2.0 Tip:\r\nThis is how I use grids to give just enough freedom for AI to work with while maintaining a controlled set of moves/techniques. Great for anything that is choreographed.\r\nWorkflow:\r\nUse Grok to generate a list of techniques that you can pick from. choose 9 variations.\r\nUse banana to make it into a grid. Specify that the pose in each grid should be at the moment most representative of the tenique.\r\nSD2 Prompt:\r\nAn olympic skater is performing her beautiful fast paced skate choreography. Choose at least 3 moves at random from @图片2 throughout her performance. No stopping between moves. Each move should be sharp and flow smoothly into the next move. Moves must not last longer than 4 seconds each. Emphasize her speed and accuracy of execution with dramatic cuts that shows her facial expression for emotional highlights. Must include at least 1 spin and 1 jump. Camera work should include fast 360 orbits, rapid jet cuts, ECUs to when she lands her jumps, dynamic push/pulls where her skate glides right infront of the camera, or any other that you think would be fitting. Perfect performance of a worldclass skater.", this)'>📋 Copy</button>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Seedance 2.0 Tip:\nThis is how I use grids to give just enough freedom for AI to work with while maintaining a controlled set of moves/techniques. Great for anything that is choreographed.\nWorkflow:\nUse Grok to generate a list of techniques that you can pick from. choose 9 variations.\nUse banana to make it into a grid. Specify that the pose in each grid should be at the moment most representative of the technique.\nSD2 Prompt:\nAn olympic skater is performing her beautiful fast paced skate choreography. Choose at least 3 moves at random from @image2 throughout her performance. No stopping between moves. Each move should be sharp and flow smoothly into the next move. Moves must not last longer than 4 seconds each. Emphasize her speed and accuracy of execution with dramatic cuts that show her facial expression for emotional highlights. Must include at least 1 spin and 1 jump. Camera work should include fast 360 orbits, rapid jet cuts, ECUs to when she lands her jumps, dynamic push/pulls where her skate glides right in front of the camera, or any other that you think would be fitting. Perfect performance of a worldclass skater.", this)'>📋 Copy</button>
         </div>
-        <p>Seedance 2.0 Tip:<br>This is how I use grids to give just enough freedom for AI to work with while maintaining a controlled set of moves/techniques. Great for anything that is choreographed.<br>Workflow:<br>Use Grok to generate a list of techniques that you can pick from. choose 9 variations.<br>Use banana to make it into a grid. Specify that the pose in each grid should be at the moment most representative of the tenique.<br>SD2 Prompt:<br>An olympic skater is performing her beautiful fast paced skate choreography. Choose at least 3 moves at random from @图片2 throughout her performance. No stopping between moves. Each move should be sharp and flow smoothly into the next move. Moves must not last longer than 4 seconds each. Emphasize her speed and accuracy of execution with dramatic cuts that shows her facial expression for emotional highlights. Must include at least 1 spin and 1 jump. Camera work should include fast 360 orbits, rapid jet cuts, ECUs to when she lands her jumps, dynamic push/pulls where her skate glides right infront of the camera, or any other that you think would be fitting. Perfect performance of a worldclass skater.</p>
+        <div data-nosnippet><p>Seedance 2.0 Tip:<br>This is how I use grids to give just enough freedom for AI to work with while maintaining a controlled set of moves/techniques. Great for anything that is choreographed.<br>Workflow:<br>Use Grok to generate a list of techniques that you can pick from. choose 9 variations.<br>Use banana to make it into a grid. Specify that the pose in each grid should be at the moment most representative of the technique.<br>SD2 Prompt:<br>An olympic skater is performing her beautiful fast paced skate choreography. Choose at least 3 moves at random from @image2 throughout her performance. No stopping between moves. Each move should be sharp and flow smoothly into the next move. Moves must not last longer than 4 seconds each. Emphasize her speed and accuracy of execution with dramatic cuts that show her facial expression for emotional highlights. Must include at least 1 spin and 1 jump. Camera work should include fast 360 orbits, rapid jet cuts, ECUs to when she lands her jumps, dynamic push/pulls where her skate glides right in front of the camera, or any other that you think would be fitting. Perfect performance of a worldclass skater.</p></div>
       </div>
-      <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/../images/tweet-2043733597803421732-1.jpg" alt="Seedance 2.0 网格编排技巧" loading="lazy"></div></div>
-      <div class="detail-block"><h3>🎬 Videos</h3><div class="detail-media-grid"><video controls><source src="/../videos/tweet-2043733597803421732-1.mp4" type="video/mp4"></video></div></div>
+      <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2043733597803421732-1.jpg" alt="Seedance 2.0 网格编排技巧" loading="lazy"></div></div>
+      <div class="detail-block"><h3>🎬 Videos</h3><div class="detail-media-grid"><video controls><source src="/videos/tweet-2043733597803421732-1.mp4" type="video/mp4"></video></div></div>
       
     </div>
 
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2779,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;

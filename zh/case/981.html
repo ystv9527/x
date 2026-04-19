@@ -7,11 +7,13 @@
     <title>Create a realistic portrait (100% identical face, no editing... #981 | Gem Nana AI 提示词库</title>
     <meta name="description" content="Create a realistic portrait (100% identical face, no editing allowed). A hyper realistic black and white portrait of...">
     <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
     <link rel="canonical" href="https://gemnana.com/zh/case/981.html">
     <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/981.html">
     <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/981.html">
     <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
-    <link rel="stylesheet" href="/assets/style.css?v=1776245841335">
+    <link rel="stylesheet" href="/assets/style.css?v=1776606022563">
     <style>
       .lang-switch-link {
         display: inline-block;
@@ -72,7 +74,7 @@
         cursor: pointer;
       }
       .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
-      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
       .local-action-row .view-full-btn { width: auto; min-width: 180px; }
       .pagination {
         display: flex;
@@ -151,17 +153,17 @@
         <a href="/zh/index.html" class="nav-item ">
           <span class="nav-icon">🏠</span>
           <span class="nav-text">首页</span>
-          <span class="nav-count">2788</span>
+          <span class="nav-count">2843</span>
         </a>
         <a href="/zh/image/index.html" class="nav-item active">
           <span class="nav-icon">📷</span>
           <span class="nav-text">图片生成</span>
-          <span class="nav-count">2762</span>
+          <span class="nav-count">2815</span>
         </a>
         <a href="/zh/video/index.html" class="nav-item ">
           <span class="nav-icon">🎬</span>
           <span class="nav-text">视频生成</span>
-          <span class="nav-count">23</span>
+          <span class="nav-count">25</span>
         </a>
         <a href="/zh/text/index.html" class="nav-item ">
           <span class="nav-icon">💬</span>
@@ -193,6 +195,8 @@
     <div class="detail-body">
       <div id="localActionRow" class="local-action-row">
         <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
         <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
       </div>
 
@@ -202,14 +206,14 @@
           <h3>🎨 中文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("创建一个真实写实的肖像（面部与真人100%相同，禁止编辑）。\n一幅超写实的黑白肖像，描绘一位年轻美丽的女性，表情平静、严肃且内省，随意地坐在一堆质朴的木箱上，置于极简主义的摄影棚环境中。她正对镜头，姿态放松而自信，双腿微微分开，一只手自然地放在两膝之间，另一只手松弛地横搭在大腿上，形成强烈的时尚编辑式姿势。\n她留有直且深色的齐肩发，自然中分，略显蓬松，轻柔地修饰着脸庞。面部特征精致对称，皮肤质感自然光滑，眼下有细微阴影，嘴唇柔软微张，深邃且富有表现力的眼睛直视镜头，传达出平静的自信与情感深度。淡妆或无浓妆突显自然的编辑美学。\n服装与风格：\n她穿着一件修身的黑色西装外套，肩部有结构感，内搭简约的白色圆领T恤，配以裁短的黑色条纹长裤。脚踏现代感厚底白色运动鞋，搭配至小腿的白色袜子，上有粗黑横条纹，为正式的西装带来随性的街头风格对比。配饰极少，无明显首饰。指甲涂成黑色。\n光线与氛围：\n采用高对比的电影式光线，侧面有强烈的定向自然光照入，在朴素的摄影棚墙面以及她的身体部分投射出戏剧性的斜线光影。光线创造出深度和质感，营造出类似高端时尚杂志的情绪化编辑氛围。柔和的阴影保留面部细节，同时保持强烈对比。\n相机与构图：\n中长全身镜头，眼平视角，居中构图。使用专业单反或中画幅相机拍摄，配备定焦镜头（50mm–85mm）。浅景深，对主体锐利对焦，背景略微虚化。细节清晰，布料的细腻质感可见，皮肤毛孔可见，光线衰减自然写实。\n风格与质量：\n编辑时尚摄影，极简、电影感、单色美学，Vogue 风格肖像，超高分辨率，焦点锐利，具有胶片般对比度，营造出永恒且现代的氛围。", this)'>📋 复制</button>
         </div>
-        <p>创建一个真实写实的肖像（面部与真人100%相同，禁止编辑）。<br>一幅超写实的黑白肖像，描绘一位年轻美丽的女性，表情平静、严肃且内省，随意地坐在一堆质朴的木箱上，置于极简主义的摄影棚环境中。她正对镜头，姿态放松而自信，双腿微微分开，一只手自然地放在两膝之间，另一只手松弛地横搭在大腿上，形成强烈的时尚编辑式姿势。<br>她留有直且深色的齐肩发，自然中分，略显蓬松，轻柔地修饰着脸庞。面部特征精致对称，皮肤质感自然光滑，眼下有细微阴影，嘴唇柔软微张，深邃且富有表现力的眼睛直视镜头，传达出平静的自信与情感深度。淡妆或无浓妆突显自然的编辑美学。<br>服装与风格：<br>她穿着一件修身的黑色西装外套，肩部有结构感，内搭简约的白色圆领T恤，配以裁短的黑色条纹长裤。脚踏现代感厚底白色运动鞋，搭配至小腿的白色袜子，上有粗黑横条纹，为正式的西装带来随性的街头风格对比。配饰极少，无明显首饰。指甲涂成黑色。<br>光线与氛围：<br>采用高对比的电影式光线，侧面有强烈的定向自然光照入，在朴素的摄影棚墙面以及她的身体部分投射出戏剧性的斜线光影。光线创造出深度和质感，营造出类似高端时尚杂志的情绪化编辑氛围。柔和的阴影保留面部细节，同时保持强烈对比。<br>相机与构图：<br>中长全身镜头，眼平视角，居中构图。使用专业单反或中画幅相机拍摄，配备定焦镜头（50mm–85mm）。浅景深，对主体锐利对焦，背景略微虚化。细节清晰，布料的细腻质感可见，皮肤毛孔可见，光线衰减自然写实。<br>风格与质量：<br>编辑时尚摄影，极简、电影感、单色美学，Vogue 风格肖像，超高分辨率，焦点锐利，具有胶片般对比度，营造出永恒且现代的氛围。</p>
+        <div data-nosnippet><p>创建一个真实写实的肖像（面部与真人100%相同，禁止编辑）。<br>一幅超写实的黑白肖像，描绘一位年轻美丽的女性，表情平静、严肃且内省，随意地坐在一堆质朴的木箱上，置于极简主义的摄影棚环境中。她正对镜头，姿态放松而自信，双腿微微分开，一只手自然地放在两膝之间，另一只手松弛地横搭在大腿上，形成强烈的时尚编辑式姿势。<br>她留有直且深色的齐肩发，自然中分，略显蓬松，轻柔地修饰着脸庞。面部特征精致对称，皮肤质感自然光滑，眼下有细微阴影，嘴唇柔软微张，深邃且富有表现力的眼睛直视镜头，传达出平静的自信与情感深度。淡妆或无浓妆突显自然的编辑美学。<br>服装与风格：<br>她穿着一件修身的黑色西装外套，肩部有结构感，内搭简约的白色圆领T恤，配以裁短的黑色条纹长裤。脚踏现代感厚底白色运动鞋，搭配至小腿的白色袜子，上有粗黑横条纹，为正式的西装带来随性的街头风格对比。配饰极少，无明显首饰。指甲涂成黑色。<br>光线与氛围：<br>采用高对比的电影式光线，侧面有强烈的定向自然光照入，在朴素的摄影棚墙面以及她的身体部分投射出戏剧性的斜线光影。光线创造出深度和质感，营造出类似高端时尚杂志的情绪化编辑氛围。柔和的阴影保留面部细节，同时保持强烈对比。<br>相机与构图：<br>中长全身镜头，眼平视角，居中构图。使用专业单反或中画幅相机拍摄，配备定焦镜头（50mm–85mm）。浅景深，对主体锐利对焦，背景略微虚化。细节清晰，布料的细腻质感可见，皮肤毛孔可见，光线衰减自然写实。<br>风格与质量：<br>编辑时尚摄影，极简、电影感、单色美学，Vogue 风格肖像，超高分辨率，焦点锐利，具有胶片般对比度，营造出永恒且现代的氛围。</p></div>
       </div>
       <div class="detail-block">
         <div class="prompt-head-row">
           <h3>🎨 英文提示词</h3>
           <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create a realistic portrait (100% identical face, no editing allowed).\nA hyper-realistic black-and-white portrait of a young beautiful woman with a calm, serious, and introspective expression, sitting casually on a stack of rustic wooden crates in a minimalist studio setting. She faces the camera directly with a relaxed yet confident posture, her legs slightly apart, one hand resting naturally between her knees and the other loosely stretched across her thigh, creating a powerful editorial fashion pose.\nShe has straight, dark, shoulder-length hair with a natural center parting, slightly tousled, gently framing her face. Her facial features are delicate and symmetrical, with a naturally smooth skin texture, subtle shadows under her eyes, soft, slightly parted lips, and deep, expressive eyes staring directly into the lens, conveying a calm confidence and emotional depth. The lack of heavy makeup emphasizes the natural editorial aesthetic.\nClothing & Style:\nShe wears a fitted black blazer with structured shoulders over a simple white crew-neck T-shirt, paired with cropped black striped trousers. On her feet are modern, chunky white sneakers, paired with white calf-length socks with bold black horizontal stripes, adding a casual street-style contrast to the formal blazer.  Minimal accessories, no visible jewelry. Her nails are painted black.\nLighting & Ambiance:\nHigh-contrast cinematic lighting with strong, directional natural light coming in from the side, creating dramatic diagonal streaks of light and shadow on the plain studio walls and partly on her body. The lighting creates depth, texture, and a moody editorial atmosphere reminiscent of a high-end fashion magazine. Soft shadows preserve facial details while maintaining strong contrast.\nCamera & Composition:\nMedium-full-length shot, eye-level perspective, centered composition. Shot with a professional DSLR or medium format camera, using a prime lens (50mm–85mm). Shallow depth of field with sharp focus on the subject, subtle background blur. Sharp details, subtle texture of fabric, visible skin pores, realistic falloff.\n\nStyle & Quality:\nEditorial fashion photography, minimalist, cinematic, monochrome aesthetic, Vogue-style portraiture, ultra-high resolution, sharp focus, film-like contrast, timeless and modern atmosphere.", this)'>📋 复制</button>
         </div>
-        <p>Create a realistic portrait (100% identical face, no editing allowed).<br>A hyper-realistic black-and-white portrait of a young beautiful woman with a calm, serious, and introspective expression, sitting casually on a stack of rustic wooden crates in a minimalist studio setting. She faces the camera directly with a relaxed yet confident posture, her legs slightly apart, one hand resting naturally between her knees and the other loosely stretched across her thigh, creating a powerful editorial fashion pose.<br>She has straight, dark, shoulder-length hair with a natural center parting, slightly tousled, gently framing her face. Her facial features are delicate and symmetrical, with a naturally smooth skin texture, subtle shadows under her eyes, soft, slightly parted lips, and deep, expressive eyes staring directly into the lens, conveying a calm confidence and emotional depth. The lack of heavy makeup emphasizes the natural editorial aesthetic.<br>Clothing &amp; Style:<br>She wears a fitted black blazer with structured shoulders over a simple white crew-neck T-shirt, paired with cropped black striped trousers. On her feet are modern, chunky white sneakers, paired with white calf-length socks with bold black horizontal stripes, adding a casual street-style contrast to the formal blazer.  Minimal accessories, no visible jewelry. Her nails are painted black.<br>Lighting &amp; Ambiance:<br>High-contrast cinematic lighting with strong, directional natural light coming in from the side, creating dramatic diagonal streaks of light and shadow on the plain studio walls and partly on her body. The lighting creates depth, texture, and a moody editorial atmosphere reminiscent of a high-end fashion magazine. Soft shadows preserve facial details while maintaining strong contrast.<br>Camera &amp; Composition:<br>Medium-full-length shot, eye-level perspective, centered composition. Shot with a professional DSLR or medium format camera, using a prime lens (50mm–85mm). Shallow depth of field with sharp focus on the subject, subtle background blur. Sharp details, subtle texture of fabric, visible skin pores, realistic falloff.</p><p>Style &amp; Quality:<br>Editorial fashion photography, minimalist, cinematic, monochrome aesthetic, Vogue-style portraiture, ultra-high resolution, sharp focus, film-like contrast, timeless and modern atmosphere.</p>
+        <div data-nosnippet><p>Create a realistic portrait (100% identical face, no editing allowed).<br>A hyper-realistic black-and-white portrait of a young beautiful woman with a calm, serious, and introspective expression, sitting casually on a stack of rustic wooden crates in a minimalist studio setting. She faces the camera directly with a relaxed yet confident posture, her legs slightly apart, one hand resting naturally between her knees and the other loosely stretched across her thigh, creating a powerful editorial fashion pose.<br>She has straight, dark, shoulder-length hair with a natural center parting, slightly tousled, gently framing her face. Her facial features are delicate and symmetrical, with a naturally smooth skin texture, subtle shadows under her eyes, soft, slightly parted lips, and deep, expressive eyes staring directly into the lens, conveying a calm confidence and emotional depth. The lack of heavy makeup emphasizes the natural editorial aesthetic.<br>Clothing &amp; Style:<br>She wears a fitted black blazer with structured shoulders over a simple white crew-neck T-shirt, paired with cropped black striped trousers. On her feet are modern, chunky white sneakers, paired with white calf-length socks with bold black horizontal stripes, adding a casual street-style contrast to the formal blazer.  Minimal accessories, no visible jewelry. Her nails are painted black.<br>Lighting &amp; Ambiance:<br>High-contrast cinematic lighting with strong, directional natural light coming in from the side, creating dramatic diagonal streaks of light and shadow on the plain studio walls and partly on her body. The lighting creates depth, texture, and a moody editorial atmosphere reminiscent of a high-end fashion magazine. Soft shadows preserve facial details while maintaining strong contrast.<br>Camera &amp; Composition:<br>Medium-full-length shot, eye-level perspective, centered composition. Shot with a professional DSLR or medium format camera, using a prime lens (50mm–85mm). Shallow depth of field with sharp focus on the subject, subtle background blur. Sharp details, subtle texture of fabric, visible skin pores, realistic falloff.</p><p>Style &amp; Quality:<br>Editorial fashion photography, minimalist, cinematic, monochrome aesthetic, Vogue-style portraiture, ultra-high resolution, sharp focus, film-like contrast, timeless and modern atmosphere.</p></div>
       </div>
       <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2010210760023248929-1.jpg" alt="Create a realistic portrait (100% identical face, no editing..." loading="lazy"></div></div>
       
@@ -275,6 +279,33 @@
           alert((data && data.data && data.data.message) || 'OK');
         } catch (err) {
           alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 981,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
         } finally {
           button.disabled = false;
           button.textContent = original;
