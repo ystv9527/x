@@ -33,6 +33,8 @@ const XHS_VIRAL_TITLE_SKILL_ROOT = path.join(os.homedir(), '.skills-manager', 's
 const DATA_DIR = path.join(__dirname, 'data');
 const XHS_SCHEDULER_FILE = path.join(DATA_DIR, 'xhs-scheduler.json');
 const XHS_SCHEDULER_LOCK_FILE = path.join(DATA_DIR, 'xhs-scheduler.lock');
+const XHS_CONTENT_LIMIT = 1000;
+const XHS_LONG_PROMPT_THRESHOLD = 900;
 
 // Ensure directories exist
 if (!fs.existsSync(IMAGES_DIR)) {
@@ -1665,32 +1667,7 @@ function buildXhsTitle(item, payloadTitle) {
   return finalizeXhsTitle(preferred);
 }
 
-function buildXhsContent(item, payloadContent, options = {}) {
-  const forcePromptTag = options.forcePromptTag !== false;
-
-  if (safeTrim(payloadContent)) {
-    let content = safeTrim(payloadContent);
-    if (forcePromptTag && !/#prompt\b/i.test(content)) {
-      content = `${content}\n\n#prompt`;
-    }
-    return trimToLength(content, 1000);
-  }
-
-  const sections = [];
-  if (safeTrim(item?.summaryChinese)) {
-    sections.push(item.summaryChinese.trim());
-  } else if (safeTrim(item?.summary)) {
-    sections.push(item.summary.trim());
-  }
-
-  if (safeTrim(item?.contentChinese)) {
-    sections.push(item.contentChinese.trim());
-  } else if (safeTrim(item?.content)) {
-    sections.push(item.content.trim());
-  } else if (safeTrim(item?.contentEnglish)) {
-    sections.push(item.contentEnglish.trim());
-  }
-
+function buildXhsTagList(item, forcePromptTag) {
   const tags = normalizeTags(item?.tags)
     .slice(0, 4)
     .map((tag) => `#${String(tag || '').replace(/\s+/g, '')}`)
@@ -1698,12 +1675,189 @@ function buildXhsContent(item, payloadContent, options = {}) {
   if (forcePromptTag && !tags.some((tag) => /^#prompt$/i.test(tag))) {
     tags.unshift('#prompt');
   }
-  if (tags.length > 0) {
-    sections.push(tags.join(' '));
+  return tags.slice(0, 5);
+}
+
+function buildXhsPromptBody(item, payloadContent) {
+  if (safeTrim(payloadContent)) return safeTrim(payloadContent);
+  if (safeTrim(item?.contentChinese)) return item.contentChinese.trim();
+  if (safeTrim(item?.content)) return item.content.trim();
+  if (safeTrim(item?.contentEnglish)) return item.contentEnglish.trim();
+  if (safeTrim(item?.summaryChinese)) return item.summaryChinese.trim();
+  if (safeTrim(item?.summary)) return item.summary.trim();
+  return '';
+}
+
+function buildXhsSummaryBody(item, fullPrompt) {
+  const summary = safeTrim(item?.summaryChinese) || safeTrim(item?.summary);
+  if (summary) return summary;
+
+  const title = safeTrim(item?.title) || 'AI提示词案例';
+  const promptPreview = trimToLength(fullPrompt, 260);
+  return `${title}\n\n这组内容适合做 AI 出图参考，完整提示词已整理到最后一页图片，方便保存和复用。\n\n${promptPreview}`;
+}
+
+function buildXhsContentPlan(item, payloadContent, options = {}) {
+  const forcePromptTag = options.forcePromptTag !== false;
+  const tagsText = buildXhsTagList(item, forcePromptTag).join(' ');
+  const fullPrompt = buildXhsPromptBody(item, payloadContent);
+
+  if (!fullPrompt) {
+    return {
+      content: tagsText,
+      fullPrompt: '',
+      shouldCreatePromptCard: false
+    };
   }
 
-  const merged = sections.join('\n\n').trim();
-  return trimToLength(merged, 1000);
+  const fullContent = [fullPrompt, tagsText].filter(Boolean).join('\n\n').trim();
+  if (fullContent.length <= XHS_LONG_PROMPT_THRESHOLD) {
+    return {
+      content: trimToLength(fullContent, XHS_CONTENT_LIMIT),
+      fullPrompt,
+      shouldCreatePromptCard: false
+    };
+  }
+
+  const summaryBody = trimToLength(buildXhsSummaryBody(item, fullPrompt), 720);
+  const content = [
+    summaryBody,
+    '完整提示词见最后一页图片。',
+    tagsText
+  ].filter(Boolean).join('\n\n').trim();
+
+  return {
+    content: trimToLength(content, XHS_CONTENT_LIMIT),
+    fullPrompt,
+    shouldCreatePromptCard: true
+  };
+}
+
+function buildXhsContent(item, payloadContent, options = {}) {
+  return buildXhsContentPlan(item, payloadContent, options).content;
+}
+
+async function createXhsPromptCardImage(pythonCmd, tempDir, key, title, promptText) {
+  const prompt = safeTrim(promptText);
+  if (!prompt) return '';
+
+  const inputFile = path.join(tempDir, `prompt-card-${key}.json`);
+  const outputFile = path.join(tempDir, `prompt-card-${key}.png`);
+  fs.writeFileSync(inputFile, JSON.stringify({
+    title: safeTrim(title) || '完整提示词',
+    prompt
+  }), 'utf8');
+
+  const script = String.raw`
+import json
+import os
+import sys
+from PIL import Image, ImageDraw, ImageFont
+
+input_path, output_path = sys.argv[1], sys.argv[2]
+with open(input_path, "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+title = str(data.get("title") or "完整提示词").strip()
+prompt = str(data.get("prompt") or "").strip()
+
+font_candidates = [
+    r"C:\Windows\Fonts\msyh.ttc",
+    r"C:\Windows\Fonts\simhei.ttf",
+    r"C:\Windows\Fonts\simsun.ttc",
+]
+
+def load_font(size):
+    for font_path in font_candidates:
+        if os.path.exists(font_path):
+            return ImageFont.truetype(font_path, size)
+    return ImageFont.load_default()
+
+width = 1242
+margin = 76
+title_font = load_font(56)
+body_font = load_font(32)
+small_font = load_font(26)
+line_gap = 14
+max_width = width - margin * 2
+
+probe = Image.new("RGB", (width, 200), "white")
+draw = ImageDraw.Draw(probe)
+
+def text_width(text, font):
+    if not text:
+        return 0
+    box = draw.textbbox((0, 0), text, font=font)
+    return box[2] - box[0]
+
+def wrap_paragraph(text, font, max_line_width):
+    lines = []
+    current = ""
+    for ch in text:
+        candidate = current + ch
+        if current and text_width(candidate, font) > max_line_width:
+            lines.append(current)
+            current = ch
+        else:
+            current = candidate
+    lines.append(current)
+    return lines
+
+def wrap_text(text, font, max_line_width):
+    lines = []
+    for paragraph in text.splitlines():
+        if not paragraph.strip():
+            lines.append("")
+            continue
+        lines.extend(wrap_paragraph(paragraph, font, max_line_width))
+    return lines
+
+title_lines = wrap_text(title, title_font, max_width)
+body_lines = wrap_text(prompt, body_font, max_width)
+line_height = body_font.size + line_gap
+height = margin + len(title_lines) * 72 + 120 + len(body_lines) * line_height + margin
+height = max(1600, height)
+
+image = Image.new("RGB", (width, height), (255, 250, 238))
+draw = ImageDraw.Draw(image)
+
+for y in range(height):
+    ratio = y / max(1, height - 1)
+    r = int(255 * (1 - ratio) + 245 * ratio)
+    g = int(250 * (1 - ratio) + 238 * ratio)
+    b = int(238 * (1 - ratio) + 214 * ratio)
+    draw.line([(0, y), (width, y)], fill=(r, g, b))
+
+draw.rounded_rectangle([38, 38, width - 38, height - 38], radius=42, fill=(255, 255, 248), outline=(226, 190, 112), width=4)
+
+y = margin
+for line in title_lines:
+    draw.text((margin, y), line, fill=(54, 43, 30), font=title_font)
+    y += 72
+y += 12
+draw.rounded_rectangle([margin, y, margin + 220, y + 46], radius=23, fill=(54, 43, 30))
+draw.text((margin + 28, y + 7), "完整提示词", fill=(255, 246, 218), font=small_font)
+y += 78
+
+for line in body_lines:
+    draw.text((margin, y), line, fill=(42, 42, 42), font=body_font)
+    y += line_height
+
+image.save(output_path, "PNG")
+`;
+
+  const result = await runCommandWithOutput(pythonCmd || 'python', ['-c', script, inputFile, outputFile], {
+    cwd: __dirname,
+    timeoutMs: 60 * 1000
+  });
+
+  try { fs.unlinkSync(inputFile); } catch (error) {}
+
+  if (result.code !== 0 || !fs.existsSync(outputFile)) {
+    throw new Error(`Failed to create XHS prompt card: ${result.stderr || result.stdout || result.code}`);
+  }
+
+  return outputFile;
 }
 
 function normalizeScheduleHours(value, fallbackValue) {
@@ -1993,7 +2147,8 @@ async function runXhsPublish(payload, item, config) {
     || (payload.forcePromptTag === undefined && xhsConfig.forcePromptTag !== false);
 
   let title = buildXhsTitle(item, payload.title);
-  const content = buildXhsContent(item, payload.content, { forcePromptTag });
+  const contentPlan = buildXhsContentPlan(item, payload.content, { forcePromptTag });
+  const content = contentPlan.content;
   if (!title || !content) {
     throw new Error('XHS title/content is empty');
   }
@@ -2025,6 +2180,11 @@ async function runXhsPublish(payload, item, config) {
   const key = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
   const titleFile = path.join(tempDir, `title-${key}.txt`);
   const contentFile = path.join(tempDir, `content-${key}.txt`);
+  let promptCardPath = '';
+  if (contentPlan.shouldCreatePromptCard && media.mode === 'images-local') {
+    promptCardPath = await createXhsPromptCardImage(pythonCmd, tempDir, key, title, contentPlan.fullPrompt);
+    media.localImages = [...media.localImages, promptCardPath];
+  }
   fs.writeFileSync(titleFile, title, 'utf8');
   fs.writeFileSync(contentFile, content, 'utf8');
 
@@ -2059,13 +2219,17 @@ async function runXhsPublish(payload, item, config) {
 
   try { fs.unlinkSync(titleFile); } catch (error) {}
   try { fs.unlinkSync(contentFile); } catch (error) {}
+  if (promptCardPath) {
+    try { fs.unlinkSync(promptCardPath); } catch (error) {}
+  }
 
   return {
     ...commandResult,
     mediaMode: media.mode,
     title,
     postTime,
-    contentPreview: trimToLength(content, 120)
+    contentPreview: trimToLength(content, 120),
+    promptCard: Boolean(promptCardPath)
   };
 }
 

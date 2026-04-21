@@ -5,6 +5,7 @@
   // 存储拦截到的数据
   window.__twitterMediaData = new Map();
   window.__twitterTweetData = new Map();
+  window.__twitterArticleData = new Map();
   window.__twitterApiResponses = [];
 
   // Hook fetch
@@ -91,6 +92,16 @@
           }, '*');
         }
 
+        const articleData = parseArticleCard(tweet);
+        if (articleData && (articleData.content || articleData.url || (articleData.images && articleData.images.length > 0))) {
+          window.__twitterArticleData.set(tweetId, articleData);
+          window.postMessage({
+            type: 'TWITTER_ARTICLE_CACHED',
+            tweetId: tweetId,
+            articleData: articleData
+          }, '*');
+        }
+
         const media = legacy.extended_entities?.media || legacy.entities?.media;
 
         if (media && media.length > 0) {
@@ -111,6 +122,142 @@
     } catch (e) {
       console.error('媒体提取失败:', e);
     }
+  }
+
+  function normalizeText(text) {
+    return String(text || '').replace(/\s+\n/g, '\n').trim();
+  }
+
+  function stringFromBindingValue(value) {
+    if (value == null) return '';
+    if (typeof value === 'string') return value;
+    if (typeof value !== 'object') return String(value || '');
+    const directKeys = [
+      'string_value',
+      'scribe_key',
+      'url',
+      'expanded_url',
+      'display_url',
+      'vanity_url',
+      'title',
+      'description',
+      'text'
+    ];
+    for (const key of directKeys) {
+      if (typeof value[key] === 'string' && value[key].trim()) return value[key];
+    }
+    return '';
+  }
+
+  function getCardBindingMap(card) {
+    const map = {};
+    const legacy = card?.legacy || card || {};
+    const bindings = legacy.binding_values || card?.binding_values || [];
+    if (Array.isArray(bindings)) {
+      bindings.forEach((binding) => {
+        const key = binding?.key;
+        if (!key) return;
+        map[key] = stringFromBindingValue(binding.value);
+      });
+    } else if (bindings && typeof bindings === 'object') {
+      Object.keys(bindings).forEach((key) => {
+        map[key] = stringFromBindingValue(bindings[key]);
+      });
+    }
+    return map;
+  }
+
+  function safeJsonParse(value) {
+    if (!value || typeof value !== 'string') return null;
+    try {
+      return JSON.parse(value);
+    } catch {
+      return null;
+    }
+  }
+
+  function collectStringsDeep(obj, result = [], seen = new Set()) {
+    if (!obj || seen.has(obj)) return result;
+    if (typeof obj === 'string') {
+      if (obj.trim()) result.push(obj.trim());
+      return result;
+    }
+    if (typeof obj !== 'object') return result;
+    seen.add(obj);
+    if (Array.isArray(obj)) {
+      obj.forEach((item) => collectStringsDeep(item, result, seen));
+      return result;
+    }
+    Object.keys(obj).forEach((key) => collectStringsDeep(obj[key], result, seen));
+    return result;
+  }
+
+  function collectImageUrlsDeep(obj, result = [], seen = new Set()) {
+    if (!obj || seen.has(obj)) return result;
+    if (typeof obj === 'string') {
+      if (/pbs\.twimg\.com\/media\//i.test(obj) && !result.includes(obj)) {
+        try {
+          const url = new URL(obj);
+          url.searchParams.set('name', 'orig');
+          result.push(url.toString());
+        } catch {
+          result.push(obj);
+        }
+      }
+      return result;
+    }
+    if (typeof obj !== 'object') return result;
+    seen.add(obj);
+    if (Array.isArray(obj)) {
+      obj.forEach((item) => collectImageUrlsDeep(item, result, seen));
+      return result;
+    }
+    Object.keys(obj).forEach((key) => collectImageUrlsDeep(obj[key], result, seen));
+    return result;
+  }
+
+  function pickArticleUrl(strings) {
+    const found = strings.find((value) => /(?:x|twitter)\.com\/i\/article\/\d+/i.test(value) || /\/i\/article\/\d+/i.test(value));
+    if (!found) return '';
+    try {
+      const url = new URL(found, 'https://x.com');
+      if (url.hostname === 'twitter.com') url.hostname = 'x.com';
+      return url.toString();
+    } catch {
+      return found;
+    }
+  }
+
+  function parseArticleCard(tweet) {
+    const card = tweet?.card || tweet?.legacy?.card || null;
+    const bindings = getCardBindingMap(card);
+    const unifiedCard = safeJsonParse(bindings.unified_card || bindings.unified_card_card || '');
+    const strings = collectStringsDeep({ bindings, unifiedCard, article: tweet?.article });
+    const articleUrl = bindings.card_url || bindings.vanity_url || pickArticleUrl(strings);
+
+    const title = normalizeText(
+      bindings.title ||
+      bindings.card_title ||
+      bindings.summary_title ||
+      strings.find((value) => value.length >= 12 && value.length <= 160 && !/^(https?:\/\/|\/)/i.test(value)) ||
+      ''
+    );
+
+    const description = normalizeText(
+      bindings.description ||
+      bindings.card_description ||
+      bindings.summary_description ||
+      bindings.preview_text ||
+      strings
+        .filter((value) => value !== title && value.length >= 30 && !/^(https?:\/\/|\/)/i.test(value))
+        .sort((a, b) => b.length - a.length)[0] ||
+      ''
+    );
+
+    const images = collectImageUrlsDeep({ bindings, unifiedCard, card });
+    const content = [title, description].filter(Boolean).join('\n\n');
+    if (!content && !articleUrl && images.length === 0) return null;
+    return { title, description, content, url: articleUrl, images };
   }
 
   function parseTweetMeta(tweet) {

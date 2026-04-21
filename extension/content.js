@@ -65,6 +65,109 @@ function normalizeText(text) {
   return String(text || '').replace(/\s+\n/g, '\n').trim();
 }
 
+function getArticleContainer(doc = document) {
+  return doc.querySelector('[data-testid="primaryColumn"]') ||
+    doc.querySelector('main article')?.parentElement ||
+    doc.querySelector('main') ||
+    doc.body;
+}
+
+function isArticleNoiseLine(line) {
+  const value = normalizeText(line);
+  if (!value) return true;
+  if (/^(Home|Explore|Notifications|Messages|Grok|Premium|Post|Search|Follow|More|Share|Reply|Repost|Like|Log in|Sign up|Article)$/i.test(value)) return true;
+  if (/^(\u{1f4da}\s*)?(\u91c7\u96c6|\u91c7\u96c6\u6587\u7ae0|\u5904\u7406\u4e2d\.\.\.|\u5df2\u91c7\u96c6)$/u.test(value)) return true;
+  if (/^(@\w+|\d+[KMB]?$|\d+(\.\d+)?[wk]?)$/i.test(value)) return true;
+  if (/^\d+(\.\d+)?[\u4e07\u5343]?$/.test(value)) return true;
+  if (/^https?:\/\/t\.co\//i.test(value)) return true;
+  return false;
+}
+
+function getArticleTextLines(container) {
+  const raw = normalizeText(container?.innerText || container?.textContent || '');
+  if (!raw) return [];
+  const seen = new Set();
+  return raw
+    .split('\n')
+    .map((line) => normalizeText(line))
+    .filter((line) => {
+      if (isArticleNoiseLine(line)) return false;
+      if (seen.has(line)) return false;
+      seen.add(line);
+      return true;
+    });
+}
+
+function isArticlePage() {
+  const url = window.location.href;
+  if (/\/i\/articles?\/\d+/i.test(url) || /\/articles?\//i.test(url)) return true;
+
+  const container = getArticleContainer(document);
+  const lines = getArticleTextLines(container);
+  const text = lines.join('\n');
+  const hasArticleHeader = Array.from(document.querySelectorAll('main span, main div[dir="auto"], main [role="heading"], main h1'))
+    .slice(0, 80)
+    .some((el) => /^Article$/i.test(normalizeText(el.textContent || '')));
+  const hasPromptArticle = text.length >= 250 && /prompt\s*:|prompt\s*\d|prompts|seedance|midjourney/i.test(text);
+  const hasArticleLine = lines.slice(0, 12).some((line) =>
+    /^Article$/i.test(line) || line === '\u6587\u7ae0'
+  );
+  return (hasArticleHeader || hasArticleLine) && hasPromptArticle;
+}
+
+function pickArticleTitle(container) {
+  const heading = Array.from(container.querySelectorAll('h1, h2, [role="heading"]'))
+    .map((el) => normalizeText(el.textContent || ''))
+    .filter((text) => text.length >= 16 && !isArticleNoiseLine(text))
+    .sort((a, b) => b.length - a.length)[0];
+  if (heading) return heading;
+
+  const lines = getArticleTextLines(container);
+  return lines.find((line) => line.length >= 16 && /prompt|prompts/i.test(line)) ||
+    lines.find((line) => line.length >= 16) ||
+    normalizeText(document.querySelector('meta[property="og:title"]')?.getAttribute('content') || document.title || 'X Article');
+}
+
+async function extractArticlePageData() {
+  const container = getArticleContainer(document);
+  const title = pickArticleTitle(container);
+  const start = Date.now();
+
+  // X Articles virtualize long pages. Scroll until enough body text is loaded.
+  while (Date.now() - start < 8000) {
+    const lines = getArticleTextLines(container);
+    const contentLength = lines.join('\n').length;
+    if (contentLength >= 1600 || (contentLength >= 700 && Date.now() - start > 2500)) break;
+    window.scrollBy({ top: Math.max(700, window.innerHeight * 0.85), behavior: 'instant' });
+    await new Promise((resolve) => setTimeout(resolve, 600));
+  }
+  const lines = getArticleTextLines(container);
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  const titleIndex = lines.findIndex((line) => line === title || line.includes(title) || title.includes(line));
+  const bodyLines = (titleIndex >= 0 ? lines.slice(titleIndex + 1) : lines)
+    .filter((line) => line !== title && !/^([A-Za-z0-9_ ]+)?@\w+$/i.test(line));
+  const content = normalizeText([title, bodyLines.join('\n')].filter(Boolean).join('\n\n'));
+  const media = extractMediaFromDomTweetElement(container);
+  const pageStatusId = getTweetIdFromUrl(window.location.href) || Date.now().toString();
+  const author =
+    normalizeText(document.querySelector('[data-testid="User-Name"]')?.textContent || '') ||
+    normalizeText(document.querySelector('meta[name="twitter:creator"]')?.getAttribute('content') || '') ||
+    getAuthorScreenNameFromUrl(window.location.href) ||
+    'X Article';
+
+  return {
+    title: title.substring(0, 100),
+    author,
+    content: content || title,
+    imageUrls: media.images,
+    videoItems: media.videos,
+    url: window.location.href,
+    date: new Date().toISOString().split('T')[0],
+    tags: 'X,Twitter,文章',
+    tweetId: pageStatusId
+  };
+}
+
 function extractTweetTextFromElement(tweetElement) {
   if (!tweetElement) return '';
 
@@ -855,7 +958,9 @@ function createCollectButton(tweetElement) {
 
     try {
       // 提取数据
-      const tweetData = await extractTweetData(tweetElement);
+      const tweetData = isArticlePage()
+        ? await extractArticlePageData()
+        : await extractTweetData(tweetElement);
 
       // 检查是否有媒体
       if (tweetData.imageUrls.length === 0 && tweetData.videoItems.length === 0) {
@@ -915,9 +1020,55 @@ function addCollectButton(tweetElement) {
   console.log('✅ 已为推文添加采集按钮');
 }
 
+function addArticlePageCollectButton() {
+  if (!isArticlePage()) return;
+  if (document.querySelector('.x-article-collector-btn')) return;
+
+  const button = document.createElement('button');
+  button.className = `${COLLECT_BUTTON_CLASS} x-article-collector-btn`;
+  button.textContent = '📚 采集文章';
+  button.title = '采集当前 X Article 完整正文';
+  button.style.position = 'fixed';
+  button.style.right = '24px';
+  button.style.bottom = '96px';
+  button.style.zIndex = '999999';
+  button.style.padding = '10px 14px';
+  button.style.borderRadius = '999px';
+  button.style.border = '0';
+  button.style.background = '#1d9bf0';
+  button.style.color = '#fff';
+  button.style.fontWeight = '700';
+  button.style.cursor = 'pointer';
+
+  button.addEventListener('click', async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      button.textContent = '处理中...';
+      button.disabled = true;
+      await collectTweet(await extractArticlePageData());
+      button.textContent = '✅ 已采集';
+      setTimeout(() => {
+        button.textContent = '📚 采集文章';
+        button.disabled = false;
+      }, 2000);
+    } catch (error) {
+      console.error('X Article 采集失败:', error);
+      button.textContent = '❌ 失败';
+      setTimeout(() => {
+        button.textContent = '📚 采集文章';
+        button.disabled = false;
+      }, 2000);
+    }
+  });
+
+  document.body.appendChild(button);
+}
+
 function scanTweets() {
   const tweets = document.querySelectorAll('article[data-testid="tweet"]');
   tweets.forEach(tweet => addCollectButton(tweet));
+  addArticlePageCollectButton();
 }
 
 const observer = new MutationObserver(() => scanTweets());
