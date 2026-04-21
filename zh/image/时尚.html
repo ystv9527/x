@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时尚 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="12 条 时尚 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/时尚.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/时尚.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/时尚.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1776781828238">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"时尚 · 图片生成提示词","description":"12 条 时尚 相关案例","url":"https://gemnana.com/zh/image/时尚.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2940</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2909</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">28</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/时尚.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>时尚 · 图片生成提示词</h1>
+      <p>12 条 时尚 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="时尚">时尚 (12)</button><button type="button" class="tag-filter" data-tag="图片">图片 (8)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (8)</button><button type="button" class="tag-filter" data-tag="AI">AI (7)</button><button type="button" class="tag-filter" data-tag="创意">创意 (6)</button><button type="button" class="tag-filter" data-tag="ChatGPT">ChatGPT (3)</button><button type="button" class="tag-filter" data-tag="GPT IMG2">GPT IMG2 (3)</button><button type="button" class="tag-filter" data-tag="灵感">灵感 (3)</button><button type="button" class="tag-filter" data-tag="电影感">电影感 (2)</button><button type="button" class="tag-filter" data-tag="设计">设计 (2)</button><button type="button" class="tag-filter" data-tag="数字艺术">数字艺术 (2)</button><button type="button" class="tag-filter" data-tag="美妆">美妆 (1)</button><button type="button" class="tag-filter" data-tag="广角">广角 (1)</button><button type="button" class="tag-filter" data-tag="商业">商业 (1)</button><button type="button" class="tag-filter" data-tag="写实">写实 (1)</button><button type="button" class="tag-filter" data-tag="街拍">街拍 (1)</button><button type="button" class="tag-filter" data-tag="黄金时刻">黄金时刻 (1)</button><button type="button" class="tag-filter" data-tag="都市">都市 (1)</button><button type="button" class="tag-filter" data-tag="复古">复古 (1)</button><button type="button" class="tag-filter" data-tag="旅行">旅行 (1)</button><button type="button" class="tag-filter" data-tag="4K">4K (1)</button><button type="button" class="tag-filter" data-tag="产品设计">产品设计 (1)</button><button type="button" class="tag-filter" data-tag="后期">后期 (1)</button><button type="button" class="tag-filter" data-tag="技巧">技巧 (1)</button><button type="button" class="tag-filter" data-tag="Gemini">Gemini (1)</button><button type="button" class="tag-filter" data-tag="Nano banana">Nano banana (1)</button><button type="button" class="tag-filter" data-tag="剧烈光线">剧烈光线 (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 12 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2868" data-search="案例2868 震撼视觉的深红影棚广角美妆大片 震撼视觉的深红影棚广角美妆大片 - gpt img2 图像生成提示词 x / maercihh https://x.com/maercihh/status/2026941078885310750 chatgpt ai 图片 gpt img2 美妆 广角 商业 写实 时尚 照片级真实感的大胆美妆宣传活动，使用上传的模特作为精确的身份参考。不做面部改变，不做平滑处理。 场景：深红色饱和的摄影棚环境，具有高对比度的地板图案或光滑表面。 产品：产品被握持或放置在极其靠近镜头的位置，由于透视关系显得巨大。 模特姿势：俏皮或自信的微笑，手臂完全伸向相机，手指因广角镜头而略微变形。透过太阳镜的强烈眼神交流或自然凝视。 相机：超广角 20–28mm 美学，动态前景夸张，浅至中等景深。 灯光：强有力的商业照明，具有清晰的高光和反射，锐利的包装边缘，充满活力的调色。超精细的皮肤纹理和织物真实感。" data-tags="ChatGPT|AI|图片|GPT IMG2|美妆|广角|商业|写实|时尚">
+      <a class="case-card-link" href="/zh/case/2868.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-stunning-red-studio-wide-angle-beauty-1.jpeg" alt="震撼视觉的深红影棚广角美妆大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2868</span></span><span class="case-title-text">震撼视觉的深红影棚广角美妆大片</span></h3>
+          <p class="case-summary">震撼视觉的深红影棚广角美妆大片 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-26</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Maercihh/status/2026941078885310750">X / Maercihh</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">美妆</span><span class="tag">广角</span><span class="tag">商业</span><span class="tag">写实</span><span class="tag">时尚</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>照片级真实感的大胆美妆宣传活动，使用上传的模特作为精确的身份参考。不做面部改变，不做平滑处理。
+场景：深红色饱和的摄影棚环境，具有高对比度的地板图案或光滑表面。
+产品：产品被握持或放置在极其靠近镜头的位置，由于透视关系显得巨大。
+模特姿势：俏皮或自信的微笑，手臂完全伸向相机，手指因广角镜头而略微变形。透过太阳镜的强烈眼神交流或自然凝视。
+相机：超广角 20–28mm 美学，动态前景夸张，浅至中等景...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2868.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2864" data-search="案例2864 都市落日时尚大片 都市落日时尚大片 - gpt img2 图像生成提示词 x chatgpt ai 图片 gpt img2 时尚 街拍 电影感 黄金时刻 都市 一张超现实电影感时尚照片，一位二十出头惊艳的年轻女性，全身可见，站在现代城市中心，黄金时段。 她随意地单肩靠在交通信号灯杆上，没有意识到相机的存在，仿佛这一刻是自然捕捉的。 她穿着紧身蓝色牛仔裤、棕色皮靴，以及一件短款棕色麂皮夹克，带有柔软羊皮翻领。夹克下，一件极简深色露脐上衣，隐约露出精致的乳沟和紧致的腹部。 她的体型天生女性化，均衡而优雅，姿态自信。 一只手穿过她丰盈的浅棕色长发，将其向后撩起，头部微微转向那一侧，眼睛自然地看向别处，没有摆拍。 肤色为轻微日晒后的奶油般柔和光泽，真实肌肤纹理，细腻毛孔与高光——毫无塑料感。 妆容醒目却精致：清晰的眼部、浓密睫毛、" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚|街拍|电影感|黄金时刻|都市">
+      <a class="case-card-link" href="/zh/case/2864.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-urban-sunset-fashion-silhouette-1.jpeg" alt="都市落日时尚大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2864</span></span><span class="case-title-text">都市落日时尚大片</span></h3>
+          <p class="case-summary">都市落日时尚大片 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-04</span>
+            <span class="case-source">X</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时尚</span><span class="tag">街拍</span><span class="tag">电影感</span><span class="tag">黄金时刻</span><span class="tag">都市</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张超现实电影感时尚照片，一位二十出头惊艳的年轻女性，全身可见，站在现代城市中心，黄金时段。  
+她随意地单肩靠在交通信号灯杆上，没有意识到相机的存在，仿佛这一刻是自然捕捉的。  
+她穿着紧身蓝色牛仔裤、棕色皮靴，以及一件短款棕色麂皮夹克，带有柔软羊皮翻领。夹克下，一件极简深色露脐上衣，隐约露出精致的乳沟和紧致的腹部。  
+
+她的体型天生女性化，均衡而优雅，姿态自信。  
+一只手穿过她丰盈的浅棕色...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2864.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2861" data-search="案例2861 复古巴士上的红风衣女郎 复古巴士上的红风衣女郎 - gpt img2 图像生成提示词 x / iamsofiaijaz https://x.com/iamsofiaijaz/status/2015337737860403283 chatgpt ai 图片 gpt img2 时尚 复古 旅行 电影感 4k 一位时尚年轻女子坐在老式复古巴士的前缘，身穿红色长风衣、羊毛无檐小便帽、圆形蓝色反光太阳镜、叠层项链和粗犷的棕色皮靴。她有着波浪状金发，带着自信而梦幻的表情，仰望天空。巴士漆面剥落，呈青绿色与铁锈红色调。明亮清澈的蓝天，城市背景建筑极少，柔和日光，电影级色彩分级，浅景深，高端时尚旅行氛围，编辑摄影，超写实，4k分辨率，锐利对焦，自然肌肤质感，戏剧性构图，电影静帧美学。" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚|复古|旅行|电影感|4K">
+      <a class="case-card-link" href="/zh/case/2861.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-vintage-bus-red-trench-girl-1.jpeg" alt="复古巴士上的红风衣女郎" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2861</span></span><span class="case-title-text">复古巴士上的红风衣女郎</span></h3>
+          <p class="case-summary">复古巴士上的红风衣女郎 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-25</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2015337737860403283">X / iamsofiaijaz</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时尚</span><span class="tag">复古</span><span class="tag">旅行</span><span class="tag">电影感</span><span class="tag">4K</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一位时尚年轻女子坐在老式复古巴士的前缘，身穿红色长风衣、羊毛无檐小便帽、圆形蓝色反光太阳镜、叠层项链和粗犷的棕色皮靴。她有着波浪状金发，带着自信而梦幻的表情，仰望天空。巴士漆面剥落，呈青绿色与铁锈红色调。明亮清澈的蓝天，城市背景建筑极少，柔和日光，电影级色彩分级，浅景深，高端时尚旅行氛围，编辑摄影，超写实，4K分辨率，锐利对焦，自然肌肤质感，戏剧性构图，电影静帧美学。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2861.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2795" data-search="案例2795 经典洛丽塔白衬衫连衣搭配 纯白棉质高领泡泡袖，深海军蓝缎带与玫瑰边饰点缀，裙装层次优雅。 x / アリス服飾店 https://x.com/alicelavli/status/2044304324415893912 设计 时尚 创意 产品设计 数字艺术 短袖上衣，纯白色面料，柔软棉质，高领，前纽扣门襟，小纽扣，胸部荷叶边面板，短泡泡袖，袖口有褶皱，袖口有小海军丝带蝴蝶结，颈部大海军丝带蝴蝶结，椭圆形胸针中心，分层服装，套头裙连衣裙穿在衬衫上，经典洛丽塔风格，白色底布，合身紧身胸衣，高腰，宽深海军蓝腰带紧身胸衣风格，双排金色纽扣， a 字裙，及膝，全褶皱，下摆深蓝色细节花卉印花，对称玫瑰图案边框，下裙前部附近有两个海军蓝丝带蝴蝶结，宽海军蓝荷叶边下摆层，内部白色荷叶边衬裙可见，干净优雅的西式设计" data-tags="设计|时尚|创意|产品设计|数字艺术">
+      <a class="case-card-link" href="/zh/case/2795.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2044304324415893912-1.jpg" alt="经典洛丽塔白衬衫连衣搭配" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2795</span></span><span class="case-title-text">经典洛丽塔白衬衫连衣搭配</span></h3>
+          <p class="case-summary">纯白棉质高领泡泡袖，深海军蓝缎带与玫瑰边饰点缀，裙装层次优雅。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-16</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2044304324415893912">X / アリス服飾店</span>
+          </div>
+          <div class="case-tags"><span class="tag">设计</span><span class="tag">时尚</span><span class="tag">创意</span><span class="tag">产品设计</span><span class="tag">数字艺术</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>短袖上衣，纯白色面料，柔软棉质，高领，前纽扣门襟，小纽扣，胸部荷叶边面板，短泡泡袖，袖口有褶皱，袖口有小海军丝带蝴蝶结，颈部大海军丝带蝴蝶结，椭圆形胸针中心，分层服装，套头裙连衣裙穿在衬衫上，经典洛丽塔风格，白色底布，合身紧身胸衣，高腰，宽深海军蓝腰带紧身胸衣风格，双排金色纽扣， A 字裙，及膝，全褶皱，下摆深蓝色细节花卉印花，对称玫瑰图案边框，下裙前部附近有两个海军蓝丝带蝴蝶结，宽海军蓝荷叶边下...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2795.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2786" data-search="案例2786 vogue封面超写实奢华提示词 生成极简高端《vogue》杂志封面：黑色造型、亮红唇妆、未来时尚头条与8k细节。 x / gemini prompts https://x.com/gemini_prompts/status/2034232141186551970 ai 创意 摄影 时尚 图片 提示：“ 打造超写实奢华时尚杂志封面，优雅女性（匹配脸庞），身穿黑色高领毛衣和宽檐黑帽，佩戴银色手链和水晶耳环。她涂上大胆的亮红色唇膏，皮肤无瑕，下颌线分明，表情平静自信，微微抬头。 戏剧性的演播室布置，纯黑背景，电影般的高对比灯光，柔和阴影突出面部轮廓。 杂志版面：头条 vogue（大胆珊瑚红色衬线）。 右侧：未来时尚头条。 左下角：扎拉·门罗，阿尔·莫古尔，时尚 叛逆者，气候倡导者。 风格：极简，高端编辑风格，光泽 杂志美学 质量：8k，超细致，清晰对焦 宽高比：2：3”" data-tags="AI|创意|摄影|时尚|图片">
+      <a class="case-card-link" href="/zh/case/2786.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2034232141186551970-1.jpg" alt="Vogue封面超写实奢华提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2786</span></span><span class="case-title-text">Vogue封面超写实奢华提示词</span></h3>
+          <p class="case-summary">生成极简高端《Vogue》杂志封面：黑色造型、亮红唇妆、未来时尚头条与8K细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-15</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2034232141186551970">X / gemini prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">创意</span><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">图片</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>提示：“
+打造超写实奢华时尚杂志封面，优雅女性（匹配脸庞），身穿黑色高领毛衣和宽檐黑帽，佩戴银色手链和水晶耳环。她涂上大胆的亮红色唇膏，皮肤无瑕，下颌线分明，表情平静自信，微微抬头。
+戏剧性的演播室布置，纯黑背景，电影般的高对比灯光，柔和阴影突出面部轮廓。
+杂志版面：头条 VOGUE（大胆珊瑚红色衬线）。
+右侧：未来时尚头条。
+左下角：扎拉·门罗，阿尔·莫古尔，时尚
+叛逆者，气候倡导者...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2786.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2770" data-search="案例2770 北面品牌概念海报：高端街头时尚电影感呈现 高端时尚电影感品牌海报概念，模特身着前卫街头装于工作室展示，手握橙色篮球。背景以巨大北面标志为焦点，青绿调光与暖边光营造强烈对比和胶片颗粒感。 x / heisenberg https://x.com/rovvmut_/status/2041451587403399395 ai 设计 摄影 时尚 一张高端时尚、电影感十足的品牌概念海报，专为《北面面》设计。上传的图片中，画面中是一位女性，站在一个风格化的工作室里。他们穿着前卫、宽大的都市街头服饰：深橄榄绿绗缝式羽绒飞行员夹克，层叠的黑褐色做旧科技短裤及膝以下，黑色运动鞋配白色鞋底。对方腰间握着一个经典的橙色篮球。背景中，一个巨大的红色“北面”标志和标志性的半圆顶符号叠加居中，占据画面上半部分。主体右侧有一个小巧的白色风格涂鸦风格签名。灯光氛围浓郁且富有戏剧性，营造出青绿色调的氛围，温暖的轮廓光照射在主体的右侧。地板是深色光滑的工作室表面，前方投下柔和的阴影。整体美学粗獷、未来感十足且对比度高，带有浓重的胶片颗粒质感。" data-tags="AI|设计|摄影|时尚">
+      <a class="case-card-link" href="/zh/case/2770.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2041451587403399395-1.jpg" alt="北面品牌概念海报：高端街头时尚电影感呈现" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2770</span></span><span class="case-title-text">北面品牌概念海报：高端街头时尚电影感呈现</span></h3>
+          <p class="case-summary">高端时尚电影感品牌海报概念，模特身着前卫街头装于工作室展示，手握橙色篮球。背景以巨大北面标志为焦点，青绿调光与暖边光营造强烈对比和胶片颗粒感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/rovvmut_/status/2041451587403399395">X / Heisenberg</span>
+          </div>
+          <div class="case-tags"><span class="tag">AI</span><span class="tag">设计</span><span class="tag">摄影</span><span class="tag">时尚</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张高端时尚、电影感十足的品牌概念海报，专为《北面面》设计。上传的图片中，画面中是一位女性，站在一个风格化的工作室里。他们穿着前卫、宽大的都市街头服饰：深橄榄绿绗缝式羽绒飞行员夹克，层叠的黑褐色做旧科技短裤及膝以下，黑色运动鞋配白色鞋底。对方腰间握着一个经典的橙色篮球。背景中，一个巨大的红色“北面”标志和标志性的半圆顶符号叠加居中，占据画面上半部分。主体右侧有一个小巧的白色风格涂鸦风格签名。灯光氛...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2770.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="572" data-search="案例572 街头偷拍风格的校服人像写真巴黎时装周场景 极近距离的狗仔式照片，聚焦面部与肩部，低角度强光下，背景拥挤模糊，呈现2000年代小报美学与巴黎时装周的即时真实氛围。 x / oogie https://x.com/oggii_0/status/2011304086847832089 摄影 时尚 创意 后期 技巧 提示：一位面部特征鲜明的女性被突然拍到的空中俯拍照片，正转向镜头。仅拍摄面部和肩膀，从低角度拍摄。强烈的现场强光，颗粒感高 iso，原始的街头摄影感觉。背景显示拥挤的场景，动感模糊（巴黎时装周氛围）。强烈的、自发的能量，不完美和真实。她穿着校服。超写实，电影现实主义，高细节皮肤纹理，轻微镜头畸变。 相机风格：“35mm 狗仔队镜头，f/2.8，闪光灯过曝高光” 外观：“2000 年代小报照片美学” 质量：“面部聚焦清晰，背景严重模糊且呈条纹状”" data-tags="摄影|时尚|创意|后期|技巧">
+      <a class="case-card-link" href="/zh/case/572.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2011304086847832089-1.jpg" alt="街头偷拍风格的校服人像写真巴黎时装周场景" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#572</span></span><span class="case-title-text">街头偷拍风格的校服人像写真巴黎时装周场景</span></h3>
+          <p class="case-summary">极近距离的狗仔式照片，聚焦面部与肩部，低角度强光下，背景拥挤模糊，呈现2000年代小报美学与巴黎时装周的即时真实氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-14</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2011304086847832089">X / Oogie</span>
+          </div>
+          <div class="case-tags"><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">创意</span><span class="tag">后期</span><span class="tag">技巧</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>提示：一位面部特征鲜明的女性被突然拍到的空中俯拍照片，正转向镜头。仅拍摄面部和肩膀，从低角度拍摄。强烈的现场强光，颗粒感高 ISO，原始的街头摄影感觉。背景显示拥挤的场景，动感模糊（巴黎时装周氛围）。强烈的、自发的能量，不完美和真实。她穿着校服。超写实，电影现实主义，高细节皮肤纹理，轻微镜头畸变。
+
+相机风格：“35mm 狗仔队镜头，f/2.8，闪光灯过曝高光”
+外观：“2000 年代小报照...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/572.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="554" data-search="案例554 花田户外时尚人像：在强光直闪下的高能花海场景 在花田背景下拍摄，使用强光直闪，突出服装与花朵的鲜艳对比，营造高能且俏皮的时尚氛围。低角度仰拍增强画面张力，带来活力和略带超现实的视觉冲击。 x / sidona https://x.com/sidona/status/2009148022836302045 图片 摄影 时尚 创意 灵感 this backdrop + my ootd = absolute perfection. the scenery understood the assignment! thx @zarairahh ——————prompt use this photo attached to create a striking outdoor fashion portrait set in a vibrant flower field during daylight, captured with a digital camera using a harsh flash. the camera a" data-tags="图片|摄影|时尚|创意|灵感">
+      <a class="case-card-link" href="/zh/case/554.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2009148022836302045-1.jpg" alt="花田户外时尚人像：在强光直闪下的高能花海场景" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#554</span></span><span class="case-title-text">花田户外时尚人像：在强光直闪下的高能花海场景</span></h3>
+          <p class="case-summary">在花田背景下拍摄，使用强光直闪，突出服装与花朵的鲜艳对比，营造高能且俏皮的时尚氛围。低角度仰拍增强画面张力，带来活力和略带超现实的视觉冲击。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/sidona/status/2009148022836302045">X / Sidona</span>
+          </div>
+          <div class="case-tags"><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">创意</span><span class="tag">灵感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>This backdrop + my OOTD = Absolute perfection.  The scenery understood the assignment!
+
+thx @ZaraIrahh 
+
+——————prompt
+
+Use this photo attached to create a striking outdoor fashion portrait set in a vi...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/554.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="551" data-search="案例551 寂静中的紫光瞬间：电影感优雅与身份锁定的四格拼贴 以寂静中的紫光照脸为起点，探讨优雅是否自足表达，并提供2×2网格超逼真拼贴的详细生成指令，强调身份锁定与统一造型带来的电影感视觉。 x / mira https://x.com/xmiiru_/status/2007732049839300912 图片 gemini ai 摄影 时尚 创意 { “提示”：以 2×2 网格布局制作超逼真的四格照片拼贴画，营造电影般的低光美感。柔和的紫色和紫罗兰色环境光，细微的胶片颗粒感，以及纯色墙面背景。\n\n 身份锁定（绝对）：使用提供的参考照片中的同一张脸，确保所有四张照片中的身份完全一致。不得修改面部结构、比例、五官、表情、年龄、肤色、肤质或任何身份特征。参考脸在每一张照片中都必须保持 100%不变。\n\n 人物及造型（所有照片保持一致）：紫色缎面无肩带紧身胸衣，勾勒出曼妙身姿。长款钻石耳坠和钻石项链。深棕色头发，中分，梳成蓬松的低发髻，几缕碎发垂在脸颊两侧。自然柔和的妆容：水润肌肤，淡淡腮红，亮泽的粉色唇妆，柔和的棕色眼影，极简眼线，" data-tags="图片|Gemini|AI|摄影|时尚|创意">
+      <a class="case-card-link" href="/zh/case/551.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2007732049839300912-1.jpg" alt="寂静中的紫光瞬间：电影感优雅与身份锁定的四格拼贴" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#551</span></span><span class="case-title-text">寂静中的紫光瞬间：电影感优雅与身份锁定的四格拼贴</span></h3>
+          <p class="case-summary">以寂静中的紫光照脸为起点，探讨优雅是否自足表达，并提供2×2网格超逼真拼贴的详细生成指令，强调身份锁定与统一造型带来的电影感视觉。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-04</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xmiiru_/status/2007732049839300912">X / Mira</span>
+          </div>
+          <div class="case-tags"><span class="tag">图片</span><span class="tag">Gemini</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+“提示”：以 2×2 网格布局制作超逼真的四格照片拼贴画，营造电影般的低光美感。柔和的紫色和紫罗兰色环境光，细微的胶片颗粒感，以及纯色墙面背景。\n\n 身份锁定（绝对）：使用提供的参考照片中的同一张脸，确保所有四张照片中的身份完全一致。不得修改面部结构、比例、五官、表情、年龄、肤色、肤质或任何身份特征。参考脸在每一张照片中都必须保持 100%不变。\n\n 人物及造型（所有照片保持一致）：...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/551.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="550" data-search="案例550 8k镜像自拍：k-pop偶像风格的高饱和活力后台场景 提供一份8k镜像自拍的生成提示，塑造韩国风格k-pop偶像在后台更衣室的高饱和造型。通过柔和高调灯光、环灯光效与动态构图，突出面部与服装细节及俏皮眼神。 x / bubblebrain https://x.com/bubblebrain/status/2007667561396109358 图片 ai 摄影 时尚 数字艺术 灵感 版本： 2.0， &quot;格式&quot;: &quot;镜像自拍肖像&quot;, &quot;target_resolution&quot;: &quot;8k uhd&quot;, &quot;style_preset&quot;: &quot;k-pop 偶像美学/y2k 多彩风格&quot; }, &quot;subject_profile&quot;: { &quot;生物识别&quot;：{ “种族”: “韩国人” “体型”：“纤细、健美、匀称的韩国流行偶像身材”， &quot;facial_id&quot;: &quot;可爱性感，小脸，娃娃般的五官&quot;, &quot;skin_texture&quot;: &quot;无瑕，略带光泽（玻璃肌），红润双颊&quot; “头发”： “带有彩色挑染（粉色或金色挑染）的长直发” }, &quot;expression_and_ga" data-tags="图片|AI|摄影|时尚|数字艺术|灵感">
+      <a class="case-card-link" href="/zh/case/550.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2007667561396109358-1.jpg" alt="8K镜像自拍：K-Pop偶像风格的高饱和活力后台场景" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#550</span></span><span class="case-title-text">8K镜像自拍：K-Pop偶像风格的高饱和活力后台场景</span></h3>
+          <p class="case-summary">提供一份8K镜像自拍的生成提示，塑造韩国风格K-Pop偶像在后台更衣室的高饱和造型。通过柔和高调灯光、环灯光效与动态构图，突出面部与服装细节及俏皮眼神。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-04</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2007667561396109358">X / BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">图片</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">数字艺术</span><span class="tag">灵感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>版本： 2.0，
+&quot;格式&quot;: &quot;镜像自拍肖像&quot;,
+&quot;target_resolution&quot;: &quot;8K UHD&quot;,
+&quot;style_preset&quot;: &quot;K-Pop 偶像美学/Y2K 多彩风格&quot;
+  },
+&quot;subject_profile&quot;: {
+&quot;生物识别&quot;：{
+“种族”: “韩国人”
+“体型”：“纤细、健美、匀称的韩国流行偶像身材”，
+&quot;facial_id&quot;: &quot;可爱性感，小脸，娃娃...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/550.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="549" data-search="案例549 车内静谧奢华瞬间：高角度镜头下的优雅与自信 车内柔和灯光映照下，颈间珍珠与宁静神态相得益彰。高角度拍摄捕捉到装扮的微妙优雅与静谧奢华，展现时尚与简约的完美平衡。 x / sidona https://x.com/sidona/status/2007733520303829291 图片 摄影 时尚 创意 灵感 车内捕捉到的一个轻松自然的瞬间，每一个细节都在讲述一个故事。 从室内柔和的灯光到颈间精致的珍珠项链，宁静的神态展现出一种沉稳的自信。 从高处拍摄，相机置于上方，捕捉到了这身装扮的微妙优雅和此刻的静谧奢华。 时尚与简约的完美平衡。" data-tags="图片|摄影|时尚|创意|灵感">
+      <a class="case-card-link" href="/zh/case/549.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2007733520303829291-1.jpg" alt="车内静谧奢华瞬间：高角度镜头下的优雅与自信" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#549</span></span><span class="case-title-text">车内静谧奢华瞬间：高角度镜头下的优雅与自信</span></h3>
+          <p class="case-summary">车内柔和灯光映照下，颈间珍珠与宁静神态相得益彰。高角度拍摄捕捉到装扮的微妙优雅与静谧奢华，展现时尚与简约的完美平衡。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-04</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/sidona/status/2007733520303829291">X / Sidona</span>
+          </div>
+          <div class="case-tags"><span class="tag">图片</span><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">创意</span><span class="tag">灵感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>车内捕捉到的一个轻松自然的瞬间，每一个细节都在讲述一个故事。  
+
+从室内柔和的灯光到颈间精致的珍珠项链，宁静的神态展现出一种沉稳的自信。
+
+从高处拍摄，相机置于上方，捕捉到了这身装扮的微妙优雅和此刻的静谧奢华。
+
+时尚与简约的完美平衡。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/549.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="513" data-search="案例513 高端时尚人像摄影：低调戏剧光线与极简背景的完美结合 这组摄影作品展现了一位自信时尚的女性形象，通过黑色极简背景、戏剧性光线和细腻的细节打造出高分辨率的专业肖像，强调自信与现代感。 x / 𝗦𝗮𝗻𝗶𝗮 https://x.com/saniaspeaks_/status/1988459709016482162 nano banana 摄影 时尚 剧烈光线 { &quot;subject&quot;: { &quot;figure&quot;: &quot;一位自信且时尚的女性形象，中景拍摄。（面部特征、头发和风格应与提供的用户参考图像保持一致。）&quot;, &quot;pose&quot;: &quot;站姿挺直，一只手不显眼地放在裤袋里。面部和视线直接且正面。&quot;, &quot;attire&quot;: { &quot;top&quot;: &quot;黑色，轻便的 v 领上衣，腰间系带露出一小部分腹部。上衣有长长的宽松袖子或喇叭袖口。&quot;, &quot;bottom&quot;: &quot;修身黑色假皮或类似材料的裤子。&quot;, &quot;accessories&quot;: &quot;颈间层层叠叠佩戴着细巧的金色项链，吊坠简约。&quot; }, &quot;styling" data-tags="Nano banana|摄影|时尚|剧烈光线">
+      <a class="case-card-link" href="/zh/case/513.html">
+        <div class="case-thumbnail"><img src="/images/tweet-1988459709016482162-1.jpg" alt="高端时尚人像摄影：低调戏剧光线与极简背景的完美结合" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#513</span></span><span class="case-title-text">高端时尚人像摄影：低调戏剧光线与极简背景的完美结合</span></h3>
+          <p class="case-summary">这组摄影作品展现了一位自信时尚的女性形象，通过黑色极简背景、戏剧性光线和细腻的细节打造出高分辨率的专业肖像，强调自信与现代感。</p>
+          <div class="case-meta">
+            <span class="case-date">2025-11-13</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/saniaspeaks_/status/1988459709016482162">X / 𝗦𝗮𝗻𝗶𝗮</span>
+          </div>
+          <div class="case-tags"><span class="tag">Nano banana</span><span class="tag">摄影</span><span class="tag">时尚</span><span class="tag">剧烈光线</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+&quot;subject&quot;: {
+    &quot;figure&quot;: &quot;一位自信且时尚的女性形象，中景拍摄。（面部特征、头发和风格应与提供的用户参考图像保持一致。）&quot;,
+    &quot;pose&quot;: &quot;站姿挺直，一只手不显眼地放在裤袋里。面部和视线直接且正面。&quot;,
+&quot;attire&quot;: {
+      &quot;top&quot;: &quot;黑色，轻便的 V 领上衣，腰间系带露出一小部分腹部。上衣有长长的宽松袖子或喇叭袖口。&quot;,...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/513.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

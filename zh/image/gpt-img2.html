@@ -1,0 +1,2785 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT IMG2 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="83 条 GPT IMG2 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/gpt-img2.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/gpt-img2.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/gpt-img2.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1776781828222">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"GPT IMG2 · 图片生成提示词","description":"83 条 GPT IMG2 相关案例","url":"https://gemnana.com/zh/image/gpt-img2.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2940</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2909</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">28</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/gpt-img2.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>GPT IMG2 · 图片生成提示词</h1>
+      <p>83 条 GPT IMG2 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="ChatGPT">ChatGPT (83)</button><button type="button" class="tag-filter" data-tag="AI">AI (83)</button><button type="button" class="tag-filter" data-tag="图片">图片 (83)</button><button type="button" class="tag-filter" data-tag="GPT IMG2">GPT IMG2 (83)</button><button type="button" class="tag-filter" data-tag="海报">海报 (7)</button><button type="button" class="tag-filter" data-tag="直播">直播 (5)</button><button type="button" class="tag-filter" data-tag="古风">古风 (4)</button><button type="button" class="tag-filter" data-tag="广州塔">广州塔 (4)</button><button type="button" class="tag-filter" data-tag="美女">美女 (4)</button><button type="button" class="tag-filter" data-tag="商业摄影">商业摄影 (4)</button><button type="button" class="tag-filter" data-tag="电影感">电影感 (4)</button><button type="button" class="tag-filter" data-tag="截图">截图 (3)</button><button type="button" class="tag-filter" data-tag="复古风">复古风 (3)</button><button type="button" class="tag-filter" data-tag="九宫格">九宫格 (3)</button><button type="button" class="tag-filter" data-tag="超写实">超写实 (3)</button><button type="button" class="tag-filter" data-tag="少女">少女 (3)</button><button type="button" class="tag-filter" data-tag="新中式">新中式 (3)</button><button type="button" class="tag-filter" data-tag="超现实">超现实 (3)</button><button type="button" class="tag-filter" data-tag="国风">国风 (3)</button><button type="button" class="tag-filter" data-tag="创意">创意 (3)</button><button type="button" class="tag-filter" data-tag="时尚">时尚 (3)</button><button type="button" class="tag-filter" data-tag="胶片感">胶片感 (2)</button><button type="button" class="tag-filter" data-tag="水墨风">水墨风 (2)</button><button type="button" class="tag-filter" data-tag="极简风">极简风 (2)</button><button type="button" class="tag-filter" data-tag="艺术">艺术 (2)</button><button type="button" class="tag-filter" data-tag="明朝">明朝 (2)</button><button type="button" class="tag-filter" data-tag="皇帝">皇帝 (2)</button><button type="button" class="tag-filter" data-tag="举牌">举牌 (2)</button><button type="button" class="tag-filter" data-tag="竖屏">竖屏 (2)</button><button type="button" class="tag-filter" data-tag="广告图">广告图 (2)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 83 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2940" data-search="案例2940 金瓶梅古风开放世界游戏截图 金瓶梅古风开放世界游戏截图 - gpt img2 图像生成提示词 x / op7418 https://x.com/op7418/status/2046520509651886451 chatgpt ai 图片 gpt img2 金瓶梅 古风 动作 网游 截图 帮我生成一个以《金瓶梅》为主题的古代 arpg mmo 开放世界游戏的截图" data-tags="ChatGPT|AI|图片|GPT IMG2|金瓶梅|古风|动作|网游|截图">
+      <a class="case-card-link" href="/zh/case/2940.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-jin-ping-mei-open-world-1.jpeg" alt="金瓶梅古风开放世界游戏截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2940</span></span><span class="case-title-text">金瓶梅古风开放世界游戏截图</span></h3>
+          <p class="case-summary">金瓶梅古风开放世界游戏截图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/op7418/status/2046520509651886451">X / op7418</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">金瓶梅</span><span class="tag">古风</span><span class="tag">动作</span><span class="tag">网游</span><span class="tag">截图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>帮我生成一个以《金瓶梅》为主题的古代 ARPG MMO 开放世界游戏的截图</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2940.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2939" data-search="案例2939 绘制金瓶梅知识图谱 绘制金瓶梅知识图谱 - gpt img2 图像生成提示词 x / xiaoxiaodong01 https://x.com/xiaoxiaodong01/status/2046252164717416641 chatgpt ai 图片 gpt img2 role: world-class scientific encyclopedia illustrator &amp; knowledge graph architect. task: generate a highly detailed, extremely intricate, and visually stunning &quot;universal illustrated encyclopedia science infographic&quot; in a classic, unbranded (no logos) scientific encyclopedia style. subject matter:" data-tags="ChatGPT|AI|图片|GPT IMG2">
+      <a class="case-card-link" href="/zh/case/2939.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-jin-ping-mei-tupu-1.jpeg" alt="绘制金瓶梅知识图谱" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2939</span></span><span class="case-title-text">绘制金瓶梅知识图谱</span></h3>
+          <p class="case-summary">绘制金瓶梅知识图谱 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/xiaoxiaodong01/status/2046252164717416641">X / xiaoxiaodong01</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词 <span class="fallback-badge">（当前为英文原文）</span></h4>
+            <p>Role: World-class Scientific Encyclopedia Illustrator &amp; Knowledge Graph Architect.
+
+Task: Generate a highly detailed, extremely intricate, and visually stunning &quot;Universal Illustrated Encyclopedia Sci...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2939.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2938" data-search="案例2938 西方艺术演进像素博物馆 西方艺术演进像素博物馆 - gpt img2 图像生成提示词 x / geekcatx https://x.com/geekcatx/status/2046172416716759171 chatgpt ai 图片 gpt img2 像素风 时间线 艺术史 等距图 高细节 创作一张超高细节等距像素艺术时间线插画（3:4，4k），融合细节密度、象征性与隐喻。用户指定的主题为【western art development】。 首先，围绕western art development进行推理，确定：主题的中英文标题、涵盖的最早与最近历史时期、起始阶段标签与结束阶段标签，以及3-5个关键演进阶段及其各自的象征性元素与色彩方案。 然后构建一个以&quot;western art development&quot;为主题的等距&quot;演进博物馆&quot;，每个展馆区域代表一个演进阶段，空间推进即代表时间演变。采用标准等距视角（2:1），丰富的层次深度与流畅过渡。每个阶段分配3-5个与主题强烈关联的象征" data-tags="ChatGPT|AI|图片|GPT IMG2|像素风|时间线|艺术史|等距图|高细节">
+      <a class="case-card-link" href="/zh/case/2938.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-western-art-pixel-museum-1.jpeg" alt="西方艺术演进像素博物馆" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2938</span></span><span class="case-title-text">西方艺术演进像素博物馆</span></h3>
+          <p class="case-summary">西方艺术演进像素博物馆 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/GeekCatX/status/2046172416716759171">X / GeekCatX</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">像素风</span><span class="tag">时间线</span><span class="tag">艺术史</span><span class="tag">等距图</span><span class="tag">高细节</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创作一张超高细节等距像素艺术时间线插画（3:4，4K），融合细节密度、象征性与隐喻。用户指定的主题为【Western Art Development】。
+
+首先，围绕Western Art Development进行推理，确定：主题的中英文标题、涵盖的最早与最近历史时期、起始阶段标签与结束阶段标签，以及3-5个关键演进阶段及其各自的象征性元素与色彩方案。
+
+然后构建一个以&quot;Western Art ...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2938.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2937" data-search="案例2937 雅致图案四款时尚单品设计 雅致图案四款时尚单品设计 - gpt img2 图像生成提示词 x / aiehon_aya https://x.com/aiehon_aya/status/2046348182301683954 chatgpt ai 图片 gpt img2 时尚款 穿搭秀 图案感 排版风 雅构图 使用附图中的图案，由专业设计师打造 4 款时尚单品，采用不同的色彩搭配与排版设计，附带穿搭效果图。以雅致的构图凸显图案的美感。格式为 2:3，希望将图像生成模型从 duct-tape-1 指定为 duct-tape-2、3。" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚款|穿搭秀|图案感|排版风|雅构图">
+      <a class="case-card-link" href="/zh/case/2937.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-elegant-pattern-fashion-items-1.png" alt="雅致图案四款时尚单品设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2937</span></span><span class="case-title-text">雅致图案四款时尚单品设计</span></h3>
+          <p class="case-summary">雅致图案四款时尚单品设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/aiehon_aya/status/2046348182301683954">X / aiehon_aya</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时尚款</span><span class="tag">穿搭秀</span><span class="tag">图案感</span><span class="tag">排版风</span><span class="tag">雅构图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>使用附图中的图案，由专业设计师打造 4 款时尚单品，采用不同的色彩搭配与排版设计，附带穿搭效果图。以雅致的构图凸显图案的美感。格式为 2:3，希望将图像生成模型从 duct-tape-1 指定为 duct-tape-2、3。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2937.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2936" data-search="案例2936 昏暗室内纯真少女的意外回眸 昏暗室内纯真少女的意外回眸 - gpt img2 图像生成提示词 x / bubblebrain https://x.com/bubblebrain/status/2046190539213885806 chatgpt ai 图片 gpt img2 女偶像 复古风 抓拍图 居家服 纯欲感 { &quot;prompt&quot;: { &quot;style_and_tech&quot;: &quot;手机照片，老式ccd相机美学，刺眼的闪光灯，颗粒感，昏暗杂乱的室内光线，抓拍快照感觉，轻微的运动模糊&quot;, &quot;subject&quot;: &quot;年轻的韩国女偶像，温柔纯真的外表&quot;, &quot;pose&quot;: &quot;动作进行中，微微转头看向镜头，仿佛刚刚注意到正在被拍照，肩膀微微耸起&quot;, &quot;expression&quot;: &quot;眼睛微微睁大，因惊讶而微微张开的嘴唇，害羞且猝不及防的表情&quot;, &quot;clothing&quot;: &quot;宽松柔软的居家服（薄开衫+内搭上衣），一侧肩膀微微滑落但没有暴露&quot;, &quot;vibe&quot;: &quot;毫无防备，亲密" data-tags="ChatGPT|AI|图片|GPT IMG2|女偶像|复古风|抓拍图|居家服|纯欲感">
+      <a class="case-card-link" href="/zh/case/2936.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-dim-room-innocent-glance-1.jpeg" alt="昏暗室内纯真少女的意外回眸" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2936</span></span><span class="case-title-text">昏暗室内纯真少女的意外回眸</span></h3>
+          <p class="case-summary">昏暗室内纯真少女的意外回眸 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2046190539213885806">X / BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">女偶像</span><span class="tag">复古风</span><span class="tag">抓拍图</span><span class="tag">居家服</span><span class="tag">纯欲感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+  &quot;prompt&quot;: {
+    &quot;style_and_tech&quot;: &quot;手机照片，老式CCD相机美学，刺眼的闪光灯，颗粒感，昏暗杂乱的室内光线，抓拍快照感觉，轻微的运动模糊&quot;,
+    &quot;subject&quot;: &quot;年轻的韩国女偶像，温柔纯真的外表&quot;,
+    &quot;pose&quot;: &quot;动作进行中，微微转头看向镜头，仿佛刚刚注意到正在被拍照，肩膀微微耸起&quot;,
+    &quot;expression&quot;: &quot;眼睛微微...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2936.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2935" data-search="案例2935 绘制科学百科知识图谱 绘制科学百科知识图谱 - gpt img2 图像生成提示词 x / geekcatx https://x.com/geekcatx chatgpt ai 图片 gpt img2 角色：世界级科学百科插画师兼知识图谱架构师 任务：以经典、无品牌标识（无任何 logo）的科学百科风格，创作一幅细节极致丰富、结构极其精巧、视觉效果惊艳的「环球图解百科科学信息图」。 题材选择：从【人物、植物、动物】中任选其一。 具体对象：【例如：大王乌贼 / 列奥纳多・达・芬奇 / 红杉树】 风格：采用复古泛黄米色纸张背景，绘制精细工整的科学插画；线条细腻精致，整体繁复专业、严谨考究。 核心视觉要求 主体逼真 3d 效果 位于画面视觉中心（c 位）的主体形象，需具备极致的写实感与动态张力。营造强烈的空间纵深感，让人物、植物或动物仿佛突破画框，从平面纸张中跃出、冲向观者（效果类似变形 3d 或" data-tags="ChatGPT|AI|图片|GPT IMG2">
+      <a class="case-card-link" href="/zh/case/2935.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-draw-scientific-style-encyclopedia-infographic-1.jpeg" alt="绘制科学百科知识图谱" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2935</span></span><span class="case-title-text">绘制科学百科知识图谱</span></h3>
+          <p class="case-summary">绘制科学百科知识图谱 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/GeekCatX">X / GeekCatX</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>角色：世界级科学百科插画师兼知识图谱架构师
+任务：以经典、无品牌标识（无任何 Logo）的科学百科风格，创作一幅细节极致丰富、结构极其精巧、视觉效果惊艳的「环球图解百科科学信息图」。
+题材选择：从【人物、植物、动物】中任选其一。
+具体对象：【例如：大王乌贼 / 列奥纳多・达・芬奇 / 红杉树】
+风格：采用复古泛黄米色纸张背景，绘制精细工整的科学插画；线条细腻精致，整体繁复专业、严谨考究。
+核心视觉...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2935.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2934" data-search="案例2934 韩系偶像九宫格写真集 韩系偶像九宫格写真集 - gpt img2 图像生成提示词 x / bubblebrain https://x.com/bubblebrain/status/2046151898621993364 chatgpt ai 图片 gpt img2 韩系 九宫格 超写实 少女感 胶片感 9:16 竖版 — 一个 3x3 网格拼贴（九张图片）形成一系列韩国偶像肖像摄影。每一帧都呈现同一位年轻的韩国女性偶像，在所有九张镜头中保持 100% 一致的面部特征、比例、发型和身份。自然、超逼真的皮肤纹理，无修图，无磨皮。干净的偶像风格极简妆容，柔和的光泽，微妙的瑕疵。发型：长发、蓬松的黑发，微乱，在所有帧中保持一致（自然松散的垂落，轻微的动感）。服装：连贯的韩国偶像摄影造型 — 白色衬衫 + 短款下装（或简单的中性色调服装），青春、干净、略带休闲但有造型感。所有帧中穿着相同的服装。场景：极简的工作室或简单的室内环境（白墙，柔和的窗光，干净的背景）。聚焦于主体，而不是环境。光照：柔和漫反射" data-tags="ChatGPT|AI|图片|GPT IMG2|韩系|九宫格|超写实|少女感|胶片感">
+      <a class="case-card-link" href="/zh/case/2934.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-korean-idol-grid-photobook-1.jpeg" alt="韩系偶像九宫格写真集" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2934</span></span><span class="case-title-text">韩系偶像九宫格写真集</span></h3>
+          <p class="case-summary">韩系偶像九宫格写真集 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2046151898621993364">X / BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">韩系</span><span class="tag">九宫格</span><span class="tag">超写实</span><span class="tag">少女感</span><span class="tag">胶片感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>9:16 竖版 — 一个 3x3 网格拼贴（九张图片）形成一系列韩国偶像肖像摄影。每一帧都呈现同一位年轻的韩国女性偶像，在所有九张镜头中保持 100% 一致的面部特征、比例、发型和身份。自然、超逼真的皮肤纹理，无修图，无磨皮。干净的偶像风格极简妆容，柔和的光泽，微妙的瑕疵。发型：长发、蓬松的黑发，微乱，在所有帧中保持一致（自然松散的垂落，轻微的动感）。服装：连贯的韩国偶像摄影造型 — 白色衬衫 +...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2934.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2933" data-search="案例2933 鎏金广州塔的东方奇幻海报 鎏金广州塔的东方奇幻海报 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2046243132774494607 chatgpt ai 图片 gpt img2 国风画 广州塔 流光 神话感 海报 平面插画，东方幻想风格高端城市海报设计，竖版9:16构图，整体采用对角线+s型流动构图，从左下向右上延展，画面以深邃黑色为背景，自上而下渐变至浓烈暗红色，形成强烈冷暖对比与空间纵深，背景带微弱星尘与颗粒质感。画面中央一条金色流动能量线条如火焰般蜿蜒贯穿，自底部向上延伸，具有流体质感、粒子光效与渐变高光，局部带细微能量碎屑与体积光。 金色流光中逐层浮现广州城市地标建筑群：广州塔为视觉核心，比例突出，周围融合珠江新城高楼群、猎德大桥及现代与岭南建筑元素，建筑采用“精细线描 + 金色发光体块”表现，轮廓清晰、细节丰富，在金色光晕映衬下仿佛悬浮于虚空，形成超现实空间层次，远景轻微雾化增强纵深感。" data-tags="ChatGPT|AI|图片|GPT IMG2|国风画|广州塔|流光|神话感|海报">
+      <a class="case-card-link" href="/zh/case/2933.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-golden-guangzhou-tower-poster-1.jpeg" alt="鎏金广州塔的东方奇幻海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2933</span></span><span class="case-title-text">鎏金广州塔的东方奇幻海报</span></h3>
+          <p class="case-summary">鎏金广州塔的东方奇幻海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2046243132774494607">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">国风画</span><span class="tag">广州塔</span><span class="tag">流光</span><span class="tag">神话感</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>平面插画，东方幻想风格高端城市海报设计，竖版9:16构图，整体采用对角线+S型流动构图，从左下向右上延展，画面以深邃黑色为背景，自上而下渐变至浓烈暗红色，形成强烈冷暖对比与空间纵深，背景带微弱星尘与颗粒质感。画面中央一条金色流动能量线条如火焰般蜿蜒贯穿，自底部向上延伸，具有流体质感、粒子光效与渐变高光，局部带细微能量碎屑与体积光。
+
+金色流光中逐层浮现广州城市地标建筑群：广州塔为视觉核心，比例突出...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2933.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2932" data-search="案例2932 窗边日系胶片女孩 窗边日系胶片女孩 - gpt img2 图像生成提示词 x / bubblebrain https://x.com/bubblebrain/status/2046115431144902732 chatgpt ai 图片 gpt img2 日系 胶片 少女 白衬衫 柔光 模拟35毫米胶片摄影，柔和轻盈的日系美学，温柔漫射的自然窗户光，轻微过曝，柔和色调，低对比度，柔和的高光，靠近窗户配有白色窗帘的极简室内环境，干净的浅色墙壁，自然构图，平视视角，略微紧凑的全身取景（大腿中部到头部），年轻东亚女性，自然极简妆容，柔和真实的皮肤纹理，长长的微乱黑发，超大号白色纽扣衬衫，浅色休闲短裤，赤脚，简单放松的造型，自然站立姿势放松，双臂自然下垂或略微放在身后，面朝镜头，温柔柔和的微笑，微妙的静止感，专注于光线、空气和安静的日常氛围，柔和的胶片颗粒，梦幻而低调的氛围 --ar 9:16" data-tags="ChatGPT|AI|图片|GPT IMG2|日系|胶片|少女|白衬衫|柔光">
+      <a class="case-card-link" href="/zh/case/2932.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-window-japanese-film-girl-1.jpeg" alt="窗边日系胶片女孩" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2932</span></span><span class="case-title-text">窗边日系胶片女孩</span></h3>
+          <p class="case-summary">窗边日系胶片女孩 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/BubbleBrain/status/2046115431144902732">X / BubbleBrain</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">日系</span><span class="tag">胶片</span><span class="tag">少女</span><span class="tag">白衬衫</span><span class="tag">柔光</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>模拟35毫米胶片摄影，柔和轻盈的日系美学，温柔漫射的自然窗户光，轻微过曝，柔和色调，低对比度，柔和的高光，靠近窗户配有白色窗帘的极简室内环境，干净的浅色墙壁，自然构图，平视视角，略微紧凑的全身取景（大腿中部到头部），年轻东亚女性，自然极简妆容，柔和真实的皮肤纹理，长长的微乱黑发，超大号白色纽扣衬衫，浅色休闲短裤，赤脚，简单放松的造型，自然站立姿势放松，双臂自然下垂或略微放在身后，面朝镜头，温柔柔和...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2932.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2931" data-search="案例2931 春日禅意水墨群山海报 春日禅意水墨群山海报 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2046215276249993720 chatgpt ai 图片 gpt img2 新中式 水墨风 春日禅 留白美 极简风 新中式水墨山水海报，竖版9:16构图，东方极简美学风格， 大面积留白，整体色调为春日清晨氛围（青绿色、雾蓝、淡灰、浅墨），低饱和、清透柔和，高级质感。 画面主体为奇峻巍峨的群山，从中间平静湖面的两侧拔地而起，占据左右两侧画面， 山体以水墨晕染表现，浓淡干湿变化丰富，局部融入淡青绿色渲染，体现春意生机。 山峰被湿润轻柔的晨雾包裹，雾气层层递进，与浅青蓝天空自然融合，形成空气透视与空间纵深。 湖面如镜面般平静，呈现微青绿色调，倒映山体与天空，反射略带柔焦与雾化扩散效果，增强春日湿润与梦幻氛围。 中景一艘带弧形篷顶的小木舟缓慢漂浮，船桨轻触水面形成细腻涟漪，水纹自然扩散，整体保持极静状态。 船上" data-tags="ChatGPT|AI|图片|GPT IMG2|新中式|水墨风|春日禅|留白美|极简风">
+      <a class="case-card-link" href="/zh/case/2931.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-spring-zen-ink-mountain-poster-1.jpeg" alt="春日禅意水墨群山海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2931</span></span><span class="case-title-text">春日禅意水墨群山海报</span></h3>
+          <p class="case-summary">春日禅意水墨群山海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2046215276249993720">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">新中式</span><span class="tag">水墨风</span><span class="tag">春日禅</span><span class="tag">留白美</span><span class="tag">极简风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>新中式水墨山水海报，竖版9:16构图，东方极简美学风格，
+大面积留白，整体色调为春日清晨氛围（青绿色、雾蓝、淡灰、浅墨），低饱和、清透柔和，高级质感。
+画面主体为奇峻巍峨的群山，从中间平静湖面的两侧拔地而起，占据左右两侧画面，
+山体以水墨晕染表现，浓淡干湿变化丰富，局部融入淡青绿色渲染，体现春意生机。
+山峰被湿润轻柔的晨雾包裹，雾气层层递进，与浅青蓝天空自然融合，形成空气透视与空间纵深。
+
+湖面如...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2931.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2930" data-search="案例2930 机甲少女立于废弃海城 机甲少女立于废弃海城 - gpt img2 图像生成提示词 x / old_pgmrs_will https://x.com/old_pgmrs_will/status/2046144801071079612 chatgpt ai 图片 gpt img2 一名十几岁的机甲少女，苍白的肌肤上沾着烟尘与海水飞沫，锐利的琥珀色眼眸中映出发光的 hud 瞄准标线；及腰的灰白色长发扎成高马尾，在海风中肆意飞扬。哑光枪灰色外骨骼装甲覆盖双肩、前臂与小腿，关节处裸露着液压活塞，胸挂布有发光的青蓝色冷却管线。一件沾着油污的超大号机库外套半滑落在一侧肩头，一门巨型轨道炮架在右肩，衣领处挂着士兵牌与磨损的红色丝带。 她站在向左略微偏移的位置，立于倾斜钢铁平台的锈蚀边缘，平台向外延伸至漆黑海面之上；重心落在单腿上，左手紧握炮带，头部微转向镜头，投来沉静而桀骜的目光。背部推进器不断喷出蒸汽，马尾与外套在咸腥海风里向一侧狂乱飘动。 背景是黄昏时分广袤的废弃海上都市，用途" data-tags="ChatGPT|AI|图片|GPT IMG2">
+      <a class="case-card-link" href="/zh/case/2930.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-mecha-girl-stands-in-derelict-sea-city-1.jpeg" alt="机甲少女立于废弃海城" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2930</span></span><span class="case-title-text">机甲少女立于废弃海城</span></h3>
+          <p class="case-summary">机甲少女立于废弃海城 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/old_pgmrs_will/status/2046144801071079612">X / old_pgmrs_will</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一名十几岁的机甲少女，苍白的肌肤上沾着烟尘与海水飞沫，锐利的琥珀色眼眸中映出发光的 HUD 瞄准标线；及腰的灰白色长发扎成高马尾，在海风中肆意飞扬。哑光枪灰色外骨骼装甲覆盖双肩、前臂与小腿，关节处裸露着液压活塞，胸挂布有发光的青蓝色冷却管线。一件沾着油污的超大号机库外套半滑落在一侧肩头，一门巨型轨道炮架在右肩，衣领处挂着士兵牌与磨损的红色丝带。
+她站在向左略微偏移的位置，立于倾斜钢铁平台的锈蚀边缘...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2930.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2929" data-search="案例2929 大师级真迹复刻 大师级真迹复刻 - gpt img2 图像生成提示词 x / mrlarus https://x.com/mrlarus/status/2046201836525302032 chatgpt ai 图片 gpt img2 真迹 名画 大师 复刻 艺术 帮我生成xxxx真迹图片" data-tags="ChatGPT|AI|图片|GPT IMG2|真迹|名画|大师|复刻|艺术">
+      <a class="case-card-link" href="/zh/case/2929.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-xxxx-masterpiece-reproduction-1.jpeg" alt="大师级真迹复刻" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2929</span></span><span class="case-title-text">大师级真迹复刻</span></h3>
+          <p class="case-summary">大师级真迹复刻 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2046201836525302032">X / MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">真迹</span><span class="tag">名画</span><span class="tag">大师</span><span class="tag">复刻</span><span class="tag">艺术</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>帮我生成xxxx真迹图片</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2929.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2928" data-search="案例2928 古风明朝帝王群像长卷 古风明朝帝王群像长卷 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045071977279635962 chatgpt ai 图片 gpt img2 明朝 皇帝 古风 画像 帝王 根据上传图片的风格，生成明朝各个皇帝的头像，头像下面有他们的谥号和名字" data-tags="ChatGPT|AI|图片|GPT IMG2|明朝|皇帝|古风|画像|帝王">
+      <a class="case-card-link" href="/zh/case/2928.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-ancient-ming-emperor-group-1.jpeg" alt="古风明朝帝王群像长卷" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2928</span></span><span class="case-title-text">古风明朝帝王群像长卷</span></h3>
+          <p class="case-summary">古风明朝帝王群像长卷 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045071977279635962">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">明朝</span><span class="tag">皇帝</span><span class="tag">古风</span><span class="tag">画像</span><span class="tag">帝王</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>根据上传图片的风格，生成明朝各个皇帝的头像，头像下面有他们的谥号和名字</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2928.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2927" data-search="案例2927 哔哩哔哩户晨风直播截图 哔哩哔哩户晨风直播截图 - gpt img2 图像生成提示词 x / austinit https://x.com/austinit/status/2044994519649997183 chatgpt ai 图片 gpt img2 直播 举牌 b站 户晨风 竖屏 9:16 的图片，生成一张哔哩哔哩直播的截图，里面是 户晨风在直播，户晨风表情开心，手里拿着牌子，牌子里写着 “austin总太性情了，大家给austin总点点关注。”" data-tags="ChatGPT|AI|图片|GPT IMG2|直播|举牌|B站|户晨风|竖屏">
+      <a class="case-card-link" href="/zh/case/2927.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-bilibili-hu-chenfeng-livestream-1.jpeg" alt="哔哩哔哩户晨风直播截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2927</span></span><span class="case-title-text">哔哩哔哩户晨风直播截图</span></h3>
+          <p class="case-summary">哔哩哔哩户晨风直播截图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/austinit/status/2044994519649997183">X / austinit</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">直播</span><span class="tag">举牌</span><span class="tag">B站</span><span class="tag">户晨风</span><span class="tag">竖屏</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>9:16 的图片，生成一张哔哩哔哩直播的截图，里面是 户晨风在直播，户晨风表情开心，手里拿着牌子，牌子里写着 “Austin总太性情了，大家给Austin总点点关注。”</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2927.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2926" data-search="案例2926 完美匹配的海报广告图 完美匹配的海报广告图 - gpt img2 图像生成提示词 x / kashiko_aiart https://x.com/kashiko_aiart/status/2045787856292151322 chatgpt ai 图片 gpt img2 广告图 海报图 高信息 强匹配 商业图 生成一张与这张图片完美匹配的广告图片。信息量要多一些。" data-tags="ChatGPT|AI|图片|GPT IMG2|广告图|海报图|高信息|强匹配|商业图">
+      <a class="case-card-link" href="/zh/case/2926.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-perfect-matching-poster-ad-1.jpeg" alt="完美匹配的海报广告图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2926</span></span><span class="case-title-text">完美匹配的海报广告图</span></h3>
+          <p class="case-summary">完美匹配的海报广告图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Kashiko_AIart/status/2045787856292151322">X / Kashiko_AIart</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">广告图</span><span class="tag">海报图</span><span class="tag">高信息</span><span class="tag">强匹配</span><span class="tag">商业图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张与这张图片完美匹配的广告图片。信息量要多一些。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2926.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2925" data-search="案例2925 琉璃透明画眉鸟飞舞羊城墨卷 琉璃透明画眉鸟飞舞羊城墨卷 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045873940883808523 chatgpt ai 图片 gpt img2 水墨风 广州塔 玻璃鸟 东方美 超现实 【背景与骨架线条】 纯黑深邃底色，一条粗壮有力的墨色书法s型曲线自画面一端蜿蜒贯穿至另一端，笔触苍劲，墨迹浓淡有致，如大写意行笔，构成整幅画面的视觉骨架与叙事动线。 【主体：透明燕子】 曲线上方，一只展翅飞翔的画眉鸟占据视觉核心；身体呈玻璃透明质感，内部映射传统建筑群叠影，蓝绿色光流在透明羽翼间流转折射，仿佛时间长河与文明记忆凝缩其中；轮廓以极细金线勾边，增强立体感与神圣感。 【中景：古典建筑序列】 燕子下方，沿墨线曲线错落分布广州的各种风景名胜：白云山、陈家祠、双子塔、广州塔、猎德大桥、海珠塔依次浮现；主色调青绿与淡金，建筑细节清晰，琉璃瓦、飞檐翘角、石阶回廊；木棉花簇拥点缀于建筑周围，花瓣" data-tags="ChatGPT|AI|图片|GPT IMG2|水墨风|广州塔|玻璃鸟|东方美|超现实">
+      <a class="case-card-link" href="/zh/case/2925.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-glazed-transparent-thrush-guangzhou-1.jpeg" alt="琉璃透明画眉鸟飞舞羊城墨卷" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2925</span></span><span class="case-title-text">琉璃透明画眉鸟飞舞羊城墨卷</span></h3>
+          <p class="case-summary">琉璃透明画眉鸟飞舞羊城墨卷 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045873940883808523">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">水墨风</span><span class="tag">广州塔</span><span class="tag">玻璃鸟</span><span class="tag">东方美</span><span class="tag">超现实</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>【背景与骨架线条】
+纯黑深邃底色，一条粗壮有力的墨色书法S型曲线自画面一端蜿蜒贯穿至另一端，笔触苍劲，墨迹浓淡有致，如大写意行笔，构成整幅画面的视觉骨架与叙事动线。
+【主体：透明燕子】
+曲线上方，一只展翅飞翔的画眉鸟占据视觉核心；身体呈玻璃透明质感，内部映射传统建筑群叠影，蓝绿色光流在透明羽翼间流转折射，仿佛时间长河与文明记忆凝缩其中；轮廓以极细金线勾边，增强立体感与神圣感。
+【中景：古典建筑序列...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2925.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2924" data-search="案例2924 极简国潮鎏金广州塔海报 极简国潮鎏金广州塔海报 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045744531686166878 chatgpt ai 图片 gpt img2 新中式 国潮 极简风 广州塔 海报设计 新中式极简风格高端城市海报，9:16竖版构图，以广州为核心主题，画面中心为抽象几何化的广州塔，造型简洁但具有辨识度， 整体采用s型流动构图，从下方向上延展，珠江水系被设计为流动的水波纹与传统祥云纹样融合，环绕整个画面形成视觉动线， 广州地标建筑以“留白+线描+局部色块”的方式点缀其中：珠江新城双塔、猎德大桥、白云山轮廓、岭南骑楼， 传统与现代建筑自然融合，层次递进，远近虚实分明， 风格控制：极简 + 高级 + 东方意境，不杂乱不过度写实， 色彩方案（重点）： 高饱和但克制 ，中国红、青蓝、鎏金为主色， 辅以少量暖金高光点缀，形成强烈视觉冲击但不俗艳， 背景：大面积纯净留白或淡宣纸肌理" data-tags="ChatGPT|AI|图片|GPT IMG2|新中式|国潮|极简风|广州塔|海报设计">
+      <a class="case-card-link" href="/zh/case/2924.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-minimalist-guochao-guangzhou-tower-1.jpeg" alt="极简国潮鎏金广州塔海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2924</span></span><span class="case-title-text">极简国潮鎏金广州塔海报</span></h3>
+          <p class="case-summary">极简国潮鎏金广州塔海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045744531686166878">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">新中式</span><span class="tag">国潮</span><span class="tag">极简风</span><span class="tag">广州塔</span><span class="tag">海报设计</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>新中式极简风格高端城市海报，9:16竖版构图，以广州为核心主题，画面中心为抽象几何化的广州塔，造型简洁但具有辨识度，
+
+整体采用S型流动构图，从下方向上延展，珠江水系被设计为流动的水波纹与传统祥云纹样融合，环绕整个画面形成视觉动线，
+
+广州地标建筑以“留白+线描+局部色块”的方式点缀其中：珠江新城双塔、猎德大桥、白云山轮廓、岭南骑楼，
+传统与现代建筑自然融合，层次递进，远近虚实分明，
+
+风格控制：...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2924.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2923" data-search="案例2923 兰亭集序书法帖意境图 兰亭集序书法帖意境图 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045137549149286858 chatgpt ai 图片 gpt img2 书法 兰亭序 王羲之 古风 意境 结合王羲之的《兰亭集序》里的内容，生成一副书法帖图片，要求图片背景符合《兰亭集序》的意境，背景图可以使用蒙版，前景是《兰亭集序》" data-tags="ChatGPT|AI|图片|GPT IMG2|书法|兰亭序|王羲之|古风|意境">
+      <a class="case-card-link" href="/zh/case/2923.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-lantingji-xu-calligraphy-art-1.jpeg" alt="兰亭集序书法帖意境图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2923</span></span><span class="case-title-text">兰亭集序书法帖意境图</span></h3>
+          <p class="case-summary">兰亭集序书法帖意境图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045137549149286858">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">书法</span><span class="tag">兰亭序</span><span class="tag">王羲之</span><span class="tag">古风</span><span class="tag">意境</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>结合王羲之的《兰亭集序》里的内容，生成一副书法帖图片，要求图片背景符合《兰亭集序》的意境，背景图可以使用蒙版，前景是《兰亭集序》</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2923.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2922" data-search="案例2922 蒙娜丽莎畅饮可乐的趣味油画 蒙娜丽莎畅饮可乐的趣味油画 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045058142858555733 chatgpt ai 图片 gpt img2 蒙娜丽莎 喝可乐 趣味油画 名画恶搞 跨界艺术 生成一张蒙娜丽莎喝可乐的油画。" data-tags="ChatGPT|AI|图片|GPT IMG2|蒙娜丽莎|喝可乐|趣味油画|名画恶搞|跨界艺术">
+      <a class="case-card-link" href="/zh/case/2922.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-mona-lisa-drinking-cola-1.jpeg" alt="蒙娜丽莎畅饮可乐的趣味油画" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2922</span></span><span class="case-title-text">蒙娜丽莎畅饮可乐的趣味油画</span></h3>
+          <p class="case-summary">蒙娜丽莎畅饮可乐的趣味油画 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045058142858555733">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">蒙娜丽莎</span><span class="tag">喝可乐</span><span class="tag">趣味油画</span><span class="tag">名画恶搞</span><span class="tag">跨界艺术</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张蒙娜丽莎喝可乐的油画。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2922.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2921" data-search="案例2921 朱元璋登基后的推特主页 朱元璋登基后的推特主页 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045021302315249738 chatgpt ai 图片 gpt img2 朱元璋 明朝 皇帝 登基 社交 创建一个明朝朱元璋登基之后的x帖子页面" data-tags="ChatGPT|AI|图片|GPT IMG2|朱元璋|明朝|皇帝|登基|社交">
+      <a class="case-card-link" href="/zh/case/2921.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-zhu-yuanzhang-throne-x-post-1.jpeg" alt="朱元璋登基后的推特主页" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2921</span></span><span class="case-title-text">朱元璋登基后的推特主页</span></h3>
+          <p class="case-summary">朱元璋登基后的推特主页 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045021302315249738">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">朱元璋</span><span class="tag">明朝</span><span class="tag">皇帝</span><span class="tag">登基</span><span class="tag">社交</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创建一个明朝朱元璋登基之后的X帖子页面</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2921.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2920" data-search="案例2920 治愈系助眠指南九宫格 治愈系助眠指南九宫格 - gpt img2 图像生成提示词 x / austinit https://x.com/austinit/status/2046037688969769346 chatgpt ai 图片 gpt img2 助眠 九宫格 治愈系 睡眠 海报 生成一张适合小红书发布的 3:4 竖版九宫格海报，整体为 3列 × 3行 排版，九个宫格边界清晰，方便后期直接切割成 9 张单图发布。整体风格干净、高级、统一，适合女性向健康生活方式内容，具有小红书爆款封面气质。画面要求 信息排版清晰、文字大、可读性强、留白舒服、配色温柔治愈。 整体视觉风格： 奶油白、浅米色、淡燕麦色、浅焦糖色为主色调，搭配少量深棕色文字，ins风、治愈感、睡眠疗愈主题，简约排版，轻拟物插画点缀，可加入枕头、月亮、星星、热牛奶、香薰、书本、眼罩、窗帘、床铺等元素。整体像专业新媒体设计图，字体工整，适合做知识科普类小红书九宫格。 排版要求： 整张图必须是标准九宫格构图，切分" data-tags="ChatGPT|AI|图片|GPT IMG2|助眠|九宫格|治愈系|睡眠|海报">
+      <a class="case-card-link" href="/zh/case/2920.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-healing-sleep-guide-grid-1.jpeg" alt="治愈系助眠指南九宫格" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2920</span></span><span class="case-title-text">治愈系助眠指南九宫格</span></h3>
+          <p class="case-summary">治愈系助眠指南九宫格 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/austinit/status/2046037688969769346">X / austinit</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">助眠</span><span class="tag">九宫格</span><span class="tag">治愈系</span><span class="tag">睡眠</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张适合小红书发布的 3:4 竖版九宫格海报，整体为 3列 × 3行 排版，九个宫格边界清晰，方便后期直接切割成 9 张单图发布。整体风格干净、高级、统一，适合女性向健康生活方式内容，具有小红书爆款封面气质。画面要求 信息排版清晰、文字大、可读性强、留白舒服、配色温柔治愈。
+
+整体视觉风格：
+奶油白、浅米色、淡燕麦色、浅焦糖色为主色调，搭配少量深棕色文字，ins风、治愈感、睡眠疗愈主题，简约排...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2920.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2919" data-search="案例2919 粤超联赛国潮风邀请函海报 粤超联赛国潮风邀请函海报 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045772039521542202 chatgpt ai 图片 gpt img2 国潮风 足球赛 邀请函 极简派 中国红 广东省城市足球超级联赛（粤超）邀请函海报设计，比例9:16； s型流动构图，画面从下方向上延展，一条由足球运动轨迹形成的动态能量流贯穿画面， 中心为一颗发光的足球，带有动感轨迹与能量光效； 沿s型动线融合广东城市地标与文化元素： 广州塔、深圳平安金融中心、珠海渔女雕像、岭南建筑与佛山武术剪影、中山孙中山文化象征、潮汕英歌舞动态人物轮廓、清远山水自然景观， 所有元素采用“线描 + 局部色块 + 留白”融合表现，层次递进、远近虚实结合； 加入抽象足球运动员剪影，弱化人物细节，强化动势与竞技氛围，视觉重点仍为足球； 风格：现代国潮高级海报，极简风格但富有设计感，高级、干净、统一， 融合东方" data-tags="ChatGPT|AI|图片|GPT IMG2|国潮风|足球赛|邀请函|极简派|中国红">
+      <a class="case-card-link" href="/zh/case/2919.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-yuechao-guochao-poster-1.jpeg" alt="粤超联赛国潮风邀请函海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2919</span></span><span class="case-title-text">粤超联赛国潮风邀请函海报</span></h3>
+          <p class="case-summary">粤超联赛国潮风邀请函海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045772039521542202">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">国潮风</span><span class="tag">足球赛</span><span class="tag">邀请函</span><span class="tag">极简派</span><span class="tag">中国红</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>广东省城市足球超级联赛（粤超）邀请函海报设计，比例9:16； 
+
+S型流动构图，画面从下方向上延展，一条由足球运动轨迹形成的动态能量流贯穿画面， 中心为一颗发光的足球，带有动感轨迹与能量光效；
+
+沿S型动线融合广东城市地标与文化元素： 广州塔、深圳平安金融中心、珠海渔女雕像、岭南建筑与佛山武术剪影、中山孙中山文化象征、潮汕英歌舞动态人物轮廓、清远山水自然景观， 所有元素采用“线描 + 局部色块 +...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2919.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2918" data-search="案例2918 夏日柑橘苏打高转化广告图 夏日柑橘苏打高转化广告图 - gpt img2 图像生成提示词 x / old_pgmrs_will https://x.com/old_pgmrs_will/status/2045852114673635507 chatgpt ai 图片 gpt img2 苏打水 夏日感 商品图 高转化 碳酸饮 图像生成: 商品广告照片, 适合夏天的季节商品, 碳酸饮料, 名称=&quot;夏柑soda&quot;, 形状=pet瓶500ml, 研究2025年作为饮料广告的高cta设计后设计并生成图像规格, 宽高比3:4" data-tags="ChatGPT|AI|图片|GPT IMG2|苏打水|夏日感|商品图|高转化|碳酸饮">
+      <a class="case-card-link" href="/zh/case/2918.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-summer-citrus-soda-ad-1.jpeg" alt="夏日柑橘苏打高转化广告图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2918</span></span><span class="case-title-text">夏日柑橘苏打高转化广告图</span></h3>
+          <p class="case-summary">夏日柑橘苏打高转化广告图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/old_pgmrs_will/status/2045852114673635507">X / old_pgmrs_will</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">苏打水</span><span class="tag">夏日感</span><span class="tag">商品图</span><span class="tag">高转化</span><span class="tag">碳酸饮</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>图像生成: 商品广告照片, 适合夏天的季节商品, 碳酸饮料, 名称=&quot;夏柑SODA&quot;, 形状=PET瓶500ml, 研究2025年作为饮料广告的高CTA设计后设计并生成图像规格, 宽高比3:4</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2918.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2917" data-search="案例2917 星云巨鲤与小人的奇幻对话 星云巨鲤与小人的奇幻对话 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045875219307655337 chatgpt ai 图片 gpt img2 超现实 大锦鲤 星云 梦幻 仰视角 一幅超现实主义数字插画风格，采用低角度仰拍视角。画面描绘了一条巨型彩色锦鲤遨游在梦幻般的星云中，四周环绕着色彩鲜艳的星云与气泡。 画面中央还站着一个小人，背对观众，神情平静地仰望空中这条巨大的锦鲤，锦鲤头向下看着小人。 整体画面呈现出强烈的大小对比，氛围空灵又梦幻。比例9:16" data-tags="ChatGPT|AI|图片|GPT IMG2|超现实|大锦鲤|星云|梦幻|仰视角">
+      <a class="case-card-link" href="/zh/case/2917.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-surreal-nebula-koi-1.jpeg" alt="星云巨鲤与小人的奇幻对话" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2917</span></span><span class="case-title-text">星云巨鲤与小人的奇幻对话</span></h3>
+          <p class="case-summary">星云巨鲤与小人的奇幻对话 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045875219307655337">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">超现实</span><span class="tag">大锦鲤</span><span class="tag">星云</span><span class="tag">梦幻</span><span class="tag">仰视角</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一幅超现实主义数字插画风格，采用低角度仰拍视角。画面描绘了一条巨型彩色锦鲤遨游在梦幻般的星云中，四周环绕着色彩鲜艳的星云与气泡。 
+画面中央还站着一个小人，背对观众，神情平静地仰望空中这条巨大的锦鲤，锦鲤头向下看着小人。 
+整体画面呈现出强烈的大小对比，氛围空灵又梦幻。比例9:16</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2917.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2916" data-search="案例2916 抖音直播间的绝美女主播 抖音直播间的绝美女主播 - gpt img2 图像生成提示词 x / joshesye https://x.com/joshesye/status/2044796366950703316 chatgpt ai 图片 gpt img2 直播 美女 截图 女主播 短视频 生成一个抖音直播的截图 里面是一个美女在直播" data-tags="ChatGPT|AI|图片|GPT IMG2|直播|美女|截图|女主播|短视频">
+      <a class="case-card-link" href="/zh/case/2916.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-douyin-beautiful-streamer-1.jpeg" alt="抖音直播间的绝美女主播" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2916</span></span><span class="case-title-text">抖音直播间的绝美女主播</span></h3>
+          <p class="case-summary">抖音直播间的绝美女主播 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/joshesye/status/2044796366950703316">X / joshesye</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">直播</span><span class="tag">美女</span><span class="tag">截图</span><span class="tag">女主播</span><span class="tag">短视频</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一个抖音直播的截图 里面是一个美女在直播</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2916.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2915" data-search="案例2915 抖音汉服美女直播带货截图 抖音汉服美女直播带货截图 - gpt img2 图像生成提示词 x / joshesye https://x.com/joshesye/status/2044796366950703316 chatgpt ai 图片 gpt img2 汉服 直播 抖音 美女 卖货 生成一个抖音直播的截图里面是一个穿着中国传统服饰的美女在直播卖货" data-tags="ChatGPT|AI|图片|GPT IMG2|汉服|直播|抖音|美女|卖货">
+      <a class="case-card-link" href="/zh/case/2915.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-douyin-hanfu-livestream-1.jpeg" alt="抖音汉服美女直播带货截图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2915</span></span><span class="case-title-text">抖音汉服美女直播带货截图</span></h3>
+          <p class="case-summary">抖音汉服美女直播带货截图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/joshesye/status/2044796366950703316">X / joshesye</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">汉服</span><span class="tag">直播</span><span class="tag">抖音</span><span class="tag">美女</span><span class="tag">卖货</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一个抖音直播的截图里面是一个穿着中国传统服饰的美女在直播卖货</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2915.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2914" data-search="案例2914 绝美国风工笔画书签设计 绝美国风工笔画书签设计 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 工笔画 书签 国风 设计稿 古风 生成一系列工笔画书签的设计稿" data-tags="ChatGPT|AI|图片|GPT IMG2|工笔画|书签|国风|设计稿|古风">
+      <a class="case-card-link" href="/zh/case/2914.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-stunning-gongbi-bookmarks-1.jpeg" alt="绝美国风工笔画书签设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2914</span></span><span class="case-title-text">绝美国风工笔画书签设计</span></h3>
+          <p class="case-summary">绝美国风工笔画书签设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">工笔画</span><span class="tag">书签</span><span class="tag">国风</span><span class="tag">设计稿</span><span class="tag">古风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一系列工笔画书签的设计稿</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2914.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2913" data-search="案例2913 定制专属风格界面设计系统 定制专属风格界面设计系统 - gpt img2 图像生成提示词 x / stark_nico99 https://x.com/stark_nico99/status/2045836554451706125 chatgpt ai 图片 gpt img2 组件库 网页端 移动端 按钮组 视觉库 用xx风格帮我生成一套ui设计系统，包含网页、移动端、卡片、控件、按钮 以及其它" data-tags="ChatGPT|AI|图片|GPT IMG2|组件库|网页端|移动端|按钮组|视觉库">
+      <a class="case-card-link" href="/zh/case/2913.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-custom-style-ui-system-1.jpeg" alt="定制专属风格界面设计系统" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2913</span></span><span class="case-title-text">定制专属风格界面设计系统</span></h3>
+          <p class="case-summary">定制专属风格界面设计系统 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/stark_nico99/status/2045836554451706125">X / stark_nico99</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">组件库</span><span class="tag">网页端</span><span class="tag">移动端</span><span class="tag">按钮组</span><span class="tag">视觉库</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>用xx风格帮我生成一套UI设计系统，包含网页、移动端、卡片、控件、按钮 以及其它</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2913.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2912" data-search="案例2912 杜蕾斯茶颜悦色联名海报设计 杜蕾斯茶颜悦色联名海报设计 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 联名 海报 杜蕾斯 茶颜 国潮 设计一套杜蕾斯和茶颜悦色联名的宣传物料" data-tags="ChatGPT|AI|图片|GPT IMG2|联名|海报|杜蕾斯|茶颜|国潮">
+      <a class="case-card-link" href="/zh/case/2912.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-durex-chayan-collaboration-1.jpeg" alt="杜蕾斯茶颜悦色联名海报设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2912</span></span><span class="case-title-text">杜蕾斯茶颜悦色联名海报设计</span></h3>
+          <p class="case-summary">杜蕾斯茶颜悦色联名海报设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">联名</span><span class="tag">海报</span><span class="tag">杜蕾斯</span><span class="tag">茶颜</span><span class="tag">国潮</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>设计一套杜蕾斯和茶颜悦色联名的宣传物料</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2912.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2911" data-search="案例2911 马斯克专属篆刻印章设计 马斯克专属篆刻印章设计 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 篆刻 印章 马斯克 国风 金石 给”埃隆·马斯克”设计一组篆刻印章" data-tags="ChatGPT|AI|图片|GPT IMG2|篆刻|印章|马斯克|国风|金石">
+      <a class="case-card-link" href="/zh/case/2911.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-elon-musk-seal-design-1.jpeg" alt="马斯克专属篆刻印章设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2911</span></span><span class="case-title-text">马斯克专属篆刻印章设计</span></h3>
+          <p class="case-summary">马斯克专属篆刻印章设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">篆刻</span><span class="tag">印章</span><span class="tag">马斯克</span><span class="tag">国风</span><span class="tag">金石</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>给”埃隆·马斯克”设计一组篆刻印章</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2911.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2910" data-search="案例2910 黑白线稿勾勒的上海风情 黑白线稿勾勒的上海风情 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 线稿 上海 明信片 黑白 城市 设计一张黑色线稿风格的上海明信片" data-tags="ChatGPT|AI|图片|GPT IMG2|线稿|上海|明信片|黑白|城市">
+      <a class="case-card-link" href="/zh/case/2910.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-black-and-white-line-art-shanghai-1.jpeg" alt="黑白线稿勾勒的上海风情" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2910</span></span><span class="case-title-text">黑白线稿勾勒的上海风情</span></h3>
+          <p class="case-summary">黑白线稿勾勒的上海风情 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">线稿</span><span class="tag">上海</span><span class="tag">明信片</span><span class="tag">黑白</span><span class="tag">城市</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>设计一张黑色线稿风格的上海明信片</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2910.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2909" data-search="案例2909 运动健身图标字体设计 运动健身图标字体设计 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 运动类 图标库 字体图 健身风 矢量集 生成一套运动类app的iconfont" data-tags="ChatGPT|AI|图片|GPT IMG2|运动类|图标库|字体图|健身风|矢量集">
+      <a class="case-card-link" href="/zh/case/2909.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-sports-fitness-icon-font-1.jpeg" alt="运动健身图标字体设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2909</span></span><span class="case-title-text">运动健身图标字体设计</span></h3>
+          <p class="case-summary">运动健身图标字体设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">运动类</span><span class="tag">图标库</span><span class="tag">字体图</span><span class="tag">健身风</span><span class="tag">矢量集</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一套运动类app的iconfont</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2909.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2908" data-search="案例2908 景德镇青花瓷全景解说图谱 景德镇青花瓷全景解说图谱 - gpt img2 图像生成提示词 x / joshesye https://x.com/joshesye/status/2045764695827562686 chatgpt ai 图片 gpt img2 青花瓷 景德镇 图解 瓷器 科普 为我生成景德镇青花瓷的详细解说图，配上详细的中文知识解析" data-tags="ChatGPT|AI|图片|GPT IMG2|青花瓷|景德镇|图解|瓷器|科普">
+      <a class="case-card-link" href="/zh/case/2908.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-jingdezhen-blue-white-porcelain-diagram-1.jpeg" alt="景德镇青花瓷全景解说图谱" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2908</span></span><span class="case-title-text">景德镇青花瓷全景解说图谱</span></h3>
+          <p class="case-summary">景德镇青花瓷全景解说图谱 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/joshesye/status/2045764695827562686">X / joshesye</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">青花瓷</span><span class="tag">景德镇</span><span class="tag">图解</span><span class="tag">瓷器</span><span class="tag">科普</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>为我生成景德镇青花瓷的详细解说图，配上详细的中文知识解析</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2908.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2907" data-search="案例2907 美女举牌感谢大哥打赏大火箭 美女举牌感谢大哥打赏大火箭 - gpt img2 图像生成提示词 x / joshesye https://x.com/joshesye/status/2044796366950703316 chatgpt ai 图片 gpt img2 直播间 美女 打赏 火箭 举牌 生成一个抖音直播的截图 ，一个美女在直播，美女手里拿着牌子，上面写着：谢谢行者大哥的大火箭！" data-tags="ChatGPT|AI|图片|GPT IMG2|直播间|美女|打赏|火箭|举牌">
+      <a class="case-card-link" href="/zh/case/2907.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-beautiful-woman-thanking-brother-for-rocket-1.jpeg" alt="美女举牌感谢大哥打赏大火箭" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2907</span></span><span class="case-title-text">美女举牌感谢大哥打赏大火箭</span></h3>
+          <p class="case-summary">美女举牌感谢大哥打赏大火箭 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/joshesye/status/2044796366950703316">X / joshesye</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">直播间</span><span class="tag">美女</span><span class="tag">打赏</span><span class="tag">火箭</span><span class="tag">举牌</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一个抖音直播的截图 ，一个美女在直播，美女手里拿着牌子，上面写着：谢谢行者大哥的大火箭！</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2907.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2906" data-search="案例2906 小王子与星舰的浪漫联名 小王子与星舰的浪漫联名 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 小王子 星际穿越 联名设计 宇宙探索 明信片 设计一张小王子和spacex联名的明信片" data-tags="ChatGPT|AI|图片|GPT IMG2|小王子|星际穿越|联名设计|宇宙探索|明信片">
+      <a class="case-card-link" href="/zh/case/2906.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-little-prince-spaceship-co-branding-1.jpeg" alt="小王子与星舰的浪漫联名" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2906</span></span><span class="case-title-text">小王子与星舰的浪漫联名</span></h3>
+          <p class="case-summary">小王子与星舰的浪漫联名 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">小王子</span><span class="tag">星际穿越</span><span class="tag">联名设计</span><span class="tag">宇宙探索</span><span class="tag">明信片</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>设计一张小王子和SpaceX联名的明信片</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2906.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2905" data-search="案例2905 言叶之庭春雨绿意单日历 言叶之庭春雨绿意单日历 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 言叶庭 新海诚 春雨 绿意 日历 生成一张言叶之庭2026年4月19日单日日历" data-tags="ChatGPT|AI|图片|GPT IMG2|言叶庭|新海诚|春雨|绿意|日历">
+      <a class="case-card-link" href="/zh/case/2905.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-garden-of-words-spring-rain-calendar-1.jpeg" alt="言叶之庭春雨绿意单日历" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2905</span></span><span class="case-title-text">言叶之庭春雨绿意单日历</span></h3>
+          <p class="case-summary">言叶之庭春雨绿意单日历 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">言叶庭</span><span class="tag">新海诚</span><span class="tag">春雨</span><span class="tag">绿意</span><span class="tag">日历</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张言叶之庭2026年4月19日单日日历</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2905.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2904" data-search="案例2904 五一劳动节手举牌创意设计集 五一劳动节手举牌创意设计集 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 手举牌 劳动节 创意 节日 排版 生成一系列五一劳动节的手举牌设计" data-tags="ChatGPT|AI|图片|GPT IMG2|手举牌|劳动节|创意|节日|排版">
+      <a class="case-card-link" href="/zh/case/2904.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-labor-day-sign-designs-1.jpeg" alt="五一劳动节手举牌创意设计集" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2904</span></span><span class="case-title-text">五一劳动节手举牌创意设计集</span></h3>
+          <p class="case-summary">五一劳动节手举牌创意设计集 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">手举牌</span><span class="tag">劳动节</span><span class="tag">创意</span><span class="tag">节日</span><span class="tag">排版</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一系列五一劳动节的手举牌设计</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2904.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2903" data-search="案例2903 2026谷雨节气唯美海报设计 2026谷雨节气唯美海报设计 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 谷雨 春雨 海报 节气 国风 生成一张2026年谷雨节气的海报" data-tags="ChatGPT|AI|图片|GPT IMG2|谷雨|春雨|海报|节气|国风">
+      <a class="case-card-link" href="/zh/case/2903.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-guyu-solar-term-poster-2026-1.jpeg" alt="2026谷雨节气唯美海报设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2903</span></span><span class="case-title-text">2026谷雨节气唯美海报设计</span></h3>
+          <p class="case-summary">2026谷雨节气唯美海报设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">谷雨</span><span class="tag">春雨</span><span class="tag">海报</span><span class="tag">节气</span><span class="tag">国风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张2026年谷雨节气的海报</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2903.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2902" data-search="案例2902 奔赴山海胶片感海报 奔赴山海胶片感海报 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 胶片感 山海 海报 复古 风光 设计一张主题是”奔赴山海”的胶片感摄影风格的海报" data-tags="ChatGPT|AI|图片|GPT IMG2|胶片感|山海|海报|复古|风光">
+      <a class="case-card-link" href="/zh/case/2902.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-run-to-mountains-and-seas-1.jpeg" alt="奔赴山海胶片感海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2902</span></span><span class="case-title-text">奔赴山海胶片感海报</span></h3>
+          <p class="case-summary">奔赴山海胶片感海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">胶片感</span><span class="tag">山海</span><span class="tag">海报</span><span class="tag">复古</span><span class="tag">风光</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>设计一张主题是”奔赴山海”的胶片感摄影风格的海报</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2902.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2901" data-search="案例2901 瑜伽裤女主播展示身材曲线 瑜伽裤女主播展示身材曲线 - gpt img2 图像生成提示词 x / joshesye https://x.com/joshesye/status/2044796366950703316 chatgpt ai 图片 gpt img2 直播 瑜伽裤 带货 竖屏 女主播 手机竖屏界面，短视频直播平台风格，一位年轻亚洲女主播在家中直播带货，主播穿着贴身瑜伽裤与简约上衣，身材曲线自然，正在侧身展示裤子的线条与弹性，动作自然不夸张；" data-tags="ChatGPT|AI|图片|GPT IMG2|直播|瑜伽裤|带货|竖屏|女主播">
+      <a class="case-card-link" href="/zh/case/2901.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-yoga-pants-streamer-curves-1.jpeg" alt="瑜伽裤女主播展示身材曲线" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2901</span></span><span class="case-title-text">瑜伽裤女主播展示身材曲线</span></h3>
+          <p class="case-summary">瑜伽裤女主播展示身材曲线 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/joshesye/status/2044796366950703316">X / joshesye</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">直播</span><span class="tag">瑜伽裤</span><span class="tag">带货</span><span class="tag">竖屏</span><span class="tag">女主播</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>手机竖屏界面，短视频直播平台风格，一位年轻亚洲女主播在家中直播带货，主播穿着贴身瑜伽裤与简约上衣，身材曲线自然，正在侧身展示裤子的线条与弹性，动作自然不夸张；</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2901.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2900" data-search="案例2900 智能视频生成器暗黑界面设计 智能视频生成器暗黑界面设计 - gpt img2 图像生成提示词 x / austinit https://x.com/austinit/status/2044968740782272596 chatgpt ai 图片 gpt img2 暗黑风 生成器 应用页 专业级 视频类 渲染一个专业的ios app首页ui图，该主题为ai video generator,英文界面。专业级设计，专业风格，暗黑色主题。" data-tags="ChatGPT|AI|图片|GPT IMG2|暗黑风|生成器|应用页|专业级|视频类">
+      <a class="case-card-link" href="/zh/case/2900.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-ai-video-generator-dark-ui-1.jpg" alt="智能视频生成器暗黑界面设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2900</span></span><span class="case-title-text">智能视频生成器暗黑界面设计</span></h3>
+          <p class="case-summary">智能视频生成器暗黑界面设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/austinit/status/2044968740782272596">X / austinit</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">暗黑风</span><span class="tag">生成器</span><span class="tag">应用页</span><span class="tag">专业级</span><span class="tag">视频类</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>渲染一个专业的IOS APP首页UI图，该主题为AI Video Generator,英文界面。专业级设计，专业风格，暗黑色主题。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2900.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2899" data-search="案例2899 z世代y2k平价美妆广告图 z世代y2k平价美妆广告图 - gpt img2 图像生成提示词 x / midori_tatsuta https://x.com/midori_tatsuta/status/2045378877363798279 chatgpt ai 图片 gpt img2 千禧风 美妆 z世代 荧光色 广告图 为z世代设计的可爱y2k风格的平价化妆品广告图像。使用鲜艳的配色，包括荧光色。纵横比为3:4。" data-tags="ChatGPT|AI|图片|GPT IMG2|千禧风|美妆|Z世代|荧光色|广告图">
+      <a class="case-card-link" href="/zh/case/2899.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-gen-z-y2k-affordable-makeup-ad-1.jpeg" alt="Z世代Y2K平价美妆广告图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2899</span></span><span class="case-title-text">Z世代Y2K平价美妆广告图</span></h3>
+          <p class="case-summary">Z世代Y2K平价美妆广告图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/midori_tatsuta/status/2045378877363798279">X / midori_tatsuta</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">千禧风</span><span class="tag">美妆</span><span class="tag">Z世代</span><span class="tag">荧光色</span><span class="tag">广告图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>为Z世代设计的可爱Y2K风格的平价化妆品广告图像。使用鲜艳的配色，包括荧光色。纵横比为3:4。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2899.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2898" data-search="案例2898 日式潮流广告四联画 日式潮流广告四联画 - gpt img2 图像生成提示词 x / midori_tatsuta https://x.com/midori_tatsuta/status/2045253072289767815 chatgpt ai 图片 gpt img2 日式广告 潮流设计 创意海报 并排展示 专业排版 生成四张虚构的日式广告图片，涵盖不同类型并排排列。采用专业设计师创作的潮流设计。宽高比为1:1" data-tags="ChatGPT|AI|图片|GPT IMG2|日式广告|潮流设计|创意海报|并排展示|专业排版">
+      <a class="case-card-link" href="/zh/case/2898.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-japanese-trendy-ads-1.jpeg" alt="日式潮流广告四联画" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2898</span></span><span class="case-title-text">日式潮流广告四联画</span></h3>
+          <p class="case-summary">日式潮流广告四联画 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/midori_tatsuta/status/2045253072289767815">X / midori_tatsuta</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">日式广告</span><span class="tag">潮流设计</span><span class="tag">创意海报</span><span class="tag">并排展示</span><span class="tag">专业排版</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成四张虚构的日式广告图片，涵盖不同类型并排排列。采用专业设计师创作的潮流设计。宽高比为1:1</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2898.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2897" data-search="案例2897 官方角色设定资料图鉴 官方角色设定资料图鉴 - gpt img2 图像生成提示词 x ](https://x.com/toshi_nyaruo_ai/status/2045025277538107420 chatgpt ai 图片 gpt img2 设定集 三视图 概念图 角色拆解 白底图 このキャラクターと背景を元に、 公式設定資料のようなキャラクターシートを作成してください。 ・正面、側面、背面の3面図を含める ・キャラクターの表情バリエーションを追加 ・衣装や装備の詳細パーツを分解して表示 ・カラーパレットを追加 ・世界観の簡単な説明を入れる ・全体は整理されたレイアウト （白背景、図解風） ・アスペクト比16：9 ← 高解像度、プロのコンセプトアートスタイル" data-tags="ChatGPT|AI|图片|GPT IMG2|设定集|三视图|概念图|角色拆解|白底图">
+      <a class="case-card-link" href="/zh/case/2897.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-official-character-reference-sheet-1776648663050-1.jpg" alt="官方角色设定资料图鉴" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2897</span></span><span class="case-title-text">官方角色设定资料图鉴</span></h3>
+          <p class="case-summary">官方角色设定资料图鉴 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="](https://x.com/Toshi_nyaruo_AI/status/2045025277538107420">X</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">设定集</span><span class="tag">三视图</span><span class="tag">概念图</span><span class="tag">角色拆解</span><span class="tag">白底图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>このキャラクターと背景を元に、 公式設定資料のようなキャラクターシートを作成してください。 
+・正面、側面、背面の3面図を含める ・キャラクターの表情バリエーションを追加 
+・衣装や装備の詳細パーツを分解して表示 ・カラーパレットを追加 ・世界観の簡単な説明を入れる 
+・全体は整理されたレイアウト
+（白背景、図解風） 
+・アスペクト比16：9 　←
+
+高解像度、プロのコンセプトアートスタイル</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2897.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2896" data-search="案例2896 gpt图像生成惊艳角色立绘 gpt图像生成惊艳角色立绘 - gpt img2 图像生成提示词 x / tsubaki_ew https://x.com/tsubaki_ew/status/2045259289993048284 chatgpt ai 图片 gpt img2 角色立绘 ai生成 gpt图像 角色设定 二次元 お借りして噂のgpt-image-2でキャラシート作ってみましたｽｺﾞｯ(๑°ㅁ°๑)‼✧更に色々指示してあげたらもっといい感じになりそう✨キャラは以前チャッピーにお願いして描いて貰った我が分身です( *¯ ꒳¯*)" data-tags="ChatGPT|AI|图片|GPT IMG2|角色立绘|AI生成|GPT图像|角色设定|二次元">
+      <a class="case-card-link" href="/zh/case/2896.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-gpt-image-character-sheet-1.jpg" alt="GPT图像生成惊艳角色立绘" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2896</span></span><span class="case-title-text">GPT图像生成惊艳角色立绘</span></h3>
+          <p class="case-summary">GPT图像生成惊艳角色立绘 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/tsubaki_ew/status/2045259289993048284">X / tsubaki_ew</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">角色立绘</span><span class="tag">AI生成</span><span class="tag">GPT图像</span><span class="tag">角色设定</span><span class="tag">二次元</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>お借りして噂のGPT-Image-2でキャラシート作ってみましたｽｺﾞｯ(๑°ㅁ°๑)‼✧更に色々指示してあげたらもっといい感じになりそう✨キャラは以前チャッピーにお願いして描いて貰った我が分身です( *¯ ꒳¯*)</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2896.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2895" data-search="案例2895 一张采用分层蒙太奇构图的电影海报 一张采用分层蒙太奇构图的电影海报 - gpt img2 图像生成提示词 x / old_pgmrs_will https://x.com/old_pgmrs_will/status/2045440101359198302 chatgpt ai 图片 gpt img2 “一张采用分层蒙太奇构图的电影海报。背景为日落时分的海滨小镇，平静的海面倒映着耀眼的日光眩光，薄雾笼罩的天空中有远处飞鸟，沿海公路旁立着电线杆剪影。左侧中景处，一位身着深灰色外套、留着深色卷发的中年男子站在混凝土海堤边，神情忧郁地低头凝视，被傍晚的阳光逆光勾勒轮廓。右侧前景主体为一张大幅特写年轻女子侧脸肖像，她望向右侧，身穿带白色条纹的深色水手校服，湿润的黑发贴在脸颊，柔和漫射光线下，一滴泪珠从她脸颊滑落。画面下方中央前景处，一只柴犬抬头朝右侧望去，红棕色毛发被温暖的轮廓光点亮。画面最底端为一条横向电影胶片，内含五幅独立矩形场景缩略图：女孩与柴犬在海滩、女孩骑车望向海面、女孩与男子坐在室内桌前" data-tags="ChatGPT|AI|图片|GPT IMG2">
+      <a class="case-card-link" href="/zh/case/2895.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-film-poster-with-layered-montage-1.jpeg" alt="一张采用分层蒙太奇构图的电影海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2895</span></span><span class="case-title-text">一张采用分层蒙太奇构图的电影海报</span></h3>
+          <p class="case-summary">一张采用分层蒙太奇构图的电影海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/old_pgmrs_will/status/2045440101359198302">X / old_pgmrs_will</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>“一张采用分层蒙太奇构图的电影海报。背景为日落时分的海滨小镇，平静的海面倒映着耀眼的日光眩光，薄雾笼罩的天空中有远处飞鸟，沿海公路旁立着电线杆剪影。左侧中景处，一位身着深灰色外套、留着深色卷发的中年男子站在混凝土海堤边，神情忧郁地低头凝视，被傍晚的阳光逆光勾勒轮廓。右侧前景主体为一张大幅特写年轻女子侧脸肖像，她望向右侧，身穿带白色条纹的深色水手校服，湿润的黑发贴在脸颊，柔和漫射光线下，一滴泪珠从她...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2895.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2894" data-search="案例2894 小恶魔莉莉香超任游戏海报 小恶魔莉莉香超任游戏海报 - gpt img2 图像生成提示词 x / lilimliliychan https://x.com/lilimliliychan/status/2045114760937804187 chatgpt ai 图片 gpt img2 小恶魔 海报 复古风 超任 莉莉香 が「小悪魔リリムリリィちゃんが スーパーファミコンのゲームだったときのポスターを考えて」に 画像数枚だけで このクオリティ 細かい説明呪文なし すごいぜ！" data-tags="ChatGPT|AI|图片|GPT IMG2|小恶魔|海报|复古风|超任|莉莉香">
+      <a class="case-card-link" href="/zh/case/2894.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-little-devil-lily-sfc-poster-1.jpg" alt="小恶魔莉莉香超任游戏海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2894</span></span><span class="case-title-text">小恶魔莉莉香超任游戏海报</span></h3>
+          <p class="case-summary">小恶魔莉莉香超任游戏海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/lilimliliychan/status/2045114760937804187">X / lilimliliychan</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">小恶魔</span><span class="tag">海报</span><span class="tag">复古风</span><span class="tag">超任</span><span class="tag">莉莉香</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>が「小悪魔リリムリリィちゃんが　スーパーファミコンのゲームだったときのポスターを考えて」に　画像数枚だけで
+このクオリティ　細かい説明呪文なし　すごいぜ！</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2894.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2893" data-search="案例2893 真实动漫画面快照 真实动漫画面快照 - gpt img2 图像生成提示词 x / thereallo1026 https://x.com/thereallo1026/status/2044241997163311569 chatgpt ai 图片 gpt img2 动漫风 真实感 快照 截图 二次元 向我展示这张附带的图像作为一部真实动漫的快照" data-tags="ChatGPT|AI|图片|GPT IMG2|动漫风|真实感|快照|截图|二次元">
+      <a class="case-card-link" href="/zh/case/2893.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-real-anime-snapshot-1.jpg" alt="真实动漫画面快照" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2893</span></span><span class="case-title-text">真实动漫画面快照</span></h3>
+          <p class="case-summary">真实动漫画面快照 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Thereallo1026/status/2044241997163311569">X / Thereallo1026</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">动漫风</span><span class="tag">真实感</span><span class="tag">快照</span><span class="tag">截图</span><span class="tag">二次元</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>向我展示这张附带的图像作为一部真实动漫的快照</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2893.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2892" data-search="案例2892 珠江新城剪纸璀璨夜景 珠江新城剪纸璀璨夜景 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045527750606487877 chatgpt ai 图片 gpt img2 纸雕 城景 广州塔 金属箔 浪漫风 以珠江新城现代都市景观为灵感的剪纸艺术，通过精巧的镂空手法在一整幅纸上，立体刻画广州塔、东西双塔等地标建筑与繁华城景。 所有建筑与元素均以流畅的线条与结构相连，无孤立部分，构成一幅完整的都市画卷。 画面采用金属箔或光泽纸材质，表面带有细腻的明暗光泽，在光照下呈现柔和的高光与阴影，仿佛被城市灯光轻轻照亮。 背景以虚化的珠江新城天际线为衬，点缀隐约可见的花城广场与树木轮廓，整体透出现代浪漫的氛围。 作品中巧妙融入轻盈的蒲公英绒毛或星光般的动态光点，象征梦想与活力在这座新城中飘散飞扬。整体呈现8k超高清视觉，细节丰富，真实而富有艺术感染力。" data-tags="ChatGPT|AI|图片|GPT IMG2|纸雕|城景|广州塔|金属箔|浪漫风">
+      <a class="case-card-link" href="/zh/case/2892.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-zhujiang-new-town-paper-cut-night-1.jpg" alt="珠江新城剪纸璀璨夜景" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2892</span></span><span class="case-title-text">珠江新城剪纸璀璨夜景</span></h3>
+          <p class="case-summary">珠江新城剪纸璀璨夜景 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045527750606487877">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">纸雕</span><span class="tag">城景</span><span class="tag">广州塔</span><span class="tag">金属箔</span><span class="tag">浪漫风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>以珠江新城现代都市景观为灵感的剪纸艺术，通过精巧的镂空手法在一整幅纸上，立体刻画广州塔、东西双塔等地标建筑与繁华城景。
+所有建筑与元素均以流畅的线条与结构相连，无孤立部分，构成一幅完整的都市画卷。
+画面采用金属箔或光泽纸材质，表面带有细腻的明暗光泽，在光照下呈现柔和的高光与阴影，仿佛被城市灯光轻轻照亮。
+背景以虚化的珠江新城天际线为衬，点缀隐约可见的花城广场与树木轮廓，整体透出现代浪漫的氛围。
+作...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2892.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2891" data-search="案例2891 抖音美女直播间界面设计 抖音美女直播间界面设计 - gpt img2 图像生成提示词 x / msjiaozhu https://x.com/msjiaozhu/status/2045470160576999812 chatgpt ai 图片 gpt img2 抖音 直播 美女 界面 主播 生成抖音直播间界面，内容是一个美女在直播" data-tags="ChatGPT|AI|图片|GPT IMG2|抖音|直播|美女|界面|主播">
+      <a class="case-card-link" href="/zh/case/2891.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-tiktok-beauty-live-interface-1.jpeg" alt="抖音美女直播间界面设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2891</span></span><span class="case-title-text">抖音美女直播间界面设计</span></h3>
+          <p class="case-summary">抖音美女直播间界面设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/msjiaozhu/status/2045470160576999812">X / msjiaozhu</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">抖音</span><span class="tag">直播</span><span class="tag">美女</span><span class="tag">界面</span><span class="tag">主播</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成抖音直播间界面，内容是一个美女在直播</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2891.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2890" data-search="案例2890 古风诗人镭射典藏卡牌 古风诗人镭射典藏卡牌 - gpt img2 图像生成提示词 x / tanshilong https://x.com/tanshilong/status/2045435090923356415 chatgpt ai 图片 gpt img2 古风卡牌 镭射效果 诗人图鉴 技能设计 稀有评级 为中国古代诗人设计一套游戏卡片，并按照ssr sr r 分级，重点卡片有放大展示的效果，包括卡面设计和人物介绍，有很高级的游戏卡片质感，稀有卡片还会有特色的光影例如镭射效果 需要有套卡设计和技能设计，并附带较为详细的说明" data-tags="ChatGPT|AI|图片|GPT IMG2|古风卡牌|镭射效果|诗人图鉴|技能设计|稀有评级">
+      <a class="case-card-link" href="/zh/case/2890.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-ancient-poet-holographic-collection-1.jpeg" alt="古风诗人镭射典藏卡牌" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2890</span></span><span class="case-title-text">古风诗人镭射典藏卡牌</span></h3>
+          <p class="case-summary">古风诗人镭射典藏卡牌 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TanShilong/status/2045435090923356415">X / TanShilong</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">古风卡牌</span><span class="tag">镭射效果</span><span class="tag">诗人图鉴</span><span class="tag">技能设计</span><span class="tag">稀有评级</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>为中国古代诗人设计一套游戏卡片，并按照SSR SR R 分级，重点卡片有放大展示的效果，包括卡面设计和人物介绍，有很高级的游戏卡片质感，稀有卡片还会有特色的光影例如镭射效果 需要有套卡设计和技能设计，并附带较为详细的说明</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2890.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2889" data-search="案例2889 极致奢华的弹珠店梦幻宣传单 极致奢华的弹珠店梦幻宣传单 - gpt img2 图像生成提示词 x chatgpt ai 图片 gpt img2 弹珠店 极奢华 彩虹字 日系女 宣传单 以 3:4 比例制作一家弹珠店那种闪闪发光的宣传单。放置一个真实、精细的现代可爱日本女性。充分利用闪闪发光、立体感丰富的豪华装饰彩虹字体等，务必做到极致奢华。并列介绍几个不存在的虚构新机型。" data-tags="ChatGPT|AI|图片|GPT IMG2|弹珠店|极奢华|彩虹字|日系女|宣传单">
+      <a class="case-card-link" href="/zh/case/2889.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-luxurious-pachinko-flyer-1.jpeg" alt="极致奢华的弹珠店梦幻宣传单" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2889</span></span><span class="case-title-text">极致奢华的弹珠店梦幻宣传单</span></h3>
+          <p class="case-summary">极致奢华的弹珠店梦幻宣传单 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source">X</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">弹珠店</span><span class="tag">极奢华</span><span class="tag">彩虹字</span><span class="tag">日系女</span><span class="tag">宣传单</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>以 3:4 比例制作一家弹珠店那种闪闪发光的宣传单。放置一个真实、精细的现代可爱日本女性。充分利用闪闪发光、立体感丰富的豪华装饰彩虹字体等，务必做到极致奢华。并列介绍几个不存在的虚构新机型。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2889.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2888" data-search="案例2888 明朝登基宝玉的推文页面 明朝登基宝玉的推文页面 - gpt img2 图像生成提示词 x / tuzi_ai https://x.com/tuzi_ai/status/2045193918736736365 chatgpt ai 图片 gpt img2 穿越者 大明朝 新帝 宝玉 x推文 创建一个宝玉（查阅 https://x.com/dotey 这个推主的主页及部分推文）穿越到明朝，登基之后依据其业务/个性，绘制的其新的x帖子页面。" data-tags="ChatGPT|AI|图片|GPT IMG2|穿越者|大明朝|新帝|宝玉|X推文">
+      <a class="case-card-link" href="/zh/case/2888.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-ming-dynasty-baoyu-tweet-1.jpeg" alt="明朝登基宝玉的推文页面" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2888</span></span><span class="case-title-text">明朝登基宝玉的推文页面</span></h3>
+          <p class="case-summary">明朝登基宝玉的推文页面 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/tuzi_ai/status/2045193918736736365">X / tuzi_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">穿越者</span><span class="tag">大明朝</span><span class="tag">新帝</span><span class="tag">宝玉</span><span class="tag">X推文</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创建一个宝玉（查阅 https://x.com/dotey 这个推主的主页及部分推文）穿越到明朝，登基之后依据其业务/个性，绘制的其新的X帖子页面。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2888.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2887" data-search="案例2887 聚焦人工智能的校园日报 聚焦人工智能的校园日报 - gpt img2 图像生成提示词 x / mrlarus https://x.com/mrlarus/status/2044824800909054181 chatgpt ai 图片 gpt img2 校园报 学ai 黑科技 报纸风 智课堂 生成一张校园日报，主题ai教育" data-tags="ChatGPT|AI|图片|GPT IMG2|校园报|学AI|黑科技|报纸风|智课堂">
+      <a class="case-card-link" href="/zh/case/2887.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-focusing-on-ai-campus-daily-1.jpeg" alt="聚焦人工智能的校园日报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2887</span></span><span class="case-title-text">聚焦人工智能的校园日报</span></h3>
+          <p class="case-summary">聚焦人工智能的校园日报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2044824800909054181">X / MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">校园报</span><span class="tag">学AI</span><span class="tag">黑科技</span><span class="tag">报纸风</span><span class="tag">智课堂</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张校园日报，主题AI教育</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2887.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2886" data-search="案例2886 精美潮汕菜馆菜单图 精美潮汕菜馆菜单图 - gpt img2 图像生成提示词 x / mrlarus https://x.com/mrlarus/status/2044824800909054181 chatgpt ai 图片 gpt img2 潮菜 菜单 美食 潮汕 餐厅 生成一张潮菜馆菜单图" data-tags="ChatGPT|AI|图片|GPT IMG2|潮菜|菜单|美食|潮汕|餐厅">
+      <a class="case-card-link" href="/zh/case/2886.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-exquisite-teochew-menu-1.jpeg" alt="精美潮汕菜馆菜单图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2886</span></span><span class="case-title-text">精美潮汕菜馆菜单图</span></h3>
+          <p class="case-summary">精美潮汕菜馆菜单图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2044824800909054181">X / MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">潮菜</span><span class="tag">菜单</span><span class="tag">美食</span><span class="tag">潮汕</span><span class="tag">餐厅</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张潮菜馆菜单图</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2886.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2885" data-search="案例2885 复古传统老黄历二零二六年四月十八 复古传统老黄历二零二六年四月十八 - gpt img2 图像生成提示词 x / mrlarus https://x.com/mrlarus/status/2044824800909054181 chatgpt ai 图片 gpt img2 老黄历 复古风 传统 日历 海报 生成一张2026年4月18日的老黄历" data-tags="ChatGPT|AI|图片|GPT IMG2|老黄历|复古风|传统|日历|海报">
+      <a class="case-card-link" href="/zh/case/2885.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-retro-traditional-almanac-2026-1.jpeg" alt="复古传统老黄历二零二六年四月十八" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2885</span></span><span class="case-title-text">复古传统老黄历二零二六年四月十八</span></h3>
+          <p class="case-summary">复古传统老黄历二零二六年四月十八 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2044824800909054181">X / MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">老黄历</span><span class="tag">复古风</span><span class="tag">传统</span><span class="tag">日历</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张2026年4月18日的老黄历</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2885.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2884" data-search="案例2884 博物馆级中文拆解信息图鉴 博物馆级中文拆解信息图鉴 - gpt img2 图像生成提示词 x / mrlarus https://x.com/mrlarus/status/2045504669401653414 chatgpt ai 图片 gpt img2 信息图 博物馆 拆解图 图鉴 纹样 请根据【主题】自动生成一张“博物馆图鉴式中文拆解信息图”。 要求整张图兼具真实写实主视觉、结构拆解、中文标注、材质说明、纹样寓意、色彩含义和核心特征总结。你需要根据【主题】自动判断最合适的主体对象、服饰体系、器物结构、时代风格、关键部件、材质工艺、颜色方案与版式结构，用户无需再提供其他信息。 整体风格应为：国家博物馆展板、历史服饰图鉴、文博专题信息图，而不是普通海报、古风写真、电商详情页或动漫插画。背景采用米白、绢纸白、浅茶色等纸张质感，整体高级、克制、专业、可收藏。 版式固定为： - 顶部：中文主标题 + 副标题 + 导语 - 左侧：结构拆解区，中文引线标注关键部件，并配局部特写 -" data-tags="ChatGPT|AI|图片|GPT IMG2|信息图|博物馆|拆解图|图鉴|纹样">
+      <a class="case-card-link" href="/zh/case/2884.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-museum-level-chinese-disassembly-infographic-1.jpeg" alt="博物馆级中文拆解信息图鉴" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2884</span></span><span class="case-title-text">博物馆级中文拆解信息图鉴</span></h3>
+          <p class="case-summary">博物馆级中文拆解信息图鉴 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2045504669401653414">X / MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">信息图</span><span class="tag">博物馆</span><span class="tag">拆解图</span><span class="tag">图鉴</span><span class="tag">纹样</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>请根据【主题】自动生成一张“博物馆图鉴式中文拆解信息图”。
+
+要求整张图兼具真实写实主视觉、结构拆解、中文标注、材质说明、纹样寓意、色彩含义和核心特征总结。你需要根据【主题】自动判断最合适的主体对象、服饰体系、器物结构、时代风格、关键部件、材质工艺、颜色方案与版式结构，用户无需再提供其他信息。
+
+整体风格应为：国家博物馆展板、历史服饰图鉴、文博专题信息图，而不是普通海报、古风写真、电商详情页或动漫...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2884.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2883" data-search="案例2883 手写食谱变身杂志级跨页 手写食谱变身杂志级跨页 - gpt img2 图像生成提示词 x / maxescu https://x.com/maxescu/status/2045203839910056014 chatgpt ai 图片 gpt img2 杂志风 烹饪书 食谱页 平铺图 营养卡 手写食谱 → 专业食谱页面 上传一份凌乱的手写家庭食谱；模型会搜索准确的现代计量/营养信息，然后生成一份精致的杂志风格双页跨页，包含分步平铺图、完美的食材标签和卡路里分解。 [insert_recipe_link]" data-tags="ChatGPT|AI|图片|GPT IMG2|杂志风|烹饪书|食谱页|平铺图|营养卡">
+      <a class="case-card-link" href="/zh/case/2883.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-handwritten-recipe-to-magazine-spread-1.jpeg" alt="手写食谱变身杂志级跨页" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2883</span></span><span class="case-title-text">手写食谱变身杂志级跨页</span></h3>
+          <p class="case-summary">手写食谱变身杂志级跨页 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/maxescu/status/2045203839910056014">X / maxescu</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">杂志风</span><span class="tag">烹饪书</span><span class="tag">食谱页</span><span class="tag">平铺图</span><span class="tag">营养卡</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>手写食谱 → 专业食谱页面 上传一份凌乱的手写家庭食谱；模型会搜索准确的现代计量/营养信息，然后生成一份精致的杂志风格双页跨页，包含分步平铺图、完美的食材标签和卡路里分解。
+
+[INSERT_RECIPE_LINK]</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2883.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2882" data-search="案例2882 关键人物关系图谱 关键人物关系图谱 - gpt img2 图像生成提示词 x / yihui_indie https://x.com/yihui_indie/status/2045179926270361890 chatgpt ai 图片 gpt img2 关系图 人物图 结构图 羁绊网 全景图 请你生成 《xxx》 的关键人物关系图。" data-tags="ChatGPT|AI|图片|GPT IMG2|关系图|人物图|结构图|羁绊网|全景图">
+      <a class="case-card-link" href="/zh/case/2882.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-key-character-relationship-map-1.jpeg" alt="关键人物关系图谱" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2882</span></span><span class="case-title-text">关键人物关系图谱</span></h3>
+          <p class="case-summary">关键人物关系图谱 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/yihui_indie/status/2045179926270361890">X / yihui_indie</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">关系图</span><span class="tag">人物图</span><span class="tag">结构图</span><span class="tag">羁绊网</span><span class="tag">全景图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>请你生成 《XXX》 的关键人物关系图。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2882.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2881" data-search="案例2881 极简留白涂鸦手绘草图 极简留白涂鸦手绘草图 - gpt img2 图像生成提示词 x / voxcatai https://x.com/voxcatai/status/2045131503001342302 chatgpt ai 图片 gpt img2 涂鸦风 速写本 干刷感 留白感 手绘稿 以涂鸦速写风表现【主题/主体】，整体呈现快速勾勒、自由变形、即兴手绘与草稿式的视觉效果。线条随手、夸张、可粗细不一，略显凌乱但具有节奏和表现力，强调概括、夸张、趣味和随性，而不是严谨写实或精细刻画。 颜色采用粗糙、干刷感明显的块面表现，可保留不均匀的涂抹痕迹、刷痕、飞白与覆盖感，色彩根据【主题/主体】自动适配，但整体保持涂鸦式、速写式、概括式的表达。不要透明水彩晕染效果，不要细腻水彩过渡，不要纸纹理，不要柔和雾化，不要梦幻质感。 背景以留白为主，保持简洁、轻松、未完成感和设计感，可加入少量辅助性符号、箭头、记号、圈画、重复线、随手写的文字或其他涂鸦元素，以增强速写本或随笔式视觉语言，但不可" data-tags="ChatGPT|AI|图片|GPT IMG2|涂鸦风|速写本|干刷感|留白感|手绘稿">
+      <a class="case-card-link" href="/zh/case/2881.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-minimalist-blank-graffiti-draft-1.jpeg" alt="极简留白涂鸦手绘草图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2881</span></span><span class="case-title-text">极简留白涂鸦手绘草图</span></h3>
+          <p class="case-summary">极简留白涂鸦手绘草图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VoxcatAI/status/2045131503001342302">X / VoxcatAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">涂鸦风</span><span class="tag">速写本</span><span class="tag">干刷感</span><span class="tag">留白感</span><span class="tag">手绘稿</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>以涂鸦速写风表现【主题/主体】，整体呈现快速勾勒、自由变形、即兴手绘与草稿式的视觉效果。线条随手、夸张、可粗细不一，略显凌乱但具有节奏和表现力，强调概括、夸张、趣味和随性，而不是严谨写实或精细刻画。
+
+颜色采用粗糙、干刷感明显的块面表现，可保留不均匀的涂抹痕迹、刷痕、飞白与覆盖感，色彩根据【主题/主体】自动适配，但整体保持涂鸦式、速写式、概括式的表达。不要透明水彩晕染效果，不要细腻水彩过渡，不要纸...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2881.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2880" data-search="案例2880 九位大师的机械键盘设计图鉴 九位大师的机械键盘设计图鉴 - gpt img2 图像生成提示词 x / tanshilong https://x.com/tanshilong/status/2045148649869692982 chatgpt ai 图片 gpt img2 九宫格 键盘 设计师 排版 创意 一个九宫格图片，展现九位当代知名设计师设计的同一组物体：机械键盘，包括设计师头像，设计师对于设计的中文文字解读和作品呈现。排版统一规则" data-tags="ChatGPT|AI|图片|GPT IMG2|九宫格|键盘|设计师|排版|创意">
+      <a class="case-card-link" href="/zh/case/2880.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-master-mechanical-keyboard-design-1.jpeg" alt="九位大师的机械键盘设计图鉴" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2880</span></span><span class="case-title-text">九位大师的机械键盘设计图鉴</span></h3>
+          <p class="case-summary">九位大师的机械键盘设计图鉴 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TanShilong/status/2045148649869692982">X / TanShilong</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">九宫格</span><span class="tag">键盘</span><span class="tag">设计师</span><span class="tag">排版</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一个九宫格图片，展现九位当代知名设计师设计的同一组物体：机械键盘，包括设计师头像，设计师对于设计的中文文字解读和作品呈现。排版统一规则</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2880.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2879" data-search="案例2879 人教版三年级语文课本内页 人教版三年级语文课本内页 - gpt img2 图像生成提示词 x / mrlarus https://x.com/mrlarus/status/2044824800909054181 chatgpt ai 图片 gpt img2 语文书 人教版 小学 怀旧 插图 生成人教版小学三年级语文课本的一页" data-tags="ChatGPT|AI|图片|GPT IMG2|语文书|人教版|小学|怀旧|插图">
+      <a class="case-card-link" href="/zh/case/2879.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-pep-third-grade-chinese-textbook-1.jpeg" alt="人教版三年级语文课本内页" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2879</span></span><span class="case-title-text">人教版三年级语文课本内页</span></h3>
+          <p class="case-summary">人教版三年级语文课本内页 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2044824800909054181">X / MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">语文书</span><span class="tag">人教版</span><span class="tag">小学</span><span class="tag">怀旧</span><span class="tag">插图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成人教版小学三年级语文课本的一页</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2879.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2878" data-search="案例2878 荧光蓝穷奇新中式山水画 荧光蓝穷奇新中式山水画 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2045506567735558336 chatgpt ai 图片 gpt img2 新中式 穷奇 禅意 撕纸风 神兽图 极简主义，新中式风格立体图形设计，图像下端有楷体中国文字：“东方美学”，“2026/04/18”，署名 “china”，和“ @liyue &quot;； 平整纯白色的亚光质感厚艺术纸上绘充满东方诗意氛围的山水创意画，不规则的撕纸效果； 中国的神兽：穷奇，身形图案完整，美轮美奂，，线条柔美灵动,眼睛炯炯有神，威严的神态，优雅的姿势，奢华装饰艺术，中国传统纹饰； 荧光蓝色线条，0.5mm极细金色金属质感勾边，泼白墨大笔触，色彩渲染，红底，蓝色的浪漫诗意视觉； 冷暖光交织的梦幻唯美场景，强烈的光影对比氛围，花轻舞的时光叙事，东风禅意，画面有大面积留白，框架构图，底部留白，细节清晰。" data-tags="ChatGPT|AI|图片|GPT IMG2|新中式|穷奇|禅意|撕纸风|神兽图">
+      <a class="case-card-link" href="/zh/case/2878.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-neon-qiongqi-chinese-painting-1.jpeg" alt="荧光蓝穷奇新中式山水画" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2878</span></span><span class="case-title-text">荧光蓝穷奇新中式山水画</span></h3>
+          <p class="case-summary">荧光蓝穷奇新中式山水画 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2045506567735558336">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">新中式</span><span class="tag">穷奇</span><span class="tag">禅意</span><span class="tag">撕纸风</span><span class="tag">神兽图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>极简主义，新中式风格立体图形设计，图像下端有楷体中国文字：“东方美学”，“2026/04/18”，署名 “CHINA”，和“
+@LIYUE
+&quot;；
+平整纯白色的亚光质感厚艺术纸上绘充满东方诗意氛围的山水创意画，不规则的撕纸效果；
+中国的神兽：穷奇，身形图案完整，美轮美奂，，线条柔美灵动,眼睛炯炯有神，威严的神态，优雅的姿势，奢华装饰艺术，中国传统纹饰；
+荧光蓝色线条，0.5mm极细金色金属质感勾边，...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2878.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2877" data-search="案例2877 抖音直播截图画面 抖音直播截图画面 - gpt img2 图像生成提示词 x / _forab https://x.com/_forab/status/2044744023261519920 chatgpt ai 图片 gpt img2 直播间 举牌子 截图感 竖屏图 抖音风 9:16 的图片比例，生成一张抖音直播的截图，里面是 xxx 在直播，xxx 手里拿着牌子，牌子里写着 xxxx。" data-tags="ChatGPT|AI|图片|GPT IMG2|直播间|举牌子|截图感|竖屏图|抖音风">
+      <a class="case-card-link" href="/zh/case/2877.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-douyin-livestream-screenshot-1.jpeg" alt="抖音直播截图画面" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2877</span></span><span class="case-title-text">抖音直播截图画面</span></h3>
+          <p class="case-summary">抖音直播截图画面 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/_FORAB/status/2044744023261519920">X / _FORAB</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">直播间</span><span class="tag">举牌子</span><span class="tag">截图感</span><span class="tag">竖屏图</span><span class="tag">抖音风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>9:16 的图片比例，生成一张抖音直播的截图，里面是 xxx 在直播，xxx 手里拿着牌子，牌子里写着 xxxx。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2877.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2876" data-search="案例2876 创意树叶拼贴构成的角色画像 创意树叶拼贴构成的角色画像 - gpt img2 图像生成提示词 x / meng_dagg695 https://x.com/meng_dagg695/status/2032019839070716170 chatgpt ai 图片 gpt img2 树叶 拼贴 植物 创意 艺术 { 角色名称 } 完全由天然树叶制成，创意树叶拼贴艺术，分层绿叶和干叶构成身体、面部和衣服，可见叶脉和纹理，手工植物艺术风格，干净的白色背景，俯视平铺构图，高度细节，柔和自然光，逼真树叶纹理，8k" data-tags="ChatGPT|AI|图片|GPT IMG2|树叶|拼贴|植物|创意|艺术">
+      <a class="case-card-link" href="/zh/case/2876.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-creative-leaf-collage-portrait-1.jpeg" alt="创意树叶拼贴构成的角色画像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2876</span></span><span class="case-title-text">创意树叶拼贴构成的角色画像</span></h3>
+          <p class="case-summary">创意树叶拼贴构成的角色画像 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2032019839070716170">X / meng_dagg695</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">树叶</span><span class="tag">拼贴</span><span class="tag">植物</span><span class="tag">创意</span><span class="tag">艺术</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{ 角色名称 } 完全由天然树叶制成，创意树叶拼贴艺术，分层绿叶和干叶构成身体、面部和衣服，可见叶脉和纹理，手工植物艺术风格，干净的白色背景，俯视平铺构图，高度细节，柔和自然光，逼真树叶纹理，8k</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2876.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2875" data-search="案例2875 零食品牌技术分解图 零食品牌技术分解图 - gpt img2 图像生成提示词 x / techiebysa https://x.com/techiebysa/status/2031795709243019280 chatgpt ai 图片 gpt img2 技术绘图 食品工程 产品展示 品牌设计 结构分解 创建一个 [snack] 的品牌技术信息图，结合产品的真实照片或照片级真实渲染，并将技术注释覆盖层直接置于其上。在纯白摄影棚背景上使用带有策略性 [brand color] 点缀的黑色墨水风格线条画（建筑草图外观），包括： • 关键组件标签 • 显示结构、分层或内部设计的内部截面图 • 测量数据、尺寸和规格 • 带有成分和数量的材料标注 • 指示主要功能和结构完整性的箭头 • 显示关键机械或设计元素的简单示意图或剖面图 • 可持续性标注 标题位置：位于手绘技术注释框内，带有强调色边框，粗体字显示产品名称，置于上角。 风格与布局规则： • 真实产品保持清晰可见 • 注释具有素描感、技术感和建筑感" data-tags="ChatGPT|AI|图片|GPT IMG2|技术绘图|食品工程|产品展示|品牌设计|结构分解">
+      <a class="case-card-link" href="/zh/case/2875.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-snack-brand-technical-breakdown-1.jpeg" alt="零食品牌技术分解图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2875</span></span><span class="case-title-text">零食品牌技术分解图</span></h3>
+          <p class="case-summary">零食品牌技术分解图 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/TechieBySA/status/2031795709243019280">X / TechieBySA</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">技术绘图</span><span class="tag">食品工程</span><span class="tag">产品展示</span><span class="tag">品牌设计</span><span class="tag">结构分解</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创建一个 [SNACK] 的品牌技术信息图，结合产品的真实照片或照片级真实渲染，并将技术注释覆盖层直接置于其上。在纯白摄影棚背景上使用带有策略性 [BRAND COLOR] 点缀的黑色墨水风格线条画（建筑草图外观），包括：
+• 关键组件标签
+• 显示结构、分层或内部设计的内部截面图
+• 测量数据、尺寸和规格
+• 带有成分和数量的材料标注
+• 指示主要功能和结构完整性的箭头
+• 显示关键机械或设计元...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2875.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2874" data-search="案例2874 晨曦薰衣草田梦幻少女三联画 晨曦薰衣草田梦幻少女三联画 - gpt img2 图像生成提示词 x / naiknelofar788 https://x.com/naiknelofar788/status/2028417667846341062 chatgpt ai 图片 gpt img2 薰衣草 三联画 唯美 日出 少女 日出时分薰衣草田中女子的水平三联画。 上部：半身像，闭着眼睛，淡紫色连衣裙，一只手放在头发里，模糊的薰衣草前景。 中部：特写镜头，看着镜头，蓬乱的头发，薄纱围巾，脸上的阳光。 下部：四分之三镜头，手持薰衣草花束，飘逸的裙子，柔和的粉彩天空，温暖的梦幻色调。" data-tags="ChatGPT|AI|图片|GPT IMG2|薰衣草|三联画|唯美|日出|少女">
+      <a class="case-card-link" href="/zh/case/2874.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-lavender-sunrise-dreamy-triptych-1.jpeg" alt="晨曦薰衣草田梦幻少女三联画" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2874</span></span><span class="case-title-text">晨曦薰衣草田梦幻少女三联画</span></h3>
+          <p class="case-summary">晨曦薰衣草田梦幻少女三联画 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-02</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Naiknelofar788/status/2028417667846341062">X / Naiknelofar788</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">薰衣草</span><span class="tag">三联画</span><span class="tag">唯美</span><span class="tag">日出</span><span class="tag">少女</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>日出时分薰衣草田中女子的水平三联画。
+上部：半身像，闭着眼睛，淡紫色连衣裙，一只手放在头发里，模糊的薰衣草前景。
+中部：特写镜头，看着镜头，蓬乱的头发，薄纱围巾，脸上的阳光。
+下部：四分之三镜头，手持薰衣草花束，飘逸的裙子，柔和的粉彩天空，温暖的梦幻色调。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2874.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2873" data-search="案例2873 鲜艳霓虹光影下的动感苏打水飞溅商业海报 鲜艳霓虹光影下的动感苏打水飞溅商业海报 - gpt img2 图像生成提示词 x / fujimoto_hina https://x.com/fujimoto_hina/status/2028388808320819277 chatgpt ai 图片 gpt img2 商业摄影 动感飞溅 饮料海报 霓虹光影 超写实 { &quot;prompt&quot;: &quot;一个充满活力的高端广告构图中的三个超动态苏打水罐 —— 一罐热带冲刺苏打水伴随着戏剧性的水和热带水果飞溅而爆炸，鲜艳的橙色和粉色背景光；一罐柠檬冰爽苏打水在发光的绿色动态光背景下被冷水泼溅；两罐都覆盖着逼真的冷凝水和运动模糊的水滴，充满果味和清爽的能量。深橙色、粉色和霓虹绿灯光在大胆的演播室布置中融合。由使用佳能 50mm 镜头的专业摄影师拍摄，超写实纹理，清晰的细节，超高分辨率，明亮的商业海报美学，丰富的色彩鲜艳度，电影级飞溅效果 --ar 3:4&quot; }" data-tags="ChatGPT|AI|图片|GPT IMG2|商业摄影|动感飞溅|饮料海报|霓虹光影|超写实">
+      <a class="case-card-link" href="/zh/case/2873.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-vibrant-neon-soda-splash-poster-1.jpeg" alt="鲜艳霓虹光影下的动感苏打水飞溅商业海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2873</span></span><span class="case-title-text">鲜艳霓虹光影下的动感苏打水飞溅商业海报</span></h3>
+          <p class="case-summary">鲜艳霓虹光影下的动感苏打水飞溅商业海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-02</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Fujimoto_hina/status/2028388808320819277">X / Fujimoto_hina</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">商业摄影</span><span class="tag">动感飞溅</span><span class="tag">饮料海报</span><span class="tag">霓虹光影</span><span class="tag">超写实</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+  &quot;prompt&quot;: &quot;一个充满活力的高端广告构图中的三个超动态苏打水罐 —— 一罐热带冲刺苏打水伴随着戏剧性的水和热带水果飞溅而爆炸，鲜艳的橙色和粉色背景光；一罐柠檬冰爽苏打水在发光的绿色动态光背景下被冷水泼溅；两罐都覆盖着逼真的冷凝水和运动模糊的水滴，充满果味和清爽的能量。深橙色、粉色和霓虹绿灯光在大胆的演播室布置中融合。由使用佳能 50mm 镜头的专业摄影师拍摄，超写实纹理，清晰的细节...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2873.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2872" data-search="案例2872 梦幻蓝紫烟雾环绕的nubella奢华护肤软管 梦幻蓝紫烟雾环绕的nubella奢华护肤软管 - gpt img2 图像生成提示词 x / fujimoto_hina https://x.com/fujimoto_hina/status/2027903683154088431 chatgpt ai 图片 gpt img2 护肤品 商业摄影 蓝紫调 烟雾特效 花卉环绕 { &quot;style&quot;: &quot;超写实奢华化妆品产品摄影&quot;, &quot;composition&quot;: { &quot;color_scheme&quot;: &quot;戏剧性的单色蓝紫色&quot;, &quot;resolution&quot;: &quot;8k超高分辨率&quot;, &quot;depth&quot;: &quot;电影级景深&quot;, &quot;aesthetic&quot;: &quot;高端香氛护肤品广告风格&quot; }, &quot;product&quot;: { &quot;type&quot;: &quot;软管包装&quot;, &quot;finish&quot;: &quot;缎面质感&quot;, &quot;color&quot;: &quot;长春花蓝&quot;, &quot;label&quot;: &quot;nubella&quot;, &quot;typography&quot;: &quot;优雅的银色字体&quot;," data-tags="ChatGPT|AI|图片|GPT IMG2|护肤品|商业摄影|蓝紫调|烟雾特效|花卉环绕">
+      <a class="case-card-link" href="/zh/case/2872.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-dreamy-blue-purple-nubella-skincare-1.jpeg" alt="梦幻蓝紫烟雾环绕的NUBELLA奢华护肤软管" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2872</span></span><span class="case-title-text">梦幻蓝紫烟雾环绕的NUBELLA奢华护肤软管</span></h3>
+          <p class="case-summary">梦幻蓝紫烟雾环绕的NUBELLA奢华护肤软管 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Fujimoto_hina/status/2027903683154088431">X / Fujimoto_hina</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">护肤品</span><span class="tag">商业摄影</span><span class="tag">蓝紫调</span><span class="tag">烟雾特效</span><span class="tag">花卉环绕</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+  &quot;style&quot;: &quot;超写实奢华化妆品产品摄影&quot;,
+  &quot;composition&quot;: {
+    &quot;color_scheme&quot;: &quot;戏剧性的单色蓝紫色&quot;,
+    &quot;resolution&quot;: &quot;8K超高分辨率&quot;,
+    &quot;depth&quot;: &quot;电影级景深&quot;,
+    &quot;aesthetic&quot;: &quot;高端香氛护肤品广告风格&quot;
+  },
+  &quot;product&quot;: {
+    &quot;type&quot;: &quot;软管包装...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2872.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2871" data-search="案例2871 红蓝光影下的未来都市双重曝光青年 红蓝光影下的未来都市双重曝光青年 - gpt img2 图像生成提示词 x / fujimoto_hina https://x.com/fujimoto_hina/status/2028045894088630679 chatgpt ai 图片 gpt img2 双重曝光 电影质感 未来都市 视觉冲击 超写实 { &quot;prompt&quot;: &quot;一位年轻男子的超写实电影级双重曝光侧脸肖像，表情专注强烈，皮肤纹理细节丰富，眼神锐利。他的面部与从剪影中浮现的未来主义城市天际线无缝融合，摩天大楼和城市建筑构成了他的颈部和下颌线。深蓝色和鲜艳红色的强烈对比，象征着冲突与力量。抽象的数字划痕、碎裂的玻璃纹理和漏光效果覆盖在面部，营造出戏剧性的效果。干净的白色背景，超精细的灯光，专业电影海报风格，高对比度，清晰聚焦，8k分辨率，逼真的发丝，社论海报构图，现代平面设计美学，戏剧性的氛围，超高清，照片级真实。&quot;, &quot;negative_prompt&quot;: &quot;模糊，低分辨率，扭曲的面部，多余的肢体，过饱和的颜色，嘈杂的背景" data-tags="ChatGPT|AI|图片|GPT IMG2|双重曝光|电影质感|未来都市|视觉冲击|超写实">
+      <a class="case-card-link" href="/zh/case/2871.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-red-blue-light-future-city-double-exposure-youth-1.jpeg" alt="红蓝光影下的未来都市双重曝光青年" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2871</span></span><span class="case-title-text">红蓝光影下的未来都市双重曝光青年</span></h3>
+          <p class="case-summary">红蓝光影下的未来都市双重曝光青年 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Fujimoto_hina/status/2028045894088630679">X / Fujimoto_hina</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">双重曝光</span><span class="tag">电影质感</span><span class="tag">未来都市</span><span class="tag">视觉冲击</span><span class="tag">超写实</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+  &quot;prompt&quot;: &quot;一位年轻男子的超写实电影级双重曝光侧脸肖像，表情专注强烈，皮肤纹理细节丰富，眼神锐利。他的面部与从剪影中浮现的未来主义城市天际线无缝融合，摩天大楼和城市建筑构成了他的颈部和下颌线。深蓝色和鲜艳红色的强烈对比，象征着冲突与力量。抽象的数字划痕、碎裂的玻璃纹理和漏光效果覆盖在面部，营造出戏剧性的效果。干净的白色背景，超精细的灯光，专业电影海报风格，高对比度，清晰聚焦，8K...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2871.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2870" data-search="案例2870 棘龙巨口中的酷飒少女与史前奇观 棘龙巨口中的酷飒少女与史前奇观 - gpt img2 图像生成提示词 x / mrdasonx https://x.com/mrdasonx/status/2028087254757867560 chatgpt ai 图片 gpt img2 棘龙 史前 少女 写实 电影感 超写实电影级奇幻场景，设定在郁郁葱葱的史前丛林山谷中。一只巨大的棘龙站在浅河边，它那长而类似鳄鱼的巨颚张得很大。一位年轻女子平静地坐在恐龙张开的嘴里，完美居中，双腿微微向前悬挂。她有一头深色直发，表情镇定无畏，皮肤纹理逼真。她身穿合身的黑色长袖短款上衣，蓝色牛仔短裤和黑色及膝战术靴。衣服和腿上可见微小的血迹和轻微划痕，增加了戏剧性的紧张感但并不血腥。她怀里温柔地抱着一只小恐龙幼崽，充满保护欲地抱着它。 在他们身后，一道高耸而充满戏剧性的瀑布顺着覆盖着茂密绿色植被和薄雾的陡峭丛林悬崖倾泻而下。场景中栖息着多只恐龙：几只迅猛龙在河岸边潜行，小型食草动物在背景中奔跑，飞翔的翼龙在头顶盘旋。环境丰富" data-tags="ChatGPT|AI|图片|GPT IMG2|棘龙|史前|少女|写实|电影感">
+      <a class="case-card-link" href="/zh/case/2870.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-fierce-girl-in-spinosaurus-jaws-1.jpeg" alt="棘龙巨口中的酷飒少女与史前奇观" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2870</span></span><span class="case-title-text">棘龙巨口中的酷飒少女与史前奇观</span></h3>
+          <p class="case-summary">棘龙巨口中的酷飒少女与史前奇观 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrDasOnX/status/2028087254757867560">X / MrDasOnX</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">棘龙</span><span class="tag">史前</span><span class="tag">少女</span><span class="tag">写实</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>超写实电影级奇幻场景，设定在郁郁葱葱的史前丛林山谷中。一只巨大的棘龙站在浅河边，它那长而类似鳄鱼的巨颚张得很大。一位年轻女子平静地坐在恐龙张开的嘴里，完美居中，双腿微微向前悬挂。她有一头深色直发，表情镇定无畏，皮肤纹理逼真。她身穿合身的黑色长袖短款上衣，蓝色牛仔短裤和黑色及膝战术靴。衣服和腿上可见微小的血迹和轻微划痕，增加了戏剧性的紧张感但并不血腥。她怀里温柔地抱着一只小恐龙幼崽，充满保护欲地抱着...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2870.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2869" data-search="案例2869 冲破次元壁的写实漫画跑者 冲破次元壁的写实漫画跑者 - gpt img2 图像生成提示词 x / fujimoto_hina https://x.com/fujimoto_hina/status/2027748030825500722 chatgpt ai 图片 gpt img2 破次元 漫画风 写实风 动态感 创意图 { &quot;prompt&quot;: &quot;超写实，一位留着深色短卷发、修剪整齐的胡须和黑色方形眼镜的年轻男子的鲜艳逼真渲染，身穿深色纹理高领毛衣和牛仔裤。他奔跑到一半被捕捉下来，姿态充满动感，向前突破，充满戏剧性地从一个破碎的漫画分镜框中显现——一条腿和一只手臂冲入现实世界，而身体的其余部分仍留在漫画框内。他的表情充满活力和喜悦，拥有锐利的面部细节，自然的皮肤纹理，以及具有高对比度和深度的戏剧性电影灯光。\n\n背景：一个非常详细的黑白漫画布局，充满了幽默、夸张的且与他直接互动的反应场景。周围的漫画人物表现出震惊和喜剧的表情，配有粗体的对话气泡和速度线。漫画分镜采用经典的高对比度水墨风格绘制，线条清晰，网" data-tags="ChatGPT|AI|图片|GPT IMG2|破次元|漫画风|写实风|动态感|创意图">
+      <a class="case-card-link" href="/zh/case/2869.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-realistic-runner-breaking-manga-1.jpeg" alt="冲破次元壁的写实漫画跑者" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2869</span></span><span class="case-title-text">冲破次元壁的写实漫画跑者</span></h3>
+          <p class="case-summary">冲破次元壁的写实漫画跑者 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Fujimoto_hina/status/2027748030825500722">X / Fujimoto_hina</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">破次元</span><span class="tag">漫画风</span><span class="tag">写实风</span><span class="tag">动态感</span><span class="tag">创意图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+  &quot;prompt&quot;: &quot;超写实，一位留着深色短卷发、修剪整齐的胡须和黑色方形眼镜的年轻男子的鲜艳逼真渲染，身穿深色纹理高领毛衣和牛仔裤。他奔跑到一半被捕捉下来，姿态充满动感，向前突破，充满戏剧性地从一个破碎的漫画分镜框中显现——一条腿和一只手臂冲入现实世界，而身体的其余部分仍留在漫画框内。他的表情充满活力和喜悦，拥有锐利的面部细节，自然的皮肤纹理，以及具有高对比度和深度的戏剧性电影灯光。\n...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2869.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2868" data-search="案例2868 震撼视觉的深红影棚广角美妆大片 震撼视觉的深红影棚广角美妆大片 - gpt img2 图像生成提示词 x / maercihh https://x.com/maercihh/status/2026941078885310750 chatgpt ai 图片 gpt img2 美妆 广角 商业 写实 时尚 照片级真实感的大胆美妆宣传活动，使用上传的模特作为精确的身份参考。不做面部改变，不做平滑处理。 场景：深红色饱和的摄影棚环境，具有高对比度的地板图案或光滑表面。 产品：产品被握持或放置在极其靠近镜头的位置，由于透视关系显得巨大。 模特姿势：俏皮或自信的微笑，手臂完全伸向相机，手指因广角镜头而略微变形。透过太阳镜的强烈眼神交流或自然凝视。 相机：超广角 20–28mm 美学，动态前景夸张，浅至中等景深。 灯光：强有力的商业照明，具有清晰的高光和反射，锐利的包装边缘，充满活力的调色。超精细的皮肤纹理和织物真实感。" data-tags="ChatGPT|AI|图片|GPT IMG2|美妆|广角|商业|写实|时尚">
+      <a class="case-card-link" href="/zh/case/2868.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-stunning-red-studio-wide-angle-beauty-1.jpeg" alt="震撼视觉的深红影棚广角美妆大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2868</span></span><span class="case-title-text">震撼视觉的深红影棚广角美妆大片</span></h3>
+          <p class="case-summary">震撼视觉的深红影棚广角美妆大片 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-26</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Maercihh/status/2026941078885310750">X / Maercihh</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">美妆</span><span class="tag">广角</span><span class="tag">商业</span><span class="tag">写实</span><span class="tag">时尚</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>照片级真实感的大胆美妆宣传活动，使用上传的模特作为精确的身份参考。不做面部改变，不做平滑处理。
+场景：深红色饱和的摄影棚环境，具有高对比度的地板图案或光滑表面。
+产品：产品被握持或放置在极其靠近镜头的位置，由于透视关系显得巨大。
+模特姿势：俏皮或自信的微笑，手臂完全伸向相机，手指因广角镜头而略微变形。透过太阳镜的强烈眼神交流或自然凝视。
+相机：超广角 20–28mm 美学，动态前景夸张，浅至中等景...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2868.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2867" data-search="案例2867 珊瑚色极简影棚时尚商业大片 珊瑚色极简影棚时尚商业大片 - gpt img2 图像生成提示词 x / maercihh https://x.com/maercihh/status/2026941078885310750 chatgpt ai 图片 gpt img2 商业摄影 时尚大片 超高清 广角透视 影棚人像 超写实高端时尚商业广告大片，使用上传的模特照片作为严格的身份参考。保留精确的面部特征、比例和自然皮肤纹理——无修图，无变形。场景：珊瑚色单色工作室盒，配有光泽反光棋盘格或极简抛光地板。拥有柔和光线渐变的干净几何墙壁。产品：产品放置在前景中心超大位置，因广角透视而占据画面主导地位。包装超清晰，文字完全可读，具有逼真的反射和材质纹理。较小的产品单元可对称放置在背景中。模特姿势：站在产品后方，微蹲或前倾，一只手伸向镜头以创造深度感。强烈自信的表情，时尚态度。相机：低角度 24-35mm 镜头感，戏剧性透视畸变，对产品和模特都进行深焦处理。灯光：明亮的商业影棚灯光，柔和阴影，包装上有光泽高光，高端广告" data-tags="ChatGPT|AI|图片|GPT IMG2|商业摄影|时尚大片|超高清|广角透视|影棚人像">
+      <a class="case-card-link" href="/zh/case/2867.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-coral-minimalist-fashion-campaign-1.jpeg" alt="珊瑚色极简影棚时尚商业大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2867</span></span><span class="case-title-text">珊瑚色极简影棚时尚商业大片</span></h3>
+          <p class="case-summary">珊瑚色极简影棚时尚商业大片 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-26</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Maercihh/status/2026941078885310750">X / Maercihh</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">商业摄影</span><span class="tag">时尚大片</span><span class="tag">超高清</span><span class="tag">广角透视</span><span class="tag">影棚人像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>超写实高端时尚商业广告大片，使用上传的模特照片作为严格的身份参考。保留精确的面部特征、比例和自然皮肤纹理——无修图，无变形。场景：珊瑚色单色工作室盒，配有光泽反光棋盘格或极简抛光地板。拥有柔和光线渐变的干净几何墙壁。产品：产品放置在前景中心超大位置，因广角透视而占据画面主导地位。包装超清晰，文字完全可读，具有逼真的反射和材质纹理。较小的产品单元可对称放置在背景中。模特姿势：站在产品后方，微蹲或前倾...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2867.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2866" data-search="案例2866 鸟群织就的梦幻高定时装秀 鸟群织就的梦幻高定时装秀 - gpt img2 图像生成提示词 x / mrdasonx https://x.com/mrdasonx/status/2026284342549340190 chatgpt ai 图片 gpt img2 时装秀 飞鸟裙 超现实 奇幻风 高定感 一个充满趣味的高级时装t台场景，主角是一位自信的女性，正走在奢华时装秀的t台上，身穿一件完全由鸟类制成的非凡高级定制礼服。数百只优雅、色彩鲜艳的鸟类构成了飘逸的雕塑感礼服形状，像活着的羽毛一样层叠，翅膀微微张开，营造出布料和运动的错觉。一些鸟儿在她周围轻轻升入空中，捕捉于飞行瞬间，增添了神奇、超现实的运动感。鸟儿们展现出丰富多样的色彩——彩虹般的蓝色、光芒四射的红色、金黄色和柔和的白色——拥有错综复杂的羽毛细节和自然纹理。她在迈步间摆出姿势，带着快乐、自信的表情，富有表现力的眼睛，以及精致的t台妆容。戏剧性的舞台灯光配以发光的高光，黑暗模糊的观众背景，电影级的景深，奇幻现实主义，超精细纹理，高" data-tags="ChatGPT|AI|图片|GPT IMG2|时装秀|飞鸟裙|超现实|奇幻风|高定感">
+      <a class="case-card-link" href="/zh/case/2866.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-bird-woven-dream-couture-1.jpeg" alt="鸟群织就的梦幻高定时装秀" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2866</span></span><span class="case-title-text">鸟群织就的梦幻高定时装秀</span></h3>
+          <p class="case-summary">鸟群织就的梦幻高定时装秀 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-25</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrDasOnX/status/2026284342549340190">X / MrDasOnX</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时装秀</span><span class="tag">飞鸟裙</span><span class="tag">超现实</span><span class="tag">奇幻风</span><span class="tag">高定感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一个充满趣味的高级时装T台场景，主角是一位自信的女性，正走在奢华时装秀的T台上，身穿一件完全由鸟类制成的非凡高级定制礼服。数百只优雅、色彩鲜艳的鸟类构成了飘逸的雕塑感礼服形状，像活着的羽毛一样层叠，翅膀微微张开，营造出布料和运动的错觉。一些鸟儿在她周围轻轻升入空中，捕捉于飞行瞬间，增添了神奇、超现实的运动感。鸟儿们展现出丰富多样的色彩——彩虹般的蓝色、光芒四射的红色、金黄色和柔和的白色——拥有错综...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2866.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2865" data-search="案例2865 冰火双雄背靠背史诗电影海报 冰火双雄背靠背史诗电影海报 - gpt img2 图像生成提示词 x / naiknelofar788 https://x.com/naiknelofar788/status/2025972876554510482 chatgpt ai 图片 gpt img2 奇幻 战士 电影感 冰与火 史诗 一幅戏剧性的电影海报风格肖像，描绘了两位史诗奇幻战士在冰冻风暴中背靠背站立。左侧是一位身经百战的男性战士，留着湿漉漉的深色卷发，低头以此表达坚定的决心，紧握着一把插在冰里的中世纪长剑。霜雪附着在他毛皮镶边的斗篷和肩膀上。右侧是一位强有力的女性战士侧影，苍白的皮肤在炽热的橙色光芒下闪耀，她的身体部分被火焰吞没，与冰冷的蓝色氛围形成对比。雪花粒子在空中盘旋，在象征性的冲突中融合了火与冰。超精细的面部细节，情感强度，体积雾，电影级布光，冷蓝色调混合温暖的火焰高光，浅景深，史诗奇幻电影海报，超写实，8k分辨率，戏剧性构图，清晰聚焦，高对比度，逼真纹理。" data-tags="ChatGPT|AI|图片|GPT IMG2|奇幻|战士|电影感|冰与火|史诗">
+      <a class="case-card-link" href="/zh/case/2865.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-ice-fire-warriors-epic-poster-1.jpeg" alt="冰火双雄背靠背史诗电影海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2865</span></span><span class="case-title-text">冰火双雄背靠背史诗电影海报</span></h3>
+          <p class="case-summary">冰火双雄背靠背史诗电影海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-24</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Naiknelofar788/status/2025972876554510482">X / Naiknelofar788</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">奇幻</span><span class="tag">战士</span><span class="tag">电影感</span><span class="tag">冰与火</span><span class="tag">史诗</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一幅戏剧性的电影海报风格肖像，描绘了两位史诗奇幻战士在冰冻风暴中背靠背站立。左侧是一位身经百战的男性战士，留着湿漉漉的深色卷发，低头以此表达坚定的决心，紧握着一把插在冰里的中世纪长剑。霜雪附着在他毛皮镶边的斗篷和肩膀上。右侧是一位强有力的女性战士侧影，苍白的皮肤在炽热的橙色光芒下闪耀，她的身体部分被火焰吞没，与冰冷的蓝色氛围形成对比。雪花粒子在空中盘旋，在象征性的冲突中融合了火与冰。超精细的面部细...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2865.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2864" data-search="案例2864 都市落日时尚大片 都市落日时尚大片 - gpt img2 图像生成提示词 x chatgpt ai 图片 gpt img2 时尚 街拍 电影感 黄金时刻 都市 一张超现实电影感时尚照片，一位二十出头惊艳的年轻女性，全身可见，站在现代城市中心，黄金时段。 她随意地单肩靠在交通信号灯杆上，没有意识到相机的存在，仿佛这一刻是自然捕捉的。 她穿着紧身蓝色牛仔裤、棕色皮靴，以及一件短款棕色麂皮夹克，带有柔软羊皮翻领。夹克下，一件极简深色露脐上衣，隐约露出精致的乳沟和紧致的腹部。 她的体型天生女性化，均衡而优雅，姿态自信。 一只手穿过她丰盈的浅棕色长发，将其向后撩起，头部微微转向那一侧，眼睛自然地看向别处，没有摆拍。 肤色为轻微日晒后的奶油般柔和光泽，真实肌肤纹理，细腻毛孔与高光——毫无塑料感。 妆容醒目却精致：清晰的眼部、浓密睫毛、" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚|街拍|电影感|黄金时刻|都市">
+      <a class="case-card-link" href="/zh/case/2864.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-urban-sunset-fashion-silhouette-1.jpeg" alt="都市落日时尚大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2864</span></span><span class="case-title-text">都市落日时尚大片</span></h3>
+          <p class="case-summary">都市落日时尚大片 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-04</span>
+            <span class="case-source">X</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时尚</span><span class="tag">街拍</span><span class="tag">电影感</span><span class="tag">黄金时刻</span><span class="tag">都市</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张超现实电影感时尚照片，一位二十出头惊艳的年轻女性，全身可见，站在现代城市中心，黄金时段。  
+她随意地单肩靠在交通信号灯杆上，没有意识到相机的存在，仿佛这一刻是自然捕捉的。  
+她穿着紧身蓝色牛仔裤、棕色皮靴，以及一件短款棕色麂皮夹克，带有柔软羊皮翻领。夹克下，一件极简深色露脐上衣，隐约露出精致的乳沟和紧致的腹部。  
+
+她的体型天生女性化，均衡而优雅，姿态自信。  
+一只手穿过她丰盈的浅棕色...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2864.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2863" data-search="案例2863 街头炫瓶男模 街头炫瓶男模 - gpt img2 图像生成提示词 x / ecommartinez https://x.com/ecommartinez/status/2017311074551533921 chatgpt ai 图片 gpt img2 街头 广角 潮男 湿沥青 电影光 专业照片，一位男士，30岁的俄罗斯模特（参考图像），正对着镜头，向相机倾斜，从下往上拍摄，使用广角镜头。男士倾斜着身体，近距离将一瓶饮料展示给镜头，一只手拿着瓶子，紧贴在镜头前。瓶子的标签和方向保持笔直，以便标签清晰可读。他穿着白色运动鞋，一只脚在镜头前方。男士站在街道上，湿漉漉的沥青和飞溅的水花从下方拍出。鲜艳的色彩，电影级灯光，光线从后方打在模特的脸上。--v7 --ar 3:4 --style raw" data-tags="ChatGPT|AI|图片|GPT IMG2|街头|广角|潮男|湿沥青|电影光">
+      <a class="case-card-link" href="/zh/case/2863.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-street-model-flaunt-bottle-1.jpeg" alt="街头炫瓶男模" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2863</span></span><span class="case-title-text">街头炫瓶男模</span></h3>
+          <p class="case-summary">街头炫瓶男模 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-31</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ecommartinez/status/2017311074551533921">X / ecommartinez</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">街头</span><span class="tag">广角</span><span class="tag">潮男</span><span class="tag">湿沥青</span><span class="tag">电影光</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>专业照片，一位男士，30岁的俄罗斯模特（参考图像），正对着镜头，向相机倾斜，从下往上拍摄，使用广角镜头。男士倾斜着身体，近距离将一瓶饮料展示给镜头，一只手拿着瓶子，紧贴在镜头前。瓶子的标签和方向保持笔直，以便标签清晰可读。他穿着白色运动鞋，一只脚在镜头前方。男士站在街道上，湿漉漉的沥青和飞溅的水花从下方拍出。鲜艳的色彩，电影级灯光，光线从后方打在模特的脸上。--v7 --ar 3:4 --styl...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2863.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2862" data-search="案例2862 超真实3d ins广告大片 超真实3d ins广告大片 - gpt img2 图像生成提示词 x / mystveil7 https://x.com/mystveil7/status/2015776042989039997 chatgpt ai 图片 gpt img2 3d写实 ins风 nike运动 商业摄影 高级渲染 create a hyper-realistic, cinematic instagram post layout where the instagram ui exists as a physical, tangible 3d object, photographed like a premium commercial product shot. the result should feel indistinguishable from a real studio photograph. instagram frame (ui accuracy – critical) authentic i" data-tags="ChatGPT|AI|图片|GPT IMG2|3D写实|INS风|Nike运动|商业摄影|高级渲染">
+      <a class="case-card-link" href="/zh/case/2862.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-hyper-realistic-3d-instagram-ad-1.jpeg" alt="超真实3D INS广告大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2862</span></span><span class="case-title-text">超真实3D INS广告大片</span></h3>
+          <p class="case-summary">超真实3D INS广告大片 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-26</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Mystveil7/status/2015776042989039997">X / Mystveil7</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">3D写实</span><span class="tag">INS风</span><span class="tag">Nike运动</span><span class="tag">商业摄影</span><span class="tag">高级渲染</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Create a hyper-realistic, cinematic Instagram post layout where the Instagram UI exists as a physical, tangible 3D object, photographed like a premium commercial product shot. The result should feel i...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2862.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2861" data-search="案例2861 复古巴士上的红风衣女郎 复古巴士上的红风衣女郎 - gpt img2 图像生成提示词 x / iamsofiaijaz https://x.com/iamsofiaijaz/status/2015337737860403283 chatgpt ai 图片 gpt img2 时尚 复古 旅行 电影感 4k 一位时尚年轻女子坐在老式复古巴士的前缘，身穿红色长风衣、羊毛无檐小便帽、圆形蓝色反光太阳镜、叠层项链和粗犷的棕色皮靴。她有着波浪状金发，带着自信而梦幻的表情，仰望天空。巴士漆面剥落，呈青绿色与铁锈红色调。明亮清澈的蓝天，城市背景建筑极少，柔和日光，电影级色彩分级，浅景深，高端时尚旅行氛围，编辑摄影，超写实，4k分辨率，锐利对焦，自然肌肤质感，戏剧性构图，电影静帧美学。" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚|复古|旅行|电影感|4K">
+      <a class="case-card-link" href="/zh/case/2861.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-vintage-bus-red-trench-girl-1.jpeg" alt="复古巴士上的红风衣女郎" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2861</span></span><span class="case-title-text">复古巴士上的红风衣女郎</span></h3>
+          <p class="case-summary">复古巴士上的红风衣女郎 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-25</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2015337737860403283">X / iamsofiaijaz</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时尚</span><span class="tag">复古</span><span class="tag">旅行</span><span class="tag">电影感</span><span class="tag">4K</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一位时尚年轻女子坐在老式复古巴士的前缘，身穿红色长风衣、羊毛无檐小便帽、圆形蓝色反光太阳镜、叠层项链和粗犷的棕色皮靴。她有着波浪状金发，带着自信而梦幻的表情，仰望天空。巴士漆面剥落，呈青绿色与铁锈红色调。明亮清澈的蓝天，城市背景建筑极少，柔和日光，电影级色彩分级，浅景深，高端时尚旅行氛围，编辑摄影，超写实，4K分辨率，锐利对焦，自然肌肤质感，戏剧性构图，电影静帧美学。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2861.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2860" data-search="案例2860 皮克斯风阳光少年 皮克斯风阳光少年 - gpt img2 图像生成提示词 x / iamsofiaijaz https://x.com/iamsofiaijaz/status/2013473309485343120 chatgpt ai 图片 gpt img2 卡通 3d 青春 微笑 高质 一个风格化的3d卡通肖像，一位年轻男子，拥有短棕发和富有表现力的绿色眼睛，温暖地微笑。他穿着黑色西装外套内搭白色t恤，现代休闲时尚。类似皮克斯/迪士尼风格角色设计，皮肤光滑，柔和光照，略微夸张的面部特征。高细节、精美的3d渲染，友好且平易近人的表情。渐变背景为柔和的蓝绿色和粉色，工作室灯光，浅景深，高分辨率。" data-tags="ChatGPT|AI|图片|GPT IMG2|卡通|3D|青春|微笑|高质">
+      <a class="case-card-link" href="/zh/case/2860.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-pixar-style-sunny-youth-1.jpeg" alt="皮克斯风阳光少年" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2860</span></span><span class="case-title-text">皮克斯风阳光少年</span></h3>
+          <p class="case-summary">皮克斯风阳光少年 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2013473309485343120">X / iamsofiaijaz</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">卡通</span><span class="tag">3D</span><span class="tag">青春</span><span class="tag">微笑</span><span class="tag">高质</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一个风格化的3D卡通肖像，一位年轻男子，拥有短棕发和富有表现力的绿色眼睛，温暖地微笑。他穿着黑色西装外套内搭白色T恤，现代休闲时尚。类似皮克斯/迪士尼风格角色设计，皮肤光滑，柔和光照，略微夸张的面部特征。高细节、精美的3D渲染，友好且平易近人的表情。渐变背景为柔和的蓝绿色和粉色，工作室灯光，浅景深，高分辨率。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2860.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2859" data-search="案例2859 沉香玫瑰悬浮幻景 沉香玫瑰悬浮幻景 - gpt img2 图像生成提示词 x / meng_dagg695 https://x.com/meng_dagg695/status/2011334627290726746 chatgpt ai 图片 gpt img2 香水 中东 金调 8k 琥珀 { &quot;master_prompt_type&quot;: &quot;超精细8k ai图像生成&quot;, &quot;global_settings&quot;: { &quot;resolution&quot;: &quot;8k uhd&quot;, &quot;aspect_ratio&quot;: &quot;2:3 竖版&quot;, &quot;render_quality&quot;: &quot;极致锐度、超微细节、电影级光效&quot;, &quot;style&quot;: &quot;超现实商业产品摄影&quot;, &quot;color_profile&quot;: &quot;温暖金调搭配柔和琥珀高光&quot;, &quot;environment&quot;: { &quot;location&quot;: &quot;古老中东市场走廊&quot;, &quot;architecture&quot;:" data-tags="ChatGPT|AI|图片|GPT IMG2|香水|中东|金调|8K|琥珀">
+      <a class="case-card-link" href="/zh/case/2859.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-floating-rose-agarwood-scene-1.jpeg" alt="沉香玫瑰悬浮幻景" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2859</span></span><span class="case-title-text">沉香玫瑰悬浮幻景</span></h3>
+          <p class="case-summary">沉香玫瑰悬浮幻景 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-14</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/meng_dagg695/status/2011334627290726746">X / meng_dagg695</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">香水</span><span class="tag">中东</span><span class="tag">金调</span><span class="tag">8K</span><span class="tag">琥珀</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>{
+  &quot;master_prompt_type&quot;: &quot;超精细8K AI图像生成&quot;,
+  &quot;global_settings&quot;: {
+    &quot;resolution&quot;: &quot;8K UHD&quot;,
+    &quot;aspect_ratio&quot;: &quot;2:3 竖版&quot;,
+    &quot;render_quality&quot;: &quot;极致锐度、超微细节、电影级光效&quot;,
+    &quot;style&quot;: &quot;超现实商业产品摄影&quot;,
+    &quot;color...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2859.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2858" data-search="案例2858 烬甲猎鹰者与燃翼神禽 烬甲猎鹰者与燃翼神禽 - gpt img2 图像生成提示词 x / iamsofiaijaz https://x.com/iamsofiaijaz/status/2008896649901535342 chatgpt ai 图片 gpt img2 fantasy landscape nature vehicle 一幅充满奇幻色彩的电影场景：一位英姿飒爽的女战士兼猎鹰师，身着饱经战火洗礼、饰以闪耀余烬纹理的皮甲，漫步于幽暗迷雾笼罩的森林之中。她高举手臂，指挥着一头巨大的凤凰与雄鹰的混合体，这头猛禽双翼燃烧，羽毛燃焰，尖端喷吐着火焰。它周身散发着橙红色的熔岩光芒，火星和余烬飞溅。女战士梳着辫子，皮肤上沾满了灰烬，神情坚定，手中拿着绳索和工具袋。画面细节丰富，羽毛纹理逼真，火焰物理效果自然，光照效果极具戏剧性，运用了体积雾、浅景深等技术，营造出史诗般的奇幻氛围，色彩调校极具电影质感，背景阴郁深沉，分辨率高达8k，呈现出概念艺术的精髓，并采用了虚幻引擎的渲染效果。" data-tags="ChatGPT|AI|图片|GPT IMG2|fantasy|landscape|nature|vehicle">
+      <a class="case-card-link" href="/zh/case/2858.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-prompt-1145-1.jpeg" alt="烬甲猎鹰者与燃翼神禽" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2858</span></span><span class="case-title-text">烬甲猎鹰者与燃翼神禽</span></h3>
+          <p class="case-summary">烬甲猎鹰者与燃翼神禽 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2008896649901535342">X / iamsofiaijaz</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">fantasy</span><span class="tag">landscape</span><span class="tag">nature</span><span class="tag">vehicle</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一幅充满奇幻色彩的电影场景：一位英姿飒爽的女战士兼猎鹰师，身着饱经战火洗礼、饰以闪耀余烬纹理的皮甲，漫步于幽暗迷雾笼罩的森林之中。她高举手臂，指挥着一头巨大的凤凰与雄鹰的混合体，这头猛禽双翼燃烧，羽毛燃焰，尖端喷吐着火焰。它周身散发着橙红色的熔岩光芒，火星和余烬飞溅。女战士梳着辫子，皮肤上沾满了灰烬，神情坚定，手中拿着绳索和工具袋。画面细节丰富，羽毛纹理逼真，火焰物理效果自然，光照效果极具戏剧性，...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2858.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag-gpt-img2-html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>
