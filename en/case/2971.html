@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT generates cute planner-style avatar images #2971 | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="Create a journal-style chibi sticker composite based on the uploaded portrait, preserving the real identity and atmosphere.">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/en/case/2971.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2971.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2971.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1777728187925">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"GPT generates cute planner-style avatar images #2971","description":"Create a journal-style chibi sticker composite based on the uploaded portrait, preserving the real identity and atmosphere.","url":"https://gemnana.com/en/case/2971.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI Prompt Collection</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/en/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+          <span class="nav-count">2971</span>
+        </a>
+        <a href="/en/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">Image</span>
+          <span class="nav-count">2939</span>
+        </a>
+        <a href="/en/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">Video</span>
+          <span class="nav-count">29</span>
+        </a>
+        <a href="/en/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Text</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/zh/case/2971.html" class="lang-switch-link">中文</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ Settings</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="/en/index.html">Home</a><span>›</span>
+        <a href="/en/image/index.html">Image</a><span>›</span>
+        <span>#2971</span>
+      </nav>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2971</span></span><span class="case-title-text">GPT generates cute planner-style avatar images</span></h1>
+      <p>2026-05-02　<a class="source-inline-link" href="https://x.com/xRahultripathi/status/2050478421109817749" target="_blank" rel="noopener noreferrer">X / Rossy</a></p>
+      <p><a class="source-link" href="/en/image/index.html">← Back to list</a></p>
+    </div>
+
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">Publish Image Post to XHS</button>
+        
+        <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
+      </div>
+
+      <div class="detail-block"><h3>📝 Summary</h3><p>Create a journal-style chibi sticker composite based on the uploaded portrait, preserving the real identity and atmosphere.</p></div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 Chinese Prompt</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("就让自己来一场艺术般的宁静告白\n\n趋势  \n使用 GPT 2.0 创建的图像 于 @renoiseai\n\n提示词  \n小巧头像剪贴簿照片提示（基于已上传的女性人像）\n\n使用上传的年轻女性图像作为基础。不要添加任何新人物。将现有主体改造成小巧头像（chibi）剪贴簿风格构图，同时需完整保留她的真实身份：面部、发型、发色（长而柔软的棕色头发）、自然妆容、黑色服装、姿势、光线以及舒适的室内氛围。\n\n[主题检测]  \n场景体现一种舒适的生活方式 / 自拍 / 工作区氛围：柔和的灯光、审美感的房间元素、一块带激励氛围的霓虹灯牌，以及一张笔记本桌面布置。全程保持平静、时尚、略带高效的生活状态情绪。\n\n[小巧头像（Chibi）]  \n添加 5–8 个与“同一个女孩”一致的小小 chibi 迷你版本：  \n- 同样的长而柔软的棕色头发（轻微波浪）  \n- 同样的穿搭色调（黑色上衣）  \n- 同样温柔、自信的表情  \n\n风格：  \n- 可爱小巧头像贴纸风  \n- 大头小身比例  \n- 富有表现力的可爱大眼睛  \n- 柔和的马卡龙色调阴影  \n- 干净、高质量的贴纸成品\n\n[小巧头像动作 – 不重复]  \n- 拿着咖啡  \n- 在笔记本电脑上工作  \n- 拍自拍  \n- 放松地侧靠姿势  \n- 比出和平手势  \n- 思考姿势  \n- 舒展 / 放松慵懒姿势  \n- 微笑并挥手\n\n[贴纸摆放]  \n- 只将小巧头像放在边缘与空白区域  \n- 不要遮挡主脸或身体  \n- 添加白色描边 + 柔和的投影  \n- 轻微漂浮贴纸效果\n\n[涂鸦]  \n添加细腻的剪贴簿风格涂鸦：  \n- 爱心、闪光、星星、箭头  \n- 审美线条与圆形  \n- 柔和发光点缀  \n\n配色方案：  \n白色 + 暖黄 + 柔粉（匹配霓虹氛围）\n\n[手写文字]  \n添加 5–8 句简短的审美短语：  \n- “just me ”  \n- “soft life”  \n- “stay cozy”  \n- “little moments”  \n- “focus mode”  \n- “good vibes only”  \n- “create & grow”  \n- “be you ”  \n\n风格：  \n- 手写字体  \n- 白色文字带柔和光晕  \n- 粉色/黄色的选择性高亮\n\n[构图]  \n- 中心焦点：真实女孩（不变）  \n- 用小巧头像贴纸 + 涂鸦 + 文字围绕  \n- 布局保持均衡、干净，不要杂乱\n\n[风格关键词]  \n真实照片 + 小巧头像贴纸、kawaii 可爱风、舒适生活方式、暖色光线、剪贴簿日记、柔和发光、高细节、Instagram 审美\n\n[最终输出]  \n一张精致、高质量、适合社交媒体发布的剪贴簿图片，包含：  \n真实主体 + 可爱的小巧 chibi 扩展 + 审美涂鸦\n\n[避免]  \n- 改变面部身份  \n- 过度变美或 AI 脸部畸变  \n- 构图杂乱  \n- 无关/随机元素  \n- 遮挡主体", this)'>📋 Copy</button>
+        </div>
+        <div data-nosnippet><p>就让自己来一场艺术般的宁静告白</p><p>趋势  <br>使用 GPT 2.0 创建的图像 于 @renoiseai</p><p>提示词  <br>小巧头像剪贴簿照片提示（基于已上传的女性人像）</p><p>使用上传的年轻女性图像作为基础。不要添加任何新人物。将现有主体改造成小巧头像（chibi）剪贴簿风格构图，同时需完整保留她的真实身份：面部、发型、发色（长而柔软的棕色头发）、自然妆容、黑色服装、姿势、光线以及舒适的室内氛围。</p><p>[主题检测]  <br>场景体现一种舒适的生活方式 / 自拍 / 工作区氛围：柔和的灯光、审美感的房间元素、一块带激励氛围的霓虹灯牌，以及一张笔记本桌面布置。全程保持平静、时尚、略带高效的生活状态情绪。</p><p>[小巧头像（Chibi）]  <br>添加 5–8 个与“同一个女孩”一致的小小 chibi 迷你版本：  <br>- 同样的长而柔软的棕色头发（轻微波浪）  <br>- 同样的穿搭色调（黑色上衣）  <br>- 同样温柔、自信的表情</p><p>风格：  <br>- 可爱小巧头像贴纸风  <br>- 大头小身比例  <br>- 富有表现力的可爱大眼睛  <br>- 柔和的马卡龙色调阴影  <br>- 干净、高质量的贴纸成品</p><p>[小巧头像动作 – 不重复]  <br>- 拿着咖啡  <br>- 在笔记本电脑上工作  <br>- 拍自拍  <br>- 放松地侧靠姿势  <br>- 比出和平手势  <br>- 思考姿势  <br>- 舒展 / 放松慵懒姿势  <br>- 微笑并挥手</p><p>[贴纸摆放]  <br>- 只将小巧头像放在边缘与空白区域  <br>- 不要遮挡主脸或身体  <br>- 添加白色描边 + 柔和的投影  <br>- 轻微漂浮贴纸效果</p><p>[涂鸦]  <br>添加细腻的剪贴簿风格涂鸦：  <br>- 爱心、闪光、星星、箭头  <br>- 审美线条与圆形  <br>- 柔和发光点缀</p><p>配色方案：  <br>白色 + 暖黄 + 柔粉（匹配霓虹氛围）</p><p>[手写文字]  <br>添加 5–8 句简短的审美短语：  <br>- “just me ”  <br>- “soft life”  <br>- “stay cozy”  <br>- “little moments”  <br>- “focus mode”  <br>- “good vibes only”  <br>- “create &amp; grow”  <br>- “be you ”</p><p>风格：  <br>- 手写字体  <br>- 白色文字带柔和光晕  <br>- 粉色/黄色的选择性高亮</p><p>[构图]  <br>- 中心焦点：真实女孩（不变）  <br>- 用小巧头像贴纸 + 涂鸦 + 文字围绕  <br>- 布局保持均衡、干净，不要杂乱</p><p>[风格关键词]  <br>真实照片 + 小巧头像贴纸、kawaii 可爱风、舒适生活方式、暖色光线、剪贴簿日记、柔和发光、高细节、Instagram 审美</p><p>[最终输出]  <br>一张精致、高质量、适合社交媒体发布的剪贴簿图片，包含：  <br>真实主体 + 可爱的小巧 chibi 扩展 + 审美涂鸦</p><p>[避免]  <br>- 改变面部身份  <br>- 过度变美或 AI 脸部畸变  <br>- 构图杂乱  <br>- 无关/随机元素  <br>- 遮挡主体</p></div>
+      </div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 English Prompt</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Just giving my self a art off peace with\nTrend\nCreated image using GPT 2.0 Created on @renoiseai\nPrompt\nChibi Avatar Scrapbook Photo Prompt (Based on Uploaded Female Portrait)\nUse the uploaded image of a young woman as the base. Do NOT add any new person. Transform the existing subject into a chibi scrapbook-style composition while fully preserving her real identity, face, hairstyle, hair color (long soft brown hair), natural makeup, black outfit, pose, lighting, and cozy indoor aesthetic.\n[Theme Detection]\nThe scene reflects a cozy lifestyle / selfie / workspace vibe with soft lighting, aesthetic room elements, a motivational neon sign, and a laptop desk setup. Maintain a calm, stylish, slightly productive lifestyle mood throughout.\n[Chibi Avatars]\nAdd 5–8 chibi mini versions of the SAME girl:\n- same long soft brown hair (slight waves)\n- same outfit tone (black top)\n- same gentle, confident expression\nStyle:\n- kawaii chibi sticker style\n- big head, small body proportions\n- expressive cute eyes\n- soft pastel shading\n- clean, high-quality sticker finish\n[Chibi Actions – no repetition]\n- holding coffee\n- working on laptop\n- taking selfie\n- relaxed leaning pose\n- peace sign\n- thinking pose\n- stretching / chill pose\n- smiling & waving\n[Sticker Placement]\n- Place chibi avatars around edges and empty areas only\n- Do NOT cover the main face or body\n- Add white outline + soft drop shadow\n- Slight floating sticker effect\n[Doodles]\nAdd subtle scrapbook-style doodles:\n- hearts, sparkles, stars, arrows\n- aesthetic lines and circles\n- soft glowing accents\nColor palette:\nwhite + warm yellow + soft pink (matching neon vibe)\n[Handwritten Text]\nAdd 5–8 short aesthetic phrases:\n- \"just me \"\n- \"soft life\"\n- \"stay cozy\"\n- \"little moments\"\n- \"focus mode\"\n- \"good vibes only\"\n- \"create & grow\"\n- \"be you \"\nStyle:\n- handwritten font\n- white text with soft glow\n- selective highlights in pink/yellow\n[Composition]\n- Center focus: real girl (unchanged)\n- Surround with chibi stickers + doodles + text\n- Keep layout balanced, clean, not cluttered\n[Style Keywords]\nrealistic photo + chibi stickers, kawaii aesthetic, cozy lifestyle, warm lighting, scrapbook diary, soft glow, high detail, Instagram aesthetic\n[Final Output]\nA polished, high-quality, social-media-ready scrapbook image combining:\nrealistic subject + cute chibi extensions + aesthetic doodles\n[Avoid]\n- altering facial identity\n- over-beautifying or AI face distortion\n- cluttered composition\n- unrelated/random elements\n- covering the subject", this)'>📋 Copy</button>
+        </div>
+        <div data-nosnippet><p>Just giving my self a art off peace with<br>Trend<br>Created image using GPT 2.0 Created on @renoiseai<br>Prompt<br>Chibi Avatar Scrapbook Photo Prompt (Based on Uploaded Female Portrait)<br>Use the uploaded image of a young woman as the base. Do NOT add any new person. Transform the existing subject into a chibi scrapbook-style composition while fully preserving her real identity, face, hairstyle, hair color (long soft brown hair), natural makeup, black outfit, pose, lighting, and cozy indoor aesthetic.<br>[Theme Detection]<br>The scene reflects a cozy lifestyle / selfie / workspace vibe with soft lighting, aesthetic room elements, a motivational neon sign, and a laptop desk setup. Maintain a calm, stylish, slightly productive lifestyle mood throughout.<br>[Chibi Avatars]<br>Add 5–8 chibi mini versions of the SAME girl:<br>- same long soft brown hair (slight waves)<br>- same outfit tone (black top)<br>- same gentle, confident expression<br>Style:<br>- kawaii chibi sticker style<br>- big head, small body proportions<br>- expressive cute eyes<br>- soft pastel shading<br>- clean, high-quality sticker finish<br>[Chibi Actions – no repetition]<br>- holding coffee<br>- working on laptop<br>- taking selfie<br>- relaxed leaning pose<br>- peace sign<br>- thinking pose<br>- stretching / chill pose<br>- smiling &amp; waving<br>[Sticker Placement]<br>- Place chibi avatars around edges and empty areas only<br>- Do NOT cover the main face or body<br>- Add white outline + soft drop shadow<br>- Slight floating sticker effect<br>[Doodles]<br>Add subtle scrapbook-style doodles:<br>- hearts, sparkles, stars, arrows<br>- aesthetic lines and circles<br>- soft glowing accents<br>Color palette:<br>white + warm yellow + soft pink (matching neon vibe)<br>[Handwritten Text]<br>Add 5–8 short aesthetic phrases:<br>- &quot;just me &quot;<br>- &quot;soft life&quot;<br>- &quot;stay cozy&quot;<br>- &quot;little moments&quot;<br>- &quot;focus mode&quot;<br>- &quot;good vibes only&quot;<br>- &quot;create &amp; grow&quot;<br>- &quot;be you &quot;<br>Style:<br>- handwritten font<br>- white text with soft glow<br>- selective highlights in pink/yellow<br>[Composition]<br>- Center focus: real girl (unchanged)<br>- Surround with chibi stickers + doodles + text<br>- Keep layout balanced, clean, not cluttered<br>[Style Keywords]<br>realistic photo + chibi stickers, kawaii aesthetic, cozy lifestyle, warm lighting, scrapbook diary, soft glow, high detail, Instagram aesthetic<br>[Final Output]<br>A polished, high-quality, social-media-ready scrapbook image combining:<br>realistic subject + cute chibi extensions + aesthetic doodles<br>[Avoid]<br>- altering facial identity<br>- over-beautifying or AI face distortion<br>- cluttered composition<br>- unrelated/random elements<br>- covering the subject</p></div>
+      </div>
+      <div class="detail-block"><h3>📷 Images</h3><div class="detail-media-grid"><img src="/images/tweet-2050478421109817749-1.jpg" alt="GPT生成可爱手帐风头像" loading="lazy"></div></div>
+      
+      
+    </div>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("No prompt content is available for this case.");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ Copied";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("Copy failed. Please copy manually.");
+        }
+      }
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing...";
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: 2971 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2971,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm("Delete this case? This action cannot be undone.")) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: 2971 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert("Deleted successfully");
+          window.location.href = "/en/image/index.html";
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+</body>
+</html>
