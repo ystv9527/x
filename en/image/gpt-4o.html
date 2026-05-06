@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-4o · Image Prompt Cases | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="10  GPT-4o related cases">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/en/image/gpt-4o.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/gpt-4o.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/gpt-4o.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1778071951288">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"GPT-4o · Image Prompt Cases","description":"10  GPT-4o related cases","url":"https://gemnana.com/en/image/gpt-4o.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI Prompt Collection</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/en/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+          <span class="nav-count">2985</span>
+        </a>
+        <a href="/en/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">Image</span>
+          <span class="nav-count">2953</span>
+        </a>
+        <a href="/en/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">Video</span>
+          <span class="nav-count">29</span>
+        </a>
+        <a href="/en/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Text</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/zh/image/gpt-4o.html" class="lang-switch-link">中文</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ Settings</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>GPT-4o · Image Prompt Cases</h1>
+      <p>10  GPT-4o related cases</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search title, summary, tags…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ Tag Filters</span>
+          <button id="clearFilters" class="btn-clear" type="button">Clear Filters</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="GPT-4o">GPT-4o (10)</button><button type="button" class="tag-filter" data-tag="AI">AI (10)</button><button type="button" class="tag-filter" data-tag="图片">Image (7)</button><button type="button" class="tag-filter" data-tag="创意">Creative (7)</button><button type="button" class="tag-filter" data-tag="教程">Tutorials (6)</button><button type="button" class="tag-filter" data-tag="工具">Tools (3)</button><button type="button" class="tag-filter" data-tag="数字艺术">Digital Art (3)</button><button type="button" class="tag-filter" data-tag="摄影">Photography (1)</button><button type="button" class="tag-filter" data-tag="Instagram风格">Instagram风格 (1)</button><button type="button" class="tag-filter" data-tag="设计">Design (1)</button><button type="button" class="tag-filter" data-tag="科技">科技 (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">10 items</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 No matched content</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2980" data-search="案例2980 summer grape girl photoshoot 3x3 prompt text use gpt-image to generate a japanese-style film look 3x3 grid of a summer grape girl, emphasizing consistent character identity and a realistic photo-shoot feel. x / 麻酱ai实验室 https://x.com/zhongying14/status/2051424745716125926 gpt-4o ai 摄影 教程 工具 gpt-image-2.0" data-tags="GPT-4o|AI|摄影|教程|工具">
+      <a class="case-card-link" href="/en/case/2980.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2051424745716125926-1.jpg" alt="夏日葡萄少女写真3x3提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2980</span></span><span class="case-title-text">Summer grape girl photoshoot 3x3 prompt text</span></h3>
+          <p class="case-summary">Use GPT-Image to generate a Japanese-style film look 3x3 grid of a summer grape girl, emphasizing consistent character identity and a realistic photo-shoot feel.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-05-05</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/zhongying14/status/2051424745716125926">X / 麻酱AI实验室</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Photography</span><span class="tag">Tutorials</span><span class="tag">Tools</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>GPT-Image-2.0</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2980.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2969" data-search="案例2969 gpt-4 image: 8k cozy sticker collage makeover use gpt image prompts to transform the reference image into a warm dream scrapbook style: keep the people and the lighting, add multiple mini chibi characters, and overlay hand-drawn doodles. x / kashberg https://x.com/kashberg_0/status/2050493308250853860 gpt-4o ai 图片 创意 instagram风格 in 8k cinematic transform the reference image into a cozy scrapbook-style composition, strictly preserving subject, identity, pose, lighting, and background. add multiple mini chibi/doll versions of the same person (matching face, hair, outfit), placed naturally and doing varied activities. overlay" data-tags="GPT-4o|AI|图片|创意|Instagram风格">
+      <a class="case-card-link" href="/en/case/2969.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2050493308250853860-1.jpg" alt="GPT-4图像：8K温馨剪贴画改造" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2969</span></span><span class="case-title-text">GPT-4 image: 8K cozy sticker collage makeover</span></h3>
+          <p class="case-summary">Use GPT image prompts to transform the reference image into a warm dream scrapbook style: keep the people and the lighting, add multiple mini chibi characters, and overlay hand-drawn doodles.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-05-02</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Kashberg_0/status/2050493308250853860">X / Kashberg</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Image</span><span class="tag">Creative</span><span class="tag">Instagram风格</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>In 8K Cinematic Transform the reference image into a cozy scrapbook-style composition, strictly preserving subject, identity, pose, lighting, and background. Add multiple mini chibi/doll versions of t...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2969.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2963" data-search="案例2963 generate elegant women’s fashion inspired by floral motifs use gpt image 2 prompts to randomly select flowers and objects for creative ideation, then design an elegant women’s apparel collection. suitable for quickly generating concepts and inspiration. x / 行者ai视频 https://x.com/joshesye/status/2049397136869966257 gpt-4o ai 设计 创意 图片 this gpt-image 2 prompt is absolutely amazing randomly photograph a flower / item prompt: inspired by this flower, design a set of elegant-style women&#39;s clothing" data-tags="GPT-4o|AI|设计|创意|图片">
+      <a class="case-card-link" href="/en/case/2963.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2049397136869966257-1.jpg" alt="花卉灵感生成优雅女装" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2963</span></span><span class="case-title-text">Generate elegant women’s fashion inspired by floral motifs</span></h3>
+          <p class="case-summary">Use GPT Image 2 prompts to randomly select flowers and objects for creative ideation, then design an elegant women’s apparel collection. Suitable for quickly generating concepts and inspiration.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/joshesye/status/2049397136869966257">X / 行者AI视频</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Design</span><span class="tag">Creative</span><span class="tag">Image</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>This GPT-image 2 prompt is absolutely amazing
+Randomly photograph a flower / item
+Prompt: Inspired by this flower, design a set of elegant-style women&#39;s clothing</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2963.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2954" data-search="案例2954 gpt image 2 mathematical visualization prompt template provide reusable gpt image 2 mathematical infographic prompt templates, emphasizing intuitive structure and an academic typesetting style. suitable for generating clear, uncluttered lecture-poster-style visuals. x / 宝玉 https://x.com/dotey/status/2048258873119674779 gpt-4o ai 教程 工具 数字艺术 please create a math visualization infographic about “【mathematical concept/knowledge point】” to help readers intuitively understand: what it is, why it holds, what the geometric/structural intuition is, and how it appears in different scenarios. the artwork should look like a high-quality math lect" data-tags="GPT-4o|AI|教程|工具|数字艺术">
+      <a class="case-card-link" href="/en/case/2954.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2048258873119674779-1.jpg" alt="GPT Image 2 数学可视化提示词模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2954</span></span><span class="case-title-text">GPT Image 2 Mathematical Visualization Prompt Template</span></h3>
+          <p class="case-summary">Provide reusable GPT Image 2 mathematical infographic prompt templates, emphasizing intuitive structure and an academic typesetting style. Suitable for generating clear, uncluttered lecture-poster-style visuals.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-27</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/dotey/status/2048258873119674779">X / 宝玉</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Tutorials</span><span class="tag">Tools</span><span class="tag">Digital Art</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Please create a math visualization infographic about “【mathematical concept/knowledge point】” to help readers intuitively understand: what it is, why it holds, what the geometric/structural intuition ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2954.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2947" data-search="案例2947 ssr character card: two gpt image-generation prompts provide two gpt image 2 prompts from《ssr cards》to generate a dark-themed portrait and a seductive villain character card, respectively. x / 松果先森 https://x.com/songguoxiansen/status/2046795105802289214 gpt-4o ai 图片 创意 教程 ssr cards gpt image 2 prompts: image 1: zhou zhiruo darkened version ssr portrait, black veil and red lips, nine yin white bone claw gleaming with chilling light image 2: demi-gods and semi-devils kang min ssr character card, red lips and curly hair seductive femme fatale, eyes enticing under dim ca" data-tags="GPT-4o|AI|图片|创意|教程">
+      <a class="case-card-link" href="/en/case/2947.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2046795105802289214-1.jpg" alt="SSR角色卡：两条GPT绘图提示" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2947</span></span><span class="case-title-text">SSR character card: two GPT image-generation prompts</span></h3>
+          <p class="case-summary">Provide two GPT Image 2 prompts from《SSR Cards》to generate a dark-themed portrait and a seductive villain character card, respectively.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-23</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/songguoxiansen/status/2046795105802289214">X / 松果先森</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Image</span><span class="tag">Creative</span><span class="tag">Tutorials</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>SSR Cards
+GPT Image 2 Prompts:
+Image 1: Zhou Zhiruo Darkened Version SSR Portrait, Black Veil and Red Lips, Nine Yin White Bone Claw Gleaming with Chilling Light
+Image 2: Demi-Gods and Semi-Devils Kan...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2947.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2945" data-search="案例2945 generate character portrait avatars with a dongfeng fantasy style generate a half-body portrait of an eastern fantasy character using gpt: flowing long hair, golden accents, and a dreamy lighting atmosphere. x / 李岳 https://x.com/liyue_ai/status/2046962895775580442 gpt-4o ai 数字艺术 图片 创意 oriental fantasy style female, half-body portrait, looking back with profile view, ethereal and elegant temperament, soft divine beauty, delicate facial features, slightly downcast gaze, cold white and fine skin texture, subtle orange-pink makeup, adorned with golden highlights long hair flowing, wi" data-tags="GPT-4o|AI|数字艺术|图片|创意">
+      <a class="case-card-link" href="/en/case/2945.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2046962895775580442-1.jpg" alt="东风奇幻风角色头像生成" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2945</span></span><span class="case-title-text">Generate character portrait avatars with a Dongfeng fantasy style</span></h3>
+          <p class="case-summary">Generate a half-body portrait of an Eastern fantasy character using GPT: flowing long hair, golden accents, and a dreamy lighting atmosphere.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-23</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2046962895775580442">X / 李岳</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Digital Art</span><span class="tag">Image</span><span class="tag">Creative</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Oriental fantasy style female, half-body portrait, looking back with profile view, ethereal and elegant temperament, soft divine beauty, delicate facial features, slightly downcast gaze, cold white an...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2945.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2856" data-search="案例2856 用 gpt-image-2 生成科普百科图 用通用提示词一键生成竖版科普百科信息图，包含模块化知识结构与top5信息卡。 x / larus canus https://x.com/mrlarus/status/2046231542817497392 gpt-4o ai 科技 教程 图片 generate science popularization encyclopedia images with gpt-image-2 to quickly brush up on knowledge you don&#39;t understand! this prompt is a universal template; just swap the theme for any animal, plant, or the like, and you can learn about its profile, habits, characteristics, care, and other knowl" data-tags="GPT-4o|AI|科技|教程|图片">
+      <a class="case-card-link" href="/en/case/2856.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2046231542817497392-3.jpg" alt="用 GPT-image-2 生成科普百科图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2856</span></span><span class="case-title-text">用 GPT-image-2 生成科普百科图</span></h3>
+          <p class="case-summary">用通用提示词一键生成竖版科普百科信息图，包含模块化知识结构与Top5信息卡。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2046231542817497392">X / Larus Canus</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">科技</span><span class="tag">Tutorials</span><span class="tag">Image</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Generate science popularization encyclopedia images with GPT-image-2 to quickly brush up on knowledge you don&#39;t understand!
+This prompt is a universal template; just swap the theme for any animal, pla...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2856.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2853" data-search="案例2853 gpt-image 2.0稳定可用 gpt-image 2.0已稳定上线，可生成视觉精美的奇幻食谱图片与步骤。 x / ssss.cryptomanai https://x.com/ssss_cryptoman/status/2046457894502285567 gpt-4o ai 图片 创意 工具 prompt create an image of a recipe for a dish from a fictional fantasy world. include illustrations or photos, and detail the cooking steps as thoroughly as possible. use mainly ingredients from a nonexistent fantasy world. design the layout to be visually beautiful as well. language: japanese." data-tags="GPT-4o|AI|图片|创意|工具">
+      <a class="case-card-link" href="/en/case/2853.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2046457894502285567-1.jpg" alt="GPT-Image 2.0稳定可用" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2853</span></span><span class="case-title-text">GPT-Image 2.0稳定可用</span></h3>
+          <p class="case-summary">GPT-Image 2.0已稳定上线，可生成视觉精美的奇幻食谱图片与步骤。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/SSSS_CRYPTOMAN/status/2046457894502285567">X / SSSS.CRYPTOMANAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Image</span><span class="tag">Creative</span><span class="tag">Tools</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Prompt
+Create an image of a recipe for a dish from a fictional fantasy world. Include illustrations or photos, and detail the cooking steps as thoroughly as possible. Use mainly ingredients from a non...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2853.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2810" data-search="案例2810 gpt-image-2汉服拆解信息图模板 用gpt生成博物馆风汉服拆解图：结构、材质工艺、图案色彩与穿戴流程一图讲清。 x / larus canus https://x.com/mrlarus/status/2045504669401653414 gpt-4o ai 教程 图片 创意 gpt-image-2 generates hanfu disassembly diagrams in an atlas-style, broken down in great detail! this prompt is a universal template. simply replace the theme with the content you want to generate, and it can be extended to disassembly diagrams for hanfu, phoenix crowns, armor, artifacts, and more." data-tags="GPT-4o|AI|教程|图片|创意">
+      <a class="case-card-link" href="/en/case/2810.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045504669401653414-1.jpg" alt="GPT-Image-2汉服拆解信息图模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2810</span></span><span class="case-title-text">GPT-Image-2汉服拆解信息图模板</span></h3>
+          <p class="case-summary">用GPT生成博物馆风汉服拆解图：结构、材质工艺、图案色彩与穿戴流程一图讲清。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2045504669401653414">X / Larus Canus</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Tutorials</span><span class="tag">Image</span><span class="tag">Creative</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>GPT-image-2 generates Hanfu disassembly diagrams  in an atlas-style, broken down in great detail!
+This prompt is a universal template. Simply replace the theme with the content you want to generate, a...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2810.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2800" data-search="案例2800 用gpt做角色设定资料卡 gpt幕后解析性格并生成世界观设定，提供正/侧/背三视图与服装细节。包含表情变化与配色方案。 x / 古一 https://x.com/manish1027512/status/2045013913901867334 gpt-4o ai 数字艺术 创意 教程 based on this character and background, please create a character profile card similar to official setting materials. ・include three views: front, side, and back ・add variations in the character&#39;s facial expressions・break down and showcase detailed parts of the clothing and equipment ・add a color pa" data-tags="GPT-4o|AI|数字艺术|创意|教程">
+      <a class="case-card-link" href="/en/case/2800.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045013913901867334-1.jpg" alt="用GPT做角色设定资料卡" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2800</span></span><span class="case-title-text">用GPT做角色设定资料卡</span></h3>
+          <p class="case-summary">GPT幕后解析性格并生成世界观设定，提供正/侧/背三视图与服装细节。包含表情变化与配色方案。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MANISH1027512/status/2045013913901867334">X / 古一</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">Digital Art</span><span class="tag">Creative</span><span class="tag">Tutorials</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Based on this character and background, please create a character profile card similar to official setting materials.
+・Include three views: front, side, and back
+・Add variations in the character&#39;s fac...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2800.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >Load more</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"{count} items","noResults":"😕 No matched content","loadMore":"Load more","loadingMore":"Loading..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/en/chunks/tag-gpt-4o-html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

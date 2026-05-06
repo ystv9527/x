@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-4o · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="10 条 GPT-4o 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/gpt-4o.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/gpt-4o.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/gpt-4o.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1778071949948">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"GPT-4o · 图片生成提示词","description":"10 条 GPT-4o 相关案例","url":"https://gemnana.com/zh/image/gpt-4o.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2985</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2953</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">29</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/gpt-4o.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>GPT-4o · 图片生成提示词</h1>
+      <p>10 条 GPT-4o 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="GPT-4o">GPT-4o (10)</button><button type="button" class="tag-filter" data-tag="AI">AI (10)</button><button type="button" class="tag-filter" data-tag="图片">图片 (7)</button><button type="button" class="tag-filter" data-tag="创意">创意 (7)</button><button type="button" class="tag-filter" data-tag="教程">教程 (6)</button><button type="button" class="tag-filter" data-tag="工具">工具 (3)</button><button type="button" class="tag-filter" data-tag="数字艺术">数字艺术 (3)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (1)</button><button type="button" class="tag-filter" data-tag="Instagram风格">Instagram风格 (1)</button><button type="button" class="tag-filter" data-tag="设计">设计 (1)</button><button type="button" class="tag-filter" data-tag="科技">科技 (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 10 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="2980" data-search="案例2980 夏日葡萄少女写真3x3提示词 用gpt-image生成日系胶片风夏日葡萄少女3x3九宫格，强调人物一致与真实拍摄感。 x / 麻酱ai实验室 https://x.com/zhongying14/status/2051424745716125926 gpt-4o ai 摄影 教程 工具 提示词 # 夏日葡萄少女写真｜3x3 九宫格提示词 请基于用户上传的 **1-3 张清晰个人照片**，生成一张 **3x3 九宫格拼图写真**，主题为 **「夏日葡萄少女写真」**。" data-tags="GPT-4o|AI|摄影|教程|工具">
+      <a class="case-card-link" href="/zh/case/2980.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2051424745716125926-1.jpg" alt="夏日葡萄少女写真3x3提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2980</span></span><span class="case-title-text">夏日葡萄少女写真3x3提示词</span></h3>
+          <p class="case-summary">用GPT-Image生成日系胶片风夏日葡萄少女3x3九宫格，强调人物一致与真实拍摄感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-05-05</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/zhongying14/status/2051424745716125926">X / 麻酱AI实验室</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">教程</span><span class="tag">工具</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>提示词
+# 夏日葡萄少女写真｜3x3 九宫格提示词
+请基于用户上传的 **1-3 张清晰个人照片**，生成一张 **3x3 九宫格拼图写真**，主题为 **「夏日葡萄少女写真」**。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2980.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2969" data-search="案例2969 gpt-4图像：8k温馨剪贴画改造 用gpt图像提示将参考图转为暖梦系剪贴簿风：保留人物与光影，添加多个迷你chibi并叠加手绘涂鸦。 x / kashberg https://x.com/kashberg_0/status/2050493308250853860 gpt-4o ai 图片 创意 instagram风格 在8k电影级画质中，将参考图像转化为温馨的剪贴簿风格构图，严格保持主体、身份、姿势、光线和背景不变。添加多个同一个人的迷你q版/玩偶版本（匹配脸部、发型、服装），自然摆放，进行各种不同的活动。在画面上叠加手绘涂鸦（爱心、箭头、星星、字幕/标注）。使用柔和的粉彩色调。画面要丰富但保持干净、温暖、梦幻、适合instagram风格。最终效果必须增强同一张图像，而不是重新创作它" data-tags="GPT-4o|AI|图片|创意|Instagram风格">
+      <a class="case-card-link" href="/zh/case/2969.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2050493308250853860-1.jpg" alt="GPT-4图像：8K温馨剪贴画改造" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2969</span></span><span class="case-title-text">GPT-4图像：8K温馨剪贴画改造</span></h3>
+          <p class="case-summary">用GPT图像提示将参考图转为暖梦系剪贴簿风：保留人物与光影，添加多个迷你chibi并叠加手绘涂鸦。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-05-02</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Kashberg_0/status/2050493308250853860">X / Kashberg</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">创意</span><span class="tag">Instagram风格</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>在8K电影级画质中，将参考图像转化为温馨的剪贴簿风格构图，严格保持主体、身份、姿势、光线和背景不变。添加多个同一个人的迷你Q版/玩偶版本（匹配脸部、发型、服装），自然摆放，进行各种不同的活动。在画面上叠加手绘涂鸦（爱心、箭头、星星、字幕/标注）。使用柔和的粉彩色调。画面要丰富但保持干净、温暖、梦幻、适合Instagram风格。最终效果必须增强同一张图像，而不是重新创作它</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2969.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2963" data-search="案例2963 花卉灵感生成优雅女装 用gpt图像2提示词随机选取花与物进行创意发想，再设计优雅风格女装系列。适合快速出概念与灵感。 x / 行者ai视频 https://x.com/joshesye/status/2049397136869966257 gpt-4o ai 设计 创意 图片 这个 gpt-image 2 提示词简直太棒了 随机拍摄一朵花 / 一个物品 提示：从这朵花中汲取灵感，设计一套优雅风格的女装" data-tags="GPT-4o|AI|设计|创意|图片">
+      <a class="case-card-link" href="/zh/case/2963.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2049397136869966257-1.jpg" alt="花卉灵感生成优雅女装" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2963</span></span><span class="case-title-text">花卉灵感生成优雅女装</span></h3>
+          <p class="case-summary">用GPT图像2提示词随机选取花与物进行创意发想，再设计优雅风格女装系列。适合快速出概念与灵感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/joshesye/status/2049397136869966257">X / 行者AI视频</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">设计</span><span class="tag">创意</span><span class="tag">图片</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>这个 GPT-image 2 提示词简直太棒了  
+随机拍摄一朵花 / 一个物品  
+提示：从这朵花中汲取灵感，设计一套优雅风格的女装</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2963.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2954" data-search="案例2954 gpt image 2 数学可视化提示词模板 提供可复用的gpt image 2数学信息图提示词模板，强调直观结构与学术排版风格。适合生成清晰不杂乱的讲义式海报。 x / 宝玉 https://x.com/dotey/status/2048258873119674779 gpt-4o ai 教程 工具 数字艺术 &gt; 请创作一张关于「【数学概念/知识点】」的数学可视化信息图，目标是帮助读者直观理解：它是什么、为什么成立、几何/结构直觉是什么、在不同场景下如何表现。画面要像高质量数学讲义 + 手绘教育海报，优雅、清晰、信息丰富，但不要杂乱。 &gt; &gt; 视觉风格：竖版或横版均可，干净的浅色纸张背景，深蓝标题，黑色/深灰正文线条，搭配少量优雅的蓝色、青绿色、金色、红色强调色。使用圆角卡片、细线边框、编号标签、手绘箭头、局部放大框和总结栏。整体要美观、平衡、有学术感，让人一眼看懂这个概念的“结构”和“为什么”。" data-tags="GPT-4o|AI|教程|工具|数字艺术">
+      <a class="case-card-link" href="/zh/case/2954.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2048258873119674779-1.jpg" alt="GPT Image 2 数学可视化提示词模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2954</span></span><span class="case-title-text">GPT Image 2 数学可视化提示词模板</span></h3>
+          <p class="case-summary">提供可复用的GPT Image 2数学信息图提示词模板，强调直观结构与学术排版风格。适合生成清晰不杂乱的讲义式海报。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-27</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/dotey/status/2048258873119674779">X / 宝玉</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">教程</span><span class="tag">工具</span><span class="tag">数字艺术</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>&gt; 请创作一张关于「【数学概念/知识点】」的数学可视化信息图，目标是帮助读者直观理解：它是什么、为什么成立、几何/结构直觉是什么、在不同场景下如何表现。画面要像高质量数学讲义 + 手绘教育海报，优雅、清晰、信息丰富，但不要杂乱。
+&gt;
+&gt; 视觉风格：竖版或横版均可，干净的浅色纸张背景，深蓝标题，黑色/深灰正文线条，搭配少量优雅的蓝色、青绿色、金色、红色强调色。使用圆角卡片、细线边框、编号标签、手绘箭...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2954.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2947" data-search="案例2947 ssr角色卡：两条gpt绘图提示 提供《ssr cards》中的两条gpt image 2提示，分别生成暗黑系肖像与魅惑反派风角色卡。 x / 松果先森 https://x.com/songguoxiansen/status/2046795105802289214 gpt-4o ai 图片 创意 教程 图1：周芷若黑化版ssr立绘，黑纱红唇，九阴白骨爪寒光凛冽 图2：天龙八部康敏ssr角色卡，红唇卷发妖妇，幽暗烛光下眼神勾人" data-tags="GPT-4o|AI|图片|创意|教程">
+      <a class="case-card-link" href="/zh/case/2947.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2046795105802289214-1.jpg" alt="SSR角色卡：两条GPT绘图提示" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2947</span></span><span class="case-title-text">SSR角色卡：两条GPT绘图提示</span></h3>
+          <p class="case-summary">提供《SSR Cards》中的两条GPT Image 2提示，分别生成暗黑系肖像与魅惑反派风角色卡。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-23</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/songguoxiansen/status/2046795105802289214">X / 松果先森</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">创意</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>图1：周芷若黑化版SSR立绘，黑纱红唇，九阴白骨爪寒光凛冽
+
+图2：天龙八部康敏SSR角色卡，红唇卷发妖妇，幽暗烛光下眼神勾人</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2947.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2945" data-search="案例2945 东风奇幻风角色头像生成 用gpt生成东方奇幻半身肖像：飘逸长发、金色点缀与梦幻光影氛围。 x / 李岳 https://x.com/liyue_ai/status/2046962895775580442 gpt-4o ai 数字艺术 图片 创意 东方幻想风格女性，半身肖像，回眸侧脸，气质空灵优雅，柔和神性美感，细腻五官，微垂眼神，冷白细腻肌肤，淡雅橘粉妆容，金色高光点缀 长发飘动，发丝中融入彩色花朵与光粒（红、蓝、橙、紫），头发具有流动感与空气感 身穿半透明丝绸礼服与披肩，材质轻盈通透，布料随风飘动，表面带有鎏金纹理与闪耀颗粒。 整体光影为暖金色逆光，强边缘光，体积光明显，光粒漂浮，柔光泛光，梦幻氛围 背景干净浅色渐变，带微光与粒子效果，整体氛围空灵、梦境、神圣 风格：高端cg插画，超精细，电影级光影，柔光渲染，8k细节，artstation 热门作品风格" data-tags="GPT-4o|AI|数字艺术|图片|创意">
+      <a class="case-card-link" href="/zh/case/2945.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2046962895775580442-1.jpg" alt="东风奇幻风角色头像生成" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2945</span></span><span class="case-title-text">东风奇幻风角色头像生成</span></h3>
+          <p class="case-summary">用GPT生成东方奇幻半身肖像：飘逸长发、金色点缀与梦幻光影氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-23</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2046962895775580442">X / 李岳</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">图片</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>东方幻想风格女性，半身肖像，回眸侧脸，气质空灵优雅，柔和神性美感，细腻五官，微垂眼神，冷白细腻肌肤，淡雅橘粉妆容，金色高光点缀
+
+长发飘动，发丝中融入彩色花朵与光粒（红、蓝、橙、紫），头发具有流动感与空气感
+
+身穿半透明丝绸礼服与披肩，材质轻盈通透，布料随风飘动，表面带有鎏金纹理与闪耀颗粒。
+
+整体光影为暖金色逆光，强边缘光，体积光明显，光粒漂浮，柔光泛光，梦幻氛围
+
+背景干净浅色渐变，带微光与粒...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2945.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2856" data-search="案例2856 用 gpt-image-2 生成科普百科图 用通用提示词一键生成竖版科普百科信息图，包含模块化知识结构与top5信息卡。 x / larus canus https://x.com/mrlarus/status/2046231542817497392 gpt-4o ai 科技 教程 图片 提示词： 请根据【主题】生成一张高质量竖版「科普百科图」。 这张图不是普通海报，也不是单纯插画，而是一张兼具“图鉴感、百科感、信息结构感、收藏感”的模块化科普信息图。整体风格参考高级博物图鉴、现代百科书页、生活方式知识卡和社交媒体高传播信息图的结合。 请让画面包含： - 一个清晰漂亮的主题主视觉 - 若干局部特征放大细节 - 多个圆角模块化信息分区 - 清楚的标题层级与重点标签 - 简洁但丰富的百科内容 - 可视化评分、要点总结或top 5模块 内容栏目请根据主题自动适配，优先从这些方向中选择并合理组合： 基础档案、分类信息、外观特征、习性/生态、形成机制/结构组成、生长或使用条件、养" data-tags="GPT-4o|AI|科技|教程|图片">
+      <a class="case-card-link" href="/zh/case/2856.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2046231542817497392-3.jpg" alt="用 GPT-image-2 生成科普百科图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2856</span></span><span class="case-title-text">用 GPT-image-2 生成科普百科图</span></h3>
+          <p class="case-summary">用通用提示词一键生成竖版科普百科信息图，包含模块化知识结构与Top5信息卡。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2046231542817497392">X / Larus Canus</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">科技</span><span class="tag">教程</span><span class="tag">图片</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>提示词：
+请根据【主题】生成一张高质量竖版「科普百科图」。 
+
+这张图不是普通海报，也不是单纯插画，而是一张兼具“图鉴感、百科感、信息结构感、收藏感”的模块化科普信息图。整体风格参考高级博物图鉴、现代百科书页、生活方式知识卡和社交媒体高传播信息图的结合。
+
+请让画面包含：
+- 一个清晰漂亮的主题主视觉
+- 若干局部特征放大细节
+- 多个圆角模块化信息分区
+- 清楚的标题层级与重点标签
+- 简洁但丰...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2856.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2853" data-search="案例2853 gpt-image 2.0稳定可用 gpt-image 2.0已稳定上线，可生成视觉精美的奇幻食谱图片与步骤。 x / ssss.cryptomanai https://x.com/ssss_cryptoman/status/2046457894502285567 gpt-4o ai 图片 创意 工具 终于，gpt-image 2.0变得稳定且可用！ 创建一个虚构奇幻世界菜肴的食谱图片。附上插图或照片，尽可能详细地描述烹饪步骤。主要使用一个不存在的奇幻世界的材料。设计布局也要视觉上美观。语言：日语。" data-tags="GPT-4o|AI|图片|创意|工具">
+      <a class="case-card-link" href="/zh/case/2853.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2046457894502285567-1.jpg" alt="GPT-Image 2.0稳定可用" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2853</span></span><span class="case-title-text">GPT-Image 2.0稳定可用</span></h3>
+          <p class="case-summary">GPT-Image 2.0已稳定上线，可生成视觉精美的奇幻食谱图片与步骤。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/SSSS_CRYPTOMAN/status/2046457894502285567">X / SSSS.CRYPTOMANAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">创意</span><span class="tag">工具</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>终于，GPT-Image 2.0变得稳定且可用！
+
+创建一个虚构奇幻世界菜肴的食谱图片。附上插图或照片，尽可能详细地描述烹饪步骤。主要使用一个不存在的奇幻世界的材料。设计布局也要视觉上美观。语言：日语。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2853.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2810" data-search="案例2810 gpt-image-2汉服拆解信息图模板 用gpt生成博物馆风汉服拆解图：结构、材质工艺、图案色彩与穿戴流程一图讲清。 x / larus canus https://x.com/mrlarus/status/2045504669401653414 gpt-4o ai 教程 图片 创意 避免：海报感、影楼感、电商感、动漫感、cosplay感、乱标注、错结构、糊字、假材质、过度装饰。" data-tags="GPT-4o|AI|教程|图片|创意">
+      <a class="case-card-link" href="/zh/case/2810.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045504669401653414-1.jpg" alt="GPT-Image-2汉服拆解信息图模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2810</span></span><span class="case-title-text">GPT-Image-2汉服拆解信息图模板</span></h3>
+          <p class="case-summary">用GPT生成博物馆风汉服拆解图：结构、材质工艺、图案色彩与穿戴流程一图讲清。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2045504669401653414">X / Larus Canus</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">教程</span><span class="tag">图片</span><span class="tag">创意</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>避免：海报感、影楼感、电商感、动漫感、cosplay感、乱标注、错结构、糊字、假材质、过度装饰。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2810.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2800" data-search="案例2800 用gpt做角色设定资料卡 gpt幕后解析性格并生成世界观设定，提供正/侧/背三视图与服装细节。包含表情变化与配色方案。 x / 古一 https://x.com/manish1027512/status/2045013913901867334 gpt-4o ai 数字艺术 创意 教程 基于该角色和背景，请制作一张类似官方设定材料的角色资料卡。 包含三种视角：正面、侧面和背面 ·增加角色面部表情的变化 ·拆解并展示服装和装备的细节 部分·添加色彩调色板 包含世界观设定的简要说明 全面使用有条理的布局（白色背景，插画风格）" data-tags="GPT-4o|AI|数字艺术|创意|教程">
+      <a class="case-card-link" href="/zh/case/2800.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2045013913901867334-1.jpg" alt="用GPT做角色设定资料卡" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2800</span></span><span class="case-title-text">用GPT做角色设定资料卡</span></h3>
+          <p class="case-summary">GPT幕后解析性格并生成世界观设定，提供正/侧/背三视图与服装细节。包含表情变化与配色方案。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MANISH1027512/status/2045013913901867334">X / 古一</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT-4o</span><span class="tag">AI</span><span class="tag">数字艺术</span><span class="tag">创意</span><span class="tag">教程</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>基于该角色和背景，请制作一张类似官方设定材料的角色资料卡。
+包含三种视角：正面、侧面和背面
+·增加角色面部表情的变化 ·拆解并展示服装和装备的细节
+部分·添加色彩调色板 包含世界观设定的简要说明
+全面使用有条理的布局（白色背景，插画风格）</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2800.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag-gpt-4o-html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>
