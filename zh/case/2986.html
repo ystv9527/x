@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用 ChatGPT-Image2 做3D历史立像 #2986 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="用ChatGPT-Image2生成3D历史人物立像档案，把一生高光浓缩成可阅读的视觉作品。">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/case/2986.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/2986.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/2986.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1778509285634">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"用 ChatGPT-Image2 做3D历史立像 #2986","description":"用ChatGPT-Image2生成3D历史人物立像档案，把一生高光浓缩成可阅读的视觉作品。","url":"https://gemnana.com/zh/case/2986.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">2991</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2959</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">29</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/case/2986.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="/zh/index.html">首页</a><span>›</span>
+        <a href="/zh/image/index.html">图片生成</a><span>›</span>
+        <span>#2986</span>
+      </nav>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2986</span></span><span class="case-title-text">用 ChatGPT-Image2 做3D历史立像</span></h1>
+      <p>2026-05-10　<a class="source-inline-link" href="https://x.com/MrLarus/status/2053121448500179018" target="_blank" rel="noopener noreferrer">X / Larus Canus</a></p>
+      <p><a class="source-link" href="/zh/image/index.html">← 返回列表</a></p>
+    </div>
+
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
+        <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
+      </div>
+
+      <div class="detail-block"><h3>📝 内容摘要</h3><p>用ChatGPT-Image2生成3D历史人物立像档案，把一生高光浓缩成可阅读的视觉作品。</p></div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 中文提示词 <span class="fallback-badge">（中文缺失，回退英文）</span></h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("《3D历史人物立像档案》简版提示词：\n\n请创作一张高完成度的「历史人物破框立像档案 / 3D Historical Breakout Biography Poster」。\n\n【用户输入】\n主题人物：【人物姓名】\n人物身份定位：【帝王 / 名将 / 名臣 / 思想家 / 文学家 / 改革家 / 军事家等】\n时代背景：【朝代 / 历史时期】\n核心关键词：【统一 / 变法 / 忠义 / 知行合一 / 北伐 / 制度 / 心学 / 盛世等】\n人物主色倾向：【玄黑金红 / 青蓝灰金 / 暗红墨金 / 铁甲深蓝等】\n画幅比例：【3:4 竖版】\n\n这不是普通历史海报，而是一张以「中央全身3D历史人物 + 破框前冲动作 + 四周轻质悬浮历史事件簇 + 底部轻量年谱时间轴」为核心结构的高完成度历史人物纪传海报。\n\n画面中央必须是一位完整全身、站立姿态的3D历史人物，人物是整张图最重要的主视觉，具有强体积感、雕塑感、纪念碑感和历史气场。服饰、冠帽、甲胄、纹样、腰带、鞋履、配饰都要符合其时代身份，整体要写实、厚重、有电影级冲击力。人物脚下要有一个轻而稳的纪念碑式台基，负责承托人物，但不能厚重压画面。\n\n人物不能只是普通站立，必须有一个明显的“前冲破框动作”。手部、手臂或所持关键道具（如玉玺、诏书、卷轴、长枪、长剑、兵符、笏板、地图、书卷等）必须朝向观者伸出，形成强烈的近大远小、前后纵深、透视压缩和破出画面的3D冲击。特别注意：前冲出来的关键道具必须完整可见、清晰可辨识，不能被画面裁切到只剩一小截。\n\n围绕人物四周布置 6 到 10 个关键历史节点。不要做成厚重、规整、整齐平铺的小卡片，而要做成“轻质悬浮、多朝向、半透明”的历史事件簇。每个节点可由 2 到 4 个子碎片组成，包括编号、年份、事件标题、简短说明、小型历史场景画面，以及细金线、开放式边框、节点圆点、注释线等。整体感觉应该像历史档案被拆解成轻盈的时间切片，在人物四周悬浮展开，而不是普通信息卡片排版。\n\n这些事件簇要有不同朝向和空间透视关系：有的左倾，有的右倾，有的向内转，有的向外翻，有的高一些，有的低一些，有前后层次，也可以被人物手臂、衣摆、武器轻微遮挡，形成空间纵深。它们应具有玻璃感、亚克力感、微发光边缘、不完整边框和轻度错位叠层，信息详细但视觉上轻，不可压过中央人物。\n\n画面左侧设置大标题【人物姓名】，使用具有东方历史气质的书法感、碑刻感或墨迹感字体。旁边可加入生卒年、身份标签、关键词总结和一句高度概括性的副标题。标题区要稳、简、克制，不要堆满。\n\n底部必须设置一条轻盈、简洁、细致的横向时间轴，串联人物一生的重要年份，并与四周历史事件簇形成对应关系。时间轴更像策展导览线、博物馆时间标尺或历史索引线，可使用细金线、小圆点、简洁年份、小型文字标注和少量装饰节点。不要做成厚重黑色横栏或巨大底部信息块。\n\n背景以米白宣纸、古纸、旧档案纸或浅色博物馆墙面为基础，整体低饱和、干净、克制。可加入淡淡地图纹理、古建筑剪影、文献残片、印章、金色连接线、注释线、节点、疆域轮廓等元素，营造轻盈理性的历史档案展陈感。\n\n整张图必须建立明确对比：\n中央人物厚重、真实、立体、强光影、强体积；\n四周历史节点轻薄、透明、悬浮、微发光、精致理性；\n人物动作前冲、破框，具有空间爆发力；\n底部时间轴轻盈克制，只负责收束信息。\n\n如果不同要求冲突，请优先保证：\n1. 中央人物完整全身\n2. 前冲道具完整可见且有强烈3D冲击\n3. 四周事件簇轻盈悬浮、不是厚重卡片\n4. 中央人物“重”，信息系统“轻”\n5. 底部时间轴轻量化、清晰、不压画面\n\n如果模型难以精确控制大量小字，请优先保证人物姓名、年份、编号、事件标题清晰，小段说明可适度简化或预留后期排版空间。", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>《3D历史人物立像档案》简版提示词：</p><p>请创作一张高完成度的「历史人物破框立像档案 / 3D Historical Breakout Biography Poster」。</p><p>【用户输入】<br>主题人物：【人物姓名】<br>人物身份定位：【帝王 / 名将 / 名臣 / 思想家 / 文学家 / 改革家 / 军事家等】<br>时代背景：【朝代 / 历史时期】<br>核心关键词：【统一 / 变法 / 忠义 / 知行合一 / 北伐 / 制度 / 心学 / 盛世等】<br>人物主色倾向：【玄黑金红 / 青蓝灰金 / 暗红墨金 / 铁甲深蓝等】<br>画幅比例：【3:4 竖版】</p><p>这不是普通历史海报，而是一张以「中央全身3D历史人物 + 破框前冲动作 + 四周轻质悬浮历史事件簇 + 底部轻量年谱时间轴」为核心结构的高完成度历史人物纪传海报。</p><p>画面中央必须是一位完整全身、站立姿态的3D历史人物，人物是整张图最重要的主视觉，具有强体积感、雕塑感、纪念碑感和历史气场。服饰、冠帽、甲胄、纹样、腰带、鞋履、配饰都要符合其时代身份，整体要写实、厚重、有电影级冲击力。人物脚下要有一个轻而稳的纪念碑式台基，负责承托人物，但不能厚重压画面。</p><p>人物不能只是普通站立，必须有一个明显的“前冲破框动作”。手部、手臂或所持关键道具（如玉玺、诏书、卷轴、长枪、长剑、兵符、笏板、地图、书卷等）必须朝向观者伸出，形成强烈的近大远小、前后纵深、透视压缩和破出画面的3D冲击。特别注意：前冲出来的关键道具必须完整可见、清晰可辨识，不能被画面裁切到只剩一小截。</p><p>围绕人物四周布置 6 到 10 个关键历史节点。不要做成厚重、规整、整齐平铺的小卡片，而要做成“轻质悬浮、多朝向、半透明”的历史事件簇。每个节点可由 2 到 4 个子碎片组成，包括编号、年份、事件标题、简短说明、小型历史场景画面，以及细金线、开放式边框、节点圆点、注释线等。整体感觉应该像历史档案被拆解成轻盈的时间切片，在人物四周悬浮展开，而不是普通信息卡片排版。</p><p>这些事件簇要有不同朝向和空间透视关系：有的左倾，有的右倾，有的向内转，有的向外翻，有的高一些，有的低一些，有前后层次，也可以被人物手臂、衣摆、武器轻微遮挡，形成空间纵深。它们应具有玻璃感、亚克力感、微发光边缘、不完整边框和轻度错位叠层，信息详细但视觉上轻，不可压过中央人物。</p><p>画面左侧设置大标题【人物姓名】，使用具有东方历史气质的书法感、碑刻感或墨迹感字体。旁边可加入生卒年、身份标签、关键词总结和一句高度概括性的副标题。标题区要稳、简、克制，不要堆满。</p><p>底部必须设置一条轻盈、简洁、细致的横向时间轴，串联人物一生的重要年份，并与四周历史事件簇形成对应关系。时间轴更像策展导览线、博物馆时间标尺或历史索引线，可使用细金线、小圆点、简洁年份、小型文字标注和少量装饰节点。不要做成厚重黑色横栏或巨大底部信息块。</p><p>背景以米白宣纸、古纸、旧档案纸或浅色博物馆墙面为基础，整体低饱和、干净、克制。可加入淡淡地图纹理、古建筑剪影、文献残片、印章、金色连接线、注释线、节点、疆域轮廓等元素，营造轻盈理性的历史档案展陈感。</p><p>整张图必须建立明确对比：<br>中央人物厚重、真实、立体、强光影、强体积；<br>四周历史节点轻薄、透明、悬浮、微发光、精致理性；<br>人物动作前冲、破框，具有空间爆发力；<br>底部时间轴轻盈克制，只负责收束信息。</p><p>如果不同要求冲突，请优先保证：<br>1. 中央人物完整全身<br>2. 前冲道具完整可见且有强烈3D冲击<br>3. 四周事件簇轻盈悬浮、不是厚重卡片<br>4. 中央人物“重”，信息系统“轻”<br>5. 底部时间轴轻量化、清晰、不压画面</p><p>如果模型难以精确控制大量小字，请优先保证人物姓名、年份、编号、事件标题清晰，小段说明可适度简化或预留后期排版空间。</p></div>
+      </div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 英文提示词 <span class="fallback-badge">（英文缺失，回退中文）</span></h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("《3D历史人物立像档案》简版提示词：\n\n请创作一张高完成度的「历史人物破框立像档案 / 3D Historical Breakout Biography Poster」。\n\n【用户输入】\n主题人物：【人物姓名】\n人物身份定位：【帝王 / 名将 / 名臣 / 思想家 / 文学家 / 改革家 / 军事家等】\n时代背景：【朝代 / 历史时期】\n核心关键词：【统一 / 变法 / 忠义 / 知行合一 / 北伐 / 制度 / 心学 / 盛世等】\n人物主色倾向：【玄黑金红 / 青蓝灰金 / 暗红墨金 / 铁甲深蓝等】\n画幅比例：【3:4 竖版】\n\n这不是普通历史海报，而是一张以「中央全身3D历史人物 + 破框前冲动作 + 四周轻质悬浮历史事件簇 + 底部轻量年谱时间轴」为核心结构的高完成度历史人物纪传海报。\n\n画面中央必须是一位完整全身、站立姿态的3D历史人物，人物是整张图最重要的主视觉，具有强体积感、雕塑感、纪念碑感和历史气场。服饰、冠帽、甲胄、纹样、腰带、鞋履、配饰都要符合其时代身份，整体要写实、厚重、有电影级冲击力。人物脚下要有一个轻而稳的纪念碑式台基，负责承托人物，但不能厚重压画面。\n\n人物不能只是普通站立，必须有一个明显的“前冲破框动作”。手部、手臂或所持关键道具（如玉玺、诏书、卷轴、长枪、长剑、兵符、笏板、地图、书卷等）必须朝向观者伸出，形成强烈的近大远小、前后纵深、透视压缩和破出画面的3D冲击。特别注意：前冲出来的关键道具必须完整可见、清晰可辨识，不能被画面裁切到只剩一小截。\n\n围绕人物四周布置 6 到 10 个关键历史节点。不要做成厚重、规整、整齐平铺的小卡片，而要做成“轻质悬浮、多朝向、半透明”的历史事件簇。每个节点可由 2 到 4 个子碎片组成，包括编号、年份、事件标题、简短说明、小型历史场景画面，以及细金线、开放式边框、节点圆点、注释线等。整体感觉应该像历史档案被拆解成轻盈的时间切片，在人物四周悬浮展开，而不是普通信息卡片排版。\n\n这些事件簇要有不同朝向和空间透视关系：有的左倾，有的右倾，有的向内转，有的向外翻，有的高一些，有的低一些，有前后层次，也可以被人物手臂、衣摆、武器轻微遮挡，形成空间纵深。它们应具有玻璃感、亚克力感、微发光边缘、不完整边框和轻度错位叠层，信息详细但视觉上轻，不可压过中央人物。\n\n画面左侧设置大标题【人物姓名】，使用具有东方历史气质的书法感、碑刻感或墨迹感字体。旁边可加入生卒年、身份标签、关键词总结和一句高度概括性的副标题。标题区要稳、简、克制，不要堆满。\n\n底部必须设置一条轻盈、简洁、细致的横向时间轴，串联人物一生的重要年份，并与四周历史事件簇形成对应关系。时间轴更像策展导览线、博物馆时间标尺或历史索引线，可使用细金线、小圆点、简洁年份、小型文字标注和少量装饰节点。不要做成厚重黑色横栏或巨大底部信息块。\n\n背景以米白宣纸、古纸、旧档案纸或浅色博物馆墙面为基础，整体低饱和、干净、克制。可加入淡淡地图纹理、古建筑剪影、文献残片、印章、金色连接线、注释线、节点、疆域轮廓等元素，营造轻盈理性的历史档案展陈感。\n\n整张图必须建立明确对比：\n中央人物厚重、真实、立体、强光影、强体积；\n四周历史节点轻薄、透明、悬浮、微发光、精致理性；\n人物动作前冲、破框，具有空间爆发力；\n底部时间轴轻盈克制，只负责收束信息。\n\n如果不同要求冲突，请优先保证：\n1. 中央人物完整全身\n2. 前冲道具完整可见且有强烈3D冲击\n3. 四周事件簇轻盈悬浮、不是厚重卡片\n4. 中央人物“重”，信息系统“轻”\n5. 底部时间轴轻量化、清晰、不压画面\n\n如果模型难以精确控制大量小字，请优先保证人物姓名、年份、编号、事件标题清晰，小段说明可适度简化或预留后期排版空间。", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>《3D历史人物立像档案》简版提示词：</p><p>请创作一张高完成度的「历史人物破框立像档案 / 3D Historical Breakout Biography Poster」。</p><p>【用户输入】<br>主题人物：【人物姓名】<br>人物身份定位：【帝王 / 名将 / 名臣 / 思想家 / 文学家 / 改革家 / 军事家等】<br>时代背景：【朝代 / 历史时期】<br>核心关键词：【统一 / 变法 / 忠义 / 知行合一 / 北伐 / 制度 / 心学 / 盛世等】<br>人物主色倾向：【玄黑金红 / 青蓝灰金 / 暗红墨金 / 铁甲深蓝等】<br>画幅比例：【3:4 竖版】</p><p>这不是普通历史海报，而是一张以「中央全身3D历史人物 + 破框前冲动作 + 四周轻质悬浮历史事件簇 + 底部轻量年谱时间轴」为核心结构的高完成度历史人物纪传海报。</p><p>画面中央必须是一位完整全身、站立姿态的3D历史人物，人物是整张图最重要的主视觉，具有强体积感、雕塑感、纪念碑感和历史气场。服饰、冠帽、甲胄、纹样、腰带、鞋履、配饰都要符合其时代身份，整体要写实、厚重、有电影级冲击力。人物脚下要有一个轻而稳的纪念碑式台基，负责承托人物，但不能厚重压画面。</p><p>人物不能只是普通站立，必须有一个明显的“前冲破框动作”。手部、手臂或所持关键道具（如玉玺、诏书、卷轴、长枪、长剑、兵符、笏板、地图、书卷等）必须朝向观者伸出，形成强烈的近大远小、前后纵深、透视压缩和破出画面的3D冲击。特别注意：前冲出来的关键道具必须完整可见、清晰可辨识，不能被画面裁切到只剩一小截。</p><p>围绕人物四周布置 6 到 10 个关键历史节点。不要做成厚重、规整、整齐平铺的小卡片，而要做成“轻质悬浮、多朝向、半透明”的历史事件簇。每个节点可由 2 到 4 个子碎片组成，包括编号、年份、事件标题、简短说明、小型历史场景画面，以及细金线、开放式边框、节点圆点、注释线等。整体感觉应该像历史档案被拆解成轻盈的时间切片，在人物四周悬浮展开，而不是普通信息卡片排版。</p><p>这些事件簇要有不同朝向和空间透视关系：有的左倾，有的右倾，有的向内转，有的向外翻，有的高一些，有的低一些，有前后层次，也可以被人物手臂、衣摆、武器轻微遮挡，形成空间纵深。它们应具有玻璃感、亚克力感、微发光边缘、不完整边框和轻度错位叠层，信息详细但视觉上轻，不可压过中央人物。</p><p>画面左侧设置大标题【人物姓名】，使用具有东方历史气质的书法感、碑刻感或墨迹感字体。旁边可加入生卒年、身份标签、关键词总结和一句高度概括性的副标题。标题区要稳、简、克制，不要堆满。</p><p>底部必须设置一条轻盈、简洁、细致的横向时间轴，串联人物一生的重要年份，并与四周历史事件簇形成对应关系。时间轴更像策展导览线、博物馆时间标尺或历史索引线，可使用细金线、小圆点、简洁年份、小型文字标注和少量装饰节点。不要做成厚重黑色横栏或巨大底部信息块。</p><p>背景以米白宣纸、古纸、旧档案纸或浅色博物馆墙面为基础，整体低饱和、干净、克制。可加入淡淡地图纹理、古建筑剪影、文献残片、印章、金色连接线、注释线、节点、疆域轮廓等元素，营造轻盈理性的历史档案展陈感。</p><p>整张图必须建立明确对比：<br>中央人物厚重、真实、立体、强光影、强体积；<br>四周历史节点轻薄、透明、悬浮、微发光、精致理性；<br>人物动作前冲、破框，具有空间爆发力；<br>底部时间轴轻盈克制，只负责收束信息。</p><p>如果不同要求冲突，请优先保证：<br>1. 中央人物完整全身<br>2. 前冲道具完整可见且有强烈3D冲击<br>3. 四周事件簇轻盈悬浮、不是厚重卡片<br>4. 中央人物“重”，信息系统“轻”<br>5. 底部时间轴轻量化、清晰、不压画面</p><p>如果模型难以精确控制大量小字，请优先保证人物姓名、年份、编号、事件标题清晰，小段说明可适度简化或预留后期排版空间。</p></div>
+      </div>
+      <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2053121448500179018-1.jpg" alt="用 ChatGPT-Image2 做3D历史立像" loading="lazy"><img src="/images/tweet-2053121448500179018-2.jpg" alt="用 ChatGPT-Image2 做3D历史立像" loading="lazy"><img src="/images/tweet-2053121448500179018-3.jpg" alt="用 ChatGPT-Image2 做3D历史立像" loading="lazy"><img src="/images/tweet-2053121448500179018-4.jpg" alt="用 ChatGPT-Image2 做3D历史立像" loading="lazy"></div></div>
+      
+      
+    </div>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("该案例暂无可展示的提示词内容。");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ 已复制";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("复制失败，请手动复制");
+        }
+      }
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布中...";
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: 2986 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 2986,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm("确认删除该案例？此操作不可恢复。")) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: 2986 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert("删除成功");
+          window.location.href = "/zh/image/index.html";
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+</body>
+</html>
