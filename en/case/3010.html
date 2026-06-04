@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seedance 2.0 ancient-style FPV shot logic #3010 | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="Add camera movement logic to create an immersive ancient-style game first-person video shot in a single take.">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/en/case/3010.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/3010.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/3010.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1780569432431">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"Seedance 2.0 ancient-style FPV shot logic #3010","description":"Add camera movement logic to create an immersive ancient-style game first-person video shot in a single take.","url":"https://gemnana.com/en/case/3010.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI Prompt Collection</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/en/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+          <span class="nav-count">3010</span>
+        </a>
+        <a href="/en/image/index.html" class="nav-item ">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">Image</span>
+          <span class="nav-count">2977</span>
+        </a>
+        <a href="/en/video/index.html" class="nav-item active">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">Video</span>
+          <span class="nav-count">30</span>
+        </a>
+        <a href="/en/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Text</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/zh/case/3010.html" class="lang-switch-link">中文</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ Settings</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="/en/index.html">Home</a><span>›</span>
+        <a href="/en/video/index.html">Video</a><span>›</span>
+        <span>#3010</span>
+      </nav>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3010</span></span><span class="case-title-text">Seedance 2.0 ancient-style FPV shot logic</span></h1>
+      <p>2026-06-04　<a class="source-inline-link" href="https://x.com/liyue_ai/status/2062417967833653688" target="_blank" rel="noopener noreferrer">X / 李岳</a></p>
+      <p><a class="source-link" href="/en/video/index.html">← Back to list</a></p>
+    </div>
+
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">Publish to WeChat Draft</button>
+        
+        <button class="view-full-btn" id="publishXhsVideoBtn" onclick="publishCurrentCaseToXhs(this, 'video')">Publish Video Post to XHS</button>
+        <button class="view-full-btn" onclick="deleteCurrentCase()">Delete this case</button>
+      </div>
+
+      <div class="detail-block"><h3>📝 Summary</h3><p>Add camera movement logic to create an immersive ancient-style game first-person video shot in a single take.</p></div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 Chinese Prompt <span class="fallback-badge">(Chinese missing, fallback from English)</span></h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("、完整提示词由GPT根据镜头轨迹生成：\n使用上传图片作为首帧、场景参考和五位角色外观参考，生成一段 16:9、15 秒、一镜到底的沉浸式古风游戏第一人称 FPV 视频。\n\n红色箭头仅作为镜头移动路线，不在最终成片中显示。玩家按照以下路线依次与五位角色互动：\n\n右前景紫衣坐姿角色“清扬” → 左前景青衣坐姿角色“静姝” → 中央粉衣站姿角色“令仪” → 右中景蓝衣倚栏角色“杜若” → 左后景粉衣回眸角色“采薇”。\n\n整体为游戏第一人称视角，玩家穿着深青色古风窄袖，右手偶尔进入画面，每次靠近角色时都轻轻抬手做出打招呼的动作。镜头具有真实步行产生的轻微起伏、自然呼吸感和明显前后景视差，不要像无人机飞行，不要瞬移，不要硬切镜头。\n\n场景保持苏式园林凉亭、水塘、古典建筑、暖色阳光、轻柔帷幔、水面反光和华丽仙侠服装。角色保持原有位置、服装颜色与人物身份，不要换脸，不要改变人数，不要增加额外人物。\n\n0.00–0.70 秒：\n玩家从凉亭右侧进入，水塘泛起波纹，帷幔轻轻飘动，出现极简游戏准星和淡红金色导航光迹。\n\n0.70–2.30 秒：\n玩家靠近右前景紫衣角色“清扬”，抬手打招呼。清扬抬眸微笑，指尖从下颌旁轻轻放下，回应：“少侠，可愿听我一曲？”角色旁出现水墨金边信息卡：清扬，擅长：歌。\n\n2.30–4.20 秒：\n玩家向左前方移动，靠近青衣坐姿角色“静姝”。静姝缓缓放低团扇，轻轻侧头，回应：“正好，陪我落一子。”角色旁出现信息卡：静姝，擅长：棋。\n\n4.20–6.40 秒：\n玩家走向中央粉衣站姿角色“令仪”，视角略微仰起。令仪从胸前缓缓放下手，袖口轻扬，微微颔首，回应：“琴音已候你多时。”角色旁出现信息卡：令仪，擅长：琴。\n\n6.40–8.70 秒：\n玩家转向右中景蓝衣倚栏角色“杜若”。杜若缓缓转身，手指轻抚袖缘，轻轻点头，回应：“今日墨色正好。”角色旁出现信息卡：杜若，擅长：书。\n\n8.70–12.20 秒：\n玩家沿凉亭向左后方移动，经过其他角色时产生明显前后景视差，其他角色只保持轻微呼吸、眨眼、衣袖与发饰摆动。\n\n12.20–14.50 秒：\n玩家靠近左后景粉衣回眸角色“采薇”。采薇缓缓回眸，抬手指向水塘与园林景色，回应：“这一园春色，正宜入画。”角色旁出现信息卡：采薇，擅长：画。\n\n14.50–15.00 秒：\n玩家缓慢回头，五位角色形成自然前后层次，画面停留在暖色苏式园林、水塘反光与人物群像上，远处传来一声轻柔琴音。\n\n声音设计：\n真实脚步声、衣料摩擦声、环佩轻响、水声、风吹帷幔声、远处鸟鸣。每位角色的声音从其所在方向传来，具有空间音频效果。角色台词清晰、轻柔、自然，不要机械播报感。\n\n画面要求：\n高沉浸感古风游戏实机演示效果，镜头移动稳定自然，人物面部保持一致，服装与发饰细节稳定，角色动作简单克制，嘴型与台词基本同步，水面、帷幔、树影和衣袖有轻微动态。\n\n避免：\n人物换脸，人物数量变化，肢体畸形，角色同时大幅动作，镜头瞬移，镜头穿模，过快转向，过度抖动，字幕乱码，游戏 UI 遮挡人物面部，红色手绘箭头直接出现在成片中。", this)'>📋 Copy</button>
+        </div>
+        <div data-nosnippet><p>、完整提示词由GPT根据镜头轨迹生成：<br>使用上传图片作为首帧、场景参考和五位角色外观参考，生成一段 16:9、15 秒、一镜到底的沉浸式古风游戏第一人称 FPV 视频。</p><p>红色箭头仅作为镜头移动路线，不在最终成片中显示。玩家按照以下路线依次与五位角色互动：</p><p>右前景紫衣坐姿角色“清扬” → 左前景青衣坐姿角色“静姝” → 中央粉衣站姿角色“令仪” → 右中景蓝衣倚栏角色“杜若” → 左后景粉衣回眸角色“采薇”。</p><p>整体为游戏第一人称视角，玩家穿着深青色古风窄袖，右手偶尔进入画面，每次靠近角色时都轻轻抬手做出打招呼的动作。镜头具有真实步行产生的轻微起伏、自然呼吸感和明显前后景视差，不要像无人机飞行，不要瞬移，不要硬切镜头。</p><p>场景保持苏式园林凉亭、水塘、古典建筑、暖色阳光、轻柔帷幔、水面反光和华丽仙侠服装。角色保持原有位置、服装颜色与人物身份，不要换脸，不要改变人数，不要增加额外人物。</p><p>0.00–0.70 秒：<br>玩家从凉亭右侧进入，水塘泛起波纹，帷幔轻轻飘动，出现极简游戏准星和淡红金色导航光迹。</p><p>0.70–2.30 秒：<br>玩家靠近右前景紫衣角色“清扬”，抬手打招呼。清扬抬眸微笑，指尖从下颌旁轻轻放下，回应：“少侠，可愿听我一曲？”角色旁出现水墨金边信息卡：清扬，擅长：歌。</p><p>2.30–4.20 秒：<br>玩家向左前方移动，靠近青衣坐姿角色“静姝”。静姝缓缓放低团扇，轻轻侧头，回应：“正好，陪我落一子。”角色旁出现信息卡：静姝，擅长：棋。</p><p>4.20–6.40 秒：<br>玩家走向中央粉衣站姿角色“令仪”，视角略微仰起。令仪从胸前缓缓放下手，袖口轻扬，微微颔首，回应：“琴音已候你多时。”角色旁出现信息卡：令仪，擅长：琴。</p><p>6.40–8.70 秒：<br>玩家转向右中景蓝衣倚栏角色“杜若”。杜若缓缓转身，手指轻抚袖缘，轻轻点头，回应：“今日墨色正好。”角色旁出现信息卡：杜若，擅长：书。</p><p>8.70–12.20 秒：<br>玩家沿凉亭向左后方移动，经过其他角色时产生明显前后景视差，其他角色只保持轻微呼吸、眨眼、衣袖与发饰摆动。</p><p>12.20–14.50 秒：<br>玩家靠近左后景粉衣回眸角色“采薇”。采薇缓缓回眸，抬手指向水塘与园林景色，回应：“这一园春色，正宜入画。”角色旁出现信息卡：采薇，擅长：画。</p><p>14.50–15.00 秒：<br>玩家缓慢回头，五位角色形成自然前后层次，画面停留在暖色苏式园林、水塘反光与人物群像上，远处传来一声轻柔琴音。</p><p>声音设计：<br>真实脚步声、衣料摩擦声、环佩轻响、水声、风吹帷幔声、远处鸟鸣。每位角色的声音从其所在方向传来，具有空间音频效果。角色台词清晰、轻柔、自然，不要机械播报感。</p><p>画面要求：<br>高沉浸感古风游戏实机演示效果，镜头移动稳定自然，人物面部保持一致，服装与发饰细节稳定，角色动作简单克制，嘴型与台词基本同步，水面、帷幔、树影和衣袖有轻微动态。</p><p>避免：<br>人物换脸，人物数量变化，肢体畸形，角色同时大幅动作，镜头瞬移，镜头穿模，过快转向，过度抖动，字幕乱码，游戏 UI 遮挡人物面部，红色手绘箭头直接出现在成片中。</p></div>
+      </div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 English Prompt <span class="fallback-badge">(English missing, fallback from Chinese)</span></h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("、完整提示词由GPT根据镜头轨迹生成：\n使用上传图片作为首帧、场景参考和五位角色外观参考，生成一段 16:9、15 秒、一镜到底的沉浸式古风游戏第一人称 FPV 视频。\n\n红色箭头仅作为镜头移动路线，不在最终成片中显示。玩家按照以下路线依次与五位角色互动：\n\n右前景紫衣坐姿角色“清扬” → 左前景青衣坐姿角色“静姝” → 中央粉衣站姿角色“令仪” → 右中景蓝衣倚栏角色“杜若” → 左后景粉衣回眸角色“采薇”。\n\n整体为游戏第一人称视角，玩家穿着深青色古风窄袖，右手偶尔进入画面，每次靠近角色时都轻轻抬手做出打招呼的动作。镜头具有真实步行产生的轻微起伏、自然呼吸感和明显前后景视差，不要像无人机飞行，不要瞬移，不要硬切镜头。\n\n场景保持苏式园林凉亭、水塘、古典建筑、暖色阳光、轻柔帷幔、水面反光和华丽仙侠服装。角色保持原有位置、服装颜色与人物身份，不要换脸，不要改变人数，不要增加额外人物。\n\n0.00–0.70 秒：\n玩家从凉亭右侧进入，水塘泛起波纹，帷幔轻轻飘动，出现极简游戏准星和淡红金色导航光迹。\n\n0.70–2.30 秒：\n玩家靠近右前景紫衣角色“清扬”，抬手打招呼。清扬抬眸微笑，指尖从下颌旁轻轻放下，回应：“少侠，可愿听我一曲？”角色旁出现水墨金边信息卡：清扬，擅长：歌。\n\n2.30–4.20 秒：\n玩家向左前方移动，靠近青衣坐姿角色“静姝”。静姝缓缓放低团扇，轻轻侧头，回应：“正好，陪我落一子。”角色旁出现信息卡：静姝，擅长：棋。\n\n4.20–6.40 秒：\n玩家走向中央粉衣站姿角色“令仪”，视角略微仰起。令仪从胸前缓缓放下手，袖口轻扬，微微颔首，回应：“琴音已候你多时。”角色旁出现信息卡：令仪，擅长：琴。\n\n6.40–8.70 秒：\n玩家转向右中景蓝衣倚栏角色“杜若”。杜若缓缓转身，手指轻抚袖缘，轻轻点头，回应：“今日墨色正好。”角色旁出现信息卡：杜若，擅长：书。\n\n8.70–12.20 秒：\n玩家沿凉亭向左后方移动，经过其他角色时产生明显前后景视差，其他角色只保持轻微呼吸、眨眼、衣袖与发饰摆动。\n\n12.20–14.50 秒：\n玩家靠近左后景粉衣回眸角色“采薇”。采薇缓缓回眸，抬手指向水塘与园林景色，回应：“这一园春色，正宜入画。”角色旁出现信息卡：采薇，擅长：画。\n\n14.50–15.00 秒：\n玩家缓慢回头，五位角色形成自然前后层次，画面停留在暖色苏式园林、水塘反光与人物群像上，远处传来一声轻柔琴音。\n\n声音设计：\n真实脚步声、衣料摩擦声、环佩轻响、水声、风吹帷幔声、远处鸟鸣。每位角色的声音从其所在方向传来，具有空间音频效果。角色台词清晰、轻柔、自然，不要机械播报感。\n\n画面要求：\n高沉浸感古风游戏实机演示效果，镜头移动稳定自然，人物面部保持一致，服装与发饰细节稳定，角色动作简单克制，嘴型与台词基本同步，水面、帷幔、树影和衣袖有轻微动态。\n\n避免：\n人物换脸，人物数量变化，肢体畸形，角色同时大幅动作，镜头瞬移，镜头穿模，过快转向，过度抖动，字幕乱码，游戏 UI 遮挡人物面部，红色手绘箭头直接出现在成片中。", this)'>📋 Copy</button>
+        </div>
+        <div data-nosnippet><p>、完整提示词由GPT根据镜头轨迹生成：<br>使用上传图片作为首帧、场景参考和五位角色外观参考，生成一段 16:9、15 秒、一镜到底的沉浸式古风游戏第一人称 FPV 视频。</p><p>红色箭头仅作为镜头移动路线，不在最终成片中显示。玩家按照以下路线依次与五位角色互动：</p><p>右前景紫衣坐姿角色“清扬” → 左前景青衣坐姿角色“静姝” → 中央粉衣站姿角色“令仪” → 右中景蓝衣倚栏角色“杜若” → 左后景粉衣回眸角色“采薇”。</p><p>整体为游戏第一人称视角，玩家穿着深青色古风窄袖，右手偶尔进入画面，每次靠近角色时都轻轻抬手做出打招呼的动作。镜头具有真实步行产生的轻微起伏、自然呼吸感和明显前后景视差，不要像无人机飞行，不要瞬移，不要硬切镜头。</p><p>场景保持苏式园林凉亭、水塘、古典建筑、暖色阳光、轻柔帷幔、水面反光和华丽仙侠服装。角色保持原有位置、服装颜色与人物身份，不要换脸，不要改变人数，不要增加额外人物。</p><p>0.00–0.70 秒：<br>玩家从凉亭右侧进入，水塘泛起波纹，帷幔轻轻飘动，出现极简游戏准星和淡红金色导航光迹。</p><p>0.70–2.30 秒：<br>玩家靠近右前景紫衣角色“清扬”，抬手打招呼。清扬抬眸微笑，指尖从下颌旁轻轻放下，回应：“少侠，可愿听我一曲？”角色旁出现水墨金边信息卡：清扬，擅长：歌。</p><p>2.30–4.20 秒：<br>玩家向左前方移动，靠近青衣坐姿角色“静姝”。静姝缓缓放低团扇，轻轻侧头，回应：“正好，陪我落一子。”角色旁出现信息卡：静姝，擅长：棋。</p><p>4.20–6.40 秒：<br>玩家走向中央粉衣站姿角色“令仪”，视角略微仰起。令仪从胸前缓缓放下手，袖口轻扬，微微颔首，回应：“琴音已候你多时。”角色旁出现信息卡：令仪，擅长：琴。</p><p>6.40–8.70 秒：<br>玩家转向右中景蓝衣倚栏角色“杜若”。杜若缓缓转身，手指轻抚袖缘，轻轻点头，回应：“今日墨色正好。”角色旁出现信息卡：杜若，擅长：书。</p><p>8.70–12.20 秒：<br>玩家沿凉亭向左后方移动，经过其他角色时产生明显前后景视差，其他角色只保持轻微呼吸、眨眼、衣袖与发饰摆动。</p><p>12.20–14.50 秒：<br>玩家靠近左后景粉衣回眸角色“采薇”。采薇缓缓回眸，抬手指向水塘与园林景色，回应：“这一园春色，正宜入画。”角色旁出现信息卡：采薇，擅长：画。</p><p>14.50–15.00 秒：<br>玩家缓慢回头，五位角色形成自然前后层次，画面停留在暖色苏式园林、水塘反光与人物群像上，远处传来一声轻柔琴音。</p><p>声音设计：<br>真实脚步声、衣料摩擦声、环佩轻响、水声、风吹帷幔声、远处鸟鸣。每位角色的声音从其所在方向传来，具有空间音频效果。角色台词清晰、轻柔、自然，不要机械播报感。</p><p>画面要求：<br>高沉浸感古风游戏实机演示效果，镜头移动稳定自然，人物面部保持一致，服装与发饰细节稳定，角色动作简单克制，嘴型与台词基本同步，水面、帷幔、树影和衣袖有轻微动态。</p><p>避免：<br>人物换脸，人物数量变化，肢体畸形，角色同时大幅动作，镜头瞬移，镜头穿模，过快转向，过度抖动，字幕乱码，游戏 UI 遮挡人物面部，红色手绘箭头直接出现在成片中。</p></div>
+      </div>
+      
+      <div class="detail-block"><h3>🎬 Videos</h3><div class="detail-media-grid"><video controls><source src="/videos/tweet-2062417967833653688-1.mp4" type="video/mp4"></video></div></div>
+      
+    </div>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("No prompt content is available for this case.");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ Copied";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("Copy failed. Please copy manually.");
+        }
+      }
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing...";
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: 3010 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "Publishing to XHS...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 3010,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm("Delete this case? This action cannot be undone.")) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: 3010 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert("Deleted successfully");
+          window.location.href = "/en/video/index.html";
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+</body>
+</html>
