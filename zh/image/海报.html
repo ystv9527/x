@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海报 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="13 条 海报 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/海报.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/海报.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/海报.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1783832402603">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"海报 · 图片生成提示词","description":"13 条 海报 相关案例","url":"https://gemnana.com/zh/image/海报.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">3030</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">2997</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">30</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/海报.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>海报 · 图片生成提示词</h1>
+      <p>13 条 海报 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="海报">海报 (13)</button><button type="button" class="tag-filter" data-tag="ChatGPT">ChatGPT (7)</button><button type="button" class="tag-filter" data-tag="AI">AI (7)</button><button type="button" class="tag-filter" data-tag="图片">图片 (7)</button><button type="button" class="tag-filter" data-tag="GPT IMG2">GPT IMG2 (7)</button><button type="button" class="tag-filter" data-tag="GPT Image">GPT Image (5)</button><button type="button" class="tag-filter" data-tag="复古">复古 (3)</button><button type="button" class="tag-filter" data-tag="写实">写实 (2)</button><button type="button" class="tag-filter" data-tag="古风">古风 (2)</button><button type="button" class="tag-filter" data-tag="复古风">复古风 (2)</button><button type="button" class="tag-filter" data-tag="通用">通用 (1)</button><button type="button" class="tag-filter" data-tag="水墨">水墨 (1)</button><button type="button" class="tag-filter" data-tag="国风画">国风画 (1)</button><button type="button" class="tag-filter" data-tag="广州塔">广州塔 (1)</button><button type="button" class="tag-filter" data-tag="流光">流光 (1)</button><button type="button" class="tag-filter" data-tag="神话感">神话感 (1)</button><button type="button" class="tag-filter" data-tag="助眠">助眠 (1)</button><button type="button" class="tag-filter" data-tag="九宫格">九宫格 (1)</button><button type="button" class="tag-filter" data-tag="治愈系">治愈系 (1)</button><button type="button" class="tag-filter" data-tag="睡眠">睡眠 (1)</button><button type="button" class="tag-filter" data-tag="联名">联名 (1)</button><button type="button" class="tag-filter" data-tag="杜蕾斯">杜蕾斯 (1)</button><button type="button" class="tag-filter" data-tag="茶颜">茶颜 (1)</button><button type="button" class="tag-filter" data-tag="国潮">国潮 (1)</button><button type="button" class="tag-filter" data-tag="谷雨">谷雨 (1)</button><button type="button" class="tag-filter" data-tag="春雨">春雨 (1)</button><button type="button" class="tag-filter" data-tag="节气">节气 (1)</button><button type="button" class="tag-filter" data-tag="国风">国风 (1)</button><button type="button" class="tag-filter" data-tag="胶片感">胶片感 (1)</button><button type="button" class="tag-filter" data-tag="山海">山海 (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 13 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="3030" data-search="案例3030 米兰意式轻奢客厅软装提案四件套提示词 整理一套米兰意式轻奢客厅软装提案四件套提示词，包含主视觉、3d 轴测拆解、软装清单与材质配色细节板。 x / @mrlarus https://x.com/mrlarus/status/2060001283625341300 通用 写实 海报 generate a set of 4 professional interior soft-furnishing proposal images, each image generated separately and not merged. use a 4:5 vertical aspect ratio. the theme is &quot;milan italian light-luxury living room proposal&quot;. the overall style should be italian light luxury, modern elegance, low saturatio" data-tags="通用|写实|海报">
+      <a class="case-card-link" href="/zh/case/3030.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2060001283625341300-1.jpg" alt="米兰意式轻奢客厅软装提案四件套提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3030</span></span><span class="case-title-text">米兰意式轻奢客厅软装提案四件套提示词</span></h3>
+          <p class="case-summary">整理一套米兰意式轻奢客厅软装提案四件套提示词，包含主视觉、3D 轴测拆解、软装清单与材质配色细节板。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2060001283625341300">X / @MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Generate a set of 4 professional interior soft-furnishing proposal images, each image generated separately and not merged.
+Use a 4:5 vertical aspect ratio.
+The theme is &quot;Milan Italian Light-Luxury Liv...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3030.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3022" data-search="案例3022 gpt image2 粉蓝撞色复古旅行海报风日系插画提示词 一组适合 gpt image2 的复古旅行海报风日系插画提示词，强调粉蓝撞色、清冷克制的时装插画感与安静怀旧氛围。 x / @yyyole https://x.com/yyyole/status/2073774407181643780 gpt image 复古 海报 exquisite japanese illustration in a retro travel poster style, with the subject as 【xxx】. the subject should be rendered in a high-end japanese fashion illustration style, with elegant outlines, elongated proportions, a cool and restrained expression, and refined details without being overly realis" data-tags="GPT Image|复古|海报">
+      <a class="case-card-link" href="/zh/case/3022.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2073774407181643780-1.jpg" alt="GPT Image2 粉蓝撞色复古旅行海报风日系插画提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3022</span></span><span class="case-title-text">GPT Image2 粉蓝撞色复古旅行海报风日系插画提示词</span></h3>
+          <p class="case-summary">一组适合 GPT Image2 的复古旅行海报风日系插画提示词，强调粉蓝撞色、清冷克制的时装插画感与安静怀旧氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-06</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/yyyole/status/2073774407181643780">X / @yyyole</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">复古</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Exquisite Japanese illustration in a retro travel poster style, with the subject as 【xxx】. The subject should be rendered in a high-end Japanese fashion illustration style, with elegant outlines, elon...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3022.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3021" data-search="案例3021 gpt image 2 禅意水墨混合媒介插画提示词 围绕 gpt image 2 的禅意水墨混合媒介插画提示词，包含静修氛围、东方美学、主体变化与负面约束。 x / @simplyannisa https://x.com/simplyannisa/status/2073030984166154501 gpt image 水墨 古风 海报 gpt image 2 zen ink wash mixed media illustration prompt: subject and style: - centered on an exquisitely detailed zen ink wash (sumi-e) mixed media artwork, with a minimalist white background, serene meditation atmosphere, and elegant east asian aesthetics. - flowing black ink splashes dissolve in" data-tags="GPT Image|水墨|古风|海报">
+      <a class="case-card-link" href="/zh/case/3021.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2073030984166154501-1.jpg" alt="GPT Image 2 禅意水墨混合媒介插画提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3021</span></span><span class="case-title-text">GPT Image 2 禅意水墨混合媒介插画提示词</span></h3>
+          <p class="case-summary">围绕 GPT Image 2 的禅意水墨混合媒介插画提示词，包含静修氛围、东方美学、主体变化与负面约束。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-04</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/SimplyAnnisa/status/2073030984166154501">X / @SimplyAnnisa</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">水墨</span><span class="tag">古风</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>GPT Image 2 Zen ink wash mixed media illustration prompt:
+
+Subject and style:
+- Centered on an exquisitely detailed Zen ink wash (sumi-e) mixed media artwork, with a minimalist white background, seren...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3021.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3020" data-search="案例3020 gpt image 2 东方禅意极简人物海报：玉青花窗前的古风女性 整理自 gpt image 2 的东方禅意极简人物海报提示词，突出玉青花窗、暖白墙面与玫红花影的明亮新中式氛围。 x / @liyue_ai https://x.com/liyue_ai/status/2072604164526633049 gpt image 古风 海报 东方禅意极简人物海报，明丽新中式风格。 一位穿着古风装扮的女性静静站在玉青色花窗前，侧身看向窗外。 情绪母题：安静、雅致、轻快、含蓄的明媚。 场景与意象：玉青花窗、暖白墙面、玫红花影、人物剪影、少量庭院绿意。 构图与空间：中心偏下构图，花窗作为背景主体，人物位于中下部，画面上方和侧边保留干净留白。 色彩控制：暖白作为墙面和空间基底，玉青用于花窗结构，玫红只用于花影和局部点睛，人物用浅墨青轮廓；避免全图玫红化或玉青化。 光线与质感：白天自然光，窗边柔光，轻纸感，边缘干净清晰。 画幅比例：9:16。 补充要求：整体要明亮、通透、安静，颜色鲜活但不俗，不要灰蒙蒙，不要复杂闺阁装饰。" data-tags="GPT Image|古风|海报">
+      <a class="case-card-link" href="/zh/case/3020.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2072604164526633049-1.jpg" alt="GPT Image 2 东方禅意极简人物海报：玉青花窗前的古风女性" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3020</span></span><span class="case-title-text">GPT Image 2 东方禅意极简人物海报：玉青花窗前的古风女性</span></h3>
+          <p class="case-summary">整理自 GPT Image 2 的东方禅意极简人物海报提示词，突出玉青花窗、暖白墙面与玫红花影的明亮新中式氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-03</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2072604164526633049">X / @liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">古风</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>东方禅意极简人物海报，明丽新中式风格。
+一位穿着古风装扮的女性静静站在玉青色花窗前，侧身看向窗外。
+情绪母题：安静、雅致、轻快、含蓄的明媚。
+场景与意象：玉青花窗、暖白墙面、玫红花影、人物剪影、少量庭院绿意。
+构图与空间：中心偏下构图，花窗作为背景主体，人物位于中下部，画面上方和侧边保留干净留白。
+色彩控制：暖白作为墙面和空间基底，玉青用于花窗结构，玫红只用于花影和局部点睛，人物用浅墨青轮廓；避免...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3020.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3018" data-search="案例3018 城市名构成的现代旅行海报提示词 整理为城市名构成的现代旅行海报提示词，保留扁平矢量、地标融入字母、限定配色与负面要求。 x / @goodmanprotocol https://x.com/goodmanprotocol/status/2071819124708438092 gpt image 复古 海报 create a clean, modern typographic travel poster where the city name itself becomes the composition. render the city name in large, bold, uppercase sans-serif letters spanning the width of the artwork. seamlessly integrate the city&#39;s most iconic landmarks, architecture, monuments, streets, transpor" data-tags="GPT Image|复古|海报">
+      <a class="case-card-link" href="/zh/case/3018.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2071819124708438092-1.jpg" alt="城市名构成的现代旅行海报提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3018</span></span><span class="case-title-text">城市名构成的现代旅行海报提示词</span></h3>
+          <p class="case-summary">整理为城市名构成的现代旅行海报提示词，保留扁平矢量、地标融入字母、限定配色与负面要求。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-06-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Goodmanprotocol/status/2071819124708438092">X / @Goodmanprotocol</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">复古</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Create a clean, modern typographic travel poster where the city name itself becomes the composition. Render the city name in large, bold, uppercase sans-serif letters spanning the width of the artwork...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3018.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3017" data-search="案例3017 gpt image 2 极简竖向相框人像构图 黑色背景上横向排列 5 个纵向相框，中间最大、两侧递减，框内为写实亚洲女性人像，白色发光边框，极简干净渲染。 x / @mind_boticni https://x.com/mind_boticni/status/2071809667794403500 gpt image 写实 海报 a minimalist graphic design: five overlapping vertical photo frames arranged in a horizontal row, centered on a pure black background. the center frame is the largest, and the frames on both sides get progressively smaller in a perfectly symmetrical arc. each frame has rounded corners and a distinct" data-tags="GPT Image|写实|海报">
+      <a class="case-card-link" href="/zh/case/3017.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2071809667794403500-1.jpg" alt="GPT Image 2 极简竖向相框人像构图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3017</span></span><span class="case-title-text">GPT Image 2 极简竖向相框人像构图</span></h3>
+          <p class="case-summary">黑色背景上横向排列 5 个纵向相框，中间最大、两侧递减，框内为写实亚洲女性人像，白色发光边框，极简干净渲染。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-06-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Mind_Boticni/status/2071809667794403500">X / @Mind_Boticni</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>A minimalist graphic design: five overlapping vertical photo frames arranged in a horizontal row, centered on a pure black background. The center frame is the largest, and the frames on both sides get...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3017.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2933" data-search="案例2933 鎏金广州塔的东方奇幻海报 鎏金广州塔的东方奇幻海报 - gpt img2 图像生成提示词 x / liyue_ai https://x.com/liyue_ai/status/2046243132774494607 chatgpt ai 图片 gpt img2 国风画 广州塔 流光 神话感 海报 平面插画，东方幻想风格高端城市海报设计，竖版9:16构图，整体采用对角线+s型流动构图，从左下向右上延展，画面以深邃黑色为背景，自上而下渐变至浓烈暗红色，形成强烈冷暖对比与空间纵深，背景带微弱星尘与颗粒质感。画面中央一条金色流动能量线条如火焰般蜿蜒贯穿，自底部向上延伸，具有流体质感、粒子光效与渐变高光，局部带细微能量碎屑与体积光。 金色流光中逐层浮现广州城市地标建筑群：广州塔为视觉核心，比例突出，周围融合珠江新城高楼群、猎德大桥及现代与岭南建筑元素，建筑采用“精细线描 + 金色发光体块”表现，轮廓清晰、细节丰富，在金色光晕映衬下仿佛悬浮于虚空，形成超现实空间层次，远景轻微雾化增强纵深感。" data-tags="ChatGPT|AI|图片|GPT IMG2|国风画|广州塔|流光|神话感|海报">
+      <a class="case-card-link" href="/zh/case/2933.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-golden-guangzhou-tower-poster-1.jpeg" alt="鎏金广州塔的东方奇幻海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2933</span></span><span class="case-title-text">鎏金广州塔的东方奇幻海报</span></h3>
+          <p class="case-summary">鎏金广州塔的东方奇幻海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-21</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liyue_ai/status/2046243132774494607">X / liyue_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">国风画</span><span class="tag">广州塔</span><span class="tag">流光</span><span class="tag">神话感</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>平面插画，东方幻想风格高端城市海报设计，竖版9:16构图，整体采用对角线+S型流动构图，从左下向右上延展，画面以深邃黑色为背景，自上而下渐变至浓烈暗红色，形成强烈冷暖对比与空间纵深，背景带微弱星尘与颗粒质感。画面中央一条金色流动能量线条如火焰般蜿蜒贯穿，自底部向上延伸，具有流体质感、粒子光效与渐变高光，局部带细微能量碎屑与体积光。
+
+金色流光中逐层浮现广州城市地标建筑群：广州塔为视觉核心，比例突出...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2933.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2920" data-search="案例2920 治愈系助眠指南九宫格 治愈系助眠指南九宫格 - gpt img2 图像生成提示词 x / austinit https://x.com/austinit/status/2046037688969769346 chatgpt ai 图片 gpt img2 助眠 九宫格 治愈系 睡眠 海报 生成一张适合小红书发布的 3:4 竖版九宫格海报，整体为 3列 × 3行 排版，九个宫格边界清晰，方便后期直接切割成 9 张单图发布。整体风格干净、高级、统一，适合女性向健康生活方式内容，具有小红书爆款封面气质。画面要求 信息排版清晰、文字大、可读性强、留白舒服、配色温柔治愈。 整体视觉风格： 奶油白、浅米色、淡燕麦色、浅焦糖色为主色调，搭配少量深棕色文字，ins风、治愈感、睡眠疗愈主题，简约排版，轻拟物插画点缀，可加入枕头、月亮、星星、热牛奶、香薰、书本、眼罩、窗帘、床铺等元素。整体像专业新媒体设计图，字体工整，适合做知识科普类小红书九宫格。 排版要求： 整张图必须是标准九宫格构图，切分" data-tags="ChatGPT|AI|图片|GPT IMG2|助眠|九宫格|治愈系|睡眠|海报">
+      <a class="case-card-link" href="/zh/case/2920.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-healing-sleep-guide-grid-1.jpeg" alt="治愈系助眠指南九宫格" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2920</span></span><span class="case-title-text">治愈系助眠指南九宫格</span></h3>
+          <p class="case-summary">治愈系助眠指南九宫格 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/austinit/status/2046037688969769346">X / austinit</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">助眠</span><span class="tag">九宫格</span><span class="tag">治愈系</span><span class="tag">睡眠</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张适合小红书发布的 3:4 竖版九宫格海报，整体为 3列 × 3行 排版，九个宫格边界清晰，方便后期直接切割成 9 张单图发布。整体风格干净、高级、统一，适合女性向健康生活方式内容，具有小红书爆款封面气质。画面要求 信息排版清晰、文字大、可读性强、留白舒服、配色温柔治愈。
+
+整体视觉风格：
+奶油白、浅米色、淡燕麦色、浅焦糖色为主色调，搭配少量深棕色文字，ins风、治愈感、睡眠疗愈主题，简约排...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2920.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2912" data-search="案例2912 杜蕾斯茶颜悦色联名海报设计 杜蕾斯茶颜悦色联名海报设计 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 联名 海报 杜蕾斯 茶颜 国潮 设计一套杜蕾斯和茶颜悦色联名的宣传物料" data-tags="ChatGPT|AI|图片|GPT IMG2|联名|海报|杜蕾斯|茶颜|国潮">
+      <a class="case-card-link" href="/zh/case/2912.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-durex-chayan-collaboration-1.jpeg" alt="杜蕾斯茶颜悦色联名海报设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2912</span></span><span class="case-title-text">杜蕾斯茶颜悦色联名海报设计</span></h3>
+          <p class="case-summary">杜蕾斯茶颜悦色联名海报设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">联名</span><span class="tag">海报</span><span class="tag">杜蕾斯</span><span class="tag">茶颜</span><span class="tag">国潮</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>设计一套杜蕾斯和茶颜悦色联名的宣传物料</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2912.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2903" data-search="案例2903 2026谷雨节气唯美海报设计 2026谷雨节气唯美海报设计 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 谷雨 春雨 海报 节气 国风 生成一张2026年谷雨节气的海报" data-tags="ChatGPT|AI|图片|GPT IMG2|谷雨|春雨|海报|节气|国风">
+      <a class="case-card-link" href="/zh/case/2903.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-guyu-solar-term-poster-2026-1.jpeg" alt="2026谷雨节气唯美海报设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2903</span></span><span class="case-title-text">2026谷雨节气唯美海报设计</span></h3>
+          <p class="case-summary">2026谷雨节气唯美海报设计 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">谷雨</span><span class="tag">春雨</span><span class="tag">海报</span><span class="tag">节气</span><span class="tag">国风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张2026年谷雨节气的海报</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2903.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2902" data-search="案例2902 奔赴山海胶片感海报 奔赴山海胶片感海报 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 胶片感 山海 海报 复古 风光 设计一张主题是”奔赴山海”的胶片感摄影风格的海报" data-tags="ChatGPT|AI|图片|GPT IMG2|胶片感|山海|海报|复古|风光">
+      <a class="case-card-link" href="/zh/case/2902.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-run-to-mountains-and-seas-1.jpeg" alt="奔赴山海胶片感海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2902</span></span><span class="case-title-text">奔赴山海胶片感海报</span></h3>
+          <p class="case-summary">奔赴山海胶片感海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">胶片感</span><span class="tag">山海</span><span class="tag">海报</span><span class="tag">复古</span><span class="tag">风光</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>设计一张主题是”奔赴山海”的胶片感摄影风格的海报</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2902.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2894" data-search="案例2894 小恶魔莉莉香超任游戏海报 小恶魔莉莉香超任游戏海报 - gpt img2 图像生成提示词 x / lilimliliychan https://x.com/lilimliliychan/status/2045114760937804187 chatgpt ai 图片 gpt img2 小恶魔 海报 复古风 超任 莉莉香 が「小悪魔リリムリリィちゃんが スーパーファミコンのゲームだったときのポスターを考えて」に 画像数枚だけで このクオリティ 細かい説明呪文なし すごいぜ！" data-tags="ChatGPT|AI|图片|GPT IMG2|小恶魔|海报|复古风|超任|莉莉香">
+      <a class="case-card-link" href="/zh/case/2894.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-little-devil-lily-sfc-poster-1.jpg" alt="小恶魔莉莉香超任游戏海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2894</span></span><span class="case-title-text">小恶魔莉莉香超任游戏海报</span></h3>
+          <p class="case-summary">小恶魔莉莉香超任游戏海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/lilimliliychan/status/2045114760937804187">X / lilimliliychan</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">小恶魔</span><span class="tag">海报</span><span class="tag">复古风</span><span class="tag">超任</span><span class="tag">莉莉香</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>が「小悪魔リリムリリィちゃんが　スーパーファミコンのゲームだったときのポスターを考えて」に　画像数枚だけで
+このクオリティ　細かい説明呪文なし　すごいぜ！</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2894.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2885" data-search="案例2885 复古传统老黄历二零二六年四月十八 复古传统老黄历二零二六年四月十八 - gpt img2 图像生成提示词 x / mrlarus https://x.com/mrlarus/status/2044824800909054181 chatgpt ai 图片 gpt img2 老黄历 复古风 传统 日历 海报 生成一张2026年4月18日的老黄历" data-tags="ChatGPT|AI|图片|GPT IMG2|老黄历|复古风|传统|日历|海报">
+      <a class="case-card-link" href="/zh/case/2885.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-retro-traditional-almanac-2026-1.jpeg" alt="复古传统老黄历二零二六年四月十八" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2885</span></span><span class="case-title-text">复古传统老黄历二零二六年四月十八</span></h3>
+          <p class="case-summary">复古传统老黄历二零二六年四月十八 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2044824800909054181">X / MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">老黄历</span><span class="tag">复古风</span><span class="tag">传统</span><span class="tag">日历</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张2026年4月18日的老黄历</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2885.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>
