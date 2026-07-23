@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用 · Image Prompt Cases | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="16  通用 related cases">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/en/image/通用.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/通用.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/通用.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1784812060868">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"通用 · Image Prompt Cases","description":"16  通用 related cases","url":"https://gemnana.com/en/image/通用.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI Prompt Collection</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/en/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+          <span class="nav-count">3044</span>
+        </a>
+        <a href="/en/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">Image</span>
+          <span class="nav-count">3011</span>
+        </a>
+        <a href="/en/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">Video</span>
+          <span class="nav-count">30</span>
+        </a>
+        <a href="/en/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Text</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/zh/image/通用.html" class="lang-switch-link">中文</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ Settings</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>通用 · Image Prompt Cases</h1>
+      <p>16  通用 related cases</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search title, summary, tags…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ Tag Filters</span>
+          <button id="clearFilters" class="btn-clear" type="button">Clear Filters</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="通用">通用 (16)</button><button type="button" class="tag-filter" data-tag="写实">Realistic (10)</button><button type="button" class="tag-filter" data-tag="信息图">信息图 (3)</button><button type="button" class="tag-filter" data-tag="二次元">二次元 (3)</button><button type="button" class="tag-filter" data-tag="头像">头像 (3)</button><button type="button" class="tag-filter" data-tag="古风">古风 (3)</button><button type="button" class="tag-filter" data-tag="复古">复古 (2)</button><button type="button" class="tag-filter" data-tag="3D">3D (2)</button><button type="button" class="tag-filter" data-tag="商品">商品 (1)</button><button type="button" class="tag-filter" data-tag="电影感">电影感 (1)</button><button type="button" class="tag-filter" data-tag="海报">海报 (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">16 items</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 No matched content</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="3044" data-search="案例3044 retro cel animation prompt template retro cel animation style prompt template, preserving hand-drawn backgrounds, visible cel lines, low-saturation color palette, soft grain, and gentle lighting. x / @azed_ai https://x.com/azed_ai/status/2079884701234589885 通用 复古 retro cel animation style, [subject] in a [setting], hand-painted background, visible cel lines, muted [color1] and [color2] palette, soft grain, gentle lighting, expressive character design, vintage animation frame aesthetic." data-tags="通用|复古">
+      <a class="case-card-link" href="/en/case/3044.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2079884701234589885-1.jpg" alt="复古赛璐璐动画提示词模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3044</span></span><span class="case-title-text">Retro cel animation prompt template</span></h3>
+          <p class="case-summary">Retro cel animation style prompt template, preserving hand-drawn backgrounds, visible cel lines, low-saturation color palette, soft grain, and gentle lighting.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-22</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/azed_ai/status/2079884701234589885">X / @azed_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Retro cel animation style, [subject] in a [setting], hand-painted background, visible cel lines, muted [color1] and [color2] palette, soft grain, gentle lighting, expressive character design, vintage ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3044.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3042" data-search="案例3042 english vocabulary flashcard generation prompt a set of english vocabulary flashcard generation prompts for gpt-image2 and gemini, emphasizing textbook-editor style, infographic layout, and integration with textbook illustrations. x / @knowledgefxg https://x.com/knowledgefxg/status/2079543791103705374 通用 信息图 you are a senior english textbook editor and a professional infographic designer. next, i will only input an english word, phrase, or expression. please automatically complete: ipa pronunciation, part of speech, chinese meaning, english definition, a natural and idiomatic english example sentence, c" data-tags="通用|信息图">
+      <a class="case-card-link" href="/en/case/3042.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2079543791103705374-1.jpg" alt="英语单词卡生成提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3042</span></span><span class="case-title-text">English vocabulary flashcard generation prompt</span></h3>
+          <p class="case-summary">A set of English vocabulary flashcard generation prompts for GPT-image2 and Gemini, emphasizing textbook-editor style, infographic layout, and integration with textbook illustrations.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-22</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/knowledgefxg/status/2079543791103705374">X / @knowledgefxg</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">信息图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>You are a senior English textbook editor and a professional infographic designer. Next, I will only input an English word, phrase, or expression. Please automatically complete: IPA pronunciation, part...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3042.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3041" data-search="案例3041 frieren: beyond journey&#39;s end amber specimen vertical portrait collection four separate 9:16 vertical images of frieren as a miniature figure preserved in amber specimens, emphasizing transmitted warm light, air bubbles, cracks, and the texture of a museum specimen. x / @dracovibecoding https://x.com/dracovibecoding/status/2078686052097933367 通用 二次元 写实 generate 4 separate 9:16 images, not combined into a single composition. theme: miniature portraits of frieren characters preserved inside amber, one character per vertical image. style: amber fossil inclusions, resin bubbles and insect-amber cracks, transmitted warm light, with an overall museum-" data-tags="通用|二次元|写实">
+      <a class="case-card-link" href="/en/case/3041.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2078686052097933367-1.jpg" alt="葬送的芙莉莲琥珀标本竖版人像集" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3041</span></span><span class="case-title-text">Frieren: Beyond Journey&#39;s End Amber Specimen Vertical Portrait Collection</span></h3>
+          <p class="case-summary">Four separate 9:16 vertical images of Frieren as a miniature figure preserved in amber specimens, emphasizing transmitted warm light, air bubbles, cracks, and the texture of a museum specimen.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/DracoVibeCoding/status/2078686052097933367">X / @DracoVibeCoding</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">二次元</span><span class="tag">Realistic</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Generate 4 separate 9:16 images, not combined into a single composition.
+
+Theme: miniature portraits of Frieren characters preserved inside amber, one character per vertical image.
+
+Style: amber fossi...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3041.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3039" data-search="案例3039 ultra-realistic portrait prompts to enhance the realism of ai faces organize a set of hyper-realistic portrait prompts for enhancing the realism of ai faces and removing any greasy look, while preserving requirements for portrait composition, lighting, lens, and skin detail. x / @graynotelab https://x.com/graynotelab/status/2078471143313592413 通用 写实 头像 cinematic ultra-realistic extreme close-up portrait photography of an adult male or female aged 22-28, freely replaceable, with only about half the face visible, one eye as the sole visual focal point, facing the camera directly, bold composition, and a strong sense of visual pressure and artistic t" data-tags="通用|写实|头像">
+      <a class="case-card-link" href="/en/case/3039.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2078471143313592413-1.jpg" alt="增强AI人脸真实感的超写实人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3039</span></span><span class="case-title-text">Ultra-realistic portrait prompts to enhance the realism of AI faces</span></h3>
+          <p class="case-summary">Organize a set of hyper-realistic portrait prompts for enhancing the realism of AI faces and removing any greasy look, while preserving requirements for portrait composition, lighting, lens, and skin detail.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/GrayNoteLab/status/2078471143313592413">X / @GrayNoteLab</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Cinematic ultra-realistic extreme close-up portrait photography of an adult male or female aged 22-28, freely replaceable, with only about half the face visible, one eye as the sole visual focal point...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3039.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3038" data-search="案例3038 bleach female character, insect-eye giant transformation, four separate vertical image prompts organize into four separate 9:16 vertical image prompts featuring bleach female characters with insect-eyed giantification, preserving the semi-realistic anime style, low-angle oppressive sense of scale, and explicit restrictions. x / @dracovibecoding https://x.com/dracovibecoding/status/2078307534662930874 通用 二次元 写实 create 4 separate vertical images in 9:16 ratio, not combined into a single collage. theme: bug-eye giantess versions of bleach / shinigami female characters, one character per image from the same franchise. style: semi-realistic anime illustration with unreal engine-like scene lighting, not photo" data-tags="通用|二次元|写实">
+      <a class="case-card-link" href="/en/case/3038.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2078307534662930874-1.jpg" alt="Bleach 女角色虫眼巨物化四张独立竖图提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3038</span></span><span class="case-title-text">Bleach female character, insect-eye giant transformation, four separate vertical image prompts</span></h3>
+          <p class="case-summary">Organize into four separate 9:16 vertical image prompts featuring BLEACH female characters with insect-eyed giantification, preserving the semi-realistic anime style, low-angle oppressive sense of scale, and explicit restrictions.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/DracoVibeCoding/status/2078307534662930874">X / @DracoVibeCoding</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">二次元</span><span class="tag">Realistic</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Create 4 separate vertical images in 9:16 ratio, not combined into a single collage.
+
+Theme: bug-eye giantess versions of BLEACH / Shinigami female characters, one character per image from the same fr...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3038.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3037" data-search="案例3037 wooden floor shadow-casting outfit flat-lay photography prompt words a realistic photography prompt: on an indoor wooden floor, lay out and disassemble the person’s outfit in order, and create a true shadow-casting feel using a first-person foot perspective and a complete cast shadow. x / @leo_xiaolei https://x.com/leo_xiaolei/status/2077251090181959966 通用 写实 商品 based on the outfit in the attached image, flatten and arrange the entire set of clothing in order from top to bottom on an indoor wooden floor, keep the layout simple, place it in the center of the frame, occupy about 60% of the image, leave enough negative space, and do not fill the whole frame." data-tags="通用|写实|商品">
+      <a class="case-card-link" href="/en/case/3037.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2077251090181959966-1.jpg" alt="木地板影子投射感服装平铺拍摄提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3037</span></span><span class="case-title-text">Wooden floor shadow-casting outfit flat-lay photography prompt words</span></h3>
+          <p class="case-summary">A realistic photography prompt: on an indoor wooden floor, lay out and disassemble the person’s outfit in order, and create a true shadow-casting feel using a first-person foot perspective and a complete cast shadow.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-15</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/leo_xiaolei/status/2077251090181959966">X / @leo_xiaolei</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Based on the outfit in the attached image, flatten and arrange the entire set of clothing in order from top to bottom on an indoor wooden floor, keep the layout simple, place it in the center of the f...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3037.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3035" data-search="案例3035 clay-style 9:16 character generation prompt template a clay-style character generation prompt template emphasizing a 9:16 aspect ratio, a stop-motion clay animation still, handcrafted textures, soft studio lighting, and a tabletop miniature scene. x / @dracovibecoding https://x.com/dracovibecoding/status/2076648402503573658 通用 3d 信息图 claymation prompt template: ratio: 9:16 style: stop-motion clay animation still + handmade texture + soft studio lighting ip / character slot: {adult sakura claymation version from naruto / adult nami claymation version from one piece / original mech girl claymation version / original knight少年感 adu" data-tags="通用|3D|信息图">
+      <a class="case-card-link" href="/en/case/3035.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2076648402503573658-1.jpg" alt="黏土版 9:16 角色生成 Prompt 模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3035</span></span><span class="case-title-text">Clay-style 9:16 Character Generation Prompt Template</span></h3>
+          <p class="case-summary">A clay-style character generation prompt template emphasizing a 9:16 aspect ratio, a stop-motion clay animation still, handcrafted textures, soft studio lighting, and a tabletop miniature scene.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-14</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/DracoVibeCoding/status/2076648402503573658">X / @DracoVibeCoding</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">3D</span><span class="tag">信息图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Claymation prompt template:
+
+Ratio: 9:16
+Style: stop-motion clay animation still + handmade texture + soft studio lighting
+IP / character slot: {adult Sakura claymation version from NARUTO / adult Nam...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3035.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3034" data-search="案例3034 general 3d relief natural art prompt keywords a set of general prompts for generating 3d high-relief, nature-themed handcrafted artwork, emphasizing layered textures, material details, and decorative compositions of flowers, leaves, and natural elements. x / @yourplugai https://x.com/yourplugai/status/2076579271607214303 通用 3d 信息图 universal 3d relief nature artwork prompt create a premium 3d high-relief handcrafted artwork featuring [main subject] as the central focus, composed in [viewing angle / pose]. the artwork should combine [primary material style] with [secondary material style], featuring exceptionally intricate han" data-tags="通用|3D|信息图">
+      <a class="case-card-link" href="/en/case/3034.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2076579271607214303-1.jpg" alt="通用 3D 浮雕自然艺术作品提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3034</span></span><span class="case-title-text">General 3D relief natural art prompt keywords</span></h3>
+          <p class="case-summary">A set of general prompts for generating 3D high-relief, nature-themed handcrafted artwork, emphasizing layered textures, material details, and decorative compositions of flowers, leaves, and natural elements.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-13</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/yourPlugAI/status/2076579271607214303">X / @yourPlugAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">3D</span><span class="tag">信息图</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Universal 3D Relief Nature Artwork Prompt
+
+Create a premium 3D high-relief handcrafted artwork featuring [main subject] as the central focus, composed in [viewing angle / pose]. The artwork should com...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3034.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3032" data-search="案例3032 freedom in motion: cinematic tracking shot running prompt a cinematic tracking shot prompt of a running figure, depicting the subject moving through the landscape and toward the distant horizon and glowing sky, evoking a sense of freedom. x / @azed_ai https://x.com/azed_ai/status/2076259538005901625 通用 电影感 cinematic tracking shot: a subject sprinting through a landscape, with the camera moving beside them and obvious motion blur in the foreground. a distant element rises on the horizon, against a glowing sky. wind moves through the hair, and the overall image conveys urgency, determination, and a stro" data-tags="通用|电影感">
+      <a class="case-card-link" href="/en/case/3032.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2076259538005901625-1.jpg" alt="自由在运动中：电影感追拍奔跑提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3032</span></span><span class="case-title-text">Freedom in Motion: Cinematic Tracking Shot Running Prompt</span></h3>
+          <p class="case-summary">A cinematic tracking shot prompt of a running figure, depicting the subject moving through the landscape and toward the distant horizon and glowing sky, evoking a sense of freedom.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-13</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/azed_ai/status/2076259538005901625">X / @azed_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Cinematic tracking shot: a subject sprinting through a landscape, with the camera moving beside them and obvious motion blur in the foreground. A distant element rises on the horizon, against a glowin...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3032.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3030" data-search="案例3030 milan italian-style light luxury living room soft furnishing proposal, four-piece set prompt keywords create a set of four prompt ideas for a milan-inspired italian light-luxury living room soft-furnishings proposal, including a hero visual, 3d axonometric exploded view, soft furnishings list, and a material and color detail board. x / @mrlarus https://x.com/mrlarus/status/2060001283625341300 通用 写实 海报 generate a set of 4 professional interior soft-furnishing proposal images, each image generated separately and not merged. use a 4:5 vertical aspect ratio. the theme is &quot;milan italian light-luxury living room proposal&quot;. the overall style should be italian light luxury, modern elegance, low saturatio" data-tags="通用|写实|海报">
+      <a class="case-card-link" href="/en/case/3030.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2060001283625341300-1.jpg" alt="米兰意式轻奢客厅软装提案四件套提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3030</span></span><span class="case-title-text">Milan Italian-style light luxury living room soft furnishing proposal, four-piece set prompt keywords</span></h3>
+          <p class="case-summary">Create a set of four prompt ideas for a Milan-inspired Italian light-luxury living room soft-furnishings proposal, including a hero visual, 3D axonometric exploded view, soft furnishings list, and a material and color detail board.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrLarus/status/2060001283625341300">X / @MrLarus</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Generate a set of 4 professional interior soft-furnishing proposal images, each image generated separately and not merged.
+Use a 4:5 vertical aspect ratio.
+The theme is &quot;Milan Italian Light-Luxury Liv...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3030.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3029" data-search="案例3029 a dark, fashion-forward group portrait with the central figure surrounded, lighting cigarettes a dark-fashion ensemble of adult characters in a live-action style, with the central figure closing their eyes and holding a cigarette, surrounded halfway by four women with lighters, creating a strongly centered power composition. x / @voxcatai https://x.com/voxcatai/status/2075917580007821502 通用 写实 复古 live-action fashion photography of an adult character, preserving the character’s hair color, eye color, hairstyle, signature color palette, iconic accessories, and core aura, translated into a refined androgynous high-end suit look. the character wears a light fitted suit, shirt, and slim tie desig" data-tags="通用|写实|复古">
+      <a class="case-card-link" href="/en/case/3029.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2075917580007821502-1.jpg" alt="中心人物被包围的暗黑时尚点烟群像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3029</span></span><span class="case-title-text">A dark, fashion-forward group portrait with the central figure surrounded, lighting cigarettes</span></h3>
+          <p class="case-summary">A dark-fashion ensemble of adult characters in a live-action style, with the central figure closing their eyes and holding a cigarette, surrounded halfway by four women with lighters, creating a strongly centered power composition.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VoxcatAI/status/2075917580007821502">X / @VoxcatAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Live-action fashion photography of an adult character, preserving the character’s hair color, eye color, hairstyle, signature color palette, iconic accessories, and core aura, translated into a refine...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3029.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3027" data-search="案例3027 cute female avatar inspiration: soft pink lily korean editorial-style portrait a hyper-realistic head-and-shoulders portrait prompt based on the reference photo, preserving the original identity and facial structure, with soft pink lilies, korean editorial style, gray studio lighting, and refined makeup. x / @gemini_prompts https://x.com/gemini_prompts/status/2074560193057390814 通用 写实 头像 based on the reference photo, preserve the accurate facial proportions, visible pores, natural skin texture, and polished editorial beauty. keep the original identity, face shape, eyes, nose, lips, jawline, skin tone, and facial structure exactly the same. do not beautify, slim, reshape, or alter th" data-tags="通用|写实|头像">
+      <a class="case-card-link" href="/en/case/3027.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2074560193057390814-1.jpg" alt="女生可爱头像灵感：软粉百合韩系编辑风人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3027</span></span><span class="case-title-text">Cute female avatar inspiration: soft pink lily Korean editorial-style portrait</span></h3>
+          <p class="case-summary">A hyper-realistic head-and-shoulders portrait prompt based on the reference photo, preserving the original identity and facial structure, with soft pink lilies, Korean editorial style, gray studio lighting, and refined makeup.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2074560193057390814">X / @gemini_prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Based on the reference photo, preserve the accurate facial proportions, visible pores, natural skin texture, and polished editorial beauty. Keep the original identity, face shape, eyes, nose, lips, ja...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3027.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3026" data-search="案例3026 anthropomorphized figurine cosplay, generate a custom meme image generate photo prompts centered on figurine anthropomorphism cosplay and expression mimicry, emphasizing an adult portrait feel, an in-store setting, realistic phone flash, and strong consistency between the person and the figurine. x / @msjiaozhu https://x.com/msjiaozhu/status/2074075972098466130 通用 写实 头像 use a vertical 9:16 realistic friend-phone direct-flash photo style, inside a store packed with collectible figures, with no readable text in the image. the subject is a clearly adult east asian woman around 29, with an outstanding mature face, long black hair, natural skin, tall proportions, and re" data-tags="通用|写实|头像">
+      <a class="case-card-link" href="/en/case/3026.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2074075972098466130-1.jpg" alt="手办拟人 cosplay 生成专属 meme 图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3026</span></span><span class="case-title-text">Anthropomorphized figurine cosplay, generate a custom meme image</span></h3>
+          <p class="case-summary">Generate photo prompts centered on figurine anthropomorphism cosplay and expression mimicry, emphasizing an adult portrait feel, an in-store setting, realistic phone flash, and strong consistency between the person and the figurine.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/msjiaozhu/status/2074075972098466130">X / @msjiaozhu</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Use a vertical 9:16 realistic friend-phone direct-flash photo style, inside a store packed with collectible figures, with no readable text in the image. The subject is a clearly adult East Asian woman...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3026.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3025" data-search="案例3025 classical-style noble lady dewy makeup close-up prompt words compile a set of vintage-style prompts for adult east asian female beauty portraits with dewy makeup, emphasizing noble-lady elegance, half-body close-ups, boudoir settings, and exquisite clothing and accessories. x / @hectornaranjo96 https://x.com/hectornaranjo96/status/2074642693574054207 通用 古风 写实 ancient-style makeup, vertical 9:16, an ancient-style noblewoman with vivid dewy makeup close-up, east asian dewy makeup noble portrait, half-body close-up composition, the subject slightly turned with a glance back, the main subject is a clearly adult young east asian woman, visual age about 20–28," data-tags="通用|古风|写实">
+      <a class="case-card-link" href="/en/case/3025.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2074642693574054207-1.jpg" alt="古风贵女水光美妆特写提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3025</span></span><span class="case-title-text">classical-style noble lady dewy makeup close-up prompt words</span></h3>
+          <p class="case-summary">Compile a set of vintage-style prompts for adult East Asian female beauty portraits with dewy makeup, emphasizing noble-lady elegance, half-body close-ups, boudoir settings, and exquisite clothing and accessories.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/hectornaranjo96/status/2074642693574054207">X / @hectornaranjo96</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">古风</span><span class="tag">Realistic</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Ancient-style makeup, vertical 9:16, an ancient-style noblewoman with vivid dewy makeup close-up, East Asian dewy makeup noble portrait, half-body close-up composition, the subject slightly turned wit...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3025.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3024" data-search="案例3024 japanese-style fantasy font design prompt i’ve put together a japanese-style fantasy typography prompt, preserving the black background, gradient blending, ukiyo-e elements, and ink-and-gold-foil details. x / @graynotelab https://x.com/graynotelab/status/2073766163360948479 通用 二次元 古风 和风奇幻风游戏标题艺术字体设计，文字为「灰度筆記」，采用带毛笔笔锋的柔中带刚衬线造型，呈浅蓝到樱花粉的渐变晕染质感，点缀浮世绘波纹、日式家纹与樱花装饰，搭配水墨笔触丝带英文小字“sakura fantasy”。整体雅致浪漫，营造日式夏夜的和风星空氛围，纯黑色背景，突出字体，高清精致，二次元和风 ui 风格，光影朦胧，带有水墨晕染与烫金细节，超高细节。" data-tags="通用|二次元|古风">
+      <a class="case-card-link" href="/en/case/3024.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2073766163360948479-1.jpg" alt="和风奇幻字体设计提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3024</span></span><span class="case-title-text">Japanese-style fantasy font design prompt</span></h3>
+          <p class="case-summary">I’ve put together a Japanese-style fantasy typography prompt, preserving the black background, gradient blending, ukiyo-e elements, and ink-and-gold-foil details.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-06</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/GrayNoteLab/status/2073766163360948479">X / @GrayNoteLab</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">二次元</span><span class="tag">古风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>和风奇幻风游戏标题艺术字体设计，文字为「灰度筆記」，采用带毛笔笔锋的柔中带刚衬线造型，呈浅蓝到樱花粉的渐变晕染质感，点缀浮世绘波纹、日式家纹与樱花装饰，搭配水墨笔触丝带英文小字“Sakura Fantasy”。整体雅致浪漫，营造日式夏夜的和风星空氛围，纯黑色背景，突出字体，高清精致，二次元和风 UI 风格，光影朦胧，带有水墨晕染与烫金细节，超高细节。</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3024.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3023" data-search="案例3023 ancient-style xianxia male four-view character concept card prompt a set of ancient-style xianxia male character image card prompts, including a facial close-up and full-body front, side, and back views, with studio lighting and strict proportion constraints. x / @graynotelab https://x.com/graynotelab/status/2073772410109874230 通用 写实 古风 ancient-fantasy male character sheet with four views, 16:9 landscape composition, clean light-gray studio background with a subtle gray gradient, and soft shadows on the floor. on the left is a large face close-up of the same male character, facing forward with a proper pose, fully showing the face" data-tags="通用|写实|古风">
+      <a class="case-card-link" href="/en/case/3023.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2073772410109874230-1.jpg" alt="古风仙侠男生四视图人物形象卡提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3023</span></span><span class="case-title-text">Ancient-style xianxia male four-view character concept card prompt</span></h3>
+          <p class="case-summary">A set of ancient-style xianxia male character image card prompts, including a facial close-up and full-body front, side, and back views, with studio lighting and strict proportion constraints.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-06</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/GrayNoteLab/status/2073772410109874230">X / @GrayNoteLab</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">古风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Ancient-fantasy male character sheet with four views, 16:9 landscape composition, clean light-gray studio background with a subtle gray gradient, and soft shadows on the floor.
+
+On the left is a large...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3023.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >Load more</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"{count} items","noResults":"😕 No matched content","loadMore":"Load more","loadingMore":"Loading..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/en/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>
