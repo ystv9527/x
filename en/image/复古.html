@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复古 · Image Prompt Cases | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="11  复古 related cases">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/en/image/复古.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/复古.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/复古.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1785496387475">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"复古 · Image Prompt Cases","description":"11  复古 related cases","url":"https://gemnana.com/en/image/复古.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI Prompt Collection</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/en/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+          <span class="nav-count">3056</span>
+        </a>
+        <a href="/en/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">Image</span>
+          <span class="nav-count">3023</span>
+        </a>
+        <a href="/en/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">Video</span>
+          <span class="nav-count">30</span>
+        </a>
+        <a href="/en/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Text</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/zh/image/复古.html" class="lang-switch-link">中文</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ Settings</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>复古 · Image Prompt Cases</h1>
+      <p>11  复古 related cases</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search title, summary, tags…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ Tag Filters</span>
+          <button id="clearFilters" class="btn-clear" type="button">Clear Filters</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="复古">复古 (11)</button><button type="button" class="tag-filter" data-tag="通用">通用 (5)</button><button type="button" class="tag-filter" data-tag="写实">Realistic (4)</button><button type="button" class="tag-filter" data-tag="GPT Image">GPT Image (3)</button><button type="button" class="tag-filter" data-tag="海报">海报 (3)</button><button type="button" class="tag-filter" data-tag="ChatGPT">ChatGPT (3)</button><button type="button" class="tag-filter" data-tag="AI">AI (3)</button><button type="button" class="tag-filter" data-tag="图片">Image (2)</button><button type="button" class="tag-filter" data-tag="GPT IMG2">GPT IMG2 (2)</button><button type="button" class="tag-filter" data-tag="商品">商品 (1)</button><button type="button" class="tag-filter" data-tag="摄影">Photography (1)</button><button type="button" class="tag-filter" data-tag="创意">Creative (1)</button><button type="button" class="tag-filter" data-tag="胶片感">胶片感 (1)</button><button type="button" class="tag-filter" data-tag="山海">山海 (1)</button><button type="button" class="tag-filter" data-tag="风光">风光 (1)</button><button type="button" class="tag-filter" data-tag="时尚">Fashion (1)</button><button type="button" class="tag-filter" data-tag="旅行">Travel (1)</button><button type="button" class="tag-filter" data-tag="电影感">电影感 (1)</button><button type="button" class="tag-filter" data-tag="4K">4K (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">11 items</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 No matched content</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="3055" data-search="案例3055 60年代莫德风撞色a字连衣裙提示词 整理一则60年代莫德风撞色a字连衣裙生成提示词，保留白色与亮金黄配色、无袖、高领、蝴蝶结、几何拼块与严格配色限制。 x / @alicelavli https://x.com/alicelavli/status/2083085254911578220 通用 复古 商品 1960s mod color-block a-line dress, white and vibrant golden yellow color scheme, sleeveless design, high jewel neckline, small white ribbon bow centered below the neckline, fitted white bodice, wide vibrant golden yellow geometric bands outlined with thin black piping extending diagonally from the" data-tags="通用|复古|商品">
+      <a class="case-card-link" href="/en/case/3055.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2083085254911578220-1.jpg" alt="60年代莫德风撞色A字连衣裙提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3055</span></span><span class="case-title-text">60年代莫德风撞色A字连衣裙提示词</span></h3>
+          <p class="case-summary">整理一则60年代莫德风撞色A字连衣裙生成提示词，保留白色与亮金黄配色、无袖、高领、蝴蝶结、几何拼块与严格配色限制。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-31</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2083085254911578220">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>1960s mod color-block A-line dress, white and vibrant golden yellow color scheme, sleeveless design, high jewel neckline, small white ribbon bow centered below the neckline, fitted white bodice, wide ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3055.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3052" data-search="案例3052 republic of china-era retro少女 portrait prompt keywords republican-era vintage-style portrait of a young woman, half-body close-up, wearing an off-white modified qipao, black low updo, with natural light from the side and behind by the window, and a film-like texture. x / @voxcatai https://x.com/voxcatai/status/2082490846625386872 通用 写实 复古 republic-era vintage girl portrait, a young woman with a black low bun and subtle makeup, wearing an off-white modified qipao with small black butterfly patterns. close-up half-body portrait, off-center composition, face close to the camera, occupying the main subject area, with the body naturally e" data-tags="通用|写实|复古">
+      <a class="case-card-link" href="/en/case/3052.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2082490846625386872-1.jpg" alt="东方民国复古少女写真提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3052</span></span><span class="case-title-text">Republic of China-era retro少女 portrait prompt keywords</span></h3>
+          <p class="case-summary">Republican-era vintage-style portrait of a young woman, half-body close-up, wearing an off-white modified qipao, black low updo, with natural light from the side and behind by the window, and a film-like texture.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VoxcatAI/status/2082490846625386872">X / @VoxcatAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Republic-era vintage girl portrait, a young woman with a black low bun and subtle makeup, wearing an off-white modified qipao with small black butterfly patterns. Close-up half-body portrait, off-cent...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3052.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3049" data-search="案例3049 z-image oblique composition half-face editorial portrait prompt a z-image photorealistic portrait editing prompt emphasizing a right-edge half-face composition, a bathroom sink setting, and soft, misty japanese-style skin tones. x / @vibequirklabs https://x.com/vibequirklabs/status/2081695966592397434 通用 写实 复古 create a photorealistic editorial portrait. use an asymmetrical off-center half-face composition, with the subject placed flush against the far right edge of the frame, the right vertical frame boundary cropping through the outer half of the face, leaving broad negative space on the left. the neck," data-tags="通用|写实|复古">
+      <a class="case-card-link" href="/en/case/3049.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2081695966592397434-1.jpg" alt="Z-Image 斜构图半脸编辑人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3049</span></span><span class="case-title-text">Z-Image oblique composition half-face editorial portrait prompt</span></h3>
+          <p class="case-summary">A Z-Image photorealistic portrait editing prompt emphasizing a right-edge half-face composition, a bathroom sink setting, and soft, misty Japanese-style skin tones.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-28</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VIBEQUIRKLABS/status/2081695966592397434">X / @VIBEQUIRKLABS</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Create a photorealistic editorial portrait.
+Use an asymmetrical off-center half-face composition, with the subject placed flush against the far right edge of the frame, the right vertical frame bounda...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3049.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3047" data-search="案例3047 gpt image 2: y2k street-style young female portrait prompt a chinese prompt for generating y2k retro street-style portraits, preserving the japanese residential street, hand gesture, film tones, and lens parameters. x / @taaruk_ https://x.com/taaruk_/status/2081410514182435158 gpt image 写实 复古 a candid y2k street photography portrait of a cheerful young woman with a short messy bob haircut, laughing naturally while flashing a peace sign directly toward the camera, her outstretched hand dominating the foreground with dramatic perspective distortion, playful carefree expression, hair blowin" data-tags="GPT Image|写实|复古">
+      <a class="case-card-link" href="/en/case/3047.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2081410514182435158-1.jpg" alt="GPT IMAGE 2：Y2K街拍风年轻女性人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3047</span></span><span class="case-title-text">GPT IMAGE 2: Y2K street-style young female portrait prompt</span></h3>
+          <p class="case-summary">A Chinese prompt for generating Y2K retro street-style portraits, preserving the Japanese residential street, hand gesture, film tones, and lens parameters.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-28</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2081410514182435158">X / @Taaruk_</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">Realistic</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>A candid Y2K street photography portrait of a cheerful young woman with a short messy bob haircut, laughing naturally while flashing a peace sign directly toward the camera, her outstretched hand domi...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3047.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3044" data-search="案例3044 retro cel animation prompt template retro cel animation style prompt template, preserving hand-drawn backgrounds, visible cel lines, low-saturation color palette, soft grain, and gentle lighting. x / @azed_ai https://x.com/azed_ai/status/2079884701234589885 通用 复古 retro cel animation style, [subject] in a [setting], hand-painted background, visible cel lines, muted [color1] and [color2] palette, soft grain, gentle lighting, expressive character design, vintage animation frame aesthetic." data-tags="通用|复古">
+      <a class="case-card-link" href="/en/case/3044.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2079884701234589885-1.jpg" alt="复古赛璐璐动画提示词模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3044</span></span><span class="case-title-text">Retro cel animation prompt template</span></h3>
+          <p class="case-summary">Retro cel animation style prompt template, preserving hand-drawn backgrounds, visible cel lines, low-saturation color palette, soft grain, and gentle lighting.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-22</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/azed_ai/status/2079884701234589885">X / @azed_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Retro cel animation style, [subject] in a [setting], hand-painted background, visible cel lines, muted [color1] and [color2] palette, soft grain, gentle lighting, expressive character design, vintage ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3044.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3029" data-search="案例3029 a dark, fashion-forward group portrait with the central figure surrounded, lighting cigarettes a dark-fashion ensemble of adult characters in a live-action style, with the central figure closing their eyes and holding a cigarette, surrounded halfway by four women with lighters, creating a strongly centered power composition. x / @voxcatai https://x.com/voxcatai/status/2075917580007821502 通用 写实 复古 live-action fashion photography of an adult character, preserving the character’s hair color, eye color, hairstyle, signature color palette, iconic accessories, and core aura, translated into a refined androgynous high-end suit look. the character wears a light fitted suit, shirt, and slim tie desig" data-tags="通用|写实|复古">
+      <a class="case-card-link" href="/en/case/3029.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2075917580007821502-1.jpg" alt="中心人物被包围的暗黑时尚点烟群像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3029</span></span><span class="case-title-text">A dark, fashion-forward group portrait with the central figure surrounded, lighting cigarettes</span></h3>
+          <p class="case-summary">A dark-fashion ensemble of adult characters in a live-action style, with the central figure closing their eyes and holding a cigarette, surrounded halfway by four women with lighters, creating a strongly centered power composition.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VoxcatAI/status/2075917580007821502">X / @VoxcatAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Live-action fashion photography of an adult character, preserving the character’s hair color, eye color, hairstyle, signature color palette, iconic accessories, and core aura, translated into a refine...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3029.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3022" data-search="案例3022 gpt image2 pink and blue color-blocked retro travel poster-style japanese illustration prompt words a set of retro travel poster-style japanese illustration prompts suitable for gpt image2, emphasizing a powder blue color clash, a cool and restrained fashion illustration feel, and a quiet, nostalgic atmosphere. x / @yyyole https://x.com/yyyole/status/2073774407181643780 gpt image 复古 海报 exquisite japanese illustration in a retro travel poster style, with the subject as 【xxx】. the subject should be rendered in a high-end japanese fashion illustration style, with elegant outlines, elongated proportions, a cool and restrained expression, and refined details without being overly realis" data-tags="GPT Image|复古|海报">
+      <a class="case-card-link" href="/en/case/3022.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2073774407181643780-1.jpg" alt="GPT Image2 粉蓝撞色复古旅行海报风日系插画提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3022</span></span><span class="case-title-text">GPT Image2 pink and blue color-blocked retro travel poster-style Japanese illustration prompt words</span></h3>
+          <p class="case-summary">A set of retro travel poster-style Japanese illustration prompts suitable for GPT Image2, emphasizing a powder blue color clash, a cool and restrained fashion illustration feel, and a quiet, nostalgic atmosphere.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-06</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/yyyole/status/2073774407181643780">X / @yyyole</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">复古</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Exquisite Japanese illustration in a retro travel poster style, with the subject as 【xxx】. The subject should be rendered in a high-end Japanese fashion illustration style, with elegant outlines, elon...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3022.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3018" data-search="案例3018 modern travel poster prompt composed of city names transform into a modern travel poster prompt composed of city names, preserving flat vector style, landmarks integrated into letters, a limited color palette, and negative requirements. x / @goodmanprotocol https://x.com/goodmanprotocol/status/2071819124708438092 gpt image 复古 海报 create a clean, modern typographic travel poster where the city name itself becomes the composition. render the city name in large, bold, uppercase sans-serif letters spanning the width of the artwork. seamlessly integrate the city&#39;s most iconic landmarks, architecture, monuments, streets, transpor" data-tags="GPT Image|复古|海报">
+      <a class="case-card-link" href="/en/case/3018.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2071819124708438092-1.jpg" alt="城市名构成的现代旅行海报提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3018</span></span><span class="case-title-text">Modern travel poster prompt composed of city names</span></h3>
+          <p class="case-summary">Transform into a modern travel poster prompt composed of city names, preserving flat vector style, landmarks integrated into letters, a limited color palette, and negative requirements.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-06-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Goodmanprotocol/status/2071819124708438092">X / @Goodmanprotocol</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">复古</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Create a clean, modern typographic travel poster where the city name itself becomes the composition. Render the city name in large, bold, uppercase sans-serif letters spanning the width of the artwork...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3018.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3002" data-search="案例3002 chatgpt recreates a 90s film snapshot use gpt image 2 to generate the vibe of a casual 1990s snapshot in a japanese izakaya. emphasize direct flash grain, vintage posters, and intimacy. x / oogie https://x.com/oggii_0/status/2058151650611884271 chatgpt ai 摄影 创意 复古 gpt image 2 on chatgpt prompt: a 90s disposable-camera style flash snapshot taken inside a small, bustling japanese izakaya decorated with handwritten menus and retro posters. direct flash creates grain, harsh shadows, and bright highlights. a young woman sits on a wooden bar stool, turning her uppe" data-tags="ChatGPT|AI|摄影|创意|复古">
+      <a class="case-card-link" href="/en/case/3002.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2058151650611884271-1.jpg" alt="ChatGPT复刻90年代胶片快照" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3002</span></span><span class="case-title-text">ChatGPT recreates a 90s film snapshot</span></h3>
+          <p class="case-summary">Use GPT Image 2 to generate the vibe of a casual 1990s snapshot in a Japanese izakaya. Emphasize direct flash grain, vintage posters, and intimacy.</p>
+          <div class="case-meta">
+            <span class="case-date">2026-05-24</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2058151650611884271">X / Oogie</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">Photography</span><span class="tag">Creative</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>GPT Image 2 on chatgpt
+Prompt: A 90s disposable-camera style flash snapshot taken inside a small, bustling Japanese izakaya decorated with handwritten menus and retro posters. Direct flash creates gra...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3002.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2902" data-search="案例2902 design a poster with the theme of &quot;running towards the mountains and seas&quot; in a film ph... design a poster with the theme of &quot;running towards the mountains and seas&quot; in a film ph... - gpt img2 image prompt x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 胶片感 山海 海报 复古 风光 design a poster with the theme of &quot;running towards the mountains and seas&quot; in a film photography style" data-tags="ChatGPT|AI|图片|GPT IMG2|胶片感|山海|海报|复古|风光">
+      <a class="case-card-link" href="/en/case/2902.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-run-to-mountains-and-seas-1.jpeg" alt="奔赴山海胶片感海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2902</span></span><span class="case-title-text">Design a poster with the theme of &quot;running towards the mountains and seas&quot; in a film ph...</span></h3>
+          <p class="case-summary">Design a poster with the theme of &quot;running towards the mountains and seas&quot; in a film ph... - GPT IMG2 image prompt</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">Image</span><span class="tag">GPT IMG2</span><span class="tag">胶片感</span><span class="tag">山海</span><span class="tag">海报</span><span class="tag">复古</span><span class="tag">风光</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Design a poster with the theme of &quot;running towards the mountains and seas&quot; in a film photography style</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2902.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2861" data-search="案例2861 a stylish young woman sitting on the front edge of an old vintage bus, wearing a long r... a stylish young woman sitting on the front edge of an old vintage bus, wearing a long r... - gpt img2 image prompt x / iamsofiaijaz https://x.com/iamsofiaijaz/status/2015337737860403283 chatgpt ai 图片 gpt img2 时尚 复古 旅行 电影感 4k a stylish young woman sitting on the front edge of an old vintage bus, wearing a long red trench coat, woolen beanie cap, round blue reflective sunglasses, layered necklaces, and rugged brown leather boots. she has wavy blonde hair and a confident, dreamy expression, looking upward toward the sky. t" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚|复古|旅行|电影感|4K">
+      <a class="case-card-link" href="/en/case/2861.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-vintage-bus-red-trench-girl-1.jpeg" alt="复古巴士上的红风衣女郎" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2861</span></span><span class="case-title-text">A stylish young woman sitting on the front edge of an old vintage bus, wearing a long r...</span></h3>
+          <p class="case-summary">A stylish young woman sitting on the front edge of an old vintage bus, wearing a long r... - GPT IMG2 image prompt</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-25</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2015337737860403283">X / iamsofiaijaz</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">Image</span><span class="tag">GPT IMG2</span><span class="tag">Fashion</span><span class="tag">复古</span><span class="tag">Travel</span><span class="tag">电影感</span><span class="tag">4K</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>A stylish young woman sitting on the front edge of an old vintage bus, wearing a long red trench coat, woolen beanie cap, round blue reflective sunglasses, layered necklaces, and rugged brown leather ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/2861.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >Load more</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"{count} items","noResults":"😕 No matched content","loadMore":"Load more","loadingMore":"Loading..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/en/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

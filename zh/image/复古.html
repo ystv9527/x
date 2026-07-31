@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复古 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="11 条 复古 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/复古.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/复古.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/复古.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1785496382588">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"复古 · 图片生成提示词","description":"11 条 复古 相关案例","url":"https://gemnana.com/zh/image/复古.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">3056</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">3023</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">30</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/复古.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>复古 · 图片生成提示词</h1>
+      <p>11 条 复古 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="复古">复古 (11)</button><button type="button" class="tag-filter" data-tag="通用">通用 (5)</button><button type="button" class="tag-filter" data-tag="写实">写实 (4)</button><button type="button" class="tag-filter" data-tag="GPT Image">GPT Image (3)</button><button type="button" class="tag-filter" data-tag="海报">海报 (3)</button><button type="button" class="tag-filter" data-tag="ChatGPT">ChatGPT (3)</button><button type="button" class="tag-filter" data-tag="AI">AI (3)</button><button type="button" class="tag-filter" data-tag="图片">图片 (2)</button><button type="button" class="tag-filter" data-tag="GPT IMG2">GPT IMG2 (2)</button><button type="button" class="tag-filter" data-tag="商品">商品 (1)</button><button type="button" class="tag-filter" data-tag="摄影">摄影 (1)</button><button type="button" class="tag-filter" data-tag="创意">创意 (1)</button><button type="button" class="tag-filter" data-tag="胶片感">胶片感 (1)</button><button type="button" class="tag-filter" data-tag="山海">山海 (1)</button><button type="button" class="tag-filter" data-tag="风光">风光 (1)</button><button type="button" class="tag-filter" data-tag="时尚">时尚 (1)</button><button type="button" class="tag-filter" data-tag="旅行">旅行 (1)</button><button type="button" class="tag-filter" data-tag="电影感">电影感 (1)</button><button type="button" class="tag-filter" data-tag="4K">4K (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 11 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="3055" data-search="案例3055 60年代莫德风撞色a字连衣裙提示词 整理一则60年代莫德风撞色a字连衣裙生成提示词，保留白色与亮金黄配色、无袖、高领、蝴蝶结、几何拼块与严格配色限制。 x / @alicelavli https://x.com/alicelavli/status/2083085254911578220 通用 复古 商品 60年代莫德风撞色a字连衣裙：白色与亮金黄配色，无袖设计，高珠宝领口，领口下方中央有一个小白色丝带蝴蝶结，贴身白色上身，宽大的亮金黄色几何色块，外缘以细黑色包边，几何带从左肩斜向延伸，并横向贯穿腰部，不对称图形拼块布局，收腰剪裁，顺滑过渡为结构感明确的亮金黄色a字裙，及膝轮廓，干净利落的分片裁剪工艺，极简1960年代莫德风美学。白色上身仅保留白色，亮金黄裙身仅保留亮金黄，亮金黄色几何色块仅保留亮金黄，细黑色包边仅保留黑色，白色蝴蝶结仅保留白色，严格色彩分布，固定颜色，固定廓形。" data-tags="通用|复古|商品">
+      <a class="case-card-link" href="/zh/case/3055.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2083085254911578220-1.jpg" alt="60年代莫德风撞色A字连衣裙提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3055</span></span><span class="case-title-text">60年代莫德风撞色A字连衣裙提示词</span></h3>
+          <p class="case-summary">整理一则60年代莫德风撞色A字连衣裙生成提示词，保留白色与亮金黄配色、无袖、高领、蝴蝶结、几何拼块与严格配色限制。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-31</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2083085254911578220">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>60年代莫德风撞色A字连衣裙：白色与亮金黄配色，无袖设计，高珠宝领口，领口下方中央有一个小白色丝带蝴蝶结，贴身白色上身，宽大的亮金黄色几何色块，外缘以细黑色包边，几何带从左肩斜向延伸，并横向贯穿腰部，不对称图形拼块布局，收腰剪裁，顺滑过渡为结构感明确的亮金黄色A字裙，及膝轮廓，干净利落的分片裁剪工艺，极简1960年代莫德风美学。白色上身仅保留白色，亮金黄裙身仅保留亮金黄，亮金黄色几何色块仅保留亮金...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3055.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3052" data-search="案例3052 东方民国复古少女写真提示词 民国复古少女近景半身写真，米白改良旗袍、黑色低盘发、窗边侧后方自然光与胶片质感。 x / @voxcatai https://x.com/voxcatai/status/2082490846625386872 通用 写实 复古 东方民国复古少女写真，年轻女性，黑色低盘发，淡雅妆容，身穿米白色改良旗袍，衣服带细小黑色蝴蝶纹样。近距离半身肖像，偏心构图，脸部靠近镜头，占据画面主体，身体自然延伸至画面下方。窗边自然光，从侧后方照射，发丝边缘高光，柔和面部光影，暗背景虚化。低饱和暖灰色调，米白与黑色配色，复古胶片质感，轻微柔焦，细腻皮肤，高光泛白，日系写真摄影，民国电影氛围，安静清冷气质。" data-tags="通用|写实|复古">
+      <a class="case-card-link" href="/zh/case/3052.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2082490846625386872-1.jpg" alt="东方民国复古少女写真提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3052</span></span><span class="case-title-text">东方民国复古少女写真提示词</span></h3>
+          <p class="case-summary">民国复古少女近景半身写真，米白改良旗袍、黑色低盘发、窗边侧后方自然光与胶片质感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VoxcatAI/status/2082490846625386872">X / @VoxcatAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>东方民国复古少女写真，年轻女性，黑色低盘发，淡雅妆容，身穿米白色改良旗袍，衣服带细小黑色蝴蝶纹样。近距离半身肖像，偏心构图，脸部靠近镜头，占据画面主体，身体自然延伸至画面下方。窗边自然光，从侧后方照射，发丝边缘高光，柔和面部光影，暗背景虚化。低饱和暖灰色调，米白与黑色配色，复古胶片质感，轻微柔焦，细腻皮肤，高光泛白，日系写真摄影，民国电影氛围，安静清冷气质。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3052.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3049" data-search="案例3049 z-image 斜构图半脸编辑人像提示词 一则 z-image 写实编辑人像提示词，强调右侧贴边半脸构图、浴室洗手台场景与柔雾感日式肤色。 x / @vibequirklabs https://x.com/vibequirklabs/status/2081695966592397434 通用 写实 复古 创建一张写实的编辑风格人像。 采用不对称的偏中心半脸构图，主体紧贴画面最右侧边缘，右侧竖直画幅边界切过脸部外侧一半，左侧留出大面积负空间，可见颈部、肩部和上半身，平视视角，左侧侧脸视角。 一位 20 多岁的性感、惊艳的日式或韩式女性，顺滑的韩式中长发，发梢自然轻微内收，干净柔和的现代轮廓，柔和的黑茶棕发色。 场景在浴室洗手台区域，可见台面与水龙头。 风格参考 nobuyoshi araki，呈现原始、亲密、日记感的影像语言，仅使用镜头雾化般的轻微朦胧效果，柔和的日式人像色彩分级，明亮的浅色高光。" data-tags="通用|写实|复古">
+      <a class="case-card-link" href="/zh/case/3049.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2081695966592397434-1.jpg" alt="Z-Image 斜构图半脸编辑人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3049</span></span><span class="case-title-text">Z-Image 斜构图半脸编辑人像提示词</span></h3>
+          <p class="case-summary">一则 Z-Image 写实编辑人像提示词，强调右侧贴边半脸构图、浴室洗手台场景与柔雾感日式肤色。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-28</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VIBEQUIRKLABS/status/2081695966592397434">X / @VIBEQUIRKLABS</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创建一张写实的编辑风格人像。
+采用不对称的偏中心半脸构图，主体紧贴画面最右侧边缘，右侧竖直画幅边界切过脸部外侧一半，左侧留出大面积负空间，可见颈部、肩部和上半身，平视视角，左侧侧脸视角。
+一位 20 多岁的性感、惊艳的日式或韩式女性，顺滑的韩式中长发，发梢自然轻微内收，干净柔和的现代轮廓，柔和的黑茶棕发色。
+场景在浴室洗手台区域，可见台面与水龙头。
+风格参考 Nobuyoshi Araki，呈现原...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3049.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3047" data-search="案例3047 gpt image 2：y2k街拍风年轻女性人像提示词 一段用于生成 y2k 复古街拍人像的中文提示词，保留日本住宅街、手势、胶片色调与镜头参数。 x / @taaruk_ https://x.com/taaruk_/status/2081410514182435158 gpt image 写实 复古 一张随拍感的 y2k 街头摄影人像：一位短乱 bob 头的开朗年轻女性，面对镜头自然大笑，同时直接朝镜头比出和平手势。她伸出的手占据前景，带来夸张的透视变形；表情轻松俏皮，头发在风中凌乱飞扬。场景是在一条安静的日本住宅街上，整体呈现怀旧的 2000 年代初氛围，具有手持快照感、构图不完美、浅景深与柔和前景虚化、运动带来的动态模糊、梦幻电影般柔软质感。色调为温暖的棕绿色胶片色，带有褪色的 kodak portra 400 / fujifilm superia 风格，细微胶片颗粒、泛光高光、点-and-shoot 相机闪光灯与柔和阴天自然光混合，真实模拟胶片摄影，低对比度、柔和低饱和的泥土色系，充" data-tags="GPT Image|写实|复古">
+      <a class="case-card-link" href="/zh/case/3047.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2081410514182435158-1.jpg" alt="GPT IMAGE 2：Y2K街拍风年轻女性人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3047</span></span><span class="case-title-text">GPT IMAGE 2：Y2K街拍风年轻女性人像提示词</span></h3>
+          <p class="case-summary">一段用于生成 Y2K 复古街拍人像的中文提示词，保留日本住宅街、手势、胶片色调与镜头参数。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-28</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2081410514182435158">X / @Taaruk_</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张随拍感的 Y2K 街头摄影人像：一位短乱 bob 头的开朗年轻女性，面对镜头自然大笑，同时直接朝镜头比出和平手势。她伸出的手占据前景，带来夸张的透视变形；表情轻松俏皮，头发在风中凌乱飞扬。场景是在一条安静的日本住宅街上，整体呈现怀旧的 2000 年代初氛围，具有手持快照感、构图不完美、浅景深与柔和前景虚化、运动带来的动态模糊、梦幻电影般柔软质感。色调为温暖的棕绿色胶片色，带有褪色的 Kodak...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3047.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3044" data-search="案例3044 复古赛璐璐动画提示词模板 复古赛璐璐动画风格提示词模板，保留手绘背景、可见赛璐璐线条、低饱和配色、柔和颗粒与温和光线等要素。 x / @azed_ai https://x.com/azed_ai/status/2079884701234589885 通用 复古 复古赛璐璐动画风格，[主体]置于[场景]中，手绘背景，可见赛璐璐线条，低饱和的[颜色1]与[颜色2]配色，柔和颗粒感，温和光线，富有表现力的角色设计，复古动画画面质感。" data-tags="通用|复古">
+      <a class="case-card-link" href="/zh/case/3044.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2079884701234589885-1.jpg" alt="复古赛璐璐动画提示词模板" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3044</span></span><span class="case-title-text">复古赛璐璐动画提示词模板</span></h3>
+          <p class="case-summary">复古赛璐璐动画风格提示词模板，保留手绘背景、可见赛璐璐线条、低饱和配色、柔和颗粒与温和光线等要素。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-22</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/azed_ai/status/2079884701234589885">X / @azed_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>复古赛璐璐动画风格，[主体]置于[场景]中，手绘背景，可见赛璐璐线条，低饱和的[颜色1]与[颜色2]配色，柔和颗粒感，温和光线，富有表现力的角色设计，复古动画画面质感。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3044.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3029" data-search="案例3029 中心人物被包围的暗黑时尚点烟群像 成年角色真人化的暗黑时尚群像，中心人物闭眼含烟，被四位女性以打火机半包围，呈现强烈中心权力构图。 x / @voxcatai https://x.com/voxcatai/status/2075917580007821502 通用 写实 复古 成年角色真人化时尚摄影，保留角色的发色、瞳色、发型、代表性配色、标志性装饰与核心气质，并将角色造型转译为精致中性化的高级西装造型。角色身穿根据其代表色设计的浅色修身西装、衬衫与细领带，面部真实精致，神情慵懒、克制、略带玩世不恭的贵气。 16:9 横版中近景群像构图，角色正坐于画面中央，身体轻微后靠，肩膀自然下沉，双眼闭合，嘴边含着一支细烟。四名身穿低饱和高级礼服的成年女性从左右两侧及后方靠近角色，身体形成半包围结构，每个人从不同方向伸出手臂，将点燃的小型打火机靠近角色嘴边。多只手臂在画面中央交错，火焰围绕角色脸部形成放射式视觉焦点，所有动作与视线共同指向中心人物。 左右两侧人物靠近镜头，身" data-tags="通用|写实|复古">
+      <a class="case-card-link" href="/zh/case/3029.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2075917580007821502-1.jpg" alt="中心人物被包围的暗黑时尚点烟群像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3029</span></span><span class="case-title-text">中心人物被包围的暗黑时尚点烟群像</span></h3>
+          <p class="case-summary">成年角色真人化的暗黑时尚群像，中心人物闭眼含烟，被四位女性以打火机半包围，呈现强烈中心权力构图。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/VoxcatAI/status/2075917580007821502">X / @VoxcatAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>成年角色真人化时尚摄影，保留角色的发色、瞳色、发型、代表性配色、标志性装饰与核心气质，并将角色造型转译为精致中性化的高级西装造型。角色身穿根据其代表色设计的浅色修身西装、衬衫与细领带，面部真实精致，神情慵懒、克制、略带玩世不恭的贵气。
+
+16:9 横版中近景群像构图，角色正坐于画面中央，身体轻微后靠，肩膀自然下沉，双眼闭合，嘴边含着一支细烟。四名身穿低饱和高级礼服的成年女性从左右两侧及后方靠近角色...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3029.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3022" data-search="案例3022 gpt image2 粉蓝撞色复古旅行海报风日系插画提示词 一组适合 gpt image2 的复古旅行海报风日系插画提示词，强调粉蓝撞色、清冷克制的时装插画感与安静怀旧氛围。 x / @yyyole https://x.com/yyyole/status/2073774407181643780 gpt image 复古 海报 复古旅行海报风格精致日系插画，主体为【xxx】。主体采用高级日系时装插画风格，轮廓优雅，比例修长，表情清冷克制，细节精致但不过度写实。精致赛璐璐上色，大面积扁平色块塑形。配色以珊瑚粉天空、深海军蓝阴影、深青绿色中间色、象牙白高光为主，色彩克制而鲜明。整体氛围安静、孤独、怀旧、清透、时尚，像高级杂志封面与20世纪中期旅行海报结合。无文字，无水印，无 logo，无摄影感，无 3d，无复杂背景，无厚涂，无低幼卡通。" data-tags="GPT Image|复古|海报">
+      <a class="case-card-link" href="/zh/case/3022.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2073774407181643780-1.jpg" alt="GPT Image2 粉蓝撞色复古旅行海报风日系插画提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3022</span></span><span class="case-title-text">GPT Image2 粉蓝撞色复古旅行海报风日系插画提示词</span></h3>
+          <p class="case-summary">一组适合 GPT Image2 的复古旅行海报风日系插画提示词，强调粉蓝撞色、清冷克制的时装插画感与安静怀旧氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-06</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/yyyole/status/2073774407181643780">X / @yyyole</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">复古</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>复古旅行海报风格精致日系插画，主体为【xxx】。主体采用高级日系时装插画风格，轮廓优雅，比例修长，表情清冷克制，细节精致但不过度写实。精致赛璐璐上色，大面积扁平色块塑形。配色以珊瑚粉天空、深海军蓝阴影、深青绿色中间色、象牙白高光为主，色彩克制而鲜明。整体氛围安静、孤独、怀旧、清透、时尚，像高级杂志封面与20世纪中期旅行海报结合。无文字，无水印，无 logo，无摄影感，无 3D，无复杂背景，无厚涂，...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3022.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3018" data-search="案例3018 城市名构成的现代旅行海报提示词 整理为城市名构成的现代旅行海报提示词，保留扁平矢量、地标融入字母、限定配色与负面要求。 x / @goodmanprotocol https://x.com/goodmanprotocol/status/2071819124708438092 gpt image 复古 海报 创建一张干净、现代的字母排版旅行海报，让城市名称本身成为画面主体。将城市名以大号、粗体、全大写无衬线字母横向铺满画面。 将该城市最具代表性的地标、建筑、纪念碑、街道、交通工具、文化符号、咖啡馆、桥梁、公园、天际线、雕塑、滨水景观、历史建筑和本地细节，自然融入字母的内外部结构之中，并保持整体可读性。 采用优雅的扁平矢量插画风格，使用清晰的几何形状、低细节、干净轮廓、细微阴影和高级编辑感。保持有限配色：深海军蓝、温暖奶油色、柔和红色与浅灰蓝，营造经典旅行海报质感。 可在合适位置加入路灯、树木、云朵、鸟、长椅、自行车、喷泉、有轨电车、渡轮或其他城市专属小元素。保留充足留白，使用干净背景，并确保" data-tags="GPT Image|复古|海报">
+      <a class="case-card-link" href="/zh/case/3018.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2071819124708438092-1.jpg" alt="城市名构成的现代旅行海报提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3018</span></span><span class="case-title-text">城市名构成的现代旅行海报提示词</span></h3>
+          <p class="case-summary">整理为城市名构成的现代旅行海报提示词，保留扁平矢量、地标融入字母、限定配色与负面要求。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-06-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Goodmanprotocol/status/2071819124708438092">X / @Goodmanprotocol</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">复古</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创建一张干净、现代的字母排版旅行海报，让城市名称本身成为画面主体。将城市名以大号、粗体、全大写无衬线字母横向铺满画面。
+
+将该城市最具代表性的地标、建筑、纪念碑、街道、交通工具、文化符号、咖啡馆、桥梁、公园、天际线、雕塑、滨水景观、历史建筑和本地细节，自然融入字母的内外部结构之中，并保持整体可读性。
+
+采用优雅的扁平矢量插画风格，使用清晰的几何形状、低细节、干净轮廓、细微阴影和高级编辑感。保持有限...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3018.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3002" data-search="案例3002 chatgpt复刻90年代胶片快照 用gpt image 2生成日式居酒屋的90年代随手拍氛围。强调直闪颗粒、复古海报与亲密感。 x / oogie https://x.com/oggii_0/status/2058151650611884271 chatgpt ai 摄影 创意 复古 聊天中的 gpt 图像 2 提示：一张 90 年代一次性相机风格的闪光快照，拍摄于一家小而热闹的日本居酒屋内，墙上装饰着手写菜单和复古海报。直闪带来颗粒感、强烈阴影和明亮高光。一位年轻女子坐在木质吧凳上，上身转回朝向镜头。她穿着一件柔软的红色开衫，内搭白色背心，并配着一条短黑裙。红色开衫在闪光灯下显得格外亮眼，与她泛红的脸颊和光泽的嘴唇相得益彰。她身后，年长的食客坐在昏暗而嘈杂的环境里，与她鲜活而亲密的光晕形成对比。整张图像带有怀旧、不完美且情感亲密的感觉。" data-tags="ChatGPT|AI|摄影|创意|复古">
+      <a class="case-card-link" href="/zh/case/3002.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2058151650611884271-1.jpg" alt="ChatGPT复刻90年代胶片快照" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3002</span></span><span class="case-title-text">ChatGPT复刻90年代胶片快照</span></h3>
+          <p class="case-summary">用GPT Image 2生成日式居酒屋的90年代随手拍氛围。强调直闪颗粒、复古海报与亲密感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-05-24</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/oggii_0/status/2058151650611884271">X / Oogie</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">摄影</span><span class="tag">创意</span><span class="tag">复古</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>聊天中的 GPT 图像 2
+提示：一张 90 年代一次性相机风格的闪光快照，拍摄于一家小而热闹的日本居酒屋内，墙上装饰着手写菜单和复古海报。直闪带来颗粒感、强烈阴影和明亮高光。一位年轻女子坐在木质吧凳上，上身转回朝向镜头。她穿着一件柔软的红色开衫，内搭白色背心，并配着一条短黑裙。红色开衫在闪光灯下显得格外亮眼，与她泛红的脸颊和光泽的嘴唇相得益彰。她身后，年长的食客坐在昏暗而嘈杂的环境里，与她鲜活而...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3002.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2902" data-search="案例2902 奔赴山海胶片感海报 奔赴山海胶片感海报 - gpt img2 图像生成提示词 x / akokoi1 https://x.com/akokoi1/status/2045693939584516441 chatgpt ai 图片 gpt img2 胶片感 山海 海报 复古 风光 设计一张主题是”奔赴山海”的胶片感摄影风格的海报" data-tags="ChatGPT|AI|图片|GPT IMG2|胶片感|山海|海报|复古|风光">
+      <a class="case-card-link" href="/zh/case/2902.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-run-to-mountains-and-seas-1.jpeg" alt="奔赴山海胶片感海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2902</span></span><span class="case-title-text">奔赴山海胶片感海报</span></h3>
+          <p class="case-summary">奔赴山海胶片感海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-04-20</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/akokoi1/status/2045693939584516441">X / akokoi1</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">胶片感</span><span class="tag">山海</span><span class="tag">海报</span><span class="tag">复古</span><span class="tag">风光</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>设计一张主题是”奔赴山海”的胶片感摄影风格的海报</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2902.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2861" data-search="案例2861 复古巴士上的红风衣女郎 复古巴士上的红风衣女郎 - gpt img2 图像生成提示词 x / iamsofiaijaz https://x.com/iamsofiaijaz/status/2015337737860403283 chatgpt ai 图片 gpt img2 时尚 复古 旅行 电影感 4k 一位时尚年轻女子坐在老式复古巴士的前缘，身穿红色长风衣、羊毛无檐小便帽、圆形蓝色反光太阳镜、叠层项链和粗犷的棕色皮靴。她有着波浪状金发，带着自信而梦幻的表情，仰望天空。巴士漆面剥落，呈青绿色与铁锈红色调。明亮清澈的蓝天，城市背景建筑极少，柔和日光，电影级色彩分级，浅景深，高端时尚旅行氛围，编辑摄影，超写实，4k分辨率，锐利对焦，自然肌肤质感，戏剧性构图，电影静帧美学。" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚|复古|旅行|电影感|4K">
+      <a class="case-card-link" href="/zh/case/2861.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-vintage-bus-red-trench-girl-1.jpeg" alt="复古巴士上的红风衣女郎" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2861</span></span><span class="case-title-text">复古巴士上的红风衣女郎</span></h3>
+          <p class="case-summary">复古巴士上的红风衣女郎 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-25</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2015337737860403283">X / iamsofiaijaz</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时尚</span><span class="tag">复古</span><span class="tag">旅行</span><span class="tag">电影感</span><span class="tag">4K</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一位时尚年轻女子坐在老式复古巴士的前缘，身穿红色长风衣、羊毛无檐小便帽、圆形蓝色反光太阳镜、叠层项链和粗犷的棕色皮靴。她有着波浪状金发，带着自信而梦幻的表情，仰望天空。巴士漆面剥落，呈青绿色与铁锈红色调。明亮清澈的蓝天，城市背景建筑极少，柔和日光，电影级色彩分级，浅景深，高端时尚旅行氛围，编辑摄影，超写实，4K分辨率，锐利对焦，自然肌肤质感，戏剧性构图，电影静帧美学。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2861.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>
