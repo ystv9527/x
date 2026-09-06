@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电影感 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="17 条 电影感 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/电影感.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/电影感.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/电影感.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1788685585404">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"电影感 · 图片生成提示词","description":"17 条 电影感 相关案例","url":"https://gemnana.com/zh/image/电影感.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">3093</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">3057</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">33</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/电影感.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>电影感 · 图片生成提示词</h1>
+      <p>17 条 电影感 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="电影感">电影感 (17)</button><button type="button" class="tag-filter" data-tag="写实">写实 (9)</button><button type="button" class="tag-filter" data-tag="通用">通用 (6)</button><button type="button" class="tag-filter" data-tag="GPT Image">GPT Image (6)</button><button type="button" class="tag-filter" data-tag="ChatGPT">ChatGPT (4)</button><button type="button" class="tag-filter" data-tag="AI">AI (4)</button><button type="button" class="tag-filter" data-tag="图片">图片 (4)</button><button type="button" class="tag-filter" data-tag="GPT IMG2">GPT IMG2 (4)</button><button type="button" class="tag-filter" data-tag="复古">复古 (2)</button><button type="button" class="tag-filter" data-tag="海报">海报 (2)</button><button type="button" class="tag-filter" data-tag="古风">古风 (2)</button><button type="button" class="tag-filter" data-tag="头像">头像 (2)</button><button type="button" class="tag-filter" data-tag="时尚">时尚 (2)</button><button type="button" class="tag-filter" data-tag="Midjourney">Midjourney (1)</button><button type="button" class="tag-filter" data-tag="棘龙">棘龙 (1)</button><button type="button" class="tag-filter" data-tag="史前">史前 (1)</button><button type="button" class="tag-filter" data-tag="少女">少女 (1)</button><button type="button" class="tag-filter" data-tag="奇幻">奇幻 (1)</button><button type="button" class="tag-filter" data-tag="战士">战士 (1)</button><button type="button" class="tag-filter" data-tag="冰与火">冰与火 (1)</button><button type="button" class="tag-filter" data-tag="史诗">史诗 (1)</button><button type="button" class="tag-filter" data-tag="街拍">街拍 (1)</button><button type="button" class="tag-filter" data-tag="黄金时刻">黄金时刻 (1)</button><button type="button" class="tag-filter" data-tag="都市">都市 (1)</button><button type="button" class="tag-filter" data-tag="旅行">旅行 (1)</button><button type="button" class="tag-filter" data-tag="4K">4K (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 17 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="3089" data-search="案例3089 暴雨中的弱小赤狐与内心九尾灵狐 暴雨原野中，一只浑身泥水的幼小赤狐继续前行，天空中浮现巨大九尾灵狐的精神化身，呈现成长与坚持的手绘水彩寓言。 x / @stellakjbk https://x.com/stellakjbk/status/2094445032162132247 通用 电影感 复古 海报 创作一幅具有强烈情绪感染力和成长寓意的手绘水彩叙事插画，主题为“暴雨中弱小的现实自己，与隐藏在内心深处的强大自己”。 【画幅与构图】 9:16 竖幅电影构图，所有内容处于同一个连续场景中，不是上下拼图，不是分镜，不是两幅画。 画面中只能出现一个现实主角和一个精神化的强大化身。 现实主角位于画面下方三分之一处，占整个画面约 15%，以自然侧面或四分之三侧面呈现；强大化身位于现实主角身后上方，占据画面上半部分约 60%，形成“小与大、现实与理想、实体与精神”的强烈反差。 现实主角与强大化身必须朝向同一方向，动作趋势相互呼应，轮廓和物种特征具有明确关联。 【现实主角表现】 暴雨笼罩着一片空旷荒凉" data-tags="通用|电影感|复古|海报">
+      <a class="case-card-link" href="/zh/case/3089.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2094445032162132247-1.jpg" alt="暴雨中的弱小赤狐与内心九尾灵狐" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3089</span></span><span class="case-title-text">暴雨中的弱小赤狐与内心九尾灵狐</span></h3>
+          <p class="case-summary">暴雨原野中，一只浑身泥水的幼小赤狐继续前行，天空中浮现巨大九尾灵狐的精神化身，呈现成长与坚持的手绘水彩寓言。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-09-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Stellakjbk/status/2094445032162132247">X / @Stellakjbk</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">电影感</span><span class="tag">复古</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>创作一幅具有强烈情绪感染力和成长寓意的手绘水彩叙事插画，主题为“暴雨中弱小的现实自己，与隐藏在内心深处的强大自己”。
+
+【画幅与构图】
+9:16 竖幅电影构图，所有内容处于同一个连续场景中，不是上下拼图，不是分镜，不是两幅画。
+画面中只能出现一个现实主角和一个精神化的强大化身。
+现实主角位于画面下方三分之一处，占整个画面约 15%，以自然侧面或四分之三侧面呈现；强大化身位于现实主角身后上方，占据画...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3089.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3087" data-search="案例3087 暗黑电影感古风奢华人像提示词 围绕古风奢华人像的 ai 生成提示词，强调深蓝刺绣长袍、冷色轮廓光、半垂眼神与高级杂志感。 x / @joywdan https://x.com/joywdan/status/2094489847797092791 通用 电影感 古风 古风电影感人像，古代中国风奢华服饰，深午夜蓝刺绣长袍，带细微银色龙纹，高领结构设计，冷白瓷般肤色，目光半垂，气质优雅而带贵族感，深蓝黑色背景，冷蓝色轮廓光，强烈明暗对照，光滑丝绸质感，超细节半写实二次元，高级韩国漫画风格，精致面部特征，高端编辑人像，神秘、克制、昂贵。" data-tags="通用|电影感|古风">
+      <a class="case-card-link" href="/zh/case/3087.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2094489847797092791-1.jpg" alt="暗黑电影感古风奢华人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3087</span></span><span class="case-title-text">暗黑电影感古风奢华人像提示词</span></h3>
+          <p class="case-summary">围绕古风奢华人像的 AI 生成提示词，强调深蓝刺绣长袍、冷色轮廓光、半垂眼神与高级杂志感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-09-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/JoywDan/status/2094489847797092791">X / @JoywDan</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">电影感</span><span class="tag">古风</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>古风电影感人像，古代中国风奢华服饰，深午夜蓝刺绣长袍，带细微银色龙纹，高领结构设计，冷白瓷般肤色，目光半垂，气质优雅而带贵族感，深蓝黑色背景，冷蓝色轮廓光，强烈明暗对照，光滑丝绸质感，超细节半写实二次元，高级韩国漫画风格，精致面部特征，高端编辑人像，神秘、克制、昂贵。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3087.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3084" data-search="案例3084 古风神仙女子床边薄纱氛围提示词 古风18岁神仙女子侧坐床边，结合薄纱露肩造型、暖金烛光、飞天飘带、细沙与港式奇幻电影柔焦氛围。 x / @ling_1055tw https://x.com/ling_1055tw/status/2091782941969883644 通用 古风 电影感 古风18岁神仙女子，侧身坐在床边，身体以3/4背对相机的角度开始。她的躯干自然向镜头扭动，一侧肩膀微微前移。一只手收拢并固定身上的床单，另一只手臂自然沿着身体放松。一条腿以对角线穿过前景，另一条腿保持自然弯曲。头部越过肩膀转向镜头。露肩短裙薄纱造型，暖金烛光，飞天飘带与细沙，将薄纱造型转化为华丽的飞天美学。港式奇幻电影柔焦，奢华珠光散景，低照度电影摄影，朦胧仙气感。画面的精髓不是单纯古装美女，而是华丽、神秘、妖冶、昏暗、梦幻又带珠宝般闪烁质感的氛围。多加一点朦胧感。" data-tags="通用|古风|电影感">
+      <a class="case-card-link" href="/zh/case/3084.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2091782941969883644-1.jpg" alt="古风神仙女子床边薄纱氛围提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3084</span></span><span class="case-title-text">古风神仙女子床边薄纱氛围提示词</span></h3>
+          <p class="case-summary">古风18岁神仙女子侧坐床边，结合薄纱露肩造型、暖金烛光、飞天飘带、细沙与港式奇幻电影柔焦氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-24</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Ling_1055Tw/status/2091782941969883644">X / @Ling_1055Tw</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">古风</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>古风18岁神仙女子，侧身坐在床边，身体以3/4背对相机的角度开始。她的躯干自然向镜头扭动，一侧肩膀微微前移。一只手收拢并固定身上的床单，另一只手臂自然沿着身体放松。一条腿以对角线穿过前景，另一条腿保持自然弯曲。头部越过肩膀转向镜头。露肩短裙薄纱造型，暖金烛光，飞天飘带与细沙，将薄纱造型转化为华丽的飞天美学。港式奇幻电影柔焦，奢华珠光散景，低照度电影摄影，朦胧仙气感。画面的精髓不是单纯古装美女，而是...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3084.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3077" data-search="案例3077 gpt image 2 金色黄昏城市窗边人像 一则 gpt image 2 人像提示词，描述年轻女性站在城市玻璃窗边的金色黄昏电影感写真，强调暖光、浅景深、胶片质感与真实细节。 x / @taaruk_ https://x.com/taaruk_/status/2089678758089494920 gpt image 写实 电影感 头像 gpt image 2 人像提示词： 创建一张具有电影感、充满怀旧氛围的金色黄昏人像，画面中的年轻女性站在城市大窗或玻璃表面旁，日落时分拍摄。她穿着一件休闲浅色上衣，肩上自然搭着一件粉色毛衣，并背着一个背包。她留着深色、略微凌乱的及肩头发，几缕发丝在微风中轻轻飘动。整体情绪放松而愉悦，先是微笑着望向落日余晖，再透过玻璃若有所思地凝视远方。 暖色阳光在她的头发和脸部边缘形成漂亮的轮廓光，带有细微的镜头光晕和发亮高光。背景是现代城市天际线，远处建筑、车流和街灯被处理成梦幻的奶油色散景。使用浅景深、柔和胶片颗粒、自然皮肤质感、头发的轻微动态感、真实面部细节、暖琥珀色与低饱和青绿色调色，保留柔和怀旧的" data-tags="GPT Image|写实|电影感|头像">
+      <a class="case-card-link" href="/zh/case/3077.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2089678758089494920-1.jpg" alt="GPT Image 2 金色黄昏城市窗边人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3077</span></span><span class="case-title-text">GPT Image 2 金色黄昏城市窗边人像</span></h3>
+          <p class="case-summary">一则 GPT Image 2 人像提示词，描述年轻女性站在城市玻璃窗边的金色黄昏电影感写真，强调暖光、浅景深、胶片质感与真实细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2089678758089494920">X / @Taaruk_</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">电影感</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>GPT Image 2 人像提示词：
+创建一张具有电影感、充满怀旧氛围的金色黄昏人像，画面中的年轻女性站在城市大窗或玻璃表面旁，日落时分拍摄。她穿着一件休闲浅色上衣，肩上自然搭着一件粉色毛衣，并背着一个背包。她留着深色、略微凌乱的及肩头发，几缕发丝在微风中轻轻飘动。整体情绪放松而愉悦，先是微笑着望向落日余晖，再透过玻璃若有所思地凝视远方。
+暖色阳光在她的头发和脸部边缘形成漂亮的轮廓光，带有细微的镜...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3077.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3075" data-search="案例3075 初秋草甸上的清冷亚洲女性全身人像提示词 gpt image2 全身人像提示词，描绘一位 20-23 岁亚洲女性坐在初秋草甸中，强调清冷气质、电影级光影、明亮通透与高细节写实质感。 x / @aivideohub_ https://x.com/aivideohub_/status/2089537730627977698 gpt image 写实 电影感 20-23岁亚洲女性，身材丰满，模特身材，坐在初秋的草甸之上。青蓝色针织衫不经意地从肩头滑落，露出雪色肌肤，深v低领；卡其色工装短裙展开在草叶间，细碎草籽点缀在裙摆边缘；不穿鞋袜。 微风拂来，草浪翻涌，她微微扬起脸，双眸温柔地看向远方，草叶影子在眼睑晃动，目光越过草尖，望向远方的流云。画面充满宁静与诗意，同时具有强烈的冲击力，像是摄影师偶然捕捉到的未命名女主角。 国色天香，清冷，冷艳脸，三庭五眼比例均衡，细腻水嫩肌肤，偏冷白皮，随机的妆容，随机的饰品，侧光，凌乱的白金色发丝飘逸，随机角度拍摄，总体有很多的不确定性，但又好看。气质美女，纯欲风，皮肤白皙，偶像气质，皮肤美白透亮，表情冷漠，肃杀" data-tags="GPT Image|写实|电影感">
+      <a class="case-card-link" href="/zh/case/3075.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2089537730627977698-1.jpg" alt="初秋草甸上的清冷亚洲女性全身人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3075</span></span><span class="case-title-text">初秋草甸上的清冷亚洲女性全身人像提示词</span></h3>
+          <p class="case-summary">GPT Image2 全身人像提示词，描绘一位 20-23 岁亚洲女性坐在初秋草甸中，强调清冷气质、电影级光影、明亮通透与高细节写实质感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-18</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AIVideoHub_/status/2089537730627977698">X / @AIVideoHub_</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>20-23岁亚洲女性，身材丰满，模特身材，坐在初秋的草甸之上。青蓝色针织衫不经意地从肩头滑落，露出雪色肌肤，深V低领；卡其色工装短裙展开在草叶间，细碎草籽点缀在裙摆边缘；不穿鞋袜。
+
+微风拂来，草浪翻涌，她微微扬起脸，双眸温柔地看向远方，草叶影子在眼睑晃动，目光越过草尖，望向远方的流云。画面充满宁静与诗意，同时具有强烈的冲击力，像是摄影师偶然捕捉到的未命名女主角。
+
+国色天香，清冷，冷艳脸，三庭五...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3075.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3067" data-search="案例3067 中文武侠空中跃击写实摄影提示词 以古代中国庭院中的白衣女剑客空中跃击为核心，强调低机位、广角、动势冻结与写实电影质感。 x / @liluocheng13 https://x.com/liluocheng13/status/2087441890518212880 通用 写实 电影感 大师级、超写实、电影感的中文武侠摄影，爆发性的武术动作在巅峰瞬间被冻结。 一位漂亮的年轻东亚女性剑客，使用上传图片作为参考，身穿飘逸的象牙白古代中国丝绸与半透明薄纱长袍，在传统中国庭院中做出爆发性的腾空前跃。她的躯干大幅前倾，腰部在强劲动势中扭转，一条腿向下伸展，另一条腿 sharply 向后弯折。 一只手臂在头顶后方挥动，握着一把打磨光亮的中国剑；另一只手臂以受控的武术姿势猛烈伸向镜头。 她的黑发梳成优雅的古代中国发髻，并因剧烈动作而部分松散，发丝在空中飞扬。长白袖、薄纱层与裙摆在身后炸开，清楚呈现速度、惯性与风阻。 她穿着朴素的象牙白传统中国布鞋和干净的白色棉袜，双脚显得小巧、精致" data-tags="通用|写实|电影感">
+      <a class="case-card-link" href="/zh/case/3067.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2087441890518212880-1.jpg" alt="中文武侠空中跃击写实摄影提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3067</span></span><span class="case-title-text">中文武侠空中跃击写实摄影提示词</span></h3>
+          <p class="case-summary">以古代中国庭院中的白衣女剑客空中跃击为核心，强调低机位、广角、动势冻结与写实电影质感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liluocheng13/status/2087441890518212880">X / @liluocheng13</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>大师级、超写实、电影感的中文武侠摄影，爆发性的武术动作在巅峰瞬间被冻结。
+
+一位漂亮的年轻东亚女性剑客，使用上传图片作为参考，身穿飘逸的象牙白古代中国丝绸与半透明薄纱长袍，在传统中国庭院中做出爆发性的腾空前跃。她的躯干大幅前倾，腰部在强劲动势中扭转，一条腿向下伸展，另一条腿 sharply 向后弯折。
+
+一只手臂在头顶后方挥动，握着一把打磨光亮的中国剑；另一只手臂以受控的武术姿势猛烈伸向镜头。
+
+...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3067.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3065" data-search="案例3065 金色芦苇田中的深红风衣电影感人像 以人物参考图保持面部身份，在金色芦苇与深红野花田野中创作电影感时尚人像，突出夕阳光影与自然风动。 x / @taaruk_ https://x.com/taaruk_/status/2084492399330680881 gpt image 写实 电影感 使用上传的图像作为面部参考，保留人物准确的面部特征和身份。创作一幅电影感时尚编辑人像：人物独自站在大片高耸的金色芦苇和零散深红色野花中，时间为黄金时刻。人物留着凌乱的黑色短波波头，发丝被风轻柔地吹动，身穿宽大的深红色连帽风衣，内搭深色针织毛衣，形成戏剧性的轮廓。温暖的低角度夕阳在脸上投下浓郁的金色高光，深沉阴影增加层次和情绪。人物可以平静而忧郁地直视镜头，也可以低头沉思。微风自然地吹动头发、风衣和周围的草。背景是一片延伸至远方湖泊的开阔草地，湖泊上方是干净的蓝色天空，并带有轻微的大气雾霭。前景芦苇形成柔和的自然框景和奶油般的散景。采用电影感调色，包含深猩红、温暖琥珀色阳光、金色草地和青蓝色天空" data-tags="GPT Image|写实|电影感">
+      <a class="case-card-link" href="/zh/case/3065.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2084492399330680881-1.jpg" alt="金色芦苇田中的深红风衣电影感人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3065</span></span><span class="case-title-text">金色芦苇田中的深红风衣电影感人像</span></h3>
+          <p class="case-summary">以人物参考图保持面部身份，在金色芦苇与深红野花田野中创作电影感时尚人像，突出夕阳光影与自然风动。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-05</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2084492399330680881">X / @Taaruk_</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>使用上传的图像作为面部参考，保留人物准确的面部特征和身份。创作一幅电影感时尚编辑人像：人物独自站在大片高耸的金色芦苇和零散深红色野花中，时间为黄金时刻。人物留着凌乱的黑色短波波头，发丝被风轻柔地吹动，身穿宽大的深红色连帽风衣，内搭深色针织毛衣，形成戏剧性的轮廓。温暖的低角度夕阳在脸上投下浓郁的金色高光，深沉阴影增加层次和情绪。人物可以平静而忧郁地直视镜头，也可以低头沉思。微风自然地吹动头发、风衣和...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3065.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3059" data-search="案例3059 沉入海湾的堕天使与未来城市 midjourney v8.2 视觉提示词案例：堕天使巨像半沉于海湾，单翼化作天然港湾，未来城市沿羽脊展开，呈现史诗级广角电影感。 x / @mo_iai https://x.com/mo_iai/status/2083659002462732340 midjourney 电影感 海报 midjourney v8.2 提示词： 堕天使神祇巨像面朝下半沉于整片海湾之中，唯一可见的翅膀弯曲成天然港湾的堤墙，密集的未来城市由玻璃塔楼和灯带桥梁直接建在翅膀的羽毛脊上，风暴云层为城市让开一道光束，远处船只沿着翅膀轮廓航行以体现尺度，史诗级广角电影镜头。" data-tags="Midjourney|电影感|海报">
+      <a class="case-card-link" href="/zh/case/3059.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2083659002462732340-1.jpg" alt="沉入海湾的堕天使与未来城市" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3059</span></span><span class="case-title-text">沉入海湾的堕天使与未来城市</span></h3>
+          <p class="case-summary">Midjourney V8.2 视觉提示词案例：堕天使巨像半沉于海湾，单翼化作天然港湾，未来城市沿羽脊展开，呈现史诗级广角电影感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-02</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MO_IAI/status/2083659002462732340">X / @MO_IAI</span>
+          </div>
+          <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">电影感</span><span class="tag">海报</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>Midjourney V8.2 提示词：
+堕天使神祇巨像面朝下半沉于整片海湾之中，唯一可见的翅膀弯曲成天然港湾的堤墙，密集的未来城市由玻璃塔楼和灯带桥梁直接建在翅膀的羽毛脊上，风暴云层为城市让开一道光束，远处船只沿着翅膀轮廓航行以体现尺度，史诗级广角电影镜头。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3059.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3057" data-search="案例3057 热气球节夏日人像提示词 gpt image 2 人像提示词，描写年轻东亚女性在夏日热气球节上的写实旅行风格照片。 x / @john_my07 https://x.com/john_my07/status/2083076046673383837 gpt image 写实 电影感 gpt image 2 人像提示词： 一张超写实的旅行人像照片，主题为一位迷人的年轻东亚女性在温暖的夏日傍晚享受热闹的热气球节。她有着柔顺飘逸的栗棕色长发，发丝在微风中轻轻摆动，肤色白皙通透，带有自然光泽，脸颊泛着淡淡红晕，眼睛为淡褐色，妆容清淡日常，嘴唇自然光亮、带玫瑰色。 她穿着一件时尚的浅蓝色牛仔连体短裤，短袖卷起，内搭贴身黑色背心，并系有一条细黑腰带。身侧斜挎一只小巧的圆形黑色肩包，衣领处随意挂着一副时髦太阳镜。她面向镜头，露出明亮自然的微笑，一只脚微微向前，双手轻轻交叠在身前，姿态放松、亲切。 背景中有数十个色彩鲜艳的热气球在金色夕阳天空中升起，绿意盎然的节庆草地上人群熙攘。远" data-tags="GPT Image|写实|电影感">
+      <a class="case-card-link" href="/zh/case/3057.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2083076046673383837-1.jpg" alt="热气球节夏日人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3057</span></span><span class="case-title-text">热气球节夏日人像提示词</span></h3>
+          <p class="case-summary">GPT Image 2 人像提示词，描写年轻东亚女性在夏日热气球节上的写实旅行风格照片。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/john_my07/status/2083076046673383837">X / @john_my07</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>GPT Image 2 人像提示词：
+
+一张超写实的旅行人像照片，主题为一位迷人的年轻东亚女性在温暖的夏日傍晚享受热闹的热气球节。她有着柔顺飘逸的栗棕色长发，发丝在微风中轻轻摆动，肤色白皙通透，带有自然光泽，脸颊泛着淡淡红晕，眼睛为淡褐色，妆容清淡日常，嘴唇自然光亮、带玫瑰色。
+
+她穿着一件时尚的浅蓝色牛仔连体短裤，短袖卷起，内搭贴身黑色背心，并系有一条细黑腰带。身侧斜挎一只小巧的圆形黑色肩包，衣...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3057.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3051" data-search="案例3051 低机位仰拍的超写实运动时尚编辑人像提示词 一段用于生成竖幅 2:3 超写实运动时尚编辑人像的中文提示词，强调低机位仰拍、汗湿质感、自然皮肤纹理与电影感灯光。 x / @torojushiai https://x.com/torojushiai/status/2082586973340921985 通用 写实 电影感 生成一张竖幅 2:3、照片级超写实的运动时尚编辑人像。人物为一位 20 多岁的年轻成年东亚女性，采用低机位近距离仰拍，画面从大腿上方延伸至头顶，身体位于中央。她略微俯视镜头，头部轻轻向右倾斜，眼神平静、冷淡，略带疲惫感，嘴唇自然微启。她拥有精致鹅蛋脸、杏仁形深棕眼睛、自然细眉、纤细鼻梁、低饱和裸粉色嘴唇，眼下与鼻梁附近有少量自然雀斑或小痣。肤色暖白，脸部、颈部和腹部带有运动后的湿润光泽与细小汗珠，保留真实毛孔、绒毛、肤色变化和皮肤纹理，不要塑料磨皮。 深棕黑色长直发自然披散，戴纯黑色棒球帽，帽檐向前压低；额前和脸侧有被汗水打湿的细碎发丝，发梢被暖色逆光勾亮。她穿黑色长袖修身运动上衣，双手抓住" data-tags="通用|写实|电影感">
+      <a class="case-card-link" href="/zh/case/3051.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2082586973340921985-1.jpg" alt="低机位仰拍的超写实运动时尚编辑人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3051</span></span><span class="case-title-text">低机位仰拍的超写实运动时尚编辑人像提示词</span></h3>
+          <p class="case-summary">一段用于生成竖幅 2:3 超写实运动时尚编辑人像的中文提示词，强调低机位仰拍、汗湿质感、自然皮肤纹理与电影感灯光。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ToroJushiAi/status/2082586973340921985">X / @ToroJushiAi</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>生成一张竖幅 2:3、照片级超写实的运动时尚编辑人像。人物为一位 20 多岁的年轻成年东亚女性，采用低机位近距离仰拍，画面从大腿上方延伸至头顶，身体位于中央。她略微俯视镜头，头部轻轻向右倾斜，眼神平静、冷淡，略带疲惫感，嘴唇自然微启。她拥有精致鹅蛋脸、杏仁形深棕眼睛、自然细眉、纤细鼻梁、低饱和裸粉色嘴唇，眼下与鼻梁附近有少量自然雀斑或小痣。肤色暖白，脸部、颈部和腹部带有运动后的湿润光泽与细小汗珠，...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3051.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3036" data-search="案例3036 gpt image 2 典雅欧式婚纱超写实人像提示词 一段用于生成高端超写实欧式室内婚纱人像的中文提示词，强调窗光、长头纱、象牙白礼服、电影感构图与严格负面限制。 x / @torojushiai https://x.com/torojushiai/status/2076667967631470645 gpt image 写实 电影感 头像 高端超写实婚纱时尚人像，优雅欧式室内，电影感16:9宽屏。新娘靠近中左位置，大腿中部至头顶取景。长款大教堂婚纱头纱宽幅延伸至画面右半侧，与左侧柔和发光窗户形成发光半透明的视觉平衡。 人物：年轻成年新娘，纤细优雅体型，白皙柔和发光肌肤。精致四分之三侧面，躯干朝镜头右侧转开，头部轻柔从肩膀回望直视镜头。双肩放松略微倾斜，在颈部、腰部与髋部形成优雅 s 曲线。头部微微朝向抬高的肩膀倾斜。平静、温暖、低调浪漫的表情，淡淡的闭嘴微笑，柔和专注的眼神。亲密、端庄、恬静的氛围，不夸张不商业。 发型：深浓咖啡棕色长发，宽松自然波浪垂落于肩后并延伸至背部。丝滑质感，几缕精致飞散发丝被窗光照亮。额头上有细腻分" data-tags="GPT Image|写实|电影感|头像">
+      <a class="case-card-link" href="/zh/case/3036.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2076667967631470645-1.jpg" alt="GPT Image 2 典雅欧式婚纱超写实人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3036</span></span><span class="case-title-text">GPT Image 2 典雅欧式婚纱超写实人像提示词</span></h3>
+          <p class="case-summary">一段用于生成高端超写实欧式室内婚纱人像的中文提示词，强调窗光、长头纱、象牙白礼服、电影感构图与严格负面限制。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-14</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ToroJushiAi/status/2076667967631470645">X / @ToroJushiAi</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">电影感</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>高端超写实婚纱时尚人像，优雅欧式室内，电影感16:9宽屏。新娘靠近中左位置，大腿中部至头顶取景。长款大教堂婚纱头纱宽幅延伸至画面右半侧，与左侧柔和发光窗户形成发光半透明的视觉平衡。
+
+人物：年轻成年新娘，纤细优雅体型，白皙柔和发光肌肤。精致四分之三侧面，躯干朝镜头右侧转开，头部轻柔从肩膀回望直视镜头。双肩放松略微倾斜，在颈部、腰部与髋部形成优雅 S 曲线。头部微微朝向抬高的肩膀倾斜。平静、温暖、低...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3036.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3032" data-search="案例3032 自由在运动中：电影感追拍奔跑提示词 一段电影感追拍奔跑提示词，描写主体穿过风景、迎向远处地平线与发光天空的自由感画面。 x / @azed_ai https://x.com/azed_ai/status/2076259538005901625 通用 电影感 电影感追拍镜头：主体在风景中奔跑，摄影机并行移动，前景带有明显运动模糊。远处有一个地平线上的元素升起，背景是发光的天空。风吹动头发，整体传达出紧迫、坚定与强烈的自由感。" data-tags="通用|电影感">
+      <a class="case-card-link" href="/zh/case/3032.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2076259538005901625-1.jpg" alt="自由在运动中：电影感追拍奔跑提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3032</span></span><span class="case-title-text">自由在运动中：电影感追拍奔跑提示词</span></h3>
+          <p class="case-summary">一段电影感追拍奔跑提示词，描写主体穿过风景、迎向远处地平线与发光天空的自由感画面。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-13</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/azed_ai/status/2076259538005901625">X / @azed_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>电影感追拍镜头：主体在风景中奔跑，摄影机并行移动，前景带有明显运动模糊。远处有一个地平线上的元素升起，背景是发光的天空。风吹动头发，整体传达出紧迫、坚定与强烈的自由感。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3032.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3019" data-search="案例3019 魔法画室中火鸟从画布中飞出 一位年轻女画家在温暖画室中停笔凝视，火鸟从画布中跃出，呈现电影感魔幻现实主义氛围。 x / @anishaa_writes https://x.com/anishaa_writes/status/2071858776949330029 gpt image 电影感 写实 一幅电影感的魔幻现实主义场景：温暖的画室里，一位年轻女性画家穿着沾满颜料的围裙，站在画架前停下动作。一只神话般的火鸟从画布中升起，鲜红、琥珀色与金色羽毛由厚重油彩逐渐转化为逼真的羽翼，同时仍与画作相连。空气中漂浮着火星、烟雾和闪烁微光，柔和的晨光透过亚麻窗帘洒入室内，照亮画笔、调色板和五彩画具。魔幻现实主义，电影感光线，浅景深，超细节纹理，绘画感奇幻，温暖色调，梦幻氛围，杰作，8k。" data-tags="GPT Image|电影感|写实">
+      <a class="case-card-link" href="/zh/case/3019.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2071858776949330029-1.jpg" alt="魔法画室中火鸟从画布中飞出" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3019</span></span><span class="case-title-text">魔法画室中火鸟从画布中飞出</span></h3>
+          <p class="case-summary">一位年轻女画家在温暖画室中停笔凝视，火鸟从画布中跃出，呈现电影感魔幻现实主义氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-06-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Anishaa_writes/status/2071858776949330029">X / @Anishaa_writes</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">电影感</span><span class="tag">写实</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一幅电影感的魔幻现实主义场景：温暖的画室里，一位年轻女性画家穿着沾满颜料的围裙，站在画架前停下动作。一只神话般的火鸟从画布中升起，鲜红、琥珀色与金色羽毛由厚重油彩逐渐转化为逼真的羽翼，同时仍与画作相连。空气中漂浮着火星、烟雾和闪烁微光，柔和的晨光透过亚麻窗帘洒入室内，照亮画笔、调色板和五彩画具。魔幻现实主义，电影感光线，浅景深，超细节纹理，绘画感奇幻，温暖色调，梦幻氛围，杰作，8K。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3019.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2870" data-search="案例2870 棘龙巨口中的酷飒少女与史前奇观 棘龙巨口中的酷飒少女与史前奇观 - gpt img2 图像生成提示词 x / mrdasonx https://x.com/mrdasonx/status/2028087254757867560 chatgpt ai 图片 gpt img2 棘龙 史前 少女 写实 电影感 超写实电影级奇幻场景，设定在郁郁葱葱的史前丛林山谷中。一只巨大的棘龙站在浅河边，它那长而类似鳄鱼的巨颚张得很大。一位年轻女子平静地坐在恐龙张开的嘴里，完美居中，双腿微微向前悬挂。她有一头深色直发，表情镇定无畏，皮肤纹理逼真。她身穿合身的黑色长袖短款上衣，蓝色牛仔短裤和黑色及膝战术靴。衣服和腿上可见微小的血迹和轻微划痕，增加了戏剧性的紧张感但并不血腥。她怀里温柔地抱着一只小恐龙幼崽，充满保护欲地抱着它。 在他们身后，一道高耸而充满戏剧性的瀑布顺着覆盖着茂密绿色植被和薄雾的陡峭丛林悬崖倾泻而下。场景中栖息着多只恐龙：几只迅猛龙在河岸边潜行，小型食草动物在背景中奔跑，飞翔的翼龙在头顶盘旋。环境丰富" data-tags="ChatGPT|AI|图片|GPT IMG2|棘龙|史前|少女|写实|电影感">
+      <a class="case-card-link" href="/zh/case/2870.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-fierce-girl-in-spinosaurus-jaws-1.jpeg" alt="棘龙巨口中的酷飒少女与史前奇观" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2870</span></span><span class="case-title-text">棘龙巨口中的酷飒少女与史前奇观</span></h3>
+          <p class="case-summary">棘龙巨口中的酷飒少女与史前奇观 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-03-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MrDasOnX/status/2028087254757867560">X / MrDasOnX</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">棘龙</span><span class="tag">史前</span><span class="tag">少女</span><span class="tag">写实</span><span class="tag">电影感</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>超写实电影级奇幻场景，设定在郁郁葱葱的史前丛林山谷中。一只巨大的棘龙站在浅河边，它那长而类似鳄鱼的巨颚张得很大。一位年轻女子平静地坐在恐龙张开的嘴里，完美居中，双腿微微向前悬挂。她有一头深色直发，表情镇定无畏，皮肤纹理逼真。她身穿合身的黑色长袖短款上衣，蓝色牛仔短裤和黑色及膝战术靴。衣服和腿上可见微小的血迹和轻微划痕，增加了戏剧性的紧张感但并不血腥。她怀里温柔地抱着一只小恐龙幼崽，充满保护欲地抱着...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2870.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2865" data-search="案例2865 冰火双雄背靠背史诗电影海报 冰火双雄背靠背史诗电影海报 - gpt img2 图像生成提示词 x / naiknelofar788 https://x.com/naiknelofar788/status/2025972876554510482 chatgpt ai 图片 gpt img2 奇幻 战士 电影感 冰与火 史诗 一幅戏剧性的电影海报风格肖像，描绘了两位史诗奇幻战士在冰冻风暴中背靠背站立。左侧是一位身经百战的男性战士，留着湿漉漉的深色卷发，低头以此表达坚定的决心，紧握着一把插在冰里的中世纪长剑。霜雪附着在他毛皮镶边的斗篷和肩膀上。右侧是一位强有力的女性战士侧影，苍白的皮肤在炽热的橙色光芒下闪耀，她的身体部分被火焰吞没，与冰冷的蓝色氛围形成对比。雪花粒子在空中盘旋，在象征性的冲突中融合了火与冰。超精细的面部细节，情感强度，体积雾，电影级布光，冷蓝色调混合温暖的火焰高光，浅景深，史诗奇幻电影海报，超写实，8k分辨率，戏剧性构图，清晰聚焦，高对比度，逼真纹理。" data-tags="ChatGPT|AI|图片|GPT IMG2|奇幻|战士|电影感|冰与火|史诗">
+      <a class="case-card-link" href="/zh/case/2865.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-ice-fire-warriors-epic-poster-1.jpeg" alt="冰火双雄背靠背史诗电影海报" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2865</span></span><span class="case-title-text">冰火双雄背靠背史诗电影海报</span></h3>
+          <p class="case-summary">冰火双雄背靠背史诗电影海报 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-24</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Naiknelofar788/status/2025972876554510482">X / Naiknelofar788</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">奇幻</span><span class="tag">战士</span><span class="tag">电影感</span><span class="tag">冰与火</span><span class="tag">史诗</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一幅戏剧性的电影海报风格肖像，描绘了两位史诗奇幻战士在冰冻风暴中背靠背站立。左侧是一位身经百战的男性战士，留着湿漉漉的深色卷发，低头以此表达坚定的决心，紧握着一把插在冰里的中世纪长剑。霜雪附着在他毛皮镶边的斗篷和肩膀上。右侧是一位强有力的女性战士侧影，苍白的皮肤在炽热的橙色光芒下闪耀，她的身体部分被火焰吞没，与冰冷的蓝色氛围形成对比。雪花粒子在空中盘旋，在象征性的冲突中融合了火与冰。超精细的面部细...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2865.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2864" data-search="案例2864 都市落日时尚大片 都市落日时尚大片 - gpt img2 图像生成提示词 x chatgpt ai 图片 gpt img2 时尚 街拍 电影感 黄金时刻 都市 一张超现实电影感时尚照片，一位二十出头惊艳的年轻女性，全身可见，站在现代城市中心，黄金时段。 她随意地单肩靠在交通信号灯杆上，没有意识到相机的存在，仿佛这一刻是自然捕捉的。 她穿着紧身蓝色牛仔裤、棕色皮靴，以及一件短款棕色麂皮夹克，带有柔软羊皮翻领。夹克下，一件极简深色露脐上衣，隐约露出精致的乳沟和紧致的腹部。 她的体型天生女性化，均衡而优雅，姿态自信。 一只手穿过她丰盈的浅棕色长发，将其向后撩起，头部微微转向那一侧，眼睛自然地看向别处，没有摆拍。 肤色为轻微日晒后的奶油般柔和光泽，真实肌肤纹理，细腻毛孔与高光——毫无塑料感。 妆容醒目却精致：清晰的眼部、浓密睫毛、" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚|街拍|电影感|黄金时刻|都市">
+      <a class="case-card-link" href="/zh/case/2864.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-urban-sunset-fashion-silhouette-1.jpeg" alt="都市落日时尚大片" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2864</span></span><span class="case-title-text">都市落日时尚大片</span></h3>
+          <p class="case-summary">都市落日时尚大片 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-02-04</span>
+            <span class="case-source">X</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时尚</span><span class="tag">街拍</span><span class="tag">电影感</span><span class="tag">黄金时刻</span><span class="tag">都市</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一张超现实电影感时尚照片，一位二十出头惊艳的年轻女性，全身可见，站在现代城市中心，黄金时段。  
+她随意地单肩靠在交通信号灯杆上，没有意识到相机的存在，仿佛这一刻是自然捕捉的。  
+她穿着紧身蓝色牛仔裤、棕色皮靴，以及一件短款棕色麂皮夹克，带有柔软羊皮翻领。夹克下，一件极简深色露脐上衣，隐约露出精致的乳沟和紧致的腹部。  
+
+她的体型天生女性化，均衡而优雅，姿态自信。  
+一只手穿过她丰盈的浅棕色...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2864.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="2861" data-search="案例2861 复古巴士上的红风衣女郎 复古巴士上的红风衣女郎 - gpt img2 图像生成提示词 x / iamsofiaijaz https://x.com/iamsofiaijaz/status/2015337737860403283 chatgpt ai 图片 gpt img2 时尚 复古 旅行 电影感 4k 一位时尚年轻女子坐在老式复古巴士的前缘，身穿红色长风衣、羊毛无檐小便帽、圆形蓝色反光太阳镜、叠层项链和粗犷的棕色皮靴。她有着波浪状金发，带着自信而梦幻的表情，仰望天空。巴士漆面剥落，呈青绿色与铁锈红色调。明亮清澈的蓝天，城市背景建筑极少，柔和日光，电影级色彩分级，浅景深，高端时尚旅行氛围，编辑摄影，超写实，4k分辨率，锐利对焦，自然肌肤质感，戏剧性构图，电影静帧美学。" data-tags="ChatGPT|AI|图片|GPT IMG2|时尚|复古|旅行|电影感|4K">
+      <a class="case-card-link" href="/zh/case/2861.html">
+        <div class="case-thumbnail"><img src="/images/gpt-img2-vintage-bus-red-trench-girl-1.jpeg" alt="复古巴士上的红风衣女郎" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#2861</span></span><span class="case-title-text">复古巴士上的红风衣女郎</span></h3>
+          <p class="case-summary">复古巴士上的红风衣女郎 - GPT IMG2 图像生成提示词</p>
+          <div class="case-meta">
+            <span class="case-date">2026-01-25</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/iamsofiaijaz/status/2015337737860403283">X / iamsofiaijaz</span>
+          </div>
+          <div class="case-tags"><span class="tag">ChatGPT</span><span class="tag">AI</span><span class="tag">图片</span><span class="tag">GPT IMG2</span><span class="tag">时尚</span><span class="tag">复古</span><span class="tag">旅行</span><span class="tag">电影感</span><span class="tag">4K</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一位时尚年轻女子坐在老式复古巴士的前缘，身穿红色长风衣、羊毛无檐小便帽、圆形蓝色反光太阳镜、叠层项链和粗犷的棕色皮靴。她有着波浪状金发，带着自信而梦幻的表情，仰望天空。巴士漆面剥落，呈青绿色与铁锈红色调。明亮清澈的蓝天，城市背景建筑极少，柔和日光，电影级色彩分级，浅景深，高端时尚旅行氛围，编辑摄影，超写实，4K分辨率，锐利对焦，自然肌肤质感，戏剧性构图，电影静帧美学。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/2861.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

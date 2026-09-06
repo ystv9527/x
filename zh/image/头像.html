@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>头像 · 图片生成提示词 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="14 条 头像 相关案例">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/image/头像.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/头像.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/头像.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1788685585420">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"头像 · 图片生成提示词","description":"14 条 头像 相关案例","url":"https://gemnana.com/zh/image/头像.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">3093</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">3057</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">33</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/image/头像.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>头像 · 图片生成提示词</h1>
+      <p>14 条 头像 相关案例</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索标题、摘要、标签…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ 标签筛选</span>
+          <button id="clearFilters" class="btn-clear" type="button">清除筛选</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="头像">头像 (14)</button><button type="button" class="tag-filter" data-tag="写实">写实 (11)</button><button type="button" class="tag-filter" data-tag="通用">通用 (8)</button><button type="button" class="tag-filter" data-tag="GPT Image">GPT Image (5)</button><button type="button" class="tag-filter" data-tag="二次元">二次元 (4)</button><button type="button" class="tag-filter" data-tag="水墨">水墨 (2)</button><button type="button" class="tag-filter" data-tag="电影感">电影感 (2)</button><button type="button" class="tag-filter" data-tag="Midjourney">Midjourney (1)</button><button type="button" class="tag-filter" data-tag="古风">古风 (1)</button><button type="button" class="tag-filter" data-tag="复古">复古 (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">共 14 条内容</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 没有找到匹配内容</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="3091" data-search="案例3091 中式凤冠华服回眸人像 一位年轻成年东亚女性的中式凤冠华服回眸人像，强调华丽头饰、丝绸织锦、暖调室内侧光与高质感写实摄影氛围。 x / @jackzhang123vip https://x.com/jackzhang123vip/status/2095115848449237179 midjourney 写实 古风 头像 一位年轻成年东亚女性，五官精致清冷，脸型小巧偏鹅蛋脸，肤色白皙细腻，气质高贵、安静、疏离，眼神清冷克制，微微侧目回望镜头。人物黑色长发盘成低位古典发髻，发丝顺滑整洁，额前有轻薄空气刘海与两缕修饰脸型的鬓发。头戴极其华丽繁复的中式金色凤冠头饰，头饰由金属花枝、叶片、流苏、珠饰、垂坠小挂件、细密雕花结构组成，层层叠叠，体积感强，质感华贵，局部点缀少量红色珠宝细节，整体呈古典宫廷婚饰风格。 人物佩戴细长垂坠耳饰，耳饰精致轻盈，带透明或浅色晶石感。身穿一袭高质感中式古风华服，服装为银金色丝绸织锦面料，表面有明显反光与高级提花纹理，绣有大面积红色、蓝色、金色花卉图案，领口带金色包边与红色细节，整体像中" data-tags="Midjourney|写实|古风|头像">
+      <a class="case-card-link" href="/zh/case/3091.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2095115848449237179-1.jpg" alt="中式凤冠华服回眸人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3091</span></span><span class="case-title-text">中式凤冠华服回眸人像</span></h3>
+          <p class="case-summary">一位年轻成年东亚女性的中式凤冠华服回眸人像，强调华丽头饰、丝绸织锦、暖调室内侧光与高质感写实摄影氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-09-03</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/jackzhang123vip/status/2095115848449237179">X / @jackzhang123vip</span>
+          </div>
+          <div class="case-tags"><span class="tag">Midjourney</span><span class="tag">写实</span><span class="tag">古风</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>一位年轻成年东亚女性，五官精致清冷，脸型小巧偏鹅蛋脸，肤色白皙细腻，气质高贵、安静、疏离，眼神清冷克制，微微侧目回望镜头。人物黑色长发盘成低位古典发髻，发丝顺滑整洁，额前有轻薄空气刘海与两缕修饰脸型的鬓发。头戴极其华丽繁复的中式金色凤冠头饰，头饰由金属花枝、叶片、流苏、珠饰、垂坠小挂件、细密雕花结构组成，层层叠叠，体积感强，质感华贵，局部点缀少量红色珠宝细节，整体呈古典宫廷婚饰风格。
+
+人物佩戴细...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3091.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3088" data-search="案例3088 新中式水墨碎片感成年东亚女性肖像提示词 成年东亚女性半脸极近景肖像，融合水墨浪潮、碎片化拼贴和高端亚洲时装编辑风的超写实提示词。 x / @liluocheng13 https://x.com/liluocheng13/status/2094474844939391169 通用 写实 水墨 头像 9:16 竖图，超写实电影感新中式东方美人肖像，碎片化拼贴摄影，日本风格 sumi-e 水墨浪潮美学，奢华亚洲时装编辑风，黑色、古董金与象牙白配色。 成年东亚女性（使用上传图片作为参考）极近景肖像，人物略偏画面右侧，仅露出半张到三分之二脸。唯一一只细节丰富的眼睛是视觉焦点，具有真实虹膜纹理、湿润高光和自然妆感。长而细的黑色发丝横向掠过她的眼睛、鼻子、脸颊和嘴唇，部分遮挡面部。 纤细的手轻柔停在嘴边，食指靠近嘴唇，自然解剖结构的手指，裸色指甲，一枚精致古董金戒指和一条细金手链。 头发盘成华丽的经典东亚发髻，以向外放射的精致古董金发簪、细链、珍珠、金属珠、小花和水晶饰件装饰。 她穿着奢华深黑色丝绸" data-tags="通用|写实|水墨|头像">
+      <a class="case-card-link" href="/zh/case/3088.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2094474844939391169-1.jpg" alt="新中式水墨碎片感成年东亚女性肖像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3088</span></span><span class="case-title-text">新中式水墨碎片感成年东亚女性肖像提示词</span></h3>
+          <p class="case-summary">成年东亚女性半脸极近景肖像，融合水墨浪潮、碎片化拼贴和高端亚洲时装编辑风的超写实提示词。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-09-01</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/liluocheng13/status/2094474844939391169">X / @liluocheng13</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">水墨</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>9:16 竖图，超写实电影感新中式东方美人肖像，碎片化拼贴摄影，日本风格 sumi-e 水墨浪潮美学，奢华亚洲时装编辑风，黑色、古董金与象牙白配色。
+成年东亚女性（使用上传图片作为参考）极近景肖像，人物略偏画面右侧，仅露出半张到三分之二脸。唯一一只细节丰富的眼睛是视觉焦点，具有真实虹膜纹理、湿润高光和自然妆感。长而细的黑色发丝横向掠过她的眼睛、鼻子、脸颊和嘴唇，部分遮挡面部。
+纤细的手轻柔停在嘴边...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3088.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3083" data-search="案例3083 ai 真人剧主角图提示词整理 整理一条用于避免主角图被识别为真人面部的中文提示词，保留白底角色设定、正面构图、绘画质感与参数限制。 x / @sukiea1008 https://x.com/sukiea1008/status/2091750919440626023 通用 写实 头像 适用于 ai 真人剧主角图，避免上传的主角图片被识别成真人面部。 提示词： masterpiece, best quality, 1 person, hyperrealistic but stylized, painted texture, not real photo, clean white background, character sheet, front view, soft brush strokes, slight illustration style 参数： --ar 3:4 --style raw" data-tags="通用|写实|头像">
+      <a class="case-card-link" href="/zh/case/3083.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2091750919440626023-1.jpg" alt="AI 真人剧主角图提示词整理" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3083</span></span><span class="case-title-text">AI 真人剧主角图提示词整理</span></h3>
+          <p class="case-summary">整理一条用于避免主角图被识别为真人面部的中文提示词，保留白底角色设定、正面构图、绘画质感与参数限制。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-24</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Sukiea1008/status/2091750919440626023">X / @Sukiea1008</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>适用于 AI 真人剧主角图，避免上传的主角图片被识别成真人面部。
+
+提示词：
+masterpiece, best quality, 1 person, hyperrealistic but stylized, painted texture, not real photo, clean white background, character sheet, front view, soft brus...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3083.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3079" data-search="案例3079 veyrakh 暴雨中的巨构科幻人像 以角色参考图为身份依据，创作暴雨中的巨构科幻人像，融合荷兰角构图、手绘线稿与复古印刷质感。 x / @hexmethod https://x.com/hexmethod/status/2091326191320125500 通用 复古 头像 使用所提供的图像作为角色身份、物种、解剖结构、比例、面部结构、轮廓、发型与头部形状、性别呈现、表情、标记、颜色、材质、图案、配饰、义肢、机械义体、面具及其他独特特征的绝对依据。保持角色清晰且不可混淆的辨识度；如果参考图中有眼睛被遮挡或隐藏，请保持遮挡或隐藏。 将角色的配色、符号、材质、几何形状、纹样、文化与科技线索及设计语言延展到整幅图像，包括服装、建筑、标识、灯光和氛围。背景必须为该角色专门设计，不得使用泛化背景。 创作一幅从大腿中部或大腿上部至头部的戏剧性编辑风格人像，场景位于巨大的粗野主义科幻环境中。采用略微低机位和受控的 10-18 度荷兰角。姿态应具有感性、自信和挑衅感，但不要规" data-tags="通用|复古|头像">
+      <a class="case-card-link" href="/zh/case/3079.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2091326191320125500-1.jpg" alt="Veyrakh 暴雨中的巨构科幻人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3079</span></span><span class="case-title-text">Veyrakh 暴雨中的巨构科幻人像</span></h3>
+          <p class="case-summary">以角色参考图为身份依据，创作暴雨中的巨构科幻人像，融合荷兰角构图、手绘线稿与复古印刷质感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-24</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/HexMethod/status/2091326191320125500">X / @HexMethod</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>使用所提供的图像作为角色身份、物种、解剖结构、比例、面部结构、轮廓、发型与头部形状、性别呈现、表情、标记、颜色、材质、图案、配饰、义肢、机械义体、面具及其他独特特征的绝对依据。保持角色清晰且不可混淆的辨识度；如果参考图中有眼睛被遮挡或隐藏，请保持遮挡或隐藏。
+
+将角色的配色、符号、材质、几何形状、纹样、文化与科技线索及设计语言延展到整幅图像，包括服装、建筑、标识、灯光和氛围。背景必须为该角色专门设...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3079.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3077" data-search="案例3077 gpt image 2 金色黄昏城市窗边人像 一则 gpt image 2 人像提示词，描述年轻女性站在城市玻璃窗边的金色黄昏电影感写真，强调暖光、浅景深、胶片质感与真实细节。 x / @taaruk_ https://x.com/taaruk_/status/2089678758089494920 gpt image 写实 电影感 头像 gpt image 2 人像提示词： 创建一张具有电影感、充满怀旧氛围的金色黄昏人像，画面中的年轻女性站在城市大窗或玻璃表面旁，日落时分拍摄。她穿着一件休闲浅色上衣，肩上自然搭着一件粉色毛衣，并背着一个背包。她留着深色、略微凌乱的及肩头发，几缕发丝在微风中轻轻飘动。整体情绪放松而愉悦，先是微笑着望向落日余晖，再透过玻璃若有所思地凝视远方。 暖色阳光在她的头发和脸部边缘形成漂亮的轮廓光，带有细微的镜头光晕和发亮高光。背景是现代城市天际线，远处建筑、车流和街灯被处理成梦幻的奶油色散景。使用浅景深、柔和胶片颗粒、自然皮肤质感、头发的轻微动态感、真实面部细节、暖琥珀色与低饱和青绿色调色，保留柔和怀旧的" data-tags="GPT Image|写实|电影感|头像">
+      <a class="case-card-link" href="/zh/case/3077.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2089678758089494920-1.jpg" alt="GPT Image 2 金色黄昏城市窗边人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3077</span></span><span class="case-title-text">GPT Image 2 金色黄昏城市窗边人像</span></h3>
+          <p class="case-summary">一则 GPT Image 2 人像提示词，描述年轻女性站在城市玻璃窗边的金色黄昏电影感写真，强调暖光、浅景深、胶片质感与真实细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2089678758089494920">X / @Taaruk_</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">电影感</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>GPT Image 2 人像提示词：
+创建一张具有电影感、充满怀旧氛围的金色黄昏人像，画面中的年轻女性站在城市大窗或玻璃表面旁，日落时分拍摄。她穿着一件休闲浅色上衣，肩上自然搭着一件粉色毛衣，并背着一个背包。她留着深色、略微凌乱的及肩头发，几缕发丝在微风中轻轻飘动。整体情绪放松而愉悦，先是微笑着望向落日余晖，再透过玻璃若有所思地凝视远方。
+暖色阳光在她的头发和脸部边缘形成漂亮的轮廓光，带有细微的镜...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3077.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3070" data-search="案例3070 单色点缀极简墨绘肖像 以黑白墨绘为主、保留单一色彩点缀的极简人物肖像提示词，强调简化轮廓、细微表情与手工质感。 x / @aleenaamiir https://x.com/aleenaamiir/status/2087476276894527622 通用 水墨 头像 【主体】的富有表现力的极简墨绘插画，笔触轮廓自信，轮廓简化，细微表情细节，黑色墨线为主，仅保留一个微妙的色彩点缀，白色背景，现代角色设计美学，保留手工不完美质感。" data-tags="通用|水墨|头像">
+      <a class="case-card-link" href="/zh/case/3070.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2087476276894527622-1.jpg" alt="单色点缀极简墨绘肖像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3070</span></span><span class="case-title-text">单色点缀极简墨绘肖像</span></h3>
+          <p class="case-summary">以黑白墨绘为主、保留单一色彩点缀的极简人物肖像提示词，强调简化轮廓、细微表情与手工质感。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-13</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/aleenaamiir/status/2087476276894527622">X / @aleenaamiir</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">水墨</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>【主体】的富有表现力的极简墨绘插画，笔触轮廓自信，轮廓简化，细微表情细节，黑色墨线为主，仅保留一个微妙的色彩点缀，白色背景，现代角色设计美学，保留手工不完美质感。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3070.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3064" data-search="案例3064 上传参考图的真人 + 彩色q版墙绘同框竖版肖像 以上传参考图为严格身份与服装依据，生成真人全身与彩色q版墙绘同框的竖版可爱肖像。 x / @pyona_ai https://x.com/pyona_ai/status/2082452557537198098 gpt image 写实 二次元 头像 请使用上传的人物参考图作为严格的身份与服装参考。 请保留参考人物的： - 脸部身份 - 面部比例 - 眼型 - 鼻子 - 嘴唇 - 肤色 - 发型 - 发色 - 可见发饰 - 整体可识别气质 - 参考图中展示的服装与穿搭风格 不要硬编码参考图中不存在的具体角色特征。 所有身份、发型、配饰、服装、颜色和造型细节，都必须直接根据上传的参考图推断。 请创作一张高质量的混合风格竖版肖像，包含： 1. 一位基于上传参考图的真实感全身人物 2. 一幅画在人物旁边墙面上的、可爱彩色的 2d q版插画版同一人物 核心概念： 真人在一幅放大的彩色 q版墙绘旁边摆出可爱的姿势。 真人与墙绘中的 q版形象做" data-tags="GPT Image|写实|二次元|头像">
+      <a class="case-card-link" href="/zh/case/3064.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2082452557537198098-1.jpg" alt="上传参考图的真人 + 彩色Q版墙绘同框竖版肖像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3064</span></span><span class="case-title-text">上传参考图的真人 + 彩色Q版墙绘同框竖版肖像</span></h3>
+          <p class="case-summary">以上传参考图为严格身份与服装依据，生成真人全身与彩色Q版墙绘同框的竖版可爱肖像。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-04</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/pyona_ai/status/2082452557537198098">X / @pyona_ai</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">二次元</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>请使用上传的人物参考图作为严格的身份与服装参考。
+
+请保留参考人物的：
+- 脸部身份
+- 面部比例
+- 眼型
+- 鼻子
+- 嘴唇
+- 肤色
+- 发型
+- 发色
+- 可见发饰
+- 整体可识别气质
+- 参考图中展示的服装与穿搭风格
+
+不要硬编码参考图中不存在的具体角色特征。
+所有身份、发型、配饰、服装、颜色和造型细节，都必须直接根据上传的参考图推断。
+
+请创作一张高质量的混合风格竖版肖像，包含：
+1....</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3064.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3050" data-search="案例3050 橙色兔子睡衣 룩북：兔耳发带、可爱卧室场景 橙色兔子睡衣 룩북，保留兔耳发带、橘色连衣裙、床上姿势与可爱卧室布景等原始要素。 x / @daltoki_s https://x.com/daltoki_s/status/2080147062855970941 通用 二次元 写实 头像 橙色兔子睡衣 룩북，白色兔耳发带，蓬松发带，彩色隐形眼镜，灰色眼睛，腮红，娃娃般的脸庞，粉色腮红贴纸，橙色连衣裙，动物印花连衣裙，兔子图案，云朵图案，无袖连衣裙，细肩带连衣裙，荷叶边连衣裙，荷叶边镶饰，褶边连衣裙，吊带背心裙，细肩带，裸露肩部，短款连衣裙。姿势为跪在床上、坐在床上，看着观众，撅嘴，恼怒表情，带有生气符号。场景为可爱房间、毛绒玩具背景、卧室、柔软床品、心形装饰，整体呈可爱美学与温馨氛围。" data-tags="通用|二次元|写实|头像">
+      <a class="case-card-link" href="/zh/case/3050.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2080147062855970941-1.jpg" alt="橙色兔子睡衣 룩북：兔耳发带、可爱卧室场景" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3050</span></span><span class="case-title-text">橙色兔子睡衣 룩북：兔耳发带、可爱卧室场景</span></h3>
+          <p class="case-summary">橙色兔子睡衣 룩북，保留兔耳发带、橘色连衣裙、床上姿势与可爱卧室布景等原始要素。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-28</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/daltoki_s/status/2080147062855970941">X / @daltoki_s</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">二次元</span><span class="tag">写实</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>橙色兔子睡衣 룩북，白色兔耳发带，蓬松发带，彩色隐形眼镜，灰色眼睛，腮红，娃娃般的脸庞，粉色腮红贴纸，橙色连衣裙，动物印花连衣裙，兔子图案，云朵图案，无袖连衣裙，细肩带连衣裙，荷叶边连衣裙，荷叶边镶饰，褶边连衣裙，吊带背心裙，细肩带，裸露肩部，短款连衣裙。姿势为跪在床上、坐在床上，看着观众，撅嘴，恼怒表情，带有生气符号。场景为可爱房间、毛绒玩具背景、卧室、柔软床品、心形装饰，整体呈可爱美学与温馨氛...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3050.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3046" data-search="案例3046 gpt image 2 温馨二次元生活肖像：女孩与猫的影子手绘涂鸦效果 一张温馨二次元生活肖像提示词：短粉发女孩与英短猫在金色夕阳下互动，影子变成手绘漫画涂鸦，保留写实光影与治愈氛围。 x / @taaruk_ https://x.com/taaruk_/status/2080197768178720865 gpt image 二次元 写实 头像 温馨二次元生活肖像：一位可爱的年轻女性，短款粉色波波头，穿着宽松的复古红色格纹法兰绒衬衫、宽松蓝色牛仔裤和经典帆布运动鞋，与一只毛茸茸的灰白相间英短猫互动，猫戴着一条小格纹围巾。他们沐浴在温暖的金色夕阳中，背景是一面干净的米色墙，形成又长又柔和的影子。魔法感设定是：他们的影子变成了有趣的手绘漫画涂鸦——女孩的影子变成一个可爱的q版动漫版自己，摆出快乐姿势；猫的影子变成一只滑稽的卡通猫，挥手、跳舞或伸手靠近她。铅笔素描风格，线条表达丰富，带有运动线、爱心、星星、蝴蝶，以及自然融入影子的俏皮涂鸦。温馨日常切片氛围，吉卜力风 × 现代漫画插画，极简背景，柔和电影感灯光，真实自然的情绪，毛发细节丰富，" data-tags="GPT Image|二次元|写实|头像">
+      <a class="case-card-link" href="/zh/case/3046.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2080197768178720865-1.jpg" alt="GPT Image 2 温馨二次元生活肖像：女孩与猫的影子手绘涂鸦效果" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3046</span></span><span class="case-title-text">GPT Image 2 温馨二次元生活肖像：女孩与猫的影子手绘涂鸦效果</span></h3>
+          <p class="case-summary">一张温馨二次元生活肖像提示词：短粉发女孩与英短猫在金色夕阳下互动，影子变成手绘漫画涂鸦，保留写实光影与治愈氛围。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-23</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/Taaruk_/status/2080197768178720865">X / @Taaruk_</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">二次元</span><span class="tag">写实</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>温馨二次元生活肖像：一位可爱的年轻女性，短款粉色波波头，穿着宽松的复古红色格纹法兰绒衬衫、宽松蓝色牛仔裤和经典帆布运动鞋，与一只毛茸茸的灰白相间英短猫互动，猫戴着一条小格纹围巾。他们沐浴在温暖的金色夕阳中，背景是一面干净的米色墙，形成又长又柔和的影子。魔法感设定是：他们的影子变成了有趣的手绘漫画涂鸦——女孩的影子变成一个可爱的Q版动漫版自己，摆出快乐姿势；猫的影子变成一只滑稽的卡通猫，挥手、跳舞或...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3046.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3039" data-search="案例3039 增强ai人脸真实感的超写实人像提示词 整理一组用于增强ai人脸真实感、去掉油腻感的超写实肖像提示词，保留人像构图、灯光、镜头与皮肤细节要求。 x / @graynotelab https://x.com/graynotelab/status/2078471143313592413 通用 写实 头像 电影级超写实极近距离肖像摄影，一位22-28岁的成年男性/女性（可自由替换），画面仅呈现约半张面部，一只眼睛作为唯一视觉焦点，人物正面凝视镜头，构图大胆，具有强烈的视觉压迫感与艺术张力。 真实自然肤质，完整保留毛孔、细小汗毛、肤色细微起伏、轻微雀斑、局部泛红、细小痘印、浅层纹理等真实肌肤特征，不进行磨皮或美颜处理，皮肤具有自然油脂高光与真实皮下质感。 眼妆精致自然，眼线干净流畅，眼影层次柔和不过度夸张；虹膜呈现复杂放射状纤维结构，瞳孔边缘锐利清晰，角膜拥有真实湿润反射，高光符合物理光学规律；睫毛粗细不一、排列自然；眉毛浓密富有生长方向，保留少量凌乱眉毛；鼻翼、嘴唇及面部边缘拥有真实皮肤纹理" data-tags="通用|写实|头像">
+      <a class="case-card-link" href="/zh/case/3039.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2078471143313592413-1.jpg" alt="增强AI人脸真实感的超写实人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3039</span></span><span class="case-title-text">增强AI人脸真实感的超写实人像提示词</span></h3>
+          <p class="case-summary">整理一组用于增强AI人脸真实感、去掉油腻感的超写实肖像提示词，保留人像构图、灯光、镜头与皮肤细节要求。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/GrayNoteLab/status/2078471143313592413">X / @GrayNoteLab</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>电影级超写实极近距离肖像摄影，一位22-28岁的成年男性/女性（可自由替换），画面仅呈现约半张面部，一只眼睛作为唯一视觉焦点，人物正面凝视镜头，构图大胆，具有强烈的视觉压迫感与艺术张力。
+
+真实自然肤质，完整保留毛孔、细小汗毛、肤色细微起伏、轻微雀斑、局部泛红、细小痘印、浅层纹理等真实肌肤特征，不进行磨皮或美颜处理，皮肤具有自然油脂高光与真实皮下质感。
+
+眼妆精致自然，眼线干净流畅，眼影层次柔和不...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3039.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3036" data-search="案例3036 gpt image 2 典雅欧式婚纱超写实人像提示词 一段用于生成高端超写实欧式室内婚纱人像的中文提示词，强调窗光、长头纱、象牙白礼服、电影感构图与严格负面限制。 x / @torojushiai https://x.com/torojushiai/status/2076667967631470645 gpt image 写实 电影感 头像 高端超写实婚纱时尚人像，优雅欧式室内，电影感16:9宽屏。新娘靠近中左位置，大腿中部至头顶取景。长款大教堂婚纱头纱宽幅延伸至画面右半侧，与左侧柔和发光窗户形成发光半透明的视觉平衡。 人物：年轻成年新娘，纤细优雅体型，白皙柔和发光肌肤。精致四分之三侧面，躯干朝镜头右侧转开，头部轻柔从肩膀回望直视镜头。双肩放松略微倾斜，在颈部、腰部与髋部形成优雅 s 曲线。头部微微朝向抬高的肩膀倾斜。平静、温暖、低调浪漫的表情，淡淡的闭嘴微笑，柔和专注的眼神。亲密、端庄、恬静的氛围，不夸张不商业。 发型：深浓咖啡棕色长发，宽松自然波浪垂落于肩后并延伸至背部。丝滑质感，几缕精致飞散发丝被窗光照亮。额头上有细腻分" data-tags="GPT Image|写实|电影感|头像">
+      <a class="case-card-link" href="/zh/case/3036.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2076667967631470645-1.jpg" alt="GPT Image 2 典雅欧式婚纱超写实人像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3036</span></span><span class="case-title-text">GPT Image 2 典雅欧式婚纱超写实人像提示词</span></h3>
+          <p class="case-summary">一段用于生成高端超写实欧式室内婚纱人像的中文提示词，强调窗光、长头纱、象牙白礼服、电影感构图与严格负面限制。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-14</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/ToroJushiAi/status/2076667967631470645">X / @ToroJushiAi</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">写实</span><span class="tag">电影感</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>高端超写实婚纱时尚人像，优雅欧式室内，电影感16:9宽屏。新娘靠近中左位置，大腿中部至头顶取景。长款大教堂婚纱头纱宽幅延伸至画面右半侧，与左侧柔和发光窗户形成发光半透明的视觉平衡。
+
+人物：年轻成年新娘，纤细优雅体型，白皙柔和发光肌肤。精致四分之三侧面，躯干朝镜头右侧转开，头部轻柔从肩膀回望直视镜头。双肩放松略微倾斜，在颈部、腰部与髋部形成优雅 S 曲线。头部微微朝向抬高的肩膀倾斜。平静、温暖、低...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3036.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3028" data-search="案例3028 gpt image 2 三联幅二次元少女肖像提示词 gpt image 2 的三联幅二次元少女肖像提示词，要求三格同脸，仅更换发型、眼镜、姿势、表情与配饰。 x / @missdelulu9 https://x.com/missdelulu9/status/2075903171743142115 gpt image 二次元 头像 gpt image 2 三联幅二次元少女肖像：三格中的同一位女孩保持完全一致的脸型与五官。仅改变发型、眼镜、姿势、表情和配饰。纵向三联画，近景半身肖像，粗细分明的干净线稿，柔和赛璐璐上色，极简细节，单色系配色与纯色平背景，微妙的色彩反光，优雅耳环，现代日本插画，审美海报设计，高对比度，锐利五官，精品编辑风格，超细节，4k，杰作。" data-tags="GPT Image|二次元|头像">
+      <a class="case-card-link" href="/zh/case/3028.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2075903171743142115-1.jpg" alt="GPT Image 2 三联幅二次元少女肖像提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3028</span></span><span class="case-title-text">GPT Image 2 三联幅二次元少女肖像提示词</span></h3>
+          <p class="case-summary">GPT Image 2 的三联幅二次元少女肖像提示词，要求三格同脸，仅更换发型、眼镜、姿势、表情与配饰。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MissDelulu9/status/2075903171743142115">X / @MissDelulu9</span>
+          </div>
+          <div class="case-tags"><span class="tag">GPT Image</span><span class="tag">二次元</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>GPT Image 2
+三联幅二次元少女肖像：三格中的同一位女孩保持完全一致的脸型与五官。仅改变发型、眼镜、姿势、表情和配饰。纵向三联画，近景半身肖像，粗细分明的干净线稿，柔和赛璐璐上色，极简细节，单色系配色与纯色平背景，微妙的色彩反光，优雅耳环，现代日本插画，审美海报设计，高对比度，锐利五官，精品编辑风格，超细节，4K，杰作。</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3028.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3027" data-search="案例3027 女生可爱头像灵感：软粉百合韩系编辑风人像 基于参考照片的超写实肩部以上头像提示词，保留原始身份与五官结构，加入软粉百合、韩系编辑感、灰色棚拍与精致美妆。 x / @gemini_prompts https://x.com/gemini_prompts/status/2074560193057390814 通用 写实 头像 基于参考照片，保留准确的面部比例、可见毛孔、自然皮肤纹理和精致的编辑感美颜。保持原始身份、脸型、眼睛、鼻子、嘴唇、下颌线、肤色和面部结构完全一致，不要美化、瘦脸、重塑或改动脸部，只调整造型、妆容、发型、服装、灯光、指甲、花朵道具和编辑概念。 创作一张超写实的肩部以上美妆人像，采用软粉百合韩系编辑风。整体氛围优雅、亲密、女性化、电影感、奢华，适合作为头像。构图紧凑，脸部以三分之二角度柔和居中，放松下巴，双唇微启，安静直视镜头。 在脸旁放置一朵单独的大号柔粉百合，部分遮住一只眼睛和部分脸颊，同时保持脸部清晰可识别。花朵需要有细致的花瓣纹理、自然花脉和柔和的珍珠感花心。 服装：合身黑色高领衫或" data-tags="通用|写实|头像">
+      <a class="case-card-link" href="/zh/case/3027.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2074560193057390814-1.jpg" alt="女生可爱头像灵感：软粉百合韩系编辑风人像" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3027</span></span><span class="case-title-text">女生可爱头像灵感：软粉百合韩系编辑风人像</span></h3>
+          <p class="case-summary">基于参考照片的超写实肩部以上头像提示词，保留原始身份与五官结构，加入软粉百合、韩系编辑感、灰色棚拍与精致美妆。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/gemini_prompts/status/2074560193057390814">X / @gemini_prompts</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>基于参考照片，保留准确的面部比例、可见毛孔、自然皮肤纹理和精致的编辑感美颜。保持原始身份、脸型、眼睛、鼻子、嘴唇、下颌线、肤色和面部结构完全一致，不要美化、瘦脸、重塑或改动脸部，只调整造型、妆容、发型、服装、灯光、指甲、花朵道具和编辑概念。
+
+创作一张超写实的肩部以上美妆人像，采用软粉百合韩系编辑风。整体氛围优雅、亲密、女性化、电影感、奢华，适合作为头像。构图紧凑，脸部以三分之二角度柔和居中，放松...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3027.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3026" data-search="案例3026 手办拟人 cosplay 生成专属 meme 图 围绕手办拟人 cosplay 与表情模仿的照片生成提示词，强调成人写真感、店内场景、真实手机闪光和强烈的人物与手办一致性。 x / @msjiaozhu https://x.com/msjiaozhu/status/2074075972098466130 通用 写实 头像 使用一张竖版 9:16 的真实朋友手机直闪照片风格，场景为摆满收藏手办的店内，画面中不要出现可读文字。主体是一位明确成年的东亚女性，约 29 岁，面容成熟出众，长黑发，自然肤质，身材修长，双手真实可信，手持一只 45 厘米的原创虚构青绿色与黑色龙偶像手办。 手办采用 q 版英雄比例，眯眼表情，带小龙角发饰，短款青绿色外套，黑色挺括迷你裙，金色腰带，长靴，并做出一只手贴脸、带点得意侧眼的表情。真人也穿着同样的虚构服装逻辑，采用公开安全的 cosplay 风格：青绿色短款缎面外套、贴身黑色方领上衣、高腰挺括黑色迷你裙、金色腰带、长黑靴、小龙角发夹、金色耳饰，并且严格复刻手办的侧眼贴脸姿势。 人" data-tags="通用|写实|头像">
+      <a class="case-card-link" href="/zh/case/3026.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2074075972098466130-1.jpg" alt="手办拟人 cosplay 生成专属 meme 图" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3026</span></span><span class="case-title-text">手办拟人 cosplay 生成专属 meme 图</span></h3>
+          <p class="case-summary">围绕手办拟人 cosplay 与表情模仿的照片生成提示词，强调成人写真感、店内场景、真实手机闪光和强烈的人物与手办一致性。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/msjiaozhu/status/2074075972098466130">X / @msjiaozhu</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">写实</span><span class="tag">头像</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 查看提示词</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>提示词</h4>
+            <p>使用一张竖版 9:16 的真实朋友手机直闪照片风格，场景为摆满收藏手办的店内，画面中不要出现可读文字。主体是一位明确成年的东亚女性，约 29 岁，面容成熟出众，长黑发，自然肤质，身材修长，双手真实可信，手持一只 45 厘米的原创虚构青绿色与黑色龙偶像手办。
+
+手办采用 Q 版英雄比例，眯眼表情，带小龙角发饰，短款青绿色外套，黑色挺括迷你裙，金色腰带，长靴，并做出一只手贴脸、带点得意侧眼的表情。真人...</p>
+          </div>
+          <a class="view-full-btn" href="/zh/case/3026.html">查看详情页</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >加载更多</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"共 {count} 条内容","noResults":"😕 没有找到匹配内容","loadMore":"加载更多","loadingMore":"加载中..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/zh/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>
