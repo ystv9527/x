@@ -27,10 +27,19 @@ if defined ORIGIN_URL (
     echo.
 )
 
+echo [1/6] Compress videos larger than the Cloudflare Pages limit...
+call npm run compress:videos
+if errorlevel 1 (
+    echo [error] Video compression failed.
+    pause
+    exit /b 1
+)
+echo.
+
 if /i "%SKIP_BUILD%"=="1" (
-    echo [1/5] Skipping build because SKIP_BUILD=1
+    echo [2/6] Skipping path fix and build because SKIP_BUILD=1
 ) else (
-    echo [1/5] Fix GitHub Pages paths...
+    echo [2/6] Fix GitHub Pages paths...
     node fix-paths-for-github.js
     if errorlevel 1 (
         echo [error] Failed to fix GitHub Pages paths.
@@ -39,7 +48,7 @@ if /i "%SKIP_BUILD%"=="1" (
     )
 
     echo.
-    echo [2/5] Rebuild data and sitemap...
+    echo [3/6] Rebuild data and sitemap...
     call npm run build
     if errorlevel 1 (
         echo [error] Build failed.
@@ -49,7 +58,7 @@ if /i "%SKIP_BUILD%"=="1" (
 )
 echo.
 
-echo [3/5] Generate llms metadata files...
+echo [4/6] Generate llms metadata files...
 call npm run generate:llms
 if errorlevel 1 (
     echo [error] llms metadata generation failed.
@@ -58,7 +67,7 @@ if errorlevel 1 (
 )
 echo.
 
-echo [4/5] Stage and commit changes...
+echo [5/6] Stage and commit changes...
 if exist ".git\index.lock" (
     echo [warn] Detected .git\index.lock. Trying to remove stale lock...
     del /f /q ".git\index.lock" >nul 2>&1
@@ -72,9 +81,9 @@ if /i "%FULL_STAGE%"=="1" (
     echo [info] FULL_STAGE=1, staging all files.
     git add -A .
 ) else (
-    echo [info] Incremental staging (data/ zh/ en/ images/ videos/ scripts/ package.json sitemap.xml index.html robots.txt llms.txt llms-full.txt)
+    echo [info] Incremental staging (data/ zh/ en/ images/ videos/ scripts/ package.json upload script sitemap.xml index.html robots.txt llms.txt llms-full.txt)
     set "STAGED_ANY=0"
-    for %%p in (data zh en images videos scripts package.json sitemap.xml index.html robots.txt llms.txt llms-full.txt) do (
+    for %%p in (data zh en images videos scripts package.json "一键上传到GitHub.bat" sitemap.xml index.html robots.txt llms.txt llms-full.txt) do (
         if exist "%%p" (
             git add -A "%%p"
             if not errorlevel 1 set "STAGED_ANY=1"
@@ -99,13 +108,13 @@ if errorlevel 1 (
 echo.
 
 if /i "%SKIP_PUSH%"=="1" (
-    echo [5/5] Skipping push because SKIP_PUSH=1
+    echo [6/6] Skipping push because SKIP_PUSH=1
     echo.
     pause
     exit /b 0
 )
 
-echo [5/5] Push to GitHub...
+echo [6/6] Push to GitHub...
 echo [info] If push fails, the script will retry up to 5 times.
 echo.
 
