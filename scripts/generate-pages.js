@@ -366,6 +366,7 @@ async function translateToEnglish(text) {
       const apiUrl = new URL(`${ai.apiUrl}/chat/completions`);
       const client = apiUrl.protocol === 'http:' ? http : https;
       const req = client.request({
+        signal: AbortSignal.timeout(12000),
         protocol: apiUrl.protocol,
         hostname: apiUrl.hostname,
         port: apiUrl.port || (apiUrl.protocol === 'https:' ? 443 : 80),
@@ -415,6 +416,7 @@ async function translateToEnglish(text) {
 
   return new Promise((resolve) => {
     const req = https.get(endpoint.toString(), {
+      signal: AbortSignal.timeout(8000),
       headers: { 'User-Agent': 'Mozilla/5.0' }
     }, (res) => {
       if (res.statusCode !== 200) {
@@ -459,8 +461,15 @@ async function enrichEnglishTitleSummary(items) {
   const recentItems = sortByIdDesc(items).slice(0, EN_TRANSLATE_RECENT_LIMIT);
   let newTranslations = 0;
   let cacheDirty = false;
+  let failedTranslations = 0;
+  const startedAt = Date.now();
+  console.log('🌐 Checking recent English translations (maximum 60 seconds)...');
 
   for (const item of recentItems) {
+    if (failedTranslations >= 2 || Date.now() - startedAt >= 60000) {
+      console.warn('⚠️ Translation service unavailable or time budget reached; continuing page generation with existing content.');
+      break;
+    }
     if (newTranslations >= EN_TRANSLATE_MAX_NEW_PER_RUN) break;
 
     const title = cleanText(item.title);
@@ -470,6 +479,7 @@ async function enrichEnglishTitleSummary(items) {
         item.titleEnglish = cached;
       } else {
         const translated = await translateToEnglish(title);
+        if (!translated) failedTranslations++;
         if (translated) {
           item.titleEnglish = translated;
           cache.title[title] = translated;
@@ -479,7 +489,7 @@ async function enrichEnglishTitleSummary(items) {
       }
     }
 
-    if (newTranslations >= EN_TRANSLATE_MAX_NEW_PER_RUN) break;
+    if (newTranslations >= EN_TRANSLATE_MAX_NEW_PER_RUN || failedTranslations >= 2 || Date.now() - startedAt >= 60000) break;
 
     const summary = cleanText(item.summary);
     if (!cleanText(item.summaryEnglish) && hasCjkText(summary)) {
@@ -488,6 +498,7 @@ async function enrichEnglishTitleSummary(items) {
         item.summaryEnglish = cached;
       } else {
         const translated = await translateToEnglish(summary);
+        if (!translated) failedTranslations++;
         if (translated) {
           item.summaryEnglish = translated;
           cache.summary[summary] = translated;

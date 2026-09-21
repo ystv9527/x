@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用ChatGPT image2.5将人物照片抽象成东方水墨线条海报 #3098 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="ChatGPT image2.5将人物照片抽象成东方水墨线条海报，保留辨识度、大面积留白、黑线骨架、朱红墨绿点睛并加小印章。">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/case/3098.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/3098.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/3098.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1789996684846">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"使用ChatGPT image2.5将人物照片抽象成东方水墨线条海报 #3098","description":"ChatGPT image2.5将人物照片抽象成东方水墨线条海报，保留辨识度、大面积留白、黑线骨架、朱红墨绿点睛并加小印章。","url":"https://gemnana.com/zh/case/3098.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">3100</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">3064</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">33</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/case/3098.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="/zh/index.html">首页</a><span>›</span>
+        <a href="/zh/image/index.html">图片生成</a><span>›</span>
+        <span>#3098</span>
+      </nav>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3098</span></span><span class="case-title-text">使用ChatGPT image2.5将人物照片抽象成东方水墨线条海报</span></h1>
+      <p>2026-09-10　<a class="source-inline-link" href="https://x.com/zhidawang219555/status/2097927488559366317" target="_blank" rel="noopener noreferrer">X / @zhidawang219555</a></p>
+      <p><a class="source-link" href="/zh/image/index.html">← 返回列表</a></p>
+    </div>
+
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
+        <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
+      </div>
+
+      <div class="detail-block"><h3>📝 内容摘要</h3><p>ChatGPT image2.5将人物照片抽象成东方水墨线条海报，保留辨识度、大面积留白、黑线骨架、朱红墨绿点睛并加小印章。</p></div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 中文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("请严格以我上传的参考图为唯一主体参考来源。\n\n首先分析并提取参考图中最具有辨识度的视觉要素，包括：\n\n主体身份与类型\n面部或头部特征\n发型、耳朵、角、帽子等头部轮廓\n服装、配饰、道具\n身体姿态与动作方向\n最有辨识度的外轮廓\n主体之间的关系\n原图中具有代表性的色彩\n能够体现主体身份的标志性细节\n\n不要机械描摹参考图，也不要追求照片级写实复制。\n\n在保证主体“一眼仍然能够被认出”的前提下，对参考图进行高度概括、抽象化和东方艺术化重新创作。\n\n将主体转译为具有强烈中国东方美学气质的现代抽象手绘线条艺术。\n\n整体采用极致简约的毛笔线条与现代线描语言，通过少量但富有表现力的曲线重新概括主体结构。\n\n线条具有明显的手绘毛笔感，粗细自然变化，带有轻微飞白、墨迹干湿变化与手工笔触。\n\n大量使用修长、流畅、飘逸的艺术曲线。\n\n部分线条可以从主体结构自然延伸出去，形成类似书法运笔、衣带、水流、风、云气一般的长曲线，使画面产生明显的速度感、方向感和东方韵律。\n\n不要把所有结构完整画出来。\n\n允许通过断线、留白、几笔概括、局部缺失和视觉联想来表现主体。\n\n重点保留最具有识别度的轮廓、姿态和标志性元素，其余细节大胆舍弃。\n\n色彩控制在极少数量。\n\n以黑色线条作为主要视觉骨架，并根据参考图本身的代表性色彩，提取 1—2 种强调色进行艺术化使用。\n\n优先允许使用：\n黑色、朱红色、墨绿色。\n颜色只作为局部点睛，不进行大面积填色。\n\n部分标志性服装、配饰、道具或动作轨迹可以使用红色或绿色长线进行强调。\n\n构图完整但极度克制。\n\n主体位于画面视觉中心区域，可以适当打破常规比例，对身体、衣物、毛发、尾巴、道具或动作轨迹进行拉长和曲线化处理。\n\n让主体像由几根正在流动的毛笔线条自然形成，而不是由封闭轮廓勾勒出来。\n\n整体具有：\n东方抽象艺术、\n现代极简主义、\n中国书法线条、\n水墨速写、\n传统神话插画、\n现代编辑插画\n融合后的视觉语言。\n\n画面加入一枚小型传统朱红色篆刻印章。\n印章文字根据参考图主体的身份、名字、昵称、角色特征或画面主题进行提炼，控制在 2—4 个汉字以内。\n如果没有明确文字信息，则不要擅自添加具体姓名，可使用与主体气质相符的简短东方意象文字。\n印章只是视觉点缀，尺寸较小，不抢主体。\n背景保持极简。\n使用细腻的米白色宣纸作为底色，具有非常轻微、自然、真实的纸张纤维纹理。\n不要出现复杂场景、建筑、景物或装饰性背景。\n画面四周必须保留大面积留白，尤其主体外围不要塞满元素。\n\n利用留白与少量曲线形成东方绘画中的“虚实关系”和呼吸感。\n\n最终效果应像：\n\n“从一张真实参考图中提取灵魂与轮廓，再用几根飘逸的中国毛笔长线重新画了一遍。”\n\n强调：\n主体辨识度必须保留，\n但不是照片复制；\n结构高度概括，\n但不能抽象到无法识别；\n线条少而精准，\n飘逸但不凌乱；\n传统东方气质与现代设计感同时存在。\n\n高清细腻，艺术海报级完成度，干净、克制、高级。\n\n禁止：\n写实照片效果、\n3D渲染、\n卡通Q版、\n复杂背景、\n大量颜色、\n大面积色块、\n密集细节、\n机械描边、\n封闭式矢量轮廓、\n霓虹灯效果、\n赛博朋克元素、\n多余文字、\n英文文字、\n商业Logo、\n水印。\n\n画面重点始终是：\n「参考图主体辨识度 + 极简毛笔线条 + 飘逸长曲线 + 东方留白 + 少量朱红/墨绿点睛」。", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>请严格以我上传的参考图为唯一主体参考来源。</p><p>首先分析并提取参考图中最具有辨识度的视觉要素，包括：</p><p>主体身份与类型<br>面部或头部特征<br>发型、耳朵、角、帽子等头部轮廓<br>服装、配饰、道具<br>身体姿态与动作方向<br>最有辨识度的外轮廓<br>主体之间的关系<br>原图中具有代表性的色彩<br>能够体现主体身份的标志性细节</p><p>不要机械描摹参考图，也不要追求照片级写实复制。</p><p>在保证主体“一眼仍然能够被认出”的前提下，对参考图进行高度概括、抽象化和东方艺术化重新创作。</p><p>将主体转译为具有强烈中国东方美学气质的现代抽象手绘线条艺术。</p><p>整体采用极致简约的毛笔线条与现代线描语言，通过少量但富有表现力的曲线重新概括主体结构。</p><p>线条具有明显的手绘毛笔感，粗细自然变化，带有轻微飞白、墨迹干湿变化与手工笔触。</p><p>大量使用修长、流畅、飘逸的艺术曲线。</p><p>部分线条可以从主体结构自然延伸出去，形成类似书法运笔、衣带、水流、风、云气一般的长曲线，使画面产生明显的速度感、方向感和东方韵律。</p><p>不要把所有结构完整画出来。</p><p>允许通过断线、留白、几笔概括、局部缺失和视觉联想来表现主体。</p><p>重点保留最具有识别度的轮廓、姿态和标志性元素，其余细节大胆舍弃。</p><p>色彩控制在极少数量。</p><p>以黑色线条作为主要视觉骨架，并根据参考图本身的代表性色彩，提取 1—2 种强调色进行艺术化使用。</p><p>优先允许使用：<br>黑色、朱红色、墨绿色。<br>颜色只作为局部点睛，不进行大面积填色。</p><p>部分标志性服装、配饰、道具或动作轨迹可以使用红色或绿色长线进行强调。</p><p>构图完整但极度克制。</p><p>主体位于画面视觉中心区域，可以适当打破常规比例，对身体、衣物、毛发、尾巴、道具或动作轨迹进行拉长和曲线化处理。</p><p>让主体像由几根正在流动的毛笔线条自然形成，而不是由封闭轮廓勾勒出来。</p><p>整体具有：<br>东方抽象艺术、<br>现代极简主义、<br>中国书法线条、<br>水墨速写、<br>传统神话插画、<br>现代编辑插画<br>融合后的视觉语言。</p><p>画面加入一枚小型传统朱红色篆刻印章。<br>印章文字根据参考图主体的身份、名字、昵称、角色特征或画面主题进行提炼，控制在 2—4 个汉字以内。<br>如果没有明确文字信息，则不要擅自添加具体姓名，可使用与主体气质相符的简短东方意象文字。<br>印章只是视觉点缀，尺寸较小，不抢主体。<br>背景保持极简。<br>使用细腻的米白色宣纸作为底色，具有非常轻微、自然、真实的纸张纤维纹理。<br>不要出现复杂场景、建筑、景物或装饰性背景。<br>画面四周必须保留大面积留白，尤其主体外围不要塞满元素。</p><p>利用留白与少量曲线形成东方绘画中的“虚实关系”和呼吸感。</p><p>最终效果应像：</p><p>“从一张真实参考图中提取灵魂与轮廓，再用几根飘逸的中国毛笔长线重新画了一遍。”</p><p>强调：<br>主体辨识度必须保留，<br>但不是照片复制；<br>结构高度概括，<br>但不能抽象到无法识别；<br>线条少而精准，<br>飘逸但不凌乱；<br>传统东方气质与现代设计感同时存在。</p><p>高清细腻，艺术海报级完成度，干净、克制、高级。</p><p>禁止：<br>写实照片效果、<br>3D渲染、<br>卡通Q版、<br>复杂背景、<br>大量颜色、<br>大面积色块、<br>密集细节、<br>机械描边、<br>封闭式矢量轮廓、<br>霓虹灯效果、<br>赛博朋克元素、<br>多余文字、<br>英文文字、<br>商业Logo、<br>水印。</p><p>画面重点始终是：<br>「参考图主体辨识度 + 极简毛笔线条 + 飘逸长曲线 + 东方留白 + 少量朱红/墨绿点睛」。</p></div>
+      </div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 英文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Please strictly take the reference image I uploaded as the only subject reference source.\n\nFirst analyze and extract the most identifiable visual elements from the reference image, including:\n\nsubject identity and type\nfacial or head features\nhairstyle, ears, horns, hats and other head outlines\nclothing, accessories, props\nbody posture and direction of movement\nmost identifiable outer contour\nrelationships between subjects\nrepresentative colors in the original image\niconic details that reflect the subject's identity\n\nDo not mechanically reproduce the reference image, nor pursue photo-level realistic replication.\n\nOn the premise that the subject can still be recognized at a glance, highly generalize, abstractize and Orientalize the reference image for recreation.\n\nTranslate the subject into a modern abstract hand-drawn line art with strong Chinese Oriental aesthetic temperament.\n\nOverall, use extremely simple brush strokes and modern line drawing language to re-generalize the subject's structure with a small number of but expressive curves.\n\nThe lines have a clear hand-drawn brush feel, with natural thickness variations, slight feibai, ink wet-dry changes and manual strokes.\n\nA large amount of slender, fluent, graceful artistic curves are used.\n\nSome lines can naturally extend from the subject's structure, forming long curves similar to calligraphy strokes, ribbons, water flow, wind, or cloud qi, creating obvious speed, direction and Oriental rhythm.\n\nDo not draw all structures completely.\n\nIt is allowed to use broken lines, blank spaces, sketchy few strokes, partial missing and visual association to represent the subject.\n\nFocus on retaining the most identifiable contours, postures and iconic elements, boldly discarding other details.\n\nColor control is limited to a very small number.\n\nBlack lines are used as the main visual skeleton, and 1-2 accent colors are extracted from the representative colors of the reference image for artistic use.\n\nPriority is allowed to use:\nblack, cinnabar red, ink green.\nColors are only used as local accents, not large area coloring.\n\nSome iconic clothing, accessories, props or action traces can use red or green long lines for emphasis.\n\nComposition is complete but extremely restrained.\n\nThe subject is located in the center of the visual area, with appropriate breaking of conventional proportions, stretching and curving the body, clothing, hair, tail, props or action traces.\n\nThe subject is like formed naturally by a few flowing brush lines, rather than outlined with closed contours.\n\nOverall it has:\nOriental abstract art,\nmodern minimalism,\nChinese calligraphy lines,\nink wash sketch,\ntraditional mythological illustration,\nmodern editorial illustration\nfused visual language.\n\nA small traditional cinnabar red seal is added to the image.\nThe seal text is refined based on the subject's identity, name, nickname, character features or image theme, controlled within 2-4 Chinese characters.\nIf there is no clear text information, do not add specific names arbitrarily, and can use short Oriental imagery text that matches the subject's temperament.\nThe seal is only a visual decoration, small in size, not competing with the subject.\nThe background is kept extremely simple.\nA delicate off-white xuan paper is used as the base color, with very subtle, natural and realistic paper fiber texture.\nNo complex scenes, buildings, scenery or decorative backgrounds should appear.\nA large area of blank space must be retained around the image, especially not filling elements around the subject periphery.\n\nUse blank space and a small amount of curves to create the \"virtual-real relationship\" and breathing sense in Oriental painting.\n\nThe final effect should be like:\n\n\"Extract the soul and contours from a real reference image, then redraw it with a few elegant Chinese brush long lines.\"\n\nEmphasize:\nthe subject's identification must be retained,\nbut it is not a photo copy;\nthe structure is highly generalized,\nbut not abstract to the point of unrecognizability;\nthe lines are few and precise,\ngraceful but not messy;\ntradiional Oriental temperament and modern design sense coexist simultaneously.\n\nHigh-definition and delicate, artistic poster-level completion, clean, restrained, and high-end.\n\nProhibited:\nphotorealistic photo effects,\n3D rendering,\ncartoon Q version,\ncomplex backgrounds,\nlarge amounts of color,\nlarge area color blocks,\ndense details,\nmechanical outlines,\nclosed vector contours,\nneon effects,\ncyberpunk elements,\nextra text,\nEnglish text,\ncommercial logos,\nwatermarks.\n\nThe focus of the image is always:\n\"reference image subject's identification + extremely simple brush lines + graceful long curves + Oriental blank space + small amount of cinnabar red / ink green accents\".", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>Please strictly take the reference image I uploaded as the only subject reference source.</p><p>First analyze and extract the most identifiable visual elements from the reference image, including:</p><p>subject identity and type<br>facial or head features<br>hairstyle, ears, horns, hats and other head outlines<br>clothing, accessories, props<br>body posture and direction of movement<br>most identifiable outer contour<br>relationships between subjects<br>representative colors in the original image<br>iconic details that reflect the subject&#39;s identity</p><p>Do not mechanically reproduce the reference image, nor pursue photo-level realistic replication.</p><p>On the premise that the subject can still be recognized at a glance, highly generalize, abstractize and Orientalize the reference image for recreation.</p><p>Translate the subject into a modern abstract hand-drawn line art with strong Chinese Oriental aesthetic temperament.</p><p>Overall, use extremely simple brush strokes and modern line drawing language to re-generalize the subject&#39;s structure with a small number of but expressive curves.</p><p>The lines have a clear hand-drawn brush feel, with natural thickness variations, slight feibai, ink wet-dry changes and manual strokes.</p><p>A large amount of slender, fluent, graceful artistic curves are used.</p><p>Some lines can naturally extend from the subject&#39;s structure, forming long curves similar to calligraphy strokes, ribbons, water flow, wind, or cloud qi, creating obvious speed, direction and Oriental rhythm.</p><p>Do not draw all structures completely.</p><p>It is allowed to use broken lines, blank spaces, sketchy few strokes, partial missing and visual association to represent the subject.</p><p>Focus on retaining the most identifiable contours, postures and iconic elements, boldly discarding other details.</p><p>Color control is limited to a very small number.</p><p>Black lines are used as the main visual skeleton, and 1-2 accent colors are extracted from the representative colors of the reference image for artistic use.</p><p>Priority is allowed to use:<br>black, cinnabar red, ink green.<br>Colors are only used as local accents, not large area coloring.</p><p>Some iconic clothing, accessories, props or action traces can use red or green long lines for emphasis.</p><p>Composition is complete but extremely restrained.</p><p>The subject is located in the center of the visual area, with appropriate breaking of conventional proportions, stretching and curving the body, clothing, hair, tail, props or action traces.</p><p>The subject is like formed naturally by a few flowing brush lines, rather than outlined with closed contours.</p><p>Overall it has:<br>Oriental abstract art,<br>modern minimalism,<br>Chinese calligraphy lines,<br>ink wash sketch,<br>traditional mythological illustration,<br>modern editorial illustration<br>fused visual language.</p><p>A small traditional cinnabar red seal is added to the image.<br>The seal text is refined based on the subject&#39;s identity, name, nickname, character features or image theme, controlled within 2-4 Chinese characters.<br>If there is no clear text information, do not add specific names arbitrarily, and can use short Oriental imagery text that matches the subject&#39;s temperament.<br>The seal is only a visual decoration, small in size, not competing with the subject.<br>The background is kept extremely simple.<br>A delicate off-white xuan paper is used as the base color, with very subtle, natural and realistic paper fiber texture.<br>No complex scenes, buildings, scenery or decorative backgrounds should appear.<br>A large area of blank space must be retained around the image, especially not filling elements around the subject periphery.</p><p>Use blank space and a small amount of curves to create the &quot;virtual-real relationship&quot; and breathing sense in Oriental painting.</p><p>The final effect should be like:</p><p>&quot;Extract the soul and contours from a real reference image, then redraw it with a few elegant Chinese brush long lines.&quot;</p><p>Emphasize:<br>the subject&#39;s identification must be retained,<br>but it is not a photo copy;<br>the structure is highly generalized,<br>but not abstract to the point of unrecognizability;<br>the lines are few and precise,<br>graceful but not messy;<br>tradiional Oriental temperament and modern design sense coexist simultaneously.</p><p>High-definition and delicate, artistic poster-level completion, clean, restrained, and high-end.</p><p>Prohibited:<br>photorealistic photo effects,<br>3D rendering,<br>cartoon Q version,<br>complex backgrounds,<br>large amounts of color,<br>large area color blocks,<br>dense details,<br>mechanical outlines,<br>closed vector contours,<br>neon effects,<br>cyberpunk elements,<br>extra text,<br>English text,<br>commercial logos,<br>watermarks.</p><p>The focus of the image is always:<br>&quot;reference image subject&#39;s identification + extremely simple brush lines + graceful long curves + Oriental blank space + small amount of cinnabar red / ink green accents&quot;.</p></div>
+      </div>
+      <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/../images/tweet-2097927488559366317-1.jpg" alt="使用ChatGPT image2.5将人物照片抽象成东方水墨线条海报" loading="lazy"><img src="/../images/tweet-2097927488559366317-2.jpg" alt="使用ChatGPT image2.5将人物照片抽象成东方水墨线条海报" loading="lazy"></div></div>
+      
+      
+    </div>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("该案例暂无可展示的提示词内容。");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ 已复制";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("复制失败，请手动复制");
+        }
+      }
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布中...";
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: 3098 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 3098,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm("确认删除该案例？此操作不可恢复。")) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: 3098 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert("删除成功");
+          window.location.href = "/zh/image/index.html";
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简墨线风景小笺：旅行照片对比海报 #3097 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="将旅行照片提炼成独立极简墨线小笺对比海报，保留高保真上方照片与下方轻盈墨线转绘，3:4竖版构图。">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/case/3097.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/3097.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/3097.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1789996684847">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"极简墨线风景小笺：旅行照片对比海报 #3097","description":"将旅行照片提炼成独立极简墨线小笺对比海报，保留高保真上方照片与下方轻盈墨线转绘，3:4竖版构图。","url":"https://gemnana.com/zh/case/3097.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">3100</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">3064</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">33</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/case/3097.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="/zh/index.html">首页</a><span>›</span>
+        <a href="/zh/image/index.html">图片生成</a><span>›</span>
+        <span>#3097</span>
+      </nav>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3097</span></span><span class="case-title-text">极简墨线风景小笺：旅行照片对比海报</span></h1>
+      <p>2026-09-09　<a class="source-inline-link" href="https://x.com/Hamburgerai/status/2096961400468119891" target="_blank" rel="noopener noreferrer">X / @Hamburgerai</a></p>
+      <p><a class="source-link" href="/zh/image/index.html">← 返回列表</a></p>
+    </div>
+
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
+        <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
+      </div>
+
+      <div class="detail-block"><h3>📝 内容摘要</h3><p>将旅行照片提炼成独立极简墨线小笺对比海报，保留高保真上方照片与下方轻盈墨线转绘，3:4竖版构图。</p></div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 中文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("将我上传的每一张旅行照片分别制作成一张独立的「极简墨线风景小笺」对比海报，不多图拼接，每张照片单独输出。\n整体采用3:4竖版构图，明确保留“上方原始照片、下方风格转绘”的视觉对照。上下区域可根据原图内容自然调整比例，不必机械均分，但两部分必须边界清楚、阅读关系明确，并共同构成一张完整的编辑设计作品。\n上半部分高保真保留原始照片：保持地点、主体、建筑结构、人物姿态、自然光影、空间层次和原有色彩氛围，不得替换场景、改变关键物体、拉伸主体或虚构原图中不存在的地标。仅进行轻微而克制的杂志摄影调色；如需适配画幅，可自然延展天空、水面、地面或环境背景。\n下半部分使用温润的米白色或自然纸白作为完整底面，将照片提炼为一幅缩小的极简墨线风景小稿。不要完整照搬原图，也不要把整个画面平均线描；应主动筛选画面中最有识别度和诗意的少数信息，例如：一个建筑或地貌结构锚点、一条山脊或水岸线、一株具有姿态的植物、一名小人物或一件旅行物件，以及一至两条天气与空间线索。\n删除无关人群、杂乱植被、重复建筑和琐碎背景。转绘主体仅占下半区域宽度约38%–62%，保留约55%–72%连续、完整、可感知的纸白。\n线条使用黑色或深灰黑色的细钢笔、干墨与轻微毛笔飞白质感：允许粗细变化、停顿、断续、纸齿、漏墨和未闭合轮廓，使其像旅行途中迅速但准确留下的观察小稿。\n建筑依靠少量结构线表现比例，山峰与远景只保留稀疏轮廓，水面、雾气、天空与距离主要通过留白完成；植物不逐片描绘叶子，而以枝干方向和极少墨点表现姿态。避免灰墨大面积铺染，避免画成完整传统山水画或精密建筑制图。\n配色以黑墨为主，只允许从原照片中提取最多两种小面积强调色，例如朱砂红、秋叶赭黄、荷花淡粉、苔藓灰绿或渔网暖黄。强调色总面积不超过下半画面的8%，仅落在一个最有记忆点的局部，不做水彩满铺、彩色轮廓或高饱和装饰。\n文字应像小型旅行出版物的页眉与图注，数量少但清楚可读。根据照片内容生成一个简短英文标题，搭配编号字段“INK NOTE 01”和一句极短英文观察句。\n标题可使用克制的衬线体、打字机体或略带手工不齐的印刷体；文字放在主要留白区域，与插画保持呼吸距离，不压住主体，不使用华丽书法，不生成中文印章、作者签名、品牌名或水印。不同图片只更换标题、编号和观察句，整体版式与字体气质保持统一。\n最终画面应呈现真实旅行摄影与轻盈墨线观察稿之间的明确对照；安静、克制、疏朗，像一页从独立旅行刊物、建筑观察册或私人速写本中取出的纸本小笺。重点不是炫技，而是通过删减、停笔与纸白，让原照片中的一个地点、一种天气或一个短暂动作被重新看见。\n避免：整张照片直接线稿滤镜化、上下内容完全重复、下半铺满画面、连续灰色晕染、传统国画满构图、复杂树叶、精密交叉排线、漫画化建筑、卡通人物、水彩填色、高饱和撞色、伪中文、复制照片中的招牌文字、作者姓名、水印、电商模板感和廉价复古滤镜。", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>将我上传的每一张旅行照片分别制作成一张独立的「极简墨线风景小笺」对比海报，不多图拼接，每张照片单独输出。<br>整体采用3:4竖版构图，明确保留“上方原始照片、下方风格转绘”的视觉对照。上下区域可根据原图内容自然调整比例，不必机械均分，但两部分必须边界清楚、阅读关系明确，并共同构成一张完整的编辑设计作品。<br>上半部分高保真保留原始照片：保持地点、主体、建筑结构、人物姿态、自然光影、空间层次和原有色彩氛围，不得替换场景、改变关键物体、拉伸主体或虚构原图中不存在的地标。仅进行轻微而克制的杂志摄影调色；如需适配画幅，可自然延展天空、水面、地面或环境背景。<br>下半部分使用温润的米白色或自然纸白作为完整底面，将照片提炼为一幅缩小的极简墨线风景小稿。不要完整照搬原图，也不要把整个画面平均线描；应主动筛选画面中最有识别度和诗意的少数信息，例如：一个建筑或地貌结构锚点、一条山脊或水岸线、一株具有姿态的植物、一名小人物或一件旅行物件，以及一至两条天气与空间线索。<br>删除无关人群、杂乱植被、重复建筑和琐碎背景。转绘主体仅占下半区域宽度约38%–62%，保留约55%–72%连续、完整、可感知的纸白。<br>线条使用黑色或深灰黑色的细钢笔、干墨与轻微毛笔飞白质感：允许粗细变化、停顿、断续、纸齿、漏墨和未闭合轮廓，使其像旅行途中迅速但准确留下的观察小稿。<br>建筑依靠少量结构线表现比例，山峰与远景只保留稀疏轮廓，水面、雾气、天空与距离主要通过留白完成；植物不逐片描绘叶子，而以枝干方向和极少墨点表现姿态。避免灰墨大面积铺染，避免画成完整传统山水画或精密建筑制图。<br>配色以黑墨为主，只允许从原照片中提取最多两种小面积强调色，例如朱砂红、秋叶赭黄、荷花淡粉、苔藓灰绿或渔网暖黄。强调色总面积不超过下半画面的8%，仅落在一个最有记忆点的局部，不做水彩满铺、彩色轮廓或高饱和装饰。<br>文字应像小型旅行出版物的页眉与图注，数量少但清楚可读。根据照片内容生成一个简短英文标题，搭配编号字段“INK NOTE 01”和一句极短英文观察句。<br>标题可使用克制的衬线体、打字机体或略带手工不齐的印刷体；文字放在主要留白区域，与插画保持呼吸距离，不压住主体，不使用华丽书法，不生成中文印章、作者签名、品牌名或水印。不同图片只更换标题、编号和观察句，整体版式与字体气质保持统一。<br>最终画面应呈现真实旅行摄影与轻盈墨线观察稿之间的明确对照；安静、克制、疏朗，像一页从独立旅行刊物、建筑观察册或私人速写本中取出的纸本小笺。重点不是炫技，而是通过删减、停笔与纸白，让原照片中的一个地点、一种天气或一个短暂动作被重新看见。<br>避免：整张照片直接线稿滤镜化、上下内容完全重复、下半铺满画面、连续灰色晕染、传统国画满构图、复杂树叶、精密交叉排线、漫画化建筑、卡通人物、水彩填色、高饱和撞色、伪中文、复制照片中的招牌文字、作者姓名、水印、电商模板感和廉价复古滤镜。</p></div>
+      </div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 英文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Create an independent \"Minimal Ink Line Landscape Note\" comparison poster for each uploaded travel photo, no multiple image splicing, each photo output separately.\nOverall 3:4 vertical composition, clearly retain \"upper original photo, lower style drawing\" visual comparison. Upper and lower areas can naturally adjust proportions based on original content, not necessarily mechanical equal division, but boundaries must be clear, reading relationship clear, and together form a complete edited design work.\nUpper part: high-fidelity retention of original photo: keep location, subject, architectural structure, character posture, natural light and shadow, spatial hierarchy and original color atmosphere, not replace scenes, change key objects, stretch subjects or fabricate landmarks not existing in original image. Only mild restrained magazine photography color grading; if needed to adapt frame, naturally extend sky, water surface, ground or environment background.\nLower part: use warm ivory white or natural paper white as complete base, refine the photo into a miniature simplified ink line landscape draft. Not directly copy entire original image, nor average line tracing whole; actively select few most recognizable and poetic elements from the image, such as one building or terrain structure anchor, one ridge or waterline, one plant with posture, one small figure or travel object, and one to two weather and space clues.\nDelete irrelevant crowds, messy vegetation, repeated buildings and trivial backgrounds. The drawn subject occupies about 38%–62% of lower region width, retaining about 55%–72% continuous, complete, perceptible paper white.\nLines use black or deep gray fine pen, dry ink with slight brush flyback texture: allow thickness variation, pauses, breaks, paper teeth, ink leakage and open contours, like rapidly but accurately observed small drafts left along the travel path.\nBuildings rely on a few structural lines to show proportion, mountain peaks and distant views only retain sparse outlines, water surface, mist, sky and distance mainly completed through blank space; plants not depict leaves one by one, but use branch direction and very few ink dots to show posture. Avoid gray ink large area coverage, avoid turning into complete traditional landscape painting or precise architectural blueprint.\nColor scheme mainly black ink, only allow extracting up to two small area accent colors from original photo, such as cinnabar red, autumn ochre yellow, lotus light pink, moss gray-green or fishing net warm yellow. Accent color total area not exceed 8% of lower half drawing, only falls in one local memory point, not watercolor full coverage, colored outline or high saturation decoration.\nText like page header and caption in small travel publications, small quantity but clearly readable. Generate short English title according to photo content, paired with number field \"INK NOTE 01\" and one extremely short English observation sentence.\nTitles can use restrained serif, typewriter or slightly uneven handmade printed style; text placed in main blank area, with illustration maintaining breathing distance, not covering subject, not using luxurious calligraphy, not generating Chinese seals, author signatures, brand names or watermarks. Different images only replace title, number and observation sentence, overall layout and font temperament kept unified.\nFinal image should present clear comparison between real travel photography and light ink line observation draft; quiet, restrained, airy, like a page taken from independent travel publication, architectural observation book or private sketchbook. Emphasis not on showing skill, but through deletion, pausing and paper white, let one location, one weather or one brief action in original photo be seen again.\nAvoid: whole photo directly line drawing filterization, upper and lower content completely repeated, lower half fully filling the picture, continuous gray haze, traditional Chinese painting full composition, complex foliage, precise crossing lines, cartoonized architecture, cartoon characters, watercolor coloring, high saturation clash colors, fake Chinese, copying billboards in photo, author name, watermark, e-commerce template feel and cheap retro filters.", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>Create an independent &quot;Minimal Ink Line Landscape Note&quot; comparison poster for each uploaded travel photo, no multiple image splicing, each photo output separately.<br>Overall 3:4 vertical composition, clearly retain &quot;upper original photo, lower style drawing&quot; visual comparison. Upper and lower areas can naturally adjust proportions based on original content, not necessarily mechanical equal division, but boundaries must be clear, reading relationship clear, and together form a complete edited design work.<br>Upper part: high-fidelity retention of original photo: keep location, subject, architectural structure, character posture, natural light and shadow, spatial hierarchy and original color atmosphere, not replace scenes, change key objects, stretch subjects or fabricate landmarks not existing in original image. Only mild restrained magazine photography color grading; if needed to adapt frame, naturally extend sky, water surface, ground or environment background.<br>Lower part: use warm ivory white or natural paper white as complete base, refine the photo into a miniature simplified ink line landscape draft. Not directly copy entire original image, nor average line tracing whole; actively select few most recognizable and poetic elements from the image, such as one building or terrain structure anchor, one ridge or waterline, one plant with posture, one small figure or travel object, and one to two weather and space clues.<br>Delete irrelevant crowds, messy vegetation, repeated buildings and trivial backgrounds. The drawn subject occupies about 38%–62% of lower region width, retaining about 55%–72% continuous, complete, perceptible paper white.<br>Lines use black or deep gray fine pen, dry ink with slight brush flyback texture: allow thickness variation, pauses, breaks, paper teeth, ink leakage and open contours, like rapidly but accurately observed small drafts left along the travel path.<br>Buildings rely on a few structural lines to show proportion, mountain peaks and distant views only retain sparse outlines, water surface, mist, sky and distance mainly completed through blank space; plants not depict leaves one by one, but use branch direction and very few ink dots to show posture. Avoid gray ink large area coverage, avoid turning into complete traditional landscape painting or precise architectural blueprint.<br>Color scheme mainly black ink, only allow extracting up to two small area accent colors from original photo, such as cinnabar red, autumn ochre yellow, lotus light pink, moss gray-green or fishing net warm yellow. Accent color total area not exceed 8% of lower half drawing, only falls in one local memory point, not watercolor full coverage, colored outline or high saturation decoration.<br>Text like page header and caption in small travel publications, small quantity but clearly readable. Generate short English title according to photo content, paired with number field &quot;INK NOTE 01&quot; and one extremely short English observation sentence.<br>Titles can use restrained serif, typewriter or slightly uneven handmade printed style; text placed in main blank area, with illustration maintaining breathing distance, not covering subject, not using luxurious calligraphy, not generating Chinese seals, author signatures, brand names or watermarks. Different images only replace title, number and observation sentence, overall layout and font temperament kept unified.<br>Final image should present clear comparison between real travel photography and light ink line observation draft; quiet, restrained, airy, like a page taken from independent travel publication, architectural observation book or private sketchbook. Emphasis not on showing skill, but through deletion, pausing and paper white, let one location, one weather or one brief action in original photo be seen again.<br>Avoid: whole photo directly line drawing filterization, upper and lower content completely repeated, lower half fully filling the picture, continuous gray haze, traditional Chinese painting full composition, complex foliage, precise crossing lines, cartoonized architecture, cartoon characters, watercolor coloring, high saturation clash colors, fake Chinese, copying billboards in photo, author name, watermark, e-commerce template feel and cheap retro filters.</p></div>
+      </div>
+      <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/../images/tweet-2096961400468119891-1.jpg" alt="极简墨线风景小笺：旅行照片对比海报" loading="lazy"><img src="/../images/tweet-2096961400468119891-2.jpg" alt="极简墨线风景小笺：旅行照片对比海报" loading="lazy"><img src="/../images/tweet-2096961400468119891-3.jpg" alt="极简墨线风景小笺：旅行照片对比海报" loading="lazy"><img src="/../images/tweet-2096961400468119891-4.jpg" alt="极简墨线风景小笺：旅行照片对比海报" loading="lazy"></div></div>
+      
+      
+    </div>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("该案例暂无可展示的提示词内容。");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ 已复制";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("复制失败，请手动复制");
+        }
+      }
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布中...";
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: 3097 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 3097,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm("确认删除该案例？此操作不可恢复。")) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: 3097 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert("删除成功");
+          window.location.href = "/zh/image/index.html";
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+</body>
+</html>
