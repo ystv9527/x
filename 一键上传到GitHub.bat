@@ -83,7 +83,7 @@ if /i "%FULL_STAGE%"=="1" (
 ) else (
     echo [info] Incremental staging: data/ zh/ en/ images/ videos/ scripts/ package.json upload script sitemap.xml index.html robots.txt llms.txt llms-full.txt
     set "STAGED_ANY=0"
-    for %%p in (data zh en images videos scripts package.json "一键上传到GitHub.bat" sitemap.xml index.html robots.txt llms.txt llms-full.txt) do (
+    for %%p in (data zh en images videos scripts package.json .gitattributes fix-paths-for-github.js "一键上传到GitHub.bat" sitemap.xml index.html robots.txt llms.txt llms-full.txt) do (
         if exist "%%p" (
             git add -A "%%p"
             if not errorlevel 1 set "STAGED_ANY=1"
