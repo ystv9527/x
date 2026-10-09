@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>真人转插画的左右分栏海报提示词 #3108 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="整理自 X 的真人转插画案例提示词，保留左右分栏、原图保真、右侧手绘涂鸦、留白与文字排版限制。">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/case/3108.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/3108.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/3108.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1791523111166">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"真人转插画的左右分栏海报提示词 #3108","description":"整理自 X 的真人转插画案例提示词，保留左右分栏、原图保真、右侧手绘涂鸦、留白与文字排版限制。","url":"https://gemnana.com/zh/case/3108.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">3108</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">3072</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">33</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/case/3108.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="/zh/index.html">首页</a><span>›</span>
+        <a href="/zh/image/index.html">图片生成</a><span>›</span>
+        <span>#3108</span>
+      </nav>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3108</span></span><span class="case-title-text">真人转插画的左右分栏海报提示词</span></h1>
+      <p>2026-10-09　<a class="source-inline-link" href="https://x.com/msjiaozhu/status/2108142673890840911" target="_blank" rel="noopener noreferrer">X / @msjiaozhu</a></p>
+      <p><a class="source-link" href="/zh/image/index.html">← 返回列表</a></p>
+    </div>
+
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
+        <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
+      </div>
+
+      <div class="detail-block"><h3>📝 内容摘要</h3><p>整理自 X 的真人转插画案例提示词，保留左右分栏、原图保真、右侧手绘涂鸦、留白与文字排版限制。</p></div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 中文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("请将我上传的每张照片分别处理为独立的高端设计海报，不要多图拼接，每张照片单独输出。整体采用 16:9 横构图，左侧保留原图，右侧进行涂鸦插画处理。\n\n左侧原图需完整保留，保持主体身份、结构、姿态、真实质感、自然光影与原始色彩氛围，只做轻微的高级调色，呈现艺术杂志和展览图像的质感。为适配画幅，可自然延展环境背景，但主体不能被拉伸、变形或改动。\n\n右侧进行新的艺术判断，只提取照片中最有识别度的主体、轮廓、结构、姿态和叙事关系，重构为手绘涂鸦生活插画 / 朴拙插画 / 马克笔绘画。不要保留全部物体，不要复制原始场景；主动删减大部分背景和无关信息，通过删除、重组、裁切和比例变化重新组织画面，让普通构图也能转化为有效作品。\n\n造型应简化、符号化、松弛且个性化，使用略微抖动、间歇、不完全规整的手绘线条，以及马克笔、蜡笔、油画棒般的自然上色。允许轻微线条交叠、留白和手工误差，不追求写实比例、完整透视或细节刻画。\n\n右侧以大量有意识留白为核心，实色图形只占很小比例，其余空间主动留空。主体可以偏角、贴边、悬浮或局部裁切，位置由姿态方向与视觉重心决定。留白与主体共同形成正负形、距离、停顿和呼吸感，宁可少画也不要填满画面。\n\n图形与文字必须作为整体重新编排，而不是简单地“上面一行字、下面一个形”。先建立无形网格、视觉轴线和阅读路径，再决定文字位置；文字可以贴近主体轮廓、顺着动作方向、对齐头部或肩线、落入大块负空间，或与图形形成错位、穿插、非对称呼应。避免机械居中、上下堆叠和固定模板，让图形负责情绪，文字负责节奏，两者共同完成构图。\n\n文字不限制语言，只保留极少量真正有意义的词语或短语。使用轻盈、自然的手写字体，字宽和笔画压力略有变化，保留一点随手书写感，但字间距、行距和整体位置必须通过编辑设计控制。可用一个稍微醒目的短句配合微小辅助文字形成层级，但不要使用菜单式标题、长文案或整页文字。\n\n颜色采用柔和、明亮、疗愈的限定色盘，从原图中提炼最关键的颜色，重组为奶油黄、桃粉、珊瑚红、天蓝、湖蓝、嫩绿、淡紫等清新色彩；鲜艳但不刺眼，柔和但不脏灰，并以暖白或极浅复合色作为大面积呼吸空间。\n\n整体追求朴拙绘画、成熟构图、聪明的图文关系和大量留白，像高端独立杂志、生活方式编辑插画或艺术出版物，而不是儿童涂鸦本。避免固定的居中主体加居中文案、随意散落的小图标、复杂背景、信息堆砌、塞满画面、廉价卡通感和模板化排版。\n\n当前用户确认的编辑规范，优先于上方冲突的排版要求：\n横向 16:9，左侧原图、右侧涂鸦等分。右侧保留小个子女性形象，粉色发带、白色毛衣、花朵裙摆和简化自行车轮廓，右侧画面占比约 20%，使用三条受控的手势线，整体以奶油色留白为主。文字为 SLOW AFTERNOON。\n原图面板必须忠实保留，不要拉伸。输入图像为 AI 生成，不是真实照片。不要额外人物，不要男性角色或男性手部。", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>请将我上传的每张照片分别处理为独立的高端设计海报，不要多图拼接，每张照片单独输出。整体采用 16:9 横构图，左侧保留原图，右侧进行涂鸦插画处理。</p><p>左侧原图需完整保留，保持主体身份、结构、姿态、真实质感、自然光影与原始色彩氛围，只做轻微的高级调色，呈现艺术杂志和展览图像的质感。为适配画幅，可自然延展环境背景，但主体不能被拉伸、变形或改动。</p><p>右侧进行新的艺术判断，只提取照片中最有识别度的主体、轮廓、结构、姿态和叙事关系，重构为手绘涂鸦生活插画 / 朴拙插画 / 马克笔绘画。不要保留全部物体，不要复制原始场景；主动删减大部分背景和无关信息，通过删除、重组、裁切和比例变化重新组织画面，让普通构图也能转化为有效作品。</p><p>造型应简化、符号化、松弛且个性化，使用略微抖动、间歇、不完全规整的手绘线条，以及马克笔、蜡笔、油画棒般的自然上色。允许轻微线条交叠、留白和手工误差，不追求写实比例、完整透视或细节刻画。</p><p>右侧以大量有意识留白为核心，实色图形只占很小比例，其余空间主动留空。主体可以偏角、贴边、悬浮或局部裁切，位置由姿态方向与视觉重心决定。留白与主体共同形成正负形、距离、停顿和呼吸感，宁可少画也不要填满画面。</p><p>图形与文字必须作为整体重新编排，而不是简单地“上面一行字、下面一个形”。先建立无形网格、视觉轴线和阅读路径，再决定文字位置；文字可以贴近主体轮廓、顺着动作方向、对齐头部或肩线、落入大块负空间，或与图形形成错位、穿插、非对称呼应。避免机械居中、上下堆叠和固定模板，让图形负责情绪，文字负责节奏，两者共同完成构图。</p><p>文字不限制语言，只保留极少量真正有意义的词语或短语。使用轻盈、自然的手写字体，字宽和笔画压力略有变化，保留一点随手书写感，但字间距、行距和整体位置必须通过编辑设计控制。可用一个稍微醒目的短句配合微小辅助文字形成层级，但不要使用菜单式标题、长文案或整页文字。</p><p>颜色采用柔和、明亮、疗愈的限定色盘，从原图中提炼最关键的颜色，重组为奶油黄、桃粉、珊瑚红、天蓝、湖蓝、嫩绿、淡紫等清新色彩；鲜艳但不刺眼，柔和但不脏灰，并以暖白或极浅复合色作为大面积呼吸空间。</p><p>整体追求朴拙绘画、成熟构图、聪明的图文关系和大量留白，像高端独立杂志、生活方式编辑插画或艺术出版物，而不是儿童涂鸦本。避免固定的居中主体加居中文案、随意散落的小图标、复杂背景、信息堆砌、塞满画面、廉价卡通感和模板化排版。</p><p>当前用户确认的编辑规范，优先于上方冲突的排版要求：<br>横向 16:9，左侧原图、右侧涂鸦等分。右侧保留小个子女性形象，粉色发带、白色毛衣、花朵裙摆和简化自行车轮廓，右侧画面占比约 20%，使用三条受控的手势线，整体以奶油色留白为主。文字为 SLOW AFTERNOON。<br>原图面板必须忠实保留，不要拉伸。输入图像为 AI 生成，不是真实照片。不要额外人物，不要男性角色或男性手部。</p></div>
+      </div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 英文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Please process each uploaded photo as an independent high-end design poster. Do not stitch multiple images together; output each photo individually. Use a 16:9 horizontal composition overall, with the original image on the left and doodle illustration treatment on the right.\n\nThe left original panel must be preserved faithfully, keeping the subject’s identity, structure, posture, real texture, natural light and shadow, and original color atmosphere, with only slight high-end color grading to give it the texture of art magazines and exhibition images. To fit the frame, the environmental background may be naturally extended, but the subject must not be stretched, distorted, or altered.\n\nThe right side should make a new artistic judgment, extracting only the most recognizable subject, outline, structure, posture, and narrative relationship from the photo, and reconstructing it as hand-drawn doodle lifestyle illustration / naïve illustration / marker drawing. Do not retain all objects, do not copy the original scene; actively remove most of the background and irrelevant information, and reorganize the image through deletion, restructuring, cropping, and scale changes so that even an ordinary composition can become a valid work.\n\nModeling should be simplified, symbolic, relaxed, and personalized, using slightly jittery, intermittent, and not fully regular hand-drawn lines, along with natural coloring like markers, crayons, and oil pastels. Allow slight line overlap, whitespace, and manual imperfections, without pursuing realistic proportions, complete perspective, or fine detail.\n\nThe right side must be centered on a large amount of intentional whitespace, with solid graphics occupying only a small proportion and the rest of the space actively left blank. The subject may be eccentric, edge-aligned, suspended, or partially cropped, with placement determined by posture direction and visual center of gravity. Whitespace and the subject should together create positive and negative shapes, distance, pauses, and a sense of breathing; paint less rather than fill the screen.\n\nGraphics and text must be retypeset as a whole, rather than simply “text on top, one character below.” Establish an invisible grid, visual axis, and reading path first, then determine text placement; text can be close to the subject’s outline, follow the direction of movement, align with the head or shoulder line, fall into large negative spaces, or form staggered, interspersed, asymmetric echoes with the graphics. Avoid mechanical centering, top-to-bottom stacking, and fixed templates; let graphics handle emotion and text handle rhythm, with both completing the composition together.\n\nText has no language restriction and should retain only a very small amount of truly meaningful words or short phrases. Use light, natural handwritten fonts with slight variations in character width and pen pressure, keeping a casual writing feel, but letter spacing, line spacing, and overall placement must be controlled through editorial design. One slightly prominent short phrase may be used with tiny auxiliary text to form a hierarchy, but avoid menu-style titles, long copy, or full-page text.\n\nUse a soft, bright, healing limited palette, remodulating the most essential colors extracted from the original image into refreshing tones such as cream yellow, peach pink, coral red, sky blue, lake cyan, tender green, and lavender purple; vivid but not glaring, soft but not dirty gray, with warm white or extremely light composite colors as large breathing areas.\n\nOverall, pursue naïve drawing, mature composition, smart text-graphic relationships, and a massive amount of whitespace, like high-end independent magazines, lifestyle editorial illustrations, or art publications, rather than children’s scrapbooks. Avoid fixed structures of centered subject plus centered copy, randomly scattered small icons, complex backgrounds, information accumulation, filling the screen, cheap cartoonishness, and templated layouts.\n\nCurrent user-approved edit spec, overriding conflicting layout above:\nHorizontal 16:9, equal left original and right doodle. Small woman with pink ribbon, white sweater, floral skirt and loose bicycle outline, 20% occupied right-panel area, three controlled gesture lines, cream whitespace. Text SLOW AFTERNOON.\nPreserve the original image panel faithfully, no stretching. The input image is AI-generated, not a real-world photograph. No extra people, no male characters or male hands.", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>Please process each uploaded photo as an independent high-end design poster. Do not stitch multiple images together; output each photo individually. Use a 16:9 horizontal composition overall, with the original image on the left and doodle illustration treatment on the right.</p><p>The left original panel must be preserved faithfully, keeping the subject’s identity, structure, posture, real texture, natural light and shadow, and original color atmosphere, with only slight high-end color grading to give it the texture of art magazines and exhibition images. To fit the frame, the environmental background may be naturally extended, but the subject must not be stretched, distorted, or altered.</p><p>The right side should make a new artistic judgment, extracting only the most recognizable subject, outline, structure, posture, and narrative relationship from the photo, and reconstructing it as hand-drawn doodle lifestyle illustration / naïve illustration / marker drawing. Do not retain all objects, do not copy the original scene; actively remove most of the background and irrelevant information, and reorganize the image through deletion, restructuring, cropping, and scale changes so that even an ordinary composition can become a valid work.</p><p>Modeling should be simplified, symbolic, relaxed, and personalized, using slightly jittery, intermittent, and not fully regular hand-drawn lines, along with natural coloring like markers, crayons, and oil pastels. Allow slight line overlap, whitespace, and manual imperfections, without pursuing realistic proportions, complete perspective, or fine detail.</p><p>The right side must be centered on a large amount of intentional whitespace, with solid graphics occupying only a small proportion and the rest of the space actively left blank. The subject may be eccentric, edge-aligned, suspended, or partially cropped, with placement determined by posture direction and visual center of gravity. Whitespace and the subject should together create positive and negative shapes, distance, pauses, and a sense of breathing; paint less rather than fill the screen.</p><p>Graphics and text must be retypeset as a whole, rather than simply “text on top, one character below.” Establish an invisible grid, visual axis, and reading path first, then determine text placement; text can be close to the subject’s outline, follow the direction of movement, align with the head or shoulder line, fall into large negative spaces, or form staggered, interspersed, asymmetric echoes with the graphics. Avoid mechanical centering, top-to-bottom stacking, and fixed templates; let graphics handle emotion and text handle rhythm, with both completing the composition together.</p><p>Text has no language restriction and should retain only a very small amount of truly meaningful words or short phrases. Use light, natural handwritten fonts with slight variations in character width and pen pressure, keeping a casual writing feel, but letter spacing, line spacing, and overall placement must be controlled through editorial design. One slightly prominent short phrase may be used with tiny auxiliary text to form a hierarchy, but avoid menu-style titles, long copy, or full-page text.</p><p>Use a soft, bright, healing limited palette, remodulating the most essential colors extracted from the original image into refreshing tones such as cream yellow, peach pink, coral red, sky blue, lake cyan, tender green, and lavender purple; vivid but not glaring, soft but not dirty gray, with warm white or extremely light composite colors as large breathing areas.</p><p>Overall, pursue naïve drawing, mature composition, smart text-graphic relationships, and a massive amount of whitespace, like high-end independent magazines, lifestyle editorial illustrations, or art publications, rather than children’s scrapbooks. Avoid fixed structures of centered subject plus centered copy, randomly scattered small icons, complex backgrounds, information accumulation, filling the screen, cheap cartoonishness, and templated layouts.</p><p>Current user-approved edit spec, overriding conflicting layout above:<br>Horizontal 16:9, equal left original and right doodle. Small woman with pink ribbon, white sweater, floral skirt and loose bicycle outline, 20% occupied right-panel area, three controlled gesture lines, cream whitespace. Text SLOW AFTERNOON.<br>Preserve the original image panel faithfully, no stretching. The input image is AI-generated, not a real-world photograph. No extra people, no male characters or male hands.</p></div>
+      </div>
+      <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="/images/tweet-2108142673890840911-1.jpg" alt="真人转插画的左右分栏海报提示词" loading="lazy"><img src="/images/tweet-2108142673890840911-2.jpg" alt="真人转插画的左右分栏海报提示词" loading="lazy"><img src="/images/tweet-2108142673890840911-3.jpg" alt="真人转插画的左右分栏海报提示词" loading="lazy"><img src="/images/tweet-2108142673890840911-4.jpg" alt="真人转插画的左右分栏海报提示词" loading="lazy"></div></div>
+      
+      
+    </div>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("该案例暂无可展示的提示词内容。");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ 已复制";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("复制失败，请手动复制");
+        }
+      }
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布中...";
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: 3108 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 3108,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm("确认删除该案例？此操作不可恢复。")) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: 3108 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert("删除成功");
+          window.location.href = "/zh/image/index.html";
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+</body>
+</html>
