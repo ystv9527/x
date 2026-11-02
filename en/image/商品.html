@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品 · Image Prompt Cases | Gem Nana AI Prompt Library</title>
+    <meta name="description" content="14  商品 related cases">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/en/image/商品.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/image/商品.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/image/商品.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1793593900819">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"en","name":"商品 · Image Prompt Cases","description":"14  商品 related cases","url":"https://gemnana.com/en/image/商品.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI Prompt Collection</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/en/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">Home</span>
+          <span class="nav-count">3136</span>
+        </a>
+        <a href="/en/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">Image</span>
+          <span class="nav-count">3097</span>
+        </a>
+        <a href="/en/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">Video</span>
+          <span class="nav-count">36</span>
+        </a>
+        <a href="/en/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">Text</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/zh/image/商品.html" class="lang-switch-link">中文</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ Settings</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header">
+      <h1>商品 · Image Prompt Cases</h1>
+      <p>14  商品 related cases</p>
+    </div>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search title, summary, tags…">
+      </div>
+      <div class="filter-section">
+        <div class="filter-header">
+          <span>🏷️ Tag Filters</span>
+          <button id="clearFilters" class="btn-clear" type="button">Clear Filters</button>
+        </div>
+        <div id="tagFilters" class="tag-filters"><button type="button" class="tag-filter" data-tag="通用">通用 (14)</button><button type="button" class="tag-filter" data-tag="商品">商品 (14)</button><button type="button" class="tag-filter" data-tag="复古">复古 (8)</button><button type="button" class="tag-filter" data-tag="写实">Realistic (6)</button><button type="button" class="tag-filter" data-tag="国潮">国潮 (1)</button><button type="button" class="tag-filter" data-tag="古风">古风 (1)</button><button type="button" class="tag-filter" data-tag="3D">3D (1)</button></div>
+      </div>
+      <div class="stats"><span id="statsText">14 items</span></div>
+    </div>
+    <div id="noResults" class="no-results" style="display:none;">😕 No matched content</div>
+  
+    <div id="caseGrid" class="case-grid">
+    <article class="case-card" data-id="3131" data-search="案例3131 橙色连帽工装外套主导的户外风休闲穿搭提示词 保守整理一则以橙色连帽工装外套为主角的户外风休闲穿搭提示词，保留服装层次、配色与配饰细节。 x / @alicelavli https://x.com/alicelavli/status/2111200510569009629 通用 复古 商品 outdoor casual outfit prompt centered on an orange hooded utility jacket: a bright vivid orange long hooded coat worn open as the main outer layer, knee length, broad notched lapels, a roomy hood, long sleeves with buttoned cuff tabs, large flap pockets at the hips, and a double-breasted front with" data-tags="通用|复古|商品">
+      <a class="case-card-link" href="/en/case/3131.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2111200510569009629-1.jpg" alt="橙色连帽工装外套主导的户外风休闲穿搭提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3131</span></span><span class="case-title-text">橙色连帽工装外套主导的户外风休闲穿搭提示词</span></h3>
+          <p class="case-summary">保守整理一则以橙色连帽工装外套为主角的户外风休闲穿搭提示词，保留服装层次、配色与配饰细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-10-17</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2111200510569009629">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Outdoor casual outfit prompt centered on an orange hooded utility jacket: a bright vivid orange long hooded coat worn open as the main outer layer, knee length, broad notched lapels, a roomy hood, lon...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3131.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3129" data-search="案例3129 秋棠旧梦｜民国复古东方名媛秋日轻奢服装设计 民国复古风服装设计，以深栗棕、酒红和香槟金营造秋日浪漫与古典轻奢氛围，呈现东方名媛气质。 x / @huanaiart https://x.com/huanaiart/status/2110928288927424920 通用 复古 国潮 商品 republican-era retro × oriental lady × autumn romance × classic light-luxury fashion design. use deep chestnut brown, vintage burgundy, and warm champagne gold as the main palette, blending shanghai-style lady aesthetics from the republican era with modern refined fashion. the top features a stand-c" data-tags="通用|复古|国潮|商品">
+      <a class="case-card-link" href="/en/case/3129.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2110928288927424920-1.jpg" alt="秋棠旧梦｜民国复古东方名媛秋日轻奢服装设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3129</span></span><span class="case-title-text">秋棠旧梦｜民国复古东方名媛秋日轻奢服装设计</span></h3>
+          <p class="case-summary">民国复古风服装设计，以深栗棕、酒红和香槟金营造秋日浪漫与古典轻奢氛围，呈现东方名媛气质。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-10-16</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/HuanAIart/status/2110928288927424920">X / @HuanAIart</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">国潮</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Republican-era retro × oriental lady × autumn romance × classic light-luxury fashion design. Use deep chestnut brown, vintage burgundy, and warm champagne gold as the main palette, blending Shanghai-s...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3129.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3128" data-search="案例3128 秋季制服穿搭提示词：柔和秋日学院风套装 一组秋季制服穿搭提示词，围绕暖象牙白、燕麦米与灰蓝色的柔和学院风造型，包含贝雷帽、短外套、格纹层次与蝴蝶结细节。 x / @alicelavli https://x.com/alicelavli/status/2110626738031952329 通用 复古 商品 autumn uniform outfit prompt, a soft academy-style look. the color palette is warm ivory, oatmeal beige, and muted blue-gray, keeping the overall outfit coordinated and clean for an autumn feel. a beret with a softly rounded crown, shallow shape, narrow folded band, and a small blue-gray ribbon acce" data-tags="通用|复古|商品">
+      <a class="case-card-link" href="/en/case/3128.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2110626738031952329-1.jpg" alt="秋季制服穿搭提示词：柔和秋日学院风套装" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3128</span></span><span class="case-title-text">秋季制服穿搭提示词：柔和秋日学院风套装</span></h3>
+          <p class="case-summary">一组秋季制服穿搭提示词，围绕暖象牙白、燕麦米与灰蓝色的柔和学院风造型，包含贝雷帽、短外套、格纹层次与蝴蝶结细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-10-16</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2110626738031952329">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Autumn uniform outfit prompt, a soft academy-style look. The color palette is warm ivory, oatmeal beige, and muted blue-gray, keeping the overall outfit coordinated and clean for an autumn feel. A ber...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3128.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3126" data-search="案例3126 秋季自然休闲穿搭提示词 保守整理一则秋季自然休闲穿搭提示词，保留毛衣、西裤、礼帽、小包与尖头低跟鞋的配色和细节。 x / @alicelavli https://x.com/alicelavli/status/2110687141558718466 通用 写实 商品 autumn natural casual outfit prompt: the color palette is warm taupe, oatmeal beige, ivory, and muted rust. the outfit includes a cropped open-knit sweater, tailored trousers, a felt fedora, a small color-block bag, and pointed low heels. the sweater is loose fitting, with a high ribbed mock neck, d" data-tags="通用|写实|商品">
+      <a class="case-card-link" href="/en/case/3126.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2110687141558718466-1.jpg" alt="秋季自然休闲穿搭提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3126</span></span><span class="case-title-text">秋季自然休闲穿搭提示词</span></h3>
+          <p class="case-summary">保守整理一则秋季自然休闲穿搭提示词，保留毛衣、西裤、礼帽、小包与尖头低跟鞋的配色和细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-10-16</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2110687141558718466">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Autumn natural casual outfit prompt:
+The color palette is warm taupe, oatmeal beige, ivory, and muted rust.
+The outfit includes a cropped open-knit sweater, tailored trousers, a felt fedora, a small c...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3126.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3124" data-search="案例3124 绯樱蜜语｜blush petal reverie：甜欲芭蕾风法式浪漫轻奢裙装设计 一组以柔雾樱花粉为主调的芭蕾风裙装设计，融合束腰胸衣、花卉刺绣、珍珠珠链、欧根纱蓬裙与缎带配饰，呈现甜美与性感并存的法式浪漫轻奢气质。 x / @huanaiart https://x.com/huanaiart/status/2110184961349226648 通用 复古 商品 misty cherry-blossom pink ballet-inspired fashion design display, centered on a structured corset bodice with delicate floral embroidery, pearl strands, and layered transparent organza puff mini skirt. satin bows on the shoulders echo the light dangling beaded tulle sleeves, paired with a pink gemst" data-tags="通用|复古|商品">
+      <a class="case-card-link" href="/en/case/3124.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2110184961349226648-1.jpg" alt="绯樱蜜语｜Blush Petal Reverie：甜欲芭蕾风法式浪漫轻奢裙装设计" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3124</span></span><span class="case-title-text">绯樱蜜语｜Blush Petal Reverie：甜欲芭蕾风法式浪漫轻奢裙装设计</span></h3>
+          <p class="case-summary">一组以柔雾樱花粉为主调的芭蕾风裙装设计，融合束腰胸衣、花卉刺绣、珍珠珠链、欧根纱蓬裙与缎带配饰，呈现甜美与性感并存的法式浪漫轻奢气质。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-10-14</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/HuanAIart/status/2110184961349226648">X / @HuanAIart</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Misty cherry-blossom pink ballet-inspired fashion design display, centered on a structured corset bodice with delicate floral embroidery, pearl strands, and layered transparent organza puff mini skirt...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3124.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3119" data-search="案例3119 金装饰古典学园制服衣装提示词 整理一则古典学园制服服装提示词，保留深巧克力棕、白、酒红、浅蓝与古金配色及完整装饰细节。 x / @alicelavli https://x.com/alicelavli/status/2109116781944074563 通用 复古 商品 classical academy uniform outfit prompt: a deep chocolate brown academy uniform with a fitted double-breasted bodice, a broad pointed white sailor collar edged with thin gold piping, a crisp white shirt collar underneath, and a burgundy necktie with a small gold crest. four round antique gold button" data-tags="通用|复古|商品">
+      <a class="case-card-link" href="/en/case/3119.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2109116781944074563-1.jpg" alt="金装饰古典学园制服衣装提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3119</span></span><span class="case-title-text">金装饰古典学园制服衣装提示词</span></h3>
+          <p class="case-summary">整理一则古典学园制服服装提示词，保留深巧克力棕、白、酒红、浅蓝与古金配色及完整装饰细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-10-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2109116781944074563">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Classical academy uniform outfit prompt:
+A deep chocolate brown academy uniform with a fitted double-breasted bodice, a broad pointed white sailor collar edged with thin gold piping, a crisp white shi...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3119.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3113" data-search="案例3113 天使芭蕾舞服装提示词 整理一则天使芭蕾舞服装生成提示词，保留白色抹胸、金色刺绣、薄纱短裙、羽翼与舞台感细节。 x / @alicelavli https://x.com/alicelavli/status/2108663803542184431 通用 写实 商品 angelic ballet costume prompt: a fitted white sleeveless bodice with delicate gold embroidery forming a narrow plunging v across the front, fine gold leaf and feather appliqués along the waist and bodice, and subtle sheer mesh panels; a short classical white tutu made from many crisp layers of fine" data-tags="通用|写实|商品">
+      <a class="case-card-link" href="/en/case/3113.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2108663803542184431-1.jpg" alt="天使芭蕾舞服装提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3113</span></span><span class="case-title-text">天使芭蕾舞服装提示词</span></h3>
+          <p class="case-summary">整理一则天使芭蕾舞服装生成提示词，保留白色抹胸、金色刺绣、薄纱短裙、羽翼与舞台感细节。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-10-10</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2108663803542184431">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Angelic ballet costume prompt: a fitted white sleeveless bodice with delicate gold embroidery forming a narrow plunging V across the front, fine gold leaf and feather appliqués along the waist and bod...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3113.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3112" data-search="案例3112 深绿刺绣迪安德尔风两件式束腰短上衣与短裤服装提示词 整理一条深绿、黑色、古金与暖白配色的迪安德尔风两件式服装提示词，保留刺绣束腰上衣、可拆卸泡泡袖与高腰短裤设定。 x / @alicelavli https://x.com/alicelavli/status/2108473408233345263 通用 复古 商品 deep forest green embroidered dirndl-inspired two-piece outfit prompt: deep forest green, black, antique gold, and warm ivory color palette; cropped black velvet bodice with a structured corset shape, sweetheart neckline, narrow shoulder straps, and fine antique-gold piping; centered pink tulip embr" data-tags="通用|复古|商品">
+      <a class="case-card-link" href="/en/case/3112.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2108473408233345263-1.jpg" alt="深绿刺绣迪安德尔风两件式束腰短上衣与短裤服装提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3112</span></span><span class="case-title-text">深绿刺绣迪安德尔风两件式束腰短上衣与短裤服装提示词</span></h3>
+          <p class="case-summary">整理一条深绿、黑色、古金与暖白配色的迪安德尔风两件式服装提示词，保留刺绣束腰上衣、可拆卸泡泡袖与高腰短裤设定。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-10-10</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2108473408233345263">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Deep forest green embroidered dirndl-inspired two-piece outfit prompt: deep forest green, black, antique gold, and warm ivory color palette; cropped black velvet bodice with a structured corset shape,...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3112.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3095" data-search="案例3095 现代风女性服饰提示词合集：花呢套装与轻盈礼服 整理一组现代风女性服饰提示词，涵盖冰蓝花呢套装、象牙白珍珠套装、薄荷绿单肩礼服和樱花粉花瓣露肩礼服。 x / @eternityspring https://x.com/eternityspring/status/2096979218999701968 通用 写实 商品 modern women&#39;s fashion prompt set, preserving the clothing structure, color palette, materials, and decorative details of four light-toned looks, with no added characters, scenes, or narrative: 1. an ice-blue short round-neck tweed jacket with an open-front design, raw edges, pearl buttons, and smal" data-tags="通用|写实|商品">
+      <a class="case-card-link" href="/en/case/3095.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2096979218999701968-1.jpg" alt="现代风女性服饰提示词合集：花呢套装与轻盈礼服" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3095</span></span><span class="case-title-text">现代风女性服饰提示词合集：花呢套装与轻盈礼服</span></h3>
+          <p class="case-summary">整理一组现代风女性服饰提示词，涵盖冰蓝花呢套装、象牙白珍珠套装、薄荷绿单肩礼服和樱花粉花瓣露肩礼服。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-09-08</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/eternityspring/status/2096979218999701968">X / @eternityspring</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Modern women&#39;s fashion prompt set, preserving the clothing structure, color palette, materials, and decorative details of four light-toned looks, with no added characters, scenes, or narrative: 1. An ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3095.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3076" data-search="案例3076 翡翠感东方金绣连衣裙提示词 深青绿色印度风两件式礼服提示词，强调金色刺绣、腰部饰链、宽大长裙与严格配色限制。 x / @alicelavli https://x.com/alicelavli/status/2089547837994365332 通用 古风 复古 商品 deep peacock teal indian-inspired two-piece dress prompt: use fully opaque deep peacock teal fabric, a fitted cropped short-sleeve blouse with a high neckline, sleeves ending above the elbows, wide antique gold sleeve cuffs, and a curved cropped hem ending beneath the bust. add ornate antique gold e" data-tags="通用|古风|复古|商品">
+      <a class="case-card-link" href="/en/case/3076.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2089547837994365332-1.jpg" alt="翡翠感东方金绣连衣裙提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3076</span></span><span class="case-title-text">翡翠感东方金绣连衣裙提示词</span></h3>
+          <p class="case-summary">深青绿色印度风两件式礼服提示词，强调金色刺绣、腰部饰链、宽大长裙与严格配色限制。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-19</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2089547837994365332">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">古风</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Deep peacock teal Indian-inspired two-piece dress prompt: use fully opaque deep peacock teal fabric, a fitted cropped short-sleeve blouse with a high neckline, sleeves ending above the elbows, wide an...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3076.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3069" data-search="案例3069 viko 荷塘锦鲤幻想写实提示词 清澈荷塘底部的超广角仰视视角，锦鲤穿行于荷叶之间，水面透出蓝天白云与强逆光。 x / @manish1027512 https://x.com/manish1027512/status/2087436605313458654 通用 写实 3d 商品 high-detail digital environment illustration with a 3d/cg blend, a fantasy-realistic natural landscape, viewed from an ultra-wide upward angle near the bottom of a clear lotus pond. in the lower third of the frame, several red-white koi and orange-gold koi serve as the main visual focus, moving thro" data-tags="通用|写实|3D|商品">
+      <a class="case-card-link" href="/en/case/3069.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2087436605313458654-1.jpg" alt="Viko 荷塘锦鲤幻想写实提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3069</span></span><span class="case-title-text">Viko 荷塘锦鲤幻想写实提示词</span></h3>
+          <p class="case-summary">清澈荷塘底部的超广角仰视视角，锦鲤穿行于荷叶之间，水面透出蓝天白云与强逆光。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-08-12</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/MANISH1027512/status/2087436605313458654">X / @MANISH1027512</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">3D</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>High-detail digital environment illustration with a 3D/CG blend, a fantasy-realistic natural landscape, viewed from an ultra-wide upward angle near the bottom of a clear lotus pond. In the lower third...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3069.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3055" data-search="案例3055 60年代莫德风撞色a字连衣裙提示词 整理一则60年代莫德风撞色a字连衣裙生成提示词，保留白色与亮金黄配色、无袖、高领、蝴蝶结、几何拼块与严格配色限制。 x / @alicelavli https://x.com/alicelavli/status/2083085254911578220 通用 复古 商品 1960s mod color-block a-line dress, white and vibrant golden yellow color scheme, sleeveless design, high jewel neckline, small white ribbon bow centered below the neckline, fitted white bodice, wide vibrant golden yellow geometric bands outlined with thin black piping extending diagonally from the" data-tags="通用|复古|商品">
+      <a class="case-card-link" href="/en/case/3055.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2083085254911578220-1.jpg" alt="60年代莫德风撞色A字连衣裙提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3055</span></span><span class="case-title-text">60年代莫德风撞色A字连衣裙提示词</span></h3>
+          <p class="case-summary">整理一则60年代莫德风撞色A字连衣裙生成提示词，保留白色与亮金黄配色、无袖、高领、蝴蝶结、几何拼块与严格配色限制。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-31</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2083085254911578220">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">复古</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>1960s mod color-block A-line dress, white and vibrant golden yellow color scheme, sleeveless design, high jewel neckline, small white ribbon bow centered below the neckline, fitted white bodice, wide ...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3055.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3053" data-search="案例3053 纯白蕾丝夏日连衣裙提示词 纯白蕾丝夏日连衣裙提示词，强调无袖方领、四层荷叶褶裙摆和严格纯白配色限制。 x / @alicelavli https://x.com/alicelavli/status/2082300081215283244 通用 写实 商品 pure white lace summer dress prompt: an all-white color scheme with lightweight floral lace fabric throughout; sleeveless design, wide lace shoulder straps, square neckline with scalloped lace edging; fitted bodice, high waistline, a-line mini skirt, four-tier cascading ruffle skirt with alternating" data-tags="通用|写实|商品">
+      <a class="case-card-link" href="/en/case/3053.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2082300081215283244-1.jpg" alt="纯白蕾丝夏日连衣裙提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3053</span></span><span class="case-title-text">纯白蕾丝夏日连衣裙提示词</span></h3>
+          <p class="case-summary">纯白蕾丝夏日连衣裙提示词，强调无袖方领、四层荷叶褶裙摆和严格纯白配色限制。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-30</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/AliceLavli/status/2082300081215283244">X / @AliceLavli</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Pure white lace summer dress prompt: an all-white color scheme with lightweight floral lace fabric throughout; sleeveless design, wide lace shoulder straps, square neckline with scalloped lace edging;...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3053.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  
+
+    <article class="case-card" data-id="3037" data-search="案例3037 木地板影子投射感服装平铺拍摄提示词 在室内木地板上，将人物穿搭按顺序平铺拆解，并用第一视角脚部与完整投影营造真实影子投射感的写实摄影提示词。 x / @leo_xiaolei https://x.com/leo_xiaolei/status/2077251090181959966 通用 写实 商品 based on the outfit in the attached image, flatten and arrange the entire set of clothing in order from top to bottom on an indoor wooden floor, keep the layout simple, place it in the center of the frame, occupy about 60% of the image, leave enough negative space, and do not fill the whole frame." data-tags="通用|写实|商品">
+      <a class="case-card-link" href="/en/case/3037.html">
+        <div class="case-thumbnail"><img src="/images/tweet-2077251090181959966-1.jpg" alt="木地板影子投射感服装平铺拍摄提示词" loading="lazy"></div>
+        <div class="case-info">
+          <h3 class="case-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3037</span></span><span class="case-title-text">木地板影子投射感服装平铺拍摄提示词</span></h3>
+          <p class="case-summary">在室内木地板上，将人物穿搭按顺序平铺拆解，并用第一视角脚部与完整投影营造真实影子投射感的写实摄影提示词。</p>
+          <div class="case-meta">
+            <span class="case-date">2026-07-15</span>
+            <span class="case-source source-inline-link clickable-source" data-url="https://x.com/leo_xiaolei/status/2077251090181959966">X / @leo_xiaolei</span>
+          </div>
+          <div class="case-tags"><span class="tag">通用</span><span class="tag">Realistic</span><span class="tag">商品</span></div>
+          
+      <details class="prompt-preview">
+        <summary>🎨 View Prompt</summary>
+        <div class="prompt-content">
+          <div class="prompt-section">
+            <h4>Prompt</h4>
+            <p>Based on the outfit in the attached image, flatten and arrange the entire set of clothing in order from top to bottom on an indoor wooden floor, keep the layout simple, place it in the center of the f...</p>
+          </div>
+          <a class="view-full-btn" href="/en/case/3037.html">Open detail page</a>
+        </div>
+      </details>
+    
+        </div>
+      </a>
+    </article>
+  </div>
+    
+    <div id="loadMoreWrap" class="load-more-wrap" style="display:none;">
+      <button
+        type="button"
+        id="loadMoreBtn"
+        class="btn-load-more"
+        data-loaded-pages="1"
+        data-total-pages="1"
+      >Load more</button>
+    </div>
+  
+    
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+    <script>
+      (function () {
+        const config = {"countText":"{count} items","noResults":"😕 No matched content","loadMore":"Load more","loadingMore":"Loading..."};
+        const options = {"enableLoadMore":true,"chunkBaseUrl":"/en/chunks/tag--html"};
+        const searchInput = document.getElementById('searchInput');
+        const clearBtn = document.getElementById('clearFilters');
+        const tagButtons = Array.from(document.querySelectorAll('.tag-filter'));
+        const statsText = document.getElementById('statsText');
+        const noResults = document.getElementById('noResults');
+        const caseGrid = document.getElementById('caseGrid');
+        const loadMoreWrap = document.getElementById('loadMoreWrap');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        if (!caseGrid) return;
+
+        let activeTag = '';
+        let loadedPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-loaded-pages') : 1) || 1;
+        const totalPages = Number(loadMoreBtn ? loadMoreBtn.getAttribute('data-total-pages') : 1) || 1;
+        let isLoading = false;
+        const chunkBase = String(options.chunkBaseUrl || '').replace(/\/+$/, '');
+
+        function getCards() {
+          return Array.from(document.querySelectorAll('.case-card'));
+        }
+
+        function applyFilters() {
+          const cards = getCards();
+          const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+          let visibleCount = 0;
+
+          cards.forEach((card) => {
+            const searchable = card.getAttribute('data-search') || '';
+            const tags = (card.getAttribute('data-tags') || '').split('|').filter(Boolean);
+            const qMatched = !query || searchable.includes(query);
+            const tagMatched = !activeTag || tags.includes(activeTag);
+            const visible = qMatched && tagMatched;
+            card.style.display = visible ? '' : 'none';
+            if (visible) visibleCount += 1;
+          });
+
+          if (statsText) statsText.textContent = config.countText.replace('{count}', String(visibleCount));
+          if (noResults) noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        function updateLoadMoreState() {
+          if (!options.enableLoadMore || !loadMoreBtn || !loadMoreWrap) return;
+          const hasMore = loadedPages < totalPages;
+          loadMoreWrap.style.display = hasMore ? '' : 'none';
+          loadMoreBtn.disabled = isLoading || !hasMore;
+          loadMoreBtn.textContent = isLoading ? config.loadingMore : config.loadMore;
+        }
+
+        async function handleLoadMore() {
+          if (!options.enableLoadMore || !loadMoreBtn || !caseGrid || isLoading) return;
+          if (loadedPages >= totalPages) {
+            updateLoadMoreState();
+            return;
+          }
+          const nextPage = loadedPages + 1;
+          if (!chunkBase) return;
+
+          isLoading = true;
+          updateLoadMoreState();
+          try {
+            const chunkUrl = chunkBase + '/' + String(nextPage) + '.html';
+            const res = await fetch(chunkUrl, { credentials: 'same-origin' });
+            if (!res.ok) throw new Error('Failed to fetch chunk: ' + chunkUrl);
+            const html = await res.text();
+            if (html && html.trim()) {
+              caseGrid.insertAdjacentHTML('beforeend', html);
+            }
+            loadedPages = nextPage;
+            loadMoreBtn.setAttribute('data-loaded-pages', String(loadedPages));
+            applyFilters();
+          } catch (err) {
+            console.error('[load-more] error:', err);
+          } finally {
+            isLoading = false;
+            updateLoadMoreState();
+          }
+        }
+
+        function setActiveTag(tag) {
+          activeTag = tag || '';
+          tagButtons.forEach((btn) => {
+            const btnTag = btn.getAttribute('data-tag') || '';
+            btn.classList.toggle('active', !!activeTag && btnTag === activeTag);
+          });
+          applyFilters();
+        }
+
+        if (searchInput) searchInput.addEventListener('input', applyFilters);
+        if (clearBtn) {
+          clearBtn.addEventListener('click', function () {
+            if (searchInput) searchInput.value = '';
+            setActiveTag('');
+          });
+        }
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            const tag = btn.getAttribute('data-tag') || '';
+            setActiveTag(activeTag === tag ? '' : tag);
+          });
+        });
+
+        if (loadMoreBtn) {
+          loadMoreBtn.addEventListener('click', handleLoadMore);
+        }
+
+        updateLoadMoreState();
+        applyFilters();
+      })();
+    </script>
+  
+</body>
+</html>

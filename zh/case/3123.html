@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超广角虫视角摄影工作流 #3123 | Gem Nana AI 提示词库</title>
+    <meta name="description" content="将普通视角照片重构为低机位超广角虫视角摄影，强调强烈透视、空间包围感与真实纪实质感。">
+    <meta name="keywords" content="AI Prompt, Midjourney, Stable Diffusion, Gemini, DALL-E, AI image generation">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <link rel="canonical" href="https://gemnana.com/zh/case/3123.html">
+    <link rel="alternate" hreflang="zh-CN" href="https://gemnana.com/zh/case/3123.html">
+    <link rel="alternate" hreflang="en" href="https://gemnana.com/en/case/3123.html">
+    <link rel="alternate" hreflang="x-default" href="https://gemnana.com/">
+    <link rel="stylesheet" href="/assets/style.css?v=1793593896824">
+    <style>
+      .lang-switch-link {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: rgba(255,255,255,0.9);
+        text-decoration: none;
+        font-size: 12px;
+        padding: 4px 10px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 999px;
+      }
+      .lang-switch-link:hover { border-color: rgba(255,255,255,0.45); color: #fff; }
+      .case-card-link { display: block; color: inherit; text-decoration: none; }
+      .case-title,
+      .detail-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .case-title-text { flex: 1 1 auto; min-width: 0; }
+      .case-id-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 10px;
+        border: 1px solid rgba(143, 177, 255, 0.4);
+        border-radius: 999px;
+        background: rgba(8, 14, 36, 0.52);
+        color: rgba(221, 232, 255, 0.96);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .case-id-icon { font-size: 0.95em; }
+      .case-title .case-id-pill,
+      .detail-title .case-id-pill {
+        font-size: calc(1em - 3px);
+      }
+      .fallback-badge { color: rgba(255, 183, 77, 0.95); font-size: 11px; font-weight: 500; }
+      .detail-body { max-width: 980px; }
+      .detail-block { margin-bottom: 20px; padding: 16px; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; background: rgba(10,15,35,0.45); }
+      .detail-block h3 { margin: 0 0 12px 0; color: #fff; font-size: 18px; }
+      .detail-block p { margin: 0 0 10px 0; color: rgba(255,255,255,0.86); line-height: 1.7; }
+      .detail-media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+      .detail-media-grid img, .detail-media-grid video { width: 100%; border-radius: 8px; background: rgba(0,0,0,0.3); }
+      .source-link { color: #77c5ff; text-decoration: none; word-break: break-all; }
+      .source-link:hover { text-decoration: underline; }
+      .source-inline-link { color: inherit; text-decoration: none; border-bottom: 1px dashed rgba(125, 198, 255, 0.45); }
+      .source-inline-link:hover { color: #8cd4ff; border-bottom-color: rgba(140, 212, 255, 0.85); }
+      .prompt-head-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+      .prompt-copy-btn {
+        background: rgba(25, 225, 155, 0.18);
+        color: #dfffea;
+        border: 1px solid rgba(25, 225, 155, 0.45);
+        border-radius: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .prompt-copy-btn:hover { background: rgba(25, 225, 155, 0.28); border-color: rgba(25, 225, 155, 0.7); }
+      .local-action-row { display: none; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+      .local-action-row .view-full-btn { width: auto; min-width: 180px; }
+      .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 22px 0 10px;
+        flex-wrap: wrap;
+      }
+      .pagination-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 38px;
+        height: 34px;
+        padding: 0 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(139, 175, 255, 0.28);
+        color: rgba(224, 234, 255, 0.96);
+        text-decoration: none;
+        background: rgba(8, 14, 35, 0.45);
+        font-size: 13px;
+      }
+      .pagination-link:hover {
+        border-color: rgba(139, 175, 255, 0.5);
+        background: rgba(18, 28, 64, 0.78);
+      }
+      .pagination-link.active {
+        background: rgba(73, 117, 255, 0.85);
+        border-color: rgba(103, 147, 255, 0.95);
+        color: #fff;
+        pointer-events: none;
+      }
+      .pagination-ellipsis {
+        display: inline-flex;
+        align-items: center;
+        height: 34px;
+        padding: 0 4px;
+        color: rgba(200, 214, 246, 0.72);
+      }
+      .load-more-wrap {
+        margin: 12px 0 6px;
+        display: flex;
+        justify-content: center;
+      }
+      .btn-load-more {
+        border: 1px solid rgba(133, 170, 255, 0.5);
+        border-radius: 10px;
+        background: rgba(24, 37, 76, 0.88);
+        color: #eaf1ff;
+        padding: 8px 18px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-load-more:hover {
+        border-color: rgba(133, 170, 255, 0.85);
+        background: rgba(35, 53, 105, 0.95);
+      }
+      .btn-load-more:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","inLanguage":"zh-CN","name":"超广角虫视角摄影工作流 #3123","description":"将普通视角照片重构为低机位超广角虫视角摄影，强调强烈透视、空间包围感与真实纪实质感。","url":"https://gemnana.com/zh/case/3123.html","isPartOf":{"@type":"WebSite","name":"Gem Nana","url":"https://gemnana.com"}}</script>
+  
+</head>
+<body class="layout-sidebar">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1 class="logo">📚 Gem Nana</h1>
+        <p class="tagline">AI 提示词收藏库</p>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/zh/index.html" class="nav-item ">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-text">首页</span>
+          <span class="nav-count">3136</span>
+        </a>
+        <a href="/zh/image/index.html" class="nav-item active">
+          <span class="nav-icon">📷</span>
+          <span class="nav-text">图片生成</span>
+          <span class="nav-count">3097</span>
+        </a>
+        <a href="/zh/video/index.html" class="nav-item ">
+          <span class="nav-icon">🎬</span>
+          <span class="nav-text">视频生成</span>
+          <span class="nav-count">36</span>
+        </a>
+        <a href="/zh/text/index.html" class="nav-item ">
+          <span class="nav-icon">💬</span>
+          <span class="nav-text">文字提示词</span>
+          <span class="nav-count">3</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="/en/case/3123.html" class="lang-switch-link">English</a>
+        <a href="/settings.html" class="local-settings-link">⚙️ 设置</a>
+        <p>© 2025 Gem Nana</p>
+      </div>
+    </aside>
+  
+<main class="main-content">
+
+    <div class="page-header detail-body">
+      <nav class="breadcrumb">
+        <a href="/zh/index.html">首页</a><span>›</span>
+        <a href="/zh/image/index.html">图片生成</a><span>›</span>
+        <span>#3123</span>
+      </nav>
+      <h1 class="detail-title"><span class="case-id-pill"><span class="case-id-icon" aria-hidden="true">🏷️</span><span class="case-id-text">#3123</span></span><span class="case-title-text">超广角虫视角摄影工作流</span></h1>
+      <p>2026-10-13　<a class="source-inline-link" href="https://x.com/nima2qisi2/status/2109812913179709700" target="_blank" rel="noopener noreferrer">X / @nima2qisi2</a></p>
+      <p><a class="source-link" href="/zh/image/index.html">← 返回列表</a></p>
+    </div>
+
+    <div class="detail-body">
+      <div id="localActionRow" class="local-action-row">
+        <button class="view-full-btn" id="publishBtn" onclick="publishCurrentCase(this)">发布到公众号草稿箱</button>
+        <button class="view-full-btn" id="publishXhsImageBtn" onclick="publishCurrentCaseToXhs(this, 'image')">发布图文到小红书</button>
+        
+        <button class="view-full-btn" onclick="deleteCurrentCase()">删除该案例</button>
+      </div>
+
+      <div class="detail-block"><h3>📝 内容摘要</h3><p>将普通视角照片重构为低机位超广角虫视角摄影，强调强烈透视、空间包围感与真实纪实质感。</p></div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 中文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("请将上传的普通视角照片重新创作为一张具有强烈空间冲击力的摄影级真实照片。\n\n核心视觉：低机位虫视角 + 超广角摄影 + 戏剧性透视 + 建筑包围感 + 沉浸式环境摄影。\n\n01｜照片内容识别\n- 上传照片作为唯一场景与主体参考。\n- 自动识别人物、建筑、自然景观、道路、地面与背景空间的结构关系。\n- 尽可能保持原照片中的人物身份、服装、建筑特征、场景地点、主要材质与光线氛围。\n\n02｜重新设计相机机位（最高优先级）\n- 彻底改变原照片的普通平视角度。\n- 将虚拟相机移动到距离地面约20—40厘米的位置，靠近主要人物或场景前景。\n- 镜头向上大幅仰拍，形成极强的低机位虫视效果。\n- 采用全画幅等效13—16mm超广角镜头，展现近大远小的夸张透视、边缘空间拉伸和强烈纵深。\n- 绝不是简单裁剪、旋转或者给原图叠加鱼眼滤镜，必须重新构建符合新相机位置的空间透视。\n\n03｜主体与构图\n- 有主要人物时，将人物布置在画面下方或中下部，优先采用背面、侧背面或自然站立的低角度构图。\n- 人物下半身因靠近镜头而产生真实的透视放大，上半身与远处环境产生明显尺度对比。\n- 没有人物时，以原照片中最具代表性的建筑、树木或物体作为前景透视主体。\n- 天空或建筑顶部构成画面的视觉中心。\n\n04｜环境空间\n- 建筑从左右两侧或多个方向向上延伸，突出巨大的空间包围感。\n- 如果原场景具有中庭、环形、弧形或围合式建筑结构，强化其环绕式仰拍效果，让天空成为中央开放区域。\n- 如果原场景是普通街道、广场、寺庙或自然风景，则根据真实环境自动形成合理的超广角透视，不强行创造不存在的环形建筑。\n- 允许根据新视角合理补全原照片未拍摄到的天空、地面和建筑侧面，但必须符合原场景的结构与风格。\n\n05｜摄影质感\n- 真实手机0.5×超广角摄影质感，自然日光、真实阴影、丰富建筑细节、较深景深、轻微数码颗粒和真实边缘畸变。\n- 画面具有偶然街拍的纪实感，而不是人工设计的3D效果图。\n\n06｜画幅\n- 3:4竖版，强调从近处地面到高处天空的巨大空间跨度。\n\n负面约束\n- 不要普通平视摄影、不要常规低角度半身人像、不要航拍、不要微缩星球、不要360度全景球、不要圆形黑边鱼眼、不要夸张到不真实的建筑弯曲、不要改变人物身份和主要服装、不要复制参考图的建筑与人物、不要插画感和CG渲染感。", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>请将上传的普通视角照片重新创作为一张具有强烈空间冲击力的摄影级真实照片。</p><p>核心视觉：低机位虫视角 + 超广角摄影 + 戏剧性透视 + 建筑包围感 + 沉浸式环境摄影。</p><p>01｜照片内容识别<br>- 上传照片作为唯一场景与主体参考。<br>- 自动识别人物、建筑、自然景观、道路、地面与背景空间的结构关系。<br>- 尽可能保持原照片中的人物身份、服装、建筑特征、场景地点、主要材质与光线氛围。</p><p>02｜重新设计相机机位（最高优先级）<br>- 彻底改变原照片的普通平视角度。<br>- 将虚拟相机移动到距离地面约20—40厘米的位置，靠近主要人物或场景前景。<br>- 镜头向上大幅仰拍，形成极强的低机位虫视效果。<br>- 采用全画幅等效13—16mm超广角镜头，展现近大远小的夸张透视、边缘空间拉伸和强烈纵深。<br>- 绝不是简单裁剪、旋转或者给原图叠加鱼眼滤镜，必须重新构建符合新相机位置的空间透视。</p><p>03｜主体与构图<br>- 有主要人物时，将人物布置在画面下方或中下部，优先采用背面、侧背面或自然站立的低角度构图。<br>- 人物下半身因靠近镜头而产生真实的透视放大，上半身与远处环境产生明显尺度对比。<br>- 没有人物时，以原照片中最具代表性的建筑、树木或物体作为前景透视主体。<br>- 天空或建筑顶部构成画面的视觉中心。</p><p>04｜环境空间<br>- 建筑从左右两侧或多个方向向上延伸，突出巨大的空间包围感。<br>- 如果原场景具有中庭、环形、弧形或围合式建筑结构，强化其环绕式仰拍效果，让天空成为中央开放区域。<br>- 如果原场景是普通街道、广场、寺庙或自然风景，则根据真实环境自动形成合理的超广角透视，不强行创造不存在的环形建筑。<br>- 允许根据新视角合理补全原照片未拍摄到的天空、地面和建筑侧面，但必须符合原场景的结构与风格。</p><p>05｜摄影质感<br>- 真实手机0.5×超广角摄影质感，自然日光、真实阴影、丰富建筑细节、较深景深、轻微数码颗粒和真实边缘畸变。<br>- 画面具有偶然街拍的纪实感，而不是人工设计的3D效果图。</p><p>06｜画幅<br>- 3:4竖版，强调从近处地面到高处天空的巨大空间跨度。</p><p>负面约束<br>- 不要普通平视摄影、不要常规低角度半身人像、不要航拍、不要微缩星球、不要360度全景球、不要圆形黑边鱼眼、不要夸张到不真实的建筑弯曲、不要改变人物身份和主要服装、不要复制参考图的建筑与人物、不要插画感和CG渲染感。</p></div>
+      </div>
+      <div class="detail-block">
+        <div class="prompt-head-row">
+          <h3>🎨 英文提示词</h3>
+          <button type="button" class="prompt-copy-btn" onclick='copyPromptText("Please transform the uploaded ordinary-view photo into a photorealistic image with strong spatial impact.\n\nCore visual: low-angle worm's-eye view + ultra-wide-angle photography + dramatic perspective + architectural enclosure + immersive environmental photography.\n\n01 | Photo content recognition\n- Use the uploaded photo as the only scene and subject reference.\n- Automatically identify the relationships among people, buildings, natural landscapes, roads, ground, and background space.\n- Preserve the identity, clothing, architectural features, location, main materials, and lighting atmosphere from the original photo as much as possible.\n\n02 | Redesign the camera position (highest priority)\n- Completely change the ordinary eye-level angle of the original photo.\n- Move the virtual camera to about 20–40 cm above the ground, close to the main subject or foreground.\n- Tilt the lens sharply upward to create a very strong low-angle worm's-eye effect.\n- Use a full-frame equivalent 13–16 mm ultra-wide lens to show exaggerated perspective, stretched edge space, and strong depth.\n- Do not simply crop, rotate, or add a fisheye filter; the spatial perspective must be rebuilt according to the new camera position.\n\n03 | Subject and composition\n- When there is a main person, place the subject in the lower or lower-middle area of the frame, preferably from the back, side-back, or in a natural standing low-angle composition.\n- The lower body appears larger due to proximity to the lens, creating a clear scale contrast with the upper body and distant environment.\n- When there is no person, use the most representative building, tree, or object from the original photo as the foreground perspective subject.\n- The sky or the top of the building should become the visual center of the frame.\n\n04 | Environmental space\n- Buildings extend upward from both sides or multiple directions, emphasizing a massive enclosing sense of space.\n- If the original scene has a courtyard, circular, curved, or enclosed architectural structure, strengthen the surrounding upward-looking effect and make the sky the central open area.\n- If the original scene is a street, square, temple, or natural landscape, form a reasonable ultra-wide perspective based on the real environment without forcing nonexistent circular architecture.\n- It is allowed to reasonably complete unseen sky, ground, and building sides from the new viewpoint, but the result must match the structure and style of the original scene.\n\n05 | Photographic texture\n- Real smartphone 0.5× ultra-wide photography texture, natural daylight, real shadows, rich architectural details, deep depth of field, slight digital grain, and realistic edge distortion.\n- The image should feel like an accidental street snapshot, not a manually designed 3D render.\n\n06 | Aspect ratio\n- 3:4 vertical composition, emphasizing the huge spatial span from the near ground to the high sky.\n\nNegative constraints\n- No ordinary eye-level photography, no standard low-angle half-body portrait, no aerial view, no tiny planet, no 360-degree panorama sphere, no circular black-border fisheye, no unrealistic architectural bending, no changing subject identity or main clothing, no copying the reference image's building and people, no illustration or CG-rendered look.", this)'>📋 复制</button>
+        </div>
+        <div data-nosnippet><p>Please transform the uploaded ordinary-view photo into a photorealistic image with strong spatial impact.</p><p>Core visual: low-angle worm&#39;s-eye view + ultra-wide-angle photography + dramatic perspective + architectural enclosure + immersive environmental photography.</p><p>01 | Photo content recognition<br>- Use the uploaded photo as the only scene and subject reference.<br>- Automatically identify the relationships among people, buildings, natural landscapes, roads, ground, and background space.<br>- Preserve the identity, clothing, architectural features, location, main materials, and lighting atmosphere from the original photo as much as possible.</p><p>02 | Redesign the camera position (highest priority)<br>- Completely change the ordinary eye-level angle of the original photo.<br>- Move the virtual camera to about 20–40 cm above the ground, close to the main subject or foreground.<br>- Tilt the lens sharply upward to create a very strong low-angle worm&#39;s-eye effect.<br>- Use a full-frame equivalent 13–16 mm ultra-wide lens to show exaggerated perspective, stretched edge space, and strong depth.<br>- Do not simply crop, rotate, or add a fisheye filter; the spatial perspective must be rebuilt according to the new camera position.</p><p>03 | Subject and composition<br>- When there is a main person, place the subject in the lower or lower-middle area of the frame, preferably from the back, side-back, or in a natural standing low-angle composition.<br>- The lower body appears larger due to proximity to the lens, creating a clear scale contrast with the upper body and distant environment.<br>- When there is no person, use the most representative building, tree, or object from the original photo as the foreground perspective subject.<br>- The sky or the top of the building should become the visual center of the frame.</p><p>04 | Environmental space<br>- Buildings extend upward from both sides or multiple directions, emphasizing a massive enclosing sense of space.<br>- If the original scene has a courtyard, circular, curved, or enclosed architectural structure, strengthen the surrounding upward-looking effect and make the sky the central open area.<br>- If the original scene is a street, square, temple, or natural landscape, form a reasonable ultra-wide perspective based on the real environment without forcing nonexistent circular architecture.<br>- It is allowed to reasonably complete unseen sky, ground, and building sides from the new viewpoint, but the result must match the structure and style of the original scene.</p><p>05 | Photographic texture<br>- Real smartphone 0.5× ultra-wide photography texture, natural daylight, real shadows, rich architectural details, deep depth of field, slight digital grain, and realistic edge distortion.<br>- The image should feel like an accidental street snapshot, not a manually designed 3D render.</p><p>06 | Aspect ratio<br>- 3:4 vertical composition, emphasizing the huge spatial span from the near ground to the high sky.</p><p>Negative constraints<br>- No ordinary eye-level photography, no standard low-angle half-body portrait, no aerial view, no tiny planet, no 360-degree panorama sphere, no circular black-border fisheye, no unrealistic architectural bending, no changing subject identity or main clothing, no copying the reference image&#39;s building and people, no illustration or CG-rendered look.</p></div>
+      </div>
+      <div class="detail-block"><h3>📷 图片</h3><div class="detail-media-grid"><img src="https://pbs.twimg.com/media/HUePqArbQAALW4V.jpg?name=orig" alt="超广角虫视角摄影工作流" loading="lazy"><img src="https://pbs.twimg.com/media/HUePp-mbMAAkdwj.jpg?name=orig" alt="超广角虫视角摄影工作流" loading="lazy"><img src="https://pbs.twimg.com/media/HUePp-pbIAA3Ael.jpg?name=orig" alt="超广角虫视角摄影工作流" loading="lazy"></div></div>
+      
+      
+    </div>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          const row = document.getElementById('localActionRow');
+          if (row) row.style.display = 'flex';
+        }
+      })();
+
+      async function copyPromptText(text, button) {
+        const value = (typeof text === 'string' ? text : '').trim();
+        if (!value) {
+          alert("该案例暂无可展示的提示词内容。");
+          return;
+        }
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(value);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = value;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          if (button) {
+            const original = button.textContent;
+            button.textContent = "✅ 已复制";
+            setTimeout(() => {
+              button.textContent = original;
+            }, 1200);
+          }
+        } catch (err) {
+          alert("复制失败，请手动复制");
+        }
+      }
+
+      async function publishCurrentCase(button) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布中...";
+        try {
+          const res = await fetch('/api/wechat-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ itemId: 3123 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'Publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function publishCurrentCaseToXhs(button, preferredMedia) {
+        if (!button) return;
+        const original = button.textContent;
+        button.disabled = true;
+        button.textContent = "发布到小红书中...";
+        try {
+          const res = await fetch('/api/xhs-publish', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              itemId: 3123,
+              preferredMedia: preferredMedia || 'image'
+            })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && (data.error || data.message)) || 'XHS publish failed');
+          }
+          alert((data && data.data && data.data.message) || 'OK');
+        } catch (err) {
+          alert('❌ ' + (err.message || 'XHS publish failed'));
+        } finally {
+          button.disabled = false;
+          button.textContent = original;
+        }
+      }
+
+      async function deleteCurrentCase() {
+        if (!confirm("确认删除该案例？此操作不可恢复。")) return;
+        try {
+          const res = await fetch('/api/delete-content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id: 3123 })
+          });
+          const data = await res.json();
+          if (!res.ok || !data.success) {
+            throw new Error((data && data.error) || 'Delete failed');
+          }
+          alert("删除成功");
+          window.location.href = "/zh/image/index.html";
+        } catch (err) {
+          alert('❌ ' + (err.message || 'Delete failed'));
+        }
+      }
+    </script>
+  
+</main>
+
+    <script>
+      (function () {
+        const isLocal = ['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+        if (isLocal) {
+          document.querySelectorAll('.local-settings-link').forEach(el => { el.style.display = 'inline-block'; });
+        }
+
+        document.addEventListener('click', function (event) {
+          const el = event.target && event.target.closest ? event.target.closest('.clickable-source[data-url]') : null;
+          if (!el) return;
+          event.preventDefault();
+          event.stopPropagation();
+          const rawUrl = (el.getAttribute('data-url') || '').trim();
+          if (!rawUrl) return;
+          window.open(rawUrl, '_blank', 'noopener,noreferrer');
+        });
+      })();
+    </script>
+  
+
+</body>
+</html>
